@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Team Mentor</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link href="css/custom-style.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Navigate <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" data-toggle="tooltip" title="Help"><span class="glyphicon glyphicon-info-sign"></span></a></li>
+            <li><a href="#" data-toggle="tooltip" title="User"><span class="glyphicon glyphicon-user"></span></a></li>
+            <li><a href="#" data-toggle="tooltip" title="Logout"><span class="glyphicon glyphicon-log-out"></span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div id="application" class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            Error/Validation messages go here
+          </div>
+
+          <h3 class="light-grey">Sign Up</h3>
+          <br>
+          <p>Complete this form and get access to the worlds largest repository of secure software development knowledge.</p>
+          <br>
+
+          <form role="form" id="sign-up-form">
+            <div class="form-group">
+              <input type="username" class="form-control" id="new-user-username" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="new-user-password" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="new-user-confirm-password" placeholder="Confirm Password">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="new-user-email" placeholder="Email">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-submit btn-block">Sign Up</button>
+              </div>
+              <div class="col-md-6">
+              </div>
+            </div>
+          </form>
+            <br>
+            <br>
+        </div>
+
+        <div class="col-md-6">
+          <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            Error/Validation messages go here
+          </div>
+
+          <h3 class="light-grey">Login</h3>
+          <br>
+
+          <p>Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?</p>
+          <br>
+
+          <div id="login-form">
+            <form role="form">
+              <div class="form-group">
+                <input type="username" class="form-control" id="returning-user-username" placeholder="Username">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="returning-user-password" placeholder="Password">
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <button type="submit" class="btn btn-submit btn-block">Login</button>
+                </div>
+                <div class="col-md-6">
+                  <button type="submit" class="btn btn-submit btn-block">Forgot your password?</button>
+                </div>
+              </div>
+            </form>
+            <br>
+            <br>
+
+            <form role="form" id="forgot-password">
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email Address">
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <button type="submit" class="btn btn-submit btn-block">Get your password</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
