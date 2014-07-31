@@ -102,7 +102,7 @@ button#search-button {
 	border-left: none;
 }
 
-.btn {
+.btn-action {
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
@@ -123,7 +123,7 @@ button#search-button {
 	max-width: 100%;
 }
 
-.btn:hover {
+.btn-action:hover {
 	color: #46641e !important;
 }
 
