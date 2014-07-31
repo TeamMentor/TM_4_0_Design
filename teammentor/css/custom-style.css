@@ -20,6 +20,11 @@ body {
 	background-color: #FFFFFF;
 }
 
+.lge-container {
+	width: 98%;
+	margin: 0 auto;
+}
+
 /*** Styles effecting typography ***/
 
 p {
@@ -73,6 +78,7 @@ input {
 	font-size: 1.25em !important;
 	height: 3em !important;
 	border-radius: 0px !important;
+	border-color: #aaaaaa !important;
 }
 
 
@@ -132,6 +138,17 @@ button#search-button {
 	border-radius: 0px;
 	color: #8aaf3e;
 }
+
+.btn-application {
+	color: #8aaf3e;
+	background-color: #FFFFFF;
+	border: 1px solid #aaaaaa;
+}
+
+	.btn-application:hover {
+		color: #49661f;
+		background-color: #ffffff;
+	}
 
 /*** Styles effecting badges ***/
 

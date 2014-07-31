@@ -34,7 +34,7 @@
 
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
+      <div class="lge-container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -59,9 +59,9 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" data-toggle="tooltip" title="Help"><span class="glyphicon glyphicon-info-sign"></span></a></li>
-            <li><a href="#" data-toggle="tooltip" title="User"><span class="glyphicon glyphicon-user"></span></a></li>
-            <li><a href="#" data-toggle="tooltip" title="Logout"><span class="glyphicon glyphicon-log-out"></span></a></li>
+            <li><a href="#" data-toggle="tooltip" title="Help"><img src="img/help.svg" width=50px alt="Help"/></a></li>
+            <li><a href="#" data-toggle="tooltip" title="User"><img src="img/user.svg" width=50px alt="Help"/></span></a></li>
+            <li><a href="#" data-toggle="tooltip" title="Logout"><img src="img/logout.svg" width=50px alt="Help"/></span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -69,119 +69,136 @@
 
     <div id="application">
       <div class="row">
-        <div class="col-sm-3">
-          <div class="container">
-          </div> <!-- /container -->
-        </div> <!-- /col-sm-3 -->
-        <div class="col-sm-6">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="input-group">
-                <input type="text" id="search-bar" class="form-control" placeholder="Type keywords here">
-                <span class="input-group-btn">
-                  <button id="search-button" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                </span>
-                <span class="input-group-btn">
-                  <button id="filters-button" class="btn btn-default" type="button"><span class="glyphicon glyphicon-filter"></span></button>
-                </span>
-              </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-          </div><!-- /.row -->
-        </div> <!-- /col-sm-6 -->
-        <div class="col-sm-3">
-          <h3 class="light-grey">Filters</h3>
-          
-          <div class="panel-group" id="accordion">
-            <div class="panel">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                    <h5 class="green">Technology <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <ul class="list-group">
-                    <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
-                    <li class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</li>
-                    <li class="list-group-item"><span class="badge">14</span>Morbi leo risus</li>
-                    <li class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</li>
-                    <li class="list-group-item"><span class="badge">14</span>Vestibulum at eros</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+        <div class="lge-container">
+          <div class="col-sm-3">
+          </div> <!-- /col-sm-3 -->
 
-            <div class="panel">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                    <h5 class="green">Category <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <ul class="list-group">
-                    <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
-                    <li class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</li>
-                    <li class="list-group-item"><span class="badge">14</span>Morbi leo risus</li>
-                    <li class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</li>
-                    <li class="list-group-item"><span class="badge">14</span>Vestibulum at eros</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="input-group">
+                  <input type="text" id="search-bar" class="form-control" placeholder="Type keywords here">
+                  <span class="input-group-btn">
+                    <button id="search-button" class="btn btn-application" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                  </span>
+                  <span class="input-group-btn">
+                    <button id="filters-button" class="btn btn-application" type="button"><span class="glyphicon glyphicon-filter"></span></button>
+                  </span>
+                </div><!-- /input-group -->
+              </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+          </div> <!-- /col-sm-6 -->
 
-            <div class="panel">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                    <h5 class="green">Phase <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <ul class="list-group">
-                    <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
-                    <li class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</li>
-                    <li class="list-group-item"><span class="badge">14</span>Morbi leo risus</li>
-                    <li class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</li>
-                    <li class="list-group-item"><span class="badge">14</span>Vestibulum at eros</li>
-                  </ul>
+          <div class="col-sm-3">
+            <div id="filters">
+              <h3 class="light-grey">Filters</h3>
+            
+              <div class="panel-group" id="accordion">
+                <div class="panel">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        <h5 class="green">Technology <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <ul class="list-group">
+                        <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
+                        <li class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</li>
+                        <li class="list-group-item"><span class="badge">14</span>Morbi leo risus</li>
+                        <li class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</li>
+                        <li class="list-group-item"><span class="badge">14</span>Vestibulum at eros</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="panel">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                    <h5 class="green">Type <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseFour" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <ul class="list-group">
-                    <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
-                    <li class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</li>
-                    <li class="list-group-item"><span class="badge">14</span>Morbi leo risus</li>
-                    <li class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</li>
-                    <li class="list-group-item"><span class="badge">14</span>Vestibulum at eros</li>
-                  </ul>
+                <div class="panel">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        <h5 class="green">Category <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <ul class="list-group">
+                        <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
+                        <li class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</li>
+                        <li class="list-group-item"><span class="badge">14</span>Morbi leo risus</li>
+                        <li class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</li>
+                        <li class="list-group-item"><span class="badge">14</span>Vestibulum at eros</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <br>
 
-            <button type="button" class="btn btn-default submit btn-block"><h5>OK, DONE <span class="glyphicon glyphicon-ok glyphicon-small"></span></h4></button>
-          </div>
-        </div> <!-- /col-sm-3 -->
-      </div> <!-- /row for columns -->
-    </div> <!-- /application div -->
+                <div class="panel">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        <h5 class="green">Phase <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <ul class="list-group">
+                        <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
+                        <li class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</li>
+                        <li class="list-group-item"><span class="badge">14</span>Morbi leo risus</li>
+                        <li class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</li>
+                        <li class="list-group-item"><span class="badge">14</span>Vestibulum at eros</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                        <h5 class="green">Type <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <ul class="list-group">
+                        <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
+                        <li class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</li>
+                        <li class="list-group-item"><span class="badge">14</span>Morbi leo risus</li>
+                        <li class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</li>
+                        <li class="list-group-item"><span class="badge">14</span>Vestibulum at eros</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <br>
+
+                <button type="button" class="btn-action btn-submit btn-block">OK, DONE <span class="glyphicon glyphicon-ok glyphicon-small"></span></button>
+              </div>
+            </div><!-- /filters -->
+
+            <div id="save">
+              <h3 class="light-grey">Save to Dashboard</h3>
+              <br>
+
+              <form role="form">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="nickname" placeholder="Nickname">
+                </div>
+                <button type="submit" class="btn-action btn-submit btn-block">OK, DONE <span class="glyphicon glyphicon-ok glyphicon-small"></span></button>
+              </form>
+            </div> <!-- /save -->
+            
+          </div> <!-- /col-sm-3 -->
+        </div> <!-- /row for columns -->
+        </div>
+      </div> <!-- /application div -->
 
 
     <!-- Bootstrap core JavaScript
