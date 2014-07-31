@@ -10,6 +10,10 @@ body {
 	max-width: 100%;
 }
 
+#article-pane {
+	padding-bottom: 40px;
+}
+
 .container {
 	max-width: 100%;
 }
@@ -38,6 +42,21 @@ a {
 
 	a:hover, a:visited, a:active {
 		text-decoration: none;
+	}
+
+a.action, a.action:visited {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	color: #8aaf3e;
+	text-align: center !important;
+}
+
+	a.action:hover, a.action:active {
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 700;
+		color: #49661f;
 	}
 
 .glyphicon {
@@ -168,7 +187,6 @@ button#search-button {
 
 .panel-collapse {
 	margin-top: -20px;
-	margin-bottom: -40px;
 }
 
 .panel-group .panel-heading + .panel-collapse .panel-body {
