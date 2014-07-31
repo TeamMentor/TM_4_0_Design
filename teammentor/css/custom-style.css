@@ -14,19 +14,15 @@ body {
 	padding-bottom: 40px;
 }
 
-.container {
-	max-width: 100%;
+.lge-container {
+	max-width: 98%;
+	margin: 0 auto;
 }
 
 /*** Styles effecting navigation ***/
 
 .navbar {
 	background-color: #FFFFFF;
-}
-
-.lge-container {
-	width: 98%;
-	margin: 0 auto;
 }
 
 /*** Styles effecting typography ***/
