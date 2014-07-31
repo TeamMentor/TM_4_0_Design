@@ -25,6 +25,15 @@ body {
 	background-color: #FFFFFF;
 }
 
+.dropdown-menu {
+	max-width: 100%;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	color: #444444;
+	background-color: #FFFFFF;
+}
+
 /*** Styles effecting typography ***/
 
 p {
