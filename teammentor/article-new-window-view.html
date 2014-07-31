@@ -59,6 +59,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" data-toggle="tooltip" title="Home"><img src="img/home.svg" width=50px alt="Home"/></a></li>
             <li><a href="#" data-toggle="tooltip" title="Help"><img src="img/help.svg" width=50px alt="Help"/></a></li>
             <li><a href="#" data-toggle="tooltip" title="User"><img src="img/user.svg" width=50px alt="Help"/></span></a></li>
             <li><a href="#" data-toggle="tooltip" title="Logout"><img src="img/logout.svg" width=50px alt="Help"/></span></a></li>
@@ -87,15 +88,51 @@
           
           <div class="row">
             <div class="col-xs-4 text-center">
-              <a href="#" class="action">Metadata <span class="glyphicon glyphicon-bookmark glyphicon-chevron-down glyphicon-small"></span></a>
+              <div class="dropdown">
+                <button class="green btn btn-action" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                  Metadata
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                </ul>
+              </div>
             </div><!--/.col-xs-6-->
+
             <div class="col-xs-4 text-center">
               <a href="#" class="action">Save <span class="glyphicon glyphicon-bookmark glyphicon-small"></span></a>
             </div><!--/.col-xs-3-->
+
             <div class="col-xs-4 text-center">
               <a href="#" class="action">Share <span class="glyphicon glyphicon-share glyphicon-small"></span></a>
             </div><!--/.col-xs-3-->
           </div><!--/.row-->
+
+          <br>
+          <hr></hr>
+          <br>
+
+          <h3 class="light-grey">Related Articles</h3>
+          <br>
+
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading grey">Related Article Headline</h4>
+              <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p>
+            </a>
+            <br>
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading grey">Related Article Headline</h4>
+              <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p>
+            </a>
+            <br>
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading grey">Related Article Headline</h4>
+              <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

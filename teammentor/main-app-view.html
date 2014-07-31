@@ -59,6 +59,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" data-toggle="tooltip" title="Home"><img src="img/home.svg" width=50px alt="Home"/></a></li>
             <li><a href="#" data-toggle="tooltip" title="Help"><img src="img/help.svg" width=50px alt="Help"/></a></li>
             <li><a href="#" data-toggle="tooltip" title="User"><img src="img/user.svg" width=50px alt="Help"/></span></a></li>
             <li><a href="#" data-toggle="tooltip" title="Logout"><img src="img/logout.svg" width=50px alt="Help"/></span></a></li>
@@ -93,19 +94,19 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#starting-point" href="#recently-viewed-articles">
-                          <h5 class="grey">Recently Viewed Articles <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
+                          <h4 class="grey">Recently Viewed Articles <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h4>
                         </a>
                       </h4>
                     </div>
                     <div id="recently-viewed-articles" class="panel-collapse collapse">
                       <div class="panel-body">
-                        <ul class="list-group">
-                          <li class="list-group-item">Cras justo odio</li>
-                          <li class="list-group-item">Dapibus ac facilisis in</li>
-                          <li class="list-group-item">Morbi leo risus</li>
-                          <li class="list-group-item">Porta ac consectetur ac</li>
-                          <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
+                        <div class="list-group">
+                          <a href="#" class="list-group-item">Cras justo odio</a>
+                          <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                          <a href="#" class="list-group-item">Morbi leo risus</a>
+                          <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                          <a href="#" class="list-group-item">Vestibulum at eros</a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -114,7 +115,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#starting-point" href="#popular-search-terms">
-                          <h5 class="grey">Popular Search Terms <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
+                          <h4 class="grey">Popular Search Terms <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h4>
                         </a>
                       </h4>
                     </div>
@@ -135,7 +136,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#starting-point" href="#top-articles">
-                          <h5 class="grey">Top Articles <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
+                          <h4 class="grey">Top Articles <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h4>
                         </a>
                       </h4>
                     </div>
@@ -156,7 +157,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#starting-point" href="#new-articles">
-                          <h5 class="grey">New Articles <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
+                          <h4 class="grey">New Articles <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h4>
                         </a>
                       </h4>
                     </div>
@@ -267,7 +268,10 @@
                 </div>
                 <br>
 
-                <a href="#" class="action">Ok, Done <span class="glyphicon glyphicon-ok glyphicon-small"></span></a>
+                <div class="col-lge-12 text-center">
+                  <br>
+                  <a href="#" class="action">Ok, Done <span class="glyphicon glyphicon-ok glyphicon-small"></span></a>
+                </div>
               </div>
             </div><!-- /filters -->
 
@@ -279,7 +283,10 @@
                 <div class="form-group">
                   <input type="text" class="form-control" id="nickname" placeholder="Nickname">
                 </div>
-                <a href="#" class="action">Ok, Done <span class="glyphicon glyphicon-ok glyphicon-small"></span></a>
+                <div class="col-lge-12 text-center">
+                  <br>
+                  <a href="#" class="action">Ok, Done <span class="glyphicon glyphicon-ok glyphicon-small"></span></a>
+                </div>
               </form>
             </div> <!-- /save -->
             
