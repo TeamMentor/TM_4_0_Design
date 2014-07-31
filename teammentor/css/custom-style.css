@@ -34,6 +34,10 @@ body {
 	background-color: #FFFFFF;
 }
 
+.breadcrumb {
+	background-color: #FFFFFF;
+}
+
 /*** Styles effecting typography ***/
 
 p {
@@ -47,9 +51,14 @@ li {
 
 a {
 	text-decoration: none;
+	color: #444444;
 }
+	
+	a:hover {
+		color: #444444;
+	}
 
-	a:hover, a:visited, a:active {
+	a:hover, a:visited, a:active, a:focus {
 		text-decoration: none;
 	}
 
