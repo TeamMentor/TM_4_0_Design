@@ -11,17 +11,17 @@
     <title>TEAM Mentor 4.0 Design</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="teammentor/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link href="css/custom-style.css" rel="stylesheet">
+    <link href="teammentor/css/custom-style.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="teammentor/js/ie-emulation-modes-warning.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="teammentor/js/ie10-viewport-bug-workaround.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -45,10 +45,10 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" data-toggle="tooltip" title="Home"><img src="img/home.svg" width=50px alt="Home"/></a></li>
-            <li><a href="#" data-toggle="tooltip" title="Help"><img src="img/help.svg" width=50px alt="Help"/></a></li>
-            <li><a href="#" data-toggle="tooltip" title="User"><img src="img/user.svg" width=50px alt="User"/></span></a></li>
-            <li><a href="#" data-toggle="tooltip" title="Logout"><img src="img/logout.svg" width=50px alt="Logout"/></span></a></li>
+            <li><a href="#" data-toggle="tooltip" title="Home"><img src="teammentor/img/home.svg" width=50px alt="Home"/></a></li>
+            <li><a href="#" data-toggle="tooltip" title="Help"><img src="teammentor/img/help.svg" width=50px alt="Help"/></a></li>
+            <li><a href="#" data-toggle="tooltip" title="User"><img src="teammentor/img/user.svg" width=50px alt="User"/></span></a></li>
+            <li><a href="#" data-toggle="tooltip" title="Logout"><img src="teammentor/img/logout.svg" width=50px alt="Logout"/></span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -63,245 +63,45 @@
           <div class="col-sm-6">
             <div class="row">
               <div class="col-lg-12">
-                <div class="input-group">
-                  <input type="text" id="search-bar" class="form-control" placeholder="Type keywords here">
-                  <span class="input-group-btn">
-                    <button id="search-button" class="btn btn-application" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                  </span>
-                  <span class="input-group-btn">
-                    <button id="filters-button" class="btn btn-application" type="button"><span class="glyphicon glyphicon-filter"></span></button>
-                  </span>
-                </div><!-- /input-group -->
+                <h3 class="light-grey">TEAM Mentor 4.0 Design</h3>
                 <br>
+                <p>This is a staging site for the TEAM Mentor 4.0 design.</p>
+                <br>
+                <hr></hr>
                 <br>
 
-                <div class="panel-group" id="starting-point">
-                  <div class="panel">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#starting-point" href="#recently-viewed-articles">
-                          <h4 class="grey">Recently Viewed Articles <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h4>
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="recently-viewed-articles" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <div class="list-group">
-                          <a href="#" class="list-group-item">Cras justo odio</a>
-                          <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                          <a href="#" class="list-group-item">Morbi leo risus</a>
-                          <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                          <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <h4 class="grey">Current pages:</h4>
 
-                  <div class="panel">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#starting-point" href="#popular-search-terms">
-                          <h4 class="grey">Popular Search Terms <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h4>
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="popular-search-terms" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <ul class="list-group">
-                          <li class="list-group-item">Cras justo odio</li>
-                          <li class="list-group-item">Dapibus ac facilisis in</li>
-                          <li class="list-group-item">Morbi leo risus</li>
-                          <li class="list-group-item">Porta ac consectetur ac</li>
-                          <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="panel">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#starting-point" href="#top-articles">
-                          <h4 class="grey">Top Articles <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h4>
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="top-articles" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <ul class="list-group">
-                          <li class="list-group-item">Cras justo odio</li>
-                          <li class="list-group-item">Dapibus ac facilisis in</li>
-                          <li class="list-group-item">Morbi leo risus</li>
-                          <li class="list-group-item">Porta ac consectetur ac</li>
-                          <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="panel">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#starting-point" href="#new-articles">
-                          <h4 class="grey">New Articles <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h4>
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="new-articles" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <ul class="list-group">
-                          <li class="list-group-item">Cras justo odio</li>
-                          <li class="list-group-item">Dapibus ac facilisis in</li>
-                          <li class="list-group-item">Morbi leo risus</li>
-                          <li class="list-group-item">Porta ac consectetur ac</li>
-                          <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                <div class="list-group">
+                  <a href="teammentor/app-keyword-search.html" class="list-group-item">app-keyword-search.html</a>
+                  <a href="teammentor/article-new-window-view.html" class="list-group-item">article-new-window-view.html</a>
+                  <a href="teammentor/filters-active.html" class="list-group-item">filters-active.html</a>
+                  <a href="teammentor/main-app-view.html" class="list-group-item">main-app-view.html</a>
+                  <a href="teammentor/new-user-login.html" class="list-group-item">new-user-login.html</a>
+                  <a href="teammentor/returning-user-login.html" class="list-group-item">returning-user-login.html</a>
+                  <a href="teammentor/side-navigation.html" class="list-group-item">side-navigation.html</a>
                 </div>
+
               </div><!-- /.col-lg-12 -->
             </div><!-- /.row -->
           </div> <!-- /col-sm-6 -->
 
           <div class="col-sm-3">
-            <div id="filters">
-              <h3 class="light-grey">Filters</h3>
-            
-              <div class="panel-group" id="filters">
-                <div class="panel">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#filters" href="#technology">
-                        <h5 class="green">Technology <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="technology" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <ul class="list-group">
-                        <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
-                        <li class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</li>
-                        <li class="list-group-item"><span class="badge">14</span>Morbi leo risus</li>
-                        <li class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</li>
-                        <li class="list-group-item"><span class="badge">14</span>Vestibulum at eros</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="panel">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#filters" href="#category">
-                        <h5 class="green">Category <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="category" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <ul class="list-group">
-                        <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
-                        <li class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</li>
-                        <li class="list-group-item"><span class="badge">14</span>Morbi leo risus</li>
-                        <li class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</li>
-                        <li class="list-group-item"><span class="badge">14</span>Vestibulum at eros</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="panel">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#filters" href="#phase">
-                        <h5 class="green">Phase <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="phase" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <ul class="list-group">
-                        <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
-                        <li class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</li>
-                        <li class="list-group-item"><span class="badge">14</span>Morbi leo risus</li>
-                        <li class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</li>
-                        <li class="list-group-item"><span class="badge">14</span>Vestibulum at eros</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="panel">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#filters" href="#type">
-                        <h5 class="green">Type <span class="glyphicon glyphicon-chevron-down glyphicon-small light-grey pull-right"></span></h5>
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="type" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <ul class="list-group">
-                        <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
-                        <li class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</li>
-                        <li class="list-group-item"><span class="badge">14</span>Morbi leo risus</li>
-                        <li class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</li>
-                        <li class="list-group-item"><span class="badge">14</span>Vestibulum at eros</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <br>
-
-                <div class="col-lge-12 text-center">
-                  <br>
-                  <a href="#" class="action">Ok, Done <span class="glyphicon glyphicon-ok glyphicon-small"></span></a>
-                </div>
-              </div>
-            </div><!-- /filters -->
-
-            <div id="save">
-              <h3 class="light-grey">Save to Dashboard</h3>
-              <br>
-
-              <form role="form">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="nickname" placeholder="Nickname">
-                </div>
-                <div class="col-lge-12 text-center">
-                  <br>
-                  <a href="#" class="action">Ok, Done <span class="glyphicon glyphicon-ok glyphicon-small"></span></a>
-                </div>
-              </form>
-            </div> <!-- /save -->
-            
           </div> <!-- /col-sm-3 -->
-        </div> <!-- /row for columns -->
-        </div>
+        </div> <!-- /lge-container -->
       </div> <!-- /application div -->
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="teammentor/js/bootstrap.min.js"></script>
   </body>
 </html>
 
 
 
 
-
-
-<html>
-  <body>
-    <h3>TM 4.0 Design</h3>
-    <p>
-      This is a staging site for the TeamMentor 4.0 design.
-    </p>
-    <p>
       <b>Current pages</b>
       <br/>
       <a href="teammentor/app-keyword-search.html"     >app-keyword-search.html</a><br/>
