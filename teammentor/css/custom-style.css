@@ -88,6 +88,13 @@ body {
 
 .navbar {
 	background-color: #FFFFFF;
+	height: 80px;
+	font-size: 0.8em;
+	border-bottom: 1px solid #aaaaaa;
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
 }
 
 .dropdown-menu {
@@ -103,6 +110,33 @@ body {
 	margin-top: 15px;
 }
 
+.navbar-inverse .navbar-nav > li > a  {
+	color: #8aae40;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	padding-top: 30px;
+}
+
+		.navbar-inverse .navbar-nav > li > a:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			-webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+			transition: all 0.3s;
+		}
+
+		.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:active {
+			color: #46641e;
+		}
+
+		.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+			color: #46641e;
+			background-color: #FFFFFF;
+			border-bottom: 2px solid #46641e;
+		}
+
 .breadcrumb {
 	background-color: #FFFFFF;
 }
@@ -110,41 +144,17 @@ body {
 /*** Styles effecting typography ***/
 
 h1 {
-	font-size: 3.5em;
-	font-family: Helvetica, Arial, sans-serif;
-	font-weight: 700;
-	letter-spacing: 1px;
-	line-height: 1.2em;
-}
-
-h2 {
 	font-size: 3em;
-	font-family: Helvetica, Arial, sans-serif;
-	
-	letter-spacing: 1px;
-	line-height: 1.25em;
-}
-
-h3 {
-	font-family: Helvetica, Arial, sans-serif;
 	font-weight: 700;
-	font-size: 2.5em;
-	line-height: 2em;
 	letter-spacing: 1px;
-	color: #aaaaaa;
 }
 
-h4 {
-	font-family: Helvetica, Arial, sans-serif;
-	font-weight: 600;
-	font-size: 2em;
-}
-
-h5 {
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 1.5em;
+h1, h2, h3 {
 	line-height: 1.5em;
-	color: #444444;
+}
+
+h4, h5 {
+	line-height: 1.75em;
 }
 
 p {
