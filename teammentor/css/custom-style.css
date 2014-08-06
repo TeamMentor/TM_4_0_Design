@@ -167,12 +167,10 @@ hr {
 }
 
 a, a:visited {
-	color: #8aae40 ;
 	text-decoration: none;
 }
 	
 	a:hover, a:active {
-		color: #46641e;
 		text-decoration: none;
 	}
 
