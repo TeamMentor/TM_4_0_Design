@@ -167,12 +167,10 @@ hr {
 }
 
 a, a:visited {
-	color: #8aae40 ;
 	text-decoration: none;
 }
 	
 	a:hover, a:active {
-		color: #46641e;
 		text-decoration: none;
 	}
 
@@ -285,6 +283,39 @@ input {
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color: #aaaaaa;
 }
+
+input[type=checkbox].css-checkbox {
+	position: absolute; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height:1px; 
+	width:1px; 
+	margin:-1px; 
+	padding:0;
+	border:0;
+}
+
+label.css-label {
+	font-weight: normal;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:20px;
+	height:15px; 
+	display:inline-block;
+	line-height:15px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:15px;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 -15px;
+}
+
+	.css-label{ background-image:url(http://csscheckbox.com/checkboxes/lite-gray-check.png); }
 
 /*** Styles effecting buttons ***/
 
