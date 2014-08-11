@@ -71,7 +71,7 @@ body {
 
 .form-control {
 	height: 3em;
-	width: 97%;
+	width: 100%;
 	border-radius: 0px;
 	padding-left: 20px;
 	border: 1px solid #8aae40;
@@ -446,6 +446,19 @@ button#search-button {
 	background-color: #ffffff;
 	border: 1px solid #8aaf3e;
 	border-radius: 0px;
+}
+
+/*** Styles effecting tables and table cells ***/
+
+table {
+	width: 100%;
+	font-size: 1.15em;
+}
+
+td {
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 30px;
 }
 
 /*** Media Queries ***/
