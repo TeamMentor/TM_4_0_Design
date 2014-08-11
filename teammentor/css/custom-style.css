@@ -67,6 +67,11 @@ body {
 	text-align: center;
 }
 
+.lge-container {
+	max-width: 98%;
+	margin: 0 auto;
+}
+
 /*** Forms and Inputs ***/
 
 .form-control {
@@ -77,11 +82,6 @@ body {
 	border: 1px solid #8aae40;
 	color: #46641e;
 	font-size: 1.15em;
-}
-
-.lge-container {
-	max-width: 98%;
-	margin: 0 auto;
 }
 
 /*** Styles effecting navigation ***/
