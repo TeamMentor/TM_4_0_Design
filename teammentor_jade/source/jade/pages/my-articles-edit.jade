@@ -1,0 +1,111 @@
+doctype html
+html(lang='en')
+  include ../layouts/head.jade
+  body 
+    include ../layouts/fixed_navbar.jade
+        
+    #application
+      .lge-container
+        .row
+          .col-sm-3
+            a(href='principles-standards.html')
+              h4.light-grey Attacks & Vulnerabilities
+            a(href='principles-standards.html')
+              h4.light-grey Principals & Standards
+            a(href='my-articles.html')
+              h4.light-grey My Articles
+            a(href='my-articles.html')
+              h4.light-grey My Search Items
+          
+          .col-sm-9
+            .col-sm-4
+              ul.list-group
+                li.list-group-item
+                  input#technology_1.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_1', name='technology_1') A New ID Is Assigned on Login
+                li.list-group-item
+                  input#technology_2.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_2', name='technology_2') A New Or Blank Session ID is Assigned on Logout
+                li.list-group-item
+                  input#technology_3.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_3', name='technology_3') Access to the Credential Store is Limited
+                li.list-group-item
+                  input#technology_4.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_4', name='technology_4') AJAX Injection Vulnerability
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') All Input is Validated
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') All Private Resources Require Authentication
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') All Senstive Data is Encrypted
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') Assume All Input is Malicious
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') Authentication is Centralized
+            .col-sm-4
+              ul.list-group
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') Centralize Authentication
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') Client-side Validation is Not Relied On
+                li.list-group-item
+                  input#technology_1.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_1', name='technology_1') Cross Site Scripting Vulnerablity
+                li.list-group-item
+                  input#technology_2.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_2', name='technology_2') Deny All Access by Default
+                li.list-group-item
+                  input#technology_3.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_3', name='technology_3') Do Not Cache Sensitive Data
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') Do Not Leave Passwords in Memory
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') Don't Trust User Input
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') Echoed Input is Encoded
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') Missing Authentication
+            .col-sm-4
+              ul.list-group
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') Missing Authorization
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') Hard-coded Credentials
+                li.list-group-item
+                  input#technology_5.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_5', name='technology_5') Missing Encryption
+                li.list-group-item
+                  input#technology_4.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_4', name='technology_4') Unrestricted Dangerous Uploads
+                li.list-group-item
+                  input#technology_4.css-checkbox(type='checkbox')
+                  label.css-label(for='technology_4', name='technology_4') Using Untrusted Inputs          
+        .row
+          .col-sm-offset-3.col-md-9
+            .row
+              .col-sm-3
+                a.action(href='#')
+                  | Clear Selected 
+                  span.glyphicon.glyphicon-trash.glyphicon-small
+              .col-sm-3
+                a.action(href='navigate.html')
+                  | Clear All 
+                  span.glyphicon.glyphicon-trash.glyphicon-small
+              .col-sm-3
+              .col-sm-3
+                a.action(href='my-articles.html')
+                  | Ok, Done 
+                  span.glyphicon.glyphicon-ok.glyphicon-small
