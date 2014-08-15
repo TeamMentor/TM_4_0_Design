@@ -84,7 +84,7 @@ body {
 	font-size: 1.15em;
 }
 
-/*** Styles effecting navigation ***/
+/*** Styles effecting navigation ***/ 
 
 .navbar {
 	background-color: #FFFFFF;
@@ -95,10 +95,6 @@ body {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 700;
-}
-
-.dropdown-menu {
-	max-width: 100%;
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -116,6 +112,7 @@ body {
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 	padding-top: 30px;
+	margin-right: 10px;
 }
 
 		.navbar-inverse .navbar-nav > li > a:after {
