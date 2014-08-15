@@ -97,11 +97,6 @@ body {
 	font-weight: 700;
 }
 
-.home {
-	border-right: 1px solid black;
-	height: 40px;
-}
-
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
 	color: #444444;
 	background-color: #FFFFFF;
