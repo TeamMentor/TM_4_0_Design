@@ -86,6 +86,14 @@ body {
 
 /*** Styles effecting navigation ***/
 
+.divider {
+    border-left: 1px solid #aaaaaa;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    margin-left: 35px;
+}
+
 .navbar {
 	background-color: #FFFFFF;
 	height: 80px;
@@ -110,12 +118,17 @@ body {
 	margin-top: 15px;
 }
 
+.navbar-nav > li {
+	width: 70px;
+}
+
 .navbar-inverse .navbar-nav > li > a  {
 	color: #8aae40;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 	padding-top: 30px;
+	margin-right: 10px;
 }
 
 		.navbar-inverse .navbar-nav > li > a:after {
