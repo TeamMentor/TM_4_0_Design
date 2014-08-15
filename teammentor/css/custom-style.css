@@ -84,15 +84,7 @@ body {
 	font-size: 1.15em;
 }
 
-/*** Styles effecting navigation ***/
-
-.divider {
-    border-left: 1px solid #aaaaaa;
-    height: 40px;
-    position: absolute;
-    top: 20px;
-    margin-left: 35px;
-}
+/*** Styles effecting navigation ***/ 
 
 .navbar {
 	background-color: #FFFFFF;
@@ -105,8 +97,9 @@ body {
 	font-weight: 700;
 }
 
-.dropdown-menu {
-	max-width: 100%;
+.home {
+	border-right: 1px solid black;
+	height: 40px;
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -116,10 +109,6 @@ body {
 
 .navbar-inverse .navbar-toggle {
 	margin-top: 15px;
-}
-
-.navbar-nav > li {
-	width: 70px;
 }
 
 .navbar-inverse .navbar-nav > li > a  {
