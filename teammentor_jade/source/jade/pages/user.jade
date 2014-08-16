@@ -7,6 +7,64 @@ html(lang='en')
         #application
           .row
             .col-md-offset-3.col-md-6
+              .row.text-center
+              	.col-sm-3
+              		a.action(href='user.html') User
+              	.col-sm-3
+              		a.action(href='backend.html') Backend
+              	.col-sm-3
+              		a.action(href='developerutilities.html') Developer Utilities
+              	.col-sm-3
+              		a.action(href='other.html') Other
+
               br
-              h3.light-grey User
-              p ...user content will go here ...
+              br
+
+              .row
+              	.col-sm-9
+              		h4.light-grey Personal Details
+              	.col-sm-3
+              		br
+              		a.action(href='user-edit.html') 
+              			Edit 
+              			span.glyphicon.glyphicon-pencil.glyphicon-small
+
+              table
+              	tr
+              		td.strong Name:
+              		td Lucy Bloomfield
+              		td.strong State:
+              		td Queensland
+              	tr
+              		td.strong Email:
+              		td hello@luchia.com.au
+              		td.strong Country:
+              		td Australia
+              	tr
+              		td.strong Title:
+              		td Designer
+              		td.strong Group ID:
+              		td Admin
+              	tr
+              		td.strong Company:
+              		td Self-Employed
+              		td
+              		td
+
+              br
+              hr
+
+              .row
+              	.col-md-4
+              		h4.light-grey Settings
+              		p
+              			a(href='user-new-password.html') New Password
+
+              	.col-md-4
+              		h4.light-grey Permanent Filters
+              		p
+              			a(href='user-add-filter.html') Add filter
+              		p
+              			a(href='user-remove-filter.html') Remove filter
+
+              	.col-md-4
