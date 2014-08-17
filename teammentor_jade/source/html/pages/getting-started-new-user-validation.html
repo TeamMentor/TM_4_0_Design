@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>TEAM Mentor 4.0</title>
+    <!-- Bootstrap core CSS-->
+    <link href="/teammentor/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom Styles-->
+    <link href="/teammentor/css/custom-style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+      <div class="lge-container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="default.html" data-toggle="tooltip" title="Home"><img src="/teammentor/img/logo.jpg" alt="TEAM Mentor" width="200px" class="img-responsive"></a></li>
+        </ul>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="help.html" data-toggle="tooltip" title="Help"><img src="/teammentor/img/help.svg" width="50px" height="50px" alt="Help"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="application" class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div role="alert" class="alert alert-warning alert-dismissible">
+            <button type="button" data-dismiss="alert" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>Error/Validation messages go here
+          </div>
+          <h3 class="light-grey">Sign Up</h3>
+          <p>Complete this form and get access to the worlds largest repository of secure software development knowledge.</p><br>
+          <form id="sign-up-form" role="form">
+            <div class="form-group">
+              <label for="new-user-username">Username</label>
+              <input id="new-user-username" type="username" placeholder="Username" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="new-user-password">Password</label>
+              <input id="new-user-password" type="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="new-user-confirm-password">Confirm Password</label>
+              <input id="new-user-confirm-password" type="password" placeholder="Confirm Password" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="new-user-email">Email Address</label>
+              <input id="new-user-email" type="username" placeholder="Email Address" class="form-control">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn-action btn-submit btn-block">Login</button>
+              </div>
+            </div>
+          </form><br><br>
+        </div>
+        <div class="col-md-6">
+          <h3 class="light-grey">Login</h3>
+          <p>Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?</p><br>
+          <form id="login-form" role="form">
+            <div class="form-group">
+              <label for="new-user-username">Username</label>
+              <input id="new-user-username" type="username" placeholder="Username" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="new-user-password">Password</label>
+              <input id="new-user-password" type="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn-action btn-submit btn-block">Login</button>
+              </div>
+              <div class="col-md-6">
+                <button type="submit" class="btn-action btn-submit btn-block">Forgot your password?</button>
+              </div>
+            </div>
+          </form><br><br>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
