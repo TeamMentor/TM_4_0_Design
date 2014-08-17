@@ -150,18 +150,6 @@
         "pretty": true
       }
     },
-    "4b4a86a2": {
-      "id": "4b4a86a2",
-      "pid": "651ae24a",
-      "name": "getting-started-new-user-validation.jade",
-      "input": "teammentor_jade/source/jade/getting-started-new-user-validation.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
     "40dab2ea": {
       "id": "40dab2ea",
       "pid": "651ae24a",
@@ -329,6 +317,114 @@
         "autoCompile": true,
         "pretty": true
       }
+    },
+    "d91f3cb6": {
+      "id": "d91f3cb6",
+      "pid": "651ae24a",
+      "name": "user-add-filter.jade",
+      "input": "teammentor_jade/source/jade/pages/user-add-filter.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "065bb53d": {
+      "id": "065bb53d",
+      "pid": "651ae24a",
+      "name": "user-edit.jade",
+      "input": "teammentor_jade/source/jade/pages/user-edit.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "2b8ac588": {
+      "id": "2b8ac588",
+      "pid": "651ae24a",
+      "name": "user-new-password.jade",
+      "input": "teammentor_jade/source/jade/pages/user-new-password.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "644ace56": {
+      "id": "644ace56",
+      "pid": "651ae24a",
+      "name": "user-remove-filter.jade",
+      "input": "teammentor_jade/source/jade/pages/user-remove-filter.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "ee513473": {
+      "id": "ee513473",
+      "pid": "651ae24a",
+      "name": "user-add-filter.jade",
+      "input": "teammentor_jade/deploy/html/user-add-filter.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "00e6f772": {
+      "id": "00e6f772",
+      "pid": "651ae24a",
+      "name": "user-new-password.jade",
+      "input": "teammentor_jade/deploy/html/user-new-password.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "f0a6e4dd": {
+      "id": "f0a6e4dd",
+      "pid": "651ae24a",
+      "name": "user-edit.jade",
+      "input": "teammentor_jade/deploy/html/user-edit.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "143641af": {
+      "id": "143641af",
+      "pid": "651ae24a",
+      "name": "user-remove-filter.jade",
+      "input": "teammentor_jade/deploy/html/user-remove-filter.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "a38b13ab": {
+      "id": "a38b13ab",
+      "pid": "651ae24a",
+      "name": "user.jade",
+      "input": "teammentor_jade/deploy/html/user.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
     }
   },
   "imports": {
@@ -360,7 +456,11 @@
         "60f5fe69",
         "a940a3eb",
         "ed0c185a",
-        "da78a395"
+        "da78a395",
+        "d91f3cb6",
+        "065bb53d",
+        "2b8ac588",
+        "644ace56"
       ]
     },
     "cf0aa598": {
@@ -381,7 +481,11 @@
         "045797fa",
         "0443b977",
         "60f5fe69",
-        "a940a3eb"
+        "a940a3eb",
+        "d91f3cb6",
+        "065bb53d",
+        "2b8ac588",
+        "644ace56"
       ]
     },
     "38bd1cf8": {
@@ -458,16 +562,6 @@
       "name": "fedex.png",
       "type": "Png",
       "initialSize": 6124,
-      "status": "NOT_OPTIMIZED"
-    },
-    "d04bc37a": {
-      "id": "d04bc37a",
-      "pid": "651ae24a",
-      "path": "teammentor/img/help-icon.png",
-      "size": 4626,
-      "name": "help-icon.png",
-      "type": "Png",
-      "initialSize": 4626,
       "status": "NOT_OPTIMIZED"
     },
     "2fee8ac5": {

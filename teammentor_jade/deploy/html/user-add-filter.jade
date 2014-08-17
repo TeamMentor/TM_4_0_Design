@@ -1,0 +1,122 @@
+doctype html
+html(lang='en')
+    include ../layouts/head.jade
+    body 
+        include ../layouts/fixed_navbar.jade        
+        
+        #application
+          .row
+            .col-md-offset-3.col-md-6
+              .row.text-center
+              	.col-sm-3
+              		a.action(href='user.html') User
+              	.col-sm-3
+              		a.action(href='backend.html') Backend
+              	.col-sm-3
+              		a.action(href='developerutilities.html') Developer Utilities
+              	.col-sm-3
+              		a.action(href='other.html') Other
+
+              br
+              br
+
+              .row
+              	.col-sm-9
+              		h4.light-grey Add Permanent Filter
+
+                	form(role='form', action='user.html')
+                      .form-group
+                        h5.green Technology
+                        ul.list-group
+                          li.list-group-item
+                            span.badge 14
+                            input#technology_1.css-checkbox(type='checkbox')
+                            label.css-label(for='technology_1', name='technology_1') Option #1
+                          li.list-group-item
+                            span.badge 14
+                            input#technology_2.css-checkbox(type='checkbox')
+                            label.css-label(for='technology_2', name='technology_2') Option #2
+                          li.list-group-item
+                            span.badge 14
+                            input#technology_3.css-checkbox(type='checkbox')
+                            label.css-label(for='technology_3', name='technology_3') Option #3
+                          li.list-group-item
+                            span.badge 14
+                            input#technology_4.css-checkbox(type='checkbox')
+                            label.css-label(for='technology_4', name='technology_4') Option #4
+                          li.list-group-item
+                            span.badge 14
+                            input#technology_5.css-checkbox(type='checkbox')
+                            label.css-label(for='technology_5', name='technology_5') Option #5
+                      .form-group
+                        h5.green Category
+                        ul.list-group
+                          li.list-group-item
+                            span.badge 14
+                            input#category_1.css-checkbox(type='checkbox')
+                            label.css-label(for='category_1', name='category_1') Option #1
+                          li.list-group-item
+                            span.badge 14
+                            input#category_2.css-checkbox(type='checkbox')
+                            label.css-label(for='category_2', name='category_2') Option #2
+                          li.list-group-item
+                            span.badge 14
+                            input#category_3.css-checkbox(type='checkbox')
+                            label.css-label(for='category_3', name='category_3') Option #3
+                          li.list-group-item
+                            span.badge 14
+                            input#category_4.css-checkbox(type='checkbox')
+                            label.css-label(for='category_4', name='category_4') Option #4
+                          li.list-group-item
+                            span.badge 14
+                            input#category_5.css-checkbox(type='checkbox')
+                            label.css-label(for='category_5', name='category_5') Option #5
+                      .form-group
+                        h5.green Phase
+                        ul.list-group
+                          li.list-group-item
+                            span.badge 14
+                            input#phase_1.css-checkbox(type='checkbox')
+                            label.css-label(for='phase_1', name='phase_1') Option #1
+                          li.list-group-item
+                            span.badge 14
+                            input#phase_2.css-checkbox(type='checkbox')
+                            label.css-label(for='phase_2', name='phase_2') Option #2
+                          li.list-group-item
+                            span.badge 14
+                            input#phase_3.css-checkbox(type='checkbox')
+                            label.css-label(for='phase_3', name='phase_3') Option #3
+                          li.list-group-item
+                            span.badge 14
+                            input#phase_4.css-checkbox(type='checkbox')
+                            label.css-label(for='phase_4', name='phase_4') Option #4
+                          li.list-group-item
+                            span.badge 14
+                            input#phase_5.css-checkbox(type='checkbox')
+                            label.css-label(for='phase_5', name='phase_5') Option #5
+                      .form-group
+                        h5.green Type
+                        ul.list-group
+                          li.list-group-item
+                            span.badge 14
+                            input#type_1.css-checkbox(type='checkbox')
+                            label.css-label(for='type_1', name='type_1') Option #1
+                          li.list-group-item
+                            span.badge 14
+                            input#type_2.css-checkbox(type='checkbox')
+                            label.css-label(for='type_2', name='type_2') Option #2
+                          li.list-group-item
+                            span.badge 14
+                            input#type_3.css-checkbox(type='checkbox')
+                            label.css-label(for='type_3', name='type_3') Option #3
+                          li.list-group-item
+                            span.badge 14
+                            input#type_4.css-checkbox(type='checkbox')
+                            label.css-label(for='type_4', name='type_4') Option #4
+                          li.list-group-item
+                            span.badge 14
+                            input#type_5.css-checkbox(type='checkbox')
+                            label.css-label(for='type_5', name='type_5') Option #5
+                      button.btn-action.btn-block(type='submit')
+                        | Ok, Done
+                        span.glyphicon.glyphicon-ok.glyphicon-small
