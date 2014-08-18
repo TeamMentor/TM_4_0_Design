@@ -1,0 +1,59 @@
+doctype html
+html(lang='en')
+    include ../layouts/head.jade
+    body 
+        include ../layouts/fixed_navbar.jade        
+        
+        #application
+          .row
+            .col-md-offset-3.col-md-6
+              .row.text-center
+                .col-sm-3
+                  a.action(href='user.html') User
+                .col-sm-3
+                  a.action(href='backend.html') Backend
+                .col-sm-3
+                  a.action(href='developerutilities.html') Developer Utilities
+                .col-sm-3
+                  a.action(href='other.html') Other
+
+              br
+              br
+              
+              h4.light-grey Remove Permanent Filter
+
+              .row
+                .col-sm-3
+                  .alert.alert-dismissible(role='alert')
+                    button.close(type='button', data-dismiss='alert')
+                      span(aria-hidden='true') ×
+                      span.sr-only Close
+                    strong.green Filter One
+                //
+                   /col-sm-3 
+                .col-sm-3
+                  .alert.alert-dismissible(role='alert')
+                    button.close(type='button', data-dismiss='alert')
+                      span(aria-hidden='true') ×
+                      span.sr-only Close
+                    strong.green Filter Two
+                //
+                   /col-sm-3 
+                .col-sm-3
+                  .alert.alert-dismissible(role='alert')
+                    button.close(type='button', data-dismiss='alert')
+                      span(aria-hidden='true') ×
+                      span.sr-only Close
+                    strong.green Filter Three
+                //
+                   /col-sm-3 
+                .col-sm-3
+                  .alert.alert-dismissible(role='alert')
+                    button.close(type='button', data-dismiss='alert')
+                      span(aria-hidden='true') ×
+                      span.sr-only Close
+                    strong.green Filter Four
+
+              button.btn-action.btn-block(type='submit')
+                | Ok, Done
+                span.glyphicon.glyphicon-ok.glyphicon-small
