@@ -365,66 +365,6 @@
         "autoCompile": true,
         "pretty": true
       }
-    },
-    "ee513473": {
-      "id": "ee513473",
-      "pid": "651ae24a",
-      "name": "user-add-filter.jade",
-      "input": "teammentor_jade/deploy/html/user-add-filter.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "00e6f772": {
-      "id": "00e6f772",
-      "pid": "651ae24a",
-      "name": "user-new-password.jade",
-      "input": "teammentor_jade/deploy/html/user-new-password.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "f0a6e4dd": {
-      "id": "f0a6e4dd",
-      "pid": "651ae24a",
-      "name": "user-edit.jade",
-      "input": "teammentor_jade/deploy/html/user-edit.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "143641af": {
-      "id": "143641af",
-      "pid": "651ae24a",
-      "name": "user-remove-filter.jade",
-      "input": "teammentor_jade/deploy/html/user-remove-filter.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "a38b13ab": {
-      "id": "a38b13ab",
-      "pid": "651ae24a",
-      "name": "user.jade",
-      "input": "teammentor_jade/deploy/html/user.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
     }
   },
   "imports": {
@@ -518,111 +458,111 @@
       "id": "6bd8f787",
       "pid": "651ae24a",
       "path": "teammentor/img/bgone.jpg",
-      "size": 240157,
+      "size": 239180,
       "name": "bgone.jpg",
       "type": "Jpg",
       "initialSize": 240157,
-      "status": "NOT_OPTIMIZED"
+      "status": "OPTIMIZED"
     },
     "bfc2a23c": {
       "id": "bfc2a23c",
       "pid": "651ae24a",
       "path": "teammentor/img/bgthree.jpg",
-      "size": 156894,
+      "size": 155433,
       "name": "bgthree.jpg",
       "type": "Jpg",
       "initialSize": 156894,
-      "status": "NOT_OPTIMIZED"
+      "status": "OPTIMIZED"
     },
     "70b83363": {
       "id": "70b83363",
       "pid": "651ae24a",
       "path": "teammentor/img/bgtwo.jpg",
-      "size": 112243,
+      "size": 95085,
       "name": "bgtwo.jpg",
       "type": "Jpg",
       "initialSize": 112243,
-      "status": "NOT_OPTIMIZED"
+      "status": "OPTIMIZED"
     },
     "e138ec2f": {
       "id": "e138ec2f",
       "pid": "651ae24a",
       "path": "teammentor/img/elsevier.png",
-      "size": 7710,
+      "size": 6898,
       "name": "elsevier.png",
       "type": "Png",
       "initialSize": 7710,
-      "status": "NOT_OPTIMIZED"
+      "status": "OPTIMIZED"
     },
     "ca371109": {
       "id": "ca371109",
       "pid": "651ae24a",
       "path": "teammentor/img/fedex.png",
-      "size": 6124,
+      "size": 3812,
       "name": "fedex.png",
       "type": "Png",
       "initialSize": 6124,
-      "status": "NOT_OPTIMIZED"
+      "status": "OPTIMIZED"
     },
     "2fee8ac5": {
       "id": "2fee8ac5",
       "pid": "651ae24a",
       "path": "teammentor/img/logo.jpg",
-      "size": 35831,
+      "size": 18684,
       "name": "logo.jpg",
       "type": "Jpg",
       "initialSize": 35831,
-      "status": "NOT_OPTIMIZED"
+      "status": "OPTIMIZED"
     },
     "1e35ba7c": {
       "id": "1e35ba7c",
       "pid": "651ae24a",
       "path": "teammentor/img/massmutual.png",
-      "size": 9223,
+      "size": 5141,
       "name": "massmutual.png",
       "type": "Png",
       "initialSize": 9223,
-      "status": "NOT_OPTIMIZED"
+      "status": "OPTIMIZED"
     },
     "33e68dc0": {
       "id": "33e68dc0",
       "pid": "651ae24a",
       "path": "teammentor/img/microsoft.png",
-      "size": 7118,
+      "size": 4499,
       "name": "microsoft.png",
       "type": "Png",
       "initialSize": 7118,
-      "status": "NOT_OPTIMIZED"
+      "status": "OPTIMIZED"
     },
     "d951ccfe": {
       "id": "d951ccfe",
       "pid": "651ae24a",
       "path": "teammentor/img/symantec.png",
-      "size": 8967,
+      "size": 4885,
       "name": "symantec.png",
       "type": "Png",
       "initialSize": 8967,
-      "status": "NOT_OPTIMIZED"
+      "status": "OPTIMIZED"
     },
     "e4af57e8": {
       "id": "e4af57e8",
       "pid": "651ae24a",
       "path": "teammentor/img/tm-logo.jpg",
-      "size": 32490,
+      "size": 14772,
       "name": "tm-logo.jpg",
       "type": "Jpg",
       "initialSize": 32490,
-      "status": "NOT_OPTIMIZED"
+      "status": "OPTIMIZED"
     },
     "68a303da": {
       "id": "68a303da",
       "pid": "651ae24a",
       "path": "teammentor/img/ubs.png",
-      "size": 12760,
+      "size": 6841,
       "name": "ubs.png",
       "type": "Png",
       "initialSize": 12760,
-      "status": "NOT_OPTIMIZED"
+      "status": "OPTIMIZED"
     }
   },
   "config": {
