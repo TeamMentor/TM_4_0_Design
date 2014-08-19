@@ -51,6 +51,9 @@
     <div id="application" class="container">
       <div class="row">
         <div class="col-md-6">
+          <div role="alert" class="alert alert-warning alert-dismissible">
+            <button type="button" data-dismiss="alert" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>Error/Validation messages go here
+          </div>
           <h3 class="light-grey">Sign Up</h3>
           <p>Complete this form and get access to the worlds largest repository of secure software development knowledge.</p><br>
           <form id="sign-up-form" role="form">
@@ -68,9 +71,13 @@
             </div>
             <div class="form-group">
               <label for="new-user-email">Email Address</label>
-              <input id="new-user-email" type="email" placeholder="Email Address" class="form-control">
+              <input id="new-user-email" type="username" placeholder="Email Address" class="form-control">
             </div>
-            <button type="submit" class="btn-action btn-submit btn-block">Submit</button>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn-action btn-submit btn-block">Login</button>
+              </div>
+            </div>
           </form><br><br>
         </div>
         <div class="col-md-6">

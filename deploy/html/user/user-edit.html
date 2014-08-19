@@ -48,52 +48,49 @@
         </div>
       </div>
     </div>
-    <div id="application" class="container">
+    <div id="application">
       <div class="row">
-        <div class="col-md-6">
-          <h3 class="light-grey">Sign Up</h3>
-          <p>Complete this form and get access to the worlds largest repository of secure software development knowledge.</p><br>
-          <form id="sign-up-form" role="form">
+        <div class="col-md-offset-3 col-md-6">
+          <div class="row text-center">
+            <div class="col-sm-3"><a href="user.html" class="action">User</a></div>
+            <div class="col-sm-3"><a href="backend.html" class="action">Backend</a></div>
+            <div class="col-sm-3"><a href="developerutilities.html" class="action">Developer Utilities</a></div>
+            <div class="col-sm-3"><a href="other.html" class="action">Other</a></div>
+          </div><br><br>
+          <h4 class="light-grey">Personal Details</h4>
+          <form role="form" action="user.html">
             <div class="form-group">
-              <label for="new-user-username">Username</label>
-              <input id="new-user-username" type="username" placeholder="Username" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="new-user-password">Password</label>
-              <input id="new-user-password" type="password" placeholder="Password" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="new-user-confirm-password">Confirm Password</label>
-              <input id="new-user-confirm-password" type="password" placeholder="Confirm Password" class="form-control">
+              <label for="user-name">Name</label>
+              <input type="user-name" id="user-name" placeholder="Name" class="form-control"><br>
             </div>
             <div class="form-group">
-              <label for="new-user-email">Email Address</label>
-              <input id="new-user-email" type="email" placeholder="Email Address" class="form-control">
-            </div>
-            <button type="submit" class="btn-action btn-submit btn-block">Submit</button>
-          </form><br><br>
-        </div>
-        <div class="col-md-6">
-          <h3 class="light-grey">Login</h3>
-          <p>Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?</p><br>
-          <form id="login-form" role="form">
-            <div class="form-group">
-              <label for="new-user-username">Username</label>
-              <input id="new-user-username" type="username" placeholder="Username" class="form-control">
+              <label for="user-email">Email Address</label>
+              <input type="user-email" id="user-email" placeholder="Email Address" class="form-control"><br>
             </div>
             <div class="form-group">
-              <label for="new-user-password">Password</label>
-              <input id="new-user-password" type="password" placeholder="Password" class="form-control">
+              <label for="user-title">Title</label>
+              <input type="user-title" id="user-title" placeholder="Title" class="form-control"><br>
             </div>
-            <div class="row">
-              <div class="col-md-6">
-                <button type="submit" class="btn-action btn-submit btn-block">Login</button>
-              </div>
-              <div class="col-md-6">
-                <button type="submit" class="btn-action btn-submit btn-block">Forgot your password?</button>
-              </div>
+            <div class="form-group">
+              <label for="user-company">Company</label>
+              <input type="user-company" id="user-company" placeholder="Company" class="form-control"><br>
             </div>
-          </form><br><br>
+            <div class="form-group">
+              <label for="user-state">State</label>
+              <input type="user-state" id="user-state" placeholder="State" class="form-control"><br>
+            </div>
+            <div class="form-group">
+              <label for="user-country">Country</label>
+              <input type="user-country" id="user-country" placeholder="Country" class="form-control"><br>
+            </div>
+            <div class="form-group">
+              <label for="user-group-id">Group ID</label>
+              <input type="user-group-id" id="user-group-id" placeholder="Group ID" class="form-control"><br>
+            </div>
+            <div class="row"><br>
+              <button type="submit" class="btn-action btn-block">Ok, Done<span class="glyphicon glyphicon-ok glyphicon-small"></span></button><br><br><br>
+            </div>
+          </form>
         </div>
       </div>
     </div>

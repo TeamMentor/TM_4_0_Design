@@ -1,9 +1,5 @@
-doctype html
-html(lang='en')
-  include ../_layouts/head.jade
-  body
-    include ../_layouts/navbar_not_logged_in.jade
-    
+extends ../_layouts/page_not_logged_in.jade
+block content
     #application.container
       .row
         .col-md-6

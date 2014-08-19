@@ -1,9 +1,10 @@
 extends ../_layouts/page_home.jade
-block content    
+block content  
     #application
       .row
         .col-md-offset-3.col-md-6
           br
-          h3.light-grey Help
-          p ...help content will go here ...
-                                    
+          //h3.light-grey Help          
+          //p ...help content will go here ...
+          
+          include:md ../../content/help.md

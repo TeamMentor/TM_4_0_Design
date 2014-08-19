@@ -620,30 +620,6 @@
         "pretty": true
       }
     },
-    "73d6a640": {
-      "id": "73d6a640",
-      "pid": "651ae24a",
-      "name": "page_not_logged_in.jade",
-      "input": "source/html/_layouts/page_not_logged_in.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "bd784ce3": {
-      "id": "bd784ce3",
-      "pid": "651ae24a",
-      "name": "page_landing.jade",
-      "input": "source/html/_layouts/page_landing.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
     "b68bfabe": {
       "id": "b68bfabe",
       "pid": "651ae24a",
@@ -750,18 +726,30 @@
         "547ccc78",
         "88c17050",
         "86ec2dfc",
-        "4351317f",
         "1ad10f64",
         "d28261c5",
         "9165d5ed",
-        "73d6a640",
-        "bd784ce3",
         "80ea5c70",
         "b68bfabe",
         "2bf5ca70",
         "00c5636d",
         "a4ca4be1",
-        "dfae812f"
+        "dfae812f",
+        "d52c18d4",
+        "a8f743f8",
+        "5a03a20f",
+        "ba6d3f97",
+        "7047b125",
+        "f7beb7b5",
+        "d7c741c3",
+        "8319a572",
+        "67b9c217",
+        "47003501",
+        "64f7ffbf",
+        "4351317f",
+        "d8d053a2",
+        "0fb3c5a7",
+        "7c350c6a"
       ]
     },
     "2ef9f62f": {
@@ -770,8 +758,16 @@
       "path": "source/html/_layouts/navbar_not_logged_in.jade",
       "parents": [
         "88c17050",
+        "ba6d3f97",
+        "7047b125",
+        "f7beb7b5",
+        "d7c741c3",
+        "8319a572",
+        "67b9c217",
         "4351317f",
-        "73d6a640"
+        "d8d053a2",
+        "0fb3c5a7",
+        "7c350c6a"
       ]
     },
     "5ac3de02": {
@@ -782,18 +778,30 @@
         "547ccc78",
         "88c17050",
         "86ec2dfc",
-        "4351317f",
         "1ad10f64",
         "d28261c5",
         "9165d5ed",
-        "73d6a640",
-        "bd784ce3",
         "80ea5c70",
         "b68bfabe",
         "2bf5ca70",
         "00c5636d",
         "a4ca4be1",
-        "dfae812f"
+        "dfae812f",
+        "d52c18d4",
+        "a8f743f8",
+        "5a03a20f",
+        "ba6d3f97",
+        "7047b125",
+        "f7beb7b5",
+        "d7c741c3",
+        "8319a572",
+        "67b9c217",
+        "47003501",
+        "64f7ffbf",
+        "4351317f",
+        "d8d053a2",
+        "0fb3c5a7",
+        "7c350c6a"
       ]
     },
     "954cb581": {
@@ -802,7 +810,8 @@
       "path": "source/html/_layouts/navbar_landing.jade",
       "parents": [
         "86ec2dfc",
-        "bd784ce3"
+        "47003501",
+        "64f7ffbf"
       ]
     },
     "376a976d": {
@@ -813,13 +822,30 @@
         "86ec2dfc",
         "d28261c5",
         "9165d5ed",
-        "bd784ce3",
         "80ea5c70",
         "b68bfabe",
         "2bf5ca70",
         "00c5636d",
         "a4ca4be1",
-        "dfae812f"
+        "dfae812f",
+        "d52c18d4",
+        "88c17050",
+        "a8f743f8",
+        "5a03a20f",
+        "1ad10f64",
+        "ba6d3f97",
+        "7047b125",
+        "f7beb7b5",
+        "d7c741c3",
+        "8319a572",
+        "67b9c217",
+        "547ccc78",
+        "47003501",
+        "64f7ffbf",
+        "4351317f",
+        "d8d053a2",
+        "0fb3c5a7",
+        "7c350c6a"
       ]
     },
     "4f5d437c": {
@@ -829,14 +855,31 @@
       "parents": [
         "86ec2dfc",
         "9165d5ed",
-        "bd784ce3",
         "80ea5c70",
         "b68bfabe",
         "2bf5ca70",
         "d28261c5",
         "00c5636d",
         "a4ca4be1",
-        "dfae812f"
+        "dfae812f",
+        "d52c18d4",
+        "88c17050",
+        "a8f743f8",
+        "5a03a20f",
+        "1ad10f64",
+        "ba6d3f97",
+        "7047b125",
+        "f7beb7b5",
+        "d7c741c3",
+        "8319a572",
+        "67b9c217",
+        "547ccc78",
+        "47003501",
+        "64f7ffbf",
+        "4351317f",
+        "d8d053a2",
+        "0fb3c5a7",
+        "7c350c6a"
       ]
     },
     "6f670854": {
@@ -851,7 +894,12 @@
         "d28261c5",
         "00c5636d",
         "a4ca4be1",
-        "dfae812f"
+        "dfae812f",
+        "d52c18d4",
+        "a8f743f8",
+        "5a03a20f",
+        "1ad10f64",
+        "547ccc78"
       ]
     },
     "34dd06aa": {
@@ -866,7 +914,40 @@
         "d28261c5",
         "00c5636d",
         "a4ca4be1",
-        "dfae812f"
+        "dfae812f",
+        "d52c18d4",
+        "a8f743f8",
+        "5a03a20f",
+        "1ad10f64",
+        "547ccc78"
+      ]
+    },
+    "73d6a640": {
+      "id": "73d6a640",
+      "pid": "651ae24a",
+      "path": "source/html/_layouts/page_not_logged_in.jade",
+      "parents": [
+        "88c17050",
+        "ba6d3f97",
+        "7047b125",
+        "f7beb7b5",
+        "d7c741c3",
+        "8319a572",
+        "67b9c217",
+        "4351317f",
+        "d8d053a2",
+        "0fb3c5a7",
+        "7c350c6a"
+      ]
+    },
+    "bd784ce3": {
+      "id": "bd784ce3",
+      "pid": "651ae24a",
+      "path": "source/html/_layouts/page_landing.jade",
+      "parents": [
+        "47003501",
+        "64f7ffbf",
+        "86ec2dfc"
       ]
     }
   },
