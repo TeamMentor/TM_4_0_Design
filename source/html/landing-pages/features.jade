@@ -1,0 +1,59 @@
+doctype html
+html(lang='en')
+  include ../../layouts/head.jade
+  body
+    include ../../layouts/navbar_landing.jade   
+
+    #features
+      .container
+        h2.text-center.light-grey What does TEAM Mentor help you do?
+        br
+        br
+        .row
+          .col-md-6
+            .row
+              .col-sm-offset-1.col-sm-2
+                img.img-responsive(src='/teammentor/img/identifyfix.svg', alt='Team Mentor identifies vulnerabilities and reduces time to fix them')
+              .col-sm-8
+                h4 Identify vulnerabilities and reduce time to fix
+            br
+            .row
+              .col-sm-offset-1.col-sm-2
+                img.img-responsive(src='/teammentor/img/improve.svg', alt='Team Mentor identifies vulnerabilities and reduces time to fix them')
+              .col-sm-8
+                h4 Improve secure coding to reduce the number of vulnerabilities
+            br
+            .row
+              .col-sm-offset-1.col-sm-2
+                img.img-responsive(src='/teammentor/img/integrate.svg', alt='Team Mentor identifies vulnerabilities and reduces time to fix them')
+              .col-sm-8
+                h4
+                  | Return on investment — integrating security scanning and guidance into a development workflow results in quicker production of more secure and stable applications
+            br
+          .col-md-6
+            .row
+              .col-sm-offset-1.col-sm-2
+                img.img-responsive(src='/teammentor/img/timely.svg', alt='Timely guidance and standards complements foundational training')
+              .col-sm-8
+                h4 Timely guidance and standards complements foundational training
+            br
+            .row
+              .col-sm-offset-1.col-sm-2
+                img.img-responsive(src='/teammentor/img/customcms.svg', alt='Customizable content management system for application security standards')
+              .col-sm-8
+                h4 Customizable content management system for application security standards
+            br
+            .row
+              .col-sm-offset-1.col-sm-2
+                img.img-responsive(src='/teammentor/img/attack.svg', alt='Attack descriptions and vulnerability fixes in a variety of development languages')
+              .col-sm-8
+                h4
+                  | Attack descriptions and vulnerability fixes in a variety of development languages
+        .row
+      #calltoaction
+        .container
+          h1 Fix Faster. Fix Better.
+          br
+          br
+          a(href='getting-started.html')
+            button.btn.btn-landing-page(type='button') See for yourself

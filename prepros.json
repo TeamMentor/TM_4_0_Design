@@ -3,6 +3,18 @@
   "cfgVersion": 1,
   "name": "TM_4_0_Design",
   "files": {
+    "47003501": {
+      "id": "47003501",
+      "pid": "651ae24a",
+      "name": "index.jade",
+      "input": "source/html/landing-pages/index.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
     "2e8f9ea2": {
       "id": "2e8f9ea2",
       "pid": "651ae24a",
@@ -30,11 +42,24 @@
         "sourcemaps": false
       }
     },
-    "da6745ab": {
-      "id": "da6745ab",
+    "48189caf": {
+      "id": "48189caf",
+      "pid": "651ae24a",
+      "name": "user.md",
+      "input": "source/content/user.md",
+      "customOutput": false,
+      "type": "Md",
+      "config": {
+        "autoCompile": true,
+        "sanitize": false,
+        "gfm": true
+      }
+    },
+    "9165d5ed": {
+      "id": "9165d5ed",
       "pid": "651ae24a",
       "name": "default.jade",
-      "input": "teammentor_jade/source/jade/pages/default.jade",
+      "input": "source/html/default.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -42,83 +67,11 @@
         "pretty": true
       }
     },
-    "ee30200f": {
-      "id": "ee30200f",
-      "pid": "651ae24a",
-      "name": "app-keyword-search.jade",
-      "input": "teammentor_jade/source/jade/pages/app-keyword-search.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "91adc648": {
-      "id": "91adc648",
-      "pid": "651ae24a",
-      "name": "main-app-view.jade",
-      "input": "teammentor_jade/source/jade/pages/main-app-view.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "7bac495d": {
-      "id": "7bac495d",
-      "pid": "651ae24a",
-      "name": "forgot-password-completed.jade",
-      "input": "teammentor_jade/source/jade/pages/forgot-password-completed.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "f318059d": {
-      "id": "f318059d",
-      "pid": "651ae24a",
-      "name": "help.jade",
-      "input": "teammentor_jade/source/jade/pages/help.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "e2de7411": {
-      "id": "e2de7411",
-      "pid": "651ae24a",
-      "name": "user.jade",
-      "input": "teammentor_jade/source/jade/pages/user.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "7cbf8652": {
-      "id": "7cbf8652",
-      "pid": "651ae24a",
-      "name": "returning-user-login.jade",
-      "input": "teammentor_jade/source/jade/pages/returning-user-login.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "aee0f0b1": {
-      "id": "aee0f0b1",
+    "832936aa": {
+      "id": "832936aa",
       "pid": "651ae24a",
       "name": "article-new-window-view.jade",
-      "input": "teammentor_jade/source/jade/pages/article-new-window-view.jade",
+      "input": "source/html/articles/article-new-window-view.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -126,23 +79,11 @@
         "pretty": true
       }
     },
-    "72274a5b": {
-      "id": "72274a5b",
-      "pid": "651ae24a",
-      "name": "filters-active.jade",
-      "input": "teammentor_jade/source/jade/pages/filters-active.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "1c00961b": {
-      "id": "1c00961b",
+    "dfae812f": {
+      "id": "dfae812f",
       "pid": "651ae24a",
       "name": "fundamentals-of-security.jade",
-      "input": "teammentor_jade/source/jade/pages/fundamentals-of-security.jade",
+      "input": "source/html/articles/fundamentals-of-security.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -150,95 +91,11 @@
         "pretty": true
       }
     },
-    "40dab2ea": {
-      "id": "40dab2ea",
-      "pid": "651ae24a",
-      "name": "getting-started-new-user-validation.jade",
-      "input": "teammentor_jade/source/jade/pages/getting-started-new-user-validation.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "e8494cef": {
-      "id": "e8494cef",
-      "pid": "651ae24a",
-      "name": "getting-started-returning-user-forgot-password.jade",
-      "input": "teammentor_jade/source/jade/pages/getting-started-returning-user-forgot-password.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "2b09a692": {
-      "id": "2b09a692",
-      "pid": "651ae24a",
-      "name": "getting-started-returning-user-validation.jade",
-      "input": "teammentor_jade/source/jade/pages/getting-started-returning-user-validation.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "d68b4ba3": {
-      "id": "d68b4ba3",
-      "pid": "651ae24a",
-      "name": "getting-started.jade",
-      "input": "teammentor_jade/source/jade/pages/getting-started.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "7faab531": {
-      "id": "7faab531",
-      "pid": "651ae24a",
-      "name": "landing-page-index.jade",
-      "input": "teammentor_jade/source/jade/pages/landing-page-index.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "61752be6": {
-      "id": "61752be6",
-      "pid": "651ae24a",
-      "name": "landing-page-about.jade",
-      "input": "teammentor_jade/source/jade/pages/landing-page-about.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "69cd9490": {
-      "id": "69cd9490",
-      "pid": "651ae24a",
-      "name": "landing-page-features.jade",
-      "input": "teammentor_jade/source/jade/pages/landing-page-features.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "ce453772": {
-      "id": "ce453772",
+    "841283a6": {
+      "id": "841283a6",
       "pid": "651ae24a",
       "name": "my-articles-edit.jade",
-      "input": "teammentor_jade/source/jade/pages/my-articles-edit.jade",
+      "input": "source/html/articles/my-articles-edit.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -246,11 +103,11 @@
         "pretty": true
       }
     },
-    "045797fa": {
-      "id": "045797fa",
+    "00c5636d": {
+      "id": "00c5636d",
       "pid": "651ae24a",
       "name": "my-articles.jade",
-      "input": "teammentor_jade/source/jade/pages/my-articles.jade",
+      "input": "source/html/articles/my-articles.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -258,23 +115,11 @@
         "pretty": true
       }
     },
-    "0443b977": {
-      "id": "0443b977",
-      "pid": "651ae24a",
-      "name": "navigate.jade",
-      "input": "teammentor_jade/source/jade/pages/navigate.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "60f5fe69": {
-      "id": "60f5fe69",
+    "fed1db7d": {
+      "id": "fed1db7d",
       "pid": "651ae24a",
       "name": "owasp.jade",
-      "input": "teammentor_jade/source/jade/pages/owasp.jade",
+      "input": "source/html/articles/owasp.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -282,11 +127,95 @@
         "pretty": true
       }
     },
-    "a940a3eb": {
-      "id": "a940a3eb",
+    "aa7df289": {
+      "id": "aa7df289",
+      "pid": "651ae24a",
+      "name": "getting-started-new-user-validation.jade",
+      "input": "source/html/getting-started/getting-started-new-user-validation.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "3c33dd7c": {
+      "id": "3c33dd7c",
+      "pid": "651ae24a",
+      "name": "getting-started-returning-user-forgot-password.jade",
+      "input": "source/html/getting-started/getting-started-returning-user-forgot-password.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "9be62718": {
+      "id": "9be62718",
+      "pid": "651ae24a",
+      "name": "getting-started-returning-user-validation.jade",
+      "input": "source/html/getting-started/getting-started-returning-user-validation.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "ef0f7187": {
+      "id": "ef0f7187",
+      "pid": "651ae24a",
+      "name": "getting-started.jade",
+      "input": "source/html/getting-started/getting-started.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "a0d06085": {
+      "id": "a0d06085",
+      "pid": "651ae24a",
+      "name": "landing-page-about.jade",
+      "input": "source/html/landing-pages/landing-page-about.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "8e968cf7": {
+      "id": "8e968cf7",
+      "pid": "651ae24a",
+      "name": "landing-page-features.jade",
+      "input": "source/html/landing-pages/landing-page-features.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "704171db": {
+      "id": "704171db",
+      "pid": "651ae24a",
+      "name": "landing-page-index.jade",
+      "input": "source/html/landing-pages/landing-page-index.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "acf94d1f": {
+      "id": "acf94d1f",
       "pid": "651ae24a",
       "name": "principles-standards.jade",
-      "input": "teammentor_jade/source/jade/pages/principles-standards.jade",
+      "input": "source/html/user/principles-standards.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -294,11 +223,11 @@
         "pretty": true
       }
     },
-    "ed0c185a": {
-      "id": "ed0c185a",
+    "7047b125": {
+      "id": "7047b125",
       "pid": "651ae24a",
       "name": "returning-user-forgot-password.jade",
-      "input": "teammentor_jade/source/jade/pages/returning-user-forgot-password.jade",
+      "input": "source/html/user/returning-user-forgot-password.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -306,11 +235,23 @@
         "pretty": true
       }
     },
-    "da78a395": {
-      "id": "da78a395",
+    "88c17050": {
+      "id": "88c17050",
+      "pid": "651ae24a",
+      "name": "returning-user-login.jade",
+      "input": "source/html/user/returning-user-login.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "d52c18d4": {
+      "id": "d52c18d4",
       "pid": "651ae24a",
       "name": "returning-user-validation.jade",
-      "input": "teammentor_jade/source/jade/pages/returning-user-validation.jade",
+      "input": "source/html/user/returning-user-validation.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -318,11 +259,11 @@
         "pretty": true
       }
     },
-    "d91f3cb6": {
-      "id": "d91f3cb6",
+    "f7beb7b5": {
+      "id": "f7beb7b5",
       "pid": "651ae24a",
       "name": "user-add-filter.jade",
-      "input": "teammentor_jade/source/jade/pages/user-add-filter.jade",
+      "input": "source/html/user/user-add-filter.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -330,11 +271,11 @@
         "pretty": true
       }
     },
-    "065bb53d": {
-      "id": "065bb53d",
+    "d7c741c3": {
+      "id": "d7c741c3",
       "pid": "651ae24a",
       "name": "user-edit.jade",
-      "input": "teammentor_jade/source/jade/pages/user-edit.jade",
+      "input": "source/html/user/user-edit.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -342,11 +283,11 @@
         "pretty": true
       }
     },
-    "2b8ac588": {
-      "id": "2b8ac588",
+    "8319a572": {
+      "id": "8319a572",
       "pid": "651ae24a",
       "name": "user-new-password.jade",
-      "input": "teammentor_jade/source/jade/pages/user-new-password.jade",
+      "input": "source/html/user/user-new-password.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -354,11 +295,444 @@
         "pretty": true
       }
     },
-    "644ace56": {
-      "id": "644ace56",
+    "67b9c217": {
+      "id": "67b9c217",
       "pid": "651ae24a",
       "name": "user-remove-filter.jade",
-      "input": "teammentor_jade/source/jade/pages/user-remove-filter.jade",
+      "input": "source/html/user/user-remove-filter.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "547ccc78": {
+      "id": "547ccc78",
+      "pid": "651ae24a",
+      "name": "user.jade",
+      "input": "source/html/user/user.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "ba6d3f97": {
+      "id": "ba6d3f97",
+      "pid": "651ae24a",
+      "name": "forgot-password-completed.jade",
+      "input": "source/html/user/forgot-password-completed.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "cf14e6d7": {
+      "id": "cf14e6d7",
+      "pid": "651ae24a",
+      "name": "navigate.jade",
+      "input": "source/html/misc/navigate.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "b82a4190": {
+      "id": "b82a4190",
+      "pid": "651ae24a",
+      "name": "main-app-view.jade",
+      "input": "source/html/misc/main-app-view.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "e1a11efe": {
+      "id": "e1a11efe",
+      "pid": "651ae24a",
+      "name": "help.jade",
+      "input": "source/html/misc/help.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "304f6e82": {
+      "id": "304f6e82",
+      "pid": "651ae24a",
+      "name": "filters-active.jade",
+      "input": "source/html/misc/filters-active.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "9e997e78": {
+      "id": "9e997e78",
+      "pid": "651ae24a",
+      "name": "app-keyword-search.jade",
+      "input": "source/html/misc/app-keyword-search.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "25c15918": {
+      "id": "25c15918",
+      "pid": "651ae24a",
+      "name": "app-keyword-search.jade",
+      "input": "source/html/search/app-keyword-search.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "a73b5100": {
+      "id": "a73b5100",
+      "pid": "651ae24a",
+      "name": "help.jade",
+      "input": "source/html/search/help.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "b9f72428": {
+      "id": "b9f72428",
+      "pid": "651ae24a",
+      "name": "filters-active.jade",
+      "input": "source/html/search/filters-active.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "3c3fd6bf": {
+      "id": "3c3fd6bf",
+      "pid": "651ae24a",
+      "name": "main-app-view.jade",
+      "input": "source/html/search/main-app-view.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "d4cd50c4": {
+      "id": "d4cd50c4",
+      "pid": "651ae24a",
+      "name": "navigate.jade",
+      "input": "source/html/search/navigate.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "7551fe4d": {
+      "id": "7551fe4d",
+      "pid": "651ae24a",
+      "name": "help.md",
+      "input": "source/content/help.md",
+      "customOutput": false,
+      "type": "Md",
+      "config": {
+        "autoCompile": true,
+        "sanitize": false,
+        "gfm": true
+      }
+    },
+    "2aba0d65": {
+      "id": "2aba0d65",
+      "pid": "651ae24a",
+      "name": "mixins.jade",
+      "input": "source/includes/mixins.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "86ec2dfc": {
+      "id": "86ec2dfc",
+      "pid": "651ae24a",
+      "name": "about.jade",
+      "input": "source/html/landing-pages/about.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "64f7ffbf": {
+      "id": "64f7ffbf",
+      "pid": "651ae24a",
+      "name": "features.jade",
+      "input": "source/html/landing-pages/features.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "4351317f": {
+      "id": "4351317f",
+      "pid": "651ae24a",
+      "name": "index.jade",
+      "input": "source/html/getting-started/index.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "7c350c6a": {
+      "id": "7c350c6a",
+      "pid": "651ae24a",
+      "name": "returning-user-validation.jade",
+      "input": "source/html/getting-started/returning-user-validation.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "0fb3c5a7": {
+      "id": "0fb3c5a7",
+      "pid": "651ae24a",
+      "name": "returning-user-forgot-password.jade",
+      "input": "source/html/getting-started/returning-user-forgot-password.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "d8d053a2": {
+      "id": "d8d053a2",
+      "pid": "651ae24a",
+      "name": "new-user-validation.jade",
+      "input": "source/html/getting-started/new-user-validation.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "5a03a20f": {
+      "id": "5a03a20f",
+      "pid": "651ae24a",
+      "name": "filters-active.jade",
+      "input": "source/html/home/filters-active.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "a8f743f8": {
+      "id": "a8f743f8",
+      "pid": "651ae24a",
+      "name": "app-keyword-search.jade",
+      "input": "source/html/home/app-keyword-search.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "d28261c5": {
+      "id": "d28261c5",
+      "pid": "651ae24a",
+      "name": "help.jade",
+      "input": "source/html/home/help.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "1ad10f64": {
+      "id": "1ad10f64",
+      "pid": "651ae24a",
+      "name": "main-app-view.jade",
+      "input": "source/html/home/main-app-view.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "80ea5c70": {
+      "id": "80ea5c70",
+      "pid": "651ae24a",
+      "name": "navigate.jade",
+      "input": "source/html/home/navigate.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "d1bb9032": {
+      "id": "d1bb9032",
+      "pid": "651ae24a",
+      "name": "page+home.jade",
+      "input": "source/html/_layouts/page+home.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "73d6a640": {
+      "id": "73d6a640",
+      "pid": "651ae24a",
+      "name": "page_not_logged_in.jade",
+      "input": "source/html/_layouts/page_not_logged_in.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "bd784ce3": {
+      "id": "bd784ce3",
+      "pid": "651ae24a",
+      "name": "page_landing.jade",
+      "input": "source/html/_layouts/page_landing.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "b68bfabe": {
+      "id": "b68bfabe",
+      "pid": "651ae24a",
+      "name": "principles-standards.jade",
+      "input": "source/html/home/principles-standards.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "f3216127": {
+      "id": "f3216127",
+      "pid": "651ae24a",
+      "name": "principles-standards copy.jade",
+      "input": "source/html/home/principles-standards copy.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "2bf5ca70": {
+      "id": "2bf5ca70",
+      "pid": "651ae24a",
+      "name": "attacks-vulnerabilities.jade",
+      "input": "source/html/home/attacks-vulnerabilities.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "6dbe64a2": {
+      "id": "6dbe64a2",
+      "pid": "651ae24a",
+      "name": "vars.jade",
+      "input": "source/content/vars.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "29e09c51": {
+      "id": "29e09c51",
+      "pid": "651ae24a",
+      "name": "my-articles.jade",
+      "input": "my-articles.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "b197cf43": {
+      "id": "b197cf43",
+      "pid": "651ae24a",
+      "name": "my-articles 2.jade",
+      "input": "my-articles 2.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "3a2113e7": {
+      "id": "3a2113e7",
+      "pid": "651ae24a",
+      "name": "my-articles copy.jade",
+      "input": "source/html/articles/my-articles copy.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "a4ca4be1": {
+      "id": "a4ca4be1",
+      "pid": "651ae24a",
+      "name": "my-search-items.jade",
+      "input": "source/html/articles/my-search-items.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -368,88 +742,131 @@
     }
   },
   "imports": {
-    "69497e0d": {
-      "id": "69497e0d",
+    "245ab78f": {
+      "id": "245ab78f",
       "pid": "651ae24a",
-      "path": "teammentor_jade/source/jade/layouts/head.jade",
+      "path": "source/html/_layouts/head.jade",
       "parents": [
-        "da6745ab",
-        "ee30200f",
-        "91adc648",
-        "7bac495d",
-        "f318059d",
-        "e2de7411",
-        "7cbf8652",
-        "aee0f0b1",
-        "72274a5b",
-        "1c00961b",
-        "40dab2ea",
-        "e8494cef",
-        "2b09a692",
-        "d68b4ba3",
-        "7faab531",
-        "61752be6",
-        "69cd9490",
-        "ce453772",
-        "045797fa",
-        "0443b977",
-        "60f5fe69",
-        "a940a3eb",
-        "ed0c185a",
-        "da78a395",
-        "d91f3cb6",
-        "065bb53d",
-        "2b8ac588",
-        "644ace56"
+        "547ccc78",
+        "88c17050",
+        "86ec2dfc",
+        "4351317f",
+        "1ad10f64",
+        "d28261c5",
+        "9165d5ed",
+        "73d6a640",
+        "bd784ce3",
+        "80ea5c70",
+        "b68bfabe",
+        "2bf5ca70",
+        "00c5636d",
+        "a4ca4be1",
+        "dfae812f"
       ]
     },
-    "cf0aa598": {
-      "id": "cf0aa598",
+    "2ef9f62f": {
+      "id": "2ef9f62f",
       "pid": "651ae24a",
-      "path": "teammentor_jade/source/jade/layouts/fixed_navbar.jade",
+      "path": "source/html/_layouts/navbar_not_logged_in.jade",
       "parents": [
-        "ee30200f",
-        "91adc648",
-        "7bac495d",
-        "f318059d",
-        "e2de7411",
-        "aee0f0b1",
-        "72274a5b",
-        "1c00961b",
-        "da6745ab",
-        "ce453772",
-        "045797fa",
-        "0443b977",
-        "60f5fe69",
-        "a940a3eb",
-        "d91f3cb6",
-        "065bb53d",
-        "2b8ac588",
-        "644ace56"
+        "88c17050",
+        "4351317f",
+        "73d6a640"
       ]
     },
-    "38bd1cf8": {
-      "id": "38bd1cf8",
+    "5ac3de02": {
+      "id": "5ac3de02",
       "pid": "651ae24a",
-      "path": "teammentor_jade/source/jade/layouts/navbar_not_logged_in.jade",
+      "path": "source/content/globals.jade",
       "parents": [
-        "7cbf8652",
-        "40dab2ea",
-        "e8494cef",
-        "2b09a692",
-        "d68b4ba3",
-        "ed0c185a",
-        "da78a395"
+        "547ccc78",
+        "88c17050",
+        "86ec2dfc",
+        "4351317f",
+        "1ad10f64",
+        "d28261c5",
+        "9165d5ed",
+        "73d6a640",
+        "bd784ce3",
+        "80ea5c70",
+        "b68bfabe",
+        "2bf5ca70",
+        "00c5636d",
+        "a4ca4be1",
+        "dfae812f"
       ]
     },
-    "a278e632": {
-      "id": "a278e632",
+    "954cb581": {
+      "id": "954cb581",
       "pid": "651ae24a",
-      "path": "teammentor_jade/source/jade/layouts/navbar_landing.jade",
+      "path": "source/html/_layouts/navbar_landing.jade",
       "parents": [
-        "7faab531",
-        "61752be6",
-        "69cd9490"
+        "86ec2dfc",
+        "bd784ce3"
+      ]
+    },
+    "376a976d": {
+      "id": "376a976d",
+      "pid": "651ae24a",
+      "path": "source/content/links.jade",
+      "parents": [
+        "86ec2dfc",
+        "d28261c5",
+        "9165d5ed",
+        "bd784ce3",
+        "80ea5c70",
+        "b68bfabe",
+        "2bf5ca70",
+        "00c5636d",
+        "a4ca4be1",
+        "dfae812f"
+      ]
+    },
+    "4f5d437c": {
+      "id": "4f5d437c",
+      "pid": "651ae24a",
+      "path": "source/content/images.jade",
+      "parents": [
+        "86ec2dfc",
+        "9165d5ed",
+        "bd784ce3",
+        "80ea5c70",
+        "b68bfabe",
+        "2bf5ca70",
+        "d28261c5",
+        "00c5636d",
+        "a4ca4be1",
+        "dfae812f"
+      ]
+    },
+    "6f670854": {
+      "id": "6f670854",
+      "pid": "651ae24a",
+      "path": "source/html/_layouts/navbar_home.jade",
+      "parents": [
+        "9165d5ed",
+        "80ea5c70",
+        "b68bfabe",
+        "2bf5ca70",
+        "d28261c5",
+        "00c5636d",
+        "a4ca4be1",
+        "dfae812f"
+      ]
+    },
+    "34dd06aa": {
+      "id": "34dd06aa",
+      "pid": "651ae24a",
+      "path": "source/html/_layouts/page_home.jade",
+      "parents": [
+        "9165d5ed",
+        "80ea5c70",
+        "b68bfabe",
+        "2bf5ca70",
+        "d28261c5",
+        "00c5636d",
+        "a4ca4be1",
+        "dfae812f"
       ]
     }
   },
@@ -458,111 +875,311 @@
       "id": "6bd8f787",
       "pid": "651ae24a",
       "path": "teammentor/img/bgone.jpg",
-      "size": 239180,
+      "size": 240157,
       "name": "bgone.jpg",
       "type": "Jpg",
       "initialSize": 240157,
-      "status": "OPTIMIZED"
+      "status": "NOT_OPTIMIZED"
     },
     "bfc2a23c": {
       "id": "bfc2a23c",
       "pid": "651ae24a",
       "path": "teammentor/img/bgthree.jpg",
-      "size": 155433,
+      "size": 156894,
       "name": "bgthree.jpg",
       "type": "Jpg",
       "initialSize": 156894,
-      "status": "OPTIMIZED"
+      "status": "NOT_OPTIMIZED"
     },
     "70b83363": {
       "id": "70b83363",
       "pid": "651ae24a",
       "path": "teammentor/img/bgtwo.jpg",
-      "size": 95085,
+      "size": 112243,
       "name": "bgtwo.jpg",
       "type": "Jpg",
       "initialSize": 112243,
-      "status": "OPTIMIZED"
+      "status": "NOT_OPTIMIZED"
     },
     "e138ec2f": {
       "id": "e138ec2f",
       "pid": "651ae24a",
       "path": "teammentor/img/elsevier.png",
-      "size": 6898,
+      "size": 7710,
       "name": "elsevier.png",
       "type": "Png",
       "initialSize": 7710,
-      "status": "OPTIMIZED"
+      "status": "NOT_OPTIMIZED"
     },
     "ca371109": {
       "id": "ca371109",
       "pid": "651ae24a",
       "path": "teammentor/img/fedex.png",
-      "size": 3812,
+      "size": 6124,
       "name": "fedex.png",
       "type": "Png",
       "initialSize": 6124,
-      "status": "OPTIMIZED"
+      "status": "NOT_OPTIMIZED"
     },
     "2fee8ac5": {
       "id": "2fee8ac5",
       "pid": "651ae24a",
       "path": "teammentor/img/logo.jpg",
-      "size": 18684,
+      "size": 35831,
       "name": "logo.jpg",
       "type": "Jpg",
       "initialSize": 35831,
-      "status": "OPTIMIZED"
+      "status": "NOT_OPTIMIZED"
     },
     "1e35ba7c": {
       "id": "1e35ba7c",
       "pid": "651ae24a",
       "path": "teammentor/img/massmutual.png",
-      "size": 5141,
+      "size": 9223,
       "name": "massmutual.png",
       "type": "Png",
       "initialSize": 9223,
-      "status": "OPTIMIZED"
+      "status": "NOT_OPTIMIZED"
     },
     "33e68dc0": {
       "id": "33e68dc0",
       "pid": "651ae24a",
       "path": "teammentor/img/microsoft.png",
-      "size": 4499,
+      "size": 7118,
       "name": "microsoft.png",
       "type": "Png",
       "initialSize": 7118,
-      "status": "OPTIMIZED"
+      "status": "NOT_OPTIMIZED"
     },
     "d951ccfe": {
       "id": "d951ccfe",
       "pid": "651ae24a",
       "path": "teammentor/img/symantec.png",
-      "size": 4885,
+      "size": 8967,
       "name": "symantec.png",
       "type": "Png",
       "initialSize": 8967,
-      "status": "OPTIMIZED"
+      "status": "NOT_OPTIMIZED"
     },
     "e4af57e8": {
       "id": "e4af57e8",
       "pid": "651ae24a",
       "path": "teammentor/img/tm-logo.jpg",
-      "size": 14772,
+      "size": 32490,
       "name": "tm-logo.jpg",
       "type": "Jpg",
       "initialSize": 32490,
-      "status": "OPTIMIZED"
+      "status": "NOT_OPTIMIZED"
     },
     "68a303da": {
       "id": "68a303da",
       "pid": "651ae24a",
       "path": "teammentor/img/ubs.png",
-      "size": 6841,
+      "size": 12760,
       "name": "ubs.png",
       "type": "Png",
       "initialSize": 12760,
-      "status": "OPTIMIZED"
+      "status": "NOT_OPTIMIZED"
+    },
+    "639f4e87": {
+      "id": "639f4e87",
+      "pid": "651ae24a",
+      "path": "apple-touch-icon-114x114.png",
+      "size": 7550,
+      "name": "apple-touch-icon-114x114.png",
+      "type": "Png",
+      "initialSize": 7550,
+      "status": "NOT_OPTIMIZED"
+    },
+    "25ba8548": {
+      "id": "25ba8548",
+      "pid": "651ae24a",
+      "path": "apple-touch-icon-120x120.png",
+      "size": 8125,
+      "name": "apple-touch-icon-120x120.png",
+      "type": "Png",
+      "initialSize": 8125,
+      "status": "NOT_OPTIMIZED"
+    },
+    "7915db86": {
+      "id": "7915db86",
+      "pid": "651ae24a",
+      "path": "apple-touch-icon-144x144.png",
+      "size": 10730,
+      "name": "apple-touch-icon-144x144.png",
+      "type": "Png",
+      "initialSize": 10730,
+      "status": "NOT_OPTIMIZED"
+    },
+    "2eebd808": {
+      "id": "2eebd808",
+      "pid": "651ae24a",
+      "path": "apple-touch-icon-152x152.png",
+      "size": 11639,
+      "name": "apple-touch-icon-152x152.png",
+      "type": "Png",
+      "initialSize": 11639,
+      "status": "NOT_OPTIMIZED"
+    },
+    "59ca3180": {
+      "id": "59ca3180",
+      "pid": "651ae24a",
+      "path": "apple-touch-icon-57x57.png",
+      "size": 2850,
+      "name": "apple-touch-icon-57x57.png",
+      "type": "Png",
+      "initialSize": 2850,
+      "status": "NOT_OPTIMIZED"
+    },
+    "e0e7cd2b": {
+      "id": "e0e7cd2b",
+      "pid": "651ae24a",
+      "path": "apple-touch-icon-60x60.png",
+      "size": 3092,
+      "name": "apple-touch-icon-60x60.png",
+      "type": "Png",
+      "initialSize": 3092,
+      "status": "NOT_OPTIMIZED"
+    },
+    "06eaf8e5": {
+      "id": "06eaf8e5",
+      "pid": "651ae24a",
+      "path": "apple-touch-icon-72x72.png",
+      "size": 3918,
+      "name": "apple-touch-icon-72x72.png",
+      "type": "Png",
+      "initialSize": 3918,
+      "status": "NOT_OPTIMIZED"
+    },
+    "4fb68c59": {
+      "id": "4fb68c59",
+      "pid": "651ae24a",
+      "path": "apple-touch-icon-76x76.png",
+      "size": 4144,
+      "name": "apple-touch-icon-76x76.png",
+      "type": "Png",
+      "initialSize": 4144,
+      "status": "NOT_OPTIMIZED"
+    },
+    "401e092c": {
+      "id": "401e092c",
+      "pid": "651ae24a",
+      "path": "apple-touch-icon-precomposed.png",
+      "size": 13531,
+      "name": "apple-touch-icon-precomposed.png",
+      "type": "Png",
+      "initialSize": 13531,
+      "status": "NOT_OPTIMIZED"
+    },
+    "6f370fe0": {
+      "id": "6f370fe0",
+      "pid": "651ae24a",
+      "path": "apple-touch-icon.png",
+      "size": 11639,
+      "name": "apple-touch-icon.png",
+      "type": "Png",
+      "initialSize": 11639,
+      "status": "NOT_OPTIMIZED"
+    },
+    "6aa8ebc4": {
+      "id": "6aa8ebc4",
+      "pid": "651ae24a",
+      "path": "favicon-160x160.png",
+      "size": 16682,
+      "name": "favicon-160x160.png",
+      "type": "Png",
+      "initialSize": 16682,
+      "status": "NOT_OPTIMIZED"
+    },
+    "553f3a52": {
+      "id": "553f3a52",
+      "pid": "651ae24a",
+      "path": "favicon-16x16.png",
+      "size": 1611,
+      "name": "favicon-16x16.png",
+      "type": "Png",
+      "initialSize": 1611,
+      "status": "NOT_OPTIMIZED"
+    },
+    "1c8fc1f9": {
+      "id": "1c8fc1f9",
+      "pid": "651ae24a",
+      "path": "favicon-196x196.png",
+      "size": 17485,
+      "name": "favicon-196x196.png",
+      "type": "Png",
+      "initialSize": 17485,
+      "status": "NOT_OPTIMIZED"
+    },
+    "bf96f369": {
+      "id": "bf96f369",
+      "pid": "651ae24a",
+      "path": "favicon-32x32.png",
+      "size": 2375,
+      "name": "favicon-32x32.png",
+      "type": "Png",
+      "initialSize": 2375,
+      "status": "NOT_OPTIMIZED"
+    },
+    "b7a57d7e": {
+      "id": "b7a57d7e",
+      "pid": "651ae24a",
+      "path": "favicon-96x96.png",
+      "size": 8033,
+      "name": "favicon-96x96.png",
+      "type": "Png",
+      "initialSize": 8033,
+      "status": "NOT_OPTIMIZED"
+    },
+    "e2388f5a": {
+      "id": "e2388f5a",
+      "pid": "651ae24a",
+      "path": "mstile-144x144.png",
+      "size": 14935,
+      "name": "mstile-144x144.png",
+      "type": "Png",
+      "initialSize": 14935,
+      "status": "NOT_OPTIMIZED"
+    },
+    "e0255412": {
+      "id": "e0255412",
+      "pid": "651ae24a",
+      "path": "mstile-150x150.png",
+      "size": 13193,
+      "name": "mstile-150x150.png",
+      "type": "Png",
+      "initialSize": 13193,
+      "status": "NOT_OPTIMIZED"
+    },
+    "2bbf9f9d": {
+      "id": "2bbf9f9d",
+      "pid": "651ae24a",
+      "path": "mstile-310x150.png",
+      "size": 14019,
+      "name": "mstile-310x150.png",
+      "type": "Png",
+      "initialSize": 14019,
+      "status": "NOT_OPTIMIZED"
+    },
+    "94fa11ec": {
+      "id": "94fa11ec",
+      "pid": "651ae24a",
+      "path": "mstile-310x310.png",
+      "size": 43609,
+      "name": "mstile-310x310.png",
+      "type": "Png",
+      "initialSize": 43609,
+      "status": "NOT_OPTIMIZED"
+    },
+    "0aef3efe": {
+      "id": "0aef3efe",
+      "pid": "651ae24a",
+      "path": "mstile-70x70.png",
+      "size": 8087,
+      "name": "mstile-70x70.png",
+      "type": "Png",
+      "initialSize": 8087,
+      "status": "NOT_OPTIMIZED"
     }
   },
   "config": {
@@ -574,14 +1191,14 @@
     "customServerUrl": "",
     "cssPath": "teammentor_jade/deploy/css/",
     "jsPath": "../../deploy/js/",
-    "htmlPath": "../../../deploy/html/",
+    "htmlPath": "deploy/",
     "minJsPath": "min/",
     "htmlExtension": ".html",
     "cssPathType": "RELATIVE_FILESDIR",
-    "htmlPathType": "RELATIVE_FILEDIR",
+    "htmlPathType": "REPLACE_TYPE",
     "jsPathType": "RELATIVE_FILEDIR",
     "minJsPathType": "RELATIVE_FILEDIR",
-    "htmlTypes": "jade, haml, slim, markdown, md",
+    "htmlTypes": "source",
     "cssTypes": "less, sass, stylus, scss, styl",
     "jsTypes": "coffee, coffeescript, coffeescripts, ls, livescript, livescripts",
     "cssPreprocessorPath": "",

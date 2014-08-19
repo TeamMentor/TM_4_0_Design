@@ -1,0 +1,40 @@
+extends ../_layouts/page_home.jade
+block content   
+    #application
+      .lge-container
+        .row
+          .col-sm-3
+            +links-home__navigate            
+          .col-sm-9
+            .col-sm-4
+              .list-group
+                a.list-group-item(href='article-new-window-view.html', target='_blank') A New ID Is Assigned on Login
+                a.list-group-item(href='article-new-window-view.html', target='_blank') A New Or Blank Session ID is Assigned on Logout
+                a.list-group-item(href='article-new-window-view.html', target='_blank') Access to the Credential Store is Limited
+                a.list-group-item(href='article-new-window-view.html', target='_blank') AJAX Injection Vulnerability
+                a.list-group-item(href='article-new-window-view.html', target='_blank') All Input is Validated
+                a.list-group-item(href='article-new-window-view.html', target='_blank') All Private Resources Require Authentication
+                a.list-group-item(href='article-new-window-view.html', target='_blank') All Senstive Data is Encrypted
+                a.list-group-item(href='article-new-window-view.html', target='_blank') Assume All Input is Malicious
+                a.list-group-item(href='article-new-window-view.html', target='_blank') Authentication is Centralized
+                a.list-group-item(href='article-new-window-view.html', target='_blank') Centralize Authentication
+                a.list-group-item(href='article-new-window-view.html', target='_blank') Client-side Validation is Not Relied On
+            .col-sm-4
+              a.list-group-item(href='article-new-window-view.html', target='_blank') Cross Site Scripting Vulnerablity
+              a.list-group-item(href='article-new-window-view.html', target='_blank') Deny All Access by Default
+              a.list-group-item(href='article-new-window-view.html', target='_blank') Do Not Cache Sensitive Data
+              a.list-group-item(href='article-new-window-view.html', target='_blank') Do Not Leave Passwords in Memory
+              a.list-group-item(href='article-new-window-view.html', target='_blank') Don't Trust User Input
+              a.list-group-item(href='article-new-window-view.html', target='_blank') Echoed Input is Encoded
+              a.list-group-item(href='article-new-window-view.html', target='_blank') Missing Authentication
+              a.list-group-item(href='article-new-window-view.html', target='_blank') Missing Authorization
+              a.list-group-item(href='article-new-window-view.html', target='_blank') Hard-coded Credentials
+              a.list-group-item(href='article-new-window-view.html', target='_blank') Missing Encryption
+              a.list-group-item(href='article-new-window-view.html', target='_blank') Unrestricted Dangerous Uploads
+              a.list-group-item(href='article-new-window-view.html', target='_blank') Using Untrusted Inputs
+            .col-sm-4
+        .row
+          .col-sm-offset-3.col-md-9
+            a.action(href='my-articles-edit.html')
+              | Edit 
+              span.glyphicon.glyphicon-pencil.glyphicon-small 
