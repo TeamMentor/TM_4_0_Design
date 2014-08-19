@@ -763,6 +763,20 @@
         "autoCompile": true,
         "pretty": true
       }
+    },
+    "47bd9cae": {
+      "id": "47bd9cae",
+      "pid": "651ae24a",
+      "name": "bootstrap.js",
+      "input": "_OLD_teammentor/js/bootstrap.js",
+      "customOutput": false,
+      "type": "Js",
+      "config": {
+        "autoCompile": true,
+        "uglify": true,
+        "mangle": true,
+        "sourcemaps": false
+      }
     }
   },
   "imports": {
