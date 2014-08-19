@@ -715,6 +715,18 @@
         "autoCompile": true,
         "pretty": true
       }
+    },
+    "cf0aa598": {
+      "id": "cf0aa598",
+      "pid": "651ae24a",
+      "name": "fixed_navbar.jade",
+      "input": "teammentor_jade/source/jade/layouts/fixed_navbar.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
     }
   },
   "imports": {
