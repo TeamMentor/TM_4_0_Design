@@ -28,20 +28,6 @@
         "gfm": false
       }
     },
-    "f764e93c": {
-      "id": "f764e93c",
-      "pid": "651ae24a",
-      "name": "bootstrap.js",
-      "input": "teammentor/js/bootstrap.js",
-      "customOutput": false,
-      "type": "Js",
-      "config": {
-        "autoCompile": true,
-        "uglify": true,
-        "mangle": true,
-        "sourcemaps": false
-      }
-    },
     "48189caf": {
       "id": "48189caf",
       "pid": "651ae24a",
@@ -120,102 +106,6 @@
       "pid": "651ae24a",
       "name": "owasp.jade",
       "input": "source/html/articles/owasp.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "aa7df289": {
-      "id": "aa7df289",
-      "pid": "651ae24a",
-      "name": "getting-started-new-user-validation.jade",
-      "input": "source/html/getting-started/getting-started-new-user-validation.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "3c33dd7c": {
-      "id": "3c33dd7c",
-      "pid": "651ae24a",
-      "name": "getting-started-returning-user-forgot-password.jade",
-      "input": "source/html/getting-started/getting-started-returning-user-forgot-password.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "9be62718": {
-      "id": "9be62718",
-      "pid": "651ae24a",
-      "name": "getting-started-returning-user-validation.jade",
-      "input": "source/html/getting-started/getting-started-returning-user-validation.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "ef0f7187": {
-      "id": "ef0f7187",
-      "pid": "651ae24a",
-      "name": "getting-started.jade",
-      "input": "source/html/getting-started/getting-started.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "a0d06085": {
-      "id": "a0d06085",
-      "pid": "651ae24a",
-      "name": "landing-page-about.jade",
-      "input": "source/html/landing-pages/landing-page-about.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "8e968cf7": {
-      "id": "8e968cf7",
-      "pid": "651ae24a",
-      "name": "landing-page-features.jade",
-      "input": "source/html/landing-pages/landing-page-features.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "704171db": {
-      "id": "704171db",
-      "pid": "651ae24a",
-      "name": "landing-page-index.jade",
-      "input": "source/html/landing-pages/landing-page-index.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "acf94d1f": {
-      "id": "acf94d1f",
-      "pid": "651ae24a",
-      "name": "principles-standards.jade",
-      "input": "source/html/user/principles-standards.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -331,126 +221,6 @@
         "pretty": true
       }
     },
-    "cf14e6d7": {
-      "id": "cf14e6d7",
-      "pid": "651ae24a",
-      "name": "navigate.jade",
-      "input": "source/html/misc/navigate.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "b82a4190": {
-      "id": "b82a4190",
-      "pid": "651ae24a",
-      "name": "main-app-view.jade",
-      "input": "source/html/misc/main-app-view.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "e1a11efe": {
-      "id": "e1a11efe",
-      "pid": "651ae24a",
-      "name": "help.jade",
-      "input": "source/html/misc/help.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "304f6e82": {
-      "id": "304f6e82",
-      "pid": "651ae24a",
-      "name": "filters-active.jade",
-      "input": "source/html/misc/filters-active.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "9e997e78": {
-      "id": "9e997e78",
-      "pid": "651ae24a",
-      "name": "app-keyword-search.jade",
-      "input": "source/html/misc/app-keyword-search.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "25c15918": {
-      "id": "25c15918",
-      "pid": "651ae24a",
-      "name": "app-keyword-search.jade",
-      "input": "source/html/search/app-keyword-search.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "a73b5100": {
-      "id": "a73b5100",
-      "pid": "651ae24a",
-      "name": "help.jade",
-      "input": "source/html/search/help.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "b9f72428": {
-      "id": "b9f72428",
-      "pid": "651ae24a",
-      "name": "filters-active.jade",
-      "input": "source/html/search/filters-active.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "3c3fd6bf": {
-      "id": "3c3fd6bf",
-      "pid": "651ae24a",
-      "name": "main-app-view.jade",
-      "input": "source/html/search/main-app-view.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "d4cd50c4": {
-      "id": "d4cd50c4",
-      "pid": "651ae24a",
-      "name": "navigate.jade",
-      "input": "source/html/search/navigate.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
     "7551fe4d": {
       "id": "7551fe4d",
       "pid": "651ae24a",
@@ -462,18 +232,6 @@
         "autoCompile": true,
         "sanitize": false,
         "gfm": true
-      }
-    },
-    "2aba0d65": {
-      "id": "2aba0d65",
-      "pid": "651ae24a",
-      "name": "mixins.jade",
-      "input": "source/includes/mixins.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
       }
     },
     "86ec2dfc": {
@@ -608,35 +366,11 @@
         "pretty": true
       }
     },
-    "d1bb9032": {
-      "id": "d1bb9032",
-      "pid": "651ae24a",
-      "name": "page+home.jade",
-      "input": "source/html/_layouts/page+home.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
     "b68bfabe": {
       "id": "b68bfabe",
       "pid": "651ae24a",
       "name": "principles-standards.jade",
       "input": "source/html/home/principles-standards.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "f3216127": {
-      "id": "f3216127",
-      "pid": "651ae24a",
-      "name": "principles-standards copy.jade",
-      "input": "source/html/home/principles-standards copy.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -656,71 +390,11 @@
         "pretty": true
       }
     },
-    "6dbe64a2": {
-      "id": "6dbe64a2",
-      "pid": "651ae24a",
-      "name": "vars.jade",
-      "input": "source/content/vars.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "29e09c51": {
-      "id": "29e09c51",
-      "pid": "651ae24a",
-      "name": "my-articles.jade",
-      "input": "my-articles.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "b197cf43": {
-      "id": "b197cf43",
-      "pid": "651ae24a",
-      "name": "my-articles 2.jade",
-      "input": "my-articles 2.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "3a2113e7": {
-      "id": "3a2113e7",
-      "pid": "651ae24a",
-      "name": "my-articles copy.jade",
-      "input": "source/html/articles/my-articles copy.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
     "a4ca4be1": {
       "id": "a4ca4be1",
       "pid": "651ae24a",
       "name": "my-search-items.jade",
       "input": "source/html/articles/my-search-items.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
-    },
-    "cf0aa598": {
-      "id": "cf0aa598",
-      "pid": "651ae24a",
-      "name": "fixed_navbar.jade",
-      "input": "teammentor_jade/source/jade/layouts/fixed_navbar.jade",
       "customOutput": false,
       "type": "Jade",
       "config": {
@@ -776,6 +450,82 @@
         "uglify": true,
         "mangle": true,
         "sourcemaps": false
+      }
+    },
+    "6c76d3b8": {
+      "id": "6c76d3b8",
+      "pid": "651ae24a",
+      "name": "bootstrap-theme.scss",
+      "input": "source/scss/bootstrap-theme.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": true,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "compressed",
+        "autoprefixer": false
+      }
+    },
+    "7bfd786e": {
+      "id": "7bfd786e",
+      "pid": "651ae24a",
+      "name": "bootstrap.scss",
+      "input": "source/scss/bootstrap.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": true,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "compressed",
+        "autoprefixer": false
+      }
+    },
+    "e4bf44a1": {
+      "id": "e4bf44a1",
+      "pid": "651ae24a",
+      "name": "bootstrap.min.scss",
+      "input": "source/scss/bootstrap.min.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": true,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "compressed",
+        "autoprefixer": false
+      }
+    },
+    "9d78fdd5": {
+      "id": "9d78fdd5",
+      "pid": "651ae24a",
+      "name": "custom-style.scss",
+      "input": "source/scss/custom-style.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": true,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "compressed",
+        "autoprefixer": false
       }
     }
   },
@@ -1038,314 +788,434 @@
     }
   },
   "images": {
-    "6bd8f787": {
-      "id": "6bd8f787",
+    "14158327": {
+      "id": "14158327",
       "pid": "651ae24a",
-      "path": "teammentor/img/bgone.jpg",
-      "size": 240157,
-      "name": "bgone.jpg",
-      "type": "Jpg",
-      "initialSize": 240157,
-      "status": "NOT_OPTIMIZED"
-    },
-    "bfc2a23c": {
-      "id": "bfc2a23c",
-      "pid": "651ae24a",
-      "path": "teammentor/img/bgthree.jpg",
-      "size": 156894,
-      "name": "bgthree.jpg",
-      "type": "Jpg",
-      "initialSize": 156894,
-      "status": "NOT_OPTIMIZED"
-    },
-    "70b83363": {
-      "id": "70b83363",
-      "pid": "651ae24a",
-      "path": "teammentor/img/bgtwo.jpg",
-      "size": 112243,
-      "name": "bgtwo.jpg",
-      "type": "Jpg",
-      "initialSize": 112243,
-      "status": "NOT_OPTIMIZED"
-    },
-    "e138ec2f": {
-      "id": "e138ec2f",
-      "pid": "651ae24a",
-      "path": "teammentor/img/elsevier.png",
-      "size": 7710,
-      "name": "elsevier.png",
-      "type": "Png",
-      "initialSize": 7710,
-      "status": "NOT_OPTIMIZED"
-    },
-    "ca371109": {
-      "id": "ca371109",
-      "pid": "651ae24a",
-      "path": "teammentor/img/fedex.png",
-      "size": 6124,
+      "path": "deploy/assets/clients/fedex.png",
+      "size": 3812,
       "name": "fedex.png",
       "type": "Png",
-      "initialSize": 6124,
+      "initialSize": 3812,
       "status": "NOT_OPTIMIZED"
     },
-    "2fee8ac5": {
-      "id": "2fee8ac5",
+    "b7e4f578": {
+      "id": "b7e4f578",
       "pid": "651ae24a",
-      "path": "teammentor/img/logo.jpg",
-      "size": 35831,
-      "name": "logo.jpg",
-      "type": "Jpg",
-      "initialSize": 35831,
+      "path": "deploy/assets/clients/elsevier.png",
+      "size": 6898,
+      "name": "elsevier.png",
+      "type": "Png",
+      "initialSize": 6898,
       "status": "NOT_OPTIMIZED"
     },
-    "1e35ba7c": {
-      "id": "1e35ba7c",
+    "134c4ca5": {
+      "id": "134c4ca5",
       "pid": "651ae24a",
-      "path": "teammentor/img/massmutual.png",
-      "size": 9223,
+      "path": "deploy/assets/clients/massmutual.png",
+      "size": 5141,
       "name": "massmutual.png",
       "type": "Png",
-      "initialSize": 9223,
+      "initialSize": 5141,
       "status": "NOT_OPTIMIZED"
     },
-    "33e68dc0": {
-      "id": "33e68dc0",
+    "498ea7f8": {
+      "id": "498ea7f8",
       "pid": "651ae24a",
-      "path": "teammentor/img/microsoft.png",
-      "size": 7118,
+      "path": "deploy/assets/clients/microsoft.png",
+      "size": 4499,
       "name": "microsoft.png",
       "type": "Png",
-      "initialSize": 7118,
+      "initialSize": 4499,
       "status": "NOT_OPTIMIZED"
     },
-    "d951ccfe": {
-      "id": "d951ccfe",
+    "2d7e1ae8": {
+      "id": "2d7e1ae8",
       "pid": "651ae24a",
-      "path": "teammentor/img/symantec.png",
-      "size": 8967,
+      "path": "deploy/assets/clients/symantec.png",
+      "size": 4885,
       "name": "symantec.png",
       "type": "Png",
-      "initialSize": 8967,
+      "initialSize": 4885,
       "status": "NOT_OPTIMIZED"
     },
-    "e4af57e8": {
-      "id": "e4af57e8",
+    "3356fa38": {
+      "id": "3356fa38",
       "pid": "651ae24a",
-      "path": "teammentor/img/tm-logo.jpg",
-      "size": 32490,
-      "name": "tm-logo.jpg",
-      "type": "Jpg",
-      "initialSize": 32490,
-      "status": "NOT_OPTIMIZED"
-    },
-    "68a303da": {
-      "id": "68a303da",
-      "pid": "651ae24a",
-      "path": "teammentor/img/ubs.png",
-      "size": 12760,
+      "path": "deploy/assets/clients/ubs.png",
+      "size": 6841,
       "name": "ubs.png",
       "type": "Png",
-      "initialSize": 12760,
+      "initialSize": 6841,
       "status": "NOT_OPTIMIZED"
     },
-    "639f4e87": {
-      "id": "639f4e87",
+    "e59eeeae": {
+      "id": "e59eeeae",
       "pid": "651ae24a",
-      "path": "apple-touch-icon-114x114.png",
+      "path": "deploy/assets/favicons/apple-touch-icon-114x114.png",
       "size": 7550,
       "name": "apple-touch-icon-114x114.png",
       "type": "Png",
       "initialSize": 7550,
       "status": "NOT_OPTIMIZED"
     },
-    "25ba8548": {
-      "id": "25ba8548",
+    "4f70bc82": {
+      "id": "4f70bc82",
       "pid": "651ae24a",
-      "path": "apple-touch-icon-120x120.png",
+      "path": "deploy/assets/favicons/apple-touch-icon-120x120.png",
       "size": 8125,
       "name": "apple-touch-icon-120x120.png",
       "type": "Png",
       "initialSize": 8125,
       "status": "NOT_OPTIMIZED"
     },
-    "7915db86": {
-      "id": "7915db86",
+    "f6b23b5b": {
+      "id": "f6b23b5b",
       "pid": "651ae24a",
-      "path": "apple-touch-icon-144x144.png",
+      "path": "deploy/assets/favicons/apple-touch-icon-144x144.png",
       "size": 10730,
       "name": "apple-touch-icon-144x144.png",
       "type": "Png",
       "initialSize": 10730,
       "status": "NOT_OPTIMIZED"
     },
-    "2eebd808": {
-      "id": "2eebd808",
+    "cd131f68": {
+      "id": "cd131f68",
       "pid": "651ae24a",
-      "path": "apple-touch-icon-152x152.png",
+      "path": "deploy/assets/favicons/apple-touch-icon-152x152.png",
       "size": 11639,
       "name": "apple-touch-icon-152x152.png",
       "type": "Png",
       "initialSize": 11639,
       "status": "NOT_OPTIMIZED"
     },
-    "59ca3180": {
-      "id": "59ca3180",
+    "c3ad53af": {
+      "id": "c3ad53af",
       "pid": "651ae24a",
-      "path": "apple-touch-icon-57x57.png",
+      "path": "deploy/assets/favicons/apple-touch-icon-57x57.png",
       "size": 2850,
       "name": "apple-touch-icon-57x57.png",
       "type": "Png",
       "initialSize": 2850,
       "status": "NOT_OPTIMIZED"
     },
-    "e0e7cd2b": {
-      "id": "e0e7cd2b",
+    "3b4c6efe": {
+      "id": "3b4c6efe",
       "pid": "651ae24a",
-      "path": "apple-touch-icon-60x60.png",
+      "path": "deploy/assets/favicons/apple-touch-icon-60x60.png",
       "size": 3092,
       "name": "apple-touch-icon-60x60.png",
       "type": "Png",
       "initialSize": 3092,
       "status": "NOT_OPTIMIZED"
     },
-    "06eaf8e5": {
-      "id": "06eaf8e5",
+    "56ea7282": {
+      "id": "56ea7282",
       "pid": "651ae24a",
-      "path": "apple-touch-icon-72x72.png",
+      "path": "deploy/assets/favicons/apple-touch-icon-72x72.png",
       "size": 3918,
       "name": "apple-touch-icon-72x72.png",
       "type": "Png",
       "initialSize": 3918,
       "status": "NOT_OPTIMIZED"
     },
-    "4fb68c59": {
-      "id": "4fb68c59",
+    "44ecd215": {
+      "id": "44ecd215",
       "pid": "651ae24a",
-      "path": "apple-touch-icon-76x76.png",
+      "path": "deploy/assets/favicons/apple-touch-icon-76x76.png",
       "size": 4144,
       "name": "apple-touch-icon-76x76.png",
       "type": "Png",
       "initialSize": 4144,
       "status": "NOT_OPTIMIZED"
     },
-    "401e092c": {
-      "id": "401e092c",
+    "9aa77509": {
+      "id": "9aa77509",
       "pid": "651ae24a",
-      "path": "apple-touch-icon-precomposed.png",
+      "path": "deploy/assets/favicons/apple-touch-icon-precomposed.png",
       "size": 13531,
       "name": "apple-touch-icon-precomposed.png",
       "type": "Png",
       "initialSize": 13531,
       "status": "NOT_OPTIMIZED"
     },
-    "6f370fe0": {
-      "id": "6f370fe0",
+    "3142c9d9": {
+      "id": "3142c9d9",
       "pid": "651ae24a",
-      "path": "apple-touch-icon.png",
+      "path": "deploy/assets/favicons/apple-touch-icon.png",
       "size": 11639,
       "name": "apple-touch-icon.png",
       "type": "Png",
       "initialSize": 11639,
       "status": "NOT_OPTIMIZED"
     },
-    "6aa8ebc4": {
-      "id": "6aa8ebc4",
+    "f2414fe9": {
+      "id": "f2414fe9",
       "pid": "651ae24a",
-      "path": "favicon-160x160.png",
+      "path": "deploy/assets/favicons/favicon-160x160.png",
       "size": 16682,
       "name": "favicon-160x160.png",
       "type": "Png",
       "initialSize": 16682,
       "status": "NOT_OPTIMIZED"
     },
-    "553f3a52": {
-      "id": "553f3a52",
+    "d0c2316e": {
+      "id": "d0c2316e",
       "pid": "651ae24a",
-      "path": "favicon-16x16.png",
+      "path": "deploy/assets/favicons/favicon-16x16.png",
       "size": 1611,
       "name": "favicon-16x16.png",
       "type": "Png",
       "initialSize": 1611,
       "status": "NOT_OPTIMIZED"
     },
-    "1c8fc1f9": {
-      "id": "1c8fc1f9",
+    "0c27253d": {
+      "id": "0c27253d",
       "pid": "651ae24a",
-      "path": "favicon-196x196.png",
+      "path": "deploy/assets/favicons/favicon-196x196.png",
       "size": 17485,
       "name": "favicon-196x196.png",
       "type": "Png",
       "initialSize": 17485,
       "status": "NOT_OPTIMIZED"
     },
-    "bf96f369": {
-      "id": "bf96f369",
+    "9fce0514": {
+      "id": "9fce0514",
       "pid": "651ae24a",
-      "path": "favicon-32x32.png",
+      "path": "deploy/assets/favicons/favicon-32x32.png",
       "size": 2375,
       "name": "favicon-32x32.png",
       "type": "Png",
       "initialSize": 2375,
       "status": "NOT_OPTIMIZED"
     },
-    "b7a57d7e": {
-      "id": "b7a57d7e",
+    "9ed3ce30": {
+      "id": "9ed3ce30",
       "pid": "651ae24a",
-      "path": "favicon-96x96.png",
+      "path": "deploy/assets/favicons/favicon-96x96.png",
       "size": 8033,
       "name": "favicon-96x96.png",
       "type": "Png",
       "initialSize": 8033,
       "status": "NOT_OPTIMIZED"
     },
-    "e2388f5a": {
-      "id": "e2388f5a",
+    "b618fc69": {
+      "id": "b618fc69",
       "pid": "651ae24a",
-      "path": "mstile-144x144.png",
+      "path": "deploy/assets/favicons/mstile-144x144.png",
       "size": 14935,
       "name": "mstile-144x144.png",
       "type": "Png",
       "initialSize": 14935,
       "status": "NOT_OPTIMIZED"
     },
-    "e0255412": {
-      "id": "e0255412",
+    "20b9933f": {
+      "id": "20b9933f",
       "pid": "651ae24a",
-      "path": "mstile-150x150.png",
+      "path": "deploy/assets/favicons/mstile-150x150.png",
       "size": 13193,
       "name": "mstile-150x150.png",
       "type": "Png",
       "initialSize": 13193,
       "status": "NOT_OPTIMIZED"
     },
-    "2bbf9f9d": {
-      "id": "2bbf9f9d",
+    "0c7f62e4": {
+      "id": "0c7f62e4",
       "pid": "651ae24a",
-      "path": "mstile-310x150.png",
+      "path": "deploy/assets/favicons/mstile-310x150.png",
       "size": 14019,
       "name": "mstile-310x150.png",
       "type": "Png",
       "initialSize": 14019,
       "status": "NOT_OPTIMIZED"
     },
-    "94fa11ec": {
-      "id": "94fa11ec",
+    "e463bf59": {
+      "id": "e463bf59",
       "pid": "651ae24a",
-      "path": "mstile-310x310.png",
+      "path": "deploy/assets/favicons/mstile-310x310.png",
       "size": 43609,
       "name": "mstile-310x310.png",
       "type": "Png",
       "initialSize": 43609,
       "status": "NOT_OPTIMIZED"
     },
-    "0aef3efe": {
-      "id": "0aef3efe",
+    "64e516e3": {
+      "id": "64e516e3",
       "pid": "651ae24a",
-      "path": "mstile-70x70.png",
+      "path": "deploy/assets/favicons/mstile-70x70.png",
       "size": 8087,
       "name": "mstile-70x70.png",
       "type": "Png",
       "initialSize": 8087,
+      "status": "NOT_OPTIMIZED"
+    },
+    "4ed21a00": {
+      "id": "4ed21a00",
+      "pid": "651ae24a",
+      "path": "deploy/assets/icons/attack.png",
+      "size": 6802,
+      "name": "attack.png",
+      "type": "Png",
+      "initialSize": 6802,
+      "status": "NOT_OPTIMIZED"
+    },
+    "7b152ba2": {
+      "id": "7b152ba2",
+      "pid": "651ae24a",
+      "path": "deploy/assets/icons/custom-cms.png",
+      "size": 6407,
+      "name": "custom-cms.png",
+      "type": "Png",
+      "initialSize": 6407,
+      "status": "NOT_OPTIMIZED"
+    },
+    "a72fc344": {
+      "id": "a72fc344",
+      "pid": "651ae24a",
+      "path": "deploy/assets/icons/gain-access.png",
+      "size": 6498,
+      "name": "gain-access.png",
+      "type": "Png",
+      "initialSize": 6498,
+      "status": "NOT_OPTIMIZED"
+    },
+    "28ea715b": {
+      "id": "28ea715b",
+      "pid": "651ae24a",
+      "path": "deploy/assets/icons/help.png",
+      "size": 6704,
+      "name": "help.png",
+      "type": "Png",
+      "initialSize": 6704,
+      "status": "NOT_OPTIMIZED"
+    },
+    "a2070abc": {
+      "id": "a2070abc",
+      "pid": "651ae24a",
+      "path": "deploy/assets/icons/home.png",
+      "size": 5375,
+      "name": "home.png",
+      "type": "Png",
+      "initialSize": 5375,
+      "status": "NOT_OPTIMIZED"
+    },
+    "431fafc0": {
+      "id": "431fafc0",
+      "pid": "651ae24a",
+      "path": "deploy/assets/icons/identify-fix.png",
+      "size": 8060,
+      "name": "identify-fix.png",
+      "type": "Png",
+      "initialSize": 8060,
+      "status": "NOT_OPTIMIZED"
+    },
+    "5b0fc3b6": {
+      "id": "5b0fc3b6",
+      "pid": "651ae24a",
+      "path": "deploy/assets/icons/improve.png",
+      "size": 7109,
+      "name": "improve.png",
+      "type": "Png",
+      "initialSize": 7109,
+      "status": "NOT_OPTIMIZED"
+    },
+    "af78c8b1": {
+      "id": "af78c8b1",
+      "pid": "651ae24a",
+      "path": "deploy/assets/icons/integrate.png",
+      "size": 5936,
+      "name": "integrate.png",
+      "type": "Png",
+      "initialSize": 5936,
+      "status": "NOT_OPTIMIZED"
+    },
+    "e5f607ca": {
+      "id": "e5f607ca",
+      "pid": "651ae24a",
+      "path": "deploy/assets/icons/logout.png",
+      "size": 8121,
+      "name": "logout.png",
+      "type": "Png",
+      "initialSize": 8121,
+      "status": "NOT_OPTIMIZED"
+    },
+    "ef12dc9a": {
+      "id": "ef12dc9a",
+      "pid": "651ae24a",
+      "path": "deploy/assets/icons/navigate.png",
+      "size": 9495,
+      "name": "navigate.png",
+      "type": "Png",
+      "initialSize": 9495,
+      "status": "NOT_OPTIMIZED"
+    },
+    "6622d342": {
+      "id": "6622d342",
+      "pid": "651ae24a",
+      "path": "deploy/assets/icons/timely.png",
+      "size": 8402,
+      "name": "timely.png",
+      "type": "Png",
+      "initialSize": 8402,
+      "status": "NOT_OPTIMIZED"
+    },
+    "859e03b1": {
+      "id": "859e03b1",
+      "pid": "651ae24a",
+      "path": "deploy/assets/icons/user.png",
+      "size": 6321,
+      "name": "user.png",
+      "type": "Png",
+      "initialSize": 6321,
+      "status": "NOT_OPTIMIZED"
+    },
+    "a172e226": {
+      "id": "a172e226",
+      "pid": "651ae24a",
+      "path": "deploy/assets/logos/logo.jpg",
+      "size": 18684,
+      "name": "logo.jpg",
+      "type": "Jpg",
+      "initialSize": 18684,
+      "status": "NOT_OPTIMIZED"
+    },
+    "1800c439": {
+      "id": "1800c439",
+      "pid": "651ae24a",
+      "path": "deploy/assets/logos/tm-logo.jpg",
+      "size": 14772,
+      "name": "tm-logo.jpg",
+      "type": "Jpg",
+      "initialSize": 14772,
+      "status": "NOT_OPTIMIZED"
+    },
+    "399a57e8": {
+      "id": "399a57e8",
+      "pid": "651ae24a",
+      "path": "deploy/assets/stock-img/bgone.jpg",
+      "size": 239180,
+      "name": "bgone.jpg",
+      "type": "Jpg",
+      "initialSize": 239180,
+      "status": "NOT_OPTIMIZED"
+    },
+    "da42c2e7": {
+      "id": "da42c2e7",
+      "pid": "651ae24a",
+      "path": "deploy/assets/stock-img/bgthree.jpg",
+      "size": 155433,
+      "name": "bgthree.jpg",
+      "type": "Jpg",
+      "initialSize": 155433,
+      "status": "NOT_OPTIMIZED"
+    },
+    "18566e07": {
+      "id": "18566e07",
+      "pid": "651ae24a",
+      "path": "deploy/assets/stock-img/bgtwo.jpg",
+      "size": 95085,
+      "name": "bgtwo.jpg",
+      "type": "Jpg",
+      "initialSize": 95085,
       "status": "NOT_OPTIMIZED"
     }
   },
@@ -1356,17 +1226,17 @@
     "filterPatterns": "",
     "useCustomServer": false,
     "customServerUrl": "",
-    "cssPath": "teammentor_jade/deploy/css/",
+    "cssPath": "deploy/css",
     "jsPath": "../../deploy/js/",
     "htmlPath": "deploy/",
     "minJsPath": "min/",
     "htmlExtension": ".html",
-    "cssPathType": "RELATIVE_FILESDIR",
+    "cssPathType": "REPLACE_TYPE",
     "htmlPathType": "REPLACE_TYPE",
     "jsPathType": "RELATIVE_FILEDIR",
     "minJsPathType": "RELATIVE_FILEDIR",
     "htmlTypes": "source",
-    "cssTypes": "less, sass, stylus, scss, styl",
+    "cssTypes": "source/scss",
     "jsTypes": "coffee, coffeescript, coffeescripts, ls, livescript, livescripts",
     "cssPreprocessorPath": "",
     "htmlPreprocessorPath": "",

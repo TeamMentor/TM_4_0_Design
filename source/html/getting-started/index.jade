@@ -20,7 +20,8 @@ block content
             .form-group
               label(for='new-user-email') Email Address
               input#new-user-email.form-control(type='email', placeholder='Email Address')
-            button.btn-action.btn-submit.btn-block(type='submit') Submit
+            a(href='new-user-validation.html')
+                button.btn-action.btn-submit.btn-block(type='button') Submit
           br
           br
         .col-md-6
@@ -39,6 +40,7 @@ block content
               .col-md-6
                 button.btn-action.btn-submit.btn-block(type='submit') Login
               .col-md-6
-                button.btn-action.btn-submit.btn-block(type='submit') Forgot your password?
+                a(href='returning-user-forgot-password.html')
+                    button.btn-action.btn-submit.btn-block(type='button') Forgot your password?
           br
           br
