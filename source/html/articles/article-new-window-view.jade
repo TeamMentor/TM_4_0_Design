@@ -1,9 +1,5 @@
-doctype html
-html(lang='en')
-    include ../../layouts/head.jade
-    body
-        include ../../layouts/fixed_navbar.jade
-
+extends ../_layouts/page_home.jade
+block content  
         #application
           .row
              #article-pane.col-md-offset-3.col-md-6
@@ -32,22 +28,14 @@ html(lang='en')
                          a(role='menuitem', tabindex='-1', href='#') Another action
                        li(role='presentation')
                          a(role='menuitem', tabindex='-1', href='#') Something else here
-                 //
-                   /.col-xs-6
                  .col-xs-4.text-center
                    a.action(href='#')
                      | Save
                      span.glyphicon.glyphicon-bookmark.glyphicon-small
-                 //
-                   /.col-xs-3
                  .col-xs-4.text-center
                    a.action(href='#')
                      | Share
                      span.glyphicon.glyphicon-share.glyphicon-small
-                 //
-                   /.col-xs-3
-               //
-                 /.row
                br
                hr
                br
@@ -55,17 +43,17 @@ html(lang='en')
                  | Related Articles
                br
                .list-group
-                 a.list-group-item(href='article-new-window-view.html', target='_blank')
+                 a.list-group-item(href='#{link_article_new_window}', target='_blank')
                    h5.list-group-item-heading.grey Related Article Headline
                    p.list-group-item-text
                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
                  br
-                 a.list-group-item(href='article-new-window-view.html', target='_blank')
+                 a.list-group-item(href='#{link_article_new_window}', target='_blank')
                    h5.list-group-item-heading.grey Related Article Headline
                    p.list-group-item-text
                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
                  br
-                 a.list-group-item(href='article-new-window-view.html', target='_blank')
+                 a.list-group-item(href='#{link_article_new_window}', target='_blank')
                    h5.list-group-item-heading.grey Related Article Headline
                    p.list-group-item-text
                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.

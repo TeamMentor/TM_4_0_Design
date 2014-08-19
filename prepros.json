@@ -23,9 +23,9 @@
       "customOutput": false,
       "type": "Md",
       "config": {
-        "autoCompile": true,
+        "autoCompile": false,
         "sanitize": false,
-        "gfm": true
+        "gfm": false
       }
     },
     "f764e93c": {
@@ -727,6 +727,42 @@
         "autoCompile": true,
         "pretty": true
       }
+    },
+    "f1ed1d0f": {
+      "id": "f1ed1d0f",
+      "pid": "651ae24a",
+      "name": "developer-utilities.jade",
+      "input": "source/html/user/developer-utilities.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "a9478804": {
+      "id": "a9478804",
+      "pid": "651ae24a",
+      "name": "backend.jade",
+      "input": "source/html/user/backend.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
+    },
+    "771159e8": {
+      "id": "771159e8",
+      "pid": "651ae24a",
+      "name": "other.jade",
+      "input": "source/html/user/other.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
     }
   },
   "imports": {
@@ -761,7 +797,11 @@
         "4351317f",
         "d8d053a2",
         "0fb3c5a7",
-        "7c350c6a"
+        "7c350c6a",
+        "832936aa",
+        "f1ed1d0f",
+        "a9478804",
+        "771159e8"
       ]
     },
     "2ef9f62f": {
@@ -779,7 +819,10 @@
         "4351317f",
         "d8d053a2",
         "0fb3c5a7",
-        "7c350c6a"
+        "7c350c6a",
+        "f1ed1d0f",
+        "a9478804",
+        "771159e8"
       ]
     },
     "5ac3de02": {
@@ -813,7 +856,11 @@
         "4351317f",
         "d8d053a2",
         "0fb3c5a7",
-        "7c350c6a"
+        "7c350c6a",
+        "832936aa",
+        "f1ed1d0f",
+        "a9478804",
+        "771159e8"
       ]
     },
     "954cb581": {
@@ -857,7 +904,11 @@
         "4351317f",
         "d8d053a2",
         "0fb3c5a7",
-        "7c350c6a"
+        "7c350c6a",
+        "832936aa",
+        "f1ed1d0f",
+        "a9478804",
+        "771159e8"
       ]
     },
     "4f5d437c": {
@@ -891,7 +942,11 @@
         "4351317f",
         "d8d053a2",
         "0fb3c5a7",
-        "7c350c6a"
+        "7c350c6a",
+        "832936aa",
+        "f1ed1d0f",
+        "a9478804",
+        "771159e8"
       ]
     },
     "6f670854": {
@@ -911,7 +966,8 @@
         "a8f743f8",
         "5a03a20f",
         "1ad10f64",
-        "547ccc78"
+        "547ccc78",
+        "832936aa"
       ]
     },
     "34dd06aa": {
@@ -931,7 +987,8 @@
         "a8f743f8",
         "5a03a20f",
         "1ad10f64",
-        "547ccc78"
+        "547ccc78",
+        "832936aa"
       ]
     },
     "73d6a640": {
@@ -949,7 +1006,10 @@
         "4351317f",
         "d8d053a2",
         "0fb3c5a7",
-        "7c350c6a"
+        "7c350c6a",
+        "f1ed1d0f",
+        "a9478804",
+        "771159e8"
       ]
     },
     "bd784ce3": {
