@@ -490,25 +490,6 @@
         "autoprefixer": false
       }
     },
-    "e4bf44a1": {
-      "id": "e4bf44a1",
-      "pid": "651ae24a",
-      "name": "bootstrap.min.scss",
-      "input": "source/scss/bootstrap.min.scss",
-      "customOutput": false,
-      "type": "Scss",
-      "config": {
-        "autoCompile": true,
-        "lineNumbers": false,
-        "unixNewlines": false,
-        "sourcemaps": true,
-        "debug": false,
-        "compass": false,
-        "fullCompass": false,
-        "outputStyle": "compressed",
-        "autoprefixer": false
-      }
-    },
     "9d78fdd5": {
       "id": "9d78fdd5",
       "pid": "651ae24a",
@@ -524,7 +505,7 @@
         "debug": false,
         "compass": false,
         "fullCompass": false,
-        "outputStyle": "compressed",
+        "outputStyle": "expanded",
         "autoprefixer": false
       }
     }
