@@ -149,6 +149,7 @@ body {
 }
 
 h1 {
+	@extend .font-stack;
 	font-size: 3em;
 	font-weight: 700;
 }
@@ -235,38 +236,16 @@ input {
     color: $grey;
 }
 
-input[type=checkbox].css-checkbox {
-	position: absolute; 
-	overflow: hidden; 
-	clip: rect(0 0 0 0); 
-	height:1px; 
-	width:1px; 
-	margin:-1px; 
-	padding:0;
-	border:0;
-}
-
-label.css-label {
+label {
 	font-weight: normal;
 }
 
-input[type=checkbox].css-checkbox + label.css-label {
-	padding-left:20px;
-	height:15px; 
-	display:inline-block;
-	line-height:15px;
-	background-repeat:no-repeat;
-	background-position: 0 0;
-	font-size:15px;
-	vertical-align:middle;
-	cursor:pointer;
+input[type=checkbox] + label {
+    display: inline-block;
+    margin-left: 0.5em;
+    margin-right: 2em;
+    line-height: 1em;
 }
-
-input[type=checkbox].css-checkbox:checked + label.css-label {
-	background-position: 0 -15px;
-}
-
-	.css-label{ background-image:url(http://csscheckbox.com/checkboxes/lite-gray-check.png); }
 
 // Buttons
 
@@ -310,6 +289,10 @@ button {
 			color: $white;
 			background-color: $green;
 		}
+	}
+
+	.btn-block {
+		width: 100%;
 	}
 }
 
