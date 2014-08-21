@@ -502,7 +502,7 @@
         "lineNumbers": false,
         "unixNewlines": false,
         "sourcemaps": true,
-        "debug": false,
+        "debug": true,
         "compass": false,
         "fullCompass": false,
         "outputStyle": "expanded",

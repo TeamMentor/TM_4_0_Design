@@ -1,4 +1,14 @@
-/*** Styles effecting layout and structure ***/
+// Variables
+$asset-path: '../../deploy/assets/';
+$white: #FFFFFF;
+$green: #8aaf3e;
+$dark-green: #49661f;
+$grey: #aaaaaa;
+$dark-grey: #444444;
+$nav-padding-top: 120px;
+
+
+// Layout and Structure
 
 body {
 	max-width: 100%;
@@ -6,65 +16,47 @@ body {
 }
 
 #application {
-	margin-top: 120px;
-	max-width: 100%;
+	margin-top: $nav-padding-top;
 }
 
 #article-pane {
 	padding-bottom: 40px;
 }
 
-#usp {
-	background: url('/deploy/assets/stock-img/bgone.jpg');
+#about, #usp {
+	padding-top: $nav-padding-top;
+	padding-bottom: 80px;
+	background-color: $green;
+	color: $white;
+	text-align: center;
 }
 
 #about {
-	background: url('/deploy/assets/stock-img/bgthree.jpg');
-}
-
-#usp, #about {
-	padding-top: 150px;
-	padding-bottom: 80px;
-	max-width: 100%;
-	background-color: #8aae40;
-	color: #FFFFFF;
-	text-align: center;
+	background: url(#{$asset-path}/stock-img/bgthree.jpg);
 }
 
 #about-us {
 	padding-top: 40px;
 	padding-bottom: 40px;
-	max-width: 100%;
-}
-
-#features {
-	padding-top: 120px;
-	padding-bottom: 50px;
-	max-width: 100%;
-}
-
-
-#reasons {
-	padding-top: 5%;
-	padding-bottom: 2%;
-	max-width: 100%;
-	background-color: #FFFFFF;
-}
-
-#clients {
-	padding-bottom: 5%;
-	max-width: 100%;
-	background-color: #FFFFFF;
 }
 
 #calltoaction {
 	padding-top: 7%;
 	padding-bottom: 5%;
-	max-width: 100%;
-	background: url('/deploy/assets/stock-img/bgtwo.jpg');
-	background-color: #46641e;
-	color: #FFFFFF;
+	background: url(#{$asset-path}/stock-img/bgtwo.jpg);
+	background-color: $dark-green;
+	color: $white;
 	text-align: center;
+}
+
+#clients {
+	padding-bottom: 5%;
+	background-color: $white;
+}
+
+#features {
+	padding-top: $nav-padding-top;
+	padding-bottom: 50px;
 }
 
 .lge-container {
@@ -72,25 +64,36 @@ body {
 	margin: 0 auto;
 }
 
-/*** Forms and Inputs ***/
+#usp {
+	background: url(#{$asset-path}/stock-img/bgone.jpg);
+}
+
+#reasons {
+	padding-top: 5%;
+	padding-bottom: 2%;
+	background-color: $white;
+}
+
+
+// Forms
 
 .form-control {
 	height: 3em;
 	width: 100%;
 	border-radius: 0px;
 	padding-left: 20px;
-	border: 1px solid #8aae40;
-	color: #46641e;
+	border: 1px solid $grey;
+	color: $dark-green;
 	font-size: 1.15em;
 }
 
-/*** Styles effecting navigation ***/ 
+// Navigation
 
 .navbar {
-	background-color: #FFFFFF;
+	background-color: $white;
 	height: 80px;
 	font-size: 0.8em;
-	border-bottom: 1px solid #aaaaaa;
+	border-bottom: 1px solid $grey;
 	display: inline-block;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -98,8 +101,8 @@ body {
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-	color: #444444;
-	background-color: #FFFFFF;
+	color: $dark-grey;
+	background-color: $white;
 }
 
 .navbar-inverse .navbar-toggle {
@@ -107,7 +110,7 @@ body {
 }
 
 .navbar-inverse .navbar-nav > li > a  {
-	color: #8aae40;
+	color: $green;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
@@ -125,160 +128,111 @@ body {
 		}
 
 		.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:active {
-			color: #46641e;
+			color: $dark-green;
 		}
 
 		.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-			color: #46641e;
-			background-color: #FFFFFF;
-			border-bottom: 2px solid #46641e;
+			color: $dark-green;
+			background-color: $white;
+			border-bottom: 2px solid $dark-green;
 		}
 
 .breadcrumb {
-	background-color: #FFFFFF;
+	background-color: $white;
 }
 
-/*** Styles effecting typography ***/
+// Typography
+
+.font-stack {
+	font-family: Helvetica, sans-serif;
+	letter-spacing: 1px;
+}
 
 h1 {
 	font-size: 3em;
 	font-weight: 700;
-	letter-spacing: 1px;
 }
 
-h1, h2, h3 {
+h1, h2 {
+	@extend .font-stack;
 	line-height: 1.5em;
+	font-weight: 700;
 }
 
-h4, h5 {
+h3, h4, h5 {
 	line-height: 1.75em;
 }
 
-p {
+p, li { 
 	font-size: 1.15em;
-	color: #444444;
+	color: $dark-grey;
 }
 
 hr {
 	width: 70%;
 }
 
-a, a:visited {
-	text-decoration: none;
-}
-	
-	a:hover, a:active {
-		text-decoration: none;
-	}
-
-li {
-	font-size: 1.15em;
-	line-height: 2em;
-	letter-spacing: 1px;
-	padding-bottom: 20px;
-}
-
-ul.articles {
-	padding: 0;
-    list-style-type: none;
-}
-
-	.articles li {
-		background-color: #FFFFFF;
-		line-height: normal;
-		list-style-type: none;
-		padding-left: 15px;
-		padding-top: 7px;
-		padding-bottom: 7px;
-	}
-
-		.articles li:nth-child(odd) { 
-			background: #e3e3e3; 
-		}
-
 a {
+	color: $dark-grey;
 	text-decoration: none;
-	color: #444444;
-}
-	
-	a:hover {
-		color: #444444;
-	}
 
-	a:hover, a:visited, a:active, a:focus {
+	:visited, :hover, :active {
 		text-decoration: none;
 	}
 
-a.action, a.action:visited {
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 700;
-	color: #8aaf3e;
-	text-align: center !important;
-}
-
-	a.action:hover, a.action:active {
+	.action, .action:visited {
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		font-weight: 700;
-		color: #49661f;
+		color: $green;
+		text-align: center !important;
 	}
+
+	.action:hover, .action:active {
+		color: $dark-green;
+	}
+}
 
 .glyphicon {
+
 	font-size: 1.5em;
-}
+	color: $green;
 
-.glyphicon-small {
-	font-size: 1em;
-}
-
-.glyphicon, .glyphicon:visited {
-	color: #8aaf3e;
-}
-
-	.glyphicon:hover, .glyphicon:active {
-		color: #49661f;
+	:visited {
+		color: $green;
 	}
 
-.green {
-	color: #8aaf3e;
+	:hover, :active {
+		color: $dark-green;
+	}
+
+	.small {
+		font-size: 1em;
+	}
 }
 
-.dark-green {
-	color: #49661f;
-}
 
-.light-grey {
-	color: #aaaaaa;
-}
-
-.grey {
-	color: #444444;
-}
-
-/*** Styles effecting input groups ***/
+// Input Groups
 
 input {
-	font-size: 1.25em !important;
-	height: 3em !important;
-	border-radius: 0px !important;
-	border-color: #aaaaaa !important;
+	font-size: 1.25em;
+	height: 3em;
+	border-radius: 0px;
 }
-
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color: #aaaaaa;
+    color: $grey;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #aaaaaa;
+    color: $grey;
     opacity: 1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #aaaaaa;
+    color: $grey;
     opacity: 1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color: #aaaaaa;
+    color: $grey;
 }
 
 input[type=checkbox].css-checkbox {
@@ -314,60 +268,52 @@ input[type=checkbox].css-checkbox:checked + label.css-label {
 
 	.css-label{ background-image:url(http://csscheckbox.com/checkboxes/lite-gray-check.png); }
 
-/*** Styles effecting buttons ***/
+// Buttons
 
-button#search-button, button#filters-button {
-	height: 3.75em;
-	border-radius: 0px;
-}
+button {
+	
+	#filters-button, #search-button {
+		height: 3.75em;
+		border-radius: 0px;
+	}
 
-button#search-button {
-	border-left: none;
-}
+	#search-button {
+		border-left: none;
+	}
 
-.btn-landing-page {
-	border: none;
-	font-family: inherit;
-	font-size: inherit;
-	color: inherit;
-	background: none;
-	cursor: pointer;
-	padding: 25px 80px;
-	display: inline-block;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 700;
-	outline: none;
-	position: relative;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-	max-width: 100%;
-	border-radius: 0;
-	background-color: #ffffff;
-	color: #8aae40;
-}
+	.btn-landing-page {
+		position: relative;
+		padding: 25px 80px;
+		max-width: 100%;
+		display: inline-block;
+		background-color: $white;
+		@extend .font-stack;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: $green !important;
+		border-radius: 0px;
+		outline: none;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		transition: all 0.3s;
 
-.btn-landing-page:after {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
+		:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			-webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+			transition: all 0.3s;
+		}
 
-.btn-landing-page:hover,
-.btn-landing-page:active {
-	color: #ffffff;
-	background-color: #8aae40;
+		:hover, :active {
+			color: $white;
+			background-color: $green;
+		}
+	}
 }
 
 .btn-action {
-	border: none;
-	font-family: inherit;
-	font-size: inherit;
-	color: inherit;
 	background: none;
 	cursor: pointer;
 	display: inline-block;
@@ -380,39 +326,39 @@ button#search-button {
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 	max-width: 100%;
-	color: #8aaf3e;
+	color: $green;
 }
 
 .btn-action:hover {
-	color: #46641e !important;
+	color: $dark-green !important;
 }
 
 .btn-submit {
-	border: 1px solid #8aaf3e;
+	border: 1px solid $green;
 	border-radius: 0px;
-	color: #8aaf3e;
+	color: $green;
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
 
 .btn-application {
-	color: #8aaf3e;
-	background-color: #FFFFFF;
-	border: 1px solid #aaaaaa;
+	color: $green;
+	background-color: $white;
+	border: 1px solid $grey;
 }
 
 	.btn-application:hover {
-		color: #49661f;
-		background-color: #ffffff;
+		color: $dark-green;
+		background-color: $white;
 	}
 
-/*** Styles effecting badges ***/
+// Badges
 
 .badge {
-	background-color: #aaaaaa;
+	background-color: $grey;
 }
 
-/*** Styles effecting panels ***/
+// Panels
 
 .panel {
 	box-shadow: none;
@@ -430,22 +376,22 @@ button#search-button {
 	border-top: none;
 }
 
-/*** Styles effecting list group and their items ***/
+// List Group and List Group Items
 
 .list-group-item {
 	border: none;
 }
 
-/*** Styles effecting alerts and warnings ***/
+// Alerts and Warnings
 
 .alert-warning {
-	color: #8aaf3e;
-	background-color: #ffffff;
-	border: 1px solid #8aaf3e;
+	color: $green;
+	background-color: $white;
+	border: 1px solid $green;
 	border-radius: 0px;
 }
 
-/*** Styles effecting tables and table cells ***/
+// Tables and Table Cells
 
 table {
 	width: 100%;
@@ -481,10 +427,6 @@ td {
 
 	h3 {
 		font-size: 1.5em;
-	}
-
-	.btn-calltoaction-light, .btn-calltoaction-dark {
-		font-size: 1em;
 	}
 }
 
