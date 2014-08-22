@@ -5,7 +5,7 @@ $green: #8aaf3e;
 $dark-green: #49661f;
 $grey: #aaaaaa;
 $dark-grey: #444444;
-$nav-padding-top: 120px;
+$nav-padding-top: 100px;
 
 .white {
 	color: #FFFFFF;
@@ -32,6 +32,7 @@ $nav-padding-top: 120px;
 body {
 	max-width: 100%;
 	overflow-x: hidden;
+	font-family: Helvetica, sans-serif;
 }
 
 #application {
@@ -84,7 +85,7 @@ body {
 }
 
 .lge-container {
-	max-width: 98%;
+	max-width: 96%;
 	margin: 0 auto;
 }
 
@@ -98,12 +99,41 @@ body {
 	background-color: $white;
 }
 
+.column {
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+	float: left;
+
+	&.three {
+		width: 25%;
+	}
+
+	&.six {
+		width: 50%;
+	}
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100% !important;
+}
+
+.pull-right {
+	float: right !important;
+}
+
 
 // Forms
 
 .form-control {
 	height: 3em;
 	width: 100%;
+	display: block;
 	border-radius: 0px;
 	padding-left: 20px;
 	border: 1px solid $grey;
@@ -123,7 +153,7 @@ body {
 	ul {
 		list-style-type: none;
 		display: inline-block;
-		padding-top: 15px;
+		padding-top: 7px;
 
 		li {
 			display: inline-block;
@@ -151,9 +181,37 @@ body {
 	z-index: 1030;
 }
 
-.navbar-inverse .navbar-toggle {
-	margin-top: 15px;
+.navbar-toggle {
+	position: relative;
+	float: right;
+	padding: 9px 10px;
+	margin-top: 8px;
+	margin-right: 15px;
+	margin-bottom: 8px;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+
+	&:focus {
+		outline: none;
+	}
+
+	&.icon-bar {
+		display: block;
+		width: 22px;
+		height: 2px;
+		border-radius: 1px;
+	}
 }
+
+.navbar-header {
+	float: left;
+}
+
+
+
+
 
 .navbar-inverse .navbar-nav > li > a  {
 	color: $green;
@@ -265,6 +323,10 @@ input {
 	border-radius: 0px;
 }
 
+.input-group {
+	width: 100%;
+}
+
 ::-webkit-input-placeholder { /* WebKit browsers */
     color: $grey;
 }
@@ -296,7 +358,7 @@ input[type=checkbox] + label {
 button {
 	
 	&#filters-button, &#search-button {
-		height: 3.75em;
+		height: 3.45em;
 		border-radius: 0px;
 	}
 	
@@ -375,6 +437,19 @@ button {
 			background-color: $white;
 		}
 	}
+
+	&.navbar-toggle {
+		position: relative;
+		float: right;
+		padding: 9px 10px;
+		margin-top: 8px;
+		margin-right: 15px;
+		margin-bottom: 8px;
+		background-color: transparent;
+		background-image: none;
+		border: 1px solid transparent;
+		border-radius: 4px;
+	}
 }
 
 // Badges
@@ -447,5 +522,15 @@ td {
 	.navbar-collapse {
 		width: 100%;
 		text-align: center;
+	}
+
+	.collapse {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.navbar-toggle {
+		display: none;
 	}
 }

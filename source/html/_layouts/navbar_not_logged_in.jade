@@ -2,16 +2,15 @@ include ../../content/images.jade
 include ../../content/links.jade
 
 .navbar.navbar-default.navbar-fixed-top(role='navigation')
-    .lge-container
+    .container
         .navbar-header
           button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
             span.sr-only Toggle navigation
             span.icon-bar
             span.icon-bar   
             span.icon-bar
-        ul.nav.navbar-nav
-          li
-            +image-teammentor-logo__default         
+        ul(class="nav navbar-nav")
+          +image-teammentor-logo__default         
         .navbar-collapse.collapse
-          ul.nav.navbar-nav.navbar-right
+          ul.navbar-right
             +links-navbar__not_logged_in                   
