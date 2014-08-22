@@ -490,6 +490,10 @@ a {
 	&.action:hover, &.action:active {
 		color: $dark-green;
 	}
+
+	&.list-group-item {
+		color: $dark-grey;
+	}
 }
 
 @font-face {
@@ -536,11 +540,9 @@ input {
 	font-size: 1.25em;
 	height: 3em;
 	border-radius: 0px;
-	max-width: 100%;
 }
 
 .input-group {
-	width: 100%;
 	position: relative;
 	display: table;
 	border-collapse: separate;
