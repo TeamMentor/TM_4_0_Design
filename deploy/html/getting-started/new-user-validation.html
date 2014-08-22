@@ -24,78 +24,65 @@
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <title>TEAM Mentor 4.0 (Html version)</title>
-    <!-- Bootstrap core CSS-->
-    <link href="/deploy/css/zz-bootstrap.css" rel="stylesheet">
-    <!-- Custom Styles-->
+    <!-- Normalize-->
     <link href="/deploy/css/normalize.css" rel="stylesheet">
+    <!-- Bootstrap core CSS-->
+    <link href="/deploy/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
   <body>
-    <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div id="application">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar">  </span><span class="icon-bar"></span></button>
-        </div>
-        <ul class="nav navbar-nav"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
-        </ul>
-        <div class="navbar-collapse collapse">
-          <ul class="navbar-right"><ul>
-<li><a href="/deploy/html/home/help.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
-</ul>
-
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div id="application" class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div role="alert" class="alert alert-warning alert-dismissible">
-            <button type="button" data-dismiss="alert" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>Error/Validation messages go here
+        <div class="row">
+          <div class="column-6">
+            <div role="alert" class="alert alert-warning alert-dismissible">
+              <button type="button" data-dismiss="alert" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>Error/Validation messages go here
+            </div>
+            <h4 class="grey">Sign Up</h4>
+            <p>Complete this form and get access to the worlds largest repository of secure software development knowledge.</p><br>
+            <form id="sign-up-form" role="form">
+              <div class="form-group">
+                <label for="new-user-username">Username</label>
+                <input id="new-user-username" type="username" placeholder="Username" class="form-control">
+              </div><br>
+              <div class="form-group">
+                <label for="new-user-password">Password</label>
+                <input id="new-user-password" type="password" placeholder="Password" class="form-control">
+              </div><br>
+              <div class="form-group">
+                <label for="new-user-confirm-password">Confirm Password</label>
+                <input id="new-user-confirm-password" type="password" placeholder="Confirm Password" class="form-control">
+              </div><br>
+              <div class="form-group">
+                <label for="new-user-email">Email Address</label>
+                <input id="new-user-email" type="username" placeholder="Email Address" class="form-control">
+              </div><br><a href="/deploy/html/home/main-app-view.html">
+                <button type="button" class="btn-action btn-submit btn-block">Sign Up</button></a>
+            </form><br><br>
           </div>
-          <h3 class="grey">Sign Up</h3>
-          <p>Complete this form and get access to the worlds largest repository of secure software development knowledge.</p><br>
-          <form id="sign-up-form" role="form">
-            <div class="form-group">
-              <label for="new-user-username">Username</label>
-              <input id="new-user-username" type="username" placeholder="Username" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="new-user-password">Password</label>
-              <input id="new-user-password" type="password" placeholder="Password" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="new-user-confirm-password">Confirm Password</label>
-              <input id="new-user-confirm-password" type="password" placeholder="Confirm Password" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="new-user-email">Email Address</label>
-              <input id="new-user-email" type="username" placeholder="Email Address" class="form-control">
-            </div><a href="/deploy/html/home/main-app-view.html">
-              <button type="button" class="btn-action btn-submit btn-block">Sign Up</button></a>
-          </form><br><br>
-        </div>
-        <div class="col-md-6">
-          <h3 class="grey">Login</h3>
-          <p>Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?</p><br>
-          <form id="login-form" role="form">
-            <div class="form-group">
-              <label for="new-user-username">Username</label>
-              <input id="new-user-username" type="username" placeholder="Username" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="new-user-password">Password</label>
-              <input id="new-user-password" type="password" placeholder="Password" class="form-control">
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <button type="submit" class="btn-action btn-submit btn-block">Login</button>
+          <div class="column-5">
+            <h4 class="grey">Login</h4>
+            <p>Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?</p><br>
+            <form id="login-form" role="form">
+              <div class="form-group">
+                <label for="new-user-username">Username</label>
+                <input id="new-user-username" type="username" placeholder="Username" class="form-control">
+              </div><br>
+              <div class="form-group">
+                <label for="new-user-password">Password</label>
+                <input id="new-user-password" type="password" placeholder="Password" class="form-control">
+              </div><br>
+              <div class="row">
+                <div class="column-5">
+                  <button type="submit" class="btn-action btn-submit btn-block">Login</button>
+                </div>
+                <div class="column-5">
+                  <button type="submit" class="btn-action btn-submit btn-block">Forgot password?</button>
+                </div>
               </div>
-              <div class="col-md-6">
-                <button type="submit" class="btn-action btn-submit btn-block">Forgot your password?</button>
-              </div>
-            </div>
-          </form><br><br>
+            </form><br><br>
+          </div>
         </div>
       </div>
     </div>

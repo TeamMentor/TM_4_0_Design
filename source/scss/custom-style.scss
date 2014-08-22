@@ -36,10 +36,6 @@ body {
 	@extend .font-stack
 }
 
-#application {
-	margin-top: $nav-padding-top;
-}
-
 #article-pane {
 	padding-bottom: 40px;
 }
@@ -60,6 +56,11 @@ body {
 #about-us {
 	padding-top: 40px;
 	padding-bottom: 40px;
+}
+
+#application {
+	margin-top: $nav-padding-top;
+	width: 100%;
 }
 
 #calltoaction {
@@ -102,44 +103,48 @@ body {
 }
 
 .column-1, .column-2, .column-3, .column-4, .column-5, .column-6, .column-7, .column-8, .column-9, .column-10, .column-11, .column-12 {
-    float: left;
-  }
-  .column-12 {
-    width: 100%;
-  }
-  .column-11 {
-    width: 91.66666667%;
-  }
-  .column-10 {
-    width: 83.33333333%;
-  }
-  .column-9 {
-    width: 75%;
-  }
-  .column-8 {
-    width: 66.66666667%;
-  }
-  .column-7 {
-    width: 58.33333333%;
-  }
-  .column-6 {
-    width: 50%;
-  }
-  .column-5 {
-    width: 41.66666667%;
-  }
-  .column-4 {
-    width: 33.33333333%;
-  }
-  .column-3 {
-    width: 25%;
-  }
-  .column-2 {
-    width: 16.66666667%;
-  }
-  .column-1 {
-    width: 8.33333333%;
-  }
+	float: left;
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+ }
+.column-12 {
+	width: 100%;
+}
+.column-11 {
+	width: 91.66666667%;
+}
+.column-10 {
+	width: 83.33333333%;
+}
+.column-9 {
+	width: 75%;
+}
+.column-8 {
+	width: 66.66666667%;
+}
+.column-7 {
+	width: 58.33333333%;
+}
+.column-6 {
+	width: 50%;
+}
+.column-5 {
+	width: 41.66666667%;
+}
+.column-4 {
+	width: 33.33333333%;
+}
+.column-3 {
+	width: 25%;
+}
+.column-2 {
+	width: 16.66666667%;
+}
+.column-1 {
+	width: 8.33333333%;
+}
 
 .container {
   padding-right: 15px;
@@ -163,6 +168,8 @@ body {
 .row {
   margin-right: -15px;
   margin-left: -15px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .clearfix:before,
@@ -211,6 +218,17 @@ body {
 .panel-body:after,
 .modal-footer:after {
   clear: both;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
 }
 
 
@@ -435,6 +453,7 @@ input {
 	font-size: 1.25em;
 	height: 3em;
 	border-radius: 0px;
+	max-width: 96.5%;
 }
 
 .input-group {
@@ -565,6 +584,11 @@ button {
 		border: 1px solid transparent;
 		border-radius: 4px;
 	}
+
+	&.close {
+		background: transparent;
+		outline: none;
+	}
 }
 
 // Badges
@@ -580,6 +604,18 @@ button {
 }
 
 // Alerts and Warnings
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	font-weight: 700;
+}
+
+.alert-dismissable {
+	padding-right: 35px;
+}
 
 .alert-warning {
 	color: $green;

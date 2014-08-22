@@ -1,46 +1,53 @@
 extends ../_layouts/page_not_logged_in.jade
 block content
-    #application.container
-      .row
-        .col-md-6
-          h3.grey Sign Up
-          p
-            | Complete this form and get access to the worlds largest repository of secure software development knowledge.
-          br
-          form#sign-up-form(role='form')
-            .form-group
-              label(for='new-user-username') Username
-              input#new-user-username.form-control(type='username', placeholder='Username')
-            .form-group
-              label(for='new-user-password') Password
-              input#new-user-password.form-control(type='password', placeholder='Password')
-            .form-group
-              label(for='new-user-confirm-password') Confirm Password
-              input#new-user-confirm-password.form-control(type='password', placeholder='Confirm Password')
-            .form-group
-              label(for='new-user-email') Email Address
-              input#new-user-email.form-control(type='email', placeholder='Email Address')
-            a(href='new-user-validation.html')
-                button.btn-action.btn-submit.btn-block(type='button') Sign Up
-          br
-          br
-        .col-md-6
-          h3.grey Login
-          p
-            | Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?
-          br
-          form#login-form(role='form')
-            .form-group
-              label(for='new-user-username') Username
-              input#new-user-username.form-control(type='username', placeholder='Username')
-            .form-group
-              label(for='new-user-password') Password
-              input#new-user-password.form-control(type='password', placeholder='Password')
-            .row
-              .col-md-6
-                button.btn-action.btn-submit.btn-block(type='submit') Login
-              .col-md-6
-                a(href='returning-user-forgot-password.html')
-                    button.btn-action.btn-submit.btn-block(type='button') Forgot your password?
-          br
-          br
+    #application
+      .container
+        .row
+          .column-6
+            h4.grey Sign Up
+            p
+              | Complete this form and get access to the worlds largest repository of secure software development knowledge.
+            br
+            form#sign-up-form(role='form')
+              .form-group
+                label(for='new-user-username') Username
+                input#new-user-username.form-control(type='username', placeholder='Username')
+              br
+              .form-group
+                label(for='new-user-password') Password
+                input#new-user-password.form-control(type='password', placeholder='Password')
+              br
+              .form-group
+                label(for='new-user-confirm-password') Confirm Password
+                input#new-user-confirm-password.form-control(type='password', placeholder='Confirm Password')
+              br
+              .form-group
+                label(for='new-user-email') Email Address
+                input#new-user-email.form-control(type='email', placeholder='Email Address')
+              br
+              a(href='new-user-validation.html')
+                  button.btn-action.btn-submit.btn-block(type='button') Sign Up
+            br
+            br
+          .column-5
+            h4.grey Login
+            p
+              | Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?
+            br
+            form#login-form(role='form')
+              .form-group
+                label(for='new-user-username') Username
+                input#new-user-username.form-control(type='username', placeholder='Username')
+              br
+              .form-group
+                label(for='new-user-password') Password
+                input#new-user-password.form-control(type='password', placeholder='Password')
+              br
+              .row
+                .column-5
+                  button.btn-action.btn-submit.btn-block(type='submit') Login
+                .column-5
+                  a(href='returning-user-forgot-password.html')
+                      button.btn-action.btn-submit.btn-block(type='button') Forgot password?
+            br
+            br
