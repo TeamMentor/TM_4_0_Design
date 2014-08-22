@@ -254,7 +254,7 @@ body {
 				text-transform: uppercase;
 				letter-spacing: 1px;
 				font-weight: 700;
-				font-size: 0.95em;
+				font-size: 1em;
 				color: $green;
 				text-align: center !important;
 
@@ -350,10 +350,26 @@ h1 {
 	font-weight: 700;
 }
 
+h2 {
+	font-size: 2.5em;
+}
+
 h1, h2 {
 	@extend .font-stack;
 	line-height: 1.5em;
 	font-weight: 700;
+}
+
+h3 {
+	font-size: 2em;
+}
+
+h4 {
+	font-size: 1.1em;
+}
+
+h5 {
+	font-size: 1.05em;
 }
 
 h3, h4, h5 {
@@ -361,7 +377,8 @@ h3, h4, h5 {
 }
 
 p, li { 
-	font-size: 1.15em;
+	font-size: 1em;
+	line-height: 1.5em;
 	color: $dark-grey;
 }
 
