@@ -29,6 +29,10 @@ $nav-padding-top: 120px;
 
 // Layout and Structure
 
+html {
+    font-size: 62.5%;
+}
+
 body {
 	max-width: 100%;
 	overflow-x: hidden;
@@ -102,50 +106,111 @@ body {
 }
 
 .column-1, .column-2, .column-3, .column-4, .column-5, .column-6, .column-7, .column-8, .column-9, .column-10, .column-11, .column-12 {
-	float: left;
-	position: relative;
-	min-height: 1px;
-	padding-right: 15px;
-	padding-left: 15px;
- }
-.column-12 {
-	width: 100%;
-}
-.column-11 {
-	width: 91.66666667%;
-}
-.column-10 {
-	width: 83.33333333%;
-}
-.column-9 {
-	width: 75%;
-}
-.column-8 {
-	width: 66.66666667%;
-}
-.column-7 {
-	width: 58.33333333%;
-}
-.column-6 {
-	width: 50%;
-}
-.column-5 {
-	width: 41.66666667%;
-}
-.column-4 {
-	width: 33.33333333%;
-}
-.column-3 {
-	width: 25%;
-}
-.column-2 {
-	width: 16.66666667%;
-}
-.column-1 {
-	width: 8.33333333%;
+    float: left;
 }
 
-.container {
+.column-12 {
+    width: 100%;
+}
+
+.column-11 {
+    width: 91.66666667%;
+}
+
+.column-10 {
+    width: 83.33333333%;
+}
+
+.column-9 {
+    width: 75%;
+}
+
+.column-8 {
+    width: 66.66666667%;
+}
+
+.column-7 {
+    width: 58.33333333%;
+}
+
+.column-6 {
+    width: 50%;
+}
+
+.column-5 {
+    width: 41.66666667%;
+}
+
+.column-4 {
+    width: 33.33333333%;
+}
+
+.column-3 {
+    width: 25%;
+}
+
+.column-2 {
+    width: 16.66666667%;
+}
+
+.column-1 {
+    width: 8.33333333%;
+}
+
+
+.column-offset-12 {
+	margin-left: 100%;
+}
+
+  .column-offset-11 {
+	margin-left: 91.66666667%;
+}
+
+  .column-offset-10 {
+	margin-left: 83.33333333%;
+}
+
+  .column-offset-9 {
+	margin-left: 75%;
+}
+
+  .column-offset-8 {
+	margin-left: 66.66666667%;
+}
+
+  .column-offset-7 {
+	margin-left: 58.33333333%;
+}
+
+  .column-offset-6 {
+	margin-left: 50%;
+}
+
+  .column-offset-5 {
+	margin-left: 41.66666667%;
+}
+
+  .column-offset-4 {
+	margin-left: 33.33333333%;
+}
+
+  .column-offset-3 {
+	margin-left: 25%;
+}
+
+  .column-offset-2 {
+	margin-left: 16.66666667%;
+}
+
+  .column-offset-1 {
+	margin-left: 8.33333333%;
+}
+
+  .column-offset-0 {
+	margin-left: 0;
+}
+
+container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -174,8 +239,6 @@ body {
 .clearfix:after,
 .container:before,
 .container:after,
-.container-fluid:before,
-.container-fluid:after,
 .row:before,
 .row:after,
 .form-horizontal .form-group:before,
@@ -184,38 +247,23 @@ body {
 .btn-toolbar:after,
 .btn-group-vertical > .btn-group:before,
 .btn-group-vertical > .btn-group:after,
-.nav:before,
-.nav:after,
 .navbar:before,
 .navbar:after,
 .navbar-header:before,
 .navbar-header:after,
 .navbar-collapse:before,
-.navbar-collapse:after,
-.pager:before,
-.pager:after,
-.panel-body:before,
-.panel-body:after,
-.modal-footer:before,
-.modal-footer:after {
-  display: table;
-  content: " ";
+.navbar-collapse:after {
+	display: table;
+	content: " ";
 }
+
 .clearfix:after,
 .container:after,
-.container-fluid:after,
 .row:after,
-.form-horizontal .form-group:after,
-.btn-toolbar:after,
-.btn-group-vertical > .btn-group:after,
-.nav:after,
 .navbar:after,
 .navbar-header:after,
-.navbar-collapse:after,
-.pager:after,
-.panel-body:after,
-.modal-footer:after {
-  clear: both;
+.navbar-collapse:after {
+	clear: both;
 }
 
 .sr-only {
@@ -248,14 +296,20 @@ body {
 
 .navbar {
 	background-color: $white;
-	height: 70px;
+	min-height: 50px;
 	border-bottom: 1px solid $grey;
 	display: inline-block;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+
+	&.container {
+		margin-right: 0px;
+		margin-left: 0px;
+	}
 
 	ul {
 		list-style-type: none;
 		display: inline-block;
-		font-size: 1em;
 
 		&.brand {
 			padding: 5px;
@@ -270,7 +324,7 @@ body {
 				text-transform: uppercase;
 				letter-spacing: 1px;
 				font-weight: 700;
-				font-size: 1em;
+				font-size: 0.95em;
 				color: $green;
 				text-align: center !important;
 
@@ -284,10 +338,27 @@ body {
 
 .navbar-fixed-top {
 	position: fixed;
+	top: 0;
 	right: 0;
 	left: 0;
 	z-index: 1030;
 	border-width: 0 0 1px;
+	border-radius: 0px;
+
+	.navbar-collapse {
+		padding-right: 0px;
+		padding-left: 0px;
+		width: auto;
+		border-top: 0px none;
+		box-shadow: none;
+
+		&.collapse {
+			display: block !important;
+			height: auto !important;
+			padding-bottom: 0px;
+			overflow: visible !important;
+		}
+	}
 }
 
 .navbar-toggle {
@@ -374,6 +445,7 @@ h3 {
 h4 {
 	font-size: 18px;
 	font-weight: bold;
+	line-height: 1.5em;
 }
 
 h5 {
@@ -386,9 +458,14 @@ h6 {
 }
 
 p, li { 
-	font-size: 1em;
+	font-size: 1.15em;
 	line-height: 1.5em;
 	color: $dark-grey;
+}
+
+ul, ol {
+	margin-top: 0px;
+	margin-bottom: 10px;
 }
 
 hr {
