@@ -1,12 +1,11 @@
 extends ../_layouts/page_not_logged_in.jade
 block content
-    #application
-      .container
-        .row
-          .column-6
-            h4.grey Sign Up
-            p
-              | Complete this form and get access to the worlds largest repository of secure software development knowledge.
+    #application.lge-container
+      .row
+        .column-6
+          .container
+            h3.grey Sign Up
+            p Complete this form and get access to the worlds largest repository of secure software development knowledge.
             br
             form#sign-up-form(role='form')
               .form-group
@@ -29,10 +28,10 @@ block content
                   button.btn-action.btn-submit.btn-block(type='button') Sign Up
             br
             br
-          .column-5
-            h4.grey Login
-            p
-              | Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?
+        .column-6
+          .container
+            h3.grey Login
+            p Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?
             br
             form#login-form(role='form')
               .form-group
@@ -44,9 +43,9 @@ block content
                 input#new-user-password.form-control(type='password', placeholder='Password')
               br
               .row
-                .column-5
+                .column-6.container
                   button.btn-action.btn-submit.btn-block(type='submit') Login
-                .column-5
+                .column-6.container
                   a(href='returning-user-forgot-password.html')
                       button.btn-action.btn-submit.btn-block(type='button') Forgot password?
             br
