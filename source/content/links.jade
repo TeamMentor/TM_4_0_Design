@@ -7,17 +7,8 @@
 - var link_article_new_window       = articles + '/article-new-window-view.html'
 - var link_app_keyword_search       = home     + '/app-keyword-search.html'
 - var link_fundamentals_of_security = articles + '/fundamentals-of-security.html'
-
-
-mixin links-navbar__landing-page
-    li
-        a(href='#{landing_pages}/about.html'   ) About
-    li
-        a(href='#{landing_pages}/features.html') Features
-    li
-        a(href='#{getting_started}/index.html' ) Get Started
             
-mixin links-navbar__landing-page_MD
+mixin links-navbar__landing-page
     :markdown
         * [About](#{landing_pages}/about.html)
         * [Features](#{landing_pages}/features.html)

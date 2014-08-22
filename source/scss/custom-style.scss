@@ -7,6 +7,25 @@ $grey: #aaaaaa;
 $dark-grey: #444444;
 $nav-padding-top: 120px;
 
+.white {
+	color: #FFFFFF;
+}
+
+.green {
+	color: #8aaf3e;
+}
+
+.dark-green {
+	color: #49661f;
+}
+
+.grey {
+	color: #aaaaaa;
+}
+
+.dark-grey {
+	color: #444444;
+}
 
 // Layout and Structure
 
@@ -92,7 +111,7 @@ body {
 	font-size: 1.15em;
 }
 
-// Navigation
+// Navigation - ******** STILL NEED TO DO THIS AREA *********
 
 .navbar {
 	background-color: $white;
@@ -100,14 +119,36 @@ body {
 	font-size: 0.8em;
 	border-bottom: 1px solid $grey;
 	display: inline-block;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 700;
+
+	ul {
+		list-style-type: none;
+		display: inline-block;
+		padding-top: 15px;
+
+		li {
+			display: inline-block;
+			padding-right: 40px;
+
+			a, :visited {
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-weight: 700;
+				color: $green;
+				text-align: center !important;
+
+				&:hover, &:active {
+					color: $dark-green;
+				}
+			}
+		}
+	}
 }
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-	color: $dark-grey;
-	background-color: $white;
+.navbar-fixed-top {
+	position: fixed;
+	right: 0;
+	left: 0;
+	z-index: 1030;
 }
 
 .navbar-inverse .navbar-toggle {
@@ -179,14 +220,13 @@ hr {
 }
 
 a {
-	color: $dark-grey;
 	text-decoration: none;
 
-	:visited, :hover, :active {
+	&:visited, &:hover, &:active {
 		text-decoration: none;
 	}
 
-	.action, .action:visited {
+	&.action, &.action:visited {
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		font-weight: 700;
@@ -194,7 +234,7 @@ a {
 		text-align: center !important;
 	}
 
-	.action:hover, .action:active {
+	&.action:hover, &.action:active {
 		color: $dark-green;
 	}
 }
@@ -204,19 +244,18 @@ a {
 	font-size: 1.5em;
 	color: $green;
 
-	:visited {
+	&:visited {
 		color: $green;
 	}
 
-	:hover, :active {
+	&:hover, &:active {
 		color: $dark-green;
 	}
 
-	.small {
+	&.small {
 		font-size: 1em;
 	}
 }
-
 
 // Input Groups
 
@@ -256,16 +295,16 @@ input[type=checkbox] + label {
 
 button {
 	
-	#filters-button, #search-button {
+	&#filters-button, &#search-button {
 		height: 3.75em;
 		border-radius: 0px;
 	}
-
-	#search-button {
+	
+	&#search-button {
 		border-left: none;
 	}
 
-	.btn-landing-page {
+	&.btn-landing-page {
 		position: relative;
 		padding: 25px 80px;
 		max-width: 100%;
@@ -281,7 +320,7 @@ button {
 		-moz-transition: all 0.3s;
 		transition: all 0.3s;
 
-		:after {
+		&:after {
 			content: '';
 			position: absolute;
 			z-index: -1;
@@ -290,78 +329,58 @@ button {
 			transition: all 0.3s;
 		}
 
-		:hover, :active {
-			color: $white;
+		&:hover, &:active {
+			color: $white !important;
 			background-color: $green;
 		}
 	}
 
-	.btn-block {
+	&.btn-block {
 		width: 100%;
 	}
-}
 
-.btn-action {
-	background: none;
-	cursor: pointer;
-	display: inline-block;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 700;
-	outline: none;
-	position: relative;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-	max-width: 100%;
-	color: $green;
-}
+	&.btn-action {
+		display: inline-block;
+		position: relative;
+		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 1px;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		transition: all 0.3s;
+		max-width: 100%;
+		color: $green;
+		background: none;
 
-.btn-action:hover {
-	color: $dark-green !important;
-}
-
-.btn-submit {
-	border: 1px solid $green;
-	border-radius: 0px;
-	color: $green;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
-
-.btn-application {
-	color: $green;
-	background-color: $white;
-	border: 1px solid $grey;
-}
-
-	.btn-application:hover {
-		color: $dark-green;
-		background-color: $white;
+		&:hover {
+			color: $dark-green !important;
+		}
 	}
+
+	&.btn-submit {
+		border: 1px solid $green;
+		border-radius: 0px;
+		color: $green;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	&.btn-application {
+		color: $green;
+		background-color: $white;
+		border: 1px solid $grey;
+
+		&:hover {
+			color: $dark-green;
+			background-color: $white;
+		}
+	}
+}
 
 // Badges
 
 .badge {
 	background-color: $grey;
-}
-
-// Panels
-
-.panel {
-	box-shadow: none;
-}
-
-.panel-group .panel {
-	margin-bottom: -10px;
-}
-
-.panel-collapse {
-	margin-top: -20px;
-}
-
-.panel-group .panel-heading + .panel-collapse .panel-body {
-	border-top: none;
 }
 
 // List Group and List Group Items
@@ -405,11 +424,7 @@ td {
 		margin-top: 2px !important;
 	}
 
-	h1 {
-		font-size: 2em;
-	}
-
-	h2 {
+	h1, h2 {
 		font-size: 2em;
 	}
 
