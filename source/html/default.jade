@@ -2,57 +2,53 @@ extends _layouts/page_home.jade
 block content    
     #application
       div(class="row")
-        div(class="lge-container")
-          div(class="col-sm-3")
-          div(class="col-sm-6")
-            div(class="row")
-              div(class="col-lg-12")
-                h3(class="light-grey") TEAM Mentor 4.0 Design..
-                br
-                p This is a staging site for the TEAM Mentor 4.0 design.
-                br
-                hr
-                br
-                h4(class="grey") Current pages:
-                div(class="list-group")
-                  a.list-group-item(href='home/app-keyword-search.html'                                  ) app-keyword-search.html
-                  a.list-group-item(href='articles/article-new-window-view.html'                         ) article-new-window-view.html
-                  a.list-group-item(href='home/filters-active.html'                                      ) filters-active.html
-                  a.list-group-item(href='user/forgot-password-completed.html'                           ) forgot-password-completed.html
-                  a.list-group-item(href='articles/fundamentals-of-security.html'                        ) fundamentals-of-security.html
-                  a.list-group-item(href='getting-started/new-user-validation.html'                      ) getting-started-new-user-validation.html
-                  a.list-group-item(href='getting-started/returning-user-forgot-password.html'           ) getting-started-returning-user-forgot-password.html
-                  a.list-group-item(href='getting-started/returning-user-validation.html'                ) getting-started-returning-user-validation.html
-                  a.list-group-item(href='getting-started/index.html'                                    ) getting-started.html
-                  a.list-group-item(href='home/help.html'                                                ) help.html
-                  a.list-group-item(href='landing-pages/index.html'                                      ) landing-page-index.html
-                  a.list-group-item(href='landing-pages/about.html'                                      ) landing-page-about.html
-                  a.list-group-item(href='landing-pages/features.html'                                   ) landing-page-features.html
-                  a.list-group-item(href='home/main-app-view.html'                                       ) main-app-view.html
-                  a.list-group-item(href='articles/my-articles-edit.html'                                ) my-articles-edit.html
-                  a.list-group-item(href='articles/my-articles.html'                                     ) my-articles.html
-                  a.list-group-item(href='home/navigate.html'                                            ) navigate.html
-                  a.list-group-item(href='articles/owasp.html'                                           ) owasp.html
-                  a.list-group-item(href='home/principles-standards.html'                                ) principles-standards.html
-                  a.list-group-item(href='user/returning-user-forgot-password.html'                      ) returning-user-forgot-password.html
-                  a.list-group-item(href='user/returning-user-login.html'                                ) returning-user-login.html
-                  a.list-group-item(href='user/returning-user-validation.html'                           ) returning-user-validation.html
-                  a.list-group-item(href='user/user-add-filter.html'                                     ) user-add-filter.html
-                  a.list-group-item(href='user/user-edit.html'                                           ) user-edit.html
-                  a.list-group-item(href='user/user-new-password.html'                                   ) user-new-password.html
-                  a.list-group-item(href='user/user-remove-filter.html'                                  ) user-remove-filter.html
-                  a.list-group-item(href='user/user.html'                                                ) user.html
-                br
-                hr
-                br
-                h4(class="grey") Git repo:
-                p Git repo with source files (auto synced with this Azure site)
-                br
-                div(class="list-group")
-                  a.list-group-item(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
-                br
-                br
-                br
-                br
-                br
-          div(class="col-sm-3")
+        .column-offset-3.column-6
+          h3(class="grey") TEAM Mentor 4.0 Design..
+          br
+          p This is a staging site for the TEAM Mentor 4.0 design.
+          br
+          hr
+          br
+          h4(class="grey") Current pages:
+          div(class="list-group")
+            a.list-group-item(href='home/app-keyword-search.html'                                  ) app-keyword-search.html
+            a.list-group-item(href='articles/article-new-window-view.html'                         ) article-new-window-view.html
+            a.list-group-item(href='home/filters-active.html'                                      ) filters-active.html
+            a.list-group-item(href='user/forgot-password-completed.html'                           ) forgot-password-completed.html
+            a.list-group-item(href='articles/fundamentals-of-security.html'                        ) fundamentals-of-security.html
+            a.list-group-item(href='getting-started/new-user-validation.html'                      ) getting-started-new-user-validation.html
+            a.list-group-item(href='getting-started/returning-user-forgot-password.html'           ) getting-started-returning-user-forgot-password.html
+            a.list-group-item(href='getting-started/returning-user-validation.html'                ) getting-started-returning-user-validation.html
+            a.list-group-item(href='getting-started/index.html'                                    ) getting-started.html
+            a.list-group-item(href='home/help.html'                                                ) help.html
+            a.list-group-item(href='landing-pages/index.html'                                      ) landing-page-index.html
+            a.list-group-item(href='landing-pages/about.html'                                      ) landing-page-about.html
+            a.list-group-item(href='landing-pages/features.html'                                   ) landing-page-features.html
+            a.list-group-item(href='home/main-app-view.html'                                       ) main-app-view.html
+            a.list-group-item(href='articles/my-articles-edit.html'                                ) my-articles-edit.html
+            a.list-group-item(href='articles/my-articles.html'                                     ) my-articles.html
+            a.list-group-item(href='home/navigate.html'                                            ) navigate.html
+            a.list-group-item(href='articles/owasp.html'                                           ) owasp.html
+            a.list-group-item(href='home/principles-standards.html'                                ) principles-standards.html
+            a.list-group-item(href='user/returning-user-forgot-password.html'                      ) returning-user-forgot-password.html
+            a.list-group-item(href='user/returning-user-login.html'                                ) returning-user-login.html
+            a.list-group-item(href='user/returning-user-validation.html'                           ) returning-user-validation.html
+            a.list-group-item(href='user/user-add-filter.html'                                     ) user-add-filter.html
+            a.list-group-item(href='user/user-edit.html'                                           ) user-edit.html
+            a.list-group-item(href='user/user-new-password.html'                                   ) user-new-password.html
+            a.list-group-item(href='user/user-remove-filter.html'                                  ) user-remove-filter.html
+            a.list-group-item(href='user/user.html'                                                ) user.html
+          br
+          hr
+          br
+          h4(class="grey") Git repo:
+          p Git repo with source files (auto synced with this Azure site)
+          br
+          div(class="list-group")
+            a.list-group-item(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
+          br
+          br
+          br
+          br
+          br
+    div(class="col-sm-3")

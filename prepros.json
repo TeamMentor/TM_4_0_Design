@@ -509,42 +509,16 @@
         "autoprefixer": false
       }
     },
-    "2e61fd13": {
-      "id": "2e61fd13",
+    "6f670854": {
+      "id": "6f670854",
       "pid": "651ae24a",
-      "name": "zz-bootstrap.scss",
-      "input": "source/scss/zz-bootstrap.scss",
+      "name": "navbar_home.jade",
+      "input": "source/html/_layouts/navbar_home.jade",
       "customOutput": false,
-      "type": "Scss",
+      "type": "Jade",
       "config": {
         "autoCompile": true,
-        "lineNumbers": false,
-        "unixNewlines": false,
-        "sourcemaps": false,
-        "debug": false,
-        "compass": false,
-        "fullCompass": false,
-        "outputStyle": "expanded",
-        "autoprefixer": false
-      }
-    },
-    "30beac85": {
-      "id": "30beac85",
-      "pid": "651ae24a",
-      "name": "zz-bootstrap-theme.scss",
-      "input": "source/scss/zz-bootstrap-theme.scss",
-      "customOutput": false,
-      "type": "Scss",
-      "config": {
-        "autoCompile": true,
-        "lineNumbers": false,
-        "unixNewlines": false,
-        "sourcemaps": false,
-        "debug": false,
-        "compass": false,
-        "fullCompass": false,
-        "outputStyle": "expanded",
-        "autoprefixer": false
+        "pretty": true
       }
     }
   },
@@ -607,7 +581,23 @@
         "7c350c6a",
         "f1ed1d0f",
         "a9478804",
-        "771159e8"
+        "771159e8",
+        "9165d5ed",
+        "80ea5c70",
+        "b68bfabe",
+        "2bf5ca70",
+        "d28261c5",
+        "00c5636d",
+        "a4ca4be1",
+        "dfae812f",
+        "d52c18d4",
+        "5a03a20f",
+        "a8f743f8",
+        "1ad10f64",
+        "547ccc78",
+        "832936aa",
+        "fed1db7d",
+        "841283a6"
       ]
     },
     "5ac3de02": {
@@ -697,7 +687,8 @@
         "a9478804",
         "771159e8",
         "fed1db7d",
-        "841283a6"
+        "841283a6",
+        "6f670854"
       ]
     },
     "4f5d437c": {
@@ -737,30 +728,8 @@
         "a9478804",
         "771159e8",
         "fed1db7d",
-        "841283a6"
-      ]
-    },
-    "6f670854": {
-      "id": "6f670854",
-      "pid": "651ae24a",
-      "path": "source/html/_layouts/navbar_home.jade",
-      "parents": [
-        "9165d5ed",
-        "80ea5c70",
-        "b68bfabe",
-        "2bf5ca70",
-        "d28261c5",
-        "00c5636d",
-        "a4ca4be1",
-        "dfae812f",
-        "d52c18d4",
-        "a8f743f8",
-        "5a03a20f",
-        "1ad10f64",
-        "547ccc78",
-        "832936aa",
-        "fed1db7d",
-        "841283a6"
+        "841283a6",
+        "6f670854"
       ]
     },
     "34dd06aa": {

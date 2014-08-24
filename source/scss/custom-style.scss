@@ -315,13 +315,13 @@ container {
 		display: inline-block;
 
 		&.brand {
-			padding: 5px;
+			padding-top: 15px !important;
 		}
 
 		li {
 			display: inline-block;
 			padding-right: 40px;
-			padding-top: 20px;
+			padding-top: 30px;
 
 			a, :visited {
 				text-transform: uppercase;

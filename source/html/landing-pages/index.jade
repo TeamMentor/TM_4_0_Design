@@ -2,47 +2,49 @@ extends ../_layouts/page_landing.jade
 block content
 
     #usp
-      .container
-        h1 Instant resources that bridge the gap between developer questions and technical solutions
-        br
-        br
-        a(href='../getting-started/index.html')
-          button.btn-landing-page Start your free trial today
+      .row
+        .column-offset-2.column-8
+          h1 Instant resources that bridge the gap between developer questions and technical solutions
+          br
+          br
+          a(href='../getting-started/index.html')
+            button.btn-landing-page Start your free trial today
 
     #reasons
-      .container
-        h3.text-center.grey With TEAM Mentor, you can...
-        br
+      h3.text-center.grey With TEAM Mentor, you can...
+      br
 
-        .row
-          .column-offset-2.column-2
-            img.img-responsive(src='/deploy/assets/icons/identify-fix.png', alt='Identify vulnerabilities and reducee time to fix them')
-          .column-7
-            br
-            br
-            br
-            h4.dark-grey FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow
+      .row
 
-        .row
-          .column-offset-2.column-2
-            img.img-responsive(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
-          .column-7
-            br
-            br
-            br
-            h4.dark-grey REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified
+        .column-offset-2.column-2
+          img.img-responsive(src='/deploy/assets/icons/identify-fix.png', alt='Identify vulnerabilities and reducee time to fix them')
+        .column-6
+          br
+          br
+          br
+          h4.dark-grey FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow
 
-        .row
-          .column-offset-2.column-2
-            img.img-responsive(src='/deploy/assets/icons/integrate.png', alt='REDUCE the number of vulnerabilities over time')
-          .column-7
-            br
-            br
-            h4.dark-grey EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organizatoin's security policies and coding best practices
-  
+      .row
+        .column-offset-2.column-2
+          img.img-responsive(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
+        .column-6
+          br
+          br
+          br
+          h4.dark-grey REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified
 
-    br
-    br
+      .row
+        .column-offset-2.column-2
+          img.img-responsive(src='/deploy/assets/icons/integrate.png', alt='REDUCE the number of vulnerabilities over time')
+        .column-6
+          br
+          br
+          br
+          h4.dark-grey EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organizatoin's security policies and coding best practices
+
+
+      br
+      br
     #clients
       .container
         h3.text-center.grey Our clients love us (and we think you will too!)
@@ -72,4 +74,5 @@ block content
 
     #footer
       .lge-container
-        img(src='/deploy/assets/logos/si-logo.png')
+        ul.brand
+          img(src='/deploy/assets/logos/si-logo.png')

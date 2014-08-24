@@ -354,13 +354,13 @@ container {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003317}}
 .navbar ul.brand {
-  padding: 5px;
+  padding-top: 15px !important;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003321}}
 .navbar ul li {
   display: inline-block;
   padding-right: 40px;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003326}}
 .navbar ul li a, .navbar ul li :visited {
