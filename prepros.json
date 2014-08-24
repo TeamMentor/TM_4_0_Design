@@ -508,18 +508,6 @@
         "outputStyle": "expanded",
         "autoprefixer": false
       }
-    },
-    "6f670854": {
-      "id": "6f670854",
-      "pid": "651ae24a",
-      "name": "navbar_home.jade",
-      "input": "source/html/_layouts/navbar_home.jade",
-      "customOutput": false,
-      "type": "Jade",
-      "config": {
-        "autoCompile": true,
-        "pretty": true
-      }
     }
   },
   "imports": {
@@ -581,23 +569,7 @@
         "7c350c6a",
         "f1ed1d0f",
         "a9478804",
-        "771159e8",
-        "9165d5ed",
-        "80ea5c70",
-        "b68bfabe",
-        "2bf5ca70",
-        "d28261c5",
-        "00c5636d",
-        "a4ca4be1",
-        "dfae812f",
-        "d52c18d4",
-        "5a03a20f",
-        "a8f743f8",
-        "1ad10f64",
-        "547ccc78",
-        "832936aa",
-        "fed1db7d",
-        "841283a6"
+        "771159e8"
       ]
     },
     "5ac3de02": {
@@ -687,8 +659,7 @@
         "a9478804",
         "771159e8",
         "fed1db7d",
-        "841283a6",
-        "6f670854"
+        "841283a6"
       ]
     },
     "4f5d437c": {
@@ -728,8 +699,7 @@
         "a9478804",
         "771159e8",
         "fed1db7d",
-        "841283a6",
-        "6f670854"
+        "841283a6"
       ]
     },
     "34dd06aa": {
@@ -784,6 +754,29 @@
         "47003501",
         "64f7ffbf",
         "86ec2dfc"
+      ]
+    },
+    "6f670854": {
+      "id": "6f670854",
+      "pid": "651ae24a",
+      "path": "source/html/_layouts/navbar_home.jade",
+      "parents": [
+        "80ea5c70",
+        "9165d5ed",
+        "b68bfabe",
+        "2bf5ca70",
+        "d28261c5",
+        "00c5636d",
+        "a4ca4be1",
+        "dfae812f",
+        "d52c18d4",
+        "a8f743f8",
+        "5a03a20f",
+        "1ad10f64",
+        "547ccc78",
+        "832936aa",
+        "fed1db7d",
+        "841283a6"
       ]
     }
   },
