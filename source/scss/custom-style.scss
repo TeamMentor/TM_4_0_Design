@@ -318,10 +318,17 @@ container {
 			padding-top: 15px !important;
 		}
 
+		&.nav-icons {
+			padding-top: 20px;
+		}
+
+		&.nav-text {
+			padding-top: 30px;
+		}
+
 		li {
 			display: inline-block;
 			padding-right: 40px;
-			padding-top: 30px;
 
 			a, :visited {
 				text-transform: uppercase;
@@ -543,6 +550,7 @@ input {
 	font-size: 1.25em;
 	height: 3em;
 	border-radius: 0px;
+	max-width: 96%;
 }
 
 .input-group {

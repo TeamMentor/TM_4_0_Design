@@ -1,8 +1,8 @@
 extends ../_layouts/page_not_logged_in.jade
 block content
-    #application.container
+    #application
       .row
-        .column-6.container
+        .column-offset-1.column-5
           h3.grey Sign Up
           p
             | Complete this form and get access to the worlds largest repository of secure software development knowledge.
@@ -23,7 +23,7 @@ block content
             button.btn-action.btn-submit.btn-block(type='submit') Submit
           br
           br
-        .column-6.container
+        .column-offset-1.column-4
           .alert.alert-warning.alert-dismissible(role='alert')
             button.close(type='button', data-dismiss='alert')
               span(aria-hidden='true') ×
