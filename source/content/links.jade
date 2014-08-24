@@ -27,15 +27,15 @@ mixin links-navbar__not_logged_in
         * [![Help](/deploy/assets/icons/help.png)](#{home}/help.html)
             
 mixin links-home__navigate
-    a(href='#{home}/attacks-vulnerabilities.html') 
-      h4.light-grey Attacks & Vulnerabilities
-    a(href='#{home}/principles-standards.html')
-      h4.light-grey Principals & Standards
-    a(href='#{articles}/my-articles.html')
-      h4.light-grey My Articles
-    a(href='#{articles}/my-search-items.html')
-      h4.light-grey My Search Items
-    
+    :markdown
+      [Attacks & Vulnerabilities](#{home}/attacks-vulnerabilities.html)
+
+      [Principles & Standards](#{home}/principles-standards.html)
+
+      [My Articles](#{home}/my-articles.html)
+      
+      [My Search Items](#{home}/my-search-items.html)
+
 mixin links_user_pages
     .col-sm-3
       a.action(href='user.html') User

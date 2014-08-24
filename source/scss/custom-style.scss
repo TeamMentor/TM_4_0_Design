@@ -479,6 +479,7 @@ ul, ol {
 }
 
 hr {
+	margin: 0 auto;
 	width: 70%;
 }
 
@@ -602,6 +603,7 @@ label {
 	display: inline-block;
 	margin-bottom: 5px;
 	font-weight: bold;
+	color: $dark-grey;
 }
 
 input[type=checkbox] + label {
@@ -770,6 +772,7 @@ button {
 	padding: 10px 15px;
 	margin-bottom: -1px;
 	background-color: #fff;
+	max-width: 100%;
 
 	&:first-child {
 		border-top-left-radius: 4px;
