@@ -2,14 +2,14 @@ extends ../_layouts/page_not_logged_in.jade
 block content
         #application
           .row
-            .col-md-offset-3.col-md-6
+            .column-offset-3.column-6
               .row.text-center
                 +links_user_pages
 
               br
               br
 
-              h4.light-grey Add Permanent Filter
+              h4.grey Add Permanent Filter
 
               form(role='form', action='user.html')
                 .form-group
@@ -104,7 +104,7 @@ block content
                       span.badge 14
                       input#type_5.css-checkbox(type='checkbox')
                       label.css-label(for='type_5', name='type_5') Option #5
-                button.btn-action.btn-block(type='submit')
+                button.btn-submit.btn-action.btn-block(type='submit')
                   | Ok, Done
                   span.glyphicon.glyphicon-ok.glyphicon-small
                 br

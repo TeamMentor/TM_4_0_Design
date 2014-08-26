@@ -2,16 +2,16 @@ extends ../_layouts/page_home.jade
 block content
     #application
       .row
-        .col-md-offset-3.col-md-6
+        .column-offset-3.column-6
           .row.text-center
             +links_user_pages
           br
           br
 
           .row
-            .col-sm-9
-              h4.light-grey Personal Details
-            .col-sm-3
+            .column-9
+              h4.grey Personal Details
+            .column-3
               br
               a.action(href='user-edit.html')
                 Edit
@@ -43,16 +43,16 @@ block content
           hr
 
           .row
-            .col-md-4
-              h4.light-grey Settings
+            .column-4
+              h4.grey Settings
               p
                 a(href='user-new-password.html') New Password
 
-            .col-md-4
-              h4.light-grey Permanent Filters
+            .column-4
+              h4.grey Permanent Filters
               p
                 a(href='user-add-filter.html') Add filter
               p
                 a(href='user-remove-filter.html') Remove filter
 
-            .col-md-4
+            .column-4

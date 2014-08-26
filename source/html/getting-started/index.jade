@@ -36,17 +36,15 @@ block content
             .form-group
               label(for='new-user-username') Username
               input#new-user-username.form-control(type='username', placeholder='Username')
-            br
+              br
             .form-group
               label(for='new-user-password') Password
               input#new-user-password.form-control(type='password', placeholder='Password')
+              br
+            a(href='/deploy/html/home/main-app-view.html')
+              button.btn-action.btn-submit.btn-block(type='submit') Login
             br
-            .form-group
-              .row
-                .column-6.container
-                  button.btn-action.btn-submit.btn-block(type='submit') Login
-                .column-6.container
-                  a(href='returning-user-forgot-password.html')
-                      button.btn-action.btn-submit.btn-block(type='button') Forgot password?
+            br
+            button.btn-action.btn-submit.btn-block(type='submit') Forgot your password?
           br
           br
