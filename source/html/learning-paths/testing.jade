@@ -1,0 +1,314 @@
+extends ../_layouts/page_home.jade
+
+block content
+	#application.lge-container
+		.row
+			.column-3.lge-container
+				.div(data-spay="affix", data-offset-top="60", data-offset-bottom="200")
+					h4.grey Exploitation
+					h4.dark-green Testing
+					h4.grey Prevention
+					h4.grey Courses
+					h4.grey Related Topics
+					br
+					br
+					br
+					br
+					br
+					br
+					br
+					br
+					br
+					br
+					br
+					br
+					br
+					br
+					br
+					.progress
+						.progress-bar(role='progressbar', aria-valuenow='30', aria-valuemin='0', aria-valuemax='100', style='width: 30%')
+			.column-6
+				h3.grey Testing
+				br
+
+				p How to test for Cross-Site Scripting. General black-box testing and code review methods.
+				br
+				hr
+				br
+
+				h4.dark-grey How to Test for XSS
+				br
+
+				p The How to Test for Cross-Site Scripting article describes the basic steps used to test for common Cross-Site Scripting vulnerabilities.
+				br
+
+				h5.dark-grey How to Test for Cross Site Scripting Vulnerabilities
+
+				p Cross site scripting (or XSS) is a well known HTML-related security vulnerability that commonly affects Internet clients through XSS vulnerable servers. A XSS bug in a web server allows an attacker to send malicious payload to a victim browser through the vulnerable server. Payloads may also execute in other HTTP clients not necessarily focused at browsing the web as long as they render HTML and execute any execute scripts.
+
+				p Below is a summary of steps needed for testing for XSS bugs
+
+				p
+					ul
+						li Step 1: Understand XSS attack scenarios
+						li Step 2: List high risk componentsandentry points
+						li Step 3: Start testing and exploring
+						li Step 4: Tune test case data
+
+				br
+				h5.dark-grey Step 1: Understand XSS Attack Scenarios
+
+				p There are two types of XSS: reflective and persistent. A reflective XSS bug occurs when the web server takes input from a visitor and automatically sends him back the input without checking if the data inputted contains a script. Thus, the input data is reflected to the visitor and executes at the visitor's browser. 
+
+				p A persistent XSS bug is when a script embedded in malicious data is stored in a persistent store such as database, a file, or other storing mechanism. The malicious data containing a script persists in the server. If the server application takes this stored content and sends it to the client without validating its contents, the script will be executed in the browser. 
+
+				p It is important to understand both XSS attack scenarios to know what to look at when testing.
+
+				br
+				h5.dark-grey  Step 2: List High Risk Components and Entry Points
+
+				p Identify high risk components
+
+				p The next step in testing for XSS bugs is to do an extensive and careful revision of components that take input data from Internet clients and use send it back to the client. In case of large web services, documentation such as design or architectural, if available, become real handy at this point. Testers need to think about what components reflect data to a web client (for reflective XSS) and store data which is later send to a web client (for persistent XSS). Common components that do this include: 
+
+				p
+					ul
+						li Search web pages
+						li Profile-related web pages
+						li Web forums
+						li Blogs
+						li RSS feeds
+						li HTML-based help browsers for thick clients 
+
+				p Look for code that writes HTML responses
+
+				p There are many different scripting functions that append HTML to the server response. Finding the server-side code that writes data out is the first step evaluating and finding potential XSS issues. Functions to write data to a response vary depending on the language and platform you're testing. Be certain that you understand all the relevant functions in the language you're using.
+
+				p Check for non-validated and unencoded data in responses
+
+				p Next, check what is being output by the mechanisms above. Even if the data written out by an application comes directly from the user and has not been specifically validated for format, if it is appropriately encoded, it can still be safe.  That said, the encoding must take the form of a whitelist of known-safe characters (generally only the alphanumerics), not a blacklist as is commonly attempted.
+
+				p Match high risk components with entry points
+
+				p Non-validated data comes from all of the application's entry points, not just the web. Be certain to cover all the possible sources of malicious data which might get passed to a client. Common data sources include:
+
+				p
+					ul
+						li Web forms
+						li URL contents
+						li Cookie contents
+						li Flash parameters
+						li SQL database query contents
+						li Web service data
+						li Graphical User Interface
+
+				p List the high risk variables in the application and their data sources to make sure that they are covered during review and testing.
+
+
+				br
+				h5.dark-grey  Step 3: Start Test and Exploring                                     
+
+				p During this step testing is focused at submitting basic XSS fuzz strings and observing how the application reacts, and then trying to display a simple alert box that proves the existence of an XSS bug.
+
+				p Start with a simple fuzz string
+
+				p Success in finding XSS bugs depends on whether the tester is able to store or reflect an HTML script in or through the server. In almost all cases scripts are included in between SCRIPT tags (other tags also worked as explained later). During this step, it is recommended to start exploring how the server application's high risk components react to tag related input. A good idea is to start testing a simple fuzz string like this one:
+
+				p '>;!--"><XYZ><=&{()}
+
+				p Then look for the string XYZ in server's response to see how the server processed the special script related characters. It might turn out that the server uses the string inside of a tag:
+
+				p <input type="text" name="keyword" id="keyword" maxlength="255" value="'>;!--"><XYZ><=&{()}" style="height:10px; color:#000;" />
+
+				p Continue by modifying the initial string to try displaying an alert. The double quotes of the original fuzz string closed the value property so whatever came before doesn't matter. Also, after the closing parenthesis next to the letter Z the string can be anything. Taking the string can be simplified to this:
+
+				p "><XYZ>
+
+				p The server might reply with:
+
+				p <input type="text" name="keyword" id="keyword" maxlength="255" value=""><XYZ>" style="height:10px; color:#000;" />
+
+				p Try to display an alert box
+
+				p The following goal is to execute a script and the easiest script to test is the one shown in the first scenario that displays an alert box. Note that now the tester knows that the malicious sting needs to start with the > character, due to where in the HTML document it will appear:
+
+				p "><script>alert('Works')</script>
+
+				p If the server doesn't filter the SCRIPT tags then an alert box will appear. The code sent back to the tester will look like this.
+
+				p <input type="text" name="keyword" id="keyword" maxlength="255" value=""><script>alert('Works')</script>" style="height:10px; color:#000;" />
+
+				p Cover different tags
+
+				p Sometimes severs filter out the string </script> from their output. If the server doesn't allow script tags, try the img tag and put your code in the src property:
+
+				p <img src="javascript:alert('Works');"></img>
+
+				p In fact, there are many other tags known to be dangerous in some cases, such as "<iframe>, <body>, <embed>, <meta>, <html>, <frame>, <frameset>, <input>, <layer>, <object>, and <style>."
+
+				p A good choice is to try the following that doesn't require script tags or the JavaScript command:
+
+				p <body onload=alert('Works')> 
+
+				br
+				h5.dark-grey  Step 4: Tune Test Case Data                                            
+
+During this step testing is focused at covering all entry points and tuning test case data based on the format of the specific entry point.  
+Consider string format and encoding according to entry point
+
+The example in step 3 doesn't specify how the fuzz string was passed to the application (it can be assumed that it was through a web form for these purposes). During this step, testers need to go through their list of components and entry points and modify test case data according to the entry point. Make sure that all entry points are covered.
+Web Forms
+
+Web forms are the easiest to test since they commonly allow only ASCII strings. To test through this entry point, just go through the high risk component list looking for ones that have web forms. Then use a web browser to submit test strings to the components via the forms, and possibly an attack proxy like Burp Suite to circumvent any client-side JavaScript used for data validation.
+URL Contents
+
+A web application is vulnerable to XSS through the value passed in the password variable: 
+
+http://www.xvulnerablesite.com/login.asp?username=[value]&password=[value]
+
+If testers want to test the following string in the password value: 
+
+<script>alert('Works')</script>
+
+They will need to modify the above URL in this way:
+
+http://www.xvulnerablesite.com/login.asp?username=any&password=<script>alert('Works')</script>
+
+When executing test cases through the URL it is important to try different encodings of the test string. For instance, one can execute the first attack string below and it causes no effect. Then execute the second one and the alert box works. In this case the web application didn't allow the symbol characters (except the round brackets) in ASCII but did in their hexadecimal encodings: 
+
+<img src="javascript:alert('Works');">
+
+http://www.xvulnerablesite.com/login.asp?username=any&password=<img%20src%3d%22javascript:alert(%27Works%27)%22>
+
+When testing through the URL and sometimes in other places, it is necessary to investigate what type of encodings the server is using and modify test cases according to them.
+Cookie contents
+
+Sometimes the application blindly displays the contents of a cookie in the web browser. To test the risky component through this entry point we have to modify the cookie file in disk and try to inject a simple script, then restart the browser to see if an alert box appears. Alternately, an attack proxy can be used to perform this modification on the fly, which is especially helpful in the case of complicated applications.
+Flash Parameters
+
+Since Flash parameters are frequently passed in the URL, testing Flash parameters is similar to testing URL contents. Here, it is necessary to go through each parameter in the URL and see how the application reacts. Flash also frequently receives parameters using FlashVars. Consider the following code to load a Flash movie:
+
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://macromedia.com/cabs/swflash.cab#version=6,0,0,0"
+ width="250" height="250" id="flaMovie1" align="center">
+ <param name=movie value="flaMovie1.swf">
+ <param name=FlashVars value="inputURL=usersinput">
+ <param name=quality value=high>
+ <param name=bgcolor value=#ffffff>
+ <embed src="flaMovie1.swf" FlashVars="inputURL=usersinput"
+  quality="high" bgcolor="#ffffff" width="250" height="250"
+  name="flaMovie1" align type="application/x-shockwave-flash"
+  pluginspage="http://www.macromedia.com/go/getflashplayer">
+</object>
+
+During this step, testers will need to change the entry parameters to Flash like this:
+
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://macromedia.com/cabs/swflash.cab#version=6,0,0,0"
+ width="250" height="250" id="flaMovie1" align="CENTER">
+ <param name=movie value="flaMovie1.swf">
+ <param name=FlashVars value="inputURL=%3cscript%3ealart%28%b4XSS%b4%29%3c%2fscript%3e">
+ <param name=quality value=high>
+ <para name=bgcolor value=#ffffff>
+ <embed src="flaMovie1.swf" FlashVars="inputURL=%3CSCRIPT%3Ealert%28%B4XSS%B4%29%3C%2FSCRIPT%3E"
+  quality="high" bgcolor="#ffffff" width="250" height="250"
+  name="flaMovie1" align type="application/x-shockwave-flash"
+  pluginspage="http://www.macromedia.com/go/getflashplayer">
+</object>
+Graphical User Interface
+
+Testing through the UI is similar to web form testing in that the tester enters test values directly to the screen. In the case of GUI testing the application used is not a web browser but any other application that interacts with high risk components, renders HTML, and that allows user input or otherwise receives untrusted data.
+Look for additional entry points
+
+Each application has its own set of entry points. This article lists the common ones for XSS attacks. Nonetheless, testers must explore their application for additional ways of passing data that might make it into a XSS vulnerability. It is recommended to use system monitoring tools such as the ones from www.sysinternals.com and dedicated attack tools such as Burp proxy that lets you intercept and add match-and-replace rules to change the contents of HTTP packets.
+Keep tuning test cases
+
+Sometimes the initial test string can land in a part of the source code where XSS is possible without using a script tag. The tester may be able to pad it a little or maybe just write the JavaScript command. Always check if the initial input lands inside or within an actual command or parameter.
+Consider the case of persistent XSS
+
+Sometimes the tester won't see the results of test cases right away. An XSS bug might exist that takes malicious input and only sends it back if the attacker does something else like visiting another page, for instance. Such is often the case with a persistent XSS attack.
+
+Consider the following case. An application asks for a user's password hint. When the server prompts the user for the hint, the attacker types one of the XSS test strings described before. Then submits the registration but the server doesn't show the alert box. Then the attacker has the victim browse the site's password page and ask for the hint. When the site displays the hint the alert box appears. 
+
+While testing persistent XSS, testers must think of all the places where the input might end up and check all of them. They should talk to developers and use specifications to check all data stores where a persistent XSS bug can manifest.
+
+
+				br
+				h5.dark-grey Applies to
+				p Applications that manipulate HTML input and output.
+				
+				br
+				h5.dark-grey Impact
+				p 
+					ul
+						li Credential compromise;
+						li Credential disclosure;
+						li Information disclosure;
+						li Execute code on client machine;
+						li Elevation of privilege;
+						li Repudiation.
+				br
+
+				h5.dark-grey Vulnerabilities
+				p
+					ul
+						li Failure to validate user input for script tags when that input can be echoed back into a web page.
+						li Trusting data retrieved from a shared database.
+						li Failure to encode all remotely provided data, including reverse DNS lookup, cookie contents, uploaded files, etc.
+						li Improperly converting "safe" tags to HTML.
+						li Displaying user input directly, without encoding it appropriately for the context in which it is used.
+						li Checking user-submitted data against a blacklist instead of a whitelist.
+
+				br
+				h5.dark-grey Counter Measures
+				p
+					ul
+						li Perform context-sensitive encoding of untrusted input before it is echoed back to a browser: Use an encoding library (e.g., the Microsoft Anti-Cross Site Scripting Library or OWASP Reform). The following language-specific functionality may be helpful, but is not sufficient to properly protect against cross-site scripting. Most of these libraries only convert the symbols ", &, <, and > to safe HTML equivalents. A whitelisting library should be used instead.
+
+						li Python: cgi.escape (only escapes 3 characters by default, escaping " is optional)
+						li ASP: HttpUtility.HtmlEncode and HttpUtility.UrlEncode (only encodes 4 characters)
+						li Perl: HTML::Entities::encode (only escapes 4 characters by default, but it makes it easy to specify other unsafe characters)
+						li PHP: htmlentities and urlencode (only escapes 4 characters by default, and can 						optionally encode ' (single quote)
+						li Validate untrusted input against an inclusion list before use: For example, use regular expressions to define acceptable character sequences, and use it as a filter. If the input is meant to be a primitive type, it can be cast appropriately to assure that it is the expected type (a type constraint) and then checked to ensure it's in the appropriate range (a range constraint). In the case where there are only a limited number of acceptable inputs, then the input can be constrained to that set with simple if or switch control structures, or by matching against a fixed list of strings (a domain constraint).
+
+				br
+				h5.dark-grey Additional Resources
+
+				p
+					ul
+						li More information on the Microsoft Anti-Cross Site Scripting Library, see here
+						li For more information on the OWASP Encoding Project, see here
+						li For more information on Cross Site Scripting, see here
+						li For more information on the Cross Site Scripting Filter Evasion Cheat Sheet, see here
+						li For more information on How To Prevent XSS in ASP.NET, see here
+
+				br
+				hr
+				br
+
+
+				h4.dark-grey XSS Types
+
+				p These slides are an excerpt from the "OWASP Top 10 - Threats and Mitigations" course. They describe the types of Cross-Site Scripting vulnerabilities.
+
+				br
+				hr
+				br
+
+				h4.dark-grey XSS Attack Scenarios
+
+				p These slides are an excerpt from the "Web Vulnerabilities - Threats and Mitigations" course. They describe Cross-Site Scripting attack scenarios.
+
+				br
+				hr
+				br
+
+				.row
+					.column-3
+						a(href='cross-site-scripting.html')
+							button.btn-action.btn-submit.btn-block(type='button') Introduction
+					.column-offset-6.column-3
+						a(href='testing.html')
+							button.btn-action.btn-submit.btn-block(type='button') Testing
+				br
+				br

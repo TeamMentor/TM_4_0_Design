@@ -482,6 +482,8 @@ hr {
 	margin: 0 auto;
 	width: 70%;
 	color: $grey;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 a {
@@ -741,18 +743,44 @@ button {
 	font-size: 12px;
 	font-weight: bold;
 	line-height: 1;
-	color: #fff;
+	color: $white;
 	background-color: $grey;
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: baseline;
-	background-color: #999;
+	background-color: $grey;
 	border-radius: 10px;
 
 	&:empty {
 		display: none;
 	}
 }
+
+// Progress Bar
+
+.progress {
+    height: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    box-shadow: none;
+    max-width: 90%;
+}
+
+.progress-bar {
+    float: left;
+    width: 0px;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: $white;
+    text-align: center;
+    background-color: $green;
+    box-shadow: none;
+    transition: width 0.6s ease 0s;
+}
+
 
 // List Group and List Group Items
 

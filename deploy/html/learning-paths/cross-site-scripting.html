@@ -27,7 +27,7 @@
     <!-- Normalize-->
     <link href="/deploy/css/normalize.css" rel="stylesheet">
     <!-- Bootstrap core CSS-->
-    <link href="/deploy/css/zz-bootstrap.css" rel="stylesheet">
+    <link href="/deploy/css/bootstrap.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
@@ -53,14 +53,28 @@
         </div>
       </div>
     </div>
-    <div id="application">
+    <div id="application" class="lge-container">
       <div class="row">
-        <div class="column-3"><br></div>
+        <div class="column-3 lge-container">
+          <div data-spay="affix" data-offset-top="60" data-offset-bottom="200" class="div">
+            <h4 class="dark-green">Exploitation</h4>
+            <h4 class="grey">Testing</h4>
+            <h4 class="grey">Prevention</h4>
+            <h4 class="grey">Courses</h4>
+            <h4 class="grey">Related Topics</h4>
+          </div>
+        </div>
         <div class="column-6">
-          <h3 class="grey">Cross-Site Scripting Learning Path</h3>
-          <p>A web applications output is rendered as a web page. If user input is included in the web application output, then it is also rendered as a part of the web page. If user input is included in output without being validated and encoded, a cross-site scripting (XSS) vulnerability results. In that case, an attacker can modify the output web page to include malicious script, which is then executed by the browser that views the vulnerable page. The resources below provide information that will describe the vulnerability in detail and guidance in avoiding, remediating and testing it.</p>
+          <h3 class="grey">Cross-Site Scripting Learning Path</h3><br>
+          <p>A web applications output is rendered as a web page. If user input is included in the web application output, then it is also rendered as a part of the web page. If user input is included in output without being validated and encoded, a cross-site scripting (XSS) vulnerability results. In that case, an attacker can modify the output web page to include malicious script, which is then executed by the browser that views the vulnerable page. The resources below provide information that will describe the vulnerability in detail and guidance in avoiding, remediating and testing it.</p><br>
           <h4 class="dark-grey">Getting around</h4>
-          <p>Scroll down to start.</p>
+          <p>You can use the buttons at the end of every chapter to jump immediately to the next or previous section.</p><br>
+          <hr><br>
+          <div class="row">
+            <div class="column-3"><br></div>
+            <div class="column-offset-6 column-3"><a href="exploitation.html">
+                <button type="button" class="btn-action btn-submit btn-block">Exploitation</button></a></div>
+          </div>
         </div>
       </div>
     </div>

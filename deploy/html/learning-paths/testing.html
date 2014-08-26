@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" sizes="57x57" href="/deploy/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="icon" sizes="72x72" href="/deploy/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="icon" sizes="144x144" href="/deploy/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="icon" sizes="60x60" href="/deploy/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="icon" sizes="120x120" href="/deploy/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="icon" sizes="76x76" href="/deploy/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="icon" sizes="152x152" href="/deploy/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/deploy/assets/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/deploy/assets/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/deploy/assets/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/deploy/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/deploy/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/deploy/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
+    <title>TEAM Mentor 4.0 (Html version)</title>
+    <!-- Normalize-->
+    <link href="/deploy/css/normalize.css" rel="stylesheet">
+    <!-- Bootstrap core CSS-->
+    <link href="/deploy/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom Styles-->
+    <link href="/deploy/css/custom-style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+      <div class="lge-container">
+        <div class="navbar-header"></div>
+        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        <ul class="brand">
+          <li><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
+          </li>
+        </ul>
+        <div class="collapse navbar-collapse pull-right">
+          <ul class="action nav nav-icons"><ul>
+<li><a href="/deploy/html/home/navigate.html"><img src="/deploy/assets/icons/navigate.png" alt="Navigate"></a></li>
+<li><a href="/deploy/html/home/main-app-view.html"><img src="/deploy/assets/icons/home.png" alt="Home"></a></li>
+<li><a href="/deploy/html/home/help.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
+<li><a href="/deploy/html/user/user.html"><img src="/deploy/assets/icons/user.png" alt="User"></a></li>
+<li><a href="/deploy/html/user/returning-user-login.html"><img src="/deploy/assets/icons/logout.png" alt="Logout"></a></li>
+</ul>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="application" class="lge-container">
+      <div class="row">
+        <div class="column-3 lge-container">
+          <div data-spay="affix" data-offset-top="60" data-offset-bottom="200" class="div">
+            <h4 class="grey">Exploitation</h4>
+            <h4 class="dark-green">Testing</h4>
+            <h4 class="grey">Prevention</h4>
+            <h4 class="grey">Courses</h4>
+            <h4 class="grey">Related Topics</h4><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="progress">
+              <div role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%" class="progress-bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="column-6">
+          <h3 class="grey">Testing</h3><br>
+          <p>How to test for Cross-Site Scripting. General black-box testing and code review methods.</p><br>
+          <hr><br>
+          <h4 class="dark-grey">How to Test for XSS</h4><br>
+          <p>The How to Test for Cross-Site Scripting article describes the basic steps used to test for common Cross-Site Scripting vulnerabilities.</p><br>
+          <h5 class="dark-grey">How to Test for Cross Site Scripting Vulnerabilities</h5>
+          <p>Cross site scripting (or XSS) is a well known HTML-related security vulnerability that commonly affects Internet clients through XSS vulnerable servers. A XSS bug in a web server allows an attacker to send malicious payload to a victim browser through the vulnerable server. Payloads may also execute in other HTTP clients not necessarily focused at browsing the web as long as they render HTML and execute any execute scripts.</p>
+          <p>Below is a summary of steps needed for testing for XSS bugs</p>
+          <p>
+            <ul>
+              <li>Step 1: Understand XSS attack scenarios</li>
+              <li>Step 2: List high risk componentsandentry points</li>
+              <li>Step 3: Start testing and exploring</li>
+              <li>Step 4: Tune test case data</li>
+            </ul>
+          </p><br>
+          <h5 class="dark-grey">Step 1: Understand XSS Attack Scenarios</h5>
+          <p>There are two types of XSS: reflective and persistent. A reflective XSS bug occurs when the web server takes input from a visitor and automatically sends him back the input without checking if the data inputted contains a script. Thus, the input data is reflected to the visitor and executes at the visitor's browser. </p>
+          <p>A persistent XSS bug is when a script embedded in malicious data is stored in a persistent store such as database, a file, or other storing mechanism. The malicious data containing a script persists in the server. If the server application takes this stored content and sends it to the client without validating its contents, the script will be executed in the browser. </p>
+          <p>It is important to understand both XSS attack scenarios to know what to look at when testing.</p><br>
+          <h5 class="dark-grey"> Step 2: List High Risk Components and Entry Points</h5>
+          <p>Identify high risk components</p>
+          <p>The next step in testing for XSS bugs is to do an extensive and careful revision of components that take input data from Internet clients and use send it back to the client. In case of large web services, documentation such as design or architectural, if available, become real handy at this point. Testers need to think about what components reflect data to a web client (for reflective XSS) and store data which is later send to a web client (for persistent XSS). Common components that do this include: </p>
+          <p>
+            <ul>
+              <li>Search web pages</li>
+              <li>Profile-related web pages</li>
+              <li>Web forums</li>
+              <li>Blogs</li>
+              <li>RSS feeds</li>
+              <li>HTML-based help browsers for thick clients </li>
+            </ul>
+          </p>
+          <p>Look for code that writes HTML responses</p>
+          <p>There are many different scripting functions that append HTML to the server response. Finding the server-side code that writes data out is the first step evaluating and finding potential XSS issues. Functions to write data to a response vary depending on the language and platform you're testing. Be certain that you understand all the relevant functions in the language you're using.</p>
+          <p>Check for non-validated and unencoded data in responses</p>
+          <p>Next, check what is being output by the mechanisms above. Even if the data written out by an application comes directly from the user and has not been specifically validated for format, if it is appropriately encoded, it can still be safe.  That said, the encoding must take the form of a whitelist of known-safe characters (generally only the alphanumerics), not a blacklist as is commonly attempted.</p>
+          <p>Match high risk components with entry points</p>
+          <p>Non-validated data comes from all of the application's entry points, not just the web. Be certain to cover all the possible sources of malicious data which might get passed to a client. Common data sources include:</p>
+          <p>
+            <ul>
+              <li>Web forms</li>
+              <li>URL contents</li>
+              <li>Cookie contents</li>
+              <li>Flash parameters</li>
+              <li>SQL database query contents</li>
+              <li>Web service data</li>
+              <li>Graphical User Interface</li>
+            </ul>
+          </p>
+          <p>List the high risk variables in the application and their data sources to make sure that they are covered during review and testing.</p><br>
+          <h5 class="dark-grey"> Step 3: Start Test and Exploring                                     </h5>
+          <p>During this step testing is focused at submitting basic XSS fuzz strings and observing how the application reacts, and then trying to display a simple alert box that proves the existence of an XSS bug.</p>
+          <p>Start with a simple fuzz string</p>
+          <p>Success in finding XSS bugs depends on whether the tester is able to store or reflect an HTML script in or through the server. In almost all cases scripts are included in between SCRIPT tags (other tags also worked as explained later). During this step, it is recommended to start exploring how the server application's high risk components react to tag related input. A good idea is to start testing a simple fuzz string like this one:</p>
+          <p>'>;!--"><XYZ><=&{()}</p>
+          <p>Then look for the string XYZ in server's response to see how the server processed the special script related characters. It might turn out that the server uses the string inside of a tag:</p>
+          <p><input type="text" name="keyword" id="keyword" maxlength="255" value="'>;!--"><XYZ><=&{()}" style="height:10px; color:#000;" /></p>
+          <p>Continue by modifying the initial string to try displaying an alert. The double quotes of the original fuzz string closed the value property so whatever came before doesn't matter. Also, after the closing parenthesis next to the letter Z the string can be anything. Taking the string can be simplified to this:</p>
+          <p>"><XYZ></p>
+          <p>The server might reply with:</p>
+          <p><input type="text" name="keyword" id="keyword" maxlength="255" value=""><XYZ>" style="height:10px; color:#000;" /></p>
+          <p>Try to display an alert box</p>
+          <p>The following goal is to execute a script and the easiest script to test is the one shown in the first scenario that displays an alert box. Note that now the tester knows that the malicious sting needs to start with the > character, due to where in the HTML document it will appear:</p>
+          <p>"><script>alert('Works')</script></p>
+          <p>If the server doesn't filter the SCRIPT tags then an alert box will appear. The code sent back to the tester will look like this.</p>
+          <p><input type="text" name="keyword" id="keyword" maxlength="255" value=""><script>alert('Works')</script>" style="height:10px; color:#000;" /></p>
+          <p>Cover different tags</p>
+          <p>Sometimes severs filter out the string </script> from their output. If the server doesn't allow script tags, try the img tag and put your code in the src property:</p>
+          <p><img src="javascript:alert('Works');"></img></p>
+          <p>In fact, there are many other tags known to be dangerous in some cases, such as "<iframe>, <body>, <embed>, <meta>, <html>, <frame>, <frameset>, <input>, <layer>, <object>, and <style>."</p>
+          <p>A good choice is to try the following that doesn't require script tags or the JavaScript command:</p>
+          <p><body onload=alert('Works')> </p><br>
+          <h5 class="dark-grey">Step 1: Understand XSS Attack Scenarios</h5>
+          <p>There are two types of XSS: reflective and persistent. A reflective XSS bug occurs when the web server takes input from a visitor and automatically sends him back the input without checking if the data inputted contains a script. Thus, the input data is reflected to the visitor and executes at the visitor's browser. </p>
+          <p>A persistent XSS bug is when a script embedded in malicious data is stored in a persistent store such as database, a file, or other storing mechanism. The malicious data containing a script persists in the server. If the server application takes this stored content and sends it to the client without validating its contents, the script will be executed in the browser. </p>
+          <p>It is important to understand both XSS attack scenarios to know what to look at when testing.</p><br>
+          <h5 class="dark-grey">Applies to</h5>
+          <p>Applications that manipulate HTML input and output.</p><br>
+          <h5 class="dark-grey">Impact</h5>
+          <p>
+            <ul>
+              <li>Credential compromise;</li>
+              <li>Credential disclosure;</li>
+              <li>Information disclosure;</li>
+              <li>Execute code on client machine;</li>
+              <li>Elevation of privilege;</li>
+              <li>Repudiation.</li>
+            </ul>
+          </p><br>
+          <h5 class="dark-grey">Vulnerabilities</h5>
+          <p>
+            <ul>
+              <li>Failure to validate user input for script tags when that input can be echoed back into a web page.</li>
+              <li>Trusting data retrieved from a shared database.</li>
+              <li>Failure to encode all remotely provided data, including reverse DNS lookup, cookie contents, uploaded files, etc.</li>
+              <li>Improperly converting "safe" tags to HTML.</li>
+              <li>Displaying user input directly, without encoding it appropriately for the context in which it is used.</li>
+              <li>Checking user-submitted data against a blacklist instead of a whitelist.</li>
+            </ul>
+          </p><br>
+          <h5 class="dark-grey">Counter Measures</h5>
+          <p>
+            <ul>
+              <li>Perform context-sensitive encoding of untrusted input before it is echoed back to a browser: Use an encoding library (e.g., the Microsoft Anti-Cross Site Scripting Library or OWASP Reform). The following language-specific functionality may be helpful, but is not sufficient to properly protect against cross-site scripting. Most of these libraries only convert the symbols ", &, <, and > to safe HTML equivalents. A whitelisting library should be used instead.</li>
+              <li>Python: cgi.escape (only escapes 3 characters by default, escaping " is optional)</li>
+              <li>ASP: HttpUtility.HtmlEncode and HttpUtility.UrlEncode (only encodes 4 characters)</li>
+              <li>Perl: HTML::Entities::encode (only escapes 4 characters by default, but it makes it easy to specify other unsafe characters)</li>
+              <li>PHP: htmlentities and urlencode (only escapes 4 characters by default, and can 						optionally encode ' (single quote)</li>
+              <li>Validate untrusted input against an inclusion list before use: For example, use regular expressions to define acceptable character sequences, and use it as a filter. If the input is meant to be a primitive type, it can be cast appropriately to assure that it is the expected type (a type constraint) and then checked to ensure it's in the appropriate range (a range constraint). In the case where there are only a limited number of acceptable inputs, then the input can be constrained to that set with simple if or switch control structures, or by matching against a fixed list of strings (a domain constraint).</li>
+            </ul>
+          </p><br>
+          <h5 class="dark-grey">Additional Resources</h5>
+          <p>
+            <ul>
+              <li>More information on the Microsoft Anti-Cross Site Scripting Library, see here</li>
+              <li>For more information on the OWASP Encoding Project, see here</li>
+              <li>For more information on Cross Site Scripting, see here</li>
+              <li>For more information on the Cross Site Scripting Filter Evasion Cheat Sheet, see here</li>
+              <li>For more information on How To Prevent XSS in ASP.NET, see here</li>
+            </ul>
+          </p><br>
+          <hr><br>
+          <h4 class="dark-grey">XSS Types</h4>
+          <p>These slides are an excerpt from the "OWASP Top 10 - Threats and Mitigations" course. They describe the types of Cross-Site Scripting vulnerabilities.</p><br>
+          <hr><br>
+          <h4 class="dark-grey">XSS Attack Scenarios</h4>
+          <p>These slides are an excerpt from the "Web Vulnerabilities - Threats and Mitigations" course. They describe Cross-Site Scripting attack scenarios.</p><br>
+          <hr><br>
+          <div class="row">
+            <div class="column-3"><a href="cross-site-scripting.html">
+                <button type="button" class="btn-action btn-submit btn-block">Introduction</button></a></div>
+            <div class="column-offset-6 column-3"><a href="testing.html">
+                <button type="button" class="btn-action btn-submit btn-block">Testing</button></a></div>
+          </div><br><br>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
