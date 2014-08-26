@@ -112,3 +112,23 @@ mixin save-div
 			input#nickname.form-control(type='text', placeholder='Nickname')
 		br
 		button.btn-action.btn-block(type='submit') Ok, Done
+
+//- landing-page_call-to-action
+mixin call-to-action-div
+	.container
+		h1 Security Risk. Understood.
+		br
+		br
+		a(href='getting-started.html')
+			button.btn.btn-landing-page(type='button') See for yourself
+
+//- landing-page_footer
+mixin footer-div
+	.lge-container
+		.row
+			.column-offset-3.column-3
+				ul.brand.text-center
+					img(src='/deploy/assets/logos/si-logo.png')
+			.column-3.text-center
+				p
+					a(href="#{user}/terms-and-conditions.html") Terms & Conditions

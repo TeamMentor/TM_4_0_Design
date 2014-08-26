@@ -508,6 +508,18 @@
         "outputStyle": "expanded",
         "autoprefixer": false
       }
+    },
+    "b5a1624d": {
+      "id": "b5a1624d",
+      "pid": "651ae24a",
+      "name": "terms-and-conditions.jade",
+      "input": "source/html/user/terms-and-conditions.jade",
+      "customOutput": false,
+      "type": "Jade",
+      "config": {
+        "autoCompile": true,
+        "pretty": true
+      }
     }
   },
   "imports": {
@@ -548,7 +560,8 @@
         "a9478804",
         "771159e8",
         "fed1db7d",
-        "841283a6"
+        "841283a6",
+        "b5a1624d"
       ]
     },
     "2ef9f62f": {
@@ -566,7 +579,8 @@
         "4351317f",
         "d8d053a2",
         "0fb3c5a7",
-        "7c350c6a"
+        "7c350c6a",
+        "b5a1624d"
       ]
     },
     "5ac3de02": {
@@ -606,7 +620,8 @@
         "a9478804",
         "771159e8",
         "fed1db7d",
-        "841283a6"
+        "841283a6",
+        "b5a1624d"
       ]
     },
     "954cb581": {
@@ -656,7 +671,8 @@
         "a9478804",
         "771159e8",
         "fed1db7d",
-        "841283a6"
+        "841283a6",
+        "b5a1624d"
       ]
     },
     "4f5d437c": {
@@ -696,7 +712,8 @@
         "a9478804",
         "771159e8",
         "fed1db7d",
-        "841283a6"
+        "841283a6",
+        "b5a1624d"
       ]
     },
     "34dd06aa": {
@@ -740,7 +757,8 @@
         "4351317f",
         "d8d053a2",
         "0fb3c5a7",
-        "7c350c6a"
+        "7c350c6a",
+        "b5a1624d"
       ]
     },
     "bd784ce3": {
