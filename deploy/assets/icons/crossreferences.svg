@@ -11,7 +11,8 @@
 		<use xlink:href="#SVGID_1_"  overflow="visible"/>
 	</clipPath>
 	<circle clip-path="url(#SVGID_2_)" fill="#8BAF40" cx="249.5" cy="250" r="185.5"/>
-	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M307.949,172v145.672l-64.125-36.723L201.973,334v-56.16h-52.922L307.949,172z
-		 M303.359,178.883l-90.719,96.125v30.508L303.359,178.883z"/>
+	<path clip-path="url(#SVGID_2_)" fill="#F2F2F2" d="M315.5,178v144h-132V178H315.5z M303.5,202h-108v108h108V202z M219.5,214h-12
+		v12h12V214z M219.5,238h-12v12h12V238z M219.5,262h-12v12h12V262z M219.5,286h-12v12h12V286z M291.5,214h-60v12h60V214z M291.5,238
+		h-60v12h60V238z M291.5,262h-60v12h60V262z M291.5,298h-60v-12h60V298z"/>
 </g>
 </svg>

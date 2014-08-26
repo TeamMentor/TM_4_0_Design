@@ -2,233 +2,100 @@ extends ../_layouts/page_home.jade
 block content
     #application
       .row
-        .lge-container
-          .col-sm-3
-          //
-             /col-sm-3 
-          .col-sm-6
-            .row
-              .col-lg-12
-                .input-group
-                  input#search-bar.form-control(type='text', placeholder='Type keywords here')
-                  span.input-group-btn
-                    button#search-button.btn.btn-application(type='button')
-                      span.glyphicon.glyphicon-search
-                  span.input-group-btn
-                    button#filters-button.btn.btn-application(type='button')
-                      span.glyphicon.glyphicon-filter
-                //
-                   /input-group 
-                br
-                br
-                h4.light-grey Filters Active
-                .row
-                  .col-sm-3
-                    .alert.alert-dismissible(role='alert')
-                      button.close(type='button', data-dismiss='alert')
-                        span(aria-hidden='true') ×
-                        span.sr-only Close
-                      strong.green Filter One
-                  //
-                     /col-sm-3 
-                  .col-sm-3
-                    .alert.alert-dismissible(role='alert')
-                      button.close(type='button', data-dismiss='alert')
-                        span(aria-hidden='true') ×
-                        span.sr-only Close
-                      strong.green Filter Two
-                  //
-                     /col-sm-3 
-                  .col-sm-3
-                    .alert.alert-dismissible(role='alert')
-                      button.close(type='button', data-dismiss='alert')
-                        span(aria-hidden='true') ×
-                        span.sr-only Close
-                      strong.green Filter Three
-                  //
-                     /col-sm-3 
-                  .col-sm-3
-                    .alert.alert-dismissible(role='alert')
-                      button.close(type='button', data-dismiss='alert')
-                        span(aria-hidden='true') ×
-                        span.sr-only Close
-                      strong.green Filter Four
-                  //
-                     /col-sm-3 
-                //
-                   /row 
-                br
-                .row
-                  .col-xs-6
-                    h4.light-grey
-                      | 0/200 results showing
-                  //
-                     /col-xs-6
-                  .col-xs-3.text-center
-                    a.action(href='#save')
-                      | Save 
-                      span.glyphicon.glyphicon-bookmark.glyphicon-small
-                  //
-                     /col-xs-3 
-                  .col-xs-3.text-center
-                    a.action(href='main-app-view.html')
-                      | Clear 
-                      span.glyphicon.glyphicon-trash.glyphicon-small
-                  //
-                     /col-xs-3 
-                //
-                   /row 
-                .list-group
-                  a.list-group-item(href='article-new-window-view.html')
-                    h5.list-group-item-heading.grey Related Article Headline
-                    p.list-group-item-text
-                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-                  br
-                  a.list-group-item(href='article-new-window-view.html')
-                    h5.list-group-item-heading.grey Related Article Headline
-                    p.list-group-item-text
-                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-                  br
-                  a.list-group-item(href='article-new-window-view.html')
-                    h5.list-group-item-heading.grey Related Article Headline
-                    p.list-group-item-text
-                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-                  a.list-group-item(href='article-new-window-view.html')
-                    h5.list-group-item-heading.grey Related Article Headline
-                    p.list-group-item-text
-                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-                  br
-                  a.list-group-item(href='article-new-window-view.html')
-                    h5.list-group-item-heading.grey Related Article Headline
-                    p.list-group-item-text
-                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-                  br
-                  a.list-group-item(href='article-new-window-view.html')
-                    h5.list-group-item-heading.grey Related Article Headline
-                    p.list-group-item-text
-                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-              //
-                 /.col-lg-12 
-            //
-               /.row 
-          //
-             /col-sm-6 
-          .col-sm-3
-            #filters
-              h3.light-grey Filters
-              form(role='form', action='filters-active.html')
-                .form-group
-                  h5.green Technology
-                  ul.list-group
-                    li.list-group-item
-                      span.badge 14
-                      input#technology_1.css-checkbox(type='checkbox')
-                      label.css-label(for='technology_1', name='technology_1') Option #1
-                    li.list-group-item
-                      span.badge 14
-                      input#technology_2.css-checkbox(type='checkbox')
-                      label.css-label(for='technology_2', name='technology_2') Option #2
-                    li.list-group-item
-                      span.badge 14
-                      input#technology_3.css-checkbox(type='checkbox')
-                      label.css-label(for='technology_3', name='technology_3') Option #3
-                    li.list-group-item
-                      span.badge 14
-                      input#technology_4.css-checkbox(type='checkbox')
-                      label.css-label(for='technology_4', name='technology_4') Option #4
-                    li.list-group-item
-                      span.badge 14
-                      input#technology_5.css-checkbox(type='checkbox')
-                      label.css-label(for='technology_5', name='technology_5') Option #5
-                .form-group
-                  h5.green Category
-                  ul.list-group
-                    li.list-group-item
-                      span.badge 14
-                      input#category_1.css-checkbox(type='checkbox')
-                      label.css-label(for='category_1', name='category_1') Option #1
-                    li.list-group-item
-                      span.badge 14
-                      input#category_2.css-checkbox(type='checkbox')
-                      label.css-label(for='category_2', name='category_2') Option #2
-                    li.list-group-item
-                      span.badge 14
-                      input#category_3.css-checkbox(type='checkbox')
-                      label.css-label(for='category_3', name='category_3') Option #3
-                    li.list-group-item
-                      span.badge 14
-                      input#category_4.css-checkbox(type='checkbox')
-                      label.css-label(for='category_4', name='category_4') Option #4
-                    li.list-group-item
-                      span.badge 14
-                      input#category_5.css-checkbox(type='checkbox')
-                      label.css-label(for='category_5', name='category_5') Option #5
-                .form-group
-                  h5.green Phase
-                  ul.list-group
-                    li.list-group-item
-                      span.badge 14
-                      input#phase_1.css-checkbox(type='checkbox')
-                      label.css-label(for='phase_1', name='phase_1') Option #1
-                    li.list-group-item
-                      span.badge 14
-                      input#phase_2.css-checkbox(type='checkbox')
-                      label.css-label(for='phase_2', name='phase_2') Option #2
-                    li.list-group-item
-                      span.badge 14
-                      input#phase_3.css-checkbox(type='checkbox')
-                      label.css-label(for='phase_3', name='phase_3') Option #3
-                    li.list-group-item
-                      span.badge 14
-                      input#phase_4.css-checkbox(type='checkbox')
-                      label.css-label(for='phase_4', name='phase_4') Option #4
-                    li.list-group-item
-                      span.badge 14
-                      input#phase_5.css-checkbox(type='checkbox')
-                      label.css-label(for='phase_5', name='phase_5') Option #5
-                .form-group
-                  h5.green Type
-                  ul.list-group
-                    li.list-group-item
-                      span.badge 14
-                      input#type_1.css-checkbox(type='checkbox')
-                      label.css-label(for='type_1', name='type_1') Option #1
-                    li.list-group-item
-                      span.badge 14
-                      input#type_2.css-checkbox(type='checkbox')
-                      label.css-label(for='type_2', name='type_2') Option #2
-                    li.list-group-item
-                      span.badge 14
-                      input#type_3.css-checkbox(type='checkbox')
-                      label.css-label(for='type_3', name='type_3') Option #3
-                    li.list-group-item
-                      span.badge 14
-                      input#type_4.css-checkbox(type='checkbox')
-                      label.css-label(for='type_4', name='type_4') Option #4
-                    li.list-group-item
-                      span.badge 14
-                      input#type_5.css-checkbox(type='checkbox')
-                      label.css-label(for='type_5', name='type_5') Option #5
-                button.btn-action.btn-block(type='submit')
-                  | Ok, Done 
-                  span.glyphicon.glyphicon-ok.glyphicon-small
-            //
-               /filters 
-            #save
-              h3.light-grey Save to Dashboard
-              br
-              form(role='form')
-                .form-group
-                  label(for='nickname') Give it a nickname
-                  input#nickname.form-control(type='text', placeholder='Nickname')
-                button.btn-action.btn-block(type='submit')
-                  | Ok, Done 
-                  span.glyphicon.glyphicon-ok.glyphicon-small
-            //
-               /save 
-          //
-             /col-sm-3 
-        //
-           /row for columns 
-    //
-       /application div 
+        .column-3
+          br
+
+        //column-3
+
+        .column-6
+          br
+          .input-group
+            input#search-bar.form-control(type='text', placeholder='Type keywords here')
+          // input-group 
+          br
+          br
+
+          h4.grey Filters Active
+          .row
+            .column-3
+              .alert.alert-dismissible(role='alert')
+                button.close(type='button', data-dismiss='alert')
+                  span(aria-hidden='true') ×
+                  span.sr-only Close
+                strong.green Filter One
+            // column-3
+            .column-3
+              .alert.alert-dismissible(role='alert')
+                button.close(type='button', data-dismiss='alert')
+                  span(aria-hidden='true') ×
+                  span.sr-only Close
+                strong.green Filter Two
+            // column-3
+            .column-3
+              .alert.alert-dismissible(role='alert')
+                button.close(type='button', data-dismiss='alert')
+                  span(aria-hidden='true') ×
+                  span.sr-only Close
+                strong.green Filter Three
+            // column-3
+            .column-3
+              .alert.alert-dismissible(role='alert')
+                button.close(type='button', data-dismiss='alert')
+                  span(aria-hidden='true') ×
+                  span.sr-only Close
+                strong.green Filter Four
+            // column-3
+          // row 
+          
+          br
+          .row
+            .column-6
+              h4.grey 0/200 results showing
+            // column-6
+            br
+            .column-3.text-center
+              a.action(href='#save')
+                | Save
+            // column-3
+            .column-3.text-center
+              a.action(href='main-app-view.html')
+                | Clear
+            // column-3
+          // row 
+          .list-group
+            a.list-group-item(href='article-new-window-view.html')
+              h5.list-group-item-heading.dark-grey Related Article Headline
+              p.list-group-item-text
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+            br
+            a.list-group-item(href='article-new-window-view.html')
+              h5.list-group-item-heading.dark-grey Related Article Headline
+              p.list-group-item-text
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+            br
+            a.list-group-item(href='article-new-window-view.html')
+              h5.list-group-item-heading.dark-grey Related Article Headline
+              p.list-group-item-text
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+            br
+            a.list-group-item(href='article-new-window-view.html')
+              h5.list-group-item-heading.dark-grey Related Article Headline
+              p.list-group-item-text
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+            br
+            a.list-group-item(href='article-new-window-view.html')
+              h5.list-group-item-heading.dark-grey Related Article Headline
+              p.list-group-item-text
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+            br
+            a.list-group-item(href='article-new-window-view.html')
+              h5.list-group-item-heading.dark-grey Related Article Headline
+              p.list-group-item-text
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+          // row 
+        // column-6 
+        
+        .column-3.container
+          +filters-div
+          br
+          +save-div

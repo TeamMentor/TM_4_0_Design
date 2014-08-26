@@ -1,16 +1,16 @@
 include ../../content/links.jade
 include ../../content/images.jade
 
-.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-    .container
+.navbar.navbar-fixed-top(role='navigation')
+    .lge-container
         .navbar-header
           button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
             span.sr-only Toggle navigation
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          +image-teammentor-logo__landing_page       
+        ul.brand
+          +image-teammentor-logo__default     
         .collapse.navbar-collapse.pull-right
-          ul.nav.navbar-nav
-            //-+links-navbar__landing-page_MD  //- lucy you can use this one to see how it should work
+          ul.action.nav.nav-text
             +links-navbar__landing-page

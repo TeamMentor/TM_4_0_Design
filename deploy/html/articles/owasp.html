@@ -24,8 +24,10 @@
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <title>TEAM Mentor 4.0 (Html version)</title>
+    <!-- Normalize-->
+    <link href="/deploy/css/normalize.css" rel="stylesheet">
     <!-- Bootstrap core CSS-->
-    <link href="/deploy/css/bootstrap.css" rel="stylesheet">
+    <link href="/deploy/css/zz-bootstrap.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
@@ -34,198 +36,178 @@
       <div class="lge-container">
         <div class="navbar-header"></div>
         <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-        <ul class="nav navbar-nav">
-          <li><a href="/deploy/html/landing-pages/index.html" data-toggle="tooltip" title="Home"><img src="/deploy/assets/logos/logo.jpg" alt="TEAM Mentor" width="200px" class="img-responsive"></a>
+        <ul class="brand">
+          <li><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
           </li>
         </ul>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-                <li><a href="/deploy/html/home/navigate.html" data-toggle="tooltip" title="Navigate"><img src="/deploy/assets/icons/navigate.png" width="50px" height="50px" alt="Navigate"></a></li>
-                <li><a href="/deploy/html/home/main-app-view.html" data-toggle="tooltip" title="Home"><img src="/deploy/assets/icons/home.png" width="50px" height="50px" alt="Home"></a></li>
-                <li><a href="/deploy/html/home/help.html" data-toggle="tooltip" title="Help"><img src="/deploy/assets/icons/help.png" width="50px" height="50px" alt="Help"></a></li>
-                <li><a href="/deploy/html/user/user.html" data-toggle="tooltip" title="User"><img src="/deploy/assets/icons/user.png" width="50px" height="50px" alt="User"></a></li>
-                <li><a href="/deploy/html/user/returning-user-login.html" data-toggle="tooltip" title="Logout"><img src="/deploy/assets/icons/logout.png" width="50px" height="50px" alt="Logout"></a></li>
+        <div class="collapse navbar-collapse pull-right">
+          <ul class="action nav nav-icons"><ul>
+<li><a href="/deploy/html/home/navigate.html"><img src="/deploy/assets/icons/navigate.png" alt="Navigate"></a></li>
+<li><a href="/deploy/html/home/main-app-view.html"><img src="/deploy/assets/icons/home.png" alt="Home"></a></li>
+<li><a href="/deploy/html/home/help.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
+<li><a href="/deploy/html/user/user.html"><img src="/deploy/assets/icons/user.png" alt="User"></a></li>
+<li><a href="/deploy/html/user/returning-user-login.html"><img src="/deploy/assets/icons/logout.png" alt="Logout"></a></li>
+</ul>
+
           </ul>
         </div>
       </div>
     </div>
-    <div id="application">
+    <div id="application" class="lge-container">
       <div class="row">
-        <div class="lge-container">
-          <div class="col-sm-3">
-            <h4 class="light-grey">Fundamentals of Security</h4>
-            <div class="list-group"><a href="owasp.html" class="list-group-item"><strong>OWASP Top 10</strong><span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A01: Injection<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A02: Cross-Site Scripting (XSS)<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A03: Broken Authentication and Session Management<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A04: Insecure Direct Object References<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A05: Cross-Site Request Forgery (CSRF)<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A06: Security Misconfiguration<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A07: Insecure Cryptographic Storage<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A08: Failure to Restrict URL Access<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A09: Insufficient Transport Layer Protection<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A10: Unvalidated Redirects and Forwards<span class="badge">14</span></a></div>
-          </div>
-          <!--/col-sm-3 
-          -->
-          <div class="col-sm-6">
-            <div class="row">
-              <ol class="breadcrumb">
-                <li><a href="fundamentals-of-security.html">Fundamentals of Security</a></li>
-                <li class="active">OWASP Top 10</li>
-              </ol>
-              <div class="col-lg-12">
-                <div class="input-group">
-                  <input id="search-bar" type="text" placeholder="Type keywords here" class="form-control"><span class="input-group-btn">
-                    <button id="search-button" type="button" class="btn btn-application"><span class="glyphicon glyphicon-search"></span></button></span><span class="input-group-btn">
-                    <button id="filters-button" type="button" class="btn btn-application"><span class="glyphicon glyphicon-filter"></span></button></span>
-                </div>
-                <!--input-group --><br><br>
-                <div class="row">
-                  <div class="col-xs-6">
-                    <h4 class="light-grey">0/200 results showing</h4>
-                  </div>
-                  <!--col-xs-6-->
-                  <div class="col-xs-3 text-center"><a href="#save" class="action">Save <span class="glyphicon glyphicon-bookmark glyphicon-small"></span></a></div>
-                  <!--col-xs-3 -->
-                  <div class="col-xs-3 text-center"><a href="main-app-view.html" class="action">Clear <span class="glyphicon glyphicon-trash glyphicon-small"></span></a></div>
-                  <!--col-xs-3 -->
-                </div>
-                <!--row -->
-                <div class="list-group"><a href="/deploy/html/articles/article-new-window-view.html" target="_blank" class="list-group-item">
-                    <h5 class="list-group-item-heading grey">Related Article Headline</h5>
-                    <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a><br><a href="/deploy/html/articles/article-new-window-view.html" target="_blank" class="list-group-item">
-                    <h5 class="list-group-item-heading grey">Related Article Headline</h5>
-                    <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a><br><a href="/deploy/html/articles/article-new-window-view.html" target="_blank" class="list-group-item">
-                    <h5 class="list-group-item-heading grey">Related Article Headline</h5>
-                    <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a><a href="/deploy/html/articles/article-new-window-view.html" target="_blank" class="list-group-item">
-                    <h5 class="list-group-item-heading grey">Related Article Headline</h5>
-                    <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a><br><a href="/deploy/html/articles/article-new-window-view.html" target="_blank" class="list-group-item">
-                    <h5 class="list-group-item-heading grey">Related Article Headline</h5>
-                    <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a><br><a href="/deploy/html/articles/article-new-window-view.html" target="_blank" class="list-group-item">
-                    <h5 class="list-group-item-heading grey">Related Article Headline</h5>
-                    <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a></div>
-              </div>
-              <!--.col-lg-12 -->
-            </div>
-            <!--.row -->
-          </div>
-          <!--col-sm-6 -->
-          <div class="col-sm-3">
-            <div id="filters">
-              <h3 class="light-grey">Filters</h3>
-              <form role="form" action="filters-active.html">
-                <div class="form-group">
-                  <h5 class="green">Technology</h5>
-                  <ul class="list-group">
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="technology_1" type="checkbox" class="css-checkbox">
-                      <label for="technology_1" name="technology_1" class="css-label">Option #1</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="technology_2" type="checkbox" class="css-checkbox">
-                      <label for="technology_2" name="technology_2" class="css-label">Option #2</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="technology_3" type="checkbox" class="css-checkbox">
-                      <label for="technology_3" name="technology_3" class="css-label">Option #3</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="technology_4" type="checkbox" class="css-checkbox">
-                      <label for="technology_4" name="technology_4" class="css-label">Option #4</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="technology_5" type="checkbox" class="css-checkbox">
-                      <label for="technology_5" name="technology_5" class="css-label">Option #5</label>
-                    </li>
-                  </ul>
-                </div>
-                <div class="form-group">
-                  <h5 class="green">Category</h5>
-                  <ul class="list-group">
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="category_1" type="checkbox" class="css-checkbox">
-                      <label for="category_1" name="category_1" class="css-label">Option #1</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="category_2" type="checkbox" class="css-checkbox">
-                      <label for="category_2" name="category_2" class="css-label">Option #2</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="category_3" type="checkbox" class="css-checkbox">
-                      <label for="category_3" name="category_3" class="css-label">Option #3</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="category_4" type="checkbox" class="css-checkbox">
-                      <label for="category_4" name="category_4" class="css-label">Option #4</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="category_5" type="checkbox" class="css-checkbox">
-                      <label for="category_5" name="category_5" class="css-label">Option #5</label>
-                    </li>
-                  </ul>
-                </div>
-                <div class="form-group">
-                  <h5 class="green">Phase</h5>
-                  <ul class="list-group">
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="phase_1" type="checkbox" class="css-checkbox">
-                      <label for="phase_1" name="phase_1" class="css-label">Option #1</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="phase_2" type="checkbox" class="css-checkbox">
-                      <label for="phase_2" name="phase_2" class="css-label">Option #2</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="phase_3" type="checkbox" class="css-checkbox">
-                      <label for="phase_3" name="phase_3" class="css-label">Option #3</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="phase_4" type="checkbox" class="css-checkbox">
-                      <label for="phase_4" name="phase_4" class="css-label">Option #4</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="phase_5" type="checkbox" class="css-checkbox">
-                      <label for="phase_5" name="phase_5" class="css-label">Option #5</label>
-                    </li>
-                  </ul>
-                </div>
-                <div class="form-group">
-                  <h5 class="green">Type</h5>
-                  <ul class="list-group">
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="type_1" type="checkbox" class="css-checkbox">
-                      <label for="type_1" name="type_1" class="css-label">Option #1</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="type_2" type="checkbox" class="css-checkbox">
-                      <label for="type_2" name="type_2" class="css-label">Option #2</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="type_3" type="checkbox" class="css-checkbox">
-                      <label for="type_3" name="type_3" class="css-label">Option #3</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="type_4" type="checkbox" class="css-checkbox">
-                      <label for="type_4" name="type_4" class="css-label">Option #4</label>
-                    </li>
-                    <li class="list-group-item"><span class="badge">14</span>
-                      <input id="type_5" type="checkbox" class="css-checkbox">
-                      <label for="type_5" name="type_5" class="css-label">Option #5</label>
-                    </li>
-                  </ul>
-                </div>
-                <button type="submit" class="btn-action btn-block">Ok, Done <span class="glyphicon glyphicon-ok glyphicon-small"></span></button>
-              </form>
-            </div>
-            <!--filters             -->
-            <div id="save">
-              <h3 class="light-grey">Save to Dashboard</h3><br>
-              <form role="form">
-                <div class="form-group">
-                  <label for="nickname">Give it a nickname</label>
-                  <input id="nickname" type="text" placeholder="Nickname" class="form-control">
-                </div>
-                <button type="submit" class="btn-action btn-block">Ok, Done <span class="glyphicon glyphicon-ok glyphicon-small"></span></button>
-              </form>
-            </div>
-            <!--save -->
-          </div>
-          <!--col-sm-3 -->
+        <div class="column-3">
+          <h4 class="grey">Fundamentals of Security</h4>
+          <div class="list-group"><a href="owasp.html" class="list-group-item"><strong>OWASP Top 10</strong><span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A01: Injection<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A02: Cross-Site Scripting (XSS)<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A03: Broken Authentication and Session Management<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A04: Insecure Direct Object References<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A05: Cross-Site Request Forgery (CSRF)<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A06: Security Misconfiguration<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A07: Insecure Cryptographic Storage<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A08: Failure to Restrict URL Access<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A09: Insufficient Transport Layer Protection<span class="badge">14</span></a><a href="owasp.html" class="list-group-item">A10: Unvalidated Redirects and Forwards<span class="badge">14</span></a></div>
         </div>
-        <!--row for columns -->
+        <!--/column-3
+        -->
+        <div class="column-6">
+          <div class="input-group">
+            <input id="search-bar" type="text" placeholder="Type keywords here" class="form-control">
+            <!--input-group --><br><br>
+            <div class="row">
+              <div class="column-6">
+                <h4 class="grey">0/200 results showing</h4>
+              </div>
+              <!--column-6-->
+              <div class="column-3 text-center"><br><a href="#save" class="action">Save <span class="glyphicon glyphicon-bookmark glyphicon-small"></span></a></div>
+              <!--column-3-->
+              <div class="column-3 text-center"><br><a href="main-app-view.html" class="action">Clear <span class="glyphicon glyphicon-trash glyphicon-small"></span></a></div>
+              <!--column-3 -->
+            </div>
+            <!--row -->
+            <div class="list-group"><a href="/deploy/html/articles/article-new-window-view.html" target="_blank" class="list-group-item">
+                <h5 class="list-group-item-heading dark-grey">Related Article Headline</h5>
+                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a><br><a href="/deploy/html/articles/article-new-window-view.html" target="_blank" class="list-group-item">
+                <h5 class="list-group-item-heading dark-grey">Related Article Headline</h5>
+                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a><br><a href="/deploy/html/articles/article-new-window-view.html" target="_blank" class="list-group-item">
+                <h5 class="list-group-item-heading dark-grey">Related Article Headline</h5>
+                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a><br><a href="/deploy/html/articles/article-new-window-view.html" target="_blank" class="list-group-item">
+                <h5 class="list-group-item-heading dark-grey">Related Article Headline</h5>
+                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a><br><a href="/deploy/html/articles/article-new-window-view.html" target="_blank" class="list-group-item">
+                <h5 class="list-group-item-heading dark-grey">Related Article Headline</h5>
+                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a><br><a href="/deploy/html/articles/article-new-window-view.html" target="_blank" class="list-group-item">
+                <h5 class="list-group-item-heading dark-grey">Related Article Headline</h5>
+                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a></div>
+          </div>
+          <!--.row -->
+        </div>
+        <!--column-6-->
+        <div class="column-3 container">
+            <h3 class="grey">Filters</h3>
+            <form role="form" action="filters-active.html">
+              <div class="form-group">
+                <h5 class="green">Technology</h5>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <input id="technology_1" type="checkbox">
+                    <label for="#technology_1" type="checkbox">Option #1<span class="badge">14 </span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="technology_2" type="checkbox">
+                    <label for="#technology_2" type="checkbox">Option #2<span class="badge">14 </span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="technology_3" type="checkbox">
+                    <label for="#technology_3" type="checkbox">Option #3<span class="badge">14 </span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="technology_4" type="checkbox">
+                    <label for="#technology_4" type="checkbox">Option #4<span class="badge">14 </span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="technology_5" type="checkbox">
+                    <label for="#technology_5" type="checkbox">Option #5<span class="badge">14 </span></label>
+                  </li>
+                </ul>
+              </div>
+              <div class="form-group">
+                <h5 class="green">Category</h5>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <input id="category_1" type="checkbox">
+                    <label for="#category_1" type="checkbox">Option #1<span class="badge">14 </span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="category_2" type="checkbox">
+                    <label for="#category_2" type="checkbox">Option #2<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="category_3" type="checkbox">
+                    <label for="#category_3" type="checkbox">Option #3<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="category_4" type="checkbox">
+                    <label for="#category_4" type="checkbox">Option #4<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="category_5" type="checkbox">
+                    <label for="#category_5" type="checkbox">Option #5<span class="badge">14</span></label>
+                  </li>
+                </ul>
+              </div>
+              <div class="form-group">
+                <h5 class="green">Phase</h5>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <input id="phase_1" type="checkbox">
+                    <label for="#phase_1" type="checkbox">Option #1<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="phase_2" type="checkbox">
+                    <label for="#phase_2" type="checkbox">Option #2<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="phase_3" type="checkbox">
+                    <label for="#phase_3" type="checkbox">Option #3<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="phase_4" type="checkbox">
+                    <label for="#phase_4" type="checkbox">Option #4<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="phase_5" type="checkbox">
+                    <label for="#phase_5" type="checkbox">Option #5<span class="badge">14</span></label>
+                  </li>
+                </ul>
+              </div>
+              <div class="form-group">
+                <h5 class="green">Type</h5>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <input id="type_1" type="checkbox">
+                    <label for="#type_1" type="checkbox">Option #1<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="type_2" type="checkbox">
+                    <label for="#type_2" type="checkbox">Option #2<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="type_3" type="checkbox">
+                    <label for="#type_3" type="checkbox">Option #3<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="type_4" type="checkbox">
+                    <label for="#type_4" type="checkbox">Option #4<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="type_5" type="checkbox">
+                    <label for="#type_5" type="checkbox">Option #5<span class="badge">14</span></label>
+                  </li>
+                </ul>
+              </div>
+              <button type="submit" class="btn-action btn-block">Ok, Done</button>
+            </form><br>
+            <h3 class="grey">Save to Dashboard</h3><br>
+            <form role="form">
+              <div class="form-group">
+                <label for="nickname">Give it a nickname</label>
+                <input id="nickname" type="text" placeholder="Nickname" class="form-control">
+              </div><br>
+              <button type="submit" class="btn-action btn-block">Ok, Done</button>
+            </form>
+        </div>
       </div>
     </div>
-    <!--application div -->
   </body>
 </html>

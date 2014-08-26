@@ -1,48 +1,21 @@
 extends ../_layouts/page_landing.jade
 block content
 
-    #about 
-      .container
-        h1
-          | TEAM Mentor is an
-          b.green interactive
-          | Application Security library with
-          b.green thousands
-          | of articles on how to
-          b.green
-            | prevent vulnerabilities
-          | during application development.
+    #about
+      .row
+        .column-offset-2.column-8
+          h2 An interactive Application Security library with thousands of code samples and professional guidance when you need it.
+
     #about-us
       .container
-        h2.text-center.light-grey Use TEAM Mentor to
-        .row
-          .col-sm-offset-1.col-sm-2
-            img.img-responsive(src='/deploy/assets/icons/identify-fix.png', alt='Find guidance for implementing the application security controls')
-          .col-sm-8
-            br
-            br
-            h4
-              | Find guidance for implementing the application security controls that are relevant to your particular application in your development language.
-        .row
-          .col-sm-offset-1.col-sm-2
-            img.img-responsive(src='/deploy/assets/icons/gain-access.png', alt='Team Mentor identifies vulnerabilities and reduces time to fix them')
-          .col-sm-8
-            br
-            br
-            h4
-              | Gain quick and easy access to comprehensive security guidance that is accurate and relevant to specific code security questions.
-        .row
-          .col-sm-offset-1.col-sm-2
-            img.img-responsive(src='/deploy/assets/icons/integrate.png', alt='Improve your development workflow by integrating security scanning and guidance')
-          .col-sm-8
-            br
-            br
-            h4
-              | Improve your development workflow by integrating security scanning and guidance, resulting in quicker production of more secure and stable applications.
+        .row 
+          .column-offset-2.column-8
+            h4.dark-grey TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.
+            p It contains over 4,000 articles with dynamic content across multiple development platforms including .NET, Java, C/C++, PHP, Android and iOS. TEAM Mentor is the In-Practice companion to our TEAM Professor eLearning courses, extending developers’ knowledge in combination with training.
+            p TeamMentor integrates with static analysis tools, such as Checkmarx and Fortify, helping teams make more sense of scan results and make critical decisions to fix software vulnerabilities.
+
     #calltoaction
-      .container
-        h1 Fix Faster. Fix Better.
-        br
-        br
-        a(href='getting-started.html')
-          button.btn.btn-landing-page(type='button') See for yourself
+      +call-to-action-div
+
+    #footer
+      +footer-div
