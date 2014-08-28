@@ -503,18 +503,18 @@ h4 {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003461}}
 h5 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003466}}
 h6 {
-  font-size: 12px;
+  font-size: 17px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003470}}
 p, li {
-  font-size: 1.15em;
+  font-size: 16px;
   line-height: 1.5em;
   color: #444444;
 }
