@@ -476,7 +476,14 @@ p, li {
 ul, ol {
 	margin-top: 0px;
 	margin-bottom: 10px;
+
+	&.sidebar {
+		list-style-type: none;
+		margin-left: -30px;
+	}
 }
+
+
 
 hr {
 	margin: 0 auto;
