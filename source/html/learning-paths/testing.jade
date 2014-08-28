@@ -40,8 +40,8 @@ block content
 				br
 
 				p The How to Test for Cross-Site Scripting article describes the basic steps used to test for common Cross-Site Scripting vulnerabilities.
-				br
 
+				br
 				h5.dark-grey How to Test for Cross Site Scripting Vulnerabilities
 
 				p Cross site scripting (or XSS) is a well known HTML-related security vulnerability that commonly affects Internet clients through XSS vulnerable servers. A XSS bug in a web server allows an attacker to send malicious payload to a victim browser through the vulnerable server. Payloads may also execute in other HTTP clients not necessarily focused at browsing the web as long as they render HTML and execute any execute scripts.
@@ -104,7 +104,6 @@ block content
 
 				p List the high risk variables in the application and their data sources to make sure that they are covered during review and testing.
 
-
 				br
 				h5.dark-grey  Step 3: Start Test and Exploring                                     
 
@@ -114,190 +113,567 @@ block content
 
 				p Success in finding XSS bugs depends on whether the tester is able to store or reflect an HTML script in or through the server. In almost all cases scripts are included in between SCRIPT tags (other tags also worked as explained later). During this step, it is recommended to start exploring how the server application's high risk components react to tag related input. A good idea is to start testing a simple fuzz string like this one:
 
-				p '>;!--"><XYZ><=&{()}
-
 				p Then look for the string XYZ in server's response to see how the server processed the special script related characters. It might turn out that the server uses the string inside of a tag:
-
-				p <input type="text" name="keyword" id="keyword" maxlength="255" value="'>;!--"><XYZ><=&{()}" style="height:10px; color:#000;" />
 
 				p Continue by modifying the initial string to try displaying an alert. The double quotes of the original fuzz string closed the value property so whatever came before doesn't matter. Also, after the closing parenthesis next to the letter Z the string can be anything. Taking the string can be simplified to this:
 
-				p "><XYZ>
-
 				p The server might reply with:
-
-				p <input type="text" name="keyword" id="keyword" maxlength="255" value=""><XYZ>" style="height:10px; color:#000;" />
 
 				p Try to display an alert box
 
 				p The following goal is to execute a script and the easiest script to test is the one shown in the first scenario that displays an alert box. Note that now the tester knows that the malicious sting needs to start with the > character, due to where in the HTML document it will appear:
 
-				p "><script>alert('Works')</script>
-
 				p If the server doesn't filter the SCRIPT tags then an alert box will appear. The code sent back to the tester will look like this.
-
-				p <input type="text" name="keyword" id="keyword" maxlength="255" value=""><script>alert('Works')</script>" style="height:10px; color:#000;" />
 
 				p Cover different tags
 
 				p Sometimes severs filter out the string </script> from their output. If the server doesn't allow script tags, try the img tag and put your code in the src property:
 
-				p <img src="javascript:alert('Works');"></img>
-
-				p In fact, there are many other tags known to be dangerous in some cases, such as "<iframe>, <body>, <embed>, <meta>, <html>, <frame>, <frameset>, <input>, <layer>, <object>, and <style>."
+				p In fact, there are many other tags known to be dangerous in some cases, such as --
 
 				p A good choice is to try the following that doesn't require script tags or the JavaScript command:
-
-				p <body onload=alert('Works')> 
 
 				br
 				h5.dark-grey  Step 4: Tune Test Case Data                                            
 
-During this step testing is focused at covering all entry points and tuning test case data based on the format of the specific entry point.  
-Consider string format and encoding according to entry point
+				p During this step testing is focused at covering all entry points and tuning test case data based on the format of the specific entry point.  
+				
+				p Consider string format and encoding according to entry point
 
-The example in step 3 doesn't specify how the fuzz string was passed to the application (it can be assumed that it was through a web form for these purposes). During this step, testers need to go through their list of components and entry points and modify test case data according to the entry point. Make sure that all entry points are covered.
-Web Forms
+				p The example in step 3 doesn't specify how the fuzz string was passed to the application (it can be assumed that it was through a web form for these purposes). During this step, testers need to go through their list of components and entry points and modify test case data according to the entry point. Make sure that all entry points are covered.
+				
+				p Web Forms
 
-Web forms are the easiest to test since they commonly allow only ASCII strings. To test through this entry point, just go through the high risk component list looking for ones that have web forms. Then use a web browser to submit test strings to the components via the forms, and possibly an attack proxy like Burp Suite to circumvent any client-side JavaScript used for data validation.
-URL Contents
+				p Web forms are the easiest to test since they commonly allow only ASCII strings. To test through this entry point, just go through the high risk component list looking for ones that have web forms. Then use a web browser to submit test strings to the components via the forms, and possibly an attack proxy like Burp Suite to circumvent any client-side JavaScript used for data validation.
 
-A web application is vulnerable to XSS through the value passed in the password variable: 
+				p URL Contents
 
-http://www.xvulnerablesite.com/login.asp?username=[value]&password=[value]
+				p A web application is vulnerable to XSS through the value passed in the password variable: 
 
-If testers want to test the following string in the password value: 
+				p http://www.xvulnerablesite.com/login.asp?username=[value]&password=[value]
 
-<script>alert('Works')</script>
+				p If testers want to test the following string in the password value: 
 
-They will need to modify the above URL in this way:
+				p They will need to modify the above URL in this way:
 
-http://www.xvulnerablesite.com/login.asp?username=any&password=<script>alert('Works')</script>
+				p When executing test cases through the URL it is important to try different encodings of the test string. For instance, one can execute the first attack string below and it causes no effect. Then execute the second one and the alert box works. In this case the web application didn't allow the symbol characters (except the round brackets) in ASCII but did in their hexadecimal encodings: 
 
-When executing test cases through the URL it is important to try different encodings of the test string. For instance, one can execute the first attack string below and it causes no effect. Then execute the second one and the alert box works. In this case the web application didn't allow the symbol characters (except the round brackets) in ASCII but did in their hexadecimal encodings: 
+				p When testing through the URL and sometimes in other places, it is necessary to investigate what type of encodings the server is using and modify test cases according to them.
 
-<img src="javascript:alert('Works');">
+				p Cookie contents
 
-http://www.xvulnerablesite.com/login.asp?username=any&password=<img%20src%3d%22javascript:alert(%27Works%27)%22>
+				p Sometimes the application blindly displays the contents of a cookie in the web browser. To test the risky component through this entry point we have to modify the cookie file in disk and try to inject a simple script, then restart the browser to see if an alert box appears. Alternately, an attack proxy can be used to perform this modification on the fly, which is especially helpful in the case of complicated applications.
 
-When testing through the URL and sometimes in other places, it is necessary to investigate what type of encodings the server is using and modify test cases according to them.
-Cookie contents
 
-Sometimes the application blindly displays the contents of a cookie in the web browser. To test the risky component through this entry point we have to modify the cookie file in disk and try to inject a simple script, then restart the browser to see if an alert box appears. Alternately, an attack proxy can be used to perform this modification on the fly, which is especially helpful in the case of complicated applications.
-Flash Parameters
+				p Flash Parameters
 
-Since Flash parameters are frequently passed in the URL, testing Flash parameters is similar to testing URL contents. Here, it is necessary to go through each parameter in the URL and see how the application reacts. Flash also frequently receives parameters using FlashVars. Consider the following code to load a Flash movie:
+				p Since Flash parameters are frequently passed in the URL, testing Flash parameters is similar to testing URL contents. Here, it is necessary to go through each parameter in the URL and see how the application reacts. Flash also frequently receives parameters using FlashVars. Consider the following code to load a Flash movie:
 
-<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
- codebase="http://macromedia.com/cabs/swflash.cab#version=6,0,0,0"
- width="250" height="250" id="flaMovie1" align="center">
- <param name=movie value="flaMovie1.swf">
- <param name=FlashVars value="inputURL=usersinput">
- <param name=quality value=high>
- <param name=bgcolor value=#ffffff>
- <embed src="flaMovie1.swf" FlashVars="inputURL=usersinput"
-  quality="high" bgcolor="#ffffff" width="250" height="250"
-  name="flaMovie1" align type="application/x-shockwave-flash"
-  pluginspage="http://www.macromedia.com/go/getflashplayer">
-</object>
+				p During this step, testers will need to change the entry parameters to Flash like this:
 
-During this step, testers will need to change the entry parameters to Flash like this:
+				p Graphical User Interface
 
-<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
- codebase="http://macromedia.com/cabs/swflash.cab#version=6,0,0,0"
- width="250" height="250" id="flaMovie1" align="CENTER">
- <param name=movie value="flaMovie1.swf">
- <param name=FlashVars value="inputURL=%3cscript%3ealart%28%b4XSS%b4%29%3c%2fscript%3e">
- <param name=quality value=high>
- <para name=bgcolor value=#ffffff>
- <embed src="flaMovie1.swf" FlashVars="inputURL=%3CSCRIPT%3Ealert%28%B4XSS%B4%29%3C%2FSCRIPT%3E"
-  quality="high" bgcolor="#ffffff" width="250" height="250"
-  name="flaMovie1" align type="application/x-shockwave-flash"
-  pluginspage="http://www.macromedia.com/go/getflashplayer">
-</object>
-Graphical User Interface
+				p Testing through the UI is similar to web form testing in that the tester enters test values directly to the screen. In the case of GUI testing the application used is not a web browser but any other application that interacts with high risk components, renders HTML, and that allows user input or otherwise receives untrusted data.
 
-Testing through the UI is similar to web form testing in that the tester enters test values directly to the screen. In the case of GUI testing the application used is not a web browser but any other application that interacts with high risk components, renders HTML, and that allows user input or otherwise receives untrusted data.
-Look for additional entry points
+				p Look for additional entry points
 
-Each application has its own set of entry points. This article lists the common ones for XSS attacks. Nonetheless, testers must explore their application for additional ways of passing data that might make it into a XSS vulnerability. It is recommended to use system monitoring tools such as the ones from www.sysinternals.com and dedicated attack tools such as Burp proxy that lets you intercept and add match-and-replace rules to change the contents of HTTP packets.
-Keep tuning test cases
+				p Each application has its own set of entry points. This article lists the common ones for XSS attacks. Nonetheless, testers must explore their application for additional ways of passing data that might make it into a XSS vulnerability. It is recommended to use system monitoring tools such as the ones from www.sysinternals.com and dedicated attack tools such as Burp proxy that lets you intercept and add match-and-replace rules to change the contents of HTTP packets.
 
-Sometimes the initial test string can land in a part of the source code where XSS is possible without using a script tag. The tester may be able to pad it a little or maybe just write the JavaScript command. Always check if the initial input lands inside or within an actual command or parameter.
-Consider the case of persistent XSS
+				p Keep tuning test cases
 
-Sometimes the tester won't see the results of test cases right away. An XSS bug might exist that takes malicious input and only sends it back if the attacker does something else like visiting another page, for instance. Such is often the case with a persistent XSS attack.
+				p Sometimes the initial test string can land in a part of the source code where XSS is possible without using a script tag. The tester may be able to pad it a little or maybe just write the JavaScript command. Always check if the initial input lands inside or within an actual command or parameter.
 
-Consider the following case. An application asks for a user's password hint. When the server prompts the user for the hint, the attacker types one of the XSS test strings described before. Then submits the registration but the server doesn't show the alert box. Then the attacker has the victim browse the site's password page and ask for the hint. When the site displays the hint the alert box appears. 
+				p Consider the case of persistent XSS
 
-While testing persistent XSS, testers must think of all the places where the input might end up and check all of them. They should talk to developers and use specifications to check all data stores where a persistent XSS bug can manifest.
+				p Sometimes the tester won't see the results of test cases right away. An XSS bug might exist that takes malicious input and only sends it back if the attacker does something else like visiting another page, for instance. Such is often the case with a persistent XSS attack.
 
+				p Consider the following case. An application asks for a user's password hint. When the server prompts the user for the hint, the attacker types one of the XSS test strings described before. Then submits the registration but the server doesn't show the alert box. Then the attacker has the victim browse the site's password page and ask for the hint. When the site displays the hint the alert box appears. 
+
+				p While testing persistent XSS, testers must think of all the places where the input might end up and check all of them. They should talk to developers and use specifications to check all data stores where a persistent XSS bug can manifest.
 
 				br
 				h5.dark-grey Applies to
 				p Applications that manipulate HTML input and output.
 				
 				br
-				h5.dark-grey Impact
+				h5.dark-grey Conclusions
+				p Testing for XSS bugs is not complicated but you need to be thorough. It is important that you go through all the places where your web server renders HTML output. There are many strings to try, many tags to look at, different methods to feed the test data, and even room for automation. However, the most important thing to keep in mind is to follow your test data. Don't just look for the alert box, but look at the code that comes back to you. Successful XSS testing is all about knowing how to tune you test case data.
+				
+				br
+				h5.dark-grey Additional Resources
+
+				p
+					ul
+						li For a Cross Site Scripting Cheat Sheet, see here
+						li For information about testing applications for Cross-Site Scripting vulnerabilities, see here
+						li For information about fuzz vectors, see here
+						li For information about fuzz testing, see here
+
+				br
+				hr
+				br
+
+				h4.dark-grey ASP.NET All Input Is Validated
+				br
+
+				p This Checklist Items can be used to review code to identify potential Cross-Site Scripting vulnerabilities.
+				
+				br
+				h5.dark-grey All Input Is Validated
+
+				br
+				h5.dark-grey What to Check For
+
+				p Ensure that all input parameters from form fields, query strings, cookies, and HTTP headers are validated. Validation routines should check for length, range, format, and type. Validation should check first for known valid and safe data and then for malicious, dangerous data.
+
+				br
+				h5.dark-grey Why
+
+				p An attacker passing malicious input can attempt SQL injection, cross-site scripting, and other injection attacks that aim to exploit your application's vulnerabilities.
+
+				br
+				h5.dark-grey How to Check
+
+				p To check for this problem, use the following steps: 
+
+				p Find all sources of input. During design time identify all of the potential sources of input parameters to your application. Scour the source code to discover sources of input that may have been missed in the design. Compile a list that you can use in the following steps. The most common sources are:
+
+				p
+					ul
+						li Form Fields
+						li Query Strings
+						li Cookies
+						li HTTP Headers
+
+				p Trace data from source to sink. Trace each of source of input through your application until you find its ultimate destination. The final sink may be in memory, on the hard drive, sent over the network or stored in a database.
+
+				p Identify validation routines. Each input source should have a data validation routine associated with it. Ideally the validation will occur as soon after the input reaches your application as possible. Shared validation routines are better than creating many spread throughout your code base, check for consolidation of routines to aid testing and reduce the chance of one-off bugs. If an input source does not have a validation routine associated with it, flag it for fixing.
+
+				p Ensure quality of validation routines. Validation routines should check for length, range, format, and type. Validation should check first for known valid and safe data and then for malicious, dangerous data. Do not rely on filtering out all malicious data, it is too easy to miss something. Do not rely on client-side validation alone as it can be easily bypassed.
+
+				br
+				h5.dark-grey How to Fix
+
+				p Check for known good data and constrain input by validating it for type, length, format, and range. For Web form applications that obtain input through server controls, use the ASP.NET validator controls, such as the RegularExpressionValidator, RangeValidator, and CustomValidator, to validate and constrain input. Check all numeric fields for type and range. If you are not using server controls, you can use regular expressions and the Regex class, and you can validate numeric ranges by converting the input value to an integer or double and then performing a range check. Validate your input against the least permissive expression possible that will accept all the input you expect for that field. If you know that the field will have certain internal structure, check for it. If your input has an internal checksum, like a credit card number, check that too.
+
+				p Most Web applications accept input from various sources, including HTML controls, server controls, query strings, and cookies. Validate input from all of these sources to help prevent injection attacks. Use regular expressions to help validate input. The following example shows how to use the Regex class.
+
+				p If you cannot cache your regular expression for frequent use, you should use the static IsMatch method where possible for performance reasons, to avoid unnecessary object creation.
+
+				p Remember that validating input does not remove the need to format output, parameterize queries, or otherwise handle user input carefully. 
+
+				br
+				hr
+				br
+
+				h4.dark-grey ASP.NET Echoed Input Is Encoded
+				br
+
+				p This Checklist Items can be used to review code to identify potential Cross-Site Scripting vulnerabilities.
+				
+				br
+				h5.dark-grey Echoed Input Is Encoded
+
+				br
+				h5.dark-grey What to Check For
+
+				p Ensure that input is not echoed back to the user without first validating and/or encoding the data. Data which can be modified by a user must be treated as untrusted data.
+
+				br
+				h5.dark-grey Why
+
+				p Echoing input directly back to the user makes your application susceptible to some code injection attacks, such as Cross-Site Scripting attacks. What constitutes malicious input varies widely depending on the system in question. On the web, it normally means some kind of JavaScript.
+
+				br
+				h5.dark-grey How to Check
+
+				p Use the following steps to ensure that input which can be modified by a user is properly validated and encoded before being echoed back to the user:
+
+				p Identify all sources of user input. At design time and again at the code review stage during development, determine all the possible tainted inputs to the application. Determine the intended characteristics of each input (length, format, etc.) and create validators for them. The following list includes some common input sources:
+
+				p
+					ul
+						li Form Fields
+						li Query strings
+						li Databases and data access methods
+						li Cookie collection
+						li Session and application variables
+
+				p Identify all output that includes user input. At design time and again at the code review stage during development, trace all inputs to the system though and determine all of the places where they may be output. In each case, identify the context in which the output occurs.
+
+				p Ensure all user-controllable data is properly encoded before being sent as output. In each location where data is output, it must be encoded according to the context of the output.
+
+				p Do not rely on the Server.HtmlEncode function to protect your application against cross-site scripting attacks. Instead use the Microsoft Anti-Cross-Site Scripting Library available here.
+
+				p Do not attempt to use a character block list; when taking into account Unicode characters, etc., along with new emerging attack forms, block lists are guaranteed to be ineffective.
+
+				p Ensure that allow list encoding is performed so that all non-alphanumeric characters are encoded instead of certain specific characters like '<', '>, etc.
+
+				p Encoding must be selected appropriately based upon how the output is returned to the client- either as HTML content or in a URL. Verify the context in which the output is used and ensure it is properly encoded.
+
+				p If you are using the Microsoft Anti-Cross-Site Scripting Library, ensure that the Microsoft.Security.Application.AntiXss.HtmlEncode method is being used to encode HTML tags and their attributes. Similarly, in case your application constructs certain URLs from input data or data from a shared database, ensure that the Microsoft.Security.Application.AntiXss.UrlEncode method is being used to make them safe. Whether you are using HttpUtility encoding methods or the methods from the Microsoft AntiXss library, the context matters. HtmlEncode cannot be used in all situations, for example for un-trusted data that is used to create URLs, UrlEncode should be used.
+
+				p Make sure that you encode data at the last possible opportunity before the data is returned to the client. If you encode any earlier than this, you may not know the exact context that the data will be used in, and hence the format you need to encode into. Also, early encoding of some data can result in double encoding problems.
+
+				p If data is being written out into an HTML context, the following code will ensure that only known safe characters get through and help prevent a large majority of known XSS attacks. It will increase the size of the resulting HTML and does require more processing overhead, but it is definitely safe for use in most scenarios:
+
+				br
+				h5.dark-grey How to Fix
+
+				p If you write output that includes user input or data from a shared database or a local file that you do not trust, encode it. Encoding the data ensures that it is treated as literal text and not as script. Use the following guidelines to encode user input:
+
+				p Do not rely on HtmlEncode. ASP.NET's Server.HtmlEncode function is often used to protect against cross-site scripting attacks. However, this function only encodes <>"& characters. This is not sufficient to protect against all possible attacks.
+
+				p Encode all special characters. The safest solution is to encode all non-alphanumeric characters. Only this type of whitelist solution will catch all possible XSS attacks, regardless of context.  This requires more overhead in terms of processing time and size of the resulting HTML, but it is the safest encoding mechanism for all HTML contexts:
+
+				p Use the Microsoft Anti-XSS Library. If you are using the Anti-Cross Site Scripting Library, you can use the Microsoft.Security.Application.AntiXss.HtmlEncode method. Similarly, if you write URLs that might contain unsafe characters because they have been constructed from input data or data from a shared database, use Microsoft.Security.Application.AntiXss.UrlEncode to make them safe.
+
+				p Note: Make sure that you encode data at the last possible opportunity before the data is returned to the client. If you encode any earlier than this, you may not know the exact context that the data will be used in, and hence the format you need to encode into. Also, early encoding of some data can result in double encoding problems.
+
+				br
+				h5.dark-grey Applies to
+				p ASP.NET 4.0
+
+				br
+				hr
+				br
+
+				h4.dark-grey Java All Input Is Validated
+				br
+
+				p This Checklist Items can be used to review code to identify potential Cross-Site Scripting vulnerabilities.
+				
+				br
+				h5.dark-grey Input from All Sources Is Validated
+
+				br
+				h5.dark-grey What to Check For
+
+				p Check for input that has not been passed through a validation routine. All input from external sources should be validated.
+
+				br
+				h5.dark-grey Why
+
+				p Input that is not validated can lead to cross-site scripting, SQL injection, directory traversals, and other vulnerabilities which would allow an attacker to gain unauthorized access to sensitive data.
+
+				br
+				h5.dark-grey How to Check
+
+				p An application can take input via various ways such as a web interface, database, file system or other software running on the server. Use the following steps to establish a validation strategy:
+
+				p Identify all sources of input. At design time identify all potential sources of input to your application. Once implemented, scour source code to discover sources of input that may have been missed in the design. Potential sources of input in a web application typically include:
+
 				p 
 					ul
-						li Credential compromise;
-						li Credential disclosure;
-						li Information disclosure;
-						li Execute code on client machine;
-						li Elevation of privilege;
-						li Repudiation.
-				br
+						li URL based parameters
+						li Form based parameters
+						li Hidden fields
+						li Cookies
+						li HTTP headers (Host, accept types, www authentication, cache settings, encodings, etc)
+						li Local filesystem
+						li Database
+						li Other services running on the system
+						li Javascript variables
+						li File upload and attributes (filename, size, data, etc)
+						li DNS results or host names
+						li External component call return values (COM, AJAX, ActiveX)
 
-				h5.dark-grey Vulnerabilities
+				p Once you know the types of input from where your application may receive data, look for all entry points. Good starting points are method parameters and assignment statements. For example:
+
+				p This method uses the searchTerm variable:
+
+
+				p This assignment stores data from a GET request parameter named index and stores it in the string searchTerm. Ensure that this input is validated:
+
+				p String searchTerm = request.getParameter("index");
+
+				p This assignment uses the input that was gathered above to store more input from a database. Verify that searchTerm is validated before this use, and also ensure that rData is validated as another source of input.
+
+				p double[] rData = common.queryDBForIndex(searchTerm);
+
+				p Trace data from source to sink. Trace each source of input from the immediate source through your application to its final destination. The final sink may be in memory, on the hard drive, sent over the network or stored in a data store such as a database.
+
+				p Identify validation routines. Each input source should have a validation routine associated with it. Ideally the validation will occur as soon as the input reaches your application. Shared validation routines are better than creating many throughout the code base, so check for consolidation of routines to aid testing and reduce the chance of one-off bugs. If any input source does not have a validation routine associated with it, flag it for fixing.
+
+				p Ensure quality of validators. Validation routines should check for length, range, format and type. Validation should first check for good data through whitelisting then for known malicious data through blacklisting. Do not rely on client-side validation alone as it can be bypassed easily.
+
+				br
+				h5.dark-grey How to Fix
+
+				p An application can take input via various ways: web interface, database, file system, other software running on the server, etc. Use the following steps to establish a validation strategy:
+
+				p Establish your application's trust boundary: The notion is that all input not generated by your application is untrusted.
+
+				p Identify all sources of input: An application can have various sources of input and each one is an entry point to your application that can potentially be used to break your application's security model. Enumerate all possible sources of input and make note of the expected input at each source. Potential sources of input in a web application typically include:
+		
 				p
 					ul
-						li Failure to validate user input for script tags when that input can be echoed back into a web page.
-						li Trusting data retrieved from a shared database.
-						li Failure to encode all remotely provided data, including reverse DNS lookup, cookie contents, uploaded files, etc.
-						li Improperly converting "safe" tags to HTML.
-						li Displaying user input directly, without encoding it appropriately for the context in which it is used.
-						li Checking user-submitted data against a blacklist instead of a whitelist.
+						li URL based parameters
+						li Form based parameters
+						li Hidden fields
+						li Cookies
+						li HTTP headers
+						li Local filesystem
+						li Database
+						li Other related services
+
+				p Understand the input that your application can handle and process: After identifying the different entry points, define the format and type of input that should be provided through each entry point.
+
+				p Create a set of validators: Build a validator for each format and type of expected input. Centralize your application's validators as it helps strengthen the code by limiting the amount of scattered validation code throughout your application. Place the set of validators on your application's trust boundary. Your application should accept input from the outside world only through its set of validators.
 
 				br
-				h5.dark-grey Counter Measures
+				h5.dark-grey Problem Example
+
+				p The following code produces a data analysis based on a financial index. Unfortunately, the application validates the user's input but not the returned data from the database. Therefore, the application is vulnerable to an integer overflow that can harm the business logic used in generating the data analysis.
+
+				h5.dark-grey Solution Example
+
+				p The following code produces a data analysis based on a financial index. Since the code validates all sources of input to the application, the application is secured from SQL injection and integer overflows. 
+
+				br
+				hr
+				br
+
+				h4.dark-grey Java Echoed Input Is Encoded
+				br
+
+				p This Checklist Items can be used to review code to identify potential Cross-Site Scripting vulnerabilities.
+				
+				br
+				h5.dark-grey All Output Data Is Encoded
+
+				br
+				h5.dark-grey What to Check For
+
+				p Ensure that all echoed input is first encoded.
+
+				br
+				h5.dark-grey Why
+
+				p Encoding echoed input prevents injection attacks such as cross-site scripting.
+
+				br
+				h5.dark-grey How to Check
+
+				p An application can take input via various sources, such as a web interface, database, file system or other software running on the server, and then use that same input in various outputs. Use the following steps to establish a validation strategy:
+
+				p Identify all sources of input. At design time identify all potential sources of input to your application. Once implemented, scour source code to discover sources of input that may have been missed in the design. Potential sources of input in a web application typically include:
+				
 				p
 					ul
-						li Perform context-sensitive encoding of untrusted input before it is echoed back to a browser: Use an encoding library (e.g., the Microsoft Anti-Cross Site Scripting Library or OWASP Reform). The following language-specific functionality may be helpful, but is not sufficient to properly protect against cross-site scripting. Most of these libraries only convert the symbols ", &, <, and > to safe HTML equivalents. A whitelisting library should be used instead.
+						li URL based parameters
+						li Form based parameters
+						li Hidden fields
+						li Cookies
+						li HTTP headers (Host, accept types, www authentication, cache settings, encodings, etc)
+						li Local filesystem
+						li Database
+						li Other services running on the system
+						li Javascript variables
+						li File upload and attributes (filename, size, data, etc)
+						li DNS results or host names
+						li External component call return values (COM, AJAX, ActiveX)
 
-						li Python: cgi.escape (only escapes 3 characters by default, escaping " is optional)
-						li ASP: HttpUtility.HtmlEncode and HttpUtility.UrlEncode (only encodes 4 characters)
-						li Perl: HTML::Entities::encode (only escapes 4 characters by default, but it makes it easy to specify other unsafe characters)
-						li PHP: htmlentities and urlencode (only escapes 4 characters by default, and can 						optionally encode ' (single quote)
-						li Validate untrusted input against an inclusion list before use: For example, use regular expressions to define acceptable character sequences, and use it as a filter. If the input is meant to be a primitive type, it can be cast appropriately to assure that it is the expected type (a type constraint) and then checked to ensure it's in the appropriate range (a range constraint). In the case where there are only a limited number of acceptable inputs, then the input can be constrained to that set with simple if or switch control structures, or by matching against a fixed list of strings (a domain constraint).
+				p Once you have listed the sources of input your application can use, look for all entry points. Good starting points are method parameters and assignment statements. For example:
+
+				p This method uses the searchTerm variable.
+
+				p This assignment stores data from a GET request parameter named index and stores it in the string searchTerm. Ensure that this input is validated.
+
+				p This assignment uses the input that was gathered above to store more input from a database. Verify that searchTerm is validated before this use, and also ensure that rData is validated as another source of input.
+
+				p Trace data from source to sink. Trace each source of input from the immediate source, through your application, to its final destination. The final sink may be in memory, on the hard drive, sent over the network or stored in a data store such as a database. Create a list of the input sources that are echoed back to the user through output - whether directly, through a file, in a URL or through a database or other intermediary source.
+
+				p Input used as output may be identified by the following:
+
+				p
+					ul
+						li out.println()
+						li append()
+						li insert()
+						li write()
+						li Assignment operator (=)
+						li Increment and assignment operator (+=)
+						li Database write operations
+
+				p Ensure input is properly encoded before being used as output. Each of the input sources identified above should have the input encoded properly before it is used as output. Encoding must be selected appropriately based upon how the output is returned to the client. Verify the context in which the output is used and ensure it is properly encoded. A couple example contexts are shown below (URL, HTML entity)
+
+				p
+					ul
+						li URL Encoding- URLEncoder.encode(output)
+						li HTML Entity Encoding - JSP HTML encoding: <c:out value="${output}" />
+						li HTML Attribute Encoding
+						li JavaScript Encoding
+						li CSS Encoding
+						li DOM Encoding
+
+				p Beware that certain locations may require a mixed encoding, such as initially performing URL encoding, then performing JavaScript encoding. This depends entirely on the output context wherein the data is used, and requires knowledge of the parsing mechanisms of browsers. Some example encodings are below.
+
+				p User URL provided:
+
+				p No encoding:
+
+				p URL Encoding:
+
+				p HTML Encoding:
+
+				br
+				h5.dark-grey How to Fix
+
+				p Encoding the echoed user input prevents injection attacks such as cross-site scripting. Use the following steps to ensure all echoed input is encoded:
+
+				p Identify all echoed input. Locate all places inside your application where user-supplied data will be returned to the client. Such data can be of a reflective or persistent nature:
+		
+				p
+					ul
+						li Reflective: In a reflective setting, the input is immediately returned to the client. For example, search engines present the searched query when displaying the results.
+						li Persistent: In a persistent setting, the input is stored and returned to the client when retrieved from the database. For example, message boards store the users' posts inside a database and return them when a given topic is viewed.
+
+				p Determine the type of encoding. After identifying all echoed input, determine how the input is returned to client. Data is said to be in a HTML context when that data is rendered as a part of a HTML document and is understood by the browser to be HTML. There are other contexts available to Web Applications, such as JavaScript context, CSS context, etc. Data is said to be in a JavaScript context when it is included in JavaScript code and is interpreted as JavaScript by the browser, and so on. Data has to be encoded differently for different contexts to prevent Cross-Site Scripting vulnerabilities. The differences of encoding arise from the fact that different contexts have different special symbols and keywords. Output encoding routines have to be designed with the understanding of the context of the output in mind.
+
+				p 
+
+					ul
+						li URL encoding: URL encoding allows your application to maintain the original URL, yet display it to the user in a non-malicious way. Because HTTP headers allow a substitution schema, all characters/symbols are preserved by displaying their ASCII codes instead of the actual character/symbol. For example, < is represented by %3C where 3C is the ASCII value for <:
+
+						li HTML encoding: HTML encoding is used when the echoed input is returned as regular text or HTML content. Input should be encoded by substituting certain characters with their respective HTML values:
+
+						li HTML Attribute Encoding: HTML Attribute encoding is used to encode dynamic data that is output in an attribute of an HTML tag, except URL, CSS, and JavaScript event handler attributes.
+
+						li JavaScript Encoding: JavaScript encoding is used to encode dynamic data that is output into the JavaScript context, including certain event handlers in HTML tags.
+
+						li CSS Encoding: CSS encoding is used to encode dynamic data that is output into the CSS context.
+
+						li DOM Encoding: DOM encoding is used to encode dynamic data that is used in situations where the DOM is involved. These instances are more complicated and often involve multiple output contexts, which necessitates chaining in many circumstances.
+
+				p Apply the encoding. After identifying the echoed input and determining the appropriate encoding method, apply the encoding before the input is returned to the client. There are different encoding libraries available. Different libraries have different capabilities and weaknesses. Please, refer to the vendor's documentation for each potential encoding library.
+
+				br
+				h5.dark-grey Problem Example
+
+				p The following code produces a data analysis based on a financial index. Because it does not HTML encode the echoed input, the application is vulnerable to reflective cross-site scripting.
+
+				br
+				h5.dark-grey Solution Example
+
+				p The following code produces a data analysis based on a financial index. Because the code HTML encodes the echoed input, it is impossible for an attacker to exploit the application via reflective cross-site scripting.
 
 				br
 				h5.dark-grey Additional Resources
 
 				p
 					ul
-						li More information on the Microsoft Anti-Cross Site Scripting Library, see here
-						li For more information on the OWASP Encoding Project, see here
-						li For more information on Cross Site Scripting, see here
-						li For more information on the Cross Site Scripting Filter Evasion Cheat Sheet, see here
-						li For more information on How To Prevent XSS in ASP.NET, see here
+						li To learn more about cross-site scripting, including a library to help defend against cross-site scripting attacks, see here.
+						li To learn more about cross-site scripting, see here.
 
 				br
 				hr
 				br
 
+				h4.dark-grey PHP All Input Is Validated
+				br
 
-				h4.dark-grey XSS Types
+				p This Checklist Items can be used to review code to identify potential Cross-Site Scripting vulnerabilities.
+				
+				br
+				h5.dark-grey Positive Input Validation Is Used
 
-				p These slides are an excerpt from the "OWASP Top 10 - Threats and Mitigations" course. They describe the types of Cross-Site Scripting vulnerabilities.
+				br
+				h5.dark-grey What to Check For
+
+				p Verify that white-list/positive input validation is used to filter all user input.
+
+				br
+				h5.dark-grey Why
+
+				p Properly implemented input validation is effective at preventing SQL Injection and Cross-Site Scripting vulnerabilities.
+
+				br
+				h5.dark-grey How to Check
+
+				p To verify that all user input is filtered using white-list input validation:
+
+				p
+					ul
+						li Identify all entry points for user input. Make a list of all possible sources of user input in your application, such as form fields, POST/GET parameters, cookies, etc.
+
+						li Identify all types on input accepted by the application. For each source of user input on the list, define valid characters, length, format, and range (for numerical values).
+
+						li Identify the input validation subsystem. Verify that validators exist for each type of user input accepted by the application. Make sure that each validator verifies the characters, length, format, and range (for numerical values) of the respective type of input.
+
+				br
+				h5.dark-grey How to Fix
+
+				p To validate all user input using white-list input validation:
+
+				p
+					ul
+						li Identify all entry points for user input. Make a list of all possible sources of user input in your application, such as form fields, POST/GET parameters, cookies, etc.
+
+						li Identify all types on input accepted by the application. For each source of user input on the list, define valid characters, length, format, and range (for numerical values).
+
+						li Define an input validation subsystem. Define a set of validator functions that should be used to validate each type of input handled by the application. Input should be validated on the server.
+
+						li Validate characters. Restrict the acceptable range of characters in text input by using regular expressions.
+
+						li Validate length. Add code to check that the length of the user input is valid.
+
+						li Validate format. If the input type has a specific pattern, such as a date or a phone number, add code to use regular expressions to make sure user input matches the input type specified by the application. Use regular expressions to enforce strong password requirements.
+
+						li Validate range. Restrict the acceptable range of numerical input by comparing the input to the maximum and minimum acceptable values.
+
+						li (Optional) Reject and respond to known bad input. This step does not add much actual security, but it is included here to let you know that such an option exists. The input validation subsystem may check for known attack strings and respond to these likely attacks by doing things like logging detailed user information, alerting the administrator, blocking the user's IP address for some time, and displaying an error message to the attacker informing that you are onto him and reminding him of the consequences.
+
+						li (Optional) Encode input. If the input is going to be displayed back through the web application, consider adding code to encode it to prevent Cross-Site Scripting attacks.
+
 
 				br
 				hr
 				br
 
-				h4.dark-grey XSS Attack Scenarios
+				h4.dark-grey PHP Echoed Input Is Encoded
+				br
 
-				p These slides are an excerpt from the "Web Vulnerabilities - Threats and Mitigations" course. They describe Cross-Site Scripting attack scenarios.
+				p This Checklist Items can be used to review code to identify potential Cross-Site Scripting vulnerabilities.
+				
+				br
+				h5.dark-grey Input Included in Output Is Encoded
+
+				br
+				h5.dark-grey What to Check For
+
+				p Verify that input that is going to be included in output in HTML contexts is encoded. 
+
+				br
+				h5.dark-grey Why
+
+				p Encoding untrusted data before displaying it prevents Cross-Site Scripting vulnerabilities. 
+
+				br
+				h5.dark-grey How to Check
+
+				p To check if input included in output is encoded:
+
+				p
+					ul
+						li Identify all pages that display user entered data. Enumerate all the pages used by the application. Make a list of all the pages that display data that comes from untrusted sources.
+						li Identify all user input that is displayed in HTML contexts. For each page that displays untrusted data, make a list of all untrusted data that is displayed and the context in which it is displayed. Most commonly, untrusted data is displayed as HTML. Other possibilities include displaying user input inside JavaScript or CSS.
+						li Check the encoding functions for each context. PHP includes functions for encoding HTML and XML special characters. PHP does not include encoding functions for other contexts. If your application displays untrusted data in other contexts, you will need to write your own encoding functions or use a third-party encoding library, such as OWASP ESAPI. Identify these functions within your application and take note if they are not present.
+						li Identify functions that display untrusted user data. For each instance of untrusted data being displayed by your application, identify what function outputs that untrusted data. Make a list of these functions and note the code that is directly responsible for displaying untrusted data.
+						li Examine the functions that display untrusted user data. Focus on the code that is directly responsible for displaying untrusted data. Make sure that all untrusted data is encoded before being displayed. Make sure that data is encoded using the correct encoding method.
+
+				br
+				h5.dark-grey How to Fix
+
+				p To encode PHP input included in output:
+
+				p
+					ul
+						li Identify all pages that display user entered data. Enumerate all the pages used by the application. Make a list of all the pages that display data that comes from untrusted sources.
+						li Identify all user input that is displayed in HTML contexts. For each page that displays untrusted data, make a list of all untrusted data that is displayed and the context in which it is displayed. Most commonly, untrusted data is displayed as HTML. Other possibilities include displaying user input inside JavaScript or CSS.
+						li Implement encoding functions for corresponding contexts. PHP has a function for encoding HTML special characters, called htmlspecialchars. PHP does not have encoding functions for data being displayed inside JavaScript and CSS contexts. If your application displays data in contexts other than plain HTML, you will need to write your own encoding functions or use third-party ones. It is recommended to use a third-party encoding library, such as OWASP ESAPI.
+						li Identify functions that display untrusted user data. For each instance of untrusted data being displayed by your application, identify what function outputs that untrusted data. Make a list of these functions and note the code that is directly responsible for displaying untrusted data.
+						li Add calls to encoding functions to functions that display untrusted data. Add calls to encoding functions in a way that all untrusted data is encoded before being displayed. Make sure that output data is encoded correctly for its respective context.
 
 				br
 				hr
@@ -305,10 +681,10 @@ While testing persistent XSS, testers must think of all the places where the inp
 
 				.row
 					.column-3
-						a(href='cross-site-scripting.html')
-							button.btn-action.btn-submit.btn-block(type='button') Introduction
+						a(href='exploitation.html')
+							button.btn-action.btn-submit.btn-block(type='button') Exploitation
 					.column-offset-6.column-3
-						a(href='testing.html')
-							button.btn-action.btn-submit.btn-block(type='button') Testing
+						a(href='prevention.html')
+							button.btn-action.btn-submit.btn-block(type='button') Prevention
 				br
 				br
