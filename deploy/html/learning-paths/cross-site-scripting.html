@@ -32,61 +32,49 @@
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
   <body>
-    <div role="navigation" class="navbar navbar-fixed-top">
+    <div role="navigation" class="navbar navbar-default navbar-fixed-top">
       <div class="lge-container">
-        <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar">  </span><span class="icon-bar"></span></button>
-        </div>
-        <ul class="brand"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
+        <div class="navbar-header"></div>
+        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        <ul class="brand">
+          <li><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
+          </li>
         </ul>
         <div class="collapse navbar-collapse pull-right">
           <ul class="action nav nav-icons"><ul>
+<li><a href="/deploy/html/home/navigate.html"><img src="/deploy/assets/icons/navigate.png" alt="Navigate"></a></li>
+<li><a href="/deploy/html/home/main-app-view.html"><img src="/deploy/assets/icons/home.png" alt="Home"></a></li>
 <li><a href="/deploy/html/home/help.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
+<li><a href="/deploy/html/user/user.html"><img src="/deploy/assets/icons/user.png" alt="User"></a></li>
+<li><a href="/deploy/html/user/returning-user-login.html"><img src="/deploy/assets/icons/logout.png" alt="Logout"></a></li>
 </ul>
 
           </ul>
         </div>
       </div>
     </div>
-    <div id="application">
+    <div id="application" class="lge-container">
       <div class="row">
-        <div class="column-offset-3 column-6">
-          <div class="row text-center">
-                <div class="column-3"><a href="user.html" class="action">User</a></div>
-                <div class="column-3"><a href="backend.html" class="action">Backend</a></div>
-                <div class="column-3"><a href="developer-utilities.html" class="action">Developer Utilities</a></div>
-                <div class="column-3"><a href="other.html" class="action">Other</a></div>
-          </div><br><br>
-          <h4 class="grey">Remove Permanent Filter</h4>
-          <div class="row">
-            <div class="column-3">
-              <div role="alert" class="alert alert-dismissible">
-                <button type="button" data-dismiss="alert" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button><strong class="green">Filter One</strong>
-              </div>
-            </div>
-            <!--/col-sm-3 
-            -->
-            <div class="column-3">
-              <div role="alert" class="alert alert-dismissible">
-                <button type="button" data-dismiss="alert" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button><strong class="green">Filter Two</strong>
-              </div>
-            </div>
-            <!--/col-sm-3 
-            -->
-            <div class="column-3">
-              <div role="alert" class="alert alert-dismissible">
-                <button type="button" data-dismiss="alert" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button><strong class="green">Filter Three</strong>
-              </div>
-            </div>
-            <!--/col-sm-3 
-            -->
-            <div class="column-3">
-              <div role="alert" class="alert alert-dismissible">
-                <button type="button" data-dismiss="alert" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button><strong class="green">Filter Four</strong>
-              </div>
-            </div>
+        <div class="column-3 lge-container">
+          <div data-spay="affix" data-offset-top="60" data-offset-bottom="200" class="div">
+            <h4 class="grey">Exploitation</h4>
+            <h4 class="grey">Testing</h4>
+            <h4 class="grey">Prevention</h4>
+            <h4 class="grey">Courses</h4>
+            <h4 class="grey">Related Topics</h4>
           </div>
-          <button type="submit" class="btn-submit btn-action btn-block">Ok, Done<span class="glyphicon glyphicon-ok glyphicon-small"></span></button>
+        </div>
+        <div class="column-6">
+          <h2 class="grey">Cross-Site Scripting Learning Path</h2><br>
+          <p>A web applications output is rendered as a web page. If user input is included in the web application output, then it is also rendered as a part of the web page. If user input is included in output without being validated and encoded, a cross-site scripting (XSS) vulnerability results. In that case, an attacker can modify the output web page to include malicious script, which is then executed by the browser that views the vulnerable page. The resources below provide information that will describe the vulnerability in detail and guidance in avoiding, remediating and testing it.</p><br>
+          <h3 class="dark-grey">Getting around</h3>
+          <p>You can use the buttons at the end of every chapter to jump immediately to the next or previous section. The learning path will track where you're up to so that if you can't finish it in one sitting, it'll re-open at the last place you were at.</p><br>
+          <hr><br>
+          <div class="row">
+            <div class="column-3"><br></div>
+            <div class="column-offset-6 column-3"><a href="exploitation.html">
+                <button type="button" class="btn-action btn-submit btn-block">Exploitation</button></a></div>
+          </div>
         </div>
       </div>
     </div>
