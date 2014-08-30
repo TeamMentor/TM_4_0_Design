@@ -7,26 +7,6 @@ $grey: #aaaaaa;
 $dark-grey: #444444;
 $nav-padding-top: 120px;
 
-.white {
-	color: #FFFFFF;
-}
-
-.green {
-	color: #8aaf3e;
-}
-
-.dark-green {
-	color: #49661f;
-}
-
-.grey {
-	color: #aaaaaa;
-}
-
-.dark-grey {
-	color: #444444;
-}
-
 // Layout and Structure
 
 html {
@@ -81,6 +61,13 @@ body {
 #clients {
 	padding-bottom: 5%;
 	background-color: $white;
+}
+
+#description {
+	background-color: #F5F5F5;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-right: 15px;
 }
 
 #features {
@@ -213,7 +200,7 @@ body {
 	margin-left: 0;
 }
 
-container {
+.container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -279,6 +266,76 @@ container {
 	clip: rect(0, 0, 0, 0);
 	border: 0;
 }
+
+// Colours
+
+.white {
+	color: #FFFFFF;
+}
+
+.green {
+	color: #8aaf3e;
+}
+
+.dark-green {
+	color: #49661f;
+}
+
+.grey {
+	color: #aaaaaa;
+}
+
+.dark-grey {
+	color: #444444;
+}
+
+.black{
+	padding-top: 20px;
+	background-color: #000000;
+}
+
+#white {
+	margin-right: 15px;
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+#green {
+	margin-right: 15px;
+	background-color: #8aaf3e;
+}
+
+#dark-green {
+	margin-right: 15px;
+	background-color: #49661f;
+}
+
+#grey {
+	margin-right: 15px;
+	background-color: #aaaaaa;
+}
+
+#dark-grey {
+	margin-right: 15px;
+	background-color: #444444;
+}
+
+#black {
+	margin-right: 15px;
+	background-color: #000000;
+}
+
+.long {
+	height: 100px;
+}
+
+.short {
+	height: 40px;
+}
+
 
 
 // Forms
