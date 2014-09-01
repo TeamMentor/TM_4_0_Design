@@ -1,25 +1,28 @@
 // Variables
 $asset-path: '../../deploy/assets/';
+$font-stack: Helvetica, sans-serif;
 $white: #FFFFFF;
 $green: #8aaf3e;
 $dark-green: #49661f;
 $grey: #aaaaaa;
 $dark-grey: #444444;
 $nav-padding-top: 120px;
+$full-width: 100%;
 
 // Layout and Structure
 
+@import 'columns';
+@import 'colours';
+
 html {
-    font-size: 62.5%;
+    font: 100% $font-stack;
 }
 
 body {
-	max-width: 100%;
+	max-width: $full-width;
 	overflow-x: hidden;
 	margin: 0;
-	font-family: Helvetica,Arial,sans-serif;
-	font-size: 14px;
-	line-height: 1.42857;
+	line-height: 1.5;
 }
 
 #article-pane {
@@ -32,7 +35,7 @@ body {
 	background-color: $green;
 	color: $white;
 	text-align: center;
-	width: 100% !important;
+	width: $full-width;
 }
 
 #about {
@@ -46,7 +49,7 @@ body {
 
 #application {
 	margin-top: $nav-padding-top;
-	width: 100%;
+	width: $full-width;
 }
 
 #calltoaction {
@@ -80,124 +83,14 @@ body {
 	padding-bottom: 10px;
 }
 
-.lge-container {
-	max-width: 96%;
-	margin: 0 auto;
-}
-
-#usp {
-	background: url(#{$asset-path}/stock-img/bgone.jpg);
-}
-
 #reasons {
 	padding-top: 5%;
 	padding-bottom: 2%;
 	background-color: $white;
 }
 
-.column-1, .column-2, .column-3, .column-4, .column-5, .column-6, .column-7, .column-8, .column-9, .column-10, .column-11, .column-12 {
-    float: left;
-}
-
-.column-12 {
-    width: 100%;
-}
-
-.column-11 {
-    width: 91.66666667%;
-}
-
-.column-10 {
-    width: 83.33333333%;
-}
-
-.column-9 {
-    width: 75%;
-}
-
-.column-8 {
-    width: 66.66666667%;
-}
-
-.column-7 {
-    width: 58.33333333%;
-}
-
-.column-6 {
-    width: 50%;
-}
-
-.column-5 {
-    width: 41.66666667%;
-}
-
-.column-4 {
-    width: 33.33333333%;
-}
-
-.column-3 {
-    width: 25%;
-}
-
-.column-2 {
-    width: 16.66666667%;
-}
-
-.column-1 {
-    width: 8.33333333%;
-}
-
-
-.column-offset-12 {
-	margin-left: 100%;
-}
-
-  .column-offset-11 {
-	margin-left: 91.66666667%;
-}
-
-  .column-offset-10 {
-	margin-left: 83.33333333%;
-}
-
-  .column-offset-9 {
-	margin-left: 75%;
-}
-
-  .column-offset-8 {
-	margin-left: 66.66666667%;
-}
-
-  .column-offset-7 {
-	margin-left: 58.33333333%;
-}
-
-  .column-offset-6 {
-	margin-left: 50%;
-}
-
-  .column-offset-5 {
-	margin-left: 41.66666667%;
-}
-
-  .column-offset-4 {
-	margin-left: 33.33333333%;
-}
-
-  .column-offset-3 {
-	margin-left: 25%;
-}
-
-  .column-offset-2 {
-	margin-left: 16.66666667%;
-}
-
-  .column-offset-1 {
-	margin-left: 8.33333333%;
-}
-
-  .column-offset-0 {
-	margin-left: 0;
+#usp {
+	background: url(#{$asset-path}/stock-img/bgone.jpg);
 }
 
 .container {
@@ -205,61 +98,16 @@ body {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  max-width: 100% !important;
+  max-width: $full-width;
 }
 
-.img-responsive {
-	display: block;
-	max-width: 100%;
-	height: auto;
+.lge-container {
+	max-width: 96%;
 	margin: 0 auto;
-}
-
-img.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .pull-right {
 	float: right !important;
-}
-
-.row {
-  margin-right: -15px;
-  margin-left: -15px;
-  max-width: 100%;
-}
-
-.clearfix:before,
-.clearfix:after,
-.container:before,
-.container:after,
-.row:before,
-.row:after,
-.form-horizontal .form-group:before,
-.form-horizontal .form-group:after,
-.btn-toolbar:before,
-.btn-toolbar:after,
-.btn-group-vertical > .btn-group:before,
-.btn-group-vertical > .btn-group:after,
-.navbar:before,
-.navbar:after,
-.navbar-header:before,
-.navbar-header:after,
-.navbar-collapse:before,
-.navbar-collapse:after {
-	display: table;
-	content: " ";
-}
-
-.clearfix:after,
-.container:after,
-.row:after,
-.navbar:after,
-.navbar-header:after,
-.navbar-collapse:after {
-	clear: both;
 }
 
 .sr-only {
@@ -273,65 +121,19 @@ img.center {
 	border: 0;
 }
 
-// Colours
+// Images
 
-.white {
-	color: #FFFFFF;
+.img-responsive {
+	display: block;
+	max-width: $full-width;
+	height: auto;
+	margin: 0 auto;
 }
 
-.green {
-	color: #8aaf3e;
-}
-
-.dark-green {
-	color: #49661f;
-}
-
-.grey {
-	color: #aaaaaa;
-}
-
-.dark-grey {
-	color: #444444;
-}
-
-.black{
-	padding-top: 20px;
-	background-color: #000000;
-}
-
-#white {
-	margin-right: 15px;
-	background-color: #FFFFFF;
-	border: 1px solid #000000;
-	box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-}
-
-#green {
-	margin-right: 15px;
-	background-color: #8aaf3e;
-}
-
-#dark-green {
-	margin-right: 15px;
-	background-color: #49661f;
-}
-
-#grey {
-	margin-right: 15px;
-	background-color: #aaaaaa;
-}
-
-#dark-grey {
-	margin-right: 15px;
-	background-color: #444444;
-}
-
-#black {
-	margin-right: 15px;
-	background-color: #000000;
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .long {
@@ -342,13 +144,11 @@ img.center {
 	height: 40px;
 }
 
-
-
 // Forms
 
 .form-control {
 	height: 3em;
-	width: 100%;
+	width: $full-width;
 	display: block;
 	border-radius: 0px;
 	padding-left: 20px;
@@ -490,10 +290,6 @@ h5 {
 	font-weight: bold;
 }
 
-h6 {
-	font-size: 17px;
-}
-
 p, li { 
 	font-size: 16px;
 	line-height: 1.5em;
@@ -603,7 +399,7 @@ input {
 	display: table;
 	border-collapse: separate;
 	float: left;
-	width: 100%;
+	width: $full-width;
 
 	&[class*="col-"] {
 		float: none;
@@ -615,7 +411,7 @@ input {
 		position: relative;
 		z-index: 2;
 		float: left;
-		width: 100%;
+		width: $full-width;
 		margin-bottom: 0;
 		display: table-cell;
 	}
@@ -689,7 +485,7 @@ button {
 	&.btn-landing-page {
 		position: relative;
 		padding: 25px 80px;
-		max-width: 100%;
+		max-width: $full-width;
 		display: inline-block;
 		background-color: $white;
 		text-transform: uppercase;
@@ -719,7 +515,7 @@ button {
 	}
 
 	&.btn-block {
-		width: 100%;
+		width: $full-width;
 	}
 
 	&.btn-action {
@@ -731,7 +527,7 @@ button {
 		-webkit-transition: all 0.3s;
 		-moz-transition: all 0.3s;
 		transition: all 0.3s;
-		max-width: 100%;
+		max-width: $full-width;
 		color: $green;
 		background: none;
 
@@ -779,6 +575,7 @@ button {
 }
 
 // Badges
+
 .badge {
 	display: inline-block;
 	min-width: 10px;
@@ -815,7 +612,7 @@ button {
 .progress-bar {
     float: left;
     width: 0px;
-    height: 100%;
+    height: $full-width;
     font-size: 12px;
     line-height: 20px;
     color: $white;
@@ -902,7 +699,7 @@ a.list-group-item:hover, a.list-group-item:focus {
 // Tables and Table Cells
 
 table {
-	width: 100%;
+	width: $full-width;
 	font-size: 1.15em;
 }
 
@@ -946,7 +743,7 @@ td {
 
 @media (max-width: 750px) {
 	.navbar-collapse {
-		width: 100%;
+		width: $full-width;
 		text-align: center;
 	}
 
