@@ -3,6 +3,7 @@
 - var home            = '/deploy/html/home'
 - var landing_pages   = '/deploy/html/landing-pages'
 - var user            = '/deploy/html/user'
+- var help            = '/deploy/html/help'
 
 - var link_article_new_window       = articles + '/article-new-window-view.html'
 - var link_app_keyword_search       = home     + '/app-keyword-search.html'
@@ -18,13 +19,13 @@ mixin links-navbar__home
     :markdown
         * [![Navigate](/deploy/assets/icons/navigate.png)](#{home}/navigate.html)
         * [![Home](/deploy/assets/icons/home.png)](#{home}/main-app-view.html)
-        * [![Help](/deploy/assets/icons/help.png)](#{home}/help.html)
+        * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
         * [![User](/deploy/assets/icons/user.png)](#{user}/user.html)
         * [![Logout](/deploy/assets/icons/logout.png)](#{user}/returning-user-login.html)
             
 mixin links-navbar__not_logged_in
     :markdown
-        * [![Help](/deploy/assets/icons/help.png)](#{home}/help.html)
+        * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
             
 mixin links-home__navigate
     :markdown

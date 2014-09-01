@@ -2,8 +2,9 @@ extends ../_layouts/page_home.jade
 block content  
     #application
       .row
-        .column-3.container
+        .column-3
           br
+
         .column-6
           .input-group
             input.form-control(type='text', placeholder='Type keywords here')
@@ -14,36 +15,36 @@ block content
           h4.grey 0/200 results showing
 
           .list-group
-            a.list-group-item(href='#{link_article_new_window}')
+            a.list-group-item(href='#{link_article_new_window}', target='_blank')
               h5.list-group-item-heading.dark-grey Related Article Headline
               p.list-group-item-text
                 | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
             br
-            a.list-group-item(href='#{link_article_new_window}')
+            a.list-group-item(href='#{link_article_new_window}', target='_blank')
               h5.list-group-item-heading.dark-grey Related Article Headline
               p.list-group-item-text
                 | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
             br
-            a.list-group-item(href='#{link_article_new_window}')
+            a.list-group-item(href='#{link_article_new_window}', target='_blank')
               h5.list-group-item-heading.dark-grey Related Article Headline
               p.list-group-item-text
                 | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-            a.list-group-item(href='#{link_article_new_window}')
-              h5.list-group-item-heading.dark-grey Related Article Headline
-              p.list-group-item-text
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-            br
-            a.list-group-item(href='#{link_article_new_window}l')
+            a.list-group-item(href='#{link_article_new_window}', target='_blank')
               h5.list-group-item-heading.dark-grey Related Article Headline
               p.list-group-item-text
                 | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
             br
-            a.list-group-item(href='#{link_article_new_window}')
+            a.list-group-item(href='#{link_article_new_window}', target='_blank')
+              h5.list-group-item-heading.dark-grey Related Article Headline
+              p.list-group-item-text
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+            br
+            a.list-group-item(href='#{link_article_new_window}', target='_blank')
               h5.list-group-item-heading.dark-grey Related Article Headline
               p.list-group-item-text
                 | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
 
-        .column-3.container
+        .column-3
           +filters-div
           br
           +save-div
