@@ -215,6 +215,12 @@ body {
 	margin: 0 auto;
 }
 
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .pull-right {
 	float: right !important;
 }
@@ -456,42 +462,6 @@ body {
 	float: left;
 }
 
-
-
-
-
-.navbar-inverse .navbar-nav > li > a  {
-	color: $green;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-	padding-top: 30px;
-	margin-right: 10px;
-}
-
-		.navbar-inverse .navbar-nav > li > a:after {
-			content: '';
-			position: absolute;
-			z-index: -1;
-			-webkit-transition: all 0.3s;
-			-moz-transition: all 0.3s;
-			transition: all 0.3s;
-		}
-
-		.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:active {
-			color: $dark-green;
-		}
-
-		.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-			color: $dark-green;
-			background-color: $white;
-			border-bottom: 2px solid $dark-green;
-		}
-
-.breadcrumb {
-	background-color: $white;
-}
-
 // Typography
 
 h1 {
@@ -548,6 +518,10 @@ ul, ol {
 	font-weight: bold;
 }
 
+.small {
+	font-size: 1em;
+}
+
 hr {
 	margin: 0 auto;
 	width: 70%;
@@ -558,6 +532,7 @@ hr {
 
 a {
 	text-decoration: none;
+	color: $dark-grey;
 
 	&:visited, &:hover, &:active {
 		text-decoration: none;
@@ -606,11 +581,7 @@ a {
 
 	&:hover, &:active {
 		color: $dark-green;
-	}
-
-	&.small {
-		font-size: 1em;
-	}
+	}	
 }
 
 .text-center {
@@ -677,13 +648,15 @@ label {
 	margin-bottom: 5px;
 	font-weight: bold;
 	color: $dark-grey;
+	margin-top: -40px;
 }
 
 input[type=checkbox] + label {
     display: inline-block;
-    margin-left: 0.5em;
+    margin-left: 20px;
     margin-right: 2em;
     line-height: 1em;
+    vertical-align: middle;
 }
 
 // Buttons
@@ -809,6 +782,7 @@ button {
 .badge {
 	display: inline-block;
 	min-width: 10px;
+	margin-left: 20px;
 	padding: 3px 7px;
 	font-size: 12px;
 	font-weight: bold;
