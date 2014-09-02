@@ -24,79 +24,75 @@
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <title>TEAM Mentor 4.0 (Html version)</title>
+    <!-- Normalize-->
+    <link href="/deploy/css/normalize.css" rel="stylesheet">
     <!-- Bootstrap core CSS-->
-    <link href="/deploy/css/bootstrap.css" rel="stylesheet">
+    <link href="/deploy/css/zz-bootstrap.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
   <body>
-    <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+    <div role="navigation" class="navbar navbar-fixed-top">
+      <div class="lge-container">
         <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/deploy/html/landing-pages/index.html"><br><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         </div>
+        <ul class="brand"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
+        </ul>
         <div class="collapse navbar-collapse pull-right">
-          <ul class="nav navbar-nav">
-                <li><a href="/deploy/html/landing-pages/about.html">About</a></li>
-                <li><a href="/deploy/html/landing-pages/features.html">Features</a></li>
-                <li><a href="/deploy/html/getting-started/index.html">Get Started</a></li>
+          <ul class="action nav nav-text"><ul>
+<li><a href="/deploy/html/landing-pages/about.html">About</a></li>
+<li><a href="/deploy/html/landing-pages/features.html">Features</a></li>
+<li><a href="/deploy/html/getting-started/index.html">Get Started</a></li>
+</ul>
+
           </ul>
         </div>
       </div>
     </div>
     <div id="features">
       <div class="container">
-        <h2 class="text-center light-grey">What does TEAM Mentor help you do?</h2><br><br>
+        <h3 class="text-center grey">TEAM Mentor provides intelligence to fix vulnerabilities and comply</h3><br><br>
         <div class="row">
-          <div class="col-md-6">
-            <div class="row">
-              <div class="col-sm-offset-1 col-sm-2"><img src="/deploy/assets/icons/identify-fix.png" alt="Team Mentor identifies vulnerabilities and reduces time to fix them" class="img-responsive"></div>
-              <div class="col-sm-8">
-                <h4>Identify vulnerabilities and reduce time to fix</h4>
-              </div>
-            </div><br>
-            <div class="row">
-              <div class="col-sm-offset-1 col-sm-2"><img src="/deploy/assets/icons/improve.png" alt="Team Mentor identifies vulnerabilities and reduces time to fix them" class="img-responsive"></div>
-              <div class="col-sm-8">
-                <h4>Improve secure coding to reduce the number of vulnerabilities</h4>
-              </div>
-            </div><br>
-            <div class="row">
-              <div class="col-sm-offset-1 col-sm-2"><img src="/deploy/assets/icons/integrate.png" alt="Team Mentor identifies vulnerabilities and reduces time to fix them" class="img-responsive"></div>
-              <div class="col-sm-8">
-                <h4>Return on investment — integrating security scanning and guidance into a development workflow results in quicker production of more secure and stable applications</h4>
-              </div>
-            </div><br>
+          <div class="column-offset-3 column-1"><img src="/deploy/assets/icons/compliance.png" alt="Delivers compliance-specific secure coding guidance" class="img-responsive"></div>
+          <div class="column-5">
+            <h4 class="dark-grey">Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.</h4>
           </div>
-          <div class="col-md-6">
-            <div class="row">
-              <div class="col-sm-offset-1 col-sm-2"><img src="/deploy/assets/icons/timely.png" alt="Timely guidance and standards complements foundational training" class="img-responsive"></div>
-              <div class="col-sm-8">
-                <h4>Timely guidance and standards complements foundational training</h4>
-              </div>
-            </div><br>
-            <div class="row">
-              <div class="col-sm-offset-1 col-sm-2"><img src="/deploy/assets/icons/custom-cms.png" alt="Customizable content management system for application security standards" class="img-responsive"></div>
-              <div class="col-sm-8">
-                <h4>Customizable content management system for application security standards</h4>
-              </div>
-            </div><br>
-            <div class="row">
-              <div class="col-sm-offset-1 col-sm-2"><img src="/deploy/assets/icons/attack.png" alt="Attack descriptions and vulnerability fixes in a variety of development languages" class="img-responsive"></div>
-              <div class="col-sm-8">
-                <h4>Attack descriptions and vulnerability fixes in a variety of development languages</h4>
-              </div>
+        </div><br>
+        <div class="row">
+          <div class="column-offset-3 column-1"><img src="/deploy/assets/icons/integrate.png" alt="Integrates with multiple static analysis tools and developer environments" class="img-responsive"></div>
+          <div class="column-5">
+            <h4 class="dark-grey">Integrates with multiple static analysis tools and developer environments (IDE’s) to map prescriptive coding guidance to scan results to fix vulnerabilities.</h4>
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="column-offset-3 column-1"><img src="/deploy/assets/icons/crossreferences.png" alt="Stores and cross-references your security policies" class="img-responsive"></div>
+          <div class="column-5">
+            <h4 class="dark-grey">Stores and cross-references your security policies with out-of-the-box secure coding checklists and examples.</h4>
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="column-offset-3 column-1"><img src="/deploy/assets/icons/reduces.png" alt="Provides guidance to assist developers" class="img-responsive"></div>
+          <div class="column-5">
+            <h4 class="dark-grey">Provides guidance to assist developers in reducing security vulnerabilities in software applications.</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="calltoaction">
+        <div class="container">
+          <h1>Security Risk. Understood.</h1><br><br><a href="getting-started.html">
+            <button type="button" class="btn btn-landing-page">See for yourself</button></a>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="lge-container">
+          <div class="row">
+            <div class="column-offset-5 column-2"><img src="/deploy/assets/logos/si-logo.png" class="center img-responsive">
+              <p class="small text-center"><a href="/deploy/html/user/terms-and-conditions.html">Terms & Conditions</a></p>
             </div>
           </div>
         </div>
-        <div class="row"></div>
-      </div>
-      <div id="calltoaction">
-        <div class="container">
-          <h1>Fix Faster. Fix Better.</h1><br><br><a href="/deploy/html/getting-started/index.html">
-            <button type="button" class="btn btn-landing-page">See for yourself</button></a>
-        </div>
-      </div>
     </div>
   </body>
 </html>

@@ -24,141 +24,143 @@
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <title>TEAM Mentor 4.0 (Html version)</title>
+    <!-- Normalize-->
+    <link href="/deploy/css/normalize.css" rel="stylesheet">
     <!-- Bootstrap core CSS-->
-    <link href="/deploy/css/bootstrap.css" rel="stylesheet">
+    <link href="/deploy/css/zz-bootstrap.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
   <body>
-    <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div role="navigation" class="navbar navbar-fixed-top">
       <div class="lge-container">
         <div class="navbar-header">
           <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar">  </span><span class="icon-bar"></span></button>
         </div>
-        <ul class="nav navbar-nav">
-          <li><a href="/deploy/html/landing-pages/index.html" data-toggle="tooltip" title="Home"><img src="/deploy/assets/logos/logo.jpg" alt="TEAM Mentor" width="200px" class="img-responsive"></a>
-          </li>
+        <ul class="brand"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
         </ul>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-                <li><a href="/deploy/html/home/help.html" data-toggle="tooltip" title="Help"><img src="/deploy/assets/icons/help.png" width="50px" height="50px" alt="Help"></a></li>
+        <div class="collapse navbar-collapse pull-right">
+          <ul class="action nav nav-icons"><ul>
+<li><a href="/deploy/html/help/index.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
+</ul>
+
           </ul>
         </div>
       </div>
     </div>
     <div id="application">
       <div class="row">
-        <div class="col-md-offset-3 col-md-6">
+        <div class="column-offset-3 column-6">
           <div class="row text-center">
-                <div class="col-sm-3"><a href="user.html" class="action">User</a></div>
-                <div class="col-sm-3"><a href="backend.html" class="action">Backend</a></div>
-                <div class="col-sm-3"><a href="developer-utilities.html" class="action">Developer Utilities</a></div>
-                <div class="col-sm-3"><a href="other.html" class="action">Other</a></div>
+                <div class="column-3"><a href="user.html" class="action">User</a></div>
+                <div class="column-3"><a href="backend.html" class="action">Backend</a></div>
+                <div class="column-3"><a href="developer-utilities.html" class="action">Developer Utilities</a></div>
+                <div class="column-3"><a href="other.html" class="action">Other</a></div>
           </div><br><br>
-          <h4 class="light-grey">Add Permanent Filter</h4>
-          <form role="form" action="user.html">
-            <div class="form-group">
-              <h5 class="green">Technology</h5>
-              <ul class="list-group">
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="technology_1" type="checkbox" class="css-checkbox">
-                  <label for="technology_1" name="technology_1" class="css-label">Option #1</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="technology_2" type="checkbox" class="css-checkbox">
-                  <label for="technology_2" name="technology_2" class="css-label">Option #2</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="technology_3" type="checkbox" class="css-checkbox">
-                  <label for="technology_3" name="technology_3" class="css-label">Option #3</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="technology_4" type="checkbox" class="css-checkbox">
-                  <label for="technology_4" name="technology_4" class="css-label">Option #4</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="technology_5" type="checkbox" class="css-checkbox">
-                  <label for="technology_5" name="technology_5" class="css-label">Option #5</label>
-                </li>
-              </ul>
-            </div>
-            <div class="form-group">
-              <h5 class="green">Category</h5>
-              <ul class="list-group">
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="category_1" type="checkbox" class="css-checkbox">
-                  <label for="category_1" name="category_1" class="css-label">Option #1</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="category_2" type="checkbox" class="css-checkbox">
-                  <label for="category_2" name="category_2" class="css-label">Option #2</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="category_3" type="checkbox" class="css-checkbox">
-                  <label for="category_3" name="category_3" class="css-label">Option #3</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="category_4" type="checkbox" class="css-checkbox">
-                  <label for="category_4" name="category_4" class="css-label">Option #4</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="category_5" type="checkbox" class="css-checkbox">
-                  <label for="category_5" name="category_5" class="css-label">Option #5</label>
-                </li>
-              </ul>
-            </div>
-            <div class="form-group">
-              <h5 class="green">Phase</h5>
-              <ul class="list-group">
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="phase_1" type="checkbox" class="css-checkbox">
-                  <label for="phase_1" name="phase_1" class="css-label">Option #1</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="phase_2" type="checkbox" class="css-checkbox">
-                  <label for="phase_2" name="phase_2" class="css-label">Option #2</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="phase_3" type="checkbox" class="css-checkbox">
-                  <label for="phase_3" name="phase_3" class="css-label">Option #3</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="phase_4" type="checkbox" class="css-checkbox">
-                  <label for="phase_4" name="phase_4" class="css-label">Option #4</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="phase_5" type="checkbox" class="css-checkbox">
-                  <label for="phase_5" name="phase_5" class="css-label">Option #5</label>
-                </li>
-              </ul>
-            </div>
-            <div class="form-group">
-              <h5 class="green">Type</h5>
-              <ul class="list-group">
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="type_1" type="checkbox" class="css-checkbox">
-                  <label for="type_1" name="type_1" class="css-label">Option #1</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="type_2" type="checkbox" class="css-checkbox">
-                  <label for="type_2" name="type_2" class="css-label">Option #2</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="type_3" type="checkbox" class="css-checkbox">
-                  <label for="type_3" name="type_3" class="css-label">Option #3</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="type_4" type="checkbox" class="css-checkbox">
-                  <label for="type_4" name="type_4" class="css-label">Option #4</label>
-                </li>
-                <li class="list-group-item"><span class="badge">14</span>
-                  <input id="type_5" type="checkbox" class="css-checkbox">
-                  <label for="type_5" name="type_5" class="css-label">Option #5</label>
-                </li>
-              </ul>
-            </div>
-            <button type="submit" class="btn-action btn-block">Ok, Done<span class="glyphicon glyphicon-ok glyphicon-small"></span></button><br><br>
-          </form>
+            <h3 class="grey">Filters</h3>
+            <form role="form" action="filters-active.html">
+              <div class="form-group">
+                <h5 class="green">Technology</h5>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <input id="technology_1" type="checkbox">
+                    <label for="#technology_1" type="checkbox">Option #1<span class="badge">14 </span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="technology_2" type="checkbox">
+                    <label for="#technology_2" type="checkbox">Option #2<span class="badge">14 </span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="technology_3" type="checkbox">
+                    <label for="#technology_3" type="checkbox">Option #3<span class="badge">14 </span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="technology_4" type="checkbox">
+                    <label for="#technology_4" type="checkbox">Option #4<span class="badge">14 </span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="technology_5" type="checkbox">
+                    <label for="#technology_5" type="checkbox">Option #5<span class="badge">14 </span></label>
+                  </li>
+                </ul>
+              </div>
+              <div class="form-group">
+                <h5 class="green">Category</h5>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <input id="category_1" type="checkbox">
+                    <label for="#category_1" type="checkbox">Option #1<span class="badge">14 </span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="category_2" type="checkbox">
+                    <label for="#category_2" type="checkbox">Option #2<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="category_3" type="checkbox">
+                    <label for="#category_3" type="checkbox">Option #3<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="category_4" type="checkbox">
+                    <label for="#category_4" type="checkbox">Option #4<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="category_5" type="checkbox">
+                    <label for="#category_5" type="checkbox">Option #5<span class="badge">14</span></label>
+                  </li>
+                </ul>
+              </div>
+              <div class="form-group">
+                <h5 class="green">Phase</h5>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <input id="phase_1" type="checkbox">
+                    <label for="#phase_1" type="checkbox">Option #1<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="phase_2" type="checkbox">
+                    <label for="#phase_2" type="checkbox">Option #2<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="phase_3" type="checkbox">
+                    <label for="#phase_3" type="checkbox">Option #3<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="phase_4" type="checkbox">
+                    <label for="#phase_4" type="checkbox">Option #4<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="phase_5" type="checkbox">
+                    <label for="#phase_5" type="checkbox">Option #5<span class="badge">14</span></label>
+                  </li>
+                </ul>
+              </div>
+              <div class="form-group">
+                <h5 class="green">Type</h5>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <input id="type_1" type="checkbox">
+                    <label for="#type_1" type="checkbox">Option #1<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="type_2" type="checkbox">
+                    <label for="#type_2" type="checkbox">Option #2<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="type_3" type="checkbox">
+                    <label for="#type_3" type="checkbox">Option #3<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="type_4" type="checkbox">
+                    <label for="#type_4" type="checkbox">Option #4<span class="badge">14</span></label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="type_5" type="checkbox">
+                    <label for="#type_5" type="checkbox">Option #5<span class="badge">14</span></label>
+                  </li>
+                </ul>
+              </div>
+              <button type="submit" class="btn-action btn-block">Ok, Done</button>
+            </form><br>
         </div>
       </div>
     </div>

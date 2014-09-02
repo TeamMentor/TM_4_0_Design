@@ -24,47 +24,45 @@
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <title>TEAM Mentor 4.0 (Html version)</title>
+    <!-- Normalize-->
+    <link href="/deploy/css/normalize.css" rel="stylesheet">
     <!-- Bootstrap core CSS-->
-    <link href="/deploy/css/bootstrap.css" rel="stylesheet">
+    <link href="/deploy/css/zz-bootstrap.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
   <body>
-    <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div role="navigation" class="navbar navbar-fixed-top">
       <div class="lge-container">
         <div class="navbar-header">
           <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar">  </span><span class="icon-bar"></span></button>
         </div>
-        <ul class="nav navbar-nav">
-          <li><a href="/deploy/html/landing-pages/index.html" data-toggle="tooltip" title="Home"><img src="/deploy/assets/logos/logo.jpg" alt="TEAM Mentor" width="200px" class="img-responsive"></a>
-          </li>
+        <ul class="brand"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
         </ul>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-                <li><a href="/deploy/html/home/help.html" data-toggle="tooltip" title="Help"><img src="/deploy/assets/icons/help.png" width="50px" height="50px" alt="Help"></a></li>
+        <div class="collapse navbar-collapse pull-right">
+          <ul class="action nav nav-icons"><ul>
+<li><a href="/deploy/html/help/index.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
+</ul>
+
           </ul>
         </div>
       </div>
     </div>
     <div id="application">
       <div class="row">
-        <div class="col-md-offset-3 col-md-6"><br>
-          <h3 class="light-grey">Login</h3><br>
+        <div class="column-offset-3 column-6"><br>
+          <h3 class="grey">Login</h3><br>
           <form id="login-form" role="form">
             <div class="form-group">
               <label for="new-user-username">Username</label>
               <input id="new-user-username" type="username" placeholder="Username" class="form-control">
-            </div>
+            </div><br>
             <div class="form-group">
               <label for="new-user-password">Password</label>
               <input id="new-user-password" type="password" placeholder="Password" class="form-control">
-            </div>
-            <div class="row">
-              <div class="col-md-6"><a href="/deploy/html/user/returning-user-validation.html">
-                  <button type="button" class="btn-action btn-submit btn-block">Login</button></a></div>
-              <div class="col-md-6"><a href="returning-user-forgot-password.html">
-                  <button type="button" class="btn-action btn-submit btn-block">Forgot your password?</button></a></div>
-            </div>
+            </div><br><a href="/deploy/html/user/returning-user-validation.html">
+              <button type="button" class="btn-action btn-submit btn-block">Login</button></a><br><br><a href="returning-user-forgot-password.html">
+              <button type="button" class="btn-action btn-submit btn-block">Forgot your password?</button></a>
           </form><br><br>
         </div>
       </div>

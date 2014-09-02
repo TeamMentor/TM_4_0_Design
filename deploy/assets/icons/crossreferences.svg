@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px"
+	 height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+<g id="Layer_1">
+</g>
+<g id="Layer_2">
+</g>
+<g id="Layer_3">
+	<g>
+		<defs>
+			<circle id="SVGID_1_" cx="249.5" cy="251" r="185.5"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<circle clip-path="url(#SVGID_2_)" fill="#8BAF40" cx="249.5" cy="250" r="185.5"/>
+		<circle clip-path="url(#SVGID_2_)" fill="none" cx="249.5" cy="250" r="185.5"/>
+		<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M315.5,179v144h-132V179H315.5z M303.5,203h-108v108h108V203z M219.5,215h-12
+			v12h12V215z M219.5,239h-12v12h12V239z M219.5,263h-12v12h12V263z M219.5,287h-12v12h12V287z M291.5,215h-60v12h60V215z
+			 M291.5,239h-60v12h60V239z M291.5,263h-60v12h60V263z M291.5,299h-60v-12h60V299z"/>
+	</g>
+</g>
+</svg>

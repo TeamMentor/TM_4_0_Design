@@ -24,38 +24,45 @@
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <title>TEAM Mentor 4.0 (Html version)</title>
+    <!-- Normalize-->
+    <link href="/deploy/css/normalize.css" rel="stylesheet">
     <!-- Bootstrap core CSS-->
-    <link href="/deploy/css/bootstrap.css" rel="stylesheet">
+    <link href="/deploy/css/zz-bootstrap.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
   <body>
     <div role="navigation" class="navbar navbar-default navbar-fixed-top">
       <div class="lge-container">
-        <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar">  </span><span class="icon-bar"></span></button>
-        </div>
-        <ul class="nav navbar-nav">
-          <li><a href="/deploy/html/landing-pages/index.html" data-toggle="tooltip" title="Home"><img src="/deploy/assets/logos/logo.jpg" alt="TEAM Mentor" width="200px" class="img-responsive"></a>
+        <div class="navbar-header"></div>
+        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        <ul class="brand">
+          <li><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
           </li>
         </ul>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-                <li><a href="/deploy/html/home/help.html" data-toggle="tooltip" title="Help"><img src="/deploy/assets/icons/help.png" width="50px" height="50px" alt="Help"></a></li>
+        <div class="collapse navbar-collapse pull-right">
+          <ul class="action nav nav-icons"><ul>
+<li><a href="/deploy/html/home/navigate.html"><img src="/deploy/assets/icons/navigate.png" alt="Navigate"></a></li>
+<li><a href="/deploy/html/home/main-app-view.html"><img src="/deploy/assets/icons/home.png" alt="Home"></a></li>
+<li><a href="/deploy/html/help/index.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
+<li><a href="/deploy/html/user/user.html"><img src="/deploy/assets/icons/user.png" alt="User"></a></li>
+<li><a href="/deploy/html/user/returning-user-login.html"><img src="/deploy/assets/icons/logout.png" alt="Logout"></a></li>
+</ul>
+
           </ul>
         </div>
       </div>
     </div>
     <div id="application">
       <div class="row">
-        <div class="col-md-offset-3 col-md-6">
+        <div class="column-offset-3 column-6">
           <div class="row text-center">
-                <div class="col-sm-3"><a href="user.html" class="action">User</a></div>
-                <div class="col-sm-3"><a href="backend.html" class="action">Backend</a></div>
-                <div class="col-sm-3"><a href="developer-utilities.html" class="action">Developer Utilities</a></div>
-                <div class="col-sm-3"><a href="other.html" class="action">Other</a></div>
+                <div class="column-3"><a href="user.html" class="action">User</a></div>
+                <div class="column-3"><a href="backend.html" class="action">Backend</a></div>
+                <div class="column-3"><a href="developer-utilities.html" class="action">Developer Utilities</a></div>
+                <div class="column-3"><a href="other.html" class="action">Other</a></div>
           </div><br><br>
-          <h4 class="light-grey">Backend (utils)</h4>
+          <h4 class="grey">Backend (utils)</h4>
         </div>
       </div>
     </div>

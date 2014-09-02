@@ -24,59 +24,64 @@
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <title>TEAM Mentor 4.0 (Html version)</title>
+    <!-- Normalize-->
+    <link href="/deploy/css/normalize.css" rel="stylesheet">
     <!-- Bootstrap core CSS-->
-    <link href="/deploy/css/bootstrap.css" rel="stylesheet">
+    <link href="/deploy/css/zz-bootstrap.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
   <body>
-    <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+    <div role="navigation" class="navbar navbar-fixed-top">
+      <div class="lge-container">
         <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/deploy/html/landing-pages/index.html"><br><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         </div>
+        <ul class="brand"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
+        </ul>
         <div class="collapse navbar-collapse pull-right">
-          <ul class="nav navbar-nav">
-                <li><a href="/deploy/html/landing-pages/about.html">About</a></li>
-                <li><a href="/deploy/html/landing-pages/features.html">Features</a></li>
-                <li><a href="/deploy/html/getting-started/index.html">Get Started</a></li>
+          <ul class="action nav nav-text"><ul>
+<li><a href="/deploy/html/landing-pages/about.html">About</a></li>
+<li><a href="/deploy/html/landing-pages/features.html">Features</a></li>
+<li><a href="/deploy/html/getting-started/index.html">Get Started</a></li>
+</ul>
+
           </ul>
         </div>
       </div>
     </div>
     <div id="about">
-      <div class="container">
-        <h1>TEAM Mentor is an<b class="green">interactive</b>Application Security library with<b class="green">thousands</b>of articles on how to<b class="green">prevent vulnerabilities</b>during application development.</h1>
+      <div class="row">
+        <div class="column-offset-2 column-8">
+          <h2>An interactive Application Security library with thousands of code samples and professional guidance when you need it.</h2>
+        </div>
       </div>
     </div>
     <div id="about-us">
       <div class="container">
-        <h2 class="text-center light-grey">Use TEAM Mentor to</h2>
         <div class="row">
-          <div class="col-sm-offset-1 col-sm-2"><img src="/deploy/assets/icons/identify-fix.png" alt="Find guidance for implementing the application security controls" class="img-responsive"></div>
-          <div class="col-sm-8"><br><br>
-            <h4>Find guidance for implementing the application security controls that are relevant to your particular application in your development language.</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-offset-1 col-sm-2"><img src="/deploy/assets/icons/gain-access.png" alt="Team Mentor identifies vulnerabilities and reduces time to fix them" class="img-responsive"></div>
-          <div class="col-sm-8"><br><br>
-            <h4>Gain quick and easy access to comprehensive security guidance that is accurate and relevant to specific code security questions.</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-offset-1 col-sm-2"><img src="/deploy/assets/icons/integrate.png" alt="Improve your development workflow by integrating security scanning and guidance" class="img-responsive"></div>
-          <div class="col-sm-8"><br><br>
-            <h4>Improve your development workflow by integrating security scanning and guidance, resulting in quicker production of more secure and stable applications.</h4>
+          <div class="column-offset-2 column-8">
+            <h4 class="dark-grey">TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.</h4>
+            <p>It contains over 4,000 articles with dynamic content across multiple development platforms including .NET, Java, C/C++, PHP, Android and iOS. TEAM Mentor is the In-Practice companion to our TEAM Professor eLearning courses, extending developers’ knowledge in combination with training.</p>
+            <p>TeamMentor integrates with static analysis tools, such as Checkmarx and Fortify, helping teams make more sense of scan results and make critical decisions to fix software vulnerabilities.</p>
           </div>
         </div>
       </div>
     </div>
     <div id="calltoaction">
-      <div class="container">
-        <h1>Fix Faster. Fix Better.</h1><br><br><a href="getting-started.html">
-          <button type="button" class="btn btn-landing-page">See for yourself</button></a>
-      </div>
+        <div class="container">
+          <h1>Security Risk. Understood.</h1><br><br><a href="getting-started.html">
+            <button type="button" class="btn btn-landing-page">See for yourself</button></a>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="lge-container">
+          <div class="row">
+            <div class="column-offset-5 column-2"><img src="/deploy/assets/logos/si-logo.png" class="center img-responsive">
+              <p class="small text-center"><a href="/deploy/html/user/terms-and-conditions.html">Terms & Conditions</a></p>
+            </div>
+          </div>
+        </div>
     </div>
   </body>
 </html>

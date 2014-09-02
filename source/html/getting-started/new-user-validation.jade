@@ -1,52 +1,55 @@
 extends ../_layouts/page_not_logged_in.jade
 block content
-    #application.container
+    #application
       .row
-        .col-md-6
+        .column-offset-1.column-5
           .alert.alert-warning.alert-dismissible(role='alert')
             button.close(type='button', data-dismiss='alert')
               span(aria-hidden='true') ×
               span.sr-only Close
             | Error/Validation messages go here
-          h3.light-grey Sign Up
-          p
-            | Complete this form and get access to the worlds largest repository of secure software development knowledge.
+
+          h3.grey Sign Up
+          p Complete this form and get access to the worlds largest repository of secure software development knowledge.
           br
           form#sign-up-form(role='form')
             .form-group
               label(for='new-user-username') Username
               input#new-user-username.form-control(type='username', placeholder='Username')
+              br
             .form-group
               label(for='new-user-password') Password
               input#new-user-password.form-control(type='password', placeholder='Password')
+              br
             .form-group
               label(for='new-user-confirm-password') Confirm Password
               input#new-user-confirm-password.form-control(type='password', placeholder='Confirm Password')
+              br
             .form-group
               label(for='new-user-email') Email Address
               input#new-user-email.form-control(type='username', placeholder='Email Address')
-            .row
-              .col-md-6
-                a(href='/deploy/html/home/main-app-view.html')
-                    button.btn-action.btn-submit.btn-block(type='button') Login
+              br
+            a(href='/deploy/html/home/main-app-view.html')
+                button.btn-action.btn-submit.btn-block(type='button') Sign Up
           br
           br
-        .col-md-6
-          h3.light-grey Login
-          p
-            | Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?
+        .column-offset-1.column-4
+          h3.grey Login
+          p Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?
           br
           form#login-form(role='form')
             .form-group
               label(for='new-user-username') Username
               input#new-user-username.form-control(type='username', placeholder='Username')
+              br
             .form-group
               label(for='new-user-password') Password
               input#new-user-password.form-control(type='password', placeholder='Password')
-            .row
-              .col-md-6
-                button.btn-action.btn-submit.btn-block(type='submit') Login
-              .col-md-6
-                button.btn-action.btn-submit.btn-block(type='submit') Forgot your password?
+              br
+            a(href='/deploy/html/home/main-app-view.html')
+              button.btn-action.btn-submit.btn-block(type='submit') Login
+            br
+            br
+            button.btn-action.btn-submit.btn-block(type='submit') Forgot your password?
           br
           br

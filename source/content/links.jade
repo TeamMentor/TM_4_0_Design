@@ -3,65 +3,46 @@
 - var home            = '/deploy/html/home'
 - var landing_pages   = '/deploy/html/landing-pages'
 - var user            = '/deploy/html/user'
+- var help            = '/deploy/html/help'
 
 - var link_article_new_window       = articles + '/article-new-window-view.html'
 - var link_app_keyword_search       = home     + '/app-keyword-search.html'
 - var link_fundamentals_of_security = articles + '/fundamentals-of-security.html'
-
-
-mixin links-navbar__landing-page
-    li
-        a(href='#{landing_pages}/about.html'   ) About
-    li
-        a(href='#{landing_pages}/features.html') Features
-    li
-        a(href='#{getting_started}/index.html' ) Get Started
             
-mixin links-navbar__landing-page_MD
+mixin links-navbar__landing-page
     :markdown
         * [About](#{landing_pages}/about.html)
         * [Features](#{landing_pages}/features.html)
         * [Get Started](#{getting_started}/index.html)
-        
-        
+  
 mixin links-navbar__home
-    li
-        a(href='#{home}/navigate.html', data-toggle='tooltip', title='Navigate')
-            img(src='/deploy/assets/icons/navigate.png', width='50px', height='50px', alt='Navigate')
-    li
-        a(href='#{home}/main-app-view.html', data-toggle='tooltip', title='Home')
-            img(src='/deploy/assets/icons/home.png', width='50px', height='50px', alt='Home')
-    li
-        a(href='#{home}/help.html', data-toggle='tooltip', title='Help')
-            img(src='/deploy/assets/icons/help.png', width='50px', height='50px', alt='Help')
-    li
-        a(href='#{user}/user.html', data-toggle='tooltip', title='User')
-            img(src='/deploy/assets/icons/user.png', width='50px', height='50px', alt='User')
-    li
-        a(href='#{user}/returning-user-login.html', data-toggle='tooltip', title='Logout')
-            img(src='/deploy/assets/icons/logout.png', width='50px', height='50px', alt='Logout')
+    :markdown
+        * [![Navigate](/deploy/assets/icons/navigate.png)](#{home}/navigate.html)
+        * [![Home](/deploy/assets/icons/home.png)](#{home}/main-app-view.html)
+        * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
+        * [![User](/deploy/assets/icons/user.png)](#{user}/user.html)
+        * [![Logout](/deploy/assets/icons/logout.png)](#{user}/returning-user-login.html)
             
 mixin links-navbar__not_logged_in
-    li
-        a(href='#{home}/help.html', data-toggle='tooltip', title='Help')
-            img(src='/deploy/assets/icons/help.png', width='50px', height='50px', alt='Help')
+    :markdown
+        * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
             
 mixin links-home__navigate
-    a(href='#{home}/attacks-vulnerabilities.html') 
-      h4.light-grey Attacks & Vulnerabilities
-    a(href='#{home}/principles-standards.html')
-      h4.light-grey Principals & Standards
-    a(href='#{articles}/my-articles.html')
-      h4.light-grey My Articles
-    a(href='#{articles}/my-search-items.html')
-      h4.light-grey My Search Items
-    
+    :markdown
+      [Attacks & Vulnerabilities](#{home}/attacks-vulnerabilities.html)
+
+      [Principles & Standards](#{home}/principles-standards.html)
+
+      [My Articles](#{home}/my-articles.html)
+      
+      [My Search Items](#{home}/my-search-items.html)
+
 mixin links_user_pages
-    .col-sm-3
+    .column-3
       a.action(href='user.html') User
-    .col-sm-3
+    .column-3
       a.action(href='backend.html') Backend
-    .col-sm-3
+    .column-3
       a.action(href='developer-utilities.html') Developer Utilities
-    .col-sm-3
+    .column-3
       a.action(href='other.html') Other

@@ -1,0 +1,33 @@
+extends ../_layouts/page_home.jade
+
+block content
+	#application.lge-container
+		.row
+			.column-3.lge-container
+				.div(data-spay="affix", data-offset-top="60", data-offset-bottom="200")
+					h4.grey Exploitation
+					h4.grey Testing
+					h4.grey Prevention
+					h4.grey Courses
+					h4.grey Related Topics
+			.column-6
+				h2.grey Cross-Site Scripting Learning Path
+				br
+
+				p A web applications output is rendered as a web page. If user input is included in the web application output, then it is also rendered as a part of the web page. If user input is included in output without being validated and encoded, a cross-site scripting (XSS) vulnerability results. In that case, an attacker can modify the output web page to include malicious script, which is then executed by the browser that views the vulnerable page. The resources below provide information that will describe the vulnerability in detail and guidance in avoiding, remediating and testing it.
+				br
+
+				h3.dark-grey Getting around
+
+				p You can use the buttons at the end of every chapter to jump immediately to the next or previous section. The learning path will track where you're up to so that if you can't finish it in one sitting, it'll re-open at the last place you were at.
+
+				br
+				hr
+				br
+
+				.row
+					.column-3
+						br
+					.column-offset-6.column-3
+						a(href='exploitation.html')
+							button.btn-action.btn-submit.btn-block(type='button') Exploitation
