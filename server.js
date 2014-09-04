@@ -24,8 +24,9 @@ app.post('/action/login'               ,function (req, res)
             
             //res.redirect('/user/returning-user-forgot-password.html');
         });
+app.get('/test', function(req,res) { res.send(__dirname) } );
+app.use(express.static(__dirname)); 
 
-  
 app.listen(port)
 
 console.log("Starting 'TM Jade' Poc on port " + port); 
