@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/TeamMentor/TM_4_0_Design/issues"
   },
-  "homepage": "https://github.com/TeamMentor/TM_4_0_Design"
+  "homepage": "https://github.com/TeamMentor/TM_4_0_Design",
+  "devDependencies": {
+    "express": "^4.8.7"
+  }
 }
