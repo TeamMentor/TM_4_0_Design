@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/TeamMentor/TM_4_0_Design",
   "dependencies": {
-    "express": "^4.8.7"
+    "express": "^4.8.7",
+    "jade": "^1.6.0",
+    "marked": "^0.3.2"
   }
 }
