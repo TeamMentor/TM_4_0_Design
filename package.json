@@ -20,7 +20,7 @@
     "url": "https://github.com/TeamMentor/TM_4_0_Design/issues"
   },
   "homepage": "https://github.com/TeamMentor/TM_4_0_Design",
-  "devDependencies": {
+  "dependencies": {
     "express": "^4.8.7"
   }
 }
