@@ -6,7 +6,7 @@ $green: #8aaf3e;
 $dark-green: #49661f;
 $grey: #aaaaaa;
 $dark-grey: #444444;
-$nav-padding-top: 120px;
+$nav-padding-top: 110px;
 $full-width: 100%;
 
 // Layout and Structure
@@ -301,6 +301,7 @@ ul, ol {
 	margin-bottom: 10px;
 
 	&.sidebar {
+		margin-top: -15px;
 		list-style-type: none;
 		margin-left: -30px;
 	}
