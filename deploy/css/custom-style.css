@@ -310,8 +310,8 @@ body {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000376}}
 #details {
-  margin: 10px 50px 10px 50px;
-  padding-left: 20px;
+  margin: 30px 50px 30px 50px;
+  padding: 10px 0px 10px 30px;
   border: 1px solid #8aaf3e;
 }
 
