@@ -5,33 +5,14 @@ block content
 		.row
 			.column-3.lge-container
 				.div(data-spay="affix", data-offset-top="60", data-offset-bottom="200")
-					h4.grey Exploiting Mechanisms
-					h4.grey Testing
-					h4.dark-green Prevention
-					ul.sidebar
-						li Input Validation
-						li Database Countermeasures
-						li Information Disclosure
-					h4.grey Advanced
-					h4.grey Related Topics
-					br
-					br
-					br
-					br
-					br
-					br
-					br
-					br
-					br
-					br
-					br
+					+links_learning_paths
 					br
 					.progress
 						.progress-bar(role='progressbar', aria-valuenow='50', aria-valuemin='0', aria-valuemax='100', style='width: 50%')
 			.column-6
 				h2.grey Prevention
 
-				h3.dark-grey Input Validation
+				h3#input-validation.dark-grey Input Validation
 				
 				img.center.img-responsive(src='/deploy/assets/videos/Video6.jpg')
 				br
@@ -40,7 +21,7 @@ block content
 				hr
 				br
 
-				h3.dark-grey Database Countermeasures
+				h3#database-countermeasures.dark-grey Database Countermeasures
 				
 				img.center.img-responsive(src='/deploy/assets/videos/Video7.jpg')
 				br
@@ -49,7 +30,7 @@ block content
 				hr
 				br
 
-				h3.dark-grey Information Disclosure
+				h3#information-disclosure.dark-grey Information Disclosure
 				
 				img.center.img-responsive(src='/deploy/assets/videos/Video8.jpg')
 				br

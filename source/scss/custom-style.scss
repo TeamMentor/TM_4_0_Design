@@ -199,7 +199,7 @@ img.center {
 			display: inline-block;
 			padding-right: 40px;
 
-			a, :visited {
+			a {
 				text-transform: uppercase;
 				letter-spacing: 1px;
 				font-weight: 700;
@@ -209,6 +209,10 @@ img.center {
 
 				&:hover, &:active {
 					color: $dark-green;
+				}
+
+				&:visited {
+					color: $dark-grey;
 				}
 			}
 		}
