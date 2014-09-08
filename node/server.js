@@ -16,10 +16,10 @@ app.use(express['static'](process.cwd()));
 app.port       = process.env.PORT || 1337;
 
 if        (process.mainModule.filename.indexOf('node_modules/mocha/bin/_mocha') > 0)   { console.log('[Running under Mocha]'); }
-else if   (process.mainModule.filename.indexOf('interceptor.js'               ) > 0)   { console.log('[Running under Azure]'); }
+//else if   (process.mainModule.filename.indexOf('interceptor.js'               ) > 0)   { console.log('[Running under Azure]'); }
 else
 {
-    console.log("[Running locally] Starting 'TM Jade' Poc on port " + app.port);
+    console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + app.port);
     app.listen(app.port);
 }
     
