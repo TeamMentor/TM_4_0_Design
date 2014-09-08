@@ -16,5 +16,5 @@ module.exports = function (app) {
 
     app.get('/dirName', function(req,res) { res.send(__dirname); } );
     app.get('/test'   , function(req,res) { res.send('from routes.js..'); } );
-    app.get('/ping'   , function(req,res) { res.send('pong....' ); } );    
+    app.get('/ping'   , function(req,res) { res.send('pong..' ); } );    
 };

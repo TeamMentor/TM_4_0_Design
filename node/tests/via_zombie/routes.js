@@ -15,7 +15,7 @@ describe('Check routes', function ()
     {
         
         Browser.visit('ping', function (err, browser) {            
-            assert.equal(browser.text("body" ),"pong....");
+            assert.equal(browser.text("body" ),"pong..");
             done();
         });
     });
