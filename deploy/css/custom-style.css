@@ -259,7 +259,7 @@ body {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000332}}
 #about, #usp {
-  padding-top: 110px;
+  padding-top: 120px;
   padding-bottom: 80px;
   background-color: #8aaf3e;
   color: white;
@@ -280,7 +280,7 @@ body {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000350}}
 #application {
-  margin-top: 110px;
+  margin-top: 120px;
   width: 100%;
 }
 
@@ -317,7 +317,7 @@ body {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000382}}
 #features {
-  padding-top: 110px;
+  padding-top: 120px;
   padding-bottom: 50px;
 }
 
