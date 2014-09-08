@@ -218,7 +218,7 @@ label {
 			display: inline-block;
 			padding-right: 40px;
 
-			a {
+			a, a:visited {
 				text-transform: uppercase;
 				letter-spacing: 1px;
 				font-weight: 700;
@@ -227,11 +227,7 @@ label {
 				text-align: center !important;
 
 				&:hover, &:active {
-					color: $dark-green;
-				}
-
-				&:visited {
-					color: $dark-grey;
+					color: $dark-green !important;
 				}
 			}
 		}
