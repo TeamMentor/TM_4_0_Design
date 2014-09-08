@@ -9,7 +9,8 @@ app.use(bodyParser.json()                        );     // to support JSON-encod
 app.use(bodyParser.urlencoded({ extended: true }));     // to support URL-encoded bodies
 
 require('./routes/routes.js')(app);
-require('./routes/user.js')(app);
+require('./routes/user.js'  )(app);
+require('./routes/debug.js' )(app);
 
 app.use(express['static'](process.cwd()));
 

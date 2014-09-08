@@ -13,8 +13,4 @@ module.exports = function (app) {
     //Render Jade pages
     app.get('/:page.html'                  ,function (req, res)  { res.render  (sourceDir + '/html/'+ req.params.page                      + '.jade');}); 
     app.get('/:area/:page.html'            ,function (req, res)  { res.render  (sourceDir + '/html/'+ req.params.area +'/'+req.params.page + '.jade');}); 
-
-    app.get('/dirName', function(req,res) { res.send(__dirname); } );
-    app.get('/test'   , function(req,res) { res.send('from routes.js..'); } );
-    app.get('/ping'   , function(req,res) { res.send('pong..' ); } );    
 };
