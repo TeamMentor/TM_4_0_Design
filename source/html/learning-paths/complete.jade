@@ -1,0 +1,22 @@
+extends ../_layouts/page_home.jade
+
+block content
+	#application.lge-container
+		.row
+			.column-3.lge-container
+				.div(data-spay="affix", data-offset-top="60", data-offset-bottom="200")
+					+links_learning_paths
+					br
+					.progress
+						.progress-bar(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%')
+			.column-6
+				p Image Here
+
+				h5.dark-grey Congratulations, you completed the SQL Injection Learning Path.
+
+				p From here, we recommend the following courses and articles:
+
+				ul
+					li Related Learning Path
+					li Related Article
+					li Related Course
