@@ -2,31 +2,35 @@
   "name": "TM_4_0_Design",
   "version": "1.0.0",
   "description": "TeamMentor 4.0 Design Implementation PoCs",
-  "main": "server.js",
+  "author": "TM Dev team",
+  "license": "TM Commercial License",
+  "homepage": "https://github.com/TeamMentor/TM_4_0_Design",
+  "bugs": {
+    "url": "https://github.com/TeamMentor/TM_4_0_Design/issues"
+  },
+  "keywords": [
+    "TeamMentor"
+  ],
+  "main": "node/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo      \"Error: no test specified\" && exit 1",
+    "start": "node       node/server.js",
+    "dev": "supervisor -i node/tests/ node/server.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/TeamMentor/TM_4_0_Design.git"
   },
-  "keywords": [
-    "TeamMentor"
-  ],
-  "author": "TM Dev team",
-  "license": "TM Commercial License",
-  "bugs": {
-    "url": "https://github.com/TeamMentor/TM_4_0_Design/issues"
-  },
-  "homepage": "https://github.com/TeamMentor/TM_4_0_Design",
   "dependencies": {
+    "body-parser": "^1.8.1",
     "express": "^4.8.7",
     "jade": "^1.6.0",
     "marked": "^0.3.2"
   },
   "devDependencies": {
+    "chai": "^1.9.1",
     "karma": "^0.12.23",
-    "karma-jasmine": "^0.1.5"
+    "karma-jasmine": "^0.1.5",
+    "should": "^4.0.4"
   }
 }
