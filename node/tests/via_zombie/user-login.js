@@ -53,8 +53,7 @@ describe('User Login sequence', function ()
         browser.assert.attribute('#new-user-password', 'value', password);
         browser.click('#btn-login', function()
         {
-            expect(browser.url).to.contain('/action/login');
-            browser.assert.text('body','Login failed');
+            browser.assert.url('http://localhost/user/returning-user-validation.html');            
             done();
         });        
     });
@@ -69,8 +68,8 @@ describe('User Login sequence', function ()
         browser.assert.attribute('#new-user-password', 'value', password);
         browser.click('#btn-login', function()
         {
-            expect(browser.url).to.contain('/action/login');
-            browser.assert.text('body','Login ok');
+            browser.assert.url('http://localhost/home/main-app-view.html');
+            //expect(browser.url).to.contain('/action/login');                        
             done();
         });        
     });

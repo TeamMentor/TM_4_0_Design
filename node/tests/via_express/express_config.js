@@ -26,6 +26,7 @@ describe('Direct access to Express Objects', function ()
             if (item.route) { paths.push(item.route.path);}
         });
         
+        //console.log(paths);  
         var expectedPaths = [ '/',                                              
                               '/deploy/html/:area/:page.html',                  // jade page rendering
                               '/:page.html'                  ,
@@ -34,10 +35,14 @@ describe('Direct access to Express Objects', function ()
                               '/getting-started/index.html'  ,                  // static redirects
                              
                               '/action/login'                ,                  // Authentication
-                             
-                              '/dirName'                     ,                  // test ones 
-                              '/test',
-                              '/ping' ];
+                              
+                              '/dirName'                     ,                  // debug ones 
+                              '/pwd'                         ,
+                              '/test'                        ,
+                              '/ping'                        ,
+                              '/module'                      ,
+                              '/mainModule'
+                             ];
         
         expect(paths.length).to.be.equal(expectedPaths.length);
         paths.forEach(function(path)
@@ -45,7 +50,7 @@ describe('Direct access to Express Objects', function ()
             expect(expectedPaths).to.contain(path);
         });
         //expect(paths).to.be.deep.equal(expectedPaths);
-//        console.log(paths);  
+
         
     }); 
 });
