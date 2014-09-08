@@ -7,10 +7,11 @@ var express    = require('express'),
 var app      = express();
 app.use(bodyParser.json()                        );     // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));     // to support URL-encoded bodies
-require('./routes/routes.js')(app);
-require('./routes/user.js')(app);
+//require('./routes/routes.js')(app);
+//require('./routes/user.js')(app);
 
-app.use(express['static'](process.cwd()));
+app.use('/',function(req,res) { res.send('simple azure test');});
+//app.use(express['static'](process.cwd()));
 
 
 app.port       = process.env.PORT || 1337;
