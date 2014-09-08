@@ -19,7 +19,9 @@ app.port       = process.env.PORT || 1337;
 if (process.mainModule === module)                                  // with this express will not start when this script is loaded from a UnitTest
 {
     console.log("Starting 'TM Jade' Poc on port " + app.port);
-    app.listen(app.port);
+ //   app.listen(app.port);
 }
+
+app.listen(app.port);
 
 module.exports = app;
