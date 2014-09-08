@@ -74,8 +74,8 @@ body {
 }
 
 #details {
-	margin: 10px 50px 10px 50px;
-	padding-left: 20px;
+	margin: 30px 50px 30px 50px;
+	padding: 10px 0px 10px 30px;
 	border: 1px solid $green;
 }
 
@@ -199,7 +199,7 @@ img.center {
 			display: inline-block;
 			padding-right: 40px;
 
-			a, :visited {
+			a {
 				text-transform: uppercase;
 				letter-spacing: 1px;
 				font-weight: 700;
@@ -209,6 +209,10 @@ img.center {
 
 				&:hover, &:active {
 					color: $dark-green;
+				}
+
+				&:visited {
+					color: $dark-grey;
 				}
 			}
 		}
@@ -660,7 +664,6 @@ button {
 
 .list-group-item-heading {
     margin-top: 0px;
-    margin-bottom: -10px;
 }
 
 .list-group-item-text {

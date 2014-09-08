@@ -46,3 +46,43 @@ mixin links_user_pages
       a.action(href='developer-utilities.html') Developer Utilities
     .column-3
       a.action(href='other.html') Other
+
+mixin links_learning_paths
+    a(href='exploiting.html')
+      h4.grey Exploiting Mechanisms
+    ul.sidebar
+      li 
+        a(href='#introduction') Introduction
+      li 
+        a(href='#sql-injection') SQL Injection
+      li 
+        a(href='#sql-injection-exploits') SQL Injection Exploits
+      li 
+        a(href='#three-dangerous-vulns') Three Dangerous Vulnerabilities
+    a(href='testing.html')
+      h4.grey Testing
+    ul.sidebar
+      li 
+        a(href='#advanced-software-testing') Advanced Software Testing
+      li 
+        a(href='#fuzz-testing') Fuzz Testing
+    a(href='prevention.html')
+      h4.grey Prevention
+    ul.sidebar
+      li 
+        a(href='#input-validation') Input Validation
+      li 
+        a(href='#database-countermeasures') Database Countermeasures
+      li 
+        a(href='#information-disclosure') Information Disclosure
+    a(href='advanced.html')
+      h4.grey Advanced
+    ul.sidebar
+      li 
+        a(href='#oracle-coding') Oracle Database Secure Coding
+      li 
+        a(href='#sql-database-coding') SQL Database Secure Coding
+      li 
+        a(href='#php-coding') PHP Secure Coding
+    a(href='related-topics.html')
+      h4.grey Related Topics
