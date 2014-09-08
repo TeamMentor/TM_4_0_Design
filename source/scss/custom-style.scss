@@ -91,6 +91,11 @@ body {
 #footer {
 	padding-top: 10px;
 	padding-bottom: 10px;
+	width: $full-width;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 #reasons {
@@ -218,7 +223,7 @@ label {
 				letter-spacing: 1px;
 				font-weight: 700;
 				font-size: 0.95em;
-				color: $green;
+				color: $green !important;
 				text-align: center !important;
 
 				&:hover, &:active {
@@ -403,8 +408,10 @@ a {
 		color: $green;
 	}
 
-	&.action {
-		margin-top: 20px;
+	&.toc {
+		color: $dark-grey !important;
+		font-size: 10px;
+		text-align: center;
 	}
 
 	&.action, &.action:visited {

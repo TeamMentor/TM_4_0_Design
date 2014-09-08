@@ -124,9 +124,8 @@ mixin call-to-action-div
 
 //- landing-page_footer
 mixin footer-div
-	.lge-container
-		.row
-			.column-offset-5.column-2
-				img.center.img-responsive(src='/deploy/assets/logos/si-logo.png')
-				p.small.text-center
-					a(href="#{user}/terms-and-conditions.html") Terms & Conditions
+	.row
+		.column-3
+			img.center.img-responsive(src='/deploy/assets/logos/si-logo.png')
+		.column-offset-7.column-2
+			a.action.toc(href="#{user}/terms-and-conditions.html") Terms & Conditions
