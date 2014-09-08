@@ -1,3 +1,4 @@
+include mixins/login-form.jade
 extends ../_layouts/page_not_logged_in.jade
 block content  
     #application
@@ -5,21 +6,5 @@ block content
         .column-offset-3.column-6
           br
           h3.grey Login
-          br
-          form#login-form(role='form' method='post' action='/action/login')
-            .form-group
-              label(for='new-user-username') Username
-              input#new-user-username.form-control(type='username' name='username' placeholder='Username')
-            br
-            .form-group
-              label(for='new-user-password') Password
-              input#new-user-password.form-control(type='password' name='password' placeholder='Password')
-            br
-            //a(href='/deploy/html/user/returning-user-validation.html')
-            button.btn-action.btn-submit.btn-block(type='submit', id='btn-login') Login
-            br
-            br
-            //a(href='returning-user-forgot-password.html')
-            button.btn-action.btn-submit.btn-block(type='submit', id='btn-forgot-pwd') Forgot your password?
-          br
-          br
+          br 
+          +login-form
