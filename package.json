@@ -13,9 +13,9 @@
   ],
   "main": "node/server.js",
   "scripts": {
-    "test": "echo      \"Error: no test specified\" && exit 1",
-    "start": "node       node/server.js",
-    "dev": "supervisor -i node/tests/ node/server.js"
+    "test" : "echo      \"Error: no test specified\" && exit 1",
+    "start": "node node/server.js",
+    "dev"  : "supervisor -i node/tests/ node/server.js"
   },
   "repository": {
     "type": "git",
