@@ -50,6 +50,10 @@ body {
 #application {
 	margin-top: $nav-padding-top;
 	width: $full-width;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 #calltoaction {
@@ -153,15 +157,25 @@ img.center {
 // Forms
 
 .form-control {
-	height: 3em;
-	width: $full-width;
+	width: 100%;
 	display: block;
-	border-radius: 0px;
+	height: 3em;
 	padding-left: 20px;
+	font-size: 1.15em;
+	border-radius: 0px;
 	border: 1px solid $grey;
 	color: $dark-green;
-	background-colour: $white;
-	font-size: 1.15em;
+	background-colour: $white;	
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 // Navigation
@@ -389,6 +403,10 @@ a {
 		color: $green;
 	}
 
+	&.action {
+		margin-top: 20px;
+	}
+
 	&.action, &.action:visited {
 		text-transform: uppercase;
 		letter-spacing: 1px;
@@ -446,7 +464,10 @@ input {
 	font-size: 1.25em;
 	height: 3em;
 	border-radius: 0px;
-	max-width: 96%;
+	max-width: 100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
 }
 
 .input-group {
@@ -509,6 +530,7 @@ input[type=checkbox] + label {
 	line-height: 1em;
 	vertical-align: middle;
 }
+
 
 // Buttons
 
