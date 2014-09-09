@@ -267,27 +267,32 @@ img.center {
 h1 {
 	font-size: 36px;
 	font-weight: bold;
+	color: $white;
 }
 
 h2 {
 	font-size: 30px;
 	font-weight: bold;
+	color: $grey;
 }
 
 h3 {
 	font-size: 24px;
 	font-weight: bold;
+	color: $grey;
 }
 
 h4 {
 	font-size: 18px;
 	font-weight: bold;
 	line-height: 1.5em;
+	color: $dark-grey;
 }
 
 h5 {
 	font-size: 16px;
 	font-weight: bold;
+	color: $dark-grey;
 }
 
 p, li { 
