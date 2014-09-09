@@ -3,10 +3,10 @@
 
 //- filters
 mixin filters-div
-	h3.grey Filters
+	h3 Filters
 	form(role='form', action='filters-active.html')
 		.form-group
-			h5.green Technology
+			h5 Technology
 			ul.list-group
 				li.list-group-item.filters
 					input#technology_1(type='checkbox')
@@ -29,7 +29,7 @@ mixin filters-div
 					label(for='#technology_5', type='checkbox') Option #5
 						span.badge 14 
 		.form-group
-			h5.green Category
+			h5 Category
 			ul.list-group
 				li.list-group-item.filters
 					input#category_1(type='checkbox')
@@ -52,7 +52,7 @@ mixin filters-div
 					label(for='#category_5', type='checkbox') Option #5
 						span.badge 14
 		.form-group
-			h5.green Phase
+			h5 Phase
 			ul.list-group
 				li.list-group-item.filters
 					input#phase_1(type='checkbox')
@@ -75,7 +75,7 @@ mixin filters-div
 					label(for='#phase_5', type='checkbox') Option #5
 						span.badge 14
 		.form-group
-			h5.green Type
+			h5 Type
 			ul.list-group
 				li.list-group-item.filters
 					input#type_1(type='checkbox')
@@ -104,8 +104,7 @@ mixin filters-div
 
 //- save to dashboard
 mixin save-div
-	h3.grey Save to Dashboard
-	br
+	h3 Save to Dashboard
 	form(role='form')
 		.form-group
 			label(for='nickname') Give it a nickname
@@ -124,8 +123,15 @@ mixin call-to-action-div
 
 //- landing-page_footer
 mixin footer-div
-	.row
-		.column-3
-			img.center.img-responsive(src='/deploy/assets/logos/si-logo.png')
-		.column-offset-7.column-2
-			a.action.toc(href="#{user}/terms-and-conditions.html") Terms & Conditions
+	.lge-container
+		.row
+			.column-3
+				img.center.img-responsive(src='/deploy/assets/logos/si-logo.png')
+			.column-offset-7.column-2
+				a.action.toc(href="#{user}/terms-and-conditions.html") Terms & Conditions
+
+//- horizontal-rule
+mixin horizontal-rule
+	br
+	hr
+	br

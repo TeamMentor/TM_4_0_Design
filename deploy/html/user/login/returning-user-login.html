@@ -26,8 +26,6 @@
     <title>TEAM Mentor 4.0 (Html version)</title>
     <!-- Normalize-->
     <link href="/deploy/css/normalize.css" rel="stylesheet">
-    <!-- Bootstrap core CSS-->
-    <link href="/deploy/css/zz-bootstrap.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
@@ -41,7 +39,7 @@
         </ul>
         <div class="collapse navbar-collapse pull-right">
           <ul class="action nav nav-icons"><ul>
-<li><a href="/deploy/html/help/index.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
+<li><a href="/deploy/html/landing-pages/help.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
 </ul>
 
           </ul>
@@ -50,28 +48,19 @@
     </div>
     <div id="application">
       <div class="row">
-        <div class="column-offset-3 column-6">
-          <div class="row text-center">
-                <div class="column-3"><a href="user.html" class="action">User</a></div>
-                <div class="column-3"><a href="backend.html" class="action">Backend</a></div>
-                <div class="column-3"><a href="developer-utilities.html" class="action">Developer Utilities</a></div>
-                <div class="column-3"><a href="other.html" class="action">Other</a></div>
-          </div><br><br>
-          <h4 class="grey">Personal Details</h4>
-          <form role="form" action="user.html">
+        <div class="column-offset-3 column-6"><br>
+          <h3 class="grey">Login</h3><br>
+          <form id="login-form" role="form" method="post" action="/user/login">
             <div class="form-group">
-              <label for="user-current-password">Current Password</label>
-              <input type="user-current-password" id="user-current-password" placeholder="Current Password" class="form-control">
-            </div><br>
+              <label for="new-user-username">Username</label>
+              <input id="new-user-username" type="username" name="username" placeholder="Username" value="user" class="form-control"/>
+            </div>
             <div class="form-group">
-              <label for="user-new-password">New Password</label>
-              <input type="user-new-password" id="user-new-password" placeholder="New Password" class="form-control">
-            </div><br>
-            <div class="form-group">
-              <label for="user-confirm-new-password">Confirm New Password</label>
-              <input type="user-confirm-new-password" id="user-confirm-new-password" placeholder="Confirm New Password" class="form-control">
-            </div><br>
-            <button type="submit" class="btn-action btn-submit btn-block">Save<span class="glyphicon glyphicon-ok glyphicon-small"></span></button>
+              <label for="new-user-password">Password</label>
+              <input id="new-user-password" type="password" name="password" placeholder="Password" class="form-control"/>
+            </div>
+            <button type="submit" id="btn-login" class="btn-action btn-submit btn-block">Login</button><br/><br/><a href="returning-user-forgot-password.html">
+              <button type="button" id="btn-forgot-pwd" class="btn-action btn-submit btn-block">Forgot your password?</button></a><br/><br/>
           </form>
         </div>
       </div>

@@ -40,6 +40,7 @@ body {
 
 #about {
 	background: url(#{$asset-path}/stock-img/bgthree.jpg);
+	padding-bottom: 20px;
 }
 
 #about-us {
@@ -68,6 +69,7 @@ body {
 #clients {
 	padding-bottom: 5%;
 	background-color: $white;
+	text-align: center;
 }
 
 #description {
@@ -86,11 +88,16 @@ body {
 #features {
 	padding-top: $nav-padding-top;
 	padding-bottom: 50px;
+
+	h3 {
+		text-align: center;
+	}
 }
 
 #footer {
 	padding-top: 10px;
 	padding-bottom: 10px;
+	text-align: center;
 	width: $full-width;
 	padding-right: 15px;
 	padding-left: 15px;
@@ -102,6 +109,10 @@ body {
 	padding-top: 5%;
 	padding-bottom: 2%;
 	background-color: $white;
+	
+	h3 {
+		text-align: center;
+	}
 }
 
 #usp {
@@ -138,17 +149,11 @@ body {
 
 // Images
 
-.img-responsive {
-	display: block;
-	max-width: $full-width;
+img {
+    display: block;
+    max-width: $full-width;
 	height: auto;
 	margin: 0 auto;
-}
-
-img.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .long {
@@ -292,27 +297,32 @@ label {
 h1 {
 	font-size: 36px;
 	font-weight: bold;
+	color: $white;
 }
 
 h2 {
 	font-size: 30px;
 	font-weight: bold;
+	color: $grey;
 }
 
 h3 {
 	font-size: 24px;
 	font-weight: bold;
+	color: $grey;
 }
 
 h4 {
 	font-size: 18px;
 	font-weight: bold;
 	line-height: 1.5em;
+	color: $dark-grey;
 }
 
 h5 {
 	font-size: 16px;
 	font-weight: bold;
+	color: $dark-grey;
 }
 
 h1, h2, h3 {
@@ -454,11 +464,6 @@ a {
 	&:hover, &:active {
 		color: $dark-green;
 	}	
-}
-
-.text-center {
-	text-align: center;
-	margin: 0 auto;
 }
 
 // Input Groups
@@ -771,6 +776,7 @@ a.list-group-item:focus {
 table {
 	width: $full-width;
 	font-size: 1.15em;
+	color: $dark-grey;
 }
 
 td {
