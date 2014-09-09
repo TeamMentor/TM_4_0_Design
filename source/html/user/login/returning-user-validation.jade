@@ -1,11 +1,9 @@
-include mixins/login-form.jade
-extends ../_layouts/page_not_logged_in.jade
+include ../mixins/login-form.jade
+extends ../../_layouts/page_not_logged_in.jade
 block content    
     #application
       .row
-        .column-offset-3.column-6      
-          br
-          br
+        .column-offset-3.column-6                
           .alert.alert-warning.alert-dismissible(role='alert')
             button.close(type='button', data-dismiss='alert')
               span(aria-hidden='true') ×

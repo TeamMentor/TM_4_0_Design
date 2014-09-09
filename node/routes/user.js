@@ -6,22 +6,24 @@ module.exports = function (app)
     var users = [ { username : 'tm'   , password : 'tm'   } ,
                   { username : 'user' , password : 'user'}
                 ];
-    app.post('/action/login'               ,function (req, res)  
-            {                         
+    app.post('/user/login'               ,function (req, res)  
+            {                     
                 for(var index in users)
                 {
                     var user = users[index];
                     if (user.username === req.body.username && user.password === req.body.password)
                     {
-                        res.redirect('/home/main-app-view.html');
-                        //res.send('Login ok');
+                        req.session.username = user.username;
+                        res.redirect('/home/main-app-view.html');                        
                         return;
                     }
-                } 
-        
-                //res.send('Login failed');  
-                res.redirect('/user/returning-user-validation.html');
-
-                //res.redirect('/user/returning-user-forgot-password.html');
+                }                
+                req.session.username = undefined;
+                res.redirect('/user/login/returning-user-validation.html');
+            });
+    app.get ('/user/logout'               ,function (req, res)  
+            {
+                req.session.username = undefined;
+                res.redirect('/landing-pages/index.html');
             });
 };

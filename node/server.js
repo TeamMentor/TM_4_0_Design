@@ -3,10 +3,15 @@
 
 var express    = require('express'),
     bodyParser = require('body-parser'),
-    app        = express();
+    app        = express(),
+    session    = require('express-session');
 
 app.use(bodyParser.json()                        );     // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));     // to support URL-encoded bodies
+app.use(session({secret           : '1234567890', 
+                 saveUninitialized: true        ,
+                 resave           : true        }));
+
 
 require('./routes/routes.js')(app);
 require('./routes/user.js'  )(app);
