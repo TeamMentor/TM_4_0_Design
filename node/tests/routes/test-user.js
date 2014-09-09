@@ -3,8 +3,7 @@
 
 "use strict";
 
-var assert   = require('assert'),
-    //expect   = require('chai').expect,
+var assert   = require('assert'),    
     Browser  = new require('zombie'),    
     app      = require('../../server'),
     browser;
