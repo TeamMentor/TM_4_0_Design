@@ -317,6 +317,12 @@ h4 {
 	font-weight: bold;
 	line-height: 1.5em;
 	color: $dark-grey;
+
+	&#applies-to-, &#prerequisites {
+		margin: 30px 50px 30px 50px;
+		padding: 10px 0px 10px 30px;
+		border: 1px solid $green;
+	}
 }
 
 h5 {
