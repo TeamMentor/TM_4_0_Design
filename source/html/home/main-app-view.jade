@@ -1,12 +1,12 @@
 extends ../_layouts/page_home.jade
 
 block content  
-    #application.container
+    #application.lge-container
       .row
-        .column-3
+        .column-3.lge-container
           br
 
-        .column-6
+        .column-6.lge-container
           .input-group
             input.form-control(type='text', placeholder='Type keywords here')
           br
@@ -42,6 +42,7 @@ block content
             a.list-group-item(href='#{link_article_new_window}', target='_blank') Vestibulum at eros                
         
         .column-3
-          +filters-div
-          br
-          +save-div
+          .lge-container
+            +filters-div
+            br
+            +save-div
