@@ -16,6 +16,7 @@ module.exports = function (app) {
     app.get('/:page.html'                  , function (req, res)  { res.render  (sourceDir + '/html/'+ req.params.page                      + '.jade');}); 
     
     app.get('/user/login/:page.html'       , function (req, res)  { res.render  (sourceDir + '/html/user/login/'+req.params.page + '.jade');}); 
+    app.get('/landing-pages/:page.html'    , function (req, res)  { res.render  (sourceDir + '/html/landing-pages/'+req.params.page + '.jade');}); 
     
     app.get('/:area/:page.html'            , checkAuth , function (req, res)  { res.render  (sourceDir + '/html/'+ req.params.area +'/'+req.params.page + '.jade');}); 
 };

@@ -35,11 +35,13 @@ describe('test-routes.js', function ()
                                   '/deploy/html/:area/:page.html',                  // jade page rendering
                                   '/:page.html'                  ,
                                   '/user/login/:page.html'       ,
+                                  '/landing-pages/:page.html'    ,
                                   '/:area/:page.html'            ,
 
                                   '/getting-started/index.html'  ,                  // static redirects
 
                                   '/user/login'                  ,                  // Authentication
+                                  '/user/login'                  ,
                                   '/user/logout'                 ,
 
                                   '/dirName'                     ,                  // debug ones 
@@ -58,20 +60,6 @@ describe('test-routes.js', function ()
             });        
         });  
     });    
-    
-    describe('tm routes', function() 
-    {
-        it('Special Redirects', function(done) 
-        {
-
-            Browser.visit('/getting-started/index.html', function(err, browser) 
-            {
-                assert.include(browser.url, '/user/login/returning-user-login.html');
-                done();
-            });        
-        });
-        
-    });
     
     describe('debug routes', function() 
     {

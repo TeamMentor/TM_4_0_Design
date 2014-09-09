@@ -3,9 +3,10 @@
 
 function checkAuth(req, res, next) 
 {    
-    if (!req.session) 
+    if (!req.session.username) 
     {
-        res.send('You are not authorized to view this page');
+        res.status(403).render('../source/html/landing-pages/need-login.jade');
+        //res.send('You are not authorized to view this page');
     }
     else 
     {

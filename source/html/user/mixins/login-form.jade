@@ -2,7 +2,7 @@ mixin login-form
     form#login-form(role='form' method='post' action='/user/login')
         .form-group
           label(for='new-user-username') Username
-          input#new-user-username.form-control(type='username' name='username' placeholder='Username')
+          input#new-user-username.form-control(type='username' name='username' placeholder='Username' value='user')
         br
         .form-group
           label(for='new-user-password') Password
@@ -12,7 +12,7 @@ mixin login-form
         button.btn-action.btn-submit.btn-block(type='submit', id='btn-login') Login
         br
         br
-        //a(href='returning-user-forgot-password.html')
-        button.btn-action.btn-submit.btn-block(type='submit', id='btn-forgot-pwd') Forgot your password?
+        a(href='returning-user-forgot-password.html')
+            button.btn-action.btn-submit.btn-block(type='button', id='btn-forgot-pwd') Forgot your password?
         br
         br
