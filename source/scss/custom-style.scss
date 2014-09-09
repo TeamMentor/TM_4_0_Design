@@ -64,6 +64,7 @@ body {
 #clients {
 	padding-bottom: 5%;
 	background-color: $white;
+	text-align: center;
 }
 
 #description {
@@ -81,12 +82,14 @@ body {
 #footer {
 	padding-top: 10px;
 	padding-bottom: 10px;
+	text-align: center;
 }
 
 #reasons {
 	padding-top: 5%;
 	padding-bottom: 2%;
 	background-color: $white;
+	text-align: center;
 }
 
 #usp {
@@ -123,17 +126,11 @@ body {
 
 // Images
 
-.img-responsive {
-	display: block;
-	max-width: $full-width;
+img {
+    display: block;
+    max-width: $full-width;
 	height: auto;
 	margin: 0 auto;
-}
-
-img.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .long {
@@ -383,11 +380,6 @@ a {
 	&:hover, &:active {
 		color: $dark-green;
 	}	
-}
-
-.text-center {
-	text-align: center;
-	margin: 0 auto;
 }
 
 // Input Groups
@@ -706,6 +698,7 @@ a.list-group-item:hover, a.list-group-item:focus {
 table {
 	width: $full-width;
 	font-size: 1.15em;
+	color: $dark-grey;
 }
 
 td {
