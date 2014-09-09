@@ -1,6 +1,13 @@
 //- static texts
 - var head_title = 'TEAM Mentor 4.0 (Html version)'
 
+//- search-bar-input
+mixin search-bar-input
+	.input-group
+		input.form-control(type='text', placeholder='Type keywords here')
+		span.input-group-btn
+			button.btn-action(type='button') SEARCH
+
 //- filters
 mixin filters-div
 	h3 Filters
