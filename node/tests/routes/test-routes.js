@@ -36,6 +36,7 @@ describe('test-routes.js', function ()
                                   '/:page.html'                  ,
                                   '/user/login/:page.html'       ,
                                   '/landing-pages/:page.html'    ,
+                                  '/help/:page.html'             ,
                                   '/:area/:page.html'            ,
 
                                   '/getting-started/index.html'  ,                  // static redirects
@@ -50,6 +51,7 @@ describe('test-routes.js', function ()
                                   '/ping'                        ,
                                   '/module'                      ,
                                   '/mainModule'                  ,
+                                  
                                   '/session'                                                    
                                  ];
 

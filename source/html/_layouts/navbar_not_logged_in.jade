@@ -10,7 +10,17 @@ include ../../content/images.jade
         span.icon-bar   
         span.icon-bar
     ul.brand
-      +image-teammentor-logo__default         
-    .collapse.navbar-collapse.pull-right
-      ul.action.nav.nav-icons
-        +links-navbar__not_logged_in
+      li
+        +image-teammentor-logo__default         
+      li
+        .collapse.navbar-collapse.pull-right
+          ul.action.nav.nav-icons
+            +links-navbar__not_logged_in
+        
+    //ul.brand
+            li
+                +image-teammentor-logo__default 
+            li
+                .collapse.navbar-collapse.pull-right
+                    ul.action.nav.nav-icons
+                        +links-navbar__home

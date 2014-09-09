@@ -2,6 +2,7 @@
 - var getting_started = '/deploy/html/getting-started'
 - var home            = '/deploy/html/home'
 - var landing_pages   = '/deploy/html/landing-pages'
+- var help            = '/help'
 - var user            = '/deploy/html/user'
 
 - var link_article_new_window       = articles + '/article-new-window-view.html'
@@ -12,19 +13,21 @@ mixin links-navbar__landing-page
     :markdown
         * [About](#{landing_pages}/about.html)
         * [Features](#{landing_pages}/features.html)
+        * [Help](#{help}/index.html)
         * [Get Started](#{getting_started}/index.html)
+        * [Login](#{getting_started}/index.html)
   
 mixin links-navbar__home
     :markdown
         * [![Navigate](/deploy/assets/icons/navigate.png)](#{home}/navigate.html)
         * [![Home](/deploy/assets/icons/home.png)](#{home}/main-app-view.html)
-        * [![Help](/deploy/assets/icons/help.png)](#{landing_pages}/help.html)
+        * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
         * [![User](/deploy/assets/icons/user.png)](#{user}/user.html)
         * [![Logout](/deploy/assets/icons/logout.png)](/user/logout)
             
 mixin links-navbar__not_logged_in
     :markdown
-        * [![Help](/deploy/assets/icons/help.png)](#{landing_pages}/help.html)
+        * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
             
 mixin links-home__navigate
     :markdown
