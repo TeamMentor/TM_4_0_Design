@@ -1,112 +1,113 @@
-.column-1, .column-2, .column-3, .column-4, .column-5, .column-6, .column-7, .column-8, .column-9, .column-10, .column-11, .column-12 {
+@media (min-width: 768px) {
+  .column-1, .column-2, .column-3, .column-4, .column-5, .column-6, .column-7, .column-8, .column-9, .column-10, .column-11, .column-12 {
     float: left;
-}
+  }
 
-.column-12 {
+  .column-12 {
     width: 100%;
-}
+  }
 
-.column-11 {
+  .column-11 {
     width: 91.66666667%;
-}
+  }
 
-.column-10 {
+  .column-10 {
     width: 83.33333333%;
-}
+  }
 
-.column-9 {
+  .column-9 {
     width: 75%;
-}
+  }
 
-.column-8 {
+  .column-8 {
     width: 66.66666667%;
-}
+  }
 
-.column-7 {
+  .column-7 {
     width: 58.33333333%;
-}
+  }
 
-.column-6 {
+  .column-6 {
     width: 50%;
-}
+  }
 
-.column-5 {
+  .column-5 {
     width: 41.66666667%;
-}
+  }
 
-.column-4 {
+  .column-4 {
     width: 33.33333333%;
-}
+  }
 
-.column-3 {
+  .column-3 {
     width: 25%;
-}
+  }
 
-.column-2 {
+  .column-2 {
     width: 16.66666667%;
-}
+  }
 
-.column-1 {
+  .column-1 {
     width: 8.33333333%;
-}
+  }
 
-
-.column-offset-12 {
-	margin-left: 100%;
-}
+  .column-offset-12 {
+    margin-left: 100%;
+  }
 
   .column-offset-11 {
-	margin-left: 91.66666667%;
-}
+    margin-left: 91.66666667%;
+  }
 
   .column-offset-10 {
-	margin-left: 83.33333333%;
-}
+    margin-left: 83.33333333%;
+  }
 
   .column-offset-9 {
-	margin-left: 75%;
-}
+    margin-left: 75%;
+  }
 
   .column-offset-8 {
-	margin-left: 66.66666667%;
-}
+    margin-left: 66.66666667%;
+  }
 
   .column-offset-7 {
-	margin-left: 58.33333333%;
-}
+    margin-left: 58.33333333%;
+  }
 
   .column-offset-6 {
-	margin-left: 50%;
-}
+    margin-left: 50%;
+  }
 
   .column-offset-5 {
-	margin-left: 41.66666667%;
-}
+    margin-left: 41.66666667%;
+  }
 
   .column-offset-4 {
-	margin-left: 33.33333333%;
-}
+    margin-left: 33.33333333%;
+  }
 
   .column-offset-3 {
-	margin-left: 25%;
-}
+    margin-left: 25%;
+  }
 
   .column-offset-2 {
-	margin-left: 16.66666667%;
-}
+    margin-left: 16.66666667%;
+  }
 
   .column-offset-1 {
-	margin-left: 8.33333333%;
-}
+    margin-left: 8.33333333%;
+  }
 
   .column-offset-0 {
-	margin-left: 0;
+    margin-left: 0;
+  }
 }
 
 .row {
   margin-right: -15px;
   margin-left: -15px;
-  max-width: $full-width;
+  max-width: 100%;
 }
 
 .clearfix:before,

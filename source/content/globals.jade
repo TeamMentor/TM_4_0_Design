@@ -8,97 +8,97 @@ mixin filters-div
 		.form-group
 			h5 Technology
 			ul.list-group
-				li.list-group-item
+				li.list-group-item.filters
 					input#technology_1(type='checkbox')
 					label(for='#technology_1', type='checkbox') Option #1
 						span.badge 14 
-				li.list-group-item
+				li.list-group-item.filters
 					input#technology_2(type='checkbox')
 					label(for='#technology_2', type='checkbox') Option #2
 						span.badge 14 
-				li.list-group-item
+				li.list-group-item.filters
 					input#technology_3(type='checkbox')
 					label(for='#technology_3', type='checkbox') Option #3
 						span.badge 14 
-				li.list-group-item
+				li.list-group-item.filters
 					input#technology_4(type='checkbox')
 					label(for='#technology_4', type='checkbox') Option #4
 						span.badge 14 
-				li.list-group-item
+				li.list-group-item.filters
 					input#technology_5(type='checkbox')
 					label(for='#technology_5', type='checkbox') Option #5
 						span.badge 14 
 		.form-group
 			h5 Category
 			ul.list-group
-				li.list-group-item
+				li.list-group-item.filters
 					input#category_1(type='checkbox')
 					label(for='#category_1', type='checkbox') Option #1
 						span.badge 14 
-				li.list-group-item
+				li.list-group-item.filters
 					input#category_2(type='checkbox')
 					label(for='#category_2', type='checkbox') Option #2
 						span.badge 14
-				li.list-group-item
+				li.list-group-item.filters
 					input#category_3(type='checkbox')
 					label(for='#category_3', type='checkbox') Option #3
 						span.badge 14
-				li.list-group-item
+				li.list-group-item.filters
 					input#category_4(type='checkbox')
 					label(for='#category_4', type='checkbox') Option #4
 						span.badge 14
-				li.list-group-item
+				li.list-group-item.filters
 					input#category_5(type='checkbox')
 					label(for='#category_5', type='checkbox') Option #5
 						span.badge 14
 		.form-group
 			h5 Phase
 			ul.list-group
-				li.list-group-item
+				li.list-group-item.filters
 					input#phase_1(type='checkbox')
 					label(for='#phase_1', type='checkbox') Option #1
 						span.badge 14
-				li.list-group-item
+				li.list-group-item.filters
 					input#phase_2(type='checkbox')
 					label(for='#phase_2', type='checkbox') Option #2
 						span.badge 14
-				li.list-group-item
+				li.list-group-item.filters
 					input#phase_3(type='checkbox')
 					label(for='#phase_3', type='checkbox') Option #3
 						span.badge 14
-				li.list-group-item
+				li.list-group-item.filters
 					input#phase_4(type='checkbox')
 					label(for='#phase_4', type='checkbox') Option #4
 						span.badge 14
-				li.list-group-item
+				li.list-group-item.filters
 					input#phase_5(type='checkbox')
 					label(for='#phase_5', type='checkbox') Option #5
 						span.badge 14
 		.form-group
 			h5 Type
 			ul.list-group
-				li.list-group-item
+				li.list-group-item.filters
 					input#type_1(type='checkbox')
 					label(for='#type_1', type='checkbox') Option #1
 						span.badge 14
-				li.list-group-item
+				li.list-group-item.filters
 					input#type_2(type='checkbox')
 					label(for='#type_2', type='checkbox') Option #2
 						span.badge 14
-				li.list-group-item
+				li.list-group-item.filters
 					input#type_3(type='checkbox')
 					label(for='#type_3', type='checkbox') Option #3
 						span.badge 14
-				li.list-group-item
+				li.list-group-item.filters
 					input#type_4(type='checkbox')
 					label(for='#type_4', type='checkbox') Option #4
 						span.badge 14
-				li.list-group-item
+				li.list-group-item.filters
 					input#type_5(type='checkbox')
 					label(for='#type_5', type='checkbox') Option #5
 						span.badge 14
 
-		button.btn-action.btn-block(type='submit')
+		button.btn-action.btn-block.btn-submit(type='submit')
 			| Ok, Done
 
 
@@ -110,7 +110,7 @@ mixin save-div
 			label(for='nickname') Give it a nickname
 			input#nickname.form-control(type='text', placeholder='Nickname')
 		br
-		button.btn-action.btn-block(type='submit') Ok, Done
+		button.btn-action.btn-block.btn-submit(type='submit') Ok, Done
 
 //- landing-page_call-to-action
 mixin call-to-action-div
@@ -125,10 +125,10 @@ mixin call-to-action-div
 mixin footer-div
 	.lge-container
 		.row
-			.column-offset-5.column-2
-				img(src='/deploy/assets/logos/si-logo.png')
-				p
-					a(href="#{user}/terms-and-conditions.html") Terms & Conditions
+			.column-3
+				img.center.img-responsive(src='/deploy/assets/logos/si-logo.png')
+			.column-offset-7.column-2
+				a.action.toc(href="#{user}/terms-and-conditions.html") Terms & Conditions
 
 //- horizontal-rule
 mixin horizontal-rule

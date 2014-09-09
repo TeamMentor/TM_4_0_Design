@@ -47,24 +47,19 @@ block content
             //input-group 
             br
             br
+            br
+
+            h4.grey 0/200 results showing
             .row
-              .column-6
-                h4.grey
-                  | 0/200 results showing
-              //column-6
-              .column-3.text-center
-                br
-                a.action(href='#save')
-                  | Save 
-                  span.glyphicon.glyphicon-bookmark.glyphicon-small
-              //column-3
-              .column-3.text-center
-                br
-                a.action(href='main-app-view.html')
-                  | Clear 
-                  span.glyphicon.glyphicon-trash.glyphicon-small
-              //column-3 
-            //row 
+            .column-6
+              br
+            .column-3
+              a.text-center.action(href='#save')
+                | Save
+            .column-3
+              a.action(href='main-app-view.html')
+                  | Clear
+            br
 
             .list-group
               a.list-group-item(href='#{link_article_new_window}', target='_blank')

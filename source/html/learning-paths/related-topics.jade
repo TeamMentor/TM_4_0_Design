@@ -5,132 +5,24 @@ block content
 		.row
 			.column-3.lge-container
 				.div(data-spay="affix", data-offset-top="60", data-offset-bottom="200")
-					h4.grey Exploitation
-					h4.grey Testing
-					h4.grey Prevention
-					h4.grey Courses
-					h4.dark-green Related Topics
-					br
-					br
-					br
-					br
-					br
-					br
-					br
-					br
-					br
-					br
-					br
-					br
-					br
-					br
+					+links_learning_paths
 					br
 					.progress
-						.progress-bar(role='progressbar', aria-valuenow='90', aria-valuemin='0', aria-valuemax='100', style='width: 90%')
+						.progress-bar(role='progressbar', aria-valuenow='10', aria-valuemin='0', aria-valuemax='100', style='width: 90%')
 			.column-6
 				h2.grey Related Topics
-				br
 
-				h3.dark-grey General
-
-				:markdown
-					* [Attack: AJAX Injection Attack](https://vulnerabilities.teammentor.net/article/e4a899ec-9301-4751-ae07-69a265336d8b)
-					* [Attack: Double Encoding Attack](https://vulnerabilities.teammentor.net/article/189a3684-3289-4097-8906-5361f7ef3aab)
-					* [Attack: Command Injection Attack](https://vulnerabilities.teammentor.net/article/8698cde2-0fdf-4676-a043-ae90e62f55b8)
-					* [Validate All Input](https://sme.teammentor.net/article/3de41277-0cc1-4ebc-8dd7-e96d161aa0ef)
+				h5.dark-grey LUCY NOTE: Is it possible to pull other websites content into TM? And is that something we want to do?
 
 				br
-				h3.dark-grey Input and Data Validation 
 
-				h4.dark-grey Guidelines
+				p
+					ul
+						li http://en.wikipedia.org/wiki/SQL_injection
+						li http://www.php.net/manual/en/security.database.sql-injection.php
+						li http://msdn2.microsoft.com/en-us/library/ms998271.aspx
+						li http://www.unixwiz.net/techtips/sql-injection.html
 
-				:markdown
-					* [Validate Input from All Sources](https://sme.teammentor.net/article/b531d29c-86f7-4812-90ce-5f3f0f780aba)
-					* [Validate Input for Length, Range, Format, and Type](https://sme.teammentor.net/article/c98695c5-cf02-44a1-96bf-1f8046b8ad9d)
-					* [Validate All Input Passed to the Database](https://sme.teammentor.net/article/67060e7b-7145-4e84-b574-c07548f81d9f)
-					* [Filter All User-Supplied Filename and Path Input](https://sme.teammentor.net/article/a5491c44-164b-4046-94d3-b575b9745e8b)
-					* [Do Not Rely on Client-Side Validation](https://sme.teammentor.net/article/9f21442f-2aee-4573-8be6-a5b51d9c89b8)
-
-				br
-				h4.dark-grey Checklists
-
-				:markdown
-					* [Input from All Sources Is Validated](https://sme.teammentor.net/article/7f8deb21-cd52-41be-80b4-8897612021dc)
-					* [Input Is Validated for Length, Range, Format and Type](https://sme.teammentor.net/article/61869793-2c10-40c0-b82a-babcc0312697)
-					* [All Database Input Is Validated](https://sme.teammentor.net/article/42f4b565-14f7-42f4-8c5a-0f78f357e4c0)
-					* [User-Supplied Filenames and Paths Are Validated](https://sme.teammentor.net/article/17884af0-fc83-412a-b613-4def4a6f84ad)
-					* [The Application Does Not Rely on Client-Side Validation](https://sme.teammentor.net/article/b1803c35-9579-4a38-9a63-30202160ef25)
-
-				br
-				h4.dark-grey Code Examples
-
-				:markdown
-					* [Input Validation Using JSF](https://sme.teammentor.net/article/0f49430b-2abe-408f-b046-89fa739f5d53)
-					* [Input Validation Using SpringMVC](https://sme.teammentor.net/article/18ac74df-602b-4a58-8998-52f638f3a045)
-					* [Input Validation Using Struts 1](https://sme.teammentor.net/article/d124abb1-e230-43ef-8762-1caa0dbb89ca)
-					* [Input Validation Using Struts 2](https://sme.teammentor.net/article/2f917654-65a8-49c9-b000-c17f9765bf42)
-					* [Use ESAPI Executor](https://sme.teammentor.net/article/38342130-4e4b-47df-afd9-c7e8c86f77ee)
-
-				br
-				h4.dark-grey Testing
-
-				:markdown
-					* [How to Test for Server-Side Code Injection in Java](https://sme.teammentor.net/article/fd3ecaaa-cb7c-43a2-a91a-f19862f736d4)
-					* [How to Test for Path Manipulation Bugs in Java](https://sme.teammentor.net/article/c00b9149-1290-4c9e-bcd0-392a9c5a6fb0)
-					* [How to Test for Double Encoding Bugs in Java](https://sme.teammentor.net/article/5c99da7b-b4eb-4315-b48c-ac2598c13144)
-					* [How to Test for Client-side Validation Bypass Bugs in Java](https://sme.teammentor.net/article/fc95c5e5-667a-4e66-b1cf-f7d0529c4c2f)
-					* [How to Test for Integer Overflows in Java](https://sme.teammentor.net/article/6f4e927b-bd45-498b-95c4-78fd2c3287c1)
-					* [How to Test for Integer Underflow Bugs in Java](https://sme.teammentor.net/article/ed20009a-59ef-415d-8e72-0ff3221a1346)
-					* [How to Test for Deserialization of Untrusted Data Bugs in Java](https://sme.teammentor.net/article/d7682043-0095-4700-97dd-01ce797c4ada)
-
-				br
-				h3.dark-grey Preventing Injection Vulnerabilities
-
-				h4.dark-grey Guidelines
-
-				:markdown
-					* [Use Prepared Statements for Data Access](https://sme.teammentor.net/article/0f4cb1a2-b00a-4d71-9e26-627e6d425798)
-					* [Use Positive Input Validation](https://sme.teammentor.net/article/c0a4f56c-1e8c-4d3a-97e2-fc9e969d5d52)
-					* [Use Helper Classes to Assure Input Validation](https://sme.teammentor.net/article/bac6fe53-5708-4297-a2d7-7df61603f09e)
-					* [Disable Dangerous Functions](https://sme.teammentor.net/article/fe289976-08f4-46b3-a6ec-b80828d090b6)
-
-				br
-				h4.dark-grey Checklists
-
-				:markdown
-					* [Prepared Statements Are Used for Data Access](https://sme.teammentor.net/article/8850ea3d-c43e-48bd-bf5c-f5a6ef898038)
-					* [Positive Input Validation Is Used](https://sme.teammentor.net/article/d4129497-3a66-44d1-881e-e6f004af2e0d)
-					* [Helper Classes Are Used to Assure Input Validation](https://sme.teammentor.net/article/2d0d9e57-6d1d-4f07-9373-7442583bca0c)
-					* [Dangerous Functions Are Disabled](https://sme.teammentor.net/article/50ff859f-1562-4b27-b230-1e3d5bd8a3b9)
-
-				br
-				h3.dark-grey Java Data Sanitization 
-
-				h4.dark-grey Guidelines
-
-				:markdown
-					* [Encode All Output Data](https://sme.teammentor.net/article/f83b953a-9b0c-406a-b274-9b2962d9c4e7)
-					* [Escape All Untrusted Data in HTML Contexts in JSF](https://sme.teammentor.net/article/c929277f-5bb0-44d5-9bf5-112c55927783)
-					* [Escape All Untrusted Data in HTML Contexts in JSP](https://sme.teammentor.net/article/bc8de6c5-ba3a-4db5-a5ff-675c7336a2e8)
-
-				br
-				h4.dark-grey Checklists
-
-				:markdown
-					* [All Output Data Is Encoded](https://sme.teammentor.net/article/13112146-7c14-4b6d-9e94-24daa22eefc4)
-					* [All Untrusted Data in HTML Contexts Is Escaped in JSF](https://sme.teammentor.net/article/90893370-cbce-4116-b9ff-2e69dab56cfa)
-					* [All Untrusted Data in HTML Contexts is Escaped in JSP](https://sme.teammentor.net/article/02c900ca-0740-412a-b685-56b13408793d)
-
-				br
-				h4.dark-grey Code Examples
-
-				:markdown
-					* [Use h:outputText to Encode Echoed Input in JSF](https://sme.teammentor.net/article/8cc6c40a-5a4c-4d77-8900-4b896e2d3912)
-					* [Output Encoding Using JSF]()
-					* [Output Encoding Using SpringMVC](https://sme.teammentor.net/article/a4c5ae58-6b1b-49b7-b16e-4199598f3446)
-					* [Output Encoding Using Struts 1](https://sme.teammentor.net/article/f8d330df-9387-45b2-a88b-40c08d0af3c4)
-					* [Output Encoding Using Struts 2](https://sme.teammentor.net/article/9135b59f-8c73-4a4f-83c5-9894d6587cca)
-					* [Use ESAPI Encoder](https://sme.teammentor.net/article/f7806f64-b1c7-4990-a9e5-f6d814bae7f1)
 
 				br
 				hr
@@ -138,10 +30,10 @@ block content
 
 				.row
 					.column-3
-						a(href='courses.html')
-							button.btn-action.btn-submit.btn-block(type='button') Courses
+						a(href='advanced.html')
+							button.btn-action.btn-submit.btn-block(type='button') Advanced
 					.column-offset-6.column-3
-						a(href='#{home}/main-app-view.html')
+						a(href='complete.html')
 						
 							button.btn-action.btn-submit.btn-block(type='button') Complete
 				br

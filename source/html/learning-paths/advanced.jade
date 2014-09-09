@@ -1,0 +1,59 @@
+extends ../_layouts/page_home.jade
+
+block content
+	#application.lge-container
+		.row
+			.column-3.lge-container
+				.div(data-spay="affix", data-offset-top="60", data-offset-bottom="200")
+					+links_learning_paths
+					br
+					.progress
+						.progress-bar(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%')
+			.column-6
+				h2.grey Advanced
+
+				#details.row
+					.column-3
+						h4.green Prerequisites:
+						
+					.column-9
+						p
+							ul
+								li Understanding of SQL Injection exploits and coding.
+
+				h3#oracle-coding.dark-grey Oracle Database Secure Coding
+				
+				img.center.img-responsive(src='/deploy/assets/videos/Video9.jpg')
+				br
+
+				br
+				hr
+				br
+
+				h3#sql-database-coding.dark-grey SQL Database Secure Coding
+				
+				img.center.img-responsive(src='/deploy/assets/videos/Video10.jpg')
+				br
+
+				br
+				hr
+				br
+
+				h3#php-coding.dark-grey PHP Secure Coding
+				
+				img.center.img-responsive(src='/deploy/assets/videos/Video11.jpg')
+				br
+
+				br
+				hr
+				br
+				
+				.row
+					.column-3
+						a(href='prevention.html')
+							button.btn-action.btn-submit.btn-block(type='button') Prevention
+					.column-offset-6.column-3
+						a(href='related-topics.html')
+							button.btn-action.btn-submit.btn-block(type='button') Related Topics
+				br
+				br

@@ -1,0 +1,10 @@
+include ../mixins/login-form.jade
+extends ../../_layouts/page_not_logged_in.jade
+block content  
+    #application
+      .row
+        .column-offset-3.column-6
+          br
+          h3.grey Login
+          br 
+          +login-form

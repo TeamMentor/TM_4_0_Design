@@ -3,7 +3,6 @@
 - var home            = '/deploy/html/home'
 - var landing_pages   = '/deploy/html/landing-pages'
 - var user            = '/deploy/html/user'
-- var help            = '/deploy/html/help'
 
 - var link_article_new_window       = articles + '/article-new-window-view.html'
 - var link_app_keyword_search       = home     + '/app-keyword-search.html'
@@ -19,13 +18,13 @@ mixin links-navbar__home
     :markdown
         * [![Navigate](/deploy/assets/icons/navigate.png)](#{home}/navigate.html)
         * [![Home](/deploy/assets/icons/home.png)](#{home}/main-app-view.html)
-        * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
+        * [![Help](/deploy/assets/icons/help.png)](#{landing_pages}/help.html)
         * [![User](/deploy/assets/icons/user.png)](#{user}/user.html)
-        * [![Logout](/deploy/assets/icons/logout.png)](#{user}/returning-user-login.html)
+        * [![Logout](/deploy/assets/icons/logout.png)](/user/logout)
             
 mixin links-navbar__not_logged_in
     :markdown
-        * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
+        * [![Help](/deploy/assets/icons/help.png)](#{landing_pages}/help.html)
             
 mixin links-home__navigate
     :markdown
@@ -88,3 +87,43 @@ mixin all-pages-links
 mixin git-repo-link
   .list-group
     a.list-group-item(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
+
+mixin links_learning_paths
+    a(href='exploiting.html')
+      h4.grey Exploiting Mechanisms
+    ul.sidebar
+      li 
+        a(href='#introduction') Introduction
+      li 
+        a(href='#sql-injection') SQL Injection
+      li 
+        a(href='#sql-injection-exploits') SQL Injection Exploits
+      li 
+        a(href='#three-dangerous-vulns') Three Dangerous Vulnerabilities
+    a(href='testing.html')
+      h4.grey Testing
+    ul.sidebar
+      li 
+        a(href='#advanced-software-testing') Advanced Software Testing
+      li 
+        a(href='#fuzz-testing') Fuzz Testing
+    a(href='prevention.html')
+      h4.grey Prevention
+    ul.sidebar
+      li 
+        a(href='#input-validation') Input Validation
+      li 
+        a(href='#database-countermeasures') Database Countermeasures
+      li 
+        a(href='#information-disclosure') Information Disclosure
+    a(href='advanced.html')
+      h4.grey Advanced
+    ul.sidebar
+      li 
+        a(href='#oracle-coding') Oracle Database Secure Coding
+      li 
+        a(href='#sql-database-coding') SQL Database Secure Coding
+      li 
+        a(href='#php-coding') PHP Secure Coding
+    a(href='related-topics.html')
+      h4.grey Related Topics
