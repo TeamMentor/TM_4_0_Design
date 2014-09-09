@@ -511,11 +511,20 @@ input {
 	}
 }
 
-.input-group-button {
-	width: 1%;
-	white-space: nowrap;
-	vertical-align: middle;
-	margin-left: -1px;
+.input-group-btn {
+    position: relative;
+    display: table-cell;
+    font-size: 0px;
+    white-space: nowrap;
+    border: 1px solid $grey;
+    border-left: none;
+    width: 1%;
+    vertical-align: middle;
+    border-radius: 0px;
+
+    &:last-child {
+    	margin-left: -1px;
+    }
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
