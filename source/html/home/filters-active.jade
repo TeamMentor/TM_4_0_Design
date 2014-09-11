@@ -13,20 +13,15 @@ block content
 						br
 						br
 						br
-						br
 						
-						h4.grey 0/200 results showing
-
-						.row
-							.column-6
-								br
-							.column-3
-								a.text-center.action(href='#save')
-									| Save
-							.column-3
-								a.action(href='main-app-view.html')
-										| Clear
-						br
+						table
+							tr
+								td 
+									h4.grey 0/200 results showing
+								td 
+									a.text-center.action(href='#save') Save
+								td 
+									a.action(href='main-app-view.html') Clear
 
 						.list-group
 							a.list-group-item(href='#{link_article_new_window}', target='_blank')
@@ -58,8 +53,7 @@ block content
 								h5.list-group-item-heading.dark-grey Related Article Headline
 								p.list-group-item-text
 									| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-						// row 
-					// column-6 
+				// column-6 
 						
 				.column-3
 					.lge-container
