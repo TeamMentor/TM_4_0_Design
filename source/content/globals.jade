@@ -116,7 +116,7 @@ mixin filters-div
 					label(for='#type_5', type='checkbox') Option #5
 						span.badge 14
 
-		button(type='submit')
+		button.btn-full-width(type='submit')
 			| Ok, Done
 
 
@@ -127,8 +127,7 @@ mixin save-div
 		.form-group
 			label(for='nickname') Give it a nickname
 			input#nickname.form-control(type='text', placeholder='Nickname')
-		br
-		button(type='submit') Ok, Done
+		button.btn-full-width(type='submit') Ok, Done
 
 //- landing-page_call-to-action
 mixin call-to-action-div
@@ -203,7 +202,7 @@ mixin sign-up-form
 			label(for='new-user-email') Email Address
 			input#new-user-email.form-control(type='username', placeholder='Email Address')
 		a(href='/deploy/html/home/main-app-view.html')
-			button(type='button') Sign Up
+			button.btn-full-width(type='button') Sign Up
 
 //- login-form
 mixin login-form
@@ -215,11 +214,11 @@ mixin login-form
 			label(for='new-user-password') Password
 			input#new-user-password.form-control(type='password', placeholder='Password')
 		a(href='/deploy/html/home/main-app-view.html')
-			button(type='submit') Login
+			button.btn-full-width(type='submit') Login
 
 //- forgot-password-button
 mixin forgot-password-button
-	button(type='submit') Forgot your password?
+	button.btn-full-width(type='submit') Forgot your password?
 
 //- alert
 mixin alert
@@ -233,4 +232,4 @@ mixin forgot-password-form
 			label(for='email') Email Address
 			input#email.form-control(type='email', placeholder='Email Address')
 		a(href='/deploy/html/user/forgot-password-completed.html')
-			button(type='button') Get your password
+			button.btn-full-width(type='button') Get your password

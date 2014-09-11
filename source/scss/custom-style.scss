@@ -478,8 +478,7 @@ a {
 // Input Groups
 
 input {
-	font-size: 1.25em;
-	height: 3em;
+	height: 1.7em;
 	border-radius: 0px;
 	max-width: 100%;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -507,13 +506,13 @@ input {
 		width: $full-width;
 		margin-bottom: 0;
 		display: table-cell;
+		font-size: 16px;
 	}
 }
 
 .input-group-btn {
     position: relative;
     display: table-cell;
-    font-size: 0px;
     white-space: nowrap;
     border: 1px solid $grey;
     border-left: none;
@@ -543,10 +542,9 @@ input {
 
 label {
 	display: inline-block;
-	margin-bottom: 5px;
 	font-weight: bold;
 	color: $dark-grey;
-	margin-top: -25px;
+	margin-top: 5px;
 }
 
 input[type=checkbox] + label {
@@ -566,7 +564,6 @@ button {
 	padding-top: 15px;
 	padding-bottom: 15px;
 	margin-bottom: 0;
-	width: $full-width;
 	font-size: 14px;
 	line-height: 1.42857143;
 	text-align: center;
@@ -589,10 +586,6 @@ button {
 
 	&:hover, &:active {
 		color: $dark-green !important;
-	}
-	
-	&#search-button {
-		border-left: none;
 	}
 
 	&.btn-landing-page {
@@ -628,8 +621,12 @@ button {
 		}
 	}
 
+	&.btn-full-width {
+		width: $full-width;
+	}
+
 	&.btn-search-bar {
-		max-width: $full-width !important;
+		max-width: $full-width;
 		border: none !important;
 	}
 
@@ -644,11 +641,6 @@ button {
 		background-image: none;
 		border: 1px solid transparent;
 		border-radius: 4px;
-	}
-
-	&.close {
-		background: transparent;
-		outline: none;
 	}
 }
 
