@@ -1,0 +1,103 @@
+var jade = require('jade/lib/runtime.js'); 
+module.exports = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<!DOCTYPE html><html lang=\"en\">");
+var head_title = 'TEAM Mentor 4.0 (Html version)'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+jade_mixins["horizontal-rule"] = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<hr>");
+};
+
+
+
+
+
+
+
+
+
+
+
+
+buf.push("<head>  <meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><meta name=\"description\" content=\"\"><meta name=\"author\" content=\"\"><link rel=\"icon\" sizes=\"57x57\" href=\"/deploy/assets/favicons/apple-touch-icon-57x57.png\"><link rel=\"icon\" sizes=\"114x114\" href=\"/deploy/assets/favicons/apple-touch-icon-114x114.png\"><link rel=\"icon\" sizes=\"72x72\" href=\"/deploy/assets/favicons/apple-touch-icon-72x72.png\"><link rel=\"icon\" sizes=\"144x144\" href=\"/deploy/assets/favicons/apple-touch-icon-144x144.png\"><link rel=\"icon\" sizes=\"60x60\" href=\"/deploy/assets/favicons/apple-touch-icon-60x60.png\"><link rel=\"icon\" sizes=\"120x120\" href=\"/deploy/assets/favicons/apple-touch-icon-120x120.png\"><link rel=\"icon\" sizes=\"76x76\" href=\"/deploy/assets/favicons/apple-touch-icon-76x76.png\"><link rel=\"icon\" sizes=\"152x152\" href=\"/deploy/assets/favicons/apple-touch-icon-152x152.png\"><link rel=\"icon\" type=\"image/png\" href=\"/deploy/assets/favicons/favicon-196x196.png\" sizes=\"196x196\"><link rel=\"icon\" type=\"image/png\" href=\"/deploy/assets/favicons/favicon-160x160.png\" sizes=\"160x160\"><link rel=\"icon\" type=\"image/png\" href=\"/deploy/assets/favicons/favicon-160x160.png\" sizes=\"160x160\"><link rel=\"icon\" type=\"image/png\" href=\"/deploy/assets/favicons/favicon-96x96.png\" sizes=\"96x96\"><link rel=\"icon\" type=\"image/png\" href=\"/deploy/assets/favicons/favicon-16x16.png\" sizes=\"16x16\"><link rel=\"icon\" type=\"image/png\" href=\"/deploy/assets/favicons/favicon-32x32.png\" sizes=\"32x32\"><link rel=\"icon\" sizes=\"114x114\" href=\"/deploy/assets/favicons/apple-touch-icon-114x114.png\"><link rel=\"icon\" sizes=\"114x114\" href=\"/deploy/assets/favicons/apple-touch-icon-114x114.png\"><link rel=\"icon\" sizes=\"114x114\" href=\"/deploy/assets/favicons/apple-touch-icon-114x114.png\"><title>" + (jade.escape((jade_interp = head_title) == null ? '' : jade_interp)) + "</title><!-- Normalize--><link href=\"/deploy/css/normalize.css\" rel=\"stylesheet\"><!-- Custom Styles--><link href=\"/deploy/css/custom-style.css\" rel=\"stylesheet\"></head><body>");
+jade_mixins["image-teammentor-logo__default"] = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<a href=\"/deploy/html/landing-pages/index.html\"><img src=\"/deploy/assets/logos/tm-logo.jpg\" alt=\"TEAM Mentor\" width=\"200px\"></a>");
+};
+var articles        = '/deploy/html/articles'
+var getting_started = '/deploy/html/getting-started'
+var home            = '/deploy/html/home'
+var landing_pages   = '/deploy/html/landing-pages'
+var help            = '/help'
+var user            = '/deploy/html/user'
+var link_article_new_window       = articles + '/article-new-window-view.html'
+var link_app_keyword_search       = home     + '/app-keyword-search.html'
+var link_fundamentals_of_security = articles + '/fundamentals-of-security.html'
+
+
+
+
+jade_mixins["links-navbar__home"] = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<ul>\n<li><a href=\"" + (jade.escape((jade_interp = home) == null ? '' : jade_interp)) + "/navigate.html\"><img src=\"/deploy/assets/icons/navigate.png\" alt=\"Navigate\"></a></li>\n<li><a href=\"" + (jade.escape((jade_interp = home) == null ? '' : jade_interp)) + "/main-app-view.html\"><img src=\"/deploy/assets/icons/home.png\" alt=\"Home\"></a></li>\n<li><a href=\"" + (jade.escape((jade_interp = help) == null ? '' : jade_interp)) + "/index.html\"><img src=\"/deploy/assets/icons/help.png\" alt=\"Help\"></a></li>\n<li><a href=\"" + (jade.escape((jade_interp = user) == null ? '' : jade_interp)) + "/user.html\"><img src=\"/deploy/assets/icons/user.png\" alt=\"User\"></a></li>\n<li><a href=\"/user/logout\"><img src=\"/deploy/assets/icons/logout.png\" alt=\"Logout\"></a></li>\n</ul>\n");
+};
+
+
+
+
+
+
+
+
+
+
+
+
+jade_mixins["all-pages-links"] = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<div class=\"list-group\"><a href=\"home/app-keyword-search.html\" class=\"list-group-item\">app-keyword-search.html</a><a href=\"articles/article-new-window-view.html\" class=\"list-group-item\">article-new-window-view.html</a><a href=\"home/filters-active.html\" class=\"list-group-item\">filters-active.html</a><a href=\"user/forgot-password-completed.html\" class=\"list-group-item\">forgot-password-completed.html</a><a href=\"articles/fundamentals-of-security.html\" class=\"list-group-item\">fundamentals-of-security.html</a><a href=\"getting-started/new-user-validation.html\" class=\"list-group-item\">getting-started-new-user-validation.html</a><a href=\"getting-started/returning-user-forgot-password.html\" class=\"list-group-item\">getting-started-returning-user-forgot-password.html</a><a href=\"getting-started/returning-user-validation.html\" class=\"list-group-item\">getting-started-returning-user-validation.html</a><a href=\"getting-started/index.html\" class=\"list-group-item\">getting-started.html</a><a href=\"help/index.html\" class=\"list-group-item\">help.html</a><a href=\"landing-pages/index.html\" class=\"list-group-item\">landing-page-index.html</a><a href=\"landing-pages/about.html\" class=\"list-group-item\">landing-page-about.html</a><a href=\"landing-pages/features.html\" class=\"list-group-item\">landing-page-features.html</a><a href=\"learning-paths/advanced.html\" class=\"list-group-item\">learning-path-advanced.html</a><a href=\"learning-paths/complete.html\" class=\"list-group-item\">learning-path-complete.html</a><a href=\"learning-paths/exploiting.html\" class=\"list-group-item\">learning-path-exploiting.html</a><a href=\"learning-paths/prevention.html\" class=\"list-group-item\">learning-path-prevention.html</a><a href=\"learning-paths/related-topics.html\" class=\"list-group-item\">learning-path-related-topics.html</a><a href=\"learning-paths/sql-injection.html\" class=\"list-group-item\">learning-path-sql-injection.html</a><a href=\"learning-paths/testing.html\" class=\"list-group-item\">learning-path-testing.html</a><a href=\"style-guide/index.html\" class=\"list-group-item\">style-guide-index.html</a><a href=\"home/main-app-view.html\" class=\"list-group-item\">main-app-view.html</a><a href=\"articles/my-articles-edit.html\" class=\"list-group-item\">my-articles-edit.html</a><a href=\"articles/my-articles.html\" class=\"list-group-item\">my-articles.html</a><a href=\"home/navigate.html\" class=\"list-group-item\">navigate.html</a><a href=\"articles/owasp.html\" class=\"list-group-item\">owasp.html</a><a href=\"home/principles-standards.html\" class=\"list-group-item\">principles-standards.html</a><a href=\"user/returning-user-forgot-password.html\" class=\"list-group-item\">returning-user-forgot-password.html</a><a href=\"user/returning-user-login.html\" class=\"list-group-item\">returning-user-login.html</a><a href=\"user/returning-user-validation.html\" class=\"list-group-item\">returning-user-validation.html</a><a href=\"user/user-add-filter.html\" class=\"list-group-item\">user-add-filter.html</a><a href=\"user/user-edit.html\" class=\"list-group-item\">user-edit.html</a><a href=\"user/user-new-password.html\" class=\"list-group-item\">user-new-password.html</a><a href=\"user/user-remove-filter.html\" class=\"list-group-item\">user-remove-filter.html</a><a href=\"user/user.html\" class=\"list-group-item\">user.html</a></div>");
+};
+jade_mixins["git-repo-link"] = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<div class=\"list-group\"><a href=\"https://github.com/TeamMentor/TM_4_0_Design\" class=\"list-group-item\">https://github.com/TeamMentor/TM_4_0_Design</a></div>");
+};
+
+
+
+
+buf.push("<div role=\"navigation\" class=\"navbar navbar-default navbar-fixed-top\"><div class=\"lge-container\"><div class=\"navbar-header\"></div><button type=\"button\" data-toggle=\"collapse\" data-target=\".navbar-collapse\" class=\"navbar-toggle\"><span class=\"sr-only\">Toggle navigation</span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span></button><ul class=\"brand\"><li>");
+jade_mixins["image-teammentor-logo__default"].call({
+block: function(){
+buf.push(" ");
+}
+});
+buf.push("</li><li><div class=\"collapse navbar-collapse pull-right\"><ul class=\"action nav nav-icons\">");
+jade_mixins["links-navbar__home"]();
+buf.push("</ul></div></li></ul><!--.collapse.navbar-collapse.pull-rightul.action.nav.nav-icons\n    +links-navbar__home                --></div></div><div id=\"application\"><div class=\"row\"><div class=\"column-offset-3 column-6\"><h3 class=\"grey\">TEAM Mentor 4.0 Design</h3><p>This is a staging site for the TEAM Mentor 4.0 design.</p>");
+jade_mixins["horizontal-rule"]();
+buf.push("<h4 class=\"dark-grey\">Current pages:</h4>");
+jade_mixins["all-pages-links"]();
+jade_mixins["horizontal-rule"]();
+buf.push("<p>Git repo with source files (auto synced with this Azure site)</p>");
+jade_mixins["git-repo-link"]();
+buf.push("<br><br></div><div class=\"column-3\"></div></div></div></body></html>");;return buf.join("");
+}

@@ -19,16 +19,7 @@ describe('User Login sequence', function ()
         browser = new Browser();
         browser.visit('/user/login/returning-user-login.html')
                .then(done)
-               .fail(function(error) { assert.fail('error');});
-                      /*function (err) 
-                      {
-                        if(err) 
-                        {
-                            //console.log('aaaaa' + err);
-                            assert.fail(err);
-                        }
-                        done();
-                      });*/
+               .fail(function(error) { assert.fail('error');});                      
     });        
 
     it('Check login page Form fields ', function () 

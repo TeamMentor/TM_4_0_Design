@@ -8,7 +8,7 @@ var supertest = require('supertest')  ,
 
 describe('pages', function () 
 {
-    before(function() { app.server = app.listen(app.port);  Zombie.localhost("localhost", app.port);  });
+    before(function() { app.server = app.listen(app.port);   });
     after (function() { app.server.close();                                                           });
         
     describe('test-help__index.js', function() 
@@ -18,19 +18,29 @@ describe('pages', function ()
             supertest(app).get('/help/index.html')
                           .expect(200,done); 
         });
+        it('open /default.html', function(done)
+        {
+            Zombie.localhost("localhost", app.port);                         
+            Zombie.visit('/default.html', function(err, browser) 
+            {                 
+                done();                
+            });            
+        });
         
         it('open help from /default.html', function(done)
         {
+            Zombie.localhost("localhost", app.port);             
+            
             Zombie.visit('/default.html', function(err, browser) 
-            {
+            {                             
                 browser.assert.url('http://localhost/default.html');
-                browser.click(".nav-icons ul li a[href='/help/index.html' ]",function(err, browser)
-                {
-                    
-                 //   browser.assert.url('http://localhost/default.html');
+                browser.click(".nav-icons ul li a[href='/help/index.html' ]",function(err)
+                {                    
+                    browser.assert.url('http://localhost/help/index.html');
                     done();
                 });
             });
         });
+        
     });
 });
