@@ -40,7 +40,6 @@ body {
 
 #about {
 	background: url(#{$asset-path}/stock-img/bgthree.jpg);
-	padding-bottom: 20px;
 }
 
 #about-us {
@@ -599,7 +598,7 @@ button {
 	&.btn-landing-page {
 		position: relative;
 		padding: 25px 80px;
-		max-width: $full-width;
+		width: 45% !important;
 		display: inline-block;
 		background-color: $white;
 		text-transform: uppercase;
@@ -608,6 +607,7 @@ button {
 		font-size: 1em;
 		color: $green !important;
 		border-radius: 0px;
+		border: none;
 		outline: none;
 		-webkit-transition: all 0.3s;
 		-moz-transition: all 0.3s;
