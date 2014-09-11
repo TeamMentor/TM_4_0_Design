@@ -224,3 +224,12 @@ mixin forgot-password-button
 mixin alert
 	.alert(role='alert')
 		| Error/Validation messages go here
+
+//- forgot-password-form
+mixin forgot-password-form
+	form#forgot-password(role='form', action='forgot-password-completed.html')
+		.form-group
+			label(for='email') Email Address
+			input#email.form-control(type='email', placeholder='Email Address')
+		a(href='/deploy/html/user/forgot-password-completed.html')
+			button(type='button') Get your password
