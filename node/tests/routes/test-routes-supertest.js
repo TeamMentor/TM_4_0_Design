@@ -2,8 +2,9 @@
 /*global describe, it, before, after */
 "use strict";
 
-var supertest = require('supertest')  ,  
-    app       = require('../../server');    
+var supertest = require('supertest')   ,  
+    expect    = require('chai').expect ,
+    app       = require('../../server');
 
 describe('routes',  function () 
 {
@@ -15,9 +16,11 @@ describe('routes',  function ()
         describe('for tm', function() 
         {   
             it('/', function(done)
-            {
+            {                
                 supertest(app).get('/')
                               .expect(302, 'Moved Temporarily. Redirecting to /default.html',done);            
+                
+                   
             });
             it('/default.html', function(done)
             {            
@@ -37,7 +40,7 @@ describe('routes',  function ()
             {
                 supertest(app).get('/getting-started/index.html')
                               .expect(302, 'Moved Temporarily. Redirecting to /user/login/returning-user-login.html',done);            
-            });
+            });                        
         }); 
 
         describe('debug methods', function() 
@@ -70,13 +73,13 @@ describe('routes',  function ()
                 nextPage();
 
             });
-
+ 
             it('for users not logged in (redirects ok)', function(done)
             {
                 var pages = ['/home/main-app-view.html','/home/navigate.html', 
                              '/users/user.html'];
                 var agent = supertest(app);
-                var nextPage = function()
+                var nextPage = function() 
                 {
                     var page  = pages.pop();                
                     agent.get(page).expect(403, function(error)

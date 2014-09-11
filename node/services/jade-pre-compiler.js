@@ -5,7 +5,8 @@ var fs   = require('fs'),
 
 var preCompiler = 
     {
-        _targetFolder : '/node/_jade_PreCompiled/'
+        _targetFolder : '/node/_jade_PreCompiled/',
+        disableCache  : false
     };
 
                 
@@ -38,37 +39,22 @@ preCompiler.compileJadeFileToDisk = function(fileToCompile)
         return fs.existsSync(targetFile_Path);            
     };
 
-preCompiler.renderJadeFile = function(jadeFile, options)
+preCompiler.renderJadeFile = function(jadeFile, params)
     {
+        if (preCompiler.disableCache)
+        {
+            return jade.renderFile(process.cwd() + jadeFile,params);
+        }
         //console.log(jadeFile);
         var targetFile_Path = preCompiler.calculateTargetPath(jadeFile);
         if (fs.existsSync(targetFile_Path) === false)
+        {
             if (preCompiler.compileJadeFileToDisk(jadeFile) === false)
             {
                 return "";
             }
-        return require(targetFile_Path)(options);
+        }
+        return require(targetFile_Path)(params);        
     };
-
-/*var helpJadeFile = process.cwd() + '/source/html/help/index.jade';
-
-        expect(fs.existsSync(helpJadeFile)).to.be.true;
-        
-        var helpJadeFile_Contents = fs.readFileSync(helpJadeFile,  "utf8");        
-        var helpJadeFile_Compiled = jade.compileClient(helpJadeFile_Contents , { filename:helpJadeFile, compileDebug : false} );
-        
-        
-        expect(helpJadeFile_Contents).to.contain('h3.dark-grey TEAM Mentor Related Sites');
-        expect(helpJadeFile_Compiled).to.contain('><h3 class=\\"dark-grey\\">TEAM Mentor Related Sites</h3>');
-        
-        var exportCode =  'var jade = require(\'jade/lib/runtime.js\'); \n' + 
-                          'module.exports = ' + helpJadeFile_Compiled;
-        
-        var filePath = process.cwd() + '/node/_jade_PreCompiled/' + "help.index.js";
-        fs.writeFileSync(filePath,exportCode);
-        var loadedRequire = require(filePath);
-        
-        expect(loadedRequire  ).to.be.an('function');
-        expect(loadedRequire()).to.be.an('string');*/
 
 module.exports = preCompiler;

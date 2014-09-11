@@ -25,7 +25,7 @@ describe("misc > test-jade-compilation.js", function()
     
     it('compile into file and executed it', function()
     {
-        var tempFile = '_testJadeCompile.js';
+        var tempFile = '_testJadeCompile.txt';
         var filePath = process.cwd() + '/node/_jade_PreCompiled/' + tempFile;
         var compiledJade = jade.compileClient("pre= abc", { compileDebug : false});
         var exportCode =  'var jade = require(\'jade/lib/runtime.js\'); \n' + 
@@ -52,7 +52,8 @@ describe("misc > test-jade-compilation.js", function()
         
     });
     
-    it('compile help file', function()
+    //this is now covered by the test in service/test-jade-pre-compiler.js
+    /*it('compile help file', function()
     {
         var helpJadeFile = process.cwd() + '/source/html/help/index.jade';
 
@@ -68,7 +69,7 @@ describe("misc > test-jade-compilation.js", function()
         var exportCode =  'var jade = require(\'jade/lib/runtime.js\'); \n' + 
                           'module.exports = ' + helpJadeFile_Compiled;
         
-        var filePath = process.cwd() + '/node/_jade_PreCompiled/' + "help.index.js";
+        var filePath = process.cwd() + '/node/_jade_PreCompiled/' + "help.index.txt";
         fs.writeFileSync(filePath,exportCode);
         var loadedRequire = require(filePath);
         
@@ -80,5 +81,8 @@ describe("misc > test-jade-compilation.js", function()
         expect(loadedRequire({loggedIn:true })).to.not.contain('<a href="/deploy/html/landing-pages/about.html">About</a>'); 
         expect(loadedRequire({loggedIn:false})).to.not.contain('<img src="/deploy/assets/icons/help.png" alt="Help">'); 
         expect(loadedRequire({loggedIn:true })).to.contain    ('<img src="/deploy/assets/icons/help.png" alt="Help">'); 
-    });
+        
+        fs.unlinkSync(filePath);        
+        expect(fs.existsSync(filePath)).to.be.false;
+    });*/
 });

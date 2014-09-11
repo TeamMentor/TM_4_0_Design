@@ -1,0 +1,102 @@
+var jade = require('jade/lib/runtime.js'); 
+module.exports = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<!DOCTYPE html><html lang=\"en\">");
+var head_title = 'TEAM Mentor 4.0 (Html version)'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+jade_mixins["horizontal-rule"] = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<hr>");
+};
+jade_mixins["article-options"] = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<div class=\"row\"><div class=\"column-4 text-center\"><a href=\"#\" class=\"action\">Metadata</a></div><div class=\"column-4 text-center\"><a href=\"#\" class=\"action\">Save</a></div><div class=\"column-4 text-center\"><a href=\"#\" class=\"action\">Share</a></div></div>");
+};
+jade_mixins["related-articles"] = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<div class=\"list-group\"><a" + (jade.attr("href", '' + (link_article_new_window) + '', true, true)) + " target=\"_blank\" class=\"list-group-item\"><h5 class=\"list-group-item-heading\">Related Article Headline</h5><p class=\"list-group-item-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a><a" + (jade.attr("href", '' + (link_article_new_window) + '', true, true)) + " target=\"_blank\" class=\"list-group-item\"><h5 class=\"list-group-item-heading\">Related Article Headline</h5><p class=\"list-group-item-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a><a" + (jade.attr("href", '' + (link_article_new_window) + '', true, true)) + " target=\"_blank\" class=\"list-group-item\"><h5 class=\"list-group-item-heading\">Related Article Headline</h5><p class=\"list-group-item-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p></a></div>");
+};
+
+
+
+
+buf.push("<head>  <meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><meta name=\"description\" content=\"\"><meta name=\"author\" content=\"\"><link rel=\"icon\" sizes=\"57x57\" href=\"/deploy/assets/favicons/apple-touch-icon-57x57.png\"><link rel=\"icon\" sizes=\"114x114\" href=\"/deploy/assets/favicons/apple-touch-icon-114x114.png\"><link rel=\"icon\" sizes=\"72x72\" href=\"/deploy/assets/favicons/apple-touch-icon-72x72.png\"><link rel=\"icon\" sizes=\"144x144\" href=\"/deploy/assets/favicons/apple-touch-icon-144x144.png\"><link rel=\"icon\" sizes=\"60x60\" href=\"/deploy/assets/favicons/apple-touch-icon-60x60.png\"><link rel=\"icon\" sizes=\"120x120\" href=\"/deploy/assets/favicons/apple-touch-icon-120x120.png\"><link rel=\"icon\" sizes=\"76x76\" href=\"/deploy/assets/favicons/apple-touch-icon-76x76.png\"><link rel=\"icon\" sizes=\"152x152\" href=\"/deploy/assets/favicons/apple-touch-icon-152x152.png\"><link rel=\"icon\" type=\"image/png\" href=\"/deploy/assets/favicons/favicon-196x196.png\" sizes=\"196x196\"><link rel=\"icon\" type=\"image/png\" href=\"/deploy/assets/favicons/favicon-160x160.png\" sizes=\"160x160\"><link rel=\"icon\" type=\"image/png\" href=\"/deploy/assets/favicons/favicon-160x160.png\" sizes=\"160x160\"><link rel=\"icon\" type=\"image/png\" href=\"/deploy/assets/favicons/favicon-96x96.png\" sizes=\"96x96\"><link rel=\"icon\" type=\"image/png\" href=\"/deploy/assets/favicons/favicon-16x16.png\" sizes=\"16x16\"><link rel=\"icon\" type=\"image/png\" href=\"/deploy/assets/favicons/favicon-32x32.png\" sizes=\"32x32\"><link rel=\"icon\" sizes=\"114x114\" href=\"/deploy/assets/favicons/apple-touch-icon-114x114.png\"><link rel=\"icon\" sizes=\"114x114\" href=\"/deploy/assets/favicons/apple-touch-icon-114x114.png\"><link rel=\"icon\" sizes=\"114x114\" href=\"/deploy/assets/favicons/apple-touch-icon-114x114.png\"><title>" + (jade.escape((jade_interp = head_title) == null ? '' : jade_interp)) + "</title><!-- Normalize--><link href=\"/deploy/css/normalize.css\" rel=\"stylesheet\"><!-- Custom Styles--><link href=\"/deploy/css/custom-style.css\" rel=\"stylesheet\"></head><body>");
+jade_mixins["image-teammentor-logo__default"] = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<a href=\"/deploy/html/landing-pages/index.html\"><img src=\"/deploy/assets/logos/tm-logo.jpg\" alt=\"TEAM Mentor\" width=\"200px\"></a>");
+};
+var articles        = '/deploy/html/articles'
+var getting_started = '/deploy/html/getting-started'
+var home            = '/deploy/html/home'
+var landing_pages   = '/deploy/html/landing-pages'
+var help            = '/help'
+var user            = '/deploy/html/user'
+var link_article_new_window       = articles + '/article-new-window-view.html'
+var link_app_keyword_search       = home     + '/app-keyword-search.html'
+var link_fundamentals_of_security = articles + '/fundamentals-of-security.html'
+
+
+
+
+jade_mixins["links-navbar__home"] = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<ul>\n<li><a href=\"" + (jade.escape((jade_interp = home) == null ? '' : jade_interp)) + "/navigate.html\"><img src=\"/deploy/assets/icons/navigate.png\" alt=\"Navigate\"></a></li>\n<li><a href=\"" + (jade.escape((jade_interp = home) == null ? '' : jade_interp)) + "/main-app-view.html\"><img src=\"/deploy/assets/icons/home.png\" alt=\"Home\"></a></li>\n<li><a href=\"" + (jade.escape((jade_interp = help) == null ? '' : jade_interp)) + "/index.html\"><img src=\"/deploy/assets/icons/help.png\" alt=\"Help\"></a></li>\n<li><a href=\"" + (jade.escape((jade_interp = user) == null ? '' : jade_interp)) + "/user.html\"><img src=\"/deploy/assets/icons/user.png\" alt=\"User\"></a></li>\n<li><a href=\"/user/logout\"><img src=\"/deploy/assets/icons/logout.png\" alt=\"Logout\"></a></li>\n</ul>\n");
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+buf.push("<div role=\"navigation\" class=\"navbar navbar-default navbar-fixed-top\"><div class=\"lge-container\"><div class=\"navbar-header\"></div><button type=\"button\" data-toggle=\"collapse\" data-target=\".navbar-collapse\" class=\"navbar-toggle\"><span class=\"sr-only\">Toggle navigation</span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span></button><ul class=\"brand\"><li>");
+jade_mixins["image-teammentor-logo__default"].call({
+block: function(){
+buf.push(" ");
+}
+});
+buf.push("</li><li><div class=\"collapse navbar-collapse pull-right\"><ul class=\"action nav nav-icons\">");
+jade_mixins["links-navbar__home"]();
+buf.push("</ul></div></li></ul><!--.collapse.navbar-collapse.pull-rightul.action.nav.nav-icons\n    +links-navbar__home                --></div></div><div id=\"application\"><div class=\"row\"><div id=\"article-pane\" class=\"column-offset-3 column-6\"><h3 id=\"article-headline\">Article Headline</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. \nMorbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. \nPellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit. Nunc elementum, dolor at mollis adipiscing, \nnulla leo lacinia nulla, vel varius felis eros nec sem. Etiam tempus pretium est eu lobortis. Maecenas sagittis elit \na felis dapibus ullamcorper eget et lacus. Vivamus malesuada, mi eget viverra luctus, mi libero tristique quam, vitae \nluctus enim tellus aliquet diam. Morbi vulputate interdum erat vitae commodo. Etiam id eros a massa tincidunt ullamcorper. \nEtiam viverra suscipit eleifend. Quisque tempor sagittis libero id cursus.</p>\n<p>Mauris ornare vestibulum nunc, ut convallis nibh tincidunt quis. Duis volutpat, erat eu tincidunt ultrices, elit magna \nplacerat ligula, ut aliquam lectus erat nec nisl. Sed mauris mauris, malesuada non ligula at, condimentum viverra velit. \nNullam dignissim arcu sed volutpat aliquet. Nullam et consequat augue. In hac habitasse platea dictumst. Maecenas eu \nporttitor magna. Curabitur sapien dolor, lobortis sit amet nisl sit amet, fermentum dignissim turpis.</p>\n<p>Pellentesque egestas lorem leo, ut faucibus eros pulvinar a. Suspendisse volutpat sollicitudin egestas. Nam in dapibus \naugue. Etiam vel vehicula turpis, eget pretium dolor. Ut adipiscing accumsan nisl, quis faucibus nulla eleifend in. Ut \nid nisi ac odio porta ornare. Pellentesque justo elit, varius et odio in, suscipit consectetur turpis. Sed auctor, \nfelis vel consectetur vehicula, arcu justo commodo odio, tempus ornare neque sapien at massa. Maecenas in turpis iaculis, \nmattis justo eget, facilisis quam. Suspendisse potenti. Duis id libero euismod nisi dictum tempor vel at dolor.</p>\n<p>Pellentesque egestas lorem leo, ut faucibus eros pulvinar a. Suspendisse volutpat sollicitudin egestas. Nam in dapibus augue.\nEtiam vel vehicula turpis, eget pretium dolor. Ut adipiscing accumsan nisl, quis faucibus nulla eleifend in. \nUt id nisi ac odio porta ornare. Pellentesque justo elit, varius et odio in, suscipit consectetur turpis. Sed auctor, \nfelis vel consectetur vehicula, arcu justo commodo odio, tempus ornare neque sapien at massa. Maecenas in turpis iaculis,\nmattis justo eget, facilisis quam. Suspendisse potenti. Duis id libero euismod nisi dictum tempor vel at dolor.</p>\n");
+jade_mixins["horizontal-rule"]();
+jade_mixins["article-options"]();
+jade_mixins["horizontal-rule"]();
+buf.push("<h4>Related Articles</h4>");
+jade_mixins["related-articles"]();
+buf.push("</div></div></div></body></html>");;return buf.join("");
+}

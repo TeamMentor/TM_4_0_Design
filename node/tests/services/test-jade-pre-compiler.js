@@ -40,18 +40,19 @@ describe("services > jade-pre-compiler.js", function()
     it('compileJadeFileToDisk', function()
     {
         var compileJadeFileToDisk = preCompiler.compileJadeFileToDisk,
-            helpJadeFile    = '/source/html/help/index.jade',
+            //helpJadeFile    = '/source/html/help/index.jade',
             defaultJadeFile = '/source/html/default.jade';
         
         expect(compileJadeFileToDisk('a')).to.be.false;
-        expect(compileJadeFileToDisk(helpJadeFile)).to.be.true;
+        //expect(compileJadeFileToDisk(helpJadeFile)).to.be.true;
         expect(compileJadeFileToDisk(defaultJadeFile)).to.be.true;
         
         var targetPath    = preCompiler.calculateTargetPath(defaultJadeFile);
         var jadeTemplate  = require(targetPath);
         expect(jadeTemplate  ).to.be.an('function');
         expect(jadeTemplate()).to.be.an('string');
-        var html             = jadeTemplate();
+        
+        var html = jadeTemplate();
         expect(html).to.contain('<!DOCTYPE html><html lang="en"><head> ');
         
     });

@@ -13,9 +13,9 @@
   ],
   "main": "node/server.js",
   "scripts": {
-    "test": "echo      \"Error: no test specified\" && exit 1",
+    "test" : "echo      \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "dev": "supervisor -i node/tests/ node/server.js"
+    "dev"  : "supervisor -i node/tests/ node/server.js"
   },
   "repository": {
     "type": "git",
@@ -30,8 +30,7 @@
   },
   "devDependencies": {
     "chai": "^1.9.1",
-    "karma": "^0.12.23",
-    "karma-jasmine": "^0.1.5",
+    "cheerio": "^0.17.0",
     "should": "^4.0.4",
     "supertest": "^0.13.0"
   }
