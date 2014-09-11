@@ -13,9 +13,9 @@ mixin results-save-clear
 	table
 		tr
 			td 
-				h4.grey 0/200 results showing
+				h4 0/200 results showing
 			td 
-				a.text-center.action(href='#save') Save
+				a.action(href='#save') Save
 			td 
 				a.action(href='main-app-view.html') Clear
 
@@ -154,14 +154,14 @@ mixin horizontal-rule
 
 //- article-options
 mixin article-options
-	.row
-		.column-4.text-center
+	.row.text-center
+		.column-4
 			a.action(href='#')
 				| Metadata
-		.column-4.text-center
+		.column-4
 			a.action(href='#')
 				| Save
-		.column-4.text-center
+		.column-4
 			a.action(href='#')
 				| Share
 
@@ -231,31 +231,24 @@ mixin user-details-form
 		.form-group
 			label(for='user-name') Name
 			input.form-control(type='user-name', id='user-name', placeholder='Name')
-
 		.form-group
 			label(for='user-email') Email Address
 			input.form-control(type='user-email', id='user-email', placeholder='Email Address')
-
 		.form-group
 			label(for='user-title') Title
 			input.form-control(type='user-title', id='user-title', placeholder='Title')
-
 		.form-group
 			label(for='user-company') Company
 			input.form-control(type='user-company', id='user-company', placeholder='Company')
-
 		.form-group
 			label(for='user-state') State
 			input.form-control(type='user-state', id='user-state', placeholder='State')
-
 		.form-group
 			label(for='user-country') Country
 			input.form-control(type='user-country', id='user-country', placeholder='Country')
-
 		.form-group
 			label(for='user-group-id') Group ID
 			input.form-control(type='user-group-id', id='user-group-id', placeholder='Group ID')
-
 		button.btn-full-width(type='submit')
 			| Ok, Done
 
