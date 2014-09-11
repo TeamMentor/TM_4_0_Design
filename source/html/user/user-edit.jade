@@ -5,12 +5,9 @@ block content
             .column-offset-3.column-6
               .row.text-center
                 +links_user_pages
-
-              br
-              br
-
               
-              h4.grey Personal Details
+              br
+              h4 Personal Details
 
               form(role='form', action='user.html')
                 .form-group
@@ -41,9 +38,8 @@ block content
                   label(for='user-group-id') Group ID
                   input.form-control(type='user-group-id', id='user-group-id', placeholder='Group ID')
 
-                button.btn-submit.btn-action.btn-block(type='submit')
+                button.btn-full-width(type='submit')
                   | Ok, Done
 
-                br
                 br
                 br
