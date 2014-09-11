@@ -21,3 +21,4 @@ SQL Injection is a common vulnerability that can have disasterous consequences i
 
 The learning path will track where you're up to so that if you can't finish it in one sitting, it'll re-open at the last place you were at.
 
+* * *

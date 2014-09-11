@@ -78,12 +78,6 @@ body {
 	margin-right: 15px;
 }
 
-#details {
-	margin: 30px 50px 30px 50px;
-	padding: 10px 0px 10px 30px;
-	border: 1px solid $green;
-}
-
 #features {
 	padding-top: $nav-padding-top;
 	padding-bottom: 50px;
@@ -355,9 +349,12 @@ ul, ol {
 	}
 
 	&.sidebar {
-		margin-top: -5px;
+		margin: 0 0 0 -30px;
 		list-style-type: none;
-		margin-left: -30px;
+
+		li {
+			margin-bottom: 2px;
+		}
 	}
 }
 
