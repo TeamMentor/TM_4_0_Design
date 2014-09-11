@@ -567,6 +567,7 @@ button {
 	padding-top: 15px;
 	padding-bottom: 15px;
 	margin-bottom: 0;
+	width: $full-width;
 	font-size: 14px;
 	line-height: 1.42857143;
 	text-align: center;
@@ -582,7 +583,6 @@ button {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
-	color: $green;
 	background: none;
 	border: 1px solid $green;
 	border-radius: 0px;
@@ -748,16 +748,8 @@ a.list-group-item:focus {
 .alert {
 	padding: 15px;
 	margin-bottom: 20px;
-	border: 1px solid transparent;
-	border-radius: 4px;
+	border-radius: 0px;
 	font-weight: 700;
-}
-
-.alert-dismissable {
-	padding-right: 35px;
-}
-
-.alert-warning {
 	color: $green;
 	background-color: $white;
 	border: 1px solid $green;
