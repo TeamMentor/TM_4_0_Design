@@ -3,43 +3,12 @@ block content
         #application
           .row
             .column-offset-3.column-6
-              .row.text-center
-                +links_user_pages
+              +links_user_pages
               
               br
               h4 Personal Details
 
-              form(role='form', action='user.html')
-                .form-group
-                  label(for='user-name') Name
-                  input.form-control(type='user-name', id='user-name', placeholder='Name')
+              +user-details-form
 
-                .form-group
-                  label(for='user-email') Email Address
-                  input.form-control(type='user-email', id='user-email', placeholder='Email Address')
-
-                .form-group
-                  label(for='user-title') Title
-                  input.form-control(type='user-title', id='user-title', placeholder='Title')
-
-                .form-group
-                  label(for='user-company') Company
-                  input.form-control(type='user-company', id='user-company', placeholder='Company')
-
-                .form-group
-                  label(for='user-state') State
-                  input.form-control(type='user-state', id='user-state', placeholder='State')
-
-                .form-group
-                  label(for='user-country') Country
-                  input.form-control(type='user-country', id='user-country', placeholder='Country')
-
-                .form-group
-                  label(for='user-group-id') Group ID
-                  input.form-control(type='user-group-id', id='user-group-id', placeholder='Group ID')
-
-                button.btn-full-width(type='submit')
-                  | Ok, Done
-
-                br
-                br
+              br
+              br
