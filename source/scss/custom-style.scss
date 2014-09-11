@@ -623,7 +623,7 @@ button {
 	}
 
 	&.btn-full-width {
-		width: $full-width;
+		width: $full-width !important;
 	}
 
 	&.btn-search-bar {

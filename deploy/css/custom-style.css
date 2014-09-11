@@ -876,7 +876,7 @@ button.btn-landing-page:hover, button.btn-landing-page:active {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003625}}
 button.btn-full-width {
-  width: 100%;
+  width: 100% !important;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003629}}
 button.btn-search-bar {
