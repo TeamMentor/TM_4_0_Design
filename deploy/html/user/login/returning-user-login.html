@@ -50,18 +50,17 @@
       <div class="row">
         <div class="column-offset-3 column-6"><br>
           <h3 class="grey">Login</h3><br>
-          <form id="login-form" role="form" method="post" action="/user/login">
-            <div class="form-group">
-              <label for="new-user-username">Username</label>
-              <input id="new-user-username" type="username" name="username" placeholder="Username" value="user" class="form-control"/>
-            </div>
-            <div class="form-group">
-              <label for="new-user-password">Password</label>
-              <input id="new-user-password" type="password" name="password" placeholder="Password" class="form-control"/>
-            </div>
-            <button type="submit" id="btn-login" class="btn-action btn-submit btn-block">Login</button><br/><br/><a href="returning-user-forgot-password.html">
-              <button type="button" id="btn-forgot-pwd" class="btn-action btn-submit btn-block">Forgot your password?</button></a><br/><br/>
-          </form>
+            <form id="login-form" role="form">
+              <div class="form-group">
+                <label for="new-user-username">Username</label>
+                <input id="new-user-username" type="username" placeholder="Username" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="new-user-password">Password</label>
+                <input id="new-user-password" type="password" placeholder="Password" class="form-control">
+              </div><a href="/deploy/html/home/main-app-view.html">
+                <button type="submit">Login</button></a>
+            </form>
         </div>
       </div>
     </div>

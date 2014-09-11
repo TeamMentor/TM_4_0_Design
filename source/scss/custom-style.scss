@@ -562,25 +562,35 @@ input[type=checkbox] + label {
 // Buttons
 
 button {
-
-	outline: none;
+	position: relative;
 	display: inline-block;
-	padding: 6px 12px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 	margin-bottom: 0;
 	font-size: 14px;
-	font-weight: normal;
 	line-height: 1.42857143;
 	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1px;
 	white-space: nowrap;
 	vertical-align: middle;
-	cursor: pointer;
 	-webkit-user-select: none;
 	 -moz-user-select: none;
 	  -ms-user-select: none;
 		  user-select: none;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	color: $green;
+	background: none;
+	border: 1px solid $green;
+	border-radius: 0px;
+	color: $green;
+
+	&:hover, &:active {
+		color: $dark-green !important;
+	}
 	
 	&#search-button {
 		border-left: none;
@@ -618,45 +628,9 @@ button {
 		}
 	}
 
-	&.btn-block {
-		width: $full-width;
-	}
-
-	&.btn-action {
-		display: inline-block;
-		position: relative;
-		text-transform: uppercase;
-		font-weight: 700;
-		letter-spacing: 1px;
-		-webkit-transition: all 0.3s;
-		-moz-transition: all 0.3s;
-		transition: all 0.3s;
-		max-width: $full-width;
-		color: $green;
-		background: none;
-
-		&:hover {
-			color: $dark-green !important;
-		}
-	}
-
-	&.btn-submit {
-		border: 1px solid $green;
-		border-radius: 0px;
-		color: $green;
-		padding-top: 15px;
-		padding-bottom: 15px;
-	}
-
-	&.btn-application {
-		color: $green;
-		background-color: $white;
-		border: 1px solid $grey;
-
-		&:hover {
-			color: $dark-green;
-			background-color: $white;
-		}
+	&.btn-search-bar {
+		max-width: $full-width !important;
+		border: none !important;
 	}
 
 	&.navbar-toggle {
