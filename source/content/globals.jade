@@ -15,9 +15,9 @@ mixin results-save-clear
 			td 
 				h4 0/200 results showing
 			td 
-				a.action(href='#save') Save
+				a(href='#save') Save
 			td 
-				a.action(href='main-app-view.html') Clear
+				a(href='main-app-view.html') Clear
 
 //- articles-list
 mixin articles-list
@@ -215,6 +215,34 @@ mixin main-app-view
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 
+//- directory-list
+mixin directory-list
+	.list-group
+		a(href='owasp.html')
+			| OWASP Top 10
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+
 //- progress-bar
 mixin progress-bar
 	.progress
@@ -267,9 +295,8 @@ mixin login-form
 
 //- forgot-password-form
 mixin forgot-password-form
-	:markdown
-		### Forgot your password?
-		Too easy - just type in your email address and we'll send you an email with further instructions.
+	h3 Forgot your password?
+	p Too easy - just type in your email address and we'll send you an email with further instructions.
 	form#forgot-password(role='form', action='forgot-password-completed.html')
 		.form-group
 			label(for='email') Email Address
@@ -310,13 +337,13 @@ mixin new-password-form
 		.form-group
 			label(for='user-current-password') Current Password
 			input.form-control(type='user-current-password', id='user-current-password', placeholder='Current Password')
-	.form-group
-		label(for='user-new-password') New Password
-		input.form-control(type='user-new-password', id='user-new-password', placeholder='New Password')
-	.form-group
-		label(for='user-confirm-new-password') Confirm New Password
-		input.form-control(type='user-confirm-new-password', id='user-confirm-new-password', placeholder='Confirm New Password')
-	button(type='submit') Save
+		.form-group
+			label(for='user-new-password') New Password
+			input.form-control(type='user-new-password', id='user-new-password', placeholder='New Password')
+		.form-group
+			label(for='user-confirm-new-password') Confirm New Password
+			input.form-control(type='user-confirm-new-password', id='user-confirm-new-password', placeholder='Confirm New Password')
+		button(type='submit') Save
 
 
 //- forgot-password-button
@@ -328,3 +355,92 @@ mixin forgot-password-button
 mixin alert
 	.alert(role='alert')
 		| Error/Validation messages go here
+
+//- my-articles-edit
+mixin edit-my-articles
+	.row
+		.column-6
+			.lge-container
+				li
+					input#technology_1(type='checkbox')
+					label(for='technology_1', name='technology_1') A New ID Is Assigned on Login
+				li
+					input#technology_2(type='checkbox')
+					label(for='technology_2', name='technology_2') A New Or Blank Session ID is Assigned on Logout
+				li
+					input#technology_3(type='checkbox')
+					label(for='technology_3', name='technology_3') Access to the Credential Store is Limited
+				li
+					input#technology_4(type='checkbox')
+					label(for='technology_4', name='technology_4') AJAX Injection Vulnerability
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') All Input is Validated
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') All Private Resources Require Authentication
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') All Senstive Data is Encrypted
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Assume All Input is Malicious
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Authentication is Centralized
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Centralize Authentication
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Client-side Validation is Not Relied On
+				li
+					input#technology_1(type='checkbox')
+					label(for='technology_1', name='technology_1') Cross Site Scripting Vulnerablity
+				li
+					input#technology_2(type='checkbox')
+					label(for='technology_2', name='technology_2') Deny All Access by Default
+				li
+					input#technology_3(type='checkbox')
+					label(for='technology_3', name='technology_3') Do Not Cache Sensitive Data
+		.column-6
+			.lge-container
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Do Not Leave Passwords in Memory
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Don't Trust User Input
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Echoed Input is Encoded
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Missing Authentication
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Missing Authorization
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Hard-coded Credentials
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Missing Encryption
+				li
+					input#technology_4(type='checkbox')
+					label(for='technology_4', name='technology_4') Unrestricted Dangerous Uploads
+				li
+					input#technology_4(type='checkbox')
+					label(for='technology_4', name='technology_4') Using Untrusted Inputs
+
+//- my-articles-edit-links
+mixin edit-links
+	#edit-links
+		br
+		.row
+			.column-4
+				a(href='#') Clear Selected
+			.column-4
+				a(href='navigate.html') Clear All
+			.column-4
+				a(href='my-articles.html') Ok, Done

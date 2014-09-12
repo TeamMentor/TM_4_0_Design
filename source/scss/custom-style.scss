@@ -19,6 +19,11 @@ $full-width: 100%;
 	vertical-align: middle;
 }
 
+@mixin action-links-hover {
+	color: $dark-green !important;
+	text-decoration: none;
+}
+
 @mixin transition {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
@@ -103,7 +108,7 @@ body {
 	}
 }
 
-#filters {
+#filters, #my-articles {
 
 	li {
 		padding-left: 0px;
@@ -125,6 +130,15 @@ body {
 			margin-right: 40px;
 			margin-bottom: 5px;
 			vertical-align: middle;
+		}
+	}
+
+	#edit-links a {
+		@include action-links;
+		@include transition;
+
+		&:hover, &:active {
+			@include action-links-hover;
 		}
 	}
 }
@@ -157,6 +171,15 @@ body {
 	}
 }
 
+#user-links {
+	@include action-links;
+	@include transition;
+
+	&:hover {
+		@include action-links-hover;
+	}
+}
+
 #usp {
 	background: url(#{$asset-path}/stock-img/bgone.jpg);
 }
@@ -170,7 +193,6 @@ body {
 		padding: 25px 80px;
 		display: inline-block;
 		background-color: $white;
-		color: $green !important;
 		border-radius: 0px;
 		border: none;
 		outline: none;
@@ -180,14 +202,6 @@ body {
 			background-color: $green;
 		}
 	}
-}
-
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: $full-width;
 }
 
 .lge-container {
@@ -282,8 +296,7 @@ label {
 				@include transition;
 
 				&:hover, &:active {
-					color: $dark-green !important;
-					text-decoration: none;
+					@include action-links-hover;
 				}
 			}
 		}
@@ -425,41 +438,12 @@ a {
 	}
 }
 
-@font-face {
-	font-family: 'Glyphicons Halflings';
-
-	src: url('../fonts/glyphicons-halflings-regular.eot');
-	src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
-
-.glyphicon {
-	position: relative;
-	top: 1px;
-	display: inline-block;
-	font-family: 'Glyphicons Halflings';
-	font-style: normal;
-	font-weight: normal;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-size: 1.5em;
-	color: $green;
-
-	&:visited {
-		color: $green;
-	}
-
-	&:hover, &:active {
-		color: $dark-green;
-	}	
-}
-
 // Input Groups
 
 input {
 	height: 1.7em;
 	border-radius: 0px;
-	max-width: 100%;
+	max-width: $full-width;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;
@@ -666,12 +650,15 @@ table {
 	width: $full-width;
 	font-size: 1.15em;
 	color: $dark-grey;
-}
 
-td {
-	padding-left: 10px;
-	padding-right: 10px;
-	height: 30px;
-}
+	td {
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 30px;
+	}
 
-// 
+	a {
+		@include action-links;
+		@include-transition;
+	}
+}
