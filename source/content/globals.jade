@@ -216,7 +216,7 @@ mixin sign-up-form
 
 //- login-form
 mixin login-form
-	form#login-form(role='form')
+	form#login-form(role='form', method='post', action='/user/login')
 		.form-group
 			label(for='new-user-username') Username
 			input#new-user-username.form-control(type='username', placeholder='Username')

@@ -49,8 +49,8 @@
     <div id="application">
       <div class="row">
         <div class="column-offset-3 column-6"><br>
-          <h3 class="grey">Login</h3><br>
-            <form id="login-form" role="form">
+          <h3>Login</h3><br>
+            <form id="login-form" role="form" method="post" action="/user/login">
               <div class="form-group">
                 <label for="new-user-username">Username</label>
                 <input id="new-user-username" type="username" placeholder="Username" class="form-control">
@@ -61,6 +61,7 @@
               </div><a href="/deploy/html/home/main-app-view.html">
                 <button type="submit" class="btn-full-width">Login</button></a>
             </form>
+            <button type="submit" class="btn-full-width">Forgot your password?</button>
         </div>
       </div>
     </div>
