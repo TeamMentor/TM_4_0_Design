@@ -24,9 +24,9 @@ describe('pages', function ()
         {            
             supertest(app).get('/default.html')
                           .expect(200)
-                          .expect('Content-Length', '7144')
                           .end(function(err, res)
                                {
+                                    if(err) { throw err; }
                                     var $ = cheerio.load(res.text);
                                     expect($('a').length).to.be.above(10);
                                     expect($("a[href='/help/aaaaa.html'] ").length).to.be.empty;
@@ -39,7 +39,6 @@ describe('pages', function ()
         {
             supertest(app).get('/default.html')
                           .expect(200)
-                          .expect('Content-Length', '7144')
                           .end(function(err, res)
                                {
                                     var $ = cheerio.load(res.text);

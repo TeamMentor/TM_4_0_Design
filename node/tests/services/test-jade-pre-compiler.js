@@ -10,7 +10,7 @@ var jade        = require("jade"),
 //used to understand better how jade compilation works (specialy how it compiles to java script)
 describe("services > jade-pre-compiler.js", function()
 {    
-    
+    preCompiler.disableCache = false;
     
     it('check preCompiler object', function()
     {   
@@ -60,6 +60,7 @@ describe("services > jade-pre-compiler.js", function()
     {        
          var renderJadeFile = preCompiler.renderJadeFile,
              helpJadeFile    = '/source/html/help/index.jade';
+        
         expect(renderJadeFile('a')).to.be.equal("");
         
         expect(renderJadeFile(helpJadeFile)).to.not.be.equal("");        
