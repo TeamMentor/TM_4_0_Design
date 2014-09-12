@@ -252,7 +252,8 @@ label {
 		display: inline-block;
 
 		&.brand {
-			padding-top: 15px !important;
+			padding-top: 10px !important;
+			padding-bottom: 5px;
 		}
 
 		&.nav-icons {
@@ -260,7 +261,7 @@ label {
 		}
 
 		&.nav-text {
-			padding-top: 30px;
+			padding-top: 25px;
 		}
 
 		li {
