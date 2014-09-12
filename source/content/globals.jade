@@ -155,11 +155,10 @@ mixin call-to-action-div
 //- landing-page_footer
 mixin footer-div
 	#footer
-		.lge-container
-			.row
-				.column-offset-2.column-8
-					img(src='/deploy/assets/logos/si-logo.png')
-					a(href="#{user}/terms-and-conditions.html") Terms & Conditions					
+		.row
+			.column-offset-2.column-8
+				img(src='/deploy/assets/logos/si-logo.png')
+				a(href="#{user}/terms-and-conditions.html") Terms & Conditions					
 				
 
 //- horizontal-rule
@@ -188,6 +187,33 @@ mixin related-articles
 			include:md teamMentor/article-details.md
 		a(href='#{link_article_new_window}', target='_blank')
 			include:md teamMentor/article-details.md
+
+//- main-app-view
+mixin main-app-view
+	h4 Recently Viewed Articles
+	.list-group
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+	h4 Popular Search Terms
+	.list-group
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+	h4 Top Articles
+	.list-group
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+	h4 New Articles
+	.list-group
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
 
 //- progress-bar
 mixin progress-bar
