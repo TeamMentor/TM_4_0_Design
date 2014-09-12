@@ -828,7 +828,7 @@ button:hover, button:active {
 button.btn-landing-page {
   position: relative;
   padding: 25px 80px;
-  width: 45% !important;
+  width: 400px !important;
   display: inline-block;
   background-color: white;
   text-transform: uppercase;
