@@ -146,8 +146,7 @@ mixin call-to-action-div
 	#call-to-action
 		.row
 			.column-offset-2.column-8
-				:markdown
-					# Security Risk. Understood.
+				h1 Security Risk. Understood.
 				br
 				br
 				a(href='getting-started.html')
@@ -158,9 +157,9 @@ mixin footer-div
 	#footer
 		.lge-container
 			.row
-				.column-offset-4.column-4
+				.column-offset-2.column-8
 					img(src='/deploy/assets/logos/si-logo.png')
-					a.action.toc(href="#{user}/terms-and-conditions.html") Terms & Conditions
+					a(href="#{user}/terms-and-conditions.html") Terms & Conditions					
 				
 
 //- horizontal-rule
@@ -242,6 +241,9 @@ mixin login-form
 
 //- forgot-password-form
 mixin forgot-password-form
+	:markdown
+		### Forgot your password?
+		Too easy - just type in your email address and we'll send you an email with further instructions.
 	form#forgot-password(role='form', action='forgot-password-completed.html')
 		.form-group
 			label(for='email') Email Address

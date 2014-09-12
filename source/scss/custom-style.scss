@@ -9,6 +9,21 @@ $dark-grey: #444444;
 $nav-padding-top: 120px;
 $full-width: 100%;
 
+@mixin action-links {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	color: $green;
+	text-align: center !important;
+}
+
+@mixin transition {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
 // Layout and Structure
 
 @import 'columns';
@@ -123,6 +138,12 @@ body {
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
+
+	a {
+		@include action-links;
+		color: $dark-grey;
+		font-size: 10px;
+	}
 }
 
 #reasons {
@@ -141,31 +162,17 @@ body {
 
 #usp, #call-to-action {	
 	button {
+		@include action-links;
+		@include transition;
 		position: relative;
 		max-width: $full-width;
 		padding: 25px 80px;
 		display: inline-block;
 		background-color: $white;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		font-weight: 700;
-		font-size: 1em;
 		color: $green !important;
 		border-radius: 0px;
 		border: none;
 		outline: none;
-		-webkit-transition: all 0.3s;
-		-moz-transition: all 0.3s;
-		transition: all 0.3s;
-
-		&:after {
-			content: '';
-			position: absolute;
-			z-index: -1;
-			-webkit-transition: all 0.3s;
-			-moz-transition: all 0.3s;
-			transition: all 0.3s;
-		}
 
 		&:hover, &:active {
 			color: $white !important;
@@ -245,15 +252,9 @@ label {
 .navbar {
 	background-color: $white;
 	min-height: 50px;
-	border-bottom: 1px solid $grey;
+	border-bottom: 10px solid $grey;
 	display: inline-block;
-	margin-bottom: 20px;
 	border: 1px solid transparent;
-
-	&.container {
-		margin-right: 0px;
-		margin-left: 0px;
-	}
 
 	ul {
 		list-style-type: none;
@@ -276,13 +277,8 @@ label {
 			padding-right: 40px;
 
 			a, a:visited {
-				text-transform: uppercase;
-				letter-spacing: 1px;
-				font-weight: 700;
-				font-size: 0.95em;
-				color: $green !important;
-				text-align: center !important;
-				text-decoration: none;
+				@include action-links;
+				@include transition;
 
 				&:hover, &:active {
 					color: $dark-green !important;
@@ -301,25 +297,6 @@ label {
 	z-index: 1030;
 	border-width: 0 0 1px;
 	border-radius: 0px;
-
-	.navbar-collapse {
-		padding-right: 0px;
-		padding-left: 0px;
-		width: auto;
-		border-top: 0px none;
-		box-shadow: none;
-
-		&.collapse {
-			display: block !important;
-			height: auto !important;
-			padding-bottom: 0px;
-			overflow: visible !important;
-		}
-	}
-}
-
-.navbar-header {
-	float: left;
 }
 
 // Typography
@@ -367,7 +344,6 @@ h4, h5, h6 {
 
 p, li { 
 	font-size: 16px;
-	margin: 0 0 10px 0;
 	line-height: 1.5em;
 	color: $dark-grey;
 	orphans: 3;
@@ -445,25 +421,6 @@ a {
 
 	&:hover, &:active {
 		color: $green;
-	}
-
-	&.toc {
-		color: $dark-grey !important;
-		font-size: 10px;
-		text-align: center;
-	}
-
-	&.action, &.action:visited {
-		font-size: 14px;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		font-weight: 700;
-		color: $green;
-		text-align: center !important;
-	}
-
-	&.action:hover, &.action:active {
-		color: $dark-green;
 	}
 }
 
@@ -566,6 +523,7 @@ input {
 // Buttons
 
 button {
+	@include transition;
 	position: relative;
 	display: inline-block;
 	padding-top: 15px;
@@ -583,9 +541,6 @@ button {
 	 -moz-user-select: none;
 	  -ms-user-select: none;
 		  user-select: none;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
 	background: none;
 	border: 1px solid $green;
 	border-radius: 0px;
