@@ -1,104 +1,90 @@
 extends ../_layouts/page_home.jade
 
 block content  
-    #application.container-fluid
+    #application
       .row
         .column-3
-          h3.grey Fundamentals of Security
-          .list-group
-            a.list-group-item(href='owasp.html')
-              | OWASP Top 10
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | Second Level Directory
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | Second Level Directory
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | Second Level Directory
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | Second Level Directory
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | Second Level Directory
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | Second Level Directory
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | Second Level Directory
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | Second Level Directory
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | Second Level Directory
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | Second Level Directory
-              span.badge 14
-        // column-3
+          .lge-container
+            h3 Fundamentals of Security
+            .list-group
+              a.list-group-item(href='owasp.html')
+                | OWASP Top 10
+                span.badge 14
+              a.list-group-item(href='owasp.html')
+                | Second Level Directory
+                span.badge 14
+              a.list-group-item(href='owasp.html')
+                | Second Level Directory
+                span.badge 14
+              a.list-group-item(href='owasp.html')
+                | Second Level Directory
+                span.badge 14
+              a.list-group-item(href='owasp.html')
+                | Second Level Directory
+                span.badge 14
+              a.list-group-item(href='owasp.html')
+                | Second Level Directory
+                span.badge 14
+              a.list-group-item(href='owasp.html')
+                | Second Level Directory
+                span.badge 14
+              a.list-group-item(href='owasp.html')
+                | Second Level Directory
+                span.badge 14
+              a.list-group-item(href='owasp.html')
+                | Second Level Directory
+                span.badge 14
+              a.list-group-item(href='owasp.html')
+                | Second Level Directory
+                span.badge 14
+              a.list-group-item(href='owasp.html')
+                | Second Level Directory
+                span.badge 14
+          // column-3
 
         .column-6
-          .input-group
-            input#search-bar.form-control(type='text', placeholder='Type keywords here')
-          //
-             /input-group
-          br
-          br
-          br
+          .lge-container
+            +search-bar-input
+            br
+            br
+            br
 
-          h4.grey 0/200 results showing
-          .row
-            .column-6
+            +results-save-clear
+
+            .list-group
+              a.list-group-item(href='#{link_article_new_window}', target='_blank')
+                h5.list-group-item-heading Related Article Headline
+                p.list-group-item-text
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
               br
-            // column-6
-            .column-3.text-center
-              a.action(href='#save')
-                | Save
-            // column-3
-            .column-3.text-center
-              a.action(href='main-app-view.html')
-                | Clear
-            // column-3
-          // row
-          br
-
-          .list-group
-            a.list-group-item(href='#{link_article_new_window}', target='_blank')
-              h5.list-group-item-heading.dark-grey Related Article Headline
-              p.list-group-item-text
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-            br
-            a.list-group-item(href='#{link_article_new_window}', target='_blank')
-              h5.list-group-item-heading.dark-grey Related Article Headline
-              p.list-group-item-text
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-            br
-            a.list-group-item(href='#{link_article_new_window}', target='_blank')
-              h5.list-group-item-heading.dark-grey Related Article Headline
-              p.list-group-item-text
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-            a.list-group-item(href='#{link_article_new_window}', target='_blank')
-              h5.list-group-item-heading.dark-grey Related Article Headline
-              p.list-group-item-text
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-            br
-            a.list-group-item(href='#{link_article_new_window}', target='_blank')
-              h5.list-group-item-heading.dark-grey Related Article Headline
-              p.list-group-item-text
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-            br
-            a.list-group-item(href='#{link_article_new_window}', target='_blank')
-              h5.list-group-item-heading.dark-grey Related Article Headline
-              p.list-group-item-text
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+              a.list-group-item(href='#{link_article_new_window}', target='_blank')
+                h5.list-group-item-heading Related Article Headline
+                p.list-group-item-text
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+              br
+              a.list-group-item(href='#{link_article_new_window}', target='_blank')
+                h5.list-group-item-heading Related Article Headline
+                p.list-group-item-text
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+              a.list-group-item(href='#{link_article_new_window}', target='_blank')
+                h5.list-group-item-heading.dark-grey Related Article Headline
+                p.list-group-item-text
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+              br
+              a.list-group-item(href='#{link_article_new_window}', target='_blank')
+                h5.list-group-item-heading Related Article Headline
+                p.list-group-item-text
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+              br
+              a.list-group-item(href='#{link_article_new_window}', target='_blank')
+                h5.list-group-item-heading Related Article Headline
+                p.list-group-item-text
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
           // row
         // column-6
 
         .column-3
-          +filters-div
-          br
-          +save-div
+          .lge-container
+            +filters-div
+            br
+            +save-div

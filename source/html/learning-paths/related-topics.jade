@@ -1,40 +1,24 @@
 extends ../_layouts/page_home.jade
 
 block content
-	#application.lge-container
+	#application
 		.row
-			.column-3.lge-container
-				.div(data-spay="affix", data-offset-top="60", data-offset-bottom="200")
+			.column-3
+				.lge-container
 					+links_learning_paths
-					br
-					.progress
-						.progress-bar(role='progressbar', aria-valuenow='10', aria-valuemin='0', aria-valuemax='100', style='width: 90%')
+					+progress-bar
 			.column-6
-				h2.grey Related Topics
+				.lge-container
+					include:md ../../content/teamMentor/learning-paths/related-topics.md
+				
 
-				h5.dark-grey LUCY NOTE: Is it possible to pull other websites content into TM? And is that something we want to do?
-
-				br
-
-				p
-					ul
-						li http://en.wikipedia.org/wiki/SQL_injection
-						li http://www.php.net/manual/en/security.database.sql-injection.php
-						li http://msdn2.microsoft.com/en-us/library/ms998271.aspx
-						li http://www.unixwiz.net/techtips/sql-injection.html
-
-
-				br
-				hr
-				br
-
-				.row
-					.column-3
-						a(href='advanced.html')
-							button.btn-action.btn-submit.btn-block(type='button') Advanced
-					.column-offset-6.column-3
-						a(href='complete.html')
-						
-							button.btn-action.btn-submit.btn-block(type='button') Complete
-				br
-				br
+					.row
+						.column-3
+							a(href='advanced.html')
+								button.btn-full-width(type='button') Advanced
+						.column-offset-6.column-3
+							a(href='complete.html')
+							
+								button.btn-full-width(type='button') Complete
+					br
+					br
