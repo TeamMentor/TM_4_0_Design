@@ -87,6 +87,33 @@ body {
 	}
 }
 
+#filters {
+
+	li {
+		padding-left: 0px;
+		margin-bottom: 0px;
+		list-style-type: none;
+
+		.badge {
+			float: right;
+			margin-top: 2px;
+		}
+
+		label {
+			margin-top: -5px;
+		}
+
+		input[type=checkbox] + label {
+			display: inline-block;
+			margin-left: 20px;
+			margin-right: 40px;
+			margin-bottom: 5px;
+			vertical-align: middle;
+		}
+	}
+}
+
+
 #footer {
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -525,21 +552,6 @@ input {
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
 	color: $grey;
-}
-
-label {
-	display: inline-block;
-	font-weight: bold;
-	color: $dark-grey;
-	margin-top: 5px;
-}
-
-input[type=checkbox] + label {
-	display: inline-block;
-	margin-left: 20px;
-	margin-right: 2em;
-	line-height: 1em;
-	vertical-align: middle;
 }
 
 
