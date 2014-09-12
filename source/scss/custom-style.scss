@@ -210,6 +210,12 @@ img {
 
 // Forms
 
+form, {
+	button, button#forgot-password {
+		width: $full-width;
+	}
+}
+
 .form-control {
 	width: 100%;
 	display: block;
@@ -253,11 +259,10 @@ label {
 
 		&.brand {
 			padding-top: 10px !important;
-			padding-bottom: 5px;
 		}
 
 		&.nav-icons {
-			padding-top: 20px;
+			padding-top: 15px;
 		}
 
 		&.nav-text {

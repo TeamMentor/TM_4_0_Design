@@ -132,13 +132,14 @@ mixin filters-div
 
 //- save to dashboard
 mixin save-div
-	:markdown
-		### Save to Dashboard
-	form(role='form')
-		.form-group
-			label(for='nickname') Give it a nickname
-			input#nickname.form-control(type='text', placeholder='Nickname')
-		button.btn-full-width(type='submit') Ok, Done
+	#save-to-dashboard
+		:markdown
+			### Save to Dashboard
+		form(role='form')
+			.form-group
+				label(for='nickname') Give it a nickname
+				input#nickname.form-control(type='text', placeholder='Nickname')
+			button(type='submit') Ok, Done
 
 //- landing-page_call-to-action
 mixin call-to-action-div
@@ -291,7 +292,8 @@ mixin new-password-form
 
 //- forgot-password-button
 mixin forgot-password-button
-	button.btn-full-width(type='submit') Forgot your password?
+	form(role='form', action='returning-user-forgot-password.html')
+		button(type='submit') Forgot your password?
 
 //- alert
 mixin alert
