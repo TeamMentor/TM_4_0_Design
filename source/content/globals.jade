@@ -216,15 +216,14 @@ mixin sign-up-form
 
 //- login-form
 mixin login-form
-	form#login-form(role='form')
+	form#login-form(role='form', method='post', action='/user/login')
 		.form-group
 			label(for='new-user-username') Username
-			input#new-user-username.form-control(type='username', placeholder='Username')
+			input#new-user-username.form-control(type='username', name='username', placeholder='Username', value = 'user')
 		.form-group
 			label(for='new-user-password') Password
-			input#new-user-password.form-control(type='password', placeholder='Password')
-		a(href='/deploy/html/home/main-app-view.html')
-			button.btn-full-width(type='submit') Login
+			input#new-user-password.form-control(type='password', name='password', placeholder='Password')
+		button.btn-full-width(type='submit', id='btn-login') Login
 
 //- forgot-password-form
 mixin forgot-password-form
