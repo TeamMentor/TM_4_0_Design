@@ -19,6 +19,19 @@ mixin results-save-clear
 			td 
 				a.action(href='main-app-view.html') Clear
 
+//- articles-list
+mixin articles-list
+	.list-group
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md teamMentor/article-details.md
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md teamMentor/article-details.md
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md teamMentor/article-details.md
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md teamMentor/article-details.md
+
+
 //- filters
 mixin filters-div
 	:markdown
@@ -27,92 +40,92 @@ mixin filters-div
 		.form-group
 			h5 Technology
 			ul.list-group
-				li.list-group-item.filters
+				li
 					input#technology_1(type='checkbox')
 					label(for='#technology_1', type='checkbox') Option #1
 						span.badge 14 
-				li.list-group-item.filters
+				li
 					input#technology_2(type='checkbox')
 					label(for='#technology_2', type='checkbox') Option #2
 						span.badge 14 
-				li.list-group-item.filters
+				li
 					input#technology_3(type='checkbox')
 					label(for='#technology_3', type='checkbox') Option #3
 						span.badge 14 
-				li.list-group-item.filters
+				li
 					input#technology_4(type='checkbox')
 					label(for='#technology_4', type='checkbox') Option #4
 						span.badge 14 
-				li.list-group-item.filters
+				li
 					input#technology_5(type='checkbox')
 					label(for='#technology_5', type='checkbox') Option #5
 						span.badge 14 
 		.form-group
 			h5 Category
 			ul.list-group
-				li.list-group-item.filters
+				li
 					input#category_1(type='checkbox')
 					label(for='#category_1', type='checkbox') Option #1
 						span.badge 14 
-				li.list-group-item.filters
+				li
 					input#category_2(type='checkbox')
 					label(for='#category_2', type='checkbox') Option #2
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#category_3(type='checkbox')
 					label(for='#category_3', type='checkbox') Option #3
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#category_4(type='checkbox')
 					label(for='#category_4', type='checkbox') Option #4
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#category_5(type='checkbox')
 					label(for='#category_5', type='checkbox') Option #5
 						span.badge 14
 		.form-group
 			h5 Phase
 			ul.list-group
-				li.list-group-item.filters
+				li
 					input#phase_1(type='checkbox')
 					label(for='#phase_1', type='checkbox') Option #1
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#phase_2(type='checkbox')
 					label(for='#phase_2', type='checkbox') Option #2
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#phase_3(type='checkbox')
 					label(for='#phase_3', type='checkbox') Option #3
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#phase_4(type='checkbox')
 					label(for='#phase_4', type='checkbox') Option #4
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#phase_5(type='checkbox')
 					label(for='#phase_5', type='checkbox') Option #5
 						span.badge 14
 		.form-group
 			h5 Type
 			ul.list-group
-				li.list-group-item.filters
+				li
 					input#type_1(type='checkbox')
 					label(for='#type_1', type='checkbox') Option #1
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#type_2(type='checkbox')
 					label(for='#type_2', type='checkbox') Option #2
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#type_3(type='checkbox')
 					label(for='#type_3', type='checkbox') Option #3
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#type_4(type='checkbox')
 					label(for='#type_4', type='checkbox') Option #4
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#type_5(type='checkbox')
 					label(for='#type_5', type='checkbox') Option #5
 						span.badge 14
@@ -123,7 +136,8 @@ mixin filters-div
 
 //- save to dashboard
 mixin save-div
-	h3 Save to Dashboard
+	:markdown
+		### Save to Dashboard
 	form(role='form')
 		.form-group
 			label(for='nickname') Give it a nickname
@@ -132,21 +146,24 @@ mixin save-div
 
 //- landing-page_call-to-action
 mixin call-to-action-div
-	.row
-		.column-offset-2.column-8
-			h1 Security Risk. Understood.
-			br
-			br
-			a(href='getting-started.html')
-				button.btn-landing-page(type='button') See for yourself
+	#call-to-action
+		.row
+			.column-offset-2.column-8
+				:markdown
+					# Security Risk. Understood.
+				br
+				br
+				a(href='getting-started.html')
+					button.btn-landing-page(type='button') See for yourself
 
 //- landing-page_footer
 mixin footer-div
-	.lge-container
-		.row
-			.column-offset-4.column-4
-				img(src='/deploy/assets/logos/si-logo.png')
-				a.action.toc(href="#{user}/terms-and-conditions.html") Terms & Conditions
+	#footer
+		.lge-container
+			.row
+				.column-offset-4.column-4
+					img(src='/deploy/assets/logos/si-logo.png')
+					a.action.toc(href="#{user}/terms-and-conditions.html") Terms & Conditions
 				
 
 //- horizontal-rule
@@ -199,6 +216,8 @@ mixin lp-start-button
 
 //- sign-up-form
 mixin sign-up-form
+	:markdown
+		### Sign Up
 	form#sign-up-form(role='form')
 		.form-group
 			label(for='new-user-username') Username
@@ -217,6 +236,8 @@ mixin sign-up-form
 
 //- login-form
 mixin login-form
+	:markdown
+		### Login
 	form#login-form(role='form', method='post', action='/user/login')
 		.form-group
 			label(for='new-user-username') Username
