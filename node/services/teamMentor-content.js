@@ -107,7 +107,8 @@ teamMentorContent.getLibraryData = function()
                 var library = {                                       
                                     Title   : tmLibrary.name,
                                     Folders : [],
-                                    Views   : []
+                                    Views   : [],
+                                    Articles: {}
                                 };
                 
                 tmLibrary.guidanceItems = [];
@@ -119,7 +120,8 @@ teamMentorContent.getLibraryData = function()
                         tmView.guidanceItems.forEach(function(guidanceItemId)
                             {
                                 var articleMetadata = articlesMetadata[guidanceItemId];
-                                view.Articles.push(articleMetadata);
+                                view   .Articles.push(articleMetadata);
+                                library.Articles[articleMetadata.Id] = articleMetadata;
                             });
                         library.Views.push(view);                        
                     });

@@ -36,7 +36,7 @@ describe('routes > test-routes.js', function ()
                                   '/:page.html'                  ,
                                   '/user/login/:page.html'       ,
                                   '/landing-pages/:page.html'    ,
-                                  '/help/:page.html'             ,
+                                  '/help/:page*'                 ,
                                   '/:area/:page.html'            ,
 
                                   '/getting-started/index.html'  ,                  // static redirects

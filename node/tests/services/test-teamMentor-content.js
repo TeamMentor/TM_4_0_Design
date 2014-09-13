@@ -93,10 +93,11 @@ describe("services > test-teamMentor-content.js", function()
         
         var library = libraryData[0];        
         
-        expect(library        ).to.be.an('Object');
-        expect(library.Title  ).to.be.an('String');
-        expect(library.Views  ).to.be.an('Array');        
-        expect(library.Folders).to.be.an('Array');
+        expect(library         ).to.be.an('Object');
+        expect(library.Title   ).to.be.an('String');
+        expect(library.Views   ).to.be.an('Array');        
+        expect(library.Folders ).to.be.an('Array');
+        expect(library.Articles).to.be.an('Object'); 
         
         var view = library.Views[0];
         
@@ -105,12 +106,16 @@ describe("services > test-teamMentor-content.js", function()
         expect(view.Articles).to.be.an('Array'); 
         expect(view.Articles).to.be.not.empty;
         
-        var article = view.Articles[0];
-        expect(article     ).to.be.an('Object');
+        var article_Id = view.Articles[0].Id;
+        expect(article_Id   ).to.be.an('String');
         
-        //check libraryData object data
+        var article = library.Articles[article_Id]; 
+        expect(article      ).to.be.an('Object');        
+        
+        //check libraryData object data         
         expect(library.Title     ).to.be.equal('TM Documentation' );       
         expect(view   .Title     ).to.be.equal('About TEAM Mentor');
+        expect(article           ).to.deep.equal(view.Articles[0]);
         expect(article.Title     ).to.be.equal('What is new in this release?');
         expect(article.Technology).to.be.equal('TEAM Mentor');
         expect(article.Phase     ).to.be.equal('NA');

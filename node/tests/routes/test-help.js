@@ -4,9 +4,10 @@
 
 var supertest         = require('supertest')   ,    
     expect            = require('chai').expect ,
-    cheerio           = require('cheerio')     ,
-    //request           = require('request')     ,
-    fs                = require('fs')          ,
+    cheerio           = require('cheerio')     ,    
+    marked            = require('marked')      ,
+    request           = require('request')     , 
+    fs                = require('fs')          ,    
     app               = require('../../server'),
     preCompiler       = require('../../services/jade-pre-compiler.js'),
     teamMentorContent = require('../../services/teamMentor-content.js');
@@ -80,101 +81,91 @@ describe('routes', function ()
         });
     });
     describe('test-help (dynamic content)', function() 
-    {          
-        it('check structure.json content', function ()
+    {               
+        var libraryData  = teamMentorContent.getLibraryData_FromCache();         
+        var pageParams   = { loggedIn : false}; 
+        var helpJadeFile = '/source/html/help/index.jade';
+         
+        before(function()
         {
-            var structureFile  = process.cwd() + '/source/content/help/structure.json'; expect(fs.existsSync(structureFile)).to.be.true;
-            var jsonContent    = fs.readFileSync(structureFile,"utf8")                ; expect(jsonContent                 ).to.contain("About TEAM Mentor"); 
-            var content        = JSON.parse(jsonContent)                              ; expect(content                     ).to.be.an  ('Array');
-
-            var folders = [];
-            content.forEach(function(value) { folders.push(value.folder);});             
-            expect(folders).to.contain("About TEAM Mentor")
-                           .to.contain("Administration")
-                           .to.contain("UI Elements");
-            
-            
-            expect(content[0].views).to.deep.equal(["What is new in this release?",
-                                                    "Introduction to TEAM Mentor",
-                                                    "Quick Start Guide",
-                                                    "Support"]);
-            
-            var structure = JSON.parse(fs.readFileSync(process.cwd() + '/source/content/help/structure.json'));
-            expect(content).to.deep.equal(structure);
-        });
-        
-        it('contents should match structure.json', function () 
-        {                            
-            //preCompiler.disableCache = true;  
-            var libraryData = teamMentorContent.getLibraryData_FromCache(); 
             expect(libraryData).to.be.an('Array');
             expect(libraryData).to.not.be.empty;
+            
             var library = libraryData[0];
             
-            expect(library).to.be.an('Object');
-            expect(library.Views).to.not.be.empty;
+            expect(library      ).to.be.an('Object');
+            expect(library.Views).to.not.be.empty;            
             
-            
-            //var structureFile = process.cwd() + '/source/content/help/structure.json';
-            var jadeFile      = '/source/html/help/index.jade';
-            //var structure     = JSON.parse(fs.readFileSync(structureFile));             
-            
-//            console.log(require('jade').renderFile(process.cwd() + jadeFile));
-//            console.log('----------');
-            
-            var html          = preCompiler.renderJadeFile(jadeFile, { loggedIn : false , library : library} );   
-            var $             = cheerio.load(html);             
-            
-            //console.log(libraryData);
-            
-            //var h4Texts = [];       
-            //$('h4').each(function() { h4Texts.push($(this).text()); });         
-            //console.log(h4Texts); 
-            
-            
-            library.Views.forEach(function(view)
-            { 
-                var h4 = $('h4:contains(' + view.Title + ')'); 
-                expect(h4.length).to.be.equal(1, 'could not find H4 with: "' + view.Title + '"'); 
-                view.Articles.forEach(function(article)
-                {
-                    var li = $('li:contains(' + article.Title + ')'); 
-                    expect(li.length).to.be.above(0, 'could not find li containing Tite: "' + article.Title + '"');
-                    expect(li.length).to.be.above(0, 'could not find li containing Guid: "' + article.Id + '"');
-                });
-                //console.log(value);
-            });
-            
-            /*structure.forEach(function(value) 
-            {                
-                var h4 = $('h4:contains(' + value.folder + ')');
-                expect(h4.length).to.be.equal(1, 'could not find: ' + value.title);
-                return;
-            });*/
-            
-            //var h4Texts = [];      
-            //$('h4').each(function() { h4Texts.push($(this).text()); });            
-            //console.log(h4Texts); 
-            /*var h4Texts = [];
-            $('h4').each(function() { h4Texts.push($(this).text()); });
-                    
-            structure.forEach(function(value) 
-            {
-                expect(h4Texts).to.contain(value);    
-            });*/
-        }); 
-         
-        xit('open docs tm article', function(done)
+            pageParams.library = library;
+            pageParams.content = "....";
+
+        });
+        
+        var getHelpPageObject = function(disableCache)
         {
-            var request = require('request');  
-            var url = 'https://docs.teammentor.net/content/dac20027-6138-4cd1-8888-3b7e6a007ea5';
-            request.get(url, function(error, response, body)  
-                        {
-                            if (error && error.code==="ENOTFOUND") { done(); return; }                                
-                            expect(body).to.contain('<p><img src="/Image/ftins1.jpg" alt="" /> <br />');                             
-                            // console.log(body);  
-                            done();
-                        });
-        });        
+            preCompiler.disableCache = disableCache;   // use when making changes to the helpJadeFile
+            var html                 = preCompiler.renderJadeFile(helpJadeFile, pageParams);   
+            var $                    = cheerio.load(html);             
+            return $;
+        };
+    
+        it('check left-hand-side navivation', function () 
+        {                      
+            var $ = getHelpPageObject(false);
+                                     
+            //library.Views.forEach(function(view)    { });
+            //view.Articles.forEach(function(article) { });   // no need to do all of these all the time
+            
+            var view    = pageParams.library.Views[0];
+            var article = view.Articles[0];
+            
+            var h4 = $('h4:contains(' + view.Title + ')');                 
+            expect(h4.length).to.be.equal(1, 'could not find H4 with: "' + view.Title + '"');                 
+            
+            var li = $('li:contains(' + article.Title + ')'); 
+            expect(li.length).to.be.above(0, 'could not find li containing Tite: "' + article.Title + '"');
+            expect(li.length).to.be.above(0, 'could not find li containing Guid: "' + article.Id + '"');                
+            
+        });  
+        it('check mainContent', function () 
+        {              
+            var customContent  = '<h2>This is custom content....</h2>';  
+            pageParams.content = customContent;
+        
+            var $ = getHelpPageObject(false); 
+            
+            expect($.html()).to.contain(customContent);                 
+        });
+        it('check that index page markdown transform', function(done)
+        {
+            var page_index_File     = './source/content/docs/page-index.md'   ; expect(fs.existsSync(page_index_File)).to.be.true;
+            var page_index_Markdown = fs.readFileSync(page_index_File, "utf8"); expect(page_index_Markdown           ).to.contain('## TEAM Mentor Documents');  
+            var page_index_Html     = marked(page_index_Markdown)             ; expect(page_index_Html               ).to.contain('<h2 id="team-mentor-documents">TEAM Mentor Documents</h2>');  
+            
+            supertest(app).get('/help/index.html')
+                          .end(function(error,response)
+                               {          
+                                    if(error) { throw error; }                                    
+                                    expect(response.text).to.contain(page_index_Html);
+                                    done();
+                               });
+             
+        });
+        
+        it('check that main content deliverer article', function(done) 
+        {            
+            var article_Id    = 'dac20027-6138-4cd1-8888-3b7e6a007ea5';  
+            var article_Line  = "<p><strong>To install TEAM Mentor Fortify SCA UI Integration</strong></p>";
+            var article_Title = "<h2>Installation</h2>";
+            console.log();
+             supertest(app).get('/help/' + article_Id) 
+                           .end(function(error,response)
+                               {     
+                                    expect(response.text).to.contain(article_Line);
+                                    expect(response.text).to.contain(article_Title);
+                                    done();
+                               });
+            
+        });       
     });
 });
