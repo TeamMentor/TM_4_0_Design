@@ -13,9 +13,11 @@ app.use(session({secret           : '1234567890',
                  resave           : true        }));
 
 
+require('./routes/help.js' )(app);
 require('./routes/routes.js')(app);
 require('./routes/user.js'  )(app);
 require('./routes/debug.js' )(app);
+
 
 app.use(express['static'](process.cwd()));
 

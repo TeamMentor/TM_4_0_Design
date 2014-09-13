@@ -15,11 +15,10 @@ function checkAuth(req, res, next)
 }
 
 function mappedAuth(req) 
-{    
-    //console.log('HERE: ' + JSON.stringify(req.session));
+{        
     return {
-                username : req.session.username,
-                loggedIn : (req.session.username !== undefined)
+                username  : req.session.username,
+                loggedIn  : (req.session.username !== undefined),
            };    
 }
 

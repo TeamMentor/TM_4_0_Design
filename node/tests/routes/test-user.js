@@ -36,7 +36,7 @@ describe('routes > test-user.js', function ()
 
 
             browser.assert.element('#btn-login'     );                        // buttons
-//            browser.assert.element('#btn-forgot-pwd');            
+            //browser.assert.element('#btn-forgot-pwd');            
             browser.assert.text   ('#btn-login'     ,'Login'                );
 //            browser.assert.text   ('#btn-forgot-pwd','Forgot your password?');                        
         });

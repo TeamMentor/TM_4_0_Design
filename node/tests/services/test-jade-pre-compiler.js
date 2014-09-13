@@ -7,7 +7,7 @@ var jade        = require("jade"),
     preCompiler = require('../../services/jade-pre-compiler.js');
 
 
-//used to understand better how jade compilation works (specialy how it compiles to java script)
+//used to understand better how jade compilation works (specialy how it compiles to java script) 
 describe("services > jade-pre-compiler.js", function()
 {    
     preCompiler.disableCache = false;
@@ -59,11 +59,11 @@ describe("services > jade-pre-compiler.js", function()
     it('renderJadeFile', function()
     {        
          var renderJadeFile = preCompiler.renderJadeFile,
-             helpJadeFile    = '/source/html/help/index.jade';
+             helpJadeFile    = '/source/html/help/index.jade'; 
         
         expect(renderJadeFile('a')).to.be.equal("");
         
-        expect(renderJadeFile(helpJadeFile)).to.not.be.equal("");        
+        expect(renderJadeFile(helpJadeFile, { structure: []})).to.not.be.equal("");        
         expect(renderJadeFile(helpJadeFile                 )).to.contain     ('<a href="/deploy/html/landing-pages/about.html">About</a>'); 
         expect(renderJadeFile(helpJadeFile,{loggedIn:false})).to.contain    ('<a href="/deploy/html/landing-pages/about.html">About</a>'); 
         expect(renderJadeFile(helpJadeFile,{loggedIn:true })).to.not.contain('<a href="/deploy/html/landing-pages/about.html">About</a>'); 

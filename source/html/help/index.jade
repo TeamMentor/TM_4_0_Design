@@ -5,7 +5,15 @@ block content
 			.column-3
 				.lge-container
 					.div(data-spay="affix", data-offset-top="60", data-offset-bottom="200")
-						h4 About TEAM Mentor
+						if library
+							each view in library.Views
+								h4= view.Title
+								ul.sidebar
+									each article in view.Articles
+										li
+											a(href= '/help/' + article.Id)
+												= article.Title
+					//	h4 About TEAM Mentor
 						ul.sidebar
 							li What is new in this release?
 							li Introduction to TEAM Mentor

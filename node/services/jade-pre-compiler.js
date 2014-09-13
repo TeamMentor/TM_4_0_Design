@@ -40,15 +40,14 @@ preCompiler.compileJadeFileToDisk = function(fileToCompile)
     };
 
 preCompiler.renderJadeFile = function(jadeFile, params)
-    {
+    {        
         if (preCompiler.disableCache)
         {
             return jade.renderFile(process.cwd() + jadeFile,params);
-        }
-        //console.log(jadeFile);
+        }    
         var targetFile_Path = preCompiler.calculateTargetPath(jadeFile);
         if (fs.existsSync(targetFile_Path) === false)
-        {
+        {            
             if (preCompiler.compileJadeFileToDisk(jadeFile) === false)
             {
                 return "";
