@@ -13,7 +13,7 @@
   ],
   "main": "node/server.js",
   "scripts": {
-    "test": "mocha node/tests/**/**.js",
+    "test": "node_modules/mocha/bin/mocha node/tests/**/**.js",
     "start": "node app.js",
     "dev": "supervisor -i node/tests/ node/server.js"
   },
