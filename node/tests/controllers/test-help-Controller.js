@@ -15,20 +15,52 @@ describe('controllers', function ()
         describe('content_cache', function() 
         {
             it('check ctor', function()
-            {
-                var help_Controller = new Help_Controller();
-                expect(Help_Controller).to.be.an("Function");
-                expect(help_Controller).to.be.an("Object");            
-                expect(help_Controller.content_cache).to.be.an("Object");
-                expect(help_Controller.title        ).to.equal(null);
-                expect(help_Controller.content      ).to.equal(null);
-            }); 
+                {
+                    var help_Controller = new Help_Controller();
+                    expect(Help_Controller).to.be.an("Function");
+                    expect(help_Controller).to.be.an("Object");            
+                    expect(help_Controller.content_cache).to.be.an("Object");
+                    expect(help_Controller.title        ).to.equal(null);
+                    expect(help_Controller.content      ).to.equal(null);
+                }); 
             
-            it(' request should add to cache', function()
-            {
-                var req = { params : { page : 'index.html' }};
-                var help_Controller = new Help_Controller(req);
-            });
+            it('request should add to cache', function(done)
+                {
+                    var page = 'index.html';
+                    var req = { params : { page : page              }};
+                    var res = { status : function() { return this;  }};
+                    var help_Controller = new Help_Controller(req,res);
+
+                    help_Controller.content_cache[page] = undefined;    
+
+                    var checkRequestCache = function(html)
+                        {
+                            var cacheItem = help_Controller.content_cache[page];
+                            expect(cacheItem).to.be.an('Object');
+                            expect(cacheItem.title  ).to.equal(help_Controller.pageParams.title);
+                            expect(cacheItem.content).to.equal(help_Controller.pageParams.content); 
+                             
+                            help_Controller.clearContentCache();
+                            
+                            expect(help_Controller.content_cache[page]).to.be.undefined; 
+                            done();
+                        };                
+
+                    res.send =  checkRequestCache;
+
+                    expect(help_Controller.content_cache).to.be.an('Object');
+                    //expect(help_Controller.content_cache[page]).to.be.undefined;
+
+                    help_Controller.renderPage();
+                });
+            
+            /*it('cache should return value set in cache', function(done)
+                {
+                    var help_Controller = new Help_Controller();
+                    expect(help_Controller.content_cache["index.html"]).to.be.undefined;
+                    //addContent
+                    done();
+                });*/
         });
         
         

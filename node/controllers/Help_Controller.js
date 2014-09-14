@@ -37,14 +37,15 @@ var Help_Controller = function (req, res)
             {        
                 var cachedData =  content_cache[this.page];
                 if(cachedData)
-                {
-                    console.log("Using cached version");
-                    console.log(cachedData);
+                { 
+                    this.addContent(cachedData.title, cachedData.content);
+                    return;
                     //this.addContent(null, page_index_Html);
+                    
                 }
                         
                 if (this.page === "index.html")  
-                {
+                {                    
                     var page_index_File     = './source/content/docs/page-index.md'   ; 
                     var page_index_Markdown = fs.readFileSync(page_index_File, 'utf8'); 
                     var page_index_Html     = marked(page_index_Markdown)             ;                 
@@ -76,13 +77,13 @@ var Help_Controller = function (req, res)
                     that.addContent(that.article.Title, body);
                 }
             };
+        
         this.addContent = function(title, content)
                 {
-                    //console.log(content_cache);
+                    content_cache[this.page] = { title: title,  content : content };                                        
                     this.pageParams.title   = title;
                     this.pageParams.content = content;
-                    this.sendResponse(this.pageParams);
-                    //callback(pageParams);
+                    this.sendResponse(this.pageParams);                    
                 };
 
         this.getRenderedPage = function(params)
@@ -95,8 +96,12 @@ var Help_Controller = function (req, res)
                 var html = this.getRenderedPage(pageParams);
                 this.res.status(200)
                     .send(html); 
-            };            
-
+            };   
+        this.clearContentCache = function()
+            {
+                this.content_cache = {};
+                content_cache      = {};
+            };
     };
 
 Help_Controller.redirectImagesToGitHub = function(req,res)
