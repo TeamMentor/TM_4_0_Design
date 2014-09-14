@@ -6,7 +6,23 @@ var fs   = require('fs'),
 var preCompiler = 
     {
         _targetFolder : '/node/_jade_PreCompiled/',
-        disableCache  : true
+        disableCache  : false
+    };
+
+preCompiler.cleanCacheFolder = function() 
+    {
+        var path = preCompiler.targetFolder();
+        
+        if( fs.existsSync(path) ) 
+        {
+            var files = fs.readdirSync(path);
+            files.forEach(function(fileName)
+                {
+                    var filePath = path  + fileName;
+                    console.log("removing cache file: " + filePath);
+                    fs.unlinkSync(filePath);
+                });
+        }
     };
 
 preCompiler.targetFolder = function()

@@ -27,18 +27,18 @@ describe('routes > test-user.js', function ()
         {
 
             browser.assert.text     ('h3','Login');                           // html elements
-
-            browser.assert.attribute('form','method','post'         );        // login form
-            browser.assert.attribute('form','action','/user/login');          // login form
+            browser.assert.element  ('#login-form');
+            browser.assert.attribute('#login-form','method','post'       );        // login form
+            browser.assert.attribute('#login-form','action','/user/login');          // login form
 
             browser.assert.element  ('#new-user-username');                   // fields
             browser.assert.element  ('#new-user-password');
 
 
-            browser.assert.element('#btn-login'     );                        // buttons
-            //browser.assert.element('#btn-forgot-pwd');            
+            browser.assert.element('#btn-login'     );                         // buttons
+            browser.assert.element('#btn-forgot-pwd');            
             browser.assert.text   ('#btn-login'     ,'Login'                );
-//            browser.assert.text   ('#btn-forgot-pwd','Forgot your password?');                        
+            browser.assert.text   ('#btn-forgot-pwd','Forgot your password?');                        
         });
 
         it('Submit from with bad data', function (done) 

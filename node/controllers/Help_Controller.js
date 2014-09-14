@@ -37,11 +37,9 @@ var Help_Controller = function (req, res)
             {        
                 var cachedData =  content_cache[this.page];
                 if(cachedData)
-                { 
+                {                     
                     this.addContent(cachedData.title, cachedData.content);
                     return;
-                    //this.addContent(null, page_index_Html);
-                    
                 }
                         
                 if (this.page === "index.html")  

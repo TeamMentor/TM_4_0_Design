@@ -9,6 +9,7 @@ var auth = require('./auth'),
 
 module.exports = function (app) 
 {
+    preCompiler.cleanCacheFolder();
 //    var sourceDir = '../source';
     
     app.get('/getting-started/index.html'  , function (req, res)  { res.redirect('/user/login/returning-user-login.html');});
