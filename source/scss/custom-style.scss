@@ -54,9 +54,12 @@ body {
 	padding-top: $nav-padding-top;
 	padding-bottom: 80px;
 	background-color: $green;
-	color: $white;
 	text-align: center;
 	width: $full-width;
+
+	h1 {
+		color: $white;
+	}
 }
 
 #about {
@@ -82,12 +85,16 @@ body {
 	padding-bottom: 5%;
 	background: url(#{$asset-path}/stock-img/bgtwo.jpg);
 	background-color: $dark-green;
-	color: $white;
 	text-align: center;
+
+	h1 {
+		color: $white;
+	}
 }
 
 #clients {
-	padding-bottom: 5%;
+	padding-top: 40px;
+	padding-bottom: 70px;
 	background-color: $white;
 	text-align: center;
 }
@@ -103,7 +110,7 @@ body {
 	padding-top: $nav-padding-top;
 	padding-bottom: 50px;
 
-	h3 {
+	h2 {
 		text-align: center;
 	}
 }
@@ -166,7 +173,7 @@ body {
 	padding-bottom: 2%;
 	background-color: $white;
 	
-	h3 {
+	h2 {
 		text-align: center;
 	}
 }
@@ -318,7 +325,7 @@ label {
 h1 {
 	font-size: 36px;
 	font-weight: bold;
-	color: $white;
+	color: $grey;
 }
 
 h2 {
@@ -330,7 +337,7 @@ h2 {
 h3 {
 	font-size: 24px;
 	font-weight: bold;
-	color: $grey;
+	color: $dark-grey;
 }
 
 h4 {
