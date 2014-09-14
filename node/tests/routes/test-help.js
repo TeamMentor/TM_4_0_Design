@@ -10,7 +10,8 @@ var supertest         = require('supertest')   ,
     fs                = require('fs')          ,    
     app               = require('../../server'),
     preCompiler       = require('../../services/jade-pre-compiler.js'),
-    teamMentorContent = require('../../services/teamMentor-content.js');
+    teamMentorContent = require('../../services/teamMentor-content.js'),
+    Help_Controller   = require('../../controllers/Help_Controller.js');
     
 
 describe('routes', function () 
@@ -195,8 +196,15 @@ describe('routes', function ()
                         });                          
                 };
             
-            check_For_Redirect();            
-                
+            check_For_Redirect();                            
+        });
+        
+        it('check content_cache', function()
+        {
+            var help_Controller = new Help_Controller();
+            expect(Help_Controller).to.be.an("Function");
+            expect(help_Controller).to.be.an("Object");            
+            expect(help_Controller.content_cache).to.be.an("Object");
         });
     });
 });

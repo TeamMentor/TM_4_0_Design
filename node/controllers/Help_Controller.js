@@ -9,18 +9,23 @@ var fs                = require('fs'),
     teamMentorContent = require(process.cwd() + '/node/services/teamMentor-content.js');
 
 
+var content_cache = {};
+var libraryData    = teamMentorContent.getLibraryData_FromCache();            
+var library        = libraryData[0]; 
+
 var Help_Controller = function (req, res) 
     {          
         var that  = this;
-        var libraryData      = teamMentorContent.getLibraryData_FromCache();            
-        var library          = libraryData[0];       
 
-        this.page  = req.params.page;    
-        this.req   = req;
-        this.res   = res;
-
-
-
+        this.library       = library;
+        this.libraryData   = libraryData;
+        this.page          = (req) ? req.params.page : null;    
+        this.req           = req;
+        this.res           = res;  
+        this.content_cache = content_cache;
+        this.title         = null;  
+        this.content       = null;        
+        
         this.renderPage = function()
             {           
                 this.pageParams     = auth.mappedAuth(req);
@@ -29,13 +34,21 @@ var Help_Controller = function (req, res)
             };
 
         this.getContent = function()
-            {                               
+            {        
+                var cachedData =  content_cache[this.page];
+                if(cachedData)
+                {
+                    console.log("Using cached version");
+                    console.log(cachedData);
+                    //this.addContent(null, page_index_Html);
+                }
+                        
                 if (this.page === "index.html")  
                 {
                     var page_index_File     = './source/content/docs/page-index.md'   ; 
                     var page_index_Markdown = fs.readFileSync(page_index_File, 'utf8'); 
                     var page_index_Html     = marked(page_index_Markdown)             ;                 
-                    this.mapContent(null, page_index_Html);
+                    this.addContent(null, page_index_Html);
                 }
                 else
                 {   
@@ -47,7 +60,7 @@ var Help_Controller = function (req, res)
                     }
                     else
                     {
-                        this.mapContent("No content for the current page");
+                        this.addContent("No content for the current page");
                         return;
                     }
                 }            
@@ -56,20 +69,21 @@ var Help_Controller = function (req, res)
             {
                 if (error && error.code==="ENOTFOUND") 
                 { 
-                    that.mapContent("Error fetching page from docs site");
+                    that.addContent("Error fetching page from docs site");
                 }
                 else
                 {
-                    that.mapContent(that.article.Title, body);
+                    that.addContent(that.article.Title, body);
                 }
             };
-        this.mapContent = function(title, content)
-                    {
-                        this.pageParams.title   = title;
-                        this.pageParams.content = content;
-                        this.sendResponse(this.pageParams);
-                        //callback(pageParams);
-                    };
+        this.addContent = function(title, content)
+                {
+                    //console.log(content_cache);
+                    this.pageParams.title   = title;
+                    this.pageParams.content = content;
+                    this.sendResponse(this.pageParams);
+                    //callback(pageParams);
+                };
 
         this.getRenderedPage = function(params)
             {
