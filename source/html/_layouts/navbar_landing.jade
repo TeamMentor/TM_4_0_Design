@@ -2,15 +2,10 @@ include ../../content/links.jade
 include ../../content/images.jade
 
 .navbar.navbar-fixed-top(role='navigation')
-    .lge-container
-        .navbar-header
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-        ul.brand
-          +image-teammentor-logo__default     
-        .collapse.navbar-collapse.pull-right
-          ul.action.nav.nav-text
-            +links-navbar__landing-page
+  .lge-container
+    ul.brand
+      li
+        +image-teammentor-logo__default     
+    .collapse.pull-right
+      ul.nav.nav-text
+        +links-navbar__landing-page

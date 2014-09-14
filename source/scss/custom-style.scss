@@ -9,6 +9,27 @@ $dark-grey: #444444;
 $nav-padding-top: 120px;
 $full-width: 100%;
 
+@mixin action-links {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	color: $green;
+	text-align: center !important;
+	vertical-align: middle;
+}
+
+@mixin action-links-hover {
+	color: $dark-green !important;
+	text-decoration: none;
+}
+
+@mixin transition {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
 // Layout and Structure
 
 @import 'columns';
@@ -33,9 +54,12 @@ body {
 	padding-top: $nav-padding-top;
 	padding-bottom: 80px;
 	background-color: $green;
-	color: $white;
 	text-align: center;
 	width: $full-width;
+
+	h1 {
+		color: $white;
+	}
 }
 
 #about {
@@ -56,18 +80,23 @@ body {
 	margin-left: auto;
 }
 
-#calltoaction {
+#call-to-action {
 	padding-top: 7%;
 	padding-bottom: 5%;
 	background: url(#{$asset-path}/stock-img/bgtwo.jpg);
 	background-color: $dark-green;
-	color: $white;
 	text-align: center;
+
+	h1 {
+		color: $white;
+	}
 }
 
 #clients {
-	padding-bottom: 5%;
+	padding-top: 40px;
+	padding-bottom: 70px;
 	background-color: $white;
+	text-align: center;
 }
 
 #description {
@@ -77,43 +106,109 @@ body {
 	margin-right: 15px;
 }
 
-#details {
-	margin: 30px 50px 30px 50px;
-	padding: 10px 0px 10px 30px;
-	border: 1px solid $green;
-}
-
 #features {
 	padding-top: $nav-padding-top;
 	padding-bottom: 50px;
+
+	h2 {
+		text-align: center;
+	}
 }
+
+#filters, #my-articles {
+
+	li {
+		padding-left: 0px;
+		margin-bottom: 0px;
+		list-style-type: none;
+
+		.badge {
+			float: right;
+			margin-top: 2px;
+		}
+
+		label {
+			margin-top: -5px;
+		}
+
+		input[type=checkbox] + label {
+			display: inline-block;
+			margin-left: 20px;
+			margin-right: 40px;
+			margin-bottom: 5px;
+			vertical-align: middle;
+		}
+	}
+
+	#edit-links a {
+		@include action-links;
+		@include transition;
+
+		&:hover, &:active {
+			@include action-links-hover;
+		}
+	}
+}
+
 
 #footer {
 	padding-top: 10px;
 	padding-bottom: 10px;
+	text-align: center;
 	width: $full-width;
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
+
+	a {
+		@include action-links;
+		color: $dark-grey;
+		font-size: 10px;
+	}
 }
 
 #reasons {
 	padding-top: 5%;
 	padding-bottom: 2%;
 	background-color: $white;
+	
+	h2 {
+		text-align: center;
+	}
+}
+
+#user-links {
+	@include action-links;
+	@include transition;
+
+	&:hover {
+		@include action-links-hover;
+	}
 }
 
 #usp {
 	background: url(#{$asset-path}/stock-img/bgone.jpg);
 }
 
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: $full-width;
+#usp, #call-to-action {	
+	button {
+		@include action-links;
+		@include transition;
+		position: relative;
+		max-width: $full-width;
+		padding: 25px 80px;
+		display: inline-block;
+		background-color: $white;
+		border-radius: 0px;
+		border: none;
+		outline: none;
+
+		&:hover, &:active {
+			color: $white !important;
+			background-color: $green;
+		}
+	}
 }
 
 .lge-container {
@@ -125,30 +220,13 @@ body {
 	float: right !important;
 }
 
-.sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	border: 0;
-}
-
 // Images
 
-.img-responsive {
+img {
 	display: block;
 	max-width: $full-width;
 	height: auto;
 	margin: 0 auto;
-}
-
-img.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .long {
@@ -160,6 +238,18 @@ img.center {
 }
 
 // Forms
+
+form {
+	margin-bottom: 15px;
+	
+	input {
+		margin-bottom: 15px;
+	}
+
+	button {
+		width: $full-width;
+	}
+}
 
 .form-control {
 	width: 100%;
@@ -173,14 +263,10 @@ img.center {
 	background-colour: $white;	
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
-
 label {
-    display: inline-block;
-    margin-bottom: 5px;
-    font-weight: bold;
+	display: inline-block;
+	margin-bottom: 5px;
+	font-weight: bold;
 }
 
 // Navigation
@@ -188,30 +274,24 @@ label {
 .navbar {
 	background-color: $white;
 	min-height: 50px;
-	border-bottom: 1px solid $grey;
+	border-bottom: 10px solid $grey;
 	display: inline-block;
-	margin-bottom: 20px;
 	border: 1px solid transparent;
-
-	&.container {
-		margin-right: 0px;
-		margin-left: 0px;
-	}
 
 	ul {
 		list-style-type: none;
 		display: inline-block;
 
 		&.brand {
-			padding-top: 15px !important;
+			padding-top: 10px !important;
 		}
 
 		&.nav-icons {
-			padding-top: 20px;
+			padding-top: 15px;
 		}
 
 		&.nav-text {
-			padding-top: 30px;
+			padding-top: 25px;
 		}
 
 		li {
@@ -219,15 +299,11 @@ label {
 			padding-right: 40px;
 
 			a, a:visited {
-				text-transform: uppercase;
-				letter-spacing: 1px;
-				font-weight: 700;
-				font-size: 0.95em;
-				color: $green !important;
-				text-align: center !important;
+				@include action-links;
+				@include transition;
 
 				&:hover, &:active {
-					color: $dark-green !important;
+					@include action-links-hover;
 				}
 			}
 		}
@@ -242,49 +318,6 @@ label {
 	z-index: 1030;
 	border-width: 0 0 1px;
 	border-radius: 0px;
-
-	.navbar-collapse {
-		padding-right: 0px;
-		padding-left: 0px;
-		width: auto;
-		border-top: 0px none;
-		box-shadow: none;
-
-		&.collapse {
-			display: block !important;
-			height: auto !important;
-			padding-bottom: 0px;
-			overflow: visible !important;
-		}
-	}
-}
-
-.navbar-toggle {
-	position: relative;
-	float: right;
-	padding: 9px 10px;
-	margin-top: 8px;
-	margin-right: 15px;
-	margin-bottom: 8px;
-	background-color: transparent;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
-
-	&:focus {
-		outline: none;
-	}
-
-	&.icon-bar {
-		display: block;
-		width: 22px;
-		height: 2px;
-		border-radius: 1px;
-	}
-}
-
-.navbar-header {
-	float: left;
 }
 
 // Typography
@@ -292,50 +325,50 @@ label {
 h1 {
 	font-size: 36px;
 	font-weight: bold;
+	color: $grey;
 }
 
 h2 {
 	font-size: 30px;
 	font-weight: bold;
+	color: $grey;
 }
 
 h3 {
 	font-size: 24px;
 	font-weight: bold;
+	color: $dark-grey;
 }
 
 h4 {
 	font-size: 18px;
 	font-weight: bold;
 	line-height: 1.5em;
+	color: $dark-grey;
 }
 
 h5 {
 	font-size: 16px;
 	font-weight: bold;
+	color: $dark-grey;
 }
 
 h1, h2, h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 h4, h5, h6 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+	margin-top: 20px;
+	margin-bottom: 5px;
 }
 
 p, li { 
 	font-size: 16px;
-    margin: 0px 0px 10px;
 	line-height: 1.5em;
 	color: $dark-grey;
 	orphans: 3;
 	widows: 3;
-}
-
-li {
-	margin-bottom: 0px;
 }
 
 ul, ol {
@@ -348,9 +381,12 @@ ul, ol {
 	}
 
 	&.sidebar {
-		margin-top: -5px;
+		margin: 0 0 0 -30px;
 		list-style-type: none;
-		margin-left: -30px;
+
+		li {
+			margin-bottom: 2px;
+		}
 	}
 }
 
@@ -375,6 +411,11 @@ pre {
 	overflow: auto;
 }
 
+.text-center {
+	text-align: center;
+	margin: 0 auto;
+}
+
 .normal {
 	font-weight: normal;
 }
@@ -391,86 +432,28 @@ hr {
 	margin: 0 auto;
 	width: 70%;
 	color: #F5F5F5;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 60px;
+	margin-bottom: 60px;
 }
 
 a {
 	text-decoration: none;
 	color: $dark-grey;
 
-	&:visited, &:hover, &:active {
-		text-decoration: none;
-		color: $green;
-	}
-
-	&.toc {
-		color: $dark-grey !important;
-		font-size: 10px;
-		text-align: center;
-	}
-
-	&.action, &.action:visited {
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		font-weight: 700;
-		color: $green;
-		text-align: center !important;
-	}
-
-	&.action:hover, &.action:active {
-		color: $dark-green;
-	}
-
-	&.list-group-item {
-		color: $dark-grey;
-	}
-}
-
-@font-face {
-	font-family: 'Glyphicons Halflings';
-
-	src: url('../fonts/glyphicons-halflings-regular.eot');
-	src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
-
-.glyphicon {
-	position: relative;
-	top: 1px;
-	display: inline-block;
-	font-family: 'Glyphicons Halflings';
-	font-style: normal;
-	font-weight: normal;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-size: 1.5em;
-	color: $green;
-
-	&:visited {
-		color: $green;
-	}
-
 	&:hover, &:active {
-		color: $dark-green;
-	}	
-}
-
-.text-center {
-	text-align: center;
-	margin: 0 auto;
+		color: $green;
+	}
 }
 
 // Input Groups
 
 input {
-	font-size: 1.25em;
-	height: 3em;
+	height: 1.7em;
 	border-radius: 0px;
-	max-width: 100%;
+	max-width: $full-width;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;
 }
 
 .input-group {
@@ -493,14 +476,24 @@ input {
 		width: $full-width;
 		margin-bottom: 0;
 		display: table-cell;
+		font-size: 16px;
+		height: 52px;
 	}
 }
 
-.input-group-button {
-	width: 1%;
+.input-group-btn {
+	position: relative;
+	display: table-cell;
 	white-space: nowrap;
+	border: 1px solid $grey;
+	border-left: none;
+	width: 1%;
 	vertical-align: middle;
-	margin-left: -1px;
+	border-radius: 0px;
+
+	&:last-child {
+		margin-left: -1px;
+	}
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -518,139 +511,40 @@ input {
 	color: $grey;
 }
 
-label {
-	display: inline-block;
-	margin-bottom: 5px;
-	font-weight: bold;
-	color: $dark-grey;
-	margin-top: -25px;
-}
-
-input[type=checkbox] + label {
-	display: inline-block;
-	margin-left: 20px;
-	margin-right: 2em;
-	line-height: 1em;
-	vertical-align: middle;
-}
-
 
 // Buttons
 
 button {
-
-	outline: none;
+	@include transition;
+	position: relative;
 	display: inline-block;
-	padding: 6px 12px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 	margin-bottom: 0;
 	font-size: 14px;
-	font-weight: normal;
 	line-height: 1.42857143;
 	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1px;
 	white-space: nowrap;
 	vertical-align: middle;
-	cursor: pointer;
 	-webkit-user-select: none;
 	 -moz-user-select: none;
 	  -ms-user-select: none;
 		  user-select: none;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	
-	&#search-button {
-		border-left: none;
+	background: none;
+	border: 1px solid $green;
+	border-radius: 0px;
+	color: $green;
+
+	&:hover, &:active {
+		color: $dark-green !important;
 	}
 
-	&.btn-landing-page {
-		position: relative;
-		padding: 25px 80px;
+	&.btn-search-bar {
 		max-width: $full-width;
-		display: inline-block;
-		background-color: $white;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		font-weight: 700;
-		font-size: 1em;
-		color: $green !important;
-		border-radius: 0px;
-		outline: none;
-		-webkit-transition: all 0.3s;
-		-moz-transition: all 0.3s;
-		transition: all 0.3s;
-
-		&:after {
-			content: '';
-			position: absolute;
-			z-index: -1;
-			-webkit-transition: all 0.3s;
-			-moz-transition: all 0.3s;
-			transition: all 0.3s;
-		}
-
-		&:hover, &:active {
-			color: $white !important;
-			background-color: $green;
-		}
-	}
-
-	&.btn-block {
-		width: $full-width;
-	}
-
-	&.btn-action {
-		display: inline-block;
-		position: relative;
-		text-transform: uppercase;
-		font-weight: 700;
-		letter-spacing: 1px;
-		-webkit-transition: all 0.3s;
-		-moz-transition: all 0.3s;
-		transition: all 0.3s;
-		max-width: $full-width;
-		color: $green;
-		background: none;
-
-		&:hover {
-			color: $dark-green !important;
-		}
-	}
-
-	&.btn-submit {
-		border: 1px solid $green;
-		border-radius: 0px;
-		color: $green;
-		padding-top: 15px;
-		padding-bottom: 15px;
-	}
-
-	&.btn-application {
-		color: $green;
-		background-color: $white;
-		border: 1px solid $grey;
-
-		&:hover {
-			color: $dark-green;
-			background-color: $white;
-		}
-	}
-
-	&.navbar-toggle {
-		position: relative;
-		float: right;
-		padding: 9px 10px;
-		margin-top: 8px;
-		margin-right: 15px;
-		margin-bottom: 8px;
-		background-color: transparent;
-		background-image: none;
-		border: 1px solid transparent;
-		border-radius: 4px;
-	}
-
-	&.close {
-		background: transparent;
-		outline: none;
+		border: none !important;
 	}
 }
 
@@ -706,60 +600,51 @@ button {
 // List Group and List Group Items
 
 .list-group {
-    padding-left: 0px;
-    margin-bottom: 30px;
-}
+	padding-left: 0px;
+	margin-bottom: 30px;
 
-.list-group-item {
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
-    background-color: #FFF;
-    border: none;
+	h5 {
+		margin-top: 0px;
+	}
 
-    &.filters {
-    	margin-bottom: -30px !important;
-    }
+	p {
+		margin-bottom: 0px;
+	}
 
-    .badge {
-		float: right;
-		margin-bottom: 15px;
+	a {
+		position: relative;
+		display: block;
+		padding: 10px 15px;
+		margin-bottom: -1px;
+		background-color: #FFF;
+		border: none;
+		color: $dark-grey !important;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: none;
+			background-color: #f5f5f5;
+		}
+	}
+
+	li {
+		margin-bottom: -10px !important;
+		list-style-type: none;
+
+		.badge {
+			float: right;
+			margin-bottom: 15px;
+		}
 	}
 }
-
-.list-group-item-heading {
-    margin-top: 0px;
-    margin-bottom: 5px;
-}
-
-.list-group-item-text {
-    margin-bottom: 0px;
-    line-height: 1.3;
-}
-
-a.list-group-item:hover,
-a.list-group-item:focus {
-	text-decoration: none;
-	background-color: #f5f5f5;
-}
-
 
 // Alerts and Warnings
 
 .alert {
 	padding: 15px;
 	margin-bottom: 20px;
-	border: 1px solid transparent;
-	border-radius: 4px;
+	border-radius: 0px;
 	font-weight: 700;
-}
-
-.alert-dismissable {
-	padding-right: 35px;
-}
-
-.alert-warning {
 	color: $green;
 	background-color: $white;
 	border: 1px solid $green;
@@ -771,59 +656,16 @@ a.list-group-item:focus {
 table {
 	width: $full-width;
 	font-size: 1.15em;
-}
+	color: $dark-grey;
 
-td {
-	padding-left: 10px;
-	padding-right: 10px;
-	height: 30px;
-}
-
-/*** Media Queries ***/
-
-@media (max-width: 992px) {
-
-	#sign-up {
-		margin-top: 120px;
-		padding-bottom: 2%;
+	td {
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 30px;
 	}
 
-	#login {
-		margin-top: 2px !important;
-	}
-
-	h1, h2 {
-		font-size: 2em;
-	}
-
-	h3 {
-		font-size: 1.5em;
-	}
-}
-
-@media (max-width: 770px) {
-	#logo {
-			display: none;
-		}
-
-	.nav .navbar-nav li {
-		display: inline-block;
-	}
-}
-
-@media (max-width: 750px) {
-	.navbar-collapse {
-		width: $full-width;
-		text-align: center;
-	}
-
-	.collapse {
-		display: none;
-	}
-}
-
-@media (min-width: 768px) {
-	.navbar-toggle {
-		display: none;
+	a {
+		@include action-links;
+		@include-transition;
 	}
 }

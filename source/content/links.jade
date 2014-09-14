@@ -2,6 +2,7 @@
 - var getting_started = '/deploy/html/getting-started'
 - var home            = '/deploy/html/home'
 - var landing_pages   = '/deploy/html/landing-pages'
+- var help            = '/help'
 - var user            = '/deploy/html/user'
 
 - var link_article_new_window       = articles + '/article-new-window-view.html'
@@ -12,19 +13,21 @@ mixin links-navbar__landing-page
     :markdown
         * [About](#{landing_pages}/about.html)
         * [Features](#{landing_pages}/features.html)
+        * [Help](#{help}/index.html)
         * [Get Started](#{getting_started}/index.html)
+        * [Login](#{getting_started}/index.html)
   
 mixin links-navbar__home
     :markdown
         * [![Navigate](/deploy/assets/icons/navigate.png)](#{home}/navigate.html)
         * [![Home](/deploy/assets/icons/home.png)](#{home}/main-app-view.html)
-        * [![Help](/deploy/assets/icons/help.png)](#{landing_pages}/help.html)
+        * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
         * [![User](/deploy/assets/icons/user.png)](#{user}/user.html)
         * [![Logout](/deploy/assets/icons/logout.png)](/user/logout)
             
 mixin links-navbar__not_logged_in
     :markdown
-        * [![Help](/deploy/assets/icons/help.png)](#{landing_pages}/help.html)
+        * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
             
 mixin links-home__navigate
     :markdown
@@ -32,23 +35,99 @@ mixin links-home__navigate
 
       [Principles & Standards](#{home}/principles-standards.html)
 
-      [My Articles](#{home}/my-articles.html)
-      
+      [My Articles](#{home}/my-articles.html) 
+          
       [My Search Items](#{home}/my-search-items.html)
 
 mixin links_user_pages
-    .column-3
-      a.action(href='user.html') User
-    .column-3
-      a.action(href='backend.html') Backend
-    .column-3
-      a.action(href='developer-utilities.html') Developer Utilities
-    .column-3
-      a.action(href='other.html') Other
+  #user-links
+    .row
+      .column-3
+        a(href='user.html') User
+      .column-3
+        a(href='backend.html') Backend
+      .column-3
+        a(href='developer-utilities.html') Developer Utilities
+      .column-3
+        a(href='other.html') Other
+
+//- all-pages-links
+mixin all-pages-links
+  .list-group
+    a(href='home/app-keyword-search.html'                                  ) app-keyword-search.html
+    a(href='articles/article-new-window-view.html'                         ) article-new-window-view.html
+    a(href='home/filters-active.html'                                      ) filters-active.html
+    a(href='user/login/forgot-password-completed.html'                     ) forgot-password-completed.html
+    a(href='articles/fundamentals-of-security.html'                        ) fundamentals-of-security.html
+    a(href='getting-started/new-user-validation.html'                      ) getting-started-new-user-validation.html
+    a(href='getting-started/returning-user-forgot-password.html'           ) getting-started-returning-user-forgot-password.html
+    a(href='getting-started/returning-user-validation.html'                ) getting-started-returning-user-validation.html
+    a(href='getting-started/index.html'                                    ) getting-started.html
+    a(href='help/index.html'                                               ) help.html
+    a(href='landing-pages/index.html'                                      ) landing-page-index.html
+    a(href='landing-pages/about.html'                                      ) landing-page-about.html
+    a(href='landing-pages/features.html'                                   ) landing-page-features.html
+    a(href='learning-paths/advanced.html'                                  ) learning-path-advanced.html
+    a(href='learning-paths/complete.html'                                  ) learning-path-complete.html
+    a(href='learning-paths/exploiting.html'                                ) learning-path-exploiting.html
+    a(href='learning-paths/prevention.html'                                ) learning-path-prevention.html
+    a(href='learning-paths/related-topics.html'                            ) learning-path-related-topics.html
+    a(href='learning-paths/sql-injection.html'                             ) learning-path-sql-injection.html
+    a(href='learning-paths/testing.html'                                   ) learning-path-testing.html
+    a(href='style-guide/index.html'                                        ) style-guide-index.html
+    a(href='home/main-app-view.html'                                       ) main-app-view.html
+    a(href='articles/my-articles-edit.html'                                ) my-articles-edit.html
+    a(href='articles/my-articles.html'                                     ) my-articles.html
+    a(href='home/navigate.html'                                            ) navigate.html
+    a(href='articles/owasp.html'                                           ) owasp.html
+    a(href='home/principles-standards.html'                                ) principles-standards.html
+    a(href='user/returning-user-forgot-password.html'                      ) returning-user-forgot-password.html
+    a(href='user/login/returning-user-login.html'                          ) returning-user-login.html
+    a(href='user/login/returning-user-validation.html'                     ) returning-user-validation.html
+    a(href='user/user-add-filter.html'                                     ) user-add-filter.html
+    a(href='user/user-edit.html'                                           ) user-edit.html
+    a(href='user/user-new-password.html'                                   ) user-new-password.html
+    a(href='user/user.html'                                                ) user.html
+
+//- my-articles-links
+mixin my-articles-links
+  .row
+    .column-6
+      .list-group
+        a(href='#{link_article_new_window}', target='_blank') A New ID Is Assigned on Login
+        a(href='#{link_article_new_window}', target='_blank') A New Or Blank Session ID is Assigned on Logout
+        a(href='#{link_article_new_window}', target='_blank') Access to the Credential Store is Limited
+        a(href='#{link_article_new_window}', target='_blank') AJAX Injection Vulnerability
+        a(href='#{link_article_new_window}', target='_blank') All Input is Validated
+        a(href='#{link_article_new_window}', target='_blank') All Private Resources Require Authentication
+        a(href='#{link_article_new_window}', target='_blank') All Senstive Data is Encrypted
+        a(href='#{link_article_new_window}', target='_blank') Assume All Input is Malicious
+        a(href='#{link_article_new_window}', target='_blank') Authentication is Centralized
+        a(href='#{link_article_new_window}', target='_blank') Centralize Authentication
+        a(href='#{link_article_new_window}', target='_blank') Client-side Validation is Not Relied On
+        a(href='#{link_article_new_window}', target='_blank') Cross Site Scripting Vulnerablity
+    .column-6
+      .list-group
+        a(href='#{link_article_new_window}', target='_blank') Deny All Access by Default
+        a(href='#{link_article_new_window}', target='_blank') Do Not Cache Sensitive Data
+        a(href='#{link_article_new_window}', target='_blank') Do Not Leave Passwords in Memory
+        a(href='#{link_article_new_window}', target='_blank') Don't Trust User Input
+        a(href='#{link_article_new_window}', target='_blank') Echoed Input is Encoded
+        a(href='#{link_article_new_window}', target='_blank') Missing Authentication
+        a(href='#{link_article_new_window}', target='_blank') Missing Authorization
+        a(href='#{link_article_new_window}', target='_blank') Hard-coded Credentials
+        a(href='#{link_article_new_window}', target='_blank') Missing Encryption
+        a(href='#{link_article_new_window}', target='_blank') Unrestricted Dangerous Uploads
+        a(href='#{link_article_new_window}', target='_blank') Using Untrusted Inputs
+
+//- git-repo-link
+mixin git-repo-link
+  .list-group
+    a(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
 
 mixin links_learning_paths
-  a(href='exploiting.html')
-    h4.grey Exploiting Mechanisms
+    a(href='exploiting.html')
+      h4 Exploiting Mechanisms
     ul.sidebar
       li 
         a(href='exploiting.html#introduction') Introduction
@@ -57,16 +136,16 @@ mixin links_learning_paths
       li 
         a(href='exploiting.html#sql-injection-exploits') SQL Injection Exploits
       li 
-        a(href='exploiting.html#three-dangerous-vulns') Three Dangerous Vulnerabilities
+        a(href='exploiting.html#three-dangerous-vulnerabilities') Three Dangerous Vulnerabilities
     a(href='testing.html')
-      h4.grey Testing
+      h4 Testing
     ul.sidebar
       li 
         a(href='testing.html#advanced-software-testing') Advanced Software Testing
       li 
         a(href='testing.html#fuzz-testing') Fuzz Testing
     a(href='prevention.html')
-      h4.grey Prevention
+      h4 Prevention
     ul.sidebar
       li 
         a(href='prevention.html#input-validation') Input Validation
@@ -75,13 +154,30 @@ mixin links_learning_paths
       li 
         a(href='prevention.html#information-disclosure') Information Disclosure
     a(href='advanced.html')
-      h4.grey Advanced
+      h4 Advanced
     ul.sidebar
       li 
-        a(href='advanced.html#oracle-coding') Oracle Database Secure Coding
+        a(href='advanced.html#oracle-database-secure-coding') Oracle Database Secure Coding
       li 
-        a(href='advanced.html#sql-database-coding') SQL Database Secure Coding
+        a(href='advanced.html#sql-database-secure-coding') SQL Database Secure Coding
       li 
-        a(href='advanced.html#php-coding') PHP Secure Coding
+        a(href='advanced.html#php-secure-coding') PHP Secure Coding
     a(href='related-topics.html')
-      h4.grey Related Topics
+      h4 Related Topics
+
+//- my-articles-edit-
+mixin my-articles-edit
+  #edit-links
+    a(href='my-articles-edit.html') Edit 
+
+//- my-articles-edit-links
+mixin edit-links
+  #edit-links
+    br
+    .row
+      .column-4
+        a(href='#') Clear Selected
+      .column-4
+        a(href='navigate.html') Clear All
+      .column-4
+        a(href='my-articles.html') Ok, Done

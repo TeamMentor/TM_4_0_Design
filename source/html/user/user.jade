@@ -2,55 +2,52 @@ extends ../_layouts/page_home.jade
 block content
     #application
       .row
-        .column-offset-3.column-6
-          .row.text-center
+        .column-3
+          .lge-container
+            br
+        .column-6
+          .lge-container
             +links_user_pages
-          br
-          br
+            br
+            br
 
-          .row
-            .column-9
-              h4.grey Personal Details
-            .column-3
-              br
-              a.action(href='user-edit.html') Edit
+            .row
+              .column-9
+                h4 Personal Details
+              .column-3
+                br
+                a.action(href='user-edit.html') Edit
 
-          table
-            tr
-              td.strong Name:
-              td Lucy Bloomfield
-              td.strong State:
-              td Queensland
-            tr
-              td.strong Email:
-              td hello@luchia.com.au
-              td.strong Country:
-              td Australia
-            tr
-              td.strong Title:
-              td Designer
-              td.strong Group ID:
-              td Admin
-            tr
-              td.strong Company:
-              td Self-Employed
-              td
-              td
+            table
+              tr
+                td.strong Name:
+                td Lucy Bloomfield
+                td.strong State:
+                td Queensland
+              tr
+                td.strong Email:
+                td hello@luchia.com.au
+                td.strong Country:
+                td Australia
+              tr
+                td.strong Title:
+                td Designer
+                td.strong Group ID:
+                td Admin
+              tr
+                td.strong Company:
+                td Self-Employed
+                td
+                td
 
-          br
-          hr
+            +horizontal-rule
 
-          .row
-            .column-4
-              h4.grey Settings
-              p
+            .row
+              .column-4
+                h4 Settings
                 a(href='user-new-password.html') New Password
 
-            .column-4
-              h4.grey Permanent Filters
-              p
-                a(href='user-add-filter.html') Add filter
-              p
-                a(href='user-remove-filter.html') Remove filter
-
-            .column-4
+              .column-4
+                h4 Permanent Filters
+                a(href='user-add-filter.html') Add/Remove Filter
+              .column-4

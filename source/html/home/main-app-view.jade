@@ -1,47 +1,21 @@
 extends ../_layouts/page_home.jade
 
 block content  
-    #application.container
+    #application
       .row
         .column-3
-          br
+          .lge-container
+            br
 
         .column-6
-          .input-group
-            input.form-control(type='text', placeholder='Type keywords here')
-          br
-          br
-          br
-          h4.grey Recently Viewed Articles
-          .list-group
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Cras justo odio                             
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Dapibus ac facilisis in
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Morbi leo risus
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Porta ac consectetur ac
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Vestibulum at eros
-          h4.grey Popular Search Terms
-          .list-group
-            a.list-group-item(href='#{link_app_keyword_search}') Cras justo odio
-            a.list-group-item(href='#{link_app_keyword_search}') Dapibus ac facilisis in
-            a.list-group-item(href='#{link_app_keyword_search}') Morbi leo risus
-            a.list-group-item(href='#{link_app_keyword_search}') Porta ac consectetur ac
-            a.list-group-item(href='#{link_app_keyword_search}') Vestibulum at eros
-          h4.grey Top Articles
-          .list-group
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Cras justo odio                             
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Dapibus ac facilisis in
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Morbi leo risus
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Porta ac consectetur ac
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Vestibulum at eros                      
-          h4.grey New Articles
-          .list-group
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Cras justo odio                             
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Dapibus ac facilisis in
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Morbi leo risus
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Porta ac consectetur ac
-            a.list-group-item(href='#{link_article_new_window}', target='_blank') Vestibulum at eros                
+          .lge-container
+            +search-bar-input   
+            br
+            br
+            br
+            +main-app-view
         
         .column-3
-          +filters-div
-          br
-          +save-div
+          .lge-container
+            +filters-div
+            +save-div

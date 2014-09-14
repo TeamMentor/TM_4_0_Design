@@ -32,13 +32,12 @@
   <body>
     <div role="navigation" class="navbar navbar-fixed-top">
       <div class="lge-container">
-        <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar">  </span><span class="icon-bar"></span></button>
-        </div>
-        <ul class="brand"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
+        <ul class="brand">
+          <li><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
+          </li>
         </ul>
-        <div class="collapse navbar-collapse pull-right">
-          <ul class="action nav nav-icons"><ul>
+        <div class="pull-right">
+          <ul class="nav nav-icons"><ul>
 <li><a href="/deploy/html/landing-pages/help.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
 </ul>
 
@@ -49,44 +48,46 @@
     <div id="application">
       <div class="row">
         <div class="column-offset-3 column-6">
-          <div class="row text-center">
-                <div class="column-3"><a href="user.html" class="action">User</a></div>
-                <div class="column-3"><a href="backend.html" class="action">Backend</a></div>
-                <div class="column-3"><a href="developer-utilities.html" class="action">Developer Utilities</a></div>
-                <div class="column-3"><a href="other.html" class="action">Other</a></div>
-          </div><br><br>
-          <h4 class="grey">Personal Details</h4>
-          <form role="form" action="user.html">
-            <div class="form-group">
-              <label for="user-name">Name</label>
-              <input type="user-name" id="user-name" placeholder="Name" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="user-email">Email Address</label>
-              <input type="user-email" id="user-email" placeholder="Email Address" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="user-title">Title</label>
-              <input type="user-title" id="user-title" placeholder="Title" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="user-company">Company</label>
-              <input type="user-company" id="user-company" placeholder="Company" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="user-state">State</label>
-              <input type="user-state" id="user-state" placeholder="State" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="user-country">Country</label>
-              <input type="user-country" id="user-country" placeholder="Country" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="user-group-id">Group ID</label>
-              <input type="user-group-id" id="user-group-id" placeholder="Group ID" class="form-control">
-            </div>
-            <button type="submit" class="btn-submit btn-action btn-block">Ok, Done</button><br><br><br>
-          </form>
+              <div id="user-links">
+                <div class="row">
+                  <div class="column-3"><a href="user.html">User</a></div>
+                  <div class="column-3"><a href="backend.html">Backend</a></div>
+                  <div class="column-3"><a href="developer-utilities.html">Developer Utilities</a></div>
+                  <div class="column-3"><a href="other.html">Other</a></div>
+                </div>
+              </div><br>
+          <h4>Personal Details</h4>
+            <form role="form" action="user.html">
+              <div class="form-group">
+                <label for="user-name">Name</label>
+                <input type="user-name" id="user-name" placeholder="Name" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="user-email">Email Address</label>
+                <input type="user-email" id="user-email" placeholder="Email Address" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="user-title">Title</label>
+                <input type="user-title" id="user-title" placeholder="Title" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="user-company">Company</label>
+                <input type="user-company" id="user-company" placeholder="Company" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="user-state">State</label>
+                <input type="user-state" id="user-state" placeholder="State" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="user-country">Country</label>
+                <input type="user-country" id="user-country" placeholder="Country" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="user-group-id">Group ID</label>
+                <input type="user-group-id" id="user-group-id" placeholder="Group ID" class="form-control">
+              </div>
+              <button type="submit">Ok, Done</button>
+            </form>
         </div>
       </div>
     </div>

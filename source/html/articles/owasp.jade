@@ -1,100 +1,23 @@
 extends ../_layouts/page_home.jade
 block content   
-    #application.lge-container
+    #application
       .row
         .column-3
-          h4.grey Fundamentals of Security
-          .list-group
-            a.list-group-item(href='owasp.html')
-              strong OWASP Top 10
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | A01: Injection
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | A02: Cross-Site Scripting (XSS)
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | A03: Broken Authentication and Session Management
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | A04: Insecure Direct Object References
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | A05: Cross-Site Request Forgery (CSRF)
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | A06: Security Misconfiguration
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | A07: Insecure Cryptographic Storage
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | A08: Failure to Restrict URL Access
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | A09: Insufficient Transport Layer Protection
-              span.badge 14
-            a.list-group-item(href='owasp.html')
-              | A10: Unvalidated Redirects and Forwards
-              span.badge 14
-        //
-           /column-3
-          .column-6
-            .input-group
-              input#search-bar.form-control(type='text', placeholder='Type keywords here')
-                
-            //input-group 
+          .lge-container
+            h3 Fundamentals of Security
+            +directory-list
+
+        .column-6
+          .lge-container
+            +search-bar-input
             br
             br
             br
 
-            h4.grey 0/200 results showing
-            .row
-            .column-6
-              br
-            .column-3
-              a.text-center.action(href='#save')
-                | Save
-            .column-3
-              a.action(href='main-app-view.html')
-                  | Clear
-            br
-
-            .list-group
-              a.list-group-item(href='#{link_article_new_window}', target='_blank')
-                h5.list-group-item-heading.dark-grey Related Article Headline
-                p.list-group-item-text
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-              br
-              a.list-group-item(href='#{link_article_new_window}', target='_blank')
-                h5.list-group-item-heading.dark-grey Related Article Headline
-                p.list-group-item-text
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-              br
-              a.list-group-item(href='#{link_article_new_window}', target='_blank')
-                h5.list-group-item-heading.dark-grey Related Article Headline
-                p.list-group-item-text
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-              br
-              a.list-group-item(href='#{link_article_new_window}', target='_blank')
-                h5.list-group-item-heading.dark-grey Related Article Headline
-                p.list-group-item-text
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-              br
-              a.list-group-item(href='#{link_article_new_window}', target='_blank')
-                h5.list-group-item-heading.dark-grey Related Article Headline
-                p.list-group-item-text
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-              br
-              a.list-group-item(href='#{link_article_new_window}', target='_blank')
-                h5.list-group-item-heading.dark-grey Related Article Headline
-                p.list-group-item-text
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-            //.row 
-          //column-6
+            +results-save-clear
+            +articles-list
           
         .column-3
-          +filters-div
-          br
-          +save-div
+          .lge-container
+            +filters-div
+            +save-div

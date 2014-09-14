@@ -8,7 +8,8 @@ module.exports = function (app)
     var mainPage_no_user  = '/landing-pages/index.html';
         
     var users = [ { username : 'tm'   , password : 'tm'   } ,
-                  { username : 'user' , password : ''     }
+                  { username : 'user' , password : ''     } ,
+                  { username : 'a'    , password : ''     }
                 ];
     app.get('/user/login'  , function (req, res) 
             {

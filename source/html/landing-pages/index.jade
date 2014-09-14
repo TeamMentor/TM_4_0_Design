@@ -11,54 +11,50 @@ block content
             button.btn-landing-page Start your free trial today
 
     #reasons
-      h3.text-center.grey With TEAM Mentor, you can...
-      br
+      .lge-container
+        h2 With TEAM Mentor, you can...
 
-      .row
+        .row
+          .column-offset-3.column-1
+            img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
+          .column-5
+            .lge-container
+              h4 FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow
+        br
+        .row
+          .column-offset-3.column-1
+            img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
+          .column-5
+            .lge-container
+              h4 REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified
+        br
+        .row
+          .column-offset-3.column-1
+            br
+            img(src='/deploy/assets/icons/integrate.png', alt='REDUCE the number of vulnerabilities over time')
+          .column-5
+            .lge-container
+              h4 EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices
+            
 
-        .column-offset-3.column-1
-          img.img-responsive(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-        .column-5
-          br
-          h4.dark-grey FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow
-      br
-      .row
-        .column-offset-3.column-1
-          img.img-responsive(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
-        .column-5
-          br
-          h4.dark-grey REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified
-      br
-      .row
-        .column-offset-3.column-1
-          img.img-responsive(src='/deploy/assets/icons/integrate.png', alt='REDUCE the number of vulnerabilities over time')
-        .column-5
-          h4.dark-grey EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organizatoin's security policies and coding best practices
-
-
-      br
-      br
     #clients
-      h3.text-center.grey Our clients love us (and we think you will too!)
-      br
-      br
-      .row
-        .column-offset-1.column-3
-          img.img-responsive(src='/deploy/assets/clients/elsevier.png')
-        .column-3
-          img.img-responsive(src='/deploy/assets/clients/fedex.png')
-        .column-3
-          img.img-responsive(src='/deploy/assets/clients/massmutual.png')
-      .row
-        .column-offset-1.column-3
-          img.img-responsive(src='/deploy/assets/clients/microsoft.png')
-        .column-3
-          img.img-responsive(src='/deploy/assets/clients/symantec.png')
-        .column-3
-          img.img-responsive(src='/deploy/assets/clients/ubs.png')
+      .lge-container
+        h2 Our clients love us (and we think you will too!)
+        .row
+          .column-4
+            img(src='/deploy/assets/clients/elsevier.png')
+          .column-4
+            img(src='/deploy/assets/clients/fedex.png')
+          .column-4
+            img(src='/deploy/assets/clients/massmutual.png')
+        .row
+          .column-4
+            img(src='/deploy/assets/clients/microsoft.png')
+          .column-4
+            img(src='/deploy/assets/clients/symantec.png')
+          .column-4
+            img(src='/deploy/assets/clients/ubs.png')
     
-    #calltoaction
-      +call-to-action-div
+    +call-to-action-div
 
-    #footer
-      +footer-div
+    +footer-div

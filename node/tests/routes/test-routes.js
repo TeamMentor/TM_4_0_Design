@@ -7,7 +7,7 @@ var assert   = require('chai').assert,
     Browser  = require('zombie'),    
     app      = require('../../server');    
     
-describe('test-routes.js', function () 
+describe('routes > test-routes.js', function () 
 {
     before(function() { app.server = app.listen(app.port); Browser.localhost("localhost", app.port);});
     after (function() { app.server.close();                                                             });
@@ -31,11 +31,13 @@ describe('test-routes.js', function ()
             });
 
             //console.log(paths);  
-            var expectedPaths = [ '/',                                              
+            var expectedPaths = [ '/',                                     
                                   '/deploy/html/:area/:page.html',                  // jade page rendering
                                   '/:page.html'                  ,
                                   '/user/login/:page.html'       ,
                                   '/landing-pages/:page.html'    ,
+                                  '/help/:page*'                 ,
+                                  '/Image/:name'                 , 
                                   '/:area/:page.html'            ,
 
                                   '/getting-started/index.html'  ,                  // static redirects
@@ -50,7 +52,8 @@ describe('test-routes.js', function ()
                                   '/ping'                        ,
                                   '/module'                      ,
                                   '/mainModule'                  ,
-                                  '/session'                                                    
+                                  
+                                  '/session'                                                                                       ,
                                  ];
 
             expect(paths.length).to.be.equal(expectedPaths.length);
@@ -80,8 +83,5 @@ describe('test-routes.js', function ()
                 done();
             });
         });
-    });
-
-    
-    
+    });    
 });

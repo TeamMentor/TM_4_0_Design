@@ -3,12 +3,11 @@ extends ../../_layouts/page_not_logged_in.jade
 block content    
     #application
       .row
-        .column-offset-3.column-6                
-          .alert.alert-warning.alert-dismissible(role='alert')
-            button.close(type='button', data-dismiss='alert')
-              span(aria-hidden='true') ×
-              span.sr-only Close
-            | Bad username or password
-          h3.grey Login
-          br
-          +login-form         
+        .column-3
+          .lge-container
+            br
+        .column-6
+          .lge-container            
+            +alert
+            +login-form
+            +forgot-password-button       

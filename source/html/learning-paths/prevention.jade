@@ -1,50 +1,22 @@
 extends ../_layouts/page_home.jade
 
 block content
-	#application.lge-container
+	#application
 		.row
-			.column-3.lge-container
-				.div(data-spay="affix", data-offset-top="60", data-offset-bottom="200")
+			.column-3
+				.lge-container
 					+links_learning_paths
-					br
-					.progress
-						.progress-bar(role='progressbar', aria-valuenow='50', aria-valuemin='0', aria-valuemax='100', style='width: 50%')
+					+progress-bar
 			.column-6
-				h2.grey Prevention
-
-				h3#input-validation.dark-grey Input Validation
+				.lge-container
+					include:md ../../content/teamMentor/learning-paths/prevention.md
 				
-				img.center.img-responsive(src='/deploy/assets/videos/Video6.jpg')
-				br
-				
-				br
-				hr
-				br
-
-				h3#database-countermeasures.dark-grey Database Countermeasures
-				
-				img.center.img-responsive(src='/deploy/assets/videos/Video7.jpg')
-				br
-				
-				br
-				hr
-				br
-
-				h3#information-disclosure.dark-grey Information Disclosure
-				
-				img.center.img-responsive(src='/deploy/assets/videos/Video8.jpg')
-				br
-				
-				br
-				hr
-				br
-
-				.row
-					.column-3
-						a(href='testing.html')
-							button.btn-action.btn-submit.btn-block(type='button') Testing
-					.column-offset-6.column-3
-						a(href='advanced.html')
-							button.btn-action.btn-submit.btn-block(type='button') Advanced
-				br
-				br
+					.row
+						.column-3
+							a(href='testing.html')
+								button.btn-full-width(type='button') Testing
+						.column-offset-6.column-3
+							a(href='advanced.html')
+								button.btn-full-width(type='button') Advanced
+					br
+					br
