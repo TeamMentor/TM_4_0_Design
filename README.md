@@ -14,3 +14,5 @@ TeamCity CI is used to pull the changes and push/publish to Azure (for more deta
 
 * [IE CSS resources](https://github.com/TeamMentor/TM_4_0_Design/wiki/IE-CSS-resources)
 
+
+Build status: [![Build Status](https://travis-ci.org/TeamMentor/TM_4_0_Design.svg?branch=Issue_66_TopNav_Auth)](https://travis-ci.org/TeamMentor/TM_4_0_Design)
