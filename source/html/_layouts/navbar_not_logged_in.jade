@@ -3,24 +3,9 @@ include ../../content/images.jade
 
 .navbar.navbar-fixed-top(role='navigation')
   .lge-container
-    .navbar-header
-      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar   
-        span.icon-bar
     ul.brand
       li
         +image-teammentor-logo__default         
-      li
-        .collapse.navbar-collapse.pull-right
-          ul.action.nav.nav-icons
-            +links-navbar__not_logged_in
-        
-    //ul.brand
-            li
-                +image-teammentor-logo__default 
-            li
-                .collapse.navbar-collapse.pull-right
-                    ul.action.nav.nav-icons
-                        +links-navbar__home
+    .pull-right
+      ul.nav.nav-icons
+        +links-navbar__not_logged_in

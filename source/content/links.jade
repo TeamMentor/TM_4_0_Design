@@ -32,64 +32,98 @@ mixin links-navbar__not_logged_in
 mixin links-home__navigate
     :markdown
       [Attacks & Vulnerabilities](#{home}/attacks-vulnerabilities.html)
+
       [Principles & Standards](#{home}/principles-standards.html)
-      [My Articles](#{home}/my-articles.html)     
+
+      [My Articles](#{home}/my-articles.html) 
+          
       [My Search Items](#{home}/my-search-items.html)
 
 mixin links_user_pages
-  .row.text-center
-    .column-3
-      a.action(href='user.html') User
-    .column-3
-      a.action(href='backend.html') Backend
-    .column-3
-      a.action(href='developer-utilities.html') Developer Utilities
-    .column-3
-      a.action(href='other.html') Other
+  #user-links
+    .row
+      .column-3
+        a(href='user.html') User
+      .column-3
+        a(href='backend.html') Backend
+      .column-3
+        a(href='developer-utilities.html') Developer Utilities
+      .column-3
+        a(href='other.html') Other
 
 //- all-pages-links
 mixin all-pages-links
   .list-group
-    a.list-group-item(href='home/app-keyword-search.html'                                  ) app-keyword-search.html
-    a.list-group-item(href='articles/article-new-window-view.html'                         ) article-new-window-view.html
-    a.list-group-item(href='home/filters-active.html'                                      ) filters-active.html
-    a.list-group-item(href='user/login/forgot-password-completed.html'                     ) forgot-password-completed.html
-    a.list-group-item(href='articles/fundamentals-of-security.html'                        ) fundamentals-of-security.html
-    a.list-group-item(href='getting-started/new-user-validation.html'                      ) getting-started-new-user-validation.html
-    a.list-group-item(href='getting-started/returning-user-forgot-password.html'           ) getting-started-returning-user-forgot-password.html
-    a.list-group-item(href='getting-started/returning-user-validation.html'                ) getting-started-returning-user-validation.html
-    a.list-group-item(href='getting-started/index.html'                                    ) getting-started.html
-    a.list-group-item(href='help/index.html'                                               ) help.html
-    a.list-group-item(href='landing-pages/index.html'                                      ) landing-page-index.html
-    a.list-group-item(href='landing-pages/about.html'                                      ) landing-page-about.html
-    a.list-group-item(href='landing-pages/features.html'                                   ) landing-page-features.html
-    a.list-group-item(href='learning-paths/advanced.html'                                  ) learning-path-advanced.html
-    a.list-group-item(href='learning-paths/complete.html'                                  ) learning-path-complete.html
-    a.list-group-item(href='learning-paths/exploiting.html'                                ) learning-path-exploiting.html
-    a.list-group-item(href='learning-paths/prevention.html'                                ) learning-path-prevention.html
-    a.list-group-item(href='learning-paths/related-topics.html'                            ) learning-path-related-topics.html
-    a.list-group-item(href='learning-paths/sql-injection.html'                             ) learning-path-sql-injection.html
-    a.list-group-item(href='learning-paths/testing.html'                                   ) learning-path-testing.html
-    a.list-group-item(href='style-guide/index.html'                                        ) style-guide-index.html
-    a.list-group-item(href='home/main-app-view.html'                                       ) main-app-view.html
-    a.list-group-item(href='articles/my-articles-edit.html'                                ) my-articles-edit.html
-    a.list-group-item(href='articles/my-articles.html'                                     ) my-articles.html
-    a.list-group-item(href='home/navigate.html'                                            ) navigate.html
-    a.list-group-item(href='articles/owasp.html'                                           ) owasp.html
-    a.list-group-item(href='home/principles-standards.html'                                ) principles-standards.html
-    a.list-group-item(href='user/returning-user-forgot-password.html'                      ) returning-user-forgot-password.html
-    a.list-group-item(href='user/login/returning-user-login.html'                          ) returning-user-login.html
-    a.list-group-item(href='user/login/returning-user-validation.html'                     ) returning-user-validation.html
-    a.list-group-item(href='user/user-add-filter.html'                                     ) user-add-filter.html
-    a.list-group-item(href='user/user-edit.html'                                           ) user-edit.html
-    a.list-group-item(href='user/user-new-password.html'                                   ) user-new-password.html
-    a.list-group-item(href='user/user-remove-filter.html'                                  ) user-remove-filter.html
-    a.list-group-item(href='user/user.html'                                                ) user.html
+    a(href='home/app-keyword-search.html'                                  ) app-keyword-search.html
+    a(href='articles/article-new-window-view.html'                         ) article-new-window-view.html
+    a(href='home/filters-active.html'                                      ) filters-active.html
+    a(href='user/login/forgot-password-completed.html'                     ) forgot-password-completed.html
+    a(href='articles/fundamentals-of-security.html'                        ) fundamentals-of-security.html
+    a(href='getting-started/new-user-validation.html'                      ) getting-started-new-user-validation.html
+    a(href='getting-started/returning-user-forgot-password.html'           ) getting-started-returning-user-forgot-password.html
+    a(href='getting-started/returning-user-validation.html'                ) getting-started-returning-user-validation.html
+    a(href='getting-started/index.html'                                    ) getting-started.html
+    a(href='help/index.html'                                               ) help.html
+    a(href='landing-pages/index.html'                                      ) landing-page-index.html
+    a(href='landing-pages/about.html'                                      ) landing-page-about.html
+    a(href='landing-pages/features.html'                                   ) landing-page-features.html
+    a(href='learning-paths/advanced.html'                                  ) learning-path-advanced.html
+    a(href='learning-paths/complete.html'                                  ) learning-path-complete.html
+    a(href='learning-paths/exploiting.html'                                ) learning-path-exploiting.html
+    a(href='learning-paths/prevention.html'                                ) learning-path-prevention.html
+    a(href='learning-paths/related-topics.html'                            ) learning-path-related-topics.html
+    a(href='learning-paths/sql-injection.html'                             ) learning-path-sql-injection.html
+    a(href='learning-paths/testing.html'                                   ) learning-path-testing.html
+    a(href='style-guide/index.html'                                        ) style-guide-index.html
+    a(href='home/main-app-view.html'                                       ) main-app-view.html
+    a(href='articles/my-articles-edit.html'                                ) my-articles-edit.html
+    a(href='articles/my-articles.html'                                     ) my-articles.html
+    a(href='home/navigate.html'                                            ) navigate.html
+    a(href='articles/owasp.html'                                           ) owasp.html
+    a(href='home/principles-standards.html'                                ) principles-standards.html
+    a(href='user/returning-user-forgot-password.html'                      ) returning-user-forgot-password.html
+    a(href='user/login/returning-user-login.html'                          ) returning-user-login.html
+    a(href='user/login/returning-user-validation.html'                     ) returning-user-validation.html
+    a(href='user/user-add-filter.html'                                     ) user-add-filter.html
+    a(href='user/user-edit.html'                                           ) user-edit.html
+    a(href='user/user-new-password.html'                                   ) user-new-password.html
+    a(href='user/user.html'                                                ) user.html
+
+//- my-articles-links
+mixin my-articles-links
+  .row
+    .column-6
+      .list-group
+        a(href='#{link_article_new_window}', target='_blank') A New ID Is Assigned on Login
+        a(href='#{link_article_new_window}', target='_blank') A New Or Blank Session ID is Assigned on Logout
+        a(href='#{link_article_new_window}', target='_blank') Access to the Credential Store is Limited
+        a(href='#{link_article_new_window}', target='_blank') AJAX Injection Vulnerability
+        a(href='#{link_article_new_window}', target='_blank') All Input is Validated
+        a(href='#{link_article_new_window}', target='_blank') All Private Resources Require Authentication
+        a(href='#{link_article_new_window}', target='_blank') All Senstive Data is Encrypted
+        a(href='#{link_article_new_window}', target='_blank') Assume All Input is Malicious
+        a(href='#{link_article_new_window}', target='_blank') Authentication is Centralized
+        a(href='#{link_article_new_window}', target='_blank') Centralize Authentication
+        a(href='#{link_article_new_window}', target='_blank') Client-side Validation is Not Relied On
+        a(href='#{link_article_new_window}', target='_blank') Cross Site Scripting Vulnerablity
+    .column-6
+      .list-group
+        a(href='#{link_article_new_window}', target='_blank') Deny All Access by Default
+        a(href='#{link_article_new_window}', target='_blank') Do Not Cache Sensitive Data
+        a(href='#{link_article_new_window}', target='_blank') Do Not Leave Passwords in Memory
+        a(href='#{link_article_new_window}', target='_blank') Don't Trust User Input
+        a(href='#{link_article_new_window}', target='_blank') Echoed Input is Encoded
+        a(href='#{link_article_new_window}', target='_blank') Missing Authentication
+        a(href='#{link_article_new_window}', target='_blank') Missing Authorization
+        a(href='#{link_article_new_window}', target='_blank') Hard-coded Credentials
+        a(href='#{link_article_new_window}', target='_blank') Missing Encryption
+        a(href='#{link_article_new_window}', target='_blank') Unrestricted Dangerous Uploads
+        a(href='#{link_article_new_window}', target='_blank') Using Untrusted Inputs
 
 //- git-repo-link
 mixin git-repo-link
   .list-group
-    a.list-group-item(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
+    a(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
 
 mixin links_learning_paths
     a(href='exploiting.html')
@@ -130,3 +164,20 @@ mixin links_learning_paths
         a(href='advanced.html#php-secure-coding') PHP Secure Coding
     a(href='related-topics.html')
       h4 Related Topics
+
+//- my-articles-edit-
+mixin my-articles-edit
+  #edit-links
+    a(href='my-articles-edit.html') Edit 
+
+//- my-articles-edit-links
+mixin edit-links
+  #edit-links
+    br
+    .row
+      .column-4
+        a(href='#') Clear Selected
+      .column-4
+        a(href='navigate.html') Clear All
+      .column-4
+        a(href='my-articles.html') Ok, Done

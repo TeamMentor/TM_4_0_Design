@@ -30,15 +30,13 @@
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
   <body>
-    <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div role="navigation" class="navbar navbar-fixed-top">
       <div class="lge-container">
-        <div class="navbar-header"></div>
-        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         <ul class="brand">
           <li><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
           </li>
         </ul>
-        <div class="collapse navbar-collapse pull-right">
+        <div class="pull-right">
           <ul class="action nav nav-icons"><ul>
 <li><a href="/deploy/html/home/navigate.html"><img src="/deploy/assets/icons/navigate.png" alt="Navigate"></a></li>
 <li><a href="/deploy/html/home/main-app-view.html"><img src="/deploy/assets/icons/home.png" alt="Home"></a></li>
@@ -58,11 +56,13 @@
         </div>
         <div class="column-6">
           <div class="lge-container">
-                <div class="row text-center">
-                  <div class="column-3"><a href="user.html" class="action">User</a></div>
-                  <div class="column-3"><a href="backend.html" class="action">Backend</a></div>
-                  <div class="column-3"><a href="developer-utilities.html" class="action">Developer Utilities</a></div>
-                  <div class="column-3"><a href="other.html" class="action">Other</a></div>
+                <div id="user-links">
+                  <div class="row">
+                    <div class="column-3"><a href="user.html">User</a></div>
+                    <div class="column-3"><a href="backend.html">Backend</a></div>
+                    <div class="column-3"><a href="developer-utilities.html">Developer Utilities</a></div>
+                    <div class="column-3"><a href="other.html">Other</a></div>
+                  </div>
                 </div><br><br>
             <div class="row">
               <div class="column-9">
@@ -99,8 +99,7 @@
               <hr>
             <div class="row">
               <div class="column-4">
-                <h4>Settings</h4>
-                <p><a href="user-new-password.html">New Password</a></p>
+                <h4>Settings</h4><a href="user-new-password.html">New Password</a>
               </div>
               <div class="column-4">
                 <h4>Permanent Filters</h4><a href="user-add-filter.html">Add/Remove Filter</a>

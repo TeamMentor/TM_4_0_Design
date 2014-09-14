@@ -15,137 +15,150 @@ mixin results-save-clear
 			td 
 				h4 0/200 results showing
 			td 
-				a.action(href='#save') Save
+				a(href='#save') Save
 			td 
-				a.action(href='main-app-view.html') Clear
+				a(href='main-app-view.html') Clear
+
+//- articles-list
+mixin articles-list
+	.list-group
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md teamMentor/article-details.md
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md teamMentor/article-details.md
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md teamMentor/article-details.md
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md teamMentor/article-details.md
+
 
 //- filters
 mixin filters-div
-	h3 Filters
-	form(role='form', action='filters-active.html')
-		.form-group
-			h5 Technology
-			ul.list-group
-				li.list-group-item.filters
+	#filters
+		h3 Filters
+		form(role='form', action='filters-active.html')
+			.form-group
+				h5 Technology
+				li
 					input#technology_1(type='checkbox')
 					label(for='#technology_1', type='checkbox') Option #1
 						span.badge 14 
-				li.list-group-item.filters
+				li
 					input#technology_2(type='checkbox')
 					label(for='#technology_2', type='checkbox') Option #2
 						span.badge 14 
-				li.list-group-item.filters
+				li
 					input#technology_3(type='checkbox')
 					label(for='#technology_3', type='checkbox') Option #3
 						span.badge 14 
-				li.list-group-item.filters
+				li
 					input#technology_4(type='checkbox')
 					label(for='#technology_4', type='checkbox') Option #4
 						span.badge 14 
-				li.list-group-item.filters
+				li
 					input#technology_5(type='checkbox')
 					label(for='#technology_5', type='checkbox') Option #5
 						span.badge 14 
-		.form-group
-			h5 Category
-			ul.list-group
-				li.list-group-item.filters
+			.form-group
+				h5 Category
+				li
 					input#category_1(type='checkbox')
 					label(for='#category_1', type='checkbox') Option #1
 						span.badge 14 
-				li.list-group-item.filters
+				li
 					input#category_2(type='checkbox')
 					label(for='#category_2', type='checkbox') Option #2
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#category_3(type='checkbox')
 					label(for='#category_3', type='checkbox') Option #3
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#category_4(type='checkbox')
 					label(for='#category_4', type='checkbox') Option #4
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#category_5(type='checkbox')
 					label(for='#category_5', type='checkbox') Option #5
 						span.badge 14
-		.form-group
-			h5 Phase
-			ul.list-group
-				li.list-group-item.filters
+			.form-group
+				h5 Phase
+				li
 					input#phase_1(type='checkbox')
 					label(for='#phase_1', type='checkbox') Option #1
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#phase_2(type='checkbox')
 					label(for='#phase_2', type='checkbox') Option #2
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#phase_3(type='checkbox')
 					label(for='#phase_3', type='checkbox') Option #3
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#phase_4(type='checkbox')
 					label(for='#phase_4', type='checkbox') Option #4
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#phase_5(type='checkbox')
 					label(for='#phase_5', type='checkbox') Option #5
 						span.badge 14
-		.form-group
-			h5 Type
-			ul.list-group
-				li.list-group-item.filters
+			.form-group
+				h5 Type
+				li
 					input#type_1(type='checkbox')
 					label(for='#type_1', type='checkbox') Option #1
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#type_2(type='checkbox')
 					label(for='#type_2', type='checkbox') Option #2
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#type_3(type='checkbox')
 					label(for='#type_3', type='checkbox') Option #3
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#type_4(type='checkbox')
 					label(for='#type_4', type='checkbox') Option #4
 						span.badge 14
-				li.list-group-item.filters
+				li
 					input#type_5(type='checkbox')
 					label(for='#type_5', type='checkbox') Option #5
 						span.badge 14
 
-		button.btn-full-width(type='submit')
-			| Ok, Done
+			button(type='submit')
+				| Ok, Done
 
 
 //- save to dashboard
 mixin save-div
-	h3 Save to Dashboard
-	form(role='form')
-		.form-group
-			label(for='nickname') Give it a nickname
-			input#nickname.form-control(type='text', placeholder='Nickname')
-		button.btn-full-width(type='submit') Ok, Done
+	#save-to-dashboard
+		:markdown
+			### Save to Dashboard
+		form(role='form')
+			.form-group
+				label(for='nickname') Give it a nickname
+				input#nickname.form-control(type='text', placeholder='Nickname')
+			button(type='submit') Ok, Done
 
 //- landing-page_call-to-action
 mixin call-to-action-div
-	.row
-		.column-offset-2.column-8
-			h1 Security Risk. Understood.
-			br
-			br
-			a(href='getting-started.html')
-				button.btn-landing-page(type='button') See for yourself
+	#call-to-action
+		.row
+			.column-offset-2.column-8
+				h1 Security Risk. Understood.
+				br
+				br
+				a(href='getting-started.html')
+					button(type='button') See for yourself
 
 //- landing-page_footer
 mixin footer-div
-	.lge-container
+	#footer
 		.row
-			.column-offset-4.column-4
+			.column-offset-2.column-8
 				img(src='/deploy/assets/logos/si-logo.png')
-				a.action.toc(href="#{user}/terms-and-conditions.html") Terms & Conditions
+				a(href="#{user}/terms-and-conditions.html") Terms & Conditions					
 				
 
 //- horizontal-rule
@@ -168,18 +181,67 @@ mixin article-options
 //- related-articles
 mixin related-articles
 	.list-group
-		a.list-group-item(href='#{link_article_new_window}', target='_blank')
-			h5.list-group-item-heading Related Article Headline
-			p.list-group-item-text
-				| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-		a.list-group-item(href='#{link_article_new_window}', target='_blank')
-			h5.list-group-item-heading Related Article Headline
-			p.list-group-item-text
-				| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-		a.list-group-item(href='#{link_article_new_window}', target='_blank')
-			h5.list-group-item-heading Related Article Headline
-			p.list-group-item-text
-				| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md teamMentor/article-details.md
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md teamMentor/article-details.md
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md teamMentor/article-details.md
+
+//- main-app-view
+mixin main-app-view
+	h4 Recently Viewed Articles
+	.list-group
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+	h4 Popular Search Terms
+	.list-group
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+	h4 Top Articles
+	.list-group
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+	h4 New Articles
+	.list-group
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='#{link_article_new_window}', target='_blank') Article Headline
+
+//- directory-list
+mixin directory-list
+	.list-group
+		a(href='owasp.html')
+			| OWASP Top 10
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
 
 //- progress-bar
 mixin progress-bar
@@ -191,13 +253,15 @@ mixin lp-start-button
 	.row
 		.column-offset-4.column-4
 			a(href='exploiting.html')
-				button.btn-full-width(type='button') Get Started
+				button(type='button') Get Started
 			br
 			br
-
 
 //- sign-up-form
 mixin sign-up-form
+	:markdown
+		### Sign Up
+		Complete this form and get access to the worlds largest repository of secure software development knowledge.
 	form#sign-up-form(role='form')
 		.form-group
 			label(for='new-user-username') Username
@@ -212,27 +276,33 @@ mixin sign-up-form
 			label(for='new-user-email') Email Address
 			input#new-user-email.form-control(type='username', placeholder='Email Address')
 		a(href='/deploy/html/home/main-app-view.html')
-			button.btn-full-width(type='button') Sign Up
+			button(type='button') Sign Up
 
 //- login-form
 mixin login-form
+	:markdown
+		### Login
+		Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?
 	form#login-form(role='form', method='post', action='/user/login')
 		.form-group
 			label(for='new-user-username') Username
-			input#new-user-username.form-control(type='username', name='username', placeholder='Username', value = 'user')
+			input#new-user-username.form-control(type='username', placeholder='Username')
 		.form-group
 			label(for='new-user-password') Password
-			input#new-user-password.form-control(type='password', name='password', placeholder='Password')
-		button.btn-full-width(type='submit', id='btn-login') Login
+			input#new-user-password.form-control(type='password', placeholder='Password')
+		a(href='/deploy/html/home/main-app-view.html')
+			button(type='submit') Login
 
 //- forgot-password-form
 mixin forgot-password-form
+	h3 Forgot your password?
+	p Too easy - just type in your email address and we'll send you an email with further instructions.
 	form#forgot-password(role='form', action='forgot-password-completed.html')
 		.form-group
 			label(for='email') Email Address
 			input#email.form-control(type='email', placeholder='Email Address')
 		a(href='/deploy/html/user/forgot-password-completed.html')
-			button.btn-full-width(type='button') Get password
+			button(type='button') Get password
 
 //- user-details-form
 mixin user-details-form
@@ -258,7 +328,7 @@ mixin user-details-form
 		.form-group
 			label(for='user-group-id') Group ID
 			input.form-control(type='user-group-id', id='user-group-id', placeholder='Group ID')
-		button.btn-full-width(type='submit')
+		button(type='submit')
 			| Ok, Done
 
 //- new-password-form
@@ -267,20 +337,110 @@ mixin new-password-form
 		.form-group
 			label(for='user-current-password') Current Password
 			input.form-control(type='user-current-password', id='user-current-password', placeholder='Current Password')
-	.form-group
-		label(for='user-new-password') New Password
-		input.form-control(type='user-new-password', id='user-new-password', placeholder='New Password')
-	.form-group
-		label(for='user-confirm-new-password') Confirm New Password
-		input.form-control(type='user-confirm-new-password', id='user-confirm-new-password', placeholder='Confirm New Password')
-	button.btn-full-width(type='submit') Save
+		.form-group
+			label(for='user-new-password') New Password
+			input.form-control(type='user-new-password', id='user-new-password', placeholder='New Password')
+		.form-group
+			label(for='user-confirm-new-password') Confirm New Password
+			input.form-control(type='user-confirm-new-password', id='user-confirm-new-password', placeholder='Confirm New Password')
+		button(type='submit') Save
 
 
 //- forgot-password-button
 mixin forgot-password-button
-	button.btn-full-width(type='submit') Forgot your password?
+	form(role='form', action='returning-user-forgot-password.html')
+		button(type='submit') Forgot your password?
 
 //- alert
 mixin alert
 	.alert(role='alert')
 		| Error/Validation messages go here
+
+//- my-articles-edit
+mixin edit-my-articles
+	.row
+		.column-6
+			.lge-container
+				li
+					input#technology_1(type='checkbox')
+					label(for='technology_1', name='technology_1') A New ID Is Assigned on Login
+				li
+					input#technology_2(type='checkbox')
+					label(for='technology_2', name='technology_2') A New Or Blank Session ID is Assigned on Logout
+				li
+					input#technology_3(type='checkbox')
+					label(for='technology_3', name='technology_3') Access to the Credential Store is Limited
+				li
+					input#technology_4(type='checkbox')
+					label(for='technology_4', name='technology_4') AJAX Injection Vulnerability
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') All Input is Validated
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') All Private Resources Require Authentication
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') All Senstive Data is Encrypted
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Assume All Input is Malicious
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Authentication is Centralized
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Centralize Authentication
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Client-side Validation is Not Relied On
+				li
+					input#technology_1(type='checkbox')
+					label(for='technology_1', name='technology_1') Cross Site Scripting Vulnerablity
+				li
+					input#technology_2(type='checkbox')
+					label(for='technology_2', name='technology_2') Deny All Access by Default
+				li
+					input#technology_3(type='checkbox')
+					label(for='technology_3', name='technology_3') Do Not Cache Sensitive Data
+		.column-6
+			.lge-container
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Do Not Leave Passwords in Memory
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Don't Trust User Input
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Echoed Input is Encoded
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Missing Authentication
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Missing Authorization
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Hard-coded Credentials
+				li
+					input#technology_5(type='checkbox')
+					label(for='technology_5', name='technology_5') Missing Encryption
+				li
+					input#technology_4(type='checkbox')
+					label(for='technology_4', name='technology_4') Unrestricted Dangerous Uploads
+				li
+					input#technology_4(type='checkbox')
+					label(for='technology_4', name='technology_4') Using Untrusted Inputs
+
+//- my-articles-edit-links
+mixin edit-links
+	#edit-links
+		br
+		.row
+			.column-4
+				a(href='#') Clear Selected
+			.column-4
+				a(href='navigate.html') Clear All
+			.column-4
+				a(href='my-articles.html') Ok, Done

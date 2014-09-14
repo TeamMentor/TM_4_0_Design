@@ -6,40 +6,7 @@ block content
         .column-3
           .lge-container
             h3 Fundamentals of Security
-            .list-group
-              a.list-group-item(href='owasp.html')
-                | OWASP Top 10
-                span.badge 14
-              a.list-group-item(href='owasp.html')
-                | Second Level Directory
-                span.badge 14
-              a.list-group-item(href='owasp.html')
-                | Second Level Directory
-                span.badge 14
-              a.list-group-item(href='owasp.html')
-                | Second Level Directory
-                span.badge 14
-              a.list-group-item(href='owasp.html')
-                | Second Level Directory
-                span.badge 14
-              a.list-group-item(href='owasp.html')
-                | Second Level Directory
-                span.badge 14
-              a.list-group-item(href='owasp.html')
-                | Second Level Directory
-                span.badge 14
-              a.list-group-item(href='owasp.html')
-                | Second Level Directory
-                span.badge 14
-              a.list-group-item(href='owasp.html')
-                | Second Level Directory
-                span.badge 14
-              a.list-group-item(href='owasp.html')
-                | Second Level Directory
-                span.badge 14
-              a.list-group-item(href='owasp.html')
-                | Second Level Directory
-                span.badge 14
+            +directory-list
           // column-3
 
         .column-6
@@ -50,41 +17,11 @@ block content
             br
 
             +results-save-clear
-
-            .list-group
-              a.list-group-item(href='#{link_article_new_window}', target='_blank')
-                h5.list-group-item-heading Related Article Headline
-                p.list-group-item-text
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-              br
-              a.list-group-item(href='#{link_article_new_window}', target='_blank')
-                h5.list-group-item-heading Related Article Headline
-                p.list-group-item-text
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-              br
-              a.list-group-item(href='#{link_article_new_window}', target='_blank')
-                h5.list-group-item-heading Related Article Headline
-                p.list-group-item-text
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-              a.list-group-item(href='#{link_article_new_window}', target='_blank')
-                h5.list-group-item-heading.dark-grey Related Article Headline
-                p.list-group-item-text
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-              br
-              a.list-group-item(href='#{link_article_new_window}', target='_blank')
-                h5.list-group-item-heading Related Article Headline
-                p.list-group-item-text
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
-              br
-              a.list-group-item(href='#{link_article_new_window}', target='_blank')
-                h5.list-group-item-heading Related Article Headline
-                p.list-group-item-text
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.
+            +articles-list
           // row
         // column-6
 
         .column-3
           .lge-container
             +filters-div
-            br
             +save-div

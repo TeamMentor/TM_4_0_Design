@@ -32,13 +32,12 @@
   <body>
     <div role="navigation" class="navbar navbar-fixed-top">
       <div class="lge-container">
-        <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar">  </span><span class="icon-bar"></span></button>
-        </div>
-        <ul class="brand"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
+        <ul class="brand">
+          <li><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
+          </li>
         </ul>
-        <div class="collapse navbar-collapse pull-right">
-          <ul class="action nav nav-icons"><ul>
+        <div class="pull-right">
+          <ul class="nav nav-icons"><ul>
 <li><a href="/deploy/html/landing-pages/help.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
 </ul>
 
@@ -50,9 +49,9 @@
       <div class="row">
         <div class="column-offset-1 column-5">
           <div class="lge-container">
-              <div role="alert" class="alert">Error/Validation messages go here</div>
-            <h3>Sign Up</h3>
-            <p>Complete this form and get access to the worlds largest repository of secure software development knowledge.</p><br>
+              <div role="alert" class="alert">Error/Validation messages go here</div><h3 id="sign-up">Sign Up</h3>
+<p>Complete this form and get access to the worlds largest repository of secure software development knowledge.</p>
+
               <form id="sign-up-form" role="form">
                 <div class="form-group">
                   <label for="new-user-username">Username</label>
@@ -70,15 +69,15 @@
                   <label for="new-user-email">Email Address</label>
                   <input id="new-user-email" type="username" placeholder="Email Address" class="form-control">
                 </div><a href="/deploy/html/home/main-app-view.html">
-                  <button type="button" class="btn-full-width">Sign Up</button></a>
+                  <button type="button">Sign Up</button></a>
               </form><br><br>
           </div>
         </div>
         <div class="column-5">
-          <div class="lge-container">
-            <h3>Login</h3>
-            <p>Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?</p><br>
-              <form id="login-form" role="form">
+          <div class="lge-container"><h3 id="login">Login</h3>
+<p>Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?</p>
+
+              <form id="login-form" role="form" method="post" action="/user/login">
                 <div class="form-group">
                   <label for="new-user-username">Username</label>
                   <input id="new-user-username" type="username" placeholder="Username" class="form-control">
@@ -87,9 +86,11 @@
                   <label for="new-user-password">Password</label>
                   <input id="new-user-password" type="password" placeholder="Password" class="form-control">
                 </div><a href="/deploy/html/home/main-app-view.html">
-                  <button type="submit" class="btn-full-width">Login</button></a>
-              </form><br>
-              <button type="submit" class="btn-full-width">Forgot your password?</button>
+                  <button type="submit">Login</button></a>
+              </form>
+              <form role="form" action="returning-user-forgot-password.html">
+                <button type="submit">Forgot your password?</button>
+              </form>
           </div>
         </div>
       </div>
