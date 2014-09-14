@@ -286,12 +286,12 @@ mixin login-form
 	form#login-form(role='form', method='post', action='/user/login')
 		.form-group
 			label(for='new-user-username') Username
-			input#new-user-username.form-control(type='username', placeholder='Username')
+			input#new-user-username.form-control(type='username', placeholder='Username' name='username')
 		.form-group
 			label(for='new-user-password') Password
-			input#new-user-password.form-control(type='password', placeholder='Password')
-		a(href='/deploy/html/home/main-app-view.html')
-			button(type='submit') Login
+			input#new-user-password.form-control(type='password', placeholder='Password', name='password')
+		//a(href='/deploy/html/home/main-app-view.html')
+		button#btn-login(type='submit') Login
 
 //- forgot-password-form
 mixin forgot-password-form
@@ -345,11 +345,10 @@ mixin new-password-form
 			input.form-control(type='user-confirm-new-password', id='user-confirm-new-password', placeholder='Confirm New Password')
 		button(type='submit') Save
 
-
 //- forgot-password-button
 mixin forgot-password-button
-	form(role='form', action='returning-user-forgot-password.html')
-		button(type='submit') Forgot your password?
+	form(role='form', action='returning-user-forgot-password.html', method='get')
+		button#btn-forgot-pwd(type='submit') Forgot your password?
 
 //- alert
 mixin alert
