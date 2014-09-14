@@ -9,11 +9,21 @@ var preCompiler =
         disableCache  : true
     };
 
+preCompiler.targetFolder = function()
+    {
+        var fullPath = process.cwd() + preCompiler._targetFolder ;
+        if (fs.existsSync(fullPath) === false) 
+        { 
+            fs.mkdirSync(fullPath); 
+        }
+        return fullPath;
+    };
                 
 preCompiler.calculateTargetPath   = function(fileToCompile) 
     {
-        return process.cwd() + preCompiler._targetFolder + fileToCompile.replace(/\//g,'_')
-                                                                        .replace(/\./g,'_') + '.txt';
+    
+        return preCompiler.targetFolder() + fileToCompile.replace(/\//g,'_')
+                                                         .replace(/\./g,'_') + '.txt';
     };
     
 preCompiler.compileJadeFileToDisk = function(fileToCompile)

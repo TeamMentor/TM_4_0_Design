@@ -27,13 +27,14 @@ describe("services > jade-pre-compiler.js", function()
     it('calculateTargetPath', function()
     {
         var calculateTargetPath = preCompiler.calculateTargetPath;
-        
+        var targetFolder        = preCompiler.targetFolder();
+        expect(targetFolder       ).to.equal(process.cwd() + preCompiler._targetFolder);
         expect(calculateTargetPath).to.be.an('function');
-        expect(calculateTargetPath('aaa'             )).to.equal(process.cwd() + preCompiler._targetFolder + 'aaa.txt'             );       // if the compiled jade file is 
-        expect(calculateTargetPath('aaa/bbb'         )).to.equal(process.cwd() + preCompiler._targetFolder + 'aaa_bbb.txt'         );       // and .js , we will have a circular auto compilation
-        expect(calculateTargetPath('aaa/bbb/ccc'     )).to.equal(process.cwd() + preCompiler._targetFolder + 'aaa_bbb_ccc.txt'     );       // when running the tests using (for example)
-        expect(calculateTargetPath('aaa/bbb.jade'    )).to.equal(process.cwd() + preCompiler._targetFolder + 'aaa_bbb_jade.txt'    );       //     mocha -w node/tests/**/*jade*.js -R list
-        expect(calculateTargetPath('aaa/bbb.ccc.jade')).to.equal(process.cwd() + preCompiler._targetFolder + 'aaa_bbb_ccc_jade.txt');
+        expect(calculateTargetPath('aaa'             )).to.equal(targetFolder + 'aaa.txt'             );       // if the compiled jade file is 
+        expect(calculateTargetPath('aaa/bbb'         )).to.equal(targetFolder + 'aaa_bbb.txt'         );       // and .js , we will have a circular auto compilation
+        expect(calculateTargetPath('aaa/bbb/ccc'     )).to.equal(targetFolder + 'aaa_bbb_ccc.txt'     );       // when running the tests using (for example)
+        expect(calculateTargetPath('aaa/bbb.jade'    )).to.equal(targetFolder + 'aaa_bbb_jade.txt'    );       //     mocha -w node/tests/**/*jade*.js -R list
+        expect(calculateTargetPath('aaa/bbb.ccc.jade')).to.equal(targetFolder + 'aaa_bbb_ccc_jade.txt');
         
     });
             
