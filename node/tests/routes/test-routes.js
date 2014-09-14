@@ -37,6 +37,7 @@ describe('routes > test-routes.js', function ()
                                   '/user/login/:page.html'       ,
                                   '/landing-pages/:page.html'    ,
                                   '/help/:page*'                 ,
+                                  '/Image/:name'                 , 
                                   '/:area/:page.html'            ,
 
                                   '/getting-started/index.html'  ,                  // static redirects
@@ -82,8 +83,5 @@ describe('routes > test-routes.js', function ()
                 done();
             });
         });
-    });
-
-    
-    
+    });    
 });

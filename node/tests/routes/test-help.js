@@ -166,6 +166,37 @@ describe('routes', function ()
                                     done();
                                });
             
-        });       
+        });
+        
+        it('handle broken images bug', function(done)
+        {         
+            var gitHub_Path = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/';
+            var local_Path  = '/Image/';
+            var test_image  = 'signup1.jpg';
+            
+            var check_For_Redirect = function()
+                {                    
+                    supertest(app).get(local_Path + test_image)
+                                  .expect(302)
+                                  .end(function(error, response)
+                                        {
+                                            expect(response.headers         ).to.be.an('Object');
+                                            expect(response.headers.location).to.be.an('String');
+                                            expect(response.headers.location).to.equal(gitHub_Path + test_image);
+                                            check_That_Image_Exists(response.headers.location);
+                                        });
+                };
+            var check_That_Image_Exists = function(image_Path)
+                {                    
+                    request.get(image_Path, function(error, response)
+                        {
+                            expect(response.statusCode).to.equal(200);
+                            done();                         
+                        });                          
+                };
+            
+            check_For_Redirect();            
+                
+        });
     });
 });
