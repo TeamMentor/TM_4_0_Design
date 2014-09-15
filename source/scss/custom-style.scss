@@ -115,7 +115,7 @@ body {
 	}
 }
 
-#filters, #my-articles {
+#filters, #my-articles, #save-to-dashboard, #directory-list {
 
 	li {
 		padding-left: 0px;
@@ -150,16 +150,11 @@ body {
 	}
 }
 
-
 #footer {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	text-align: center;
 	width: $full-width;
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
 
 	a {
 		@include action-links;
@@ -267,6 +262,7 @@ label {
 	display: inline-block;
 	margin-bottom: 5px;
 	font-weight: bold;
+	color: $dark-grey;
 }
 
 // Navigation
@@ -337,7 +333,7 @@ h2 {
 h3 {
 	font-size: 24px;
 	font-weight: bold;
-	color: $dark-grey;
+	color: $grey;
 }
 
 h4 {
@@ -608,6 +604,7 @@ button {
 	}
 
 	p {
+		margin-top: 0px;
 		margin-bottom: 0px;
 	}
 
