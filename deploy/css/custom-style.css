@@ -248,7 +248,7 @@ body {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000365}}
 #about {
-  background: url(../../deploy/assets//stock-img/bgthree.jpg);
+  background: url(../../_Customizations/deploy/assets//stock-img/bgthree.jpg);
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000369}}
@@ -271,7 +271,7 @@ body {
 #call-to-action {
   padding-top: 7%;
   padding-bottom: 5%;
-  background: url(../../deploy/assets//stock-img/bgtwo.jpg);
+  background: url(../../_Customizations/deploy/assets//stock-img/bgtwo.jpg);
   background-color: #49661f;
   text-align: center;
 }
@@ -404,7 +404,7 @@ body {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003190}}
 #usp {
-  background: url(../../deploy/assets//stock-img/bgone.jpg);
+  background: url(../../_Customizations/deploy/assets//stock-img/bgone.jpg);
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003195}}

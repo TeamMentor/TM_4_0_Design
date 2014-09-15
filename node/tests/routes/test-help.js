@@ -63,14 +63,14 @@ describe('routes', function ()
                           .end(function(err, res)
                                {
                                     var $ = cheerio.load(res.text);
-                                    var helpImgTag    = $("img[src='/deploy/assets/icons/help.png']").parent();
+                                    var helpImgTag    = $("img[src='/_Customizations/deploy/assets/icons/help.png']").parent();
                                     var helpAnchorTag = helpImgTag.parent();
                 
                                     expect(helpImgTag   ).to.be.an('object');
                                     expect(helpAnchorTag).to.be.an('object');
                 
-                                    expect(helpImgTag   .html()).to.equal('<img src="/deploy/assets/icons/help.png" alt="Help">');
-                                    expect(helpAnchorTag.html()).to.equal('<a href="/help/index.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a>');
+                                    expect(helpImgTag   .html()).to.equal('<img src="/_Customizations/deploy/assets/icons/help.png" alt="Help">');
+                                    expect(helpAnchorTag.html()).to.equal('<a href="/help/index.html"><img src="/_Customizations/deploy/assets/icons/help.png" alt="Help"></a>');
                                     
                                     var helpUrl = helpAnchorTag.find('a').attr('href');                          
                                     expect(helpUrl).to.equal('/help/index.html');
