@@ -10,20 +10,6 @@ $nav-padding-top: 120px;
 $full-width: 100%;
 
 // Mixins
-@mixin action-links {
-	font-size: 14px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 700;
-	color: $green;
-	text-align: center !important;
-	vertical-align: middle;
-}
-
-@mixin action-links-hover {
-	color: $dark-green !important;
-	text-decoration: none;
-}
 
 @mixin transition {
 	-webkit-transition: all 0.3s;
@@ -41,34 +27,28 @@ html {
 
 body {
 	max-width: $full-width;
-	overflow-x: hidden;
 	margin: 0;
 	line-height: 1.5;
-}
-
-#article-pane {
-	padding-bottom: 40px;
-}
-
-#about, #usp {
-	padding-top: $nav-padding-top;
-	padding-bottom: 80px;
-	background-color: $green;
-	text-align: center;
-	width: $full-width;
-
-	h1 {
-		color: $white;
-	}
 }
 
 #about {
 	background: url(#{$asset-path}/stock-img/bgthree.jpg);
 }
 
+#about, #usp {
+	width: $full-width;
+	padding-top: $nav-padding-top;
+	padding-bottom: 80px;
+	background-color: $green;
+	text-align: center;
+
+	h1 {
+		color: $white;
+	}
+}
+
 #about-us {
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding: 40px 0 40px 0;
 }
 
 #application {
@@ -76,9 +56,23 @@ body {
 	width: $full-width;
 }
 
+#article {
+	padding-bottom: 40px;
+
+	a {
+		text-transform: none;
+		font-weight: normal;
+		font-size: 16px;
+		color: $green;
+
+		&:hover {
+			color: $dark-green !important;
+		}
+	}
+}
+
 #call-to-action {
-	padding-top: 100px;
-	padding-bottom: 110px;
+	padding: 100px 0 110px 0;
 	background: url(#{$asset-path}/stock-img/bgtwo.jpg);
 	background-color: $dark-green;
 	text-align: center;
@@ -89,16 +83,14 @@ body {
 }
 
 #clients {
-	padding-top: 40px;
-	padding-bottom: 70px;
-	background-color: $white;
+	padding: 40px 0 80px 0;
 	text-align: center;
 }
 
 #description {
+	margin-right: 15px;
+	padding: 5px 0 5px 0;
 	background-color: #F5F5F5;
-	padding-top: 5px;
-	padding-bottom: 5px;
 	margin-right: 15px;
 }
 
@@ -111,8 +103,7 @@ body {
 	}
 }
 
-#filters, #my-articles, #save-to-dashboard, #directory-list {
-
+#filters {
 	li {
 		padding-left: 0px;
 		margin-bottom: 0px;
@@ -135,53 +126,30 @@ body {
 			vertical-align: middle;
 		}
 	}
-
-	#edit-links a {
-		@include action-links;
-		@include transition;
-
-		&:hover, &:active {
-			@include action-links-hover;
-		}
-	}
 }
 
 #footer {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	text-align: center;
 	width: $full-width;
+	padding: 10px 0 10px 0;
+	text-align: center;
 
 	a {
-		@include action-links;
 		color: $dark-grey;
 		font-size: 10px;
 	}
 }
 
 #learning-path {
-	
 	button {
 		width: $full-width;
 	}
 }
 
 #reasons {
-	padding-top: 5%;
-	padding-bottom: 2%;
-	background-color: $white;
+	padding-top: 70px;
 	
 	h2 {
 		text-align: center;
-	}
-}
-
-#user-links {
-	@include action-links;
-	@include transition;
-
-	&:hover {
-		@include action-links-hover;
 	}
 }
 
@@ -191,16 +159,10 @@ body {
 
 #usp, #call-to-action {	
 	button {
-		@include action-links;
-		@include transition;
-		position: relative;
 		max-width: $full-width;
 		padding: 25px 80px;
-		display: inline-block;
 		background-color: $white;
-		border-radius: 0px;
 		border: none;
-		outline: none;
 
 		&:hover, &:active {
 			color: $white !important;
@@ -296,15 +258,6 @@ label {
 		li {
 			display: inline-block;
 			padding-right: 40px;
-
-			a, a:visited {
-				@include action-links;
-				@include transition;
-
-				&:hover, &:active {
-					@include action-links-hover;
-				}
-			}
 		}
 	}
 }
@@ -374,7 +327,6 @@ ul, ol {
 	margin-bottom: 0;
 	margin-top: 0;
 
-
 	ul {
 		margin-bottom: 0;
 	}
@@ -436,11 +388,19 @@ hr {
 }
 
 a {
+	@include transition;
+	font-size: 14px;
+	text-transform: uppercase;
 	text-decoration: none;
-	color: $dark-grey;
+	letter-spacing: 1px;
+	font-weight: 700;
+	color: $green;
+	text-align: center !important;
+	vertical-align: middle;
 
 	&:hover, &:active {
-		color: $green;
+		color: $dark-green !important;
+		text-decoration: none;
 	}
 }
 
@@ -602,11 +562,7 @@ button {
 	padding-left: 0px;
 	margin-bottom: 30px;
 
-	h5 {
-		margin-top: 0px;
-	}
-
-	p {
+	h5, p {
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
@@ -614,8 +570,13 @@ button {
 	a {
 		position: relative;
 		display: block;
-		padding: 10px 15px;
 		margin-bottom: -1px;
+		padding: 10px 15px;
+		text-transform: none;
+		text-align: left !important;
+		font-weight: normal;
+		font-size: 16px;
+		letter-spacing: 0px;
 		background-color: #FFF;
 		border: none;
 		color: $dark-grey !important;
@@ -624,16 +585,6 @@ button {
 		&:hover {
 			text-decoration: none;
 			background-color: #f5f5f5;
-		}
-	}
-
-	li {
-		margin-bottom: -10px !important;
-		list-style-type: none;
-
-		.badge {
-			float: right;
-			margin-bottom: 15px;
 		}
 	}
 }
@@ -655,17 +606,12 @@ button {
 
 table {
 	width: $full-width;
-	font-size: 1.15em;
+	font-size: 16px;
 	color: $dark-grey;
 
 	td {
 		padding-left: 10px;
 		padding-right: 10px;
 		height: 30px;
-	}
-
-	a {
-		@include action-links;
-		@include-transition;
 	}
 }
