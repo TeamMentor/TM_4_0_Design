@@ -32,7 +32,7 @@ describe('routes > test-routes.js', function ()
 
             //console.log(paths);  
             var expectedPaths = [ '/',                                     
-                                  '/_Customizations/deploy/html/:area/:page.html',                  // jade page rendering
+                                  '/deploy/html/:area/:page.html',                  // jade page rendering
                                   '/:page.html'                  ,
                                   '/user/login/:page.html'       ,
                                   '/landing-pages/:page.html'    ,

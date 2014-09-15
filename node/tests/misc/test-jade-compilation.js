@@ -77,11 +77,11 @@ describe("misc > test-jade-compilation.js", function()
         expect(loadedRequire  ).to.be.an('function');
         expect(loadedRequire()).to.be.an('string');
                 
-        expect(loadedRequire()                ).to.contain    ('<a href="/_Customizations/deploy/html/landing-pages/about.html">About</a>'); 
-        expect(loadedRequire({loggedIn:false})).to.contain    ('<a href="/_Customizations/deploy/html/landing-pages/about.html">About</a>'); 
-        expect(loadedRequire({loggedIn:true })).to.not.contain('<a href="/_Customizations/deploy/html/landing-pages/about.html">About</a>'); 
-        expect(loadedRequire({loggedIn:false})).to.not.contain('<img src="/_Customizations/deploy/assets/icons/help.png" alt="Help">'); 
-        expect(loadedRequire({loggedIn:true })).to.contain    ('<img src="/_Customizations/deploy/assets/icons/help.png" alt="Help">'); 
+        expect(loadedRequire()                ).to.contain    ('<a href="/deploy/html/landing-pages/about.html">About</a>'); 
+        expect(loadedRequire({loggedIn:false})).to.contain    ('<a href="/deploy/html/landing-pages/about.html">About</a>'); 
+        expect(loadedRequire({loggedIn:true })).to.not.contain('<a href="/deploy/html/landing-pages/about.html">About</a>'); 
+        expect(loadedRequire({loggedIn:false})).to.not.contain('<img src="/deploy/assets/icons/help.png" alt="Help">'); 
+        expect(loadedRequire({loggedIn:true })).to.contain    ('<img src="/deploy/assets/icons/help.png" alt="Help">'); 
         
         fs.unlinkSync(filePath);        
         expect(fs.existsSync(filePath)).to.be.false;

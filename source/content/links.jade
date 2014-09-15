@@ -1,9 +1,9 @@
-- var articles        = '/_Customizations/deploy/html/articles'
-- var getting_started = '/_Customizations/deploy/html/getting-started'
-- var home            = '/_Customizations/deploy/html/home'
-- var landing_pages   = '/_Customizations/deploy/html/landing-pages'
+- var articles        = '/deploy/html/articles'
+- var getting_started = '/deploy/html/getting-started'
+- var home            = '/deploy/html/home'
+- var landing_pages   = '/deploy/html/landing-pages'
 - var help            = '/help'
-- var user            = '/_Customizations/deploy/html/user'
+- var user            = '/deploy/html/user'
 
 - var link_article_new_window       = articles + '/article-new-window-view.html'
 - var link_app_keyword_search       = home     + '/app-keyword-search.html'
@@ -19,15 +19,15 @@ mixin links-navbar__landing-page
   
 mixin links-navbar__home
     :markdown
-        * [![Navigate](/_Customizations/deploy/assets/icons/navigate.png)](#{home}/navigate.html)
-        * [![Home](/_Customizations/deploy/assets/icons/home.png)](#{home}/main-app-view.html)
-        * [![Help](/_Customizations/deploy/assets/icons/help.png)](#{help}/index.html)
-        * [![User](/_Customizations/deploy/assets/icons/user.png)](#{user}/user.html)
-        * [![Logout](/_Customizations/deploy/assets/icons/logout.png)](/user/logout)
+        * [![Navigate](/deploy/assets/icons/navigate.png)](#{home}/navigate.html)
+        * [![Home](/deploy/assets/icons/home.png)](#{home}/main-app-view.html)
+        * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
+        * [![User](/deploy/assets/icons/user.png)](#{user}/user.html)
+        * [![Logout](/deploy/assets/icons/logout.png)](/user/logout)
             
 mixin links-navbar__not_logged_in
     :markdown
-        * [![Help](/_Customizations/deploy/assets/icons/help.png)](#{help}/index.html)
+        * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
             
 mixin links-home__navigate
     :markdown

@@ -65,10 +65,10 @@ describe("services > jade-pre-compiler.js", function()
         expect(renderJadeFile('a')).to.be.equal("");
         
         expect(renderJadeFile(helpJadeFile, { structure: []})).to.not.be.equal("");        
-        expect(renderJadeFile(helpJadeFile                 )).to.contain     ('<a href="/_Customizations/deploy/html/landing-pages/about.html">About</a>'); 
-        expect(renderJadeFile(helpJadeFile,{loggedIn:false})).to.contain    ('<a href="/_Customizations/deploy/html/landing-pages/about.html">About</a>'); 
-        expect(renderJadeFile(helpJadeFile,{loggedIn:true })).to.not.contain('<a href="/_Customizations/deploy/html/landing-pages/about.html">About</a>'); 
-        expect(renderJadeFile(helpJadeFile,{loggedIn:false})).to.not.contain('<img src="/_Customizations/deploy/assets/icons/help.png" alt="Help">'); 
-        expect(renderJadeFile(helpJadeFile,{loggedIn:true })).to.contain    ('<img src="/_Customizations/deploy/assets/icons/help.png" alt="Help">'); 
+        expect(renderJadeFile(helpJadeFile                 )).to.contain     ('<a href="/deploy/html/landing-pages/about.html">About</a>'); 
+        expect(renderJadeFile(helpJadeFile,{loggedIn:false})).to.contain    ('<a href="/deploy/html/landing-pages/about.html">About</a>'); 
+        expect(renderJadeFile(helpJadeFile,{loggedIn:true })).to.not.contain('<a href="/deploy/html/landing-pages/about.html">About</a>'); 
+        expect(renderJadeFile(helpJadeFile,{loggedIn:false})).to.not.contain('<img src="/deploy/assets/icons/help.png" alt="Help">'); 
+        expect(renderJadeFile(helpJadeFile,{loggedIn:true })).to.contain    ('<img src="/deploy/assets/icons/help.png" alt="Help">'); 
     });
 });

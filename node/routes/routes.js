@@ -23,7 +23,7 @@ module.exports = function (app)
     
     //Redirect to Jade pages
     app.get('/'                                             , function (req, res)  { res.redirect('/default.html'                                                     );});
-    app.get('/_Customizations/deploy/html/:area/:page.html'                 , function (req, res)  { res.redirect('/'                 + req.params.area +'/'+req.params.page + '.html');}); 
+    app.get('/deploy/html/:area/:page.html'                 , function (req, res)  { res.redirect('/'                 + req.params.area +'/'+req.params.page + '.html');}); 
     
     //Render Jade pages (old with no precompilation)
     //app.get('/:page.html'                                    , function (req, res)  { res.render  (sourceDir + '/html/'+ req.params.page                      + '.jade');});     
