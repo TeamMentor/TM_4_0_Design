@@ -9,6 +9,7 @@ $dark-grey: #444444;
 $nav-padding-top: 120px;
 $full-width: 100%;
 
+// Mixins
 @mixin action-links {
 	font-size: 14px;
 	text-transform: uppercase;
@@ -31,7 +32,6 @@ $full-width: 100%;
 }
 
 // Layout and Structure
-
 @import 'columns';
 @import 'colours';
 
@@ -74,10 +74,6 @@ body {
 #application {
 	margin-top: $nav-padding-top;
 	width: $full-width;
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
 }
 
 #call-to-action {
