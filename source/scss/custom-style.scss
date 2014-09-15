@@ -9,14 +9,6 @@ $dark-grey: #444444;
 $nav-padding-top: 120px;
 $full-width: 100%;
 
-// Mixins
-
-@mixin transition {
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
 // Layout and Structure
 @import 'columns';
 @import 'colours';
@@ -29,6 +21,7 @@ body {
 	max-width: $full-width;
 	margin: 0;
 	line-height: 1.5;
+	background: $white;
 }
 
 #about {
@@ -91,7 +84,6 @@ body {
 	margin-right: 15px;
 	padding: 5px 0 5px 0;
 	background-color: #F5F5F5;
-	margin-right: 15px;
 }
 
 #features {
@@ -216,11 +208,9 @@ form {
 	display: block;
 	height: 3em;
 	padding-left: 20px;
-	font-size: 1.15em;
 	border-radius: 0px;
 	border: 1px solid $grey;
-	color: $dark-green;
-	background-colour: $white;	
+	color: $dark-grey;
 }
 
 label {
@@ -388,7 +378,6 @@ hr {
 }
 
 a {
-	@include transition;
 	font-size: 14px;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -402,6 +391,12 @@ a {
 		color: $dark-green !important;
 		text-decoration: none;
 	}
+}
+
+a, button {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 // Input Groups
@@ -435,7 +430,6 @@ input {
 		width: $full-width;
 		margin-bottom: 0;
 		display: table-cell;
-		font-size: 16px;
 		height: 52px;
 	}
 }
@@ -474,7 +468,6 @@ input {
 // Buttons
 
 button {
-	@include transition;
 	position: relative;
 	display: inline-block;
 	padding-top: 15px;
@@ -597,7 +590,6 @@ button {
 	border-radius: 0px;
 	font-weight: 700;
 	color: $green;
-	background-color: $white;
 	border: 1px solid $green;
 	border-radius: 0px;
 }
