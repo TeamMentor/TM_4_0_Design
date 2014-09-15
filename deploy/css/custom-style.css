@@ -263,8 +263,8 @@ body {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000379}}
 #call-to-action {
-  padding-top: 7%;
-  padding-bottom: 5%;
+  padding-top: 100px;
+  padding-bottom: 110px;
   background: url(../../deploy/assets//stock-img/bgtwo.jpg);
   background-color: #49661f;
   text-align: center;
