@@ -283,7 +283,7 @@ mixin login-form
 	:markdown
 		### Login
 		Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?
-	form#login-form(role='form', action='/user/login')
+	form#login-form(role='form', method='post', action='/user/login')
 		.form-group
 			label(for='new-user-username') Username
 			input#new-user-username.form-control(type='username', placeholder='Username' name='username')
