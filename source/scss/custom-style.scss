@@ -225,9 +225,7 @@ label {
 .navbar {
 	background-color: $white;
 	min-height: 50px;
-	border-bottom: 10px solid $grey;
 	display: inline-block;
-	border: 1px solid transparent;
 
 	ul {
 		list-style-type: none;
@@ -258,8 +256,6 @@ label {
 	right: 0;
 	left: 0;
 	z-index: 1030;
-	border-width: 0 0 1px;
-	border-radius: 0px;
 }
 
 // Typography
