@@ -255,19 +255,16 @@ body {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000352}}
-#article {
-  padding-bottom: 40px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000355}}
-#article a {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000354}}
+#article a, #lp-navigation a, #learning-path a {
   text-transform: none;
+  text-align: left !important;
   font-weight: normal;
   font-size: 16px;
   color: #8aaf3e;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000361}}
-#article a:hover {
+#article a:hover, #lp-navigation a:hover, #learning-path a:hover {
   color: #49661f !important;
 }
 
@@ -598,8 +595,8 @@ hr {
   margin: 0 auto;
   width: 70%;
   color: #F5F5F5;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003376}}

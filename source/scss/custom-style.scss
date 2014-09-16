@@ -49,11 +49,11 @@ body {
 	width: $full-width;
 }
 
-#article {
-	padding-bottom: 40px;
+#article, #lp-navigation, #learning-path {
 
 	a {
 		text-transform: none;
+		text-align: left !important;
 		font-weight: normal;
 		font-size: 16px;
 		color: $green;
@@ -369,8 +369,8 @@ hr {
 	margin: 0 auto;
 	width: 70%;
 	color: #F5F5F5;
-	margin-top: 60px;
-	margin-bottom: 60px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 a {
