@@ -263,7 +263,6 @@ body {
   list-style-type: none;
 }
 #filters li .badge, #my-articles li .badge {
-  float: right;
   margin-top: 2px;
 }
 #filters li label, #my-articles li label {
@@ -641,7 +640,6 @@ button.btn-search-bar {
 }
 
 .badge {
-  float: right;
   display: inline-block;
   min-width: 10px;
   margin-left: 20px;
