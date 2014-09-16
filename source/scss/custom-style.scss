@@ -249,10 +249,12 @@ label {
 		display: inline-block;
 
 		&.brand {
+			padding-left: 0px;
 			padding-top: 10px !important;
 		}
 
 		&.nav-icons {
+			padding-left: 0px;
 			padding-top: 15px;
 		}
 
@@ -262,7 +264,7 @@ label {
 
 		li {
 			display: inline-block;
-			padding-right: 40px;
+			padding-right: 25px;
 		}
 	}
 }
@@ -618,5 +620,40 @@ table {
 		padding-left: 10px;
 		padding-right: 10px;
 		height: 30px;
+	}
+}
+
+// Media Queries
+
+@media (max-width: 900px) {
+	.navbar {
+		ul {
+			li {
+				padding-right: 10px;
+			}
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.navbar {
+
+		ul li {
+			margin: 0 auto;
+			padding-right: 0px;
+		}
+	}
+}
+
+@media (max-width: 527px) {
+	.navbar {
+		ul.brand {
+			display: none;
+		}
+
+		.pull-right {
+			float: left !important;
+			margin: 0 auto;
+		}
 	}
 }
