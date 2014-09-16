@@ -305,22 +305,22 @@ body {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003100}}
-#filters li {
+#filters li, #my-articles li {
   padding-left: 0px;
   margin-bottom: 0px;
   list-style-type: none;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003105}}
-#filters li .badge {
+#filters li .badge, #my-articles li .badge {
   float: right;
   margin-top: 2px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003110}}
-#filters li label {
+#filters li label, #my-articles li label {
   margin-top: -5px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003114}}
-#filters li input[type=checkbox] + label {
+#filters li input[type=checkbox] + label, #my-articles li input[type=checkbox] + label {
   display: inline-block;
   margin-left: 20px;
   margin-right: 40px;
