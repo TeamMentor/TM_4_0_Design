@@ -34,6 +34,11 @@ describe('routes',  function ()
                 supertest(app).get('/user/logout')
                               .expect(302, 'Moved Temporarily. Redirecting to /landing-pages/index.html',done);
             });
+            it('/user/login', function(done)
+            {
+                supertest(app).get('/user/login')
+                              .expect(302,'Moved Temporarily. Redirecting to /user/login/returning-user-validation.html',done);
+            });
 
             //special redirect        
             /*it('/getting-started/index.html', function(done)

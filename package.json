@@ -14,8 +14,11 @@
   "main": "node/server.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha node/tests/**/**.js",
+    "test-watch": "mocha -w node/tests/**/**.js -R dot",
     "start": "node app.js",
-    "dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ node/server.js"
+    "dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ node/server.js",
+    "instrument": "./node_modules/jscover/bin/jscover node node-cov",
+    "coverage": "mocha -R mocha-lcov-reporter node-cov/tests/**/**.js | sed 's,SF:,SF:node/,' | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -32,7 +35,10 @@
   "devDependencies": {
     "chai": "^1.9.1",
     "cheerio": "^0.17.0",
+    "coveralls": "^2.11.1",
+    "jscover": "^0.2.4",
     "mocha": "^1.21.4",
+    "mocha-lcov-reporter": "0.0.1",
     "should": "^4.0.4",
     "supertest": "^0.13.0",
     "supervisor": "^0.6.0",

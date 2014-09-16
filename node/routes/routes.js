@@ -18,14 +18,14 @@ module.exports = function (app)
     
     //login routes
     
-    app.get ('/user/login' , function (req, res) { new Login_Controller(res, req).redirectToLoginPage(); }); 
+    app.get ('/user/login' , function (req, res) { new Login_Controller(req, res).redirectToLoginPage(); }); 
     app.post('/user/login' , function (req, res) { new Login_Controller(req, res).loginUser          (); });
     app.get ('/user/logout', function (req, res) { new Login_Controller(req, res).logoutUser         (); });
     
     //help routes
     
-    app.get('/help/:page*' , function (req, res) { new Help_Controller(req, res).renderPage(); });
-    app.get('/Image/:name' , Help_Controller.redirectImagesToGitHub);                            
+    app.get('/help/:page*' , function (req, res) { new Help_Controller(req, res).renderPage            (); });
+    app.get('/Image/:name' , function (req, res) { new Help_Controller(req, res).redirectImagesToGitHub(); });
     
     // jade (pre-compiled) pages (these have to be the last set of routes)
     

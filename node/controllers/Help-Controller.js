@@ -100,13 +100,14 @@ var Help_Controller = function (req, res)
                 this.content_cache = {};
                 content_cache      = {};
             };
+        this.redirectImagesToGitHub = function()
+            {
+                var gitHubImagePath = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/';
+                this.res.redirect(gitHubImagePath + this.req.params.name);
+            };
+
     };
 
-Help_Controller.redirectImagesToGitHub = function(req,res)
-    {
-        var gitHubImagePath = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/';
-        res.redirect(gitHubImagePath + req.params.name);
-    };
                         //app.get('/Image/:name', function (req, res) {  } );
 
 module.exports = Help_Controller;

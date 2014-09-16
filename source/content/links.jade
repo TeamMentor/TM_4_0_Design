@@ -1,9 +1,9 @@
-- var articles        = '/deploy/html/articles'
-- var getting_started = '/deploy/html/getting-started'
-- var home            = '/deploy/html/home'
-- var landing_pages   = '/deploy/html/landing-pages'
+- var articles        = '/articles'
+- var getting_started = '/getting-started'
+- var home            = '/home'
+- var landing_pages   = '/landing-pages'
 - var help            = '/help'
-- var user            = '/deploy/html/user'
+- var user            = '/user'
 
 - var link_article_new_window       = articles + '/article-new-window-view.html'
 - var link_app_keyword_search       = home     + '/app-keyword-search.html'
@@ -15,7 +15,7 @@ mixin links-navbar__landing-page
         * [Features](#{landing_pages}/features.html)
         * [Help](#{help}/index.html)
         * [Get Started](#{getting_started}/index.html)
-        * [Login](#{getting_started}/index.html)
+        * [Login](#{user}/login/returning-user-login.html)        
   
 mixin links-navbar__home
     :markdown
