@@ -140,6 +140,17 @@ body {
 	button {
 		width: $full-width;
 	}
+
+	#box {
+		width: 75%;
+		margin: 30px auto 30px auto !important;
+		border: 1px solid $green;
+		padding: 7px 40px 10px 40px;
+
+		h4 {
+			color: $green !important;
+		}
+	}
 }
 
 #reasons {
