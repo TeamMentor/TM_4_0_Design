@@ -65,6 +65,50 @@ var Library_Controller = function(req, res)
                     this.res.redirect('/Libraries');
                 }
             };
+        this.showFolder = function()
+            {
+                var library_name = (req && req.params) ? req.params.library : "";
+                var folder_name = (req && req.params) ? req.params.folder : "";
+                
+                var library = this.libraries[library_name];
+                
+                console.log();
+                
+                if(library)    
+                {
+                    var that = this;
+                    this.mapLibraryData(library, function()
+                        {
+                            console.log('found library');
+                            var subFolders = library.data.subFolders;
+                            var folder = null;
+                            subFolders.forEach(function(subFolder)
+                                {
+                                    if (subFolder.name === folder_name )
+                                    {
+                                        folder = subFolder;
+                                        return false; 
+                                    }
+                                });
+                            if (folder)
+                            {
+                                var viewModel = { libraries : that.libraries , 
+                                              library   : library,
+                                              folder    : folder};
+                                that.res.send(preCompiler.renderJadeFile('/source/html/libraries/folder.jade', viewModel));                        
+                            }
+                            else
+                                that.res.send('Folder not found: ' + folder_name);          // vuln to XSS
+                            
+                        });
+                    
+                }
+                else
+                {
+                    this.res.send('Library not found: ' + library_name);
+                }
+                
+            };
         
         this.mapLibraryData = function(library, next)
         {
@@ -90,7 +134,8 @@ var Library_Controller = function(req, res)
 Library_Controller.registerRoutes = function (app)
     {
         //console.log('registering routes for Library Controller');
-        app.get('/libraries'     , function (req, res) { new Library_Controller(req, res).showLibraries  (); });
-        app.get('/library/:name' , function (req, res) { new Library_Controller(req, res).showLibrary    (); });
+        app.get('/libraries'                      , function (req, res) { new Library_Controller(req, res).showLibraries  (); });
+        app.get('/library/:name'                   , function (req, res) { new Library_Controller(req, res).showLibrary   (); });
+        app.get('/library/:library/folder/:folder' , function (req, res) { new Library_Controller(req, res).showFolder    (); });
     };
 module.exports = Library_Controller;  

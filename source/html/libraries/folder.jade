@@ -1,0 +1,61 @@
+extends ../_layouts/page_home.jade
+
+block content      
+    #application
+      .row
+        .column-3
+          .lge-container
+            h3= folder.name
+                .list-group
+                    each view in folder.views                                    
+                        a(href='owasp.html')= view.caption
+                            span.badge= view.guidanceItems.length 
+                        //a(href='owasp.html') view.caption
+                            span.badge 14
+            //+directory-list        
+          
+          //h1= folder.views[0].guidanceItems.length            
+           //h3 Fundamentals of Security
+                .list-group
+                    a(href='owasp.html')
+                        | OWASP Top 10
+                        span.badge 14
+                    a(href='owasp.html')
+                        | Second Level Directory
+                        span.badge 14
+                    a(href='owasp.html')
+                        | Second Level Directory
+                        span.badge 14
+                    a(href='owasp.html')
+                        | Second Level Directory
+                        span.badge 14
+                    a(href='owasp.html')
+                        | Second Level Directory
+                        span.badge 14
+                    a(href='owasp.html')
+                        | Second Level Directory
+                        span.badge 14
+                    a(href='owasp.html')
+                        | Second Level Directory
+                        span.badge 14
+                    a(href='owasp.html')
+                        | Second Level Directory
+                        span.badge 14
+          // column-3
+
+        .column-6
+          .lge-container
+            +search-bar-input
+            br
+            br
+            br
+
+            +results-save-clear
+            +articles-list
+          // row
+        // column-6
+
+        .column-3
+          .lge-container
+            +filters-div
+            +save-div

@@ -78,6 +78,33 @@ describe('controllers | test-Library-Controller.js |', function ()
                                         done();
                                    });                                     
             });
+        
+        it('/library/{good value}/folder/{good value}', function(done) 
+           {   
+            //preCompiler.disableCache =false; 
+            var checkPageContents = function(html)   
+                    {    
+                        /*var $ = cheerio.load(html);
+                        expect($('#links-libraries a'   ).length).to.equal(6);                        
+                        expect($('#link-my-articles'    ).html()).to.equal('My Articles'); 
+                        expect($('#link-my-search-items').html()).to.equal('My Search Items'); 
+                        
+                        expect($('#links-library a'   ).length).to.equal(9);                        */
+                        
+                        //console.log(html);
+                        
+                        console.log(html);   
+                        done();
+                    };
+                supertest(app).get('/library/Uno/folder/Security Engineering')       
+                              .expect(200) 
+                              .end(function(error, response) 
+                                   {   
+                                        if(error) { throw error;}                                                                                    
+                                        checkPageContents(response.text); 
+                                   });
+
+            });
     });
 
     describe('internal Functions.js', function() 
