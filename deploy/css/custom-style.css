@@ -3,9 +3,8 @@ html {
 }
 
 body {
-  max-width: 100%;
   margin: 0;
-  padding: 0 !important;
+  padding: 0;
   line-height: 1.5;
   background: white;
 }
@@ -642,6 +641,7 @@ button.btn-search-bar {
 }
 
 .badge {
+  float: right;
   display: inline-block;
   min-width: 10px;
   margin-left: 20px;
@@ -710,6 +710,9 @@ button.btn-search-bar {
 .list-group a:hover {
   text-decoration: none;
   background-color: #f5f5f5;
+}
+.list-group span.badge {
+  float: right;
 }
 
 .alert {

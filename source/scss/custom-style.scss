@@ -16,9 +16,8 @@ html {
 }
 
 body {
-	max-width: $full-width;
 	margin: 0;
-	padding: 0 !important;
+	padding: 0;
 	line-height: 1.5;
 	background: $white;
 }
@@ -523,6 +522,7 @@ button {
 // Badges
 
 .badge {
+	float: right;
 	display: inline-block;
 	min-width: 10px;
 	margin-left: 20px;
@@ -599,6 +599,10 @@ button {
 			text-decoration: none;
 			background-color: #f5f5f5;
 		}
+	}
+
+	span.badge {
+		float: right;
 	}
 }
 
