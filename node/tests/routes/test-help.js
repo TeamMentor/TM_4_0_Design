@@ -11,7 +11,7 @@ var supertest         = require('supertest')   ,
     app               = require('../../server'),
     preCompiler       = require('../../services/jade-pre-compiler.js'),
     teamMentorContent = require('../../services/teamMentor-content.js'),
-    Help_Controller   = require('../../controllers/Help_Controller.js');
+    Help_Controller   = require('../../controllers/Help-Controller.js');
     
 
 describe('routes', function () 

@@ -40,7 +40,7 @@ describe('routes > test-routes.js', function ()
                                   '/Image/:name'                 , 
                                   '/:area/:page.html'            ,
 
-                                  '/getting-started/index.html'  ,                  // static redirects
+                                  //'/getting-started/index.html'  ,                  // static redirects
 
                                   '/user/login'                  ,                  // Authentication
                                   '/user/login'                  ,

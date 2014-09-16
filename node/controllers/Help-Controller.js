@@ -4,7 +4,7 @@
 var fs                = require('fs'),        
     marked            = require('marked'),
     request           = require('request'),
-    auth              = require('../routes/auth'),    
+    auth              = require('../middleware/auth'),    
     preCompiler       = require(process.cwd() + '/node/services/jade-pre-compiler.js'),
     teamMentorContent = require(process.cwd() + '/node/services/teamMentor-content.js');
 

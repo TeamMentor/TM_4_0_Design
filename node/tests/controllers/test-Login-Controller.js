@@ -8,7 +8,7 @@ var assert   = require('assert'),
     app      = require('../../server'),
     browser;
 
-describe('routes > test-user.js', function ()
+describe('routes > test-Login-Controller.js', function ()
 {
     describe('User Login sequence', function () 
     {

@@ -6,7 +6,7 @@ var supertest         = require('supertest')   ,
     expect            = require('chai').expect ,        
     request           = require('request')     ,    
     app               = require('../../server'),    
-    Help_Controller   = require('../../controllers/Help_Controller.js');
+    Help_Controller   = require('../../controllers/Help-Controller.js');
 
 describe('controllers', function () 
 {

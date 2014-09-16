@@ -15,13 +15,16 @@ preCompiler.cleanCacheFolder = function()
         
         if( fs.existsSync(path) ) 
         {
+            var count = 0; 
+            
             var files = fs.readdirSync(path);
             files.forEach(function(fileName)
                 {
                     var filePath = path  + fileName;
-                    console.log("removing cache file: " + filePath);
+                    count ++;
                     fs.unlinkSync(filePath);
                 });
+            if (count) { console.log('[Removed ' + count + ' cache files]'); } 
         }
     };
 

@@ -2,11 +2,14 @@
 "use strict";
 var preCompiler = require(process.cwd() + '/node/services/jade-pre-compiler.js');
 
+var loginEnabled = true;
+
 function checkAuth(req, res, next) 
 {    
-    if (!req.session.username) 
+    if (loginEnabled && !req.session.username) 
     {
-        res.status(403).send(preCompiler.renderJadeFile('/source/html/landing-pages/need-login.jade'));        
+        res.status(403)
+           .send(preCompiler.renderJadeFile('/source/html/landing-pages/need-login.jade'));        
     }
     else 
     {
