@@ -10,8 +10,6 @@ $nav-padding-top: 120px;
 $full-width: 100%;
 
 // Layout and Structure
-@import 'columns';
-@import 'colours';
 
 html {
 	font: 100% $font-stack;
@@ -20,9 +18,13 @@ html {
 body {
 	max-width: $full-width;
 	margin: 0;
+	padding: 0 !important;
 	line-height: 1.5;
 	background: $white;
 }
+
+@import 'columns';
+@import 'colours';
 
 #about {
 	background: url(#{$asset-path}/stock-img/bgthree.jpg);
