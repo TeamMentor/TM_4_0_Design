@@ -15,7 +15,7 @@ var library        = libraryData[0];
 
 var Help_Controller = function (req, res) 
     {          
-        var that  = this;
+        var that           = this;
 
         this.library       = library;
         this.libraryData   = libraryData;

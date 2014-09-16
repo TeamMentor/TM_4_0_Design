@@ -28,6 +28,7 @@ describe("services > jade-pre-compiler.js", function()
     {
         var calculateTargetPath = preCompiler.calculateTargetPath;
         var targetFolder        = preCompiler.targetFolder();
+        
         expect(targetFolder       ).to.equal(process.cwd() + preCompiler._targetFolder);
         expect(calculateTargetPath).to.be.an('function');
         expect(calculateTargetPath('aaa'             )).to.equal(targetFolder + 'aaa.txt'             );       // if the compiled jade file is 
@@ -40,10 +41,10 @@ describe("services > jade-pre-compiler.js", function()
             
     it('compileJadeFileToDisk', function()
     {
-        var compileJadeFileToDisk = preCompiler.compileJadeFileToDisk,
+        var compileJadeFileToDisk = preCompiler.compileJadeFileToDisk,            
             //helpJadeFile    = '/source/html/help/index.jade',
             defaultJadeFile = '/source/html/default.jade';
-        
+                
         expect(compileJadeFileToDisk('a')).to.be.false;
         //expect(compileJadeFileToDisk(helpJadeFile)).to.be.true;
         expect(compileJadeFileToDisk(defaultJadeFile)).to.be.true;
@@ -54,9 +55,24 @@ describe("services > jade-pre-compiler.js", function()
         expect(jadeTemplate()).to.be.an('string');
         
         var html = jadeTemplate();
-        expect(html).to.contain('<!DOCTYPE html><html lang="en"><head> ');
-        
+        expect(html).to.contain('<!DOCTYPE html><html lang="en"><head> ');        
     });
+    it('cleanCacheFolder', function()
+    {
+        var cacheFolder        = preCompiler.targetFolder();
+        var filesInCacheFolder = fs.readdirSync(cacheFolder);
+        
+        expect(filesInCacheFolder).to.be.an('Array');
+        expect(filesInCacheFolder).to.not.be.empty;
+        preCompiler.cleanCacheFolder();
+        
+        filesInCacheFolder = fs.readdirSync(cacheFolder);
+        expect(filesInCacheFolder).to.be.an('Array');
+        expect(filesInCacheFolder).to.be.empty;        
+    });
+    
+
+    var targetFolder      = preCompiler.targetFolder()
     it('renderJadeFile', function()
     {        
          var renderJadeFile = preCompiler.renderJadeFile,
