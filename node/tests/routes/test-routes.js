@@ -47,6 +47,7 @@ describe('routes > test-routes.js', function ()
                                   '/user/logout'                 ,
                                   
                                   '/libraries'                   ,
+                                  '/library/:name'               , 
                                   
                                   '/dirName'                     ,                  // debug ones 
                                   '/pwd'                         ,
