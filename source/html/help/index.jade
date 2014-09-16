@@ -15,6 +15,7 @@ block content
 												= article.Title
 			.column-6
 				.lge-container
-					if title
-						h2= title
-					!= content
+					#help-docs
+						if title
+							h1= title
+						!= content

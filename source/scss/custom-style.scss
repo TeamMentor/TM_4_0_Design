@@ -49,7 +49,7 @@ body {
 	width: $full-width;
 }
 
-#article, #lp-navigation, #learning-path {
+#article, #lp-navigation, #learning-path, #help-docs {
 
 	a {
 		text-transform: none;
@@ -227,6 +227,7 @@ label {
 	background-color: $white;
 	min-height: 50px;
 	display: inline-block;
+	border: none;
 
 	ul {
 		list-style-type: none;
