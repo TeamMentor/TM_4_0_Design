@@ -10,7 +10,7 @@ var supertest         = require('supertest')   ,
 
 describe('controllers', function () 
 {
-    describe('test-help-controller.js', function() 
+    describe('test-Help-Controller.js', function() 
     {   
         describe('content_cache', function() 
         {

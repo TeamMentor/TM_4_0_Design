@@ -1,10 +1,11 @@
 /*jslint node: true */
 "use strict";
 
-var auth             = require('../middleware/auth'),    
-    preCompiler      = require(process.cwd() + '/node/services/jade-pre-compiler.js'),
-    Help_Controller  = require('../controllers/Help-Controller'),
-    Login_Controller = require('../controllers/Login-Controller');
+var auth                = require('../middleware/auth'),    
+    preCompiler         = require(process.cwd() + '/node/services/jade-pre-compiler.js'),
+    Help_Controller     = require('../controllers/Help-Controller'),
+    Login_Controller    = require('../controllers/Login-Controller'),
+    Library_Controller  = require('../controllers/Library-Controller');
 //console.log(jade);
 
 
@@ -16,12 +17,15 @@ module.exports = function (app)
     app.get('/getting-started/index.html'  , function (req, res)  { res.redirect('/user/login/returning-user-login.html');});
     
     
-    
+
     //login routes
     
     app.get ('/user/login' , function (req, res) { new Login_Controller(req, res).redirectToLoginPage(); }); 
     app.post('/user/login' , function (req, res) { new Login_Controller(req, res).loginUser          (); });
     app.get ('/user/logout', function (req, res) { new Login_Controller(req, res).logoutUser         (); });
+    
+    
+    Library_Controller.registerRoutes(app);
     
     //help routes
     

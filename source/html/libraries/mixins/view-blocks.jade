@@ -1,0 +1,9 @@
+mixin links-libraries
+    if libraries
+        each library in libraries
+            p 
+                a(href="/library/" + library.name, id="link-library-" + library.id)= library.title
+    p 
+        a#link-my-articles(href='/library/my-articles') My Articles
+    p
+        a#link-my-search-items(href='/library/my-search-items') My Search Items

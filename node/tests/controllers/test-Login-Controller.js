@@ -76,7 +76,7 @@ describe('routes > test-Login-Controller.js', function ()
 
                 //check that session username is set
                 browser.visit('/session', function()
-                {
+                { 
                     var session = JSON.parse(browser.text('body'), true);                
                     assert.equal(session.username, username);  
                     done();
