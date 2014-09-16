@@ -41,11 +41,11 @@ describe('routes',  function ()
             });
 
             //special redirect        
-            /*it('/getting-started/index.html', function(done)
+            it('/getting-started/index.html', function(done)
             {
                 supertest(app).get('/getting-started/index.html')
                               .expect(302, 'Moved Temporarily. Redirecting to /user/login/returning-user-login.html',done);            
-            });*/                        
+            });
         }); 
 
         describe('debug methods', function() 
