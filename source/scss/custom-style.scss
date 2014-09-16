@@ -251,6 +251,7 @@ label {
 		display: inline-block;
 
 		&.brand {
+			padding-left: 0px;
 			padding-top: 10px !important;
 		}
 
@@ -265,6 +266,10 @@ label {
 		li {
 			display: inline-block;
 			padding-right: 40px;
+
+			&:last-child {
+				padding-right: 0px !important;
+			}
 		}
 	}
 }

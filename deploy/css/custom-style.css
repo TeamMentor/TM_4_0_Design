@@ -385,6 +385,7 @@ label {
   display: inline-block;
 }
 .navbar ul.brand {
+  padding-left: 0px;
   padding-top: 10px !important;
 }
 .navbar ul.nav-icons {
@@ -396,6 +397,9 @@ label {
 .navbar ul li {
   display: inline-block;
   padding-right: 40px;
+}
+.navbar ul li:last-child {
+  padding-right: 0px !important;
 }
 
 .navbar-fixed-top {
