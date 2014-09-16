@@ -3,28 +3,25 @@ block content
     #application.lge-container
       .row
         .column-3
-          h4
-            +links-home__navigate            
+          .lge-container
+            h3
+              +links-home__navigate            
         .column-9
-          .column-4
-            .list-group
-                a.list-group-item(href='article-new-window-view.html', target='_blank') Cross Site Scripting Vulnerablity
-                a.list-group-item(href='article-new-window-view.html', target='_blank') Deny All Access by Default
-                a.list-group-item(href='article-new-window-view.html', target='_blank') Do Not Cache Sensitive Data
-                a.list-group-item(href='article-new-window-view.html', target='_blank') Do Not Leave Passwords in Memory
-                a.list-group-item(href='article-new-window-view.html', target='_blank') Don't Trust User Input
-                a.list-group-item(href='article-new-window-view.html', target='_blank') Echoed Input is Encoded
-                a.list-group-item(href='article-new-window-view.html', target='_blank') Missing Authentication
-                a.list-group-item(href='article-new-window-view.html', target='_blank') Missing Authorization
-                a.list-group-item(href='article-new-window-view.html', target='_blank') Hard-coded Credentials
-                a.list-group-item(href='article-new-window-view.html', target='_blank') Missing Encryption
-                a.list-group-item(href='article-new-window-view.html', target='_blank') Unrestricted Dangerous Uploads
-                a.list-group-item(href='article-new-window-view.html', target='_blank') Using Untrusted Inputs
-          .column-4
-            
-          .column-4
-        .row
-          .column-offset-3.column-9
-            a.action(href='my-articles-edit.html')
-              | Edit 
-              span.glyphicon.glyphicon-pencil.glyphicon-small 
+          .lge-container
+            .column-4
+              .list-group
+                  a(href='article-new-window-view.html', target='_blank') Cross Site Scripting Vulnerablity
+                  a(href='article-new-window-view.html', target='_blank') Deny All Access by Default
+                  a(href='article-new-window-view.html', target='_blank') Do Not Cache Sensitive Data
+                  a(href='article-new-window-view.html', target='_blank') Do Not Leave Passwords in Memory
+                  a(href='article-new-window-view.html', target='_blank') Don't Trust User Input
+                  a(href='article-new-window-view.html', target='_blank') Echoed Input is Encoded
+                  a(href='article-new-window-view.html', target='_blank') Missing Authentication
+                  a(href='article-new-window-view.html', target='_blank') Missing Authorization
+                  a(href='article-new-window-view.html', target='_blank') Hard-coded Credentials
+                  a(href='article-new-window-view.html', target='_blank') Missing Encryption
+                  a(href='article-new-window-view.html', target='_blank') Unrestricted Dangerous Uploads
+                  a(href='article-new-window-view.html', target='_blank') Using Untrusted Inputs
+            .column-4
+            .column-4
+          +my-articles-edit

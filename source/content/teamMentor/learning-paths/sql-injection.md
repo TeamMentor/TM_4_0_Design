@@ -1,13 +1,30 @@
 ## SQL Injection Learning Path
 
-#### Prerequisites:						
-
-* Understanding of SQL Injection exploits.
-* Some knowledge of application testing.
-
-#### Applies to:
-
-* Developers looking to -------.
+<div id="box">
+	<div class="row">
+		<div class="column-4">
+			<h4>Prerequisites:</h4>
+		</div>
+		<div class="column-8">
+			<p>
+				<ul>
+					<li>Understanding of SQL Injection exploits.</li>
+					<li>Some knowledge of application testing.</li>
+				</ul>
+			</p>
+		</div>
+		<div class="column-4">
+			<h4>Applies to:</h4>
+		</div>
+		<div class="column-8">
+			<p>
+				<ul>
+					<li>Developers looking to -------.</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+</div>
 
 
 SQL Injection is a common vulnerability that can have disasterous consequences if successfully attacked.  The vulnerability typically derives from defects in the database access code in an application.  The resources below provide information that will describe the vulnerability in detail and guidance in avoiding, remediating and testing it.

@@ -14,7 +14,8 @@ mixin links-navbar__landing-page
         * [About](#{landing_pages}/about.html)
         * [Features](#{landing_pages}/features.html)
         * [Help](#{help}/index.html)
-        * [Get Started](#{getting_started}/index.html)
+        * [|](#)
+        * [Sign Up](#{getting_started}/index.html)
         * [Login](#{getting_started}/index.html)
   
 mixin links-navbar__home
@@ -41,7 +42,7 @@ mixin links-home__navigate
 
 mixin links_user_pages
   #user-links
-    .row
+    .row.text-center
       .column-3
         a(href='user.html') User
       .column-3
@@ -126,6 +127,7 @@ mixin git-repo-link
     a(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
 
 mixin links_learning_paths
+  #lp-navigation
     a(href='exploiting.html')
       h4 Exploiting Mechanisms
     ul.sidebar

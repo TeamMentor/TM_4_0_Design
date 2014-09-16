@@ -131,12 +131,10 @@
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/_columns\.scss}line{font-family:\00003107}}
 .row {
-  margin-right: -15px;
-  margin-left: -15px;
   max-width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/_columns\.scss}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/_columns\.scss}line{font-family:\00003111}}
 .clearfix:before,
 .clearfix:after,
 .container:before,
@@ -159,7 +157,7 @@
   content: " ";
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/_columns\.scss}line{font-family:\00003135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/_columns\.scss}line{font-family:\00003133}}
 .clearfix:after,
 .container:after,
 .row:after,
@@ -215,113 +213,118 @@
   background-color: #000000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000316}}
 html {
   font: 100% Helvetica, sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000320}}
 body {
   max-width: 100%;
-  overflow-x: hidden;
   margin: 0;
   line-height: 1.5;
+  background: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000349}}
-#article-pane {
-  padding-bottom: 40px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000353}}
-#about, #usp {
-  padding-top: 120px;
-  padding-bottom: 80px;
-  background-color: #8aaf3e;
-  text-align: center;
-  width: 100%;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000360}}
-#about h1, #usp h1 {
-  color: white;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000327}}
 #about {
   background: url(../../deploy/assets//stock-img/bgthree.jpg);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000369}}
-#about-us {
-  padding-top: 40px;
-  padding-bottom: 40px;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000331}}
+#about, #usp {
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  background-color: #8aaf3e;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000338}}
+#about h1, #usp h1 {
+  color: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000343}}
+#about-us {
+  padding: 40px 0 40px 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000347}}
 #application {
   margin-top: 120px;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000354}}
+#article a, #lp-navigation a, #learning-path a, #help-docs a {
+  text-transform: none;
+  text-align: left !important;
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #8aaf3e;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000362}}
+#article a:hover, #lp-navigation a:hover, #learning-path a:hover, #help-docs a:hover {
+  color: #49661f !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000368}}
 #call-to-action {
-  padding-top: 7%;
-  padding-bottom: 5%;
+  padding: 100px 0 110px 0;
   background: url(../../deploy/assets//stock-img/bgtwo.jpg);
   background-color: #49661f;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000374}}
 #call-to-action h1 {
   color: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000379}}
 #clients {
-  padding-top: 40px;
-  padding-bottom: 70px;
-  background-color: white;
+  padding: 40px 0 80px 0;
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000384}}
 #description {
-  background-color: #F5F5F5;
-  padding-top: 5px;
-  padding-bottom: 5px;
   margin-right: 15px;
+  padding: 5px 0 5px 0;
+  background-color: #F5F5F5;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000390}}
+#details {
+  background: #8aaf3e;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000394}}
 #features {
   padding-top: 120px;
   padding-bottom: 50px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\0000398}}
 #features h2 {
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003104}}
 #filters li, #my-articles li {
   padding-left: 0px;
   margin-bottom: 0px;
   list-style-type: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003109}}
 #filters li .badge, #my-articles li .badge {
   float: right;
   margin-top: 2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003114}}
 #filters li label, #my-articles li label {
   margin-top: -5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003118}}
 #filters li input[type=checkbox] + label, #my-articles li input[type=checkbox] + label {
   display: inline-block;
   margin-left: 20px;
@@ -329,123 +332,74 @@ body {
   margin-bottom: 5px;
   vertical-align: middle;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003143}}
-#filters #edit-links a, #my-articles #edit-links a {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  color: #8aaf3e;
-  text-align: center !important;
-  vertical-align: middle;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003147}}
-#filters #edit-links a:hover, #filters #edit-links a:active, #my-articles #edit-links a:hover, #my-articles #edit-links a:active {
-  color: #49661f !important;
-  text-decoration: none;
-}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003128}}
 #footer {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  padding: 10px 0 10px 0;
+  text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003164}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003133}}
 #footer a {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  color: #8aaf3e;
-  text-align: center !important;
-  vertical-align: middle;
   color: #444444;
   font-size: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003171}}
-#reasons {
-  padding-top: 5%;
-  padding-bottom: 2%;
-  background-color: white;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003140}}
+#learning-path button {
+  width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003144}}
+#learning-path #box {
+  width: 75%;
+  margin: 30px auto 30px auto !important;
+  border: 1px solid #8aaf3e;
+  padding: 7px 40px 10px 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003150}}
+#learning-path #box h4 {
+  color: #8aaf3e !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003156}}
+#reasons {
+  padding-top: 70px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003159}}
 #reasons h2 {
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003181}}
-#user-links {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  color: #8aaf3e;
-  text-align: center !important;
-  vertical-align: middle;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003185}}
-#user-links:hover {
-  color: #49661f !important;
-  text-decoration: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003190}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003164}}
 #usp {
   background: url(../../deploy/assets//stock-img/bgone.jpg);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003195}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003169}}
 #usp button, #call-to-action button {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  color: #8aaf3e;
-  text-align: center !important;
-  vertical-align: middle;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  position: relative;
   max-width: 100%;
   padding: 25px 80px;
-  display: inline-block;
   background-color: white;
-  border-radius: 0px;
   border: none;
-  outline: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003207}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003175}}
 #usp button:hover, #usp button:active, #call-to-action button:hover, #call-to-action button:active {
   color: white !important;
   background-color: #8aaf3e;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003182}}
 .lge-container {
   max-width: 96%;
   margin: 0 auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003219}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003187}}
 .pull-right {
   float: right !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003225}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003193}}
 img {
   display: block;
   max-width: 100%;
@@ -453,131 +407,109 @@ img {
   margin: 0 auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003232}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003200}}
 .long {
   height: 100px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003236}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003204}}
 .short {
   height: 40px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003242}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003210}}
 form {
   margin-bottom: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003245}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003213}}
 form input {
   margin-bottom: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003249}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003217}}
 form button {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003222}}
 .form-control {
   width: 100%;
   display: block;
   height: 3em;
   padding-left: 20px;
-  font-size: 1.15em;
   border-radius: 0px;
   border: 1px solid #aaaaaa;
-  color: #49661f;
-  background-colour: white;
+  color: #444444;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003266}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003232}}
 label {
   display: inline-block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: #444444;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003274}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003241}}
 .navbar {
   background-color: white;
   min-height: 50px;
-  border-bottom: 10px solid #aaaaaa;
   display: inline-block;
-  border: 1px solid transparent;
+  border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003281}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003247}}
 .navbar ul {
   list-style-type: none;
   display: inline-block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003285}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003251}}
 .navbar ul.brand {
   padding-top: 10px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003289}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003255}}
 .navbar ul.nav-icons {
   padding-top: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003293}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003259}}
 .navbar ul.nav-text {
   padding-top: 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003297}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003263}}
 .navbar ul li {
   display: inline-block;
   padding-right: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003301}}
-.navbar ul li a, .navbar ul li a:visited {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  color: #8aaf3e;
-  text-align: center !important;
-  vertical-align: middle;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003305}}
-.navbar ul li a:hover, .navbar ul li a:active, .navbar ul li a:visited:hover, .navbar ul li a:visited:active {
-  color: #49661f !important;
-  text-decoration: none;
-}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003270}}
 .navbar-fixed-top {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 1030;
-  border-width: 0 0 1px;
-  border-radius: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003280}}
 h1 {
   font-size: 36px;
   font-weight: bold;
   color: #aaaaaa;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003286}}
 h2 {
   font-size: 30px;
   font-weight: bold;
   color: #aaaaaa;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003292}}
 h3 {
   font-size: 24px;
   font-weight: bold;
-  color: #444444;
+  color: #aaaaaa;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003298}}
 h4 {
   font-size: 18px;
   font-weight: bold;
@@ -585,26 +517,26 @@ h4 {
   color: #444444;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003305}}
 h5 {
   font-size: 16px;
   font-weight: bold;
   color: #444444;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003311}}
 h1, h2, h3 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003316}}
 h4, h5, h6 {
   margin-top: 20px;
   margin-bottom: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003321}}
 p, li {
   font-size: 16px;
   line-height: 1.5em;
@@ -613,32 +545,32 @@ p, li {
   widows: 3;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003329}}
 ul, ol {
   margin-bottom: 0;
   margin-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003333}}
 ul ul, ol ul {
   margin-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003337}}
 ul.sidebar, ol.sidebar {
   margin: 0 0 0 -30px;
   list-style-type: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003341}}
 ul.sidebar li, ol.sidebar li {
   margin-bottom: 2px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003347}}
 code, pre {
   font-family: monospace, monospace;
   font-size: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003352}}
 pre {
   display: block;
   padding: 20px;
@@ -655,47 +587,61 @@ pre {
   overflow: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003414}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003368}}
 .text-center {
   text-align: center;
   margin: 0 auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003419}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003373}}
 .normal {
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003423}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003377}}
 .strong {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003427}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003381}}
 .small {
   font-size: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003431}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003385}}
 hr {
   margin: 0 auto;
   width: 70%;
   color: #F5F5F5;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003439}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003393}}
 a {
+  font-size: 14px;
+  text-transform: uppercase;
   text-decoration: none;
-  color: #444444;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003443}}
-a:hover, a:active {
+  letter-spacing: 1px;
+  font-weight: 700;
   color: #8aaf3e;
+  text-align: center !important;
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003403}}
+a:hover, a:active {
+  color: #49661f !important;
+  text-decoration: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003450}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003409}}
+a, button {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003417}}
 input {
   height: 1.7em;
   border-radius: 0px;
@@ -707,7 +653,7 @@ input {
   box-sizing: border-box;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003459}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003426}}
 .input-group {
   position: relative;
   display: table;
@@ -715,13 +661,13 @@ input {
   float: left;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003466}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003433}}
 .input-group[class*="col-"] {
   float: none;
   padding-right: 0;
   padding-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003472}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003439}}
 .input-group .form-control {
   position: relative;
   z-index: 2;
@@ -729,11 +675,10 @@ input {
   width: 100%;
   margin-bottom: 0;
   display: table-cell;
-  font-size: 16px;
   height: 52px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003484}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003450}}
 .input-group-btn {
   position: relative;
   display: table-cell;
@@ -744,42 +689,39 @@ input {
   vertical-align: middle;
   border-radius: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003494}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003460}}
 .input-group-btn:last-child {
   margin-left: -1px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003499}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003465}}
 ::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #aaaaaa;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003502}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003468}}
 :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #aaaaaa;
   opacity: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003506}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003472}}
 ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: #aaaaaa;
   opacity: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003510}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003476}}
 :-ms-input-placeholder {
   /* Internet Explorer 10+ */
   color: #aaaaaa;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003517}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003483}}
 button {
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
   position: relative;
   display: inline-block;
   padding-top: 15px;
@@ -802,17 +744,17 @@ button {
   border-radius: 0px;
   color: #8aaf3e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003541}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003506}}
 button:hover, button:active {
   color: #49661f !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003545}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003510}}
 button.btn-search-bar {
   max-width: 100%;
   border: none !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003553}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003518}}
 .badge {
   display: inline-block;
   min-width: 10px;
@@ -829,12 +771,12 @@ button.btn-search-bar {
   background-color: #aaaaaa;
   border-radius: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003569}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003534}}
 .badge:empty {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003576}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003541}}
 .progress {
   height: 20px;
   margin-bottom: 20px;
@@ -845,7 +787,7 @@ button.btn-search-bar {
   max-width: 90%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003586}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003551}}
 .progress-bar {
   float: left;
   width: 0px;
@@ -859,80 +801,60 @@ button.btn-search-bar {
   transition: width 0.6s ease 0s;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003602}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003567}}
 .list-group {
   padding-left: 0px;
   margin-bottom: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003606}}
-.list-group h5 {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003571}}
+.list-group h5, .list-group p {
   margin-top: 0px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003610}}
-.list-group p {
   margin-bottom: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003614}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003576}}
 .list-group a {
   position: relative;
   display: block;
-  padding: 10px 15px;
   margin-bottom: -1px;
+  padding: 10px 15px;
+  text-transform: none;
+  text-align: left !important;
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0px;
   background-color: #FFF;
   border: none;
   color: #444444 !important;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003624}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003591}}
 .list-group a:hover {
   text-decoration: none;
   background-color: #f5f5f5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003630}}
-.list-group li {
-  margin-bottom: -10px !important;
-  list-style-type: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003634}}
-.list-group li .badge {
-  float: right;
-  margin-bottom: 15px;
-}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003643}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003600}}
 .alert {
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 0px;
   font-weight: 700;
   color: #8aaf3e;
-  background-color: white;
   border: 1px solid #8aaf3e;
   border-radius: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003656}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003612}}
 table {
   width: 100%;
-  font-size: 1.15em;
+  font-size: 16px;
   color: #444444;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003661}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003617}}
 table td {
   padding-left: 10px;
   padding-right: 10px;
   height: 30px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/custom-style\.scss}line{font-family:\00003667}}
-table a {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  color: #8aaf3e;
-  text-align: center !important;
-  vertical-align: middle;
-  @include-transition;
 }
 
 /*# sourceMappingURL=custom-style.css.map */
