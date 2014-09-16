@@ -38,7 +38,7 @@
         </ul>
         <div class="pull-right">
           <ul class="nav nav-icons"><ul>
-<li><a href="/deploy/html/landing-pages/help.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
+<li><a href="/help/index.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
 </ul>
 
           </ul>
@@ -80,16 +80,17 @@
               <form id="login-form" role="form" method="post" action="/user/login">
                 <div class="form-group">
                   <label for="new-user-username">Username</label>
-                  <input id="new-user-username" type="username" placeholder="Username" class="form-control">
+                  <input id="new-user-username" type="username" placeholder="Username" name="username" class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="new-user-password">Password</label>
-                  <input id="new-user-password" type="password" placeholder="Password" class="form-control">
-                </div><a href="/deploy/html/home/main-app-view.html">
-                  <button type="submit">Login</button></a>
+                  <input id="new-user-password" type="password" placeholder="Password" name="password" class="form-control">
+                </div>
+                <!--a(href='/deploy/html/home/main-app-view.html')-->
+                <button id="btn-login" type="submit">Login</button>
               </form>
-              <form role="form" action="returning-user-forgot-password.html">
-                <button type="submit">Forgot your password?</button>
+              <form role="form" action="returning-user-forgot-password.html" method="get">
+                <button id="btn-forgot-pwd" type="submit">Forgot your password?</button>
               </form>
           </div>
         </div>

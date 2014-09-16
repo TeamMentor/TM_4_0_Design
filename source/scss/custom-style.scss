@@ -9,29 +9,7 @@ $dark-grey: #444444;
 $nav-padding-top: 120px;
 $full-width: 100%;
 
-@mixin action-links {
-	font-size: 14px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 700;
-	color: $green;
-	text-align: center !important;
-	vertical-align: middle;
-}
-
-@mixin action-links-hover {
-	color: $dark-green !important;
-	text-decoration: none;
-}
-
-@mixin transition {
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
 // Layout and Structure
-
 @import 'columns';
 @import 'colours';
 
@@ -41,48 +19,53 @@ html {
 
 body {
 	max-width: $full-width;
-	overflow-x: hidden;
 	margin: 0;
 	line-height: 1.5;
-}
-
-#article-pane {
-	padding-bottom: 40px;
-}
-
-#about, #usp {
-	padding-top: $nav-padding-top;
-	padding-bottom: 80px;
-	background-color: $green;
-	text-align: center;
-	width: $full-width;
-
-	h1 {
-		color: $white;
-	}
+	background: $white;
 }
 
 #about {
 	background: url(#{$asset-path}/stock-img/bgthree.jpg);
 }
 
+#about, #usp {
+	width: $full-width;
+	padding-top: $nav-padding-top;
+	padding-bottom: 80px;
+	background-color: $green;
+	text-align: center;
+
+	h1 {
+		color: $white;
+	}
+}
+
 #about-us {
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding: 40px 0 40px 0;
 }
 
 #application {
 	margin-top: $nav-padding-top;
 	width: $full-width;
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
+}
+
+#article {
+	padding-bottom: 40px;
+
+	a {
+		text-transform: none;
+		font-weight: normal;
+		font-size: 16px;
+		color: $green;
+
+		&:hover {
+			color: $dark-green !important;
+		}
+	}
 }
 
 #call-to-action {
-	padding-top: 7%;
-	padding-bottom: 5%;
+	padding: 100px 0 110px 0;
 	background: url(#{$asset-path}/stock-img/bgtwo.jpg);
 	background-color: $dark-green;
 	text-align: center;
@@ -93,17 +76,14 @@ body {
 }
 
 #clients {
-	padding-top: 40px;
-	padding-bottom: 70px;
-	background-color: $white;
+	padding: 40px 0 80px 0;
 	text-align: center;
 }
 
 #description {
-	background-color: #F5F5F5;
-	padding-top: 5px;
-	padding-bottom: 5px;
 	margin-right: 15px;
+	padding: 5px 0 5px 0;
+	background-color: #F5F5F5;
 }
 
 #features {
@@ -115,8 +95,7 @@ body {
 	}
 }
 
-#filters, #my-articles {
-
+#filters {
 	li {
 		padding-left: 0px;
 		margin-bottom: 0px;
@@ -139,51 +118,30 @@ body {
 			vertical-align: middle;
 		}
 	}
-
-	#edit-links a {
-		@include action-links;
-		@include transition;
-
-		&:hover, &:active {
-			@include action-links-hover;
-		}
-	}
 }
 
-
 #footer {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	text-align: center;
 	width: $full-width;
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
+	padding: 10px 0 10px 0;
+	text-align: center;
 
 	a {
-		@include action-links;
 		color: $dark-grey;
 		font-size: 10px;
 	}
 }
 
-#reasons {
-	padding-top: 5%;
-	padding-bottom: 2%;
-	background-color: $white;
-	
-	h2 {
-		text-align: center;
+#learning-path {
+	button {
+		width: $full-width;
 	}
 }
 
-#user-links {
-	@include action-links;
-	@include transition;
-
-	&:hover {
-		@include action-links-hover;
+#reasons {
+	padding-top: 70px;
+	
+	h2 {
+		text-align: center;
 	}
 }
 
@@ -193,16 +151,10 @@ body {
 
 #usp, #call-to-action {	
 	button {
-		@include action-links;
-		@include transition;
-		position: relative;
 		max-width: $full-width;
 		padding: 25px 80px;
-		display: inline-block;
 		background-color: $white;
-		border-radius: 0px;
 		border: none;
-		outline: none;
 
 		&:hover, &:active {
 			color: $white !important;
@@ -256,17 +208,16 @@ form {
 	display: block;
 	height: 3em;
 	padding-left: 20px;
-	font-size: 1.15em;
 	border-radius: 0px;
 	border: 1px solid $grey;
-	color: $dark-green;
-	background-colour: $white;	
+	color: $dark-grey;
 }
 
 label {
 	display: inline-block;
 	margin-bottom: 5px;
 	font-weight: bold;
+	color: $dark-grey;
 }
 
 // Navigation
@@ -274,9 +225,7 @@ label {
 .navbar {
 	background-color: $white;
 	min-height: 50px;
-	border-bottom: 10px solid $grey;
 	display: inline-block;
-	border: 1px solid transparent;
 
 	ul {
 		list-style-type: none;
@@ -297,15 +246,6 @@ label {
 		li {
 			display: inline-block;
 			padding-right: 40px;
-
-			a, a:visited {
-				@include action-links;
-				@include transition;
-
-				&:hover, &:active {
-					@include action-links-hover;
-				}
-			}
 		}
 	}
 }
@@ -316,8 +256,6 @@ label {
 	right: 0;
 	left: 0;
 	z-index: 1030;
-	border-width: 0 0 1px;
-	border-radius: 0px;
 }
 
 // Typography
@@ -337,7 +275,7 @@ h2 {
 h3 {
 	font-size: 24px;
 	font-weight: bold;
-	color: $dark-grey;
+	color: $grey;
 }
 
 h4 {
@@ -374,7 +312,6 @@ p, li {
 ul, ol {
 	margin-bottom: 0;
 	margin-top: 0;
-
 
 	ul {
 		margin-bottom: 0;
@@ -437,12 +374,25 @@ hr {
 }
 
 a {
+	font-size: 14px;
+	text-transform: uppercase;
 	text-decoration: none;
-	color: $dark-grey;
+	letter-spacing: 1px;
+	font-weight: 700;
+	color: $green;
+	text-align: center !important;
+	vertical-align: middle;
 
 	&:hover, &:active {
-		color: $green;
+		color: $dark-green !important;
+		text-decoration: none;
 	}
+}
+
+a, button {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 // Input Groups
@@ -476,7 +426,6 @@ input {
 		width: $full-width;
 		margin-bottom: 0;
 		display: table-cell;
-		font-size: 16px;
 		height: 52px;
 	}
 }
@@ -515,7 +464,6 @@ input {
 // Buttons
 
 button {
-	@include transition;
 	position: relative;
 	display: inline-block;
 	padding-top: 15px;
@@ -603,19 +551,21 @@ button {
 	padding-left: 0px;
 	margin-bottom: 30px;
 
-	h5 {
+	h5, p {
 		margin-top: 0px;
-	}
-
-	p {
 		margin-bottom: 0px;
 	}
 
 	a {
 		position: relative;
 		display: block;
-		padding: 10px 15px;
 		margin-bottom: -1px;
+		padding: 10px 15px;
+		text-transform: none;
+		text-align: left !important;
+		font-weight: normal;
+		font-size: 16px;
+		letter-spacing: 0px;
 		background-color: #FFF;
 		border: none;
 		color: $dark-grey !important;
@@ -624,16 +574,6 @@ button {
 		&:hover {
 			text-decoration: none;
 			background-color: #f5f5f5;
-		}
-	}
-
-	li {
-		margin-bottom: -10px !important;
-		list-style-type: none;
-
-		.badge {
-			float: right;
-			margin-bottom: 15px;
 		}
 	}
 }
@@ -646,7 +586,6 @@ button {
 	border-radius: 0px;
 	font-weight: 700;
 	color: $green;
-	background-color: $white;
 	border: 1px solid $green;
 	border-radius: 0px;
 }
@@ -655,17 +594,12 @@ button {
 
 table {
 	width: $full-width;
-	font-size: 1.15em;
+	font-size: 16px;
 	color: $dark-grey;
 
 	td {
 		padding-left: 10px;
 		padding-right: 10px;
 		height: 30px;
-	}
-
-	a {
-		@include action-links;
-		@include-transition;
 	}
 }
