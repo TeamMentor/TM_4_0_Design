@@ -1,6 +1,6 @@
 extends ../_layouts/page_home.jade
 include mixins/view-blocks.jade
-block content
+//block content
     #application
         .row
             .column-3
@@ -9,3 +9,12 @@ block content
                         +links-libraries
             .column-6
                 .lge-container 
+block content
+    #application.lge-container
+      .row
+        .column-3
+          h3
+            div#links-libraries
+                +links-libraries
+        .column-9
+          .column-4
