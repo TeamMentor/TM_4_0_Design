@@ -48,6 +48,7 @@ describe('routes > test-routes.js', function ()
                                   
                                   '/libraries'                   ,
                                   '/library/:name'               , 
+                                  '/library/:library/folder/:folder',
                                   
                                   '/dirName'                     ,                  // debug ones 
                                   '/pwd'                         ,

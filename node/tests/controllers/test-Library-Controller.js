@@ -138,12 +138,12 @@ describe('controllers | test-Library-Controller.js |', function ()
                 expect(libraries.docs.site  ).to.equal('https://docs.teammentor.net/'); 
                 expect(libraries.docs.title ).to.equal('TM Documentation'); 
 
-                expect(libraries.vulns      ).to.be.an('Object'); 
+                /*expect(libraries.vulns      ).to.be.an('Object'); 
                 expect(libraries.vulns.name ).to.equal('vulns'); 
                 expect(libraries.vulns.id   ).to.equal('be5273b1-d682-4361-99d9-6204f2d47eb7'); 
                 expect(libraries.vulns.repo ).to.equal('https://github.com/TMContent/Lib_Vulnerabilities'); 
                 expect(libraries.vulns.site ).to.equal('https://tmdev01-sme.teammentor.net/'); 
-                expect(libraries.vulns.title).to.equal('Vulnerabilities');
+                expect(libraries.vulns.title).to.equal('Vulnerabilities');*/
 
 
                 expect(libraries.ABC        ).to.not.be.an('Object'); 
