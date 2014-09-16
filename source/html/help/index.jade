@@ -13,9 +13,8 @@ block content
 										li
 											a(href= '/help/' + article.Id)
 												= article.Title
-			.column-6
+			.column-6#help-docs
 				.lge-container
-					#help-docs
-						if title
-							h1= title
-						!= content
+					if title
+						h2= title
+					!= content
