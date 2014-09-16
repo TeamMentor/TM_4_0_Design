@@ -270,7 +270,8 @@ label {
 }
 
 .navbar-fixed-top {
-	overflow-x: visible;
+	overflow-x: visible !important;
+	min-width: 600px;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -626,22 +627,13 @@ table {
 
 // Media Queries
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 	.navbar {
 		ul {
 			li {
+				margin: 0 auto;
 				padding-right: 10px;
 			}
-		}
-	}
-}
-
-@media (max-width: 800px) {
-	.navbar {
-
-		ul li {
-			margin: 0 auto;
-			padding-right: 0px;
 		}
 	}
 }
