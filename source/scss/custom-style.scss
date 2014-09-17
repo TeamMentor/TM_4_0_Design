@@ -571,6 +571,22 @@ button {
 	transition: width 0.6s ease 0s;
 }
 
+// Breadcrumbs
+
+.breadcrumbs {
+
+	ul {
+		margin-left: 0 !important;
+		padding-left: 0 !important;
+
+		li {
+			display: inline-block;
+			padding: 0 10px 0 0;
+			padding-right: 10px;
+		}
+	}
+}
+
 
 // List Group and List Group Items
 

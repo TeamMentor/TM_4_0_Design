@@ -686,6 +686,16 @@ button.btn-search-bar {
   transition: width 0.6s ease 0s;
 }
 
+.breadcrumbs ul {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+.breadcrumbs ul li {
+  display: inline-block;
+  padding: 0 10px 0 0;
+  padding-right: 10px;
+}
+
 .list-group {
   padding-left: 0px;
   margin-bottom: 30px;
