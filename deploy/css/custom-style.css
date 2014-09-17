@@ -549,6 +549,10 @@ input {
   /* Firefox, other Gecko */
   box-sizing: border-box;
 }
+input:focus {
+  box-shadow: 0 0 8px #8aaf3e;
+  outline: 0 none;
+}
 
 .input-group {
   position: relative;
