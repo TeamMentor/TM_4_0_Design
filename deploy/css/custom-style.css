@@ -3,9 +3,8 @@ html {
 }
 
 body {
-  max-width: 100%;
   margin: 0;
-  padding: 0 !important;
+  padding: 0;
   line-height: 1.5;
   background: white;
 }
@@ -264,7 +263,6 @@ body {
   list-style-type: none;
 }
 #filters li .badge, #my-articles li .badge {
-  float: right;
   margin-top: 2px;
 }
 #filters li label, #my-articles li label {
@@ -385,6 +383,7 @@ label {
   display: inline-block;
 }
 .navbar ul.brand {
+  padding-left: 0px;
   padding-top: 10px !important;
 }
 .navbar ul.nav-icons {
@@ -396,6 +395,9 @@ label {
 .navbar ul li {
   display: inline-block;
   padding-right: 40px;
+}
+.navbar ul li:last-child {
+  padding-right: 0px !important;
 }
 
 .navbar-fixed-top {
@@ -547,6 +549,10 @@ input {
   /* Firefox, other Gecko */
   box-sizing: border-box;
 }
+input:focus {
+  box-shadow: 0 0 8px #8aaf3e;
+  outline: 0 none;
+}
 
 .input-group {
   position: relative;
@@ -680,6 +686,16 @@ button.btn-search-bar {
   transition: width 0.6s ease 0s;
 }
 
+.breadcrumbs ul {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+.breadcrumbs ul li {
+  display: inline-block;
+  padding: 0 10px 0 0;
+  padding-right: 10px;
+}
+
 .list-group {
   padding-left: 0px;
   margin-bottom: 30px;
@@ -706,6 +722,9 @@ button.btn-search-bar {
 .list-group a:hover {
   text-decoration: none;
   background-color: #f5f5f5;
+}
+.list-group span.badge {
+  float: right;
 }
 
 .alert {
