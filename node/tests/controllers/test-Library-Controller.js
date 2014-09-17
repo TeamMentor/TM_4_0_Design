@@ -93,7 +93,7 @@ describe('controllers | test-Library-Controller.js |', function ()
                         
                         //console.log(html);
                         
-                        console.log(html);   
+                        //console.log(html);   
                         done();
                     };
                 supertest(app).get('/library/Uno/folder/Security Engineering')       

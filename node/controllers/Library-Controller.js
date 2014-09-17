@@ -85,7 +85,7 @@ var Library_Controller = function(req, res)
                     var that = this;
                     this.mapLibraryData(library, function()
                         {
-                            console.log('found library');
+                            //console.log('found library');
                             var subFolders = library.data.subFolders;
                             var folder = null;
                             subFolders.forEach(function(subFolder)
@@ -120,7 +120,7 @@ var Library_Controller = function(req, res)
         {
             if(library.data)
             {
-                console.log('library.data is already loaded, skiping load');
+                //console.log('library.data is already loaded, skiping load');
                 next();
                 return;
             }

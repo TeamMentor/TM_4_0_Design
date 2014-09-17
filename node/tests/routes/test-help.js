@@ -14,7 +14,7 @@ var supertest         = require('supertest')   ,
     Help_Controller   = require('../../controllers/Help-Controller.js');
     
 
-describe('routes', function () 
+describe('routes |', function () 
 {
     before(function() 
     { 
@@ -33,7 +33,7 @@ describe('routes', function ()
     });
     after (function() { app.server.close();                  });
         
-    describe('test-help.js', function() 
+    describe('test-help.js |', function() 
     {   
         it('should open page ok', function(done)
         {
@@ -81,7 +81,7 @@ describe('routes', function ()
                                });            
         });
     });
-    describe('test-help (dynamic content)', function() 
+    describe('test-help (dynamic content) |', function() 
     {               
         var libraryData  = teamMentorContent.getLibraryData_FromCache();         
         var pageParams   = { loggedIn : false}; 
