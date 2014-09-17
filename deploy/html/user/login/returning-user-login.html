@@ -51,22 +51,24 @@
           <div class="lge-container"><br></div>
         </div>
         <div class="column-6">
-          <div class="lge-container">
+          <div class="lge-container"><h3 id="login">Login</h3>
+<p>Returning customer? This is the form for you. Did you know you can go straight to www.teammentor.net/teammentor to log in?</p>
+
             <form id="login-form" role="form" method="post" action="/user/login">
               <div class="form-group">
                 <label for="new-user-username">Username</label>
-                <input id="new-user-username" type="username" name="username" placeholder="Username" value="user" class="form-control"/>
+                <input id="new-user-username" type="username" placeholder="Username" name="username" class="form-control"/>
               </div>
               <div class="form-group">
                 <label for="new-user-password">Password</label>
-                <input id="new-user-password" type="password" name="password" placeholder="Password" class="form-control"/>
+                <input id="new-user-password" type="password" placeholder="Password" name="password" class="form-control"/>
               </div>
-              <button type="submit" id="btn-login">Login</button><br/><br/><a href="returning-user-forgot-password.html">
-                <button type="button" id="btn-forgot-pwd">Forgot your password?</button></a><br/><br/>
+              <!--a(href='/deploy/html/home/main-app-view.html')-->
+              <button id="btn-login" type="submit">Login</button>
             </form>
-              <form role="form" action="returning-user-forgot-password.html" method="get">
-                <button id="btn-forgot-pwd" type="submit">Forgot your password?</button>
-              </form>
+            <form role="form" action="returning-user-forgot-password.html" method="get">
+              <button id="btn-forgot-pwd" type="submit">Forgot your password?</button>
+            </form>
           </div>
         </div>
       </div>
