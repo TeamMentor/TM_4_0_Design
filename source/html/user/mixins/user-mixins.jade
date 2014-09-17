@@ -2,20 +2,20 @@ mixin login-form
   :markdown
     ### Login
     Already have an account? Sign in here.
-    form#login-form(role='form' method='post' action='/user/login')
-        .form-group
-          label(for='new-user-username') Username
-          input#new-user-username.form-control(type='username' name='username' placeholder='Username' value='user')        
-        .form-group
-          label(for='new-user-password') Password
-          input#new-user-password.form-control(type='password' name='password' placeholder='Password')                
-        button(type='submit', id='btn-login') Login
-        br
-        br
-        a(href='returning-user-forgot-password.html')
-            button(type='button', id='btn-forgot-pwd') Forgot your password?
-        br
-        br
+  form#login-form(role='form' method='post' action='/user/login')
+      .form-group
+        label(for='new-user-username') Username
+        input#new-user-username.form-control(type='username' name='username' placeholder='Username' value='user')        
+      .form-group
+        label(for='new-user-password') Password
+        input#new-user-password.form-control(type='password' name='password' placeholder='Password')                
+      button(type='submit', id='btn-login') Login
+      br
+      br
+      a(href='returning-user-forgot-password.html')
+          button(type='button', id='btn-forgot-pwd') Forgot your password?
+      br
+      br
 
 //- user-details-form
 mixin user-details-form

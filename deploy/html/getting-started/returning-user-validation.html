@@ -75,20 +75,20 @@
         <div class="column-5">
           <div class="lge-container">
               <div role="alert" class="alert">Error/Validation messages go here</div><h3 id="login">Login</h3>
-<p>Already have an account? Sign in here.
-form#login-form(role=&#39;form&#39; method=&#39;post&#39; action=&#39;/user/login&#39;)
-    .form-group
-      label(for=&#39;new-user-username&#39;) Username
-      input#new-user-username.form-control(type=&#39;username&#39; name=&#39;username&#39; placeholder=&#39;Username&#39; value=&#39;user&#39;)<br>    .form-group
-      label(for=&#39;new-user-password&#39;) Password
-      input#new-user-password.form-control(type=&#39;password&#39; name=&#39;password&#39; placeholder=&#39;Password&#39;)<br>    button(type=&#39;submit&#39;, id=&#39;btn-login&#39;) Login
-    br
-    br
-    a(href=&#39;returning-user-forgot-password.html&#39;)
-        button(type=&#39;button&#39;, id=&#39;btn-forgot-pwd&#39;) Forgot your password?
-    br
-    br</p>
+<p>Already have an account? Sign in here.</p>
 
+            <form id="login-form" role="form" method="post" action="/user/login">
+              <div class="form-group">
+                <label for="new-user-username">Username</label>
+                <input id="new-user-username" type="username" name="username" placeholder="Username" value="user" class="form-control"/>
+              </div>
+              <div class="form-group">
+                <label for="new-user-password">Password</label>
+                <input id="new-user-password" type="password" name="password" placeholder="Password" class="form-control"/>
+              </div>
+              <button type="submit" id="btn-login">Login</button><br/><br/><a href="returning-user-forgot-password.html">
+                <button type="button" id="btn-forgot-pwd">Forgot your password?</button></a><br/><br/>
+            </form>
             <form role="form" action="returning-user-forgot-password.html" method="get">
               <button id="btn-forgot-pwd" type="submit">Forgot your password?</button>
             </form>
