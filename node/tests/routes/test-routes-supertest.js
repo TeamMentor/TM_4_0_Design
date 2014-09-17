@@ -62,10 +62,10 @@ describe('routes | test-routes-supertest.js |',  function ()
             var nextPage = function()
             {
                 var page  = pages.pop();                
-                console.log('testing page: ' + page);
+                //console.log('testing page: ' + page);
                 agent.get(page).expect(200, function(error,response)
                 {         
-                    console.log(" page error: " + error + " page html size: " + response.text.length);
+                    //console.log(" page error: " + error + " page html size: " + response.text.length);
                     if (error) { throw error; }
                     if (pages.length > 0) { nextPage(); }
                     else                  { done()    ; }
