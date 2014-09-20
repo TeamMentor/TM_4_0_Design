@@ -9,9 +9,9 @@ var libraries = {
                               id   : 'be5273b1-d682-4361-99d9-6234f2d47eb7' , 
                               repo : 'https://github.com/TMContent/Lib_UNO', 
                               site : 'https://tmdev01-sme.teammentor.net/' , 
-                              title: 'Principles and Standards',
+                              title: 'Index',
                               data : null} ,
-                  "Java"  : { name : 'Java',
+                  /*"Java"  : { name : 'Java',
                               id   : 'c4b9cb6a-4561-4451-9b6c-4e59d73584f6' , 
                               repo : 'https://github.com/TMContent/Lib_Java', 
                               site : 'https://tmdev01-sme.teammentor.net/' , 
@@ -34,7 +34,7 @@ var libraries = {
                               repo : 'https://github.com/TMContent/Lib_Html5', 
                               site : 'https://tmdev01-sme.teammentor.net/' , 
                               title: 'Html 5',
-                              data : null}                  
+                              data : null}                
                               
                 };
             
@@ -44,6 +44,7 @@ var Library_Controller = function(req, res)
         this.req        = req;
         this.res        = res;
         this.libraries  = libraries;
+        
         this.showLibraries = function() 
             {                
                 var viewModel = {'libraries' : this.libraries};

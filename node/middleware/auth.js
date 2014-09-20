@@ -6,9 +6,10 @@ var loginEnabled = true;
 
 function checkAuth(req, res, next) 
 {    
+    //console.log('Check auth');
     if (loginEnabled && !req.session.username) 
     {
-        res.status(403)
+        res.status(403) 
            .send(preCompiler.renderJadeFile('/source/html/landing-pages/need-login.jade'));        
     }
     else 

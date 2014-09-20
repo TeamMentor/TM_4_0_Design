@@ -6,10 +6,10 @@ block content
         .column-3
           .lge-container
             h3= folder.name
-                .list-group
-                    each view in folder.views                                    
-                        a(href='owasp.html')= view.caption
-                            span.badge= view.guidanceItems.length 
+            .list-group
+                each view in folder.views                                    
+                    a(href='owasp.html')= view.caption
+                        span.badge= view.guidanceItems.length 
                        
         .column-6
           .lge-container

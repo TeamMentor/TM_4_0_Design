@@ -13,9 +13,7 @@ app.use(session({secret           : '1234567890',
                  resave           : true        }));
 
 
-//require('./routes/help.js' )(app);
 require('./routes/routes.js')(app);
-//require('./routes/user.js'  )(app);
 require('./routes/debug.js' )(app);
 
 
@@ -30,5 +28,5 @@ else
     console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + app.port);
     app.listen(app.port);
 }
-    
+
 module.exports = app;

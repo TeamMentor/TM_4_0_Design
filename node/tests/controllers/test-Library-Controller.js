@@ -22,15 +22,15 @@ describe('controllers | test-Library-Controller.js |', function ()
                 var checkPageContents = function(html)  
                     {    
                         var $ = cheerio.load(html);
-                        expect($('#links-libraries a'   ).length).to.equal(6);                        
+                        expect($('#links-libraries a'   ).length).to.equal(4);                        
                         expect($('#link-my-articles'    ).html()).to.equal('My Articles'); 
                         expect($('#link-my-search-items').html()).to.equal('My Search Items'); 
  
 
-                        var docsLink = $('#link-library-' + libraries.docs.id);
+                        var docsLink = $('#link-library-' + libraries.Uno.id);
                         expect(docsLink.length).to.be.above(0);
-                        expect(docsLink.html()).to.equal(libraries.docs.title);
-                        expect(docsLink.attr('href')).to.equal('/library/' + libraries.docs.name);
+                        expect(docsLink.html()).to.equal(libraries.Uno.title);
+                        expect(docsLink.attr('href')).to.equal('/library/' + libraries.Uno.name);
                         done();  
                     };   
 
@@ -48,17 +48,17 @@ describe('controllers | test-Library-Controller.js |', function ()
             var checkPageContents = function(html)  
                     {    
                         var $ = cheerio.load(html);
-                        expect($('#links-libraries a'   ).length).to.equal(6);                        
+                        expect($('#links-libraries a'   ).length).to.equal(4);                        
                         expect($('#link-my-articles'    ).html()).to.equal('My Articles'); 
                         expect($('#link-my-search-items').html()).to.equal('My Search Items'); 
                         
-                        expect($('#links-library a'   ).length).to.equal(9);                        
+                        expect($('#links-library a'   ).length).to.equal(13);                        
                         
                         //console.log(html);
                         //console.log(html); 
                         done();
                     };
-                supertest(app).get('/library/docs')    
+                supertest(app).get('/library/Uno')    
                               .expect(200) 
                               .end(function(error, response) 
                                    {   
@@ -81,22 +81,15 @@ describe('controllers | test-Library-Controller.js |', function ()
         
         it('/library/{good value}/folder/{good value}', function(done) 
            {   
-            //preCompiler.disableCache =false; 
             var checkPageContents = function(html)   
                     {    
-                        /*var $ = cheerio.load(html);
-                        expect($('#links-libraries a'   ).length).to.equal(6);                        
-                        expect($('#link-my-articles'    ).html()).to.equal('My Articles'); 
-                        expect($('#link-my-search-items').html()).to.equal('My Search Items'); 
-                        
-                        expect($('#links-library a'   ).length).to.equal(9);                        */
-                        
-                        //console.log(html);
+                        var $ = cheerio.load(html);
+                        expect($('h3').html()).to.equal('Authentication');                        
                         
                         //console.log(html);   
                         done();
                     };
-                supertest(app).get('/library/Uno/folder/Security Engineering')       
+                supertest(app).get('/library/Uno/folder/Authentication')       
                               .expect(200) 
                               .end(function(error, response) 
                                    {   
@@ -107,7 +100,7 @@ describe('controllers | test-Library-Controller.js |', function ()
             });
     });
 
-    describe('internal Functions.js', function() 
+    describe('internal Functions.js |', function() 
     {
         it('check ctor', function() 
             {
@@ -126,17 +119,17 @@ describe('controllers | test-Library-Controller.js |', function ()
                 var libraries = new Library_Controller().libraries;
                 expect(libraries).to.be.an('Object'); 
 
-                expect(libraries.docs       ).to.be.an('Object'); 
-                expect(libraries.docs.id    ).to.be.an('String'); 
-                expect(libraries.docs.repo  ).to.be.an('String'); 
-                expect(libraries.docs.site  ).to.be.an('String'); 
-                expect(libraries.docs.title ).to.be.an('String'); 
+                expect(libraries.Uno       ).to.be.an('Object'); 
+                expect(libraries.Uno.id    ).to.be.an('String'); 
+                expect(libraries.Uno.repo  ).to.be.an('String'); 
+                expect(libraries.Uno.site  ).to.be.an('String'); 
+                expect(libraries.Uno.title ).to.be.an('String'); 
 
-                expect(libraries.docs.name  ).to.equal('docs' ); 
-                expect(libraries.docs.id    ).to.equal('eb39d862-f752-4d1c-ab6e-14ed697397c0'); 
-                expect(libraries.docs.repo  ).to.equal('https://github.com/TMContent/Lib_Docs'); 
-                expect(libraries.docs.site  ).to.equal('https://docs.teammentor.net/'); 
-                expect(libraries.docs.title ).to.equal('TM Documentation'); 
+                expect(libraries.Uno.name  ).to.equal('Uno' ); 
+                expect(libraries.Uno.id    ).to.equal('be5273b1-d682-4361-99d9-6234f2d47eb7'); 
+                expect(libraries.Uno.repo  ).to.equal('https://github.com/TMContent/Lib_UNO'); 
+                expect(libraries.Uno.site  ).to.equal('https://tmdev01-sme.teammentor.net/'); 
+                expect(libraries.Uno.title ).to.equal('Index'); 
 
                 /*expect(libraries.vulns      ).to.be.an('Object'); 
                 expect(libraries.vulns.name ).to.equal('vulns'); 
@@ -153,16 +146,20 @@ describe('controllers | test-Library-Controller.js |', function ()
             {
                 var library_Controller  = new Library_Controller();
                 var libraries           = library_Controller.libraries;
+                                                
+                var library_Key  = "Uno";
+                var library_Name = "UNO";
+                var library_ID   = 'be5273b1-d682-4361-99d9-6234f2d47eb7';
                 
-                var docs = libraries.docs;
-                expect(docs).to.be.defined;
+                var library      = libraries[library_Key];
+                expect(library).to.be.defined;
                 
-                libraries.docs.data = null;
+                libraries.Uno.data = null;
                 
-                library_Controller.mapLibraryData(docs, function()
+                library_Controller.mapLibraryData(library, function()
                     {
-                        expect(docs.data).to.be.not.null;
-                        var data = docs.data;            
+                        expect(library.data).to.be.not.null;
+                        var data = library.data;            
                     
                         expect(data).to.be.an('object');
                     
@@ -170,12 +167,13 @@ describe('controllers | test-Library-Controller.js |', function ()
                         expect(data.libraryId).to.be.an('String');
                         expect(data.guidanceItems).to.be.an('Array');
                     
-                        expect(data.name     ).to.equal('TM Documentation');
-                        expect(data.libraryId).to.equal('eb39d862-f752-4d1c-ab6e-14ed697397c0');
+                        expect(data.name     ).to.equal(library_Name);  
+                        expect(data.libraryId).to.equal(library_ID);
+                            
                     
-                        library_Controller.mapLibraryData(docs, function()
+                        library_Controller.mapLibraryData(library, function()
                             {                                
-                                expect(docs.data).to.equal(data);
+                                expect(library.data).to.equal(data);                // previous object should had been reused
                                 done(); 
                             });
                         
