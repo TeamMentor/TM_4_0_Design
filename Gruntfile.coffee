@@ -4,7 +4,7 @@ module.exports = (grunt) ->
 
     cacheFolder  = "./_node_cache"
     filesToWatch = 'node/**/**.js'
-    testsToRun   = 'node/tests/**/**.*' #'node/tests/**/*jade*.js'
+    testsToRun   = 'node/tests/**/*Jade*.*' #'node/tests/**/*jade*.js'
     reportMode   = 'list'
     
     @initConfig

@@ -1,12 +1,22 @@
 /*jslint node: true */
 
-var fs   = require('fs'),
-    jade = require('jade');
+var fs     = require('fs'),
+    path   = require('path'),
+    jade   = require('jade'),
+    config = require('../config');
+
+var JadeService = function()
+    {
+        this.config       = config;
+        this.targetFolder = path.join(config.cache_folder, '/node/_jade_PreCompiled/');
+        this.disableCache = !config.enable_Jade_Cache;                     //set to false to allow caching of jade compiled files
+    };
 
 var preCompiler = 
     {
-        _targetFolder : '/node/_jade_PreCompiled/',
-        disableCache  : true                        //set to false to allow caching of jade compiled files
+      //  _targetFolder : '/node/_jade_PreCompiled/',
+      // disableCache  : true                        //set to false to allow caching of jade compiled files
+
     };
 
 preCompiler.cleanCacheFolder = function() 
@@ -85,4 +95,5 @@ preCompiler.renderJadeFile = function(jadeFile, params)
         return require(targetFile_Path)(params);        
     };
 
-module.exports = preCompiler;
+//module.exports = preCompiler;
+module.exports = JadeService;
