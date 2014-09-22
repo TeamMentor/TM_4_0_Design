@@ -6,7 +6,7 @@ var fs   = require('fs'),
 var preCompiler = 
     {
         _targetFolder : '/node/_jade_PreCompiled/',
-        disableCache  : false                        //set to false to allow caching of jade compiled files
+        disableCache  : true                        //set to false to allow caching of jade compiled files
     };
 
 preCompiler.cleanCacheFolder = function() 

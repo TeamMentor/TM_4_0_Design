@@ -53,8 +53,9 @@ var Help_Controller = function (req, res)
                 {   
                     this.article = library.Articles[this.page];                
                     if (this.article)
-                    {
+                    {                        
                         var docs_Url   = 'https://docs.teammentor.net/content/' + this.page;                    
+                        //console.log('fetching: ' + docs_Url);
                         request.get(docs_Url, this.handleFetchedHtml);
                     }
                     else
@@ -70,8 +71,9 @@ var Help_Controller = function (req, res)
                 { 
                     that.addContent("Error fetching page from docs site");
                 }
-                else
+                else 
                 {
+                    //console.log("[this.handleFetchedHtml] received " + body.length + " for article: " + that.article.Title);
                     that.addContent(that.article.Title, body);
                 }
             };
