@@ -57,6 +57,8 @@ describe('routes | test-routes.js |', function ()
                                   '/module'                      ,
                                   '/mainModule'                  ,
                                   
+                                  '/version'                     ,                  // config ones
+                                  
                                   '/session'                                                                                       ,
                                  ];
 

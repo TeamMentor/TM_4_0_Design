@@ -2,37 +2,39 @@
 # consume.
 module.exports = (grunt) ->
 
+    cacheFolder  = "./_node_cache"
     filesToWatch = 'node/**/**.js'
-    testsToRun   = 'node/tests/**/*jade*.js'
+    testsToRun   = 'node/tests/**/**.*' #'node/tests/**/*jade*.js'
     reportMode   = 'list'
     
     @initConfig
+        clean:
+            clean: cacheFolder
+            
         watch:
             scripts:
-                files    : [filesToWatch, "Gruntfile.coffee" ]
+                files    : [filesToWatch, "./**/*.coffee" ]
                 tasks    : ["default"]
                 options  :
                     spawn: false
+                    
         #mocha: null
 
     @registerTask 'mocha', 'Execute mochaJS tests....', ->
-        
-        done = @async()
-        grunt.util.spawn
+        done  = @async()
+        params =
             cmd: "mocha"
-            args: [testsToRun,"-R",reportMode], (error, result, code) ->
-                if error
-                    grunt.log.write error
-                    done()
-                else
-                    grunt.log.write result
-                    done()
-
-    @registerTask "TM", "TM test Grunt task", ->
-        grunt.log.writeln 'Starting TM 4 design compilation.'
-        return true
+            args: [testsToRun,"-R", reportMode, "--compilers", "coffee:coffee-script/register"]
         
+        child = grunt.util.spawn params, (error, result, code) -> done()
+                    
+        child.stdout.pipe(process.stdout)
+        child.stderr.pipe(process.stderr)
+        
+    @loadNpmTasks('grunt-contrib-clean')    
     @loadNpmTasks('grunt-contrib-watch')
     
-    @registerTask "default", ["TM", "mocha"]
-    @registerTask "run", ["default", "watch"]
+    
+    @registerTask "default", ["mocha"]
+    @registerTask "run"    , ["default", "clean", "watch"]
+    @registerTask "test"   , ["mocha"]

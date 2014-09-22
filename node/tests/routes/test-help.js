@@ -154,7 +154,8 @@ describe('routes |', function ()
         });
         
         it('check that main content deliverer article', function(done) 
-        {            
+        {          
+            this.timeout(5000);
             var article_Id    = 'dac20027-6138-4cd1-8888-3b7e6a007ea5';  
             var article_Line  = "<p><strong>To install TEAM Mentor Fortify SCA UI Integration</strong></p>";
             var article_Title = "<h2>Installation</h2>";
