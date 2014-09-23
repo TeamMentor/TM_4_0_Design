@@ -28,7 +28,7 @@ var Help_Controller = function (req, res)
         
         this.renderPage = function()
             {           
-                this.pageParams     = auth.mappedAuth(req);
+                this.pageParams         = auth.mappedAuth(req);
                 this.pageParams.library = library;
                 this.getContent(this.page);
             };

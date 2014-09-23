@@ -1,0 +1,31 @@
+{
+    "title"       : "Data Validation",
+    "containers"  : [
+                        { "title" : "Validate All Input"                    , "id" : "24b76e10-6caf-4f83-8c6c-d994753ff409", "size" : 30 },
+                        { "title" : "Perform Validation on the Server"      , "id" : "00b76e10-6caf-4f83-8c6c-d994753ff409", "size" : 16 },
+                        { "title" : "Use White-list Validation"             , "id" : "01b76e10-6caf-4f83-8c6c-d994753ff409", "size" : 28 },
+                        { "title" : "Validate Results of Calculations"      , "id" : "02b76e10-6caf-4f83-8c6c-d994753ff409", "size" : 5  },
+                        { "title" : "Validate SOAP Array Length"            , "id" : "03b76e10-6caf-4f83-8c6c-d994753ff409", "size" : 6  },
+                        { "title" : "Validate XML Data Length"              , "id" : "04b76e10-6caf-4f83-8c6c-d994753ff409", "size" : 8  },
+                        { "title" : "Validate File Formats"                 , "id" : "05b76e10-6caf-4f83-8c6c-d994753ff409", "size" : 6  },
+                        { "title" : "Constrain, Reject and Sanitize Input"  , "id" : "06b76e10-6caf-4f83-8c6c-d994753ff409", "size" : 4  }
+                    ],
+                   
+    "resultsTitle" : "0/10 results showing",
+    "results"     : [
+                        { "title"    : "Access Control Checks Are Performed for All Filesystem Access..."                 , 
+                          "link"     : "https://tmdev01-sme.teammentor.net/99b76e10-6caf-4f83-8c6c-d994753ff409" , 
+                          "summary"  : "Check if you have configured code access security policy in your web.config or machine.config files.",
+                          "score"    : 0.9 },
+                        { "title"    : "A Connection Is Used to the Database with a Least-privileged Service Account"     , 
+                           "link"    : "https://tmdev01-sme.teammentor.net/" , 
+                           "summary" : "Check to ensure that your application connects to the database by using a least-privileged account." ,
+                           "score"   : 0.81 },
+                        { "title"    : "A Control Flow Analysis Is Performed"     , 
+                           "link"    : "https://tmdev01-sme.teammentor.net/" , 
+                           "summary" : "Project documentation should include the results of a control flow analysis.",
+                           "score"   : 0.80}   
+                           
+                     ]
+                   
+}

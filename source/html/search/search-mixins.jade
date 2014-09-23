@@ -1,0 +1,90 @@
+mixin directory-list
+    h3#title= title                
+    .list-group#containers
+        if(containers)
+            each container in containers                                    
+                a(href=container.id, id=container.id)= container.title
+                    span.badge= container.size
+
+//- search-bar-input
+mixin search-bar-input
+    .input-group
+        input.form-control(type='text', placeholder='Type keywords here')
+        span.input-group-btn
+            button.btn-search-bar(type='button') SEARCH
+            
+//- results-save-clear
+mixin results-save-clear
+    table
+        tr
+            td 
+                h4#resultsTitle= resultsTitle
+            td 
+                a(href='#save') Save
+            td 
+                a(href='main-app-view.html') Clear
+
+//- articles-list
+mixin articles-list    
+    .list-group    
+        each result in results                                    
+            a(href=result.link, id=result.id)
+                h4= result.title
+                p= result.summary
+                
+        //a(href='#{link_article_new_window}', target='_blank')
+            :markdown
+                ##### AAAA123
+                bbbb
+        a(href='#{link_article_new_window}', target='_blank')
+            :markdown
+                ##### AAAA
+                bbbb
+
+//- filters
+mixin filters-div
+    #filters
+        h3 Filters
+        form(role='form', action='filters-active.html')
+            .form-group
+                h5 Technology
+                li
+                    input#technology_1(type='checkbox')
+                    label(for='#technology_1', type='checkbox') Option #1
+                        span.badge 14 
+                li
+                    input#technology_2(type='checkbox')
+                    label(for='#technology_2', type='checkbox') Option #2
+                        span.badge 14                 
+            .form-group
+                h5 Category
+                li
+                    input#category_1(type='checkbox')
+                    label(for='#category_1', type='checkbox') Option #1
+                        span.badge 14                                     
+            .form-group
+                h5 Phase
+                li
+                    input#phase_1(type='checkbox')
+                    label(for='#phase_1', type='checkbox') Option #1
+                        span.badge 14
+                li
+                    input#phase_2(type='checkbox')
+                    label(for='#phase_2', type='checkbox') Option #2
+                        span.badge 14
+            .form-group
+                h5 Type
+                li
+                    input#type_1(type='checkbox')
+                    label(for='#type_1', type='checkbox') Option #1
+                        span.badge 14
+                li
+                    input#type_2(type='checkbox')
+                    label(for='#type_2', type='checkbox') Option #2
+                        span.badge 14
+                
+
+            button(type='submit')
+                | Ok, Done
+
+                
