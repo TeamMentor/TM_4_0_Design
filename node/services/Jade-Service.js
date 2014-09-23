@@ -1,25 +1,87 @@
 /*jslint node: true */
 
-var fs     = require('fs'),
+var fs     = require('fs'),    
     path   = require('path'),
     jade   = require('jade'),
-    config = require('../config');
+    Config = require('../config');
 
-var JadeService = function()
+var JadeService = function(config)
     {
-        this.config       = config;
-        this.targetFolder = path.join(config.cache_folder, '/node/_jade_PreCompiled/');
-        this.disableCache = !config.enable_Jade_Cache;                     //set to false to allow caching of jade compiled files
+        this.config       = config || new Config();
+        this.targetFolder = this.config.jade_Compilation;            //path.join(this.config.cache_folder, '/node/_jade_PreCompiled/');               
+        
+        this.enableCache= function(value)                           //set to true to allow caching of jade compiled files
+            {                
+                if(value !== undefined) {     this.config.enable_Jade_Cache = value; }
+                else                    {     this.config.enable_Jade_Cache = true;  }
+                return this;
+            };
+        this.cacheEnabled = function()                           
+            {
+                return this.config.enable_Jade_Cache;
+            };
+        this.calculateTargetPath   = function(fileToCompile) 
+            {
+                return this.targetFolder + fileToCompile.replace(/\//g,'_')
+                                                        .replace(/\./g,'_') + '.txt';
+            };
+            
+        this.compileJadeFileToDisk = function(fileToCompile)
+            {
+                var fileToCompile_Path = path.join(process.cwd(), fileToCompile);
+
+                if (fs.existsSync(fileToCompile_Path)===false)  {  return false;  }
+
+                var targetFile_Path = this.calculateTargetPath(fileToCompile);
+
+                if (fs.existsSync(targetFile_Path))             
+                {  
+                    fs.unlinkSync(targetFile_Path);
+                }
+                var fileContents = fs.readFileSync(fileToCompile_Path,  "utf8");        
+                var file_Compiled = jade.compileClient(fileContents , { filename:fileToCompile_Path, compileDebug : false} );
+
+                var exportCode =  'var jade = require(\'jade/lib/runtime.js\'); \n' + 
+                                  'module.exports = ' + file_Compiled;
+
+
+                fs.writeFileSync(targetFile_Path, exportCode);
+                return fs.existsSync(targetFile_Path);            
+            };    
+        
+        this.renderJadeFile = function(jadeFile, params)
+            {                        
+                if (this.cacheEnabled() === false) 
+                {
+                    var jadeFile_Path = path.join(process.cwd(), jadeFile);
+                    if (fs.existsSync(jadeFile_Path))
+                    {            
+                        return jade.renderFile(jadeFile_Path,params);
+                    }
+                    return "";
+                }
+                var targetFile_Path = this.calculateTargetPath(jadeFile);
+                if (fs.existsSync(targetFile_Path) === false)
+                {            
+                    if (this.compileJadeFileToDisk(jadeFile) === false)
+                    {
+                        return "";
+                    }
+                }
+                return require(targetFile_Path)(params);        
+            };                        
+        
+        this.config.createCacheFolders();                   // ensure cache folders exists
     };
 
-var preCompiler = 
-    {
+//var preCompiler = 
+//    {
       //  _targetFolder : '/node/_jade_PreCompiled/',
       // disableCache  : true                        //set to false to allow caching of jade compiled files
 
-    };
+  //  };
 
-preCompiler.cleanCacheFolder = function() 
+/*JadeService.prototype.cleanCacheFolder = function() 
     {
         var path = preCompiler.targetFolder();
         
@@ -36,9 +98,9 @@ preCompiler.cleanCacheFolder = function()
                 });
             if (count) { console.log('[Removed ' + count + ' cache files]'); } 
         }
-    };
+    };*/
 
-preCompiler.targetFolder = function()
+/*JadeService.targetFolder = function()
     {
         var fullPath = process.cwd() + preCompiler._targetFolder ;
         if (fs.existsSync(fullPath) === false) 
@@ -46,54 +108,13 @@ preCompiler.targetFolder = function()
             fs.mkdirSync(fullPath); 
         }
         return fullPath;
-    };
+    };*/
                 
-preCompiler.calculateTargetPath   = function(fileToCompile) 
-    {
-    
-        return preCompiler.targetFolder() + fileToCompile.replace(/\//g,'_')
-                                                         .replace(/\./g,'_') + '.txt';
-    };
-    
-preCompiler.compileJadeFileToDisk = function(fileToCompile)
-    {
-        var fileToCompile_Path = process.cwd() + fileToCompile;
-        
-        if (fs.existsSync(fileToCompile_Path)===false)  {  return false;  }
-    
-        var targetFile_Path = preCompiler.calculateTargetPath(fileToCompile);
-    
-        if (fs.existsSync(targetFile_Path))             
-        {  
-            fs.unlinkSync(targetFile_Path);
-        }
-        var fileContents = fs.readFileSync(fileToCompile_Path,  "utf8");        
-        var file_Compiled = jade.compileClient(fileContents , { filename:fileToCompile_Path, compileDebug : false} );
-    
-        var exportCode =  'var jade = require(\'jade/lib/runtime.js\'); \n' + 
-                          'module.exports = ' + file_Compiled;
-    
-        
-        fs.writeFileSync(targetFile_Path, exportCode);
-        return fs.existsSync(targetFile_Path);            
-    };
 
-preCompiler.renderJadeFile = function(jadeFile, params)
-    {        
-        if (preCompiler.disableCache)
-        {
-            return jade.renderFile(process.cwd() + jadeFile,params);
-        }    
-        var targetFile_Path = preCompiler.calculateTargetPath(jadeFile);
-        if (fs.existsSync(targetFile_Path) === false)
-        {            
-            if (preCompiler.compileJadeFileToDisk(jadeFile) === false)
-            {
-                return "";
-            }
-        }
-        return require(targetFile_Path)(params);        
-    };
+    
+
+
+
 
 //module.exports = preCompiler;
 module.exports = JadeService;

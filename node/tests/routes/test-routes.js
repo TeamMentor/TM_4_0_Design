@@ -58,6 +58,7 @@ describe('routes | test-routes.js |', function ()
                                   '/mainModule'                  ,
                                   
                                   '/version'                     ,                  // config ones
+                                  '/config'                      , 
                                   
                                   '/session'                                                                                       ,
                                  ];
@@ -68,26 +69,5 @@ describe('routes | test-routes.js |', function ()
                 expect(expectedPaths).to.contain(path);
             });        
         });  
-    });    
-    
-    describe('debug routes', function() 
-    {
-        it('/ping', function (done) 
-        {
-
-            Browser.visit('/ping', function (err, browser) {            
-                assert.equal(browser.text("body" ),"pong..");
-                done();
-            });
-        });
-        it('/session', function (done) 
-        {
-            var expectedSessionValue = '{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"}}';
-      
-            Browser.visit('/session', function (err, browser) {            
-                assert.equal(browser.text("body" ),expectedSessionValue);
-                done();
-            });
-        });
     });    
 });

@@ -5,7 +5,7 @@ var fs                = require('fs'),
     marked            = require('marked'),
     request           = require('request'),
     auth              = require('../middleware/auth'),    
-    preCompiler       = require(process.cwd() + '/node/services/jade-pre-compiler.js'),
+    Jade_Service      = require('../services/Jade-Service'),
     teamMentorContent = require(process.cwd() + '/node/services/teamMentor-content.js');
 
 
@@ -88,7 +88,7 @@ var Help_Controller = function (req, res)
 
         this.getRenderedPage = function(params)
             {
-                return preCompiler.renderJadeFile('/source/html/help/index.jade', params); 
+                return new Jade_Service().renderJadeFile('/source/html/help/index.jade', params); 
             };
 
         this.sendResponse = function(pageParams)

@@ -2,7 +2,8 @@
 "use strict";
 
 var auth                = require('../middleware/auth'),    
-    preCompiler         = require(process.cwd() + '/node/services/jade-pre-compiler.js'),
+    Jade_Service        = require('../services/Jade-Service'),
+    //preCompiler         = require(process.cwd() + '/node/services/jade-pre-compiler.js'),
     Help_Controller     = require('../controllers/Help-Controller'),
     Login_Controller    = require('../controllers/Login-Controller'),
     Library_Controller  = require('../controllers/Library-Controller');
@@ -11,7 +12,8 @@ var auth                = require('../middleware/auth'),
 
 module.exports = function (app) 
 {
-    preCompiler.cleanCacheFolder();
+    
+    //preCompiler.cleanCacheFolder();
     
     ///hard-coded-redirect
     app.get('/getting-started/index.html'  , function (req, res)  { res.redirect('/user/login/returning-user-login.html');});
@@ -34,10 +36,10 @@ module.exports = function (app)
     
     // jade (pre-compiled) pages (these have to be the last set of routes)
     
-    app.get('/:page.html'                                   , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/html/'                         + req.params.page + '.jade'                       ));});     
-    app.get('/landing-pages/:page.html'                     , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/html/landing-pages/'           + req.params.page + '.jade'                       ));});         
-    app.get('/user/login/:page.html'                        , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/html/user/login/'              + req.params.page + '.jade'                       ));}); 
-    app.get('/:area/:page.html'            , auth.checkAuth , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/html/' + req.params.area + '/' + req.params.page + '.jade'                       ));});     
+    app.get('/:page.html'                                   , function (req, res)  { res.send(new Jade_Service().renderJadeFile('/source/html/'                         + req.params.page + '.jade'                       ));});     
+    app.get('/landing-pages/:page.html'                     , function (req, res)  { res.send(new Jade_Service().renderJadeFile('/source/html/landing-pages/'           + req.params.page + '.jade'                       ));});         
+    app.get('/user/login/:page.html'                        , function (req, res)  { res.send(new Jade_Service().renderJadeFile('/source/html/user/login/'              + req.params.page + '.jade'                       ));}); 
+    app.get('/:area/:page.html'            , auth.checkAuth , function (req, res)  { res.send(new Jade_Service().renderJadeFile('/source/html/' + req.params.area + '/' + req.params.page + '.jade'                       ));});     
     
     //Redirect to Jade pages
     app.get('/'                                             , function (req, res)  { res.redirect('/default.html'                                                     );});

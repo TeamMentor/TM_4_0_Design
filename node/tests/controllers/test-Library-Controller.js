@@ -2,20 +2,28 @@
 /*global describe, it */
 "use strict";
 
-var //fs                 = require('fs'),
+var fs                 = require('fs'),
+    path               = require('path'),
     supertest          = require('supertest')   ,    
     cheerio            = require('cheerio')   ,    
-    expect             = require('chai').expect ,        
-    //request           = require('request')     ,    
+    expect             = require('chai').expect ,            
     app                = require('../../server'),    
-    Library_Controller = require('../../controllers/Library-Controller.js');
-    //preCompiler        = require(process.cwd() + '/node/services/jade-pre-compiler.js');
+    Config             = require('../../Config'),
+    Library_Controller = require('../../controllers/Library-Controller.js');    
 
 describe('controllers | test-Library-Controller.js |', function () 
-{
-    describe('used by controllers', function() 
-    {            
+{    
+    describe('used by controllers', function()
+    {
+        app.config.enable_Jade_Cache = true;                        // enable Jade compilation cache (which dramatically speeds up tests)
+                
         var libraries = new Library_Controller().libraries;
+
+        it("/config", function(done) 
+        {
+            supertest(app).get('/config')
+                          .expect(200, app.config        , done);                      
+        });
 
         it('/libraries', function(done) 
            {   
@@ -42,7 +50,7 @@ describe('controllers | test-Library-Controller.js |', function ()
                                         checkPageContents(response.text); 
                                    });
            });
-         it('/library/{good value}', function(done) 
+         it('/library/{good value}', function(done)
            {   
             //preCompiler.disableCache =false; 
             var checkPageContents = function(html)  
@@ -85,8 +93,6 @@ describe('controllers | test-Library-Controller.js |', function ()
                     {    
                         var $ = cheerio.load(html);
                         expect($('h3').html()).to.equal('Authentication');                        
-                        
-                        //console.log(html);   
                         done();
                     };
                 supertest(app).get('/library/Uno/folder/Authentication')       
@@ -96,7 +102,6 @@ describe('controllers | test-Library-Controller.js |', function ()
                                         if(error) { throw error;}                                                                                    
                                         checkPageContents(response.text); 
                                    });
-
             });
     });
 
@@ -108,10 +113,21 @@ describe('controllers | test-Library-Controller.js |', function ()
                 var res = {};
                 var libraryController = new Library_Controller(req, res);
 
-                expect(libraryController    ).to.be.an('Object');
+                expect(libraryController          ).to.be.an('Object');
                 expect(libraryController.libraries).to.be.an('Object');
-                expect(libraryController.req).to.deep.equal(req);
-                expect(libraryController.res).to.deep.equal(res);
+                expect(libraryController.req      ).to.deep.equal(req);
+                expect(libraryController.res      ).to.deep.equal(res);
+                expect(libraryController.config   ).to.deep.equal(new Config());
+                
+                expect(libraryController.jade_Service.config        ).to.be.an('Object');
+                expect(libraryController.jade_Service.config.version).to.equal(new Config().version);
+                var customConfig = new Config();
+                var customVersion    = "aa.bb.cc";
+                customConfig.version = customVersion;
+                var custom_libraryController = new Library_Controller(req, res, customConfig);
+                expect(custom_libraryController.config                     ).to.equal(customConfig);
+                expect(custom_libraryController.jade_Service.config        ).to.equal(customConfig);
+                expect(custom_libraryController.jade_Service.config.version).to.equal(customVersion);
 
             });
         it('check default libraries mappings', function ()
@@ -142,6 +158,7 @@ describe('controllers | test-Library-Controller.js |', function ()
                 expect(libraries.ABC        ).to.not.be.an('Object'); 
 
             });
+                        
             it('mapLibraryData', function(done)
             {
                 var library_Controller  = new Library_Controller();
@@ -173,11 +190,79 @@ describe('controllers | test-Library-Controller.js |', function ()
                     
                         library_Controller.mapLibraryData(library, function()
                             {                                
-                                expect(library.data).to.equal(data);                // previous object should had been reused
+                                expect(library.data).to.deep.equal(data);                // previous object should had been reused
                                 done(); 
                             });
-                        
                     });
+            });
+            
+            it('mapLibraryData (using cache', function(done)
+            {
+                var library_Controller  = new Library_Controller();
+                var libraryData = { some : 'data'};
+                var library     = { id : 'abc123' , data: libraryData};
+                var cacheFile   = library_Controller.cacheLibraryData(library);                
+                expect(fs.existsSync(cacheFile)).to.be.true;
+                
+                library.data    = null;                                             // reset it so that we can confirm it was set
+                
+                library_Controller.mapLibraryData(library, function()
+                    {
+                        fs.unlinkSync(cacheFile);
+                        expect(fs.existsSync(cacheFile)).to.be.false;
+                        done();
+                    });                                    
+            });
+            it('cachedLibraryData', function()
+            {            
+                var library_Controller  = new Library_Controller();
+                expect(library_Controller.cachedLibraryData).to.be.an('Function');
+                expect(library_Controller.cachedLibraryData()).to.equal(null);
+                
+                var libraryId   =  'abc123';
+                var libraryJson = '{ "id" : "' + libraryId +'", "name" : "' + libraryId +'"}';
+                var library        = { id : libraryId };
+                var cacheFile      = library_Controller.cachedLibraryData_File(library);
+                
+                fs.writeFileSync(cacheFile, libraryJson);
+                expect(fs.existsSync(cacheFile)).to.be.true;
+                
+                var libraryData = library_Controller.cachedLibraryData(library);
+                expect(libraryData).to.be.an('Object');
+                expect(libraryData.id   ).to.equal    (libraryId);
+                expect(libraryData.name ).to.equal    (libraryId);
+                expect(libraryData.abc  ).to.not.equal(libraryId);
+                fs.unlinkSync(cacheFile);
+                expect(fs.existsSync(cacheFile)).to.be.false;
+            });
+            it('cacheLibraryData', function()
+            {
+                var library_Controller  = new Library_Controller();
+                expect(library_Controller.cacheLibraryData).to.be.an('Function');
+                expect(library_Controller.cacheLibraryData()).to.equal(null);
+                                   
+                var library     = { id : 'abc123' };
+                var cacheFile   = library_Controller.cachedLibraryData_File(library);
+                
+                expect(library_Controller.cacheLibraryData(library)).to.equal(cacheFile);
+                
+                var fileContents = fs.readFileSync(cacheFile, 'utf8');
+                expect(fileContents).to.equal(JSON.stringify(library));                
+                expect(JSON.parse(fileContents)).to.deep.equal(library);
+                
+                fs.unlinkSync(cacheFile);
+                expect(fs.existsSync(cacheFile)).to.be.false;
+            });
+            
+            it('cachedLibraryData_Path', function()
+            {
+                var libraryId   =  'abc123';
+                var library_Controller  = new Library_Controller();
+                var library        = { id : libraryId };
+                var expectedPath   = path.join(library_Controller.config.library_Data, libraryId + ".json");
+               
+                expect(library_Controller.cachedLibraryData_File(null)).to.equal(null);
+                expect(library_Controller.cachedLibraryData_File(library)).to.equal(expectedPath);
             });
     });
 

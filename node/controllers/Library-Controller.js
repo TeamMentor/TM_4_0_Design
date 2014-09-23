@@ -1,8 +1,11 @@
 /*jslint node: true */
 "use strict";
 
-var request           = require('request'),
-    preCompiler       = require(process.cwd() + '/node/services/jade-pre-compiler.js');
+var fs            = require('fs'),
+    path          = require('path'),
+    request       = require('request'),
+    Config        = require('../Config'),
+    Jade_Service  = require('../services/Jade-Service');
 
 var libraries = { 
                   "Uno"   : { name : 'Uno',
@@ -39,17 +42,19 @@ var libraries = {
                 };
             
             
-var Library_Controller = function(req, res) 
+var Library_Controller = function(req, res, config) 
     {        
-        this.req        = req;
-        this.res        = res;
-        this.libraries  = libraries;
+        this.req          = req;
+        this.res          = res;
+        this.libraries    = libraries;     
+        this.config       = config || new Config();
+        this.jade_Service = new Jade_Service(this.config);
         
         this.showLibraries = function() 
-            {                
+            {       
                 var viewModel = {'libraries' : this.libraries};
                                 
-                this.res.send(preCompiler.renderJadeFile('/source/html/libraries/list.jade', viewModel));                
+                this.res.send(this.jade_Service.renderJadeFile('/source/html/libraries/list.jade', viewModel));                
             };
         this.showLibrary = function()
             {
@@ -63,7 +68,7 @@ var Library_Controller = function(req, res)
                         {
                             //console.log(viewModel.library.data.subFolders);
                             //viewModel.library = JSON.stringify(viewModel.library.data.subfolders);
-                            that.res.send(preCompiler.renderJadeFile('/source/html/libraries/library.jade', viewModel));                        
+                            that.res.send(that.jade_Service.renderJadeFile('/source/html/libraries/library.jade', viewModel));                        
                         });
                     
                 }
@@ -77,9 +82,7 @@ var Library_Controller = function(req, res)
                 var library_name = (req && req.params) ? req.params.library : "";
                 var folder_name = (req && req.params) ? req.params.folder : "";
                 
-                var library = this.libraries[library_name];
-                
-                console.log();
+                var library = this.libraries[library_name];                                
                 
                 if(library)    
                 {
@@ -102,7 +105,7 @@ var Library_Controller = function(req, res)
                                 var viewModel = { libraries : that.libraries , 
                                               library   : library,
                                               folder    : folder};
-                                that.res.send(preCompiler.renderJadeFile('/source/html/libraries/folder.jade', viewModel));                        
+                                that.res.send(that.jade_Service.renderJadeFile('/source/html/libraries/folder.jade', viewModel));                        
                             }
                             else
                                 that.res.send('Folder not found: ' + folder_name);          // vuln to XSS
@@ -119,21 +122,60 @@ var Library_Controller = function(req, res)
         
         this.mapLibraryData = function(library, next)
         {
+            var cachedLibrary = this.cachedLibraryData(library);            
+            if (cachedLibrary)
+            {
+                library.data = cachedLibrary.data;
+            }            
             if(library.data)
             {
-                //console.log('library.data is already loaded, skiping load');
+                //console.log('library.data is already loaded, skiping load'); 
                 next();
                 return;
             }
-            var url = library.site + 'rest/library/' + library.id;            
+            
+            var url  = library.site + 'rest/library/' + library.id;    
+            var that = this;
             request.get({url: url, json:true}, function(error, request, body)
                 {
-                    if(error)
-                        throw error;                    
+                    if(error) { throw error; }
                     library.data = body;                    
+                    that.cacheLibraryData(library);
                     next();
                 });
 
+        };
+        this.cachedLibraryData = function(library)
+        {
+            if(library && library.id)
+            {
+                var cacheFile =  this.cachedLibraryData_File(library); //path.join(this.config.library_Data, library.id + ".json");
+                if (fs.existsSync(cacheFile))
+                {
+                    var fileContents = fs.readFileSync(cacheFile, 'utf8');                     
+                    if (fileContents)
+                    {                    
+                        return JSON.parse(fileContents);                        
+                    }
+                }
+            }
+            return null;
+        };
+        this.cacheLibraryData = function(library)
+        {
+            if(library && library.id)
+            {
+                var cacheFile =  this.cachedLibraryData_File(library);
+                fs.writeFileSync(cacheFile, JSON.stringify(library));
+                return cacheFile;
+            }
+            return null;
+        };
+        this.cachedLibraryData_File = function(library)
+        {
+            if(library && library.id)
+                return  path.join(this.config.library_Data, library.id + ".json");
+            return null;
         };
     };
     
@@ -141,8 +183,8 @@ var Library_Controller = function(req, res)
 Library_Controller.registerRoutes = function (app)
     {
         //console.log('registering routes for Library Controller');
-        app.get('/libraries'                      , function (req, res) { new Library_Controller(req, res).showLibraries  (); });
-        app.get('/library/:name'                   , function (req, res) { new Library_Controller(req, res).showLibrary   (); });
-        app.get('/library/:library/folder/:folder' , function (req, res) { new Library_Controller(req, res).showFolder    (); });
+        app.get('/libraries'                       , function (req, res) { new Library_Controller(req, res, app.config).showLibraries  (); });
+        app.get('/library/:name'                   , function (req, res) { new Library_Controller(req, res, app.config).showLibrary   (); });
+        app.get('/library/:library/folder/:folder' , function (req, res) { new Library_Controller(req, res, app.config).showFolder    (); });
     };
 module.exports = Library_Controller;  

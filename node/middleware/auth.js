@@ -1,8 +1,8 @@
 /*jshint node: true */
 "use strict";
-var preCompiler = require(process.cwd() + '/node/services/jade-pre-compiler.js');
-
-var loginEnabled = true;
+//var preCompiler = require(process.cwd() + '/node/services/jade-pre-compiler.js');
+var Jade_Service        = require('../services/Jade-Service'),
+    loginEnabled = true;
 
 function checkAuth(req, res, next) 
 {    
@@ -10,7 +10,7 @@ function checkAuth(req, res, next)
     if (loginEnabled && !req.session.username) 
     {
         res.status(403) 
-           .send(preCompiler.renderJadeFile('/source/html/landing-pages/need-login.jade'));        
+           .send(new Jade_Service().renderJadeFile('/source/html/landing-pages/need-login.jade'));        
     }
     else 
     {

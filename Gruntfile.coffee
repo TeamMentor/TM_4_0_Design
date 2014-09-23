@@ -2,9 +2,9 @@
 # consume.
 module.exports = (grunt) ->
 
-    cacheFolder  = "./_node_cache"
+    cacheFolder  = "./.tmCache"
     filesToWatch = 'node/**/**.js'
-    testsToRun   = 'node/tests/**/*Jade*.*' #'node/tests/**/*jade*.js'
+    testsToRun   = 'node/tests/**/**.*' #'node/tests/**/*jade*.js'
     reportMode   = 'list'
     
     @initConfig
@@ -31,10 +31,10 @@ module.exports = (grunt) ->
         child.stdout.pipe(process.stdout)
         child.stderr.pipe(process.stderr)
         
-    @loadNpmTasks('grunt-contrib-clean')    
+    @loadNpmTasks('grunt-contrib-clean')
     @loadNpmTasks('grunt-contrib-watch')
     
     
     @registerTask "default", ["mocha"]
-    @registerTask "run"    , ["default", "clean", "watch"]
+    @registerTask "run"    , ["clean", "default", "default", "watch"]
     @registerTask "test"   , ["mocha"]

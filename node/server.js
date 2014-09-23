@@ -6,9 +6,10 @@ require('coffee-script/register');                      // enabled coffee-script
 var express    = require('express'),
     bodyParser = require('body-parser'),
     app        = express(),
-    session    = require('express-session');
+    session    = require('express-session'),
+    Config     = require('./config');
 
-app.config = require('./config')
+app.config = new Config();
 app.use(bodyParser.json()                        );     // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));     // to support URL-encoded bodies
 app.use(session({secret           : '1234567890', 
