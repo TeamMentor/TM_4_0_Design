@@ -169,3 +169,9 @@ describe "controllers | test-Search-Controller |", ->
                 });
 
          ###
+        
+        it '/search/.json', (done) ->
+            searchController = new Search_Controller()
+            searchData       = searchController.loadSearchData().searchData
+            supertest(app).get('/search/.json')
+                          .expect(200, searchData , done)

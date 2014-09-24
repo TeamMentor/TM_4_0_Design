@@ -29,9 +29,13 @@ class SearchController
 
     showSearch: ->
         @res.send(@renderPage(null))
+    
+    showSearchData: ->
+        @res.send(@loadSearchData().searchData)
 
 SearchController.registerRoutes = (app) ->
-    app.get('/search' , (req, res) -> new SearchController(req, res, app.config).showSearch())
+    app.get('/search'       , (req, res) -> new SearchController(req, res, app.config).showSearch())
+    app.get('/search/.json' , (req, res) -> new SearchController(req, res, app.config).showSearchData())
     #app.get('/search' , (req, res) -> res.send('a'))
                 
 module.exports = SearchController
