@@ -32,3 +32,8 @@ head
 
     // Custom Styles
     link(href="/deploy/css/custom-style.css" rel="stylesheet")
+    
+    //weird CSS fix to handle Chrome prob when <form> exists
+    style
+        |.pull-right { float  : right !important; }
+        |.navbar ul  { display: inline-block;     }
