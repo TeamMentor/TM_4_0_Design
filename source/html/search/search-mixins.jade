@@ -26,20 +26,12 @@ mixin results-save-clear
 
 //- articles-list
 mixin articles-list    
-    .list-group    
-        each result in results                                    
-            a(href=result.link, id=result.id)
-                h4= result.title
-                p= result.summary
-                
-        //a(href='#{link_article_new_window}', target='_blank')
-            :markdown
-                ##### AAAA123
-                bbbb
-        a(href='#{link_article_new_window}', target='_blank')
-            :markdown
-                ##### AAAA
-                bbbb
+    .list-group   
+        if results
+            each result in results                                    
+                a(href=result.link, id=result.id)
+                    h4= result.title
+                    p= result.summary
 
 //- filters
 mixin filters-div

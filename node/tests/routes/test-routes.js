@@ -50,6 +50,8 @@ describe('routes | test-routes.js |', function ()
                                   '/library/:name'               , 
                                   '/library/:library/folder/:folder',
                                   
+                                  '/search'                      ,                  // search
+                                  
                                   '/dirName'                     ,                  // debug ones 
                                   '/pwd'                         ,
                                   '/test'                        ,

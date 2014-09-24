@@ -2,7 +2,7 @@
     "indentation": {
                         "name": "indentation",
                         "value": 4,
-                        "level": "error"
+                        "level": "warn"
                    },
     "max_line_length": {
                         "name": "max_line_length",

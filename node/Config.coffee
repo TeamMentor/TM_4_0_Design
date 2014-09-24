@@ -8,6 +8,7 @@ class Config
         @library_Data      = path.join(@cache_folder, "library_Data")
         @version           = '0.1.0'
         @enable_Jade_Cache = enable_Jade_Cache || false
+        @disableAuth       = false
         
     createCacheFolders : ()->
         if not fs.existsSync(@cache_folder)

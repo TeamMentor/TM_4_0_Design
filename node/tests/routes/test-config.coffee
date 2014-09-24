@@ -11,4 +11,3 @@ describe "routes | test-config.coffee |", ->
     it "/config", (done) ->
         supertest(app).get('/config')
                           .expect(200, app.config        , done)
-                          

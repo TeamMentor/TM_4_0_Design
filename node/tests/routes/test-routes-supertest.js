@@ -1,13 +1,15 @@
 /*jslint node: true */
-/*global describe, it, before, after */
+/*global describe, it */
 "use strict";
 
 var supertest = require('supertest')   ,  
-    expect    = require('chai').expect ,
+    //expect    = require('chai').expect ,
     app       = require('../../server');
 
 describe('routes | test-routes-supertest.js |',  function () 
 {
+    app.config.enable_Jade_Cache = true;
+    
     describe('for tm', function() 
     {   
         it('/', function(done)
@@ -98,9 +100,8 @@ describe('routes | test-routes-supertest.js |',  function ()
                     else                  { done()    ; }
                 });
             };
-
             nextPage();
 
         });        
-    });
+    });       
 });
