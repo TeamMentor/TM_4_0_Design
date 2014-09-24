@@ -31,7 +31,8 @@ class SearchController
         @res.send(@renderPage(null))
     
     showSearchData: ->
-        @res.send(JSON.stringify(@loadSearchData().searchData,null, ' '))
+        @res.set('Content-Type', 'application/json')
+            .send(JSON.stringify(@loadSearchData().searchData,null, ' '))
 
 SearchController.registerRoutes = (app) ->
     app.get('/search'      , (req, res) -> new SearchController(req, res, app.config).showSearch())

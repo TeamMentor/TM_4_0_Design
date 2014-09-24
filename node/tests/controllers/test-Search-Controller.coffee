@@ -174,4 +174,5 @@ describe "controllers | test-Search-Controller |", ->
             searchController = new Search_Controller()
             searchData       = JSON.stringify(searchController.loadSearchData().searchData, null, " ")
             supertest(app).get('/search.json')
+                          .expect('Content-Type', /json/)
                           .expect(200, searchData , done)
