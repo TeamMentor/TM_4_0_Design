@@ -14,7 +14,6 @@ class SearchController
     
     renderPage: (params)->
         @loadSearchData()
-        console.log @searchData
         @jade_Service.renderJadeFile(@jade_Page, @searchData)
         
     

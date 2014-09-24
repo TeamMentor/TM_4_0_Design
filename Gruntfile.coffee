@@ -3,9 +3,9 @@
 module.exports = (grunt) ->
 
     cacheFolder  = "./.tmCache"
-    filesToWatch = 'node/**/**.js'
-    testsToRun   = 'node/tests/**/*routes*.*' #'node/tests/**/*jade*.js'
-    reportMode   = 'list'
+    filesToWatch = ['./node/**/**.*','source/**/**.*','./**/*.coffee' ]
+    testsToRun   = 'node/tests/**/*Search*.*' #'node/tests/**/*jade*.js'
+    reportMode   = 'dot'
     
     @initConfig
         clean:
@@ -13,7 +13,7 @@ module.exports = (grunt) ->
             
         watch:
             scripts:
-                files    : [filesToWatch, "./**/*.coffee" ]
+                files    : filesToWatch
                 tasks    : ["default"]
                 options  :
                     spawn: false

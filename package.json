@@ -13,7 +13,7 @@
   ],
   "main": "node/server.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha node/tests/**/**.js",
+    "test": "node_modules/mocha/bin/mocha node/tests/**/**.*",
     "test-watch": "mocha -w node/tests/**/**.js -R list",
     "start": "node app.js",
     "dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ node/server.js",

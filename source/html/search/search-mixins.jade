@@ -1,3 +1,4 @@
+//- directory-list
 mixin directory-list
     h3#title= title                
     .list-group#containers
@@ -38,8 +39,18 @@ mixin filters-div
     #filters
         h3 Filters
         form(role='form', action='filters-active.html')
-            .form-group
-                h5 Technology
+            if filters
+                for filter in filters
+                    .form-group                    
+                        h5= filter.title
+                        for result in filter.results
+                            li
+                                input(type='checkbox', id=result.title)
+                                label(for=result.title, type='checkbox')= result.title
+                                    span.badge= result.size 
+                        
+            //.form-group
+                h5 TechnologyAA
                 li
                     input#technology_1(type='checkbox')
                     label(for='#technology_1', type='checkbox') Option #1
@@ -48,14 +59,14 @@ mixin filters-div
                     input#technology_2(type='checkbox')
                     label(for='#technology_2', type='checkbox') Option #2
                         span.badge 14                 
-            .form-group
-                h5 Category
+            //.form-group
+                h5 CategoryBB
                 li
                     input#category_1(type='checkbox')
                     label(for='#category_1', type='checkbox') Option #1
                         span.badge 14                                     
-            .form-group
-                h5 Phase
+            //.form-group
+                h5 PhaseCC
                 li
                     input#phase_1(type='checkbox')
                     label(for='#phase_1', type='checkbox') Option #1
@@ -64,8 +75,8 @@ mixin filters-div
                     input#phase_2(type='checkbox')
                     label(for='#phase_2', type='checkbox') Option #2
                         span.badge 14
-            .form-group
-                h5 Type
+            //.form-group
+                h5 TypeDD
                 li
                     input#type_1(type='checkbox')
                     label(for='#type_1', type='checkbox') Option #1
