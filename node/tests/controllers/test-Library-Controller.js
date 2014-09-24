@@ -13,6 +13,8 @@ var fs                 = require('fs'),
 
 describe('controllers | test-Library-Controller.js |', function () 
 {    
+    this.timeout(5000);
+    
     describe('used by controllers', function()
     {
         app.config.enable_Jade_Cache = true;                        // enable Jade compilation cache (which dramatically speeds up tests)
