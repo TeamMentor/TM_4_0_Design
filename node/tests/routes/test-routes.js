@@ -51,6 +51,7 @@ describe('routes | test-routes.js |', function ()
                                   '/library/:library/folder/:folder',
                                   
                                   '/search'                      ,                  // search
+                                  '/search.json'                 ,
                                   
                                   '/dirName'                     ,                  // debug ones 
                                   '/pwd'                         ,
