@@ -19,7 +19,6 @@ module.exports = (grunt) ->
                     spawn: false
         githooks:
             all:
-                "pre-commit" : "mocha"
                 "post-commit": "azure"
                     
         #mocha: null
