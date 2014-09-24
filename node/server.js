@@ -7,7 +7,7 @@ var express    = require('express'),
     bodyParser = require('body-parser'),
     app        = express(),
     session    = require('express-session'),
-    Config     = require('./config');
+    Config     = require('./Config');
 
 app.config = new Config();
 app.use(bodyParser.json()                        );     // to support JSON-encoded bodies
