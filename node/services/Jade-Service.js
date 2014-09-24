@@ -3,7 +3,7 @@
 var fs     = require('fs'),    
     path   = require('path'),
     jade   = require('jade'),
-    Config = require('../config');
+    Config = require('../Config');
 
 var JadeService = function(config)
     {
