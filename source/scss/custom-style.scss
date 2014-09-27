@@ -10,8 +10,6 @@ $nav-padding-top: 120px;
 $full-width: 100%;
 
 // Layout and Structure
-@import 'columns';
-@import 'colours';
 
 html {
 	font: 100% $font-stack;
@@ -20,9 +18,13 @@ html {
 body {
 	max-width: $full-width;
 	margin: 0;
+	padding: 0;
 	line-height: 1.5;
 	background: $white;
 }
+
+@import 'columns';
+@import 'colours';
 
 #about {
 	background: url(#{$asset-path}/stock-img/bgthree.jpg);
@@ -107,7 +109,6 @@ body {
 		list-style-type: none;
 
 		.badge {
-			float: right;
 			margin-top: 2px;
 		}
 
@@ -265,6 +266,10 @@ label {
 		li {
 			display: inline-block;
 			padding-right: 25px;
+
+			&:last-child {
+				padding-right: 0px !important;
+			}
 		}
 	}
 }
@@ -425,6 +430,11 @@ input {
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;
+
+	&:focus {
+    	box-shadow:0 0 8px $green;
+    	outline: 0 none;
+	}
 }
 
 .input-group {
@@ -565,6 +575,22 @@ button {
 	transition: width 0.6s ease 0s;
 }
 
+// Breadcrumbs
+
+.breadcrumbs {
+
+	ul {
+		margin-left: 0 !important;
+		padding-left: 0 !important;
+
+		li {
+			display: inline-block;
+			padding: 0 10px 0 0;
+			padding-right: 10px;
+		}
+	}
+}
+
 
 // List Group and List Group Items
 
@@ -596,6 +622,10 @@ button {
 			text-decoration: none;
 			background-color: #f5f5f5;
 		}
+	}
+
+	span.badge {
+		float: right;
 	}
 }
 
