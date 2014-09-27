@@ -220,9 +220,6 @@ body {
   letter-spacing: 0px;
   color: #8aaf3e;
 }
-#article a:hover, #lp-navigation a:hover, #learning-path a:hover, #help-docs a:hover {
-  color: #49661f !important;
-}
 
 #call-to-action {
   padding: 100px 0 110px 0;
@@ -384,20 +381,18 @@ label {
   display: inline-block;
 }
 .navbar ul.brand {
+  padding-left: 0px;
   padding-top: 10px !important;
 }
-.navbar ul.nav-icons {
-  padding-top: 15px;
-}
-.navbar ul.nav-text {
-  padding-top: 25px;
-}
+
 .navbar ul li {
   display: inline-block;
-  padding-right: 40px;
+  padding-right: 25px;
 }
 
 .navbar-fixed-top {
+  overflow-x: visible !important;
+  min-width: 600px;
   position: fixed;
   top: 0;
   right: 0;
@@ -429,7 +424,6 @@ h4 {
   line-height: 1.5em;
   color: #444444;
 }
-
 h5 {
   font-size: 16px;
   font-weight: bold;
@@ -458,13 +452,20 @@ ul, ol {
   margin-bottom: 0;
   margin-top: 0;
 }
+
 ul ul, ol ul {
   margin-bottom: 0;
 }
+
+ul ul, ol ul {
+  margin-bottom: 0;
+}
+
 ul.sidebar, ol.sidebar {
   margin: 0 0 0 -30px;
   list-style-type: none;
 }
+
 ul.sidebar li, ol.sidebar li {
   margin-bottom: 2px;
 }
@@ -525,6 +526,7 @@ a {
   text-align: center !important;
   vertical-align: middle;
 }
+
 a:hover, a:active {
   color: #49661f !important;
   text-decoration: none;
@@ -554,11 +556,13 @@ input {
   float: left;
   width: 100%;
 }
+
 .input-group[class*="col-"] {
   float: none;
   padding-right: 0;
   padding-left: 0;
 }
+
 .input-group .form-control {
   position: relative;
   z-index: 2;
@@ -579,6 +583,7 @@ input {
   vertical-align: middle;
   border-radius: 0px;
 }
+
 .input-group-btn:last-child {
   margin-left: -1px;
 }
@@ -587,7 +592,6 @@ input {
   /* WebKit browsers */
   color: #aaaaaa;
 }
-
 :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #aaaaaa;
@@ -628,6 +632,10 @@ button {
   border-radius: 0px;
   color: #8aaf3e;
 }
+
+button:hover, button:active {
+  color: #49661f !important;
+}
 button:hover, button:active {
   color: #49661f !important;
 }
@@ -652,6 +660,7 @@ button.btn-search-bar {
   background-color: #aaaaaa;
   border-radius: 10px;
 }
+
 .badge:empty {
   display: none;
 }
@@ -683,10 +692,12 @@ button.btn-search-bar {
   padding-left: 0px;
   margin-bottom: 30px;
 }
+
 .list-group h5, .list-group p {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
 .list-group a {
   position: relative;
   display: block;
@@ -702,6 +713,7 @@ button.btn-search-bar {
   color: #444444 !important;
   text-decoration: none;
 }
+
 .list-group a:hover {
   text-decoration: none;
   background-color: #f5f5f5;
@@ -722,10 +734,18 @@ table {
   font-size: 16px;
   color: #444444;
 }
+
 table td {
   padding-left: 10px;
   padding-right: 10px;
   height: 30px;
+}
+
+@media (max-width: 768px) {
+  .navbar ul li {
+    margin: 0 auto;
+    padding-right: 10px;
+  }
 }
 
 /*# sourceMappingURL=custom-style.css.map */
