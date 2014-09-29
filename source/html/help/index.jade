@@ -1,17 +1,17 @@
 extends ../_layouts/page_landing.jade
 block append head  
-	script(src='/deploy/js/tmcontrollers.js')
+	script(src='/deploy/js/controllers/tm.js')
 block content
 	#application
-		.row(ng-controller='NavigationController')
+		.row(ng-controller='libraryController')
 			.column-3
 				div(class="lge-container")
 					div(data-spay="affix", data-offset-top="60", data-offset-bottom="200")
-						div(ng-repeat="view in views")
-							h4.grey {{view.caption}}
-							ul.sidebar
-								li(ng-repeat="guid in view.guidanceItems")
-									a(href="#" ng-click="ShowContent(guid,results[guid].title)") {{results[guid].title}}
+						div(ng-repeat="view in tmLibrary.Views")
+							h4.grey(ng-click="isCollapsed=!isCollapsed" style="cursor: hand;") {{view.Title}}
+							ul(ng-class="{'sidebar-collapsed': isCollapsed, 'sidebar': !isCollapsed}")
+								li(ng-repeat="article in view.Articles")
+									a(href="#" ng-click="getContentAsync(article.Id,article.Title)") {{article.Title}}
 			.column-6
 					div(class="lge_container" ng-show="!payload.length>0 && rendered")
 						h2.grey TEAM Mentor Documents

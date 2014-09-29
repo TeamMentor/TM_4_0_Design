@@ -34,7 +34,7 @@
     <script src="/deploy/js/angularjs/1.2.6/angular-sanitize.js"></script>
     <!--WebServices-->
     <script type="text/javascript" src="/aspx_Pages/scriptCombiner.ashx?s=WebServices_JS"></script>
-    <script src="/deploy/js/tmcontrollers.js"></script>
+    <script src="/deploy/js/controllers/tm.js"></script>
   </head>
   <body>
     <div role="navigation" class="navbar navbar-fixed-top">
@@ -57,14 +57,14 @@
       </div>
     </div>
     <div id="application">
-      <div ng-controller="NavigationController" class="row">
+      <div ng-controller="libraryController" class="row">
         <div class="column-3">
           <div class="lge-container">
             <div data-spay="affix" data-offset-top="60" data-offset-bottom="200">
-              <div ng-repeat="view in views">
-                <h4 class="grey">{{view.caption}}</h4>
-                <ul class="sidebar">
-                  <li ng-repeat="guid in view.guidanceItems"><a href="#" ng-click="ShowContent(guid,results[guid].title)">{{results[guid].title}}</a></li>
+              <div ng-repeat="view in tmLibrary.Views">
+                <h4 ng-click="isCollapsed=!isCollapsed" class="grey">{{view.Title}}</h4>
+                <ul ng-class="{'sidebar-collapsed': isCollapsed, 'sidebar': !isCollapsed}">
+                  <li ng-repeat="article in view.Articles"><a href="#" ng-click="getContentAsync(article.Id,article.Title)">{{article.Title}}</a></li>
                 </ul>
               </div>
             </div>
