@@ -14,7 +14,7 @@
   "main": "node/server.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha node/tests/**/**.*",
-    "test-watch": "mocha -w node/tests/**/**.js -R list",
+    "test-watch": "mocha -w node/tests/**/**.** -R list",
     "start": "node app.js",
     "dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ node/server.js",
     "coverage": "./node/bin/publish-code-coverage.sh"
@@ -28,6 +28,7 @@
     "coffee-script": "^1.8.0",
     "express": "^4.8.7",
     "express-session": "^1.8.0",
+    "fluentnode": "^0.1.3",
     "jade": "^1.6.0",
     "marked": "^0.3.2",
     "request": "^2.42.0"

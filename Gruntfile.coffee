@@ -5,7 +5,9 @@ module.exports = (grunt) ->
     cacheFolder  = "./.tmCache"
     filesToWatch = ['./node/**/**.*','source/**/**.*','./**/*.coffee' ]
     testsToRun   = 'node/tests/**/*Search*.*' #'node/tests/**/*jade*.js'
-    reportMode   = 'dot'
+    reportMode   = 'list'
+    
+    currentBranch = 'Issue_68_Library_Rendering'
     
     @initConfig
         clean:
@@ -35,7 +37,7 @@ module.exports = (grunt) ->
         runCommand(@async(), cmd, args)
     
     @registerTask 'azure', 'Publish branch to azure', ->
-        runCommand(@async(), 'git', ['push', 'azure', 'Issue_68_Library_Rendering:master'])
+        runCommand(@async(), 'git', ['push', 'azure', currentBranch + ':master'])
     
     @registerTask 'coverage', 'Run code coverage', ->
         runCommand(@async(), 'npm', ['run-script','coverage'])

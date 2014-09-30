@@ -47,45 +47,7 @@ mixin filters-div
                             li
                                 input(type='checkbox', id=result.title)
                                 label(for=result.title, type='checkbox')= result.title
-                                    span.badge= result.size 
-                        
-            //.form-group
-                h5 TechnologyAA
-                li
-                    input#technology_1(type='checkbox')
-                    label(for='#technology_1', type='checkbox') Option #1
-                        span.badge 14 
-                li
-                    input#technology_2(type='checkbox')
-                    label(for='#technology_2', type='checkbox') Option #2
-                        span.badge 14                 
-            //.form-group
-                h5 CategoryBB
-                li
-                    input#category_1(type='checkbox')
-                    label(for='#category_1', type='checkbox') Option #1
-                        span.badge 14                                     
-            //.form-group
-                h5 PhaseCC
-                li
-                    input#phase_1(type='checkbox')
-                    label(for='#phase_1', type='checkbox') Option #1
-                        span.badge 14
-                li
-                    input#phase_2(type='checkbox')
-                    label(for='#phase_2', type='checkbox') Option #2
-                        span.badge 14
-            //.form-group
-                h5 TypeDD
-                li
-                    input#type_1(type='checkbox')
-                    label(for='#type_1', type='checkbox') Option #1
-                        span.badge 14
-                li
-                    input#type_2(type='checkbox')
-                    label(for='#type_2', type='checkbox') Option #2
-                        span.badge 14
-                
+                                    span.badge= result.size        
 
             button(type='submit')
                 | Ok, Done
