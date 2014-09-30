@@ -52,6 +52,7 @@ describe('routes | test-routes.js |', function ()
                                   
                                   '/search'                      ,                  // search
                                   '/search.json'                 ,
+                                  '/search/gist/:name/:id/:file' ,
                                   
                                   '/dirName'                     ,                  // debug ones 
                                   '/pwd'                         ,
