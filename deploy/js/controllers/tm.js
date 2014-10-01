@@ -1,13 +1,13 @@
-//defining modulo
+//defining module
 var app = angular.module('tm', ['ngSanitize']);
 
 //defining TMService factory
 app.factory("TMService", function ($http, $q){
    return {
-	  ProcessHttpRequest : function () {
-		  return $q.all([$http.get("/rest/library/eb39d862-f752-4d1c-ab6e-14ed697397c0",{cache:true}),
-					 	 $http.post("/Aspx_Pages/TM_WebServices.asmx/GetGUIObjects",{headers:{'Content-Type':'application/json'}})
-						]);
+			  ProcessHttpRequest : function () {
+				  return $q.all([$http.get("/rest/library/eb39d862-f752-4d1c-ab6e-14ed697397c0",{cache:true}),
+								 $http.post("/Aspx_Pages/TM_WebServices.asmx/GetGUIObjects", {headers:{'Content-Type':'application/json'}})
+								]);
 	  },
 	   fetchArticleContent : function(id){
 		 var url ="/Aspx_Pages/TM_WebServices.asmx/GetGuidanceItemHtml";
@@ -31,13 +31,11 @@ $scope.isCollapsed= true;
 		    $scope.rendered = true;			
 });
 
-	
+//Fetch article content	
 $scope.getContentAsync = function (articleId,title)
 {
-	 $scope.bodyContent ={};
-	 var bodyContent = {};
 	 var h1Title = "<h1> " + title + " </h1>";
-	  TMService.fetchArticleContent(articleId).then(function(response){
+	 TMService.fetchArticleContent(articleId).then(function(response){
 		 	$scope.payload =h1Title.concat(response.data.d.toString());
 		  	$scope.body = $sce.trustAsHtml( $scope.payload);
 	  });
@@ -81,6 +79,7 @@ var tmViews = libraryInfo.views;
 angular.forEach(tmViews, function (tmview){
 	var view = {Title: tmview.caption, Articles: []}
 	angular.forEach(tmview.guidanceItems,function (guidanceItem){
+		
 	 		var articlemetadata = metadata[guidanceItem];
 		    view.Articles.push(articlemetadata);
 			library.Articles[articlemetadata.Id] =articlemetadata;

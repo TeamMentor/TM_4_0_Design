@@ -37,6 +37,7 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/_columns\.scss}line{font-family:\0000330}}
   .column-6 {
     width: 50%;
+	margin-left: 360px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/_columns\.scss}line{font-family:\0000334}}
@@ -52,6 +53,9 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/_columns\.scss}line{font-family:\0000342}}
   .column-3 {
     width: 25%;
+	position: fixed;
+	height: 90%;
+	overflow: auto;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lucybloomfield\/Client\/TM\%204\.0\/source\/scss\/_columns\.scss}line{font-family:\0000346}}

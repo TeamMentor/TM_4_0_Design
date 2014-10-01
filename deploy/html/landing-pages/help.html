@@ -62,7 +62,7 @@
           <div class="lge-container">
             <div data-spay="affix" data-offset-top="60" data-offset-bottom="200">
               <div ng-repeat="view in tmLibrary.Views">
-                <h4 ng-click="isCollapsed=!isCollapsed" class="grey">{{view.Title}}</h4>
+                <h4 ng-click="isCollapsed=!isCollapsed" style="cursor:pointer;" class="grey">{{view.Title}}</h4>
                 <ul ng-class="{'sidebar-collapsed': isCollapsed, 'sidebar': !isCollapsed}">
                   <li ng-repeat="article in view.Articles"><a href="#" ng-click="getContentAsync(article.Id,article.Title)">{{article.Title}}</a></li>
                 </ul>

@@ -8,7 +8,7 @@ block content
 				div(class="lge-container")
 					div(data-spay="affix", data-offset-top="60", data-offset-bottom="200")
 						div(ng-repeat="view in tmLibrary.Views")
-							h4.grey(ng-click="isCollapsed=!isCollapsed" style="cursor: hand;") {{view.Title}}
+							h4.grey(ng-click="isCollapsed=!isCollapsed" style="cursor:pointer;") {{view.Title}}
 							ul(ng-class="{'sidebar-collapsed': isCollapsed, 'sidebar': !isCollapsed}")
 								li(ng-repeat="article in view.Articles")
 									a(href="#" ng-click="getContentAsync(article.Id,article.Title)") {{article.Title}}
@@ -16,7 +16,6 @@ block content
 					div(class="lge_container" ng-show="!payload.length>0 && rendered")
 						h2.grey TEAM Mentor Documents
 						br
-
 						p Welcome to the TEAM Mentor Documentation Website where you will find detailed information on how to install TEAM Mentor, how it works and how to customize it.
 
 						br
