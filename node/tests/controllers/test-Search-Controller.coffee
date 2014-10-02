@@ -9,7 +9,9 @@ Search_Controller = require('../../controllers/Search-Controller')
 require('fluentnode')
 
 describe "controllers | test-Search-Controller |", ->
-
+    
+    @.timeout(3500)
+    
     it "Ctor values", ->
         expect(Search_Controller).to.be.an('Function')
         
@@ -29,8 +31,13 @@ describe "controllers | test-Search-Controller |", ->
         expect(searchController.req         ).to.equal     (req       )
         expect(searchController.res         ).to.equal     (res       )
         expect(searchController.config      ).to.equal     (config    )
-        expect(searchController.searchData  ).to.equal     (null       )
+        expect(searchController.searchData  ).to.equal     (null      )
         expect(searchController.jade_Page   ).to.equal     ('/source/html/search/main.jade')
+        
+        expect(searchController.defaultUser    ).to.be.an('String')
+        expect(searchController.defaultRepo    ).to.be.an('String')
+        expect(searchController.defaultFolder  ).to.be.an('String')
+        expect(searchController.defaultDataFile).to.be.an('String')
         
         expect(searchController.showSearch ).to.be.an('Function')
         expect(searchController.renderPage ).to.be.an('Function')
@@ -88,17 +95,16 @@ describe "controllers | test-Search-Controller |", ->
                     expect(result.title).to.be.an('String')
                     expect(result.size).to.be.an('Number')
          
-         it 'getSearchDataFromGist', (done)->
-            expect(searchController.getSearchDataFromGist).to.be.an('Function')
-            testGist = searchController.defaultGist  #'DinisCruz/ad328585205f67569e0d/raw/Search_Data_Validation.json'
-            searchController.getSearchDataFromGist testGist, (data)->
+         it 'getSearchDataFromRepo', (done)->
+            expect(searchController.getSearchDataFromRepo).to.be.an('Function')
+            testFile = searchController.defaultDataFile
+            searchController.getSearchDataFromRepo testFile, (data)->
                 expect(data).to.be.an('string')
                 searchData = JSON.parse(data)
                 expect(searchData      ).to.be.an('Object')
-                expect(searchData.title).to.equal('Data Validation')                
+                expect(searchData.title).to.equal('Data Validation')
                 done()
-                
-         return            
+                         
          it 'renderPage (and check content)', ->
             
             searchController.config.enable_Jade_Cache = false
@@ -173,30 +179,18 @@ describe "controllers | test-Search-Controller |", ->
                           .expect(200)
                           .end (error, response)->
                                 $ = cheerio.load(response.text)
-                                expect($('#title').html()).to.equal('Data Validation')                                
-                                done();
+                                expect($('#title').html()).to.equal('Data Validation')
+                                done()
                           
-        it '/search/:name/:id/:file', (done) ->
-            name = 'DinisCruz'
-            id   = 'ad328585205f67569e0d'
-            file = 'Search_Input_Validation.json'
-            url  = "/search/gist/#{name}/#{id}/#{file}";
+        it '/search/:file', (done) ->
+            file = 'Input_Validation'
+            url  = "/search/#{file}"
             supertest(app).get(url)
                           .expect(200)
                           .end (error, response)->
                                 $ = cheerio.load(response.text)
-                                expect($('#title').html()).to.equal('Input Validation')                                
-                                done();
-          ###
-          .end(function(error, response)
-                {
-                    expect(response.headers         ).to.be.an('Object');
-                    expect(response.headers.location).to.be.an('String');
-                    expect(response.headers.location).to.equal(gitHub_Path + test_image);
-                    check_That_Image_Exists(response.headers.location);
-                });
-
-         ###
+                                expect($('#title').html()).to.equal('Input Validation')
+                                done()
         
         it '/search.json', (done) ->
             searchController = new Search_Controller()

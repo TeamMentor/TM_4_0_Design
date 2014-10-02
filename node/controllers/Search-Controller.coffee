@@ -1,17 +1,21 @@
-fs           = require('fs')
-path         = require('path')
-Config       = require('../Config')
-Jade_Service = require('../services/Jade-Service')
+fs              = require('fs')
+path            = require('path')
+Config          = require('../Config')
+Jade_Service    = require('../services/Jade-Service')
+GitHub_Service  = require('../services/GitHub-Service')
 
 class SearchController
     constructor: (req, res, config)->
-        @req          = req
-        @res          = res
-        @config       = config || new Config()
-        @jade_Page    = '/source/html/search/main.jade'
-        @jade_Service = new Jade_Service(@config)
-        @searchData   = null
-        @defaultGist  = 'DinisCruz/ad328585205f67569e0d/raw/Search_Data_Validation.json'
+        @req              = req
+        @res              = res
+        @config           = config || new Config()
+        @jade_Page        = '/source/html/search/main.jade'
+        @jade_Service     = new Jade_Service(@config)
+        @searchData       = null
+        @defaultUser      = "TMContent"
+        @defaultRepo      = "TM_Test_GraphData"
+        @defaultFolder    = '/SearchData/'
+        @defaultDataFile  = 'Data_Validation'
     
     renderPage: ()->
         if not @searchData
@@ -29,29 +33,31 @@ class SearchController
             @searchData = JSON.parse(fs.readFileSync(jsonFile, 'utf8'))
         return this
 
-    getSearchDataFromGist: (gistId, callback) ->
-        gistUrl = 'https://gist.githubusercontent.com/' + gistId
-        require('request').get gistUrl, (error, response, body) =>
-            callback(body)
+    getSearchDataFromRepo: (file, callback) =>
+        new GitHub_Service().file(@defaultUser, @defaultRepo, @defaultFolder + file + '.json', callback)        
 
     showSearch: () ->        
-        if (@req.params.name && @req.params.id)
-            gistToUse = "#{@req.params.name}/#{@req.params.id}/raw/#{@req.params.file}";
+        if (@req.params.file)
+            fileToUse = @req.params.file
         else
-            gistToUse = @defaultGist
+            fileToUse = @defaultDataFile
         
-        @getSearchDataFromGist gistToUse, (data) =>
-            @searchData = JSON.parse(data)
+        @getSearchDataFromRepo fileToUse, (data) =>
+            try
+                @searchData = JSON.parse(data)                
+            catch error
+                @searchData = { title: 'JSON Parsing error' , resultsTitle : error}
             @res.send(@renderPage())
+    
     
     showSearchData: ->
         @res.set('Content-Type', 'application/json')
             .send(JSON.stringify(@loadSearchData().searchData,null, ' '))
 
 SearchController.registerRoutes = (app) ->
-    app.get('/search'                    , (req, res) -> new SearchController(req, res, app.config).showSearch())
-    app.get('/search.json'               , (req, res) -> new SearchController(req, res, app.config).showSearchData())
-    app.get('/search/gist/:name/:id/:file'      , (req, res) -> new SearchController(req, res, app.config).showSearch())
+    app.get('/search'                 , (req, res) -> new SearchController(req, res, app.config).showSearch())
+    app.get('/search.json'            , (req, res) -> new SearchController(req, res, app.config).showSearchData())
+    app.get('/search/:file'           , (req, res) -> new SearchController(req, res, app.config).showSearch())
         
     #app.get('/search' , (req, res) -> res.send('a'))
                 
