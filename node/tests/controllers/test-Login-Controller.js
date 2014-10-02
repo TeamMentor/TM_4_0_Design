@@ -20,7 +20,7 @@ describe('routes > test-Login-Controller.js', function ()
             browser = new Browser();
             browser.visit('/user/login/returning-user-login.html')
                    .then(done)
-                   .fail(function(error) { assert.fail('error');});                      
+                   //.fail(function(error) { assert.fail('error');});                      
         });        
 
         it('Check login page Form fields ', function () 

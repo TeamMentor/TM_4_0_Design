@@ -12,6 +12,8 @@ describe('controllers |', function ()
 {
     describe('test-Help-Controller.js |', function() 
     {   
+        this.timeout(3500)
+        
         describe('content_cache', function() 
         {
             it('check ctor', function()

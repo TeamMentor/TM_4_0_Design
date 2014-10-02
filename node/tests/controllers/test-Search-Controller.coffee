@@ -172,6 +172,8 @@ describe "controllers | test-Search-Controller |", ->
 
     describe "routes |", ->
         
+        @.timeout(3500)
+        
         app.config.enable_Jade_Cache = true
         
         it '/search', (done) ->

@@ -1,5 +1,6 @@
 //extends ../_layouts/page_just_css.jade
 extends ../_layouts/page_home.jade
+include ../articles/mixins/articles-mixins.jade
 include ./search-mixins.jade
 
 block content     
@@ -40,9 +41,11 @@ block content
                     span  repo
         .column-6
           .lge-container
-                +search-bar-input
-                br
-                br
+                +breadcrumbs
+                //br
+                //+search-bar-input
+                //br
+                //br
                 br
 
                 +results-save-clear
