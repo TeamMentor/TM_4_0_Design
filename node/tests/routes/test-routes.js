@@ -53,6 +53,7 @@ describe('routes | test-routes.js |', function ()
                                   '/search'                      ,                  // search
                                   '/search.json'                 ,
                                   '/search/:file'                ,
+                                  '/graph'                       , 
                                   
                                   '/dirName'                     ,                  // debug ones 
                                   '/pwd'                         ,

@@ -198,3 +198,12 @@ describe "controllers | test-Search-Controller |", ->
             supertest(app).get('/search.json')
                           .expect('Content-Type', /json/)
                           .expect(200, searchData , done)
+                          
+        it '/graph', (done)->
+            supertest(app).get('/graph')
+                          .expect(200)
+                          .end (error, response)->
+                                $ = cheerio.load(response.text)
+                                #console.log(response.text)
+                                expect($('#title').html()).to.equal('Data from Graph')                                
+                                done()            

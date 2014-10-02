@@ -3,6 +3,7 @@ path            = require('path')
 Config          = require('../Config')
 Jade_Service    = require('../services/Jade-Service')
 GitHub_Service  = require('../services/GitHub-Service')
+Graph_Service  = require('../services/Graph-Service')
 
 class SearchController
     constructor: (req, res, config)->
@@ -34,9 +35,9 @@ class SearchController
         return this
 
     getSearchDataFromRepo: (file, callback) =>
-        new GitHub_Service().file(@defaultUser, @defaultRepo, @defaultFolder + file + '.json', callback)        
+        new GitHub_Service().file(@defaultUser, @defaultRepo, @defaultFolder + file + '.json', callback)
 
-    showSearch: () ->        
+    showSearch: () ->
         if (@req.params.file)
             fileToUse = @req.params.file
         else
@@ -44,11 +45,18 @@ class SearchController
         
         @getSearchDataFromRepo fileToUse, (data) =>
             try
-                @searchData = JSON.parse(data)                
+                @searchData = JSON.parse(data)
             catch error
                 @searchData = { title: 'JSON Parsing error' , resultsTitle : error}
             @res.send(@renderPage())
     
+    showSearchFromGraph: ()=>
+        graphService = new Graph_Service()
+        graphService.loadTestData =>
+            graphService.createSearchData 'Data from Graph',( searchData) =>
+                @searchData = searchData
+                graphService.closeDb =>
+                    @res.send(@renderPage())
     
     showSearchData: ->
         @res.set('Content-Type', 'application/json')
@@ -58,6 +66,7 @@ SearchController.registerRoutes = (app) ->
     app.get('/search'                 , (req, res) -> new SearchController(req, res, app.config).showSearch())
     app.get('/search.json'            , (req, res) -> new SearchController(req, res, app.config).showSearchData())
     app.get('/search/:file'           , (req, res) -> new SearchController(req, res, app.config).showSearch())
+    app.get('/graph'                  , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
         
     #app.get('/search' , (req, res) -> res.send('a'))
                 

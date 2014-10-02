@@ -2,46 +2,12 @@ require ('fluentnode')
 GitHub_Service = require('./../../services/GitHub-Service')
 expect         = require('chai').expect
 
-xdescribe 'services | test-GitHub-Service |', ->
+describe 'services | test-GitHub-Service |', ->
 
     gitHubService = new GitHub_Service()
     
     @.timeout(3500)
 
-    it 'file', (done)->
-        expect(gitHubService.file).to.be.an('Function')
-        user   = "TMContent"
-        repo   = "TM_Test_GraphData"
-        sha    = 'SearchData/Data_Validation.json'
-        gitHubService.file user, repo, sha, (data)->
-            expect(data).to.be.an('String')
-            searchData = JSON.parse(data)
-            expect(searchData      ).to.be.an('Object')
-            expect(searchData.title).to.equal('Data Validation')
-            done()
-
-    it 'tree_Raw', (done)->
-        expect(gitHubService.tree_Raw).to.be.an('Function')
-        user   = "TMContent"
-        repo   = "TM_Test_GraphData"
-        sha    = 'master'
-        gitHubService.tree_Raw user, repo, sha, (data)->
-            console.log(data)
-            files = (item.path for item in data.tree)
-            console.log(files)
-            console.log("There were #{files.length} files")
-            expect(data).to.be.an('Object')
-            done()
-    
-    it 'repo_Raw', (done)->
-        expect(gitHubService.repo_Raw).to.be.an('Function')
-        user = "TMContent"
-        repo = "TM_Test_GraphData"
-        gitHubService.repo_Raw user, repo, (data)->
-            #console.log(data)
-            expect(data).to.be.an('Object')
-            done()
-    
     
     it 'test constructor', ->
         expect(GitHub_Service).to.be.an('Function')
@@ -95,6 +61,40 @@ xdescribe 'services | test-GitHub-Service |', ->
             expect(data).to.be.an('String')
             searchData = JSON.parse(data)
             
+            expect(searchData      ).to.be.an('Object')
+            expect(searchData.title).to.equal('Data Validation')
+            done()
+    
+    it 'repo_Raw', (done)->
+        expect(gitHubService.repo_Raw).to.be.an('Function')
+        user = "TMContent"
+        repo = "TM_Test_GraphData"
+        gitHubService.repo_Raw user, repo, (data)->
+            #console.log(data)
+            expect(data).to.be.an('Object')
+            done()
+            
+    it 'tree_Raw', (done)->
+        expect(gitHubService.tree_Raw).to.be.an('Function')
+        user   = "TMContent"
+        repo   = "TM_Test_GraphData"
+        sha    = 'master'
+        gitHubService.tree_Raw user, repo, sha, (data)->
+            #console.log(data)
+            files = (item.path for item in data.tree)
+            #console.log(files)
+            #console.log("There were #{files.length} files")
+            expect(data).to.be.an('Object')
+            done()
+    
+    it 'file', (done)->
+        expect(gitHubService.file).to.be.an('Function')
+        user   = "TMContent"
+        repo   = "TM_Test_GraphData"
+        sha    = 'SearchData/Data_Validation.json'
+        gitHubService.file user, repo, sha, (data)->
+            expect(data).to.be.an('String')
+            searchData = JSON.parse(data)
             expect(searchData      ).to.be.an('Object')
             expect(searchData.title).to.equal('Data Validation')
             done()
