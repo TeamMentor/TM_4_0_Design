@@ -15,8 +15,8 @@
   "scripts": {
     "test": "node_modules/mocha/bin/mocha node/tests/**/**.*",
     "test-watch": "mocha -w node/tests/**/**.** -R list",
-    "start": "node app.js",
-    "dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ node/server.js",
+    "start_once": "node app.js",
+    "start": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ node/server.js",
     "coverage": "./node/bin/publish-code-coverage.sh"
   },
   "repository": {
@@ -35,7 +35,8 @@
     "leveldown": "^1.0.0",
     "levelgraph": "^0.8.2",
     "marked": "^0.3.2",
-    "request": "^2.42.0"
+    "request": "^2.42.0",
+    "supervisor": "^0.6.0"
   },
   "devDependencies": {
     "chai": "^1.9.1",
@@ -49,8 +50,7 @@
     "mocha": "^1.21.4",
     "mocha-lcov-reporter": "0.0.1",
     "should": "^4.0.4",
-    "supertest": "^0.13.0",
-    "supervisor": "^0.6.0",
+    "supertest": "^0.13.0",    
     "zombie": "^2.0.0-alpha31"
   }
 }
