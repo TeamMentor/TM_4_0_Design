@@ -209,7 +209,7 @@ body {
 }
 
 #application {
-  margin-top: 120px;
+  margin-top: 90px;
   width: 100%;
 }
 
@@ -364,6 +364,7 @@ form button {
   border-radius: 0px;
   border: 1px solid #aaaaaa;
   color: #444444;
+  background: white;
 }
 
 label {
@@ -642,7 +643,7 @@ button:hover, button:active {
   color: #49661f !important;
 }
 button.btn-search-bar {
-  max-width: 100%;
+  width: 60px;
   border: none !important;
 }
 

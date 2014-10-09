@@ -6,7 +6,7 @@ http_path = "/"
 css_dir = "deploy/css"
 sass_dir = "source/scss"
 images_dir = "deploy/assets/images"
-javascripts_dir = "deploy/assets/js"
+javascripts_dir = "deploy/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

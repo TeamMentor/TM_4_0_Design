@@ -28,6 +28,12 @@
     <link href="/deploy/css/normalize.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
+    <!-- Foundation Javascript-->
+    <link href="/deploy/assets/bower_components/modernizer/modernizer.js" rel="text/javascript">
+    <link href="/deploy/assets/bower_components/jquery/jquery.js" rel="text/javascript">
+    <link href="/deploy/assets/bower_components/fastclick/fastclick.js" rel="text/javascript">
+    <link href="/deploy/assets/bower_components/foundation/js/foundation.min.js" rel="text/javascript">
+    <link href="/deploy/js/app.js" rel="text/javascript">
   </head>
   <body>
     <div role="navigation" class="navbar navbar-fixed-top">
@@ -47,10 +53,10 @@
     </div>
     <div id="application">
       <div class="row">
-        <div class="column-3">
+        <div class="col-3">
           <div class="lge-container"><br></div>
         </div>
-        <div class="column-6">
+        <div class="col-6">
           <div class="lge-container">           
               <div role="alert" class="alert">Error/Validation messages go here</div><h3 id="login">Login</h3>
 <p>Already have an account? Sign in here.</p>
@@ -66,9 +72,6 @@
               </div>
               <button type="submit" id="btn-login">Login</button><br/><br/><a href="returning-user-forgot-password.html">
                 <button type="button" id="btn-forgot-pwd">Forgot your password?</button></a><br/><br/>
-            </form>
-            <form role="form" action="returning-user-forgot-password.html" method="get">
-              <button id="btn-forgot-pwd" type="submit">Forgot your password?</button>
             </form>
           </div>
         </div>

@@ -3,7 +3,7 @@ include ../../content/mixins/user-mixins.jade
 block content
 	#application.lge-container
 		.row
-			.column-6
+			.col-6
 				.lge-container
 					h1 Security Risk. Understood.
 					h4 Instant resources that bridge the gap between developer questions and technical solutions.
@@ -14,27 +14,36 @@ block content
 					br
 
 					.row 
-						.column-offset-1.column-10
+						.col-offset-1.col-10
 							.row
-								.column-1
+								.col-1
 									img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-								.column-11
+								.col-11
 									.lge-container
 										p FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow
 							
 							.row
-								.column-1
+								.col-1
 									img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
-								.column-11
+								.col-11
 									.lge-container
 										p REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified
 							
 							.row
-								.column-1
+								.col-1
 									img(src='/deploy/assets/icons/expand.png', alt='REDUCE the number of vulnerabilities over time')
-								.column-11
+								.col-11
 									.lge-container
 										p EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices
 
-			.column-6
-				p Hello
+			.col-6
+				dl.tabs(data-tab='data-tab')
+					dd.active
+						a(href='#signup') Sign Up
+					dd
+						a(href='#login') Login
+				.tabs-content
+					#signup.content.active
+						p This is the first panel of the basic tab example. This is the first panel of the basic tab example.
+					#login.content
+						p This is the second panel of the basic tab example. This is the second panel of the basic tab example.

@@ -47,7 +47,7 @@ body {
 }
 
 #application {
-	margin-top: $nav-padding-top;
+	margin-top: 90px;
 	width: $full-width;
 }
 
@@ -228,6 +228,7 @@ form {
 	border-radius: 0px;
 	border: 1px solid $grey;
 	color: $dark-grey;
+	background: $white;
 }
 
 label {
@@ -521,7 +522,7 @@ button {
 	}
 
 	&.btn-search-bar {
-		max-width: $full-width;
+		width: 60px;
 		border: none !important;
 	}
 }

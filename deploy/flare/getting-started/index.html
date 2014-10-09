@@ -26,10 +26,14 @@
     <title>TEAM Mentor 4.0 (Html version)</title>
     <!-- Normalize-->
     <link href="/deploy/css/normalize.css" rel="stylesheet">
-    <!-- Foundation-->
-    <link href="/deploy/css/app.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
+    <!-- Foundation Javascript-->
+    <link href="/deploy/assets/bower_components/modernizer/modernizer.js" rel="text/javascript">
+    <link href="/deploy/assets/bower_components/jquery/jquery.js" rel="text/javascript">
+    <link href="/deploy/assets/bower_components/fastclick/fastclick.js" rel="text/javascript">
+    <link href="/deploy/assets/bower_components/foundation/js/foundation.min.js" rel="text/javascript">
+    <link href="/deploy/js/app.js" rel="text/javascript">
   </head>
   <body>
     <div role="navigation" class="navbar navbar-fixed-top">
@@ -45,7 +49,7 @@
     </div>
     <div id="application" class="lge-container">
       <div class="row">
-        <div class="column-6">
+        <div class="col-6">
           <div class="lge-container">
             <h1>Security Risk. Understood.</h1>
             <h4>Instant resources that bridge the gap between developer questions and technical solutions.</h4>
@@ -53,26 +57,26 @@
             <hr>
             <h3 class="text-center">With TEAM Mentor, you can...</h3><br>
             <div class="row">
-              <div class="column-offset-1 column-10">
+              <div class="col-offset-1 col-10">
                 <div class="row">
-                  <div class="column-1"><img src="/deploy/assets/icons/identifyfix.png" alt="Identify vulnerabilities and reduce time to fix them"></div>
-                  <div class="column-11">
+                  <div class="col-1"><img src="/deploy/assets/icons/identifyfix.png" alt="Identify vulnerabilities and reduce time to fix them"></div>
+                  <div class="col-11">
                     <div class="lge-container">
                       <p>FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow</p>
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="column-1"><img src="/deploy/assets/icons/reduces.png" alt="REDUCE the number of vulnerabilities over time"></div>
-                  <div class="column-11">
+                  <div class="col-1"><img src="/deploy/assets/icons/reduces.png" alt="REDUCE the number of vulnerabilities over time"></div>
+                  <div class="col-11">
                     <div class="lge-container">
                       <p>REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified</p>
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="column-1"><img src="/deploy/assets/icons/expand.png" alt="REDUCE the number of vulnerabilities over time"></div>
-                  <div class="column-11">
+                  <div class="col-1"><img src="/deploy/assets/icons/expand.png" alt="REDUCE the number of vulnerabilities over time"></div>
+                  <div class="col-11">
                     <div class="lge-container">
                       <p>EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices</p>
                     </div>
@@ -82,8 +86,19 @@
             </div>
           </div>
         </div>
-        <div class="column-6">
-          <p>Hello</p>
+        <div class="col-6">
+          <dl data-tab="data-tab" class="tabs">
+            <dd class="active"><a href="#signup">Sign Up</a></dd>
+            <dd><a href="#login">Login</a></dd>
+          </dl>
+          <div class="tabs-content">
+            <div id="signup" class="content active">
+              <p>This is the first panel of the basic tab example. This is the first panel of the basic tab example.</p>
+            </div>
+            <div id="login" class="content">
+              <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

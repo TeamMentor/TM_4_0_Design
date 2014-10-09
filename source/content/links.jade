@@ -31,22 +31,27 @@ mixin links-navbar__not_logged_in
         * [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
             
 mixin links-home__navigate
-    :markdown
-      [Attacks & Vulnerabilities](#{home}/attacks-vulnerabilities.html)
-      [Principles & Standards](#{home}/principles-standards.html)
-      [My Articles](#{home}/my-articles.html)       
-      [My Search Items](#{home}/my-search-items.html)
+    h3 Navigate TEAM Mentor
+      .list-group
+        a(href='fundamentals-of-security.html')
+          | Attacks & Vulernabilites
+        a(href='fundamentals-of-security.html')
+          | Fundamentals of Security
+        a(href='my-articles.html')
+          | My Articles
+        a(href='my-search-terms.html')
+          | My Saved Searches
 
 mixin links_user_pages
   #user-links
     .row.text-center
-      .column-3
+      .col-3
         a(href='user.html') User
-      .column-3
+      .col-3
         a(href='backend.html') Backend
-      .column-3
+      .col-3
         a(href='developer-utilities.html') Developer Utilities
-      .column-3
+      .col-3
         a(href='other.html') Other
 
 //- all-pages-links
@@ -79,7 +84,7 @@ mixin all-pages-links
     a(href='home/navigate.html'                                            ) navigate.html
     a(href='articles/owasp.html'                                           ) owasp.html
     a(href='home/principles-standards.html'                                ) principles-standards.html
-    a(href='user/returning-user-forgot-password.html'                      ) returning-user-forgot-password.html
+    a(href='user/login/returning-user-forgot-password.html'                      ) returning-user-forgot-password.html
     a(href='user/login/returning-user-login.html'                          ) returning-user-login.html
     a(href='user/login/returning-user-validation.html'                     ) returning-user-validation.html
     a(href='user/user-add-filter.html'                                     ) user-add-filter.html
@@ -90,7 +95,7 @@ mixin all-pages-links
 //- my-articles-links
 mixin my-articles-links
   .row
-    .column-6
+    .col-6
       .list-group
         a(href='#{link_article_new_window}', target='_blank') A New ID Is Assigned on Login
         a(href='#{link_article_new_window}', target='_blank') A New Or Blank Session ID is Assigned on Logout
@@ -104,7 +109,7 @@ mixin my-articles-links
         a(href='#{link_article_new_window}', target='_blank') Centralize Authentication
         a(href='#{link_article_new_window}', target='_blank') Client-side Validation is Not Relied On
         a(href='#{link_article_new_window}', target='_blank') Cross Site Scripting Vulnerablity
-    .column-6
+    .col-6
       .list-group
         a(href='#{link_article_new_window}', target='_blank') Deny All Access by Default
         a(href='#{link_article_new_window}', target='_blank') Do Not Cache Sensitive Data
@@ -174,9 +179,9 @@ mixin edit-links
   #edit-links
     br
     .row
-      .column-4
+      .col-4
         a(href='#') Clear Selected
-      .column-4
+      .col-4
         a(href='navigate.html') Clear All
-      .column-4
+      .col-4
         a(href='my-articles.html') Ok, Done
