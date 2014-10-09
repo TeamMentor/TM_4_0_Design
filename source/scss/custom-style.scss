@@ -255,8 +255,7 @@ label {
 		}
 
 		&.nav-icons {
-			padding-left: 0px;
-			padding-top: 15px;
+			padding: 20px 0 10px 0;
 		}
 
 		&.nav-text {
@@ -265,7 +264,7 @@ label {
 
 		li {
 			display: inline-block;
-			padding-right: 25px;
+			padding-right: 30px;
 
 			&:last-child {
 				padding-right: 0px !important;
