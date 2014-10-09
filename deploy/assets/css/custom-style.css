@@ -14,132 +14,132 @@ body {
 
 @media (min-width: 768px) {
   /* line 2, ../../../source/scss/_columns.scss */
-  .column-1, .column-2, .column-3, .column-4, .column-5, .column-6, .column-7, .column-8, .column-9, .column-10, .column-11, .column-12 {
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
     float: left;
   }
 
   /* line 6, ../../../source/scss/_columns.scss */
-  .column-12 {
+  .col-12 {
     width: 100%;
   }
 
   /* line 10, ../../../source/scss/_columns.scss */
-  .column-11 {
+  .col-11 {
     width: 91.66666667%;
   }
 
   /* line 14, ../../../source/scss/_columns.scss */
-  .column-10 {
+  .col-10 {
     width: 83.33333333%;
   }
 
   /* line 18, ../../../source/scss/_columns.scss */
-  .column-9 {
+  .col-9 {
     width: 75%;
   }
 
   /* line 22, ../../../source/scss/_columns.scss */
-  .column-8 {
+  .col-8 {
     width: 66.66666667%;
   }
 
   /* line 26, ../../../source/scss/_columns.scss */
-  .column-7 {
+  .col-7 {
     width: 58.33333333%;
   }
 
   /* line 30, ../../../source/scss/_columns.scss */
-  .column-6 {
+  .col-6 {
     width: 50%;
   }
 
   /* line 34, ../../../source/scss/_columns.scss */
-  .column-5 {
+  .col-5 {
     width: 41.66666667%;
   }
 
   /* line 38, ../../../source/scss/_columns.scss */
-  .column-4 {
+  .col-4 {
     width: 33.33333333%;
   }
 
   /* line 42, ../../../source/scss/_columns.scss */
-  .column-3 {
+  .col-3 {
     width: 25%;
   }
 
   /* line 46, ../../../source/scss/_columns.scss */
-  .column-2 {
+  .col-2 {
     width: 16.66666667%;
   }
 
   /* line 50, ../../../source/scss/_columns.scss */
-  .column-1 {
+  .col-1 {
     width: 8.33333333%;
   }
 
   /* line 54, ../../../source/scss/_columns.scss */
-  .column-offset-12 {
+  .col-offset-12 {
     margin-left: 100%;
   }
 
   /* line 58, ../../../source/scss/_columns.scss */
-  .column-offset-11 {
+  .col-offset-11 {
     margin-left: 91.66666667%;
   }
 
   /* line 62, ../../../source/scss/_columns.scss */
-  .column-offset-10 {
+  .col-offset-10 {
     margin-left: 83.33333333%;
   }
 
   /* line 66, ../../../source/scss/_columns.scss */
-  .column-offset-9 {
+  .col-offset-9 {
     margin-left: 75%;
   }
 
   /* line 70, ../../../source/scss/_columns.scss */
-  .column-offset-8 {
+  .col-offset-8 {
     margin-left: 66.66666667%;
   }
 
   /* line 74, ../../../source/scss/_columns.scss */
-  .column-offset-7 {
+  .col-offset-7 {
     margin-left: 58.33333333%;
   }
 
   /* line 78, ../../../source/scss/_columns.scss */
-  .column-offset-6 {
+  .col-offset-6 {
     margin-left: 50%;
   }
 
   /* line 82, ../../../source/scss/_columns.scss */
-  .column-offset-5 {
+  .col-offset-5 {
     margin-left: 41.66666667%;
   }
 
   /* line 86, ../../../source/scss/_columns.scss */
-  .column-offset-4 {
+  .col-offset-4 {
     margin-left: 33.33333333%;
   }
 
   /* line 90, ../../../source/scss/_columns.scss */
-  .column-offset-3 {
+  .col-offset-3 {
     margin-left: 25%;
   }
 
   /* line 94, ../../../source/scss/_columns.scss */
-  .column-offset-2 {
+  .col-offset-2 {
     margin-left: 16.66666667%;
   }
 
   /* line 98, ../../../source/scss/_columns.scss */
-  .column-offset-1 {
+  .col-offset-1 {
     margin-left: 8.33333333%;
   }
 
   /* line 102, ../../../source/scss/_columns.scss */
-  .column-offset-0 {
+  .col-offset-0 {
     margin-left: 0;
   }
 }
@@ -229,7 +229,7 @@ body {
 
 /* line 29, ../../../source/scss/custom-style.scss */
 #about {
-  background: url(../../deploy/assets//stock-img/bgthree.jpg);
+  background: url(../../deploy/assets//images/bgthree.jpg);
 }
 
 /* line 33, ../../../source/scss/custom-style.scss */
@@ -273,7 +273,7 @@ body {
 /* line 70, ../../../source/scss/custom-style.scss */
 #call-to-action {
   padding: 100px 0 110px 0;
-  background: url(../../deploy/assets//stock-img/bgtwo.jpg);
+  background: url(../../deploy/assets//images/bgtwo.jpg);
   background-color: #49661f;
   text-align: center;
 }
@@ -372,7 +372,7 @@ body {
 
 /* line 165, ../../../source/scss/custom-style.scss */
 #usp {
-  background: url(../../deploy/assets//stock-img/bgone.jpg);
+  background: url(../../deploy/assets//images/bgone.jpg);
 }
 
 /* line 170, ../../../source/scss/custom-style.scss */

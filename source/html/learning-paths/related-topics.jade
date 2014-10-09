@@ -4,20 +4,20 @@ include mixins/learning-path-mixins.jade
 block content
 	#application
 		.row
-			.column-3
+			.col-3
 				.lge-container
 					+links_learning_paths
 					+progress-bar
-			.column-6#learning-path
+			.col-6#learning-path
 				.lge-container
 					include:md ../../content/teamMentor/learning-paths/related-topics.md
 				
 
 					.row
-						.column-3
+						.col-3
 							a(href='advanced.html')
 								button.btn-full-width(type='button') Advanced
-						.column-offset-6.column-3
+						.col-offset-6.col-3
 							a(href='complete.html')
 							
 								button.btn-full-width(type='button') Complete
