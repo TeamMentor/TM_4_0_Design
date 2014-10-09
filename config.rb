@@ -1,9 +1,9 @@
 # Require any additional compass plugins here.
-add_import_path "bower_components/foundation/scss"
+add_import_path "deploy/assets/bower_components/foundation/scss"
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "deploy/assets/css"
+css_dir = "deploy/css"
 sass_dir = "source/scss"
 images_dir = "deploy/assets/images"
 javascripts_dir = "deploy/assets/js"
