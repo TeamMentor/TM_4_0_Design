@@ -220,13 +220,12 @@ class GraphService
                     result = { title : metadata_Node.text ,id: metadata_Id, size: metadata_Node.edges.xref.length}
                     filter.results.push(result)
                     if (filter_query== metadata_Id)
-                        article_Ids = []
-                        
+                        article_Ids = []                        
                         for xref_Id in metadata_Node.edges.xref
                             xref_Article = nodes.nodes_by_Id[xref_Id]
                             article_Id   = xref_Article.edges.target
-                            article_Ids.push(article_Id)
-                        
+                            article_Ids.push(article_Id)          
+                            
                 searchData.filters.push(filter)
                 
             mapArticles(nodes)
@@ -236,6 +235,14 @@ class GraphService
             for queries_Id in queries_Ids
                 query_Node = nodes.nodes_by_Id[queries_Id]
                 container = { title: query_Node.text, id: queries_Id, size : query_Node.edges.xref.length }
+                if (filter_container== queries_Id)
+                        article_Ids = []                        
+                        for xref_Id in query_Node.edges.xref
+                            xref_Article = nodes.nodes_by_Id[xref_Id]
+                            article_Id   = xref_Article.edges.target
+                            article_Ids.push(article_Id)
+                
+                
                 searchData.containers.push(container)
             mapMetadata(nodes)
                 

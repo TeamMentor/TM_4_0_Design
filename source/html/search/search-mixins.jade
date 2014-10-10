@@ -5,12 +5,14 @@ mixin directory-list
         if(containers)
             each container in containers   
                 if container.id == filter_container
-                        a(href="graph?left=&right=" + filter_query, id=container.id)
+                        //a(href="graph?left=&right=" + filter_query, id=container.id)
+                        a(href='graph')
                             i 
                                 b= container.title
                             span.badge= container.size
                 else
-                    a(href="graph?left=" + container.id + "&right=" + filter_query, id=container.id)= container.title 
+                    //a(href="graph?left=" + container.id + "&right=" + filter_query, id=container.id)= container.title 
+                    a(href="graph?left=" + container.id, id=container.id)= container.title 
                         span.badge= container.size
 
 //- search-bar-input
@@ -52,13 +54,15 @@ mixin filters-div
                         h5= filter.title
                         for result in filter.results
                             li
-                                if result.id == filter_query
-                                    a(href="graph?left=" + filter_container + "&right=", id=result.id)
+                                if result.id == filter_query 
+                                    //a(href="graph?left=" + filter_container + "&right=", id=result.id)
+                                    a(href="graph")
                                         i
                                             b= result.title
-                                        span.badge= result.size
+                                        span.badge= result.size                                    
                                 else                                    
-                                    a(href="graph?left=" + filter_container + "&right=" + result.id, id=result.id)
+                                    //a(href="graph?left=" + filter_container + "&right=" + result.id, id=result.id)
+                                    a(href="graph?right=" + result.id, id=result.id)
                                         if(filter_query)
                                             font(color='gray')= result.title 
                                         else
