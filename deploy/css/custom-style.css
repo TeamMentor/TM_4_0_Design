@@ -353,9 +353,6 @@ img {
 form {
   margin-bottom: 15px;
 }
-form input {
-  margin-bottom: 15px;
-}
 form button {
   width: 100%;
 }
@@ -371,11 +368,25 @@ form button {
   background: white;
 }
 
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+  width: 100%;
+  height: 3em;
+  margin: 5px 0 5px 0;
+  display: block;
+  padding-left: 10px;
+  border-radius: 0px;
+  border: 1px solid #aaaaaa;
+  color: #444444;
+  background: white;
+  margin-bottom: 15px;
+}
+
 label {
   display: inline-block;
   margin-bottom: 5px;
   font-weight: bold;
   color: #444444;
+  width: 100%;
 }
 
 .navbar {

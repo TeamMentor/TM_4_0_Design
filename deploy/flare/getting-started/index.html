@@ -31,39 +31,104 @@
   </head>
   <body>
     <div class="fixed">
-      <div class="lge-container">
-        <nav data-topbar="data-topbar" role="navigation" class="top-bar">
-          <ul class="title-area">
-            <li class="name"><a href="#"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a></a></li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      <nav data-topbar="data-topbar" role="navigation" class="top-bar">
+        <ul class="title-area">
+          <li class="name"><a href="#"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a></a></li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li><a href="#">Menu Icon</a></li>
           </ul>
-          <section class="top-bar-section">
-            <!-- Right Nav Section -->
-            <ul class="right">
-              <li><a href="#">Menu Icon</a></li>
-            </ul>
-          </section>
-        </nav>
-      </div>
+        </section>
+      </nav>
     </div>
     <div class="container">
       <div class="row">
-        <div class="small-12 large-6 large-push-6 columns"><br>
+        <div class="small-12 medium-6 medium-push-6 columns"><br>
           <dl data-tab="data-tab" class="tabs">
             <dd class="active"><a href="#signup">Sign Up</a></dd>
             <dd><a href="#login">Login</a></dd>
           </dl>
           <div class="tabs-content">
-            <div id="signup" class="content active">
+            <div id="signup" class="content active"><br>
               <p>Create an account and get access to the world's largest repository of secure software development knowledge.</p><br>
+              <form>
+                <div class="row">
+                  <div class="small-12 large-offset-1 large-10 end columns">
+                    <label>Username
+                      <input type="text" placeholder="Username">
+                    </label>
+                  </div>
+                </div>
+                <!-- row-->
+                <div class="row">
+                  <div class="small-12 large-offset-1 large-10 end columns">
+                    <label>Email Address
+                      <input type="text" placeholder="Email Address">
+                    </label>
+                  </div>
+                </div>
+                <!-- row-->
+                <div class="row">
+                  <div class="small-12 large-offset-1 large-10 end columns">
+                    <label>Password
+                      <input type="text" placeholder="Password">
+                    </label>
+                  </div>
+                </div>
+                <!-- row-->
+                <div class="row">
+                  <div class="small-12 large-offset-1 large-10 end columns">
+                    <p>By signing up, you agree to our Terms and Conditions.</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="small-12 large-offset-1 large-10 end columns">
+                    <button>Access the world's largest repository</button>
+                  </div>
+                </div>
+                <!-- row-->
+              </form>
+              <!-- form-->
             </div>
+            <!-- content-->
             <div id="login" class="content">
-              <p>Returning customer? Please log in to access TEAM Mentor</p>
+              <p>Returning customer? Please log in to access TEAM Mentor</p><br>
+              <form>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <label>Username
+                      <input type="text" placeholder="Username">
+                    </label>
+                  </div>
+                </div>
+                <!-- row-->
+                <div class="row">
+                  <div class="large-12 columns">
+                    <label>Password
+                      <input type="text" placeholder="Password">
+                    </label>
+                  </div>
+                </div>
+                <!-- row-->
+                <div class="row">
+                  <div class="large-12 columns">
+                    <button>Sign Up</button>
+                  </div>
+                </div>
+                <!-- row-->
+              </form>
+              <!-- form-->
             </div>
+            <!-- content-->
           </div>
+          <!-- tabs-content-->
         </div>
-        <div class="small-12 large-6 large-pull-6 columns">
+        <!-- column-->
+        <div class="small-12 medium-6 medium-pull-6 columns">
           <h1>Security Risk. Understood.</h1>
           <h4>Instant resources that bridge the gap between developer questions and technical solutions.</h4>
           <p>TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.</p>

@@ -2,18 +2,17 @@ include ../../content/images.jade
 include ../../content/links.jade
 
 .fixed
-	.lge-container
-		nav.top-bar(data-topbar='data-topbar', role='navigation')
-			ul.title-area
-				li.name
-					a(href='#')
-						+image-teammentor-logo__default
-				// Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone 
-				li.toggle-topbar.menu-icon
-					a(href='#')
-						span Menu
-			section.top-bar-section
-				// Right Nav Section 
-				ul.right
-					li
-						a(href='#') Menu Icon
+	nav.top-bar(data-topbar='data-topbar', role='navigation')
+		ul.title-area
+			li.name
+				a(href='#')
+					+image-teammentor-logo__default
+			// Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone 
+			li.toggle-topbar.menu-icon
+				a(href='#')
+					span Menu
+		section.top-bar-section
+			// Right Nav Section 
+			ul.right
+				li
+					a(href='#') Menu Icon
