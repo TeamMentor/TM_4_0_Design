@@ -1,13 +1,11 @@
 // Variables
 $asset-path: '../../deploy/assets/';
 $font-stack: Helvetica, sans-serif;
-$white: #FFFFFF;
-$green: #8aaf3e;
-$dark-green: #49661f;
-$grey: #aaaaaa;
-$dark-grey: #444444;
 $nav-padding-top: 120px;
 $full-width: 100%;
+
+@import 'columns';
+@import 'colours';
 
 // Layout and Structure
 
@@ -22,9 +20,6 @@ body {
 	line-height: 1.5;
 	background: $white;
 }
-
-@import 'columns';
-@import 'colours';
 
 #about {
 	background: url(#{$asset-path}/images/bgthree.jpg);
@@ -81,6 +76,10 @@ body {
 #clients {
 	padding: 40px 0 80px 0;
 	text-align: center;
+}
+
+.container {
+	margin-top: 70px;
 }
 
 #description {

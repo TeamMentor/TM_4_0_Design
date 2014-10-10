@@ -1,43 +1,11 @@
-extends ../_layouts/flare_page_not_logged_in.jade
+extends ../_layouts/flare_page.jade
 include ../../content/mixins/user-mixins.jade
 
 block content
-	#application.lge-container
+	.container
 		.row
-			.col-6
-				.lge-container
-					h1 Security Risk. Understood.
-					h4 Instant resources that bridge the gap between developer questions and technical solutions.
-					p TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.
-
-					hr
-					h3.text-center With TEAM Mentor, you can...
-					br
-
-					.row 
-						.col-offset-1.col-10
-							.row
-								.col-1
-									img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-								.col-11
-									.lge-container
-										p FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow
-							
-							.row
-								.col-1
-									img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
-								.col-11
-									.lge-container
-										p REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified
-							
-							.row
-								.col-1
-									img(src='/deploy/assets/icons/expand.png', alt='REDUCE the number of vulnerabilities over time')
-								.col-11
-									.lge-container
-										p EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices
-
-			.col-6
+			.small-12.large-6.large-push-6.columns
+				br
 				dl.tabs(data-tab='data-tab')
 					dd.active
 						a(href='#signup') Sign Up
@@ -45,6 +13,64 @@ block content
 						a(href='#login') Login
 				.tabs-content
 					#signup.content.active
-						p This is the first panel of the basic tab example. This is the first panel of the basic tab example.
+						p Create an account and get access to the world's largest repository of secure software development knowledge.
+						br
+
 					#login.content
-						p This is the second panel of the basic tab example. This is the second panel of the basic tab example.
+						p Returning customer? Please log in to access TEAM Mentor
+
+				form
+					.row
+						.small-12.large-12.columns
+							label
+								| Username
+								input(type='text', placeholder='Username')
+					.row
+						.small-12.large-12.columns
+							label
+								| Email Address
+								input(type='text', placeholder='Email Address')
+					.row
+						.small-12.large-12.columns
+							label
+								| Password
+								input(type='text', placeholder='Password')
+
+			.small-12.large-6.large-pull-6.columns
+				h1 Security Risk. Understood.
+				h4 Instant resources that bridge the gap between developer questions and technical solutions.
+				p TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.
+
+				hr
+				h3.text-center With TEAM Mentor, you can...
+				br
+
+				.row
+					.small-3.large-2.columns
+						img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
+					// column
+					.small-9.large-10.columns
+						p FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow.
+					// column
+				// row
+
+				.row
+					.small-3.large-2.columns
+						img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
+					//column
+					.small-9.large-10.columns
+						p REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified.
+					// column
+				// row
+
+				.row
+					.small-3.large-2.columns
+						img(src='/deploy/assets/icons/expand.png', alt='REDUCE the number of vulnerabilities over time')
+					//column
+					.small-9.large-10.columns
+						p EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices.
+					// column
+				// row
+			// column
+		// row
+	// container

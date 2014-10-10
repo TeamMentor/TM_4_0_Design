@@ -24,79 +24,106 @@
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <title>TEAM Mentor 4.0 (Html version)</title>
-    <!-- Normalize-->
-    <link href="/deploy/css/normalize.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/app.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
   <body>
-    <div role="navigation" class="navbar navbar-fixed-top">
+    <div class="fixed">
       <div class="lge-container">
-        <ul class="brand">
-          <li><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
-          </li>
-        </ul>
-        <div class="pull-right">
-          <p>Menu icon here</p>
-        </div>
+        <nav data-topbar="data-topbar" role="navigation" class="top-bar">
+          <ul class="title-area">
+            <li class="name"><a href="#"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a></a></li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
+          <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+              <li><a href="#">Menu Icon</a></li>
+            </ul>
+          </section>
+        </nav>
       </div>
     </div>
-    <div id="application" class="lge-container">
+    <div class="container">
       <div class="row">
-        <div class="col-6">
-          <div class="lge-container">
-            <h1>Security Risk. Understood.</h1>
-            <h4>Instant resources that bridge the gap between developer questions and technical solutions.</h4>
-            <p>TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.</p>
-            <hr>
-            <h3 class="text-center">With TEAM Mentor, you can...</h3><br>
-            <div class="row">
-              <div class="col-offset-1 col-10">
-                <div class="row">
-                  <div class="col-1"><img src="/deploy/assets/icons/identifyfix.png" alt="Identify vulnerabilities and reduce time to fix them"></div>
-                  <div class="col-11">
-                    <div class="lge-container">
-                      <p>FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-1"><img src="/deploy/assets/icons/reduces.png" alt="REDUCE the number of vulnerabilities over time"></div>
-                  <div class="col-11">
-                    <div class="lge-container">
-                      <p>REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-1"><img src="/deploy/assets/icons/expand.png" alt="REDUCE the number of vulnerabilities over time"></div>
-                  <div class="col-11">
-                    <div class="lge-container">
-                      <p>EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
+        <div class="small-12 large-6 large-push-6 columns"><br>
           <dl data-tab="data-tab" class="tabs">
             <dd class="active"><a href="#signup">Sign Up</a></dd>
             <dd><a href="#login">Login</a></dd>
           </dl>
           <div class="tabs-content">
             <div id="signup" class="content active">
-              <p>This is the first panel of the basic tab example. This is the first panel of the basic tab example.</p>
+              <p>Create an account and get access to the world's largest repository of secure software development knowledge.</p><br>
             </div>
             <div id="login" class="content">
-              <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+              <p>Returning customer? Please log in to access TEAM Mentor</p>
             </div>
           </div>
+          <form>
+            <div class="row">
+              <div class="small-12 large-12 columns">
+                <label>Username
+                  <input type="text" placeholder="Username">
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-12 large-12 columns">
+                <label>Email Address
+                  <input type="text" placeholder="Email Address">
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-12 large-12 columns">
+                <label>Password
+                  <input type="text" placeholder="Password">
+                </label>
+              </div>
+            </div>
+          </form>
         </div>
+        <div class="small-12 large-6 large-pull-6 columns">
+          <h1>Security Risk. Understood.</h1>
+          <h4>Instant resources that bridge the gap between developer questions and technical solutions.</h4>
+          <p>TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.</p>
+          <hr>
+          <h3 class="text-center">With TEAM Mentor, you can...</h3><br>
+          <div class="row">
+            <div class="small-3 large-2 columns"><img src="/deploy/assets/icons/identifyfix.png" alt="Identify vulnerabilities and reduce time to fix them"></div>
+            <!-- column-->
+            <div class="small-9 large-10 columns">
+              <p>FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow.</p>
+            </div>
+            <!-- column-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="small-3 large-2 columns"><img src="/deploy/assets/icons/reduces.png" alt="REDUCE the number of vulnerabilities over time"></div>
+            <!--column-->
+            <div class="small-9 large-10 columns">
+              <p>REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified.</p>
+            </div>
+            <!-- column-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="small-3 large-2 columns"><img src="/deploy/assets/icons/expand.png" alt="REDUCE the number of vulnerabilities over time"></div>
+            <!--column-->
+            <div class="small-9 large-10 columns">
+              <p>EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices.</p>
+            </div>
+            <!-- column-->
+          </div>
+          <!-- row-->
+        </div>
+        <!-- column-->
       </div>
+      <!-- row-->
     </div>
+    <!-- container-->
   </body>
 </html>
