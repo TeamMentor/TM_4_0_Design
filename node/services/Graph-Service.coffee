@@ -152,7 +152,8 @@ class GraphService
                                   .solutions(mapResults)        
     
     graphDataFromQAServer: (callback)->
-        graphDataUrl     = 'http://localhost:1331/graphData.json'
+        #graphDataUrl     = 'http://localhost:1331/graphData.json'
+        graphDataUrl = 'http://levelgraph-test.herokuapp.com/graphData.json'
         require('request').get graphDataUrl, (err,response,body)->
             throw err if err
             callback JSON.parse(body)
