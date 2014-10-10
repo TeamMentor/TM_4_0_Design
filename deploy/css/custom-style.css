@@ -534,11 +534,11 @@ a:hover, a:active {
   text-decoration: none;
 }
 
-a, button {
+/*a, button {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
-}
+}*/
 
 input {
   height: 1.7em;
@@ -684,7 +684,7 @@ button.btn-search-bar {
   text-align: center;
   background-color: #8aaf3e;
   box-shadow: none;
-  transition: width 0.6s ease 0s;
+  /*transition: width 0.6s ease 0s;*/
 }
 
 .breadcrumbs ul {

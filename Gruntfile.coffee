@@ -4,7 +4,7 @@ module.exports = (grunt) ->
 
     cacheFolder  = "./.tmCache"
     filesToWatch = ['./node/**/**.*','source/**/**.*','./**/*.coffee' ]
-    testsToRun   = 'node/tests/**/*Search*.*' #'node/tests/**/*jade*.js'
+    testsToRun   = 'node/tests/**/*Graph*.*' #'node/tests/**/*jade*.js'
     reportMode   = 'list'
     
     currentBranch = 'Issue_68_Library_Rendering'

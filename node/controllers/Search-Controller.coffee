@@ -16,7 +16,7 @@ class SearchController
         @defaultUser      = "TMContent"
         @defaultRepo      = "TM_Test_GraphData"
         @defaultFolder    = '/SearchData/'
-        @defaultDataFile  = 'Data_Validation'
+        @defaultDataFile  = 'Data_Validation'        
     
     renderPage: ()->
         if not @searchData
@@ -50,14 +50,24 @@ class SearchController
                 @searchData = { title: 'JSON Parsing error' , resultsTitle : error}
             @res.send(@renderPage())
     
+   #showSearchFromGraph: ()=>
+   #    graphService = new Graph_Service()
+   #    graphService.loadTestData =>
+   #        graphService.createSearchData 'Data from Graph',( searchData) =>
+   #            @searchData = searchData
+   #            graphService.closeDb =>
+   #                @res.send(@renderPage())
+   
     showSearchFromGraph: ()=>
         graphService = new Graph_Service()
-        graphService.loadTestData =>
-            graphService.createSearchData 'Data from Graph',( searchData) =>
-                @searchData = searchData
-                graphService.closeDb =>
-                    @res.send(@renderPage())
-    
+        graphService.graphDataFromQAServer (graphData)=>
+            #graphData.filterBy_Container  = if (@req.query.left ) then @req.query.left  else null
+            #graphData.filterBy_Query      = if (@req.query.right) then @req.query.right else null
+            graphService.createSearchDataFromGraphData graphData,@req.query.left, @req.query.right, (searchData)=>
+                @searchData = searchData                
+                @res.send(@renderPage())
+            
+
     showSearchData: ->
         @res.set('Content-Type', 'application/json')
             .send(JSON.stringify(@loadSearchData().searchData,null, ' '))

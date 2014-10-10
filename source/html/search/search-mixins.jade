@@ -1,11 +1,17 @@
 //- directory-list
 mixin directory-list
-    h3#title= title                
+    h3#title= title
     .list-group#containers
         if(containers)
-            each container in containers                                    
-                a(href=container.id, id=container.id)= container.title
-                    span.badge= container.size
+            each container in containers   
+                if container.id == filter_container
+                        a(href="graph?left=&right=" + filter_query, id=container.id)
+                            i 
+                                b= container.title
+                            span.badge= container.size
+                else
+                    a(href="graph?left=" + container.id + "&right=" + filter_query, id=container.id)= container.title 
+                        span.badge= container.size
 
 //- search-bar-input
 mixin search-bar-input
@@ -30,8 +36,8 @@ mixin articles-list
     .list-group   
         if results
             each result in results                                    
-                a(href=result.link, id=result.id)
-                    h4= result.title
+                a(href='https://tmdev01-sme.teammentor.net/article/' + result.guid, id=result.id, target='_blank')
+                    h4= result.title 
                     p= result.summary
 
 //- filters
@@ -41,12 +47,27 @@ mixin filters-div
         form(role='form', action='filters-active.html')
             if filters
                 for filter in filters
-                    .form-group                    
+                    //.form-group   
+                    .list-group
                         h5= filter.title
                         for result in filter.results
                             li
-                                input(type='checkbox', id=result.title)
-                                label(for=result.title, type='checkbox')= result.title
+                                if result.id == filter_query
+                                    a(href="graph?left=" + filter_container + "&right=", id=result.id)
+                                        i
+                                            b= result.title
+                                        span.badge= result.size
+                                else                                    
+                                    a(href="graph?left=" + filter_container + "&right=" + result.id, id=result.id)
+                                        if(filter_query)
+                                            font(color='gray')= result.title 
+                                        else
+                                            span= result.title 
+                                        span.badge= result.size
+                                
+                            
+                                //input(type='checkbox', id=result.title)
+                                //label(for=result.title, type='checkbox')= result.title
                                     span.badge= result.size        
 
             button(type='submit')
