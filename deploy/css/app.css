@@ -2245,7 +2245,7 @@ button, .button {
   border-width: 0px;
   cursor: pointer;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: normal;
+  font-weight: 700;
   line-height: normal;
   margin: 0 0 1.25rem;
   position: relative;
@@ -2268,7 +2268,7 @@ button, .button {
   padding-bottom: 1rem;
   -webkit-appearance: none;
   border: none;
-  font-weight: normal !important;
+  font-weight: 700 !important;
 }
 /* line 143, ../assets/bower_components/foundation/scss/foundation/components/_buttons.scss */
 button:hover, button:focus, .button:hover, .button:focus {
@@ -5187,7 +5187,7 @@ table tfoot tr td {
 .tabs dd > a {
   display: block;
   background: #efefef;
-  color: #222222;
+  color: #aaaaaa;
   padding-top: 1rem;
   padding-right: 2rem;
   padding-bottom: 1.0625rem;
@@ -7763,4 +7763,67 @@ th.hide-for-touch {
 /* line 674, ../assets/bower_components/foundation/scss/foundation/components/_visibility.scss */
 .touch th.show-for-touch {
   display: table-cell !important;
+}
+
+/* line 9, ../../source/scss/_colours.scss */
+.black {
+  padding-top: 20px;
+  background-color: #000000;
+}
+
+/* line 14, ../../source/scss/_colours.scss */
+#white {
+  margin-right: 15px;
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 23, ../../source/scss/_colours.scss */
+#green {
+  margin-right: 15px;
+  background-color: #8aaf3e;
+}
+
+/* line 28, ../../source/scss/_colours.scss */
+#dark-green {
+  margin-right: 15px;
+  background-color: #49661f;
+}
+
+/* line 33, ../../source/scss/_colours.scss */
+#grey {
+  margin-right: 15px;
+  background-color: #aaaaaa;
+}
+
+/* line 38, ../../source/scss/_colours.scss */
+#dark-grey {
+  margin-right: 15px;
+  background-color: #444444;
+}
+
+/* line 43, ../../source/scss/_colours.scss */
+#black {
+  margin-right: 15px;
+  background-color: #000000;
+}
+
+/* line 48, ../../source/scss/app.scss */
+dl.tabs dd {
+  width: 50%;
+  border: 1px solid #aaaaaa;
+}
+/* line 53, ../../source/scss/app.scss */
+dl.tabs .active {
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+/* line 59, ../../source/scss/app.scss */
+.tabs-content {
+  border: 1px solid #aaaaaa;
+  border-top: none !important;
 }

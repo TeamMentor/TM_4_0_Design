@@ -3,112 +3,117 @@ include ../../content/mixins/user-mixins.jade
 
 block content
 	.container
-		.row
-			.small-12.medium-6.medium-push-6.columns
-				br
-				dl.tabs(data-tab='data-tab')
-					dd.active
-						a(href='#signup') Sign Up
-					dd
-						a(href='#login') Login
-				.tabs-content
-					#signup.content.active
-						br
-						p Create an account and get access to the world's largest repository of secure software development knowledge.
-						br
-						form
-							.row
-								.small-12.large-offset-1.large-10.end.columns
-									label
-										| Username
-										input(type='text', placeholder='Username')
-							// row
-							.row
-								.small-12.large-offset-1.large-10.end.columns
-									label
-										| Email Address
-										input(type='text', placeholder='Email Address')
-							// row
-							.row
-								.small-12.large-offset-1.large-10.end.columns
-									label
-										| Password
-										input(type='text', placeholder='Password')
-							// row
-							.row
-								.small-12.large-offset-1.large-10.end.columns
-									p By signing up, you agree to our Terms and Conditions.
-							.row
-								.small-12.large-offset-1.large-10.end.columns
-									button
-										| Access the world's largest repository
-							// row
-						// form
-					// content
+		.lge-container
+			.row
+				.small-12.medium-6.medium-push-6.columns
+					br
+					dl.tabs(data-tab='data-tab')
+						dd.active
+							a(href='#signup') Sign Up
+						dd
+							a(href='#login') Login
+					.tabs-content
+						#signup.content.active
+							br
+							.lge-container
+								p Create an account and get access to the world's largest repository of secure software development knowledge.
+								br
+							form
+								.row
+									.small-offset-1.small-10.large-offset-1.large-10.end.columns
+										label
+											| Username
+											input(type='text', placeholder='Username')
+								// row
+								.row
+									.small-offset-1.small-10.large-offset-1.large-10.end.columns
+										label
+											| Email Address
+											input(type='text', placeholder='Email Address')
+								// row
+								.row
+									.small-offset-1.small-10.large-offset-1.large-10.end.columns
+										label
+											| Password
+											input(type='text', placeholder='Password')
+								// row
+								.row
+									.small-offset-1.small-10.large-offset-1.large-10.end.columns
+										p By signing up, you agree to our Terms and Conditions.
+								.row
+									.small-offset-1.small-10.large-offset-1.large-10.end.columns
+										button
+											| Access the world's largest repository
+								// row
+							// form
+						// content
+							
+						#login.content
+							br
+							.lge-container
+								p Returning customer? Please log in to access TEAM Mentor.
+								br
+							form
+								.row
+									.small-offset-1.small-10.large-offset-1.large-10.end.columns
+										label
+											| Username
+											input(type='text', placeholder='Username')
+								// row
+								.row
+									.small-offset-1.small-10.large-offset-1.large-10.end.columns
+										
+										label
+											| Password
+											input(type='text', placeholder='Password')
+								// row
+								.row
+									.small-offset-1.small-10.large-offset-1.large-10.end.columns
+										button
+											| Sign Up
+								// row
+							// form
+						// content
+							
+					// tabs-content
+				// column
 
-					#login.content
-						p Returning customer? Please log in to access TEAM Mentor
-						br
-						form
-							.row
-								.large-12.columns
-									label
-										| Username
-										input(type='text', placeholder='Username')
-							// row
-							.row
-								.large-12.columns
-									
-									label
-										| Password
-										input(type='text', placeholder='Password')
-							// row
-							.row
-								.large-12.columns
-									button
-										| Sign Up
-							// row
-						// form
-					// content
-				// tabs-content
-			// column
 
+				.small-12.medium-6.medium-pull-6.columns
+					h1 Security Risk. Understood.
+					h4 Instant resources that bridge the gap between developer questions and technical solutions.
+					p TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.
 
-			.small-12.medium-6.medium-pull-6.columns
-				h1 Security Risk. Understood.
-				h4 Instant resources that bridge the gap between developer questions and technical solutions.
-				p TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.
+					hr
+					h3.text-center With TEAM Mentor, you can...
+					br
 
-				hr
-				h3.text-center With TEAM Mentor, you can...
-				br
+					.row
+						.small-3.large-2.columns
+							img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
+						// column
+						.small-9.large-10.columns
+							p FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow.
+						// column
+					// row
 
-				.row
-					.small-3.large-2.columns
-						img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-					// column
-					.small-9.large-10.columns
-						p FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow.
-					// column
-				// row
+					.row
+						.small-3.large-2.columns
+							img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
+						//column
+						.small-9.large-10.columns
+							p REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified.
+						// column
+					// row
 
-				.row
-					.small-3.large-2.columns
-						img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
-					//column
-					.small-9.large-10.columns
-						p REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified.
-					// column
-				// row
-
-				.row
-					.small-3.large-2.columns
-						img(src='/deploy/assets/icons/expand.png', alt='REDUCE the number of vulnerabilities over time')
-					//column
-					.small-9.large-10.columns
-						p EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices.
-					// column
-				// row
-			// column
-		// row
-	// container
+					.row
+						.small-3.large-2.columns
+							img(src='/deploy/assets/icons/expand.png', alt='REDUCE the number of vulnerabilities over time')
+						//column
+						.small-9.large-10.columns
+							p EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices.
+						// column
+					// row
+				// column
+			// row
+		// container

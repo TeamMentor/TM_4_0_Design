@@ -1,6 +1,9 @@
 @import "settings";
 @import "foundation";
 
+// TEAM Mentor Custom Colours Import
+@import "colours";
+
 // Or selectively include components
 // @import
 //   "foundation/components/accordion",
@@ -39,3 +42,21 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
+// Tabs
+
+dl.tabs {
+	dd {
+		width: 50%;
+		border: 1px solid $grey;
+	}
+
+	.active {
+		border-right: none !important;
+		border-bottom: none !important;
+	}
+}
+
+.tabs-content {
+	border: 1px solid $grey;
+	border-top: none !important;
+}

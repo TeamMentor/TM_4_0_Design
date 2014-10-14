@@ -439,7 +439,7 @@ $include-html-global-classes: $include-html-classes;
 // $button-font-sml: rem-calc(13);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
-// $button-font-weight: $font-weight-normal;
+$button-font-weight: 700;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
@@ -448,8 +448,8 @@ $include-html-global-classes: $include-html-classes;
 // We use these to control button border and hover styles.
 // $button-border-width: 0px;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
-// $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+$button-bg-color: $white;
+$button-bg-color-hover: #8aaf3e;
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
@@ -1303,7 +1303,7 @@ $include-html-global-classes: $include-html-classes;
 // $tabs-navigation-bg-color: $silver  ;
 // $tabs-navigation-active-bg-color: $white;
 // $tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -6%);
-// $tabs-navigation-font-color: $jet;
+$tabs-navigation-font-color: $grey;
 // $tabs-navigation-active-font-color: $tabs-navigation-font-color;
 // $tabs-navigation-font-size: rem-calc(16);
 // $tabs-navigation-font-family: $body-font-family;
