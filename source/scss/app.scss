@@ -69,38 +69,38 @@ nav.top-bar {
 	ul.title-area {
 		padding: 5px 0 0 20px;
 	}
-}
 
-section.top-bar-section {
-	margin: 0 auto;
-
-	img {
-		align: center;
-	}
-	
-	ul.flare {
+	section.top-bar-section {
 		margin: 0 auto;
-		display: inline-block;
-		background: none;
 
-		li {
-			padding: 10px 50px 0 50px;
+		img {
+			align: center;
 		}
+		
+		ul.flare {
+			display: inline-block;
+			background: none;
 
-			p, a {
-				text-transform: uppercase;
-				font-size: 14px;
-				font-weight: 700;
-				color: $grey;
+			li {
+				padding: 10px 50px 0 50px;
+			}
 
-				&:hover {
-					color: $green;
+				p, a {
+					text-transform: uppercase;
+					font-size: 14px;
+					font-weight: 700;
+					color: $grey;
+
+					&:hover {
+						color: $green;
+					}
 				}
-			}
 
-			i {
-				font-size: 24px;
-				color: $grey;
-			}
-	}	
+				i {
+					font-size: 24px;
+					color: $grey;
+				}
+		}	
+	}
 }
+
