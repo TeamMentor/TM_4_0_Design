@@ -7832,37 +7832,41 @@ dl.tabs .active {
 nav.top-bar {
   text-align: center;
 }
+/* line 69, ../../source/scss/app.scss */
+nav.top-bar ul.title-area {
+  padding: 5px 0 0 20px;
+}
 
-/* line 70, ../../source/scss/app.scss */
+/* line 74, ../../source/scss/app.scss */
 section.top-bar-section {
   margin: 0 auto;
 }
-/* line 73, ../../source/scss/app.scss */
+/* line 77, ../../source/scss/app.scss */
 section.top-bar-section img {
   align: center;
 }
-/* line 77, ../../source/scss/app.scss */
+/* line 81, ../../source/scss/app.scss */
 section.top-bar-section ul.flare {
   margin: 0 auto;
   display: inline-block;
   background: none;
 }
-/* line 82, ../../source/scss/app.scss */
+/* line 86, ../../source/scss/app.scss */
 section.top-bar-section ul.flare li {
   padding: 10px 50px 0 50px;
 }
-/* line 86, ../../source/scss/app.scss */
+/* line 90, ../../source/scss/app.scss */
 section.top-bar-section ul.flare p, section.top-bar-section ul.flare a {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
   color: #aaaaaa;
 }
-/* line 92, ../../source/scss/app.scss */
+/* line 96, ../../source/scss/app.scss */
 section.top-bar-section ul.flare p:hover, section.top-bar-section ul.flare a:hover {
   color: #8aaf3e;
 }
-/* line 97, ../../source/scss/app.scss */
+/* line 101, ../../source/scss/app.scss */
 section.top-bar-section ul.flare i {
   font-size: 24px;
   color: #aaaaaa;
