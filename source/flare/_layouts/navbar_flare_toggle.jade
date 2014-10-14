@@ -1,25 +1,32 @@
 include ../../content/images.jade
 include ../../content/links.jade
 
-.navbar.navbar-fixed-top(role='navigation')
-	.lge-container
-		.row
-			.col-offset-3.col-6
-				.row
-					.col-1
-						img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-						p Navigate
-					.col-1
-						img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-						p Home
-					.col-1
-						img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-						p Help
-					.col-1
-						img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-						p User
-					.col-1
-						img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-						p Logout
-			.pull-right
-				p Menu icon here
+.fixed
+	nav.top-bar(data-topbar='data-topbar', role='navigation')
+		section.top-bar-section
+			.lge-container
+				ul.flare
+					li
+						i.fi-map
+						a(href='#')
+							p Navigate
+					li
+						i.fi-home
+						a(href='#')
+							p Home
+					li
+						i.fi-info
+						a(href='#')
+							p Help
+					li
+						i.fi-torso
+						a(href='#')
+							p User
+					li
+						i.fi-power
+						a(href='#')
+							p Logout
+		// Right Nav Section 
+			ul.right
+				li.toggle-topbar.menu-icon
+					a(href='#')
