@@ -658,7 +658,7 @@ button:hover, button:active {
   color: #49661f !important;
 }
 button.btn-search-bar {
-  width: 60px;
+  max-width: 100%;
   border: none !important;
 }
 

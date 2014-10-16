@@ -531,7 +531,7 @@ button {
 	}
 
 	&.btn-search-bar {
-		width: 60px;
+		max-width: $full-width;
 		border: none !important;
 	}
 }
