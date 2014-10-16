@@ -79,14 +79,20 @@ body {
 }
 
 #copyright {
-	
 	padding-bottom: 30px;
 
-	p {
+	p, a {
 		font-size: 12px !important;
 		color: $grey;
 		text-align: center;
 		line-height: 1;
+	}
+
+	a {
+		text-transform: none;
+		text-decoration: underline;
+		font-weight: normal;
+		letter-spacing: 0px;
 	}
 }
 

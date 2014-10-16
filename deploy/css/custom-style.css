@@ -243,11 +243,17 @@ body {
 #copyright {
   padding-bottom: 30px;
 }
-#copyright p {
+#copyright p, #copyright a {
   font-size: 12px !important;
   color: #aaaaaa;
   text-align: center;
   line-height: 1;
+}
+#copyright a {
+  text-transform: none;
+  text-decoration: underline;
+  font-weight: normal;
+  letter-spacing: 0px;
 }
 
 .container {
