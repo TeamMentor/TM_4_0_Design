@@ -44,6 +44,9 @@ body {
 #application {
 	margin-top: 90px;
 	width: $full-width;
+	display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 #article, #lp-navigation, #learning-path, #help-docs, #help-nav {
@@ -177,6 +180,12 @@ body {
 	h2 {
 		text-align: center;
 	}
+}
+
+#results {
+	flex: 1 1 auto;
+    overflow-y: auto;
+    height: 100%;
 }
 
 #usp {

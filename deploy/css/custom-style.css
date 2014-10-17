@@ -211,6 +211,9 @@ body {
 #application {
   margin-top: 90px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 #article a, #lp-navigation a, #learning-path a, #help-docs a, #help-nav a {
@@ -325,6 +328,12 @@ body {
 }
 #reasons h2 {
   text-align: center;
+}
+
+#results {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  height: 100%;
 }
 
 #usp {
