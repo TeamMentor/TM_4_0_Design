@@ -104,3 +104,32 @@ nav.top-bar {
 	}
 }
 
+// Buttons
+
+button, .button {
+	font-size: 14px;
+	background-color: $white;
+	color: $green;
+	border: 1px solid $green;
+
+	&:hover, &:focus {
+		background-color: $green;
+		color: $white !important;
+	}
+}
+
+// Accordians
+
+.article {
+	.accordion dd > a {
+		border: 1px solid $green;
+		background: none repeat scroll 0% 0% $white;
+		color: $green;
+		font-size: 14px;
+
+		&:hover, &:focus {
+			background-color: $green;
+			color: $white !important;
+		}
+	}	
+}

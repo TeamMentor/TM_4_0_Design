@@ -1,0 +1,28 @@
+extends ../_layouts/flare_page.jade
+include mixins/articles-mixins.jade
+
+block content  
+	#application
+		.row
+			.small-0.large-3.columns
+				br
+
+			.small-12.large-6.columns
+				.lge-container
+					#article
+						include:md ../../content/teamMentor/article-new-window.md
+
+					+horizontal-rule
+
+					+article-options
+
+					+horizontal-rule
+
+					+related-articles
+
+					+horizontal-rule
+
+					+copyright
+
+			.small-0.large-3.columns
+				br
