@@ -28,6 +28,7 @@ body {
 
 #about, #usp {
 	width: $full-width;
+	margin-top: -50px;
 	padding-top: $nav-padding-top;
 	padding-bottom: 80px;
 	background-color: $green;
@@ -257,6 +258,7 @@ label {
 
 .navbar {
 	background-color: $white;
+	padding-right: 20px;
 	min-height: 50px;
 	display: inline-block;
 	border: none;
@@ -266,8 +268,8 @@ label {
 		display: inline-block;
 
 		&.brand {
-			padding-left: 0px;
-			padding-top: 10px !important;
+			padding-left: 20px;
+			padding-top: 5px !important;
 		}
 
 		&.nav-icons {

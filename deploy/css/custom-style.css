@@ -196,6 +196,7 @@ body {
 
 #about, #usp {
   width: 100%;
+  margin-top: -50px;
   padding-top: 120px;
   padding-bottom: 80px;
   background-color: #8aaf3e;
@@ -394,6 +395,7 @@ label {
 
 .navbar {
   background-color: white;
+  padding-right: 20px;
   min-height: 50px;
   display: inline-block;
   border: none;
@@ -403,8 +405,8 @@ label {
   display: inline-block;
 }
 .navbar ul.brand {
-  padding-left: 0px;
-  padding-top: 10px !important;
+  padding-left: 20px;
+  padding-top: 5px !important;
 }
 .navbar ul.nav-icons {
   padding: 20px 0 10px 0;
