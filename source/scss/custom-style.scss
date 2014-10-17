@@ -116,6 +116,12 @@ body {
 	h2 {
 		text-align: center;
 	}
+
+	i {
+		font-size: 60px;
+		color: $green;
+		margin: 0 auto;
+	}
 }
 
 #filters, #my-articles {
@@ -173,8 +179,14 @@ body {
 #reasons {
 	padding-top: 70px;
 	
-	h2 {
+	h2, i {
 		text-align: center;
+	}
+
+	i {
+		font-size: 60px;
+		color: $green;
+		margin: 0 auto;
 	}
 }
 

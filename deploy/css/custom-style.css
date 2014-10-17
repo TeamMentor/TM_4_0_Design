@@ -276,6 +276,11 @@ body {
 #features h2 {
   text-align: center;
 }
+#features i {
+  font-size: 60px;
+  color: #8aaf3e;
+  margin: 0 auto;
+}
 
 #filters li, #my-articles li {
   padding-left: 0px;
@@ -322,8 +327,13 @@ body {
 #reasons {
   padding-top: 70px;
 }
-#reasons h2 {
+#reasons h2, #reasons i {
   text-align: center;
+}
+#reasons i {
+  font-size: 60px;
+  color: #8aaf3e;
+  margin: 0 auto;
 }
 
 #results {

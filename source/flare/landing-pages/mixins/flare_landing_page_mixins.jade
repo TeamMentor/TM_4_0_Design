@@ -1,0 +1,120 @@
+//- flare-landing-page-usp-div
+mixin usp-div
+	#usp
+		.row
+			.small-12.large-offset-2.large-8.end.columns
+				include:md ../../../content/teamMentor/landing-pages/usp.md
+				br
+				br
+				.row
+					.small-12.large-offset-3.large-6.end.columns
+						a(href='../getting-started/index.html')
+							button Start your free trial today
+
+//- reasons-to-use-tm-div
+mixin reasons-to-use-tm-div
+	#reasons
+		h2 With TEAM Mentor, you can...
+		.row
+			.small-12.medium-offset-1.medium-10.large-offset-3.large-6.end.columns
+				.row
+					.small-3.large-2.columns
+						i.fi-clipboard-pencil
+					.small-9.large-10.columns
+						include:md ../../../content/teamMentor/landing-pages/selling-point-1.md
+				br
+				.row
+					.small-3.large-2.columns
+						i.fi-arrows-in
+					.small-9.large-10.columns
+						include:md ../../../content/teamMentor/landing-pages/selling-point-2.md
+				br
+				.row
+					.small-3.large-2.columns
+						i.fi-checkbox
+					.small-9.large-10.columns
+						include:md ../../../content/teamMentor/landing-pages/selling-point-3.md
+
+//- clients-div
+mixin clients-div
+	#clients
+		h2 Our clients love us (and we think you will too!)
+		.row
+			.small-6.large-4.columns
+				+image-elsevier-logo
+			.small-6.large-4.columns
+				+image-fedex-logo
+			.small-6.large-4.columns
+				+image-mass-mutual-logo
+			.small-6.large-4.columns
+				+image-microsoft-logo
+			.small-6.large-4.columns
+				+image-symantec-logo
+			.small-6.large-4.columns
+				+image-ubs-logo
+
+//- about-tagline-div
+mixin about-tagline-div
+	#about
+		.row
+			.small-12.large-offset-2.large-8.end.columns
+				include:md ../../../content/teamMentor/landing-pages/about-tm-tagline.md
+
+// about-us-div
+mixin about-us-div
+	#about-us
+		.row 
+			.small-12.large-offset-2.large-8.end.columns
+				include:md ../../../content/teamMentor/landing-pages/about-tm-summary.md
+
+// features-div
+mixin features-div
+	#features
+		.row
+			.small-12.medium-offset-1.medium-10.large-offset-3.large-6.end.columns
+				h2 TEAM Mentor provides intelligence to fix vulnerabilities and comply
+				br
+				.row
+					.small-3.large-2.columns
+						i.fi-check
+					.small-9.large-10.columns
+						include:md ../../../content/teamMentor/landing-pages/feature-1.md
+
+				.row
+					.small-3.large-2.columns
+						i.fi-loop
+					.small-9.large-10.columns
+						include:md ../../../content/teamMentor/landing-pages/feature-2.md
+
+				.row
+					.small-3.large-2.columns
+						i.fi-clipboard-notes
+					.small-9.large-10.columns
+						include:md ../../../content/teamMentor/landing-pages/feature-3.md
+
+				.row
+					.small-3.large-2.columns
+						i.fi-arrows-in
+					.small-9.large-10.columns
+						include:md ../../../content/teamMentor/landing-pages/feature-4.md
+
+//- landing-page_call-to-action
+mixin call-to-action-div
+	#call-to-action
+		.row
+			.small-12.large-offset-2.large-8.end.columns
+				include:md ../../../content/teamMentor/landing-pages/call-to-action.md
+				br
+				br
+				.row
+					.small-12.large-offset-3.large-6.end.columns
+						a(href='getting-started.html')
+							button(type='button') See for yourself
+
+//- landing-page_footer
+mixin footer-div
+	#footer
+		.row
+			.col-offset-2.col-8
+				+image-security-innovation-logo
+				a(href="#{user}/terms-and-conditions.html") Terms & Conditions
