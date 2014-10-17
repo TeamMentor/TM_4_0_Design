@@ -7893,8 +7893,8 @@ button.postfix, .button.postfix {
 }
 /* line 128, ../../source/scss/app.scss */
 button.postfix:hover, .button.postfix:hover {
-  color: #49661f !important;
-  background: white;
+  color: white !important;
+  background: #49661f;
 }
 
 /* line 138, ../../source/scss/app.scss */

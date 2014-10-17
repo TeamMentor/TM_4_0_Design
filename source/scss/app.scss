@@ -126,8 +126,8 @@ button, .button {
 		border-left: none;
 
 		&:hover {
-			color: $dark-green !important;
-			background: $white;
+			color: $white !important;
+			background: $dark-green;
 		}
 	}
 }

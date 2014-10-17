@@ -527,6 +527,7 @@ button {
 	line-height: 1.42857143;
 	text-align: center;
 	text-transform: uppercase;
+	letter-spacing: 1px;
 	font-weight: 700;
 	vertical-align: middle;
 	-webkit-user-select: none;
@@ -534,14 +535,13 @@ button {
 	  -ms-user-select: none;
 		  user-select: none;
 	background: $white;
-	border: 1px solid $grey;
+	border: 1px solid $green;
 	border-radius: 0px;
 	color: $green;
 
 	&:hover, &:active {
-		background: $light-grey;
-		color: $dark-green !important;
-		border: 1px solid $green;
+		background: $green;
+		color: $white !important;
 	}
 
 	&.btn-search-bar {
