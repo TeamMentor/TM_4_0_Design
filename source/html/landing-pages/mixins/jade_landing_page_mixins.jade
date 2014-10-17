@@ -32,7 +32,6 @@ mixin reasons-to-use-tm-div
 					.lge-container
 						include:md ../../../content/teamMentor/landing-pages/selling-point-3.md
 
-
 //- clients-div
 mixin clients-div
 	#clients
@@ -53,7 +52,6 @@ mixin clients-div
 				.col-4
 					+image-ubs-logo
 
-
 //- landing-page_call-to-action
 mixin call-to-action-div
 	#call-to-action
@@ -72,3 +70,47 @@ mixin footer-div
 			.col-offset-2.col-8
 				+image-security-innovation-logo
 				a(href="#{user}/terms-and-conditions.html") Terms & Conditions
+
+//- about-tagline-div
+mixin about-tagline-div
+	#about
+		.row
+			.col-offset-2.col-8
+				include:md ../../../content/teamMentor/landing-pages/about-tm-tagline.md
+
+// about-us-div
+mixin about-us-div
+	#about-us
+		.row 
+			.col-offset-2.col-8
+				include:md ../../../content/teamMentor/landing-pages/about-tm-summary.md
+
+// features-div
+mixin features-div
+	#features
+		h2 TEAM Mentor provides intelligence to fix vulnerabilities and comply
+		br
+	
+		.row
+			.col-offset-3.col-1
+				+image-compliance-icon
+			.col-5
+				include:md ../../../content/teamMentor/landing-pages/feature-1.md
+		br
+		.row
+			.col-offset-3.col-1
+				+image-integrate-icon
+			.col-5
+				include:md ../../../content/teamMentor/landing-pages/feature-2.md
+		br
+		.row
+			.col-offset-3.col-1
+				+image-cross-references-icon
+			.col-5
+				include:md ../../../content/teamMentor/landing-pages/feature-3.md
+		br
+		.row
+			.col-offset-3.col-1
+				+image-reduces-icon
+			.col-5
+				include:md ../../../content/teamMentor/landing-pages/feature-4.md

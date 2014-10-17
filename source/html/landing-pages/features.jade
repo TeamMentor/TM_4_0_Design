@@ -1,35 +1,9 @@
 extends ../../content/_layouts/page_landing.jade
-include ../../content/mixins/landing-page-mixins.jade
+include mixins/jade_landing_page_mixins.jade
+
 block content
+  +features-div
 
-    #features
-      h2 TEAM Mentor provides intelligence to fix vulnerabilities and comply
-      br
-      
-      .row
-        .col-offset-3.col-1
-          img(src='/deploy/assets/icons/compliance.png', alt='Delivers compliance-specific secure coding guidance')
-        .col-5
-          h4 Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.
-      br
-      .row
-        .col-offset-3.col-1
-          img(src='/deploy/assets/icons/integrate.png', alt='Integrates with multiple static analysis tools and developer environments')
-        .col-5
-          h4 Integrates with multiple static analysis tools and developer environments (IDE’s) to map prescriptive coding guidance to scan results to fix vulnerabilities.
-      br
-      .row
-        .col-offset-3.col-1
-          img(src='/deploy/assets/icons/crossreferences.png', alt='Stores and cross-references your security policies')
-        .col-5
-          h4 Stores and cross-references your security policies with out-of-the-box secure coding checklists and examples.
-      br
-      .row
-        .col-offset-3.col-1
-          img(src='/deploy/assets/icons/reduces.png', alt='Provides guidance to assist developers')
-        .col-5
-          h4 Provides guidance to assist developers in reducing security vulnerabilities in software applications.
+  +call-to-action-div
 
-    +call-to-action-div
-
-    +footer-div
+  +footer-div
