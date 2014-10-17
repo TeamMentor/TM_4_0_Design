@@ -7,33 +7,51 @@ mixin usp-div
 				br
 				br
 				a(href='../getting-started/index.html')
-					button.btn-landing-page Start your free trial today
+					button Start your free trial today
 
 //- reasons-to-use-tm-div
 mixin reasons-to-use-tm-div
 	#reasons
 		.lge-container
-			h2 With TEAM Mentor, you can...
 			.row
 				.col-offset-3.col-1
-					img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
+					+image-identify-fix-icon
 				.col-5
 					.lge-container
-						h4 FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow
-		br
-		.row
-			.col-offset-3.col-1
-				img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
-			.col-5
-				.lge-container
-					h4 REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified
-		br
-		.row
-			.col-offset-3.col-1
-				img(src='/deploy/assets/icons/expand.png', alt='EXPAND the development teams knowledge and improve process')
-			.col-5
-				.lge-container
-					h4 EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices
+						include:md ../../../content/teamMentor/landing-pages/selling-point-1.md
+			.row
+				.col-offset-3.col-1
+					+image-reduces-icon
+				.col-5
+					.lge-container
+						include:md ../../../content/teamMentor/landing-pages/selling-point-2.md
+			.row
+				.col-offset-3.col-1
+					+image-expand-icon
+				.col-5
+					.lge-container
+						include:md ../../../content/teamMentor/landing-pages/selling-point-3.md
+
+
+//- clients-div
+mixin clients-div
+	#clients
+		.lge-container
+			h2 Our clients love us (and we think you will too!)
+			.row
+				.col-4
+					+image-elsevier-logo
+				.col-4
+					+image-fedex-logo
+				.col-4
+					+image-mass-mutual-logo
+			.row
+				.col-4
+					+image-microsoft-logo
+				.col-4
+					+image-symantec-logo
+				.col-4
+					+image-ubs-logo
 
 
 //- landing-page_call-to-action
@@ -41,7 +59,7 @@ mixin call-to-action-div
 	#call-to-action
 		.row
 			.col-offset-2.col-8
-				h1 Security Risk. Understood.
+				include:md ../../../content/teamMentor/landing-pages/call-to-action.md
 				br
 				br
 				a(href='getting-started.html')
@@ -52,5 +70,5 @@ mixin footer-div
 	#footer
 		.row
 			.col-offset-2.col-8
-				img(src='/deploy/assets/logos/si-logo.png')
+				+image-security-innovation-logo
 				a(href="#{user}/terms-and-conditions.html") Terms & Conditions
