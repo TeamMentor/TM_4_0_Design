@@ -45,8 +45,8 @@ body {
 #application {
 	width: $full-width;
 	display: flex;
-    flex-direction: column;
-    height: 100%;
+	flex-direction: column;
+	height: 100%;
 }
 
 #article, #lp-navigation, #learning-path, #help-docs, #help-nav {
@@ -102,7 +102,7 @@ body {
 #description {
 	margin-right: 15px;
 	padding: 5px 0 5px 0;
-	background-color: #F5F5F5;
+	background-color: $light-grey;
 }
 
 #details {
@@ -180,8 +180,8 @@ body {
 
 #results {
 	flex: 1 1 auto;
-    overflow-y: auto;
-    height: 100%;
+	overflow-y: auto;
+	height: 100%;
 }
 
 #usp {
@@ -382,7 +382,7 @@ pre {
 	color: $dark-grey;
 	word-break: break-all;
 	word-wrap: break-word;
-	background-color: #f5f5f5;
+	background-color: $light-grey;
 	border: 1px solid $grey;
 	border-radius: 0px;
 	margin: 30px 0 30px 0;
@@ -409,7 +409,7 @@ pre {
 hr {
 	margin: 0 auto;
 	width: 70%;
-	color: #F5F5F5;
+	color: $light-grey;
 	margin-top: 40px;
 	margin-bottom: 40px;
 }
@@ -440,19 +440,25 @@ a, button {
 
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
 	width: $full-width !important;
-    background-color: #FFF;
-    font-family: inherit;
-    border: 1px solid $grey;
-    box-shadow: none;
-    color: $grey;
-    display: block;
-    font-size: 16px;
-    padding: 0.5rem;
-    height: 3rem;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	background-color: #FFF;
+	font-family: inherit;
+	border: 1px solid $grey;
+	box-shadow: none;
+	color: $grey;
+	display: block;
+	font-size: 16px;
+	padding: 0.5rem;
+	height: 3rem;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;
-    transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
+	transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
+
+	&:focus {
+		background: $white;
+		border-color: $green;
+		outline: medium none;
+	}
 }
 
 .input-group {
@@ -522,20 +528,20 @@ button {
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: 700;
-	letter-spacing: 1px;
-	white-space: nowrap;
 	vertical-align: middle;
 	-webkit-user-select: none;
 	 -moz-user-select: none;
 	  -ms-user-select: none;
 		  user-select: none;
-	background: none;
-	border: 1px solid $green;
+	background: $white;
+	border: 1px solid $grey;
 	border-radius: 0px;
 	color: $green;
 
 	&:hover, &:active {
+		background: $light-grey;
 		color: $dark-green !important;
+		border: 1px solid $green;
 	}
 
 	&.btn-search-bar {
@@ -573,7 +579,7 @@ button {
 	height: 20px;
 	margin-bottom: 20px;
 	overflow: hidden;
-	background-color: #F5F5F5;
+	background-color: $light-grey;
 	border-radius: 4px;
 	box-shadow: none;
 	max-width: 90%;
@@ -637,7 +643,7 @@ button {
 
 		&:hover {
 			text-decoration: none;
-			background-color: #f5f5f5;
+			background-color: $light-grey;
 		}
 	}
 

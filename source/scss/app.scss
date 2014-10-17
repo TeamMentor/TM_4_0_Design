@@ -113,19 +113,20 @@ button, .button {
 	width: 100% !important;
 
 	&:hover, &:focus {
-		background-color: #EFEFEF;
-		color: $green !important;
+		background-color: $white;
+		color: $dark-green !important;
 	}
 
 	&.postfix {
+		color: $green !important;
+		font-size: 20px;
+		padding-top: 7px;
 		border: 1px solid $grey;
-	}
-
-	&#search-button {
-		border: none;
-		color: $grey !important;
+		height: 3rem;
+		border-left: none;
 
 		&:hover {
+			color: $dark-green !important;
 			background: $white;
 		}
 	}
@@ -135,14 +136,13 @@ button, .button {
 
 .article {
 	.accordion dd > a {
-		border: 1px solid $green;
 		background: none repeat scroll 0% 0% $white;
 		color: $green;
 		font-size: 14px;
 
 		&:hover, &:focus {
-			background-color: $green;
-			color: $white !important;
+			background-color: $white;
+			color: $dark-green !important;
 		}
 	}	
 }
