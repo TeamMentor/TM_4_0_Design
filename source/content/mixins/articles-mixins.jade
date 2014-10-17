@@ -1,15 +1,31 @@
 //- article-options
 mixin article-options
-	.row.text-center
-		.col-4
-			:markdown
-				[Metadata](#)
-		.col-4
-			:markdown
-				[Save](#)
-		.col-4
-			:markdown
-				[Share](#)
+	.row
+		.col-offset-2.col-8
+			.col-6.text-center
+				:markdown
+					[Save](#)
+			.col-6.text-center
+				:markdown
+					[Share](#)
+
+			br
+			br
+			h5 Metadata
+			table
+				tr
+					td Technology:
+					td Category:
+					td Phase:
+					td Type:
+				tr
+					td Any
+					td Authentication
+					td Implementation
+					td Attack
+
+		
+
 
 //- related-articles
 mixin related-articles
