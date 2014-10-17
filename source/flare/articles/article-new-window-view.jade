@@ -4,25 +4,23 @@ include mixins/articles-mixins.jade
 block content  
 	#application
 		.row
-			.small-0.large-3.columns
+			.small-12.large-3.columns
 				br
-
-			.small-12.large-6.columns
-				.lge-container
-					#article
+			.small-12.large-6.columns#results
+				#article
 						include:md ../../content/teamMentor/article-new-window.md
 
-					+horizontal-rule
+				+horizontal-rule
 
-					+article-options
+				+article-options
 
-					+horizontal-rule
+				+horizontal-rule
 
-					+related-articles
+				+related-articles
 
-					+horizontal-rule
+				+horizontal-rule
 
-					+copyright
+				+copyright
 
-			.small-0.large-3.columns
+			.small-12.large-3.columns
 				br

@@ -7811,10 +7811,11 @@ th.hide-for-touch {
   background-color: #000000;
 }
 
-/* line 48, ../../source/scss/app.scss */
+/* line 47, ../../source/scss/app.scss */
 .icons-green {
   color: #8aaf3e;
   font-size: 60px;
+  margin: 0 auto;
 }
 
 /* line 56, ../../source/scss/app.scss */

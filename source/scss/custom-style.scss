@@ -703,3 +703,16 @@ table {
 		}
 	}
 }
+
+
+
+// Loginwall links
+#sign-up-form {
+	a {
+		text-transform: none;
+		color: $dark-grey;
+		text-decoration: underline;
+		font-weight: normal;
+		font-size: inherit;
+	}
+}

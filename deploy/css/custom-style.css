@@ -795,5 +795,12 @@ table td {
     padding-right: 10px;
   }
 }
+#sign-up-form a {
+  text-transform: none;
+  color: #444444;
+  text-decoration: underline;
+  font-weight: normal;
+  font-size: inherit;
+}
 
 /*# sourceMappingURL=custom-style.css.map */
