@@ -1,0 +1,66 @@
+extends ../_layouts/flare_page_landing.jade
+include ../../content/mixins/landing-page-mixins.jade
+
+block content
+	#usp
+		.row
+			.small-12.large-offset-2.large-8.end.columns
+				h1 Instant resources that bridge the gap between developer questions and technical solutions
+				br
+				br
+				.row
+					.small-12.large-offset-3.large-6.end.columns
+						a(href='../getting-started/index.html')
+							button.btn-landing-page Start your free trial today
+
+	#reasons
+		h2 With TEAM Mentor, you can...
+
+		.row
+			.small-12.medium-offset-1.medium-10.large-offset-3.large-6.end.columns
+				.row
+					.small-3.large-2.columns
+						img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
+					.small-9.large-10.columns
+						h4 FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow
+				br
+				.row
+					.small-3.large-2.columns
+						img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
+					.small-9.large-10.columns
+						h4 REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified
+				br
+				.row
+					.small-3.large-2.columns
+						img(src='/deploy/assets/icons/expand.png', alt='EXPAND the development teams knowledge and improve process')
+					.small-9.large-10.columns
+						h4 EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices
+
+	#clients
+		h2 Our clients love us (and we think you will too!)
+		.row
+			.small-6.large-4.columns
+				img(src='/deploy/assets/clients/elsevier.png')
+			.small-6.large-4.columns
+				img(src='/deploy/assets/clients/fedex.png')
+			.small-6.large-4.columns
+				img(src='/deploy/assets/clients/massmutual.png')
+			.small-6.large-4.columns
+				img(src='/deploy/assets/clients/microsoft.png')
+			.small-6.large-4.columns
+				img(src='/deploy/assets/clients/symantec.png')
+			.small-6.large-4.columns
+				img(src='/deploy/assets/clients/ubs.png')
+	
+	#call-to-action
+		.row
+			.small-12.large-offset-2.large-8.end.columns
+				h1 Security Risk. Understood.
+				br
+				br
+				.row
+					.small-12.large-offset-3.large-6.end.columns
+						a(href='getting-started.html')
+							button(type='button') See for yourself
+
+	+footer-div

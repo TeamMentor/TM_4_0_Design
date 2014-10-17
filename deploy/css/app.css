@@ -7908,3 +7908,15 @@ button.postfix:hover, .button.postfix:hover {
   background-color: white;
   color: #49661f !important;
 }
+
+/* line 153, ../../source/scss/app.scss */
+.tabs dd > a {
+  font-size: 20px;
+  text-transform: none;
+  background: whitesmoke;
+  color: #aaaaaa;
+}
+/* line 159, ../../source/scss/app.scss */
+.tabs dd > a:hover {
+  color: #444444 !important;
+}

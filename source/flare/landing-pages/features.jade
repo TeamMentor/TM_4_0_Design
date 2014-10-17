@@ -1,0 +1,36 @@
+extends ../_layouts/flare_page_landing.jade
+include ../../content/mixins/landing-page-mixins.jade
+
+block content
+	#features
+		.row
+			.small-12.medium-offset-1.medium-10.large-offset-3.large-6.end.columns
+				h2 TEAM Mentor provides intelligence to fix vulnerabilities and comply
+				br
+				.row
+					.small-3.large-2.columns
+						img(src='/deploy/assets/icons/compliance.png', alt='Delivers compliance-specific secure coding guidance')
+					.small-9.large-10.columns
+						h4 Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.
+
+				.row
+					.small-3.large-2.columns
+						img(src='/deploy/assets/icons/integrate.png', alt='Integrates with multiple static analysis tools and developer environments')
+					.small-9.large-10.columns
+						h4 Integrates with multiple static analysis tools and developer environments (IDE’s) to map prescriptive coding guidance to scan results to fix vulnerabilities.
+
+				.row
+					.small-3.large-2.columns
+						img(src='/deploy/assets/icons/crossreferences.png', alt='Stores and cross-references your security policies')
+					.small-9.large-10.columns
+						h4 Stores and cross-references your security policies with out-of-the-box secure coding checklists and examples.
+
+				.row
+					.small-3.large-2.columns
+						img(src='/deploy/assets/icons/reduces.png', alt='Provides guidance to assist developers')
+					.small-9.large-10.columns
+						h4 Provides guidance to assist developers in reducing security vulnerabilities in software applications.
+
+	+call-to-action-div
+
+	+footer-div

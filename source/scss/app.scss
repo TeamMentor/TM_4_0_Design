@@ -146,3 +146,17 @@ button, .button {
 		}
 	}	
 }
+
+
+// Tabs
+
+.tabs dd > a {
+	font-size: 20px;
+	text-transform: none;
+	background: $light-grey;
+	color: $grey;
+
+	&:hover {
+		color: $dark-grey !important;
+	}
+}
