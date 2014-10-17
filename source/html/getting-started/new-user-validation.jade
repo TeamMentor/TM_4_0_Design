@@ -1,5 +1,6 @@
 extends ../../content/_layouts/page_not_logged_in.jade
-include ../../content/mixins/user-mixins.jade
+include ../user/mixins/user-mixins.jade
+
 block content
     #application
       .row
@@ -7,9 +8,6 @@ block content
           .lge-container
             +alert
             +sign-up-form
-            
-            br
-            br
         .col-5
           .lge-container
             +login-form

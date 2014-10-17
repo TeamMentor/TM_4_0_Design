@@ -1,0 +1,33 @@
+include ../../../content/mixins/user-mixins.jade
+
+//- login-form
+mixin login-form
+  h3 Login
+  include:md ../../../content/teamMentor/getting-started/login-form.md
+  form#login-form(role='form' method='post' action='/user/login')
+    .form-group
+      +username-input
+    .form-group     
+      +password-input 
+    .row
+      .col-6
+        .lge-container
+          +login-button
+      .col-6
+        .lge-container
+          +forgot-password-button
+
+//- sign-up-form
+mixin sign-up-form
+  h3 Sign Up
+  include:md ../../../content/teamMentor/getting-started/sign-up-form.md
+  form#sign-up-form(role='form')
+    .form-group
+      +username-input
+    .form-group
+      +email-input
+    .form-group
+      +password-input
+    .form-group
+      include:md ../../../content/teamMentor/getting-started/agree-to-toc.md
+    +sign-up-button

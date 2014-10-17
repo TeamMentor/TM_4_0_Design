@@ -55,74 +55,72 @@
         </dl>
         <div class="tabs-content">
           <div id="signup" class="content active"><br>
-            <div class="small-offset-1 small-10 large-offset-1 large-10 end columns">
-              <p>Create an account and get access to the world's largest repository of secure software development knowledge.</p><br>
+            <div class="small-offset-1 small-10 large-offset-1 large-10 end columns"><p>Create an account and get access to the world&#39;s largest repository of secure software development knowledge.</p>
+
               <form>
                 <div class="row">
                   <div class="small-12 large-12 columns">
                     <label>Username</label>
-                    <input type="text" placeholder="Username">
+                    <input type="text" id="username" placeholder="Username"/>
                   </div>
                 </div>
-                <!-- row-->
                 <div class="row">
                   <div class="small-12 large-12 columns">
                     <label>Email Address</label>
-                    <input type="text" placeholder="Email Address">
+                    <input type="email" id="email" placeholder="Email Address"/>
                   </div>
                 </div>
-                <!-- row-->
                 <div class="row">
                   <div class="small-12 large-12 columns">
                     <label>Password</label>
-                    <input type="text" placeholder="Password">
-                  </div>
-                </div>
-                <!-- row-->
-                <div class="row">
-                  <div class="small-12 large-12 columns">
-                    <p>By signing up, you agree to our Terms and Conditions.</p>
+                    <input type="password" id="password" placeholder="Password"/>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="small-12 large-12 columns">
-                    <button>Start Fixing Vulnerabilities</button>
+                  <div class="small-12 large-12 columns"><p>By signing up, you agree to our Terms and Conditions.</p>
+
                   </div>
                 </div>
-                <!-- row-->
+                <div class="row">
+                  <div class="small-12 large-12 columns"><a href="/deploy/html/home/main-app-view.html">
+                      <button type="button" id="btn-sign-up">Start Fixing Vulnerabilities</button></a>
+                  </div>
+                </div>
               </form>
-              <!-- form-->
             </div>
             <!-- column-->
           </div>
-          <!-- content-->
+          <!-- content					-->
           <div id="login" class="content">
             <div class="row">
-              <div class="small-offset-1 small-10 large-offset-1 large-10 end columns">
-                <p>Returning customer? Please log in to access TEAM Mentor.</p><br>
+              <div class="small-offset-1 small-10 large-offset-1 large-10 end columns"><p>Returning customer? Please log in to access TEAM Mentor. You can also log in directly from www.teammentor.net/teammentor </p>
+
                 <form>
                   <div class="row">
                     <div class="small-12 large-12 columns">
                       <label>Username</label>
-                      <input type="text" placeholder="Username">
+                      <input type="text" id="username" placeholder="Username"/>
                     </div>
                   </div>
-                  <!-- row-->
                   <div class="row">
                     <div class="small-12 large-12 columns">
                       <label>Password</label>
-                      <input type="text" placeholder="Password">
+                      <input type="password" id="password" placeholder="Password"/>
                     </div>
                   </div>
-                  <!-- row-->
                   <div class="row">
                     <div class="small-12 large-12 columns">
-                      <button>Login</button>
+                      <button type="submit" id="btn-login">Access TEAM Mentor</button>
+                    </div>
+                  </div><br/>
+                  <div class="row">
+                    <div class="small-12 large-12 columns">
+                      <form role="form" action="returning-user-forgot-password.html" method="get">
+                        <button id="btn-forgot-pwd" type="submit">Forgot your password?</button>
+                      </form>
                     </div>
                   </div>
-                  <!-- row-->
                 </form>
-                <!-- form-->
               </div>
               <!-- columns-->
             </div>
@@ -133,34 +131,36 @@
         <!-- tabs-content-->
       </div>
       <!-- column-->
-      <div class="small-12 large-5 large-pull-6 columns">
-        <h1>Security Risk. Understood.</h1>
-        <h4>Instant resources that bridge the gap between developer questions and technical solutions.</h4>
-        <p>TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.</p><br>
-        <h3>With TEAM Mentor, you can...</h3>
-        <div class="row">
-          <div class="small-3 large-2 columns"><img src="/deploy/assets/icons/identifyfix.png" alt="Identify vulnerabilities and reduce time to fix them"></div>
-          <!-- column-->
-          <div class="small-9 large-10 columns">
-            <p>FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow.</p>
+      <div class="small-12 large-5 large-pull-6 columns"><h1 id="security-risk-understood-">Security Risk. Understood.</h1>
+<h4 id="instant-resources-that-bridge-the-gap-between-developer-questions-and-technical-solutions-">Instant resources that bridge the gap between developer questions and technical solutions.</h4>
+<p>TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.</p>
+<h3 id="with-team-mentor-you-can-">With TEAM Mentor, you can...</h3>
+
+        <div class="icons-green">
+          <div class="row">
+            <div class="small-3 large-2 columns"><i class="fi-clipboard-pencil"></i></div>
+            <!-- column-->
+            <div class="small-9 large-10 columns"><p>FIX vulnerabilities quicker than ever before with TEAM Mentor&#39;s seamless integration into a developer&#39;s IDE and daily workflow.</p>
+
+            </div>
+            <!-- column-->
           </div>
-          <!-- column-->
-        </div>
-        <!-- row-->
-        <div class="row">
-          <div class="small-3 large-2 columns"><img src="/deploy/assets/icons/reduces.png" alt="REDUCE the number of vulnerabilities over time"></div>
-          <!--column-->
-          <div class="small-9 large-10 columns">
-            <p>REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified.</p>
+          <!-- row-->
+          <div class="row">
+            <div class="small-3 large-2 columns"><i class="fi-arrows-in"></i></div>
+            <!--column-->
+            <div class="small-9 large-10 columns"><p>REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified.</p>
+
+            </div>
+            <!-- column-->
           </div>
-          <!-- column-->
-        </div>
-        <!-- row-->
-        <div class="row">
-          <div class="small-3 large-2 columns"><img src="/deploy/assets/icons/expand.png" alt="REDUCE the number of vulnerabilities over time"></div>
-          <!--column-->
-          <div class="small-9 large-10 columns">
-            <p>EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices.</p>
+          <!-- row-->
+          <div class="row">
+            <div class="small-3 large-2 columns"><i class="fi-checkbox"></i></div>
+            <!--column-->
+            <div class="small-9 large-10 columns"><p>EXPAND the development team&#39;s knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization&#39;s security policies and coding best practices.</p>
+
+            </div>
           </div>
           <!-- column-->
         </div>

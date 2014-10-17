@@ -1,21 +1,32 @@
-mixin login-form
-  :markdown
-    ### Login
-    Returning customer? Please log in to access TEAM Mentor. You can also log in directly from www.teammentor.net/teammentor 
-  form#login-form(role='form' method='post' action='/user/login')
-    .form-group
-      label(for='new-user-username') Username
-      input#new-user-username.form-control(type='text' name='username' placeholder='Username' value='user')
-    .form-group     
-      label(for='new-user-password') Password
-      input#new-user-password.form-control(type='password' name='password' placeholder='Password')                
-    button(type='submit', id='btn-login') Login
-    br
-    br
-    a(href='returning-user-forgot-password.html')
-        button(type='button', id='btn-forgot-pwd') Forgot your password?
-    br
-    br
+//- Form Inputs
+mixin username-input
+  label
+    | Username
+  input(type='text', id='username', placeholder='Username')
+
+mixin password-input
+  label
+    | Password
+  input(type='password', id='password', placeholder='Password')
+
+mixin email-input
+  label
+    | Email Address
+  input(type='email', id='email', placeholder='Email Address')
+
+
+//- Form Buttons
+mixin login-button
+  button(type='submit', id='btn-login') Access TEAM Mentor
+
+mixin sign-up-button
+  a(href='/deploy/html/home/main-app-view.html')
+      button(type='button', id='btn-sign-up') Start Fixing Vulnerabilities
+
+mixin forgot-password-button
+  a(href='returning-user-forgot-password.html')
+    button(type='button', id='btn-forgot-pwd') Forgot your password?
+
 
 //- user-details-form
 mixin user-details-form
@@ -58,29 +69,11 @@ mixin new-password-form
       input.form-control(type='user-confirm-new-password', id='user-confirm-new-password', placeholder='Confirm New Password')
     button(type='submit') Save
 
-//- sign-up-form
-mixin sign-up-form
-  :markdown
-    ### Sign Up
-    Create an account and get access to the world's largest repository of secure software development knowledge.
-  form#sign-up-form(role='form')
-    .form-group
-      label(for='new-user-username') Username
-      input#new-user-username.form-control(type='text', placeholder='Username')
-    .form-group
-      label(for='new-user-email') Email Address
-      input#new-user-email.form-control(type='email', placeholder='Email Address')
-    .form-group
-      label(for='new-user-password') Password
-      input#new-user-password.form-control(type='password', placeholder='Password')
-    a(href='/deploy/html/home/main-app-view.html')
-      button(type='button') Sign Up
-
 //- forgot-password-form
 mixin forgot-password-form
   :markdown
     ### Forgot your password?
-    Too easy - just type in your email address and we'll send you an email with further instructions.
+    Just type in your email address and we'll send you an email with further instructions.
   form#forgot-password(role='form', action='forgot-password-completed.html')
     .form-group
       label(for='email') Email Address

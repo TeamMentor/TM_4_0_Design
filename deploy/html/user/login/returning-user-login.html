@@ -49,20 +49,32 @@
           <div class="lge-container"><br></div>
         </div>
         <div class="col-6">
-          <div class="lge-container"><h3 id="login">Login</h3>
-<p>Returning customer? Please log in to access TEAM Mentor. You can also log in directly from www.teammentor.net/teammentor </p>
+          <div class="lge-container">
+            <h3>Login</h3><p>Returning customer? Please log in to access TEAM Mentor. You can also log in directly from www.teammentor.net/teammentor </p>
 
             <form id="login-form" role="form" method="post" action="/user/login">
               <div class="form-group">
-                <label for="new-user-username">Username</label>
-                <input id="new-user-username" type="text" name="username" placeholder="Username" value="user" class="form-control"/>
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Username"/>
               </div>
               <div class="form-group">    
-                <label for="new-user-password">Password</label>
-                <input id="new-user-password" type="password" name="password" placeholder="Password" class="form-control"/>
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Password"/>
               </div>
-              <button type="submit" id="btn-login">Login</button><br/><br/><a href="returning-user-forgot-password.html">
-                <button type="button" id="btn-forgot-pwd">Forgot your password?</button></a><br/><br/>
+              <div class="row">
+                <div class="col-6">
+                  <div class="lge-container">
+                    <button type="submit" id="btn-login">Access TEAM Mentor</button>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="lge-container">
+                    <form role="form" action="returning-user-forgot-password.html" method="get">
+                      <button id="btn-forgot-pwd" type="submit">Forgot your password?</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
         </div>
