@@ -7812,85 +7812,90 @@ th.hide-for-touch {
 }
 
 /* line 48, ../../source/scss/app.scss */
+#application {
+  overflow-y: hidden;
+}
+
+/* line 55, ../../source/scss/app.scss */
 dl.tabs dd {
   width: 50%;
   border: 1px solid #aaaaaa;
 }
-/* line 53, ../../source/scss/app.scss */
+/* line 60, ../../source/scss/app.scss */
 dl.tabs .active {
   border-right: none !important;
   border-bottom: none !important;
 }
 
-/* line 59, ../../source/scss/app.scss */
+/* line 66, ../../source/scss/app.scss */
 .tabs-content {
   border: 1px solid #aaaaaa;
   border-top: none !important;
 }
 
-/* line 66, ../../source/scss/app.scss */
+/* line 73, ../../source/scss/app.scss */
 nav.top-bar {
   text-align: center;
 }
-/* line 69, ../../source/scss/app.scss */
+/* line 76, ../../source/scss/app.scss */
 nav.top-bar ul.title-area {
   padding: 5px 0 0 20px;
 }
-/* line 73, ../../source/scss/app.scss */
+/* line 80, ../../source/scss/app.scss */
 nav.top-bar section.top-bar-section {
   margin: 0 auto;
 }
-/* line 76, ../../source/scss/app.scss */
+/* line 83, ../../source/scss/app.scss */
 nav.top-bar section.top-bar-section img {
   align: center;
 }
-/* line 80, ../../source/scss/app.scss */
+/* line 87, ../../source/scss/app.scss */
 nav.top-bar section.top-bar-section ul.flare {
   display: inline-block;
   background: none;
 }
-/* line 84, ../../source/scss/app.scss */
+/* line 91, ../../source/scss/app.scss */
 nav.top-bar section.top-bar-section ul.flare li {
   padding: 10px 50px 0 50px;
 }
-/* line 88, ../../source/scss/app.scss */
+/* line 95, ../../source/scss/app.scss */
 nav.top-bar section.top-bar-section ul.flare p, nav.top-bar section.top-bar-section ul.flare a {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
   color: #aaaaaa;
 }
-/* line 94, ../../source/scss/app.scss */
+/* line 101, ../../source/scss/app.scss */
 nav.top-bar section.top-bar-section ul.flare p:hover, nav.top-bar section.top-bar-section ul.flare a:hover {
   color: #8aaf3e;
 }
-/* line 99, ../../source/scss/app.scss */
+/* line 106, ../../source/scss/app.scss */
 nav.top-bar section.top-bar-section ul.flare i {
   font-size: 24px;
   color: #aaaaaa;
 }
 
-/* line 109, ../../source/scss/app.scss */
+/* line 116, ../../source/scss/app.scss */
 button, .button {
   font-size: 14px;
   background-color: white;
   color: #8aaf3e;
   border: 1px solid #8aaf3e;
 }
-/* line 115, ../../source/scss/app.scss */
+/* line 122, ../../source/scss/app.scss */
 button:hover, button:focus, .button:hover, .button:focus {
   background-color: #8aaf3e;
   color: white !important;
 }
 
-/* line 124, ../../source/scss/app.scss */
+/* line 131, ../../source/scss/app.scss */
 .article .accordion dd > a {
   border: 1px solid #8aaf3e;
   background: none repeat scroll 0% 0% white;
   color: #8aaf3e;
   font-size: 14px;
 }
-/* line 130, ../../source/scss/app.scss */
+/* line 137, ../../source/scss/app.scss */
 .article .accordion dd > a:hover, .article .accordion dd > a:focus {
   background-color: #8aaf3e;
   color: white !important;

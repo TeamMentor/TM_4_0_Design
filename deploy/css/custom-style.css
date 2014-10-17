@@ -408,6 +408,7 @@ label {
   min-height: 50px;
   display: inline-block;
   border: none;
+  margin-bottom: 90px;
 }
 .navbar ul {
   list-style-type: none;
