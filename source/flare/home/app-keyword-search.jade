@@ -1,10 +1,12 @@
 extends ../_layouts/flare_page.jade
+
 block content  
 		#application
 			.row
 				.small-12.large-3.columns
 					br
 				.small-12.large-6.columns#results
+					+search-bar
 					.row
 						.large-12.columns
 								.row.collapse
@@ -16,20 +18,20 @@ block content
 									.small-2.columns
 										a.button.postfix(href='#')
 											i.fi-filter
-					br
-					br
 
 					.row
 						.small-6.large-6.columns
 							h4 0/200 results showing
-						.small-3.large-3.columns
+						.small-3.large-3.columns.vertical-align
 							a.button(href='#')
 								i.fi-bookmark
 								|    Save
-						.small-3.large-3.columns
+						.small-3.large-3.columns.vertical-align
 							a.button(href='#')
 								i.fi-trash
 								|    Clear
+
+					+articles-list
 
 				.small-12.large-3.columns
 					br

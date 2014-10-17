@@ -99,10 +99,6 @@ body {
 	}
 }
 
-.container {
-	margin-top: 70px;
-}
-
 #description {
 	margin-right: 15px;
 	padding: 5px 0 5px 0;
@@ -204,6 +200,10 @@ body {
 			background-color: $green;
 		}
 	}
+}
+
+.vertical-align {
+	margin-top: 10px;
 }
 
 .lge-container {

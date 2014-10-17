@@ -259,10 +259,6 @@ body {
   letter-spacing: 0px;
 }
 
-.container {
-  margin-top: 70px;
-}
-
 #description {
   margin-right: 15px;
   padding: 5px 0 5px 0;
@@ -349,6 +345,10 @@ body {
 #usp button:hover, #usp button:active, #call-to-action button:hover, #call-to-action button:active {
   color: white !important;
   background-color: #8aaf3e;
+}
+
+.vertical-align {
+  margin-top: 10px;
 }
 
 .lge-container {

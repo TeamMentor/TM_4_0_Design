@@ -42,13 +42,6 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
-
-// Application
-
-#application {
-	overflow-y: hidden;
-}
-
 // Tabs
 
 dl.tabs {
@@ -117,10 +110,11 @@ button, .button {
 	font-size: 14px;
 	background-color: $white;
 	color: $green;
+	width: 100% !important;
 
 	&:hover, &:focus {
-		background-color: $green;
-		color: $white !important;
+		background-color: #EFEFEF;
+		color: $green !important;
 	}
 }
 
