@@ -185,6 +185,7 @@ body {
   max-width: 100%;
   margin: 0;
   padding: 0;
+  padding-top: 90px;
   line-height: 1.5;
   background: white;
 }
@@ -209,7 +210,6 @@ body {
 }
 
 #application {
-  margin-top: 90px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -408,7 +408,6 @@ label {
   min-height: 50px;
   display: inline-block;
   border: none;
-  margin-bottom: 90px;
 }
 .navbar ul {
   list-style-type: none;

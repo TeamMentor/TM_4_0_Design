@@ -17,6 +17,7 @@ body {
 	max-width: $full-width;
 	margin: 0;
 	padding: 0;
+	padding-top: 90px;
 	line-height: 1.5;
 	background: $white;
 }
@@ -42,7 +43,6 @@ body {
 }
 
 #application {
-	margin-top: 90px;
 	width: $full-width;
 	display: flex;
     flex-direction: column;
@@ -271,7 +271,6 @@ label {
 	min-height: 50px;
 	display: inline-block;
 	border: none;
-	margin-bottom: 90px;
 
 	ul {
 		list-style-type: none;

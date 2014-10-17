@@ -7880,22 +7880,21 @@ button, .button {
   font-size: 14px;
   background-color: white;
   color: #8aaf3e;
-  border: 1px solid #8aaf3e;
 }
-/* line 122, ../../source/scss/app.scss */
+/* line 121, ../../source/scss/app.scss */
 button:hover, button:focus, .button:hover, .button:focus {
   background-color: #8aaf3e;
   color: white !important;
 }
 
-/* line 131, ../../source/scss/app.scss */
+/* line 130, ../../source/scss/app.scss */
 .article .accordion dd > a {
   border: 1px solid #8aaf3e;
   background: none repeat scroll 0% 0% white;
   color: #8aaf3e;
   font-size: 14px;
 }
-/* line 137, ../../source/scss/app.scss */
+/* line 136, ../../source/scss/app.scss */
 .article .accordion dd > a:hover, .article .accordion dd > a:focus {
   background-color: #8aaf3e;
   color: white !important;
