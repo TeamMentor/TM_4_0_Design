@@ -7882,15 +7882,28 @@ button:hover, button:focus, .button:hover, .button:focus {
   background-color: #EFEFEF;
   color: #8aaf3e !important;
 }
-
+/* line 120, ../../source/scss/app.scss */
+button.postfix, .button.postfix {
+  border: 1px solid #aaaaaa;
+}
 /* line 124, ../../source/scss/app.scss */
+button#search-button, .button#search-button {
+  border: none;
+  color: #aaaaaa !important;
+}
+/* line 128, ../../source/scss/app.scss */
+button#search-button:hover, .button#search-button:hover {
+  background: white;
+}
+
+/* line 137, ../../source/scss/app.scss */
 .article .accordion dd > a {
   border: 1px solid #8aaf3e;
   background: none repeat scroll 0% 0% white;
   color: #8aaf3e;
   font-size: 14px;
 }
-/* line 130, ../../source/scss/app.scss */
+/* line 143, ../../source/scss/app.scss */
 .article .accordion dd > a:hover, .article .accordion dd > a:focus {
   background-color: #8aaf3e;
   color: white !important;

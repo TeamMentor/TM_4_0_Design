@@ -385,17 +385,6 @@ form input {
   margin-bottom: 15px;
 }
 
-.form-control {
-  width: 100%;
-  display: block;
-  height: 3em;
-  padding-left: 20px;
-  border-radius: 0px;
-  border: 1px solid #aaaaaa;
-  color: #444444;
-  background: white;
-}
-
 label {
   display: inline-block;
   margin-bottom: 5px;
@@ -572,19 +561,23 @@ a, button {
   transition: all 0.3s;
 }
 
-input {
-  height: 1.7em;
-  border-radius: 0px;
-  max-width: 100%;
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+  width: 100% !important;
+  background-color: #FFF;
+  font-family: inherit;
+  border: 1px solid #aaaaaa;
+  box-shadow: none;
+  color: #aaaaaa;
+  display: block;
+  font-size: 16px;
+  padding: 0.5rem;
+  height: 3rem;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;
   /* Firefox, other Gecko */
   box-sizing: border-box;
-}
-input:focus {
-  box-shadow: 0 0 8px #8aaf3e;
-  outline: 0 none;
+  transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
 }
 
 .input-group {
@@ -603,7 +596,6 @@ input:focus {
   position: relative;
   z-index: 2;
   float: left;
-  width: 100%;
   margin-bottom: 0;
   display: table-cell;
   height: 52px;

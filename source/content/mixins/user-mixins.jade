@@ -3,19 +3,19 @@ mixin login-form
     ### Login
     Returning customer? Please log in to access TEAM Mentor. You can also log in directly from www.teammentor.net/teammentor 
   form#login-form(role='form' method='post' action='/user/login')
-      .form-group
-        label(for='new-user-username') Username
-        input#new-user-username.form-control(type='username' name='username' placeholder='Username' value='user')        
-      .form-group
-        label(for='new-user-password') Password
-        input#new-user-password.form-control(type='password' name='password' placeholder='Password')                
-      button(type='submit', id='btn-login') Login
-      br
-      br
-      a(href='returning-user-forgot-password.html')
-          button(type='button', id='btn-forgot-pwd') Forgot your password?
-      br
-      br
+    .form-group
+      label(for='new-user-username') Username
+      input#new-user-username.form-control(type='text' name='username' placeholder='Username' value='user')
+    .form-group     
+      label(for='new-user-password') Password
+      input#new-user-password.form-control(type='password' name='password' placeholder='Password')                
+    button(type='submit', id='btn-login') Login
+    br
+    br
+    a(href='returning-user-forgot-password.html')
+        button(type='button', id='btn-forgot-pwd') Forgot your password?
+    br
+    br
 
 //- user-details-form
 mixin user-details-form
@@ -66,16 +66,13 @@ mixin sign-up-form
   form#sign-up-form(role='form')
     .form-group
       label(for='new-user-username') Username
-      input#new-user-username.form-control(type='username', placeholder='Username')
+      input#new-user-username.form-control(type='text', placeholder='Username')
     .form-group
       label(for='new-user-email') Email Address
-      input#new-user-email.form-control(type='username', placeholder='Email Address')
+      input#new-user-email.form-control(type='email', placeholder='Email Address')
     .form-group
       label(for='new-user-password') Password
       input#new-user-password.form-control(type='password', placeholder='Password')
-    .form-group
-      label(for='new-user-confirm-password') Confirm Password
-      input#new-user-confirm-password.form-control(type='password', placeholder='Confirm Password')
     a(href='/deploy/html/home/main-app-view.html')
       button(type='button') Sign Up
 
