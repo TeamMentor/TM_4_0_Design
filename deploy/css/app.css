@@ -7864,25 +7864,20 @@ nav.top-bar section.top-bar-section ul.flare p, nav.top-bar section.top-bar-sect
 nav.top-bar section.top-bar-section ul.flare p:hover, nav.top-bar section.top-bar-section ul.flare a:hover {
   color: #8aaf3e;
 }
-/* line 99, ../../source/scss/app.scss */
-nav.top-bar section.top-bar-section ul.flare i {
-  font-size: 24px;
-  color: #aaaaaa;
-}
 
-/* line 109, ../../source/scss/app.scss */
+/* line 105, ../../source/scss/app.scss */
 button, .button {
   font-size: 14px;
   background-color: white;
   color: #8aaf3e;
   width: 100% !important;
 }
-/* line 115, ../../source/scss/app.scss */
+/* line 111, ../../source/scss/app.scss */
 button:hover, button:focus, .button:hover, .button:focus {
   background-color: white;
   color: #49661f !important;
 }
-/* line 120, ../../source/scss/app.scss */
+/* line 116, ../../source/scss/app.scss */
 button.postfix, .button.postfix {
   color: #8aaf3e !important;
   font-size: 20px;
@@ -7891,32 +7886,32 @@ button.postfix, .button.postfix {
   height: 3rem;
   border-left: none;
 }
-/* line 128, ../../source/scss/app.scss */
+/* line 124, ../../source/scss/app.scss */
 button.postfix:hover, .button.postfix:hover {
   color: #49661f !important;
   background: white;
 }
 
-/* line 138, ../../source/scss/app.scss */
+/* line 134, ../../source/scss/app.scss */
 .article .accordion dd > a {
   background: none repeat scroll 0% 0% white;
   color: #8aaf3e;
   font-size: 14px;
 }
-/* line 143, ../../source/scss/app.scss */
+/* line 139, ../../source/scss/app.scss */
 .article .accordion dd > a:hover, .article .accordion dd > a:focus {
   background-color: white;
   color: #49661f !important;
 }
 
-/* line 153, ../../source/scss/app.scss */
+/* line 149, ../../source/scss/app.scss */
 .tabs dd > a {
   font-size: 20px;
   text-transform: none;
   background: whitesmoke;
   color: #aaaaaa;
 }
-/* line 159, ../../source/scss/app.scss */
+/* line 155, ../../source/scss/app.scss */
 .tabs dd > a:hover {
   color: #444444 !important;
 }

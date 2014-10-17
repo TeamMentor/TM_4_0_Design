@@ -85,21 +85,17 @@ nav.top-bar {
 				padding: 10px 50px 0 50px;
 			}
 
-				p, a {
-					text-transform: uppercase;
-					font-size: 14px;
-					font-weight: 700;
-					color: $grey;
+			p, a {
+				text-transform: uppercase;
+				font-size: 14px;
+				font-weight: 700;
+				color: $grey;
 
-					&:hover {
-						color: $green;
-					}
+				&:hover {
+					color: $green;
 				}
+			}
 
-				i {
-					font-size: 24px;
-					color: $grey;
-				}
 		}	
 	}
 }
