@@ -53,3 +53,23 @@ mixin flare-article-preview-menu
 		.small-12.large-4.columns
 			a(href='#share')
 				+share-icon
+
+//- Flare Main App View
+mixin flare-main-app-view
+	dl.accordion(data-accordion='data-accordion')
+		dd.accordion-navigation
+			a(href='#panel1') Recently Viewed Articles
+			#panel1.content
+				+flare-articles-list
+		dd.accordion-navigation
+			a(href='#panel2') Popular Search Terms
+			#panel2.content
+				+flare-articles-list
+		dd.accordion-navigation
+			a(href='#panel3') Top Articles
+			#panel3.content
+				+flare-articles-list
+		dd.accordion-navigation
+			a(href='#panel4') New Articles
+			#panel4.content
+				+flare-articles-list

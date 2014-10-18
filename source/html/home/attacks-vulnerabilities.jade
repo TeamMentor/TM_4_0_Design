@@ -1,4 +1,6 @@
 extends ../_layouts/page_home.jade
+include mixins/application-mixins.jade
+
 block content
     #application
       .row
@@ -24,3 +26,6 @@ block content
                 a(href='#{link_fundamentals_of_security}') Top iOS Threats          
             .col-4              
             .col-4
+        .col-3
+            .lge-container
+                +filters-div
