@@ -1,20 +1,6 @@
 //- static texts
 - var head_title = 'TEAM Mentor 4.0 (Html version)'
 
-//- flare-search-bar-input
-mixin flare-search-bar-input
-	.row
-		.large-12.columns
-				.row.collapse
-					.small-8.large-10.columns
-						input#search-bar(type='text', placeholder='Type keywords here')
-					.small-2.large-1.columns
-						a.button.postfix#search-button(href='#')
-							+search-icon
-					.small-2.large-1.columns
-						a.button.postfix(href='#')
-							+filter-icon
-
 //- Icons
 mixin metadata-icon
 	i.fi-list-bullet
@@ -47,40 +33,6 @@ mixin clear-icon
 mixin copyright
 	#copyright
 		include:md teamMentor/articles/copyright-information.md
-
-
-//- Flare Results-Save-Clear
-mixin flare-results-save-clear
-	.row
-		.small-12.large-6.columns
-			h4 0/200 results showing
-		.small-6.large-3.columns.vertical-align
-			a.button(href='#')
-				+save-icon
-		.small-6.large-3.columns.vertical-align
-			a.button(href='#')
-				+clear-icon
-
-//- articles-list
-mixin articles-list
-	.list-group
-		a(href='#{link_article_new_window}', target='_blank')
-			include:md teamMentor/articles/article-details.md
-		a(href='#{link_article_new_window}', target='_blank')
-			include:md teamMentor/articles/article-details.md
-		a(href='#{link_article_new_window}', target='_blank')
-			include:md teamMentor/articles/article-details.md
-		a(href='#{link_article_new_window}', target='_blank')
-			include:md teamMentor/articles/article-details.md
-
-//- Save Article/Search Results Div
-mixin save-div
-	form
-		.row
-			.small-12.large-12.columns
-				+save-input
-			.small-12.large-12.columns
-				+save-button
 
 //- filters
 mixin filters-div
@@ -179,33 +131,6 @@ mixin filters-div
 			button(type='submit')
 				| Ok, Done
 
-//- main-app-view
-mixin main-app-view
-	h4 Recently Viewed Articles
-	.list-group
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-	h4 Popular Search Terms
-	.list-group
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-	h4 Top Articles
-	.list-group
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-	h4 New Articles
-	.list-group
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-
 //- horizontal-rule
 mixin horizontal-rule
 	hr
@@ -214,3 +139,21 @@ mixin horizontal-rule
 mixin alert
 	.alert(role='alert')
 		| Error/Validation messages go here
+
+// Save Div
+mixin save-div
+	form
+		.row
+			.small-12.large-12.columns
+				+save-input
+			.small-12.large-12.columns
+				+save-button
+
+// Share Div
+mixin share-div
+	form
+		.row
+			.small-12.large-12.columns
+				+share-input
+			.small-12.large-12.columns
+				+share-button
