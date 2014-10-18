@@ -52,16 +52,17 @@ body {
 
 #article, #lp-navigation, #learning-path, #help-docs, #help-nav {
 
-	a {
+	a {	
 		text-transform: none;
+		text-decoration: underline;
 		text-align: left !important;
 		font-weight: normal;
 		font-size: 16px;
 		letter-spacing: 0px;
-		color: $green;
+		color: $dark-grey;
 
 		&:hover {
-			color: $dark-green !important;
+			color: $green !important;
 		}
 	}
 }
@@ -156,6 +157,10 @@ body {
 	a {
 		color: $dark-grey;
 		font-size: 10px;
+
+		&:hover {
+			color: $green;
+		}
 	}
 }
 
@@ -706,6 +711,14 @@ table {
 
 
 
+
+
+
+
+
+
+
+
 // Loginwall links
 #sign-up-form {
 	a {
@@ -714,5 +727,149 @@ table {
 		text-decoration: underline;
 		font-weight: normal;
 		font-size: inherit;
+	}
+}
+
+// Icons
+
+.icons-green {
+	color: $green;
+	font-size: 60px;
+	margin: 0 auto;
+}
+
+// Navigation
+
+nav.top-bar {
+	text-align: center;
+
+	ul.title-area {
+		padding: 5px 0 0 20px;
+	}
+
+	section.top-bar-section {
+		margin: 0 auto;
+
+		img {
+			align: center;
+		}
+		
+		ul.flare {
+			display: inline-block;
+			background: none;
+
+			li {
+				padding: 10px 50px 0 50px;
+			}
+
+			p, a {
+				text-transform: uppercase;
+				font-size: 14px;
+				font-weight: 700;
+				color: $grey;
+
+				&:hover {
+					color: $green;
+				}
+			}
+
+		}	
+	}
+}
+
+// Buttons
+
+button, .button {
+	font-size: 14px;
+	background-color: $white;
+	color: $green;
+	width: 100% !important;
+
+	&:hover, &:focus {
+		background-color: $white;
+		color: $dark-green !important;
+	}
+
+	&.postfix {
+		color: $green !important;
+		font-size: 20px;
+		padding-top: 7px;
+		border: 1px solid $grey;
+		height: 3rem;
+		border-left: none;
+
+		&:hover {
+			color: $dark-green !important;
+			background: $white;
+		}
+	}
+}
+
+// Accordians
+
+#related-articles {
+	.accordion dd > a {
+	    background: $white;
+	    color: $dark-grey;
+	    font-size: 16px;
+	    font-weight: 700;
+	    letter-spacing: 0px;
+	    text-transform: none;
+	    text-decoration: none;
+	    text-align: left !important;
+	}
+}
+
+// Tabs
+
+#article {
+	dl.tabs {
+		dd {
+			width: 33%;
+			a {
+				font-size: 14px;
+				text-align: center !important;
+				text-transform: uppercase !important;
+				text-decoration: none;
+				letter-spacing: 1px;
+				font-weight: 700;
+				background: $white;
+				color: $green;
+
+				&:hover, &:active {
+					color: $dark-green !important;
+				}
+			}
+		}
+	}
+}
+
+.tabs dd > a {
+	font-size: 20px;
+	text-transform: none;
+	background: $light-grey;
+	color: $grey;
+
+	&:hover {
+		color: $dark-grey !important;
+	}
+}
+
+#loginwall {
+	dl.tabs {
+		dd {
+			width: 50%;
+			border: 1px solid $grey;
+		}
+
+		.active {
+			border-right: none !important;
+			border-bottom: none !important;
+		}
+	}
+
+	.tabs-content {
+		border: 1px solid $grey;
+		border-top: none !important;
 	}
 }

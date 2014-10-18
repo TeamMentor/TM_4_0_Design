@@ -14,6 +14,17 @@ mixin email-input
     | Email Address
   input(type='email', id='email', placeholder='Email Address')
 
+mixin save-input
+  label
+    | Save to Dashboard
+  input(type='text', id='nickname', placeholder='Quick reference nickname (optional)')
+
+mixin share-input
+  label
+    | Share via Email
+  input(type='text', id='share', placeholder='Email address to link article to')
+
+
 
 //- Form Buttons
 mixin login-button
@@ -26,6 +37,13 @@ mixin sign-up-button
 mixin forgot-password-button
   a(href='returning-user-forgot-password.html')
     button(type='button', id='btn-forgot-pwd') Forgot your password?
+
+mixin save-button
+  button(type='submit', id='btn-save') Save for later
+
+mixin share-button
+  button(type='submit', id='btn-share') Share it
+
 
 
 //- user-details-form

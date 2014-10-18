@@ -1,5 +1,6 @@
 extends ../_layouts/flare_page.jade
 include mixins/articles-mixins.jade
+include ../../content/mixins/user-mixins.jade
 
 block content  
 	#application
@@ -8,19 +9,19 @@ block content
 				br
 			.small-12.large-6.columns#results
 				#article
-						include:md ../../content/teamMentor/article-new-window.md
+					include:md ../../content/teamMentor/articles/article-new-window.md
 
-				+horizontal-rule
+					+horizontal-rule
 
-				+article-options
+					+article-options
 
-				+horizontal-rule
+					+horizontal-rule
 
-				+related-articles
+					+related-articles
 
-				+horizontal-rule
+					+horizontal-rule
 
-				+copyright
+					+copyright
 
 			.small-12.large-3.columns
 				br

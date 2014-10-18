@@ -1,44 +1,60 @@
-//- article-options
+//- Article Options
 mixin article-options
-	.row
-		.small-12.large-4.columns
-			.article
-				dl.accordion(data-accordion='data-accordion')
-					dd.accordion-navigation
-						a(href='#panel1') 
-							i.fi-list-bullet
-							|     Metadata
-						#panel1.content.active
-							table
-								tr
-									td Technology:
-									td Any
-								tr
-									td Category:
-									td Authentication
-								tr
-									td Phase:
-									td Implementation
-								tr
-									td Type:
-									td Attack
-		.small-12.large-4.columns.text-center
-			a.button(href='#')
-				i.fi-bookmark
-				|    Save
-		.small-12.large-4.columns.text-center
-			a.button(href='#')
-				i.fi-share
-				|    Share
+	dl.tabs(data-tab='data-tab')
+		dd
+			a(href='#metadata')
+				+metadata-icon
+		dd
+			a(href='#save')
+				+save-icon
+		dd
+			a(href='#share')
+				+share-icon
+	.tabs-content
+		#metadata.content
+			table
+				thead
+					tr
+						td Technology:
+						td Category:
+						td Phase:
+						td Type:
+				tr
+					td Any
+					td Authentication
+					td Implementation
+					td Attack
+		#save.content
+			+save-div
+			
+		#share.content
+			+share-div
 
+
+// Share Div
+mixin share-div
+	form
+		.row
+			.small-12.large-12.columns
+				+share-input
+			.small-12.large-12.columns
+				+share-button
 
 //- related-articles
 mixin related-articles
-	h4 Related Articles
-	.list-group
-		a(href='#{link_article_new_window}', target='_blank')
-			include:md ../../../content/teamMentor/article-details.md
-		a(href='#{link_article_new_window}', target='_blank')
-			include:md ../../../content/teamMentor/article-details.md
-		a(href='#{link_article_new_window}', target='_blank')
-			include:md ../../../content/teamMentor/article-details.md
+	#related-articles
+		h3 You might also like
+		dl.accordion(data-accordion='data-accordion')
+			dd.accordion-navigation
+				a(href='#panel1') Article Headline
+				#panel1.content
+					a(href='/articles/article-new-window-view.jade')
+						include:md ../../../content/teamMentor/articles/article-details.md
+			dd.accordion-navigation
+				a(href='#panel2') Article Headline
+				#panel2.content
+					include:md ../../../content/teamMentor/articles/article-details.md
+			dd.accordion-navigation
+				a(href='#panel3') Article Headline
+				#panel3.content
+					include:md ../../../content/teamMentor/articles/article-details.md

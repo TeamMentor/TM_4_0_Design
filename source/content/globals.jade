@@ -18,21 +18,40 @@ mixin flare-search-bar-input
 						input#search-bar(type='text', placeholder='Type keywords here')
 					.small-2.large-1.columns
 						a.button.postfix#search-button(href='#')
-							i.fi-magnifying-glass
+							+search-icon
 					.small-2.large-1.columns
 						a.button.postfix(href='#')
-							i.fi-filter
+							+filter-icon
 
+
+//- Icons
+mixin metadata-icon
+	i.fi-list-bullet
+	|     Metadata
+
+mixin save-icon
+	i.fi-bookmark
+	|    Save
+
+mixin share-icon
+	i.fi-share
+	|    Share
+
+mixin open-icon
+	i.fi-plus
+	|     Open
+
+mixin search-icon
+	i.fi-magnifying-glass
+
+mixin filter-icon
+	i.fi-filter
 
 //- copyright information
 mixin copyright
 	#copyright
-		:markdown
-			TEAM Mentor, a [Security Innovation](http://www.securityinnovation.com/) eKnowledge Product.
+		include:md teamMentor/articles/copyright-information.md
 
-			© Security Innovation 2007-2014, all rights reserved.
-
-			[Contact Us](mailto:)
 
 //- results-save-clear
 mixin results-save-clear
@@ -64,13 +83,22 @@ mixin flare-results-save-clear
 mixin articles-list
 	.list-group
 		a(href='#{link_article_new_window}', target='_blank')
-			include:md teamMentor/article-details.md
+			include:md teamMentor/articles/article-details.md
 		a(href='#{link_article_new_window}', target='_blank')
-			include:md teamMentor/article-details.md
+			include:md teamMentor/articles/article-details.md
 		a(href='#{link_article_new_window}', target='_blank')
-			include:md teamMentor/article-details.md
+			include:md teamMentor/articles/article-details.md
 		a(href='#{link_article_new_window}', target='_blank')
-			include:md teamMentor/article-details.md
+			include:md teamMentor/articles/article-details.md
+
+//- Save Article/Search Results Div
+mixin save-div
+	form
+		.row
+			.small-12.large-12.columns
+				+save-input
+			.small-12.large-12.columns
+				+save-button
 
 
 //- filters
@@ -169,18 +197,6 @@ mixin filters-div
 
 			button(type='submit')
 				| Ok, Done
-
-
-//- save to dashboard
-mixin save-div
-	#save-to-dashboard
-		:markdown
-			### Save to Dashboard
-		form(role='form')
-			.form-group
-				label(for='nickname') Give it a nickname
-				input#nickname.form-control(type='text', placeholder='Nickname')
-			button(type='submit') Ok, Done
 
 //- main-app-view
 mixin main-app-view

@@ -75,55 +75,85 @@ Ut id nisi ac odio porta ornare. Pellentesque justo elit, varius et odio in, sus
 felis vel consectetur vehicula, arcu justo commodo odio, tempus ornare neque sapien at massa. Maecenas in turpis iaculis,
 mattis justo eget, facilisis quam. Suspendisse potenti. Duis id libero euismod nisi dictum tempor vel at dolor.</p>
 
-          </div>
-            <hr>
-          <div class="row">
-            <div class="small-12 large-4 columns">
-              <div class="article">
-                <dl data-accordion="data-accordion" class="accordion">
-                  <dd class="accordion-navigation"><a href="#panel1"><i class="fi-list-bullet"></i>    Metadata</a>
-                    <div id="panel1" class="content active">
-                      <table>
-                        <tr>
-                          <td>Technology:</td>
-                          <td>Any</td>
-                        </tr>
-                        <tr>
-                          <td>Category:</td>
-                          <td>Authentication</td>
-                        </tr>
-                        <tr>
-                          <td>Phase:</td>
-                          <td>Implementation</td>
-                        </tr>
-                        <tr>
-                          <td>Type:</td>
-                          <td>Attack</td>
-                        </tr>
-                      </table>
+              <hr>
+            <dl data-tab="data-tab" class="tabs">
+              <dd><a href="#metadata"><i class="fi-list-bullet"></i>    Metadata</a></dd>
+              <dd><a href="#save"><i class="fi-bookmark"></i>   Save</a></dd>
+              <dd><a href="#share"><i class="fi-share"></i>   Share</a></dd>
+            </dl>
+            <div class="tabs-content">
+              <div id="metadata" class="content">
+                <table>
+                  <thead>
+                    <tr>
+                      <td>Technology:</td>
+                      <td>Category:</td>
+                      <td>Phase:</td>
+                      <td>Type:</td>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Any</td>
+                    <td>Authentication</td>
+                    <td>Implementation</td>
+                    <td>Attack</td>
+                  </tr>
+                </table>
+              </div>
+              <div id="save" class="content">
+                  <form>
+                    <div class="row">
+                      <div class="small-12 large-12 columns">
+                        <label>Save to Dashboard</label>
+                        <input type="text" id="nickname" placeholder="Quick reference nickname (optional)"/>
+                      </div>
+                      <div class="small-12 large-12 columns">
+                        <button type="submit" id="btn-save">Save for later</button>
+                      </div>
                     </div>
-                  </dd>
-                </dl>
+                  </form>
+              </div>
+              <div id="share" class="content">
+                <form>
+                  <div class="row">
+                    <div class="small-12 large-12 columns">
+                      <label>Share via Email</label>
+                      <input type="text" id="share" placeholder="Email address to link article to"/>
+                    </div>
+                    <div class="small-12 large-12 columns">
+                      <button type="submit" id="btn-share">Share it</button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
-            <div class="small-12 large-4 columns text-center"><a href="#" class="button"><i class="fi-bookmark"></i>   Save</a></div>
-            <div class="small-12 large-4 columns text-center"><a href="#" class="button"><i class="fi-share"></i>   Share</a></div>
-          </div>
-            <hr>
-          <h4>Related Articles</h4>
-          <div class="list-group"><a href="/deploy/html/articles/article-new-window-view.html" target="_blank"><h5 id="article-headline">Article Headline</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p>
-</a><a href="/deploy/html/articles/article-new-window-view.html" target="_blank"><h5 id="article-headline">Article Headline</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p>
-</a><a href="/deploy/html/articles/article-new-window-view.html" target="_blank"><h5 id="article-headline">Article Headline</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p>
+              <hr>
+            <div id="related-articles">
+              <h3>You might also like</h3>
+              <dl data-accordion="data-accordion" class="accordion">
+                <dd class="accordion-navigation"><a href="#panel1">Article Headline</a>
+                  <div id="panel1" class="content"><a href="/articles/article-new-window-view.jade"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p>
 </a></div>
-            <hr>
-            <div id="copyright"><p>TEAM Mentor, a <a href="http://www.securityinnovation.com/">Security Innovation</a> eKnowledge Product.</p>
+                </dd>
+                <dd class="accordion-navigation"><a href="#panel2">Article Headline</a>
+                  <div id="panel2" class="content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p>
+
+                  </div>
+                </dd>
+                <dd class="accordion-navigation"><a href="#panel3">Article Headline</a>
+                  <div id="panel3" class="content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p>
+
+                  </div>
+                </dd>
+              </dl>
+            </div>
+              <hr>
+              <div id="copyright"><p>TEAM Mentor, a <a href="http://www.securityinnovation.com/">Security Innovation</a> eKnowledge Product.</p>
 <p>© Security Innovation 2007-2014, all rights reserved.</p>
 <p><a href="mailto:">Contact Us</a></p>
 
-            </div>
+              </div>
+          </div>
         </div>
         <div class="small-12 large-3 columns"><br></div>
       </div>
