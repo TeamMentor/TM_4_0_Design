@@ -1,5 +1,5 @@
 extends ../_layouts/page_home.jade
-include ../../content/mixins/articles-mixins.jade
+include mixins/article-mixins.jade
 
 block content  
 	#application
@@ -11,7 +11,7 @@ block content
 			.col-6
 				.lge-container
 					#article
-						include:md ../../content/teamMentor/article-new-window.md
+						include:md ../../content/teamMentor/articles/article-new-window.md
 
 					+horizontal-rule
 
@@ -27,3 +27,9 @@ block content
 
 			.col-3
 				.lge-container
+					br
+					br
+					br
+					+save-div
+					br
+					+share-div

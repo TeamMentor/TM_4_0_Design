@@ -1,3 +1,5 @@
+include ../../../content/mixins/articles-mixins.jade
+
 //- Article Options
 mixin article-options
 	dl.tabs(data-tab='data-tab')
@@ -12,18 +14,8 @@ mixin article-options
 				+share-icon
 	.tabs-content
 		#metadata.content
-			table
-				thead
-					tr
-						td Technology:
-						td Category:
-						td Phase:
-						td Type:
-				tr
-					td Any
-					td Authentication
-					td Implementation
-					td Attack
+			+metadata-table
+
 		#save.content
 			+save-div
 			
@@ -31,16 +23,7 @@ mixin article-options
 			+share-div
 
 
-// Share Div
-mixin share-div
-	form
-		.row
-			.small-12.large-12.columns
-				+share-input
-			.small-12.large-12.columns
-				+share-button
-
-//- related-articles
+//- Related Articles
 mixin related-articles
 	#related-articles
 		h3 You might also like
@@ -58,3 +41,21 @@ mixin related-articles
 				a(href='#panel3') Article Headline
 				#panel3.content
 					include:md ../../../content/teamMentor/articles/article-details.md
+
+// Save Div
+mixin save-div
+	form
+		.row
+			.small-12.large-12.columns
+				+save-input
+			.small-12.large-12.columns
+				+save-button
+
+// Share Div
+mixin share-div
+	form
+		.row
+			.small-12.large-12.columns
+				+share-input
+			.small-12.large-12.columns
+				+share-button

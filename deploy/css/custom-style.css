@@ -875,11 +875,14 @@ button.postfix:hover, .button.postfix:hover {
   text-decoration: none;
   text-align: left !important;
 }
+#related-articles .accordion dd > a:hover {
+  color: #8aaf3e !important;
+}
 
-#article dl.tabs dd {
+dl.tabs dd {
   width: 33%;
 }
-#article dl.tabs dd a {
+dl.tabs dd a {
   font-size: 14px;
   text-align: center !important;
   text-transform: uppercase !important;
@@ -889,8 +892,9 @@ button.postfix:hover, .button.postfix:hover {
   background: white;
   color: #8aaf3e;
 }
-#article dl.tabs dd a:hover, #article dl.tabs dd a:active {
+dl.tabs dd a:hover, dl.tabs dd a:active {
   color: #49661f !important;
+  background: white;
 }
 
 .tabs dd > a {

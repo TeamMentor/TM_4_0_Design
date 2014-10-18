@@ -82,31 +82,27 @@ mattis justo eget, facilisis quam. Suspendisse potenti. Duis id libero euismod n
               <hr>
             <div class="row">
               <div class="col-offset-2 col-8">
-                <div class="col-6 text-center"><p><a href="#">Save</a></p>
-
-                </div>
-                <div class="col-6 text-center"><p><a href="#">Share</a></p>
-
-                </div><br/><br/>
                 <h5>Metadata</h5>
                 <table>
-                  <tr>
-                    <td>Technology:</td>
-                    <td>Category:</td>
-                    <td>Phase:</td>
-                    <td>Type:</td>
-                  </tr>
-                  <tr>
-                    <td>Any</td>
-                    <td>Authentication</td>
-                    <td>Implementation</td>
-                    <td>Attack</td>
-                  </tr>
+                  <thead>
+                    <tr>
+                      <td>Technology:</td>
+                      <td>Category:</td>
+                      <td>Phase:</td>
+                      <td>Type:</td>
+                    </tr>
+                    <tr>
+                      <td>Any</td>
+                      <td>Authentication</td>
+                      <td>Implementation</td>
+                      <td>Attack</td>
+                    </tr>
+                  </thead>
                 </table>
               </div>
             </div>
               <hr>
-            <h4>Related Articles</h4>
+            <h3>You might also like</h3>
             <div class="list-group"><a href="/deploy/html/articles/article-new-window-view.html" target="_blank"><h5 id="article-headline">Article Headline</h5>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et erat eu nibh interdum euismod at eget diam. Morbi pulvinar lorem vitae venenatis rutrum. Aliquam quis sem vel odio tristique dignissim sagittis sed massa. Pellentesque nibh arcu, laoreet sed varius sed, scelerisque in elit.</p>
 </a><a href="/deploy/html/articles/article-new-window-view.html" target="_blank"><h5 id="article-headline">Article Headline</h5>
@@ -123,7 +119,30 @@ mattis justo eget, facilisis quam. Suspendisse potenti. Duis id libero euismod n
           </div>
         </div>
         <div class="col-3">
-          <div class="lge-container"></div>
+          <div class="lge-container"><br><br><br>
+              <form>
+                <div class="row">
+                  <div class="small-12 large-12 columns">
+                    <label>Save to Dashboard</label>
+                    <input type="text" id="nickname" placeholder="Quick reference nickname (optional)"/>
+                  </div>
+                  <div class="small-12 large-12 columns">
+                    <button type="submit" id="btn-save">Save for later</button>
+                  </div>
+                </div>
+              </form><br>
+            <form>
+              <div class="row">
+                <div class="form-group">
+                  <label>Share via Email</label>
+                  <input type="text" id="share" placeholder="Email address to link article to"/>
+                </div>
+                <div class="form-group">
+                  <button type="submit" id="btn-share">Share it</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

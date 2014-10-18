@@ -817,28 +817,32 @@ button, .button {
 	    text-transform: none;
 	    text-decoration: none;
 	    text-align: left !important;
+
+	    &:hover {
+	    	color: $green !important;
+	    }
 	}
 }
 
 // Tabs
 
-#article {
-	dl.tabs {
-		dd {
-			width: 33%;
-			a {
-				font-size: 14px;
-				text-align: center !important;
-				text-transform: uppercase !important;
-				text-decoration: none;
-				letter-spacing: 1px;
-				font-weight: 700;
-				background: $white;
-				color: $green;
 
-				&:hover, &:active {
-					color: $dark-green !important;
-				}
+dl.tabs {
+	dd {
+		width: 33%;
+		a {
+			font-size: 14px;
+			text-align: center !important;
+			text-transform: uppercase !important;
+			text-decoration: none;
+			letter-spacing: 1px;
+			font-weight: 700;
+			background: $white;
+			color: $green;
+
+			&:hover, &:active {
+				color: $dark-green !important;
+				background: $white;
 			}
 		}
 	}
