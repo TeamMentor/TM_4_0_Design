@@ -1,4 +1,6 @@
 extends ../_layouts/page_home.jade
+include mixins/application-mixins.jade
+
 block content  
     #application
       .row
@@ -14,6 +16,7 @@ block content
             br
             +results-save-clear
             +articles-list
+            p Hello
 
         .col-3
           .lge-container

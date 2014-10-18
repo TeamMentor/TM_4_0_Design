@@ -1,14 +1,6 @@
 //- static texts
 - var head_title = 'TEAM Mentor 4.0 (Html version)'
 
-//- jade-search-bar-input
-mixin jade-search-bar-input
-	.input-group
-		input.form-control(type='text', placeholder='Type keywords here')
-		span.input-group-btn
-			button.btn-search-bar(type='button')
-				| SEARCH
-
 //- flare-search-bar-input
 mixin flare-search-bar-input
 	.row
@@ -22,7 +14,6 @@ mixin flare-search-bar-input
 					.small-2.large-1.columns
 						a.button.postfix(href='#')
 							+filter-icon
-
 
 //- Icons
 mixin metadata-icon
@@ -47,37 +38,28 @@ mixin search-icon
 mixin filter-icon
 	i.fi-filter
 
-//- copyright information
+mixin clear-icon
+	i.fi-trash
+	|     Clear
+
+
+//- Copyright Information
 mixin copyright
 	#copyright
 		include:md teamMentor/articles/copyright-information.md
 
 
-//- results-save-clear
-mixin results-save-clear
-	table
-		tr
-			td 
-				h4 0/200 results showing
-			.vertical-align
-				td
-					a(href='#save') Save
-				td
-					a(href='main-app-view.html') Clear
-
-//- flare-results-save-clear
+//- Flare Results-Save-Clear
 mixin flare-results-save-clear
 	.row
 		.small-12.large-6.columns
 			h4 0/200 results showing
 		.small-6.large-3.columns.vertical-align
 			a.button(href='#')
-				i.fi-bookmark
-				|     Save
+				+save-icon
 		.small-6.large-3.columns.vertical-align
 			a.button(href='#')
-				i.fi-trash
-				|     Clear
+				+clear-icon
 
 //- articles-list
 mixin articles-list
@@ -99,7 +81,6 @@ mixin save-div
 				+save-input
 			.small-12.large-12.columns
 				+save-button
-
 
 //- filters
 mixin filters-div

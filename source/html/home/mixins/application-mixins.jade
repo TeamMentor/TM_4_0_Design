@@ -1,0 +1,24 @@
+//- Jade Search-Bar-Input
+mixin jade-search-bar-input
+	.input-group
+		input.form-control(type='text', placeholder='Type keywords here')
+		span.input-group-btn
+			button.btn-search-bar(type='button')
+				| SEARCH
+
+//- Jade Results-Save-Clear
+mixin results-save-clear
+	table
+		tr
+			td 
+				h4 0/200 results showing
+			td
+				a(href='#save') Save
+			td
+				a(href='main-app-view.html') Clear
+
+//- Articles List
+mixin articles-list
+	.list-group
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md ../../../content/teamMentor/articles/article-summary.md

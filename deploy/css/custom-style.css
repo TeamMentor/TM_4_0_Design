@@ -292,7 +292,7 @@ body {
   margin-top: 2px;
 }
 #filters li label, #my-articles li label {
-  margin-top: -5px;
+  margin-top: 0px;
 }
 #filters li input[type=checkbox] + label, #my-articles li input[type=checkbox] + label {
   display: inline-block;
@@ -627,7 +627,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus
   white-space: nowrap;
   border: 1px solid #aaaaaa;
   border-left: none;
-  width: 1%;
+  width: 100px;
   vertical-align: middle;
   border-radius: 0px;
 }
@@ -865,7 +865,7 @@ button.postfix:hover, .button.postfix:hover {
   background: white;
 }
 
-#related-articles .accordion dd > a {
+.accordion dd > a {
   background: white;
   color: #444444;
   font-size: 16px;
@@ -875,8 +875,9 @@ button.postfix:hover, .button.postfix:hover {
   text-decoration: none;
   text-align: left !important;
 }
-#related-articles .accordion dd > a:hover {
+.accordion dd > a:hover {
   color: #8aaf3e !important;
+  background: white;
 }
 
 dl.tabs dd {
