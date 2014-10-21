@@ -13,36 +13,4 @@ block content
 				+flare-articles-list
 
 			.small-12.large-3.columns#right-nav
-				h3 Filters
-				dl.accordion(data-accordion='data-accordion')
-					dd.accordion-navigation
-						a(href='#panel1') Technnology
-						#panel1.content.active
-							form
-								.row
-									.large-12.columns
-										.row
-											.small-2.columns
-												span.badge 14
-											.small-8.columns
-												label(for='checkbox1') Checkbox 1
-											.small-2.columns
-												input#checkbox1(type='checkbox')
-
-										br
-										input#checkbox2(type='checkbox')
-										label(for='checkbox2') Checkbox 2
-										br
-
-					dd.accordion-navigation
-						a(href='#panel2') Type
-						#panel2.content
-							p Hello
-					dd.accordion-navigation
-						a(href='#panel3') Phase
-						#panel3.content
-							p Hello
-					dd.accordion-navigation
-						a(href='#panel4') Categroy
-						#panel4.content
-							p Hello
+				+flare-filters-div

@@ -75,3 +75,119 @@ mixin flare-main-app-view
 			a(href='#panel4') New Articles
 			#panel4.content
 				+flare-articles-list
+
+//- Flare Filters Div
+mixin flare-filters-div
+	h3 Filters
+	form
+		dl.accordion(data-accordion='data-accordion')
+			dd.accordion-navigation
+				a(href='#panel1') Technnology
+				#panel1.content
+					.row
+						.large-12.columns
+							.row
+								.small-2.columns
+									span.badge 14
+								.small-8.columns
+									label(for='tech-checkbox1') Checkbox 1
+								.small-2.columns
+									input#tech-checkbox1(type='checkbox')
+							.row
+								.small-2.columns
+									span.badge 14
+								.small-8.columns
+									label(for='tech-checkbox2') Checkbox 2
+								.small-2.columns
+									input#tech-checkbox2(type='checkbox')
+							.row
+								.small-2.columns
+									span.badge 14
+								.small-8.columns
+									label(for='tech-checkbox3') Checkbox 3
+								.small-2.columns
+									input#tech-checkbox3(type='checkbox')
+
+			dd.accordion-navigation
+				a(href='#panel2') Type
+				#panel2.content
+					.row
+						.large-12.columns
+							.row
+								.small-2.columns
+									span.badge 14
+								.small-8.columns
+									label(for='type-checkbox1') Checkbox 1
+								.small-2.columns
+									input#type-checkbox1(type='checkbox')
+							.row
+								.small-2.columns
+									span.badge 14
+								.small-8.columns
+									label(for='type-checkbox2') Checkbox 2
+								.small-2.columns
+									input#type-checkbox2(type='checkbox')
+							.row
+								.small-2.columns
+									span.badge 14
+								.small-8.columns
+									label(for='type-checkbox3') Checkbox 3
+								.small-2.columns
+									input#type-checkbox3(type='checkbox')
+
+			dd.accordion-navigation
+				a(href='#panel3') Phase
+				#panel3.content
+					.row
+						.large-12.columns
+							.row
+								.small-2.columns
+									span.badge 14
+								.small-8.columns
+									label(for='phase-checkbox1') Checkbox 1
+								.small-2.columns
+									input#phase-checkbox1(type='checkbox')
+							.row
+								.small-2.columns
+									span.badge 14
+								.small-8.columns
+									label(for='phase-checkbox2') Checkbox 2
+								.small-2.columns
+									input#phase-checkbox2(type='checkbox')
+							.row
+								.small-2.columns
+									span.badge 14
+								.small-8.columns
+									label(for='phase-checkbox3') Checkbox 3
+								.small-2.columns
+									input#phase-checkbox3(type='checkbox')
+
+			dd.accordion-navigation
+				a(href='#panel4') Category
+				#panel4.content
+					.row
+						.large-12.columns
+							.row
+								.small-2.columns
+									span.badge 14
+								.small-8.columns
+									label(for='category-checkbox1') Checkbox 1
+								.small-2.columns
+									input#category-checkbox1(type='checkbox')
+							.row
+								.small-2.columns
+									span.badge 14
+								.small-8.columns
+									label(for='category-checkbox2') Checkbox 2
+								.small-2.columns
+									input#category-checkbox2(type='checkbox')
+							.row
+								.small-2.columns
+									span.badge 14
+								.small-8.columns
+									label(for='category-checkbox3') Checkbox 3
+								.small-2.columns
+									input#category-checkbox3(type='checkbox')
+		br
+		button(type='submit')
+			| Ok, Done
