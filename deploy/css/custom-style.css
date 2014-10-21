@@ -861,7 +861,7 @@ button:hover, button:focus, .button:hover, .button:focus {
 }
 button.postfix, .button.postfix {
   color: #8aaf3e !important;
-  font-size: 20px;
+  font-size: 16px;
   padding-top: 7px;
   border: 1px solid #aaaaaa;
   height: 3rem;
@@ -925,10 +925,7 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   vertical-align: baseline;
 }
 #loginwall .postfix {
-  padding: 3px 0 0 13px;
-}
-#loginwall .postfix label {
-  color: #aaaaaa;
+  color: #aaaaaa !important;
 }
 #loginwall dl.tabs dd {
   width: 50%;

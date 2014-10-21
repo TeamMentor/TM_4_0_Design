@@ -801,7 +801,7 @@ button, .button {
 
 	&.postfix {
 		color: $green !important;
-		font-size: 20px;
+		font-size: 16px;
 		padding-top: 7px;
 		border: 1px solid $grey;
 		height: 3rem;
@@ -879,10 +879,7 @@ dl.tabs {
 	}
 
 	.postfix {
-		padding: 3px 0 0 13px;
-		label {
-			color: $grey;
-		}
+		color: $grey !important;
 	}
 
 	dl.tabs {

@@ -41,12 +41,7 @@ mixin flare-password-input
 		.small-9.columns
 			input(type='text', placeholder='Password')
 		.small-3.columns
-			.button.postfix(href='#')
-				.row
-					.small-2.columns
-						input#show-pw(type='checkbox')
-					.small-10.columns
-						label(for='show-pw') SHOW
+			.button.postfix(href='#') SHOW
 					
 
 mixin password-input
@@ -97,7 +92,11 @@ mixin horizontal-rule
 	hr
 
 //- alert
-mixin alert
+mixin flare-alert
 	.alert-box(data-alert='')
 		| Error Message Here
 		a.close(href='#') ×
+
+mixin jade-alert
+	.alert-box(data-alert='')
+		| Error Message Here
