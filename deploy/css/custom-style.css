@@ -915,7 +915,7 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   color: #444444 !important;
 }
 
-#loginwall a {
+#loginwall p a {
   color: #444444;
   text-transform: none;
   text-decoration: underline;
