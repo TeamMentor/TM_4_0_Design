@@ -752,6 +752,10 @@ nav.top-bar {
 	section.top-bar-section {
 		margin: 0 auto;
 
+		li:not(.has-form) a:not(.button) {
+			line-height: 23px;
+		}
+
 		i {
 			font-size: 16px;
 		}
@@ -765,7 +769,7 @@ nav.top-bar {
 			background: none;
 
 			li {
-				padding: 10px 50px 0 50px;
+				padding: 10px 20px 0 20px;
 			}
 
 			p, a {
@@ -775,7 +779,7 @@ nav.top-bar {
 				color: $grey;
 
 				&:hover {
-					color: $green;
+					color: $green !important;
 				}
 			}
 
