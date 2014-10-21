@@ -1,0 +1,16 @@
+extends ../_layouts/flare_page.jade
+include mixins/application-mixins.jade
+
+block content  
+	#application
+		.row
+			.small-12.large-3.columns
+				br
+			.small-12.large-6.columns#results
+				+flare-search-bar-input
+				+flare-results-save-clear
+
+				+flare-articles-list
+
+			.small-12.large-3.columns
+				br
