@@ -915,17 +915,26 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   color: #444444 !important;
 }
 
+#loginwall a {
+  color: #444444;
+  text-transform: none;
+  text-decoration: underline;
+  letter-spacing: 0px;
+  font-weight: normal;
+  font-size: 16px;
+  vertical-align: baseline;
+}
 #loginwall dl.tabs dd {
   width: 50%;
   border: 1px solid #aaaaaa;
 }
 #loginwall dl.tabs .active {
-  border-right: none !important;
-  border-bottom: none !important;
+  border-right: none;
+  border-bottom: none;
 }
 #loginwall .tabs-content {
   border: 1px solid #aaaaaa;
-  border-top: none !important;
+  border-top: none;
 }
 
 /*# sourceMappingURL=custom-style.css.map */

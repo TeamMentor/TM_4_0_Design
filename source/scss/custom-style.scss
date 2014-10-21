@@ -868,6 +868,16 @@ dl.tabs {
 }
 
 #loginwall {
+	a {
+		color: $dark-grey;
+		text-transform: none;
+		text-decoration: underline;
+		letter-spacing: 0px;
+		font-weight: normal;
+		font-size: 16px;
+		vertical-align: baseline;
+	}
+
 	dl.tabs {
 		dd {
 			width: 50%;
@@ -875,13 +885,13 @@ dl.tabs {
 		}
 
 		.active {
-			border-right: none !important;
-			border-bottom: none !important;
+			border-right: none;
+			border-bottom: none;
 		}
 	}
 
 	.tabs-content {
 		border: 1px solid $grey;
-		border-top: none !important;
+		border-top: none;
 	}
 }
