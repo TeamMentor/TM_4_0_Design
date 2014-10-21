@@ -51,7 +51,7 @@
     </div>
     <div id="application">
       <div class="row">
-        <div class="small-12 large-3 columns"><br></div>
+        <div id="left-nav" class="small-12 large-3 columns"><br></div>
         <div id="results" class="small-12 large-6 columns">
           <div class="row">
             <div class="large-12 columns">
@@ -104,7 +104,47 @@
             </dd>
           </dl>
         </div>
-        <div class="small-12 large-3 columns"><br></div>
+        <div id="right-nav" class="small-12 large-3 columns">
+          <h3>Filters</h3>
+          <dl data-accordion="data-accordion" class="accordion">
+            <dd class="accordion-navigation"><a href="#panel1">Technnology</a>
+              <div id="panel1" class="content active">
+                <form>
+                  <div class="row">
+                    <div class="large-12 columns">
+                      <div class="row">
+                        <div class="small-2 columns"><span class="badge">14</span></div>
+                        <div class="small-8 columns">
+                          <label for="checkbox1">Checkbox 1</label>
+                        </div>
+                        <div class="small-2 columns">
+                          <input id="checkbox1" type="checkbox">
+                        </div>
+                      </div><br>
+                      <input id="checkbox2" type="checkbox">
+                      <label for="checkbox2">Checkbox 2</label><br>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </dd>
+            <dd class="accordion-navigation"><a href="#panel2">Type</a>
+              <div id="panel2" class="content">
+                <p>Hello</p>
+              </div>
+            </dd>
+            <dd class="accordion-navigation"><a href="#panel3">Phase</a>
+              <div id="panel3" class="content">
+                <p>Hello</p>
+              </div>
+            </dd>
+            <dd class="accordion-navigation"><a href="#panel4">Categroy</a>
+              <div id="panel4" class="content">
+                <p>Hello</p>
+              </div>
+            </dd>
+          </dl>
+        </div>
       </div>
     </div>
   </body>

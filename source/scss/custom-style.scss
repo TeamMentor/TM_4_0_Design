@@ -195,7 +195,7 @@ body {
 	}
 }
 
-#results {
+#results, #right-nav, #left-nav {
 	flex: 1 1 auto;
 	overflow-y: auto;
 	height: 100%;
@@ -573,7 +573,6 @@ button {
 .badge {
 	display: inline-block;
 	min-width: 10px;
-	margin-left: 20px;
 	padding: 3px 7px;
 	font-size: 12px;
 	font-weight: bold;
