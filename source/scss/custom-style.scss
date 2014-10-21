@@ -257,10 +257,6 @@ form {
 	button {
 		width: $full-width;
 	}
-
-	input {
-		margin-bottom: 15px;
-	}
 }
 
 label {
@@ -466,6 +462,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 	display: block;
 	font-size: 16px;
 	padding: 0.5rem;
+	margin-bottom: 0xp;
 	height: 3rem;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -898,4 +895,16 @@ dl.tabs {
 		border: 1px solid $grey;
 		border-top: none;
 	}
+}
+
+// Forms
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+// Structure
+
+.collapse {
+	margin-bottom: -50px;
 }

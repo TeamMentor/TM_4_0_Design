@@ -36,6 +36,29 @@ mixin sign-up-form
 			.small-12.large-12.columns
 				+sign-up-button
 
+//- sign-up-form-prompts
+mixin sign-up-form-prompts
+	include:md ../../../content/teamMentor/getting-started/sign-up-form.md
+	form
+		.row
+			.small-12.large-12.columns
+				+username-input
+				p Your username should only container letters and numbers.
+		.row
+			.small-12.large-12.columns
+				+email-input
+				p We'll email you a confirmation.
+		.row
+			.small-12.large-12.columns
+				+flare-password-input
+				p Your password should be at least 8 characters long. It should have one uppercase and one lowercase letter, a number and a special character.
+		.row
+			.small-12.large-12.columns
+				include:md ../../../content/teamMentor/getting-started/agree-to-toc.md
+		.row
+			.small-12.large-12.columns
+				+sign-up-button
+
 //- flare-forgot-password-form
 mixin flare-forgot-password-form
 	include:md ../../../content/teamMentor/getting-started/forgot-password-form.md

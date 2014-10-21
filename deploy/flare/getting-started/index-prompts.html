@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" sizes="57x57" href="/deploy/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="icon" sizes="72x72" href="/deploy/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="icon" sizes="144x144" href="/deploy/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="icon" sizes="60x60" href="/deploy/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="icon" sizes="120x120" href="/deploy/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="icon" sizes="76x76" href="/deploy/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="icon" sizes="152x152" href="/deploy/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/deploy/assets/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/deploy/assets/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/deploy/assets/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/deploy/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/deploy/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/deploy/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
+    <title>TEAM Mentor 4.0 (Html version)</title>
+    <!-- Foundation-->
+    <link href="/deploy/css/app.css" rel="stylesheet">
+    <!-- Foundation Icons-->
+    <link href="/deploy/css/foundation-icons.css" rel="stylesheet">
+    <!-- Custom Styles-->
+    <link href="/deploy/css/custom-style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="fixed">
+      <nav data-topbar="data-topbar" role="navigation" class="top-bar">
+        <ul class="title-area">
+          <li class="name"><a href="#"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a></a></li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li><a href="#"><i class="fi-list"></i></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+    <div id="application">
+      <div class="row">
+        <div id="loginwall" class="small-12 large-5 large-push-6 columns"><br>
+          <dl data-tab="data-tab" class="tabs">
+            <dd class="active"><a href="#signup">Sign Up</a></dd>
+            <dd><a href="#login">Login</a></dd>
+          </dl>
+          <div class="tabs-content">
+            <div id="signup" class="content active"><br>
+              <div class="small-offset-1 small-10 large-offset-1 large-10 end columns"><p>Create an account and get access to the world&#39;s largest repository of secure software development knowledge.</p>
+
+                <form>
+                  <div class="row">
+                    <div class="small-12 large-12 columns">
+                          <label>Username</label>
+                          <input type="text" id="username" placeholder="Username">
+                      <p>Your username should only container letters and numbers.</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 large-12 columns">
+                          <label>Email Address</label>
+                          <input type="email" id="email" placeholder="Email Address">
+                      <p>We'll email you a confirmation.</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 large-12 columns">
+                          <label>Password</label>
+                          <div class="row collapse">
+                            <div class="small-9 columns">
+                              <input type="text" placeholder="Password">
+                            </div>
+                            <div class="small-3 columns">
+                              <div href="#" class="button postfix">SHOW</div>
+                            </div>
+                          </div>
+                      <p>Your password should be at least 8 characters long. It should have one uppercase and one lowercase letter, a number and a special character.</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 large-12 columns"><p>By signing up, you agree to our <a href="/user/terms-and-conditions.html">Terms and Conditions</a>.</p>
+
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 large-12 columns"><a href="/deploy/html/home/main-app-view.html">
+                            <button type="button" id="btn-sign-up">Start Fixing Vulnerabilities</button></a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- column-->
+            </div>
+            <!-- content					-->
+            <div id="login" class="content">
+              <div class="row"><br>
+                <div class="small-offset-1 small-10 large-offset-1 large-10 end columns"><p>Returning customer? Please log in to access TEAM Mentor.</p>
+
+                  <form>
+                    <div class="row">
+                      <div class="small-12 large-12 columns">
+                            <label>Username</label>
+                            <input type="text" id="username" placeholder="Username">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="small-12 large-12 columns">
+                            <label>Password</label>
+                            <input type="password" id="password" placeholder="Password">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="small-12 large-12 columns">
+                            <button type="submit" id="btn-login">Access TEAM Mentor</button>
+                      </div>
+                    </div><br/>
+                    <div class="row">
+                      <div class="small-12 large-12 columns"><a href="returning-user-forgot-password.html">
+                              <button type="button" id="btn-forgot-pwd">Forgot your password?</button></a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- columns-->
+              </div>
+              <!-- row-->
+            </div>
+            <!-- content-->
+          </div>
+          <!-- tabs-content-->
+        </div>
+        <!-- column-->
+        <div class="small-12 large-5 large-pull-6 columns"><h1 id="security-risk-understood-">Security Risk. Understood.</h1>
+<h4 id="instant-resources-that-bridge-the-gap-between-developer-questions-and-technical-solutions-">Instant resources that bridge the gap between developer questions and technical solutions.</h4>
+<p>TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.</p>
+<h3 id="with-team-mentor-you-can-">With TEAM Mentor, you can...</h3>
+
+          <div class="icons-green">
+            <div class="row">
+              <div class="small-3 large-2 columns"><i class="fi-clipboard-pencil"></i></div>
+              <!-- column-->
+              <div class="small-9 large-10 columns"><p>FIX vulnerabilities quicker than ever before with TEAM Mentor&#39;s seamless integration into a developer&#39;s IDE and daily workflow.</p>
+
+              </div>
+              <!-- column-->
+            </div>
+            <!-- row-->
+            <div class="row">
+              <div class="small-3 large-2 columns"><i class="fi-arrows-in"></i></div>
+              <!--column-->
+              <div class="small-9 large-10 columns"><p>REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified.</p>
+
+              </div>
+              <!-- column-->
+            </div>
+            <!-- row-->
+            <div class="row">
+              <div class="small-3 large-2 columns"><i class="fi-checkbox"></i></div>
+              <!--column-->
+              <div class="small-9 large-10 columns"><p>EXPAND the development team&#39;s knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization&#39;s security policies and coding best practices.</p>
+
+              </div>
+            </div>
+            <!-- column-->
+          </div>
+          <!-- row-->
+        </div>
+        <!-- column-->
+      </div>
+      <!-- row-->
+    </div>
+    <!-- container-->
+  </body>
+</html>
