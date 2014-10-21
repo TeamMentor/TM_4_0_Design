@@ -744,6 +744,7 @@ table {
 
 nav.top-bar {
 	text-align: center;
+	height: auto;
 
 	ul.title-area {
 		padding: 5px 0 0 20px;
@@ -764,7 +765,7 @@ nav.top-bar {
 			align: center;
 		}
 		
-		ul.flare {
+		ul {
 			display: inline-block;
 			background: none;
 
@@ -777,6 +778,7 @@ nav.top-bar {
 				font-size: 14px;
 				font-weight: 700;
 				color: $grey;
+				background: $white;
 
 				&:hover {
 					color: $green !important;

@@ -817,6 +817,7 @@ table td {
 
 nav.top-bar {
   text-align: center;
+  height: auto;
 }
 nav.top-bar ul.title-area {
   padding: 5px 0 0 20px;
@@ -833,20 +834,21 @@ nav.top-bar section.top-bar-section i {
 nav.top-bar section.top-bar-section img {
   align: center;
 }
-nav.top-bar section.top-bar-section ul.flare {
+nav.top-bar section.top-bar-section ul {
   display: inline-block;
   background: none;
 }
-nav.top-bar section.top-bar-section ul.flare li {
+nav.top-bar section.top-bar-section ul li {
   padding: 10px 20px 0 20px;
 }
-nav.top-bar section.top-bar-section ul.flare p, nav.top-bar section.top-bar-section ul.flare a {
+nav.top-bar section.top-bar-section ul p, nav.top-bar section.top-bar-section ul a {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
   color: #aaaaaa;
+  background: white;
 }
-nav.top-bar section.top-bar-section ul.flare p:hover, nav.top-bar section.top-bar-section ul.flare a:hover {
+nav.top-bar section.top-bar-section ul p:hover, nav.top-bar section.top-bar-section ul a:hover {
   color: #8aaf3e !important;
 }
 
