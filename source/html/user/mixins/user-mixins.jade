@@ -31,3 +31,12 @@ mixin sign-up-form
     .form-group
       include:md ../../../content/teamMentor/getting-started/agree-to-toc.md
     +sign-up-button
+
+//- forgot-password-form
+mixin forgot-password-form
+  h3 Forgot your password?
+  include:md ../../../content/teamMentor/getting-started/forgot-password-form.md
+  form#forgot-password(role='form')
+    .form-group
+      +email-input
+    +get-password-button

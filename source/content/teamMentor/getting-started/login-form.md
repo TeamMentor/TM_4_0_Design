@@ -1,1 +1,1 @@
-Returning customer? Please log in to access TEAM Mentor. You can also log in directly from www.teammentor.net/teammentor 
+Returning customer? Please log in to access TEAM Mentor.

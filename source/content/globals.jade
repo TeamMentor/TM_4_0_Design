@@ -28,6 +28,7 @@ mixin clear-icon
 	i.fi-trash
 	|     Clear
 
+
 //- Form Inputs
 mixin username-input
 	label
@@ -43,7 +44,6 @@ mixin flare-password-input
 		.small-3.columns
 			.button.postfix(href='#') SHOW
 					
-
 mixin password-input
 	label
 		| Password
@@ -64,6 +64,7 @@ mixin share-input
 		| Share via Email
 	input(type='text', id='share', placeholder='Email address to link article to')
 
+
 //- Form Buttons
 mixin login-button
 	button(type='submit', id='btn-login') Access TEAM Mentor
@@ -76,11 +77,16 @@ mixin forgot-password-button
 	a(href='returning-user-forgot-password.html')
 		button(type='button', id='btn-forgot-pwd') Forgot your password?
 
+mixin get-password-button
+	a(href='/deploy/html/user/forgot-password-completed.html')
+		button(type='button') Get password
+
 mixin save-button
 	button(type='submit', id='btn-save') Save for later
 
 mixin share-button
 	button(type='submit', id='btn-share') Share it
+
 
 //- Copyright Information
 mixin copyright

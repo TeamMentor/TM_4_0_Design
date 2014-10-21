@@ -932,8 +932,8 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   border: 1px solid #aaaaaa;
 }
 #loginwall dl.tabs .active {
-  border-right: none;
-  border-bottom: none;
+  border-right: none !important;
+  border-bottom: none !important;
 }
 #loginwall .tabs-content {
   border: 1px solid #aaaaaa;

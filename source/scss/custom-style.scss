@@ -889,8 +889,8 @@ dl.tabs {
 		}
 
 		.active {
-			border-right: none;
-			border-bottom: none;
+			border-right: none !important;
+			border-bottom: none !important;
 		}
 	}
 
