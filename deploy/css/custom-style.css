@@ -826,6 +826,9 @@ nav.top-bar ul.title-area {
 nav.top-bar section.top-bar-section {
   margin: 0 auto;
 }
+nav.top-bar section.top-bar-section i {
+  font-size: 16px;
+}
 nav.top-bar section.top-bar-section img {
   align: center;
 }
