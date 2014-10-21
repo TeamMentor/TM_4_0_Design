@@ -98,5 +98,6 @@ mixin horizontal-rule
 
 //- alert
 mixin alert
-	.alert-box(role='alert')
-		| Error/Validation messages go here
+	.alert-box(data-alert='')
+		| Error Message Here
+		a.close(href='#') ×
