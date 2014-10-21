@@ -924,6 +924,12 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   font-size: 16px;
   vertical-align: baseline;
 }
+#loginwall .postfix {
+  padding: 3px 0 0 13px;
+}
+#loginwall .postfix label {
+  color: #aaaaaa;
+}
 #loginwall dl.tabs dd {
   width: 50%;
   border: 1px solid #aaaaaa;

@@ -878,6 +878,13 @@ dl.tabs {
 		vertical-align: baseline;
 	}
 
+	.postfix {
+		padding: 3px 0 0 13px;
+		label {
+			color: $grey;
+		}
+	}
+
 	dl.tabs {
 		dd {
 			width: 50%;

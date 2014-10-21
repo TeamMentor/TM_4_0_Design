@@ -34,6 +34,21 @@ mixin username-input
 		| Username
 	input(type='text', id='username', placeholder='Username')
 
+mixin flare-password-input
+	label
+		| Password
+	.row.collapse
+		.small-9.columns
+			input(type='text', placeholder='Password')
+		.small-3.columns
+			.button.postfix(href='#')
+				.row
+					.small-2.columns
+						input#show-pw(type='checkbox')
+					.small-10.columns
+						label(for='show-pw') SHOW
+					
+
 mixin password-input
 	label
 		| Password
