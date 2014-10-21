@@ -671,14 +671,20 @@ button {
 
 // Alerts and Warnings
 
-.alert {
+.alert-box {
 	padding: 15px;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 	border-radius: 0px;
+	font-size: inherit;
 	font-weight: 700;
+	background: $white;
 	color: $green;
-	border: 1px solid $green;
+	border: 1px solid transparent;
 	border-radius: 0px;
+
+	.alerts {
+		border: 1px solid $green !important;
+	}
 }
 
 // Tables and Table Cells

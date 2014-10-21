@@ -82,8 +82,8 @@ mixin flare-filters-div
 	form
 		dl.accordion(data-accordion='data-accordion')
 			dd.accordion-navigation
-				a(href='#panel1') Technnology
-				#panel1.content
+				a(href='#technology') Technnology
+				#technology.content
 					.row
 						.large-12.columns
 							.row
@@ -109,8 +109,8 @@ mixin flare-filters-div
 									input#tech-checkbox3(type='checkbox')
 
 			dd.accordion-navigation
-				a(href='#panel2') Type
-				#panel2.content
+				a(href='#type') Type
+				#type.content
 					.row
 						.large-12.columns
 							.row
@@ -136,8 +136,8 @@ mixin flare-filters-div
 									input#type-checkbox3(type='checkbox')
 
 			dd.accordion-navigation
-				a(href='#panel3') Phase
-				#panel3.content
+				a(href='#phase') Phase
+				#phase.content
 					.row
 						.large-12.columns
 							.row
@@ -163,8 +163,8 @@ mixin flare-filters-div
 									input#phase-checkbox3(type='checkbox')
 
 			dd.accordion-navigation
-				a(href='#panel4') Category
-				#panel4.content
+				a(href='#category') Category
+				#category.content
 					.row
 						.large-12.columns
 							.row
@@ -191,3 +191,20 @@ mixin flare-filters-div
 		br
 		button(type='submit')
 			| Ok, Done
+
+//- Flare 
+mixin flare-filters-active
+	h4 Filters Active
+	.row
+		.small-12.medium-6.large-4.columns
+			.alert-box(data-alert='')
+				| Active Filter
+				a.close(href='#') ×
+		.small-12.medium-6.large-4.columns
+			.alert-box(data-alert='')
+				| Active Filter
+				a.close(href='#') ×
+		.small-12.medium-6.large-4.columns
+			.alert-box(data-alert='')
+				| Active Filter
+				a.close(href='#') ×
