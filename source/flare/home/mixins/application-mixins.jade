@@ -1,3 +1,5 @@
+include ../../../content/globals.jade
+
 //- Flare Search Bar Input
 mixin flare-search-bar-input
 	.row
@@ -208,3 +210,21 @@ mixin flare-filters-active
 			.alert-box(data-alert='')
 				| Active Filter
 				a.close(href='#') ×
+
+// Save Div
+mixin save-div
+	form
+		.row
+			.small-12.large-12.columns
+				+save-input
+			.small-12.large-12.columns
+				+save-button
+
+// Share Div
+mixin share-div
+	form
+		.row
+			.small-12.large-12.columns
+				+share-input
+			.small-12.large-12.columns
+				+share-button

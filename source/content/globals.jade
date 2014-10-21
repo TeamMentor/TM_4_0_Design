@@ -28,6 +28,50 @@ mixin clear-icon
 	i.fi-trash
 	|     Clear
 
+//- Form Inputs
+mixin username-input
+	label
+		| Username
+	input(type='text', id='username', placeholder='Username')
+
+mixin password-input
+	label
+		| Password
+	input(type='password', id='password', placeholder='Password')
+
+mixin email-input
+	label
+		| Email Address
+	input(type='email', id='email', placeholder='Email Address')
+
+mixin save-input
+	label
+		| Save to Dashboard
+	input(type='text', id='nickname', placeholder='Quick reference nickname (optional)')
+
+mixin share-input
+	label
+		| Share via Email
+	input(type='text', id='share', placeholder='Email address to link article to')
+
+//- Form Buttons
+mixin login-button
+	button(type='submit', id='btn-login') Access TEAM Mentor
+
+mixin sign-up-button
+	a(href='/deploy/html/home/main-app-view.html')
+		button(type='button', id='btn-sign-up') Start Fixing Vulnerabilities
+
+mixin forgot-password-button
+	a(href='returning-user-forgot-password.html')
+		button(type='button', id='btn-forgot-pwd') Forgot your password?
+
+mixin save-button
+	button(type='submit', id='btn-save') Save for later
+
+mixin share-button
+	button(type='submit', id='btn-share') Share it
+
 //- Copyright Information
 mixin copyright
 	#copyright
@@ -41,21 +85,3 @@ mixin horizontal-rule
 mixin alert
 	.alert-box(role='alert')
 		| Error/Validation messages go here
-
-// Save Div
-mixin save-div
-	form
-		.row
-			.small-12.large-12.columns
-				+save-input
-			.small-12.large-12.columns
-				+save-button
-
-// Share Div
-mixin share-div
-	form
-		.row
-			.small-12.large-12.columns
-				+share-input
-			.small-12.large-12.columns
-				+share-button
