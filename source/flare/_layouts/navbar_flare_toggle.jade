@@ -3,35 +3,42 @@ include ../../content/links.jade
 
 .fixed
 	nav.top-bar(data-topbar='data-topbar', role='navigation')
+		// TM Logo Area
+		ul.title-area
+			li.name
+				a(href='#')
+					+image-teammentor-logo__default
+		// Actual Navigation
 		section.top-bar-section
-			.lge-container
-				ul
-					li
-						a(href='#')
-							i.fi-map
-							br
-							|    Navigate
-					li
-						a(href='#')
-							i.fi-home
-							br
-							|    Home
-					li
-						a(href='#')
-							i.fi-info
-							br
-							|    Help
-					li
-						a(href='#')
-							i.fi-torso
-							br
-							|    User
-					li
-						a(href='#')
-							i.fi-power
-							br
-							|    Logout
-		// Right Nav Section 
+			// Right Navigation
 			ul.right
 				li
-					a(href='#') Menu Icon
+					a(href='#')
+						i.fi-list
+			// Center Navigation
+			ul.left
+				li
+					a(href='#')
+						i.fi-map
+						br
+						|    Navigate
+				li
+					a(href='#')
+						i.fi-home
+						br
+						|    Home
+				li
+					a(href='#')
+						i.fi-info
+						br
+						|    Help
+				li
+					a(href='#')
+						i.fi-torso
+						br
+						|    User
+				li
+					a(href='#')
+						i.fi-power
+						br
+						|    Logout

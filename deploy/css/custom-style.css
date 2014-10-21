@@ -815,15 +815,8 @@ table td {
   margin: 0 auto;
 }
 
-nav.top-bar {
-  text-align: center;
-  height: auto;
-}
 nav.top-bar ul.title-area {
   padding: 5px 0 0 20px;
-}
-nav.top-bar section.top-bar-section {
-  margin: 0 auto;
 }
 nav.top-bar section.top-bar-section li:not(.has-form) a:not(.button) {
   line-height: 23px;
