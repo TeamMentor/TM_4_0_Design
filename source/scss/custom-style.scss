@@ -612,23 +612,6 @@ button {
 	transition: width 0.6s ease 0s;
 }
 
-// Breadcrumbs
-
-.breadcrumbs {
-
-	ul {
-		margin-left: 0 !important;
-		padding-left: 0 !important;
-
-		li {
-			display: inline-block;
-			padding: 0 10px 0 0;
-			padding-right: 10px;
-		}
-	}
-}
-
-
 // List Group and List Group Items
 
 .list-group {
@@ -910,4 +893,41 @@ dl.tabs {
 
 .collapse {
 	margin-bottom: -50px;
+}
+
+
+// Breadcrumbs
+
+.breadcrumbs {
+	padding-left: 10px;
+	background: $white;
+	border: none;
+
+	li {
+		display: inline-block;
+
+		&.current a {
+			color: $green;			
+		}
+
+		a {
+			font-size: 12px;
+			color: $grey;
+
+			&:hover {
+				color: $green !important;
+				text-decoration: none;
+			}
+		}
+
+		&:first-child:before {
+		    content: " ";
+		    margin: 0px;
+		}
+
+		&:before {
+			content: "/";
+			margin: 0 20px;
+		}
+	}
 }

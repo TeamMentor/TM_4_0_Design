@@ -728,16 +728,6 @@ button.btn-search-bar {
   transition: width 0.6s ease 0s;
 }
 
-.breadcrumbs ul {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-}
-.breadcrumbs ul li {
-  display: inline-block;
-  padding: 0 10px 0 0;
-  padding-right: 10px;
-}
-
 .list-group {
   padding-left: 0px;
   margin-bottom: 30px;
@@ -942,6 +932,34 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 
 .collapse {
   margin-bottom: -50px;
+}
+
+.breadcrumbs {
+  padding-left: 10px;
+  background: white;
+  border: none;
+}
+.breadcrumbs li {
+  display: inline-block;
+}
+.breadcrumbs li.current a {
+  color: #8aaf3e;
+}
+.breadcrumbs li a {
+  font-size: 12px;
+  color: #aaaaaa;
+}
+.breadcrumbs li a:hover {
+  color: #8aaf3e !important;
+  text-decoration: none;
+}
+.breadcrumbs li:first-child:before {
+  content: " ";
+  margin: 0px;
+}
+.breadcrumbs li:before {
+  content: "/";
+  margin: 0 20px;
 }
 
 /*# sourceMappingURL=custom-style.css.map */

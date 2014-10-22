@@ -1,5 +1,6 @@
 extends ../_layouts/page_home.jade
 include mixins/article-mixins.jade
+include ../../content/mixins/articles-mixins.jade
 include ../home/mixins/application-mixins.jade
 
 block content  
@@ -12,11 +13,8 @@ block content
 
         .col-6
           .lge-container
+            br
             +breadcrumbs
-            br
-            +jade-search-bar-input
-            br
-            br
             br
 
             +results-save-clear

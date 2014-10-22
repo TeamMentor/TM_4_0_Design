@@ -88,16 +88,29 @@ mixin share-button
 	button(type='submit', id='btn-share') Share it
 
 
+//- Breadcrumbs
+mixin breadcrumbs
+	ul.breadcrumbs
+		li
+			a(href='#') Navigate
+		li
+			a(href='#') Principles & Standards
+		li.current
+			a(href='#') Fundamentals of Security
+
+
 //- Copyright Information
 mixin copyright
 	#copyright
 		include:md teamMentor/articles/copyright-information.md
 
+
 //- horizontal-rule
 mixin horizontal-rule
 	hr
+	
 
-//- alert
+//- Alert System
 mixin flare-alert
 	.alert-box(data-alert='')
 		| Error, Validation or Alert Message Here

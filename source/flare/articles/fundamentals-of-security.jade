@@ -1,13 +1,20 @@
 extends ../_layouts/flare_page.jade
 include ../home/mixins/application-mixins.jade
+include ../../content/mixins/articles-mixins.jade
 
 block content  
 	#application
 		.row
 			.small-12.large-3.columns#left-nav
-				h3 Fundamentals of Security
+				+directory-list
 				
 			.small-12.large-6.columns#results
+				br
+				+breadcrumbs
+				br
+
+				+flare-search-bar-input
+
 				+flare-results-save-clear
 
 				+flare-articles-list
