@@ -1,0 +1,16 @@
+include ../../content/links.jade
+include ../../content/images.jade
+
+nav.top-bar(role='navigation', data-topbar='')
+	ul.title-area
+		li.name
+			a(href='#')
+				+image-teammentor-logo__default
+		// Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+		li.toggle-topbar.menu-icon
+			a(href='#')
+				span
+	section.top-bar-section
+		// Right Nav Section 
+		ul.right
+			+links-navbar__landing-page

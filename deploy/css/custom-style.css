@@ -185,7 +185,6 @@ body {
   max-width: 100%;
   margin: 0;
   padding: 0;
-  padding-top: 90px;
   line-height: 1.5;
   background: white;
 }
@@ -196,8 +195,8 @@ body {
 
 #about, #usp {
   width: 100%;
-  margin-top: -50px;
-  padding-top: 120px;
+  margin-top: -20px;
+  padding-top: 100px;
   padding-bottom: 80px;
   background-color: #8aaf3e;
   text-align: center;
@@ -211,6 +210,7 @@ body {
 }
 
 #application {
+  padding-top: 90px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -814,25 +814,22 @@ nav.top-bar section.top-bar-section li:not(.has-form) a:not(.button) {
 nav.top-bar section.top-bar-section i {
   font-size: 16px;
 }
-nav.top-bar section.top-bar-section img {
-  align: center;
-}
 nav.top-bar section.top-bar-section ul {
   display: inline-block;
   background: none;
 }
 nav.top-bar section.top-bar-section ul li {
-  padding: 10px 20px 0 20px;
+  padding: 20px 0 0;
 }
-nav.top-bar section.top-bar-section ul p, nav.top-bar section.top-bar-section ul a {
+nav.top-bar section.top-bar-section ul a {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
-  color: #aaaaaa;
   background: white;
+  color: #8aaf3e;
 }
-nav.top-bar section.top-bar-section ul p:hover, nav.top-bar section.top-bar-section ul a:hover {
-  color: #8aaf3e !important;
+nav.top-bar section.top-bar-section ul a:hover {
+  color: #49661f;
 }
 
 button, .button {

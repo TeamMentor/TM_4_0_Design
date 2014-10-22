@@ -1,7 +1,7 @@
 // Variables
 $asset-path: '../../deploy/assets/';
 $font-stack: Helvetica, sans-serif;
-$nav-padding-top: 120px;
+$nav-padding-top: 100px;
 $full-width: 100%;
 
 @import 'columns';
@@ -17,7 +17,6 @@ body {
 	max-width: $full-width;
 	margin: 0;
 	padding: 0;
-	padding-top: 90px;
 	line-height: 1.5;
 	background: $white;
 }
@@ -28,7 +27,7 @@ body {
 
 #about, #usp {
 	width: $full-width;
-	margin-top: -50px;
+	margin-top: -20px;
 	padding-top: $nav-padding-top;
 	padding-bottom: 80px;
 	background-color: $green;
@@ -44,6 +43,7 @@ body {
 }
 
 #application {
+	padding-top: 90px;
 	width: $full-width;
 	display: flex;
 	flex-direction: column;
@@ -740,28 +740,24 @@ nav.top-bar {
 		i {
 			font-size: 16px;
 		}
-
-		img {
-			align: center;
-		}
 		
 		ul {
 			display: inline-block;
 			background: none;
 
 			li {
-				padding: 10px 20px 0 20px;
+				padding: 20px 0 0;
 			}
 
-			p, a {
+			a {
 				text-transform: uppercase;
 				font-size: 14px;
 				font-weight: 700;
-				color: $grey;
 				background: $white;
+				color: $green;
 
 				&:hover {
-					color: $green !important;
+					color: $dark-green;
 				}
 			}
 
