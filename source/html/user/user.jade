@@ -5,13 +5,9 @@ block content
       .row
         .col-3
           .lge-container
-            br
+            +links_user_pages
         .col-6
           .lge-container
-            +links_user_pages
-            br
-            br
-
             .row
               .col-9
                 h3 Personal Details
@@ -41,16 +37,11 @@ block content
                 td
                 td
 
-            +horizontal-rule
+            br
+            h3 Settings
+            .list-group
+              a(href='user-new-password.html') New Password
 
-            .row
-              .col-4
-                h3 Settings
-                .list-group
-                  a(href='user-new-password.html') New Password
-
-              .col-4
-                h3 Permanent Filters
-                .list-group
-                  a(href='user-add-filter.html') Add/Remove Filter
-              .col-4
+            h3 Permanent Filters
+            .list-group
+              a(href='user-add-filter.html') Add/Remove Filter

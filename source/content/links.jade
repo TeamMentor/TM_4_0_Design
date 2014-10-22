@@ -39,23 +39,19 @@ mixin links-home__navigate
         a(href='fundamentals-of-security.html')
           | Attacks & Vulernabilites
         a(href='fundamentals-of-security.html')
-          | Fundamentals of Security
+          | Principles & Standards
         a(href='my-articles.html')
           | My Articles
         a(href='my-search-terms.html')
           | My Saved Searches
 
 mixin links_user_pages
-  #user-links
-    .row.text-center
-      .col-3
-        a(href='user.html') User
-      .col-3
-        a(href='backend.html') Backend
-      .col-3
-        a(href='developer-utilities.html') Developer Utilities
-      .col-3
-        a(href='other.html') Other
+    h3 User
+    .list-group
+      a(href='user.html') User
+      a(href='backend.html') Backend
+      a(href='developer-utilities.html') Developer Utilities
+      a(href='other.html') Other
 
 //- all-pages-links
 mixin all-pages-links

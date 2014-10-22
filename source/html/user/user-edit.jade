@@ -3,10 +3,16 @@ include ../../content/mixins/user-mixins.jade
 block content
         #application
           .row
-            .col-offset-3.col-6
-              +links_user_pages
-              
-              br
-              h3 Personal Details
+            .col-3
+              .lge-container
+                +links_user_pages
+            .col-6
+              .lge-container
+                br
+                h3 Personal Details
 
-              +user-details-form
+                +user-details-form
+
+            .col-3
+              .lge-container
+                br

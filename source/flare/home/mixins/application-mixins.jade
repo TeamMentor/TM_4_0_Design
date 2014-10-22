@@ -50,7 +50,7 @@ mixin flare-saved-articles-list
 	dl.accordion(data-accordion='data-accordion')
 		dd.accordion-navigation
 			a(href='#panel1') Article Headline
-			#panel1.content.active
+			#panel1.content
 				include:md ../../../content/teamMentor/articles/article-details.md
 				+saved-article-menu
 		dd.accordion-navigation
