@@ -1,0 +1,12 @@
+extends ../_layouts/flare_page.jade
+include mixins/application-mixins.jade
+
+block content  
+	#application
+		.row
+			.small-12.large-3.columns#left-nav
+				+links-home__navigate
+			.small-12.large-6.columns#results
+				br
+			.small-12.large-3.columns#right-nav
+				br
