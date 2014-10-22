@@ -19,6 +19,7 @@ body {
 	padding: 0;
 	line-height: 1.5;
 	background: $white;
+	z-index: -99;
 }
 
 #about {
@@ -270,7 +271,7 @@ label {
 .navbar {
 	background-color: $white;
 	padding-right: 20px;
-	min-height: 50px;
+
 	display: inline-block;
 	border: none;
 
@@ -304,7 +305,6 @@ label {
 
 .navbar-fixed-top {
 	overflow-x: visible !important;
-	min-width: 600px;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -725,6 +725,8 @@ table {
 // Navigation
 
 nav.top-bar {
+	z-index: 100000;
+	background: $white;
 
 	ul.title-area {
 		padding: 5px 0 0 20px;
