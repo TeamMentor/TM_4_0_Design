@@ -6,8 +6,10 @@ mixin usp-div
 				include:md ../../../content/teamMentor/landing-pages/usp.md
 				br
 				br
-				a(href='../getting-started/index.html')
-					button Start your free trial today
+				.row
+					.col-offset-3.col-6
+						a(href='../getting-started/index.html')
+							button Start your free trial today
 
 //- reasons-to-use-tm-div
 mixin reasons-to-use-tm-div
@@ -56,6 +58,8 @@ mixin clients-div
 				.col-4
 					+image-ubs-logo
 
+
+
 //- landing-page_call-to-action
 mixin call-to-action-div
 	#call-to-action
@@ -64,8 +68,10 @@ mixin call-to-action-div
 				include:md ../../../content/teamMentor/landing-pages/call-to-action.md
 				br
 				br
-				a(href='getting-started.html')
-					button(type='button') See for yourself
+				.row
+					.col-offset-3.col-6
+						a(href='getting-started.html')
+							button(type='button') See for yourself
 
 //- landing-page_footer
 mixin footer-div
