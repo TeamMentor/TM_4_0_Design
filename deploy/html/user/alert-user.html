@@ -37,7 +37,11 @@
       </ul>
       <div class="pull-right">
         <ul class="nav nav-icons"><ul>
+<li><a href="/deploy/html/home/navigate.html"><img src="/deploy/assets/icons/navigate.png" alt="Navigate"></a></li>
+<li><a href="/deploy/html/home/main-app-view.html"><img src="/deploy/assets/icons/home.png" alt="Home"></a></li>
 <li><a href="/help/index.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
+<li><a href="/deploy/html/user/user.html"><img src="/deploy/assets/icons/user.png" alt="User"></a></li>
+<li><a href="/user/logout"><img src="/deploy/assets/icons/logout.png" alt="Logout"></a></li>
 </ul>
 
         </ul>
@@ -50,30 +54,59 @@
         </div>
         <div class="col-6">
           <div class="lge-container">
-            <h3>Login</h3><p>Returning customer? Please log in to access TEAM Mentor.</p>
-
-            <form id="login-form" role="form" method="post" action="/user/login">
-              <div class="form-group">
-                  <label>Username</label>
-                  <input type="text" id="username" placeholder="Username">
-              </div>
-              <div class="form-group">    
-                  <label>Password</label>
-                  <input type="password" id="password" placeholder="Password">
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <div class="lge-container">
-                      <button type="submit" id="btn-login">Access TEAM Mentor</button>
+                <div id="user-links">
+                  <div class="row text-center">
+                    <div class="col-3"><a href="user.html">User</a></div>
+                    <div class="col-3"><a href="backend.html">Backend</a></div>
+                    <div class="col-3"><a href="developer-utilities.html">Developer Utilities</a></div>
+                    <div class="col-3"><a href="other.html">Other</a></div>
                   </div>
-                </div>
-                <div class="col-6">
-                  <div class="lge-container"><a href="returning-user-forgot-password.html">
-                        <button type="button" id="btn-forgot-pwd">Forgot your password?</button></a>
-                  </div>
-                </div>
+                </div><br>
+              <div data-alert="" class="alert-box">Error, Validation or Alert Message Here</div><br>
+            <div class="row">
+              <div class="col-9">
+                <h3>Personal Details</h3>
               </div>
-            </form>
+              <div class="col-3"><br><a href="user-edit.html" class="action">Edit</a></div>
+            </div>
+            <table>
+              <tr>
+                <td class="strong">Name:</td>
+                <td>Lucy Bloomfield</td>
+                <td class="strong">State:</td>
+                <td>Queensland</td>
+              </tr>
+              <tr>
+                <td class="strong">Email:</td>
+                <td>hello@luchia.com.au</td>
+                <td class="strong">Country:</td>
+                <td>Australia</td>
+              </tr>
+              <tr>
+                <td class="strong">Title:</td>
+                <td>Designer</td>
+                <td class="strong">Group ID:</td>
+                <td>Admin</td>
+              </tr>
+              <tr>
+                <td class="strong">Company:</td>
+                <td>Self-Employed</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+              <hr>
+            <div class="row">
+              <div class="col-4">
+                <h3>Settings</h3>
+                <div class="list-group"><a href="user-new-password.html">New Password</a></div>
+              </div>
+              <div class="col-4">
+                <h3>Permanent Filters</h3>
+                <div class="list-group"><a href="user-add-filter.html">Add/Remove Filter</a></div>
+              </div>
+              <div class="col-4"></div>
+            </div>
           </div>
         </div>
       </div>
