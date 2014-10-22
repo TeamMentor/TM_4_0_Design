@@ -1,3 +1,4 @@
+include ../../content/globals.jade
 include ../../content/images.jade
 include ../../content/links.jade
 
@@ -19,26 +20,26 @@ include ../../content/links.jade
 			ul
 				li
 					a(href='#')
-						i.fi-map
+						+navigate-icon
 						br
 						|    Navigate
 				li
 					a(href='#')
-						i.fi-home
+						+home-icon
 						br
 						|    Home
 				li
 					a(href='#')
-						i.fi-info
+						+help-icon
 						br
 						|    Help
 				li
 					a(href='#')
-						i.fi-torso
+						+user-icon
 						br
 						|    User
 				li
 					a(href='#')
-						i.fi-power
+						+logout-icon
 						br
 						|    Logout

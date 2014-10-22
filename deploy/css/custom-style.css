@@ -342,6 +342,7 @@ body {
 
 #results, #right-nav, #left-nav {
   flex: 1 1 auto;
+  overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
 }
@@ -573,27 +574,37 @@ a, button {
 
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
   width: 100% !important;
-  background-color: #FFF;
+  background-color: white;
   font-family: inherit;
   border: 1px solid #aaaaaa;
   box-shadow: none;
-  color: #aaaaaa;
+  color: #444444;
   display: block;
   font-size: 16px;
   padding: 0.5rem;
-  margin-bottom: 0xp;
   height: 3rem;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;
   /* Firefox, other Gecko */
   box-sizing: border-box;
-  transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
 }
 input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
   background: white;
   border-color: #8aaf3e;
   outline: medium none;
+}
+
+select {
+  width: 100%;
+  display: block;
+  background: white;
+  font-family: inherit;
+  font-size: 16px;
+  border: 1px solid #aaaaaa;
+  box-shadow: none;
+  color: #444444;
+  padding: 15px 0 15px 5px;
 }
 
 .input-group {

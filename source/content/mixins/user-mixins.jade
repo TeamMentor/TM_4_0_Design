@@ -10,20 +10,16 @@ mixin user-details-form
     .form-group
       +company-input
     .form-group
-      +state-input
-    .form-group
       +country-input
     .form-group
-      +group-id-input
-    button(type='submit')
-      | Ok, Done
+      +state-input
+    +ok-button
 
 //- new-password-form
 mixin new-password-form
   form(role='form', action='user.html')
     .form-group
-      label(for='user-current-password') Current Password
-      input.form-control(type='user-current-password', id='user-current-password', placeholder='Current Password')
+      +password-input
     .form-group
       label(for='user-new-password') New Password
       input.form-control(type='user-new-password', id='user-new-password', placeholder='New Password')

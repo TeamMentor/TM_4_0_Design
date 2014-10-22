@@ -197,6 +197,7 @@ body {
 
 #results, #right-nav, #left-nav {
 	flex: 1 1 auto;
+	overflow-x: hidden;
 	overflow-y: auto;
 	height: 100%;
 }
@@ -453,26 +454,37 @@ a, button {
 
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
 	width: $full-width !important;
-	background-color: #FFF;
+	background-color: $white;
 	font-family: inherit;
 	border: 1px solid $grey;
 	box-shadow: none;
-	color: $grey;
+	color: $dark-grey;
 	display: block;
 	font-size: 16px;
 	padding: 0.5rem;
-	margin-bottom: 0xp;
 	height: 3rem;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;
-	transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
 
 	&:focus {
 		background: $white;
 		border-color: $green;
 		outline: medium none;
 	}
+}
+
+select { 
+	width: $full-width;
+	display: block;
+	background: $white;
+	font-family: inherit;
+	font-size: 16px;
+	border: 1px solid $grey;
+	box-shadow: none;
+	color: $dark-grey;
+	padding: 15px 0 15px 5px;
+
 }
 
 .input-group {
