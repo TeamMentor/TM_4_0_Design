@@ -80,7 +80,16 @@ mixin flare-password-input
 		| Password
 	.row.collapse
 		.small-9.columns
-			input(type='text', placeholder='Password')
+			input(type='password', placeholder='Password')
+		.small-3.columns
+			.button.postfix(href='#') SHOW
+
+mixin flare-new-password-input
+	label
+		| New Password
+	.row.collapse
+		.small-9.columns
+			input(type='password', placeholder='New Password')
 		.small-3.columns
 			.button.postfix(href='#') SHOW
 					
@@ -88,6 +97,16 @@ mixin password-input
 	label
 		| Password
 	input(type='password', id='password', placeholder='Password')
+
+mixin new-password-input
+	label(for='user-new-password') 
+		| New Password
+	input(type='password', id='user-new-password', placeholder='New Password')
+
+mixin confirm-new-password-input
+	label(for='user-confirm-new-password') 
+		| Confirm New Password
+	input(type='password', id='user-confirm-new-password', placeholder='Confirm New Password')
 
 mixin email-input
 	label
@@ -102,12 +121,7 @@ mixin name-input
 mixin title-input
 	label
 		| Title
-	select
-		option(value='ms') Ms
-		option(value='miss') Miss
-		option(value='Mrs') Mrs
-		option(value='Mr') Mr
-		option(value='Dr') Dr
+	input(type='text', id='title', placeholder='Title')
 
 mixin company-input
 	label

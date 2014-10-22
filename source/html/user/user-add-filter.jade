@@ -3,12 +3,12 @@ include ../../content/mixins/user-mixins.jade
 include ../home/mixins/application-mixins.jade
 
 block content
-        #application
-          .row
-            .col-offset-3.col-6
-              +links_user_pages
-
-              br
-              br
-              +filters-div
-              br
+		#application
+			.row
+				.col-3
+					.lge-container
+						+links_user_pages
+				.col-6
+					.lge-container
+						+filters-div
+						br

@@ -476,6 +476,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 
 select { 
 	width: $full-width;
+	height: 3em;
 	display: block;
 	background: $white;
 	font-family: inherit;
@@ -483,8 +484,6 @@ select {
 	border: 1px solid $grey;
 	box-shadow: none;
 	color: $dark-grey;
-	padding: 15px 0 15px 5px;
-
 }
 
 .input-group {

@@ -17,13 +17,12 @@ mixin user-details-form
 
 //- new-password-form
 mixin new-password-form
+  h3 Change Password
   form(role='form', action='user.html')
     .form-group
       +password-input
     .form-group
-      label(for='user-new-password') New Password
-      input.form-control(type='user-new-password', id='user-new-password', placeholder='New Password')
+      +new-password-input
     .form-group
-      label(for='user-confirm-new-password') Confirm New Password
-      input.form-control(type='user-confirm-new-password', id='user-confirm-new-password', placeholder='Confirm New Password')
-    button(type='submit') Save
+      +confirm-new-password-input
+    +ok-button
