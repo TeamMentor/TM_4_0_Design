@@ -831,6 +831,10 @@ nav.top-bar section.top-bar-section ul a:hover {
   color: #49661f;
 }
 
+.center {
+  margin: 0 auto;
+}
+
 button, .button {
   font-size: 14px;
   background-color: white;
