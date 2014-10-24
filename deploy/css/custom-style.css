@@ -944,6 +944,12 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   margin-bottom: -50px;
 }
 
+#instructions {
+  background: white;
+  border: 1px solid #8aaf3e;
+  padding: 0 20px 25px 20px;
+}
+
 .breadcrumbs {
   padding-left: 10px;
   background: white;

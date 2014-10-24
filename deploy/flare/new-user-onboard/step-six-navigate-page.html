@@ -24,33 +24,48 @@
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <link rel="icon" sizes="114x114" href="/deploy/assets/favicons/apple-touch-icon-114x114.png">
     <title>TEAM Mentor 4.0 (Html version)</title>
-    <!-- Normalize-->
-    <link href="/deploy/css/normalize.css" rel="stylesheet">
+    <!-- Foundation-->
+    <link href="/deploy/css/app.css" rel="stylesheet">
+    <!-- Foundation Icons-->
+    <link href="/deploy/css/foundation-icons.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
   <body>
-    <div role="navigation" class="navbar navbar-fixed-top">
-      <ul class="brand">
-        <li><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
-        </li>
-      </ul>
-      <div class="pull-right">
-        <ul class="nav nav-text"><ul>
-<li><a href="/deploy/html/landing-pages/about.html">About</a></li>
-<li><a href="/deploy/html/landing-pages/features.html">Features</a></li>
-<li><a href="NaN/index.html">Get Started</a></li>
-</ul>
-
+    <div class="fixed">
+      <nav data-topbar="data-topbar" role="navigation" class="top-bar">
+        <ul class="title-area">
+          <li class="name"><a href="#"><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a></a></li>
         </ul>
-      </div>
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li><a href="#"><i class="fi-list"></i></a></li>
+          </ul>
+        </section>
+      </nav>
     </div>
     <div id="application">
       <div class="row">
-        <div class="col-offset-3 col-6">
-          <h3>This part of TEAM Mentor requires a login.</h3><br>
-          <p>NB: Use getting-started/index.html</p>
+        <div id="left-nav" class="small-12 large-3 columns">
+              <h3>Navigate TEAM Mentor
+                <div class="list-group"><a href="fundamentals-of-security.html">Attacks & Vulernabilites</a><a href="fundamentals-of-security.html">Principles & Standards</a><a href="my-articles.html">My Articles</a><a href="my-search-terms.html">My Saved Searches</a></div>
+              </h3>
         </div>
+        <div id="results" class="small-12 large-6 columns">
+          <div class="row">
+            <div class="small-12 large-6 end columns">
+              <div id="instructions"><h3 id="saved-items-gateways">Saved Items &amp; Gateways</h3>
+<p>Saved search results can be seen in  ‘My Search Terms’ and saved articles can be seen in ‘My Articles’.</p>
+<p>You can use our Gateways to learn about specific, content-heavy subjects. These collate our best information for a single term and is a good place to start if you the know the term but not what you need to do. </p>
+<p>Or, if you’re just in the learning mood, Gateways can quickly and easily bring you up to speed on a new topics.</p>
+<h5 id="toggle-the-navigation-menu-and-go-back-to-the-home-screen-">Toggle the navigation menu and go back to the home screen.</h5>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="right-nav" class="small-12 large-3 columns"><br></div>
       </div>
     </div>
   </body>

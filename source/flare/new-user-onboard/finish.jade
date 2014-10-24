@@ -1,4 +1,5 @@
 extends ../_layouts/flare_page.jade
+include mixins/new-user-onboard-mixins.jade
 
 block content
 	#application
@@ -8,21 +9,11 @@ block content
 			//column
 
 			.small-12.large-6.columns
-				h1 That's it, you're done.
-				p Well, not entirely. There’s a lot more to TEAM Mentor then meets the eye but we think you know the most important parts so you can start learning and solving problems straight away.
-
-				p If you’re interested in more in-depth tutorials, you can access them here. Or alternatively, we have documentation which can be accessed at any time in the navigation bar - just click the information icon.
-
-				p If you have any feedback, please send us an email. Enjoy!
+				#article
+					include:md ../../content/teamMentor/new-user-onboard/finish.md
 
 				br
-				.row
-					.small-12.large-12.columns
-						button
-							| Start Fixing Vulnerabilities
-						// button
-					// columns
-				// row
+				+new-user-onboard-finish-buttons
 			// column
 
 			.small-12.large-3.columns
