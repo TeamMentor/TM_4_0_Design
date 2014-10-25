@@ -139,10 +139,12 @@ body {
 
 	a {
 		color: $dark-grey;
+		text-transform: uppercase;
+		letter-spacing: 1px;
 		font-size: 10px;
 
 		&:hover {
-			color: $green;
+			color: $dark-green;
 		}
 	}
 }
@@ -253,6 +255,15 @@ label {
 
 	display: inline-block;
 	border: none;
+
+	a {
+		text-transform: uppercase;
+		text-decoration: none;
+		color: $green;
+		font-weight: 700;
+		font-size: 14px;
+		letter-spacing: 1px;
+	}
 
 	ul {
 		list-style-type: none;
@@ -401,7 +412,7 @@ a {
 	color: $dark-grey;
 	text-decoration: underline;
 
-	&:hover, &:active {
+	&:hover, &:active, &:focus {
 		color: $dark-green;
 		text-decoration: underline;
 	}
@@ -739,6 +750,8 @@ nav.top-bar {
 
 			a {
 				text-transform: uppercase;
+				text-decoration: none;
+				letter-spacing: 1px;
 				font-size: 14px;
 				font-weight: 700;
 				background: $white;

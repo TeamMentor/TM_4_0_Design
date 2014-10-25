@@ -1,4 +1,4 @@
-extends ../html/_layouts/page_home.jade
+extends _layouts/flare_page_not_logged_in.jade
 
 block content    
 	#application
@@ -6,6 +6,7 @@ block content
 			.small-12.large-3.columns#left-nav
 				br
 			// column
+
 			.small-12.large-6.columns#results
 				h3 TEAM Mentor 4.0 Design
 				p This is a staging site for the TEAM Mentor 4.0 design.
@@ -13,7 +14,7 @@ block content
 				+horizontal-rule
 
 				h4 Current pages:
-				+all-pages-links
+				+flare-all-pages-links
 				
 				+horizontal-rule
 
@@ -22,6 +23,7 @@ block content
 				br
 				br
 			// column
+			
 			.small-12.large-3.columns#right-nav
 				br
 			// column

@@ -296,10 +296,12 @@ body {
 }
 #footer a {
   color: #444444;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   font-size: 10px;
 }
 #footer a:hover {
-  color: #8aaf3e;
+  color: #49661f;
 }
 
 #box {
@@ -394,6 +396,14 @@ label {
   padding-right: 20px;
   display: inline-block;
   border: none;
+}
+.navbar a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #8aaf3e;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 .navbar ul {
   list-style-type: none;
@@ -533,7 +543,7 @@ a {
   color: #444444;
   text-decoration: underline;
 }
-a:hover, a:active {
+a:hover, a:active, a:focus {
   color: #49661f;
   text-decoration: underline;
 }
@@ -819,6 +829,8 @@ nav.top-bar section.top-bar-section ul li {
 }
 nav.top-bar section.top-bar-section ul a {
   text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
   font-size: 14px;
   font-weight: 700;
   background: white;
