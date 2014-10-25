@@ -4,16 +4,17 @@ include mixins/article-mixins.jade
 block content  
 	#application
 		.row
-			.col-3
+			.col-3#left-nav
 				.lge-container
 					br
+				// lge-container
+			// column
 
-			.col-6
+			.col-6#right-nav
 				.lge-container
 					+jade-alert
 					
-					#article
-						include:md ../../content/teamMentor/articles/article-new-window.md
+					+article
 
 					+horizontal-rule
 
@@ -26,12 +27,17 @@ block content
 					+horizontal-rule
 
 					+copyright
+				// lge-container
+			// column
 
-			.col-3
+			.col-3#left-nav
 				.lge-container
-					br
 					br
 					br
 					+save-div
 					br
 					+share-div
+				// lge-container
+			// column
+		// row
+	// application

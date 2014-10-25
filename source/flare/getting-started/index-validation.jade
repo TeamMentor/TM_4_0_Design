@@ -1,69 +1,45 @@
 extends ../_layouts/flare_page_not_logged_in.jade
-include ../user/mixins/user-mixins.jade
+include mixins/getting-started-mixins.jade
 
 block content
 	#application
-		#loginwall.row
-			.small-12.large-5.large-push-6.columns
-				br
-				dl.tabs(data-tab='data-tab')
-					dd.active
-						a(href='#signup') Sign Up
-					dd
-						a(href='#login') Login
-				.tabs-content
-					#signup.content.active
-						br
-						.small-offset-1.small-10.large-offset-1.large-10.end.columns
-							+flare-alert
-							br
-							+sign-up-form
-						// column
-					// content					
-					#login.content
-						.row
+		#loginwall
+			.row
+				.small-12.large-5.large-push-6.columns
+					br
+					dl.tabs(data-tab='data-tab')
+						dd.active
+							a(href='#signup') Sign Up
+						// dd
+						dd
+							a(href='#login') Login
+						// dd
+					// dl-tabs
+					.tabs-content
+						#signup.content.active
 							br
 							.small-offset-1.small-10.large-offset-1.large-10.end.columns
 								+flare-alert
 								br
-								+login-form
-							// columns
-						// row
-					// content
-				// tabs-content
-			// column
+								+sign-up-form
+							// column
+						// sign-up-content				
+						#login.content
+							.row
+								br
+								.small-offset-1.small-10.large-offset-1.large-10.end.columns
+									+flare-alert
+									br
+									+login-form
+								// columns
+							// row
+						// login-content
+					// tabs-content
+				// column
 
-
-			.small-12.large-5.large-pull-6.columns
-				include:md ../../content/teamMentor/getting-started/login-wall-summary.md
-
-				.icons-green
-					.row
-						.small-3.large-2.columns
-							i.fi-clipboard-pencil
-						// column
-						.small-9.large-10.columns
-							include:md ../../../source/content/teamMentor/landing-pages/selling-point-1.md
-						// column
-					// row
-
-					.row
-						.small-3.large-2.columns
-							i.fi-arrows-in
-						//column
-						.small-9.large-10.columns
-							include:md ../../../source/content/teamMentor/landing-pages/selling-point-2.md
-						// column
-					// row
-
-					.row
-						.small-3.large-2.columns
-							i.fi-checkbox
-						//column
-						.small-9.large-10.columns
-							include:md ../../../source/content/teamMentor/landing-pages/selling-point-3.md
-					// column
-				// row
-			// column
-		// row
-	// container
+				.small-12.large-5.large-pull-6.columns
+					+team-mentor-summary
+				// column
+			// row
+		// loginwall
+	// application

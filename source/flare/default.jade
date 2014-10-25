@@ -1,20 +1,29 @@
 extends ../html/_layouts/page_home.jade
+
 block content    
-    #application
-      .row
-        .col-offset-3.col-6
-          h3 TEAM Mentor 4.0 Design
-          p This is a staging site for the TEAM Mentor 4.0 design.
-          
-          +horizontal-rule
+	#application
+		.row
+			.small-12.large-3.columns#left-nav
+				br
+			// column
+			.small-12.large-6.columns#results
+				h3 TEAM Mentor 4.0 Design
+				p This is a staging site for the TEAM Mentor 4.0 design.
+				
+				+horizontal-rule
 
-          h4 Current pages:
-          +all-pages-links
-          
-          +horizontal-rule
+				h4 Current pages:
+				+all-pages-links
+				
+				+horizontal-rule
 
-          p Git repo with source files (auto synced with this Azure site)
-          +git-repo-link
-          br
-          br
-        .col-3
+				p Git repo with source files (auto synced with this Azure site)
+				+git-repo-link
+				br
+				br
+			// column
+			.small-12.large-3.columns#right-nav
+				br
+			// column
+		// row
+	// application

@@ -4,19 +4,18 @@ include ../../content/links.jade
 
 .fixed
 	nav.top-bar(data-topbar='data-topbar', role='navigation')
-		// TM Logo Area
 		ul.title-area
 			li.name
 				a(href='#')
 					+image-teammentor-logo__default
-		// Actual Navigation
+			// li-name
+		// ul-title-area
 		section.top-bar-section
-			// Right Navigation
 			ul.right
 				li
 					a(href='#')
 						i.fi-list
-			// Center Navigation
+			// ul-right
 			ul
 				li
 					a(href='#')
@@ -43,3 +42,7 @@ include ../../content/links.jade
 						+logout-icon
 						br
 						|    Logout
+			// ul
+		// section
+	// nav
+// fixed

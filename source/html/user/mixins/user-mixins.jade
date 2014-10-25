@@ -1,42 +1,79 @@
-include ../../../content/mixins/user-mixins.jade
-
-//- login-form
+//- Jade Login Form
 mixin login-form
-  h3 Login
-  include:md ../../../content/teamMentor/getting-started/login-form.md
-  form#login-form(role='form' method='post' action='/user/login')
-    .form-group
-      +username-input
-    .form-group     
-      +password-input 
-    .row
-      .col-6
-        .lge-container
-          +login-button
-      .col-6
-        .lge-container
-          +forgot-password-button
+	h3 Login
+	include:md ../../../content/teamMentor/getting-started/login-form.md
+	form#login-form(role='form' method='post' action='/user/login')
+		.form-group
+			+username-input
+		.form-group     
+			+password-input 
+		.row
+			.col-6
+				.lge-container
+					+login-button
+				// lge-container
+			// column
+			.col-6
+				.lge-container
+					+forgot-password-button
+				// lge-container
+			// column
+		// row
+	// form
 
-//- sign-up-form
+//- Jade Sign Up Form
 mixin sign-up-form
-  h3 Sign Up
-  include:md ../../../content/teamMentor/getting-started/sign-up-form.md
-  form#sign-up-form(role='form')
-    .form-group
-      +username-input
-    .form-group
-      +email-input
-    .form-group
-      +password-input
-    .form-group
-      include:md ../../../content/teamMentor/getting-started/agree-to-toc.md
-    +sign-up-button
+	h3 Sign Up
+	include:md ../../../content/teamMentor/getting-started/sign-up-form.md
+	form#sign-up-form(role='form')
+		.form-group
+			+username-input
+		.form-group
+			+email-input
+		.form-group
+			+password-input
+		.form-group
+			include:md ../../../content/teamMentor/getting-started/agree-to-toc.md
+		+sign-up-button
+	// form
 
-//- forgot-password-form
+//- Jade Forgot Password Form
 mixin forgot-password-form
-  h3 Forgot your password?
-  include:md ../../../content/teamMentor/getting-started/forgot-password-form.md
-  form#forgot-password(role='form')
-    .form-group
-      +email-input
-    +get-password-button
+	h3 Forgot your password?
+	include:md ../../../content/teamMentor/getting-started/forgot-password-form.md
+	form#forgot-password(role='form')
+		.form-group
+			+email-input
+		+get-password-button
+	// form
+
+//- Jade User Details Form
+mixin user-details-form
+	form(role='form', action='user.html')
+		.form-group
+			+name-input
+		.form-group
+			+email-input
+		.form-group
+			+title-input
+		.form-group
+			+company-input
+		.form-group
+			+country-input
+		.form-group
+			+state-input
+		+ok-button
+	// form
+
+//- Jade New Password Form
+mixin new-password-form
+	h3 Change Password
+	form(role='form', action='user.html')
+		.form-group
+			+password-input
+		.form-group
+			+new-password-input
+		.form-group
+			+confirm-new-password-input
+		+ok-button
+	// form

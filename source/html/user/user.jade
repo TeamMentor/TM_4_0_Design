@@ -1,47 +1,64 @@
 extends ../_layouts/page_home.jade
-include ../../content/mixins/user-mixins.jade
+include mixins/user-mixins.jade
+
 block content
-    #application
-      .row
-        .col-3
-          .lge-container
-            +links_user_pages
-        .col-6
-          .lge-container
-            .row
-              .col-9
-                h3 Personal Details
-              .col-3
-                br
-                a.action(href='user-edit.html') Edit
+	#application
+		.row
+			.col-3#left-nav
+				.lge-container
+					+links_user_pages
+				// lge-container
+			// column
+			.col-6#results
+				.lge-container
+					.row
+						.col-9
+							h3 Personal Details
+						// column
+						.col-3
+							br
+							a.action(href='user-edit.html') Edit
+						// column
+					// row
 
-            table
-              tr
-                td.strong Name:
-                td Lucy Bloomfield
-                td.strong Email:
-                td hello@luchia.com.au
-              tr
-                td.strong Title:
-                td Designer
-                td.strong Company:
-                td Self-Employed
-              tr
-                td.strong State:
-                td Queensland
-                td.strong Country:
-                td Australia     
-              tr
-                td.strong Group ID:
-                td Admin
-                td
-                td
+					table
+						tr
+							td.strong Name:
+							td Lucy Bloomfield
+							td.strong Email:
+							td hello@luchia.com.au
+						tr
+							td.strong Title:
+							td Designer
+							td.strong Company:
+							td Self-Employed
+						tr
+							td.strong State:
+							td Queensland
+							td.strong Country:
+							td Australia     
+						tr
+							td.strong Group ID:
+							td Admin
+							td
+							td
+					// table
 
-            br
-            h3 Settings
-            .list-group
-              a(href='user-new-password.html') New Password
+					br
+					h3 Settings
+					.list-group
+						a(href='user-new-password.html') New Password
 
-            h3 Permanent Filters
-            .list-group
-              a(href='user-add-filter.html') Add/Remove Filter
+					h3 Permanent Filters
+					.list-group
+						a(href='user-add-filter.html') Add/Remove Filter
+				// lge-container
+			// column
+
+			.col-3#right-nav
+				.lge-container
+					br
+				// lge-container
+			// column
+		// row
+	// application

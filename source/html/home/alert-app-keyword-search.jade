@@ -1,24 +1,32 @@
 extends ../_layouts/page_home.jade
 include mixins/application-mixins.jade
 
-block content  
-    #application
-      .row
-        .col-3
-          .lge-container
-            br
+block content
+	#application
+		.row
+			.col-3#left-nav
+				.lge-container
+					br
+				// lge-container
+			// column
 
-        .col-6
-          .lge-container
-            +jade-alert
-            br
-            +jade-search-bar-input
-            br
-            br
-            br
-            +results-save-clear
-            +articles-list
+			.col-6#results
+				.lge-container
+					+jade-alert
+					br
+					+jade-search-bar-input
+					br
+					br
+					br
+					+results-save-clear
+					+articles-list
+				// lge-container
+			// column
 
-        .col-3
-          .lge-container
-            +filters-div
+			.col-3
+				.lge-container
+					+filters-div
+				// lge-container
+			// column
+		// row
+	// application

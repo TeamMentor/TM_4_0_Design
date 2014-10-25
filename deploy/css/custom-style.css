@@ -217,19 +217,6 @@ body {
   height: 100%;
 }
 
-#article a, #lp-navigation a, #learning-path a, #help-docs a, #help-nav a {
-  text-transform: none;
-  text-decoration: underline;
-  text-align: left !important;
-  font-weight: normal;
-  font-size: 16px;
-  letter-spacing: 0px;
-  color: #444444;
-}
-#article a:hover, #lp-navigation a:hover, #learning-path a:hover, #help-docs a:hover, #help-nav a:hover {
-  color: #8aaf3e !important;
-}
-
 #call-to-action {
   padding: 100px 0 110px 0;
   background: url(../../deploy/assets//images/bgtwo.jpg);
@@ -315,16 +302,13 @@ body {
   color: #8aaf3e;
 }
 
-#learning-path button {
-  width: 100%;
-}
-#learning-path #box {
+#box {
   width: 75%;
   margin: 30px auto 30px auto !important;
   border: 1px solid #8aaf3e;
   padding: 7px 40px 10px 40px;
 }
-#learning-path #box h4 {
+#box h4 {
   color: #8aaf3e !important;
 }
 
@@ -343,8 +327,9 @@ body {
 #results, #right-nav, #left-nav {
   flex: 1 1 auto;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   height: 100%;
+  max-width: 100%;
 }
 
 #usp {
@@ -497,13 +482,6 @@ ul, ol {
 ul ul, ol ul {
   margin-bottom: 0;
 }
-ul.sidebar, ol.sidebar {
-  margin: 0 0 0 -30px;
-  list-style-type: none;
-}
-ul.sidebar li, ol.sidebar li {
-  margin-bottom: 2px;
-}
 
 code, pre {
   font-family: monospace, monospace;
@@ -552,18 +530,23 @@ hr {
 }
 
 a {
-  font-size: 14px;
+  color: #444444;
+  text-decoration: underline;
+}
+a:hover, a:active {
+  color: #49661f;
+  text-decoration: underline;
+}
+a.action {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
+  font-size: 14px;
   font-weight: 700;
   color: #8aaf3e;
-  text-align: center !important;
-  vertical-align: middle;
 }
-a:hover, a:active {
-  color: #49661f !important;
-  text-decoration: none;
+a.action:hover, a.action:focus, a.action:active {
+  color: #49661f;
 }
 
 a, button {
@@ -776,7 +759,7 @@ button.btn-search-bar {
   font-weight: 700;
   background: white;
   color: #8aaf3e;
-  border: 1px solid transparent;
+  border: 1px solid #8aaf3e;
   border-radius: 0px;
 }
 .alert-box .alerts {
@@ -911,15 +894,6 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   color: #444444 !important;
 }
 
-#loginwall p a {
-  color: #444444;
-  text-transform: none;
-  text-decoration: underline;
-  letter-spacing: 0px;
-  font-weight: normal;
-  font-size: 16px;
-  vertical-align: baseline;
-}
 #loginwall .postfix {
   color: #aaaaaa !important;
 }
@@ -938,6 +912,9 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 
 .form-group {
   margin-bottom: 15px;
+}
+.form-group li {
+  list-style-type: none;
 }
 
 .collapse {
@@ -963,6 +940,9 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 }
 .breadcrumbs li a {
   font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   color: #aaaaaa;
 }
 .breadcrumbs li a:hover {

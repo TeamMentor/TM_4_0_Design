@@ -1,14 +1,25 @@
 extends ../_layouts/page_home.jade
-include ../../content/mixins/user-mixins.jade
+include mixins/user-mixins.jade
 include ../home/mixins/application-mixins.jade
 
 block content
-		#application
-			.row
-				.col-3
-					.lge-container
-						+links_user_pages
-				.col-6
-					.lge-container
-						+filters-div
-						br
+	#application
+		.row
+			.col-3#left-nav
+				.lge-container
+					+links_user_pages
+				// lge-container
+			// column
+			.col-6#results
+				.lge-container
+					+filters-div
+					br
+				// lge-container
+			// column
+			.col-3#right-nav
+				.lge-container
+					br
+				// lge-container
+			// column
+		// row
+	// application

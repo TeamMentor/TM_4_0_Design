@@ -5,6 +5,7 @@ mixin jade-search-bar-input
 		span.input-group-btn
 			button.btn-search-bar(type='button')
 				| SEARCH
+	// input-group
 
 //- Jade Results-Save-Clear
 mixin results-save-clear
@@ -13,15 +14,18 @@ mixin results-save-clear
 			td 
 				h4 0/200 results showing
 			td
-				a(href='#save') Save
+				a.action(href='#save') Save
 			td
-				a(href='main-app-view.html') Clear
+				a.action(href='main-app-view.html') Clear
+		//tr
+	// table
 
 //- Articles List
 mixin articles-list
 	.list-group
 		a(href='#{link_article_new_window}', target='_blank')
 			include:md ../../../content/teamMentor/articles/article-summary.md
+	// list-group
 
 //- Main Application View
 mixin main-app-view
@@ -31,24 +35,28 @@ mixin main-app-view
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
+	// list-group
 	h4 Popular Search Terms
 	.list-group
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
+	// list-group
 	h4 Top Articles
 	.list-group
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
+	// list-group
 	h4 New Articles
 	.list-group
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
 		a(href='#{link_article_new_window}', target='_blank') Article Headline
+	// list-group
 
 //- Jade Filters Div
 mixin filters-div
@@ -61,168 +69,271 @@ mixin filters-div
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#technology_1', type='checkbox') Option #1
+						// column
 						.col-2
 							input#technology_1(type='checkbox')
+						// column
+					// row
+				// li
 				li
 					.row
 						.col-2
-							span.badge 14 	
+							span.badge 14 
+						// column	
 						.col-8
 							label(for='#technology_2', type='checkbox') Option #2
+						// column
 						.col-2
-							input#technology_2(type='checkbox')					
+							input#technology_2(type='checkbox')
+						// column
+					// row
+				// li			
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#technology_3', type='checkbox') Option #3
+						// column
 						.col-2
 							input#technology_3(type='checkbox')
-									
+						// column
+					// row
+				// li						
 				li
 					.row
 						.col-2
 							span.badge 14 
+						// column
 						.col-8
 							label(for='#technology_4', type='checkbox') Option #4
+						// column
 						.col-2
-							input#technology_4(type='checkbox')			
+							input#technology_4(type='checkbox')
+						// column
+					// row
+				// li	
 				li
 					.row
 						.col-2
 							span.badge 14 
+						// column
 						.col-8
 							label(for='#technology_5', type='checkbox') Option #5
+						// column
 						.col-2
 							input#technology_5(type='checkbox')
+						// column
+					// row
+				// li
+			// form-group
 			.form-group
 				h5 Category
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#category_1', type='checkbox') Option #1
+						// column
 						.col-2
-							input#category_1(type='checkbox')		 
+							input#category_1(type='checkbox')
+						// column
+					// row
+				// li	 
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#category_2', type='checkbox') Option #2
+						// column
 						.col-2
-							input#category_2(type='checkbox')			
+							input#category_2(type='checkbox')
+						// column
+					// row
+				// li		
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#category_3', type='checkbox') Option #3
+						// column
 						.col-2
-							input#category_3(type='checkbox')		
+							input#category_3(type='checkbox')
+						// column
+					// row
+				// li	
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#category_4', type='checkbox') Option #4
+						// column
 						.col-2
-							input#category_4(type='checkbox')		
+							input#category_4(type='checkbox')
+						// column
+					// row
+				// li		
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#category_5', type='checkbox') Option #5
+						// column
 						.col-2
-							input#category_5(type='checkbox')		
+							input#category_5(type='checkbox')
+						// column
+					// row
+				// li
+			// form-group
 			.form-group
 				h5 Phase
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#phase_1', type='checkbox') Option #1
+						// column
 						.col-2
 							input#phase_1(type='checkbox')
+						// column
+					// row
+				// li
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#phase_2', type='checkbox') Option #2
+						// column
 						.col-2
 							input#phase_2(type='checkbox')
+						// column
+					// row
+				// li
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#phase_3', type='checkbox') Option #3
+						// column
 						.col-2
 							input#phase_3(type='checkbox')
+						// column
+					// row
+				// li
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#phase_4', type='checkbox') Option #4
+						// column
 						.col-2
 							input#phase_4(type='checkbox')
+						// column
+					// row
+				// li
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#phase_5', type='checkbox') Option #5
+						// column
 						.col-2
-							input#phase_5(type='checkbox')			
+							input#phase_5(type='checkbox')
+						// column
+					// row
+				// li
+			// form-group
 			.form-group
 				h5 Type
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#type_1', type='checkbox') Option #1
+						// column
 						.col-2
-							input#type_1(type='checkbox')		
+							input#type_1(type='checkbox')
+						// column
+					// row
+				// li	
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#type_2', type='checkbox') Option #2
+						// column
 						.col-2
 							input#type_2(type='checkbox')
+						// column
+					// row
+				// li
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#type_3', type='checkbox') Option #3
+						// column
 						.col-2
 							input#type_3(type='checkbox')
+						// column
+					// row
+				// li
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#type_4', type='checkbox') Option #4
+						// column
 						.col-2
 							input#type_4(type='checkbox')
+						// column
+					// row
+				// li
 				li
 					.row
 						.col-2
 							span.badge 14
+						// column
 						.col-8
 							label(for='#type_5', type='checkbox') Option #5
+						// column
 						.col-2
-							input#type_5(type='checkbox')		
+							input#type_5(type='checkbox')
+						// column
+					// row
+				// li
+			// form-group	
 			br
 			+ok-button

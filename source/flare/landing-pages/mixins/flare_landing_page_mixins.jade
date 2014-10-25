@@ -10,6 +10,11 @@ mixin usp-div
 					.small-12.large-offset-3.large-6.end.columns
 						a(href='../getting-started/index.html')
 							button Start your free trial today
+					// column
+				// row
+			// column
+		// row
+	// usp-div
 
 //- reasons-to-use-tm-div
 mixin reasons-to-use-tm-div
@@ -20,23 +25,35 @@ mixin reasons-to-use-tm-div
 				.row
 					.small-3.large-2.columns
 						i.fi-clipboard-pencil
+					// column
 					.small-9.large-10.columns
 						h4
 							include:md ../../../content/teamMentor/landing-pages/selling-point-1.md
+					// column
+				// row
 				br
 				.row
 					.small-3.large-2.columns
 						i.fi-arrows-in
+					// column
 					.small-9.large-10.columns
 						h4
 							include:md ../../../content/teamMentor/landing-pages/selling-point-2.md
+					// column
+				// row
 				br
 				.row
 					.small-3.large-2.columns
 						i.fi-checkbox
+					// columns
 					.small-9.large-10.columns
 						h4
 							include:md ../../../content/teamMentor/landing-pages/selling-point-3.md
+					// columns
+				// row
+			// column
+		// row
+	// reasons-div
 
 //- clients-div
 mixin clients-div
@@ -45,16 +62,29 @@ mixin clients-div
 		.row
 			.small-6.large-4.columns
 				+image-elsevier-logo
+			// column
+
 			.small-6.large-4.columns
 				+image-fedex-logo
+			// column
+
 			.small-6.large-4.columns
 				+image-mass-mutual-logo
+			// column
+
 			.small-6.large-4.columns
 				+image-microsoft-logo
+			// column
+
 			.small-6.large-4.columns
 				+image-symantec-logo
+			// column
+
 			.small-6.large-4.columns
 				+image-ubs-logo
+			// column
+		// row
+	// clients-div
 
 //- about-tagline-div
 mixin about-tagline-div
@@ -62,6 +92,9 @@ mixin about-tagline-div
 		.row
 			.small-12.large-offset-2.large-8.end.columns
 				include:md ../../../content/teamMentor/landing-pages/about-tm-tagline.md
+			// column
+		// row
+	// about-div
 
 // about-us-div
 mixin about-us-div
@@ -69,6 +102,9 @@ mixin about-us-div
 		.row 
 			.small-12.large-offset-2.large-8.end.columns
 				include:md ../../../content/teamMentor/landing-pages/about-tm-summary.md
+			// column
+		// row
+	// about-us
 
 // features-div
 mixin features-div
@@ -80,26 +116,41 @@ mixin features-div
 				.row
 					.small-3.large-2.columns
 						i.fi-check
+					// column
 					.small-9.large-10.columns
 						include:md ../../../content/teamMentor/landing-pages/feature-1.md
+					// column
+				// row
 
 				.row
 					.small-3.large-2.columns
 						i.fi-loop
+					// column
 					.small-9.large-10.columns
 						include:md ../../../content/teamMentor/landing-pages/feature-2.md
+					// column
+				// row
 
 				.row
 					.small-3.large-2.columns
 						i.fi-clipboard-notes
+					// column
 					.small-9.large-10.columns
 						include:md ../../../content/teamMentor/landing-pages/feature-3.md
+					// column
+				// row
 
 				.row
 					.small-3.large-2.columns
 						i.fi-arrows-in
+					// column
 					.small-9.large-10.columns
 						include:md ../../../content/teamMentor/landing-pages/feature-4.md
+					// column
+				// row
+			// column
+		// row
+	// features-div
 
 //- landing-page_call-to-action
 mixin call-to-action-div
@@ -113,11 +164,19 @@ mixin call-to-action-div
 					.small-12.large-offset-3.large-6.end.columns
 						a(href='getting-started.html')
 							button(type='button') See for yourself
+					// column
+				// row
+			// column
+		// row
+	// call-to-action-div
 
 //- landing-page_footer
 mixin footer-div
 	#footer
 		.row
-			.col-offset-2.col-8
+			.small-12.large-offset-4.large-4.columns
 				+image-security-innovation-logo
 				a(href="#{user}/terms-and-conditions.html") Terms & Conditions
+			// column
+		// row
+	// footer-div

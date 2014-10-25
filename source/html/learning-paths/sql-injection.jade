@@ -1,15 +1,17 @@
-extends ../../content/_layouts/page_home.jade
-include ../../content/mixins/learning-path-mixins.jade
+extends ../_layouts/page_home.jade
+include mixins/learning-path-mixins.jade
 
 block content
 	#application
 		.row
-			.col-3
+			.col-3#left-nav
 				.lge-container
 					br
-			.col-6#learning-path
+			.col-6#results
 				.lge-container
-					include:md ../../content/teamMentor/learning-paths/sql-injection.md
-					
-					br
+					+lp-overview
+					+horizontal-rule
 					+lp-start-button
+			.col-3#right-nav
+				.lge-container
+					br

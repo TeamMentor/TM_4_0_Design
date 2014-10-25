@@ -1,41 +1,22 @@
 extends ../../content/_layouts/page_not_logged_in.jade
-include ../user/mixins/user-mixins.jade
+include mixins/getting-started-mixins.jade
 
 block content
 	#application
 		.row
 			.col-offset-1.col-5
 				.lge-container
-					include:md ../../content/teamMentor/getting-started/login-wall-summary.md
-					
-					.row
-						.col-2
-							+image-identify-fix-icon
-						// column
-						.col-10
-							include:md ../../content/teamMentor/landing-pages/selling-point-1.md
-						// column
-					// row
-
-					.row
-						.col-2
-							+image-reduces-icon
-						//column
-						.col-10
-							include:md ../../content/teamMentor/landing-pages/selling-point-2.md
-						// column
-					// row
-
-					.row
-						.col-2
-							+image-expand-icon
-						//column
-						.col-10
-							include:md ../../content/teamMentor/landing-pages/selling-point-3.md
+					+team-mentor-summary
+				// lge-container
+			// column
 			.col-5
 				.lge-container
 					+jade-alert
-					+sign-up-form
+					+jade-sign-up-form
 					br
 					+jade-alert
-					+login-form
+					+jade-login-form
+				// lge-container
+			// column
+		// row
+	// application

@@ -1,12 +1,12 @@
 extends ../_layouts/flare_page.jade
 include mixins/articles-mixins.jade
-include ../../content/mixins/user-mixins.jade
 
 block content  
 	#application
 		.row
 			.small-12.large-3.columns#left-nav
 				br
+			// column
 			.small-12.large-6.columns#results
 				+article
 
@@ -21,6 +21,10 @@ block content
 				+horizontal-rule
 
 				+copyright
+			// column
 
 			.small-12.large-3.columns#right-nav
 				br
+			// column
+		// row
+	// application

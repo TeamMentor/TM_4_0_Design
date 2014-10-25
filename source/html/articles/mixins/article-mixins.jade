@@ -1,5 +1,10 @@
 include ../../../content/mixins/articles-mixins.jade
-include ../../../content/mixins/user-mixins.jade
+
+//- Article
+mixin article
+	#article
+		include:md ../../../content/teamMentor/articles/article-new-window.md
+	// article-div
 
 //- article-options
 mixin article-options
@@ -7,6 +12,8 @@ mixin article-options
 		.col-offset-2.col-8
 			h5 Metadata
 			+metadata-table
+		// column
+	// row
 
 //- related-articles
 mixin related-articles
@@ -18,6 +25,7 @@ mixin related-articles
 			include:md ../../../content/teamMentor/articles/article-summary.md
 		a(href='#{link_article_new_window}', target='_blank')
 			include:md ../../../content/teamMentor/articles/article-summary.md
+	// list-group
 
 // Save Div
 mixin save-div
@@ -27,6 +35,8 @@ mixin save-div
 				+save-input
 			.form-group
 				+save-button
+		// row
+	// form
 
 // Share Div
 mixin share-div
@@ -36,92 +46,92 @@ mixin share-div
 				+share-input
 			.form-group
 				+share-button
+		// row
+	// form
 
 //- my-articles-edit
 mixin edit-my-articles
-	.row
-		.col-6
-			.lge-container
-				li
-					input#technology_1(type='checkbox')
-					label(for='technology_1', name='technology_1') A New ID Is Assigned on Login
-				li
-					input#technology_2(type='checkbox')
-					label(for='technology_2', name='technology_2') A New Or Blank Session ID is Assigned on Logout
-				li
-					input#technology_3(type='checkbox')
-					label(for='technology_3', name='technology_3') Access to the Credential Store is Limited
-				li
-					input#technology_4(type='checkbox')
-					label(for='technology_4', name='technology_4') AJAX Injection Vulnerability
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') All Input is Validated
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') All Private Resources Require Authentication
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') All Senstive Data is Encrypted
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') Assume All Input is Malicious
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') Authentication is Centralized
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') Centralize Authentication
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') Client-side Validation is Not Relied On
-				li
-					input#technology_1(type='checkbox')
-					label(for='technology_1', name='technology_1') Cross Site Scripting Vulnerablity
-				li
-					input#technology_2(type='checkbox')
-					label(for='technology_2', name='technology_2') Deny All Access by Default
-				li
-					input#technology_3(type='checkbox')
-					label(for='technology_3', name='technology_3') Do Not Cache Sensitive Data
-		.col-6
-			.lge-container
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') Do Not Leave Passwords in Memory
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') Don't Trust User Input
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') Echoed Input is Encoded
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') Missing Authentication
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') Missing Authorization
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') Hard-coded Credentials
-				li
-					input#technology_5(type='checkbox')
-					label(for='technology_5', name='technology_5') Missing Encryption
-				li
-					input#technology_4(type='checkbox')
-					label(for='technology_4', name='technology_4') Unrestricted Dangerous Uploads
-				li
-					input#technology_4(type='checkbox')
-					label(for='technology_4', name='technology_4') Using Untrusted Inputs
+	.form-group
+		li
+			input#article_1(type='checkbox')
+			label(for='article_1', name='article_1') A New ID Is Assigned on Login
+		li
+			input#article_2(type='checkbox')
+			label(for='article_2', name='article_2') A New Or Blank Session ID is Assigned on Logout
+		li
+			input#article_3(type='checkbox')
+			label(for='article_3', name='article_3') Access to the Credential Store is Limited
+		li
+			input#article_4(type='checkbox')
+			label(for='article_4', name='article_4') AJAX Injection Vulnerability
+		li
+			input#article_5(type='checkbox')
+			label(for='article_5', name='article_5') All Input is Validated
+		li
+			input#article_6(type='checkbox')
+			label(for='article_6', name='article_6') All Private Resources Require Authentication
+		li
+			input#article_7(type='checkbox')
+			label(for='article_7', name='article_7') All Senstive Data is Encrypted
+		li
+			input#article_8(type='checkbox')
+			label(for='article_8', name='article_8') Assume All Input is Malicious
+		li
+			input#article_9(type='checkbox')
+			label(for='article_9', name='article_9') Authentication is Centralized
+		li
+			input#article_10(type='checkbox')
+			label(for='article_10', name='article_10') Centralize Authentication
+		li
+			input#article_11(type='checkbox')
+			label(for='article_11', name='article_11') Client-side Validation is Not Relied On
+		li
+			input#article_12(type='checkbox')
+			label(for='article_12', name='article_12') Cross Site Scripting Vulnerablity
+		li
+			input#article_13(type='checkbox')
+			label(for='article_13', name='article_13') Deny All Access by Default
+		li
+			input#article_14(type='checkbox')
+			label(for='article_14', name='article_14') Do Not Cache Sensitive Data
+	// form-group
 
 //- my-articles-edit-links
 mixin edit-links
-	#edit-links
-		br
-		.row
-			.col-4
-				a(href='#') Clear Selected
-			.col-4
-				a(href='navigate.html') Clear All
-			.col-4
-				a(href='my-articles.html') Ok, Done
+	+clear-selected-button
+	br
+	br
+	+clear-all-button
+	br
+	br
+	+ok-button
+
+//- Directory List
+mixin directory-list
+	h3 Fundamentals of Security
+	.list-group
+		a(href='owasp.html')
+			| OWASP Top 10
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+		a(href='owasp.html')
+			| Second Level Directory
+			span.badge 14
+	// list-group

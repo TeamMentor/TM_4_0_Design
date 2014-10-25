@@ -1,4 +1,4 @@
-//- jade-landing-page-usp-div
+//- USP Div
 mixin usp-div
 	#usp
 		.row
@@ -10,8 +10,13 @@ mixin usp-div
 					.col-offset-3.col-6
 						a(href='../getting-started/index.html')
 							button Start your free trial today
+					// column
+				// row
+			// column
+		// row
+	// usp-div
 
-//- reasons-to-use-tm-div
+//- Reason to Use TM Div
 mixin reasons-to-use-tm-div
 	#reasons
 		.lge-container
@@ -19,26 +24,42 @@ mixin reasons-to-use-tm-div
 			.row
 				.col-offset-3.col-1
 					+image-identify-fix-icon
+				// column
 				.col-5
 					.lge-container
 						h4
 							include:md ../../../content/teamMentor/landing-pages/selling-point-1.md
+					// lge-container
+				// column
+			//row
+
 			.row
 				.col-offset-3.col-1
 					+image-reduces-icon
+				// column 
 				.col-5
 					.lge-container
 						h4
 							include:md ../../../content/teamMentor/landing-pages/selling-point-2.md
+					// lge-container
+				// column
+			// row
+
 			.row
 				.col-offset-3.col-1
 					+image-expand-icon
+				// column
 				.col-5
 					.lge-container
 						h4
 							include:md ../../../content/teamMentor/landing-pages/selling-point-3.md
+					// lge-container
+				// column
+			// row
+		// lge-container
+	// reasons
 
-//- clients-div
+//- Clients Div
 mixin clients-div
 	#clients
 		.lge-container
@@ -46,21 +67,31 @@ mixin clients-div
 			.row
 				.col-4
 					+image-elsevier-logo
+				// column
 				.col-4
 					+image-fedex-logo
+				// column
 				.col-4
 					+image-mass-mutual-logo
+				// column
+			// row
 			.row
 				.col-4
 					+image-microsoft-logo
+				// column
 				.col-4
 					+image-symantec-logo
+				// column
 				.col-4
 					+image-ubs-logo
+				// column
+			// row
+		// lge-container
+	// clients-div
 
 
 
-//- landing-page_call-to-action
+//- Call to Action
 mixin call-to-action-div
 	#call-to-action
 		.row
@@ -72,30 +103,44 @@ mixin call-to-action-div
 					.col-offset-3.col-6
 						a(href='getting-started.html')
 							button(type='button') See for yourself
+					// column
+				// row
+			// column
+		// row
+	// call-to-action-div
 
-//- landing-page_footer
+//- Footer
 mixin footer-div
 	#footer
 		.row
 			.col-offset-2.col-8
 				+image-security-innovation-logo
 				a(href="#{user}/terms-and-conditions.html") Terms & Conditions
+			// column
+		// row
+	// footer-div
 
-//- about-tagline-div
+//- About Tagline Div
 mixin about-tagline-div
 	#about
 		.row
 			.col-offset-2.col-8
 				include:md ../../../content/teamMentor/landing-pages/about-tm-tagline.md
+			// column
+		// row
+	// about-div
 
-// about-us-div
+// About Us Div
 mixin about-us-div
 	#about-us
 		.row 
 			.col-offset-2.col-8
 				include:md ../../../content/teamMentor/landing-pages/about-tm-summary.md
+			// column
+		// row
+	// about-us-div
 
-// features-div
+// Features Div
 mixin features-div
 	#features
 		h2 TEAM Mentor provides intelligence to fix vulnerabilities and comply
@@ -104,23 +149,36 @@ mixin features-div
 		.row
 			.col-offset-3.col-1
 				+image-compliance-icon
+			// column
 			.col-5
 				include:md ../../../content/teamMentor/landing-pages/feature-1.md
+			// column
+		// row
 		br
 		.row
 			.col-offset-3.col-1
 				+image-integrate-icon
+			// column
 			.col-5
 				include:md ../../../content/teamMentor/landing-pages/feature-2.md
+			// column
+		// row
 		br
 		.row
 			.col-offset-3.col-1
 				+image-cross-references-icon
+			// column
 			.col-5
 				include:md ../../../content/teamMentor/landing-pages/feature-3.md
+			// column
+		// row
 		br
 		.row
 			.col-offset-3.col-1
 				+image-reduces-icon
+			// column
 			.col-5
 				include:md ../../../content/teamMentor/landing-pages/feature-4.md
+			// column
+		// row
+	// features-div

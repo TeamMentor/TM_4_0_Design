@@ -4,27 +4,37 @@ include ../../../content/globals.jade
 mixin flare-search-bar-input
 	.row
 		.large-12.columns
-				.row.collapse
-					.small-8.large-10.columns
-						input#search-bar(type='text', placeholder='Type keywords here')
-					.small-2.large-1.columns
-						a.button.postfix#search-button(href='#')
-							+search-icon
-					.small-2.large-1.columns
-						a.button.postfix(href='#')
-							+filter-icon
+			.row.collapse
+				.small-8.large-10.columns
+					input#search-bar(type='text', placeholder='Type keywords here')
+				// column
+				.small-2.large-1.columns
+					a.button.postfix#search-button(href='#')
+						+search-icon
+				// column
+				.small-2.large-1.columns
+					a.button.postfix(href='#')
+						+filter-icon
+				// column
+			// row-collapse
+		// column
+	// row
 
 //- Flare Results-Save-Clear
 mixin flare-results-save-clear
 	.row
 		.small-12.large-6.columns
 			h4 0/200 results showing
+		//column
 		.small-6.large-3.columns.vertical-align
 			a.button(href='#')
 				+save-icon
+		// column
 		.small-6.large-3.columns.vertical-align
 			a.button(href='#')
 				+clear-icon
+		// column
+	// row
 
 //- Articles List
 mixin flare-articles-list
@@ -34,16 +44,23 @@ mixin flare-articles-list
 			#panel1.content
 				include:md ../../../content/teamMentor/articles/article-details.md
 				+flare-article-preview-menu
+			// panel1-content
+		// accordian-navigation
 		dd.accordion-navigation
 			a(href='#panel2') Article Headline
 			#panel2.content
 				include:md ../../../content/teamMentor/articles/article-details.md
 				+flare-article-preview-menu
+			// panel2-content
+		// accordian-navigation
 		dd.accordion-navigation
 			a(href='#panel3') Article Headline
 			#panel3.content
 				include:md ../../../content/teamMentor/articles/article-details.md
 				+flare-article-preview-menu
+			// panel3-content
+		// accordian-navigation
+	// accordian
 
 //- Flare Saved Articles List
 mixin flare-saved-articles-list
@@ -53,16 +70,23 @@ mixin flare-saved-articles-list
 			#panel1.content
 				include:md ../../../content/teamMentor/articles/article-details.md
 				+saved-article-menu
+			// panel1-content
+		// accordian-navigation
 		dd.accordion-navigation
 			a(href='#panel2') Article Headline
 			#panel2.content
 				include:md ../../../content/teamMentor/articles/article-details.md
 				+saved-article-menu
+			// panel2-content
+		// accordian-navigation
 		dd.accordion-navigation
 			a(href='#panel3') Article Headline
 			#panel3.content
 				include:md ../../../content/teamMentor/articles/article-details.md
 				+saved-article-menu
+			// panel3-content
+		// accordian-navigation
+	// accordian
 
 //- Article Preview Menu
 mixin flare-article-preview-menu
@@ -70,12 +94,16 @@ mixin flare-article-preview-menu
 		.small-12.large-4.columns
 			a(href='/deploy/flare/articles/article-new-window-view.html', target='_blank')
 				+open-icon
+		// columns
 		.small-12.large-4.columns
 			a(href='#save')
 				+save-icon
+		// columns
 		.small-12.large-4.columns
 			a(href='#share')
 				+share-icon
+		// columns
+	// row
 
 // Saved Article Menu
 mixin saved-article-menu
@@ -83,12 +111,16 @@ mixin saved-article-menu
 		.small-12.large-4.columns
 			a(href='/deploy/flare/articles/article-new-window-view.html', target='_blank')
 				+open-icon
+		// column
 		.small-12.large-4.columns
 			a(href='#share')
 				+share-icon
+		// column
 		.small-12.large-4.columns
 			a(href='#')
 				+delete-icon
+		// column
+	// row
 
 //- Flare Main App View
 mixin flare-main-app-view
@@ -97,18 +129,27 @@ mixin flare-main-app-view
 			a(href='#panel1') Recently Viewed Articles
 			#panel1.content
 				+flare-articles-list
+			// panel1-content
+		// acordian-navigation
 		dd.accordion-navigation
 			a(href='#panel2') Popular Search Terms
 			#panel2.content
 				+flare-articles-list
+			// panel2-content
+		// accordian-navigation
 		dd.accordion-navigation
 			a(href='#panel3') Top Articles
 			#panel3.content
 				+flare-articles-list
+			// panel3-content
+		// accordian-navigation
 		dd.accordion-navigation
 			a(href='#panel4') New Articles
 			#panel4.content
 				+flare-articles-list
+			// panel4-content
+		// accordian-navigation
+	// accordian
 
 //- Flare Filters Div
 mixin flare-filters-div
@@ -123,24 +164,40 @@ mixin flare-filters-div
 							.row
 								.small-2.columns
 									span.badge 14
+								// column
 								.small-8.columns
 									label(for='tech-checkbox1') Checkbox 1
+								// column
 								.small-2.columns
 									input#tech-checkbox1(type='checkbox')
+								// column
+							// row
 							.row
 								.small-2.columns
 									span.badge 14
+								// column
 								.small-8.columns
 									label(for='tech-checkbox2') Checkbox 2
+								// column
 								.small-2.columns
 									input#tech-checkbox2(type='checkbox')
+								// column
+							// row
 							.row
 								.small-2.columns
 									span.badge 14
+								// column
 								.small-8.columns
 									label(for='tech-checkbox3') Checkbox 3
+								// column
 								.small-2.columns
 									input#tech-checkbox3(type='checkbox')
+								// column
+							// row
+						// column
+					// row
+				// technology-content
+			// accordian-navigation
 
 			dd.accordion-navigation
 				a(href='#type') Type
@@ -150,24 +207,40 @@ mixin flare-filters-div
 							.row
 								.small-2.columns
 									span.badge 14
+								// column
 								.small-8.columns
 									label(for='type-checkbox1') Checkbox 1
+								// column
 								.small-2.columns
 									input#type-checkbox1(type='checkbox')
+								// column
+							// row
 							.row
 								.small-2.columns
 									span.badge 14
+								// column
 								.small-8.columns
 									label(for='type-checkbox2') Checkbox 2
+								// column
 								.small-2.columns
 									input#type-checkbox2(type='checkbox')
+								// column
+							// row
 							.row
 								.small-2.columns
 									span.badge 14
+								// column
 								.small-8.columns
 									label(for='type-checkbox3') Checkbox 3
+								// column
 								.small-2.columns
 									input#type-checkbox3(type='checkbox')
+								// column
+							// row
+						// column
+					// row
+				// type-content
+			// accordian-navigation
 
 			dd.accordion-navigation
 				a(href='#phase') Phase
@@ -177,24 +250,40 @@ mixin flare-filters-div
 							.row
 								.small-2.columns
 									span.badge 14
+								// column
 								.small-8.columns
 									label(for='phase-checkbox1') Checkbox 1
+								// column
 								.small-2.columns
 									input#phase-checkbox1(type='checkbox')
+								// column
+							// row
 							.row
 								.small-2.columns
 									span.badge 14
+								// column
 								.small-8.columns
 									label(for='phase-checkbox2') Checkbox 2
+								// column
 								.small-2.columns
 									input#phase-checkbox2(type='checkbox')
+								// column
+							// row
 							.row
 								.small-2.columns
 									span.badge 14
+								// column
 								.small-8.columns
 									label(for='phase-checkbox3') Checkbox 3
+								// column
 								.small-2.columns
 									input#phase-checkbox3(type='checkbox')
+								// column
+							// row
+						// column
+					// row
+				// phase-content
+			// accordian-navigation
 
 			dd.accordion-navigation
 				a(href='#category') Category
@@ -204,27 +293,45 @@ mixin flare-filters-div
 							.row
 								.small-2.columns
 									span.badge 14
+								// column
 								.small-8.columns
 									label(for='category-checkbox1') Checkbox 1
+								// column
 								.small-2.columns
 									input#category-checkbox1(type='checkbox')
+								// column
+							// row
 							.row
 								.small-2.columns
 									span.badge 14
+								// column
 								.small-8.columns
 									label(for='category-checkbox2') Checkbox 2
+								// column
 								.small-2.columns
 									input#category-checkbox2(type='checkbox')
+								// column
+							// row
 							.row
 								.small-2.columns
 									span.badge 14
+								// column
 								.small-8.columns
 									label(for='category-checkbox3') Checkbox 3
+								// column
 								.small-2.columns
 									input#category-checkbox3(type='checkbox')
+								// column
+							// row
+						// column
+					// row
+				// category-content
+			// accordian-content
+		// accordian
 		br
 		button(type='submit')
 			| Ok, Done
+	// form
 
 //- Flare 
 mixin flare-filters-active
@@ -234,14 +341,18 @@ mixin flare-filters-active
 			.alert-box(data-alert='')
 				| Active Filter
 				a.close(href='#') ×
+		// column
 		.small-12.medium-6.large-4.columns
 			.alert-box(data-alert='')
 				| Active Filter
 				a.close(href='#') ×
+		// column
 		.small-12.medium-6.large-4.columns
 			.alert-box(data-alert='')
 				| Active Filter
 				a.close(href='#') ×
+		// column
+	// row
 
 // Save Div
 mixin save-div
@@ -249,8 +360,12 @@ mixin save-div
 		.row
 			.small-12.large-12.columns
 				+save-input
+			// column
 			.small-12.large-12.columns
 				+save-button
+			// column
+		// row
+	// form
 
 // Share Div
 mixin share-div
@@ -258,5 +373,9 @@ mixin share-div
 		.row
 			.small-12.large-12.columns
 				+share-input
+			// column
 			.small-12.large-12.columns
 				+share-button
+			// column
+		// row
+	// form

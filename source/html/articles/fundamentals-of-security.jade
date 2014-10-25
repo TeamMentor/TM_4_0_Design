@@ -4,24 +4,29 @@ include ../../content/mixins/articles-mixins.jade
 include ../home/mixins/application-mixins.jade
 
 block content  
-    #application
-      .row
-        .col-3
-          .lge-container
-            +directory-list
-          // col-3
+	#application
+		.row
+			.col-3#left-nav
+				.lge-container
+					+directory-list
+				// lge-container
+			// column
 
-        .col-6
-          .lge-container
-            br
-            +breadcrumbs
-            br
+			.col-6#results
+				.lge-container
+					br
+					+breadcrumbs
+					br
 
-            +results-save-clear
-            +articles-list
-          // row
-        // col-6
+					+results-save-clear
+					+articles-list
+				// row
+			// column
 
-        .col-3
-          .lge-container
-            +filters-div
+			.col-3
+				.lge-container
+					+filters-div
+				// lge-container
+			// column
+		// row
+	// application

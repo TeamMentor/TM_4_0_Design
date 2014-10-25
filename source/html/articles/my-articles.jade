@@ -3,12 +3,26 @@ include mixins/article-mixins.jade
 include ../home/mixins/application-mixins.jade
 
 block content   
-    #application
-      .row
-        .col-3
-          .lge-container
-            +links-home__navigate            
-        .col-9#my-articles
-          .lge-container
-            +my-articles-links
-            +my-articles-edit
+	#application
+		.row
+			.col-3#left-nav
+				.lge-container
+					+links-home__navigate  
+				// lge-container
+			// column
+
+			.col-6#results
+				.lge-container
+					br
+					+my-articles-links
+				// lge-container
+			// column
+
+			.col-3#right-nav
+				.lge-container
+					br
+					+edit-button
+				// lge-container
+			// column
+		// row
+	// application

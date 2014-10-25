@@ -2,22 +2,28 @@ extends ../_layouts/custom_page.jade
 include mixins/application-mixins.jade
 
 block content  
-    #application
-      .row
-        .col-3
-          .lge-container
-            br
+	#application
+		.row
+			.col-3#left-nav
+				.lge-container
+					br
+				// lge-container
+			// column
 
-        .col-6
-          .lge-container
-            +jade-search-bar-input
-            br
-            br
-            br
-            +main-app-view
-        
-        .col-3
-          .lge-container
-            +filters-div
-
-            
+			.col-6#results
+				.lge-container
+					+jade-search-bar-input
+					br
+					br
+					br
+					+main-app-view
+				// lge-container
+			// column
+			
+			.col-3
+				.lge-container
+					+filters-div
+				// lge-container
+			// column
+		// row
+	// application

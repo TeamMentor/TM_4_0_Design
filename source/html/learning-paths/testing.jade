@@ -1,14 +1,15 @@
-extends ../../content/_layouts/page_home.jade
-include ../../content/mixins/learning-path-mixins.jade
+extends ../_layouts/page_home.jade
+include mixins/learning-path-mixins.jade
 
 block content
 	#application
 		.row
-			.col-3
+			.col-3#left-nav
 				.lge-container
 					+links_learning_paths
+					br
 					+progress-bar
-			.col-6#learning-path
+			.col-6#results
 				.lge-container
 					include:md ../../content/teamMentor/learning-paths/testing.md
 				
@@ -21,4 +22,8 @@ block content
 							a(href='prevention.html')
 								button.btn-full-width(type='button') Prevention
 					br
+					br
+
+			.col-3#right-nav
+				.lge-container
 					br
