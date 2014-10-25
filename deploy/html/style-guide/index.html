@@ -27,19 +27,17 @@
     <!-- Normalize-->
     <link href="/deploy/css/normalize.css" rel="stylesheet">
     <!-- Custom Styles-->
-    <link href="/deploy/css/app.css" rel="stylesheet">
-    <!-- Custom Styles-->
     <link href="/deploy/css/custom-style.css" rel="stylesheet">
   </head>
   <body>
     <div role="navigation" class="navbar navbar-fixed-top">
-      <div class="lge-container">
-        <ul class="brand">
-          <li><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
-          </li>
-        </ul>
-        <div class="pull-right">
-          <ul class="nav nav-icons"><ul>
+      <ul class="brand">
+        <li><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a>
+        </li>
+      </ul>
+      <!-- ul-brand-->
+      <div class="pull-right">
+        <ul class="nav nav-icons"><ul>
 <li><a href="/deploy/html/home/navigate.html"><img src="/deploy/assets/icons/navigate.png" alt="Navigate"></a></li>
 <li><a href="/deploy/html/home/main-app-view.html"><img src="/deploy/assets/icons/home.png" alt="Home"></a></li>
 <li><a href="/help/index.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a></li>
@@ -47,126 +45,137 @@
 <li><a href="/user/logout"><img src="/deploy/assets/icons/logout.png" alt="Logout"></a></li>
 </ul>
 
-          </ul>
-        </div>
+        </ul>
       </div>
+      <!-- pull-right-->
     </div>
     <div id="application">
       <div class="row">
-        <div class="col-3">
+        <div id="left-nav" class="col-3">
           <div class="lge-container">
-            <div data-spay="affix" data-offset-top="60" data-offset-bottom="200" class="div">
-              <h4>About Us</h4>
-              <ul class="sidebar">
-                <li>Who are we?</li>
-                <li>History</li>
-                <li>Mission Statement</li>
-                <li>Strategy</li>
-                <li>Vision</li>
-              </ul>
-              <h4>Our Visual Identity</h4>
-              <ul class="sidebar">
-                <li>Logo</li>
-                <li>Dos and Don'ts</li>
-                <li>Colours</li>
-                <li>Typography</li>
-                <li>Pictures</li>
-                <li>Lingo</li>
-              </ul>
-              <h4>Usage Examples</h4>
-              <ul class="sidebar">
-                <li>Web</li>
-                <li>Advertising</li>
-                <li>Group Communication</li>
-                <li>PR</li>
-                <li>Consumer Communication</li>
-              </ul>
-              <h4>General</h4>
-              <ul class="sidebar">
-                <li>FAQ</li>
-                <li>Team</li>
-              </ul>
-            </div>
+            <h4>About Us</h4>
+            <div class="list-group"><a href="#who-are-we">Who are we?</a><a href="#history">History</a><a href="#mission-statement">Mission Statement</a><a href="#strategy">Strategy</a><a href="#vision">Vision</a></div>
+            <!-- list-group-->
+            <h4>Our Visual Identity</h4>
+            <div class="list-group"><a href="#logo">Logo</a><a href="#dos-and-donts">Dos and Don'ts</a><a href="#colours">Colours</a><a href="#typography">Typography</a><a href="#pictures">Pictures</a><a href="#lingo">Lingo</a></div>
+            <!-- list-group-->
+            <h4>Usage Examples</h4>
+            <div class="list-group"><a href="#web">Web</a><a href="#advertising">Advertising</a><a href="#pr">PR</a><a href="#github">Github</a></div>
+            <!-- list-group-->
+            <h4>General</h4>
+            <div class="list-group"><a href="#faq">FAQ</a><a href="#team">Team</a></div>
+            <!-- list-group-->
           </div>
+          <!-- lge-container-->
         </div>
-        <div class="col-6">
+        <!-- column-->
+        <div id="results" class="col-6">
           <div class="lge-container">
-            <h2>TEAM Mentor Style Guide</h2><br>
+            <h1>TEAM Mentor Style Guide</h1>
             <p>This is a set of standards to help provide uniformity with style, formatting, tone of voice and various other facets of the TEAM Mentor brand.</p>
               <hr>
             <div id="aboutus">
-              <h3>About Us</h3><br>
+              <h2>About Us</h2>
               <div id="who-are-we">
-                <h4>Who are we?</h4>
-                <p>Security Innovation is comprised of application security trailblazers - one of the first companies to focus solely on this critical aspect of Product & IT Security. Professionals so good at what we do, we’re confident we can solve your hardest security problems. People so passionate about what we do, we get a rush knowing that we've made a direct impact on each and every client we work with.</p>
-                <p>We are a team of world-class engineers, developers, testers, security analysts, and business thinkers who collectively address business issues with technical solutions. Our work spans seamlessly across industries, platforms and technologies. It is creative and elegant, simple and intelligent. Security Innovation pledges to never deliver low-value solutions or settle for mediocrity - your business is too important for that.</p><br>
+                <h3>Who are we?</h3>
+                <p>TEAM Mentor is one of several sub-companies inside Security Innovation, comprised of application security trailblazers - one of the first companies to focus solely on the critical aspect of Product & IT Security. </p>
+                <p>Our team of professionals so good at what we do, we’re confident we can solve our clients hardest security problems. People so passionate about what we do, we get a rush knowing that we've made a direct impact on each and every client we work with.</p><br>
               </div>
+              <!-- who-we-are-div-->
               <div id="history">
-                <h4>History</h4><br>
+                <h3>History</h3>
+                <p>Our roots are in application behavior and software quality, the underlying foundation for software application security.  We started as an application penetration testing company but realized that penetration testing alone was not enough to make our customers secure. As a result, we evolved our services to include assessments at each phase of the software development lifecycle (SDLC): code review, threat modeling, architecture, design review, and the development lifecycle itself. These assessments highlighted the need for developer training and standards across the SDLC.</p><br>
               </div>
+              <!-- history-div-->
               <div id="mission-statement">
-                <h4>Mission</h4>
-                <p>Our mission is to work tirelessly on your behalf to deliver security solutions that match your business objectives and align with your risk tolerance.</p><br>
+                <h3>Mission</h3>
+                <p>Our mission is to work tirelessly on our clients behalf to deliver security solutions that match their business objectives and align with their risk tolerance.</p><br>
               </div>
+              <!-- mission-statement-->
               <div id="strategy">
-                <h4>Strategy</h4>
+                <h3>Strategy</h3>
                 <p>We will build on our brand values:</p>
-                <p>
-                  <ul>
-                    <li>Great value;</li>
-                    <li>For the many, not the few;</li>
-                    <li>Relentless innovation;</li>
-                    <li>Keep it simple;</li>
-                    <li>Making a difference in people's lives</li>
-                    <li>Honest, open, caring, fun.</li>
-                  </ul>
-                </p><br>
+                <ul>
+                  <li>Great value;</li>
+                  <li>For the many, not the few;</li>
+                  <li>Relentless innovation;</li>
+                  <li>Keep it simple;</li>
+                  <li>Making a difference in people's lives; and</li>
+                  <li>Honest, open, caring, fun.</li>
+                </ul><br>
               </div>
+              <!-- strategy-->
               <div id="vision">
-                <h4>Vision</h4><br>
+                <h3>Vision</h3><br>
               </div>
+              <!-- vision-->
             </div>
               <hr>
+            <!-- about-us-div-->
             <div id="visual-identity">
-              <h3>Visual Identity</h3>
-              <p>Our visual identity is an essential part of the TEAM Mentor Brand Licence and is cast in stone. Stick to the guidelines to present a uniform image to the world and create a strong brand.</p><br>
+              <h2>Visual Identity</h2>
+              <p>Our visual identity is an essential part of the TEAM Mentor Brand Licence. These guidelines are designed to help staff present TEAM Mentor with a uniform image so we can create a consistent brand.</p><br>
               <div id="logo">
-                <h4>Logo</h4>
-                <p>Our logo is at the heart of all communication aimed at our users. </p><br><a href="/deploy/html/landing-pages/index.html"><img src="/deploy/assets/logos/tm-logo.jpg" alt="TEAM Mentor" width="200px"></a><br><br>
-                <h5>Written Style</h5>
+                <h3>Logo</h3>
+                <p>Our logo is at the heart of all communication aimed at our users.</p><br><img src="/deploy/assets/logos/tm-logo-large.jpg"><br>
+                <h4>Displaying our logo</h4>
+                <ul>
+                  <li>Only colour versions of the logo should be used;</li>
+                  <li>There should be no skew or distortion of the image;</li>
+                  <li>The size should be large enough that the logo is legible; and</li>
+                  <li>The quality of the image should be high enough that the image is not pixelated.</li>
+                </ul><br>
+                <h4>Written Style</h4>
                 <p>In body text, TEAM Mentor should always appear in Helvetica (no bold, italics, outline or underline) with the word "team" in uppercase followed (with a space) by the word "mentor", only the initial letter of which is capitalised.</p><br>
-                <h5>Minimum Size</h5>
-                <p>The logo should always be clearly legible.</p><br>
               </div>
+              <!-- logo-div		-->
               <div id="dos-and-donts">
-                <h4>Dos and Don'ts</h4>
-                <p>A demonstration below of correct and incorrect renderings of TEAM Mentor. Whilst it doesn't cover every possible variation, you will be able to formulate an fairly good understanding of what is acceptable and what isn't using this guide.</p>
-                <div class="row">
-                  <div class="col-offset-2 col-4"><br>
-                    <h5>Correct</h5>
-                    <p>TEAM Mentor</p>
-                    <p>TEAM Mentor</p>
-                    <p>TEAM Mentor</p>
-                    <p>TEAM Mentor</p>
-                    <p>teammentor.net</p>
-                    <p>teammentor.net</p>
-                    <p class="green">TEAM Mentor</p>
-                  </div>
-                  <div class="col-4"><br>
-                    <h5>Incorrect</h5>
-                    <p>Team Mentor</p>
-                    <p>TEAMMentor</p>
-                    <p>TEAMMENTOR</p>
-                    <p>TEAM MENTOR</p>
-                    <p>TEAMMentor.net</p>
-                    <p>TEAM Mentor.net</p>
-                    <p class="dark-green">TEAM Mentor</p>
-                  </div>
-                </div><br>
+                <h3>Dos and Don'ts</h3>
+                <p>A demonstration below of correct and incorrect renderings of TEAM Mentor. While it doesn't cover every possible variation, you will be able to formulate an fairly good understanding of what is acceptable and what isn't using this guide.</p>
+                <table class="text-center">
+                  <tr>
+                    <td>
+                      <h4>Correct</h4>
+                    </td>
+                    <td>
+                      <h4>Incorrect</h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TEAM Mentor</td>
+                    <td>Team Mentor</td>
+                  </tr>
+                  <tr>
+                    <td>TEAM Mentor</td>
+                    <td>TEAMMentor</td>
+                  </tr>
+                  <tr>
+                    <td>TEAM Mentor</td>
+                    <td>TEAMMENTOR</td>
+                  </tr>
+                  <tr>
+                    <td>TEAM Mentor</td>
+                    <td>TEAM MENTOR</td>
+                  </tr>
+                  <tr>
+                    <td>teammentor.net</td>
+                    <td>TEAMMentor.net</td>
+                  </tr>
+                  <tr>
+                    <td>teammentor.net</td>
+                    <td>TEAM Mentor.net</td>
+                  </tr>
+                  <tr>
+                    <td class="green">TEAM Mentor</td>
+                    <td class="dark-green">TEAM Mentor</td>
+                  </tr>
+                </table>
+                <!-- table--><br>
               </div>
+              <!-- dos-and-donts-div-->
               <div id="colours">
-                <h4>Colours</h4>
-                <p>Green is our distinguishing colour - it's an essential part of our brand identity. We use other colours too, which you can see below.</p><br><br>
+                <h3>Colours</h3>
+                <p>Green is our distinguishing colour - it's an essential part of our brand identity. We use other colours too, which you can see below.</p><br>
                 <div class="row">
                   <div class="col-2">
                     <div id="white" class="long"></div>
@@ -174,176 +183,242 @@
                       <h5>White</h5>
                       <p>#FFFFFF</p>
                     </div>
+                    <!-- description-div-->
                   </div>
+                  <!-- column-->
                   <div class="col-2">
                     <div id="green" class="long"></div>
                     <div id="description">
                       <h5>Green</h5>
                       <p>#8AAF3E</p>
                     </div>
+                    <!-- description-div-->
                   </div>
+                  <!-- column-->
                   <div class="col-2">
                     <div id="dark-green" class="long"></div>
                     <div id="description">
                       <h5>Dark Green</h5>
                       <p>#49661F</p>
                     </div>
+                    <!-- description-->
                   </div>
+                  <!-- column-->
                   <div class="col-2">
                     <div id="grey" class="long"></div>
                     <div id="description">
                       <h5>Grey</h5>
                       <p>#AAAAAA</p>
                     </div>
+                    <!-- description-->
                   </div>
+                  <!-- column-->
                   <div class="col-2">
                     <div id="dark-grey" class="long"></div>
                     <div id="description">
                       <h5>Dark Grey</h5>
                       <p>#444444</p>
                     </div>
+                    <!-- description-->
                   </div>
+                  <!-- column-->
                   <div class="col-2">
                     <div id="black" class="long"></div>
                     <div id="description">
                       <h5>Black</h5>
                       <p>#000000</p>
                     </div>
+                    <!-- description-->
                   </div>
-                </div><br><br>
-                <h5>How to use our colours</h5><br><br>
+                  <!-- column-->
+                </div>
+                <!-- row--><br>
+                <h4>How to use our colours</h4><br>
                 <div class="row">
                   <div class="col-offset-1 col-1"><br>
                     <div id="white" class="short"></div>
                   </div>
+                  <!-- column-->
                   <div class="col-offset-1 col-9">
                     <p>White should only be used a background colour or font colour in places where there are colours or images as backgrounds (eg. Landing Page).</p>
                   </div>
-                </div><br>
+                  <!-- column-->
+                </div>
+                <!-- row--><br>
                 <div class="row">
                   <div class="col-offset-1 col-1">
                     <div id="green" class="short"></div>
                   </div>
+                  <!-- column-->
                   <div class="col-offset-1 col-9">
                     <p>The brand colour should be used for the company name and for action links (save, login, start your free trial etc.) as well as icons.</p>
                   </div>
-                </div><br>
+                  <!-- column-->
+                </div>
+                <!-- row--><br>
                 <div class="row">
                   <div class="col-offset-1 col-1"><br>
                     <div id="dark-green" class="short"></div>
                   </div>
+                  <!-- column-->
                   <div class="col-offset-1 col-9">
                     <p>The dark green should be used for anything that is active or on hover, but only when it starts in the TM green. This colour is very heavy, so it is never used as a headline or link colour.</p>
                   </div>
-                </div><br>
+                  <!-- column-->
+                </div>
+                <!-- row--><br>
                 <div class="row">
                   <div class="col-offset-1 col-1"><br>
                     <div id="grey" class="short"></div>
                   </div>
+                  <!-- column-->
                   <div class="col-offset-1 col-9">
                     <p>The light grey should be used as the lead colour for the opening headline on a page. An article title, filters headline, navigate options, user settings etc. The first thing that users read will be in this colour.</p>
                   </div>
-                </div><br>
+                  <!-- column-->
+                </div>
+                <!-- row--><br>
                 <div class="row">
                   <div class="col-offset-1 col-1"><br>
                     <div id="dark-grey" class="short"></div>
                   </div>
+                  <!-- column-->
                   <div class="col-offset-1 col-9">
                     <p>The dark grey is the main colour in the application. Body copy, article sub-headlines, related article headlines, options (filters), inputs and forms etc all use this colour.</p>
                   </div>
-                </div><br>
+                  <!-- column-->
+                </div>
+                <!-- row--><br>
                 <div class="row">
                   <div class="col-offset-1 col-1"><br>
                     <div id="black" class="short"></div>
                   </div>
+                  <!-- column-->
                   <div class="col-offset-1 col-9">
                     <p>Black is used very sparingly as it’s harsh on a straight white background. Only use it for real emphasis and always try to use the dark grey first.</p>
                   </div>
-                </div><br><br>
+                  <!-- column-->
+                </div>
+                <!-- row--><br>
               </div>
+              <!-- colours-div-->
               <div id="typography">
-                <h4>Typography</h4><br><br>
-                <div class="div text-center">
+                <h2>Typography</h2><br>
+                <div class="text-center">
                   <h1 class="green text-center">Aa</h1>
-                  <h5 class="dark-grey">Bold</h5>
-                  <p>Helvetica</p><br>
+                  <h5>Bold</h5>
+                  <p>Helvetica</p>
                   <p class="strong">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
                   <p class="strong">a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
                   <p>Used for headlines, buttons and links.</p>
-                </div><br><br>
-                <div class="div text-center">
+                </div>
+                <!-- text-center--><br><br>
+                <div class="text-center">
                   <h1 class="green normal text-center">Aa</h1>
                   <h5 class="dark-grey">Regular</h5>
                   <p>Helvetica</p>
                   <p>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
                   <p>a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
                   <p>Used for body copy.</p>
-                </div><br><br>
-                <h5>How to use our typefaces</h5><br><br>
-                <div class="div text-center">
+                </div>
+                <!-- text-center--><br>
+                <h4>How to use our typefaces</h4><br>
+                <div class="text-center">
                   <h1>This is our H1.</h1>
-                  <p>It should only be used for calls to action and unique selling propositions on the landing page.</p><br>
+                  <p>It should be used for opening headlines, whether that is on the landing pages (unique selling propositions, calls to action) or article headlines within the application.</p><br>
                   <h2>This is our H2.</h2>
-                  <p>It should only be used for landing page headlines - for example, ‘Our clients love us (and we think you will too!’).</p><br>
+                  <p>This headline should follow any H1 heading. Common occurances are on the landing pages and within articles, as well as the help documentation.</p><br>
                   <h3>This is our H3.</h3>
-                  <p>It should only be used for article titles.</p><br>
+                  <p>This headline should follow any H2 heading. It is also used as the headline for parts of the application that require directive headlines - for example, the filters div and the side navigation.</p><br>
                   <h4>This is our H4.</h4>
-                  <p>It should only be used for convincing points of sale (specifically on the landing page) and sub-headings in articles.</p><br>
+                  <p>This headline should follow any H3 heading. It is also used for Article Headlines within the application and to show related articles on articles.</p><br>
                   <h5>This is our H5.</h5>
-                  <p>It should only be used for filter headings and article headlines (within the application only).</p><br>
-                  <h5 class="action green">This is our ACTION TEXT.</h5>
-                  <p>It’s saved for specific links that are actionable by the user - for example, links to new pages and buttons. It must always be the TEAMMentor green. </p>
-                  <p>Action text should always be capitalised.</p>
-                </div><br><br>
+                  <p>This headline should follow any H4 heading.</p><br>
+                  <h5 class="green">This is our ACTION TEXT.</h5>
+                  <p>It’s saved for specific links that are actionable by the user - for example, links to new pages and buttons. It must always be the TEAM Mentor green.</p>
+                </div>
+                <!-- text-center--><br>
               </div>
+              <!-- typography-->
               <div id="pictures">
-                <h4>Pictures</h4>
-                <p>The pictures we use show the attributes we believe TEAM Mentor possesses and are cropped for maximum effect.</p><br>
-                <h5>The attributes</h5>
-                <p>Professional and effective.</p><br><br><img src="../../assets/stock-img/bgthree.jpg" class="img-responsive"><img src="../../assets/stock-img/bgtwo.jpg" class="img-responsive"><img src="../../assets/stock-img/bgone.jpg" class="img-responsive">
-              </div><br><br>
-              <div id="lingo">
-                <h4>Lingo</h4>
+                <h3>Pictures</h3>
+                <p>The pictures we use on our landing pages are supportive of the attributes we want TEAM Mentor to display - professional, intuitive to use and effective within the developer environment.</p><br><img src="../../assets/images/bgone.jpg"><img src="../../assets/images/bgtwo.jpg"><img src="../../assets/images/bgthree.jpg"><br>
               </div>
+              <!-- pictures-div-->
+              <div id="lingo">
+                <h3>Lingo</h3>
+                <p>Tone of voice</p>
+                <p>Don't over-complicate.</p>
+                <p>Tell it like it is.</p>
+                <p>Be direct and get to the point.</p>
+                <p>Always look for the simplest way to say what you want.</p>
+              </div>
+              <!-- lingo-div-->
             </div>
+            <!-- visual-identity-div-->
               <hr>
             <div id="usage-examples">
-              <h3>Usage Examples</h3>
+              <h2>Usage Examples</h2>
               <div id="web">
-                <h4>Web</h4>
+                <h3>Web</h3>
+                <p>The design of the web pages is critical.</p>
+                <p>The layout needs to be single column, using white space effectively to get the reader from the top of the page, to the bottom (where the call to action is).</p>
+                <p>As the user scrolls, they should be further persuaded to choose TM.</p>
+                <p>Visuals should highlight and support our main messages.</p>
+                <p>Screenshot of landing pages</p>
               </div>
+              <!-- web-div-->
               <div id="advertising">
-                <h4>Advertising</h4>
+                <h3>Advertising</h3>
+                <p>The communication must lead the reader with a motivating consumer benefit.</p>
+                <p>The benfit should focus on experiences that TEAM mentor can bring</p>
+                <p>Description headlines, phtoography of the businesses in action</p>
               </div>
-              <div id="group-communication">
-                <h4>Group Communication</h4>
-              </div>
+              <!-- advertising-div-->
               <div id="pr">
-                <h4>PR</h4>
+                <h3>PR</h3>
+                <p>Marketing is considered as core competence at TEAM Mentor and within the marketing mix public relations has always been used extensively by the team. Advertising can be very useful but it is relatively expensive. PR can be just as effective and it's free.</p>
+                <p>TEAM Mentor public relations is frequent and loud, open, quick to react, cheeky, fun and takes its job rather than itself seriously. Don’t ignore a journalist, there’s nothing wrong with admitting “I don't know, can I find out?”</p>
+                <h4>PR case studies</h4>
+                <p>Examples here</p>
               </div>
-              <div id="consumer-communication">
-                <h4>Consumer Communication</h4>
+              <!-- pr-div-->
+              <div id="github">
+                <h3>Github</h3>
+                <p>How to use Github</p>
               </div>
+              <!-- github-div-->
             </div>
+            <!-- usage-examples div-->
               <hr>
             <div id="general">
-              <h3>General</h3>
+              <h2>General</h2>
               <div id="faq">
-                <h4>Frequently Asked Questions</h4>
+                <h3>Frequently Asked Questions</h3>
               </div>
+              <!-- faq-div-->
               <div id="team">
-                <h4>Team</h4>
+                <h3>Team</h3>
+                <p>Roman Garber</p>
+                <p>Dinis Cruz</p>
+                <p>Michael Hidalgo</p>
+                <p>Lucy Bloomfield</p>
               </div>
+              <!-- team-div-->
             </div>
+            <!-- general-div-->
           </div>
+          <!-- lge-container-->
         </div>
+        <!-- column-->
+        <div id="right-nav" class="col-3">
+          <div class="lge-container"><br></div>
+          <!-- lge-container-->
+        </div>
+        <!-- column-->
       </div>
+      <!-- row-->
     </div>
-    <!-- Foundation Javascript-->
-    <link href="/deploy/assets/bower_components/modernizer/modernizer.js" rel="text/javascript">
-    <link href="/deploy/assets/bower_components/jquery/jquery.js" rel="text/javascript">
-    <link href="/deploy/assets/bower_components/fastclick/fastclick.js" rel="text/javascript">
-    <link href="/deploy/assets/bower_components/foundation/js/foundation.min.js" rel="text/javascript">
-    <link href="/deploy/js/app.js" rel="text/javascript">
+    <!-- application-->
   </body>
 </html>

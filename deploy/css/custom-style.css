@@ -143,6 +143,14 @@
   background-color: #000000;
 }
 
+.green {
+  color: #8aaf3e;
+}
+
+.dark-green {
+  color: #49661f;
+}
+
 #white {
   margin-right: 15px;
   background-color: #FFFFFF;
@@ -252,6 +260,7 @@ body {
   margin-right: 15px;
   padding: 5px 0 5px 0;
   background-color: whitesmoke;
+  text-align: center;
 }
 
 #details {
