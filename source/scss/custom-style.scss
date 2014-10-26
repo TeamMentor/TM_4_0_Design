@@ -15,6 +15,7 @@ html {
 
 body {
 	max-width: $full-width;
+	overflow: hidden;
 	margin: 0;
 	margin-top: 80px;
 	padding: 0;
@@ -187,6 +188,7 @@ body {
 
 #usp, #call-to-action {	
 	button {
+		padding: 20px 0 20px 0;
 		background-color: $white;
 		border: none;
 
