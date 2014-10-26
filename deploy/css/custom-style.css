@@ -151,6 +151,12 @@
   color: #49661f;
 }
 
+.icons-green {
+  color: #8aaf3e;
+  font-size: 60px;
+  margin: 0 auto;
+}
+
 #white {
   width: 100%;
   margin-right: 15px;
@@ -229,6 +235,16 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+#box {
+  width: 75%;
+  margin: 30px auto 30px auto !important;
+  border: 1px solid #8aaf3e;
+  padding: 7px 40px 10px 40px;
+}
+#box h4 {
+  color: #8aaf3e !important;
 }
 
 #call-to-action {
@@ -320,14 +336,12 @@ body {
   color: #49661f;
 }
 
-#box {
-  width: 75%;
-  margin: 30px auto 30px auto !important;
-  border: 1px solid #8aaf3e;
-  padding: 7px 40px 10px 40px;
-}
-#box h4 {
-  color: #8aaf3e !important;
+#sign-up-form a {
+  text-transform: none;
+  color: #444444;
+  text-decoration: underline;
+  font-weight: normal;
+  font-size: inherit;
 }
 
 #reasons {
@@ -374,7 +388,7 @@ body {
   margin: 0 auto;
 }
 
-.pull-right {
+.right {
   float: right !important;
 }
 
@@ -407,49 +421,43 @@ label {
   color: #444444;
 }
 
-.navbar {
+nav.top-bar {
+  z-index: 100000;
+  height: 70px;
   background-color: white;
+}
+nav.top-bar ul.title-area {
+  padding: 0 0 0 20px;
+  list-style-type: none;
+  float: left;
+}
+nav.top-bar section.top-bar-section li:not(.has-form) a:not(.button) {
+  line-height: 23px;
+}
+nav.top-bar section.top-bar-section i {
+  font-size: 16px;
+}
+nav.top-bar section.top-bar-section ul {
+  padding-top: 10px;
+  display: inline-block;
+  list-style-type: none;
+  background: none;
+}
+nav.top-bar section.top-bar-section ul li {
   padding-right: 20px;
   display: inline-block;
-  border: none;
 }
-.navbar a {
+nav.top-bar section.top-bar-section ul li a {
   text-transform: uppercase;
   text-decoration: none;
-  color: #8aaf3e;
-  font-weight: 700;
-  font-size: 14px;
   letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 700;
+  background: white;
+  color: #8aaf3e;
 }
-.navbar ul {
-  list-style-type: none;
-  display: inline-block;
-}
-.navbar ul.brand {
-  padding-left: 20px;
-  padding-top: 5px !important;
-}
-.navbar ul.nav-icons {
-  padding: 20px 0 10px 0;
-}
-.navbar ul.nav-text {
-  padding-top: 20px;
-}
-.navbar ul li {
-  display: inline-block;
-  padding-right: 30px;
-}
-.navbar ul li:last-child {
-  padding-right: 0px !important;
-}
-
-.navbar-fixed-top {
-  overflow-x: visible !important;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
+nav.top-bar section.top-bar-section ul li a:hover {
+  color: #49661f;
 }
 
 h1 {
@@ -541,10 +549,6 @@ pre {
 
 .strong {
   font-weight: bold;
-}
-
-.small {
-  font-size: 1em;
 }
 
 hr {
@@ -809,53 +813,6 @@ table td {
     padding-right: 10px;
   }
 }
-#sign-up-form a {
-  text-transform: none;
-  color: #444444;
-  text-decoration: underline;
-  font-weight: normal;
-  font-size: inherit;
-}
-
-.icons-green {
-  color: #8aaf3e;
-  font-size: 60px;
-  margin: 0 auto;
-}
-
-nav.top-bar {
-  z-index: 100000;
-  background: white;
-}
-nav.top-bar ul.title-area {
-  padding: 5px 0 0 20px;
-}
-nav.top-bar section.top-bar-section li:not(.has-form) a:not(.button) {
-  line-height: 23px;
-}
-nav.top-bar section.top-bar-section i {
-  font-size: 16px;
-}
-nav.top-bar section.top-bar-section ul {
-  display: inline-block;
-  background: none;
-}
-nav.top-bar section.top-bar-section ul li {
-  padding: 20px 0 0;
-}
-nav.top-bar section.top-bar-section ul a {
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 1px;
-  font-size: 14px;
-  font-weight: 700;
-  background: white;
-  color: #8aaf3e;
-}
-nav.top-bar section.top-bar-section ul a:hover {
-  color: #49661f;
-}
-
 button, .button {
   font-size: 14px;
   background-color: white;

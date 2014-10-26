@@ -50,6 +50,17 @@ body {
 	height: 100%;
 }
 
+#box {
+	width: 75%;
+	margin: 30px auto 30px auto !important;
+	border: 1px solid $green;
+	padding: 7px 40px 10px 40px;
+
+	h4 {
+		color: $green !important;
+	}
+}
+
 #call-to-action {
 	padding: 100px 0 110px 0;
 	background: url(#{$asset-path}/images/bgtwo.jpg);
@@ -151,14 +162,13 @@ body {
 	}
 }
 
-#box {
-	width: 75%;
-	margin: 30px auto 30px auto !important;
-	border: 1px solid $green;
-	padding: 7px 40px 10px 40px;
-
-	h4 {
-		color: $green !important;
+#sign-up-form {
+	a {
+		text-transform: none;
+		color: $dark-grey;
+		text-decoration: underline;
+		font-weight: normal;
+		font-size: inherit;
 	}
 }
 
@@ -211,7 +221,7 @@ body {
 	margin: 0 auto;
 }
 
-.pull-right {
+.right {
 	float: right !important;
 }
 
@@ -251,57 +261,52 @@ label {
 
 // Navigation
 
-.navbar {
+nav.top-bar {
+	z-index: 100000;
+	height: 70px;
 	background-color: $white;
-	padding-right: 20px;
 
-	display: inline-block;
-	border: none;
-
-	a {
-		text-transform: uppercase;
-		text-decoration: none;
-		color: $green;
-		font-weight: 700;
-		font-size: 14px;
-		letter-spacing: 1px;
-	}
-
-	ul {
+	ul.title-area {
+		padding: 0 0 0 20px;
 		list-style-type: none;
-		display: inline-block;
-
-		&.brand {
-			padding-left: 20px;
-			padding-top: 5px !important;
-		}
-
-		&.nav-icons {
-			padding: 20px 0 10px 0;
-		}
-
-		&.nav-text {
-			padding-top: 20px;
-		}
-
-		li {
-			display: inline-block;
-			padding-right: 30px;
-
-			&:last-child {
-				padding-right: 0px !important;
-			}
-		}
+		float: left;
 	}
-}
 
-.navbar-fixed-top {
-	overflow-x: visible !important;
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 1030;
+	section.top-bar-section {
+		li:not(.has-form) a:not(.button) {
+			line-height: 23px;
+		}
+
+		i {
+			font-size: 16px;
+		}
+		
+		ul {
+			padding-top: 10px;
+			display: inline-block;
+			list-style-type: none;
+			background: none;
+
+			li {
+				padding-right: 20px;
+				display: inline-block;
+
+				a {
+					text-transform: uppercase;
+					text-decoration: none;
+					letter-spacing: 1px;
+					font-size: 14px;
+					font-weight: 700;
+					background: $white;
+					color: $green;
+
+					&:hover {
+						color: $dark-green;
+					}
+				}
+			}
+		}	
+	}
 }
 
 // Typography
@@ -396,10 +401,6 @@ pre {
 
 .strong {
 	font-weight: bold;
-}
-
-.small {
-	font-size: 1em;
 }
 
 hr {
@@ -690,81 +691,6 @@ table {
 				padding-right: 10px;
 			}
 		}
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-// Loginwall links
-#sign-up-form {
-	a {
-		text-transform: none;
-		color: $dark-grey;
-		text-decoration: underline;
-		font-weight: normal;
-		font-size: inherit;
-	}
-}
-
-// Icons
-
-.icons-green {
-	color: $green;
-	font-size: 60px;
-	margin: 0 auto;
-}
-
-// Navigation
-
-nav.top-bar {
-	z-index: 100000;
-	background: $white;
-
-	ul.title-area {
-		padding: 5px 0 0 20px;
-	}
-
-	section.top-bar-section {
-
-		li:not(.has-form) a:not(.button) {
-			line-height: 23px;
-		}
-
-		i {
-			font-size: 16px;
-		}
-		
-		ul {
-			display: inline-block;
-			background: none;
-
-			li {
-				padding: 20px 0 0;
-			}
-
-			a {
-				text-transform: uppercase;
-				text-decoration: none;
-				letter-spacing: 1px;
-				font-size: 14px;
-				font-weight: 700;
-				background: $white;
-				color: $green;
-
-				&:hover {
-					color: $dark-green;
-				}
-			}
-
-		}	
 	}
 }
 
