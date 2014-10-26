@@ -204,6 +204,7 @@ html {
 body {
   max-width: 100%;
   margin: 0;
+  margin-top: 80px;
   padding: 0;
   line-height: 1.5;
   background: white;
@@ -230,7 +231,6 @@ body {
 }
 
 #application {
-  padding-top: 90px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -421,6 +421,14 @@ label {
   color: #444444;
 }
 
+.fixed {
+  width: 100%;
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+}
+
 nav.top-bar {
   z-index: 100000;
   height: 70px;
@@ -432,7 +440,7 @@ nav.top-bar ul.title-area {
   float: left;
 }
 nav.top-bar section.top-bar-section li:not(.has-form) a:not(.button) {
-  line-height: 23px;
+  line-height: 50px;
 }
 nav.top-bar section.top-bar-section i {
   font-size: 16px;

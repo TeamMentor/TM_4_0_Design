@@ -16,6 +16,7 @@ html {
 body {
 	max-width: $full-width;
 	margin: 0;
+	margin-top: 80px;
 	padding: 0;
 	line-height: 1.5;
 	background: $white;
@@ -43,7 +44,6 @@ body {
 }
 
 #application {
-	padding-top: 90px;
 	width: $full-width;
 	display: flex;
 	flex-direction: column;
@@ -261,10 +261,19 @@ label {
 
 // Navigation
 
+.fixed {
+    width: 100%;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    z-index: 99;
+}
+
 nav.top-bar {
 	z-index: 100000;
 	height: 70px;
 	background-color: $white;
+
 
 	ul.title-area {
 		padding: 0 0 0 20px;
@@ -274,7 +283,7 @@ nav.top-bar {
 
 	section.top-bar-section {
 		li:not(.has-form) a:not(.button) {
-			line-height: 23px;
+			line-height: 50px;
 		}
 
 		i {

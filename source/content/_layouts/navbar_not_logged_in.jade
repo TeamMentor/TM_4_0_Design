@@ -1,10 +1,17 @@
 include ../links.jade
 include ../images.jade
 
-.navbar.navbar-fixed-top(role='navigation')
-  ul.brand
-    li
-      +image-teammentor-logo__default         
-  .pull-right
-    ul.nav.nav-icons
-      +links-navbar__not_logged_in
+nav.top-bar(role='navigation', data-topbar='')
+	ul.title-area
+		li.name
+			a(href='#')
+				+image-teammentor-logo__default
+		// li-name
+	// ul-title-area
+	section.top-bar-section
+		// Right Nav Section 
+		ul.right
+			+links-navbar__not_logged_in
+		// ul-right
+	// section
+// nav
