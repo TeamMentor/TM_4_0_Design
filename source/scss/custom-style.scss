@@ -245,21 +245,20 @@ label {
 // Navigation
 
 .fixed {
-	width: 100%;
-	left: 0px;
 	position: fixed;
-	top: 0px;
+	width: 100%;
+	left: 0;
+	top: 0;
 	z-index: 99;
 }
 
 nav.top-bar {
 	z-index: 100000;
-	height: 70px;
 	background-color: $white;
-
+	padding: 0;
 
 	ul.title-area {
-		padding: 0 0 0 20px;
+		padding: 5px 0 0 20px;
 		list-style-type: none;
 		float: left;
 	}
