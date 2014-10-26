@@ -1,0 +1,28 @@
+extends ../_layouts/flare_page.jade
+include mixins/style-guide-mixins.jade
+include ../../content/mixins/style-guide-mixins.jade
+
+block content 
+	#application
+		.row
+			.small-12.large-3.columns#left-nav
+				+flare-style-guide-links
+			// column
+
+			.small-12.large-6.columns#results
+				+introduction
+				+horizontal-rule
+				+style-guide-about-us
+				+horizontal-rule
+				+style-guide-visual-identity
+				+horizontal-rule
+				+usage-examples-div
+				+horizontal-rule
+				+general-div
+			// column
+
+			.small-12.large-3.columns#right-nav
+				br
+			// column
+		// row
+	// application

@@ -152,6 +152,7 @@
 }
 
 #white {
+  width: 100%;
   margin-right: 15px;
   background-color: #FFFFFF;
   border: 1px solid #000000;
@@ -161,26 +162,31 @@
 }
 
 #green {
+  width: 100%;
   margin-right: 15px;
   background-color: #8aaf3e;
 }
 
 #dark-green {
+  width: 100%;
   margin-right: 15px;
   background-color: #49661f;
 }
 
 #grey {
+  width: 100%;
   margin-right: 15px;
   background-color: #aaaaaa;
 }
 
 #dark-grey {
+  width: 100%;
   margin-right: 15px;
   background-color: #444444;
 }
 
 #black {
+  width: 100%;
   margin-right: 15px;
   background-color: #000000;
 }
@@ -257,6 +263,7 @@ body {
 }
 
 #description {
+  width: 100%;
   margin-right: 15px;
   padding: 5px 0 5px 0;
   background-color: whitesmoke;

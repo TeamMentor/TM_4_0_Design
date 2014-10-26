@@ -1,12 +1,13 @@
 extends ../_layouts/page_home.jade
 include mixins/style-guide-mixins.jade
+include ../../content/mixins/style-guide-mixins.jade
 
 block content
 	#application
 		.row
 			.col-3#left-nav
 				.lge-container
-					+style-guide-links
+					+jade-style-guide-links
 				// lge-container
 			// column
 

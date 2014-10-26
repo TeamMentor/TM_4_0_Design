@@ -1,0 +1,218 @@
+//- Style Guide Introduction
+mixin introduction
+	#introduction
+		include:md ../teamMentor/style-guide/introduction.md
+
+//- Style Guide About Us Div
+mixin style-guide-about-us
+	#aboutus
+		h2 About Us
+		+who-we-are-div
+		+history-div
+		+mission-statement-div
+		+strategy-div
+	// about-us-div
+
+//- Who We Are Div
+mixin who-we-are-div
+	#who-are-we
+		include:md ../teamMentor/style-guide/who-we-are.md
+		br
+	// who-we-are-div
+
+//- History Div
+mixin history-div
+	#history
+		include:md ../teamMentor/style-guide/history.md
+		br
+	// history-div
+
+//- Mission Statement Div
+mixin mission-statement-div
+	#mission-statement
+		include:md ../teamMentor/style-guide/mission-statement.md
+		br
+	// mission-statement
+
+//- Strategy Div
+mixin strategy-div
+	#strategy
+		include:md ../teamMentor/style-guide/strategy.md
+		br
+	// strategy
+
+//- Style Guide Visual Identity Div
+mixin style-guide-visual-identity
+	#visual-identity
+		include:md ../teamMentor/style-guide/visual-identity.md
+		br
+
+		+logo-div
+		+dos-and-donts-div
+		+colours-div
+		+typography-div
+		+pictures-div
+		+lingo-div
+	// visual-identity-div
+
+//- Logo Div
+mixin logo-div
+	#logo
+		include:md ../teamMentor/style-guide/logo.md
+		br
+	// logo-div	
+
+//- Do's and Dont's Div
+mixin dos-and-donts-div
+	#dos-and-donts
+		include:md ../teamMentor/style-guide/dos-and-donts.md
+		br
+
+		table.text-center
+			tr
+				td
+					h4 Correct
+				td
+					h4 Incorrect
+			tr
+				td TEAM Mentor
+				td Team Mentor
+			tr
+				td TEAM Mentor
+				td TEAMMentor
+			tr
+				td TEAM Mentor
+				td TEAMMENTOR
+			tr
+				td TEAM Mentor
+				td TEAM MENTOR
+			tr
+				td teammentor.net
+				td TEAMMentor.net
+			tr
+				td teammentor.net
+				td TEAM Mentor.net
+			tr
+				td.green TEAM Mentor
+				td.dark-green TEAM Mentor
+		// table
+		br
+	// dos-and-donts-div
+
+// Typography Div
+mixin typography-div
+	#typography
+		h2 Typography
+		br
+		
+		.text-center
+			h1.green.text-center Aa
+			h5 Bold
+			p Helvetica
+			p.strong A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+			p.strong a b c d e f g h i j k l m n o p q r s t u v w x y z
+			p Used for headlines, buttons and links.
+		// text-center
+
+		br
+		br
+		.text-center
+			h1.green.normal.text-center Aa
+			h5.dark-grey Regular
+			p Helvetica
+			p A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+			p a b c d e f g h i j k l m n o p q r s t u v w x y z
+			p Used for body copy.
+		// text-center
+		br
+
+		h4 How to use our typefaces
+		br
+
+		.text-center
+			include:md ../teamMentor/style-guide/how-to-use-h1.md
+			br
+			include:md ../teamMentor/style-guide/how-to-use-h2.md
+			br
+			include:md ../teamMentor/style-guide/how-to-use-h3.md
+			br
+			include:md ../teamMentor/style-guide/how-to-use-h4.md
+			br
+			include:md ../teamMentor/style-guide/how-to-use-h5.md
+			br
+			include:md ../teamMentor/style-guide/how-to-use-action-text.md
+		// text-center
+		br
+	// typography
+
+//- Pictures Div
+mixin pictures-div
+	#pictures
+		include:md ..//teamMentor/style-guide/pictures.md
+		br
+		img(src='../../assets/images/bgone.jpg')
+		img(src='../../assets/images/bgtwo.jpg')
+		img(src='../../assets/images/bgthree.jpg')
+		br
+	// pictures-div
+
+
+//- Lingo Div
+mixin lingo-div
+	#lingo
+		include:md ../teamMentor/style-guide/lingo.md
+	// lingo-div
+
+//- Usage Examples Div
+mixin usage-examples-div
+	#usage-examples
+		h2 Usage Examples
+		+web-div
+		+advertising-div
+		+pr-div
+		+github-div
+	// usage-examples div
+
+//- Web Div
+mixin web-div
+	#web
+		include:md ../teamMentor/style-guide/usage-example-web.md
+	// web-div
+
+//- Advertising Div
+mixin advertising-div
+	#advertising
+		include:md ../teamMentor/style-guide/usage-example-advertising.md
+	// advertising-div
+
+//- PR Div
+mixin pr-div
+	#pr
+		include:md ../teamMentor/style-guide/usage-example-pr.md
+	// pr-div
+
+//- Github Div
+mixin github-div
+	#github
+		include:md ../teamMentor/style-guide/usage-example-github.md
+	// github-div
+
+//- General Div
+mixin general-div
+	#general
+		h2 General
+		+faq-div
+		+team-div
+	// general-div
+
+//- FAQ Div
+mixin faq-div
+	#faq
+		include:md ../teamMentor/style-guide/faq.md
+	// faq-div
+
+//- Team Div
+mixin team-div
+	#team
+		include:md ../teamMentor/style-guide/team.md
+	// team-div
