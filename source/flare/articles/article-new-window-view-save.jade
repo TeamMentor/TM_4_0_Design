@@ -1,0 +1,25 @@
+extends ../_layouts/flare_page.jade
+include mixins/articles-mixins.jade
+
+block content  
+	#application
+		.row
+			.small-12.large-3.columns#left-nav
+				br
+			// column
+			.small-12.large-6.columns#results
+				+article
+				+horizontal-rule
+				+article-options
+				+horizontal-rule
+				+related-articles
+				+horizontal-rule
+				+copyright
+			// column
+
+			.small-12.large-3.columns#right-nav
+				a(href='alert-article-new-window-view.html')
+					+save-div
+			// column
+		// row
+	// application

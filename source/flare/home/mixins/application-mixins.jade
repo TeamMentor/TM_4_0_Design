@@ -9,11 +9,11 @@ mixin flare-search-bar-input
 					input#search-bar(type='text', placeholder='Type keywords here')
 				// column
 				.small-2.large-1.columns
-					a.button.postfix#search-button(href='#')
+					a.button.postfix#search-button(href='app-keyword-search.html')
 						+search-icon
 				// column
 				.small-2.large-1.columns
-					a.button.postfix(href='#')
+					a.button.postfix(href='filters-div.html')
 						+filter-icon
 				// column
 			// row-collapse
@@ -27,11 +27,11 @@ mixin flare-results-save-clear
 			h4 0/200 results showing
 		//column
 		.small-6.large-3.columns.vertical-align
-			a.button(href='#')
+			a.button(href='app-keyword-search-save.html')
 				+save-icon
 		// column
 		.small-6.large-3.columns.vertical-align
-			a.button(href='#')
+			a.button(href='main-app-view.html')
 				+clear-icon
 		// column
 	// row
@@ -92,15 +92,15 @@ mixin flare-saved-articles-list
 mixin flare-article-preview-menu
 	.row.text-center
 		.small-12.large-4.columns
-			a(href='/deploy/flare/articles/article-new-window-view.html', target='_blank')
+			a.button(href='/deploy/flare/articles/article-new-window-view.html', target='_blank')
 				+open-icon
 		// columns
 		.small-12.large-4.columns
-			a(href='#save')
+			a.button(href='../articles/article-new-window-view-save.html')
 				+save-icon
 		// columns
 		.small-12.large-4.columns
-			a(href='#share')
+			a.button(href='../articles/article-new-window-view-share.html')
 				+share-icon
 		// columns
 	// row
@@ -329,8 +329,9 @@ mixin flare-filters-div
 			// accordian-content
 		// accordian
 		br
-		button(type='submit')
-			| Ok, Done
+		a(href='filters-active.html')
+			button(type='submit')
+				| Ok, Done
 	// form
 
 //- Flare 
