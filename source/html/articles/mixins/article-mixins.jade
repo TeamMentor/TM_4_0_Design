@@ -34,7 +34,8 @@ mixin save-div
 			.form-group
 				+save-input
 			.form-group
-				+save-button
+				a(href='alert-article-new-window-view.html')
+					+save-button
 		// row
 	// form
 
@@ -45,7 +46,8 @@ mixin share-div
 			.form-group
 				+share-input
 			.form-group
-				+share-button
+				a(href='alert-article-new-window-view.html')
+					+share-button
 		// row
 	// form
 
@@ -98,40 +100,40 @@ mixin edit-my-articles
 
 //- my-articles-edit-links
 mixin edit-links
-	+clear-selected-button
+	a(href='my-articles.html')
+		+clear-selected-button
 	br
 	br
-	+clear-all-button
+	a(href='my-articles.html')
+		+clear-all-button
 	br
 	br
-	+ok-button
+	a(href='my-articles.html')
+		+ok-button
 
 //- Directory List
 mixin directory-list
 	h3 Fundamentals of Security
 	.list-group
-		a(href='owasp.html')
-			| OWASP Top 10
-			span.badge 14
-		a(href='owasp.html')
+		a(href='fundamentals-of-security.html')
 			| Second Level Directory
 			span.badge 14
-		a(href='owasp.html')
+		a(href='fundamentals-of-security.html')
 			| Second Level Directory
 			span.badge 14
-		a(href='owasp.html')
+		a(href='fundamentals-of-security.html')
 			| Second Level Directory
 			span.badge 14
-		a(href='owasp.html')
+		a(href='fundamentals-of-security.html')
 			| Second Level Directory
 			span.badge 14
-		a(href='owasp.html')
+		a(href='fundamentals-of-security.html')
 			| Second Level Directory
 			span.badge 14
-		a(href='owasp.html')
+		a(href='fundamentals-of-security.html')
 			| Second Level Directory
 			span.badge 14
-		a(href='owasp.html')
+		a(href='fundamentals-of-security.html')
 			| Second Level Directory
 			span.badge 14
 	// list-group

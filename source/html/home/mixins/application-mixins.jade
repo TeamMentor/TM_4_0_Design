@@ -3,8 +3,9 @@ mixin jade-search-bar-input
 	.input-group
 		input.form-control(type='text', placeholder='Type keywords here')
 		span.input-group-btn
-			button(type='button')
-				| SEARCH
+			a(href='app-keyword-search.html')
+				button(type='button')
+					| SEARCH
 	// input-group
 
 //- Jade Results-Save-Clear
@@ -14,7 +15,7 @@ mixin results-save-clear
 			td 
 				h4 0/200 results showing
 			td
-				a.action(href='#save') Save
+				a.action(href='alert-app-keyword-search.html') Save
 			td
 				a.action(href='main-app-view.html') Clear
 		//tr
@@ -336,4 +337,5 @@ mixin filters-div
 				// li
 			// form-group	
 			br
-			+ok-button
+			a(href='filters-active.html')
+				+ok-button

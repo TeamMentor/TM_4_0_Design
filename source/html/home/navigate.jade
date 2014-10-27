@@ -1,4 +1,5 @@
 extends ../_layouts/page_home.jade
+include mixins/application-mixins.jade
 
 block content
 	#application
@@ -12,6 +13,8 @@ block content
 			.col-6#results
 				.lge-container
 					br
+					+results-save-clear
+					+articles-list
 				// lge-container
 			// column
 

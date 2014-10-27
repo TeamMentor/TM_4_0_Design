@@ -10,12 +10,14 @@ mixin jade-login-form
 		.row
 			.col-6
 				.lge-container
-					+login-button
+					a(href='../home/main-app-view.html')
+						+login-button
 				// lge-container
 			// column
 			.col-6
 				.lge-container
-					+forgot-password-button
+					a(href='forgot-password.html')
+						+forgot-password-button
 				// lge-container
 			// column
 		// row
@@ -35,7 +37,8 @@ mixin jade-sign-up-form
 			+password-input
 		.form-group
 			include:md ../../../content/teamMentor/getting-started/agree-to-toc.md
-		+sign-up-button
+		a(href='../home/main-app-view.html')
+			+sign-up-button
 	// form
 
 
@@ -46,7 +49,8 @@ mixin jade-forgot-password-form
 	form#forgot-password(role='form')
 		.form-group
 			+email-input
-		+get-password-button
+		a(href='index-validation.html')
+			+get-password-button
 	// form
 
 
