@@ -1,0 +1,29 @@
+extends ../_layouts/page_home.jade
+include mixins/new-user-onboard-mixins.jade
+include ../home/mixins/application-mixins.jade
+include ../../content/mixins/articles-mixins.jade
+
+block content  
+	#application
+		.row
+			.col-3#left-nav
+				.lge-container
+					+directory-list
+				// lge-container
+			// column
+
+			.col-6#results
+				.lge-container
+					br
+					+results-save-clear
+					+articles-list
+				// lge-container
+			// column
+			
+			.col-3
+				.lge-container
+					+step-five-instructions
+				// lge-container
+			// column
+		// row
+	// application

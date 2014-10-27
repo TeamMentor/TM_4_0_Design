@@ -1,0 +1,61 @@
+//- New User Onboard Welcome Buttons
+mixin new-user-onboard-welcome-buttons
+	.row
+		.col-6
+			.lge-container
+				a(href='step-one-search.html')
+					button
+						| Start Tutorial
+						br
+						| (It only takes 2 minutes)
+					// button
+			// lge-container
+		// columns
+		.col-6
+			.lge-container
+				a(href='../home/main-app-view.html')
+					button
+						| Skip Tutorial
+						br
+						| (Check it out later)
+					// button
+			// lge-container
+		// column
+	// row
+
+//- New User Onboard Finish Tutorial Button
+mixin new-user-onboard-finish-buttons
+	a(href='../home/main-app-view.html')
+		button
+			| Start Fixing Vulnerabilities
+		// button
+
+//- Step One Instructions
+mixin step-one-instructions
+	#instructions
+		include:md ../../../content/teamMentor/new-user-onboard/step-one-search.md
+	// instructions-div
+
+//- Step Two Instructions
+mixin step-two-instructions
+	#instructions
+		include:md ../../../content/teamMentor/new-user-onboard/jade-step-two-filters.md
+	// instructions-div
+
+//- Step Three Instructions
+mixin step-three-instructions
+	#instructions
+		include:md ../../../content/teamMentor/new-user-onboard/jade-step-three-filters-active.md
+	// instructions-div
+
+//- Step Four Instructions
+mixin step-four-instructions
+	#instructions
+		include:md ../../../content/teamMentor/new-user-onboard/jade-step-four-navigate.md
+	// instructions-div
+
+//- Step Five Instructions
+mixin step-five-instructions
+	#instructions
+		include:md ../../../content/teamMentor/new-user-onboard/jade-step-five-navigate-page.md
+	// instructions-div

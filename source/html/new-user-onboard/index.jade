@@ -1,0 +1,27 @@
+extends ../_layouts/page_home.jade
+include mixins/new-user-onboard-mixins.jade
+
+block content  
+	#application
+		.row
+			.col-3#left-nav
+				.lge-container
+					br
+				// lge-container
+			// column
+
+			.col-6#results
+				.lge-container
+					include:md ../../content/teamMentor/new-user-onboard/welcome.md
+					br
+					+new-user-onboard-welcome-buttons
+				// lge-container
+			// column
+			
+			.col-3
+				.lge-container
+					br
+				// lge-container
+			// column
+		// row
+	// application
