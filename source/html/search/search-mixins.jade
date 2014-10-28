@@ -6,14 +6,18 @@ mixin directory-list
             each container in containers   
                 if container.id == filter_container
                         //a(href="graph?left=&right=" + filter_query, id=container.id)
-                        a(href='graph')
+                        a(href='?')
                             i 
                                 b= container.title
                             span.badge= container.size
                 else
                     //a(href="graph?left=" + container.id + "&right=" + filter_query, id=container.id)= container.title 
-                    a(href="graph?left=" + container.id, id=container.id)= container.title 
-                        span.badge= container.size
+                    a(href="?left=" + container.id, id=container.id)= container.title 
+                        if filter_container
+                            span.badge= '0'
+                        else
+                            span.badge= container.size
+                            
 
 //- search-bar-input
 mixin search-bar-input
@@ -31,7 +35,7 @@ mixin results-save-clear
             td 
                 a() Save
             td 
-                a(href='graph') Clear
+                a(href='?') Clear
 
 //- articles-list
 mixin articles-list    
@@ -56,18 +60,19 @@ mixin filters-div
                             li
                                 if result.id == filter_query 
                                     //a(href="graph?left=" + filter_container + "&right=", id=result.id)
-                                    a(href="graph")
+                                    a(href="?")
                                         i
                                             b= result.title
-                                        span.badge= result.size                                    
+                                        span.badge= result.size
                                 else                                    
                                     //a(href="graph?left=" + filter_container + "&right=" + result.id, id=result.id)
-                                    a(href="graph?right=" + result.id, id=result.id)
+                                    a(href="?right=" + result.id, id=result.id)
                                         if(filter_query)
                                             font(color='gray')= result.title 
+                                            span.badge= '0'
                                         else
                                             span= result.title 
-                                        span.badge= result.size
+                                            span.badge= result.size
                                 
                             
                                 //input(type='checkbox', id=result.title)

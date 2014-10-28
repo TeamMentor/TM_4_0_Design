@@ -59,8 +59,10 @@ class SearchController
    #                @res.send(@renderPage())
    
     showSearchFromGraph: ()=>
+        dataId = @req.params.dataId 
+        #dataId = 'input-validation-data'        
         graphService = new Graph_Service()
-        graphService.graphDataFromQAServer (graphData)=>
+        graphService.graphDataFromQAServer dataId, (graphData)=>
             #graphData.filterBy_Container  = if (@req.query.left ) then @req.query.left  else null
             #graphData.filterBy_Query      = if (@req.query.right) then @req.query.right else null
             graphService.createSearchDataFromGraphData graphData,@req.query.left, @req.query.right, (searchData)=>
@@ -76,7 +78,7 @@ SearchController.registerRoutes = (app) ->
     app.get('/search'                 , (req, res) -> new SearchController(req, res, app.config).showSearch())
     app.get('/search.json'            , (req, res) -> new SearchController(req, res, app.config).showSearchData())
     app.get('/search/:file'           , (req, res) -> new SearchController(req, res, app.config).showSearch())
-    app.get('/graph'                  , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
+    app.get('/graph/:dataId'          , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
         
     #app.get('/search' , (req, res) -> res.send('a'))
                 

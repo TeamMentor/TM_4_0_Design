@@ -151,9 +151,11 @@ class GraphService
                                   .archIn('View'     ).as('article')
                                   .solutions(mapResults)        
     
-    graphDataFromQAServer: (callback)->
+    graphDataFromQAServer: (dataId,callback)->
         #graphDataUrl     = 'http://localhost:1331/graphData.json'
-        graphDataUrl = 'http://levelgraph-test.herokuapp.com/graphData.json'
+        #graphDataUrl = 'http://levelgraph-test.herokuapp.com/graphData.json'        
+        graphDataUrl = 'http://localhost:1332/data/' + dataId + '/tm-search' 
+        console.log("****:   " + graphDataUrl)
         require('request').get graphDataUrl, (err,response,body)->
             throw err if err
             callback JSON.parse(body)
