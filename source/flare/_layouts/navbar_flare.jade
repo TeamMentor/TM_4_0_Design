@@ -3,18 +3,45 @@ include ../../content/links.jade
 
 .fixed
 	nav.top-bar(data-topbar='data-topbar', role='navigation')
-		ul.title-area
-			li.name
-				a(href='#')
-					+image-teammentor-logo__default
-			// li-name
-		// ul-title-area
-		section.top-bar-section 
-			ul.right
-				li
+			ul.title-area
+				li.name
 					a(href='#')
-						i.fi-list
-			// ul-right
-		// section
-	// nav
-// fixed
+						+image-teammentor-logo__default
+				// li-name
+			// ul-title-area
+			section.top-bar-section
+				ul.right
+					li
+						a(href='#')
+							i.fi-list
+				// ul-right
+				ul.center
+					li
+						a(href='../home/navigate.html')
+							+navigate-icon
+							br
+							|    Navigate
+					li
+						a(href='../home/main-app-view.html')
+							+home-icon
+							br
+							|    Home
+					li
+						a(href='../help/index.html')
+							+help-icon
+							br
+							|    Help
+					li
+						a(href='../user/user.html')
+							+user-icon
+							br
+							|    User
+					li
+						a(href='../getting-started/index-validation.html')
+							+logout-icon
+							br
+							|    Logout
+				// ul
+			// section
+		// nav
+	// fixed

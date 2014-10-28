@@ -5,7 +5,25 @@
 }
 
 /* line 15, ../../source/scss/_colours.scss */
+.green {
+  color: #8aaf3e;
+}
+
+/* line 19, ../../source/scss/_colours.scss */
+.dark-green {
+  color: #49661f;
+}
+
+/* line 23, ../../source/scss/_colours.scss */
+.icons-green {
+  color: #8aaf3e;
+  font-size: 60px;
+  margin: 0 auto;
+}
+
+/* line 29, ../../source/scss/_colours.scss */
 #white {
+  width: 100%;
   margin-right: 15px;
   background-color: #FFFFFF;
   border: 1px solid #000000;
@@ -14,32 +32,37 @@
   -webkit-box-sizing: border-box;
 }
 
-/* line 24, ../../source/scss/_colours.scss */
+/* line 39, ../../source/scss/_colours.scss */
 #green {
+  width: 100%;
   margin-right: 15px;
   background-color: #8aaf3e;
 }
 
-/* line 29, ../../source/scss/_colours.scss */
+/* line 45, ../../source/scss/_colours.scss */
 #dark-green {
+  width: 100%;
   margin-right: 15px;
   background-color: #49661f;
 }
 
-/* line 34, ../../source/scss/_colours.scss */
+/* line 51, ../../source/scss/_colours.scss */
 #grey {
+  width: 100%;
   margin-right: 15px;
   background-color: #aaaaaa;
 }
 
-/* line 39, ../../source/scss/_colours.scss */
+/* line 57, ../../source/scss/_colours.scss */
 #dark-grey {
+  width: 100%;
   margin-right: 15px;
   background-color: #444444;
 }
 
-/* line 44, ../../source/scss/_colours.scss */
+/* line 63, ../../source/scss/_colours.scss */
 #black {
+  width: 100%;
   margin-right: 15px;
   background-color: #000000;
 }
@@ -7763,50 +7786,4 @@ th.hide-for-touch {
 /* line 674, ../assets/bower_components/foundation/scss/foundation/components/_visibility.scss */
 .touch th.show-for-touch {
   display: table-cell !important;
-}
-
-/* line 10, ../../source/scss/_colours.scss */
-.black {
-  padding-top: 20px;
-  background-color: #000000;
-}
-
-/* line 15, ../../source/scss/_colours.scss */
-#white {
-  margin-right: 15px;
-  background-color: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-
-/* line 24, ../../source/scss/_colours.scss */
-#green {
-  margin-right: 15px;
-  background-color: #8aaf3e;
-}
-
-/* line 29, ../../source/scss/_colours.scss */
-#dark-green {
-  margin-right: 15px;
-  background-color: #49661f;
-}
-
-/* line 34, ../../source/scss/_colours.scss */
-#grey {
-  margin-right: 15px;
-  background-color: #aaaaaa;
-}
-
-/* line 39, ../../source/scss/_colours.scss */
-#dark-grey {
-  margin-right: 15px;
-  background-color: #444444;
-}
-
-/* line 44, ../../source/scss/_colours.scss */
-#black {
-  margin-right: 15px;
-  background-color: #000000;
 }
