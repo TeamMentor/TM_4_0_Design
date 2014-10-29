@@ -3,7 +3,7 @@
 
 var users = [ { username : 'tm'   , password : 'tm'   } ,
               { username : 'user' , password : ''     } ,
-              { username : 'a'    , password : ''     }
+              { username : 'roman', password : 'longpassword'     }
             ];
             
 var loginPage         = '/user/login/returning-user-validation.html';

@@ -16,3 +16,11 @@ TeamCity CI is used to pull the changes and push/publish to Azure (for more deta
 
 
 Build status: [![Build Status](https://travis-ci.org/TeamMentor/TM_4_0_Design.svg?branch=Issue_66_TopNav_Auth)](https://travis-ci.org/TeamMentor/TM_4_0_Design)
+
+
+** to run dev brach
+* clone https://github.com/TeamMentor/TM_4_0_Design
+* git checkout Issue_68_Library_Rendering
+* npm install
+* npm start
+* http://localhost:1337/

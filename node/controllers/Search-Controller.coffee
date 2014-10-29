@@ -1,9 +1,13 @@
 fs              = require('fs')
 path            = require('path')
 Config          = require('../Config')
+request         = require('request')
 Jade_Service    = require('../services/Jade-Service')
 GitHub_Service  = require('../services/GitHub-Service')
 Graph_Service  = require('../services/Graph-Service')
+
+recentArticles_Cache = []
+breadcrumbs_Cache    = []
 
 class SearchController
     constructor: (req, res, config)->
@@ -59,27 +63,58 @@ class SearchController
    #                @res.send(@renderPage())
    
     showSearchFromGraph: ()=>
-        dataId = @req.params.dataId 
-        #dataId = 'input-validation-data'        
+        dataId = @req.params.dataId
+        breadcrumbs_Cache = breadcrumbs_Cache.splice(0,3)
+        breadcrumbs_Cache.unshift  {href:"/graph/#{dataId}", title: dataId}
+        
+        
         graphService = new Graph_Service()
         graphService.graphDataFromQAServer dataId, (graphData)=>
-            #graphData.filterBy_Container  = if (@req.query.left ) then @req.query.left  else null
-            #graphData.filterBy_Query      = if (@req.query.right) then @req.query.right else null
             graphService.createSearchDataFromGraphData graphData,@req.query.left, @req.query.right, (searchData)=>
-                @searchData = searchData                
+                @searchData = searchData
+                searchData.breadcrumbs = breadcrumbs_Cache
                 @res.send(@renderPage())
-            
-
+    
     showSearchData: ->
         @res.set('Content-Type', 'application/json')
             .send(JSON.stringify(@loadSearchData().searchData,null, ' '))
+            
+    showMainAppView: =>
+        breadcrumbs_Cache.unshift {href:"/home/main-app-view.html", title: "Search Home"}
+        topArticles = 'http://localhost:1332/data/tm-data/articles-by-weight'
+        request topArticles, (err, respojnse, data)=>
+            data = JSON.parse(data).splice(0,4)
+            topArticles = []
+            for item in data
+                topArticles.push { href: "/article/view/#{item.guid}/#{item.title}", title: "#{item.title}", weight:"#{item.weight}"}
+            
+            searchTerms = []
+            searchTerms.push { href: "/graph/input-validation" , title: "Input validation"}
+            searchTerms.push { href: "/graph/sql-injection"    , title: "Sql Injection"}
+            searchTerms.push { href: "/graph/tm-data"          , title: "TM Data"}
+            recentArticles = []
+            for recentArticle in recentArticles_Cache
+                recentArticles.push {href : 'https://tmdev01-sme.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
+                break if recentArticles.length >2
+            viewModel = { recentArticles: recentArticles, topArticles : topArticles , searchTerms : searchTerms}
+            jadePage  = '../source/html/home/main-app-view.jade'
+            @res.render(jadePage, viewModel)
+            
+    showArticle: =>
+        guid = @req.params.guid
+        title = @req.params.title
+        recentArticles_Cache.unshift ({ guid: guid , title:title})
+        @res.redirect('https://tmdev01-sme.teammentor.net/'+guid)
 
 SearchController.registerRoutes = (app) ->
     app.get('/search'                 , (req, res) -> new SearchController(req, res, app.config).showSearch())
     app.get('/search.json'            , (req, res) -> new SearchController(req, res, app.config).showSearchData())
     app.get('/search/:file'           , (req, res) -> new SearchController(req, res, app.config).showSearch())
     app.get('/graph/:dataId'          , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
-        
+    app.get('/graph/:dataId'          , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
+    
+    app.get '/home/main-app-view.html'  , (req,res) -> new SearchController(req, res, app.config).showMainAppView()
+    app.get '/article/view/:guid/:title', (req,res) -> new SearchController(req, res, app.config).showArticle()
     #app.get('/search' , (req, res) -> res.send('a'))
                 
 module.exports = SearchController
