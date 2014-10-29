@@ -2,4 +2,4 @@ TEAM Mentor, a [Security Innovation](http://www.securityinnovation.com/) eKnowle
 
 © Security Innovation 2007-2014, all rights reserved.
 
-[Contact Us](mailto:)
+[Contact Us](mailto:support@securityinnovation.com)
