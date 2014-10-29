@@ -426,6 +426,7 @@ nav.top-bar {
   z-index: 100000;
   padding: 0;
   margin-bottom: 100px;
+  background: white;
 }
 nav.top-bar ul.title-area {
   padding: 5px 0 0 5px;
@@ -439,7 +440,7 @@ nav.top-bar section.top-bar-section i {
   font-size: 16px;
 }
 nav.top-bar section.top-bar-section ul {
-  padding-top: 10px;
+  padding-top: 5px;
   padding-left: 0;
   display: inline-block !important;
   list-style-type: none;
@@ -450,25 +451,18 @@ nav.top-bar section.top-bar-section ul li {
   padding-right: 30px;
   text-align: center;
 }
-nav.top-bar section.top-bar-section ul li a {
+nav.top-bar section.top-bar-section ul li a, nav.top-bar section.top-bar-section ul li p {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
   font-size: 14px;
   font-weight: 700;
   background: white;
-  color: #8aaf3e;
+  color: #8aaf3e !important;
+  line-height: 0.5em;
 }
-nav.top-bar section.top-bar-section ul li a:hover {
+nav.top-bar section.top-bar-section ul li a:hover, nav.top-bar section.top-bar-section ul li p:hover {
   color: #49661f;
-}
-nav.top-bar section.top-bar-section ul li.center {
-  margin: 0 auto;
-  line-height: 20px;
-  padding-left: 100px;
-}
-nav.top-bar section.top-bar-section ul li.center li:not(.has-form) a:not(.button) {
-  line-height: 25px;
 }
 
 #customer-navigation {
