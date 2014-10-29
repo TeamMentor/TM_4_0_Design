@@ -4,21 +4,23 @@ include ../../content/images.jade
 
 .fixed
 	nav.top-bar(role='navigation', data-topbar='')
-		ul.title-area
-			li.name
-				a(href='#')
-					+image-teammentor-logo__default
-			// li-name
-			li.toggle-topbar.menu-icon
-				a(href='#')
-					span
-			// li-toggle
-		// ul-title-area
-		section.top-bar-section
-			// Right Nav Section 
-			ul.right
-				+links-navbar__landing-page
-			// ul-right
-		// section
+		#team-mentor-navigation
+			ul.title-area
+				li.name
+					a(href='#')
+						+image-teammentor-logo__default
+				// li-name
+				li.toggle-topbar.menu-icon
+					a(href='#')
+						span
+				// li-toggle
+			// ul-title-area
+			section.top-bar-section
+				// Right Nav Section 
+				ul.right
+					+links-navbar__landing-page
+				// ul-right
+			// section
+		// team-mentor-navigation
 	// nav
 // fixed

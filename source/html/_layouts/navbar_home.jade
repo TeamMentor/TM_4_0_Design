@@ -3,16 +3,19 @@ include ../../content/links.jade
 
 .fixed
 	nav.top-bar(role='navigation', data-topbar='')
-		ul.title-area
-			li.name
-				a(href='#')
-					+image-teammentor-logo__default
-			// li-name
-		// ul-title-area
-		section.top-bar-section
-			// Right Nav Section 
-			ul.right
-				+links-navbar__home
-			// ul-right
-		// section
+		#team-mentor-navigation
+			ul.title-area
+				li.name
+					a(href='#')
+						+image-teammentor-logo__default
+				// li-name
+			// ul-title-area
+			section.top-bar-section
+				// Right Nav Section 
+				ul.right
+					+links-navbar__home
+				// ul-right
+			// section
+		// team-mentor-navigation
 	// nav
+// fixed
