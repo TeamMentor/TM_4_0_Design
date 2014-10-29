@@ -2,27 +2,29 @@ include ../../content/images.jade
 include ../../content/links.jade
 
 .fixed
-	nav.top-bar(data-topbar='data-topbar', role='navigation')
-		ul.title-area
-			li.name
-				a(href='#')
-					+image-security-innovation-logo
-			// li-name
-	nav.top-bar(data-topbar='data-topbar', role='navigation')
-		ul.title-area
-			li.name
-				a(href='#')
-					+image-teammentor-logo__default
-			// li-name
-		// ul-title-area
-		section.top-bar-section
-			// Right Nav Section 
-			ul.right
+	nav.top-bar(role='navigation', data-topbar='')
+		#customer-navigation
+			ul.title-area
 				li
 					a(href='#')
-						i.fi-list
-			// ul-right
-		// section
+						+image-security-innovation-logo
+				// li-name
+			// ul title-area
+		// customer-navigation
+		#team-mentor-navigation
+			ul.left
+				li
+					a(href='#')
+						+image-teammentor-logo__default
+				// li
+			// ul
+			section.top-bar-section 
+				ul.right
+					li
+						a(href='#')
+							i.fi-list
+				// ul-right
+			// section
+		// teammentor navigation
 	// nav
 // fixed
-br

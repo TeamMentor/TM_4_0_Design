@@ -3,22 +3,26 @@ include ../../content/links.jade
 
 .fixed
 	nav.top-bar(role='navigation', data-topbar='')
-		ul.title-area
-			li.name
-				a(href='#')
-					+image-security-innovation-logo
-			// li-name
-			li.name
-				a(href='#')
-					+image-teammentor-logo__default
-			// li-name
-		// ul-title-area
-		br
-		br
-		section.top-bar-section
-			// Right Nav Section 
-			ul.right
-				+links-navbar__home
-			// ul-right
-		// section
+		#customer-navigation
+			ul.title-area
+				li
+					a(href='#')
+						+image-security-innovation-logo
+				// li-name
+			// ul-title-area
+		// customer-navigation
+		#team-mentor-navigation
+			ul.left
+				li
+					a(href='#')
+						+image-teammentor-logo__default
+				// li
+			// ul.left
+			section.top-bar-section
+				ul.right
+					+links-navbar__home
+				// ul-right
+			// section
+		// teammentor-navigation
 	// nav
+// fixed
