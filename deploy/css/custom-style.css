@@ -730,6 +730,9 @@ button:hover, button:active {
   background-color: #8aaf3e;
 }
 
+.list-group {
+  height: 100%;
+}
 .list-group h5, .list-group p {
   margin-top: 0px;
   margin-bottom: 0px;

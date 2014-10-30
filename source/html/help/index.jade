@@ -8,14 +8,13 @@ block content
 					.div(data-spay="affix", data-offset-top="60", data-offset-bottom="200")
 						if library
 							each view in library.Views
-								h4= view.Title
-								ul.sidebar
+								h3= view.Title
+								.list-group
 									each article in view.Articles
-										li
-											a(href= '/help/' + article.Id)
-												= article.Title
+										a(href= '/help/' + article.Id)
+											= article.Title
 			.col-6#help-docs
 				.lge-container
 					if title
-						h2= title
+						h1= title
 					!= content
