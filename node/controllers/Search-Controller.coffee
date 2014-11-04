@@ -81,8 +81,8 @@ class SearchController
             
     showMainAppView: =>
         breadcrumbs_Cache.unshift {href:"/home/main-app-view.html", title: "Search Home"}
-        #topArticles = 'http://localhost:1332/data/tm-data/articles-by-weight'
-        topArticles = 'https://tm-graph.herokuapp.com/data/tm-data/articles-by-weight'
+        topArticles = 'http://localhost:1332/data/tm-data/articles-by-weight'
+        #topArticles = 'https://tm-graph.herokuapp.com/data/tm-data/articles-by-weight'
         request topArticles, (err, respojnse, data)=>
             data = JSON.parse(data).splice(0,4)
             topArticles = []

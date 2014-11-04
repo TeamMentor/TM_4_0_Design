@@ -154,8 +154,8 @@ class GraphService
     graphDataFromQAServer: (dataId,callback)->
         #graphDataUrl     = 'http://localhost:1331/graphData.json'
         #graphDataUrl = 'http://levelgraph-test.herokuapp.com/graphData.json'        
-        #graphDataUrl = 'http://localhost:1332/data/' + dataId + '/tm-search'
-        graphDataUrl = 'https://tm-graph.herokuapp.com/data/' + dataId + '/tm-search' 
+        graphDataUrl = 'http://localhost:1332/data/' + dataId + '/tm-search'
+        #graphDataUrl = 'https://tm-graph.herokuapp.com/data/' + dataId + '/tm-search' 
         
         console.log("****:   " + graphDataUrl)
         require('request').get graphDataUrl, (err,response,body)->
