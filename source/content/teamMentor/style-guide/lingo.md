@@ -1,6 +1,5 @@
 ### Lingo
 
-* Don't over-complicate.
+* Make it concise and quick.
 * Tell it like it is.
-* Be direct and get to the point.
 * Always look for the simplest way to say what you want.
