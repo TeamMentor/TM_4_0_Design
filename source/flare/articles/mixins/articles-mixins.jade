@@ -32,7 +32,7 @@ mixin article-options
 			a(href='alert-article-new-window-view.html')
 				+save-div
 		// save-content
-			
+
 		#share.content
 			a(href='alert-article-new-window-view.html')
 				+share-div
@@ -41,30 +41,59 @@ mixin article-options
 
 
 //- Related Articles
-mixin related-articles
-	#related-articles
-		h3 You might also like
-		dl.accordion(data-accordion='data-accordion')
-			dd.accordion-navigation
-				a(href='#panel1') Article Headline
-				#panel1.content
+mixin related-options
+	h3 You might also like
+	dl.tabs(data-tab='data-tab')
+		dd
+			a(href='#related-articles')
+				h5 Related Articles
+		// dd
+		dd
+			a(href='#related-courses')
+				h5 Related Courses
+		// dd
+	// dl-tabs
+	.tabs-content
+		#related-articles.content
+			dl.accordion(data-accordion='data-accordion')
+				dd.accordion-navigation
+					a(href='#panel1') Article Headline
+					#panel1.content
+						include:md ../../../content/teamMentor/articles/article-details.md
+						+flare-article-preview-menu
+					// panel1-content
+				// accordian-navigation
+				dd.accordion-navigation
+					a(href='#panel2') Article Headline
+					#panel2.content
+						include:md ../../../content/teamMentor/articles/article-details.md
+						+flare-article-preview-menu
+					// panel2-content
+				// accordian-navigation
+				dd.accordion-navigation
+					a(href='#panel3') Article Headline
+					#panel3.content
+						include:md ../../../content/teamMentor/articles/article-details.md
+						+flare-article-preview-menu
+					// panel3-content
+				// accordian-navigation
+			// accordian
+		// related-articles-content
+
+		#related-courses.content
+			.list-group
+				a(href='#')
+					h4 Course Headline
 					include:md ../../../content/teamMentor/articles/article-details.md
-					+flare-article-preview-menu
-				// panel1-content
-			// accordian-navigation
-			dd.accordion-navigation
-				a(href='#panel2') Article Headline
-				#panel2.content
+				// a
+				a(href='#')
+					h4 Course Headline
 					include:md ../../../content/teamMentor/articles/article-details.md
-					+flare-article-preview-menu
-				// panel2-content
-			// accordian-navigation
-			dd.accordion-navigation
-				a(href='#panel3') Article Headline
-				#panel3.content
+				// a
+				a(href='#')
+					h4 Course Headline
 					include:md ../../../content/teamMentor/articles/article-details.md
-					+flare-article-preview-menu
-				// panel3-content
-			// accordian-navigation
-		// accordian
-	// related-articles-div
+				// a
+			// list-group
+		// related-courses-content
+	// tabs-content
