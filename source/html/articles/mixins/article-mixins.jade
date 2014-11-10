@@ -6,7 +6,7 @@ mixin article
 		include:md ../../../content/teamMentor/articles/article-new-window.md
 	// article-div
 
-//- article-options
+//- Article Options
 mixin article-options
 	.row
 		.col-offset-2.col-8
@@ -15,9 +15,21 @@ mixin article-options
 		// column
 	// row
 
-//- related-articles
+//- Related Articles
 mixin related-articles
 	h3 You might also like
+	.list-group
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md ../../../content/teamMentor/articles/article-summary.md
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md ../../../content/teamMentor/articles/article-summary.md
+		a(href='#{link_article_new_window}', target='_blank')
+			include:md ../../../content/teamMentor/articles/article-summary.md
+	// list-group
+
+//- Related Courses
+mixin related-courses
+	h3 Related TEAM Professor Courses
 	.list-group
 		a(href='#{link_article_new_window}', target='_blank')
 			include:md ../../../content/teamMentor/articles/article-summary.md
