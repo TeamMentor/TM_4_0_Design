@@ -20,7 +20,7 @@ module.exports = function (app)
     app.get('/:area/:page.html'            , auth.checkAuth , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/html/' + req.params.area + '/' + req.params.page + '.jade'                       ));});
 
     //Redirect to Jade pages
-    app.get('/'                                             , function (req, res)  { res.redirect('/default.html'                                                     );});
+    app.get('/'                                             , function (req, res)  { res.redirect('__index.htm'                                                     );});
     app.get('/deploy/html/:area/:page.html'                 , function (req, res)  { res.redirect('/'                 + req.params.area +'/'+req.params.page + '.html');});
 
     //Render Jade pages (old with no precompilation)
