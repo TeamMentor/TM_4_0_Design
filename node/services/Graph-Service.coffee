@@ -151,6 +151,16 @@ class GraphService
                                   .archIn('View'     ).as('article')
                                   .solutions(mapResults)        
     
+    graphDataFromGraphDB: (dataId, queryId, callback)->
+        server = 'http://localhost:1332'
+        dataId = dataId || 'tm-uno'
+        target = target || 'Logging'
+        graphDataUrl = "#{server}/data/#{dataId}/folder-metadata/filter/tm-search?show=#{queryId}"
+        console.log("****:   " + graphDataUrl)
+        require('request').get graphDataUrl, (err,response,body)->
+            throw err if err
+            callback JSON.parse(body)
+            
     graphDataFromQAServer: (dataId,callback)->
         #graphDataUrl     = 'http://localhost:1331/graphData.json'
         #graphDataUrl = 'http://levelgraph-test.herokuapp.com/graphData.json'        

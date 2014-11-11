@@ -62,15 +62,16 @@ class SearchController
    #            graphService.closeDb =>
    #                @res.send(@renderPage())
    
-    showSearchFromGraph: ()=>
-        dataId = @req.params.dataId
+    showSearchFromGraph: ()=>        
+        queryId = @req.params.queryId        
         breadcrumbs_Cache = breadcrumbs_Cache.splice(0,3)
-        breadcrumbs_Cache.unshift  {href:"/graph/#{dataId}", title: dataId}
+        breadcrumbs_Cache.unshift  {href:"/graph/#{queryId}", title: queryId}
         
         
         graphService = new Graph_Service()
-        graphService.graphDataFromQAServer dataId, (graphData)=>
-            graphService.createSearchDataFromGraphData graphData,@req.query.left, @req.query.right, (searchData)=>
+        graphService.graphDataFromGraphDB null, queryId, (searchData)=>
+        #graphService.graphDataFromQAServer dataId, (graphData)=>
+        #    graphService.createSearchDataFromGraphData graphData,@req.query.left, @req.query.right, (searchData)=>
                 @searchData = searchData
                 searchData.breadcrumbs = breadcrumbs_Cache
                 @res.send(@renderPage())
@@ -111,8 +112,7 @@ SearchController.registerRoutes = (app) ->
     app.get('/search'                 , (req, res) -> new SearchController(req, res, app.config).showSearch())
     app.get('/search.json'            , (req, res) -> new SearchController(req, res, app.config).showSearchData())
     app.get('/search/:file'           , (req, res) -> new SearchController(req, res, app.config).showSearch())
-    app.get('/graph/:dataId'          , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
-    app.get('/graph/:dataId'          , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
+    app.get('/graph/:queryId'         , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())    
     
     app.get '/home/main-app-view.html'  , (req,res) -> new SearchController(req, res, app.config).showMainAppView()
     app.get '/article/view/:guid/:title', (req,res) -> new SearchController(req, res, app.config).showArticle()

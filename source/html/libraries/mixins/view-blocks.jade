@@ -14,4 +14,5 @@ mixin links-library
         each view in library.data.views
             a.list-group-item(href='#{link_fundamentals_of_security}')= view.caption
         each folder in library.data.subFolders            
-            a.list-group-item(href='/library/'+library.name + '/folder/' + folder.name)= folder.name
+            //a.list-group-item(href='/library/'+library.name + '/folder/' + folder.name)= folder.name
+            a.list-group-item(href='/graph/'+ folder.name)= folder.name
