@@ -91,9 +91,9 @@ class SearchController
                 topArticles.push { href: "/article/view/#{item.guid}/#{item.title}", title: "#{item.title}", weight:"#{item.weight}"}
             
             searchTerms = []
-            searchTerms.push { href: "/graph/input-validation" , title: "Input validation"}
-            searchTerms.push { href: "/graph/sql-injection"    , title: "Sql Injection"}
-            searchTerms.push { href: "/graph/tm-data"          , title: "TM Data"}
+            searchTerms.push { href: "/graph/Logging"                                   , title: "Logging"}
+            searchTerms.push { href: "/graph/Separation%20of%20Data%20and%20Control"    , title: "Separation of Data and Control"}
+            searchTerms.push { href: "/graph/(Web) Encoding"                            , title: "(Web) Encoding"}
             recentArticles = []
             for recentArticle in recentArticles_Cache
                 recentArticles.push {href : 'https://tmdev01-sme.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
