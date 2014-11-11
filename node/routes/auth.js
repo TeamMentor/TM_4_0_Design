@@ -2,30 +2,30 @@
 "use strict";
 var preCompiler = require(process.cwd() + '/node/services/jade-pre-compiler.js');
 
-function checkAuth(req, res, next) 
-{    
-    if (!req.session.username) 
+function checkAuth(req, res, next)
+{
+    if (!req.session.username)
     {
-        res.status(403).send(preCompiler.renderJadeFile('/source/html/landing-pages/need-login.jade'));        
+        res.status(403).send(preCompiler.renderJadeFile('/source/html/getting-started/index.jade'));
     }
-    else 
+    else
     {
         next();
     }
 }
 
-function mappedAuth(req) 
-{   
+function mappedAuth(req)
+{
     var data = {};
     if(req && req.session)
         data =  {
                     username  : req.session.username,
                     loggedIn  : (req.session.username !== undefined),
-                };    
+                };
     return data;
 }
 
-module.exports = { 
+module.exports = {
                     checkAuth : checkAuth,
                     mappedAuth : mappedAuth
                  };

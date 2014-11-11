@@ -8,7 +8,7 @@ var express    = require('express'),
 
 app.use(bodyParser.json()                        );     // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));     // to support URL-encoded bodies
-app.use(session({secret           : '1234567890', 
+app.use(session({secret           : '1234567890',
                  saveUninitialized: true        ,
                  resave           : true        }));
 
@@ -30,5 +30,5 @@ else
     console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + app.port);
     app.listen(app.port);
 }
-    
+
 module.exports = app;
