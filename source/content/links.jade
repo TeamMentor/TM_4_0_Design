@@ -1,48 +1,53 @@
-- var articles        = '/deploy/html/articles'
-- var getting_started = '/deploy/html/getting-started'
-- var home            = '/deploy/html/home'
-- var landing_pages   = '/deploy/html/landing-pages'
-- var help            = '/help'
-- var user            = '/deploy/html/user'
-
-- var link_article_new_window       = articles + '/article-new-window-view'
-- var link_app_keyword_search       = home     + '/app-keyword-search'
-- var link_fundamentals_of_security = articles + '/fundamentals-of-security'
-
 mixin links-navbar__landing-page
 	:markdown
-		* [About](#{landing_pages}/about)
-		* [Features](#{landing_pages}/features)
+		* [About](about)
+		* [Features](features)
 		* [Get Started](../getting-started/index)
 
 mixin links-navbar__home
 	:markdown
-		* [![Navigate](/deploy/assets/icons/navigate.png)](#{home}/navigate)
-		* [![Home](/deploy/assets/icons/home.png)](#{home}/main-app-view)
-		* [![Help](/deploy/assets/icons/help.png)](#{help}/index)
-		* [![User](/deploy/assets/icons/user.png)](#{user}/user)
-		* [![Logout](/deploy/assets/icons/logout.png)](/user/logout)
+		* [![Navigate](/deploy/assets/icons/navigate.png)](navigate)
+		* [![Home](/deploy/assets/icons/home.png)](main-app-view)
+		* [![Help](/deploy/assets/icons/help.png)](../help/index)
+		* [![User](/deploy/assets/icons/user.png)](../user/user)
+		* [![Logout](/deploy/assets/icons/logout.png)](../user/logout)
+
+mixin links-flare-navbar__home
+	li
+		a(href='navigate/')
+			+navigate-icon
+			p Navigate
+	li
+		a(href='main-app-view')
+			+home-icon
+			p Home
+	li
+		a(href='../help/index')
+			+help-icon
+			p Help
+	li
+		a(href='../user/user')
+			+user-icon
+			p User
+	li
+		a(href='../getting-started/index')
+			+logout-icon
+			p Logout
 
 mixin links-navbar__not_logged_in
 	:markdown
-		* [![Help](/deploy/assets/icons/help.png)](#{help}/index)
-
-mixin links-flare__untoggled-menu
-	:markdown
-		* [About](#{landing_pages}/about)
-		* [Features](#{landing_pages}/features)
-		* [Get Started](#{getting-started}/index)
+		* [![Help](/deploy/assets/icons/help.png)](help/index)
 
 mixin links-home__navigate
 	h3 Navigate TEAM Mentor
 	.list-group
-		a(href='fundamentals-of-security')
+		a(href='../articles/fundamentals-of-security')
 			| Attacks & Vulnerabilites
-		a(href='fundamentals-of-security')
+		a(href='../articles/fundamentals-of-security')
 			| Principles & Standards
-		a(href='my-articles')
+		a(href='../articles/my-articles')
 			| My Articles
-		a(href='my-search-terms')
+		a(href='../articles/my-search-items')
 			| My Saved Searches
 
 mixin links_user_pages
@@ -56,7 +61,7 @@ mixin links_user_pages
 //- Flare Page Links
 mixin flare-all-pages-links
 	.list-group
-		a(href='/flare/articles/alert-article-new-window-view'                   ) articles/alert-article-new-window-view
+		a(href='articles/alert-article-new-window-view'                   ) articles/alert-article-new-window-view
 		a(href='articles/article-new-window-view'                         ) articles/article-new-window-view
 		a(href='articles/fundamentals-of-security'                        ) articles/fundamentals-of-security
 		a(href='articles/my-articles'                                     ) articles/my-articles
@@ -143,18 +148,18 @@ mixin jade-all-pages-links
 mixin flare-style-guide-links
 	dl.accordion(data-accordion='data-accordion')
 		dd.accordion-navigation
-			a(href='#panel1') About Us
-			#panel1.content
+			a(href='#about-us') About Us
+			#about-us.content
 				.list-group
 					a(href='#who-are-we') Who are we?
 					a(href='#history') History
 					a(href='#mission-statement') Mission Statement
 					a(href='#strategy') Strategy
-			// panel1-content
+			// about-us-content
 		// accordian-navigation
 		dd.accordion-navigation
-			a(href='#panel2') Visual Identity
-			#panel2.content
+			a(href='#visual-identity') Visual Identity
+			#visual-identity.content
 				.list-group
 					a(href='#logo') Logo
 					a(href='#dos-and-donts') Dos and Don'ts
@@ -162,7 +167,7 @@ mixin flare-style-guide-links
 					a(href='#typography') Typography
 					a(href='#pictures') Pictures
 					a(href='#lingo') Lingo
-			// panel2-content
+			// visual-identity-content
 		// accordian-navigation
 	// accordian
 
@@ -188,29 +193,29 @@ mixin jade-style-guide-links
 //- my-articles-links
 mixin my-articles-links
 	.list-group
-		a(href='#{link_article_new_window}', target='_blank') A New ID Is Assigned on Login
-		a(href='#{link_article_new_window}', target='_blank') A New Or Blank Session ID is Assigned on Logout
-		a(href='#{link_article_new_window}', target='_blank') Access to the Credential Store is Limited
-		a(href='#{link_article_new_window}', target='_blank') AJAX Injection Vulnerability
-		a(href='#{link_article_new_window}', target='_blank') All Input is Validated
-		a(href='#{link_article_new_window}', target='_blank') All Private Resources Require Authentication
-		a(href='#{link_article_new_window}', target='_blank') All Senstive Data is Encrypted
-		a(href='#{link_article_new_window}', target='_blank') Assume All Input is Malicious
-		a(href='#{link_article_new_window}', target='_blank') Authentication is Centralized
-		a(href='#{link_article_new_window}', target='_blank') Centralize Authentication
-		a(href='#{link_article_new_window}', target='_blank') Client-side Validation is Not Relied On
-		a(href='#{link_article_new_window}', target='_blank') Cross Site Scripting Vulnerablity
-		a(href='#{link_article_new_window}', target='_blank') Deny All Access by Default
-		a(href='#{link_article_new_window}', target='_blank') Do Not Cache Sensitive Data
-		a(href='#{link_article_new_window}', target='_blank') Do Not Leave Passwords in Memory
-		a(href='#{link_article_new_window}', target='_blank') Don't Trust User Input
-		a(href='#{link_article_new_window}', target='_blank') Echoed Input is Encoded
-		a(href='#{link_article_new_window}', target='_blank') Missing Authentication
-		a(href='#{link_article_new_window}', target='_blank') Missing Authorization
-		a(href='#{link_article_new_window}', target='_blank') Hard-coded Credentials
-		a(href='#{link_article_new_window}', target='_blank') Missing Encryption
-		a(href='#{link_article_new_window}', target='_blank') Unrestricted Dangerous Uploads
-		a(href='#{link_article_new_window}', target='_blank') Using Untrusted Inputs
+		a(href='article-new-window-view', target='_blank') A New ID Is Assigned on Login
+		a(href='article-new-window-view', target='_blank') A New Or Blank Session ID is Assigned on Logout
+		a(href='article-new-window-view', target='_blank') Access to the Credential Store is Limited
+		a(href='article-new-window-view', target='_blank') AJAX Injection Vulnerability
+		a(href='article-new-window-view', target='_blank') All Input is Validated
+		a(href='article-new-window-view', target='_blank') All Private Resources Require Authentication
+		a(href='article-new-window-view', target='_blank') All Senstive Data is Encrypted
+		a(href='article-new-window-view', target='_blank') Assume All Input is Malicious
+		a(href='article-new-window-view', target='_blank') Authentication is Centralized
+		a(href='article-new-window-view', target='_blank') Centralize Authentication
+		a(href='article-new-window-view', target='_blank') Client-side Validation is Not Relied On
+		a(href='article-new-window-view', target='_blank') Cross Site Scripting Vulnerablity
+		a(href='article-new-window-view', target='_blank') Deny All Access by Default
+		a(href='article-new-window-view', target='_blank') Do Not Cache Sensitive Data
+		a(href='article-new-window-view', target='_blank') Do Not Leave Passwords in Memory
+		a(href='article-new-window-view', target='_blank') Don't Trust User Input
+		a(href='article-new-window-view', target='_blank') Echoed Input is Encoded
+		a(href='article-new-window-view', target='_blank') Missing Authentication
+		a(href='article-new-window-view', target='_blank') Missing Authorization
+		a(href='article-new-window-view', target='_blank') Hard-coded Credentials
+		a(href='article-new-window-view', target='_blank') Missing Encryption
+		a(href='article-new-window-view', target='_blank') Unrestricted Dangerous Uploads
+		a(href='article-new-window-view', target='_blank') Using Untrusted Inputs
 
 //- git-repo-link
 mixin git-repo-link

@@ -2,13 +2,12 @@ extends ../_layouts/flare_page.jade
 include mixins/articles-mixins.jade
 include ../home/mixins/application-mixins.jade
 
-block content  
+block content
 	#application
 		.row
 			.small-12.large-3.columns#left-nav
 				+directory-list
 			// column
-				
 			.small-12.large-6.columns#results
 				br
 				+breadcrumbs
@@ -16,6 +15,9 @@ block content
 				+flare-search-bar-input
 				+flare-results-save-clear
 				+flare-articles-list
-
+			// column
 			.small-12.large-3.columns#right-nav
 				br
+			// column
+		// row
+	// application

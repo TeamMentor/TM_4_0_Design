@@ -92,19 +92,19 @@ mixin flare-new-password-input
 			input(type='password', placeholder='New Password')
 		.small-3.columns
 			.button.postfix(href='#') SHOW
-					
+
 mixin password-input
 	label
 		| Password
 	input(type='password', id='password', placeholder='Password')
 
 mixin new-password-input
-	label(for='user-new-password') 
+	label(for='user-new-password')
 		| New Password
 	input(type='password', id='user-new-password', placeholder='New Password')
 
 mixin confirm-new-password-input
-	label(for='user-confirm-new-password') 
+	label(for='user-confirm-new-password')
 		| Confirm New Password
 	input(type='password', id='user-confirm-new-password', placeholder='Confirm New Password')
 
@@ -391,11 +391,11 @@ mixin edit-button
 mixin breadcrumbs
 	ul.breadcrumbs
 		li
-			a(href='navigate.html') Navigate
+			a(href='../home/navigate') Navigate
 		li
-			a(href='fundamentals-of-security.html') Principles & Standards
+			a(href='fundamentals-of-security') Principles & Standards
 		li.current
-			a(href='fundamentals-of-security.html') Fundamentals of Security
+			a(href='fundamentals-of-security') Fundamentals of Security
 
 
 //- Copyright Information
@@ -407,7 +407,6 @@ mixin copyright
 //- horizontal-rule
 mixin horizontal-rule
 	hr
-	
 
 //- Alert System
 mixin flare-alert

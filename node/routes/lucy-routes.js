@@ -24,6 +24,8 @@ module.exports = function (app)
 
     app.get('/:version/landing-pages/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/landing-pages/' + req.params.page + '.jade'));});
 
+    app.get('/:version/learning-paths/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/learning-paths/' + req.params.page + '.jade'));});
+
     app.get('/:version/new-user-onboard/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/new-user-onboard/' + req.params.page + '.jade'));});
 
     app.get('/:version/style-guide/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/style-guide/' + req.params.page + '.jade'));});

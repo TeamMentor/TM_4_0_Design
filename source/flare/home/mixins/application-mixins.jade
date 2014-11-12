@@ -9,11 +9,11 @@ mixin flare-search-bar-input
 					input#search-bar(type='text', placeholder='Type keywords here')
 				// column
 				.small-2.large-1.columns
-					a.button.postfix#search-button(href='app-keyword-search.html')
+					a.button.postfix#search-button(href='app-keyword-search')
 						+search-icon
 				// column
 				.small-2.large-1.columns
-					a.button.postfix(href='filters-div.html')
+					a.button.postfix(href='filters-div')
 						+filter-icon
 				// column
 			// row-collapse
@@ -27,11 +27,11 @@ mixin flare-results-save-clear
 			h4 0/200 results showing
 		//column
 		.small-6.large-3.columns.vertical-align
-			a.button(href='app-keyword-search-save.html')
+			a.button(href='app-keyword-search-save')
 				+save-icon
 		// column
 		.small-6.large-3.columns.vertical-align
-			a.button(href='main-app-view.html')
+			a.button(href='main-app-view')
 				+clear-icon
 		// column
 	// row
@@ -92,15 +92,15 @@ mixin flare-saved-articles-list
 mixin flare-article-preview-menu
 	.row.text-center
 		.small-12.large-4.columns
-			a.button(href='/deploy/flare/articles/article-new-window-view.html', target='_blank')
+			a.button(href='../articles/article-new-window-view', target='_blank')
 				+open-icon
 		// columns
 		.small-12.large-4.columns
-			a.button(href='../articles/article-new-window-view-save.html')
+			a.button(href='app-keyword-search-save')
 				+save-icon
 		// columns
 		.small-12.large-4.columns
-			a.button(href='../articles/article-new-window-view-share.html')
+			a.button(href='app-keyword-search-share')
 				+share-icon
 		// columns
 	// row
@@ -109,15 +109,15 @@ mixin flare-article-preview-menu
 mixin saved-article-menu
 	.row.text-center
 		.small-12.large-4.columns
-			a(href='/deploy/flare/articles/article-new-window-view.html', target='_blank')
+			a.button(href='article-new-window-view', target='_blank')
 				+open-icon
 		// column
 		.small-12.large-4.columns
-			a(href='#share')
+			a.button(href='../home/app-keyword-search-share')
 				+share-icon
 		// column
 		.small-12.large-4.columns
-			a(href='#')
+			a.button(href='my-search-items')
 				+delete-icon
 		// column
 	// row
@@ -126,28 +126,28 @@ mixin saved-article-menu
 mixin flare-main-app-view
 	dl.accordion(data-accordion='data-accordion')
 		dd.accordion-navigation
-			a(href='#panel1') Recently Viewed Articles
-			#panel1.content
+			a(href='#recently-viewed-articles') Recently Viewed Articles
+			#recently-viewed-articles.content
 				+flare-articles-list
-			// panel1-content
+			// recently-viewed-articles-content
 		// acordian-navigation
 		dd.accordion-navigation
-			a(href='#panel2') Popular Search Terms
-			#panel2.content
+			a(href='#popular-search-terms') Popular Search Terms
+			#popular-search-terms.content
 				+flare-articles-list
-			// panel2-content
+			// popular-search-terms-content
 		// accordian-navigation
 		dd.accordion-navigation
-			a(href='#panel3') Top Articles
-			#panel3.content
+			a(href='#top-articles') Top Articles
+			#top-articles.content
 				+flare-articles-list
-			// panel3-content
+			// top-articles-content
 		// accordian-navigation
 		dd.accordion-navigation
-			a(href='#panel4') New Articles
-			#panel4.content
+			a(href='#new-articles') New Articles
+			#new-articles.content
 				+flare-articles-list
-			// panel4-content
+			// new-articles-content
 		// accordian-navigation
 	// accordian
 
@@ -329,12 +329,11 @@ mixin flare-filters-div
 			// accordian-content
 		// accordian
 		br
-		a(href='filters-active.html')
-			button(type='submit')
-				| Ok, Done
+		button(type='submit' href='filters-active')
+			| Ok, Done
 	// form
 
-//- Flare 
+//- Flare Filters Active
 mixin flare-filters-active
 	h4 Filters Active
 	.row
