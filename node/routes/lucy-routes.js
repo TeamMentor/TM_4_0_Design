@@ -14,9 +14,9 @@ module.exports = function (app)
 
     // special opitimized views (pre-compiled)
 
-    app.get('/:area/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.area + '/' + req.params.page + '.jade'));});
+    app.get('/:version/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/' + req.params.page + '.jade'));});
 
-    app.get('/:area/articles/:page.html', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.area + '/articles/' + req.params.page + '.jade'));});
+    app.get('/:version/articles/:page.html', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/articles/' + req.params.page + '.jade'));});
 
     app.get('/:area/getting-started/:page.html', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.area + '/articles/' + req.params.page + '.jade'));});
 
