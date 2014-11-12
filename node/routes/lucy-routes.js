@@ -14,15 +14,23 @@ module.exports = function (app)
 
     // special opitimized views (pre-compiled)
 
-    app.get('/:version/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/' + req.params.page + '.jade'));});
+    app.get('/:version/articles/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/articles/' + req.params.page + '.jade'));});
 
-    app.get('/:version/articles/:page.html', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/articles/' + req.params.page + '.jade'));});
+    app.get('/:version/getting-started/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/getting-started/' + req.params.page + '.jade'));});
 
-    app.get('/:area/getting-started/:page.html', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.area + '/articles/' + req.params.page + '.jade'));});
+    app.get('/:version/help/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/help/' + req.params.page + '.jade'));});
 
-    app.get('/:area/home/:page.html', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.area + '/home/' + req.params.page + '.jade'));});
+    app.get('/:version/home/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/home/' + req.params.page + '.jade'));});
 
-    app.get('/:area/landing-pages/:page.html', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.area + '/landing-pages/' + req.params.page + '.jade'));});
+    app.get('/:version/landing-pages/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/landing-pages/' + req.params.page + '.jade'));});
+
+    app.get('/:version/new-user-onboard/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/new-user-onboard/' + req.params.page + '.jade'));});
+
+    app.get('/:version/style-guide/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/style-guide/' + req.params.page + '.jade'));});
+
+    app.get('/:version/user/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/user/' + req.params.page + '.jade'));});
+
+    app.get('/:version/default', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/default.jade'));});
 
     // This directory doesn't exist anymore - app.get('/user/login/:page.html'                        , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/html/user/login/'              + req.params.page + '.jade'                       ));});
 
