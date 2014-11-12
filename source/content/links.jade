@@ -8,7 +8,7 @@
 - var link_article_new_window       = articles + '/article-new-window-view.html'
 - var link_app_keyword_search       = home     + '/app-keyword-search.html'
 - var link_fundamentals_of_security = articles + '/fundamentals-of-security.html'
-			
+
 mixin links-navbar__landing-page
 	:markdown
 		* [About](#{landing_pages}/about.html)
@@ -22,7 +22,7 @@ mixin links-navbar__home
 		* [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
 		* [![User](/deploy/assets/icons/user.png)](#{user}/user.html)
 		* [![Logout](/deploy/assets/icons/logout.png)](/user/logout)
-			
+
 mixin links-navbar__not_logged_in
 	:markdown
 		* [![Help](/deploy/assets/icons/help.png)](#{help}/index.html)
@@ -32,7 +32,7 @@ mixin links-flare__untoggled-menu
 		* [About](#{landing_pages}/about.html)
 		* [Features](#{landing_pages}/features.html)
 		* [Get Started](#{getting-started}/index.html)
-			
+
 mixin links-home__navigate
 	h3 Navigate TEAM Mentor
 	.list-group
@@ -56,9 +56,7 @@ mixin links_user_pages
 //- Flare Page Links
 mixin flare-all-pages-links
 	.list-group
-		a(href='articles/alert-article-new-window-view.html'                   ) articles/alert-article-new-window-view.html
-		a(href='articles/article-new-window-view-save.html'                    ) articles/article-new-window-view-save.html
-		a(href='articles/article-new-window-view-share.html'                   ) articles/article-new-window-view-share.html
+		a(href='flare/articles/alert-article-new-window-view'                   ) articles/alert-article-new-window-view.html
 		a(href='articles/article-new-window-view.html'                         ) articles/article-new-window-view.html
 		a(href='articles/fundamentals-of-security.html'                        ) articles/fundamentals-of-security.html
 		a(href='articles/my-articles.html'                                     ) articles/my-articles.html
@@ -101,7 +99,7 @@ mixin flare-all-pages-links
 //- Jade Page Links
 mixin jade-all-pages-links
 	.list-group
-		a(href='articles/alert-article-new-window-view.html'                   ) articles/alert-article-new-window-view.html
+		a(href='articles/alert-article-new-window-view'                   ) articles/alert-article-new-window-view.html
 		a(href='articles/article-new-window-view.html'                         ) articles/article-new-window-view.html
 		a(href='articles/fundamentals-of-security.html'                        ) articles/fundamentals-of-security.html
 		a(href='articles/my-articles-edit.html'                                ) articles/my-articles-edit.html

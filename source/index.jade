@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    link(rel='icon', href='/favicon.ico')
+    title TEAM Mentor 4.0 Design
+    //
+       TEAM Mentor App CSS
+    link(href='../deploy/css/app.css', rel='stylesheet')
+    //
+       Custom Styles
+    link(href='../deploy/css/custom-style.css', rel='stylesheet')
+  body
+    //
+       Fixed navbar
+    .fixed
+      nav.top-bar(data-topbar='data-topbar', role='navigation')
+        #team-mentor-navigation
+          ul.title-area
+            li.name
+              a(href='landing-pages/index.html')
+                img(src='/deploy/assets/logos/tm-logo.jpg', alt='TEAM Mentor')
+    #application
+      .row
+        .lge-container
+          .col-offset-3.col-6
+            h4 TEAM Mentor 4.0 designs
+            | There are two different implementations of the the new TM design.
+            | Please chose the one you want to see:
+            br
+            br
+            .list-group
+              a(href='/html/default')
+                h5 HTML version
+              a(href='/flare/default')
+                h5 Flare version
