@@ -6,7 +6,7 @@ function checkAuth(req, res, next)
 {
     if (!req.session.username)
     {
-        res.status(403).send(preCompiler.renderJadeFile('/source/html/getting-started/index.jade'));
+        res.status(403).send(preCompiler.renderJadeFile('/source/getting-started/index.jade'));
     }
     else
     {
