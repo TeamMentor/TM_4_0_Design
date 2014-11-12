@@ -16,7 +16,13 @@ module.exports = function (app)
 
     app.get('/:area/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.area + '/' + req.params.page + '.jade'));});
 
-    app.get('/:folder/:area/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.folder + '/' + req.params.area + '/' + req.params.page + '.jade'));});
+    app.get('/:area/articles/:page.html', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.area + '/articles/' + req.params.page + '.jade'));});
+
+    app.get('/:area/getting-started/:page.html', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.area + '/articles/' + req.params.page + '.jade'));});
+
+    app.get('/:area/home/:page.html', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.area + '/home/' + req.params.page + '.jade'));});
+
+    app.get('/:area/landing-pages/:page.html', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.area + '/landing-pages/' + req.params.page + '.jade'));});
 
     // This directory doesn't exist anymore - app.get('/user/login/:page.html'                        , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/html/user/login/'              + req.params.page + '.jade'                       ));});
 
