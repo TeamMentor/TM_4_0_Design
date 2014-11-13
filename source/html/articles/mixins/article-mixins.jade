@@ -41,25 +41,23 @@ mixin related-courses
 
 // Save Div
 mixin save-div
-	form
+	form(action='alert-article-new-window-view')
 		.row
 			.form-group
 				+save-input
 			.form-group
-				a(href='alert-article-new-window-view')
-					+save-button
+				+save-button
 		// row
 	// form
 
 // Share Div
 mixin share-div
-	form
+	form(action='alert-articlew-new-window-view')
 		.row
 			.form-group
 				+share-input
 			.form-group
-				a(href='alert-article-new-window-view')
-					+share-button
+				+share-button
 		// row
 	// form
 

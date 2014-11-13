@@ -84,7 +84,7 @@ mixin other-user-settings
 //- Flare Edit User Details
 mixin flare-edit-user-details
 	h3 Edit User Details
-	form
+	form(action='alert-user')
 		.row
 			.small-12.columns
 				+name-input
@@ -113,8 +113,7 @@ mixin flare-edit-user-details
 		// row
 		.row
 			.small-12.columns
-				a(href='alert-user')
-					+ok-button
+				+ok-button
 			// column
 		// row
 	// form
@@ -122,7 +121,7 @@ mixin flare-edit-user-details
 //- Flare Change Password
 mixin flare-change-password
 	h3 Change Password
-	form
+	form(action='alert-user')
 		.row
 			.small-12.columns
 				+password-input
@@ -135,8 +134,7 @@ mixin flare-change-password
 		// row
 		.row
 			.small-12.columns
-				a(href='alert-user')
-					+ok-button
+				+ok-button
 			// column
 		// row
 	// form
