@@ -3,7 +3,7 @@ mixin jade-search-bar-input
 	.input-group
 		input.form-control(type='text', placeholder='Type keywords here')
 		span.input-group-btn
-			a(href='app-keyword-search.html')
+			a(href='app-keyword-search')
 				button(type='button')
 					| SEARCH
 	// input-group
@@ -12,19 +12,19 @@ mixin jade-search-bar-input
 mixin results-save-clear
 	table
 		tr
-			td 
+			td
 				h4 0/200 results showing
 			td
-				a.action(href='alert-app-keyword-search.html') Save
+				a.action(href='alert-app-keyword-search') Save
 			td
-				a.action(href='main-app-view.html') Clear
+				a.action(href='main-app-view') Clear
 		//tr
 	// table
 
 //- Articles List
 mixin articles-list
 	.list-group
-		a(href='#{link_article_new_window}', target='_blank')
+		a(href='article-new-window-view', target='_blank')
 			include:md ../../../content/teamMentor/articles/article-summary.md
 	// list-group
 
@@ -32,38 +32,38 @@ mixin articles-list
 mixin main-app-view
 	h4 Recently Viewed Articles
 	.list-group
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
 	// list-group
 	h4 Popular Search Terms
 	.list-group
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
 	// list-group
 	h4 Top Articles
 	.list-group
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
 	// list-group
 	h4 New Articles
 	.list-group
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
+		a(href='article-new-window-view', target='_blank') Article Headline
 	// list-group
 
 //- Jade Filters Div
 mixin filters-div
 	#filters
 		h3 Filters
-		form(role='form', action='filters-active.html')
+		form(role='form', action='filters-active')
 			.form-group
 				h5 Technology
 				li
@@ -82,8 +82,8 @@ mixin filters-div
 				li
 					.row
 						.col-2
-							span.badge 14 
-						// column	
+							span.badge 14
+						// column
 						.col-8
 							label(for='#technology_2', type='checkbox') Option #2
 						// column
@@ -91,7 +91,7 @@ mixin filters-div
 							input#technology_2(type='checkbox')
 						// column
 					// row
-				// li			
+				// li
 				li
 					.row
 						.col-2
@@ -104,11 +104,11 @@ mixin filters-div
 							input#technology_3(type='checkbox')
 						// column
 					// row
-				// li						
+				// li
 				li
 					.row
 						.col-2
-							span.badge 14 
+							span.badge 14
 						// column
 						.col-8
 							label(for='#technology_4', type='checkbox') Option #4
@@ -117,11 +117,11 @@ mixin filters-div
 							input#technology_4(type='checkbox')
 						// column
 					// row
-				// li	
+				// li
 				li
 					.row
 						.col-2
-							span.badge 14 
+							span.badge 14
 						// column
 						.col-8
 							label(for='#technology_5', type='checkbox') Option #5
@@ -146,7 +146,7 @@ mixin filters-div
 							input#category_1(type='checkbox')
 						// column
 					// row
-				// li	 
+				// li
 				li
 					.row
 						.col-2
@@ -159,7 +159,7 @@ mixin filters-div
 							input#category_2(type='checkbox')
 						// column
 					// row
-				// li		
+				// li
 				li
 					.row
 						.col-2
@@ -172,7 +172,7 @@ mixin filters-div
 							input#category_3(type='checkbox')
 						// column
 					// row
-				// li	
+				// li
 				li
 					.row
 						.col-2
@@ -185,7 +185,7 @@ mixin filters-div
 							input#category_4(type='checkbox')
 						// column
 					// row
-				// li		
+				// li
 				li
 					.row
 						.col-2
@@ -282,7 +282,7 @@ mixin filters-div
 							input#type_1(type='checkbox')
 						// column
 					// row
-				// li	
+				// li
 				li
 					.row
 						.col-2
@@ -335,7 +335,7 @@ mixin filters-div
 						// column
 					// row
 				// li
-			// form-group	
+			// form-group
 			br
-			a(href='filters-active.html')
+			a(href='filters-active')
 				+ok-button

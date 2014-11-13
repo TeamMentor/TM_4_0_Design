@@ -6,7 +6,7 @@ mixin user-details-heading
 		// column
 		.small-12.large-3.columns.text-center
 			br
-			a.action(href='user-edit.html')
+			a.action(href='user-edit')
 				+edit-icon
 		// column
 	// row
@@ -72,11 +72,11 @@ mixin user-details-display
 mixin other-user-settings
 	.row
 		.small-12.large-6.columns
-			a.action(href='user-new-password.html')
+			a.action(href='user-new-password')
 				+new-pw-icon
 		// column
 		.small-12.large-6.columns
-			a.action(href='user-add-filter.html')
+			a.action(href='user-add-filter')
 				+change-filters-icon
 		// column
 	// row
@@ -113,7 +113,7 @@ mixin flare-edit-user-details
 		// row
 		.row
 			.small-12.columns
-				a.action(href='alert-user.html')
+				a(href='alert-user')
 					+ok-button
 			// column
 		// row
@@ -135,7 +135,7 @@ mixin flare-change-password
 		// row
 		.row
 			.small-12.columns
-				a.action(href='alert-user.html')
+				a(href='alert-user')
 					+ok-button
 			// column
 		// row

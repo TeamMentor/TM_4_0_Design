@@ -2,21 +2,21 @@
 mixin jade-login-form
 	h3 Login
 	include:md ../../../content/teamMentor/getting-started/login-form.md
-	form#login-form(role='form' method='post' action='/user/login')
+	form#login-form(role='form' method='post')
 		.form-group
 			+username-input
-		.form-group     
-			+password-input 
+		.form-group
+			+password-input
 		.row
 			.col-6
 				.lge-container
-					a(href='../home/main-app-view.html')
+					a(href='../home/main-app-view')
 						+login-button
 				// lge-container
 			// column
 			.col-6
 				.lge-container
-					a(href='forgot-password.html')
+					a(href='forgot-password')
 						+forgot-password-button
 				// lge-container
 			// column
@@ -37,7 +37,7 @@ mixin jade-sign-up-form
 			+password-input
 		.form-group
 			include:md ../../../content/teamMentor/getting-started/agree-to-toc.md
-		a(href='../home/main-app-view.html')
+		a(href='../home/main-app-view')
 			+sign-up-button
 	// form
 
@@ -49,7 +49,7 @@ mixin jade-forgot-password-form
 	form#forgot-password(role='form')
 		.form-group
 			+email-input
-		a(href='index-validation.html')
+		a(href='index-validation')
 			+get-password-button
 	// form
 
@@ -57,7 +57,6 @@ mixin jade-forgot-password-form
 //- TEAM Mentor Summary
 mixin team-mentor-summary
 	include:md ../../../content/teamMentor/getting-started/login-wall-summary.md
-					
 	.row
 		.col-2
 			+image-identify-fix-icon
@@ -66,7 +65,6 @@ mixin team-mentor-summary
 			include:md ../../../content/teamMentor/landing-pages/selling-point-1.md
 		// column
 	// row
-
 	.row
 		.col-2
 			+image-reduces-icon
@@ -75,7 +73,6 @@ mixin team-mentor-summary
 			include:md ../../../content/teamMentor/landing-pages/selling-point-2.md
 		// column
 	// row
-
 	.row
 		.col-2
 			+image-expand-icon

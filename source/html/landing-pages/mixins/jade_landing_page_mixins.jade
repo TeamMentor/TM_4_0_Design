@@ -8,7 +8,7 @@ mixin usp-div
 				br
 				.row
 					.col-offset-3.col-6
-						a(href='../getting-started/index.html')
+						a(href='../getting-started/index')
 							button Start your free trial today
 					// column
 				// row
@@ -36,7 +36,7 @@ mixin reasons-to-use-tm-div
 			.row
 				.col-offset-3.col-1
 					+image-reduces-icon
-				// column 
+				// column
 				.col-5
 					.lge-container
 						h4
@@ -101,7 +101,7 @@ mixin call-to-action-div
 				br
 				.row
 					.col-offset-3.col-6
-						a(href='../getting-started/index.html')
+						a(href='../getting-started/index')
 							button(type='button') See for yourself
 					// column
 				// row
@@ -115,7 +115,7 @@ mixin footer-div
 		.row
 			.col-offset-2.col-8
 				+image-security-innovation-logo
-				a(href="#{user}/terms-and-conditions.html") Terms & Conditions
+				a(href="../user/terms-and-conditions") Terms & Conditions
 			// column
 		// row
 	// footer-div
@@ -133,7 +133,7 @@ mixin about-tagline-div
 // About Us Div
 mixin about-us-div
 	#about-us
-		.row 
+		.row
 			.col-offset-2.col-8
 				include:md ../../../content/teamMentor/landing-pages/about-tm-summary.md
 			// column
@@ -145,7 +145,6 @@ mixin features-div
 	#features
 		h2 TEAM Mentor provides intelligence to fix vulnerabilities and comply
 		br
-	
 		.row
 			.col-offset-3.col-1
 				+image-compliance-icon

@@ -2,7 +2,7 @@ extends ../_layouts/page_home.jade
 include mixins/new-user-onboard-mixins.jade
 include ../home/mixins/application-mixins.jade
 
-block content  
+block content
 	#application
 		.row
 			.col-3#left-nav
@@ -10,7 +10,6 @@ block content
 					br
 				// lge-container
 			// column
-
 			.col-6#results
 				.lge-container
 					+jade-search-bar-input
@@ -20,7 +19,6 @@ block content
 					+main-app-view
 				// lge-container
 			// column
-			
 			.col-3
 				.lge-container
 					+step-one-instructions

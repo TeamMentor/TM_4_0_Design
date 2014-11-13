@@ -8,7 +8,7 @@ mixin usp-div
 				br
 				.row
 					.small-12.large-offset-3.large-6.end.columns
-						a(href='../getting-started/index.html')
+						a(href='../getting-started/index')
 							button Start your free trial today
 					// column
 				// row
@@ -99,7 +99,7 @@ mixin about-tagline-div
 // about-us-div
 mixin about-us-div
 	#about-us
-		.row 
+		.row
 			.small-12.large-offset-2.large-8.end.columns
 				include:md ../../../content/teamMentor/landing-pages/about-tm-summary.md
 			// column
@@ -162,7 +162,7 @@ mixin call-to-action-div
 				br
 				.row
 					.small-12.large-offset-3.large-6.end.columns
-						a(href='getting-started.html')
+						a(href='../getting-started/index')
 							button(type='button') See for yourself
 					// column
 				// row
@@ -176,7 +176,7 @@ mixin footer-div
 		.row
 			.small-12.large-offset-4.large-4.columns
 				+image-security-innovation-logo
-				a(href="#{user}/terms-and-conditions.html") Terms & Conditions
+				a(href="../user/terms-and-conditions") Terms & Conditions
 			// column
 		// row
 	// footer-div

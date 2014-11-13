@@ -2,19 +2,22 @@
 mixin new-user-onboard-welcome-buttons
 	.row
 		.small-12.large-6.columns
-			a(href='step-one-search.html')
+			a(href='step-one-search')
 				button
 					| Start Tutorial
 					br
 					| (It only takes 2 minutes)
 				// button
+			// a
 		// columns
 		.small-12.large-6.columns
-			button
-				| Skip Tutorial
-				br
-				| (Check it out later)
-			// button
+			a(href='../home/main-app-view')
+				button
+					| Skip Tutorial
+					br
+					| (Check it out later)
+				// button
+			// a
 		// column
 	// row
 

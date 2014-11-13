@@ -19,11 +19,11 @@ mixin article-options
 mixin related-articles
 	h3 You might also like
 	.list-group
-		a(href='#{link_article_new_window}', target='_blank')
+		a(href='article-new-window-view', target='_blank')
 			include:md ../../../content/teamMentor/articles/article-summary.md
-		a(href='#{link_article_new_window}', target='_blank')
+		a(href='article-new-window-view', target='_blank')
 			include:md ../../../content/teamMentor/articles/article-summary.md
-		a(href='#{link_article_new_window}', target='_blank')
+		a(href='article-new-window-view', target='_blank')
 			include:md ../../../content/teamMentor/articles/article-summary.md
 	// list-group
 
@@ -31,11 +31,11 @@ mixin related-articles
 mixin related-courses
 	h3 Related TEAM Professor Courses
 	.list-group
-		a(href='#{link_article_new_window}', target='_blank')
+		a(href='article-new-window-view', target='_blank')
 			include:md ../../../content/teamMentor/articles/course-summary.md
-		a(href='#{link_article_new_window}', target='_blank')
+		a(href='article-new-window-view', target='_blank')
 			include:md ../../../content/teamMentor/articles/course-summary.md
-		a(href='#{link_article_new_window}', target='_blank')
+		a(href='article-new-window-view', target='_blank')
 			include:md ../../../content/teamMentor/articles/course-summary.md
 	// list-group
 
@@ -46,7 +46,7 @@ mixin save-div
 			.form-group
 				+save-input
 			.form-group
-				a(href='alert-article-new-window-view.html')
+				a(href='alert-article-new-window-view')
 					+save-button
 		// row
 	// form
@@ -58,7 +58,7 @@ mixin share-div
 			.form-group
 				+share-input
 			.form-group
-				a(href='alert-article-new-window-view.html')
+				a(href='alert-article-new-window-view')
 					+share-button
 		// row
 	// form
@@ -112,13 +112,13 @@ mixin edit-my-articles
 
 //- my-articles-edit-links
 mixin edit-links
-	a(href='my-articles.html')
+	a(href='my-articles')
 		+clear-selected-button
 	br
 	br
-	a(href='my-articles.html')
+	a(href='my-articles')
 		+clear-all-button
 	br
 	br
-	a(href='my-articles.html')
+	a(href='my-articles')
 		+ok-button
