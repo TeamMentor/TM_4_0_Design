@@ -14,13 +14,13 @@ module.exports = function (app)
 
     // special opitimized views (pre-compiled)
 
-    app.get('/:version/articles/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/articles/' + req.params.page + '.jade'));});
+    app.get('/:version/articles/:page', auth.checkAuth, function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/articles/' + req.params.page + '.jade'));});
 
     app.get('/:version/getting-started/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/getting-started/' + req.params.page + '.jade'));});
 
     app.get('/:version/help/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/help/' + req.params.page + '.jade'));});
 
-    app.get('/:version/home/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/home/' + req.params.page + '.jade'));});
+    app.get('/:version/home/:page', auth.checkAuth, function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/home/' + req.params.page + '.jade'));});
 
     app.get('/:version/landing-pages/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/landing-pages/' + req.params.page + '.jade'));});
 

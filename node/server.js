@@ -15,7 +15,7 @@ app.use(session({secret           : '1234567890',
 
 require('./routes/help.js' )(app);
 require('./routes/lucy-routes.js')(app);
-require('./routes/user.js'  )(app);
+require('./routes/lucy-user.js'  )(app);
 require('./routes/debug.js' )(app);
 
 
