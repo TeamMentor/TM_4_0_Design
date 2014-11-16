@@ -3,9 +3,9 @@
 
 module.exports = function (app)
 {
-    var loginPage         = 'getting-started/index';
-    var mainPage_user     = 'home/main-app-view';
-    var mainPage_no_user  = 'landing-pages/index';
+    var loginPage         = '/getting-started/index';
+    var mainPage_user     = '/home/main-app-view';
+    var mainPage_no_user  = '/landing-pages/index';
 
     var users = [ { username : 'tm'   , password : 'tm'   } ,
                   { username : 'user' , password : ''     } ,
@@ -30,7 +30,7 @@ module.exports = function (app)
                 req.session.username = undefined;
                 res.redirect(loginPage);
             });
-    app.get ('/user/logout' , function (req, res)
+    app.get ('logout' , function (req, res)
             {
                 req.session.username = undefined;
                 res.redirect(mainPage_no_user);

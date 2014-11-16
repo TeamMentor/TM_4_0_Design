@@ -14,7 +14,7 @@ module.exports = function (app)
 
     // special opitimized views (pre-compiled)
 
-    app.get('/:version/articles/:page', auth.checkAuth, function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/articles/' + req.params.page + '.jade'));});
+    app.get('/:version/articles/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/articles/' + req.params.page + '.jade'));});
 
     app.get('/:version/getting-started/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/getting-started/' + req.params.page + '.jade'));});
 
