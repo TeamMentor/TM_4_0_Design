@@ -4,7 +4,8 @@
 var express    = require('express'),
     bodyParser = require('body-parser'),
     app        = express(),
-    session    = require('express-session');
+    session    = require('express-session'),
+    sass       = require('node-sass');
 
 app.use(bodyParser.json()                        );     // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));     // to support URL-encoded bodies
@@ -16,6 +17,7 @@ app.use(session({secret           : '1234567890',
 require('./routes/help.js' )(app);
 require('./routes/lucy-routes.js')(app);
 require('./routes/lucy-user.js'  )(app);
+require('./routes/debug.js' )(app);
 require('./routes/debug.js' )(app);
 
 

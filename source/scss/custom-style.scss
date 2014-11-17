@@ -83,7 +83,7 @@ body {
 
 #copyright {
 	padding-bottom: 30px;
-	
+
 	p, a {
 		font-size: 12px;
 		text-align: center;
@@ -668,7 +668,10 @@ table {
 
 dl.tabs {
 	dd {
-		width: 33%;
+		&.related-options-width {
+			width: 50%;
+		}
+
 		a {
 			font-size: 14px;
 			text-align: center !important;
