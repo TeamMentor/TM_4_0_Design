@@ -20,7 +20,7 @@ module.exports = function (app)
 
     app.get('/:version/help/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/help/' + req.params.page + '.jade'));});
 
-    app.get('/:version/home/:page', auth.checkAuth, function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/home/' + req.params.page + '.jade'));});
+    app.get('/:version/home/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/home/' + req.params.page + '.jade'));});
 
     app.get('/:version/landing-pages/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/landing-pages/' + req.params.page + '.jade'));});
 

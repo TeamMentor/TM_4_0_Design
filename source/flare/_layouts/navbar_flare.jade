@@ -10,14 +10,33 @@ include ../../content/links.jade
 						+image-teammentor-logo__default
 				// li-name
 			// ul-title-area
+			ul.menu-icon.right
+				li
+					a(href='#')
+						i.fi-list
+			// ul-right
 			section.top-bar-section
-				ul.right
+				ul.left
 					li
-						a(href='#')
-							i.fi-list
-				// ul-right
-				ul.center
-					+links-flare-navbar__home
+						a(href='navigate/')
+							+navigate-icon
+							p Navigate
+					li
+						a(href='main-app-view')
+							+home-icon
+							p Home
+					li
+						a(href='../help/index')
+							+help-icon
+							p Help
+					li
+						a(href='../user/user')
+							+user-icon
+							p User
+					li
+						a(href='../getting-started/index')
+							+logout-icon
+							p Logout
 				// ul-center
 			// section
 		// team-mentor-navigation

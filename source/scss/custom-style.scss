@@ -270,15 +270,21 @@ nav.top-bar {
 		float: left;
 	}
 
+	ul.menu-icon.right {
+		padding: 5px 0 0 5px;
+		float: right;
+	}
+
 	section.top-bar-section {
+		padding-left: 10%;
+		float: left;
+
 		li:not(.has-form) a:not(.button) {
 			line-height: 50px;
 		}
-
 		i {
 			font-size: 16px;
 		}
-		
 		ul {
 			padding-top: 5px;
 			padding-left: 0;
@@ -306,7 +312,7 @@ nav.top-bar {
 					}
 				}
 			}
-		}	
+		}
 	}
 }
 
@@ -327,10 +333,12 @@ nav.top-bar {
 	height: 70px;
 
 	ul {
-		padding: 5px 0 0 5px;
+		&.menu-icon.right {
+			margin: 20px 25px 0 0;
 
-		li {
-			list-style-type: none;
+			li {
+				list-style-type: none;
+			}
 		}
 	}
 }
