@@ -543,12 +543,6 @@ a:hover, a:active {
   text-decoration: none;
 }
 
-a, button {
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
 input {
   height: 1.7em;
   border-radius: 0px;
