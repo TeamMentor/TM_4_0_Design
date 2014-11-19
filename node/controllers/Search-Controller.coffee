@@ -28,32 +28,32 @@ class SearchController
         @jade_Service.renderJadeFile(@jade_Page, @searchData)
         
     
-    searchDataFile: ->
-        content_File = '/source/content/search_data/main.json'
-        return path.join(process.cwd(), content_File)
-        
-    loadSearchData: ->
-        jsonFile = @searchDataFile()
-        if (fs.existsSync(jsonFile))
-            @searchData = JSON.parse(fs.readFileSync(jsonFile, 'utf8'))
-        return this
+#   searchDataFile: ->
+#       content_File = '/source/content/search_data/main.json'
+#       return path.join(process.cwd(), content_File)
+#       
+#   loadSearchData: ->
+#       jsonFile = @searchDataFile()
+#       if (fs.existsSync(jsonFile))
+#           @searchData = JSON.parse(fs.readFileSync(jsonFile, 'utf8'))
+#       return this
 
-    getSearchDataFromRepo: (file, callback) =>
-        new GitHub_Service().file(@defaultUser, @defaultRepo, @defaultFolder + file + '.json', callback)
+#   getSearchDataFromRepo: (file, callback) =>
+#       new GitHub_Service().file(@defaultUser, @defaultRepo, @defaultFolder + file + '.json', callback)
 
-    showSearch: () ->
-        if (@req.params.file)
-            fileToUse = @req.params.file
-        else
-            fileToUse = @defaultDataFile
-        
-        @getSearchDataFromRepo fileToUse, (data) =>
-            try
-                @searchData = JSON.parse(data)
-            catch error
-                @searchData = { title: 'JSON Parsing error' , resultsTitle : error}
-            @res.send(@renderPage())
-    
+#   showSearch: () ->
+#       if (@req.params.file)
+#           fileToUse = @req.params.file
+#       else
+#           fileToUse = @defaultDataFile
+#       
+#       @getSearchDataFromRepo fileToUse, (data) =>
+#           try
+#               @searchData = JSON.parse(data)
+#           catch error
+#               @searchData = { title: 'JSON Parsing error' , resultsTitle : error}
+#           @res.send(@renderPage())
+#   
    #showSearchFromGraph: ()=>
    #    graphService = new Graph_Service()
    #    graphService.loadTestData =>
@@ -61,7 +61,29 @@ class SearchController
    #            @searchData = searchData
    #            graphService.closeDb =>
    #                @res.send(@renderPage())
-   
+    search : ()=>
+        server = 'http://localhost:1332';
+        url    = '/data/tm-uno/queries';
+        text = @req.query.text
+        
+        request server + url, (error, response,data) =>
+            graph = JSON.parse(data);
+            nodes = graph.nodes;
+            node_Labels = [];
+            nodes.forEach (node)=> node_Labels.push(node.label)
+            allQueries =  node_Labels.sort();
+            foundQuery = ""
+            if (allQueries.contains(text))
+                foundQuery = text
+            else
+                text = text.lower()
+                foundQuery = query for query in allQueries when query.lower().indexOf(text) > -1
+            if (foundQuery == "")
+                @res.redirect('/home/main-app-view.html')
+            else            
+                @res.redirect("/graph/#{foundQuery}")
+            
+        
     showSearchFromGraph: ()=>        
         queryId = @req.params.queryId        
         filters = @req.params.filters  
@@ -114,9 +136,10 @@ class SearchController
         @res.redirect('https://uno.teammentor.net/'+guid)
 
 SearchController.registerRoutes = (app) ->
-    app.get('/search'                 , (req, res) -> new SearchController(req, res, app.config).showSearch())
-    app.get('/search.json'            , (req, res) -> new SearchController(req, res, app.config).showSearchData())
-    app.get('/search/:file'           , (req, res) -> new SearchController(req, res, app.config).showSearch())
+    #app.get('/search'                 , (req, res) -> new SearchController(req, res, app.config).showSearch())
+    #app.get('/search.json'            , (req, res) -> new SearchController(req, res, app.config).showSearchData())
+    #app.get('/search/:file'           , (req, res) -> new SearchController(req, res, app.config).showSearch())
+    app.get('/search'                  , (req, res) -> new SearchController(req, res, app.config).search())
     app.get('/graph/:queryId'         , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())    
     app.get('/graph/:queryId/:filters', (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())    
     

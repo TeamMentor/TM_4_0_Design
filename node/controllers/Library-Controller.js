@@ -77,6 +77,22 @@ var Library_Controller = function(req, res, config)
                     this.res.redirect('/Libraries');
                 }
             };
+        this.showQueries = function()
+        {
+            var server = 'http://localhost:1332';
+            var url    = '/data/tm-uno/queries';
+            var that   = this;
+            request(server + url, function(error, response,data)
+                {
+                    var graph = JSON.parse(data);
+                    var nodes = graph.nodes;
+                    var node_Labels = [];
+                    nodes.forEach(function(node){node_Labels.push(node.label);});                    
+                    var viewModel = {'queries' : node_Labels.sort()};
+                    that.res.send(that.jade_Service.renderJadeFile('/source/html/libraries/queries.jade', viewModel));                
+                    //that.res.send(nodes)
+                });            
+        };
         this.showFolder = function()
             {
                 var library_name = (req && req.params) ? req.params.library : "";
@@ -184,7 +200,8 @@ Library_Controller.registerRoutes = function (app)
     {
         //console.log('registering routes for Library Controller');
         app.get('/libraries'                       , function (req, res) { new Library_Controller(req, res, app.config).showLibraries  (); });
-        app.get('/library/:name'                   , function (req, res) { new Library_Controller(req, res, app.config).showLibrary   (); });
-        app.get('/library/:library/folder/:folder' , function (req, res) { new Library_Controller(req, res, app.config).showFolder    (); });
+        app.get('/library/queries'                 , function (req, res) { new Library_Controller(req, res, app.config).showQueries    (); });
+        app.get('/library/:name'                   , function (req, res) { new Library_Controller(req, res, app.config).showLibrary    (); });
+        app.get('/library/:library/folder/:folder' , function (req, res) { new Library_Controller(req, res, app.config).showFolder     (); });
     };
 module.exports = Library_Controller;  

@@ -28,7 +28,7 @@
     "coffee-script": "^1.8.0",
     "express": "^4.8.7",
     "express-session": "^1.8.0",
-    "fluentnode": "^0.1.4",
+    "fluentnode": "^0.1.8",
     "github": "^0.2.2",
     "jade": "^1.6.0",
     "level": "^0.18.0",
@@ -50,7 +50,7 @@
     "mocha": "^1.21.4",
     "mocha-lcov-reporter": "0.0.1",
     "should": "^4.0.4",
-    "supertest": "^0.13.0",    
+    "supertest": "^0.13.0",
     "zombie": "^2.0.0-alpha31"
   }
 }

@@ -1,11 +1,15 @@
 mixin links-libraries
-    if libraries
+    //if libraries
         each library in libraries
             p 
                 a(href="/library/" + library.name, id="link-library-" + library.id)= library.title
     p 
+        a#link-my-articles(href='/library/Uno') Guidance
+    p 
+        a#link-my-articles(href='/library/queries') Library Queries
+    //p 
         a#link-my-articles(href='/library/my-articles') My Articles
-    p
+    //p
         a#link-my-search-items(href='/library/my-search-items') My Search Items
         
 mixin links-library        
@@ -16,3 +20,9 @@ mixin links-library
         each folder in library.data.subFolders            
             //a.list-group-item(href='/library/'+library.name + '/folder/' + folder.name)= folder.name
             a.list-group-item(href='/graph/'+ folder.name)= folder.name
+
+mixin links-queries    
+    if(queries)            
+        //div= library
+        each query in queries
+            a.list-group-item(href='/graph/' + query)= query            
