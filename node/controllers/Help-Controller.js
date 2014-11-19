@@ -4,8 +4,8 @@
 var fs                = require('fs'),        
     marked            = require('marked'),
     request           = require('request'),
-    auth              = require('../routes/auth'),    
-    preCompiler       = require(process.cwd() + '/node/services/jade-pre-compiler.js'),
+    auth              = require('../middleware/auth'),    
+    Jade_Service      = require('../services/Jade-Service'),
     teamMentorContent = require(process.cwd() + '/node/services/teamMentor-content.js');
 
 
@@ -15,7 +15,7 @@ var library        = libraryData[0];
 
 var Help_Controller = function (req, res) 
     {          
-        var that  = this;
+        var that           = this;
 
         this.library       = library;
         this.libraryData   = libraryData;
@@ -28,7 +28,7 @@ var Help_Controller = function (req, res)
         
         this.renderPage = function()
             {           
-                this.pageParams     = auth.mappedAuth(req);
+                this.pageParams         = auth.mappedAuth(req);
                 this.pageParams.library = library;
                 this.getContent(this.page);
             };
@@ -53,8 +53,9 @@ var Help_Controller = function (req, res)
                 {   
                     this.article = library.Articles[this.page];                
                     if (this.article)
-                    {
+                    {                        
                         var docs_Url   = 'https://docs.teammentor.net/content/' + this.page;                    
+                        //console.log('fetching: ' + docs_Url);
                         request.get(docs_Url, this.handleFetchedHtml);
                     }
                     else
@@ -70,8 +71,9 @@ var Help_Controller = function (req, res)
                 { 
                     that.addContent("Error fetching page from docs site");
                 }
-                else
+                else 
                 {
+                    //console.log("[this.handleFetchedHtml] received " + body.length + " for article: " + that.article.Title);
                     that.addContent(that.article.Title, body);
                 }
             };
@@ -86,7 +88,7 @@ var Help_Controller = function (req, res)
 
         this.getRenderedPage = function(params)
             {
-                return preCompiler.renderJadeFile('/source/html/help/index.jade', params); 
+                return new Jade_Service().renderJadeFile('/source/html/help/index.jade', params); 
             };
 
         this.sendResponse = function(pageParams)
@@ -100,13 +102,14 @@ var Help_Controller = function (req, res)
                 this.content_cache = {};
                 content_cache      = {};
             };
+        this.redirectImagesToGitHub = function()
+            {
+                var gitHubImagePath = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/';
+                this.res.redirect(gitHubImagePath + this.req.params.name);
+            };
+
     };
 
-Help_Controller.redirectImagesToGitHub = function(req,res)
-    {
-        var gitHubImagePath = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/';
-        res.redirect(gitHubImagePath + req.params.name);
-    };
                         //app.get('/Image/:name', function (req, res) {  } );
 
 module.exports = Help_Controller;

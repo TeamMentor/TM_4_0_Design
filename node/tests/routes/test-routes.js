@@ -7,12 +7,12 @@ var assert   = require('chai').assert,
     Browser  = require('zombie'),    
     app      = require('../../server');    
     
-describe('routes > test-routes.js', function () 
+describe('routes | test-routes.js |', function () 
 {
     before(function() { app.server = app.listen(app.port); Browser.localhost("localhost", app.port);});
     after (function() { app.server.close();                                                             });
     
-    describe('routes step up', function() 
+    describe('routes step up |', function() 
     {
         it('Check app variable/import', function ()
         {        
@@ -45,13 +45,25 @@ describe('routes > test-routes.js', function ()
                                   '/user/login'                  ,                  // Authentication
                                   '/user/login'                  ,
                                   '/user/logout'                 ,
-
+                                  
+                                  '/libraries'                   ,
+                                  '/library/:name'               , 
+                                  '/library/:library/folder/:folder',
+                                  
+                                  '/search'                      ,                  // search
+                                  '/search.json'                 ,
+                                  '/search/:file'                ,
+                                  '/graph'                       , 
+                                  
                                   '/dirName'                     ,                  // debug ones 
                                   '/pwd'                         ,
                                   '/test'                        ,
                                   '/ping'                        ,
                                   '/module'                      ,
                                   '/mainModule'                  ,
+                                  
+                                  '/version'                     ,                  // config ones
+                                  '/config'                      , 
                                   
                                   '/session'                                                                                       ,
                                  ];
@@ -62,26 +74,5 @@ describe('routes > test-routes.js', function ()
                 expect(expectedPaths).to.contain(path);
             });        
         });  
-    });    
-    
-    describe('debug routes', function() 
-    {
-        it('/ping', function (done) 
-        {
-
-            Browser.visit('/ping', function (err, browser) {            
-                assert.equal(browser.text("body" ),"pong..");
-                done();
-            });
-        });
-        it('/session', function (done) 
-        {
-            var expectedSessionValue = '{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"}}';
-      
-            Browser.visit('/session', function (err, browser) {            
-                assert.equal(browser.text("body" ),expectedSessionValue);
-                done();
-            });
-        });
     });    
 });

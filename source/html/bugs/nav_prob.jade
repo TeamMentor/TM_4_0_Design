@@ -1,9 +1,41 @@
-extends ../_layouts/page_home.jade
-block content
-    #application
-      .row
-        .column-offset-3.column-6
-          Form#login-form(role='form')		
-             h1 not all visible
-             h2 visible
-          h1 all good here
+doctype html
+html(lang='en')
+    head
+        style            
+            |/*pulls right (not aftected by <form>)*/
+            |.pull-right {
+            |  float: right !important;
+            |}
+            |/* also afected by the <form> element> */
+            |.navbar ul {
+            |  list-style-type: none;
+            |  display: inline-block;
+            |}
+         //      |/* makes them line horizontally (not aftected by <form>)*/
+               |.navbar ul li {
+               |  display: inline-block;
+               |  padding-right: 40px;
+               |}
+
+              
+
+        //       |/* this is the one that gets overwridden with the <form> element*/
+               |.navbar-fixed-top {
+               |  position: fixed;
+               |  top: 0;
+               |  right: 0;
+               |  left: 0;
+               |  z-index: 1030;
+               |}  
+        link(href="/deploy/css/custom-style.css" rel="stylesheet")
+    
+    body
+        .navbar.navbar-fixed-top(role='navigation')        
+            .lge-container
+                ul.brand
+                    li left image                    
+                .pull-right
+                    ul.nav.nav-icons
+                        li top nav
+                        
+//| <form/>

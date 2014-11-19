@@ -9,18 +9,20 @@ var supertest         = require('supertest')   ,
     request           = require('request')     , 
     fs                = require('fs')          ,    
     app               = require('../../server'),
-    preCompiler       = require('../../services/jade-pre-compiler.js'),
+    Jade_Service      = require('../../services/Jade-Service'),
     teamMentorContent = require('../../services/teamMentor-content.js'),
-    Help_Controller   = require('../../controllers/Help_Controller.js');
+    Help_Controller   = require('../../controllers/Help-Controller.js');
     
 
-describe('routes', function () 
+describe('routes |', function () 
 {
+    app.config.enable_Jade_Cache = true;                        // enable Jade compilation cache (which dramatically speeds up tests)
+    
     before(function() 
     { 
         app.server = app.listen(app.port);
         
-        preCompiler.disableCache = false;  
+        //preCompiler.disableCache = false;  
         
         expect(teamMentorContent).to.be.an('Object'); 
         
@@ -33,7 +35,7 @@ describe('routes', function ()
     });
     after (function() { app.server.close();                  });
         
-    describe('test-help.js', function() 
+    describe('test-help.js |', function() 
     {   
         it('should open page ok', function(done)
         {
@@ -81,7 +83,7 @@ describe('routes', function ()
                                });            
         });
     });
-    describe('test-help (dynamic content)', function() 
+    describe('test-help (dynamic content) |', function() 
     {               
         var libraryData  = teamMentorContent.getLibraryData_FromCache();         
         var pageParams   = { loggedIn : false}; 
@@ -102,17 +104,16 @@ describe('routes', function ()
 
         });
         
-        var getHelpPageObject = function(disableCache)
-        {
-            preCompiler.disableCache = disableCache;   // use when making changes to the helpJadeFile
-            var html                 = preCompiler.renderJadeFile(helpJadeFile, pageParams);   
+        var getHelpPageObject = function()
+        {            
+            var html                 = new Jade_Service().renderJadeFile(helpJadeFile, pageParams);   
             var $                    = cheerio.load(html);             
             return $;
         };
     
         it('check left-hand-side navivation', function () 
         {                      
-            var $ = getHelpPageObject(false);
+            var $ = getHelpPageObject();
                                      
             //library.Views.forEach(function(view)    { });
             //view.Articles.forEach(function(article) { });   // no need to do all of these all the time
@@ -133,7 +134,7 @@ describe('routes', function ()
             var customContent  = '<h2>This is custom content....</h2>';  
             pageParams.content = customContent;
         
-            var $ = getHelpPageObject(false); 
+            var $ = getHelpPageObject(); 
             
             expect($.html()).to.contain(customContent);                 
         });
@@ -154,7 +155,8 @@ describe('routes', function ()
         });
         
         it('check that main content deliverer article', function(done) 
-        {            
+        {          
+            this.timeout(5000);
             var article_Id    = 'dac20027-6138-4cd1-8888-3b7e6a007ea5';  
             var article_Line  = "<p><strong>To install TEAM Mentor Fortify SCA UI Integration</strong></p>";
             var article_Title = "<h2>Installation</h2>";

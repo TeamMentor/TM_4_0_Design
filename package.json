@@ -13,9 +13,11 @@
   ],
   "main": "node/server.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha node/tests/**/**.js",
-    "start": "node app.js",
-    "dev": "supervisor -i node/tests/ node/server.js"
+    "test": "node_modules/mocha/bin/mocha node/tests/**/**.*",
+    "test-watch": "mocha -w node/tests/**/**.** -R list",
+    "start_once": "node app.js",
+    "start": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' node/server.js",
+    "coverage": "./node/bin/publish-code-coverage.sh"
   },
   "repository": {
     "type": "git",
@@ -23,18 +25,32 @@
   },
   "dependencies": {
     "body-parser": "^1.8.1",
+    "coffee-script": "^1.8.0",
     "express": "^4.8.7",
     "express-session": "^1.8.0",
+    "fluentnode": "^0.1.4",
+    "github": "^0.2.2",
     "jade": "^1.6.0",
+    "level": "^0.18.0",
+    "leveldown": "^1.0.0",
+    "levelgraph": "^0.8.2",
     "marked": "^0.3.2",
-    "request": "^2.42.0"
+    "request": "^2.42.0",
+    "supervisor": "^0.6.0"
   },
   "devDependencies": {
     "chai": "^1.9.1",
     "cheerio": "^0.17.0",
+    "coveralls": "^2.11.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-githooks": "^0.3.1",
+    "jscover": "^0.2.4",
     "mocha": "^1.21.4",
+    "mocha-lcov-reporter": "0.0.1",
     "should": "^4.0.4",
-    "supertest": "^0.13.0",
+    "supertest": "^0.13.0",    
     "zombie": "^2.0.0-alpha31"
   }
 }

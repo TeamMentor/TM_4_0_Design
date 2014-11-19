@@ -1,178 +1,46 @@
 //- static texts
 - var head_title = 'TEAM Mentor 4.0 (Html version)'
 
-//- search-bar-input
-mixin search-bar-input
-	.input-group
-		input.form-control(type='text', placeholder='Type keywords here')
-		span.input-group-btn
-			button.btn-search-bar(type='button') SEARCH
-
-//- results-save-clear
-mixin results-save-clear
-	table
-		tr
-			td 
-				h4 0/200 results showing
-			td 
-				a(href='#save') Save
-			td 
-				a(href='main-app-view.html') Clear
-
-//- articles-list
-mixin articles-list
-	.list-group
-		a(href='#{link_article_new_window}', target='_blank')
-			include:md teamMentor/article-details.md
-		a(href='#{link_article_new_window}', target='_blank')
-			include:md teamMentor/article-details.md
-		a(href='#{link_article_new_window}', target='_blank')
-			include:md teamMentor/article-details.md
-		a(href='#{link_article_new_window}', target='_blank')
-			include:md teamMentor/article-details.md
-
-
-//- filters
-mixin filters-div
-	#filters
-		h3 Filters
-		form(role='form', action='filters-active.html')
-			.form-group
-				h5 Technology
-				li
-					input#technology_1(type='checkbox')
-					label(for='#technology_1', type='checkbox') Option #1
-						span.badge 14 
-				li
-					input#technology_2(type='checkbox')
-					label(for='#technology_2', type='checkbox') Option #2
-						span.badge 14 
-				li
-					input#technology_3(type='checkbox')
-					label(for='#technology_3', type='checkbox') Option #3
-						span.badge 14 
-				li
-					input#technology_4(type='checkbox')
-					label(for='#technology_4', type='checkbox') Option #4
-						span.badge 14 
-				li
-					input#technology_5(type='checkbox')
-					label(for='#technology_5', type='checkbox') Option #5
-						span.badge 14 
-			.form-group
-				h5 Category
-				li
-					input#category_1(type='checkbox')
-					label(for='#category_1', type='checkbox') Option #1
-						span.badge 14 
-				li
-					input#category_2(type='checkbox')
-					label(for='#category_2', type='checkbox') Option #2
-						span.badge 14
-				li
-					input#category_3(type='checkbox')
-					label(for='#category_3', type='checkbox') Option #3
-						span.badge 14
-				li
-					input#category_4(type='checkbox')
-					label(for='#category_4', type='checkbox') Option #4
-						span.badge 14
-				li
-					input#category_5(type='checkbox')
-					label(for='#category_5', type='checkbox') Option #5
-						span.badge 14
-			.form-group
-				h5 Phase
-				li
-					input#phase_1(type='checkbox')
-					label(for='#phase_1', type='checkbox') Option #1
-						span.badge 14
-				li
-					input#phase_2(type='checkbox')
-					label(for='#phase_2', type='checkbox') Option #2
-						span.badge 14
-				li
-					input#phase_3(type='checkbox')
-					label(for='#phase_3', type='checkbox') Option #3
-						span.badge 14
-				li
-					input#phase_4(type='checkbox')
-					label(for='#phase_4', type='checkbox') Option #4
-						span.badge 14
-				li
-					input#phase_5(type='checkbox')
-					label(for='#phase_5', type='checkbox') Option #5
-						span.badge 14
-			.form-group
-				h5 Type
-				li
-					input#type_1(type='checkbox')
-					label(for='#type_1', type='checkbox') Option #1
-						span.badge 14
-				li
-					input#type_2(type='checkbox')
-					label(for='#type_2', type='checkbox') Option #2
-						span.badge 14
-				li
-					input#type_3(type='checkbox')
-					label(for='#type_3', type='checkbox') Option #3
-						span.badge 14
-				li
-					input#type_4(type='checkbox')
-					label(for='#type_4', type='checkbox') Option #4
-						span.badge 14
-				li
-					input#type_5(type='checkbox')
-					label(for='#type_5', type='checkbox') Option #5
-						span.badge 14
-
-			button(type='submit')
-				| Ok, Done
-
-
 //- save to dashboard
 mixin save-div
-	#save-to-dashboard
-		:markdown
-			### Save to Dashboard
-		form(role='form')
-			.form-group
-				label(for='nickname') Give it a nickname
-				input#nickname.form-control(type='text', placeholder='Nickname')
-			button(type='submit') Ok, Done
+    #save-to-dashboard
+        :markdown
+            ### Save to Dashboard
+        form(role='form')
+            .form-group
+                label(for='nickname') Give it a nickname
+                input#nickname.form-control(type='text', placeholder='Nickname')
+            button(type='submit') Ok, Done
 
 //- main-app-view
 mixin main-app-view
-	h4 Recently Viewed Articles
-	.list-group
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-	h4 Popular Search Terms
-	.list-group
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-	h4 Top Articles
-	.list-group
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-	h4 New Articles
-	.list-group
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
-		a(href='#{link_article_new_window}', target='_blank') Article Headline
+    h4 Recently Viewed Articles
+    .list-group
+        if (recentArticles)
+            for recentArticle in recentArticles
+                a(href=recentArticle.href, target='_blank')= recentArticle.title        
+    h4 Popular Search Terms
+    .list-group
+        if (searchTerms)
+            for searchTerm in searchTerms
+                a(href=searchTerm.href)= searchTerm.title                     
+    h4 Top Articles
+    .list-group
+        if (topArticles)
+            for article in topArticles
+                a(href=article.href, target='_blank')= article.title                      
+                    span.badge= article.weight
+    h4 New Articles
+    .list-group
+        if (newArticles)
+            for newArticle in newArticles
+                a(href=newArticle.href, target='_blank')= newArticle.title        
 
 //- horizontal-rule
 mixin horizontal-rule
-	hr
+    hr
 
 //- alert
 mixin alert
-	.alert(role='alert')
-		| Error/Validation messages go here
+    .alert(role='alert')
+        | Login failed
