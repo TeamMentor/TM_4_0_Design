@@ -34,9 +34,9 @@ mixin results-save-clear
             td 
                 h4#resultsTitle= resultsTitle
             td 
-                a() Save
+                //a() Save
             td 
-                a(href='?') Clear
+                a(href='/graph/' + title) Clear
 
 //- articles-list
 mixin articles-list    
@@ -82,7 +82,7 @@ mixin filters-div
                                 //label(for=result.title, type='checkbox')= result.title
                                     span.badge= result.size        
 
-            button(type='submit')
+            //button(type='submit')
                 | Ok, Done
 
                 
