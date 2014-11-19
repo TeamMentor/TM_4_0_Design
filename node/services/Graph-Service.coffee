@@ -113,7 +113,7 @@ class GraphService
                                     metadata[item.predicate][item.object]++
                                 else
                                     metadata[item.predicate][item.object] = 1
-                    result.link = 'https://tmdev01-sme.teammentor.net/'+result.id
+                    result.link = 'https://uno.teammentor.net/'+result.id
                     result.score = 0
                     searchData.results.push(result)
                     mapArticles(articles)
@@ -151,11 +151,15 @@ class GraphService
                                   .archIn('View'     ).as('article')
                                   .solutions(mapResults)        
     
-    graphDataFromGraphDB: (dataId, queryId, callback)->
+    graphDataFromGraphDB: (dataId, queryId, filters, callback)->
         server = 'http://localhost:1332'
+        #server = 'https://tm-graph.herokuapp.com'
         dataId = dataId || 'tm-uno'
-        target = target || 'Logging'
-        graphDataUrl = "#{server}/data/#{dataId}/folder-metadata/filter/tm-search?show=#{queryId}"
+        #target = target || 'Logging'
+        #graphDataUrl = "#{server}/data/#{dataId}/folder-metadata/filter/tm-search?show=#{queryId}"
+        graphDataUrl = "#{server}/data/#{dataId}/query/filter/tm-search?show=#{queryId}"
+        if (filters)
+            graphDataUrl += "&filters=#{filters}"
         console.log("****:   " + graphDataUrl)
         require('request').get graphDataUrl, (err,response,body)->
             throw err if err

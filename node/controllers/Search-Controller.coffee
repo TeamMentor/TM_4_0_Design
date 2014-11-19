@@ -64,12 +64,17 @@ class SearchController
    
     showSearchFromGraph: ()=>        
         queryId = @req.params.queryId        
+        filters = @req.params.filters  
         breadcrumbs_Cache = breadcrumbs_Cache.splice(0,3)
-        breadcrumbs_Cache.unshift  {href:"/graph/#{queryId}", title: queryId}
+        if (filters)
+            breadcrumbs_Cache.unshift  {href:"/graph/#{queryId}/#{filters}", title: filters}
+        else
+            breadcrumbs_Cache.unshift  {href:"/graph/#{queryId}", title: queryId}
         
         
         graphService = new Graph_Service()
-        graphService.graphDataFromGraphDB null, queryId, (searchData)=>
+        graphService.graphDataFromGraphDB null, queryId, filters,  (searchData)=>
+                searchData.filter_container = filters
         #graphService.graphDataFromQAServer dataId, (graphData)=>
         #    graphService.createSearchDataFromGraphData graphData,@req.query.left, @req.query.right, (searchData)=>
                 @searchData = searchData
@@ -96,7 +101,7 @@ class SearchController
             searchTerms.push { href: "/graph/(Web) Encoding"                            , title: "(Web) Encoding"}
             recentArticles = []
             for recentArticle in recentArticles_Cache
-                recentArticles.push {href : 'https://tmdev01-sme.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
+                recentArticles.push {href : 'https://uno.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
                 break if recentArticles.length >2
             viewModel = { recentArticles: recentArticles, topArticles : topArticles , searchTerms : searchTerms}
             jadePage  = '../source/html/home/main-app-view.jade'
@@ -106,13 +111,14 @@ class SearchController
         guid = @req.params.guid
         title = @req.params.title
         recentArticles_Cache.unshift ({ guid: guid , title:title})
-        @res.redirect('https://tmdev01-sme.teammentor.net/'+guid)
+        @res.redirect('https://uno.teammentor.net/'+guid)
 
 SearchController.registerRoutes = (app) ->
     app.get('/search'                 , (req, res) -> new SearchController(req, res, app.config).showSearch())
     app.get('/search.json'            , (req, res) -> new SearchController(req, res, app.config).showSearchData())
     app.get('/search/:file'           , (req, res) -> new SearchController(req, res, app.config).showSearch())
     app.get('/graph/:queryId'         , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())    
+    app.get('/graph/:queryId/:filters', (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())    
     
     app.get '/home/main-app-view.html'  , (req,res) -> new SearchController(req, res, app.config).showMainAppView()
     app.get '/article/view/:guid/:title', (req,res) -> new SearchController(req, res, app.config).showArticle()
