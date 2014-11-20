@@ -469,12 +469,6 @@ a {
 	}
 }
 
-a, button, .button {
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
 button, .button {
 	font-size: 14px;
 	background-color: $white;
