@@ -18,10 +18,16 @@ TeamCity CI is used to pull the changes and push/publish to Azure (for more deta
 Build status: [![Build Status](https://travis-ci.org/TeamMentor/TM_4_0_Design.svg?branch=Issue_66_TopNav_Auth)](https://travis-ci.org/TeamMentor/TM_4_0_Design)
 Code coverage: [![Coverage Status](https://coveralls.io/repos/TeamMentor/TM_4_0_Design/badge.png?branch=Issue_68_Library_Rendering)](https://coveralls.io/r/TeamMentor/TM_4_0_Design?branch=Issue_68_Library_Rendering)
 
-** to run dev brach
+** to run dev brach **
+
 * clone https://github.com/TeamMentor/TM_4_0_Design
 * git checkout Issue_68_Library_Rendering
 * npm install
 * npm start
 * http://localhost:1337/
 
+**MAJOR REFACTORING CURRENTLY HAPPENING**
+
+See the [Issue_80_Jade_Cleanup](https://github.com/TeamMentor/TM_4_0_Design/tree/Issue_80_Jade_Cleanup) branch for the current structure. 
+
+The key objective of that branch is to create a clean and fully unit-tested version of TM Jade
