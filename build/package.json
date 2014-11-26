@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register --recursive -R list tests",
-    "test-watch": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register --recursive -R list -w tests"
+    "test-watch": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register --recursive -R list -w tests",
+    "build": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register -R list build_TM_4_0_Design.coffee",
+    "build-watch": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register -R list build_TM_4_0_Design.coffee -w"
   },
   "author": "TM Dev team",
   "license": "TM Commercial License",
   "dependencies": {
+    "async": "^0.9.0",
     "coffee-script": "^1.8.0",
     "fluentnode": "^0.1.8",
     "mocha": "^2.0.1",
