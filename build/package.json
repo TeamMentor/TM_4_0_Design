@@ -3,9 +3,8 @@
   "version": "0.5.0",
   "description": "Build for TM-4.0-Design",
   "main": "index.js",
-  "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register --recursive -R list tests",
-    "test-watch": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register --recursive -R list -w tests",
+  "scripts":{"test": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register --recursive -R list tests",
+    "dev-watch": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register --recursive -R list -w tests",
     "build": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register -R list build_TM_4_0_Design.coffee",
     "build-watch": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register -R list build_TM_4_0_Design.coffee -w"
   },
