@@ -5,3 +5,4 @@ node/_jade_PreCompiled
 node-cov
 .tmCache
 UNO_Library_Data.json
+.idea
