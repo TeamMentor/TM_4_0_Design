@@ -2,21 +2,10 @@ require 'fluentnode'
 jade  = require('jade');
 async = require('async')
 
-#extra prototypes (to add to fluentnode)
-String::files_Recursive = (extension)->
-  files = []
-  for item in @.str().files_and_Folders()
-    if (item.is_Folder())
-      files = files.concat(item.files_Recursive(extension))
-    else
-      if (not extension or item.file_Extension() is extension)
-        files.push(item)
-  return files
-
 class Jade_Compiler
   default_Options =
-    ignore_Underscore_Folders : true      # looks on the parent folder name of the jade file being compiled
-    ignore_Mixins_Folders     : true      # looks to see if there is the word mixins on the path
+    ignore_Underscore_Folders : true        # looks on the parent folder name of the jade file being compiled
+    ignore_Folders_Containing : ['mixin']  # ignores folders that contains one of these strings
 
   constructor: (options)->
     @options = options || default_Options
@@ -56,9 +45,17 @@ class Jade_Compiler
     async.each files, ((file,next)=> @compile_File_To(file,target,()->next())), callback
 
   compile_Folder_To: (source_Folder, target_Folder, callback)=>
-    source_Files = source_Folder.files_Recursive(".jade")
-    if (@options.ignore_Underscore_Folders)
-      source_Files = (file for file in source_Files when file.file_Parent_Folder().file_Name().starts_With('_') is false and file.contains('mixins') is false)
+
+    should_Compile_File = (file)=>
+      if (@options.ignore_Underscore_Folders) and file.file_Parent_Folder().file_Name().starts_With('_')
+        return false
+      for item in @options.ignore_Folders_Containing
+        if file.contains(item)
+          return false
+      return true
+
+    source_Files = (file for file in source_Folder.files_Recursive(".jade") when should_Compile_File(file))
+
     target_Folder.folder_Create()
 
     async.each source_Files, ((file, next)=> @compile_File_To(file, file.replace(source_Folder, target_Folder)+ '.js', ()->next())), callback

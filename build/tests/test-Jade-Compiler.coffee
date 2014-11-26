@@ -20,10 +20,10 @@ describe 'test-Jade_Compiler',->
     jade_Compiler.assert_Is_Object()
     jade_Compiler.options.assert_Is_Object()
     jade_Compiler.options.ignore_Underscore_Folders.assert_Is_True()
-    jade_Compiler.options.ignore_Mixins_Folders.assert_Is_True()
+    jade_Compiler.options.ignore_Folders_Containing.assert_Is(['mixin'])
     options =
-      ignore_Underscore_Folders: false
-      ignore_Mixins_Folders    : false
+      ignore_Underscore_Folders : false
+      ignore_Folders_Containing : ['abcd']
     jade_Compiler_With_Options = new Jade_Compiler(options)
     jade_Compiler_With_Options.options.assert_Is(options)
 
