@@ -11,11 +11,11 @@ module.exports = function (app)
                   { username : 'user' , password : ''     } ,
                   { username : 'a'    , password : ''     }
                 ];
-    app.get('getting-started/index'  , function (req, res)
+    app.get('/getting-started/index'  , function (req, res)
             {
                 res.redirect(loginPage);
             });
-    app.post('getting-started/index' , function (req, res)
+    app.post('/home/main-app-view' , function (req, res)
             {
                 for(var index in users)
                 {

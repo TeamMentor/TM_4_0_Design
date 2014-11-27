@@ -1,7 +1,7 @@
 //- Flare Login Form
 mixin login-form
 	include:md ../../../content/teamMentor/getting-started/login-form.md
-	form(action='../home/main-app-view')
+	form(role='form' method='post' action='/flare/home/main-app-view')
 		.row
 			.small-12.large-12.columns
 				+username-input
