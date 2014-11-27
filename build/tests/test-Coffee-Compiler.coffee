@@ -6,6 +6,8 @@ describe 'test-Coffee_Compiler',->
   tmp_Coffee_File     = ".".fullPath().path_Combine('_tmp_Coffee.coffee')
   tmp_Coffee_Js_File  = ".".fullPath().path_Combine('_tmp_Coffee.js')
 
+  coffee_Compiler = new Coffee_Compiler();
+
   before ->
     source_Coffee.saveAs(tmp_Coffee_File).assert_Is_True()
 
@@ -13,7 +15,6 @@ describe 'test-Coffee_Compiler',->
     tmp_Coffee_File   .file_Delete().assert_Is_True()
     tmp_Coffee_Js_File.file_Delete().assert_Is_True()
 
-  coffee_Compiler = new Coffee_Compiler();
 
   it 'constructor',->
     Coffee_Compiler.assert_Is_Function().ctor().assert_Is_Object()
