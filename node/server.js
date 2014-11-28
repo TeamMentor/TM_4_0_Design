@@ -20,7 +20,6 @@ require('./routes/lucy-user.js'  )(app);
 require('./routes/debug.js' )(app);
 require('./routes/debug.js' )(app);
 
-
 app.use(express['static'](process.cwd()));
 
 app.port       = process.env.PORT || 1337;
