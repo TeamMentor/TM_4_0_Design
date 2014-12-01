@@ -625,6 +625,10 @@ button {
 		}
 	}
 
+	table {
+		border-color: transparent;
+	}
+
 	span.badge {
 		float: right;
 	}
@@ -639,7 +643,7 @@ button {
 	color: $green;
 	border: none;
 	font-size: inherit;
-	font-weight: 700;	
+	font-weight: 700;
 }
 
 // Tables and Table Cells
@@ -667,6 +671,14 @@ table {
 	&:hover {
 		color: $dark-green;
 		background: $white;
+	}
+
+	table {
+		border-color: transparent;
+
+		table tr:nth-of-type(even) {
+			background-color: $white;
+		}
 	}
 }
 
