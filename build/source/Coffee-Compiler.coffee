@@ -38,6 +38,6 @@ class Coffee_Compiler
   compile_Folder_To: (source_Folder, target_Folder, callback)=>
     source_Files = source_Folder.files_Recursive(".coffee")
     target_Folder.folder_Create()
-    async.each source_Files, ((file, next)=> @compile_File_To(file, file.replace(source_Folder, target_Folder)+ '.js', ()->next())), callback
+    async.each source_Files, ((file, next)=> @compile_File_To(file, file.replace(source_Folder, target_Folder).replace('.coffee','.js'), ()->next())), callback
 
 module.exports =  Coffee_Compiler

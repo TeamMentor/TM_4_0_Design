@@ -1,50 +1,70 @@
-SCSS_Compiler   = require './source/SCSS-Compiler'
-Jade_Compiler   = require './source/Jade-Compiler'
 Coffee_Compiler = require './source/Coffee-Compiler'
+IO_Actions      = require './source/IO-Actions'
+Jade_Compiler   = require './source/Jade-Compiler'
+SCSS_Compiler   = require './source/SCSS-Compiler'
 
-describe 'build TM_4_0_Design |', ->
 
-  root_Folder   = ".".append_To_Process_Cwd_Path()
-  source_Folder = root_Folder.path_Combine("../source")
-  scss_Folder   = source_Folder.path_Combine('scss')
-  jade_Folder   = source_Folder
-  coffee_Folder = root_Folder.path_Combine("../node")
+describe.only 'build TM_4_0_Design |', ->
 
-  target_Folder  = "../static".append_To_Process_Cwd_Path()
-  css_Folder     = target_Folder.path_Combine('css')
-  js_Jade_Folder = target_Folder.path_Combine('jade_js')
-  js_Coffee_Folder = target_Folder.path_Combine('coffee_js')
+  root_Folder     = "../".append_To_Process_Cwd_Path()
+  source_Assets   = root_Folder.path_Combine("deploy/assets")
+  source_Coffee   = root_Folder.path_Combine("node")
+  source_Fonts    = root_Folder.path_Combine("deploy/fonts")
+  source_Scss     = root_Folder.path_Combine('source/scss')
+  source_Jade     = root_Folder.path_Combine('source')
+
+  build_Folder    = root_Folder.path_Combine("static")
+  build_Assets    = build_Folder.path_Combine('assets')
+  build_Css       = build_Folder.path_Combine('css')
+  build_Fonts     = build_Folder.path_Combine('fonts')
+  build_Js_Jade   = build_Folder.path_Combine('jade_js')
+  build_Js_Coffee = build_Folder.path_Combine('coffee_js')
 
   scss_files    = ['normalize.css', 'custom-style.scss']
 
+  coffee_Compiler = new Coffee_Compiler()
+  io_Actions      = new IO_Actions()
+  jade_Compiler   = new Jade_Compiler()
+
   it 'Clean target folders',->
-    target_Folder   .folder_Delete_Recursive().assert_Is_True()
-    target_Folder   .folder_Create()          .assert_That_Folder_Exists()
-    css_Folder      .folder_Create()          .assert_That_Folder_Exists()
-    js_Jade_Folder  .folder_Create()          .assert_That_Folder_Exists()
-    js_Coffee_Folder.folder_Create()          .assert_That_Folder_Exists()
+    build_Folder   .folder_Delete_Recursive().assert_Is_True()
+    build_Folder   .folder_Create()          .assert_That_Folder_Exists()
+    build_Assets   .folder_Create()          .assert_That_Folder_Exists()
+    build_Css      .folder_Create()          .assert_That_Folder_Exists()
+    build_Fonts    .folder_Create()          .assert_That_Folder_Exists()
+    build_Js_Jade  .folder_Create()          .assert_That_Folder_Exists()
+    build_Js_Coffee.folder_Create()          .assert_That_Folder_Exists()
 
   it 'Compile scss files', (done)->
-    scss_Files_In_Scss_Folder = (scss_Folder.path_Combine(scss_file) for scss_file in scss_files)
+    scss_Files_In_Scss_Folder = (source_Scss.path_Combine(scss_file) for scss_file in scss_files)
 
-    new SCSS_Compiler().compile_Files_To scss_Files_In_Scss_Folder, css_Folder,done
+    new SCSS_Compiler().compile_Files_To scss_Files_In_Scss_Folder, build_Css,done
 
-  it 'Confirm that scss files compiled ok', (done)->
-      for scss_file in scss_files
-        css_Folder.path_Combine(scss_file.replace('.scss','.css')).assert_That_File_Exists()
-      done()
 
   it 'Compile Jade files', (done)->
     @timeout(5000)
-    jade_Compiler = new Jade_Compiler()
     jade_Compiler.options.ignore_Folders_Containing.add('user', 'articles', 'home','landing-pages','libraries','learning-paths', 'style-guide', 'search')
-    jade_Compiler.compile_Folder_To jade_Folder, js_Jade_Folder, ->
-      js_Jade_Folder.files_Recursive(".js").assert_Size_Is_Bigger_Than(3)
+    jade_Compiler.compile_Folder_To source_Jade, build_Js_Jade, ->
       done()
 
 
   it 'Compile Coffee files', (done)->
-    coffee_Compiler = new Coffee_Compiler()
-    coffee_Compiler.compile_Folder_To coffee_Folder, js_Coffee_Folder, ->
-      js_Coffee_Folder.files_Recursive(".js").assert_Size_Is_Bigger_Than(3)
+    coffee_Compiler.compile_Folder_To source_Coffee, build_Js_Coffee, ->
+      for js_File in source_Coffee.files_Recursive(".js")
+        io_Actions.copy_File(js_File, js_File.replace(source_Coffee, build_Js_Coffee))
       done()
+
+  it 'Copy assets', (done)->
+    io_Actions.copy_Folder source_Assets, build_Assets, ->
+      io_Actions.copy_Folder source_Fonts, build_Fonts, ->
+        done()
+
+  it 'Confirm files compiled/copied ok', (done)->
+    for scss_file in scss_files
+      build_Css.path_Combine(scss_file.replace('.scss','.css')).assert_That_File_Exists()
+    build_Js_Jade  .files_Recursive(".js")   .assert_Size_Is_Bigger_Than(3)
+    build_Js_Coffee.files_Recursive(".js")   .assert_Size_Is_Bigger_Than(14)
+    build_Js_Coffee.path_Combine('Config.js').assert_File_Exists()
+    build_Js_Coffee.path_Combine('server.js').assert_File_Exists()
+    done()
+
