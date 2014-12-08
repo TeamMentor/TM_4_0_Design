@@ -798,6 +798,10 @@ table td {
   background-color: #FFFFFF;
 }
 
+.accordian .content {
+  padding: 0 0 10px 10px;
+}
+
 #article-options dl.tabs dd {
   width: 33%;
 }

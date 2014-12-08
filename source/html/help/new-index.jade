@@ -1,0 +1,29 @@
+extends ../_layouts/page_home.jade
+
+block content
+	#application
+		.row
+			.col-3#left-nav
+				.lge-container
+					br
+				// lge-container
+			// column
+			.col-6#results
+				.lge-container
+					include:md ../../content/teamMentor/help/index.md
+					br
+					hr
+					include:md ../../content/teamMentor/help/video.md
+					br
+					hr
+					include:md ../../content/teamMentor/help/faq.md
+					br
+				// lge-container
+			// column
+			.col-3#right-nav
+				.lge-container
+					br
+				// lge-container
+			// column
+		//row
+	//application
