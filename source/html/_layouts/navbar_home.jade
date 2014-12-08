@@ -4,24 +4,18 @@ include ../../content/links.jade
 .fixed
 	nav.top-bar(role='navigation', data-topbar='')
 		#team-mentor-navigation
-			.row
-				.col-6
-					ul.title-area
-						li.name
-							a(href='#')
-								+image-teammentor-logo__default
-						// li-name
-					// ul-title-area
-				// column
-				.col-6
-					section.top-bar-section
-						// Right Nav Section
-						ul.right.jade-icons
-							+links-navbar__home
-						// ul-right
-					// section
-				// column
-			// row
+			ul.title-area
+				li.name
+					a(href='#')
+						+image-teammentor-logo__default
+				// li-name
+			// ul-title-area
+			section.top-bar-section
+				// Right Nav Section
+				ul.right.jade-icons
+					+links-navbar__home
+				// ul-right
+			// section
 		// team-mentor-navigation
 	// nav
 // fixed
