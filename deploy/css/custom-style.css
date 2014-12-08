@@ -206,7 +206,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  background: white;
+  background: #FFFFFF;
   z-index: -99;
 }
 
@@ -222,7 +222,7 @@ body {
   text-align: center;
 }
 #about h1, #usp h1 {
-  color: white;
+  color: #FFFFFF;
 }
 
 #about-us {
@@ -234,7 +234,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 #box {
@@ -254,7 +254,7 @@ body {
   text-align: center;
 }
 #call-to-action h1 {
-  color: white;
+  color: #FFFFFF;
 }
 
 #clients {
@@ -284,7 +284,7 @@ body {
   width: 100%;
   margin-right: 15px;
   padding: 5px 0 5px 0;
-  background-color: whitesmoke;
+  background-color: #ececec;
   text-align: center;
 }
 
@@ -317,7 +317,7 @@ body {
 }
 
 #instructions {
-  background: white;
+  background: #FFFFFF;
   border: 1px solid #8aaf3e;
   padding: 0 20px 25px 20px;
 }
@@ -327,8 +327,7 @@ body {
   border: 1px solid #aaaaaa;
 }
 #loginwall dl.tabs .active {
-  border-right: none !important;
-  border-bottom: none !important;
+  background: #ececec;
 }
 #loginwall .tabs-content {
   border: 1px solid #aaaaaa;
@@ -361,11 +360,11 @@ body {
 
 #usp button, #call-to-action button {
   padding: 20px 0 20px 0;
-  background-color: white;
+  background-color: #FFFFFF;
   border: none;
 }
 #usp button:hover, #usp button:active, #call-to-action button:hover, #call-to-action button:active {
-  color: white !important;
+  color: #FFFFFF !important;
   background-color: #8aaf3e;
 }
 
@@ -417,6 +416,7 @@ label {
 .fixed {
   position: fixed;
   width: 100%;
+  height: 60px;
   left: 0;
   top: 0;
   z-index: 99;
@@ -426,11 +426,22 @@ nav.top-bar {
   z-index: 100000;
   padding: 0;
   margin-bottom: 100px;
-  background: white;
+  background: #FFFFFF;
 }
 nav.top-bar ul.title-area {
   padding: 5px 0 0 5px;
   list-style-type: none;
+  float: left;
+}
+nav.top-bar ul.menu-icon.right {
+  padding: 5px 0 0 5px;
+  float: right;
+}
+nav.top-bar .jade-icons {
+  margin-top: 10px;
+}
+nav.top-bar section.top-bar-section {
+  padding-left: 10%;
   float: left;
 }
 nav.top-bar section.top-bar-section li:not(.has-form) a:not(.button) {
@@ -457,7 +468,7 @@ nav.top-bar section.top-bar-section ul li a, nav.top-bar section.top-bar-section
   letter-spacing: 1px;
   font-size: 14px;
   font-weight: 700;
-  background: white;
+  background: #FFFFFF;
   color: #8aaf3e !important;
   line-height: 0.5em;
 }
@@ -466,7 +477,7 @@ nav.top-bar section.top-bar-section ul li a:hover, nav.top-bar section.top-bar-s
 }
 
 #customer-navigation {
-  background-color: white;
+  background-color: #FFFFFF;
   width: 100%;
   height: 45px;
 }
@@ -475,15 +486,15 @@ nav.top-bar section.top-bar-section ul li a:hover, nav.top-bar section.top-bar-s
 }
 
 #team-mentor-navigation {
-  background-color: white;
+  background-color: #FFFFFF;
   padding-left: 20px;
   width: 100%;
   height: 70px;
 }
-#team-mentor-navigation ul {
-  padding: 5px 0 0 5px;
+#team-mentor-navigation ul.menu-icon.right {
+  margin: 20px 25px 0 0;
 }
-#team-mentor-navigation ul li {
+#team-mentor-navigation ul.menu-icon.right li {
   list-style-type: none;
 }
 
@@ -559,7 +570,7 @@ pre {
   color: #444444;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: whitesmoke;
+  background-color: #ececec;
   border: 1px solid #aaaaaa;
   border-radius: 0px;
   margin: 30px 0 30px 0;
@@ -582,7 +593,7 @@ pre {
 hr {
   margin: 0 auto;
   width: 70%;
-  color: whitesmoke;
+  color: #ececec;
   margin-top: 40px;
   margin-bottom: 40px;
 }
@@ -607,22 +618,16 @@ a.action:hover, a.action:focus, a.action:active {
   color: #49661f;
 }
 
-a, button, .button {
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
 button, .button {
   font-size: 14px;
-  background-color: white;
+  background-color: #FFFFFF;
   color: #8aaf3e;
   width: 100% !important;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 button:hover, button:focus, .button:hover, .button:focus {
-  background-color: white;
+  background-color: #FFFFFF;
   color: #49661f !important;
   text-decoration: none;
 }
@@ -636,12 +641,12 @@ button.postfix, .button.postfix {
 }
 button.postfix:hover, .button.postfix:hover {
   color: #49661f !important;
-  background: white;
+  background: #FFFFFF;
 }
 
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
   width: 100% !important;
-  background-color: white;
+  background-color: #FFFFFF;
   font-family: inherit;
   border: 1px solid #aaaaaa;
   box-shadow: none;
@@ -657,7 +662,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   box-sizing: border-box;
 }
 input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
-  background: white;
+  background: #FFFFFF;
   border-color: #8aaf3e;
   outline: medium none;
 }
@@ -666,7 +671,7 @@ select {
   width: 100%;
   height: 3em;
   display: block;
-  background: white;
+  background: #FFFFFF;
   font-family: inherit;
   font-size: 16px;
   border: 1px solid #aaaaaa;
@@ -699,7 +704,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
-  background: white;
+  background: #FFFFFF;
   border: 1px solid #8aaf3e;
   color: #8aaf3e;
 }
@@ -711,7 +716,7 @@ button:hover, button:active {
   min-width: 10px;
   padding: 3px 7px;
   font-size: 12px;
-  color: white;
+  color: #FFFFFF;
   background-color: #aaaaaa;
   text-align: center;
   border-radius: 10px;
@@ -719,14 +724,14 @@ button:hover, button:active {
 
 .progress {
   height: 20px;
-  background-color: whitesmoke;
+  background-color: #ececec;
   border-radius: 4px;
   box-shadow: none;
 }
 
 .progress-bar {
   height: 100%;
-  color: white;
+  color: #FFFFFF;
   background-color: #8aaf3e;
 }
 
@@ -745,7 +750,10 @@ button:hover, button:active {
 }
 .list-group a:hover {
   text-decoration: none;
-  background-color: whitesmoke;
+  background-color: #ececec;
+}
+.list-group table {
+  border-color: transparent;
 }
 .list-group span.badge {
   float: right;
@@ -754,7 +762,7 @@ button:hover, button:active {
 .alert-box {
   padding: 15px;
   margin-bottom: 0px;
-  background: white;
+  background: #FFFFFF;
   color: #8aaf3e;
   border: none;
   font-size: inherit;
@@ -773,18 +781,24 @@ table td {
 }
 
 .accordion dd > a {
-  background: white;
+  background: #FFFFFF;
   color: #444444;
   font-weight: 700;
   text-decoration: none;
 }
 .accordion dd > a:hover {
   color: #49661f;
-  background: white;
+  background: #FFFFFF;
+}
+.accordion dd > a table {
+  border-color: transparent;
+}
+.accordion dd > a table table tr:nth-of-type(even) {
+  background-color: #FFFFFF;
 }
 
-dl.tabs dd {
-  width: 33%;
+dl.tabs dd.related-options-width {
+  width: 50%;
 }
 dl.tabs dd a {
   font-size: 14px;
@@ -793,17 +807,17 @@ dl.tabs dd a {
   text-decoration: none;
   letter-spacing: 1px;
   font-weight: 700;
-  background: white;
+  background: #FFFFFF;
   color: #8aaf3e;
 }
 dl.tabs dd a:hover, dl.tabs dd a:active {
   color: #49661f !important;
-  background: white;
+  background: #FFFFFF;
 }
 
 .breadcrumbs {
   padding-left: 10px;
-  background: white;
+  background: #FFFFFF;
   border: none;
 }
 .breadcrumbs li {
@@ -831,5 +845,3 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   content: "/";
   margin: 0 20px;
 }
-
-/*# sourceMappingURL=custom-style.css.map */
