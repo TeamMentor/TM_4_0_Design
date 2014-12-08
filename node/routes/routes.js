@@ -17,7 +17,7 @@ module.exports = function (app)
     //preCompiler.cleanCacheFolder();
     
     ///hard-coded-redirect
-    app.get('/getting-started/index.html'  , function (req, res)  { res.redirect('/user/login/returning-user-login.html');});
+    //app.get('/getting-started/index.html'  , function (req, res)  { res.redirect('/user/login/returning-user-login.html');});
         
     //login routes
     

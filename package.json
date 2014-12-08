@@ -13,10 +13,11 @@
   ],
   "main": "node/server.js",
   "scripts": {
+    "start": "node_modules/supervisor/lib/cli-wrapper.js -i node static/coffee_js/server.js",
     "test": "node_modules/mocha/bin/mocha node/tests/**/**.*",
     "test-watch": "mocha -w node/tests/**/**.** -R list",
     "start_once": "node app.js",
-    "start": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' node/server.js",
+    "start-dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' node/server.js",
     "coverage": "./node/bin/publish-code-coverage.sh"
   },
   "repository": {

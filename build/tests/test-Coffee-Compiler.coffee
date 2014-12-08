@@ -75,9 +75,9 @@ describe 'test-Coffee_Compiler',->
     targetFolder   = '_tmp_folder_target'.append_To_Process_Cwd_Path()#.folder_Create().assert_That_Folder_Exists();
     coffee_Compiler.compile_Folder_To sourceFolder, targetFolder, ->
       targetFolder.files_Recursive().assert_Size_Is(2)
-      targetFolder.path_Combine('/A/A.coffee.js').assert_That_File_Exists()
-      targetFolder.path_Combine('/A/B.coffee.js').assert_That_File_Not_Exists()
-      targetFolder.path_Combine('/B/B.coffee.js').assert_That_File_Exists()
+      targetFolder.path_Combine('/A/A.js').assert_That_File_Exists()
+      targetFolder.path_Combine('/A/B.js').assert_That_File_Not_Exists()
+      targetFolder.path_Combine('/B/B.js').assert_That_File_Exists()
       sourceFolder.folder_Delete_Recursive().assert_Is_True();
       targetFolder.folder_Delete_Recursive().assert_Is_True();
       done()

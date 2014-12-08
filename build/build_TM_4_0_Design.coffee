@@ -43,10 +43,9 @@ describe.only 'build TM_4_0_Design |', ->
 
   it 'Compile Jade files', (done)->
     @timeout(5000)
-    jade_Compiler.options.ignore_Folders_Containing.add('user', 'articles', 'home','landing-pages','libraries','learning-paths', 'style-guide', 'search')
+    jade_Compiler.options.ignore_Folders_Containing.add('user', 'articles', 'home','libraries','learning-paths', 'style-guide', 'search')
     jade_Compiler.compile_Folder_To source_Jade, build_Js_Jade, ->
       done()
-
 
   it 'Compile Coffee files', (done)->
     coffee_Compiler.compile_Folder_To source_Coffee, build_Js_Coffee, ->
