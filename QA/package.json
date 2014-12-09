@@ -21,7 +21,7 @@
     "coffee-script": "^1.8.0",
     "fluentnode": "*",
     "mocha": "^2.0.1",
-    "node-webkit-repl": "^0.1.2",
+    "node-webkit-repl": "*",
     "wd": "^0.3.11"
   }
 }
