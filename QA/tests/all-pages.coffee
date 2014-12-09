@@ -14,28 +14,40 @@ describe 'all pages | anonymous users', ->
   afterEach (done)->
     page.html (html,$)->
       $('title').text().assert_Is('TEAM Mentor 4.0 (Html version)')           # confirm that all pages have the same title
-                                                                              # confirm that all anonymous pages have the same top level menu
-      navBarLinks = $('.nav li a')                                            # get all top right links using a css selector
-      navBarLinks.length.assert_Is(6)                                         # there should be 6 links
-      linksData = for link in navBarLinks                                     # for each link in navBarLinks
-                    {                                                         # create a new object
-                      href : link.attribs.href,                               # with the href
-                      value: $(link).html()                                   # and the value (which is the innerHTML)
-                    }                                                         # in coffee-script the last value is the default return value
-
-      checkValues = (index, expected_Href,expected_Value ) ->                 # create a helper function to check for expected values
-        linksData[index].href.assert_Is(expected_Href)
-        linksData[index].value.assert_Is(expected_Value)
-
-      checkValues(0,'/deploy/html/landing-pages/about.html'   , 'About'   )   # check expected values of 6 links
-      checkValues(1,'/deploy/html/landing-pages/features.html', 'Features')
-      checkValues(2,'/help/index.html'                        , 'Help')
-      checkValues(3,'#'                                       , '|')
-      checkValues(4,'/deploy/html/getting-started/index.html' , 'Sign Up')
-      checkValues(5,'/deploy/html/getting-started/index.html' , 'Login')
+      check_Top_Right_Navigation_Bar($)
       done()
 
-  it.only '/',(done)->
+  check_Top_Right_Navigation_Bar = ($)->                                       # confirm that all anonymous pages have the same top level menu
+    navBarLinks = $('.nav li a')                                            # get all top right links using a css selector
+    navBarLinks.length.assert_Is(6)                                         # there should be 6 links
+    linksData = for link in navBarLinks                                     # for each link in navBarLinks
+      {                                                                     # create a new object
+        href : link.attribs.href,                                           # with the href
+        value: $(link).html()                                               # and the value (which is the innerHTML)
+      }                                                                     # in coffee-script the last value is the default return value
+
+    checkValues = (index, expected_Href,expected_Value ) ->                 # create a helper function to check for expected values
+      linksData[index].href.assert_Is(expected_Href)
+      linksData[index].value.assert_Is(expected_Value)
+
+    checkValues(0,'/deploy/html/landing-pages/about.html'   , 'About'   )   # check expected values of 6 links
+    checkValues(1,'/deploy/html/landing-pages/features.html', 'Features')
+    checkValues(2,'/help/index.html'                        , 'Help')
+    checkValues(3,'#'                                       , '|')
+    checkValues(4,'/deploy/html/getting-started/index.html' , 'Sign Up')
+    checkValues(5,'/deploy/html/getting-started/index.html' , 'Login')
+
+  check_Generic_Footer = ($)->
+
+    $('#call-to-action h1').html()             .assert_Is('Security Risk. Understood.'           )
+    $('#call-to-action a' ).get(0).attribs.href.assert_Is('getting-started.html'                 ) # BUG this is a broken link!
+    $('#call-to-action button').html()         .assert_Is('See for yourself'                     )
+
+    $('#footer img'       ).get(0).attribs.src .assert_Is('/deploy/assets/logos/si-logo.png'     )
+    $('#footer a'         ).html()             .assert_Is('Terms &amp; Conditions'               )
+
+
+  it '/',(done)->
     page.open '/', (html,$)->
       $('#usp h1').html().assert_Is('Instant resources that bridge the gap between developer questions and technical solutions')
 
@@ -56,16 +68,31 @@ describe 'all pages | anonymous users', ->
       clientImages[4].attribs.src                .assert_Is('/deploy/assets/clients/symantec.png'  )
       clientImages[5].attribs.src                .assert_Is('/deploy/assets/clients/ubs.png'       )
 
-      $('#call-to-action h1').html()             .assert_Is('Security Risk. Understood.'   )
-      $('#call-to-action a' ).get(0).attribs.href.assert_Is('getting-started.html'          ) # BUG this is a broken link!
-
-      $('#footer img'       ).get(0).attribs.src .assert_Is('/deploy/assets/logos/si-logo.png')
-      $('#footer a'         ).html()             .assert_Is('Terms &amp; Conditions'          )
+      check_Generic_Footer($)
       done()
 
   it '/landing-pages/about.html',(done)->
     page.open '/landing-pages/about.html', (html,$)->
+      $(  '#about h1'   ).html()        .assert_Is('An interactive Application Security library with thousands of code samples and professional guidance when you need it.')
+      $(  '#about-us h4').html()        .assert_Is('TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.')
+      $($('#about-us p' ).get(0)).html().assert_Is('It contains over 4,000 articles with dynamic content across multiple development platforms including .NET, Java, C/C++, PHP, Android and iOS. TEAM Mentor is the In-Practice companion to our TEAM Professor eLearning courses, extending developers&#x2019; knowledge in combination with training.')
+      $($('#about-us p' ).get(1)).html().assert_Is('TeamMentor integrates with static analysis tools, such as Checkmarx and Fortify, helping teams make more sense of scan results and make critical decisions to fix software vulnerabilities.')
+
+      check_Generic_Footer($);
       done()
+
+  it  '/landing-pages/features.html',(done)->
+    page.open '/landing-pages/features.html', (html,$)->
+      $(  '#features h4'   ).html()
+      $(  '#features h4'   ).html()        .assert_Is('Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.')
+      $($('.row h4').get(0)).html()        .assert_Is('Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.')
+      $($('.row h4').get(1)).html()        .assert_Is('Integrates with multiple static analysis tools and developer environments (IDE&#x2019;s) to map prescriptive coding guidance to scan results to fix vulnerabilities.')
+      $($('.row h4').get(2)).html()        .assert_Is('Stores and cross-references your security policies with out-of-the-box secure coding checklists and examples.')
+      $($('.row h4').get(3)).html()        .assert_Is('Provides guidance to assist developers in reducing security vulnerabilities in software applications.')
+
+      check_Generic_Footer($)
+      done()
+
 
   it '/help/index.html',(done)->
     page.open '/help/index.html', (html,$)->
