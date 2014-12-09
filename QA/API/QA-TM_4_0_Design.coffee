@@ -5,10 +5,11 @@ NodeWebKit_Service = require('node-webkit-repl')
 class QA_TM_4_0_Design
 
   constructor: ()->
-    @nodeWebKit = new NodeWebKit_Service(57777)
-    nodeWebKit  = @nodeWebKit
-    @tm_Server  = 'http://localhost:1337'
-    @chrome     = null
+    @nodeWebKit  = new NodeWebKit_Service(57777)
+    nodeWebKit   = @nodeWebKit
+    @tm_Server   = 'http://localhost:1337'
+    @chrome      = null
+    @open_Delay  = 0
 
   before: (done)=>
     if not (@chrome is null)
@@ -20,11 +21,11 @@ class QA_TM_4_0_Design
         @nodeWebKit.start =>
           @chrome = @nodeWebKit.chrome
           #@nodeWebKit.open_Index ->
-          done()
+          @add_Extra_Error_Handling done
       else
         @nodeWebKit.chrome.connect =>
           @chrome = @nodeWebKit.chrome
-          done()
+          @add_Extra_Error_Handling done
 
 
   after: (done)->
@@ -33,7 +34,8 @@ class QA_TM_4_0_Design
 
   open: (url, callback)=>
     @chrome.open @tm_Server + url, =>
-      @html(callback)
+      @open_Delay.wait =>
+        @html(callback)
 
   html: (callback)=>
       @chrome.html (html,$) =>
@@ -69,13 +71,27 @@ class QA_TM_4_0_Design
                            curWindow.height=#{height};
                            ", callback
 
+  click: (href, callback)->
+    @chrome.eval_Script "document.querySelector('a[href*=\"#{href}\"]').click()", =>
+      @wait_For_Complete =>
+        @open_Delay.wait =>
+          callback()
+
+  add_Extra_Error_Handling: (callback)->
+    @nodeWebKit.open_Index =>
+      code = "process.on('uncaughtException', function(err) { alert(err);});";
+      @chrome.eval_Script code, (err,data)=>
+        callback()
+
 singleton  = null
 
-QA_TM_4_0_Design.create = ()->
+QA_TM_4_0_Design.create = (before)->
   #return new QA_TM_4_0_Design()              # uncomment this if a new instance is needed per test (and the 'after' mocha event is set)
 
   if singleton is null
     singleton = new QA_TM_4_0_Design()
+  if typeof(before) == 'function'
+    before (done)-> singleton.before done
   return singleton
 
 module.exports = QA_TM_4_0_Design
