@@ -18,7 +18,8 @@ module.exports = function (app)
     
     ///hard-coded-redirect
     //app.get('/getting-started/index.html'  , function (req, res)  { res.redirect('/user/login/returning-user-login.html');});
-        
+
+
     //login routes
     
     app.get ('/user/login' , function (req, res) { new Login_Controller(req, res).redirectToLoginPage(); }); 
@@ -35,10 +36,10 @@ module.exports = function (app)
     
     app.get('/help/:page*' , function (req, res) { new Help_Controller(req, res).renderPage            (); });
     app.get('/Image/:name' , function (req, res) { new Help_Controller(req, res).redirectImagesToGitHub(); });
-    
+
     // jade (pre-compiled) pages (these have to be the last set of routes)
-    
-    app.get('/:page.html'                                   , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/html/'                         + req.params.page + '.jade'                       ));});     
+
+    app.get('/'                                             , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/html/landing-pages/index.jade'                                                   ));});
     app.get('/landing-pages/:page.html'                     , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/html/landing-pages/'           + req.params.page + '.jade'                       ));});         
     app.get('/user/login/:page.html'                        , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/html/user/login/'              + req.params.page + '.jade'                       ));}); 
     //app.get('/bugs/:page.html'                              , function (req, res)  { res.send(new Jade_Service().renderJadeFile('/source/html/bugs/'              + req.params.page + '.jade'                       ));}); 

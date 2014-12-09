@@ -18,7 +18,8 @@
     "test-watch": "mocha -w node/tests/**/**.** -R list",
     "start_once": "node app.js",
     "start-dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' node/server.js",
-    "coverage": "./node/bin/publish-code-coverage.sh"
+    "coverage": "./node/bin/publish-code-coverage.sh",
+    "QA":"cd QA && npm test && cd .."
   },
   "repository": {
     "type": "git",
