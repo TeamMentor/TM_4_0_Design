@@ -1,6 +1,6 @@
 QA_TM_Design = require '../API/QA-TM_4_0_Design'
 
-xdescribe 'qa-workflow-login | ', ->
+describe 'qa-workflow-login | ', ->
   page = QA_TM_Design.create();
   before (done)-> page.before done
   #after  (done)-> page.after ->

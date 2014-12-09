@@ -60,6 +60,15 @@ class QA_TM_4_0_Design
       require('fs').writeFile png_File, image.data, 'base64',(err)->
         callback()
 
+  window_Position: (x,y,width,height, callback)=>
+    @nodeWebKit.open_Index ()=>
+      @chrome.eval_Script "curWindow = require('nw.gui').Window.get();
+                           curWindow.x=#{x};
+                           curWindow.y=#{y};
+                           curWindow.width=#{width};
+                           curWindow.height=#{height};
+                           ", callback
+
 singleton  = null
 
 QA_TM_4_0_Design.create = ()->

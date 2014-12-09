@@ -13,11 +13,11 @@ describe 'all pages | anonymous users', ->
 
   afterEach (done)->
     page.html (html,$)->
-      $('title').text().assert_Is('TEAM Mentor 4.0 (Html version)')           # confirm that all pages have the same title
+      $('title').text().assert_Is('TEAM Mentor 4.0 (Html version)')         # confirm that all pages have the same title
       check_Top_Right_Navigation_Bar($)
       done()
 
-  check_Top_Right_Navigation_Bar = ($)->                                       # confirm that all anonymous pages have the same top level menu
+  check_Top_Right_Navigation_Bar = ($)->                                    # confirm that all anonymous pages have the same top level menu
     navBarLinks = $('.nav li a')                                            # get all top right links using a css selector
     navBarLinks.length.assert_Is(6)                                         # there should be 6 links
     linksData = for link in navBarLinks                                     # for each link in navBarLinks
@@ -96,6 +96,19 @@ describe 'all pages | anonymous users', ->
 
   it '/help/index.html',(done)->
     page.open '/help/index.html', (html,$)->
+      titles = ($(h4).text() for h4 in $('#help-nav h4'))
+      titles.assert_Is ["About TEAM Mentor", "Installation", "Administration", "UI Elements",
+                        "Reading Content","Editing Content","Eclipse for Fortify plugin",
+                        "HP Fortify SCA UI Integration","Visual Studio Plugin"]
+
+      $(  '#help-docs h2').html().assert_Is('TEAM Mentor Documents')
+      $($('#help-docs p' ).get(0)).html().assert_Is('Welcome to the TEAM Mentor Documentation Website where you will find detailed information on \nhow to install TEAM Mentor, how it works and how to customize it.')
+      $($('#help-docs h4').get(0)).html().assert_Is('TEAM Mentor in action:')
+      #todo: add check for links
+      $($('#help-docs p' ).get(1)).html().assert_Is('Other places to get information about TeamMentor:')
+      $($('#help-docs h4').get(1)).html().assert_Is('TEAM Mentor Related Sites')
+      #todo: add check for links
+
       done()
 
 
