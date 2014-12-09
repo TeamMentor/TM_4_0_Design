@@ -1,0 +1,264 @@
+body
+  nav
+    logo
+    links
+    menu-icon
+  application
+    left-nav
+    results
+    right-nav
+
+body {
+  margin: 0;
+  display: flex;
+}
+
+nav, #application {
+  flex: 1;
+  overflow: auto;
+}
+
+#application {
+  padding: 10px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: wrap;
+}
+
+.logo {
+  order: 1;
+  padding: 0 0 0 10px;
+  margin: 0;
+  -webkit-flex: 90%;
+}
+
+.menu-icon {
+  padding: 15px 15px 0 0;
+  order: 2;
+  text-align: right;
+  -webkit-flex: 10%;
+}
+
+ul.links {
+  order: 3;
+  -webkit-flex: 100%;
+  align-self: flex-end;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: nowrap;
+  flex-direction: column;
+  display: none;
+}
+
+.links li {
+  margin-top: 10px;
+  text-align: center;
+}
+.left-nav, .right-nav, .results {
+  flex: 1;
+  overflow: auto;
+}
+.left-nav {
+  order: 1;
+}
+.right-nav {
+  order: 2;
+}
+.results {
+  order: 3;
+}
+
+
+/* ===== == = === 20em (320px) === = == ===== */
+
+@media only screen and (min-width : 20em) {
+}
+
+/* ===== == = === 30em (480px) === = == ===== */
+
+@media only screen and (min-width : 30em) {
+}
+
+/* ===== == = === 37.5em (600px) === = == ===== */
+
+@media only screen and (min-width: 37.5em) {
+}
+
+/* ===== == = === 48em (768px) === = == ===== */
+
+@media only screen and (min-width : 48em) {
+}
+
+/* ===== == = === 56.25em (900px) === = == ===== */
+
+@media only screen and (min-width : 56.25em) {
+  nav {
+    -webkit-flex-flow: nowrap;
+  }
+  #application {
+    flex-direction: row;
+  }
+  .logo {
+    -webkit-flex: 100%;
+  }
+  .menu-icon {
+    order: 3;
+    -webkit-flex: 100%;
+  }
+  ul.links {
+    flex-direction: row;
+    order: 2;
+    -webkit-flex: 100%;
+  }
+  .links li {
+    width: 20%;
+  }
+  .left-nav, .right-nav {
+    -webkit-flex: 25%;
+  }
+  .results {
+    -webkit-flex: 50%;
+    order: 2;
+  }
+}
+
+/* ===== == = === 68.75em (1100px) === = == ===== */
+
+@media only screen and (min-width : 68.75em) {
+
+}
+
+/* ===== == = === 81.25em (1300px) === = == ===== */
+
+@media only screen and (min-width : 81.25em) {
+}
+
+
+
+_________________________________
+
+
+
+.black {
+  padding-top: 20px;
+  background-color: #000000;
+}
+
+.green {
+  color: #8aaf3e;
+}
+
+.dark-green {
+  color: #49661f;
+}
+
+.icons-green {
+  color: #8aaf3e;
+  font-size: 60px;
+  margin: 0 auto;
+}
+
+#white {
+  width: 100%;
+  margin-right: 15px;
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#green {
+  width: 100%;
+  margin-right: 15px;
+  background-color: #8aaf3e;
+}
+
+#dark-green {
+  width: 100%;
+  margin-right: 15px;
+  background-color: #49661f;
+}
+
+#grey {
+  width: 100%;
+  margin-right: 15px;
+  background-color: #aaaaaa;
+}
+
+#dark-grey {
+  width: 100%;
+  margin-right: 15px;
+  background-color: #444444;
+}
+
+#black {
+  width: 100%;
+  margin-right: 15px;
+  background-color: #000000;
+}
+
+#loginwall dl.tabs dd {
+  width: 50%;
+  border: 1px solid #aaaaaa;
+}
+#loginwall dl.tabs .active {
+  background: #ececec;
+}
+#loginwall .tabs-content {
+  border: 1px solid #aaaaaa;
+  border-top: none;
+}
+
+.accordion dd > a {
+  background: #FFFFFF;
+  color: #444444;
+  font-weight: 700;
+  text-decoration: none;
+}
+.accordion dd > a:hover {
+  color: #49661f;
+  background: #FFFFFF;
+}
+.accordion dd > a table {
+  border-color: transparent;
+}
+.accordion dd > a table table tr:nth-of-type(even) {
+  background-color: #FFFFFF;
+}
+
+dl.tabs dd.related-options-width {
+  width: 50%;
+}
+dl.tabs dd a {
+  font-size: 14px;
+  text-align: center !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 700;
+  background: #FFFFFF;
+  color: #8aaf3e;
+}
+dl.tabs dd a:hover, dl.tabs dd a:active {
+  color: #49661f !important;
+  background: #FFFFFF;
+}

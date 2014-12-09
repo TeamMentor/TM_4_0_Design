@@ -207,7 +207,6 @@ body {
   padding: 0;
   line-height: 1.5;
   background: #FFFFFF;
-  z-index: -99;
 }
 
 #about {
@@ -231,10 +230,7 @@ body {
 
 #application {
   width: 100%;
-  display: flex;
-  flex-direction: column;
   height: 100%;
-  margin-top: 100px;
 }
 
 #box {
@@ -322,18 +318,6 @@ body {
   padding: 0 20px 25px 20px;
 }
 
-#loginwall dl.tabs dd {
-  width: 50%;
-  border: 1px solid #aaaaaa;
-}
-#loginwall dl.tabs .active {
-  background: #ececec;
-}
-#loginwall .tabs-content {
-  border: 1px solid #aaaaaa;
-  border-top: none;
-}
-
 #reasons {
   padding-top: 70px;
 }
@@ -344,14 +328,6 @@ body {
   font-size: 60px;
   color: #8aaf3e;
   margin: 0 auto;
-}
-
-#results, #right-nav, #left-nav {
-  flex: 1 1 auto;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  height: 100%;
-  max-width: 100%;
 }
 
 #usp {
@@ -386,7 +362,6 @@ body {
 }
 
 img {
-  display: block;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
@@ -437,14 +412,13 @@ nav.top-bar ul.menu-icon.right {
   padding: 5px 0 0 5px;
   float: right;
 }
-nav.top-bar ul.right.jade-icons {
-   padding: 15px 20px 0 0;
+nav.top-bar .jade-icons {
+  margin-top: 10px;
 }
-
 nav.top-bar section.top-bar-section {
   padding-left: 10%;
+  float: left;
 }
-
 nav.top-bar section.top-bar-section li:not(.has-form) a:not(.button) {
   line-height: 50px;
 }
@@ -779,49 +753,6 @@ table td {
   padding-left: 10px;
   padding-right: 10px;
   height: 30px;
-}
-
-.accordion dd > a {
-  background: #FFFFFF;
-  color: #444444;
-  font-weight: 700;
-  text-decoration: none;
-}
-.accordion dd > a:hover {
-  color: #49661f;
-  background: #FFFFFF;
-}
-.accordion dd > a table {
-  border-color: transparent;
-}
-.accordion dd > a table table tr:nth-of-type(even) {
-  background-color: #FFFFFF;
-}
-
-.accordian .content {
-  padding: 0 0 10px 10px;
-}
-
-#article-options dl.tabs dd {
-  width: 33%;
-}
-
-#related-options dl.tabs dd {
-  width: 50%;
-}
-dl.tabs dd a {
-  font-size: 14px;
-  text-align: center !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 1px;
-  font-weight: 700;
-  background: #FFFFFF;
-  color: #8aaf3e;
-}
-dl.tabs dd a:hover, dl.tabs dd a:active {
-  color: #49661f !important;
-  background: #FFFFFF;
 }
 
 .breadcrumbs {

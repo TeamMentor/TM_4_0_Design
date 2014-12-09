@@ -1,0 +1,31 @@
+include ../../content/images.jade
+include ../../content/links.jade
+
+nav
+	.logo
+		a(href='main-app-view')
+			+image-teammentor-logo__default
+	ul.links
+		li
+			a(href='navigate/')
+				+navigate-icon
+				p Navigate
+		li
+			a(href='main-app-view')
+				+home-icon
+				p Home
+		li
+			a(href='../help/index')
+				+help-icon
+				p Help
+		li
+			a(href='../user/user')
+				+user-icon
+				p User
+		li
+			a(href='../getting-started/index')
+				+logout-icon
+				p Logout
+	.menu-icon
+		a(href='#')
+			i.fi-list
