@@ -1,4 +1,5 @@
 extends ../_layouts/page_home.jade
+include ../getting-started/mixins/getting-started-mixins.jade
 
 block content
 	#application
@@ -10,13 +11,10 @@ block content
 			// column
 			.col-6#results
 				.lge-container
-					include:md ../../content/teamMentor/help/index.md
+					+team-mentor-summary
 					br
 					hr
 					include:md ../../content/teamMentor/help/video.md
-					br
-					hr
-					include:md ../../content/teamMentor/help/faq.md
 					br
 				// lge-container
 			// column
