@@ -1,11 +1,13 @@
 require 'fluentnode'
 require('../node_modules/node-webkit-repl/src/extra_fluentnode.coffee')
 NodeWebKit_Service = require('node-webkit-repl')
+Jade_API            = require('./Jade_API')
 
 class QA_TM_4_0_Design
 
   constructor: ()->
     @nodeWebKit  = new NodeWebKit_Service(57777)
+    @jade_API    = new Jade_API(@)
     nodeWebKit   = @nodeWebKit
     @tm_Server   = 'http://localhost:1337'
     @chrome      = null
@@ -20,20 +22,19 @@ class QA_TM_4_0_Design
       if (data is null)
         @nodeWebKit.start =>
           @chrome = @nodeWebKit.chrome
-          #@nodeWebKit.open_Index ->
           @add_Extra_Error_Handling done
       else
         @nodeWebKit.chrome.connect =>
           @chrome = @nodeWebKit.chrome
-          @add_Extra_Error_Handling done
+          done()
 
 
   after: (done)->
-    @chrome._chrome.close()
-    @chrome = null
+    if @chrome != null
+      @chrome._chrome.close()
+    else
+      @chrome = null
     done()
-    #@nodeWebKit.stop =>
-    #  done()
 
   open: (url, callback)=>
     @chrome.open @tm_Server + url, =>
@@ -80,6 +81,15 @@ class QA_TM_4_0_Design
  #       @open_Delay.wait =>
  #         callback()
 
+  dom_Find     : (selector,callback)=>
+    @chrome.dom_Find selector, (data)->
+      callback(data.$)
+
+  field: (selector,callback)=>
+    @chrome.dom_Find "input#{selector}", (data)->
+      attributes = data.$('input').attr()
+      callback(attributes)
+
   click: (text, callback)->
     code = "elements = document.documentElement.querySelectorAll('a');
             for(var i=0; i< elements.length; i++)
@@ -95,6 +105,8 @@ class QA_TM_4_0_Design
       code = "process.on('uncaughtException', function(err) { alert(err);});";
       @chrome.eval_Script code, (err,data)=>
         callback()
+
+
 
 singleton  = null
 

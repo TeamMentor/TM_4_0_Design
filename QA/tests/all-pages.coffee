@@ -3,6 +3,7 @@ QA_TM_Design = require '../API/QA-TM_4_0_Design'
 # this test suite contains all  all pages that we currently need to support for anonymous users (i.e. non logged in users)
 describe 'all pages | anonymous users', ->
   page = QA_TM_Design.create(before, after);
+  jade = page.jade_API;
 
   #afterEach (done)->
   #  testTitle = @.currentTest.fullTitle()
@@ -45,7 +46,7 @@ describe 'all pages | anonymous users', ->
 
 
   it '/',(done)->
-    page.open '/', (html,$)->
+    jade.home (html,$)->
       $('#usp h1').html().assert_Is('Instant resources that bridge the gap between developer questions and technical solutions')
 
       $('#usp a'     ).get(0).attribs.href       .assert_Is('../getting-started/index.html')
@@ -68,8 +69,8 @@ describe 'all pages | anonymous users', ->
       check_Generic_Footer($)
       done()
 
-  it '/landing-pages/about.html',(done)->
-    page.open '/landing-pages/about.html', (html,$)->
+  it 'About',(done)->
+    jade.about (html,$)->
       $(  '#about h1'   ).html()        .assert_Is('An interactive Application Security library with thousands of code samples and professional guidance when you need it.')
       $(  '#about-us h4').html()        .assert_Is('TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.')
       $($('#about-us p' ).get(0)).html().assert_Is('It contains over 4,000 articles with dynamic content across multiple development platforms including .NET, Java, C/C++, PHP, Android and iOS. TEAM Mentor is the In-Practice companion to our TEAM Professor eLearning courses, extending developers&#x2019; knowledge in combination with training.')
@@ -78,8 +79,8 @@ describe 'all pages | anonymous users', ->
       check_Generic_Footer($);
       done()
 
-  it  '/landing-pages/features.html',(done)->
-    page.open '/landing-pages/features.html', (html,$)->
+  it  'features',(done)->
+    jade.features (html,$)->
       $(  '#features h4'   ).html()
       $(  '#features h4'   ).html()        .assert_Is('Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.')
       $($('.row h4').get(0)).html()        .assert_Is('Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.')
@@ -91,8 +92,8 @@ describe 'all pages | anonymous users', ->
       done()
 
 
-  it '/help/index.html',(done)->
-    page.open '/help/index.html', (html,$)->
+  it 'Help',(done)->
+    jade.help (html,$)->
       titles = ($(h4).text() for h4 in $('#help-nav h4'))
       titles.assert_Is ["About TEAM Mentor", "Installation", "Administration", "UI Elements",
                         "Reading Content","Editing Content","Eclipse for Fortify plugin",
@@ -107,9 +108,6 @@ describe 'all pages | anonymous users', ->
       #todo: add check for links
 
       done()
-
-
-
 
 
   describe 'misc other page tests', ->

@@ -2,7 +2,7 @@ QA_TM_Design = require '../API/QA-TM_4_0_Design'
 async        = require('async')
 # this test suite contains all  all pages that we currently need to support for anonymous users (i.e. non logged in users)
 
-describe 'help pages ', ->
+xdescribe 'help pages ', ->
   page = QA_TM_Design.create(before, after)
 
   help_Pages = []

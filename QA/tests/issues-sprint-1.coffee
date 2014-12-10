@@ -1,16 +1,17 @@
 describe 'issues-sprint-1', ->                                                                         # name of this suite of tests (should match the file name)
   page = require('../API/QA-TM_4_0_Design').create(before,after)                                       # required import and get page object
+  jade = page.jade_API
+
 
   it 'Issue 88 - navigation page should not be accessible without a login', (done)->
-    page.open '/', ()->
-      1000.wait ->
-        page.open '/libraries', (html,$)->
+    jade.page_Home ()->
+      jade.page_Libraries (html,$)->
           assert_Is_Null $('#features h3').html()  # we should be redirected to the login page
           #.assert_Is('It looks like the page you want to see needs a valid login')    # confirms that we are on the 'you need to login page'
           done()
 
   it 'Issue 96 - Main Navigation "Login" link is not opening up the Login page', (done)->                   # name of current test
-    page.open '/', (html,$)->                                                                               # open the index page
+    jade.page_Home (html,$)->                                                                               # open the index page
       login_Link = link.attribs.href for link in $('.nav li a') when $(link).html()=='Login'                # extract the url from the link with 'Login' as text
       login_Link.assert_Is    ('/deploy/html/getting-started/index.html')                                   # checks that the link is the wrong one
       login_Link.assert_Is_Not('/user/login/returning-user-login.html')                                     # checks that the link is not the 'correct' one
@@ -21,18 +22,27 @@ describe 'issues-sprint-1', ->                                                  
           $('#features h3').html().assert_Is('It looks like the page you want to see needs a valid login')
           done()                                                                                            # call done to finish test
 
-  xit 'Issue 96 - Take Screenshot of affected pages', (done)->                                              # name of current test
-    @timeout(4000)
-    page.window_Position 1000,50,800,400, ->                                                                # change window size to make it more 'screenshot friendly'
-      page.open '/', (html,$)->                                                                             # open the index page
-        page.screenshot 'Issue 96 1. Home Page', ->                                                         # take screenshot
-          login_Link = link.attribs.href for Fink in $('.nav li a') when $(link).html()=='Login'            # extract 'Login' link
-          page.open login_Link, ->                                                                          # follow link
-            page.screenshot 'Issue 96 2. UI after clicking on link', ->                                     # take screenshot
-              done()                                                                                        # finish test
+  #it 'Issue 96 - Take Screenshot of affected pages', (done)->                                              # name of current test
+  # @timeout(4000)
+  # page.window_Position 1000,50,800,400, ->                                                                # change window size to make it more 'screenshot friendly'
+  #   page.open '/', (html,$)->                                                                             # open the index page
+  #     page.screenshot 'Issue 96 1. Home Page', ->                                                         # take screenshot
+  #       login_Link = link.attribs.href for Fink in $('.nav li a') when $(link).html()=='Login'            # extract 'Login' link
+  #       page.open login_Link, ->                                                                          # follow link
+  #         page.screenshot 'Issue 96 2. UI after clicking on link', ->                                     # take screenshot
+  #           done()                                                                                        # finish test
 
   it 'Issue 99 - Main Navigation "Sign Up" link is asking the user to login', (done)->
-    page.open '/', (html,$)->
+    jade.page_Home (html,$)->
       page.click 'SIGN UP',  (html,$)->
         $('#features h3').html().assert_Is('It looks like the page you want to see needs a valid login')
+        done()
+
+  it.only 'Issue 100 - Login page should not have hardcoded username', (done)->
+    hardcoded_UserName = 'user'
+    jade.page_Login ->
+      page.field '#new-user-username', (attributes) ->
+        attributes.id   .assert_Is 'new-user-username'
+        attributes.name .assert_Is 'username'
+        attributes.value.assert_Is hardcoded_UserName        # this is the bug, this value should be empty
         done()
