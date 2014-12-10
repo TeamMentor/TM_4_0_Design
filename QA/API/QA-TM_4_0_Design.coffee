@@ -32,8 +32,7 @@ class QA_TM_4_0_Design
   after: (done)->
     if @chrome != null
       @chrome._chrome.close()
-    else
-      @chrome = null
+    @chrome = null
     done()
 
   open: (url, callback)=>

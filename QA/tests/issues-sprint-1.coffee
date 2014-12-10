@@ -1,3 +1,4 @@
+
 describe 'issues-sprint-1', ->                                                                         # name of this suite of tests (should match the file name)
   page = require('../API/QA-TM_4_0_Design').create(before,after)                                       # required import and get page object
   jade = page.jade_API
@@ -38,7 +39,7 @@ describe 'issues-sprint-1', ->                                                  
         $('#features h3').html().assert_Is('It looks like the page you want to see needs a valid login')
         done()
 
-  it.only 'Issue 100 - Login page should not have hardcoded username', (done)->
+  it 'Issue 100 - Login page should not have hardcoded username', (done)->
     hardcoded_UserName = 'user'
     jade.page_Login ->
       page.field '#new-user-username', (attributes) ->

@@ -46,7 +46,7 @@ describe 'all pages | anonymous users', ->
 
 
   it '/',(done)->
-    jade.home (html,$)->
+    jade.page_Home (html,$)->
       $('#usp h1').html().assert_Is('Instant resources that bridge the gap between developer questions and technical solutions')
 
       $('#usp a'     ).get(0).attribs.href       .assert_Is('../getting-started/index.html')
@@ -70,7 +70,7 @@ describe 'all pages | anonymous users', ->
       done()
 
   it 'About',(done)->
-    jade.about (html,$)->
+    jade.page_About (html,$)->
       $(  '#about h1'   ).html()        .assert_Is('An interactive Application Security library with thousands of code samples and professional guidance when you need it.')
       $(  '#about-us h4').html()        .assert_Is('TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.')
       $($('#about-us p' ).get(0)).html().assert_Is('It contains over 4,000 articles with dynamic content across multiple development platforms including .NET, Java, C/C++, PHP, Android and iOS. TEAM Mentor is the In-Practice companion to our TEAM Professor eLearning courses, extending developers&#x2019; knowledge in combination with training.')
@@ -80,7 +80,7 @@ describe 'all pages | anonymous users', ->
       done()
 
   it  'features',(done)->
-    jade.features (html,$)->
+    jade.page_Features (html,$)->
       $(  '#features h4'   ).html()
       $(  '#features h4'   ).html()        .assert_Is('Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.')
       $($('.row h4').get(0)).html()        .assert_Is('Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.')
@@ -93,7 +93,7 @@ describe 'all pages | anonymous users', ->
 
 
   it 'Help',(done)->
-    jade.help (html,$)->
+    jade.page_Help (html,$)->
       titles = ($(h4).text() for h4 in $('#help-nav h4'))
       titles.assert_Is ["About TEAM Mentor", "Installation", "Administration", "UI Elements",
                         "Reading Content","Editing Content","Eclipse for Fortify plugin",
