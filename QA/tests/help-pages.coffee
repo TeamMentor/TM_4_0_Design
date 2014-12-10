@@ -3,8 +3,7 @@ async        = require('async')
 # this test suite contains all  all pages that we currently need to support for anonymous users (i.e. non logged in users)
 
 describe 'help pages ', ->
-  page = QA_TM_Design.create();
-  before (done)-> page.before done
+  page = QA_TM_Design.create(before, after)
 
   help_Pages = []
   #@timeout(60000)             # set unit test timeout to 60s
@@ -27,7 +26,7 @@ describe 'help pages ', ->
     @timeout(60000)
     index = 0
     open_Help_Page = (help_Page, next)->
-      console.log "[#{++index}/#{help_Pages.size()}] opening page: #{help_Page.title} - #{help_Page.href}"
+      #console.log "[#{++index}/#{help_Pages.size()}] opening page: #{help_Page.title} - #{help_Page.href}"
       0.wait ->
         page.open help_Page.href,(html,$)->
           $('#help-docs h2').html().assert_Is(help_Page.title)                   # confirms title of loaded page matches link title

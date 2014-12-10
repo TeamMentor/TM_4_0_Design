@@ -29,8 +29,11 @@ class QA_TM_4_0_Design
 
 
   after: (done)->
-    @nodeWebKit.stop =>
-      done()
+    @chrome._chrome.close()
+    @chrome = null
+    done()
+    #@nodeWebKit.stop =>
+    #  done()
 
   open: (url, callback)=>
     @chrome.open @tm_Server + url, =>
@@ -71,11 +74,21 @@ class QA_TM_4_0_Design
                            curWindow.height=#{height};
                            ", callback
 
-  click: (href, callback)->
-    @chrome.eval_Script "document.querySelector('a[href*=\"#{href}\"]').click()", =>
+ # click: (href, callback)->
+ #   @chrome.eval_Script "document.querySelector('a[href*=\"#{href}\"]').click()", =>
+ #     @wait_For_Complete =>
+ #       @open_Delay.wait =>
+ #         callback()
+
+  click: (text, callback)->
+    code = "elements = document.documentElement.querySelectorAll('a');
+            for(var i=0; i< elements.length; i++)
+              if(elements[i].innerText == '#{text}')
+                elements[i].click();"
+    @chrome.eval_Script code, (err,data)=>
       @wait_For_Complete =>
         @open_Delay.wait =>
-          callback()
+           @html callback
 
   add_Extra_Error_Handling: (callback)->
     @nodeWebKit.open_Index =>
@@ -85,13 +98,16 @@ class QA_TM_4_0_Design
 
 singleton  = null
 
-QA_TM_4_0_Design.create = (before)->
-  #return new QA_TM_4_0_Design()              # uncomment this if a new instance is needed per test (and the 'after' mocha event is set)
 
+QA_TM_4_0_Design.create = (before, after)->
+  #return new QA_TM_4_0_Design()              # uncomment this if a new instance is needed per test (and the 'after' mocha event is set)
   if singleton is null
     singleton = new QA_TM_4_0_Design()
-  if typeof(before) == 'function'
+
+  if typeof(before) == 'function'           # set these mocha events here so that the user (writting the unit test) doesn't have to
     before (done)-> singleton.before done
+  if typeof(after) == 'function'
+    after (done)-> singleton.after done
   return singleton
 
 module.exports = QA_TM_4_0_Design

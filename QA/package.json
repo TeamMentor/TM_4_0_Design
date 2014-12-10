@@ -4,7 +4,7 @@
   "description": "QA tests for TM 4.0 Design",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register --recursive -R list tests",
-    "test-watch": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register --recursive -R list -w tests"
+    "test-watch": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register --recursive -R list -w --extensions 'coffee' tests"
   },
   "repository": {
     "type": "git",
