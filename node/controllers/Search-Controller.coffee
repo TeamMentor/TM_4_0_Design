@@ -111,22 +111,26 @@ class SearchController
         breadcrumbs_Cache.unshift {href:"/home/main-app-view.html", title: "Search Home"}
         topArticles = 'http://localhost:1332/data/tm-data/articles-by-weight'
         #topArticles = 'https://tm-graph.herokuapp.com/data/tm-data/articles-by-weight'
-        request topArticles, (err, respojnse, data)=>
-            data = JSON.parse(data).splice(0,4)
-            topArticles = []
-            for item in data
-                topArticles.push { href: "/article/view/#{item.guid}/#{item.title}", title: "#{item.title}", weight:"#{item.weight}"}
-            
-            searchTerms = []
-            searchTerms.push { href: "/graph/Logging"                                   , title: "Logging"}
-            searchTerms.push { href: "/graph/Separation%20of%20Data%20and%20Control"    , title: "Separation of Data and Control"}
-            searchTerms.push { href: "/graph/(Web) Encoding"                            , title: "(Web) Encoding"}
-            recentArticles = []
-            for recentArticle in recentArticles_Cache
-                recentArticles.push {href : 'https://uno.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
-                break if recentArticles.length >2
-            viewModel = { recentArticles: recentArticles, topArticles : topArticles , searchTerms : searchTerms}
+        request topArticles, (err, response, data)=>
+            console.log data
             jadePage  = '../source/html/home/main-app-view.jade'
+            viewModel = {}
+            if false then ->
+                data = JSON.parse(data).splice(0,4)
+                topArticles = []
+                for item in data
+                    topArticles.push { href: "/article/view/#{item.guid}/#{item.title}", title: "#{item.title}", weight:"#{item.weight}"}
+
+                searchTerms = []
+                searchTerms.push { href: "/graph/Logging"                                   , title: "Logging"}
+                searchTerms.push { href: "/graph/Separation%20of%20Data%20and%20Control"    , title: "Separation of Data and Control"}
+                searchTerms.push { href: "/graph/(Web) Encoding"                            , title: "(Web) Encoding"}
+                recentArticles = []
+                for recentArticle in recentArticles_Cache
+                    recentArticles.push {href : 'https://uno.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
+                    break if recentArticles.length >2
+                viewModel = { recentArticles: recentArticles, topArticles : topArticles , searchTerms : searchTerms}
+
             @res.render(jadePage, viewModel)
             
     showArticle: =>

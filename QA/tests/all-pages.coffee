@@ -9,6 +9,8 @@ describe 'all pages | anonymous users', ->
   #  testTitle = @.currentTest.fullTitle()
   #  page.screenshot testTitle, done
 
+  before (done)-> jade.clear_Session done                                   # ensure we are anonymous
+
   afterEach (done)->
     page.html (html,$)->
       $('title').text().assert_Is('TEAM Mentor 4.0 (Html version)')         # confirm that all pages have the same title

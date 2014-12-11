@@ -80,14 +80,24 @@ class QA_TM_4_0_Design
  #       @open_Delay.wait =>
  #         callback()
 
+  eval: (code, callback)->
+    @chrome.eval_Script(code,callback)
+
   dom_Find     : (selector,callback)=>
     @chrome.dom_Find selector, (data)->
       callback(data.$)
 
-  field: (selector,callback)=>
-    @chrome.dom_Find "input#{selector}", (data)->
-      attributes = data.$('input').attr()
-      callback(attributes)
+  field: (selector, value, callback)=>
+    if value instanceof Function
+      callback = value
+      value = null
+      @chrome.dom_Find "input#{selector}", (data)->
+        attributes = data.$('input').attr()
+        callback(attributes)
+    else
+      "need to set the field".log()
+      callback()
+
 
   click: (text, callback)->
     code = "elements = document.documentElement.querySelectorAll('a');
@@ -104,7 +114,6 @@ class QA_TM_4_0_Design
       code = "process.on('uncaughtException', function(err) { alert(err);});";
       @chrome.eval_Script code, (err,data)=>
         callback()
-
 
 
 singleton  = null

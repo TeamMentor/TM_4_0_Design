@@ -29,7 +29,11 @@ describe 'help pages ', ->
       #console.log "[#{++index}/#{help_Pages.size()}] opening page: #{help_Page.title} - #{help_Page.href}"
       0.wait ->
         page.open help_Page.href,(html,$)->
-          $('#help-docs h2').html().assert_Is(help_Page.title)                   # confirms title of loaded page matches link title
+          article_Title =$('#help-docs h2').html()
+          if article_Title is 'Error fetching page from docs site'  # check if we are offline
+            next()
+            return
+          article_Title.assert_Is(help_Page.title)                   # confirms title of loaded page matches link title
           $('#help-docs .lge-container').text().size().assert_Bigger_Than(100)   # confirms there is some text on the page
           next()
 

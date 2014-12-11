@@ -2,13 +2,13 @@
 "use strict";
 
 var users = [ { username : 'tm'   , password : 'tm'   } ,
-              { username : 'user' , password : ''     } ,
+              { username : 'user' , password : 'a'     } ,
               { username : 'roman', password : 'longpassword'     }
             ];
             
-var loginPage         = '/user/login/returning-user-validation.html';
-var mainPage_user     = '/home/main-app-view.html';
-var mainPage_no_user  = '/landing-pages/index.html';                
+var loginPage         = '/user/login/returning-user-validation.html'
+var mainPage_user     = '/home/main-app-view.html'
+var mainPage_no_user  = '/landing-pages/index.html'
 
 var Login_Controller = function(req, res) 
     {
@@ -28,18 +28,32 @@ var Login_Controller = function(req, res)
         
         this.loginUser = function()
             {
+                //Temp QA logins
+                for(var index in users)
+                {
+                    var user = users[index];
+                    if (user.username === req.body.username && user.password === req.body.password)
+                    {
+                        req.session.username = user.username;
+                        res.redirect(mainPage_user);
+                        return;
+                    }
+                }
+
+
                 var username = req.body.username
                 var password = req.body.password
-                
+
+
                 //major hack for demo (this needs to be done by consuming the GraphDB TeamMentor-Service)
                 var request = require('request')
-                var loginUrl = 'https://tmdev01-sme.teammentor.net/rest/login/' + username + '/' + password;
+                var loginUrl = 'https://uno.teammentor.net/rest/login/' + username + '/' + password;
                 console.log(loginUrl)
                 request(loginUrl, function(error, response, body)
-                    {                         
-                        if (body.indexOf('00000000-0000-0000-0000-00000000000') > -1 || body.indexOf('Endpoint not found.')>-1 )
+                    {
+                        if (error || body.indexOf('00000000-0000-0000-0000-00000000000') > -1 || body.indexOf('Endpoint not found.')>-1 )
                         {
-                            console.log('not logged in')                        
+                            console.log('not logged in...')
                             req.session.username = undefined;
                             res.redirect(loginPage);                            
                         }
@@ -51,21 +65,6 @@ var Login_Controller = function(req, res)
                         }
                     });
             };
-//           console.log ('logging in with:' + loginUrl)
-//           
-//           for(var index in users)
-//           {
-//               var user = users[index];                    
-//               if (user.username === req.body.username && user.password === req.body.password)
-//               {
-//                   req.session.username = user.username;
-//                   res.redirect(mainPage_user);
-//                   return;
-//               }
-//           }                
-//           req.session.username = undefined;
-//           res.redirect(loginPage);
-//          };  
         this.logoutUser = function()
             {
                 req.session.username = undefined;
