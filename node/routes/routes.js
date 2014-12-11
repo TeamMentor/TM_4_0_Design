@@ -22,9 +22,10 @@ module.exports = function (app)
 
     //login routes
     
-    app.get ('/user/login' , function (req, res) { new Login_Controller(req, res).redirectToLoginPage(); }); 
-    app.post('/user/login' , function (req, res) { new Login_Controller(req, res).loginUser          (); });
-    app.get ('/user/logout', function (req, res) { new Login_Controller(req, res).logoutUser         (); });
+    app.get ('/user/login'     , function (req, res) { new Login_Controller(req, res).redirectToLoginPage(); });
+    app.post('/user/login'     , function (req, res) { new Login_Controller(req, res).loginUser          (); });
+    app.get ('/user/logout'    , function (req, res) { new Login_Controller(req, res).logoutUser         (); });
+    app.post('/user/pwd_reset' , function (req, res) { new Login_Controller(req, res).passwordReset      (); });
     
     //library routes
     Library_Controller.registerRoutes(app);

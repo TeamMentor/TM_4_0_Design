@@ -7,17 +7,16 @@ describe 'qa-workflow-login | ', ->
   #  testTitle = @.currentTest.fullTitle()
   #  page.screenshot testTitle, done
 
-  it 'Login page (take screenshot)', (done)->
-    page.open '/user/login/returning-user-login.html', (html,$)->
-      $.title.log()
-      $('.lge-container h3').text().assert_Is('Login')
-
-      done();
+  #it 'Login page (take screenshot)', (done)->
+  #  page.open '/user/login/returning-user-login.html', (html,$)->
+  #    #$.title.log()
+  #    $('.lge-container h3').text().assert_Is('Login')
+  #
+  #    done();
 
 
 
   it 'Login fail', (done)->
-      @timeout(0)
       #page.show ->
       page.open '/user/login/returning-user-login.html', (html)->
           code = "document.querySelector('#new-user-username').value='aaaa';

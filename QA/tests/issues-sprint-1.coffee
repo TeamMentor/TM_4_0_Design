@@ -1,4 +1,3 @@
-
 describe 'issues-sprint-1', ->                                                                         # name of this suite of tests (should match the file name)
   page = require('../API/QA-TM_4_0_Design').create(before,after)                                       # required import and get page object
   jade = page.jade_API
@@ -47,3 +46,4 @@ describe 'issues-sprint-1', ->                                                  
         attributes.name .assert_Is 'username'
         attributes.value.assert_Is hardcoded_UserName        # this is the bug, this value should be empty
         done()
+

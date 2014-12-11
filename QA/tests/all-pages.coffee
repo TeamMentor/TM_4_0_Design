@@ -11,6 +11,8 @@ describe 'all pages | anonymous users', ->
 
   before (done)-> jade.clear_Session done                                   # ensure we are anonymous
 
+  @timeout(4000)
+
   afterEach (done)->
     page.html (html,$)->
       $('title').text().assert_Is('TEAM Mentor 4.0 (Html version)')         # confirm that all pages have the same title
@@ -83,7 +85,6 @@ describe 'all pages | anonymous users', ->
 
   it  'features',(done)->
     jade.page_Features (html,$)->
-      $(  '#features h4'   ).html()
       $(  '#features h4'   ).html()        .assert_Is('Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.')
       $($('.row h4').get(0)).html()        .assert_Is('Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.')
       $($('.row h4').get(1)).html()        .assert_Is('Integrates with multiple static analysis tools and developer environments (IDE&#x2019;s) to map prescriptive coding guidance to scan results to fix vulnerabilities.')
@@ -111,6 +112,42 @@ describe 'all pages | anonymous users', ->
 
       done()
 
+  it 'Login', (done)->
+    jade.page_Login (html,$)->
+      $('h3').html().assert_Is("Login")
+      $('p' ).html().assert_Is("Already have an account? Sign in here.")
+      $.html('#new-user-username').assert_Contains('name="username"')
+      $.html('#new-user-password').assert_Contains('name="password"')
+      $('#btn-login').html().assert_Is('Login')
+      $('#btn-forgot-pwd').html().assert_Is('Forgot your password?')
+      $('#btn-login'     ).attr('type').assert_Is('submit')
+      $('#btn-forgot-pwd').attr('type').assert_Is('button')
+      $('#btn-forgot-pwd').parent().attr('href').assert_Is('returning-user-forgot-password.html')
+      done()
+
+  it 'Login Fail', (done)->
+    jade.page_Login_Fail (html, $)->
+      $('.alert').html().assert_Is('Login failed')
+      $('h3').html().assert_Is("Login")
+      $('p' ).html().assert_Is("Already have an account? Sign in here.")
+      # Same as "it 'Login', (done)->" , so we should also check if those fields are here
+      done()
+
+  it 'Password Forgot', (done)->
+    jade.page_Pwd_Forgot (html, $)->
+      $('h3').html().assert_Is("Forgot your password?")
+      $('p' ).html().assert_Is("Too easy - just type in your email address and we&apos;ll send you an email with further instructions.")
+      $.html('.form-group label') .assert_Is('<label for="email">Email Address</label>')
+      $.html('#email').assert_Is('<input id="email" type="email" name="email" placeholder="Email Address" class="form-control">')
+      $('#forgot-password').attr('action').assert_Is('/user/pwd_reset')
+      $('button').html().assert_Is('Get password')
+      done()
+
+  it 'Password Sent', (done)->
+    jade.page_Pwd_Sent (html,$)->
+      $('h3').html().assert_Is("Ok, Done")
+      $('p' ).html().assert_Is("We&apos;ve sent you an email with instructions for resetting your password.")
+      done()
 
   describe 'misc other page tests', ->
     it 'page on root should have the same as /landing-pages/index.html', (done)->

@@ -84,12 +84,11 @@ mixin forgot-password-form
   :markdown
     ### Forgot your password?
     Too easy - just type in your email address and we'll send you an email with further instructions.
-  form#forgot-password(role='form', action='forgot-password-completed.html')
+  form#forgot-password(role='form', action='/user/pwd_reset' method='post')
     .form-group
       label(for='email') Email Address
-      input#email.form-control(type='email', placeholder='Email Address')
-    a(href='/deploy/html/user/forgot-password-completed.html')
-      button(type='button') Get password
+      input#email.form-control(type='email', name='email' placeholder='Email Address')
+      button#btn-get-password(type='submit') Get password
 
 //- forgot-password-button
 mixin forgot-password-button
