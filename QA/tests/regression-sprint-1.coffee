@@ -2,6 +2,13 @@ describe 'regression-sprint-1', ->                                              
   page = require('../API/QA-TM_4_0_Design').create(before,after)                                       # required import and get page object
   jade = page.jade_API
 
+  it 'Issue 96 - Main Navigation "Login" link is not opening up the Login page', (done)->                   # name of current test
+    jade.page_Home (html,$)->                                                                               # open the index page
+      login_Link = link.attribs.href for link in $('.nav li a') when $(link).html()=='Login'                # extract the url from the link with 'Login' as text
+      login_Link.assert_Is_Not('/deploy/html/getting-started/index.html')                                   # checks that the link is the wrong one
+      login_Link.assert_Is    ('/user/login/returning-user-login.html')                                     # checks that the link is not the 'correct' one
+      done()
+
   it 'Issue 99 - Main Navigation "Sign Up" link is asking the user to login', (done)->
     jade.page_Home ->
       page.click 'SIGN UP', ->

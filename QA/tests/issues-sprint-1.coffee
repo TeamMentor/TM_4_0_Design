@@ -10,14 +10,6 @@ describe 'issues-sprint-1', ->                                                  
           #.assert_Is('It looks like the page you want to see needs a valid login')    # confirms that we are on the 'you need to login page'
           done()
 
-  it 'Issue 96 - Main Navigation "Login" link is not opening up the Login page', (done)->                   # name of current test
-    jade.page_Home (html,$)->                                                                               # open the index page
-      login_Link = link.attribs.href for link in $('.nav li a') when $(link).html()=='Login'                # extract the url from the link with 'Login' as text
-      login_Link.assert_Is    ('/deploy/html/getting-started/index.html')                                   # checks that the link is the wrong one
-      login_Link.assert_Is_Not('/user/login/returning-user-login.html')                                     # checks that the link is not the 'correct' one
-      page.open login_Link, (html,$)->                                                                      # follows the login link
-        $('#features h3').html().assert_Is('It looks like the page you want to see needs a valid login')    # confirms that we are on the 'you need to login page'
-        done()                                                                                            # call done to finish test
 
   #it 'Issue 96 - Take Screenshot of affected pages', (done)->                                              # name of current test
   # @timeout(4000)

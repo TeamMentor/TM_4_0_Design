@@ -51,10 +51,9 @@ var Login_Controller = function(req, res)
 
                 request(loginUrl, function(error, response, body)
                     {
-                        '>>>>after request'.log()
                         if (error || body.indexOf('00000000-0000-0000-0000-00000000000') > -1 || body.indexOf('Endpoint not found.')>-1 )
                         {
-                            console.log('not logged in...')
+                            //console.log('not logged in...')
                             req.session.username = undefined;
                             res.redirect(loginPage);                            
                         }

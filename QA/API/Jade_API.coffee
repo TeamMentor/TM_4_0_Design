@@ -32,6 +32,15 @@ class Jade_API
   page_Sign_Up_Fail : (callback) => @page.open '/landing-pages/user-sign-up-validation.html'     , callback
   page_Sign_Up_OK   : (callback) => @page.open '/landing-pages/user-sign-up-completed.html'      , callback
 
+
+  page_User_Help    : (callback        ) => @page.open '/help/index.html'                                , callback
+  page_User_Library : (callback        ) => @page.open '/library/Uno'                                    , callback
+  page_User_Logout  : (callback        ) => @page.open '/user/logout'                                    , callback
+  page_User_Main    : (callback        ) => @page.open '/home/main-app-view.html'                        , callback
+  page_User_Queries : (callback        ) => @page.open '/library/queries'                                , callback
+  page_User_Graph   : (target, callback) => @page.open "/graph/#{target}"                                , callback
+
+
   session_Cookie  : (callback) =>
                       @page.chrome.cookies (cookies)->
                         for cookie in cookies

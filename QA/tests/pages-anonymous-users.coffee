@@ -1,7 +1,7 @@
 QA_TM_Design = require '../API/QA-TM_4_0_Design'
 
 # this test suite contains all  all pages that we currently need to support for anonymous users (i.e. non logged in users)
-describe 'all pages | anonymous users', ->
+describe 'all pages - anonymous users', ->
   page = QA_TM_Design.create(before, after);
   jade = page.jade_API;
 
@@ -37,7 +37,7 @@ describe 'all pages | anonymous users', ->
     checkValues(2,'/help/index.html'                              , 'Help')
     checkValues(3,'#'                                             , '|')
     checkValues(4,'/deploy/html/landing-pages/user-sign-up.html'  , 'Sign Up')
-    checkValues(5,'/deploy/html/getting-started/index.html'       , 'Login')
+    checkValues(5,'/user/login/returning-user-login.html'          , 'Login')
 
   check_Generic_Footer = ($)->
 
