@@ -32,12 +32,12 @@ describe 'all pages | anonymous users', ->
       linksData[index].href.assert_Is(expected_Href)
       linksData[index].value.assert_Is(expected_Value)
 
-    checkValues(0,'/deploy/html/landing-pages/about.html'   , 'About'   )   # check expected values of 6 links
-    checkValues(1,'/deploy/html/landing-pages/features.html', 'Features')
-    checkValues(2,'/help/index.html'                        , 'Help')
-    checkValues(3,'#'                                       , '|')
-    checkValues(4,'/deploy/html/getting-started/index.html' , 'Sign Up')
-    checkValues(5,'/deploy/html/getting-started/index.html' , 'Login')
+    checkValues(0,'/deploy/html/landing-pages/about.html'         , 'About'   )   # check expected values of 6 links
+    checkValues(1,'/deploy/html/landing-pages/features.html'      , 'Features')
+    checkValues(2,'/help/index.html'                              , 'Help')
+    checkValues(3,'#'                                             , '|')
+    checkValues(4,'/deploy/html/landing-pages/user-sign-up.html'  , 'Sign Up')
+    checkValues(5,'/deploy/html/getting-started/index.html'       , 'Login')
 
   check_Generic_Footer = ($)->
 
@@ -148,6 +148,40 @@ describe 'all pages | anonymous users', ->
       $('h3').html().assert_Is("Ok, Done")
       $('p' ).html().assert_Is("We&apos;ve sent you an email with instructions for resetting your password.")
       done()
+
+  it 'Sign Up', (done) ->
+    jade.page_Sign_Up (html,$)->
+      $('h3'                                  ).html().assert_Is("Sign Up")
+      $('p'                                   ).html().assert_Is("Complete this form and get access to the worlds largest repository of secure software development knowledge.")
+
+      $('form'                                ).attr().assert_Is({ id: 'sign-up-form', role: 'form' , method:'POST', action: '/user/sign-up' })
+      $('label[for=new-user-username]'        ).html().assert_Is('Username')
+      $('label[for=new-user-password]'        ).html().assert_Is('Password')
+      $('label[for=new-user-confirm-password]').html().assert_Is('Confirm Password')
+      $('label[for=new-user-email]'           ).html().assert_Is('Email Address')
+
+      $('input[id=new-user-username]'         ).attr().assert_Is({ id: 'new-user-username'        , name: 'username'        , type: 'username', placeholder: 'Username'        , class: 'form-control' })
+      $('input[id=new-user-password]'         ).attr().assert_Is({ id: 'new-user-password'        , name: 'password'        , type: 'password', placeholder: 'Password'        , class: 'form-control' })
+      $('input[id=new-user-confirm-password]' ).attr().assert_Is({ id: 'new-user-confirm-password', name: 'password-confirm', type: 'password', placeholder: 'Confirm Password', class: 'form-control' })
+      $('input[id=new-user-email]'            ).attr().assert_Is({ id: 'new-user-email'           , name: 'email'           , type: 'email', placeholder: 'Email Address'   , class: 'form-control' })
+      $('button#btn-sign-up'                  ).html().assert_Is('Sign Up')
+      $('button#btn-sign-up'                  ).attr().assert_Is({ id:'btn-sign-up', type:'submit'})
+      done()
+
+  it  'Sign Up Fail', (done) ->
+    jade.page_Sign_Up_Fail (html,$)->
+      $('.alert').html().assert_Is('Sign Up failed')
+      $('h3'    ).html().assert_Is("Sign Up")
+      done()
+
+  it  'Sign Up OK', (done) ->
+    jade.page_Sign_Up_OK (html,$)->
+      $('h3' )        .html().assert_Is('Welcome to TEAM Mentor'                     )
+      $($('p').get(0)).html().assert_Is('Thank you for creating a new account.'      )
+      $($('p').get(1)).text().assert_Is('Please Login'                               )
+      $('p a')        .attr('href').assert_Is('/user/login/returning-user-login.html')
+      done()
+
 
   describe 'misc other page tests', ->
     it 'page on root should have the same as /landing-pages/index.html', (done)->

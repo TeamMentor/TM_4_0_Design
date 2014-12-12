@@ -18,25 +18,36 @@ class Jade_API
                     user = @QA_Users.first()
                     @login user.name, user.pwd, callback
 
+  page_About        : (callback) => @page.open '/landing-pages/about.html'                       , callback
+  page_Help         : (callback) => @page.open '/help/index.html'                                , callback
+  page_Home         : (callback) => @page.open '/'                                               , callback
+  page_Features     : (callback) => @page.open '/landing-pages/features.html'                    , callback
+  page_Login        : (callback) => @page.open '/user/login/returning-user-login.html'           , callback
+  page_Login_Fail   : (callback) -> @page.open '/user/login/returning-user-validation.html'      , callback
+  page_Libraries    : (callback) => @page.open '/libraries'                                      , callback
+  page_Main_Page    : (callback) => @page.open '/home/main-app-view.html'                        , callback
+  page_Pwd_Forgot   : (callback) => @page.open '/user/login/returning-user-forgot-password.html' , callback
+  page_Pwd_Sent     : (callback) => @page.open '/user/login/forgot-password-completed.html'      , callback
+  page_Sign_Up      : (callback) => @page.open '/landing-pages/user-sign-up.html'                , callback
+  page_Sign_Up_Fail : (callback) => @page.open '/landing-pages/user-sign-up-validation.html'     , callback
+  page_Sign_Up_OK   : (callback) => @page.open '/landing-pages/user-sign-up-completed.html'      , callback
+
   session_Cookie  : (callback) =>
-                    @page.chrome.cookies (cookies)->
-                      for cookie in cookies
-                        if cookie.name is "connect.sid"
-                          callback(cookie)
-                          return
-                      callback(null)
-
-  page_About      : (callback) => @page.open '/landing-pages/about.html'                       , callback
-  page_Help       : (callback) => @page.open '/help/index.html'                                , callback
-  page_Home       : (callback) => @page.open '/'                                               , callback
-  page_Features   : (callback) => @page.open '/landing-pages/features.html'                    , callback
-  page_Login      : (callback) => @page.open '/user/login/returning-user-login.html'           , callback
-  page_Login_Fail : (callback) -> @page.open '/user/login/returning-user-validation.html'      , callback
-  page_Libraries  : (callback) => @page.open '/libraries'                                      , callback
-  page_Main_Page  : (callback) => @page.open '/home/main-app-view.html'                        , callback
-  page_Pwd_Forgot : (callback) => @page.open '/user/login/returning-user-forgot-password.html' , callback
-  page_Pwd_Sent   : (callback) => @page.open '/user/login/forgot-password-completed.html'      , callback
-
-
+                      @page.chrome.cookies (cookies)->
+                        for cookie in cookies
+                          if cookie.name is "connect.sid"
+                            callback(cookie)
+                            return
+                        callback(null)
+  user_Sign_Up    : (username, password, email, callback) =>
+                      @page_Sign_Up (html, $)=>
+                        code = "document.querySelector('#new-user-username').value='#{username}';
+                                document.querySelector('#new-user-password').value='#{password}';
+                                document.querySelector('#new-user-confirm-password').value='#{password}';
+                                document.querySelector('#new-user-email').value='#{email}';
+                                document.querySelector('#btn-sign-up').click()"
+                        @page.chrome.eval_Script code, =>
+                          @page.wait_For_Complete (html, $)=>
+                            callback()
 
 module.exports = Jade_API

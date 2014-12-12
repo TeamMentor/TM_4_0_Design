@@ -17,7 +17,7 @@
     "test": "node_modules/mocha/bin/mocha node/tests/**/**.*",
     "test-watch": "mocha -w node/tests/**/**.** -R list",
     "start_once": "node app.js",
-    "start-dev": "node_modules/supervisor/lib/cli-wrapper.js -i node node/server.js",
+    "start-dev": "node_modules/supervisor/lib/cli-wrapper.js node/server.js",
     "coverage": "./node/bin/publish-code-coverage.sh",
     "QA":"cd QA && npm test && cd ..",
 

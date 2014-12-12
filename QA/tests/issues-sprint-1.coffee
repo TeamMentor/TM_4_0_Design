@@ -17,10 +17,7 @@ describe 'issues-sprint-1', ->                                                  
       login_Link.assert_Is_Not('/user/login/returning-user-login.html')                                     # checks that the link is not the 'correct' one
       page.open login_Link, (html,$)->                                                                      # follows the login link
         $('#features h3').html().assert_Is('It looks like the page you want to see needs a valid login')    # confirms that we are on the 'you need to login page'
-        # here is a simpler way of doing the above
-        page.click 'SIGN UP',  (html,$)->
-          $('#features h3').html().assert_Is('It looks like the page you want to see needs a valid login')
-          done()                                                                                            # call done to finish test
+        done()                                                                                            # call done to finish test
 
   #it 'Issue 96 - Take Screenshot of affected pages', (done)->                                              # name of current test
   # @timeout(4000)
@@ -32,9 +29,4 @@ describe 'issues-sprint-1', ->                                                  
   #         page.screenshot 'Issue 96 2. UI after clicking on link', ->                                     # take screenshot
   #           done()                                                                                        # finish test
 
-  it 'Issue 99 - Main Navigation "Sign Up" link is asking the user to login', (done)->
-    jade.page_Home (html,$)->
-      page.click 'SIGN UP',  (html,$)->
-        $('#features h3').html().assert_Is('It looks like the page you want to see needs a valid login')
-        done()
 

@@ -95,6 +95,43 @@ var Login_Controller = function(req, res)
 
                 });
             };
+        this.userSignUp = function()
+            {
+                if (req.body.password != req.body['password-confirm'])
+                {
+                    res.redirect('/landing-pages/user-sign-up-validation.html');
+                    return
+                }
+
+                var newUser =
+                    {
+                        username : req.body.username,
+                        password : req.body.password,
+                        email    : req.body.email
+                    }
+                var options = {
+                    method: 'post',
+                    body: {newUser: newUser},
+                    json: true,
+                    url: 'https://uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/CreateUser'
+                };
+                request(options, function(error, response, body)
+                    {
+                        if (error && error.code==="ENOTFOUND")
+                        {
+                            res.send('could not connect with TM Uno server');
+                            return;
+                        }
+                        if (response.statusCode == 200)
+                            if(response.body.d == '0')
+                                res.redirect('/landing-pages/user-sign-up-validation.html');
+                            else
+                                res.redirect('/landing-pages/user-sign-up-completed.html');
+                        else
+                            res.send(response)
+                    });
+                 //   res.send('user signup goes here for ' + newUser.json_pretty())
+            }
     };
 
 module.exports = Login_Controller;

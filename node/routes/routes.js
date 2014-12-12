@@ -20,12 +20,13 @@ module.exports = function (app)
     //app.get('/getting-started/index.html'  , function (req, res)  { res.redirect('/user/login/returning-user-login.html');});
 
 
-    //login routes
+    //login routes (and temporarily also user-sign-up)
     
     app.get ('/user/login'     , function (req, res) { new Login_Controller(req, res).redirectToLoginPage(); });
     app.post('/user/login'     , function (req, res) { new Login_Controller(req, res).loginUser          (); });
     app.get ('/user/logout'    , function (req, res) { new Login_Controller(req, res).logoutUser         (); });
     app.post('/user/pwd_reset' , function (req, res) { new Login_Controller(req, res).passwordReset      (); });
+    app.post('/user/sign-up'   , function (req, res) { new Login_Controller(req, res).userSignUp         (); });
     
     //library routes
     Library_Controller.registerRoutes(app);

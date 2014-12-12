@@ -2,6 +2,16 @@ describe 'regression-sprint-1', ->                                              
   page = require('../API/QA-TM_4_0_Design').create(before,after)                                       # required import and get page object
   jade = page.jade_API
 
+  it 'Issue 99 - Main Navigation "Sign Up" link is asking the user to login', (done)->
+    jade.page_Home ->
+      page.click 'SIGN UP', ->
+        page.chrome.url (url_Via_Link)->
+          jade.page_Sign_Up ->
+          page.chrome.url (url_Link)->
+            page.chrome.url (url_Direct)->
+              url_Direct.assert_Is(url_Link)
+              done()
+
   it 'Issue 100 - Login page should not have hardcoded username', (done)->
     hardcoded_UserName = 'user'
     jade.page_Login ->

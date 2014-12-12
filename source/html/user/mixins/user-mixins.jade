@@ -63,21 +63,20 @@ mixin sign-up-form
   :markdown
     ### Sign Up
     Complete this form and get access to the worlds largest repository of secure software development knowledge.
-  form#sign-up-form(role='form')
+  form#sign-up-form(role='form', method='POST', action='/user/sign-up')
     .form-group
       label(for='new-user-username') Username
-      input#new-user-username.form-control(type='username', placeholder='Username')
+      input#new-user-username.form-control(name='username', type='username', placeholder='Username')
     .form-group
       label(for='new-user-password') Password
-      input#new-user-password.form-control(type='password', placeholder='Password')
+      input#new-user-password.form-control(name='password', type='password', placeholder='Password')
     .form-group
       label(for='new-user-confirm-password') Confirm Password
-      input#new-user-confirm-password.form-control(type='password', placeholder='Confirm Password')
+      input#new-user-confirm-password.form-control(name='password-confirm', type='password', placeholder='Confirm Password')
     .form-group
       label(for='new-user-email') Email Address
-      input#new-user-email.form-control(type='username', placeholder='Email Address')
-    a(href='/deploy/html/home/main-app-view.html')
-      button(type='button') Sign Up
+      input#new-user-email.form-control(name='email', type='email', placeholder='Email Address')
+      button#btn-sign-up(type='submit') Sign Up
 
 //- forgot-password-form
 mixin forgot-password-form
@@ -94,3 +93,12 @@ mixin forgot-password-form
 mixin forgot-password-button
   form(role='form', action='returning-user-forgot-password.html', method='get')
     button#btn-forgot-pwd(type='submit') Forgot your password?
+
+mixin alert
+  .alert(role='alert')
+    | Login failed
+
+mixin alert-sign-up
+  .alert(role='alert')
+    | Sign Up failed
+
