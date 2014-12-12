@@ -1,12 +1,12 @@
 body
   nav
-    logo
-    links
-    menu-icon
-  application
-    left-nav
-    results
-    right-nav
+    .logo
+    ul.links
+    .menu-icon
+  #application
+    .left-nav
+    .results
+    .right-nav
 
 body {
   margin: 0;
