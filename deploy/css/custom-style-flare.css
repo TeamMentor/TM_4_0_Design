@@ -52,8 +52,7 @@ nav {
   -webkit-order: 3;
   -webkit-flex: 10%;
   text-align: right;
-  margin: 0 0 0 20px;
-  padding: 20px;
+  padding: 20px 0 0 20px;
 }
 
 ul.links {
@@ -132,7 +131,7 @@ nav ul.links li a p {
   .menu-icon {
     -webkit-order: 3;
     -webkit-flex: 25%;
-    padding: 25px 20px 0 0;
+    padding: 20px 20px 0 0;
   }
 
   .right-nav {
