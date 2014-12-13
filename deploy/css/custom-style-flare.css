@@ -12,58 +12,58 @@ body > * {
 }
 
 nav {
+  order:1;
   display: -webkit-flex;
   -webkit-flex-wrap: wrap;
 }
 
 #application {
-  order: 4;
   padding: 10px;
+  order: 4;
   display: -webkit-flex;
-  -webkit-flex: 100%;
   -webkit-flex-wrap: wrap;
-  flex-direction: column;
-  overflow-y: auto;
 }
 
 .left-nav {
   order: 5;
-  -webkit-flex: 25%;
+  -webkit-flex: 100%;
   overflow-y: auto;
 }
 
 .results {
   order: 7;
-  -webkit-flex: 50%;
+  -webkit-flex: 100%;
   overflow-y: auto;
 }
 
 .right-nav {
   order: 6;
-  -webkit-flex: 25%;
+  -webkit-flex: 100%;
   overflow-y: auto;
 }
 
 .logo {
-  -webkit-order: 1;
-  -webkit-flex: 90%;
-  padding: 5px 0 0 10px;
+  -webkit-order: 2;
+  -webkit-flex: 80%;
+  margin: 5px 0 0 10px;
 }
 
 .menu-icon {
-  -webkit-order: 2;
+  -webkit-order: 3;
   -webkit-flex: 10%;
   text-align: right;
-  padding: 20px 0 0 30px;
+  margin: 0 0 0 20px;
+  padding: 20px;
 }
 
 ul.links {
   margin: 0 auto;
   padding-top: 18px;
-  -webkit-order: 3;
+  -webkit-order: 4;
   -webkit-flex: 100%;
   text-align: center;
   list-style-type: none;
+  display: none;
 }
 
 nav ul.links li a {
@@ -124,6 +124,11 @@ nav ul.links li a p {
     -webkit-flex: 25%;
   }
 
+  .results {
+    order: 6;
+    -webkit-flex: 50%;
+  }
+
   .menu-icon {
     -webkit-order: 3;
     -webkit-flex: 25%;
@@ -132,6 +137,7 @@ nav ul.links li a p {
 
   .right-nav {
     -webkit-order: 7;
+    -webkit-flex: 25%;
   }
 
   ul.links {
