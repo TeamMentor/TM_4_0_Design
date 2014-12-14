@@ -16,6 +16,8 @@ module.exports = function (app)
 
     app.get('/:version/articles/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/articles/' + req.params.page + '.jade'));});
 
+    app.get('/:version/error-pages/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/error-pages/' + req.params.page + '.jade'));});
+
     app.get('/:version/getting-started/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/getting-started/' + req.params.page + '.jade'));});
 
     app.get('/:version/help/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/help/' + req.params.page + '.jade'));});

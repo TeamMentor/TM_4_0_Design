@@ -69,6 +69,7 @@ ul.links {
   -webkit-flex: 100%;
   text-align: center;
   list-style-type: none;
+  display: none;
 }
 
 nav a {
@@ -85,6 +86,11 @@ nav a p {
   font-size: 14px;
   color: #8aaf3e;
   letter-spacing: 1px;
+}
+
+nav a:hover, nav a p:hover {
+  text-decoration: none;
+  color: #49661f;
 }
 
 .center {
@@ -150,6 +156,7 @@ nav a p {
   .menu-icon, .help-icon {
     -webkit-order: 3;
     -webkit-flex: 25%;
+    float: right;
     padding: 20px 20px 0 0;
   }
 
