@@ -1,52 +1,29 @@
 include ../../content/images.jade
 include ../../content/links.jade
 
-.fixed
-	nav.top-bar(role='navigation', data-topbar='')
-		#customer-navigation
-			ul.title-area
-				li
-					a(href='main-app-view')
-						+image-security-innovation-logo
-				// li-name
-			// ul title-area
-		// customer-navigation
-		#team-mentor-navigation
-			ul.title-area
-				li.name
-					a(href='main-app-view')
-						+image-teammentor-logo__default
-				// li-name
-			// ul-title-area
-			ul.menu-icon.right
-				li
-					a(href='#')
-						i.fi-list
-			// ul-right
-			section.top-bar-section
-				ul.left
-					li
-						a(href='navigate/')
-							+navigate-icon
-							p Navigate
-					li
-						a(href='main-app-view')
-							+home-icon
-							p Home
-					li
-						a(href='../help/index')
-							+help-icon
-							p Help
-					li
-						a(href='../user/user')
-							+user-icon
-							p User
-					li
-						a(href='../getting-started/index')
-							+logout-icon
-							p Logout
-				// ul-center
-			// section
-		// team-mentor-navigation
-	// nav
-// fixed
+nav
+	.customer
+		a(href='main-app-view')
+			+image-security-innovation-logo
+	.logo
+		a(href='main-app-view')
+			+image-teammentor-logo__default
+	ul.links
+		li
+			a(href='navigate/')
+				+navigate-icon
+		li
+			a(href='main-app-view')
+				+home-icon
+		li
+			a(href='../help/index')
+				+help-icon
+		li
+			a(href='../user/user')
+				+user-icon
+		li
+			a(href='../getting-started/index')
+				+logout-icon
+	.menu-icon
+		a(href='#')
+			i.fi-list

@@ -12,47 +12,56 @@ body > * {
 }
 
 nav {
-  order: 1;
+  -webkit-flex: 100%;
   display: -webkit-flex;
   -webkit-flex-wrap: wrap;
 }
 
 #application {
   padding: 10px;
-  order: 4;
+  -webkit-order: 4;
   display: -webkit-flex;
   -webkit-flex-wrap: wrap;
 }
 
 .left-nav {
-  order: 5;
+  -webkit-order: 5;
   -webkit-flex: 100%;
   overflow-y: auto;
 }
 
 .results {
-  order: 7;
+  -webkit-order: 7;
   -webkit-flex: 100%;
   overflow-y: auto;
 }
 
 .right-nav {
-  order: 6;
+  -webkit-order: 6;
   -webkit-flex: 100%;
   overflow-y: auto;
 }
 
-.logo {
+.customer {
   -webkit-order: 2;
+  -webkit-flex: 100%;
+}
+
+.customer img {
+  margin: 5px 0 0 10px;
+}
+
+.logo {
+  -webkit-order: 3;
   -webkit-flex: 80%;
   margin: 5px 0 0 10px;
 }
 
 .menu-icon {
-  -webkit-order: 3;
+  -webkit-order: 4;
   -webkit-flex: 10%;
   text-align: right;
-  padding: 20px 0 0 20px;
+  padding: 20px 10px 0 0;
 }
 
 .help-icon {
@@ -65,7 +74,7 @@ nav {
 ul.links {
   margin: 0 auto;
   padding-top: 18px;
-  -webkit-order: 4;
+  -webkit-order: 5;
   -webkit-flex: 100%;
   text-align: center;
   list-style-type: none;
@@ -98,7 +107,7 @@ nav a:hover, nav a p:hover {
   text-align: center;
 }
 
-#summary table {
+#summary table, #filters table {
   border: transparent;
 }
 
@@ -142,6 +151,11 @@ nav a:hover, nav a p:hover {
     -webkit-flex: 100%;
     flex-direction: row;
     -webkit-flex-wrap: nowrap;
+  }
+
+  .customer {
+    order: 1;
+    -webkit-flex: 100%;
   }
 
   .logo, .left-nav {

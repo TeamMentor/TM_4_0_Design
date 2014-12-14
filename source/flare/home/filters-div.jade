@@ -3,19 +3,17 @@ include mixins/application-mixins.jade
 
 block content
 	#application
-		.row
-			.small-12.large-3.columns#left-nav
-				br
-			// column
-			.small-12.large-6.columns#results
-				+flare-search-bar-input
-				+flare-results-save-clear
-				+flare-articles-list
-				+horizontal-rule
-				+copyright
-			// column
-			.small-12.large-3.columns#right-nav
-				+flare-filters-div
-			// column
-		// row
+		.left-nav
+			br
+		// left-nav
+		.results
+			+flare-search-bar-input
+			+flare-results-save-clear
+			+flare-articles-list
+			+horizontal-rule
+			+copyright
+		// results
+		.right-nav
+			+flare-filters-div
+		// right-nav
 	// application

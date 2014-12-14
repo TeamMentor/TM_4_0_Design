@@ -187,142 +187,144 @@ mixin flare-main-app-view
 
 //- Flare Filters Div
 mixin flare-filters-div
-	h3 Filters
-	form
-		dl.accordion(data-accordion='data-accordion')
-			dd.accordion-navigation
-				a(href='#technology') Technnology
-				#technology.content.active
-					table
-						tr
-							td
-								input#tech-checkbox1(type='checkbox')
-							td
-								label(for='tech-checkbox1') Checkbox 1
-							td
-								span.badge 14
-						// tr
-						tr
-							td
-								input#tech-checkbox2(type='checkbox')
-							td
-								label(for='tech-checkbox2') Checkbox 2
-							td
-								span.badge 14
-						// tr
+	#filters
+		h3 Filters
+		form
+			dl.accordion(data-accordion='data-accordion')
+				dd.accordion-navigation
+					a(href='#technology') Technnology
+					#technology.content.active
+						table
+							tr
+								td
+									input#tech-checkbox1(type='checkbox')
+								td
+									label(for='tech-checkbox1') Checkbox 1
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#tech-checkbox2(type='checkbox')
+								td
+									label(for='tech-checkbox2') Checkbox 2
+								td
+									span.badge 14
+							// tr
 
-						tr
-							td
-								input#tech-checkbox3(type='checkbox')
-							td
-								label(for='tech-checkbox3') Checkbox 3
-							td
-								span.badge 14
-						// tr
-					// table
-				// technology-content
-			// accordian-navigation
+							tr
+								td
+									input#tech-checkbox3(type='checkbox')
+								td
+									label(for='tech-checkbox3') Checkbox 3
+								td
+									span.badge 14
+							// tr
+						// table
+					// technology-content
+				// accordian-navigation
 
-			dd.accordion-navigation
-				a(href='#type') Type
-				#type.content
-					table
-						tr
-							td
-								input#type-checkbox1(type='checkbox')
-							td
-								label(for='type-checkbox1') Checkbox 1
-							td
-								span.badge 14
-						// tr
-						tr
-							td
-								input#type-checkbox2(type='checkbox')
-							td
-								label(for='type-checkbox2') Checkbox 2
-							td
-								span.badge 14
-						// tr
-						tr
-							td
-								input#type-checkbox3(type='checkbox')
-							td
-								label(for='type-checkbox3') Checkbox 3
-							td
-								span.badge 14
-						// tr
-					// table
-				// type-content
-			// accordian-navigation
+				dd.accordion-navigation
+					a(href='#type') Type
+					#type.content
+						table
+							tr
+								td
+									input#type-checkbox1(type='checkbox')
+								td
+									label(for='type-checkbox1') Checkbox 1
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#type-checkbox2(type='checkbox')
+								td
+									label(for='type-checkbox2') Checkbox 2
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#type-checkbox3(type='checkbox')
+								td
+									label(for='type-checkbox3') Checkbox 3
+								td
+									span.badge 14
+							// tr
+						// table
+					// type-content
+				// accordian-navigation
 
-			dd.accordion-navigation
-				a(href='#phase') Phase
-				#phase.content
-					table
-						tr
-							td
-								input#phase-checkbox1(type='checkbox')
-							td
-								label(for='phase-checkbox1') Checkbox 1
-							td
-								span.badge 14
-						// tr
-						tr
-							td
-								input#phase-checkbox2(type='checkbox')
-							td
-								label(for='phase-checkbox2') Checkbox 2
-							td
-								span.badge 14
-						// tr
-						tr
-							td
-								input#phase-checkbox3(type='checkbox')
-							td
-								label(for='phase-checkbox3') Checkbox 3
-							td
-								span.badge 14
-						// tr
-					// table
-				// phase-content
-			// accordian-navigation
+				dd.accordion-navigation
+					a(href='#phase') Phase
+					#phase.content
+						table
+							tr
+								td
+									input#phase-checkbox1(type='checkbox')
+								td
+									label(for='phase-checkbox1') Checkbox 1
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#phase-checkbox2(type='checkbox')
+								td
+									label(for='phase-checkbox2') Checkbox 2
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#phase-checkbox3(type='checkbox')
+								td
+									label(for='phase-checkbox3') Checkbox 3
+								td
+									span.badge 14
+							// tr
+						// table
+					// phase-content
+				// accordian-navigation
 
-			dd.accordion-navigation
-				a(href='#category') Category
-				#category.content
-					table
-						tr
-							td
-								input#category-checkbox1(type='checkbox')
-							td
-								label(for='category-checkbox1') Checkbox 1
-							td
-								span.badge 14
-						// tr
-						tr
-							td
-								input#category-checkbox2(type='checkbox')
-							td
-								label(for='category-checkbox2') Checkbox 2
-							td
-								span.badge 14
-						// tr
-						tr
-							td
-								input#category-checkbox3(type='checkbox')
-							td
-								label(for='category-checkbox3') Checkbox 3
-							td
-								span.badge 14
-						// tr
-					// table
-				// category-content
-			// accordian-content
-		// accordian
-		br
-		button(type='submit' href='filters-active')
-			| Ok, Done
-	// form
+				dd.accordion-navigation
+					a(href='#category') Category
+					#category.content
+						table
+							tr
+								td
+									input#category-checkbox1(type='checkbox')
+								td
+									label(for='category-checkbox1') Checkbox 1
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#category-checkbox2(type='checkbox')
+								td
+									label(for='category-checkbox2') Checkbox 2
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#category-checkbox3(type='checkbox')
+								td
+									label(for='category-checkbox3') Checkbox 3
+								td
+									span.badge 14
+							// tr
+						// table
+					// category-content
+				// accordian-content
+			// accordian
+			br
+			button(type='submit' href='filters-active')
+				| Ok, Done
+		// form
+	// filters-div
 
 //- Flare Filters Active
 mixin flare-filters-active
