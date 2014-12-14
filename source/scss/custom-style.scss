@@ -62,6 +62,7 @@ body {
 	background: url(#{$asset-path}/images/bgtwo.jpg);
 	background-color: $dark-green;
 	text-align: center;
+	width: 100%;
 
 	h1 {
 		color: $white;
