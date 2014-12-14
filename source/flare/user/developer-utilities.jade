@@ -4,15 +4,13 @@ include mixins/user-mixins.jade
 
 block content
 	#application
-		.row
-			.small-12.large-3.columns#left-nav
-				+links_user_pages
-			// column
-			.small-12.large-6.columns#results
-				h3 Developer Utilities
-			// column
-			.small-12.large-3.columns#right-nav
-				br
-			// column
-		// row
+		.left-nav
+			+links_user_pages
+		// left-nav
+		.results
+			h3 Developer Utilities
+		// results
+		.right-nav
+			br
+		// right-nav
 	// application

@@ -2,15 +2,13 @@ extends ../_layouts/flare_page_not_logged_in.jade
 
 block content
 	#application
-		.row
-			.small-12.large-3.columns
-				br
-			// column
-			.small-12.large-6.columns#results
-				include:md ../../content/teamMentor/terms-and-conditions/terms-and-conditions.md
-			// column
-			.small-12.large-3.columns
-				br
-			// column
-		// row
+		.left-nav
+			br
+		// left-nav
+		.results
+			include:md ../../content/teamMentor/terms-and-conditions/terms-and-conditions.md
+		// column
+		.right-nav
+			br
+		// right-nav
 	// application
