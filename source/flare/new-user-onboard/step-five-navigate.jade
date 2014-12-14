@@ -4,19 +4,17 @@ include ../home/mixins/application-mixins.jade
 
 block content
 	#application
-		.row
-			.small-12.large-3.columns#left-nav
-				br
-			// column
-			.small-12.large-6.columns#results
-				+flare-alert
-				+flare-search-bar-input
-				+flare-filters-active
-				+flare-results-save-clear
-				+flare-articles-list
-			// column
-			.small-12.large-3.columns#right-nav
-				+step-five-instructions
-			// column
-		// row
+		.left-nav
+			br
+		// left-nav
+		.results
+			+flare-alert
+			+flare-search-bar-input
+			+flare-filters-active
+			+flare-results-save-clear
+			+flare-articles-list
+		// results
+		.right-nav
+			+step-five-instructions
+		// right-nav
 	// application

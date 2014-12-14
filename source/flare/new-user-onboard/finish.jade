@@ -3,18 +3,16 @@ include mixins/new-user-onboard-mixins.jade
 
 block content
 	#application
-		.row
-			.small-12.large-3.columns
-				br
-			//column
-			.small-12.large-6.columns
-				#article
-					include:md ../../content/teamMentor/new-user-onboard/finish.md
-				br
-				+new-user-onboard-finish-buttons
-			// column
-			.small-12.large-3.columns
-				br
-			// column
-		// row
+		.left-nav
+			br
+		// left-nav
+		.results
+			#article
+				include:md ../../content/teamMentor/new-user-onboard/finish.md
+			br
+			+new-user-onboard-finish-buttons
+		// results
+		.right-nav
+			br
+		// right-nav
 	// application

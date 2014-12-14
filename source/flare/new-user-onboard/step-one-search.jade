@@ -4,16 +4,14 @@ include ../home/mixins/application-mixins.jade
 
 block content
 	#application
-		.row
-			.small-12.large-3.columns#left-nav
-				br
-			// column
-			.small-12.large-6.columns#results
-				+flare-search-bar-input
-				+flare-main-app-view
-			// column
-			.small-12.large-3.columns#right-nav
-				+step-one-instructions
-			// column
-		// row
+		.left-nav
+			br
+		// left-nav
+		.results
+			+flare-search-bar-input
+			+flare-main-app-view
+		// results
+		.right-nav
+			+step-one-instructions
+		// right-nav
 	// application
