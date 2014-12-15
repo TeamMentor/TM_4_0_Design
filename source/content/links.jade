@@ -39,16 +39,24 @@ mixin links-navbar__not_logged_in
 		* [![Help](/deploy/assets/icons/help.png)](help/index)
 
 mixin links-home__navigate
-	h3 Navigate TEAM Mentor
-	.list-group
-		a(href='../articles/fundamentals-of-security')
-			| Attacks & Vulnerabilites
-		a(href='../articles/fundamentals-of-security')
-			| Principles & Standards
-		a(href='../articles/my-articles')
-			| My Articles
-		a(href='../articles/my-search-items')
-			| My Saved Searches
+	#navigate-list
+		h3 Navigate TEAM Mentor
+		.list-group
+			a(href='../articles/fundamentals-of-security')
+				| Attacks & Vulnerabilites
+			a(href='../articles/fundamentals-of-security')
+				| Principles & Standards
+			a(href='../articles/my-articles')
+				| My Articles
+			a(href='../articles/my-search-items')
+				| My Saved Searches
+
+		select
+			option(value='Directory') Directory
+			option(value='Directory') Directory
+			option(value='Directory') Directory
+			option(value='Directory') Directory
+			option(value='Directory') Directory
 
 mixin links_user_pages
 	h3 Account Details

@@ -23,6 +23,7 @@ nav {
 #application {
   -webkit-order: 6;
   padding: 10px;
+  max-height:90%;
   display: -webkit-flex;
   -webkit-flex-wrap: wrap;
   overflow-y: auto;
@@ -136,14 +137,13 @@ nav a:hover, nav a p:hover {
   text-align: center;
 }
 
-#summary table, #filters table {
-  border: transparent;
+#article-options dl.tabs dd {
+  width: 100%;
 }
 
-#summary table tr.even, table tr.alt, table tr:nth-of-type(even) {
-  background: #FFFFFF !important;
-}
-
+#directory-list .list-group {
+    display: none;
+  }
 
 /* ===== == = === 20em (320px) === = == ===== */
 
@@ -179,6 +179,7 @@ nav a:hover, nav a p:hover {
     max-height: 86%;
     flex-direction: row;
     -webkit-flex-wrap: nowrap;
+    -webkit-align-items: flex-start;
   }
 
   #logo {
@@ -235,6 +236,18 @@ nav a:hover, nav a p:hover {
     display: inline-block;
     -webkit-flex-wrap: nowrap;
   }
+
+  #article-options dl.tabs dd {
+    width: 33%;
+  }
+
+  #directory-list select {
+    display: none;
+  }
+
+  #directory-list .list-group {
+    display: block;
+  }
 }
 
 /* ===== == = === 68.75em (1100px) === = == ===== */
@@ -248,7 +261,7 @@ nav a:hover, nav a p:hover {
 @media only screen and (min-width : 81.25em) {
 }
 
-.list-group table tr td{
+.list-group table tr td {
   padding: 0;
   font-size: 16px;
   height: auto;
@@ -259,6 +272,35 @@ nav a:hover, nav a p:hover {
   background: transparent;
 }
 
+#summary table, #filters table {
+  border: transparent;
+}
+
+#summary table tr.even, #summary table tr.alt, #summary table tr:nth-of-type(even) {
+  background: #FFFFFF !important;
+}
+
+#article-options table {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#article-options table h5 {
+  margin: 5px 0 0 10px;
+}
+
+#article-options table p {
+  margin: 5px 0 0 10px;
+}
+
+#related-options dl.tabs dd {
+  width: 50%;
+}
+
+.label {
+  float: right;
+  background-color: #aaaaaa;
+}
 
 _________________________________
 
