@@ -71,6 +71,13 @@ nav {
   margin: 5px 0 0 10px;
 }
 
+#lp-menu-icon {
+  -webkit-order: 4;
+  -webkit-flex: 10%;
+  text-align: right;
+  padding: 20px 10px 0 0;
+}
+
 #menu-icon {
   -webkit-order: 4;
   -webkit-flex: 10%;
@@ -98,6 +105,7 @@ ul#links {
 ul#lp-links {
   -webkit-order: 5;
   -webkit-flex: 100%;
+  margin: 10px 10px 0 0;
   text-align: center;
   list-style-type: none;
 }
@@ -193,6 +201,11 @@ nav a:hover, nav a p:hover {
     padding: 20px 20px 0 0;
   }
 
+  #lp-menu-icon {
+    -webkit-order: 3;
+    display: none;
+  }
+
   #right-nav {
     -webkit-order: 9;
     -webkit-flex: 25%;
@@ -205,20 +218,22 @@ nav a:hover, nav a p:hover {
   }
 
   ul#lp-links {
-    -webkit-order: 3;
-    -webkit-flex: 50%;
-    padding: 20px 0 0 0;
+    padding: 15px 0 0 0;
+    -webkit-flex: 60%;
+    -webkit-order: 4;
+    text-align: right;
+    justify-content: flex-end;
   }
 
   ul#links li {
-    width: 20%;
     -webkit-flex-wrap: nowrap;
     display: inline-block;
   }
 
   ul#lp-links li {
-    width: 25%;
+    padding-left: 40px;
     display: inline-block;
+    -webkit-flex-wrap: nowrap;
   }
 }
 
