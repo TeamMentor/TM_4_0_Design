@@ -4,10 +4,10 @@ include mixins/user-mixins.jade
 
 block content
 	#application
-		.left-nav
+		#left-nav
 			+links_user_pages
 		// left-nav
-		.results
+		#results
 			+flare-alert
 			+user-details-heading
 			br
@@ -15,7 +15,7 @@ block content
 			br
 			+other-user-settings
 		// results
-		.right-nav
+		#right-nav
 			br
 		// right-nav
 	// application

@@ -12,66 +12,70 @@ body > * {
 }
 
 nav {
+  height: auto;
+  -webkit-order: 1;
   -webkit-flex: 100%;
   display: -webkit-flex;
   -webkit-flex-wrap: wrap;
+  -webkit-flex-direction: row;
 }
 
 #application {
+  -webkit-order: 6;
   padding: 10px;
-  -webkit-order: 4;
   display: -webkit-flex;
   -webkit-flex-wrap: wrap;
-}
-
-.left-nav {
-  -webkit-order: 5;
-  -webkit-flex: 100%;
   overflow-y: auto;
 }
 
-.results {
+#left-nav {
   -webkit-order: 7;
   -webkit-flex: 100%;
   overflow-y: auto;
 }
 
-.right-nav {
-  -webkit-order: 6;
+#results {
+  -webkit-order: 9;
   -webkit-flex: 100%;
   overflow-y: auto;
 }
 
-.customer {
+#right-nav {
+  -webkit-order: 8;
+  -webkit-flex: 100%;
+  overflow-y: auto;
+}
+
+#customer {
   -webkit-order: 2;
   -webkit-flex: 100%;
 }
 
-.customer img {
+#customer img {
   margin: 5px 0 0 10px;
 }
 
-.logo {
+#logo {
   -webkit-order: 3;
   -webkit-flex: 80%;
   margin: 5px 0 0 10px;
 }
 
-.menu-icon {
+#menu-icon {
   -webkit-order: 4;
   -webkit-flex: 10%;
   text-align: right;
   padding: 20px 10px 0 0;
 }
 
-.help-icon {
+#help-icon {
   padding: 20px 0 0 50px;
   -webkit-order: 3;
   -webkit-flex: 10%;
   text-align: right;
 }
 
-ul.links {
+ul#links {
   margin: 0 auto;
   padding-top: 18px;
   -webkit-order: 5;
@@ -140,52 +144,50 @@ nav a:hover, nav a p:hover {
 
 @media only screen and (min-width : 56.25em) {
   nav {
-    height: 10%;
     -webkit-flex: 100%;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
+    max-height: 14%;
+    -webkit-flex-wrap: wrap;
   }
 
   #application {
-    height: 90%;
     -webkit-flex: 100%;
+    max-height: 86%;
     flex-direction: row;
     -webkit-flex-wrap: nowrap;
   }
 
-  .customer {
-    order: 1;
-    -webkit-flex: 100%;
+  #logo {
+    -webkit-flex: 24%;
   }
 
-  .logo, .left-nav {
+  #left-nav {
     -webkit-flex: 25%;
   }
 
-  .results {
-    order: 6;
+  #results {
+    order: 8;
     -webkit-flex: 50%;
   }
 
-  .menu-icon, .help-icon {
-    -webkit-order: 3;
+  #menu-icon, #help-icon {
+    -webkit-order: 4;
     -webkit-flex: 25%;
     float: right;
     padding: 20px 20px 0 0;
   }
 
-  .right-nav {
-    -webkit-order: 7;
+  #right-nav {
+    -webkit-order: 9;
     -webkit-flex: 25%;
   }
 
-  ul.links {
-    -webkit-order: 2;
+  ul#links {
+    -webkit-order: 3;
     -webkit-flex: 50%;
     flex-direction: row;
   }
 
-  ul.links li {
+  ul#links li {
     width: 20%;
     -webkit-flex-wrap: nowrap;
     display: inline-block;
