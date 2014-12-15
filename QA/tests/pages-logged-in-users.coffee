@@ -1,7 +1,7 @@
 QA_TM_Design = require '../API/QA-TM_4_0_Design'
 
 # this test suite contains all  all pages that we currently need to support for logged in  users
-describe 'all pages - logged in users', ->
+describe 'pages-logged-in-users', ->
   page = QA_TM_Design.create(before, after);
   jade = page.jade_API;
 
@@ -24,11 +24,10 @@ describe 'all pages - logged in users', ->
       linksData[index].href.assert_Is(expected_Href)
       linksData[index].value.assert_Is(expected_Value)
 
-    checkValues(0,'/library/Uno'                             , '<img src=\"/deploy/assets/icons/navigate.png\" alt=\"Navigate\">'   )   # check expected values of 6 links
-    checkValues(1,'/deploy/html/home/main-app-view.html'     , '<img src=\"/deploy/assets/icons/home.png\" alt=\"Home\">')
-    checkValues(2,'/help/index.html'                         , '<img src=\"/deploy/assets/icons/help.png\" alt=\"Help\">')
-    #checkValues(3,'/user/user.html'                          , '<img src=\"/deploy/assets/icons/user.png\" alt=\"User\">')
-    checkValues(3,'/user/logout'                             , '<img src=\"/deploy/assets/icons/logout.png\" alt=\"Logout\">')
+    checkValues(0,'/library/Uno'                             , '<img src=\"/static/assets/icons/navigate.png\" alt=\"Navigate\">'   )   # check expected values of 6 links
+    checkValues(1,'/static/html/home/main-app-view.html'     , '<img src=\"/static/assets/icons/home.png\" alt=\"Home\">')
+    checkValues(2,'/help/index.html'                         , '<img src=\"/static/assets/icons/help.png\" alt=\"Help\">')
+    checkValues(3,'/user/logout'                             , '<img src=\"/static/assets/icons/logout.png\" alt=\"Logout\">')
 
 
   before (done)->
@@ -51,7 +50,7 @@ describe 'all pages - logged in users', ->
                                  'TEAM Mentor Related Sites' ])
       done()
 
-  it 'Library', (done)->
+  it.only 'Library', (done)->
     jade.page_User_Library (html,$)->
       links_Libraries = $('#links-libraries a')
       $(links_Libraries.get(0)).html().assert_Is('Guidance')

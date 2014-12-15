@@ -1,7 +1,7 @@
 QA_TM_Design = require '../API/QA-TM_4_0_Design'
 
 # this test suite contains all  all pages that we currently need to support for anonymous users (i.e. non logged in users)
-describe 'all pages - anonymous users', ->
+describe 'pages-anonymous-users', ->
   page = QA_TM_Design.create(before, after);
   jade = page.jade_API;
 
@@ -32,11 +32,11 @@ describe 'all pages - anonymous users', ->
       linksData[index].href.assert_Is(expected_Href)
       linksData[index].value.assert_Is(expected_Value)
 
-    checkValues(0,'/deploy/html/landing-pages/about.html'         , 'About'   )   # check expected values of 6 links
-    checkValues(1,'/deploy/html/landing-pages/features.html'      , 'Features')
+    checkValues(0,'/static/html/landing-pages/about.html'         , 'About'   )   # check expected values of 6 links
+    checkValues(1,'/static/html/landing-pages/features.html'      , 'Features')
     checkValues(2,'/help/index.html'                              , 'Help')
     checkValues(3,'#'                                             , '|')
-    checkValues(4,'/deploy/html/landing-pages/user-sign-up.html'  , 'Sign Up')
+    checkValues(4,'/static/html/landing-pages/user-sign-up.html'  , 'Sign Up')
     checkValues(5,'/user/login/returning-user-login.html'          , 'Login')
 
   check_Generic_Footer = ($)->
@@ -45,7 +45,7 @@ describe 'all pages - anonymous users', ->
     $('#call-to-action a' ).get(0).attribs.href.assert_Is('getting-started.html'                 ) # BUG this is a broken link!
     $('#call-to-action button').html()         .assert_Is('See for yourself'                     )
 
-    $('#footer img'       ).get(0).attribs.src .assert_Is('/deploy/assets/logos/si-logo.png'     )
+    $('#footer img'       ).get(0).attribs.src .assert_Is('/static/assets/logos/si-logo.png'     )
     $('#footer a'         ).html()             .assert_Is('Terms &amp; Conditions'               )
 
 
@@ -63,12 +63,12 @@ describe 'all pages - anonymous users', ->
       $('#clients h2').html()                    .assert_Is('Our clients love us (and we think you will too!)')
       clientImages = $('#clients img')
 
-      clientImages[0].attribs.src                .assert_Is('/deploy/assets/clients/elsevier.png'  )
-      clientImages[1].attribs.src                .assert_Is('/deploy/assets/clients/fedex.png'     )
-      clientImages[2].attribs.src                .assert_Is('/deploy/assets/clients/massmutual.png')
-      clientImages[3].attribs.src                .assert_Is('/deploy/assets/clients/microsoft.png' )
-      clientImages[4].attribs.src                .assert_Is('/deploy/assets/clients/symantec.png'  )
-      clientImages[5].attribs.src                .assert_Is('/deploy/assets/clients/ubs.png'       )
+      clientImages[0].attribs.src                .assert_Is('/static/assets/clients/elsevier.png'  )
+      clientImages[1].attribs.src                .assert_Is('/static/assets/clients/fedex.png'     )
+      clientImages[2].attribs.src                .assert_Is('/static/assets/clients/massmutual.png')
+      clientImages[3].attribs.src                .assert_Is('/static/assets/clients/microsoft.png' )
+      clientImages[4].attribs.src                .assert_Is('/static/assets/clients/symantec.png'  )
+      clientImages[5].attribs.src                .assert_Is('/static/assets/clients/ubs.png'       )
 
       check_Generic_Footer($)
       done()
@@ -83,7 +83,7 @@ describe 'all pages - anonymous users', ->
       check_Generic_Footer($);
       done()
 
-  it  'features',(done)->
+  it  'Features',(done)->
     jade.page_Features (html,$)->
       $(  '#features h4'   ).html()        .assert_Is('Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.')
       $($('.row h4').get(0)).html()        .assert_Is('Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.')
@@ -168,7 +168,7 @@ describe 'all pages - anonymous users', ->
       $('button#btn-sign-up'                  ).attr().assert_Is({ id:'btn-sign-up', type:'submit'})
       done()
 
-  it  'Sign Up Fail', (done) ->
+  it 'Sign Up Fail', (done) ->
     jade.page_Sign_Up_Fail (html,$)->
       $('.alert').html().assert_Is('Sign Up failed')
       $('h3'    ).html().assert_Is("Sign Up")
@@ -182,14 +182,10 @@ describe 'all pages - anonymous users', ->
       $('p a')        .attr('href').assert_Is('/user/login/returning-user-login.html')
       done()
 
-
-  describe 'misc other page tests', ->
-    it 'page on root should have the same as /landing-pages/index.html', (done)->
-      page.open '/', (html_1,$)->
-        page.open '/landing-pages/index.html', (html_2)->
-          html_1.assert_Is(html_2)
-          done()
-
+  it 'Tearms and Conditions', (done)->
+    jade.page_TermsAndCond (html,$)->
+      $('h3').html().assert_Is('Security Innovation Software License Agreement')
+      done()
 
 
 

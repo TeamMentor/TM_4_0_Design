@@ -18,25 +18,27 @@ class Jade_API
                     user = @QA_Users.first()
                     @login user.name, user.pwd, callback
 
-  page_About        : (callback) => @page.open '/landing-pages/about.html'                       , callback
-  page_Help         : (callback) => @page.open '/help/index.html'                                , callback
-  page_Home         : (callback) => @page.open '/'                                               , callback
-  page_Features     : (callback) => @page.open '/landing-pages/features.html'                    , callback
-  page_Login        : (callback) => @page.open '/user/login/returning-user-login.html'           , callback
-  page_Login_Fail   : (callback) -> @page.open '/user/login/returning-user-validation.html'      , callback
-  page_Libraries    : (callback) => @page.open '/libraries'                                      , callback
-  page_Main_Page    : (callback) => @page.open '/home/main-app-view.html'                        , callback
-  page_Pwd_Forgot   : (callback) => @page.open '/user/login/returning-user-forgot-password.html' , callback
-  page_Pwd_Sent     : (callback) => @page.open '/user/login/forgot-password-completed.html'      , callback
-  page_Sign_Up      : (callback) => @page.open '/landing-pages/user-sign-up.html'                , callback
-  page_Sign_Up_Fail : (callback) => @page.open '/landing-pages/user-sign-up-validation.html'     , callback
-  page_Sign_Up_OK   : (callback) => @page.open '/landing-pages/user-sign-up-completed.html'      , callback
+  page_About         : (callback) => @page.open '/about.html'             , callback
+  page_Help          : (callback) => @page.open '/help/index.html'                , callback
+  page_Home          : (callback) => @page.open '/index.html'                            , callback
+  page_Features      : (callback) => @page.open '/features.html'               , callback
+  page_Login         : (callback) => @page.open '/login.html'                  , callback
+  page_Login_Fail    : (callback) -> @page.open '/login-Fail.html'             , callback
+  page_Libraries     : (callback) => @page.open '/libraries'                                      , callback
+  page_Main_Page     : (callback) => @page.open '/home/main-app-view.html'     , callback
+  page_Pwd_Forgot    : (callback) => @page.open '/pwd-forgot.html'             , callback
+  page_Pwd_Sent      : (callback) => @page.open '/pwd-sent.html'               , callback
+  page_Sign_Up       : (callback) => @page.open '/sign-up.html'                , callback
+  page_Sign_Up_Fail  : (callback) => @page.open '/sign-up-Fail.html'             , callback
+  page_Sign_Up_OK    : (callback) => @page.open '/sign-up-OK.html'           , callback
+  page_TermsAndCond  : (callback) => @page.open '/terms-and-conditions.html'                      , callback
+
 
 
   page_User_Help    : (callback        ) => @page.open '/help/index.html'                                , callback
   page_User_Library : (callback        ) => @page.open '/library/Uno'                                    , callback
   page_User_Logout  : (callback        ) => @page.open '/user/logout'                                    , callback
-  page_User_Main    : (callback        ) => @page.open '/home/main-app-view.html'                        , callback
+  page_User_Main    : (callback        ) => @page.open '/user/main.html'                        , callback
   page_User_Queries : (callback        ) => @page.open '/library/queries'                                , callback
   page_User_Graph   : (target, callback) => @page.open "/graph/#{target}"                                , callback
 
