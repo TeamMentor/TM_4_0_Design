@@ -28,6 +28,14 @@ nav {
   overflow-y: auto;
 }
 
+#landing-page {
+  height: 90%;
+  -webkit-order: 6;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  overflow-y: auto;
+}
+
 #left-nav {
   -webkit-order: 7;
   -webkit-flex: 100%;
@@ -85,6 +93,13 @@ ul#links {
   text-align: center;
   list-style-type: none;
   display: none;
+}
+
+ul#lp-links {
+  -webkit-order: 5;
+  -webkit-flex: 100%;
+  text-align: center;
+  list-style-type: none;
 }
 
 nav a {
@@ -189,9 +204,20 @@ nav a:hover, nav a p:hover {
     flex-direction: row;
   }
 
+  ul#lp-links {
+    -webkit-order: 3;
+    -webkit-flex: 50%;
+    padding: 20px 0 0 0;
+  }
+
   ul#links li {
     width: 20%;
     -webkit-flex-wrap: nowrap;
+    display: inline-block;
+  }
+
+  ul#lp-links li {
+    width: 25%;
     display: inline-block;
   }
 }

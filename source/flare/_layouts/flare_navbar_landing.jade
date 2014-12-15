@@ -1,26 +1,23 @@
 include ../../content/links.jade
 include ../../content/images.jade
 
-
-.fixed
-	nav.top-bar(role='navigation', data-topbar='')
-		#team-mentor-navigation
-			ul.title-area
-				li.name
-					a(href='index')
-						+image-teammentor-logo__default
-				// li-name
-				li.toggle-topbar.menu-icon
-					a(href='#')
-						span
-				// li-toggle
-			// ul-title-area
-			section.top-bar-section
-				// Right Nav Section
-				ul.right
-					+links-navbar__landing-page
-				// ul-right
-			// section
-		// team-mentor-navigation
-	// nav
-// fixed
+nav
+	#logo
+		a(href='index/')
+			+image-teammentor-logo__default
+	ul#lp-links
+		li
+			a(href='about/')
+				p About
+		li
+			a(href='features/')
+				p Features
+		li
+			a(href='../help/index')
+				p Help
+		li
+			a(href='../getting-started/index/')
+				p Get Started
+	#menu-icon
+		a(href='#')
+			i.fi-list
