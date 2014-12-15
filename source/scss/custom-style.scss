@@ -62,7 +62,7 @@ body {
 	background: url(#{$asset-path}/images/bgtwo.jpg);
 	background-color: $dark-green;
 	text-align: center;
-	width: 100%;
+	width: $full-width;
 
 	h1 {
 		color: $white;
@@ -70,6 +70,7 @@ body {
 }
 
 #clients {
+	width: $full-width;
 	padding: 40px 0 80px 0;
 	text-align: center;
 }
@@ -79,6 +80,7 @@ body {
 }
 
 #copyright {
+	width: $full-width;
 	padding-bottom: 30px;
 
 	p, a {
@@ -107,6 +109,7 @@ body {
 }
 
 #features {
+	width: $full-width;
 	padding-bottom: 50px;
 
 	h2 {
@@ -140,6 +143,7 @@ body {
 }
 
 #reasons {
+	width: $full-width;
 	padding-top: 70px;
 
 	h2, i {
