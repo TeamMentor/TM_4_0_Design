@@ -47,6 +47,13 @@ describe 'regression-sprint-1', ->                                              
             $('h3').html().assert_Is("Sign Up")
             done()
 
+  it 'Issue 118 - Clicking on TM logo while logged in should not bring back the main screen', (done)->
+    jade.page_Home ->
+      jade.login_As_QA (html,$)->
+        $('.brand a').attr().href.assert_Is('/user/main.html')
+        $('.brand a img').attr().assert_Is { src: '/static/assets/logos/tm-logo.jpg', alt: 'TEAM Mentor', width: '200px' }
+        done()
+
   it 'Issue 119 - /returning-user-login.html is Blank', (done)->
     jade.page_Sign_Up_OK (html, $)->                                                       # open sign-up ok page
       $('p a').attr('href').assert_Is('/guest/login.html')                                 # confirm link is now ok
