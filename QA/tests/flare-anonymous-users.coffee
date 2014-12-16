@@ -3,7 +3,7 @@ require('../node_modules/nwr/src/extra_fluentnode')
 
 QA_TM_Design = require '../API/QA-TM_4_0_Design'
 
-describe.only 'flare-anonymous-users', ->
+describe 'flare-anonymous-users', ->
   page = QA_TM_Design.create(before, after);
   #jade = page.jade_API;
 
@@ -18,6 +18,11 @@ describe.only 'flare-anonymous-users', ->
       done()
 
   it '/',(done)->
-    page.open '/flare/help/index.html', (html,$)->
+    page.open '/flare', (html,$)->
+      console.log html
+      done()
+
+  it '/help',(done)->
+    page.open '/flare/help/index', (html,$)->
       console.log html
       done()

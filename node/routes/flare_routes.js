@@ -33,5 +33,8 @@ module.exports = function (app)
     app.get('/:version/style-guide/:page'     , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/style-guide/' + req.params.page + '.jade'));});
     app.get('/:version/user/:page'            , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/user/' + req.params.page + '.jade'));});
     app.get('/:version/default'               , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/default.jade'));});
-    app.get('/'                               , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/index.jade'));});
+    app.get('/flare/index'                    , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/flare/index.jade'));});
+    app.get('/flare'                          , function (req, res)  { res.redirect('/flare/index') });
+    app.get('/flare/main-app-view'            , function (req, res)  { res.redirect('/flare/index') });
+
 };
