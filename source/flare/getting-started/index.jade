@@ -1,0 +1,39 @@
+extends ../_layouts/flare_page_not_logged_in.jade
+include mixins/getting-started-mixins.jade
+
+block content
+	#application
+		.row
+			.small-12.large-5.large-push-6.columns#loginwall
+				br
+				dl.tabs(data-tab='data-tab')
+					dd.active
+						a(href='#signup') Sign Up
+					// dd
+					dd
+						a(href='#login') Login
+					// dd
+				// dl-tabs
+				.tabs-content
+					#signup.content.active
+						br
+						.small-offset-1.small-10.large-offset-1.large-10.end.columns
+							+sign-up-form
+						// column
+					// sign-up-content
+					#login.content
+						.row
+							br
+							.small-offset-1.small-10.large-offset-1.large-10.end.columns
+								+login-form
+							// column
+						// row
+					// login-content
+				// tabs-content
+			// column
+			.small-12.large-5.large-pull-6.columns#summary
+				+team-mentor-summary
+
+			// column
+		// row
+	// application

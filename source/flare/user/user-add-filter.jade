@@ -1,0 +1,16 @@
+extends ../_layouts/flare_page.jade
+include ../home/mixins/application-mixins.jade
+include mixins/user-mixins.jade
+
+block content
+	#application
+		#left-nav
+			+links_user_pages
+		// left-nav
+		#results
+			h3 Add or Remove Permanent Filters
+			+flare-filters-div
+		// results
+		#right-nav
+		// right-nav
+	// application

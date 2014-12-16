@@ -1,11 +1,33 @@
 // Colours
 
+$white: #FFFFFF;
+$green: #8aaf3e;
+$dark-green: #49661f;
+$light-grey: #ececec;
+$grey: #aaaaaa;
+$dark-grey: #444444;
+
 .black {
 	padding-top: 20px;
 	background-color: #000000;
 }
 
+.green {
+	color: $green;
+}
+
+.dark-green {
+	color: $dark-green;
+}
+
+.icons-green {
+	color: $green;
+	font-size: 60px;
+	margin: 0 auto;
+}
+
 #white {
+	width: 100%;
 	margin-right: 15px;
 	background-color: #FFFFFF;
 	border: 1px solid #000000;
@@ -15,26 +37,31 @@
 }
 
 #green {
+	width: 100%;
 	margin-right: 15px;
 	background-color: #8aaf3e;
 }
 
 #dark-green {
+	width: 100%;
 	margin-right: 15px;
 	background-color: #49661f;
 }
 
 #grey {
+	width: 100%;
 	margin-right: 15px;
 	background-color: #aaaaaa;
 }
 
 #dark-grey {
+	width: 100%;
 	margin-right: 15px;
 	background-color: #444444;
 }
 
 #black {
+	width: 100%;
 	margin-right: 15px;
 	background-color: #000000;
 }

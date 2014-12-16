@@ -1,0 +1,76 @@
+#application {
+	display: flex;
+	flex-direction: column;
+}
+
+#loginwall {
+	dl.tabs {
+		dd {
+			width: 50%;
+			border: 1px solid $grey;
+		}
+		.active {
+			background: $light-grey;
+		}
+	}
+	.tabs-content {
+		border: 1px solid $grey;
+		border-top: none;
+	}
+}
+
+#results, #right-nav, #left-nav {
+	flex: 1 1 auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 100%;
+	max-width: $full-width;
+}
+
+// Accordians
+
+.accordion dd > a {
+	background: $white;
+	color: $dark-grey;
+	font-weight: 700;
+	text-decoration: none;
+
+	&:hover {
+		color: $dark-green;
+		background: $white;
+	}
+
+	table {
+		border-color: transparent;
+
+		table tr:nth-of-type(even) {
+			background-color: $white;
+		}
+	}
+}
+
+// Tabs
+
+dl.tabs {
+	dd {
+		&.related-options-width {
+			width: 50%;
+		}
+
+		a {
+			font-size: 14px;
+			text-align: center !important;
+			text-transform: uppercase;
+			text-decoration: none;
+			letter-spacing: 1px;
+			font-weight: 700;
+			background: $white;
+			color: $green;
+
+			&:hover, &:active {
+				color: $dark-green !important;
+				background: $white;
+			}
+		}
+	}
+}

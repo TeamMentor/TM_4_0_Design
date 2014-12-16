@@ -1,0 +1,140 @@
+//- Flare User Details Heading
+mixin user-details-heading
+	.row
+		.small-12.large-9.columns
+			h3 User Details
+		// column
+		.small-12.large-3.columns.text-center
+			br
+			a.action(href='user-edit')
+				+edit-icon
+		// column
+	// row
+
+//- Flare User Details Display
+mixin user-details-display
+	.row
+		.small-12.large-6.columns
+			.row
+				.small-2.columns
+					+user-icon-no-text
+				// column
+				.small-10.columns
+					p Name
+				// column
+			// row
+			.row
+				.small-2.columns
+					+company-icon
+				// column
+				.small-10.columns
+					p Title, Company
+				// column
+			// row
+			.row
+				.small-2.columns
+					+group-id-icon
+				// column
+				.small-10.columns
+					p Group ID
+				// column
+			// row
+		// column
+		.small-12.large-6.columns
+			.row
+				.small-2.columns
+					+email-icon
+				// column
+				.small-10.columns
+					p Email
+				// column
+			// row
+			.row
+				.small-2.columns
+					+navigate-icon-no-text
+				// column
+				.small-10.columns
+					p Location
+				// column
+			// row
+			.row
+				.small-2.columns
+					+filter-icon
+				// column
+				.small-10.columns
+					p Permanent Filters
+				// column
+			// row
+		// column
+	// row
+
+//- Flare Other User Settings
+mixin other-user-settings
+	.row
+		.small-12.large-6.columns
+			a.action(href='user-new-password')
+				+new-pw-icon
+		// column
+		.small-12.large-6.columns
+			a.action(href='user-add-filter')
+				+change-filters-icon
+		// column
+	// row
+
+//- Flare Edit User Details
+mixin flare-edit-user-details
+	h3 Edit User Details
+	form(action='alert-user')
+		.row
+			.small-12.columns
+				+name-input
+			// column
+		// row
+		.row
+			.small-12.columns
+				+email-input
+			// column
+		// row
+		.row
+			.small-12.large-6.columns
+				+title-input
+			// column
+			.small-12.large-6.columns
+				+company-input
+			// column
+		// row
+		.row
+			.small-12.large-6.columns
+				+country-input
+			// column
+			.small-12.large-6.columns
+				+state-input
+			// column
+		// row
+		.row
+			.small-12.columns
+				+ok-button
+			// column
+		// row
+	// form
+
+//- Flare Change Password
+mixin flare-change-password
+	h3 Change Password
+	form(action='alert-user')
+		.row
+			.small-12.columns
+				+password-input
+			// column
+		// row
+		.row
+			.small-12.columns
+				+flare-new-password-input
+			// column
+		// row
+		.row
+			.small-12.columns
+				+ok-button
+			// column
+		// row
+	// form

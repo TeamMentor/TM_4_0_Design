@@ -1,0 +1,273 @@
+mixin links-navbar__landing-page
+	:markdown
+		* [About](about)
+		* [Features](features)
+		* [Get Started](../getting-started/index)
+
+mixin links-navbar__home
+	:markdown
+		* [![Navigate](/deploy/assets/icons/navigate.png)](navigate)
+		* [![Home](/deploy/assets/icons/home.png)](main-app-view)
+		* [![Help](/deploy/assets/icons/help.png)](../help/index)
+		* [![User](/deploy/assets/icons/user.png)](../user/user)
+		* [![Logout](/deploy/assets/icons/logout.png)](../user/logout)
+
+mixin links-flare-navbar__home
+	li
+		a(href='navigate/')
+			+navigate-icon
+			p Navigate
+	li
+		a(href='main-app-view')
+			+home-icon
+			p Home
+	li
+		a(href='../help/index')
+			+help-icon
+			p Help
+	li
+		a(href='../user/user')
+			+user-icon
+			p User
+	li
+		a(href='../getting-started/index')
+			+logout-icon
+			p Logout
+
+mixin links-navbar__not_logged_in
+	:markdown
+		* [![Help](/deploy/assets/icons/help.png)](help/index)
+
+mixin links-home__navigate
+	#navigate-list
+		h3 Navigate TEAM Mentor
+		.list-group
+			a(href='../articles/fundamentals-of-security')
+				| Attacks & Vulnerabilites
+			a(href='../articles/fundamentals-of-security')
+				| Principles & Standards
+			a(href='../articles/my-articles')
+				| My Articles
+			a(href='../articles/my-search-items')
+				| My Saved Searches
+
+		select
+			option(value='Directory') Directory
+			option(value='Directory') Directory
+			option(value='Directory') Directory
+			option(value='Directory') Directory
+			option(value='Directory') Directory
+
+mixin links_user_pages
+	h3 Account Details
+	.list-group
+		a(href='user') User
+		a(href='backend') Backend
+		a(href='developer-utilities') Developer Utilities
+		a(href='other') Other
+
+//- Flare Page Links
+mixin flare-all-pages-links
+	.list-group
+		a(href='articles/alert-article-new-window-view'                   ) articles/alert-article-new-window-view
+		a(href='articles/article-new-window-view'                         ) articles/article-new-window-view
+		a(href='articles/fundamentals-of-security'                        ) articles/fundamentals-of-security
+		a(href='articles/my-articles'                                     ) articles/my-articles
+		a(href='articles/my-search-items'                                 ) articles/my-search-items
+		a(href='error-pages/error-occurred'                               ) error-pages/error-occurred
+		a(href='error-pages/unavailable'                                  ) error-pages/unavailable
+		a(href='error-pages/upgraded'                                     ) error-pages/upgraded
+		a(href='getting-started/forgot-password'                          ) getting-started/forgot-password
+		a(href='getting-started/index-prompts'                            ) getting-started/index-prompts
+		a(href='getting-started/index-validation'                         ) getting-started/index-validation
+		a(href='getting-started/index'                                    ) getting-started/index
+		a(href='help/index'                                               ) help/index
+		a(href='home/alert-application'                                   ) home/alert-application
+		a(href='home/app-keyword-search-save'                             ) home/app-keyword-search-save
+		a(href='home/app-keyword-search-share'                            ) home/app-keyword-search-share
+		a(href='home/app-keyword-search'                                  ) home/app-keyword-search
+		a(href='home/customer-main-app-view'                              ) home/customer-main-app-view
+		a(href='home/filters-active'                                      ) home/filters-active
+		a(href='home/filters-div'                                         ) home/filters-div
+		a(href='home/main-app-view'                                       ) home/main-app-view
+		a(href='home/navigate'                                            ) home/navigate
+		a(href='landing-pages/about'                                      ) landing-pages/about
+		a(href='landing-pages/features'                                   ) landing-pages/features
+		a(href='landing-pages/index'                                      ) landing-pages/index
+		a(href='new-user-onboard/index'                                   ) new-user-onboard/index
+		a(href='new-user-onboard/step-one-search'                         ) new-user-onboard/step-one-search
+		a(href='new-user-onboard/step-two-filter-button'                  ) new-user-onboard/step-two-filter-button
+		a(href='new-user-onboard/step-four-filters-active'                ) new-user-onboard/step-four-filters-active
+		a(href='new-user-onboard/step-three-filters-div'                  ) new-user-onboard/step-three-filters-div
+		a(href='new-user-onboard/step-five-navigate'                      ) new-user-onboard/step-five-navigate
+		a(href='new-user-onboard/step-six-navigate-page'                  ) new-user-onboard/step-six-navigate-page
+		a(href='new-user-onboard/finish'                                  ) new-user-onboard/finish
+		a(href='style-guide/index'                                        ) style-guide/index
+		a(href='user/alert-user'                                          ) user/alert-user
+		a(href='user/backend'                                             ) user/backend
+		a(href='user/developer-utilities'                                 ) user/developer-utilities
+		a(href='user/other'                                               ) user/other
+		a(href='user/terms-and-conditions'                                ) user/terms-and-conditions
+		a(href='user/user-add-filter'                                     ) user/user-add-filter
+		a(href='user/user-edit'                                           ) user/user-edit
+		a(href='user/user-new-password'                                   ) user/user-new-password
+		a(href='user/user'                                                ) user/user
+
+//- Jade Page Links
+mixin jade-all-pages-links
+	.list-group
+		a(href='articles/alert-article-new-window-view'                   ) articles/alert-article-new-window-view
+		a(href='articles/article-new-window-view'                         ) articles/article-new-window-view
+		a(href='articles/fundamentals-of-security'                        ) articles/fundamentals-of-security
+		a(href='articles/my-articles-edit'                                ) articles/my-articles-edit
+		a(href='articles/my-articles'                                     ) articles/my-articles
+		a(href='articles/my-search-items'                                 ) articles/my-search-items
+		a(href='articles/my-search-items-edit'                            ) articles/my-search-items-edit
+		a(href='getting-started/forgot-password'                          ) getting-started/forgot-password
+		a(href='getting-started/index-validation'                         ) getting-started/index-validation
+		a(href='getting-started/index'                                    ) getting-started/index
+		a(href='help/index'                                               ) help/index
+		a(href='home/alert-app-keyword-search'                            ) home/alert-app-keyword-search
+		a(href='home/alert-filters-active'                                ) home/alert-filters-active
+		a(href='home/app-keyword-search'                                  ) home/app-keyword-search
+		a(href='home/customer-main-app-view'                              ) home/customer-main-app-view
+		a(href='home/filters-active'                                      ) home/filters-active
+		a(href='home/main-app-view'                                       ) home/main-app-view
+		a(href='home/navigate'                                            ) home/navigate
+		a(href='landing-pages/about'                                      ) landing-pages/about
+		a(href='landing-pages/features'                                   ) landing-pages/features
+		a(href='landing-pages/index'                                      ) landing-pages/index
+		a(href='learning-paths/advanced'                                  ) learning-paths/advanced
+		a(href='learning-paths/complete'                                  ) learning-paths/complete
+		a(href='learning-paths/exploiting'                                ) learning-paths/exploiting
+		a(href='learning-paths/prevention'                                ) learning-paths/prevention
+		a(href='learning-paths/related-topics'                            ) learning-paths/related-topics
+		a(href='learning-paths/sql-injection'                             ) learning-paths/sql-injection
+		a(href='learning-paths/testing'                                   ) learning-paths/testing
+		a(href='new-user-onboard/index'                                   ) new-user-onboard/index
+		a(href='new-user-onboard/step-five-navigate'                      ) new-user-onboard/step-five-navigate
+		a(href='new-user-onboard/step-four-filters-active'                ) new-user-onboard/step-four-filters-active
+		a(href='new-user-onboard/step-one-search'                         ) new-user-onboard/step-one-search
+		a(href='new-user-onboard/step-six-navigate-page'                  ) new-user-onboard/step-six-navigate-page
+		a(href='new-user-onboard/step-three-filters-div'                  ) new-user-onboard/step-three-filters-div
+		a(href='new-user-onboard/step-two-filter-button'                  ) new-user-onboard/step-two-filter-button
+		a(href='style-guide/index'                                        ) style-guide/index
+		a(href='user/alert-user'                                          ) user/alert-user
+		a(href='user/backend'                                             ) user/backend
+		a(href='user/developer-utilities'                                 ) user/developer-utilities
+		a(href='user/other'                                               ) user/other
+		a(href='user/terms-and-conditions'                                ) user/terms-and-conditions
+		a(href='user/user-add-filter'                                     ) user/user-add-filter
+		a(href='user/user-edit'                                           ) user/user-edit
+		a(href='user/user-new-password'                                   ) user/user-new-password
+		a(href='user/user'                                                ) user/user
+
+//- Flare Style Guide Links
+mixin flare-style-guide-links
+	dl.accordion(data-accordion='data-accordion')
+		dd.accordion-navigation
+			a(href='#about-us') About Us
+			#about-us.content
+				.list-group
+					a(href='#who-are-we') Who are we?
+					a(href='#history') History
+					a(href='#mission-statement') Mission Statement
+					a(href='#strategy') Strategy
+			// about-us-content
+		// accordian-navigation
+		dd.accordion-navigation
+			a(href='#visual-identity') Visual Identity
+			#visual-identity.content
+				.list-group
+					a(href='#logo') Logo
+					a(href='#dos-and-donts') Dos and Don'ts
+					a(href='#colours') Colours
+					a(href='#typography') Typography
+					a(href='#pictures') Pictures
+					a(href='#lingo') Lingo
+			// visual-identity-content
+		// accordian-navigation
+	// accordian
+
+//- Jade Style Guide Links
+mixin jade-style-guide-links
+	h4 About Us
+	.list-group
+		a(href='#who-are-we') Who are we?
+		a(href='#history') History
+		a(href='#mission-statement') Mission Statement
+		a(href='#strategy') Strategy
+	// list-group
+	h4 Our Visual Identity
+	.list-group
+		a(href='#logo') Logo
+		a(href='#dos-and-donts') Dos and Don'ts
+		a(href='#colours') Colours
+		a(href='#typography') Typography
+		a(href='#pictures') Pictures
+		a(href='#lingo') Lingo
+	// list-group
+
+//- my-articles-links
+mixin my-articles-links
+	.list-group
+		a(href='article-new-window-view', target='_blank') A New ID Is Assigned on Login
+		a(href='article-new-window-view', target='_blank') A New Or Blank Session ID is Assigned on Logout
+		a(href='article-new-window-view', target='_blank') Access to the Credential Store is Limited
+		a(href='article-new-window-view', target='_blank') AJAX Injection Vulnerability
+		a(href='article-new-window-view', target='_blank') All Input is Validated
+		a(href='article-new-window-view', target='_blank') All Private Resources Require Authentication
+		a(href='article-new-window-view', target='_blank') All Senstive Data is Encrypted
+		a(href='article-new-window-view', target='_blank') Assume All Input is Malicious
+		a(href='article-new-window-view', target='_blank') Authentication is Centralized
+		a(href='article-new-window-view', target='_blank') Centralize Authentication
+		a(href='article-new-window-view', target='_blank') Client-side Validation is Not Relied On
+		a(href='article-new-window-view', target='_blank') Cross Site Scripting Vulnerablity
+		a(href='article-new-window-view', target='_blank') Deny All Access by Default
+		a(href='article-new-window-view', target='_blank') Do Not Cache Sensitive Data
+		a(href='article-new-window-view', target='_blank') Do Not Leave Passwords in Memory
+		a(href='article-new-window-view', target='_blank') Don't Trust User Input
+		a(href='article-new-window-view', target='_blank') Echoed Input is Encoded
+		a(href='article-new-window-view', target='_blank') Missing Authentication
+		a(href='article-new-window-view', target='_blank') Missing Authorization
+		a(href='article-new-window-view', target='_blank') Hard-coded Credentials
+		a(href='article-new-window-view', target='_blank') Missing Encryption
+		a(href='article-new-window-view', target='_blank') Unrestricted Dangerous Uploads
+		a(href='article-new-window-view', target='_blank') Using Untrusted Inputs
+
+//- git-repo-link
+mixin git-repo-link
+	.list-group
+		a(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
+
+mixin links_learning_paths
+	a(href='exploiting')
+		h4 Exploiting Mechanisms
+	.list-group
+		a(href='exploiting#introduction') Introduction
+		a(href='exploiting#sql-injection') SQL Injection
+		a(href='exploiting#sql-injection-exploits') SQL Injection Exploits
+		a(href='exploiting#three-dangerous-vulnerabilities') Three Dangerous Vulnerabilities
+
+	a(href='testing')
+		h4 Testing
+	.list-group
+		a(href='testing#advanced-software-testing') Advanced Software Testing
+		a(href='testing#fuzz-testing') Fuzz Testing
+
+	a(href='prevention')
+		h4 Prevention
+	.list-group
+		a(href='prevention#input-validation') Input Validation
+		a(href='prevention#database-countermeasures') Database Countermeasures
+		a(href='prevention#information-disclosure') Information Disclosure
+
+	a(href='advanced')
+		h4 Advanced
+	.list-group
+		a(href='advanced#oracle-database-secure-coding') Oracle Database Secure Coding
+		a(href='advanced#sql-database-secure-coding') SQL Database Secure Coding
+		a(href='advanced#php-secure-coding') PHP Secure Coding
+
+	a(href='related-topics')
+		h4 Related Topics

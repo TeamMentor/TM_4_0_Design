@@ -1,0 +1,1 @@
+SQL Injection is a common vulnerability that can have disasterous consequences if successfully attacked.  The vulnerability typically derives from defects in the database access code in an application.  The resources below provide information that will describe the vulnerability in detail and guidance in avoiding, remediating and testing it.

@@ -1,0 +1,8 @@
+extends _layouts/flare_page_not_logged_in.jade
+include getting-started/mixins/getting-started-mixins.jade
+block content
+   #application
+      .row
+         .small-12.large-5.large-push-6.columns
+            h1 All links
+            +jade-all-pages-links

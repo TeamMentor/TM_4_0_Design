@@ -1,0 +1,17 @@
+extends ../_layouts/flare_page.jade
+include mixins/new-user-onboard-mixins.jade
+include ../home/mixins/application-mixins.jade
+
+block content
+	#application
+		#left-nav
+		// left-nav
+		#results
+			+flare-search-bar-input
+			+flare-results-save-clear
+			+flare-articles-list
+		// results
+		#right-nav
+			+step-two-instructions
+		// right-nav
+	// application

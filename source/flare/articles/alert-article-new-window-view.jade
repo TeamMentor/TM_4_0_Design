@@ -1,0 +1,20 @@
+extends ../_layouts/flare_page.jade
+include mixins/articles-mixins.jade
+
+block content
+	#application
+		#left-nav
+		// left-nav
+		#results
+			+flare-alert
+			+article
+			br
+			+article-options
+			+horizontal-rule
+			+related-options
+			+horizontal-rule
+			+copyright
+		// results
+		#right-nav
+		// right-nav
+	// application
