@@ -1,6 +1,6 @@
 require 'fluentnode'
-require('../node_modules/node-webkit-repl/src/extra_fluentnode.coffee')
-NodeWebKit_Service = require('node-webkit-repl')
+require('../node_modules/nwr/src/extra_fluentnode.coffee')
+NodeWebKit_Service = require('nwr')
 Jade_API            = require('./Jade_API')
 
 class QA_TM_4_0_Design
