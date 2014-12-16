@@ -1,0 +1,1 @@
+The dark grey is the main colour in the application. Body copy, article sub-headlines, related article headlines, options (filters), inputs and forms etc all use this colour.

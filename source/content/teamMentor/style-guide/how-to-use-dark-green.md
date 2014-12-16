@@ -1,0 +1,1 @@
+The dark green should be used for anything that is active or on hover, but only when it starts in the TM green. This colour is very heavy, so it is never used as a headline or link colour.
