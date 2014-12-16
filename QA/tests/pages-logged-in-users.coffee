@@ -24,10 +24,10 @@ describe 'pages-logged-in-users', ->
       linksData[index].href.assert_Is(expected_Href)
       linksData[index].value.assert_Is(expected_Value)
 
-    checkValues(0,'/library/Uno'                             , '<img src=\"/static/assets/icons/navigate.png\" alt=\"Navigate\">'   )   # check expected values of 6 links
-    checkValues(1,'/static/html/home/main-app-view.html'     , '<img src=\"/static/assets/icons/home.png\" alt=\"Home\">')
-    checkValues(2,'/help/index.html'                         , '<img src=\"/static/assets/icons/help.png\" alt=\"Help\">')
-    checkValues(3,'/user/logout'                             , '<img src=\"/static/assets/icons/logout.png\" alt=\"Logout\">')
+    checkValues(0,'/library/Uno'     , '<img src=\"/static/assets/icons/navigate.png\" alt=\"Navigate\">'   )   # check expected values of 6 links
+    checkValues(1,'/user/main.html'  , '<img src=\"/static/assets/icons/home.png\" alt=\"Home\">')
+    checkValues(2,'/help/index.html' , '<img src=\"/static/assets/icons/help.png\" alt=\"Help\">')
+    checkValues(3,'/user/logout'     , '<img src=\"/static/assets/icons/logout.png\" alt=\"Logout\">')
 
 
   before (done)->
@@ -50,7 +50,7 @@ describe 'pages-logged-in-users', ->
                                  'TEAM Mentor Related Sites' ])
       done()
 
-  it.only 'Library', (done)->
+  it 'Library', (done)->
     jade.page_User_Library (html,$)->
       links_Libraries = $('#links-libraries a')
       $(links_Libraries.get(0)).html().assert_Is('Guidance')
@@ -77,7 +77,7 @@ describe 'pages-logged-in-users', ->
   it 'Logout', (done)->
     jade.page_User_Logout (html,$)->
       page.chrome.url (url)->
-        url.assert_Contains('/landing-pages/index.html')
+        url.assert_Contains('/guest/default.html')
         jade.login_As_QA ->
             done()
 

@@ -105,8 +105,8 @@ class GraphService
                             when 'Guid'     then result.id = item.object
                             when 'Title'    then result.title = item.object
                             when 'Summary'  then result.summary = item.object
-                            when 'is an'    then #do Nothing
-                            when 'View'     then #do Nothing
+                            #when 'is an'    then ; #do Nothing
+                            #when 'View'     then  #do Nothing
                             else
                                 if not metadata[item.predicate] then metadata[item.predicate] = {}
                                 if metadata[item.predicate][item.object]

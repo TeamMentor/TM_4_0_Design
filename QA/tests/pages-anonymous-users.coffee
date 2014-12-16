@@ -32,12 +32,12 @@ describe 'pages-anonymous-users', ->
       linksData[index].href.assert_Is(expected_Href)
       linksData[index].value.assert_Is(expected_Value)
 
-    checkValues(0,'/static/html/landing-pages/about.html'         , 'About'   )   # check expected values of 6 links
-    checkValues(1,'/static/html/landing-pages/features.html'      , 'Features')
-    checkValues(2,'/help/index.html'                              , 'Help')
-    checkValues(3,'#'                                             , '|')
-    checkValues(4,'/static/html/landing-pages/user-sign-up.html'  , 'Sign Up')
-    checkValues(5,'/user/login/returning-user-login.html'          , 'Login')
+    checkValues(0,'/guest/about.html'    , 'About'   )   # check expected values of 6 links
+    checkValues(1,'/guest/features.html' , 'Features')
+    checkValues(2,'/help/index.html'     , 'Help'    )
+    checkValues(3,'#'                    , '|'       )
+    checkValues(4,'/guest/sign-up.html'  , 'Sign Up' )
+    checkValues(5,'/guest/login.html'    , 'Login'   )
 
   check_Generic_Footer = ($)->
 

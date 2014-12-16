@@ -72,7 +72,7 @@ describe('routes > test-Login-Controller.js', function ()
             browser.assert.attribute('#new-user-password', 'value', password);        
             browser.click('#btn-login', function()
             {            
-                browser.assert.url('http://localhost/home/main-app-view.html');
+                browser.assert.url('http://localhost/user/main.html');
 
                 //check that session username is set
                 browser.visit('/session', function()

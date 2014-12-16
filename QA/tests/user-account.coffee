@@ -29,12 +29,12 @@ describe 'user-account', ->
     email    = "#{username}@teammentor.net"
     jade.user_Sign_Up username, password, email, ->
       page.chrome.url (url)->
-        url.assert_Contains('/landing-pages/user-sign-up-completed.html')
+        url.assert_Contains('/guest/sign-up-OK.html')
         page.html (html,$)->
           $('h3').html().assert_Is('Welcome to TEAM Mentor')
           jade.login username, password, ->
             page.chrome.url (url)->
-              url.assert_Contains('home/main-app-view.html')
+              url.assert_Contains('user/main.html')
               done()
 
   it 'User Sign Up Fail',(done)->
@@ -42,7 +42,7 @@ describe 'user-account', ->
     assert_User_Sign_Up_Fail = (username, password, email, next)->
       jade.user_Sign_Up username, password, email, ->
         page.chrome.url (url)->
-          url.assert_Contains('/landing-pages/user-sign-up-validation.html')
+          url.assert_Contains('/guest/sign-up-Fail.html')
           next()
 
     randomUser  = 'abc_'.add_5_Random_Letters();
@@ -71,7 +71,7 @@ describe 'user-account', ->
       page.chrome.eval_Script code, =>
         page.wait_For_Complete (html, $)=>
           page.chrome.url (url)->
-            url.assert_Contains('/landing-pages/user-sign-up-validation.html')
+            url.assert_Contains('/guest/sign-up-Fail.html')
           done()
 
   #add issue that new users can be created with weak pwds (from jade)

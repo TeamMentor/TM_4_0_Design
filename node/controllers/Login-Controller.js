@@ -7,9 +7,9 @@ var users = [ { username : 'tm'   , password : 'tm'   } ,
               { username : 'roman', password : 'longpassword'     }
             ];
             
-var loginPage         = '/user/login/returning-user-validation.html'
-var mainPage_user     = '/home/main-app-view.html'
-var mainPage_no_user  = '/landing-pages/index.html'
+var loginPage         = '/guest/login-Fail.html'
+var mainPage_user     = '/user/main.html'
+var mainPage_no_user  = '/guest/default.html'
 
 var Login_Controller = function(req, res) 
     {
@@ -26,8 +26,13 @@ var Login_Controller = function(req, res)
             {
                 this.res.redirect(this.loginPage);
             };
-        this.loginUser = function()
-            {
+        this.loginUser = function() {
+            if (req.body.username === '' || req.body.password === '')
+                {
+                    req.session.username = undefined;
+                    res.redirect(loginPage);
+                    return
+                }
                 //Temp QA logins
                 for(var index in users)
                 {
@@ -55,7 +60,7 @@ var Login_Controller = function(req, res)
                         {
                             //console.log('not logged in...')
                             req.session.username = undefined;
-                            res.redirect(loginPage);                            
+                            res.redirect(loginPage);
                         }
                         else
                         {
@@ -88,7 +93,7 @@ var Login_Controller = function(req, res)
                         return;
                     }
                     if (response.statusCode == 200)
-                        res.redirect('/user/login/forgot-password-completed.html');
+                        res.redirect('/guest/pwd-sent.html');
                     else
                         res.send(JSON.stringify(response));
 
@@ -98,7 +103,7 @@ var Login_Controller = function(req, res)
             {
                 if (req.body.password != req.body['password-confirm'])
                 {
-                    res.redirect('/landing-pages/user-sign-up-validation.html');
+                    res.redirect('/guest/sign-up-Fail.html');
                     return
                 }
 
@@ -123,9 +128,9 @@ var Login_Controller = function(req, res)
                         }
                         if (response.statusCode == 200)
                             if(response.body.d == '0')
-                                res.redirect('/landing-pages/user-sign-up-validation.html');
+                                res.redirect('/guest/sign-up-Fail.html');
                             else
-                                res.redirect('/landing-pages/user-sign-up-completed.html');
+                                res.redirect('/guest/sign-up-OK.html');
                         else
                             res.send(response)
                     });

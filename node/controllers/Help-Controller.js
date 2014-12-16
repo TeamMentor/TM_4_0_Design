@@ -44,7 +44,7 @@ var Help_Controller = function (req, res)
                         
                 if (this.page === "index.html")  
                 {
-                    var page_index_File     = './source/content/docs/page-index.md'   ;
+                    var page_index_File     = './source/content/page-index.md'   ;
                     var page_index_Markdown = fs.readFileSync(page_index_File, 'utf8'); 
                     var page_index_Html     = marked(page_index_Markdown)             ;
                     this.addContent(null, page_index_Html);

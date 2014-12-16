@@ -12,7 +12,7 @@ describe "routes | test-routes-design |", ->
                { url: "/articles/owasp.html"                   , status: 200 }
                { url: "/home/app-keyword-search.html"          , status: 200 }
                { url: "/home/filters-active.html"              , status: 200 }
-               { url: "/home/main-app-view.html"               , status: 200 }
+               { url: "/user/main.html"                        , status: 200 }
              ]
     
     before ->

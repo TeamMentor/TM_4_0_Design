@@ -14,7 +14,7 @@ class SearchController
         @req              = req
         @res              = res
         @config           = config || new Config()
-        @jade_Page        = '/source/html/search/main.jade'
+        @jade_Page        = '/source/jade/user/search.jade'
         @jade_Service     = new Jade_Service(@config)
         @searchData       = null
         @defaultUser      = "TMContent"
@@ -79,14 +79,15 @@ class SearchController
                 text = text.lower()
                 foundQuery = query for query in allQueries when query.lower().indexOf(text) > -1
             if (foundQuery == "")
-                @res.redirect('/home/main-app-view.html')
+                @res.redirect('/user/main.html')
             else            
                 @res.redirect("/graph/#{foundQuery}")
             
         
     showSearchFromGraph: ()=>        
         queryId = @req.params.queryId        
-        filters = @req.params.filters  
+        filters = @req.params.filters
+        console.log queryId
         breadcrumbs_Cache = breadcrumbs_Cache.splice(0,3)
         if (filters)
             breadcrumbs_Cache.unshift  {href:"/graph/#{queryId}/#{filters}", title: filters}
@@ -108,12 +109,12 @@ class SearchController
             .send(JSON.stringify(@loadSearchData().searchData,null, ' '))
             
     showMainAppView: =>
-        breadcrumbs_Cache.unshift {href:"/home/main-app-view.html", title: "Search Home"}
+        breadcrumbs_Cache.unshift {href:"/user/main.html", title: "Search Home"}
         topArticles = 'http://localhost:1332/data/tm-data/articles-by-weight'
         #topArticles = 'https://tm-graph.herokuapp.com/data/tm-data/articles-by-weight'
         request topArticles, (err, response, data)=>
-            console.log data
-            jadePage  = '../source/html/home/main-app-view.jade'
+            console.log "data" + data
+            jadePage  = '../source/jade/user/main.jade'  # relative to the /views folder
             viewModel = {}
             if false then ->
                 data = JSON.parse(data).splice(0,4)
@@ -130,7 +131,7 @@ class SearchController
                     recentArticles.push {href : 'https://uno.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
                     break if recentArticles.length >2
                 viewModel = { recentArticles: recentArticles, topArticles : topArticles , searchTerms : searchTerms}
-
+            console.log "jadePage: " + jadePage
             @res.render(jadePage, viewModel)
             
     showArticle: =>
@@ -147,7 +148,7 @@ SearchController.registerRoutes = (app) ->
     app.get('/graph/:queryId'         , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())    
     app.get('/graph/:queryId/:filters', (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())    
     
-    app.get '/home/main-app-view.html'  , (req,res) -> new SearchController(req, res, app.config).showMainAppView()
+    app.get '/user/main.html'  , (req,res) -> new SearchController(req, res, app.config).showMainAppView()
     app.get '/article/view/:guid/:title', (req,res) -> new SearchController(req, res, app.config).showArticle()
     #app.get('/search' , (req, res) -> res.send('a'))
                 

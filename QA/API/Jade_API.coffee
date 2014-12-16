@@ -18,20 +18,20 @@ class Jade_API
                     user = @QA_Users.first()
                     @login user.name, user.pwd, callback
 
-  page_About         : (callback) => @page.open '/about.html'             , callback
-  page_Help          : (callback) => @page.open '/help/index.html'                , callback
-  page_Home          : (callback) => @page.open '/index.html'                            , callback
-  page_Features      : (callback) => @page.open '/features.html'               , callback
-  page_Login         : (callback) => @page.open '/login.html'                  , callback
-  page_Login_Fail    : (callback) -> @page.open '/login-Fail.html'             , callback
-  page_Libraries     : (callback) => @page.open '/libraries'                                      , callback
-  page_Main_Page     : (callback) => @page.open '/home/main-app-view.html'     , callback
-  page_Pwd_Forgot    : (callback) => @page.open '/pwd-forgot.html'             , callback
-  page_Pwd_Sent      : (callback) => @page.open '/pwd-sent.html'               , callback
-  page_Sign_Up       : (callback) => @page.open '/sign-up.html'                , callback
-  page_Sign_Up_Fail  : (callback) => @page.open '/sign-up-Fail.html'             , callback
-  page_Sign_Up_OK    : (callback) => @page.open '/sign-up-OK.html'           , callback
-  page_TermsAndCond  : (callback) => @page.open '/terms-and-conditions.html'                      , callback
+  page_About         : (callback) => @page.open '/guest/about.html'                 , callback
+  page_Help          : (callback) => @page.open '/help/index.html'                  , callback
+  page_Home          : (callback) => @page.open '/'                                 , callback
+  page_Features      : (callback) => @page.open '/guest/features.html'              , callback
+  page_Login         : (callback) => @page.open '/guest/login.html'                 , callback
+  page_Login_Fail    : (callback) -> @page.open '/guest/login-Fail.html'            , callback
+  page_Libraries     : (callback) => @page.open '/guest/libraries'                  , callback
+  page_Main_Page     : (callback) => @page.open '/guest/main/main.html'             , callback
+  page_Pwd_Forgot    : (callback) => @page.open '/guest/pwd-forgot.html'            , callback
+  page_Pwd_Sent      : (callback) => @page.open '/guest/pwd-sent.html'              , callback
+  page_Sign_Up       : (callback) => @page.open '/guest/sign-up.html'               , callback
+  page_Sign_Up_Fail  : (callback) => @page.open '/guest/sign-up-Fail.html'          , callback
+  page_Sign_Up_OK    : (callback) => @page.open '/guest/sign-up-OK.html'            , callback
+  page_TermsAndCond  : (callback) => @page.open '/guest/terms-and-conditions.html'  , callback
 
 
 

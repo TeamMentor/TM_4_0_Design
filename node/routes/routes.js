@@ -42,11 +42,12 @@ module.exports = function (app)
     // jade (pre-compiled) pages (these have to be the last set of routes)
 
     app.get('/'                                             , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/jade/guest/default.jade'                                                   ));});
-    app.get('/:page.html'                                   , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/jade/guest/'           + req.params.page + '.jade'                       ));});
+    app.get('/index.html'                                   , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/jade/guest/default.jade'                                                   ));});
+    app.get('/guest/:page.html'                             , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/jade/guest/'           + req.params.page + '.jade'                       ));});
     app.get('/user/login/:page.html'                        , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/html/user/login/'              + req.params.page + '.jade'                       ));}); 
     //app.get('/bugs/:page.html'                              , function (req, res)  { res.send(new Jade_Service().renderJadeFile('/source/html/bugs/'              + req.params.page + '.jade'                       ));}); 
     app.get('/:area/:page.html'    , function (req,res,next) { auth.checkAuth(req, res,next, app.config);} 
-                                                            , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/html/' + req.params.area + '/' + req.params.page + '.jade'                       ));});     
+                                                            , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/jade/' + req.params.area + '/' + req.params.page + '.jade'                       ));});
     
     //Redirect to Jade pages
     app.get('/'                                             , function (req, res)  { res.redirect('/default.html'                                                     );});

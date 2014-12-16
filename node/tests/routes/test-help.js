@@ -140,7 +140,7 @@ describe('routes |', function ()
         });
         it('check that index page markdown transform', function(done)
         {
-            var page_index_File     = './source/content/docs/page-index.md'   ; expect(fs.existsSync(page_index_File)).to.be.true;
+            var page_index_File     = './source/content/page-index.md'   ; expect(fs.existsSync(page_index_File)).to.be.true;
             var page_index_Markdown = fs.readFileSync(page_index_File, "utf8"); expect(page_index_Markdown           ).to.contain('## TEAM Mentor Documents');  
             var page_index_Html     = marked(page_index_Markdown)             ; expect(page_index_Html               ).to.contain('<h2 id="team-mentor-documents">TEAM Mentor Documents</h2>');  
             
