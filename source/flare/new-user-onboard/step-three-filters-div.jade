@@ -1,0 +1,15 @@
+extends ../_layouts/flare_page.jade
+include mixins/new-user-onboard-mixins.jade
+include ../home/mixins/application-mixins.jade
+
+block content
+	#application
+		#left-nav
+		// left-nav
+		#results
+			+step-three-instructions
+		// results
+		#right-nav
+			+flare-filters-div
+		// right-nav
+	// application

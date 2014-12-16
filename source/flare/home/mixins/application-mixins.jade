@@ -1,0 +1,374 @@
+include ../../../content/globals.jade
+
+//- Flare Search Bar Input
+mixin flare-search-bar-input
+	.row
+		.large-12.columns
+			.row.collapse
+				.small-8.large-10.columns
+					input#search-bar(type='text', placeholder='Type keywords here')
+				// column
+				.small-2.large-1.columns
+					a.button.postfix#search-button(href='app-keyword-search')
+						+search-icon
+				// column
+				.small-2.large-1.columns
+					a.button.postfix(href='filters-div')
+						+filter-icon
+				// column
+			// row-collapse
+		// column
+	// row
+
+//- Flare Results-Save-Clear
+mixin flare-results-save-clear
+	.row
+		.small-12.medium-6.columns
+			h4 0/200 results showing
+		//column
+		.small-6.medium-3.columns.vertical-align
+			a.button(href='app-keyword-search-save')
+				+save-icon
+		// column
+		.small-6.medium-3.columns.vertical-align
+			a.button(href='main-app-view')
+				+clear-icon
+		// column
+	// row
+
+//- Articles List
+mixin flare-articles-list
+	dl.accordion(data-accordion='data-accordion')
+		dd.accordion-navigation
+			a(href='#panel1') Article Headline
+			#panel1.content
+				include:md ../../../content/teamMentor/articles/article-details.md
+				+flare-article-preview-menu
+			// panel1-content
+		// accordian-navigation
+		dd.accordion-navigation
+			a(href='#panel2') Article Headline
+			#panel2.content
+				include:md ../../../content/teamMentor/articles/article-details.md
+				+flare-article-preview-menu
+			// panel2-content
+		// accordian-navigation
+		dd.accordion-navigation
+			a(href='#panel3') Article Headline
+			#panel3.content
+				include:md ../../../content/teamMentor/articles/article-details.md
+				+flare-article-preview-menu
+			// panel3-content
+		// accordian-navigation
+	// accordian
+
+//- Flare Saved Articles List
+mixin flare-saved-articles-list
+	dl.accordion(data-accordion='data-accordion')
+		dd.accordion-navigation
+			a(href='#panel1') Article Headline
+			#panel1.content
+				include:md ../../../content/teamMentor/articles/article-details.md
+				+saved-article-menu
+			// panel1-content
+		// accordian-navigation
+		dd.accordion-navigation
+			a(href='#panel2') Article Headline
+			#panel2.content
+				include:md ../../../content/teamMentor/articles/article-details.md
+				+saved-article-menu
+			// panel2-content
+		// accordian-navigation
+		dd.accordion-navigation
+			a(href='#panel3') Article Headline
+			#panel3.content
+				include:md ../../../content/teamMentor/articles/article-details.md
+				+saved-article-menu
+			// panel3-content
+		// accordian-navigation
+	// accordian
+
+//- Article Preview Menu
+mixin flare-article-preview-menu
+	.row.text-center
+		.small-12.large-4.columns
+			button.button.dropdown(href='#', data-dropdown='drop1', aria-controls='drop1', aria-expanded='false')
+				+open-icon
+				br
+				ul#drop1.f-dropdown(data-dropdown-content='data-dropdown-content', aria-hidden='true', tabindex='-1')
+					li
+						a(href='../articles/article-new-window-view', target='_blank')
+							+aspnet-icon
+							|    ASP.NET
+					li
+						a(href='../articles/article-new-window-view', target='_blank')
+							+android-icon
+							|    Android
+					li
+						a(href='../articles/article-new-window-view', target='_blank')
+							+c-icon
+							|    C/C++
+					li
+						a(href='../articles/article-new-window-view', target='_blank')
+							+html5-icon
+							|    HTML5
+					li
+						a(href='../articles/article-new-window-view', target='_blank')
+							+iOS-icon
+							|    iOS
+					li
+						a(href='../articles/article-new-window-view', target='_blank')
+							+java-icon
+							|    Java
+					li
+						a(href='../articles/article-new-window-view', target='_blank')
+							+php-icon
+							|    PHP
+					li
+						a(href='../articles/article-new-window-view', target='_blank')
+							+scala-icon
+							|    Scala
+		// columns
+		.small-12.large-4.columns
+			a.button(href='app-keyword-search-save')
+				+save-icon
+		// columns
+		.small-12.large-4.columns
+			a.button(href='app-keyword-search-share')
+				+share-icon
+		// columns
+	// row
+
+// Saved Article Menu
+mixin saved-article-menu
+	.row.text-center
+		.small-12.large-4.columns
+			a.button(href='article-new-window-view', target='_blank')
+				+open-icon
+		// column
+		.small-12.large-4.columns
+			a.button(href='../home/app-keyword-search-share')
+				+share-icon
+		// column
+		.small-12.large-4.columns
+			a.button(href='my-search-items')
+				+delete-icon
+		// column
+	// row
+
+//- Flare Main App View
+mixin flare-main-app-view
+	dl.accordion(data-accordion='data-accordion')
+		dd.accordion-navigation
+			a(href='#recently-viewed-articles') Recently Viewed Articles
+			#recently-viewed-articles.content
+				+flare-articles-list
+			// recently-viewed-articles-content
+		// acordian-navigation
+		dd.accordion-navigation
+			a(href='#popular-search-terms') Popular Search Terms
+			#popular-search-terms.content
+				+flare-articles-list
+			// popular-search-terms-content
+		// accordian-navigation
+		dd.accordion-navigation
+			a(href='#top-articles') Top Articles
+			#top-articles.content
+				+flare-articles-list
+			// top-articles-content
+		// accordian-navigation
+		dd.accordion-navigation
+			a(href='#new-articles') New Articles
+			#new-articles.content
+				+flare-articles-list
+			// new-articles-content
+		// accordian-navigation
+	// accordian
+
+//- Flare Filters Div
+mixin flare-filters-div
+	#filters
+		h3 Filters
+		form
+			dl.accordion(data-accordion='data-accordion')
+				dd.accordion-navigation
+					a(href='#technology') Technnology
+					#technology.content.active
+						table
+							tr
+								td
+									input#tech-checkbox1(type='checkbox')
+								td
+									label(for='tech-checkbox1') Checkbox 1
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#tech-checkbox2(type='checkbox')
+								td
+									label(for='tech-checkbox2') Checkbox 2
+								td
+									span.badge 14
+							// tr
+
+							tr
+								td
+									input#tech-checkbox3(type='checkbox')
+								td
+									label(for='tech-checkbox3') Checkbox 3
+								td
+									span.badge 14
+							// tr
+						// table
+					// technology-content
+				// accordian-navigation
+
+				dd.accordion-navigation
+					a(href='#type') Type
+					#type.content
+						table
+							tr
+								td
+									input#type-checkbox1(type='checkbox')
+								td
+									label(for='type-checkbox1') Checkbox 1
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#type-checkbox2(type='checkbox')
+								td
+									label(for='type-checkbox2') Checkbox 2
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#type-checkbox3(type='checkbox')
+								td
+									label(for='type-checkbox3') Checkbox 3
+								td
+									span.badge 14
+							// tr
+						// table
+					// type-content
+				// accordian-navigation
+
+				dd.accordion-navigation
+					a(href='#phase') Phase
+					#phase.content
+						table
+							tr
+								td
+									input#phase-checkbox1(type='checkbox')
+								td
+									label(for='phase-checkbox1') Checkbox 1
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#phase-checkbox2(type='checkbox')
+								td
+									label(for='phase-checkbox2') Checkbox 2
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#phase-checkbox3(type='checkbox')
+								td
+									label(for='phase-checkbox3') Checkbox 3
+								td
+									span.badge 14
+							// tr
+						// table
+					// phase-content
+				// accordian-navigation
+
+				dd.accordion-navigation
+					a(href='#category') Category
+					#category.content
+						table
+							tr
+								td
+									input#category-checkbox1(type='checkbox')
+								td
+									label(for='category-checkbox1') Checkbox 1
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#category-checkbox2(type='checkbox')
+								td
+									label(for='category-checkbox2') Checkbox 2
+								td
+									span.badge 14
+							// tr
+							tr
+								td
+									input#category-checkbox3(type='checkbox')
+								td
+									label(for='category-checkbox3') Checkbox 3
+								td
+									span.badge 14
+							// tr
+						// table
+					// category-content
+				// accordian-content
+			// accordian
+			br
+			button(type='submit' href='filters-active')
+				| Ok, Done
+		// form
+	// filters-div
+
+//- Flare Filters Active
+mixin flare-filters-active
+	h4 Filters Active
+	.row
+		.small-12.medium-6.large-4.columns
+			.alert-box(data-alert='')
+				| Active Filter
+				a.close(href='#') ×
+		// column
+		.small-12.medium-6.large-4.columns
+			.alert-box(data-alert='')
+				| Active Filter
+				a.close(href='#') ×
+		// column
+		.small-12.medium-6.large-4.columns
+			.alert-box(data-alert='')
+				| Active Filter
+				a.close(href='#') ×
+		// column
+	// row
+
+// Save Div
+mixin save-div
+	form
+		.row
+			.small-12.columns
+				+save-input
+			// column
+			.small-12.columns
+				+save-button
+			// column
+		// row
+	// form
+
+// Share Div
+mixin share-div
+	form
+		.row
+			.small-12.columns
+				+share-input
+			// column
+			.small-12.columns
+				+share-button
+			// column
+		// row
+	// form

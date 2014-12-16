@@ -1,0 +1,20 @@
+extends ../_layouts/flare_page.jade
+include mixins/articles-mixins.jade
+include ../home/mixins/application-mixins.jade
+
+block content
+	#application
+		#left-nav
+			+flare-directory-list
+		// left-nav
+		#results
+			br
+			+breadcrumbs
+			br
+			+flare-search-bar-input
+			+flare-results-save-clear
+			+flare-articles-list
+		// results
+		#right-nav
+		// right-nav
+	// application
