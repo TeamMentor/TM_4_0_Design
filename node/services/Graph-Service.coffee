@@ -113,7 +113,7 @@ class GraphService
                                     metadata[item.predicate][item.object]++
                                 else
                                     metadata[item.predicate][item.object] = 1
-                    result.link = 'https://uno.teammentor.net/'+result.id
+                    result.link = 'https://tmdev01-uno.teammentor.net/'+result.id
                     result.score = 0
                     searchData.results.push(result)
                     mapArticles(articles)

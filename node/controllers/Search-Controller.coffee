@@ -128,7 +128,7 @@ class SearchController
                 searchTerms.push { href: "/graph/(Web) Encoding"                            , title: "(Web) Encoding"}
                 recentArticles = []
                 for recentArticle in recentArticles_Cache
-                    recentArticles.push {href : 'https://uno.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
+                    recentArticles.push {href : 'https://tmdev01-uno.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
                     break if recentArticles.length >2
                 viewModel = { recentArticles: recentArticles, topArticles : topArticles , searchTerms : searchTerms}
             console.log "jadePage: " + jadePage
@@ -138,7 +138,7 @@ class SearchController
         guid = @req.params.guid
         title = @req.params.title
         recentArticles_Cache.unshift ({ guid: guid , title:title})
-        @res.redirect('https://uno.teammentor.net/'+guid)
+        @res.redirect('https://tmdev01-uno.teammentor.net/'+guid)
 
 SearchController.registerRoutes = (app) ->
     #app.get('/search'                 , (req, res) -> new SearchController(req, res, app.config).showSearch())

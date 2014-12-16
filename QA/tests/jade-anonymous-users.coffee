@@ -42,7 +42,7 @@ describe 'pages-anonymous-users', ->
   check_Generic_Footer = ($)->
 
     $('#call-to-action h1').html()             .assert_Is('Security Risk. Understood.'           )
-    $('#call-to-action a' ).get(0).attribs.href.assert_Is('getting-started.html'                 ) # BUG this is a broken link!
+    $('#call-to-action a' ).get(0).attribs.href.assert_Is('/guest/sign-up.html'                  ) # BUG this is a broken link!
     $('#call-to-action button').html()         .assert_Is('See for yourself'                     )
 
     $('#footer img'       ).get(0).attribs.src .assert_Is('/static/assets/logos/si-logo.png'     )
@@ -53,7 +53,7 @@ describe 'pages-anonymous-users', ->
     jade.page_Home (html,$)->
       $('#usp h1').html().assert_Is('Instant resources that bridge the gap between developer questions and technical solutions')
 
-      $('#usp a'     ).get(0).attribs.href       .assert_Is('../getting-started/index.html')
+      $('#usp a'     ).get(0).attribs.href       .assert_Is('/guest/sign-up.html')
       $('#usp button').html()                    .assert_Is('Start your free trial today')
       $('#reasons h2').html()                    .assert_Is('With TEAM Mentor, you can...')
       $('#reasons h4')[0].children[0].data       .assert_Is('FIX vulnerabilities quicker than ever before with TEAM Mentor\'s seamless integration into a developer\'s IDE and daily workflow')
@@ -122,7 +122,7 @@ describe 'pages-anonymous-users', ->
       $('#btn-forgot-pwd').html().assert_Is('Forgot your password?')
       $('#btn-login'     ).attr('type').assert_Is('submit')
       $('#btn-forgot-pwd').attr('type').assert_Is('button')
-      $('#btn-forgot-pwd').parent().attr('href').assert_Is('returning-user-forgot-password.html')
+      $('#btn-forgot-pwd').parent().attr('href').assert_Is('/guest/pwd-forgot.html')
       done()
 
   it 'Login Fail', (done)->
@@ -179,7 +179,7 @@ describe 'pages-anonymous-users', ->
       $('h3' )        .html().assert_Is('Welcome to TEAM Mentor'                     )
       $($('p').get(0)).html().assert_Is('Thank you for creating a new account.'      )
       $($('p').get(1)).text().assert_Is('Please Login'                               )
-      $('p a')        .attr('href').assert_Is('/user/login/returning-user-login.html')
+      $('p a')        .attr('href').assert_Is('/guest/login.html')
       done()
 
   it 'Tearms and Conditions', (done)->

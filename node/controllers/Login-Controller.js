@@ -51,7 +51,7 @@ var Login_Controller = function(req, res)
 
 
                 //major hack for demo (this needs to be done by consuming the GraphDB TeamMentor-Service)
-                var loginUrl = 'https://uno.teammentor.net/rest/login/' + username + '/' + password;
+                var loginUrl = 'https://tmdev01-uno.teammentor.net/rest/login/' + username + '/' + password;
                 console.log(loginUrl)
 
                 request(loginUrl, function(error, response, body)
@@ -83,7 +83,7 @@ var Login_Controller = function(req, res)
                                 method: 'post',
                                 body: {email: email},
                                 json: true,
-                                url: 'https://uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/SendPasswordReminder'
+                                url: 'https://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/SendPasswordReminder'
                           };
                 request(options, function(error, response, body)
                 {
@@ -117,7 +117,7 @@ var Login_Controller = function(req, res)
                     method: 'post',
                     body: {newUser: newUser},
                     json: true,
-                    url: 'https://uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/CreateUser'
+                    url: 'https://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/CreateUser'
                 };
                 request(options, function(error, response, body)
                     {
