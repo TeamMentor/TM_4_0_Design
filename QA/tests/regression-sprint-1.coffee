@@ -38,6 +38,15 @@ describe 'regression-sprint-1', ->                                              
             $('p' ).html().assert_Is("We&apos;ve sent you an email with instructions for resetting your password.")
             done()
 
+  it 'Issue 117 - Getting Started Page is blank', (done)->
+    jade.page_Home ->
+      page.click 'START YOUR FREE TRIAL TODAY', (html, $)->
+        $('h3').html().assert_Is("Sign Up")
+        jade.page_Home ->
+          page.click 'SEE FOR YOURSELF', (html)->
+            $('h3').html().assert_Is("Sign Up")
+            done()
+
   it 'Issue 119 - /returning-user-login.html is Blank', (done)->
     jade.page_Sign_Up_OK (html, $)->                                                       # open sign-up ok page
       $('p a').attr('href').assert_Is('/guest/login.html')                                 # confirm link is now ok
@@ -45,3 +54,4 @@ describe 'regression-sprint-1', ->                                              
         page.wait_For_Complete (html, $)->                                                 # wait for page to load
           $('h3').html().assert_Is("Login")                                                # confirm that we are on the login page
           done();
+
