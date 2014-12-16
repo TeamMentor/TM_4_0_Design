@@ -37,3 +37,11 @@ describe 'regression-sprint-1', ->                                              
             $('h3').html().assert_Is("Ok, Done")
             $('p' ).html().assert_Is("We&apos;ve sent you an email with instructions for resetting your password.")
             done()
+
+  it 'Issue 119 - /returning-user-login.html is Blank', (done)->
+    jade.page_Sign_Up_OK (html, $)->                                                       # open sign-up ok page
+      $('p a').attr('href').assert_Is('/guest/login.html')                                 # confirm link is now ok
+      page.chrome.eval_Script "document.documentElement.querySelector('p a').click()", ->  # click on link
+        page.wait_For_Complete (html, $)->                                                 # wait for page to load
+          $('h3').html().assert_Is("Login")                                                # confirm that we are on the login page
+          done();

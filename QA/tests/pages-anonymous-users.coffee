@@ -179,7 +179,7 @@ describe 'pages-anonymous-users', ->
       $('h3' )        .html().assert_Is('Welcome to TEAM Mentor'                     )
       $($('p').get(0)).html().assert_Is('Thank you for creating a new account.'      )
       $($('p').get(1)).text().assert_Is('Please Login'                               )
-      $('p a')        .attr('href').assert_Is('/user/login/returning-user-login.html')
+      $('p a')        .attr('href').assert_Is('/guest/login.html')
       done()
 
   it 'Tearms and Conditions', (done)->
