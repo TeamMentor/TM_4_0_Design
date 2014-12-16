@@ -6,5 +6,5 @@ node-cov
 .tmCache
 UNO_Library_Data.json
 .idea
-static
+#static
 QA/_screenshots
