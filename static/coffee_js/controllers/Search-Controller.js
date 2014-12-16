@@ -156,7 +156,7 @@
               for (_j = 0, _len1 = recentArticles_Cache.length; _j < _len1; _j++) {
                 recentArticle = recentArticles_Cache[_j];
                 recentArticles.push({
-                  href: 'https://uno.teammentor.net/' + recentArticle.guid,
+                  href: 'https://tmdev01-uno.teammentor.net/' + recentArticle.guid,
                   title: recentArticle.title
                 });
                 if (recentArticles.length > 2) {
@@ -184,7 +184,7 @@
         guid: guid,
         title: title
       });
-      return this.res.redirect('https://uno.teammentor.net/' + guid);
+      return this.res.redirect('https://tmdev01-uno.teammentor.net/' + guid);
     };
 
     return SearchController;

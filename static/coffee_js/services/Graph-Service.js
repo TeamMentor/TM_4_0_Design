@@ -173,7 +173,7 @@
                     }
                 }
               }
-              result.link = 'https://uno.teammentor.net/' + result.id;
+              result.link = 'https://tmdev01-uno.teammentor.net/' + result.id;
               result.score = 0;
               searchData.results.push(result);
               return mapArticles(articles);

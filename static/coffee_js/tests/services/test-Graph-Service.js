@@ -67,7 +67,7 @@
       container_Size = 3;
       resultsTitle = '8/8 results showing';
       result_Title = 'Client-side Validation Is Not Relied On';
-      result_Link = 'https://uno.teammentor.net/9607b6e3-de61-4ff7-8ef0-9f8b44a5b27d';
+      result_Link = 'https://tmdev01-uno.teammentor.net/9607b6e3-de61-4ff7-8ef0-9f8b44a5b27d';
       result_Id = '9607b6e3-de61-4ff7-8ef0-9f8b44a5b27d';
       result_Summary = 'Verify that the same or more rigorous checks are performed on the server as on the client. Verify that client-side validation is used only for usability and to reduce the number of posts to the server.';
       result_Score = 0;
@@ -190,7 +190,7 @@
       container_Size = 3;
       resultsTitle = '8/8 results showing';
       result_Title = 'Client-side Validation Is Not Relied On';
-      result_Link = 'https://uno.teammentor.net/9607b6e3-de61-4ff7-8ef0-9f8b44a5b27d';
+      result_Link = 'https://tmdev01-uno.teammentor.net/9607b6e3-de61-4ff7-8ef0-9f8b44a5b27d';
       result_Id = '9607b6e3-de61-4ff7-8ef0-9f8b44a5b27d';
       result_Summary = 'Verify that the same or more rigorous checks are performed on the server as on the client. Verify that client-side validation is used only for usability and to reduce the number of posts to the server.';
       result_Score = 0;
