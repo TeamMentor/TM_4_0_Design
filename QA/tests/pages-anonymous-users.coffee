@@ -122,7 +122,7 @@ describe 'pages-anonymous-users', ->
       $('#btn-forgot-pwd').html().assert_Is('Forgot your password?')
       $('#btn-login'     ).attr('type').assert_Is('submit')
       $('#btn-forgot-pwd').attr('type').assert_Is('button')
-      $('#btn-forgot-pwd').parent().attr('href').assert_Is('returning-user-forgot-password.html')
+      $('#btn-forgot-pwd').parent().attr('href').assert_Is('/guest/pwd-forgot.html')
       done()
 
   it 'Login Fail', (done)->
