@@ -10,6 +10,13 @@ describe 'issues-sprint-1', ->                                                  
           #.assert_Is('It looks like the page you want to see needs a valid login')    # confirms that we are on the 'you need to login page'
           done()
 
+  it.only 'Issue 119 - /returning-user-login.html is Blank', (done)->
+    jade.page_Sign_Up_OK (html, $)->                                                       # open sign-up ok page
+      $('p a').attr('href').assert_Is('/user/login/returning-user-login.html')             # confirm link is wrong
+      page.chrome.eval_Script "document.documentElement.querySelector('p a').click()", ->  # click on link
+        page.wait_For_Complete (html, $)->                                                 # wait for page to load
+          html.assert_Is('<html><head></head><body></body></html>')                        # confirm empty html page
+          done();
 
   #it 'Issue 96 - Take Screenshot of affected pages', (done)->                                              # name of current test
   # @timeout(4000)
