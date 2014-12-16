@@ -43,10 +43,10 @@ var Help_Controller = function (req, res)
                 }
                         
                 if (this.page === "index.html")  
-                {                    
-                    var page_index_File     = './source/content/docs/page-index.md'   ; 
+                {
+                    var page_index_File     = './source/content/page-index.md'   ;
                     var page_index_Markdown = fs.readFileSync(page_index_File, 'utf8'); 
-                    var page_index_Html     = marked(page_index_Markdown)             ;                 
+                    var page_index_Html     = marked(page_index_Markdown)             ;
                     this.addContent(null, page_index_Html);
                 }
                 else
@@ -88,7 +88,7 @@ var Help_Controller = function (req, res)
 
         this.getRenderedPage = function(params)
             {
-                return new Jade_Service().renderJadeFile('/source/html/help/index.jade', params); 
+                return new Jade_Service().renderJadeFile('/source/jade/help/index.jade', params);
             };
 
         this.sendResponse = function(pageParams)

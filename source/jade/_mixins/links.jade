@@ -1,0 +1,54 @@
+- var articles        = '/static/html/articles'
+- var getting_started = '/static/html/getting-started'
+- var home            = '/static/html/home'
+- var landing_pages   = '/static/html/landing-pages'
+- var help            = '/help'
+- var user            = '/user'
+
+- var link_article_new_window       = articles + '/article-new-window-view.html'
+- var link_app_keyword_search       = home     + '/app-keyword-search.html'
+- var link_fundamentals_of_security = articles + '/fundamentals-of-security.html'
+            
+mixin links-navbar__landing-page
+    :markdown
+        * [About](/guest/about.html)
+        * [Features](/guest/features.html)
+        * [Help](/help/index.html)
+        * [|](#)
+        * [Sign Up](/guest/sign-up.html)
+        * [Login](/guest/login.html)
+  
+mixin links-navbar__home
+    :markdown
+        * [![Navigate](/static/assets/icons/navigate.png)](/library/Uno)
+        * [![Home](/static/assets/icons/home.png)](/user/main.html)
+        * [![Help](/static/assets/icons/help.png)](/help/index.html)
+        * [![Logout](/static/assets/icons/logout.png)](/user/logout)
+            
+mixin links-navbar__not_logged_in
+    :markdown
+        * [![Help](/static/assets/icons/help.png)](#{help}/index.html)
+
+
+
+//- git-repo-link
+mixin git-repo-link
+  .list-group
+    a(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
+
+//- my-articles-edit-
+mixin my-articles-edit
+  #edit-links
+    a(href='my-articles-edit.html') Edit 
+
+//- my-articles-edit-links
+mixin edit-links
+  #edit-links
+    br
+    .row
+      .column-4
+        a(href='#') Clear Selected
+      .column-4
+        a(href='navigate.html') Clear All
+      .column-4
+        a(href='my-articles.html') Ok, Done

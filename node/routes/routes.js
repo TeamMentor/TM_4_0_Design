@@ -17,13 +17,16 @@ module.exports = function (app)
     //preCompiler.cleanCacheFolder();
     
     ///hard-coded-redirect
-    app.get('/getting-started/index.html'  , function (req, res)  { res.redirect('/user/login/returning-user-login.html');});
-        
-    //login routes
+    //app.get('/getting-started/index.html'  , function (req, res)  { res.redirect('/user/login/returning-user-login.html');});
+
+
+    //login routes (and temporarily also user-sign-up)
     
-    app.get ('/user/login' , function (req, res) { new Login_Controller(req, res).redirectToLoginPage(); }); 
-    app.post('/user/login' , function (req, res) { new Login_Controller(req, res).loginUser          (); });
-    app.get ('/user/logout', function (req, res) { new Login_Controller(req, res).logoutUser         (); });
+    app.get ('/user/login'     , function (req, res) { new Login_Controller(req, res).redirectToLoginPage(); });
+    app.post('/user/login'     , function (req, res) { new Login_Controller(req, res).loginUser          (); });
+    app.get ('/user/logout'    , function (req, res) { new Login_Controller(req, res).logoutUser         (); });
+    app.post('/user/pwd_reset' , function (req, res) { new Login_Controller(req, res).passwordReset      (); });
+    app.post('/user/sign-up'   , function (req, res) { new Login_Controller(req, res).userSignUp         (); });
     
     //library routes
     Library_Controller.registerRoutes(app);
@@ -35,15 +38,16 @@ module.exports = function (app)
     
     app.get('/help/:page*' , function (req, res) { new Help_Controller(req, res).renderPage            (); });
     app.get('/Image/:name' , function (req, res) { new Help_Controller(req, res).redirectImagesToGitHub(); });
-    
+
     // jade (pre-compiled) pages (these have to be the last set of routes)
-    
-    app.get('/:page.html'                                   , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/html/'                         + req.params.page + '.jade'                       ));});     
-    app.get('/landing-pages/:page.html'                     , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/html/landing-pages/'           + req.params.page + '.jade'                       ));});         
+
+    app.get('/'                                             , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/jade/guest/default.jade'                                                   ));});
+    app.get('/index.html'                                   , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/jade/guest/default.jade'                                                   ));});
+    app.get('/guest/:page.html'                             , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/jade/guest/'           + req.params.page + '.jade'                       ));});
     app.get('/user/login/:page.html'                        , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/html/user/login/'              + req.params.page + '.jade'                       ));}); 
     //app.get('/bugs/:page.html'                              , function (req, res)  { res.send(new Jade_Service().renderJadeFile('/source/html/bugs/'              + req.params.page + '.jade'                       ));}); 
     app.get('/:area/:page.html'    , function (req,res,next) { auth.checkAuth(req, res,next, app.config);} 
-                                                            , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/html/' + req.params.area + '/' + req.params.page + '.jade'                       ));});     
+                                                            , function (req, res)  { res.send(new Jade_Service(app.config).renderJadeFile('/source/jade/' + req.params.area + '/' + req.params.page + '.jade'                       ));});
     
     //Redirect to Jade pages
     app.get('/'                                             , function (req, res)  { res.redirect('/default.html'                                                     );});

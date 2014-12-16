@@ -1,0 +1,25 @@
+extends ../_layouts/page_home.jade
+include mixins/learning-path-mixins
+
+block content
+	#application
+		.row
+			.column-3
+				.lge-container
+					+links_learning_paths
+					+progress-bar
+			.column-6#learning-path
+				.lge-container
+					include:md ../../content/teamMentor/learning-paths/related-topics.md
+				
+
+					.row
+						.column-3
+							a(href='advanced.html')
+								button.btn-full-width(type='button') Advanced
+						.column-offset-6.column-3
+							a(href='complete.html')
+							
+								button.btn-full-width(type='button') Complete
+					br
+					br

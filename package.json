@@ -1,6 +1,6 @@
 {
   "name": "TM_4_0_Design",
-  "version": "1.0.0",
+  "version": "0.5.0",
   "description": "TeamMentor 4.0 Design Implementation PoCs",
   "author": "TM Dev team",
   "license": "TM Commercial License",
@@ -13,11 +13,15 @@
   ],
   "main": "node/server.js",
   "scripts": {
+    "start": "node_modules/supervisor/lib/cli-wrapper.js -i node static/coffee_js/server.js",
     "test": "node_modules/mocha/bin/mocha node/tests/**/**.*",
     "test-watch": "mocha -w node/tests/**/**.** -R list",
     "start_once": "node app.js",
-    "start": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' node/server.js",
-    "coverage": "./node/bin/publish-code-coverage.sh"
+    "start-dev": "node_modules/supervisor/lib/cli-wrapper.js node/server.js",
+    "coverage": "./node/bin/publish-code-coverage.sh",
+    "QA":"cd QA && npm test && cd ..",
+
+    "__start-dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' node/server.js"
   },
   "repository": {
     "type": "git",
@@ -41,16 +45,6 @@
   "devDependencies": {
     "chai": "^1.9.1",
     "cheerio": "^0.17.0",
-    "coveralls": "^2.11.1",
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-githooks": "^0.3.1",
-    "jscover": "^0.2.4",
-    "mocha": "^1.21.4",
-    "mocha-lcov-reporter": "0.0.1",
-    "should": "^4.0.4",
-    "supertest": "^0.13.0",
-    "zombie": "^2.0.0-alpha31"
+    "mocha": "^1.21.4"
   }
 }

@@ -1,0 +1,14 @@
+{
+  "name": "qa-tm-4.0_design",
+  "main": "index.html",
+  "single-instance":false,
+  "window": {
+    "toolbar": true,
+    "show"   : true,
+    "width"  : 545,
+    "height" : 1002,
+    "x"      : 1133,
+    "y"      : 24
+
+  }
+}

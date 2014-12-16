@@ -54,7 +54,7 @@ var Library_Controller = function(req, res, config)
             {       
                 var viewModel = {'libraries' : this.libraries};
                                 
-                this.res.send(this.jade_Service.renderJadeFile('/source/html/libraries/list.jade', viewModel));                
+                this.res.send(this.jade_Service.renderJadeFile('/source/jade/user/list.jade', viewModel));
             };
         this.showLibrary = function()
             {
@@ -68,7 +68,7 @@ var Library_Controller = function(req, res, config)
                         {
                             //console.log(viewModel.library.data.subFolders);
                             //viewModel.library = JSON.stringify(viewModel.library.data.subfolders);
-                            that.res.send(that.jade_Service.renderJadeFile('/source/html/libraries/library.jade', viewModel));                        
+                            that.res.send(that.jade_Service.renderJadeFile('/source/jade/user/library.jade', viewModel));
                         });
                     
                 }
@@ -89,7 +89,7 @@ var Library_Controller = function(req, res, config)
                     var node_Labels = [];
                     nodes.forEach(function(node){node_Labels.push(node.label);});                    
                     var viewModel = {'queries' : node_Labels.sort()};
-                    that.res.send(that.jade_Service.renderJadeFile('/source/html/libraries/queries.jade', viewModel));                
+                    that.res.send(that.jade_Service.renderJadeFile('/source/jade/user/queries.jade', viewModel));
                     //that.res.send(nodes)
                 });            
         };
@@ -121,7 +121,7 @@ var Library_Controller = function(req, res, config)
                                 var viewModel = { libraries : that.libraries , 
                                               library   : library,
                                               folder    : folder};
-                                that.res.send(that.jade_Service.renderJadeFile('/source/html/libraries/folder.jade', viewModel));                        
+                                that.res.send(that.jade_Service.renderJadeFile('/source/jade/user/folder.jade', viewModel));
                             }
                             else
                                 that.res.send('Folder not found: ' + folder_name);          // vuln to XSS

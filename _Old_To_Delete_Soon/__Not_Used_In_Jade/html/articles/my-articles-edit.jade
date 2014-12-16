@@ -1,0 +1,13 @@
+extends ../_layouts/page_home.jade
+include mixins/articles-mixins
+
+block content   
+    #application
+      .row
+        .column-3
+          .lge-container
+            +links-home__navigate 
+          
+        .column-9#my-articles
+          +edit-my-articles
+          +edit-links

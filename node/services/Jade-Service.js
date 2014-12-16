@@ -50,7 +50,8 @@ var JadeService = function(config)
             };    
         
         this.renderJadeFile = function(jadeFile, params)
-            {                        
+            {
+                console.log(jadeFile)
                 if (this.cacheEnabled() === false) 
                 {
                     var jadeFile_Path = path.join(process.cwd(), jadeFile);

@@ -87,7 +87,7 @@ describe('routes | test-routes-supertest.js |',  function ()
 
         it('for users not logged in (redirects ok)', function(done)
         {
-            var pages = ['/home/main-app-view.html','/home/navigate.html', 
+            var pages = ['/user/main.html','/home/navigate.html',
                          '/users/user.html'];
             var agent = supertest(app);
             var nextPage = function() 

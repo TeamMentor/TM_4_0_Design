@@ -1,0 +1,27 @@
+{
+  "name": "QA_TM_4_0_Design",
+  "version": "0.0.1",
+  "description": "QA tests for TM 4.0 Design",
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register --recursive -R list tests",
+    "test-watch": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register --recursive -R list -w --extensions 'coffee' tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:TeamMentor/TM_4_0_Design.git"
+  },
+  "author": "Dinis Cruz <dinis.cruz@owasp.org> (http://blog.diniscruz.com/)",
+  "license": "TM Commercial License",
+  "bugs": {
+    "url": "https://github.com/TeamMentor/TM_4_0_Design/issues"
+  },
+  "homepage": "https://github.com/TeamMentor/TM_4_0_Design",
+  "dependencies": {
+    "async": "^0.9.0",
+    "coffee-script": "^1.8.0",
+    "fluentnode": "*",
+    "mocha": "^2.0.1",
+    "node-webkit-repl": "*",
+    "wd": "^0.3.11"
+  }
+}

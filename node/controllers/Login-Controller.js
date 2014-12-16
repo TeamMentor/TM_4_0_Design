@@ -1,14 +1,15 @@
 /*jslint node: true */
 "use strict";
+var request = require('request')
 
 var users = [ { username : 'tm'   , password : 'tm'   } ,
-              { username : 'user' , password : ''     } ,
+              { username : 'user' , password : 'a'     } ,
               { username : 'roman', password : 'longpassword'     }
             ];
             
-var loginPage         = '/user/login/returning-user-validation.html';
-var mainPage_user     = '/home/main-app-view.html';
-var mainPage_no_user  = '/landing-pages/index.html';                
+var loginPage         = '/guest/login-Fail.html'
+var mainPage_user     = '/user/main.html'
+var mainPage_no_user  = '/guest/default.html'
 
 var Login_Controller = function(req, res) 
     {
@@ -25,23 +26,41 @@ var Login_Controller = function(req, res)
             {
                 this.res.redirect(this.loginPage);
             };
-        
-        this.loginUser = function()
-            {
+        this.loginUser = function() {
+            if (req.body.username === '' || req.body.password === '')
+                {
+                    req.session.username = undefined;
+                    res.redirect(loginPage);
+                    return
+                }
+                //Temp QA logins
+                for(var index in users)
+                {
+                    var user = users[index];
+                    if (user.username === req.body.username && user.password === req.body.password)
+                    {
+                        req.session.username = user.username;
+                        res.redirect(mainPage_user);
+                        return;
+                    }
+                }
+
+
                 var username = req.body.username
                 var password = req.body.password
-                
+
+
                 //major hack for demo (this needs to be done by consuming the GraphDB TeamMentor-Service)
-                var request = require('request')
-                var loginUrl = 'https://tmdev01-sme.teammentor.net/rest/login/' + username + '/' + password;
+                var loginUrl = 'https://uno.teammentor.net/rest/login/' + username + '/' + password;
                 console.log(loginUrl)
+
                 request(loginUrl, function(error, response, body)
-                    {                         
-                        if (body.indexOf('00000000-0000-0000-0000-00000000000') > -1 || body.indexOf('Endpoint not found.')>-1 )
+                    {
+                        if (error || body.indexOf('00000000-0000-0000-0000-00000000000') > -1 || body.indexOf('Endpoint not found.')>-1 )
                         {
-                            console.log('not logged in')                        
+                            //console.log('not logged in...')
                             req.session.username = undefined;
-                            res.redirect(loginPage);                            
+                            res.redirect(loginPage);
                         }
                         else
                         {
@@ -51,26 +70,72 @@ var Login_Controller = function(req, res)
                         }
                     });
             };
-//           console.log ('logging in with:' + loginUrl)
-//           
-//           for(var index in users)
-//           {
-//               var user = users[index];                    
-//               if (user.username === req.body.username && user.password === req.body.password)
-//               {
-//                   req.session.username = user.username;
-//                   res.redirect(mainPage_user);
-//                   return;
-//               }
-//           }                
-//           req.session.username = undefined;
-//           res.redirect(loginPage);
-//          };  
         this.logoutUser = function()
             {
                 req.session.username = undefined;
                 res.redirect(mainPage_no_user);
-            };        
+            };
+        this.passwordReset = function()
+            {
+                var email = req.body.email
+
+                var options = {
+                                method: 'post',
+                                body: {email: email},
+                                json: true,
+                                url: 'https://uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/SendPasswordReminder'
+                          };
+                request(options, function(error, response, body)
+                {
+                    if (error && error.code==="ENOTFOUND")
+                    {
+                        res.send('could not connect with TM Uno server');
+                        return;
+                    }
+                    if (response.statusCode == 200)
+                        res.redirect('/guest/pwd-sent.html');
+                    else
+                        res.send(JSON.stringify(response));
+
+                });
+            };
+        this.userSignUp = function()
+            {
+                if (req.body.password != req.body['password-confirm'])
+                {
+                    res.redirect('/guest/sign-up-Fail.html');
+                    return
+                }
+
+                var newUser =
+                    {
+                        username : req.body.username,
+                        password : req.body.password,
+                        email    : req.body.email
+                    }
+                var options = {
+                    method: 'post',
+                    body: {newUser: newUser},
+                    json: true,
+                    url: 'https://uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/CreateUser'
+                };
+                request(options, function(error, response, body)
+                    {
+                        if (error && error.code==="ENOTFOUND")
+                        {
+                            res.send('could not connect with TM Uno server');
+                            return;
+                        }
+                        if (response.statusCode == 200)
+                            if(response.body.d == '0')
+                                res.redirect('/guest/sign-up-Fail.html');
+                            else
+                                res.redirect('/guest/sign-up-OK.html');
+                        else
+                            res.send(response)
+                    });
+                 //   res.send('user signup goes here for ' + newUser.json_pretty())
+            }
     };
 
 module.exports = Login_Controller;
