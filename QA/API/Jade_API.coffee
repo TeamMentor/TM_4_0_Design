@@ -25,7 +25,7 @@ class Jade_API
   page_Login         : (callback) => @page.open '/guest/login.html'                 , callback
   page_Login_Fail    : (callback) -> @page.open '/guest/login-Fail.html'            , callback
   page_Libraries     : (callback) => @page.open '/guest/libraries'                  , callback
-  page_Main_Page     : (callback) => @page.open '/guest/main/main.html'             , callback
+  page_Main_Page     : (callback) => @page.open '/guest/default.html'               , callback
   page_Pwd_Forgot    : (callback) => @page.open '/guest/pwd-forgot.html'            , callback
   page_Pwd_Sent      : (callback) => @page.open '/guest/pwd-sent.html'              , callback
   page_Sign_Up       : (callback) => @page.open '/guest/sign-up.html'               , callback
