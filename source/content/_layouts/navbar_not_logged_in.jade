@@ -1,0 +1,26 @@
+include ../links.jade
+include ../images.jade
+
+.fixed
+	nav.top-bar(role='navigation', data-topbar='')
+		#team-mentor-navigation
+			.row
+				.col-6
+					ul.title-area
+							a(href='../landing-pages/index')
+								+image-teammentor-logo__default
+						// li-name
+					// ul-title-area
+				// column
+				.col-6
+					section.top-bar-section
+						// Right Nav Section
+						ul.right
+							+links-navbar__not_logged_in
+						// ul-right
+					// section
+				// column
+			// row
+		// team-mentor-navigation
+	// nav
+// fixed

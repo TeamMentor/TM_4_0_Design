@@ -3,8 +3,6 @@ describe 'regression-sprint-1', ->                                              
   jade = page.jade_API
 
   it 'Issue 96 - Main Navigation "Login" link is not opening up the Login page', (done)->                   # name of current test
-
-    @timeout(5000)
     jade.page_Home (html,$)->                                                                               # open the index page
       login_Link = link.attribs.href for link in $('.nav li a') when $(link).html()=='Login'                # extract the url from the link with 'Login' as text
       login_Link.assert_Is_Not('/deploy/html/getting-started/index.html')                                   # checks that the link is the wrong one
@@ -49,6 +47,13 @@ describe 'regression-sprint-1', ->                                              
             $('h3').html().assert_Is("Sign Up")
             done()
 
+  it 'Issue 118 - Clicking on TM logo while logged in should not bring back the main screen', (done)->
+    jade.page_Home ->
+      jade.login_As_QA (html,$)->
+        $('.brand a').attr().href.assert_Is('/user/main.html')
+        $('.brand a img').attr().assert_Is { src: '/static/assets/logos/tm-logo.jpg', alt: 'TEAM Mentor', width: '200px' }
+        done()
+
   it 'Issue 119 - /returning-user-login.html is Blank', (done)->
     jade.page_Sign_Up_OK (html, $)->                                                       # open sign-up ok page
       $('p a').attr('href').assert_Is('/guest/login.html')                                 # confirm link is now ok
@@ -68,3 +73,10 @@ describe 'regression-sprint-1', ->                                              
       footerDiv =  $('#footer').html()
       footerDiv.assert_Not_Contains("Terms &amp; Conditions")
       done();
+
+
+  it "Issue 129 - 'Need to login page' missing from current 'guest' pages", (done)->
+    jade.keys().assert_Contains('page_Login_Required')
+    page.open '/guest/login-required.html', (html,$)->
+      $('h3').html().assert_Is('It looks like the page you want to see needs a valid login')
+      done()

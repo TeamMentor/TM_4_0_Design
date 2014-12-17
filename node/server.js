@@ -17,6 +17,7 @@ app.use(session({secret           : '1234567890',
                  resave           : true        }));
 
 
+require('./routes/flare_routes')(app);
 require('./routes/routes')(app);
 require('./routes/debug')(app);
 require('./routes/config')(app);

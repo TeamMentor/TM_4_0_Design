@@ -170,7 +170,7 @@ describe 'test-Articles-Graph |', ->
         checkItem()
     
      
-     it 'createSearchData' , (done)->
+    it 'createSearchData' , (done)->
             
         viewName          = 'Data Validation'
         container_Title   = 'Perform Validation on the Server'

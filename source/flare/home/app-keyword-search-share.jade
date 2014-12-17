@@ -1,0 +1,18 @@
+extends ../_layouts/flare_page.jade
+include mixins/application-mixins.jade
+
+block content
+	#application
+		#left-nav
+		// left-nav
+		#results
+			+flare-search-bar-input
+			+flare-results-save-clear
+			+flare-articles-list
+			+horizontal-rule
+			+copyright
+		// results
+		#right-nav
+			+share-div
+		// right-nav
+	// application

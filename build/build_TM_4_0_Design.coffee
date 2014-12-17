@@ -20,7 +20,7 @@ describe.only 'build TM_4_0_Design |', ->
   build_Js_Jade   = build_Folder.path_Combine('jade_js')
   build_Js_Coffee = build_Folder.path_Combine('coffee_js')
 
-  scss_files    = ['normalize.css', 'custom-style.scss']
+  scss_files    = ['app.scss'] #, 'custom-style.scss','custom-style-flare.scss','ie.scss', 'normalize.css', 'print,scss', 'screen.scss']
 
   coffee_Compiler = new Coffee_Compiler()
   io_Actions      = new IO_Actions()
@@ -37,12 +37,12 @@ describe.only 'build TM_4_0_Design |', ->
 
   it 'Compile scss files', (done)->
     scss_Files_In_Scss_Folder = (source_Scss.path_Combine(scss_file) for scss_file in scss_files)
-
+    console.log scss_Files_In_Scss_Folder
     new SCSS_Compiler().compile_Files_To scss_Files_In_Scss_Folder, build_Css,done
 
-
+  return
   it 'Compile Jade files', (done)->
-    @timeout(5000)
+    @timeout(20000)
     jade_Compiler.options.ignore_Folders_Containing.add('user', 'articles', 'home','libraries','learning-paths', 'style-guide', 'search')
     jade_Compiler.compile_Folder_To source_Jade, build_Js_Jade, ->
       done()
@@ -53,10 +53,10 @@ describe.only 'build TM_4_0_Design |', ->
         io_Actions.copy_File(js_File, js_File.replace(source_Coffee, build_Js_Coffee))
       done()
 
-  it 'Copy assets', (done)->
-    io_Actions.copy_Folder source_Assets, build_Assets, ->
-      io_Actions.copy_Folder source_Fonts, build_Fonts, ->
-        done()
+  #it 'Copy assets', (done)->
+  #  io_Actions.copy_Folder source_Assets, build_Assets, ->
+  #    io_Actions.copy_Folder source_Fonts, build_Fonts, ->
+  #      done()
 
   it 'Confirm files compiled/copied ok', (done)->
     for scss_file in scss_files
