@@ -37,6 +37,18 @@ nav {
   overflow-y: auto;
 }
 
+#loginwall {
+  -webkit-order: 7;
+  -webkit-flex: 100%;
+  overflow-y: auto;
+}
+
+#summary {
+  -webkit-order: 8;
+  -webkit-flex: 100%;
+  overflow-y: auto;
+}
+
 #left-nav {
   -webkit-order: 7;
   -webkit-flex: 100%;
@@ -47,7 +59,12 @@ nav {
 #results {
   -webkit-order: 9;
   -webkit-flex: 100%;
+  min-height: 70%;
   overflow-y: auto;
+}
+
+#right-nav:empty, #left-nav:empty {
+  display: none;
 }
 
 #right-nav {
@@ -87,7 +104,7 @@ nav {
 }
 
 #help-icon {
-  padding: 20px 0 0 50px;
+  padding: 20px 20px 0 0;
   -webkit-order: 3;
   -webkit-flex: 10%;
   text-align: right;
@@ -141,9 +158,35 @@ nav a:hover, nav a p:hover {
   width: 100%;
 }
 
-#directory-list .list-group {
-    display: none;
-  }
+#directory-list .list-group, #navigate-list .list-group {
+  display: none;
+  margin-bottom: 0;
+}
+
+#directory-list button, #navigate-list button {
+  display: block;
+  background-color: #f5f5f5;
+  text-align: left;
+  text-transform: none;
+  font-weight: normal !important;
+  color: #444444;
+  border: none;
+  padding-left: 15px;
+  margin-bottom: 0;
+}
+
+#technology > button {
+  text-transform: none;
+  text-align: left;
+  color: #444444;
+  background-color: #f5f5f5;
+  font-weight: normal !important;
+}
+
+.tabs-content .content {
+  padding: 20px;
+  padding-bottom: 0px;
+}
 
 /* ===== == = === 20em (320px) === = == ===== */
 
@@ -179,20 +222,36 @@ nav a:hover, nav a p:hover {
     max-height: 86%;
     flex-direction: row;
     -webkit-flex-wrap: nowrap;
-    -webkit-align-items: flex-start;
   }
 
   #logo {
     -webkit-flex: 24%;
   }
 
+  #left-nav:empty, #right-nav:empty {
+    display: block;
+  }
+
   #left-nav {
     -webkit-flex: 25%;
   }
 
+  #loginwall {
+    -webkit-order: 8;
+  }
+
+  #summary {
+    -webkit-order: 7;
+  }
+
+  #loginwall, #summary {
+    padding: 0 20px 20px 20px;
+  }
+
   #results {
-    order: 8;
+    -webkit-order: 8;
     -webkit-flex: 50%;
+    height: 100% !important;
   }
 
   #menu-icon, #help-icon {
@@ -241,24 +300,29 @@ nav a:hover, nav a p:hover {
     width: 33%;
   }
 
-  #directory-list button.button.dropdown {
+  #directory-list select {
     display: none;
   }
 
-  #directory-list .list-group {
+  #directory-list .list-group, #navigate-list .list-group {
     display: block;
   }
-}
 
-/* ===== == = === 68.75em (1100px) === = == ===== */
+  #directory-list button, #navigate-list button {
+    display: none;
+  }
 
-@media only screen and (min-width : 68.75em) {
+  .tabs-content .content {
+    padding: 40px;
+    padding-bottom: 0px;
+    padding-top: 20px;
+  }
 
-}
-
-/* ===== == = === 81.25em (1300px) === = == ===== */
-
-@media only screen and (min-width : 81.25em) {
+  #loginwall > * {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
 }
 
 .list-group table tr td {
