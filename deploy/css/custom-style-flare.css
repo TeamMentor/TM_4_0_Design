@@ -183,6 +183,25 @@ nav a:hover, nav a p:hover {
   font-weight: normal !important;
 }
 
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio] + label{
+  padding-left: 40px;
+  display: inline-block;
+  line-height: 10px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+input[type=radio]:checked + label {
+  background-position: 0 -15px;
+}
+label{
+  background-image: url('../assets/icons/radio.png');
+}
+
 .tabs-content .content {
   padding: 20px;
   padding-bottom: 0px;
