@@ -2,6 +2,21 @@ describe 'regression-sprint-1', ->                                              
   page = require('../API/QA-TM_4_0_Design').create(before,after)                                       # required import and get page object
   jade = page.jade_API
 
+  it 'Issue 88 - navigation page should not be accessible without a login', (done)->
+    check_Login_Request = (next)->
+      page.html (html,$)->
+        $('#features h3').html().assert_Is('It looks like the page you want to see needs a valid login')
+        0.wait ->
+          next()
+
+    jade.clear_Session ->
+      jade.page_User_Libraries -> check_Login_Request ->
+        jade.page_User_Library -> check_Login_Request ->
+          jade.page_User_Main -> check_Login_Request ->
+            jade.page_User_Queries -> check_Login_Request ->
+              jade.page_User_Graph 'CORS', -> check_Login_Request ->
+                done()
+
   it 'Issue 96 - Main Navigation "Login" link is not opening up the Login page', (done)->                   # name of current test
     jade.page_Home (html,$)->                                                                               # open the index page
       login_Link = link.attribs.href for link in $('.nav li a') when $(link).html()=='Login'                # extract the url from the link with 'Login' as text
@@ -67,3 +82,9 @@ describe 'regression-sprint-1', ->                                              
       page.click 'FORGOT YOUR PASSWORD?', (html,$)->
         $('h3').html().assert_Is("Forgot your password?")
         done();
+
+  it "Issue 129 - 'Need to login page' missing from current 'guest' pages", (done)->
+    jade.keys().assert_Contains('page_Login_Required')
+    page.open '/guest/login-required.html', (html,$)->
+      $('h3').html().assert_Is('It looks like the page you want to see needs a valid login')
+      done()

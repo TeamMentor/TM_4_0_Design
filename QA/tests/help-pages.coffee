@@ -7,7 +7,7 @@ describe 'help pages ', ->
 
   help_Pages = []
   #@timeout(60000)             # set unit test timeout to 60s
-  max             = 5         # number of pages to process
+  max             = 1         # number of pages to process
   takeScreenshots = false
 
   it 'find all help link', (done)->

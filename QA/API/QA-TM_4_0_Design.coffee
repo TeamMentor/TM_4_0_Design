@@ -1,13 +1,14 @@
 require 'fluentnode'
 require('../node_modules/nwr/src/extra_fluentnode.coffee')
 NodeWebKit_Service = require('nwr')
-Jade_API            = require('./Jade_API')
-
+Jade_API           = require('./Jade_API')
+Flare_API          = require('./Flare_API')
 class QA_TM_4_0_Design
 
   constructor: ()->
     @nodeWebKit  = new NodeWebKit_Service(57777)
     @jade_API    = new Jade_API(@)
+    @flare_API   = new Flare_API(@)
     nodeWebKit   = @nodeWebKit
     @tm_Server   = 'http://localhost:1337'
     @chrome      = null

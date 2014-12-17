@@ -1,0 +1,19 @@
+extends ../_layouts/flare_page
+include ../home/mixins/application-mixins
+include mixins/user-mixins
+
+block content
+	#application
+		#left-nav
+			+links_user_pages
+		// left-nav
+		#results
+			+user-details-heading
+			br
+			+user-details-display
+			br
+			+other-user-settings
+		// results
+		#right-nav
+		// right-nav
+	// application

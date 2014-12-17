@@ -133,6 +133,15 @@ describe 'jade-anonymous-users', ->
       # Same as "it 'Login', (done)->" , so we should also check if those fields are here
       done()
 
+  it "Login Required", (done)->
+    jade.page_Login_Required (html,$)->
+      page.chrome.url (url)->
+        url.assert_Contains('/guest/login-required.html')
+        $('h3').html().assert_Is('It looks like the page you want to see needs a valid login')
+        $('p').text().assert_Is('Please Login')
+        $('p a').attr().assert_Is({ href: '/guest/login.html' })
+        done()
+
   it 'Password Forgot', (done)->
     jade.page_Pwd_Forgot (html, $)->
       $('h3').html().assert_Is("Forgot your password?")
