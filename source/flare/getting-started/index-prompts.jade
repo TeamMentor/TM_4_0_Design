@@ -3,36 +3,26 @@ include mixins/getting-started-mixins.jade
 
 block content
 	#application
-		.row
-			.small-12.large-5.large-push-6.columns#loginwall
-				br
-				dl.tabs(data-tab='data-tab')
-					dd.active
-						a(href='#signup') Sign Up
-					// dd
-					dd
-						a(href='#login') Login
-					// dd
-				// dl-tabs
-				.tabs-content
-					#signup.content.active
-						br
-						.small-offset-1.small-10.large-offset-1.large-10.end.columns
-							+sign-up-form-prompts
-						// column
-					// sign-up-content
-					#login.content
-						.row
-							br
-							.small-offset-1.small-10.large-offset-1.large-10.end.columns
-								+login-form
-							// columns
-						// row
-					// login-content
-				// tabs-content
-			// column
-			.small-12.large-5.large-pull-6.columns#summary
-				+team-mentor-summary
-			// column
-		// row
+		#loginwall
+			br
+			dl.tabs(data-tab='data-tab')
+				dd.active
+					a(href='#signup') Sign Up
+				// dd
+				dd
+					a(href='#login') Login
+				// dd
+			// dl-tabs
+			.tabs-content
+				#signup.content.active
+					+sign-up-form-prompts
+				// sign-up-content
+				#login.content
+					+login-form
+				// login-content
+			// tabs-content
+		// loginwall
+		#summary
+			+team-mentor-summary
+		// summary
 	// application
