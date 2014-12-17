@@ -183,11 +183,11 @@ nav a:hover, nav a p:hover {
   font-weight: normal !important;
 }
 
-input[type=radio] {
+#filters input[type=radio] {
   display: none;
 }
 
-input[type=radio] + label{
+#filters input[type=radio] + label{
   margin-left: 20px;
   padding-left: 40px;
   display: inline-block;
@@ -196,23 +196,18 @@ input[type=radio] + label{
   cursor: pointer;
 }
 
-input[type=radio]:checked + label {
+#filters input[type=radio]:checked + label {
   background-position: 0 -15px;
 }
-label{
+#filters label{
   background-image: url('../assets/icons/radio.png');
 }
 
-.tabs-content .content {
-  padding: 20px;
-  padding-bottom: 0px;
-}
-
-input[type=checkbox] {
+#filters input[type=checkbox] {
   display:none;
 }
 
-input[type=checkbox] + label {
+#filters input[type=checkbox] + label {
   padding-left:40px;
   display:inline-block;
   line-height:10px;
@@ -220,11 +215,11 @@ input[type=checkbox] + label {
   cursor:pointer;
 }
 
-input[type=checkbox]:checked + label {
+#filters input[type=checkbox]:checked + label {
   background-position: 0 -15px;
 }
 
-label.checkbox {
+#filters label.checkbox {
   background-image:url('../assets/icons/tick.png');
 }
 
