@@ -83,6 +83,13 @@ describe 'regression-sprint-1', ->                                              
         $('h3').html().assert_Is("Forgot your password?")
         done();
 
+  it 'Issue 123-Terms and conditions link is available', (done)->
+    jade.page_Home (html, $) ->
+      footerDiv =  $('#footer').html()
+      footerDiv.assert_Not_Contains("Terms &amp; Conditions")
+      done();
+
+
   it "Issue 129 - 'Need to login page' missing from current 'guest' pages", (done)->
     jade.keys().assert_Contains('page_Login_Required')
     page.open '/guest/login-required.html', (html,$)->
