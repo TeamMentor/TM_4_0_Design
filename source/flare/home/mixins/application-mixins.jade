@@ -193,7 +193,7 @@ mixin flare-filters-div
 			dl.accordion(data-accordion='data-accordion')
 				dd.accordion-navigation
 					a(href='#technology') Technnology
-					#technology.content.active
+					#technology.content
 						button.button.dropdown(href='#', data-dropdown='technology-button', aria-controls='technology-button', aria-expanded='false') Select a technology
 						br
 						ul#technology-button.f-dropdown(data-dropdown-content='', aria-hidden='true', tabindex='-1')
@@ -250,25 +250,22 @@ mixin flare-filters-div
 						table
 							tr
 								td
-									input#type-checkbox1(type='checkbox')
-								td
-									label(for='type-checkbox1') Checkbox 1
-								td
-									span.badge 14
-							// tr
-							tr
-								td
-									input#type-checkbox2(type='checkbox')
-								td
-									label(for='type-checkbox2') Checkbox 2
+									input#type1(type='checkbox', name='type', value='Type 1')
+									label.checkbox(for='type1') Type 1
 								td
 									span.badge 14
 							// tr
 							tr
 								td
-									input#type-checkbox3(type='checkbox')
+									input#type2(type='checkbox', name='type', value='Type 2')
+									label.checkbox(for='type2') Type 2
 								td
-									label(for='type-checkbox3') Checkbox 3
+									span.badge 14
+							// tr
+							tr
+								td
+									input#type3(type='checkbox', name='type', value='Type 3')
+									label.checkbox(for='type3') Type 3
 								td
 									span.badge 14
 							// tr
@@ -281,25 +278,22 @@ mixin flare-filters-div
 						table
 							tr
 								td
-									input#phase-checkbox1(type='checkbox')
-								td
-									label(for='phase-checkbox1') Checkbox 1
-								td
-									span.badge 14
-							// tr
-							tr
-								td
-									input#phase-checkbox2(type='checkbox')
-								td
-									label(for='phase-checkbox2') Checkbox 2
+									input#phase(type='checkbox', name='phase', value='Phase 1')
+									label.checkbox(for='phase') Phase 1
 								td
 									span.badge 14
 							// tr
 							tr
 								td
-									input#phase-checkbox3(type='checkbox')
+									input#phase(type='checkbox', name='phase', value='Phase 2')
+									label.checkbox(for='phase') Phase 2
 								td
-									label(for='phase-checkbox3') Checkbox 3
+									span.badge 14
+							// tr
+							tr
+								td
+									input#phase(type='checkbox', name='phase', value='Phase 3')
+									label.checkbox(for='phase') Phase 3
 								td
 									span.badge 14
 							// tr
@@ -312,25 +306,22 @@ mixin flare-filters-div
 						table
 							tr
 								td
-									input#category-checkbox1(type='checkbox')
-								td
-									label(for='category-checkbox1') Checkbox 1
-								td
-									span.badge 14
-							// tr
-							tr
-								td
-									input#category-checkbox2(type='checkbox')
-								td
-									label(for='category-checkbox2') Checkbox 2
+									input#category(type='checkbox', name='category', value='Category 1')
+									label.checkbox(for='category') Category 1
 								td
 									span.badge 14
 							// tr
 							tr
 								td
-									input#category-checkbox3(type='checkbox')
+									input#category(type='checkbox', name='category', value='Category 2')
+									label.checkbox(for='category') Category 2
 								td
-									label(for='category-checkbox3') Checkbox 3
+									span.badge 14
+							// tr
+							tr
+								td
+									input#category(type='checkbox', name='category', value='Category 3')
+									label.checkbox(for='category') Category 3
 								td
 									span.badge 14
 							// tr

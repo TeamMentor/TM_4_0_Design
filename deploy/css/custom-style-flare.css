@@ -188,6 +188,7 @@ input[type=radio] {
 }
 
 input[type=radio] + label{
+  margin-left: 20px;
   padding-left: 40px;
   display: inline-block;
   line-height: 10px;
@@ -205,6 +206,26 @@ label{
 .tabs-content .content {
   padding: 20px;
   padding-bottom: 0px;
+}
+
+input[type=checkbox] {
+  display:none;
+}
+
+input[type=checkbox] + label {
+  padding-left:40px;
+  display:inline-block;
+  line-height:10px;
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+
+input[type=checkbox]:checked + label {
+  background-position: 0 -15px;
+}
+
+label.checkbox {
+  background-image:url('../assets/icons/tick.png');
 }
 
 /* ===== == = === 20em (320px) === = == ===== */
@@ -359,7 +380,7 @@ label{
   border: transparent;
 }
 
-#summary table tr.even, #summary table tr.alt, #summary table tr:nth-of-type(even) {
+#summary table tr.even, #summary table tr.alt, #summary table tr:nth-of-type(even), #filters table tr.even, #filters table tr.alt, #filters table tr:nth-of-type(even) {
   background: #FFFFFF !important;
 }
 
