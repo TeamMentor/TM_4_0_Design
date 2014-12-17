@@ -1,8 +1,21 @@
 extends _layouts/flare_page_not_logged_in.jade
-include getting-started/mixins/getting-started-mixins.jade
+
 block content
-   #application
-      .row
-         .small-12.large-5.large-push-6.columns
-            h1 All links
-            +jade-all-pages-links
+	#application
+		#left-nav
+		// left-nav
+		#results
+			h3 TEAM Mentor 4.0 Design
+			p This is a staging site for the TEAM Mentor 4.0 design.
+			+horizontal-rule
+			h4 Current pages:
+			+flare-all-pages-links
+			+horizontal-rule
+			p Git repo with source files (auto synced with this Azure site)
+			+git-repo-link
+			br
+			br
+		// results
+		#right-nav
+		// right-nav
+	// application
