@@ -1,7 +1,8 @@
 fs              = require('fs')
 path            = require('path')
-Config          = require('../Config')
 request         = require('request')
+Config          = require('../Config')
+auth            = require('../middleware/auth')
 Jade_Service    = require('../services/Jade-Service')
 GitHub_Service  = require('../services/GitHub-Service')
 Graph_Service  = require('../services/Graph-Service')
@@ -140,16 +141,20 @@ class SearchController
         recentArticles_Cache.unshift ({ guid: guid , title:title})
         @res.redirect('https://tmdev01-uno.teammentor.net/'+guid)
 
+
+
 SearchController.registerRoutes = (app) ->
     #app.get('/search'                 , (req, res) -> new SearchController(req, res, app.config).showSearch())
     #app.get('/search.json'            , (req, res) -> new SearchController(req, res, app.config).showSearchData())
     #app.get('/search/:file'           , (req, res) -> new SearchController(req, res, app.config).showSearch())
-    app.get('/search'                  , (req, res) -> new SearchController(req, res, app.config).search())
-    app.get('/graph/:queryId'         , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())    
-    app.get('/graph/:queryId/:filters', (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())    
+    #app.get('/search'                  , (req, res) -> new SearchController(req, res, app.config).search())
+
+    app.get('/graph/:queryId'          , ((req,res,next) -> auth.checkAuth(req, res,next, app.config)) ,  (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
+    app.get('/graph/:queryId/:filters' , ((req,res,next) -> auth.checkAuth(req, res,next, app.config)) ,  (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
     
-    app.get '/user/main.html'  , (req,res) -> new SearchController(req, res, app.config).showMainAppView()
-    app.get '/article/view/:guid/:title', (req,res) -> new SearchController(req, res, app.config).showArticle()
+    app.get '/user/main.html'           , ((req,res,next) -> auth.checkAuth(req, res,next, app.config)) , (req,res) -> new SearchController(req, res, app.config).showMainAppView()
+
+    app.get '/article/view/:guid/:title', ((req,res,next) -> auth.checkAuth(req, res,next, app.config)) , (req,res) -> new SearchController(req, res, app.config).showArticle()
     #app.get('/search' , (req, res) -> res.send('a'))
                 
 module.exports = SearchController

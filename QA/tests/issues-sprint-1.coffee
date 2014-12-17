@@ -3,25 +3,6 @@ describe 'issues-sprint-1', ->                                                  
   jade = page.jade_API
 
 
-  it 'Issue 88 - navigation page should not be accessible without a login', (done)->
-
-    check_Login_Request = (next)->
-      page.html (html,$)->
-        console.log $('#features h3').html()
-        assert_Is_Null $('#features h3').html()  # we should be redirected to the login page
-        0.wait ->
-          next()
-
-        #.assert_Is('It looks like the page you want to see needs a valid login')    # confirms that we are on the 'you need to login page'
-
-    jade.clear_Session ->
-      jade.page_User_Libraries -> check_Login_Request ->
-        jade.page_User_Library -> check_Login_Request ->
-          jade.page_User_Main -> check_Login_Request ->
-            jade.page_User_Queries -> check_Login_Request ->
-              jade.page_User_Graph 'CORS', -> check_Login_Request ->
-                done()
-
   it 'Issue 105 - New users can be created with Weak Passwords', (done)->
     assert_Weak_Pwd_Fail = (password, expectFail, next)->
       randomUser  = 'abc_'.add_5_Random_Letters();

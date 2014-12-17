@@ -14,7 +14,7 @@ function checkAuth(req, res, next, config)
     if (loginEnabled && !req.session.username) 
     {        
         res.status(403) 
-           .send(new Jade_Service(config).renderJadeFile('/source/html/landing-pages/need-login.jade'));        
+           .send(new Jade_Service(config).renderJadeFile('/source/jade/guest/login-required.jade'));
     }
     else 
     {
