@@ -1,7 +1,7 @@
 QA_TM_Design = require '../API/QA-TM_4_0_Design'
 
 # this test suite contains all  all pages that we currently need to support for logged in  users
-describe 'pages-logged-in-users', ->
+describe.only 'pages-logged-in-users', ->
   page = QA_TM_Design.create(before, after);
   jade = page.jade_API;
 
@@ -18,7 +18,8 @@ describe 'pages-logged-in-users', ->
       {                                                                     # create a new object
         href : link.attribs.href,                                           # with the href
         value: $(link).html()                                               # and the value (which is the innerHTML)
-      }                                                                     # in coffee-script the last value is the default return value
+      }
+                                                                        # in coffee-script the last value is the default return value
 
     checkValues = (index, expected_Href,expected_Value ) ->                 # create a helper function to check for expected values
       linksData[index].href.assert_Is(expected_Href)

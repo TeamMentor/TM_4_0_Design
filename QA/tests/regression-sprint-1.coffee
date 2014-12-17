@@ -1,8 +1,10 @@
-describe 'regression-sprint-1', ->                                                                         # name of this suite of tests (should match the file name)
+describe.only 'regression-sprint-1', ->                                                                         # name of this suite of tests (should match the file name)
   page = require('../API/QA-TM_4_0_Design').create(before,after)                                       # required import and get page object
   jade = page.jade_API
 
   it 'Issue 96 - Main Navigation "Login" link is not opening up the Login page', (done)->                   # name of current test
+
+    @timeout(5000)
     jade.page_Home (html,$)->                                                                               # open the index page
       login_Link = link.attribs.href for link in $('.nav li a') when $(link).html()=='Login'                # extract the url from the link with 'Login' as text
       login_Link.assert_Is_Not('/deploy/html/getting-started/index.html')                                   # checks that the link is the wrong one
@@ -60,3 +62,9 @@ describe 'regression-sprint-1', ->                                              
       page.click 'FORGOT YOUR PASSWORD?', (html,$)->
         $('h3').html().assert_Is("Forgot your password?")
         done();
+
+  it 'Issue 123-Terms and conditions link is available', (done)->
+    jade.page_Home (html, $) ->
+      footerDiv =  $('#footer').html()
+      footerDiv.assert_Not_Contains("Terms &amp; Conditions")
+      done();
