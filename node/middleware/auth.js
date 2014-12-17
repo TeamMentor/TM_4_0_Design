@@ -28,7 +28,7 @@ function mappedAuth(req)
     if(req && req.session)
         data =  {
                     username  : req.session.username,
-                    loggedIn  : (req.session.username !== undefined),
+                    loggedIn  : (req.session.username !== undefined)
                 };    
     return data;
 }

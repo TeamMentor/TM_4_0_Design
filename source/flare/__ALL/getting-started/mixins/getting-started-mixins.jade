@@ -1,6 +1,6 @@
 //- Flare Login Form
 mixin login-form
-	include:md ../../../content/teamMentor/getting-started/login-form.md
+	include:md ../../content/teamMentor/getting-started/login-form.md
 	form(role='form' method='post' action='/flare/home/main-app-view')
 		.row
 			.small-12.large-12.columns
@@ -28,7 +28,7 @@ mixin login-form
 
 //- Flare Sign Up Form
 mixin sign-up-form
-	include:md ../../../content/teamMentor/getting-started/sign-up-form.md
+	include:md ../../content/teamMentor/getting-started/sign-up-form.md
 	form(action='../home/main-app-view')
 		.row
 			.small-12.large-12.columns
@@ -47,7 +47,7 @@ mixin sign-up-form
 		// row
 		.row
 			.small-12.large-12.columns
-				include:md ../../../content/teamMentor/getting-started/agree-to-toc.md
+				include:md ../../content/teamMentor/getting-started/agree-to-toc.md
 			// columns
 		// row
 		.row
@@ -59,8 +59,8 @@ mixin sign-up-form
 
 //- Flare Sign Up Form Prompts
 mixin sign-up-form-prompts
-	include:md ../../../content/teamMentor/getting-started/sign-up-form.md
-	form(action='../home/main-app-view')
+	include:md ../../content/teamMentor/getting-started/sign-up-form.md
+	form(action='../../home/main-app-view')
 		.row
 			.small-12.large-12.columns
 				+username-input
@@ -81,7 +81,7 @@ mixin sign-up-form-prompts
 		// row
 		.row
 			.small-12.large-12.columns
-				include:md ../../../content/teamMentor/getting-started/agree-to-toc.md
+				include:md ../../content/teamMentor/getting-started/agree-to-toc.md
 			// columns
 		// row
 		.row
@@ -93,7 +93,7 @@ mixin sign-up-form-prompts
 
 //- Flare Forgot Password Form
 mixin flare-forgot-password-form
-	include:md ../../../content/teamMentor/getting-started/forgot-password-form.md
+	include:md ../../content/teamMentor/getting-started/forgot-password-form.md
 	form(action='index-validation')
 		.row
 			.small-12.large-12.columns
@@ -109,20 +109,20 @@ mixin flare-forgot-password-form
 
 //- Flare Team Mentor Summary
 mixin team-mentor-summary
-	include:md ../../../content/teamMentor/getting-started/login-wall-summary.md
+	include:md ../../content/teamMentor/getting-started/login-wall-summary.md
 	table
 		tr
 			td.center.icons-green
 				i.fi-clipboard-pencil
 			td
-				include:md ../../../../source/content/teamMentor/landing-pages/selling-point-1.md
+				include:md ../../content/teamMentor/landing-pages/selling-point-1.md
 		tr
 			td.center.icons-green
 				i.fi-arrows-in
 			td
-				include:md ../../../../source/content/teamMentor/landing-pages/selling-point-2.md
+				include:md ../../content/teamMentor/landing-pages/selling-point-2.md
 		tr
 			td.center.icons-green
 				i.fi-checkbox
 			td
-				include:md ../../../../source/content/teamMentor/landing-pages/selling-point-3.md
+				include:md ../../content/teamMentor/landing-pages/selling-point-3.md

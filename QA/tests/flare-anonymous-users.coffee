@@ -4,10 +4,10 @@ require('../node_modules/nwr/src/extra_fluentnode')
 QA_TM_Design = require '../API/QA-TM_4_0_Design'
 
 describe 'flare-anonymous-users', ->
-  page = QA_TM_Design.create(before, after);
-  #jade = page.jade_API;
+  page  = QA_TM_Design.create(before, after);
+  flare = page.flare_API;
 
-  #before (done)-> jade.clear_Session done                                   # ensure we are anonymous
+  before (done)-> flare.clear_Session done                                   # ensure we are anonymous
 
   @timeout(4000)
 
@@ -17,8 +17,8 @@ describe 'flare-anonymous-users', ->
 #      check_Top_Right_Navigation_Bar($)
       done()
 
-  it '/',(done)->
-    page.open '/flare', (html,$)->
+  it 'All',(done)->
+    flare.page_All (html,$)->
       console.log html
       done()
 

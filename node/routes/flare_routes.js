@@ -22,19 +22,19 @@ module.exports = function (app)
 
     // special opitimized views (pre-compiled)
 
-    app.get('/:version/articles/:page'        , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/articles/' + req.params.page + '.jade'));});
-    app.get('/:version/error-pages/:page'     , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/error-pages/' + req.params.page + '.jade'));});
-    app.get('/:version/getting-started/:page' , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/getting-started/' + req.params.page + '.jade'));});
-    app.get('/:version/help/:page'            , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/help/' + req.params.page + '.jade'));});
-    app.get('/:version/home/:page'            , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/home/' + req.params.page + '.jade'));});
-    app.get('/:version/landing-pages/:page'   , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/landing-pages/' + req.params.page + '.jade'));});
-    app.get('/:version/learning-paths/:page'  , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/learning-paths/' + req.params.page + '.jade'));});
-    app.get('/:version/new-user-onboard/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/new-user-onboard/' + req.params.page + '.jade'));});
-    app.get('/:version/style-guide/:page'     , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/style-guide/' + req.params.page + '.jade'));});
-    app.get('/:version/user/:page'            , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/user/' + req.params.page + '.jade'));});
-    app.get('/:version/default'               , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/default.jade'));});
-    app.get('/flare/index'                    , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/flare/index.jade'));});
-    app.get('/flare'                          , function (req, res)  { res.redirect('/flare/index') });
+    app.get('/:version/articles/:page'        , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/__ALL/articles/' + req.params.page + '.jade'));});
+    app.get('/:version/error-pages/:page'     , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/__ALL/error-pages/' + req.params.page + '.jade'));});
+    app.get('/:version/getting-started/:page' , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/__ALL/getting-started/' + req.params.page + '.jade'));});
+    app.get('/:version/help/:page'            , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/__ALL/help/' + req.params.page + '.jade'));});
+    app.get('/:version/home/:page'            , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/__ALL/home/' + req.params.page + '.jade'));});
+    app.get('/:version/landing-pages/:page'   , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/__ALL/landing-pages/' + req.params.page + '.jade'));});
+    app.get('/:version/learning-paths/:page'  , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/__ALL/learning-paths/' + req.params.page + '.jade'));});
+    app.get('/:version/new-user-onboard/:page', function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/__ALL/new-user-onboard/' + req.params.page + '.jade'));});
+    app.get('/:version/style-guide/:page'     , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/__ALL/style-guide/' + req.params.page + '.jade'));});
+    app.get('/:version/user/:page'            , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/__ALL/user/' + req.params.page + '.jade'));});
+    app.get('/:version/default'               , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/' + req.params.version + '/__ALL/default.jade'));});
+    app.get('/flare/all'                      , function (req, res)  { res.send(preCompiler.renderJadeFile('/source/flare/__ALL/index.jade'));});
+    app.get('/flare'                          , function (req, res)  { res.redirect('/flare/all') });
     app.get('/flare/main-app-view'            , function (req, res)  { res.redirect('/flare/index') });
 
 };
