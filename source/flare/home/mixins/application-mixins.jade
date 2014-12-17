@@ -194,33 +194,53 @@ mixin flare-filters-div
 				dd.accordion-navigation
 					a(href='#technology') Technnology
 					#technology.content.active
-						table
-							tr
-								td
-									input#tech-checkbox1(type='checkbox')
-								td
-									label(for='tech-checkbox1') Checkbox 1
-								td
-									span.badge 14
-							// tr
-							tr
-								td
-									input#tech-checkbox2(type='checkbox')
-								td
-									label(for='tech-checkbox2') Checkbox 2
-								td
-									span.badge 14
-							// tr
-
-							tr
-								td
-									input#tech-checkbox3(type='checkbox')
-								td
-									label(for='tech-checkbox3') Checkbox 3
-								td
-									span.badge 14
-							// tr
-						// table
+						button.button.dropdown(href='#', data-dropdown='directory-button', aria-controls='directory-button', aria-expanded='false') Select a technology
+						br
+						ul#directory-button.f-dropdown(data-dropdown-content='', aria-hidden='true', tabindex='-1')
+						li
+							table
+								tr
+									td
+										input#technology1(type='radio', name='technology', value='Technology 1')
+										label(for='technology1') Technology 1
+									td
+										span.round.label 14
+								// tr
+							// table
+						// li
+						li
+							table
+								tr
+									td
+										input#technology2(type='radio', name='technology', value='Technology 2')
+										label(for='technology2') Technology 2
+									td
+										span.round.label 14
+								// tr
+							// table
+						// li
+						li
+							table
+								tr
+									td
+										input#technology3(type='radio', name='technology', value='Technology 3')
+										label(for='technology3') Technology 3
+									td
+										span.round.label 14
+								// tr
+							// table
+						// li
+						li
+							table
+								tr
+									td
+										input#technology4(type='radio', name='technology', value='Technology 4')
+										label(for='technology4') Technology 4
+									td
+										span.round.label 14
+								// tr
+							// table
+						// li
 					// technology-content
 				// accordian-navigation
 

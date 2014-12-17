@@ -241,7 +241,7 @@ nav a:hover, nav a p:hover {
     width: 33%;
   }
 
-  #directory-list select {
+  #directory-list button.button.dropdown {
     display: none;
   }
 
@@ -267,7 +267,7 @@ nav a:hover, nav a p:hover {
   height: auto;
 }
 
-.list-group table {
+.list-group table, #filters table {
   margin-bottom: 0;
   background: transparent;
 }
