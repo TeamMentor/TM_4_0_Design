@@ -5,7 +5,7 @@ describe 'regression-sprint-1', ->                                              
   it 'Issue 88 - navigation page should not be accessible without a login', (done)->
     check_Login_Request = (next)->
       page.html (html,$)->
-        $('#features h3').html().assert_Is('It looks like the page you want to see needs a valid login')
+        $('h3').html().assert_Is('It looks like the page you want to see needs a valid login')
         0.wait ->
           next()
 
@@ -65,7 +65,7 @@ describe 'regression-sprint-1', ->                                              
   it 'Issue 118 - Clicking on TM logo while logged in should not bring back the main screen', (done)->
     jade.page_Home ->
       jade.login_As_QA (html,$)->
-        $($('.title-area a').get(1)).attr().href.assert_Is('/user/main.html')
+        $($('.title-area a').get(0)).attr().href.assert_Is('/user/main.html')
         $('.title-area a img').attr().assert_Is { src: '/static/assets/logos/tm-logo.jpg', alt: 'TEAM Mentor', width: '200px' }
         done()
 
@@ -77,18 +77,17 @@ describe 'regression-sprint-1', ->                                              
           $('h3').html().assert_Is("Login")                                                # confirm that we are on the login page
           done();
 
-  it 'Issue 119 - Forgot password page is blank', (done)->
-    jade.page_Login ->
-      page.click 'FORGOT YOUR PASSWORD?', (html,$)->
-        $('h3').html().assert_Is("Forgot your password?")
-        done();
-
   it 'Issue 123-Terms and conditions link is available', (done)->
     jade.page_Home (html, $) ->
       footerDiv =  $('#footer').html()
       footerDiv.assert_Not_Contains("Terms &amp; Conditions")
       done();
 
+  it 'Issue 124 - Forgot password page is blank', (done)->
+    jade.page_Login ->
+      page.click 'FORGOT YOUR PASSWORD?', (html,$)->
+        $('h3').html().assert_Is("Forgot your password?")
+        done();
 
   it "Issue 129 - 'Need to login page' missing from current 'guest' pages", (done)->
     jade.keys().assert_Contains('page_Login_Required')
