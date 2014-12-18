@@ -2,17 +2,27 @@ extends ../_layouts/page_home.jade
 include ../_mixins/view-blocks
 
 block content
-    #application.lge-container
-      .row
-        .column-3
-          h3
-            div#links-libraries
-                +links-libraries
-        .column-9
-          .column-4            
-            .list-group
-                div#links-library
-                  +links-library                     
-          .column-4              
-          .column-4
-                 
+	#application
+		.row
+			.col-3
+				.lge-container
+					h3
+						div#links-libraries
+							+links-libraries
+				// lge-container
+			// column
+			.col-6
+				.lge-container
+					.list-group
+						div#links-library
+							+links-library
+					// list-group
+				// lge-container
+			// column
+			.col-3
+				.lge-container
+					br
+				// lge-container
+			// column
+		// row
+	// application

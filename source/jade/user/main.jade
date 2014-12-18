@@ -4,19 +4,25 @@ include ../_mixins/search-mixins
 block content
     #application
       .row
-        .column-3
+        .col-3
           .lge-container
             br
-
-        .column-6
+          // lge-container
+        // column
+        .col-6
           .lge-container
             +search-bar-input
             br
             br
             br
             +main-app-view
-
-        .column-3
+          // lge-container
+        // column
+        .col-3
           .lge-container
             //+filters-div
             //+save-div
+          // lge-container
+        // column
+      // row
+    // application
