@@ -3,19 +3,27 @@ include ../_mixins/links.jade
 
 .fixed
 	nav.top-bar(role='navigation', data-topbar='')
-		#team-mentor-navigation
+		#customer-navigation
 			ul.title-area
-				li.name
+				li
 					a(href='#')
-						+image-teammentor-logo__default
+						+image-security-innovation-logo
 				// li-name
 			// ul-title-area
+		// customer-navigation
+		.clearfix
+		#team-mentor-navigation
+			ul.title-area
+				li
+					a(href='customer-main-app-view')
+						+image-teammentor-logo__default
+				// li
+			// ul.left
 			section.top-bar-section
-				// Right Nav Section
 				ul.right.jade-icons
 					+links-navbar__home
 				// ul-right
 			// section
-		// team-mentor-navigation
+		// teammentor-navigation
 	// nav
 // fixed

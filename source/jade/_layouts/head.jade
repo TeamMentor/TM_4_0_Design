@@ -1,12 +1,12 @@
 include ../_mixins/globals
 
-head   
+head
     meta(charset    ="utf-8"                                                                     )
     meta(http-equiv ="X-UA-Compatible"  content="IE=edge"                                        )
     meta(name       ="viewport"         content="width=device-width, initial-scale=1"            )
     meta(name       ="description"      content=""                                               )
     meta(name       ="author"           content=""                                               )
-    
+
     link(rel="icon" sizes="57x57"       href="/static/assets/favicons/apple-touch-icon-57x57.png"              )
     link(rel="icon" sizes="114x114"     href="/static/assets/favicons/apple-touch-icon-114x114.png"            )
     link(rel="icon" sizes="72x72"       href="/static/assets/favicons/apple-touch-icon-72x72.png"              )
@@ -24,15 +24,15 @@ head
     link(rel="icon" sizes="114x114"     href="/static/assets/favicons/apple-touch-icon-114x114.png"            )
     link(rel="icon" sizes="114x114"     href="/static/assets/favicons/apple-touch-icon-114x114.png"            )
     link(rel="icon" sizes="114x114"     href="/static/assets/favicons/apple-touch-icon-114x114.png"            )
-    
+
     title #{head_title}
-    
+
     // Normalize
     link(href="/static/css/normalize.css" rel="stylesheet")
 
     // Custom Styles
     link(href="/static/css/custom-style.css" rel="stylesheet")
-    
+
     //weird CSS fix to handle Chrome prob when <form> exists
     style
         |.pull-right { float  : right !important; }
