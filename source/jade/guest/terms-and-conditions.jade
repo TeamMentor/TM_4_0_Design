@@ -1,11 +1,22 @@
 extends ../_layouts/page_landing
 include ../_mixins/landing-page-mixins
-block content  
+block content
 	#application
 		.row
-			.column-3
+			.col-3
 				.lge-container
 					br
-			.column-6
+				// lge-container
+			// column
+			.col-6
 				.lge-container
 					include:md ../../content/terms-and-conditions.md
+				// lge-container
+			// column
+			.col-3
+				.lge-container
+					br
+				// lge-container
+			// column
+		// row
+	// application

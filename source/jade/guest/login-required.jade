@@ -1,12 +1,23 @@
 extends ../_layouts/page_landing.jade
 block content
-
-    #features
-      .container
-        h3.text-center.grey It looks like the page you want to see needs a valid login
-        br
-        .row
-          .column-offset-3.column-12
-            :markdown
-                Please [Login](/guest/login.html)
-            //or ***Create an Accout***
+	#application
+		.row
+			.col-3
+				.lge-container
+					br
+				// lge-container
+			// column
+			.col-6
+				.lge-container
+					h3 It looks like the page you want to see needs a valid login
+					:markdown
+						Please [Login](/guest/login.html)
+				// lge-container
+			// column
+			.col-3
+				.lge-container
+					br
+				// lge-container
+			// column
+		// row
+	// application

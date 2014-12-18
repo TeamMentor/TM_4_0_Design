@@ -1,10 +1,19 @@
 extends ../_layouts/page_landing
 include ../_mixins/user-mixins
 block content
-   #application
-      .row
-         .column-offset-1.column-5
-            .lge-container
-               +alert-sign-up
-               +sign-up-form
-               br
+	#application
+		.row
+			.col-offset-1.col-5
+				.lge-container
+					+alert-sign-up
+					+sign-up-form
+					br
+				// lge-container
+			// column
+			.col-5
+				.lge-container
+					+team-mentor-summary
+				// lge-container
+			// column
+		// row
+	// application
