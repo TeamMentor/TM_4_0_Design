@@ -20,7 +20,7 @@ describe 'jade-anonymous-users', ->
       done()
 
   check_Top_Right_Navigation_Bar = ($)->                                    # confirm that all anonymous pages have the same top level menu
-    navBarLinks = $('.nav li a')                                            # get all top right links using a css selector
+    navBarLinks = $('.top-bar-section li a')                                            # get all top right links using a css selector
     navBarLinks.length.assert_Is(6)                                         # there should be 6 links
     linksData = for link in navBarLinks                                     # for each link in navBarLinks
       {                                                                     # create a new object
@@ -46,7 +46,6 @@ describe 'jade-anonymous-users', ->
     $('#call-to-action button').html()         .assert_Is('See for yourself'                     )
 
     $('#footer img'       ).get(0).attribs.src .assert_Is('/static/assets/logos/si-logo.png'     )
-    $('#footer a'         ).html()             .assert_Is('Terms &amp; Conditions'               )
 
 
   it '/',(done)->
@@ -56,9 +55,10 @@ describe 'jade-anonymous-users', ->
       $('#usp a'     ).get(0).attribs.href       .assert_Is('/guest/sign-up.html')
       $('#usp button').html()                    .assert_Is('Start your free trial today')
       $('#reasons h2').html()                    .assert_Is('With TEAM Mentor, you can...')
-      $('#reasons h4')[0].children[0].data       .assert_Is('FIX vulnerabilities quicker than ever before with TEAM Mentor\'s seamless integration into a developer\'s IDE and daily workflow')
-      $('#reasons h4')[1].children[0].data       .assert_Is('REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified')
-      $('#reasons h4')[2].children[0].data       .assert_Is('EXPAND the development team\'s knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization\'s security policies and coding best practices')
+
+      $($('#reasons h4 p').get(0)).html()       .assert_Is('FIX vulnerabilities quicker than ever before with TEAM Mentor&apos;s seamless integration into a developer&apos;s IDE and daily workflow.')
+      $($('#reasons h4 p').get(1)).html()       .assert_Is('REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified.')
+      $($('#reasons h4 p').get(2)).html()       .assert_Is('EXPAND the development team&apos;s knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization&apos;s security policies and coding best practices.')
 
       $('#clients h2').html()                    .assert_Is('Our clients love us (and we think you will too!)')
       clientImages = $('#clients img')
@@ -115,7 +115,7 @@ describe 'jade-anonymous-users', ->
   it 'Login', (done)->
     jade.page_Login (html,$)->
       $('h3').html().assert_Is("Login")
-      $('p' ).html().assert_Is("Already have an account? Sign in here.")
+      $('p' ).html().assert_Is("Returning customer? Please log in to access TEAM Mentor.")
       $.html('#new-user-username').assert_Contains('name="username"')
       $.html('#new-user-password').assert_Contains('name="password"')
       $('#btn-login').html().assert_Is('Login')
@@ -129,7 +129,7 @@ describe 'jade-anonymous-users', ->
     jade.page_Login_Fail (html, $)->
       $('.alert').html().assert_Is('Login failed')
       $('h3').html().assert_Is("Login")
-      $('p' ).html().assert_Is("Already have an account? Sign in here.")
+      $('p' ).html().assert_Is("Returning customer? Please log in to access TEAM Mentor.")
       # Same as "it 'Login', (done)->" , so we should also check if those fields are here
       done()
 
@@ -154,14 +154,14 @@ describe 'jade-anonymous-users', ->
 
   it 'Password Sent', (done)->
     jade.page_Pwd_Sent (html,$)->
-      $('h3').html().assert_Is("Ok, Done")
+      $('h3').html().assert_Is("Done :)")
       $('p' ).html().assert_Is("We&apos;ve sent you an email with instructions for resetting your password.")
       done()
 
   it 'Sign Up', (done) ->
     jade.page_Sign_Up (html,$)->
       $('h3'                                  ).html().assert_Is("Sign Up")
-      $('p'                                   ).html().assert_Is("Complete this form and get access to the worlds largest repository of secure software development knowledge.")
+      $('p'                                   ).html().assert_Is("Create an account and get access to the world&apos;s largest repository of secure software development knowledge.")
 
       $('form'                                ).attr().assert_Is({ id: 'sign-up-form', role: 'form' , method:'POST', action: '/user/sign-up' })
       $('label[for=new-user-username]'        ).html().assert_Is('Username')
@@ -169,10 +169,10 @@ describe 'jade-anonymous-users', ->
       $('label[for=new-user-confirm-password]').html().assert_Is('Confirm Password')
       $('label[for=new-user-email]'           ).html().assert_Is('Email Address')
 
-      $('input[id=new-user-username]'         ).attr().assert_Is({ id: 'new-user-username'        , name: 'username'        , type: 'username', placeholder: 'Username'        , class: 'form-control' })
+      $('input[id=new-user-username]'         ).attr().assert_Is({ id: 'new-user-username'        , name: 'username'        , type: 'text'    , placeholder: 'Username'        , class: 'form-control' })
       $('input[id=new-user-password]'         ).attr().assert_Is({ id: 'new-user-password'        , name: 'password'        , type: 'password', placeholder: 'Password'        , class: 'form-control' })
       $('input[id=new-user-confirm-password]' ).attr().assert_Is({ id: 'new-user-confirm-password', name: 'password-confirm', type: 'password', placeholder: 'Confirm Password', class: 'form-control' })
-      $('input[id=new-user-email]'            ).attr().assert_Is({ id: 'new-user-email'           , name: 'email'           , type: 'email', placeholder: 'Email Address'   , class: 'form-control' })
+      $('input[id=new-user-email]'            ).attr().assert_Is({ id: 'new-user-email'           , name: 'email'           , type: 'email'   , placeholder: 'Email Address'   , class: 'form-control' })
       $('button#btn-sign-up'                  ).html().assert_Is('Sign Up')
       $('button#btn-sign-up'                  ).attr().assert_Is({ id:'btn-sign-up', type:'submit'})
       done()
