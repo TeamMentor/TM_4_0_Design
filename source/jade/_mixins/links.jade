@@ -8,7 +8,7 @@
 - var link_article_new_window       = articles + '/article-new-window-view.html'
 - var link_app_keyword_search       = home     + '/app-keyword-search.html'
 - var link_fundamentals_of_security = articles + '/fundamentals-of-security.html'
-            
+
 mixin links-navbar__landing-page
     :markdown
         * [About](/guest/about.html)
@@ -17,19 +17,17 @@ mixin links-navbar__landing-page
         * [|](#)
         * [Sign Up](/guest/sign-up.html)
         * [Login](/guest/login.html)
-  
+
 mixin links-navbar__home
     :markdown
         * [![Navigate](/static/assets/icons/navigate.png)](/library/Uno)
         * [![Home](/static/assets/icons/home.png)](/user/main.html)
         * [![Help](/static/assets/icons/help.png)](/help/index.html)
         * [![Logout](/static/assets/icons/logout.png)](/user/logout)
-            
+
 mixin links-navbar__not_logged_in
     :markdown
         * [![Help](/static/assets/icons/help.png)](#{help}/index.html)
-
-
 
 //- git-repo-link
 mixin git-repo-link
@@ -39,16 +37,16 @@ mixin git-repo-link
 //- my-articles-edit-
 mixin my-articles-edit
   #edit-links
-    a(href='my-articles-edit.html') Edit 
+    a(href='my-articles-edit.html') Edit
 
 //- my-articles-edit-links
 mixin edit-links
   #edit-links
     br
     .row
-      .column-4
+      .col-4
         a(href='#') Clear Selected
-      .column-4
+      .col-4
         a(href='navigate.html') Clear All
-      .column-4
+      .col-4
         a(href='my-articles.html') Ok, Done

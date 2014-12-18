@@ -1,13 +1,13 @@
 //- article-options
 mixin article-options
     .row.text-center
-        .column-4
+        .col-4
             :markdown
                 [Metadata](#)
-        .column-4
+        .col-4
             :markdown
                 [Save](#)
-        .column-4
+        .col-4
             :markdown
                 [Share](#)
 
@@ -28,8 +28,17 @@ mixin directory-list
         h3 Fundamentals of Security
         .list-group
             a(href='owasp.html')
-                | OWASP Top 10
-                span.badge 14
+                table
+                    tr
+                        td OWASP Top 10
+                        td
+                            span.badge 14
+            a(href='owasp.html')
+                table
+                    tr
+                        td OWASP Top 10
+                        td
+                            span.badge 14
             a(href='owasp.html')
                 | Second Level Directory
                 span.badge 14
