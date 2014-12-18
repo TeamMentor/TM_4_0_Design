@@ -1,20 +1,20 @@
 extends ../_layouts/flare_page
 include mixins/style-guide-mixins
-include ../../content/mixins/style-guide-mixins.jade
+include ../content/mixins/style-guide-mixins.jade
 
 block content
 	#application
-		.left-nav
+		#left-nav
 			+flare-style-guide-links
 		// left-nav
-		.results
+		#results
 			+introduction
 			+horizontal-rule
 			+style-guide-about-us
 			+horizontal-rule
 			+style-guide-visual-identity
 		// results
-		.right-nav
+		#right-nav
 			br
 		// right-nav
 	// application
