@@ -18,23 +18,23 @@ mixin main-app-view
     .list-group
         if (recentArticles)
             for recentArticle in recentArticles
-                a(href=recentArticle.href, target='_blank')= recentArticle.title        
+                a(href=recentArticle.href, target='_blank')= recentArticle.title
     h4 Popular Search Terms
     .list-group
         if (searchTerms)
             for searchTerm in searchTerms
-                a(href=searchTerm.href)= searchTerm.title                     
+                a(href=searchTerm.href)= searchTerm.title
     h4 Top Articles
     .list-group
         if (topArticles)
             for article in topArticles
-                a(href=article.href, target='_blank')= article.title                      
+                a(href=article.href, target='_blank')= article.title
                     span.badge= article.weight
     h4 New Articles
     .list-group
         if (newArticles)
             for newArticle in newArticles
-                a(href=newArticle.href, target='_blank')= newArticle.title        
+                a(href=newArticle.href, target='_blank')= newArticle.title
 
 //- horizontal-rule
 mixin horizontal-rule
