@@ -19,7 +19,7 @@ describe 'regression-sprint-1', ->                                              
 
   it 'Issue 96 - Main Navigation "Login" link is not opening up the Login page', (done)->                   # name of current test
     jade.page_Home (html,$)->                                                                               # open the index page
-      login_Link = link.attribs.href for link in $('.nav li a') when $(link).html()=='Login'                # extract the url from the link with 'Login' as text
+      login_Link = link.attribs.href for link in $('.top-bar-section li a') when $(link).html()=='Login'                # extract the url from the link with 'Login' as text
       login_Link.assert_Is_Not('/deploy/html/getting-started/index.html')                                   # checks that the link is the wrong one
       login_Link.assert_Is    ('/guest/login.html')                                     # checks that the link is not the 'correct' one
       done()
@@ -49,7 +49,7 @@ describe 'regression-sprint-1', ->                                              
       page.chrome.eval_Script "document.querySelector('#email').value='#{email}';", =>
         page.chrome.eval_Script "document.querySelector('#btn-get-password').click();", =>
           page.wait_For_Complete  (html,$)->
-            $('h3').html().assert_Is("Ok, Done")
+            $('h3').html().assert_Is("Done :)")
             $('p' ).html().assert_Is("We&apos;ve sent you an email with instructions for resetting your password.")
             done()
 
@@ -65,8 +65,8 @@ describe 'regression-sprint-1', ->                                              
   it 'Issue 118 - Clicking on TM logo while logged in should not bring back the main screen', (done)->
     jade.page_Home ->
       jade.login_As_QA (html,$)->
-        $('.brand a').attr().href.assert_Is('/user/main.html')
-        $('.brand a img').attr().assert_Is { src: '/static/assets/logos/tm-logo.jpg', alt: 'TEAM Mentor', width: '200px' }
+        $($('.title-area a').get(1)).attr().href.assert_Is('/user/main.html')
+        $('.title-area a img').attr().assert_Is { src: '/static/assets/logos/tm-logo.jpg', alt: 'TEAM Mentor', width: '200px' }
         done()
 
   it 'Issue 119 - /returning-user-login.html is Blank', (done)->

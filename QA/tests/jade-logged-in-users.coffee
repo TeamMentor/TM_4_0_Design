@@ -1,7 +1,7 @@
 QA_TM_Design = require '../API/QA-TM_4_0_Design'
 
 # this test suite contains all  all pages that we currently need to support for logged in  users
-describe 'pages-logged-in-users', ->
+describe 'jade-logged-in-users', ->
   page = QA_TM_Design.create(before, after);
   jade = page.jade_API;
 
@@ -12,7 +12,7 @@ describe 'pages-logged-in-users', ->
       done()
 
   check_Top_Right_Navigation_Bar = ($)->                                    # confirm that all anonymous pages have the same top level menu
-    navBarLinks = $('.nav li a')                                            # get all top right links using a css selector
+    navBarLinks = $('.top-bar-section li a')                                            # get all top right links using a css selector
     navBarLinks.length.assert_Is(4)                                         # there should be 6 links
     linksData = for link in navBarLinks                                     # for each link in navBarLinks
       {                                                                     # create a new object
