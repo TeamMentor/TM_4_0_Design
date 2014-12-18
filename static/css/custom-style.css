@@ -210,7 +210,7 @@ body {
 }
 
 #about {
-  background: url(../../deploy/assets//images/bgthree.jpg);
+  background: url(../assets/stock-img/bgthree.jpg);
 }
 
 #about, #usp {
@@ -245,7 +245,7 @@ body {
 
 #call-to-action {
   padding: 100px 0 110px 0;
-  background: url(../../deploy/assets//images/bgtwo.jpg);
+  background: url(../assets/stock-img/bgtwo.jpg);
   background-color: #49661f;
   text-align: center;
 }
@@ -331,7 +331,7 @@ body {
 }
 
 #usp {
-  background: url(../../deploy/assets//images/bgone.jpg);
+  background: url(../assets/stock-img/bgone.jpg);
 }
 
 #usp button, #call-to-action button {
@@ -408,29 +408,18 @@ nav.top-bar ul.title-area {
   list-style-type: none;
   float: left;
 }
-nav.top-bar ul.menu-icon.right {
-  padding: 5px 0 0 5px;
-  float: right;
-}
 nav.top-bar .jade-icons {
   margin-top: 10px;
 }
 nav.top-bar section.top-bar-section {
   padding-left: 10%;
-  float: left;
-}
-nav.top-bar section.top-bar-section li:not(.has-form) a:not(.button) {
-  line-height: 50px;
-}
-nav.top-bar section.top-bar-section i {
-  font-size: 16px;
 }
 nav.top-bar section.top-bar-section ul {
-  padding-top: 5px;
-  padding-left: 0;
-  display: inline-block !important;
+  padding: 10px 10px 0 0;
+  display: inline-block;
   list-style-type: none;
   background: none;
+  float: right;
 }
 nav.top-bar section.top-bar-section ul li {
   display: inline-block;

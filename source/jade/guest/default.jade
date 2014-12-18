@@ -1,60 +1,8 @@
 extends ../_layouts/page_landing
 include ../_mixins/landing-page-mixins
 block content
-
-    #usp
-      .row
-        .column-offset-2.column-8
-          h1 Instant resources that bridge the gap between developer questions and technical solutions
-          br
-          br
-          a(href='/guest/sign-up.html')
-            button.btn-landing-page Start your free trial today
-
-    #reasons
-      .lge-container
-        h2 With TEAM Mentor, you can...
-
-        .row
-          .column-offset-3.column-1
-            img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-          .column-5
-            .lge-container
-              h4 FIX vulnerabilities quicker than ever before with TEAM Mentor's seamless integration into a developer's IDE and daily workflow
-        br
-        .row
-          .column-offset-3.column-1
-            img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
-          .column-5
-            .lge-container
-              h4 REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified
-        br
-        .row
-          .column-offset-3.column-1
-            br
-            img(src='/deploy/assets/icons/integrate.png', alt='REDUCE the number of vulnerabilities over time')
-          .column-5
-            .lge-container
-              h4 EXPAND the development team's knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization's security policies and coding best practices
-
-    #clients
-      .lge-container
-        h2 Our clients love us (and we think you will too!)
-        .row
-          .column-4
-            img(src='/static/assets/clients/elsevier.png')
-          .column-4
-            img(src='/static/assets/clients/fedex.png')
-          .column-4
-            img(src='/static/assets/clients/massmutual.png')
-        .row
-          .column-4
-            img(src='/static/assets/clients/microsoft.png')
-          .column-4
-            img(src='/static/assets/clients/symantec.png')
-          .column-4
-            img(src='/static/assets/clients/ubs.png')
-    
-    +call-to-action-div
-
-    +footer-div
+  +usp-div
+  +reasons-div
+  +clients-div
+  +call-to-action-div
+  +footer-div
