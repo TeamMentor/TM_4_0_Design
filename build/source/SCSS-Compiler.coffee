@@ -40,6 +40,7 @@ class SCSS_Compiler
       target_File = if target and target.is_Folder() then target.path_Combine(file.file_Name_Without_Extension()).append('.css') else target
       @compile_File file, (error,css,stats) ->
         if error
+          console.log error
           callback(error, null, stats)
         else
           css.saveAs(target_File)

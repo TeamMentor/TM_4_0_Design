@@ -8,3 +8,4 @@ UNO_Library_Data.json
 .idea
 #static
 QA/_screenshots
+bower_components
