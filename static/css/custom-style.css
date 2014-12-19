@@ -439,6 +439,10 @@ nav.top-bar section.top-bar-section ul li a:hover, nav.top-bar section.top-bar-s
   color: #49661f;
 }
 
+nav.top-bar section.top-bar-section ul.jade-icons {
+  padding-top: 0;
+}
+
 #customer-navigation {
   background-color: #FFFFFF;
   width: 100%;
