@@ -1,4 +1,4 @@
-@media (min-width: 768px) {f
+@media (min-width: 768px) {
   .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
     float: left;
   }
@@ -396,40 +396,34 @@ label {
   z-index: 99;
 }
 
-nav.top-bar {
-  z-index: 100000;
-  padding: 0;
-  margin-bottom: 100px;
-  background: #FFFFFF;
-}
 nav.top-bar ul.title-area {
-  padding: 5px 0 0 5px;
   list-style-type: none;
   float: left;
+  padding: 5px 5px 0 5px;
+  margin: 0;
+  width: 50%;
 }
 nav.top-bar ul.title-area img {
-  max-width: 100%;
+  max-width: 50%;
 }
 nav.top-bar section.top-bar-section {
-  padding-left: 10%;
+  width: 50%;
+  height: 40px;
 }
 nav.top-bar section.top-bar-section ul {
-  padding: 10px 5px 0 0;
   display: inline-block;
   list-style-type: none;
-  background: none;
   float: right;
 }
 nav.top-bar section.top-bar-section ul li {
   display: inline-block;
-  padding-right: 30px;
   text-align: center;
 }
 nav.top-bar section.top-bar-section ul li a, nav.top-bar section.top-bar-section ul li p {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 700;
   background: #FFFFFF;
   color: #8aaf3e !important;
@@ -454,7 +448,6 @@ nav.top-bar section.top-bar-section ul.jade-icons {
 
 #team-mentor-navigation {
   background-color: #FFFFFF;
-  padding-left: 20px;
   width: 100%;
   height: 70px;
 }
