@@ -2,8 +2,7 @@
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
-// TEAM Mentor Custom Colours Import
-@import "colours";
+//
 
 // Table of Contents
 // Foundation Settings
@@ -96,14 +95,6 @@ $include-html-global-classes: $include-html-classes;
 // $font-weight-normal: normal !default;
 // $font-weight-bold: bold !default;
 
-// We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
-
 // $white       : #FFFFFF;
 // $ghost       : #FAFAFA;
 // $snow        : #F9F9F9;
@@ -123,6 +114,14 @@ $include-html-global-classes: $include-html-classes;
 // $oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
+
+// We use these as default colors throughout
+// $primary-color: #008CBA;
+// $secondary-color: #e7e7e7;
+// $alert-color: #f04124;
+// $success-color: #43AC6A;
+// $warning-color: #f08a24;
+// $info-color: #a0d3e8;
 
 // We use these to control various global styles
 // $body-bg: $white;
@@ -319,14 +318,14 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-accordion-classes: $include-html-classes;
 
 // $accordion-navigation-padding: rem-calc(16);
-// $accordion-navigation-bg-color: $silver  ;
+// $accordion-navigation-bg-color: $silver;
 // $accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
 // $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%);
 // $accordion-navigation-font-color: $jet;
 // $accordion-navigation-font-size: rem-calc(16);
 // $accordion-navigation-font-family: $body-font-family;
 
-// $accordion-content-padding: $column-gutter/2;
+// $accordion-content-padding: ($column-gutter/2);
 // $accordion-content-active-bg-color: $white;
 
 // 02. Alert Boxes
@@ -439,7 +438,7 @@ $include-html-global-classes: $include-html-classes;
 // $button-font-sml: rem-calc(13);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
-$button-font-weight: 700;
+// $button-font-weight: $font-weight-normal;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
@@ -448,8 +447,8 @@ $button-font-weight: 700;
 // We use these to control button border and hover styles.
 // $button-border-width: 0px;
 // $button-border-style: solid;
-$button-bg-color: $white;
-$button-bg-color-hover: #8aaf3e;
+// $button-bg-color: $primary-color;
+// $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
@@ -546,7 +545,7 @@ $button-bg-color-hover: #8aaf3e;
 // $f-dropdown-font-size: rem-calc(14);
 // $f-dropdown-list-padding: rem-calc(5, 10);
 // $f-dropdown-line-height: rem-calc(18);
-// $f-dropdown-list-hover-bg: $smoke  ;
+// $f-dropdown-list-hover-bg: $smoke;
 // $dropdown-mobile-default-float: 0;
 
 // We use this to control the styles for when the dropdown has custom content.
@@ -574,25 +573,25 @@ $button-bg-color-hover: #8aaf3e;
 // $dropdown-button-padding-tny: $button-pip-tny * 7;
 // $dropdown-button-pip-size-tny: $button-pip-tny;
 // $dropdown-button-pip-opposite-tny: $button-pip-tny * 3;
-// $dropdown-button-pip-top-tny: -$button-pip-tny / 2 + rem-calc(1);
+// $dropdown-button-pip-top-tny: (-$button-pip-tny / 2) + rem-calc(1);
 
 // We use these to style small dropdown buttons
 // $dropdown-button-padding-sml: $button-pip-sml * 7;
 // $dropdown-button-pip-size-sml: $button-pip-sml;
 // $dropdown-button-pip-opposite-sml: $button-pip-sml * 3;
-// $dropdown-button-pip-top-sml: -$button-pip-sml / 2 + rem-calc(1);
+// $dropdown-button-pip-top-sml: (-$button-pip-sml / 2) + rem-calc(1);
 
 // We use these to style medium dropdown buttons
 // $dropdown-button-padding-med: $button-pip-med * 6 + rem-calc(3);
 // $dropdown-button-pip-size-med: $button-pip-med - rem-calc(3);
 // $dropdown-button-pip-opposite-med: $button-pip-med * 2.5;
-// $dropdown-button-pip-top-med: -$button-pip-med / 2 + rem-calc(2);
+// $dropdown-button-pip-top-med: (-$button-pip-med / 2) + rem-calc(2);
 
 // We use these to style large dropdown buttons
 // $dropdown-button-padding-lrg: $button-pip-lrg * 5 + rem-calc(3);
 // $dropdown-button-pip-size-lrg: $button-pip-lrg - rem-calc(6);
 // $dropdown-button-pip-opposite-lrg: $button-pip-lrg * 2.5;
-// $dropdown-button-pip-top-lrg: -$button-pip-lrg / 2 + rem-calc(3);
+// $dropdown-button-pip-top-lrg: (-$button-pip-lrg / 2) + rem-calc(3);
 
 // 10. Flex Video
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -668,6 +667,7 @@ $button-bg-color-hover: #8aaf3e;
 // $input-error-message-font-weight: $font-weight-normal;
 // $input-error-message-font-style: italic;
 // $input-error-message-font-color: $white;
+// $input-error-message-bg-color: $alert-color;
 // $input-error-message-font-color-alt: $oil;
 
 // We use this to style the glowing effect of inputs when focused
@@ -686,9 +686,11 @@ $button-bg-color-hover: #8aaf3e;
 // $include-html-icon-bar-classes: $include-html-classes;
 // $icon-bar-bg: $oil;
 // $icon-bar-font-color: $white;
+// $icon-bar-font-color-hover: $icon-bar-font-color;
 // $icon-bar-font-size: 1rem;
 // $icon-bar-hover-color: $primary-color;
 // $icon-bar-icon-color: $white;
+// $icon-bar-icon-color-hover: $icon-bar-icon-color;
 // $icon-bar-icon-size: 1.875rem;
 // $icon-bar-image-width: 1.875rem;
 // $icon-bar-image-height: 1.875rem;
@@ -992,7 +994,7 @@ $button-bg-color-hover: #8aaf3e;
 // $price-title-font-family: $body-font-family;
 
 // We use these to control the price styles
-// $price-money-bg: $vapor  ;
+// $price-money-bg: $vapor;
 // $price-money-padding: rem-calc(15 20);
 // $price-money-align: center;
 // $price-money-color: $oil;
@@ -1269,7 +1271,7 @@ $button-bg-color-hover: #8aaf3e;
 
 // These control the background color for the table and even rows
 // $table-bg: $white;
-// $table-even-row-bg: $snow  ;
+// $table-even-row-bg: $snow;
 
 // These control the table cell border style
 // $table-border-style: solid;
@@ -1303,13 +1305,13 @@ $button-bg-color-hover: #8aaf3e;
 // $tabs-navigation-bg-color: $silver  ;
 // $tabs-navigation-active-bg-color: $white;
 // $tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -6%);
-$tabs-navigation-font-color: $grey;
+// $tabs-navigation-font-color: $jet;
 // $tabs-navigation-active-font-color: $tabs-navigation-font-color;
 // $tabs-navigation-font-size: rem-calc(16);
 // $tabs-navigation-font-family: $body-font-family;
 
 // $tabs-content-margin-bottom: rem-calc(24);
-// $tabs-content-padding: $column-gutter/2;
+// $tabs-content-padding: ($column-gutter/2);
 
 // $tabs-vertical-navigation-margin-bottom: 1.25rem;
 
@@ -1362,11 +1364,11 @@ $tabs-navigation-font-color: $grey;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: $white;
-$topbar-bg: $topbar-bg-color;
+// $topbar-bg-color: $oil;
+// $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-$topbar-height: 60px;
+// $topbar-height: rem-calc(45);
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
@@ -1377,27 +1379,28 @@ $topbar-height: 60px;
 // $topbar-dropdown-bg: $oil;
 // $topbar-dropdown-link-color: $white;
 // $topbar-dropdown-link-bg: $oil;
+// $topbar-dropdown-link-bg-hover: $oil;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: $grey;
-$topbar-link-color-hover: $dark-grey;
+// $topbar-link-color: $white;
+// $topbar-link-color-hover: $white;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
-$topbar-link-weight: bold;
+// $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-$topbar-link-bg: $topbar-bg;
-$topbar-link-bg-color-hover: $topbar-bg;
-$topbar-link-bg-hover: $topbar-bg;
+// $topbar-link-bg: $topbar-bg;
+// $topbar-link-bg-color-hover: $charcoal;
+// $topbar-link-bg-hover: $oil;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
-$topbar-link-text-transform: uppercase;
-// $topbar-link-padding: $topbar-height / 3;
+// $topbar-link-text-transform: none;
+// $topbar-link-padding: ($topbar-height / 3);
 // $topbar-back-link-size: $h5-font-size;
 // $topbar-link-dropdown-padding: 20px;
 
