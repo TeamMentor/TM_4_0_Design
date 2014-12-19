@@ -362,7 +362,6 @@ body {
 }
 
 img {
-  max-width: 100%;
   height: auto;
   margin: 0 auto;
 }
@@ -407,6 +406,9 @@ nav.top-bar ul.title-area {
   padding: 5px 0 0 5px;
   list-style-type: none;
   float: left;
+}
+nav.top-bar ul.title-area img {
+  max-width: 100%;
 }
 nav.top-bar section.top-bar-section {
   padding-left: 10%;
