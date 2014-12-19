@@ -231,7 +231,7 @@ body {
 #application {
   width: 100%;
   height: 100%;
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 #box {
@@ -362,8 +362,10 @@ body {
 }
 
 img {
+  display: block;
   height: auto;
   margin: 0 auto;
+  max-width: 100%;
 }
 
 .long {
@@ -390,57 +392,15 @@ label {
 .fixed {
   position: fixed;
   width: 100%;
-  height: 60px;
   left: 0;
   top: 0;
   z-index: 99;
 }
 
-nav.top-bar ul.title-area {
-  list-style-type: none;
-  float: left;
-  padding: 5px 5px 0 5px;
-  margin: 0;
-  width: 50%;
-}
-nav.top-bar ul.title-area img {
-  max-width: 50%;
-}
-nav.top-bar section.top-bar-section {
-  width: 50%;
-  height: 40px;
-}
-nav.top-bar section.top-bar-section ul {
-  display: inline-block;
-  list-style-type: none;
-  float: right;
-}
-nav.top-bar section.top-bar-section ul li {
-  display: inline-block;
-  text-align: center;
-}
-nav.top-bar section.top-bar-section ul li a, nav.top-bar section.top-bar-section ul li p {
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 1px;
-  font-size: 10px;
-  font-weight: 700;
-  background: #FFFFFF;
-  color: #8aaf3e !important;
-  line-height: 0.5em;
-}
-nav.top-bar section.top-bar-section ul li a:hover, nav.top-bar section.top-bar-section ul li p:hover {
-  color: #49661f;
-}
-
-nav.top-bar section.top-bar-section ul.jade-icons {
-  padding-top: 0;
-}
-
 #customer-navigation {
   background-color: #FFFFFF;
-  width: 100%;
-  height: 45px;
+  max-height: 100px;
+  display: block;
 }
 #customer-navigation ul {
   padding: 5px 0 0 25px;
@@ -448,14 +408,48 @@ nav.top-bar section.top-bar-section ul.jade-icons {
 
 #team-mentor-navigation {
   background-color: #FFFFFF;
+  max-height: 150px;
+  text-align:center;
+}
+
+#title-area {
   width: 100%;
-  height: 70px;
+  float: left;
 }
-#team-mentor-navigation ul.menu-icon.right {
-  margin: 20px 25px 0 0;
+
+#links {
+  width: 100%;
+  text-align: text-center;
+  padding: 10px 0 5px 0;
 }
-#team-mentor-navigation ul.menu-icon.right li {
+
+#links ul {
   list-style-type: none;
+  width: 100%;
+  padding: 0;
+}
+
+#links ul.jade-icon {
+  padding-top: 5px;
+}
+
+#links ul li {
+  display: inline;
+  padding: 0 15px 0 0;
+}
+
+#links ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #8aaf3e;
+  line-height: 1em;
+}
+
+#links ul li a:hover {
+  color: #49661f;
 }
 
 h1 {
@@ -785,4 +779,37 @@ table td {
 .breadcrumbs li:before {
   content: "/";
   margin: 0 20px;
+}
+
+@media (min-width: 600px) {
+  #title-area {
+    display: inline-block;
+    max-width: 30%;
+  }
+
+  #title-area img {
+    padding-left: 5px;
+    float: left;
+  }
+
+  #links {
+    display: inline-block;
+    max-width: 70%;
+  }
+
+  #links ul {
+    padding: 10px 0 0 10px;
+    text-align: right;
+  }
+
+  #links ul li {
+    padding: 0 20px 0 0;
+  }
+}
+
+@media (min-width: 999px) {
+
+  #links ul li {
+    padding: 0 40px 0 0;
+  }
 }

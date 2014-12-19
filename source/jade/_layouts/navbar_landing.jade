@@ -2,19 +2,12 @@ include ../_mixins/links
 include ../_mixins/images
 
 .fixed
-	nav.top-bar(role='navigation', data-topbar='')
-		#team-mentor-navigation
-			ul.title-area
-				li.name
-					+image-teammentor-logo__default
-				// li-name
-			// ul-title-area
-			section.top-bar-section
-				// Right Nav Section
-				ul.right
-					+links-navbar__landing-page
-				// ul-right
-			// section
-		// team-mentor-navigation
-	// nav
+	#team-mentor-navigation
+		#title-area
+			+image-teammentor-logo__default
+		// title-area
+		#links
+			+links-navbar__landing-page
+		// links
+	// team-mentor-navigation
 // fixed
