@@ -1,26 +1,21 @@
 extends ../_layouts/page_landing
-
 include ../_mixins/user-mixins
 block content
 	#application
 		.row
-			.col-3
+			br
+			br
+			.col-offset-1.col-5
 				.lge-container
-					br
-				// lge-container
-			// column
-			.col-6
-				.lge-container
-					br
-					br
 					br
 					+alert
 					+login-form
+					br
 				// lge-container
 			// column
-			.col-3
+			.col-5
 				.lge-container
-					br
+					+team-mentor-summary
 				// lge-container
 			// column
 		// row
