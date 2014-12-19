@@ -231,7 +231,7 @@ body {
 #application {
   width: 100%;
   height: 100%;
-  margin-top: 30px;
+  margin-top: 80px;
 }
 
 #box {
@@ -724,7 +724,9 @@ button:hover, button:active {
 .list-group span.badge {
   float: right;
 }
-
+#help-nav .list-group a {
+  padding: 0 0 0 10px;
+}
 .alert-box {
   padding: 15px;
   margin-bottom: 0px;
