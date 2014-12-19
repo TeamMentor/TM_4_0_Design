@@ -19,7 +19,7 @@ describe 'flare-anonymous-users', ->
 
   it 'All',(done)->
     flare.page_All (html,$)->
-      console.log html
+      #console.log html
       done()
 
   it '/help',(done)->
