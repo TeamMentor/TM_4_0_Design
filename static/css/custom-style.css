@@ -231,7 +231,7 @@ body {
 #application {
   width: 100%;
   height: 100%;
-  margin-top: 80px;
+  margin-top: 20px;
 }
 
 #box {
@@ -390,7 +390,7 @@ label {
 .fixed {
   position: fixed;
   width: 100%;
-  height: auto;
+  height: 60px;
   left: 0;
   top: 0;
   z-index: 99;
@@ -704,7 +704,7 @@ button:hover, button:active {
 .list-group {
   height: 100%;
 }
-.list-group h5, .list-group p {
+.list-group h5, .list-group p, .list-group h4 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -724,8 +724,18 @@ button:hover, button:active {
 .list-group span.badge {
   float: right;
 }
-#help-nav .list-group a {
-  padding: 0 0 0 10px;
+.nav table a {
+  text-decoration: none;
+}
+.nav table tr {
+  height: 45px;
+}
+.nav table tr:hover {
+  background-color: #e3e3e3;
+  color: #49661f;
+}
+.nav table span.badge {
+  float: right;
 }
 .alert-box {
   padding: 15px;
@@ -758,6 +768,7 @@ table td {
 }
 .breadcrumbs li.current a {
   color: #8aaf3e;
+  text-decoration: none;
 }
 .breadcrumbs li a {
   font-size: 12px;
@@ -768,7 +779,7 @@ table td {
   color: #aaaaaa;
 }
 .breadcrumbs li a:hover {
-  color: #8aaf3e !important;
+  color: #8aaf3e;
 }
 .breadcrumbs li:first-child:before {
   content: " ";

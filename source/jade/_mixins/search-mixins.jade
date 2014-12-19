@@ -1,83 +1,79 @@
 //- directory-list
 mixin directory-list
-    h3#title= title
-    .list-group#containers
-        if(containers)
-            each container in containers
-                if container.id == filter_container
-                        //a(href="graph?left=&right=" + filter_query, id=container.id)
-                        a(href='/graph/' + title)
-                            i
-                                b= container.title
-                            span.badge= container.size
-                else
-                    //a(href="graph?left=" + container.id + "&right=" + filter_query, id=container.id)= container.title
-                    a(href='/graph/' + title + '/' + container.id, id=container.id)= container.title
-                        if filter_container
-                            span.badge= '0'
-                        else
-                            span.badge= container.size
+	h3#title= title
+	.nav#containers
+		if(containers)
+			each container in containers
+				table
+					tr
+						if container.id == filter_container
+							a(href='/graph/' + title)
+								td
+									= container.title
+								td
+									span.badge= container.size
+						else
+							td
+								a(href='/graph/' + title + '/' + container.id, id=container.id)= container.title
+							if filter_container
+								td
+									span.badge= '0'
+							else
+								td
+									span.badge= container.size
 
 //- search-bar-input
 mixin search-bar-input
-    form(action='/search', method='GET')
-        .input-group
-            input.form-control(type='text', placeholder='Type keywords here', name='text')
-            span.input-group-btn
-                button.btn-search-bar(type='submit') SEARCH
+	form(action='/search', method='GET')
+		.input-group
+			input.form-control(type='text', placeholder='Type keywords here', name='text')
+			span.input-group-btn
+				button.btn-search-bar(type='submit') SEARCH
 
 //- results-save-clear
 mixin results-save-clear
-    table
-        tr
-            td
-                h4#resultsTitle= resultsTitle
-            td
-                //a() Save
-            td
-                a(href='/graph/' + title) Clear
+	table
+		tr
+			td
+				h4#resultsTitle= resultsTitle
+			td
+				//a.action() Save
+			td
+				a.action(href='/graph/' + title) Clear
 
 //- articles-list
 mixin articles-list
-    .list-group
-        if results
-            each result in results
-                a(href='/article/view/' + result.guid +'/'+result.title, id=result.id, target='_blank')
-                    h4= result.title
-                    p= result.summary + '...'
+	.list-group
+		if results
+			each result in results
+				a(href='/article/view/' + result.guid +'/'+result.title, id=result.id, target='_blank')
+					h4= result.title
+					p= result.summary + '...'
 
 //- filters
 mixin filters-div
-    #filters
-        h3 Filters
-        form(role='form', action='filters-active.html')
-            if filters
-                for filter in filters
-                    //.form-group
-                    .list-group
-                        h5= filter.title
-                        for result in filter.results
-                            li
-                                if result.id == filter_container
-                                    //filter_query
-                                    //a(href="graph?left=" + filter_container + "&right=", id=result.id)
-                                    a(href='/graph/' + title)
-                                        i
-                                            b= result.title
-                                        span.badge= result.size
-                                else
-                                    //a(href="graph?left=" + filter_container + "&right=" + result.id, id=result.id)
-                                    a(href='/graph/' + title + '/'  + result.id, id=result.id)
-                                        //(filter_query)
-                                        if(filter_container)
-                                            font(color='gray')= result.title
-                                            span.badge= result.size
-                                        else
-                                            span= result.title
-                                            span.badge= result.size
-                                //input(type='checkbox', id=result.title)
-                                //label(for=result.title, type='checkbox')= result.title
-                                    span.badge= result.size
-
-            //button(type='submit')
-                | Ok, Done
+	#filters
+		h3 Filters
+		form(role='form', action='filters-active.html')
+			if filters
+				for filter in filters
+					table
+						h5= filter.title
+						for result in filter.results
+							tr
+								if result.id == filter_container
+									a(href='/graph/' + title)
+										td= result.title
+										td
+											span.badge= result.size
+								else
+									a(href='/graph/' + title + '/'  + result.id, id=result.id)
+										if(filter_container)
+											td= result.title
+											td
+												span.badge= result.size
+										else
+											td= result.title
+											td
+												span.badge
+													= result.size

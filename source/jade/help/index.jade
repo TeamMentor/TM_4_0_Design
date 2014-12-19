@@ -7,7 +7,7 @@ block content
 					if library
 						each view in library.Views
 							h4= view.Title
-							.list-group
+							.nav.list-group
 								each article in view.Articles
 									a(href= '/help/' + article.Id)
 										= article.Title
