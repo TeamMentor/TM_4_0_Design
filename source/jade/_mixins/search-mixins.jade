@@ -52,9 +52,8 @@ mixin articles-list
 
 //- filters
 mixin filters-div
-	#filters
 		h3 Filters
-		form(role='form', action='filters-active.html')
+		.nav#filters
 			if filters
 				for filter in filters
 					table
@@ -67,13 +66,7 @@ mixin filters-div
 										td
 											span.badge= result.size
 								else
-									a(href='/graph/' + title + '/'  + result.id, id=result.id)
-										if(filter_container)
-											td= result.title
-											td
-												span.badge= result.size
-										else
-											td= result.title
-											td
-												span.badge
-													= result.size
+									td
+										a(href='/graph/' + title + '/'  + result.id, id=result.id)= result.title
+									td
+										span.badge= result.size
