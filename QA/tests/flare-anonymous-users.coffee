@@ -24,5 +24,5 @@ describe 'flare-anonymous-users', ->
 
   it '/help',(done)->
     page.open '/flare/help/index', (html,$)->
-      console.log html
+      #console.log html
       done()

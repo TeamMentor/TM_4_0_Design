@@ -54,7 +54,7 @@ describe 'jade-anonymous-users', ->
 
       $('#usp a'     ).get(0).attribs.href       .assert_Is('/guest/sign-up.html')
       $('#usp button').html()                    .assert_Is('Start your free trial today')
-      $('#reasons h2').html()                    .assert_Is('With TEAM Mentor, you can...')
+      $('#reasons h2').html()                    .assert_Is('With TEAM Mentor, you can')
 
       $($('#reasons h4 p').get(0)).html()       .assert_Is('FIX vulnerabilities quicker than ever before with TEAM Mentor&apos;s seamless integration into a developer&apos;s IDE and daily workflow.')
       $($('#reasons h4 p').get(1)).html()       .assert_Is('REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified.')
