@@ -1,26 +1,27 @@
 //- directory-list
 mixin directory-list
 	h3#title= title
-	.nav#containers
-		if(containers)
-			each container in containers
+	.nav
+		#containers
+			if(containers)
 				table
-					tr
-						if container.id == filter_container
-							a(href='/graph/' + title)
-								td
-									= container.title
-								td
-									span.badge= container.size
-						else
-							td
-								a(href='/graph/' + title + '/' + container.id, id=container.id)= container.title
-							if filter_container
-								td
-									span.badge= '0'
+					each container in containers
+						tr
+							if container.id == filter_container
+								a(href='/graph/' + title)
+									td
+										= container.title
+									td
+										span.badge= container.size
 							else
 								td
-									span.badge= container.size
+									a(href='/graph/' + title + '/' + container.id, id=container.id)= container.title
+								if filter_container
+									td
+										span.badge= '0'
+								else
+									td
+										span.badge= container.size
 
 //- search-bar-input
 mixin search-bar-input
