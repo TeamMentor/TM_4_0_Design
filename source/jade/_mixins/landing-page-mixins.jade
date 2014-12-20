@@ -2,14 +2,15 @@
 
 mixin usp-div
 	#usp
-		.row
-			.col-offset-2.col-8
-				include:md ../../flare/__ALL/content/teamMentor/landing-pages/usp.md
-				br
-				.row
-					.col-offset-2.col-8
-						a(href='/guest/sign-up.html')
-							button.btn-landing-page Start your free trial today
+		.lge-container
+			.row
+				.col-offset-2.col-8
+					include:md ../../flare/__ALL/content/teamMentor/landing-pages/usp.md
+					br
+					.row
+						.col-offset-2.col-8
+							a(href='/guest/sign-up.html')
+								button.btn-landing-page Start your free trial today
 
 mixin reasons-div
 	#reasons
@@ -58,15 +59,17 @@ mixin clients-div
 
 mixin about-div
 	#about
-		.row
-			.col-offset-2.col-8
-				include:md ../../flare/__ALL/content/teamMentor/landing-pages/about-tm-tagline.md
+		.lge-container
+			.row
+				.col-offset-2.col-8
+					include:md ../../flare/__ALL/content/teamMentor/landing-pages/about-tm-tagline.md
 
 mixin about-us-div
 	#about-us
-		.row
-			.col-offset-3.col-6
-				include:md ../../flare/__ALL/content/teamMentor/landing-pages/about-tm-summary.md
+		.lge-container
+			.row
+				.col-offset-3.col-6
+					include:md ../../flare/__ALL/content/teamMentor/landing-pages/about-tm-summary.md
 
 mixin features-div
 	#features
@@ -100,19 +103,21 @@ mixin features-div
 
 mixin call-to-action-div
 	#call-to-action
-		.row
-			.col-offset-2.col-8
-				include:md ../../flare/__ALL/content/teamMentor/landing-pages/call-to-action.md
-				br
-				br
-				.row
-					.col-offset-2.col-8
-						a(href='/guest/sign-up.html')
-							button(type='button') See for yourself
+		.lge-container
+			.row
+				.col-offset-2.col-8
+					include:md ../../flare/__ALL/content/teamMentor/landing-pages/call-to-action.md
+					br
+					br
+					.row
+						.col-offset-2.col-8
+							a(href='/guest/sign-up.html')
+								button(type='button') See for yourself
 
 //- landing-page_footer
 mixin footer-div
 	#footer
-		.row
-			.col-offset-2.col-8
-				img(src='/static/assets/logos/si-logo.png')
+		.lge-container
+			.row
+				.col-offset-2.col-8
+					img(src='/static/assets/logos/si-logo.png')

@@ -3,20 +3,16 @@ include ../_mixins/user-mixins
 block content
 	#application
 		.row
-			br
-			br
-			.col-offset-1.col-5
-				.lge-container
-					br
-					+alert
+			.col-6
+				#loginwall
+					+alert-login-failed
 					+login-form
-					br
-				// lge-container
+				// loginwall
 			// column
-			.col-5
-				.lge-container
+			.col-6
+				#summary
 					+team-mentor-summary
-				// lge-container
+				// summary
 			// column
 		// row
 	// application
