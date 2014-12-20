@@ -220,7 +220,7 @@ body {
   background-color: #8aaf3e;
   text-align: center;
 }
-#about h1, #usp h1 {
+#about h2, #usp h2 {
   color: #FFFFFF;
 }
 
@@ -367,7 +367,6 @@ body {
 }
 
 img {
-  display: block;
   height: auto;
   margin: 0 auto;
 }
@@ -416,6 +415,21 @@ label {
   text-align:center;
 }
 
+#not-logged-in {
+  width: 100%;
+}
+
+#not-logged-in img {
+  padding: 0 0 0 5px;
+  float: left;
+}
+
+#not-logged-in ul li {
+  padding: 5px 5px 0 0;
+  list-style-type: none;
+  float: right;
+}
+
 #title-area {
   width: 100%;
   float: left;
@@ -433,8 +447,9 @@ label {
   padding: 0;
 }
 
-#links ul.jade-icon {
-  padding-top: 5px;
+#links.icons a img {
+  display: inline-block;
+  max-width: 40px;
 }
 
 #links ul li {
@@ -783,14 +798,39 @@ table td {
     max-width: 100%;
   }
 
+  #not-logged-in img {
+    padding: 0 0 0 20px;
+  }
+
+  #not-logged-in ul li {
+    padding: 5px 10px 0 0;
+  }
+
   #links {
     display: inline-block;
     max-width: 65%;
   }
 
-  #links ul {
-    padding: 10px 0 0 10px;
+  #links.icons {
+    padding-top: 7px;
     text-align: right;
+  }
+
+  #links.text-links {
+    padding-top: 20px;
+  }
+
+  #links.text-links ul {
+    padding: 0 0 0 10px;
+    text-align: right;
+  }
+
+  #links.icons ul {
+    padding: 0;
+  }
+
+  #links.icons a img {
+    max-width: 100%;
   }
 
   #links ul li {
@@ -809,11 +849,14 @@ table td {
   #team-mentor-navigation {
     height: 65px;
   }
-  #links ul li {
+
+  #links.text-links ul li {
     padding: 0 40px 0 0;
   }
 
-
+  #links.icons ul li {
+    padding: 0 30px 0 0;
+  }
 
   h1 {
     font-size: 3em;
