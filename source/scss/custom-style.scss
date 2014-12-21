@@ -2,361 +2,30 @@
 
 // TEAM Mentor was built mobile first , so the structure of this file means that styles without media queries apply to mobile and carry out throughout the whole application ONLY if there are no over-riding styles in the media queries at the end of the file.
 
-// You'll find imports first, then a list of variables that can be used through out the stylesheet. Styles for the application are next and finally, styles for medium to large screens at the end.
+// Hello
 
-//--- Imports
+// IMPORTS
 
 @import 'columns';
 @import 'colours';
 
-//--- Variables
+// VARIABLES
 $asset-path: '../../deploy/assets/';
 $font-stack: 100% Helvetica, sans-serif;
 $full-width: 100%;
 
-//--- Layout & Structure
-
-html {
-	font: $font-stack;
-}
-
-body {
-	background: $white;
-	margin: 0;
-	max-width: $full-width;
-	padding: 0;
-}
-
-.collapse {
-	margin-bottom: -50px;
-}
-
-img {
-	height: auto;
-	margin: 0 auto;
-}
-
-.lge-container {
-	margin: 0 auto;
-	max-width: 96%;
-}
-
-.long {
-	height: 100px;
-}
-
-.vertical-align {
-	margin-top: 10px;
-}
-
-.short {
-	height: 40px;
-}
-
-//------ Landing Page
-
-#about {
-	background: url(../assets/stock-img/bgthree.jpg);
-	background-color: $green;
-	margin: 65px 0 0 0;
-	padding: 50px 0 80px 0;
-	text-align: center;
-	width: $full-width;
-}
-
-#about h2, #usp h2 {
-	color: $white;
-}
-
-#about-us {
-	padding: 40px 0 40px 0;
-}
-
-#call-to-action {
-	background: url(../assets/stock-img/bgtwo.jpg);
-	background-color: $dark-green;
-	padding: 100px 0 110px 0;
-	text-align: center;
-	h1 {
-		color: $white;
-	}
-	button {
-		background-color: $white;
-		border: none;
-		padding: 20px 0 20px 0;
-		&:hover, &:active {
-			background-color: $green;
-			color: $white;
-		}
-	}
-}
-
-#clients {
-	padding: 40px 0 80px 0;
-	text-align: center;
-}
-
-#copyright {
-	padding-bottom: 30px;
-	a {
-		font-size: 12px;
-		font-weight: normal;
-		letter-spacing: 0px;
-		text-align: center;
-		text-decoration: underline;
-		text-transform: none;
-	}
-}
-
-#description {
-	background-color: $light-grey;
-	margin: 0 15px 0 0;
-	padding: 5px 0 5px 0;
-	text-align: center;
-	width: $full-width;
-}
-
-#features {
-	padding: 100px 0 50px 0;
-	h2 {
-		text-align: center;
-	}
-	img {
-		vertical-align: middle;
-	}
-}
-
-#footer {
-	padding: 15px 0 20px 0;
-	text-align: center;
-	width: $full-width;
-	a {
-		color: $dark-grey;
-		font-size: 10px;
-		letter-spacing: 1px;
-		text-transform: uppercase;
-	}
-}
-
-#reasons {
-	padding: 70px 0 0 0;
-	h2 {
-		text-align: center;
-	}
-}
-
-#usp {
-	background: url(../assets/stock-img/bgone.jpg);
-	background-color: $green;
-	margin: 65px 0 0 0;
-	padding: 50px 0 80px 0;
-	text-align: center;
-	width: $full-width;
-	button {
-		background-color: $white;
-		border: none;
-		padding: 20px 0 20px 0;
-		&:hover, &:active {
-			background-color: $green;
-			color: $white;
-		}
-	}
-}
-
-
-
-//------ Application
-
-#application {
-	height: $full-width;
-	margin-top: 50px;
-	width: $full-width;
-}
-
-#loginwall, #summary {
-	margin: 0 auto;
-	max-width: 95%;
-	padding-top: 80px;
-}
-
-
-//------ Navigation
-
-.fixed {
-	left: 0;
-	position: fixed;
-	top: 0;
-	width: $full-width;
-	z-index: 99;
-}
-
-#customer-navigation {
-	background-color: $white;
-	display: block;
-	max-height: 100px;
-	ul {
-		padding: 5px 0 0 25px;
-	}
-}
-
-#team-mentor-navigation {
-	background-color: $white;
-	max-height: 150px;
-	text-align: center;
-}
-
-#not-logged-in {
-	width: $full-width;
-	img {
-		float: left;
-		padding: 0 0 0 5px;
-	}
-	ul li {
-		float: right;
-		list-style-type: none;
-		padding: 5px 5px 0 0;
-	}
-}
-
-#title-area {
-	float: left;
-	width: $full-width;
-}
-
-#links {
-	padding: 10px 0 5px 0;
-	width: $full-width;
-	text-align: center;
-	ul {
-		list-style-type: none;
-		padding: 0;
-		width: $full-width;
-	}
-	&.icons a img {
-		display: inline-block;
-		max-width: 40px;
-	}
-	ul li {
-		display: inline;
-		padding: 0 10px 0 0;
-		a {
-			color: $green;
-			font-size: 12px;
-			font-weight: 700;
-			letter-spacing: 1px;
-			line-height: 1em;
-			text-decoration: none;
-			text-transform: uppercase;
-			&:hover {
-				color: $dark-green;
-			}
-		}
-	}
-}
-
-//--- Forms
-
-form, .form-group {
-	list-style-type: none;
-	margin-bottom: 15px;
-}
-
-label {
-	color: $dark-grey;
-	display: inline-block;
-	font-weight: bold;
-	padding: 3px 0 0 0;
-	margin-bottom: 5px;
-}
-
-input {
-	&[type="checkbox"] {
-		margin-right: 20px;
-	}
-	&[type="text"], &[type="password"], &[type="date"], &[type="datetime"], &[type="datetime-local"], &[type="month"], &[type="week"], &[type="email"], &[type="number"], &[type="search"], &[type="tel"], &[type="time"], &[type="url"] {
-		background-color: $white;
-		border: 1px solid $grey;
-		box-shadow: none;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-		color: $dark-grey;
-		display: block;
-		font-family: inherit;
-		font-size: 1em;
-		height: 3rem;
-		padding: 0.5rem;
-		width: $full-width;
-	}
-	&[type="text"]:focus, &[type="password"]:focus, &[type="date"]:focus, &[type="datetime"]:focus, &[type="datetime-local"]:focus, &[type="month"]:focus, &[type="week"]:focus, &[type="email"]:focus, &[type="number"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="time"]:focus, &[type="url"]:focus {
-		background: $white;
-		border-color: $green;
-		outline: medium none;
-	}
-}
-
-textarea {
-	background-color: $white;
-	border: 1px solid $grey;
-	box-shadow: none;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	color: $dark-grey;
-	display: block;
-	font-family: inherit;
-	font-size: 1em;
-	height: 3rem;
-	padding: 0.5rem;
-	width: $full-width;
-	&:focus {
-		background: $white;
-		border-color: $green;
-		outline: medium none;
-	}
-}
-
-select {
-	background: $white;
-	border: 1px solid $grey;
-	box-shadow: none;
-	color: $dark-grey;
-	display: block;
-	font-family: inherit;
-	font-size: 1em;
-	height: 3em;
-	width: $full-width;
-}
-
-.input-group {
-	display: table;
-	float: left;
-	width: $full-width;
-	.form-control {
-		display: table-cell;
-		height: 53px;
-	}
-	.input-group-btn {
-		border-left: none !important;
-		display: table-cell;
-		max-width: $full-width;
-		vertical-align: middle;
-		width: 100px;
-	}
-}
-
-//--- Typography
+// TYPOGRAPHY
 
 h1 {
-	color: $grey;
 	font-size: 2em;
 	line-height: 1.25em;
+	color: $grey;
 }
 
 h2 {
-	color: $grey;
 	font-size: 1.625em;
 	line-height: 1.153em;
+	color: $grey;
 }
 
 h3 {
@@ -378,9 +47,25 @@ h5 {
 }
 
 p {
-	color: $dark-grey;
 	font-size: 1em;
 	line-height: 1.5em;
+	color: $dark-grey;
+}
+
+a {
+	text-decoration: underline;
+	color: $dark-grey;
+	&:hover, &:active, &:focus, a.action:hover, a.action:focus, a.action:active {
+		color: $dark-green;
+	}
+	&.action {
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 1px;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: $green;
+	}
 }
 
 ul, ol, ul ul, ol ul {
@@ -390,103 +75,118 @@ ul, ol, ul ul, ol ul {
 code {
 	font-family: monospace, monospace;
 	font-size: 1em;
+	color: $dark-grey;
 }
 
 pre {
-	background-color: $light-grey;
-	border: 1px solid $grey;
-	border-radius: 0px;
-	color: $dark-grey;
+	@extend code;
 	display: block;
-	font-family: monospace, monospace;
-	font-size: 1em;
-	line-height: 1.5;
-	margin: 30px 0 30px 0;
 	overflow: auto;
+	margin: 30px 0 30px 0;
 	padding: 20px;
 	word-break: break-all;
 	word-wrap: break-word;
-}
-
-.text-center {
-	text-align: center;
-	margin: 0 auto;
-}
-
-.normal {
-	font-weight: normal;
-}
-
-.strong {
-	font-weight: bold;
+	background-color: $light-grey;
+	border: 1px solid $grey;
+	border-radius: 0px;
+	line-height: 1.5em;
 }
 
 hr {
-	color: $light-grey;
 	margin: 40px auto 40px auto;
 	width: 70%;
+	color: $light-grey;
 }
 
-a {
-	color: $dark-grey;
-	text-decoration: underline;
-	&:hover, &:active, &:focus {
-		color: $dark-green;
-		text-decoration: underline;
+// LAYOUT & STRUCTURE
+
+html {
+	font: $font-stack;
+}
+
+body {
+	background: $white;
+	margin: 0;
+	max-width: $full-width;
+	padding: 0;
+}
+
+img {
+	height: auto;
+	margin: 0 auto;
+}
+
+//--- NAVIGATION
+
+.fixed {
+	left: 0;
+	top: 0;
+	position: fixed;
+	width: $full-width;
+	z-index: 99;
+
+	#customer-navigation {
+		display: block;
+		max-height: 100px;
+		background-color: $white;
+		ul {
+			padding: 5px 0 0 25px;
+		}
 	}
-	&.action {
-		color: $green;
-		font-size: 14px;
-		font-weight: 700;
-		letter-spacing: 1px;
-		text-decoration: none;
-		text-transform: uppercase;
-		&:hover, &:focus, &:active {
-			color: $dark-green;
+	#team-mentor-navigation {
+		max-height: 150px;
+		text-align: center;
+		background-color: $white;
+
+		#not-logged-in {
+			width: $full-width;
+			img {
+				float: left;
+				padding: 0 0 0 5px;
+			}
+			ul li {
+				float: right;
+				padding: 5px 5px 0 0;
+				list-style-type: none;
+			}
+		}
+
+		#title-area {
+			float: left;
+			width: $full-width;
+		}
+
+		#links {
+			width: $full-width;
+			padding: 10px 0 5px 0;
+			text-align: center;
+			ul {
+				padding: 0;
+				width: $full-width;
+				list-style-type: none;
+			}
+			&.icons a img {
+				max-width: 40px;
+				display: inline-block;
+			}
+			ul li {
+				display: inline;
+				padding: 0 10px 0 0;
+				a {
+					@extend a.action;
+					font-size: 12px;
+					&:hover {
+						@extend a.action:hover;
+					}
+				}
+			}
 		}
 	}
 }
 
-button, .button {
-	background-color: $white;
-	color: $green;
-	font-size: 14px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	width: $full-width;
-	&:hover, &:focus {
-		background-color: $white;
-		color: $dark-green;
-		text-decoration: none;
-	}
-}
 
-button.postfix, .button.postfix {
-	border: 1px solid $grey;
-	border-left: none;
-	color: $green;
-	font-size: 1em;
-	height: 3rem;
-	padding-top: 7px;
-	&:hover {
-		background: $white;
-		color: $dark-green;
-	}
-}
-
-//--- Badges
-
-.badge {
-	color: $white;
-	background-color: $grey;
-	border-radius: 10px;
-	font-size: 12px;
-	min-width: 10px;
-	padding: 3px 7px;
-	text-align: center;
-}
-
-//--- List Group and Nav Tables
+//------ SUB-NAVIGATION
+//--------- LISTGROUPS
 
 .list-group {
 	height: auto;
@@ -498,31 +198,8 @@ button.postfix, .button.postfix {
 		padding: 11px;
 		text-decoration: none;
 		&:hover {
-			background-color: $light-grey;
 			text-decoration: none;
-		}
-	}
-	span.badge {
-		float: right;
-	}
-}
-
-.nav table {
-	margin-top: -20px;
-	a {
-		text-decoration: none;
-	}
-	tr {
-		td {
-			border-bottom: 1px solid $light-grey;
-			padding: 5px;
-		}
-		&:last-child {
-			border-bottom: transparent;
-		}
-		&:hover {
 			background-color: $light-grey;
-			color: $dark-green;
 		}
 	}
 	span.badge {
@@ -530,36 +207,46 @@ button.postfix, .button.postfix {
 	}
 }
 
-//--- Alerts
-
-.alert {
-	background: $white;
-	border: none;
-	color: $green;
-	font-size: inherit;
-	font-weight: 700;
-	margin: 0;
-	padding: 15px;
-}
-
-//--- Table
+//--------- TABLES
 
 table {
-	color: $dark-grey;
-	font-size: 16px;
 	width: 100%;
+	font-size: 1em;
+	color: $dark-grey;
 	td {
 		height: 30px;
 		padding: 0 10px 0 10px
 	}
+	.nav {
+		margin-top: -20px;
+		a {
+			text-decoration: none;
+		}
+		tr {
+			td {
+				padding: 5px;
+				border-bottom: 1px solid $light-grey;
+			}
+			&:last-child {
+				border-bottom: transparent;
+			}
+			&:hover {
+				background-color: $light-grey;
+				color: $dark-green;
+			}
+		}
+		span.badge {
+			float: right;
+		}
+	}
 }
 
-//--- Breadcrumbs
+//--------- BREADCRUMBS
 
 .breadcrumbs {
+	padding: 0 0 0 10px;
 	background: $white;
 	border: none;
-	padding: 0 0 0 10px;
 	li {
 		display: inline-block;
 		&.current a {
@@ -567,12 +254,9 @@ table {
 			text-decoration: none;
 		}
 		a {
+			@extend a.action;
 			color: $grey;
 			font-size: 12px;
-			font-weight: 700;
-			letter-spacing: 1px;
-			text-decoration: none;
-			text-transform: uppercase;
 			&:hover {
 				color: $green;
 			}
@@ -588,7 +272,280 @@ table {
 	}
 }
 
-//--- Media Queries
+//--- APPLICATION
+
+#application {
+	height: $full-width;
+	margin-top: 50px;
+	width: $full-width;
+}
+
+.lge-container {
+	margin: 0 auto;
+	max-width: 96%;
+}
+
+#loginwall, #summary {
+	margin: 0 auto;
+	max-width: 95%;
+	padding-top: 80px;
+}
+
+//------ FORMS
+
+form, .form-group {
+	list-style-type: none;
+	margin-bottom: 15px;
+}
+
+label {
+	display: inline-block;
+	padding: 3px 0 0 0;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: $dark-grey;
+}
+
+input {
+	&[type="checkbox"] {
+		margin-right: 20px;
+	}
+	&[type="text"], &[type="password"], &[type="date"], &[type="datetime"], &[type="datetime-local"], &[type="month"], &[type="week"], &[type="email"], &[type="number"], &[type="search"], &[type="tel"], &[type="time"], &[type="url"] {
+		display: block;
+		height: 3rem;
+		padding: 0.5rem;
+		width: $full-width;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		font-size: 1em;
+		background-color: $white;
+		border: 1px solid $grey;
+		box-shadow: none;
+		color: $dark-grey;
+	}
+	&[type="text"]:focus, &[type="password"]:focus, &[type="date"]:focus, &[type="datetime"]:focus, &[type="datetime-local"]:focus, &[type="month"]:focus, &[type="week"]:focus, &[type="email"]:focus, &[type="number"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="time"]:focus, &[type="url"]:focus {
+		background: $white;
+		border-color: $green;
+		outline: medium none;
+	}
+}
+
+textarea {
+	@extend input[type="text"];
+	height: auto;
+	&:focus {
+		@extend input[type="text"]:focus;
+	}
+}
+
+select {
+	@extend input[type="text"];
+}
+
+.input-group {
+	display: table;
+	float: left;
+	width: $full-width;
+	.form-control {
+		display: table-cell;
+		height: 53px;
+	}
+	.input-group-btn {
+		display: table-cell;
+		max-width: $full-width;
+		vertical-align: middle;
+		width: 100px;
+		border-left: none !important;
+	}
+}
+
+//------ BUTTONS
+
+button {
+	@extend a.action;
+	width: $full-width;
+	background-color: $white;
+	&:hover, &:focus, &:active {
+		@extend a.action:hover;
+		background-color: $white;
+	}
+	&.postfix {
+		height: 3rem;
+		padding-top: 7px;
+		border: 1px solid $grey;
+		border-left: none;
+		font-size: 1em;
+		color: $green;
+		&:hover {
+			background-color: $white;
+			color: $dark-green;
+		}
+	}
+}
+
+//------ BADES
+
+.badge {
+	min-width: 10px;
+	padding: 3px 7px;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 12px;
+	background-color: $grey;
+	color: $white;
+}
+
+//------ ALERTS
+
+.alert {
+	margin: 0;
+	padding: 15px;
+	border: none;
+	background: $white;
+	font-weight: 700;
+	color: $green;
+}
+
+//------ ADDITIONAL CLASSES
+
+.collapse {
+	margin-bottom: -50px;
+}
+
+.long {
+	height: 100px;
+}
+
+.vertical-align {
+	margin-top: 10px;
+}
+
+.short {
+	height: 40px;
+}
+
+.text-center {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.normal {
+	font-weight: normal;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+//--- LANDING PAGES
+
+#about {
+	margin: 65px 0 0 0;
+	padding: 50px 0 80px 0;
+	width: $full-width;
+	text-align: center;
+	background: url(../assets/stock-img/bgthree.jpg);
+	background-color: $green;
+}
+
+#about h2, #usp h2 {
+	color: $white;
+}
+
+#about-us {
+	padding: 40px 0 40px 0;
+}
+
+#call-to-action {
+	padding: 100px 0 110px 0;
+	text-align: center;
+	background: url(../assets/stock-img/bgtwo.jpg);
+	background-color: $dark-green;
+	h1 {
+		color: $white;
+	}
+	button {
+		padding: 20px 0 20px 0;
+		background-color: $white;
+		border: none;
+		&:hover, &:active {
+			background-color: $green;
+			color: $white;
+		}
+	}
+}
+
+#clients {
+	padding: 40px 0 80px 0;
+	text-align: center;
+}
+
+#copyright {
+	padding-bottom: 30px;
+	a {
+		@extend a;
+		font-size: 12px;
+		text-align: center;
+	}
+}
+
+#description {
+	margin: 0 15px 0 0;
+	padding: 5px 0 5px 0;
+	width: $full-width;
+	text-align: center;
+	background-color: $light-grey;
+}
+
+#features {
+	padding: 100px 0 50px 0;
+	h2 {
+		text-align: center;
+	}
+	img {
+		vertical-align: middle;
+	}
+}
+
+#footer {
+	padding: 15px 0 20px 0;
+	width: $full-width;
+	text-align: center;
+	a {
+		@extend a;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		font-size: 10px;
+	}
+}
+
+#reasons {
+	padding: 70px 0 0 0;
+	h2 {
+		text-align: center;
+	}
+}
+
+#usp {
+	margin: 65px 0 0 0;
+	padding: 50px 0 80px 0;
+	width: $full-width;
+	text-align: center;
+	background: url(../assets/stock-img/bgone.jpg);
+	background-color: $green;
+	button {
+		padding: 20px 0 20px 0;
+		background-color: $white;
+		border: none;
+		&:hover, &:active {
+			background-color: $green;
+			color: $white;
+		}
+	}
+}
+
+// MEDIA QUERIES
 
 @media (min-width: 650px) {
 	#application {
