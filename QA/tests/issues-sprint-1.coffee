@@ -12,7 +12,7 @@ describe 'issues-sprint-1', ->                                                  
           $('h3').html().assert_Is('Sign Up')
           next()
         else
-          $('h3').html().assert_Is('Welcome to TEAM Mentor')
+          $('h3').html().assert_Is('Login')
           jade.login randomUser,password, (html,$)->
             page.chrome.url (url)->
               url.assert_Contains('/user/main.html')

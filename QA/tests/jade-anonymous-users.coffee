@@ -20,8 +20,8 @@ describe 'jade-anonymous-users', ->
       done()
 
   check_Top_Right_Navigation_Bar = ($)->                                    # confirm that all anonymous pages have the same top level menu
-    navBarLinks = $('.top-bar-section li a')                                            # get all top right links using a css selector
-    navBarLinks.length.assert_Is(6)                                         # there should be 6 links
+    navBarLinks = $('#links li a')                                            # get all top right links using a css selector
+    navBarLinks.length.assert_Is(5)                                         # there should be 6 links
     linksData = for link in navBarLinks                                     # for each link in navBarLinks
       {                                                                     # create a new object
         href : link.attribs.href,                                           # with the href
@@ -35,9 +35,8 @@ describe 'jade-anonymous-users', ->
     checkValues(0,'/guest/about.html'    , 'About'   )   # check expected values of 6 links
     checkValues(1,'/guest/features.html' , 'Features')
     checkValues(2,'/help/index.html'     , 'Help'    )
-    checkValues(3,'#'                    , '|'       )
-    checkValues(4,'/guest/sign-up.html'  , 'Sign Up' )
-    checkValues(5,'/guest/login.html'    , 'Login'   )
+    checkValues(3,'/guest/sign-up.html'  , 'Sign Up' )
+    checkValues(4,'/guest/login.html'    , 'Login'   )
 
   check_Generic_Footer = ($)->
 
@@ -50,7 +49,7 @@ describe 'jade-anonymous-users', ->
 
   it '/',(done)->
     jade.page_Home (html,$)->
-      $('#usp h1').html().assert_Is('Instant resources that bridge the gap between developer questions and technical solutions')
+      $('#usp h2').html().assert_Is('Instant resources that bridge the gap between developer questions and technical solutions')
 
       $('#usp a'     ).get(0).attribs.href       .assert_Is('/guest/sign-up.html')
       $('#usp button').html()                    .assert_Is('Start your free trial today')
@@ -75,7 +74,7 @@ describe 'jade-anonymous-users', ->
 
   it 'About',(done)->
     jade.page_About (html,$)->
-      $(  '#about h1'   ).html()        .assert_Is('An interactive Application Security library with thousands of code samples and professional guidance when you need it.')
+      $(  '#about h2'   ).html()        .assert_Is('An interactive Application Security library with thousands of code samples and professional guidance when you need it')
       $(  '#about-us h4').html()        .assert_Is('TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.')
       $($('#about-us p' ).get(0)).html().assert_Is('It contains over 4,000 articles with dynamic content across multiple development platforms including .NET, Java, C/C++, PHP, Android and iOS. TEAM Mentor is the In-Practice companion to our TEAM Professor eLearning courses, extending developers&#x2019; knowledge in combination with training.')
       $($('#about-us p' ).get(1)).html().assert_Is('TeamMentor integrates with static analysis tools, such as Checkmarx and Fortify, helping teams make more sense of scan results and make critical decisions to fix software vulnerabilities.')
@@ -127,7 +126,7 @@ describe 'jade-anonymous-users', ->
 
   it 'Login Fail', (done)->
     jade.page_Login_Fail (html, $)->
-      $('.alert').html().assert_Is('Login failed')
+      $('.alert').html().assert_Is('Login failed, please try again :(')
       $('h3').html().assert_Is("Login")
       $('p' ).html().assert_Is("Returning customer? Please log in to access TEAM Mentor.")
       # Same as "it 'Login', (done)->" , so we should also check if those fields are here
@@ -136,10 +135,9 @@ describe 'jade-anonymous-users', ->
   it "Login Required", (done)->
     jade.page_Login_Required (html,$)->
       page.chrome.url (url)->
-        url.assert_Contains('/guest/login-required.html')
-        $('h3').html().assert_Is('It looks like the page you want to see needs a valid login')
-        $('p').text().assert_Is('Please Login')
-        $('p a').attr().assert_Is({ href: '/guest/login.html' })
+        $('#loginwall .alert').html('You need to login to see that page :)')
+        $('#loginwall h3').html().assert_Is("Login")
+        $('#loginwall p').text().assert_Is('Returning customer? Please log in to access TEAM Mentor.')
         done()
 
   it 'Password Forgot', (done)->
@@ -154,8 +152,8 @@ describe 'jade-anonymous-users', ->
 
   it 'Password Sent', (done)->
     jade.page_Pwd_Sent (html,$)->
-      $('h3').html().assert_Is("Done :)")
-      $('p' ).html().assert_Is("We&apos;ve sent you an email with instructions for resetting your password.")
+      $('h3').html().assert_Is("Login")
+      $('#loginwall .alert' ).html().assert_Is("We&apos;ve sent you an email with instructions for resetting your password :)")
       done()
 
   it 'Sign Up', (done) ->
@@ -179,16 +177,16 @@ describe 'jade-anonymous-users', ->
 
   it 'Sign Up Fail', (done) ->
     jade.page_Sign_Up_Fail (html,$)->
-      $('.alert').html().assert_Is('Sign Up failed')
+      $('.alert').html().assert_Is('Sign Up failed, please try again :(')
       $('h3'    ).html().assert_Is("Sign Up")
       done()
 
   it  'Sign Up OK', (done) ->
     jade.page_Sign_Up_OK (html,$)->
-      $('h3' )        .html().assert_Is('Welcome to TEAM Mentor'                     )
-      $($('p').get(0)).html().assert_Is('Thank you for creating a new account.'      )
-      $($('p').get(1)).text().assert_Is('Please Login'                               )
-      $('p a')        .attr('href').assert_Is('/guest/login.html')
+      $('h3' )      .html().assert_Is('Login'                     )
+      $('#loginwall .alert').html().assert_Is('Thanks for signing up to TEAM Mentor. Please login to access our libraries :)')
+      $('#loginwall h3').html().assert_Is("Login")
+      $('#loginwall p').text().assert_Is('Returning customer? Please log in to access TEAM Mentor.')
       done()
 
   it 'Tearms and Conditions', (done)->
