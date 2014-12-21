@@ -4,108 +4,14 @@
 
 var fs                 = require('fs'),
     path               = require('path'),
-    supertest          = require('supertest')   ,    
     cheerio            = require('cheerio')   ,    
     expect             = require('chai').expect ,            
     app                = require('../../server'),    
     Config             = require('../../Config'),
     Library_Controller = require('../../controllers/Library-Controller.js');    
 
-describe('controllers | test-Library-Controller.js |', function () 
+describe.only('controllers | test-Library-Controller.js |', function ()
 {    
-    this.timeout(5000);
-    
-    describe('used by controllers', function()
-    {
-        app.config.enable_Jade_Cache = true;                        // enable Jade compilation cache (which dramatically speeds up tests)
-                
-        var libraries = new Library_Controller().libraries;
-
-        it("/config", function(done) 
-        {
-            supertest(app).get('/config')
-                          .expect(200, app.config        , done);                      
-        });
-
-        it('/libraries', function(done) 
-           {   
-                var checkPageContents = function(html)  
-                    {    
-                        var $ = cheerio.load(html);
-                        expect($('#links-libraries a'   ).length).to.equal(4);                        
-                        expect($('#link-my-articles'    ).html()).to.equal('My Articles'); 
-                        expect($('#link-my-search-items').html()).to.equal('My Search Items'); 
- 
-
-                        var docsLink = $('#link-library-' + libraries.Uno.id);
-                        expect(docsLink.length).to.be.above(0);
-                        expect(docsLink.html()).to.equal(libraries.Uno.title);
-                        expect(docsLink.attr('href')).to.equal('/library/' + libraries.Uno.name);
-                        done();  
-                    };   
-
-                supertest(app).get('/libraries')    
-                              .expect(200)
-                              .end(function(error, response) 
-                                   {   
-                                        if(error) { throw error;}                                            
-                                        checkPageContents(response.text); 
-                                   });
-           });
-         it('/library/{good value}', function(done)
-           {   
-            //preCompiler.disableCache =false; 
-            var checkPageContents = function(html)  
-                    {    
-                        var $ = cheerio.load(html);
-                        expect($('#links-libraries a'   ).length).to.equal(4);                        
-                        expect($('#link-my-articles'    ).html()).to.equal('My Articles'); 
-                        expect($('#link-my-search-items').html()).to.equal('My Search Items'); 
-                        
-                        expect($('#links-library a'   ).length).to.equal(13);                        
-                        
-                        //console.log(html);
-                        //console.log(html); 
-                        done();
-                    };
-                supertest(app).get('/library/Uno')    
-                              .expect(200) 
-                              .end(function(error, response) 
-                                   {   
-                                        if(error) { throw error;}                                                                                    
-                                        checkPageContents(response.text); 
-                                   });
-
-            });
-        it('/library/{bad value}', function(done) 
-           {   
-
-                supertest(app).get('/library/AAABBBCC')    
-                              .expect(302)
-                              .end(function(error, response) 
-                                   {   
-                                        expect(response.headers.location).to.equal('/Libraries');
-                                        done();
-                                   });                                     
-            });
-        
-        it('/library/{good value}/folder/{good value}', function(done) 
-           {   
-            var checkPageContents = function(html)   
-                    {    
-                        var $ = cheerio.load(html);
-                        expect($('h3').html()).to.equal('Authentication');                        
-                        done();
-                    };
-                supertest(app).get('/library/Uno/folder/Authentication')       
-                              .expect(200) 
-                              .end(function(error, response) 
-                                   {   
-                                        if(error) { throw error;}                                                                                    
-                                        checkPageContents(response.text); 
-                                   });
-            });
-    });
 
     describe('internal Functions.js |', function() 
     {
@@ -146,16 +52,8 @@ describe('controllers | test-Library-Controller.js |', function ()
                 expect(libraries.Uno.name  ).to.equal('Uno' ); 
                 expect(libraries.Uno.id    ).to.equal('be5273b1-d682-4361-99d9-6234f2d47eb7'); 
                 expect(libraries.Uno.repo  ).to.equal('https://github.com/TMContent/Lib_UNO'); 
-                expect(libraries.Uno.site  ).to.equal('https://tmdev01-sme.teammentor.net/'); 
-                expect(libraries.Uno.title ).to.equal('Index'); 
-
-                /*expect(libraries.vulns      ).to.be.an('Object'); 
-                expect(libraries.vulns.name ).to.equal('vulns'); 
-                expect(libraries.vulns.id   ).to.equal('be5273b1-d682-4361-99d9-6204f2d47eb7'); 
-                expect(libraries.vulns.repo ).to.equal('https://github.com/TMContent/Lib_Vulnerabilities'); 
-                expect(libraries.vulns.site ).to.equal('https://tmdev01-sme.teammentor.net/'); 
-                expect(libraries.vulns.title).to.equal('Vulnerabilities');*/
-
+                expect(libraries.Uno.site  ).to.equal('https://tmdev01-uno.teammentor.net/');
+                expect(libraries.Uno.title ).to.equal('Index');
 
                 expect(libraries.ABC        ).to.not.be.an('Object'); 
 
