@@ -10,7 +10,7 @@ var fs                 = require('fs'),
     Config             = require('../../Config'),
     Library_Controller = require('../../controllers/Library-Controller.js');    
 
-describe.only('controllers | test-Library-Controller.js |', function ()
+describe('controllers | test-Library-Controller.js |', function ()
 {    
 
     describe('internal Functions.js |', function() 

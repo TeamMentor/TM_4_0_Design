@@ -29,44 +29,52 @@ describe('routes | test-routes.js |', function ()
             {
                 if (item.route) { paths.push(item.route.path);}
             });
-
+            console.log(paths)
             //console.log(paths);  
-            var expectedPaths = [ '/',                                     
-                                  '/deploy/html/:area/:page.html',                  // jade page rendering
-                                  '/:page.html'                  ,
-                                  '/user/login/:page.html'       ,
-                                  '/landing-pages/:page.html'    ,
-                                  '/help/:page*'                 ,
-                                  '/Image/:name'                 , 
-                                  '/:area/:page.html'            ,
-
-                                  '/getting-started/index.html'  ,                  // static redirects
-
-                                  '/user/login'                  ,                  // Authentication
-                                  '/user/login'                  ,
-                                  '/user/logout'                 ,
-                                  
-                                  '/libraries'                   ,
-                                  '/library/:name'               , 
-                                  '/library/:library/folder/:folder',
-                                  
-                                  '/search'                      ,                  // search
-                                  '/search.json'                 ,
-                                  '/search/:file'                ,
-                                  '/graph'                       , 
-                                  
-                                  '/dirName'                     ,                  // debug ones 
-                                  '/pwd'                         ,
-                                  '/test'                        ,
-                                  '/ping'                        ,
-                                  '/module'                      ,
-                                  '/mainModule'                  ,
-                                  
-                                  '/version'                     ,                  // config ones
-                                  '/config'                      , 
-                                  
-                                  '/session'                                                                                       ,
-                                 ];
+            var expectedPaths = [   '/:version/articles/:page',
+                                    '/:version/error-pages/:page',
+                                    '/:version/getting-started/:page',
+                                    '/:version/help/:page',
+                                    '/:version/home/:page',
+                                    '/:version/landing-pages/:page',
+                                    '/:version/learning-paths/:page',
+                                    '/:version/new-user-onboard/:page',
+                                    '/:version/style-guide/:page',
+                                    '/:version/user/:page',
+                                    '/:version/default',
+                                    '/flare/all',
+                                    '/flare',
+                                    '/flare/main-app-view',
+                                    '/user/login',
+                                    '/user/login',
+                                    '/user/logout',
+                                    '/user/pwd_reset',
+                                    '/user/sign-up',
+                                    '/libraries',
+                                    '/library/queries',
+                                    '/library/:name',
+                                    '/library/:library/folder/:folder',
+                                    '/graph/:queryId',
+                                    '/graph/:queryId/:filters',
+                                    '/user/main.html',
+                                    '/article/view/:guid/:title',
+                                    '/help/:page*',
+                                    '/Image/:name',
+                                    '/',
+                                    '/index.html',
+                                    '/guest/:page.html',
+                                    '/user/login/:page.html',
+                                    '/',
+                                    '/deploy/html/:area/:page.html',
+                                    '/module',
+                                    '/mainModule',
+                                    '/session',
+                                    '/dirName',
+                                    '/pwd',
+                                    '/test',
+                                    '/ping',
+                                    '/version',
+                                    '/config' ];
 
             expect(paths.length).to.be.equal(expectedPaths.length);
             paths.forEach(function(path)
