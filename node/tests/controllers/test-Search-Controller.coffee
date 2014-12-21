@@ -32,14 +32,13 @@ describe "controllers | test-Search-Controller |", ->
       expect(searchController.res         ).to.equal     (res       )
       expect(searchController.config      ).to.equal     (config    )
       expect(searchController.searchData  ).to.equal     (null      )
-      expect(searchController.jade_Page   ).to.equal     ('/source/jade/search.jade')
+      expect(searchController.jade_Page   ).to.equal     ('/source/jade/user/search.jade')
 
       expect(searchController.defaultUser    ).to.be.an('String')
       expect(searchController.defaultRepo    ).to.be.an('String')
       expect(searchController.defaultFolder  ).to.be.an('String')
       expect(searchController.defaultDataFile).to.be.an('String')
 
-      expect(searchController.showSearch ).to.be.an('Function')
       expect(searchController.renderPage ).to.be.an('Function')
 
       expect(new Search_Controller().config).to.deep.equal(new Config())
