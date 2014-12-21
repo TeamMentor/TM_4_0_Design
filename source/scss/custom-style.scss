@@ -1,30 +1,30 @@
 // HOW TO UNDERSTAND, USE AND EDIT THIS STYLESHEET
 
-// TEAM Mentor was built with mobile first, so the structure of this file means that styles without media queries apply to mobile and carry out throughout the whole application ONLY if there are no over-riding styles in the media queries at the end of the file.
+// TEAM Mentor was built mobile first , so the structure of this file means that styles without media queries apply to mobile and carry out throughout the whole application ONLY if there are no over-riding styles in the media queries at the end of the file.
 
-//--- Variables
-$asset-path: '../../deploy/assets/';
-$font-stack: Helvetica, sans-serif;
-$nav-padding-top: 100px;
-$full-width: 100%;
+// You'll find imports first, then a list of variables that can be used through out the stylesheet. Styles for the application are next and finally, styles for medium to large screens at the end.
 
 //--- Imports
 
 @import 'columns';
 @import 'colours';
 
+//--- Variables
+$asset-path: '../../deploy/assets/';
+$font-stack: 100% Helvetica, sans-serif;
+$full-width: 100%;
 
 //--- Layout & Structure
 
 html {
-	font: 100% Helvetica, sans-serif;
+	font: $font-stack;
 }
 
 body {
-	max-width: 100%;
+	background: $white;
 	margin: 0;
+	max-width: $full-width;
 	padding: 0;
-	background: #FFFFFF;
 }
 
 .collapse {
@@ -37,8 +37,8 @@ img {
 }
 
 .lge-container {
-	max-width: 96%;
 	margin: 0 auto;
+	max-width: 96%;
 }
 
 .long {
@@ -57,15 +57,15 @@ img {
 
 #about {
 	background: url(../assets/stock-img/bgthree.jpg);
-	width: 100%;
-	margin-top: 65px;
+	background-color: $green;
+	margin: 65px 0 0 0;
 	padding: 50px 0 80px 0;
-	background-color: #8aaf3e;
 	text-align: center;
+	width: $full-width;
 }
 
 #about h2, #usp h2 {
-	color: #FFFFFF;
+	color: $white;
 }
 
 #about-us {
@@ -73,23 +73,20 @@ img {
 }
 
 #call-to-action {
-	padding: 100px 0 110px 0;
 	background: url(../assets/stock-img/bgtwo.jpg);
-	background-color: #49661f;
+	background-color: $dark-green;
+	padding: 100px 0 110px 0;
 	text-align: center;
-
 	h1 {
-		color: #FFFFFF;
+		color: $white;
 	}
-
 	button {
-		padding: 20px 0 20px 0;
-		background-color: #FFFFFF;
+		background-color: $white;
 		border: none;
-
+		padding: 20px 0 20px 0;
 		&:hover, &:active {
-			color: #FFFFFF !important;
-			background-color: #8aaf3e;
+			background-color: $green;
+			color: $white;
 		}
 	}
 }
@@ -101,28 +98,22 @@ img {
 
 #copyright {
 	padding-bottom: 30px;
-	p {
-		font-size: 12px;
-		text-align: center;
-		font-weight: normal;
-		letter-spacing: 0px;
-	}
 	a {
 		font-size: 12px;
-		text-align: center;
 		font-weight: normal;
 		letter-spacing: 0px;
-		text-transform: none !important;
+		text-align: center;
 		text-decoration: underline;
+		text-transform: none;
 	}
 }
 
 #description {
-	width: 100%;
+	background-color: $light-grey;
 	margin: 0 15px 0 0;
 	padding: 5px 0 5px 0;
-	background-color: #ececec;
 	text-align: center;
+	width: $full-width;
 }
 
 #features {
@@ -136,14 +127,14 @@ img {
 }
 
 #footer {
-	width: 100%;
 	padding: 15px 0 20px 0;
 	text-align: center;
+	width: $full-width;
 	a {
-		color: #444444;
-		text-transform: uppercase;
-		letter-spacing: 1px;
+		color: $dark-grey;
 		font-size: 10px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
 	}
 }
 
@@ -155,20 +146,19 @@ img {
 }
 
 #usp {
-	width: 100%;
+	background: url(../assets/stock-img/bgone.jpg);
+	background-color: $green;
 	margin: 65px 0 0 0;
 	padding: 50px 0 80px 0;
-	background-color: #8aaf3e;
 	text-align: center;
-	background: url(../assets/stock-img/bgone.jpg);
+	width: $full-width;
 	button {
-		padding: 20px 0 20px 0;
-		background-color: #FFFFFF;
+		background-color: $white;
 		border: none;
-
+		padding: 20px 0 20px 0;
 		&:hover, &:active {
-			color: #FFFFFF !important;
-			background-color: #8aaf3e;
+			background-color: $green;
+			color: $white;
 		}
 	}
 }
@@ -178,69 +168,69 @@ img {
 //------ Application
 
 #application {
-	width: 100%;
-	height: 100%;
+	height: $full-width;
 	margin-top: 50px;
+	width: $full-width;
 }
 
 #loginwall, #summary {
-	padding-top: 80px;
-	max-width: 95%;
 	margin: 0 auto;
+	max-width: 95%;
+	padding-top: 80px;
 }
 
 
 //------ Navigation
 
 .fixed {
-	position: fixed;
-	width: 100%;
 	left: 0;
+	position: fixed;
 	top: 0;
+	width: $full-width;
 	z-index: 99;
 }
 
 #customer-navigation {
-	background-color: #FFFFFF;
-	max-height: 100px;
+	background-color: $white;
 	display: block;
+	max-height: 100px;
 	ul {
 		padding: 5px 0 0 25px;
 	}
 }
 
 #team-mentor-navigation {
-	background-color: #FFFFFF;
+	background-color: $white;
 	max-height: 150px;
 	text-align: center;
 }
 
 #not-logged-in {
-	width: 100%;
+	width: $full-width;
 	img {
-		padding: 0 0 0 5px;
 		float: left;
+		padding: 0 0 0 5px;
 	}
 	ul li {
-		padding: 5px 5px 0 0;
-		list-style-type: none;
 		float: right;
+		list-style-type: none;
+		padding: 5px 5px 0 0;
 	}
 }
 
 #title-area {
-	width: 100%;
 	float: left;
+	width: $full-width;
 }
 
 #links {
-	width: 100%;
-	text-align: text-center;
 	padding: 10px 0 5px 0;
+	width: $full-width;
+	text-align: center;
 	ul {
 		list-style-type: none;
-		width: 100%;
 		padding: 0;
+		width: $full-width;
 	}
 	&.icons a img {
 		display: inline-block;
@@ -250,15 +240,15 @@ img {
 		display: inline;
 		padding: 0 10px 0 0;
 		a {
-			text-transform: uppercase;
-			text-decoration: none;
-			letter-spacing: 1px;
+			color: $green;
 			font-size: 12px;
 			font-weight: 700;
-			color: #8aaf3e;
+			letter-spacing: 1px;
 			line-height: 1em;
+			text-decoration: none;
+			text-transform: uppercase;
 			&:hover {
-				color: #49661f;
+				color: $dark-green;
 			}
 		}
 	}
@@ -267,16 +257,16 @@ img {
 //--- Forms
 
 form, .form-group {
-	margin-bottom: 15px;
 	list-style-type: none;
+	margin-bottom: 15px;
 }
 
 label {
+	color: $dark-grey;
 	display: inline-block;
+	font-weight: bold;
 	padding: 3px 0 0 0;
 	margin-bottom: 5px;
-	font-weight: bold;
-	color: #444444;
 }
 
 input {
@@ -284,127 +274,117 @@ input {
 		margin-right: 20px;
 	}
 	&[type="text"], &[type="password"], &[type="date"], &[type="datetime"], &[type="datetime-local"], &[type="month"], &[type="week"], &[type="email"], &[type="number"], &[type="search"], &[type="tel"], &[type="time"], &[type="url"] {
-		width: 100% !important;
-		background-color: #FFFFFF;
-		font-family: inherit;
-		border: 1px solid #aaaaaa;
+		background-color: $white;
+		border: 1px solid $grey;
 		box-shadow: none;
-		color: #444444;
-		display: block;
-		font-size: 16px;
-		padding: 0.5rem;
-		height: 3rem;
 		-webkit-box-sizing: border-box;
-		/* Safari/Chrome, other WebKit */
 		-moz-box-sizing: border-box;
-		/* Firefox, other Gecko */
 		box-sizing: border-box;
+		color: $dark-grey;
+		display: block;
+		font-family: inherit;
+		font-size: 1em;
+		height: 3rem;
+		padding: 0.5rem;
+		width: $full-width;
 	}
 	&[type="text"]:focus, &[type="password"]:focus, &[type="date"]:focus, &[type="datetime"]:focus, &[type="datetime-local"]:focus, &[type="month"]:focus, &[type="week"]:focus, &[type="email"]:focus, &[type="number"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="time"]:focus, &[type="url"]:focus {
-		background: #FFFFFF;
-		border-color: #8aaf3e;
+		background: $white;
+		border-color: $green;
 		outline: medium none;
 	}
 }
 
 textarea {
-	width: 100% !important;
-	background-color: #FFFFFF;
-	font-family: inherit;
-	border: 1px solid #aaaaaa;
+	background-color: $white;
+	border: 1px solid $grey;
 	box-shadow: none;
-	color: #444444;
-	display: block;
-	font-size: 16px;
-	padding: 0.5rem;
-	height: 3rem;
 	-webkit-box-sizing: border-box;
-	/* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;
-	/* Firefox, other Gecko */
 	box-sizing: border-box;
-
+	color: $dark-grey;
+	display: block;
+	font-family: inherit;
+	font-size: 1em;
+	height: 3rem;
+	padding: 0.5rem;
+	width: $full-width;
 	&:focus {
-		background: #FFFFFF;
-		border-color: #8aaf3e;
+		background: $white;
+		border-color: $green;
 		outline: medium none;
 	}
 }
 
 select {
-	width: 100%;
-	height: 3em;
-	display: block;
-	background: #FFFFFF;
-	font-family: inherit;
-	font-size: 16px;
-	border: 1px solid #aaaaaa;
+	background: $white;
+	border: 1px solid $grey;
 	box-shadow: none;
-	color: #444444;
+	color: $dark-grey;
+	display: block;
+	font-family: inherit;
+	font-size: 1em;
+	height: 3em;
+	width: $full-width;
 }
 
 .input-group {
 	display: table;
 	float: left;
-	width: 100%;
+	width: $full-width;
 	.form-control {
 		display: table-cell;
 		height: 53px;
 	}
 	.input-group-btn {
-		display: table-cell;
 		border-left: none !important;
-		width: 100px;
-		max-width: 100%;
+		display: table-cell;
+		max-width: $full-width;
 		vertical-align: middle;
+		width: 100px;
 	}
 }
 
 //--- Typography
 
 h1 {
+	color: $grey;
 	font-size: 2em;
 	line-height: 1.25em;
-	color: #aaaaaa;
 }
 
 h2 {
+	color: $grey;
 	font-size: 1.625em;
 	line-height: 1.153em;
-	color: #aaaaaa;
 }
 
 h3 {
 	font-size: 1.375em;
 	line-height: 1.136em;
-	color: #aaaaaa;
+	color: $grey;
 }
 
 h4 {
 	font-size: 1.125em;
 	line-height: 1.11em;
-	color: #444444;
+	color: $dark-grey;
 }
 
 h5 {
 	font-size: 1.105em;
 	line-height: 1.11em;
-	color: #444444;
+	color: $dark-grey;
 }
 
 p {
+	color: $dark-grey;
 	font-size: 1em;
 	line-height: 1.5em;
 }
 
-ul, ol {
-	margin-left: 0;
-	margin-bottom: 0;
-	margin-top: 0;
-}
-
-ul ul, ol ul {
-	margin-bottom: 0;
+ul, ol, ul ul, ol ul {
+	margin: 0;
 }
 
 code {
@@ -413,21 +393,19 @@ code {
 }
 
 pre {
+	background-color: $light-grey;
+	border: 1px solid $grey;
+	border-radius: 0px;
+	color: $dark-grey;
+	display: block;
 	font-family: monospace, monospace;
 	font-size: 1em;
-	display: block;
-	padding: 20px;
-	margin: 0 0 10px;
-	font-size: 13px;
 	line-height: 1.5;
-	color: #444444;
-	word-break: break-all;
-	word-wrap: break-word;
-	background-color: #ececec;
-	border: 1px solid #aaaaaa;
-	border-radius: 0px;
 	margin: 30px 0 30px 0;
 	overflow: auto;
+	padding: 20px;
+	word-break: break-all;
+	word-wrap: break-word;
 }
 
 .text-center {
@@ -444,72 +422,68 @@ pre {
 }
 
 hr {
-	margin: 0 auto;
+	color: $light-grey;
+	margin: 40px auto 40px auto;
 	width: 70%;
-	color: #ececec;
-	margin-top: 40px;
-	margin-bottom: 40px;
 }
 
 a {
-	color: #444444;
+	color: $dark-grey;
 	text-decoration: underline;
 	&:hover, &:active, &:focus {
-		color: #49661f;
+		color: $dark-green;
 		text-decoration: underline;
 	}
 	&.action {
-		text-transform: uppercase;
-		text-decoration: none;
-		letter-spacing: 1px;
+		color: $green;
 		font-size: 14px;
 		font-weight: 700;
-		color: #8aaf3e;
+		letter-spacing: 1px;
+		text-decoration: none;
+		text-transform: uppercase;
 		&:hover, &:focus, &:active {
-			color: #49661f;
+			color: $dark-green;
 		}
 	}
 }
 
 button, .button {
+	background-color: $white;
+	color: $green;
 	font-size: 14px;
-	background-color: #FFFFFF;
-	color: #8aaf3e;
-	width: 100% !important;
-	text-transform: uppercase;
 	letter-spacing: 1px;
-
+	text-transform: uppercase;
+	width: $full-width;
 	&:hover, &:focus {
-		background-color: #FFFFFF;
-		color: #49661f;
+		background-color: $white;
+		color: $dark-green;
 		text-decoration: none;
 	}
 }
 
 button.postfix, .button.postfix {
-	color: #8aaf3e !important;
-	font-size: 16px;
-	padding-top: 7px;
-	border: 1px solid #aaaaaa;
-	height: 3rem;
+	border: 1px solid $grey;
 	border-left: none;
-
+	color: $green;
+	font-size: 1em;
+	height: 3rem;
+	padding-top: 7px;
 	&:hover {
-		color: #49661f !important;
-		background: #FFFFFF;
+		background: $white;
+		color: $dark-green;
 	}
 }
 
 //--- Badges
 
 .badge {
+	color: $white;
+	background-color: $grey;
+	border-radius: 10px;
+	font-size: 12px;
 	min-width: 10px;
 	padding: 3px 7px;
-	font-size: 12px;
-	color: #FFFFFF;
-	background-color: #aaaaaa;
 	text-align: center;
-	border-radius: 10px;
 }
 
 //--- List Group and Nav Tables
@@ -517,16 +491,15 @@ button.postfix, .button.postfix {
 .list-group {
 	height: auto;
 	h5, h4 {
-		margin-top: 5px;
-		margin-bottom: 0;
+		margin: 5px 0 0 0;
 	}
 	a {
 		display: block;
 		padding: 11px;
 		text-decoration: none;
 		&:hover {
+			background-color: $light-grey;
 			text-decoration: none;
-			background-color: #e3e3e3;
 		}
 	}
 	span.badge {
@@ -541,15 +514,15 @@ button.postfix, .button.postfix {
 	}
 	tr {
 		td {
+			border-bottom: 1px solid $light-grey;
 			padding: 5px;
-			border-bottom: 1px solid #e3e3e3;
 		}
 		&:last-child {
 			border-bottom: transparent;
 		}
 		&:hover {
-			background-color: #e3e3e3;
-			color: #49661f;
+			background-color: $light-grey;
+			color: $dark-green;
 		}
 	}
 	span.badge {
@@ -560,49 +533,48 @@ button.postfix, .button.postfix {
 //--- Alerts
 
 .alert {
-	padding: 15px;
-	margin-bottom: 0px;
-	background: #FFFFFF;
-	color: #8aaf3e;
+	background: $white;
 	border: none;
+	color: $green;
 	font-size: inherit;
 	font-weight: 700;
+	margin: 0;
+	padding: 15px;
 }
 
 //--- Table
 
 table {
-	width: 100%;
+	color: $dark-grey;
 	font-size: 16px;
-	color: #444444;
+	width: 100%;
 	td {
-		padding-left: 10px;
-		padding-right: 10px;
 		height: 30px;
+		padding: 0 10px 0 10px
 	}
 }
 
 //--- Breadcrumbs
 
 .breadcrumbs {
-	padding-left: 10px;
-	background: #FFFFFF;
+	background: $white;
 	border: none;
+	padding: 0 0 0 10px;
 	li {
 		display: inline-block;
 		&.current a {
-			color: #8aaf3e;
+			color: $green;
 			text-decoration: none;
 		}
 		a {
+			color: $grey;
 			font-size: 12px;
 			font-weight: 700;
 			letter-spacing: 1px;
-			text-transform: uppercase;
 			text-decoration: none;
-			color: #aaaaaa;
+			text-transform: uppercase;
 			&:hover {
-				color: #8aaf3e;
+				color: $green;
 			}
 		}
 		&:first-child:before {
@@ -620,15 +592,15 @@ table {
 
 @media (min-width: 650px) {
 	#application {
-		margin-top: 30px;
+		margin: 30px 0 0 0;
 	}
 	#title-area {
 		display: inline-block;
 		max-width: 35%;
 		img {
-			padding: 0 0 0 20px;
 			float: left;
-			max-width: 100%;
+			max-width: $full-width;
+			padding: 0 0 0 20px;
 		}
 	}
 	#not-logged-in {
@@ -643,11 +615,11 @@ table {
 		display: inline-block;
 		max-width: 65%;
 		&.icons {
-			padding-top: 7px;
+			padding: 7px 0 0 0;
 			text-align: right;
 		}
 		&.text-links {
-			padding-top: 20px;
+			padding: 20px 0 0 0;
 			ul {
 				padding: 0 0 0 10px;
 				text-align: right;
