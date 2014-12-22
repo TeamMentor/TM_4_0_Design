@@ -1,64 +1,126 @@
-@import "custom-style.scss";
+// HOW TO UNDERSTAND, USE AND EDIT THIS STYLESHEET
+
+// TEAM Mentor was built mobile first , so the structure of this file means that styles without media queries apply to mobile and carry out throughout the whole application ONLY if there are no over-riding styles in the media queries at the end of the file.
+
+// The structure for the file follows an hierarchal layout. Beginning from the top, everything is laid out in the order it appears. Styles are applied by how they affect the structure of an item followed by how they make an item appear.
+
+// |- Imports
+// |- Variables
+// |- Layout & Structure
+//  --|- Navigation
+//  --|- Application
+//  ----|- Loginwall
+//  ----|- Accordion
+//  ----|- Tabs
+// |- Media Queries
+
+// IMPORTS
+
+@import 'colours';
+
+// VARIABLES
+
+// LAYOUT & STRUCTURE
+//--- NAVIGATION
+.fixed {
+	position: fixed;
+	width: $full-width;
+	height: 60px;
+	left: 0;
+	top: 0;
+	z-index: 99;
+
+	#customer-navigation {
+		background-color: $white;
+		width: $full-width;
+		height: 45px;
+
+		ul {
+			padding: 5px 0 0 25px;
+		}
+	}
+	#team-mentor-navigation {
+		background-color: $white;
+		padding-left: 20px;
+		width: $full-width;
+		height: 70px;
+
+		ul.menu-icon.right {
+			margin: 20px 25px 0 0;
+
+			li {
+				list-style-type: none;
+			}
+		}
+	}
+}
+
+//--- APPLICATION
 
 #application {
 	display: flex;
 	flex-direction: column;
 }
 
+#results, #right-nav, #left-nav {
+	flex: 1 1 auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: $full-width;
+	max-width: $full-width;
+}
+
+//--- LOGINWALL
+
 #loginwall {
-	dl.tabs {
-		dd {
-			width: 50%;
-			border: 1px solid $grey;
-		}
+	padding: 0;
+
+	dl.tabs dd {
+		width: 50%;
+		border: 1px solid $grey;
+
 		.active {
 			background: $light-grey;
 		}
 	}
+
 	.tabs-content {
 		border: 1px solid $grey;
 		border-top: none;
 	}
 }
 
-#results, #right-nav, #left-nav {
-	flex: 1 1 auto;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	height: 100%;
-	max-width: $full-width;
-}
+//--- ACCORDION
 
-// Accordians
-
-.accordion dd > a {
-	background: $white;
-	color: $dark-grey;
-	font-weight: 700;
-	text-decoration: none;
-
-	&:hover {
-		color: $dark-green;
+.accordion {
+	dd a {
 		background: $white;
-	}
+		color: $dark-grey;
+		font-weight: 700;
+		text-decoration: none;
 
-	table {
-		border-color: transparent;
+		&:hover {
+			color: $dark-green;
+			background: $white;
+		}
 
-		table tr:nth-of-type(even) {
-			background-color: $white;
+		table {
+			border-color: transparent;
+
+			tr:nth-of-type(even) {
+				background-color: $white;
+			}
 		}
 	}
 }
 
-// Tabs
+//--- TABS
 
 dl.tabs {
 	dd {
 		&.related-options-width {
-			width: 50%;
+		width: 50%;
 		}
-
 		a {
 			font-size: 14px;
 			text-align: center !important;
@@ -70,7 +132,7 @@ dl.tabs {
 			color: $green;
 
 			&:hover, &:active {
-				color: $dark-green !important;
+				color: $dark-green;
 				background: $white;
 			}
 		}
