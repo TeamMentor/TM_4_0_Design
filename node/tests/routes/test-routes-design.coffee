@@ -2,7 +2,7 @@ app       = require('../../server')
 expect    = require('chai').expect
 supertest = require('supertest')
 
-describe "routes | test-routes-design |", ->
+describe.only "routes | test-routes-design |", ->
     
     routes = [ { url: "/articles/article-new-window-view.html" , status: 200 }
                { url: "/articles/fundamentals-of-security.html", status: 200 }
@@ -25,6 +25,7 @@ describe "routes | test-routes-design |", ->
     
     runTest = (route) ->
         it route.url, (done) ->
+            console.log route.url
             checkreponse = (error,response) ->
                 expect(error).to.equal(null)
                 expect(response.text).to.not.equal('')

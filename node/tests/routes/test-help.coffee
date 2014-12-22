@@ -1,38 +1,25 @@
-/*jslint node: true , expr:true */
-/*global describe, it ,before, after */
-"use strict";
-
-var supertest         = require('supertest')   ,    
-    expect            = require('chai').expect ,
-    cheerio           = require('cheerio')     ,    
-    marked            = require('marked')      ,
-    request           = require('request')     , 
-    fs                = require('fs')          ,    
-    app               = require('../../server'),
-    Jade_Service      = require('../../services/Jade-Service'),
-    teamMentorContent = require('../../services/teamMentor-content.js'),
-    Help_Controller   = require('../../controllers/Help-Controller.js');
+supertest         = require('supertest')
+expect            = require('chai').expect
+cheerio           = require('cheerio')
+marked            = require('marked')
+request           = require('request')
+fs                = require('fs')
+app               = require('../../server')
+Jade_Service      = require('../../services/Jade-Service')
+teamMentorContent = require('../../services/teamMentor-content.js')
+Help_Controller   = require('../../controllers/Help-Controller.js')
     
 
-describe.only('routes |', function ()
-{
-    app.config.enable_Jade_Cache = true;                        // enable Jade compilation cache (which dramatically speeds up tests)
+describe.only 'routes |', ()->
+
+    app.config.enable_Jade_Cache = true;       # enable Jade compilation cache (which dramatically speeds up tests)
     
-    before(function() 
-    { 
+    before ->
         app.server = app.listen(app.port);
-        
-        //preCompiler.disableCache = false;  
-        
-        expect(teamMentorContent).to.be.an('Object'); 
-        
-        /*var targetPath = preCompiler.calculateTargetPath('/source/html/help/index.jade');
-        if(fs.existsSync(targetPath))
-        {
-            fs.unlinkSync(targetPath); 
-        }
-        expect(fs.existsSync(targetPath)).to.be.false;*/
-    });
+        #preCompiler.disableCache = false;
+        expect(teamMentorContent).to.be.an('Object');
+
+###
     after (function() { app.server.close();                  });
         
     describe('test-help.js |', function() 
@@ -40,7 +27,7 @@ describe.only('routes |', function ()
         it('should open page ok', function(done)
         {
             supertest(app).get('/help/index.html')
-                          .expect(200,done); 
+                          .expect(200,done);
         });
         
         it('open /default.html', function(done)
@@ -159,3 +146,5 @@ describe.only('routes |', function ()
         });
     });
 });
+
+###
