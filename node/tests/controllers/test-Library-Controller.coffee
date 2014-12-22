@@ -54,7 +54,7 @@ describe 'controllers | test-Library-Controller.js |', ()->
             libraries           = library_Controller.libraries;
 
             library_Key  = "Uno";
-            library_Name = "UNO";
+            library_Name = "Guidance";
             library_ID   = 'be5273b1-d682-4361-99d9-6234f2d47eb7';
                 
             library      = libraries[library_Key];
