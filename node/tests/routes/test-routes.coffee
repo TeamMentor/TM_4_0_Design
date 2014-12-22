@@ -1,10 +1,7 @@
-assert   = require('chai').assert
-expect   = require('chai').expect
 supertest = require('supertest')
-#Browser  = require('zombie')
 app      = require('../../server')
     
-describe.only 'routes | test-routes.js |', ()->
+describe 'routes | test-routes.js |', ()->
     expectedPaths = [ '/',
                       '/flare/:area/:page',
                       '/flare/default',
@@ -42,8 +39,6 @@ describe.only 'routes | test-routes.js |', ()->
     before ()->
       app.server = app.listen();
 
-      #Browser.localhost("localhost", app.port)
-
     after ()->
       app.server.close()
 
@@ -58,9 +53,9 @@ describe.only 'routes | test-routes.js |', ()->
 
         #console.log(paths.sort())
 
-        expect(paths.length).to.be.equal(expectedPaths.length);
+        paths.length.assert_Is(expectedPaths.length)
         paths.forEach (path)->
-            expect(expectedPaths).to.contain(path);
+            expectedPaths.assert_Contains(path)
 
   #dynamically create the tests
     runTest = (originalPath) ->
@@ -83,8 +78,8 @@ describe.only 'routes | test-routes.js |', ()->
       it testName, (done) ->
 
         checkResponse = (error,response) ->
-          expect(error).to.equal(null)
-          expect(response.text).to.not.equal('')
+          assert_Is_Null(error)
+          response.text.assert_Is_String()
           done()
         if (postRequest)
           supertest(app).post(path).send({})
