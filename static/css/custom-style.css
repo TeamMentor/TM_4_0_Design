@@ -408,6 +408,7 @@ label {
 }
 #customer-navigation ul {
   padding: 5px 0 0 25px;
+  text-align: center;
 }
 
 #team-mentor-navigation {
@@ -801,6 +802,9 @@ table td {
 @media (min-width: 650px) {
   #application {
     margin-top: 30px;
+  }
+  #customer-navigation ul {
+    text-align: left;
   }
   #title-area {
     display: inline-block;
