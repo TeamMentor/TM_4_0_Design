@@ -2,7 +2,24 @@
 
 // TEAM Mentor was built mobile first , so the structure of this file means that styles without media queries apply to mobile and carry out throughout the whole application ONLY if there are no over-riding styles in the media queries at the end of the file.
 
-// Hello
+// The structure for the file follows an hierarchal layout. Beginning from the top, everything is laid out in the order it appears. Styles are applied by how they affect the structure of an item followed by how they make an item appear.
+
+// |- Imports
+// |- Variables
+// |- Typography
+// |- Layout & Structure
+//  --|- Navigation
+//  ----|- Sub Navigation
+//  ----|- List Groups
+//  ----|- Tables
+//  ----|- Breadcrumbs
+//  --|- Application
+//  ----|- Forms
+//  ----|- Badges
+//  ----|- Alerts
+//  --|- Landing Pages
+// |- Media Queries
+
 
 // IMPORTS
 
@@ -114,6 +131,35 @@ body {
 img {
 	height: auto;
 	margin: 0 auto;
+}
+
+.collapse {
+	margin-bottom: -50px;
+}
+
+.long {
+	height: 100px;
+}
+
+.vertical-align {
+	margin-top: 10px;
+}
+
+.short {
+	height: 40px;
+}
+
+.text-center {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.normal {
+	font-weight: normal;
+}
+
+.strong {
+	font-weight: bold;
 }
 
 //--- NAVIGATION
@@ -384,7 +430,7 @@ button {
 	}
 }
 
-//------ BADES
+//------ BADGES
 
 .badge {
 	min-width: 10px;
@@ -405,37 +451,6 @@ button {
 	background: $white;
 	font-weight: 700;
 	color: $green;
-}
-
-//------ ADDITIONAL CLASSES
-
-.collapse {
-	margin-bottom: -50px;
-}
-
-.long {
-	height: 100px;
-}
-
-.vertical-align {
-	margin-top: 10px;
-}
-
-.short {
-	height: 40px;
-}
-
-.text-center {
-	text-align: center;
-	margin: 0 auto;
-}
-
-.normal {
-	font-weight: normal;
-}
-
-.strong {
-	font-weight: bold;
 }
 
 //--- LANDING PAGES
