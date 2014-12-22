@@ -24,8 +24,6 @@ class SearchController
         @defaultDataFile  = 'Data_Validation'        
     
     renderPage: ()->
-        if not @searchData
-            @loadSearchData()
         @jade_Service.renderJadeFile(@jade_Page, @searchData)
 
     ###
@@ -66,8 +64,6 @@ class SearchController
         graphService = new Graph_Service()
         graphService.graphDataFromGraphDB null, queryId, filters,  (searchData)=>
                 searchData.filter_container = filters
-        #graphService.graphDataFromQAServer dataId, (graphData)=>
-        #    graphService.createSearchDataFromGraphData graphData,@req.query.left, @req.query.right, (searchData)=>
                 @searchData = searchData
                 searchData.breadcrumbs = breadcrumbs_Cache
                 @res.send(@renderPage())

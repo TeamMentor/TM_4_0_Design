@@ -4,7 +4,7 @@ expect        = require('chai'         ).expect
 spawn         = require('child_process').spawn
 Graph_Service  = require('./../../services/Graph-Service')
 
-describe 'test-Articles-Graph |', ->
+describe 'test-Graph-Service |', ->
     graphService  = new Graph_Service()    
     
     beforeEach ()->
@@ -17,109 +17,18 @@ describe 'test-Articles-Graph |', ->
         done()
     
     it 'deleteDb', (done) ->
-        graphService.closeDb ->    
-            expect(graphService.dbPath.fileExists()).to.be.true
-            spawn('rm', ['-Rv',graphService.dbPath])
-                .on 'exit', (code, signal) ->                     
-                    expect(graphService.dbPath.fileExists()).to.be.false
-                    done()
+      graphService.closeDb ->
+        graphService.dbPath.assert_That_Folder_Exists()
+        graphService.deleteDb ->
+          graphService.dbPath.assert_That_Folder_Not_Exists()
+          done()
         
     it 'check ctor',->
         expect(Graph_Service       ).to.be.an('Function')
         expect(graphService       ).to.be.an('Object'  )
         expect(graphService.dbPath).to.be.an('String'  )
-        #expect(graphService.level ).to.be.an('Object'  )
         expect(graphService.db    ).to.be.an('Object'  )
 
-    it 'graphDataFromQAServer', (done)->
-        expect(graphService.graphDataFromQAServer).to.be.an('Function')
-        graphService.graphDataFromQAServer (graphData)->
-            expect(graphData      ).to.be.an('Object')
-            expect(graphData.nodes).to.be.an('Array')
-            expect(graphData.edges).to.be.an('Array')
-            done()
-            
-    it 'mapNodesFromGraphData', (done)->
-        expect(graphService.mapNodesFromGraphData).to.be.an('Function')
-        graphService.graphDataFromQAServer (graphData)->
-            graphService.mapNodesFromGraphData graphData, (nodes)->
-                expect(nodes            ).to.be.an('Object')
-                expect(nodes.nodes_by_Id).to.be.an('Object')
-                expect(nodes.nodes_by_Is).to.be.an('Object')
-                expect(Object.keys(nodes.nodes_by_Id).length).to.equal(graphData.nodes.length)
-                done()
-        
-    it 'createSearchDataFromGraphData', (done)->
-    
-        viewName          = 'Data Validation'
-        container_Title   = 'Perform Validation on the Server'
-        container_Id      = '4eef2c5f-7108-4ad2-a6b9-e6e84097e9e0'
-        container_Size    = 3
-        resultsTitle      = '8/8 results showing'
-        result_Title      = 'Client-side Validation Is Not Relied On'
-        result_Link       = 'https://tmdev01-uno.teammentor.net/9607b6e3-de61-4ff7-8ef0-9f8b44a5b27d'
-        result_Id         = '9607b6e3-de61-4ff7-8ef0-9f8b44a5b27d'
-        result_Summary    = 'Verify that the same or more rigorous checks are performed on the server as
-                             on the client. Verify that client-side validation is used only for usability
-                             and to reduce the number of posts to the server.'
-        result_Score      = 0
-        view_Title        = 'Technology'
-        view_result_Title = 'ASP.NET 4.0'
-        view_result_Size  = 1
-        
-        checkSearchData = (data)->
-            #console.log(data)
-            expect(data             ).to.be.an('Object')
-            
-            expect(data.title       ).to.be.an('String')
-            expect(data.containers  ).to.be.an('Array' )
-            expect(data.resultsTitle).to.be.an('String')
-            expect(data.results     ).to.be.an('Array' )
-            expect(data.filters     ).to.be.an('Array' )
-                        
-            expect(data.title                   ).to.equal(viewName)
-            done()
-            return
-            expect(data.containers.first().title).to.equal(container_Title)
-            expect(data.containers.first().id   ).to.equal(container_Id   )
-            expect(data.containers.first().size ).to.equal(container_Size )      
-            expect(data.resultsTitle            ).to.equal(resultsTitle   )
-            expect(data.results.first().title   ).to.equal(result_Title)
-            expect(data.results.first().link    ).to.equal(result_Link)
-            expect(data.results.first().id      ).to.equal(result_Id)
-            expect(data.results.first().summary ).to.equal(result_Summary)
-            expect(data.results.first().score   ).to.equal(result_Score)
-                                
-            firstFilter = data.filters.first()
-            expect(firstFilter.title                ).to.equal(view_Title)
-            expect(firstFilter.results              ).to.be.an('Array' )
-            expect(firstFilter.results.first().title).to.equal(view_result_Title)
-            expect(firstFilter.results.first().size ).to.equal(view_result_Size)
-
-            done()
-            
-        expect(graphService.createSearchDataFromGraphData).to.be.an('Function')    
-        graphService.graphDataFromQAServer (graphData) ->
-            graphService.createSearchDataFromGraphData graphData, (searchData)->
-                checkSearchData(searchData)
-            
-    return 
-#    it 'dataFilePath',->
-#        expect(              graphService.dataFilePath   ).to.be.an('Function')
-#        expect(              graphService.dataFilePath() ).to.be.an('String')
-#        expect(fs.existsSync(graphService.dataFilePath())).to.be.true
-#    
-#    it 'dataFromFile', ->
-#        expect(              graphService.dataFromFile   ).to.be.an('Function')
-#        data = graphService.dataFromFile()
-#        expect(data        ).to.be.an('Array')
-#        expect(data        ).to.not.be.empty
-#        expect(data.first()).to.not.be.empty
-#
-#        expect(data.first().subject).to.be.an('String')
-#        expect(data.first().predicate).to.be.an('String')
-#        expect(data.first().object).to.be.an('String')
-    
     it 'dataFromGitHub', (done)->
         expect(graphService.dataFromGitHub   ).to.be.an('Function')
         graphService.dataFromGitHub (data)->

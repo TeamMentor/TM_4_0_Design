@@ -30,6 +30,7 @@ var JadeService = function(config)
             {
                 var fileToCompile_Path = path.join(process.cwd(), fileToCompile);
 
+
                 if (fs.existsSync(fileToCompile_Path)===false)  {  return false;  }
 
                 var targetFile_Path = this.calculateTargetPath(fileToCompile);
@@ -46,12 +47,11 @@ var JadeService = function(config)
 
 
                 fs.writeFileSync(targetFile_Path, exportCode);
-                return fs.existsSync(targetFile_Path);            
+                return fs.existsSync(targetFile_Path);
             };    
         
         this.renderJadeFile = function(jadeFile, params)
             {
-                console.log(jadeFile)
                 if (this.cacheEnabled() === false) 
                 {
                     var jadeFile_Path = path.join(process.cwd(), jadeFile);

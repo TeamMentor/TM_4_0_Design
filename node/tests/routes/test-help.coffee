@@ -10,7 +10,7 @@ teamMentorContent = require('../../services/teamMentor-content.js')
 Help_Controller   = require('../../controllers/Help-Controller.js')
     
 
-describe.only 'routes |', ()->
+describe 'routes |', ()->
 
     app.config.enable_Jade_Cache = true;       # enable Jade compilation cache (which dramatically speeds up tests)
     
