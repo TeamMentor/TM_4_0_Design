@@ -52,19 +52,16 @@ var Login_Controller = function(req, res)
 
                 //major hack for demo (this needs to be done by consuming the GraphDB TeamMentor-Service)
                 var loginUrl = 'https://tmdev01-uno.teammentor.net/rest/login/' + username + '/' + password;
-                console.log(loginUrl)
 
                 request(loginUrl, function(error, response, body)
                     {
                         if (error || body.indexOf('00000000-0000-0000-0000-00000000000') > -1 || body.indexOf('Endpoint not found.')>-1 )
                         {
-                            //console.log('not logged in...')
                             req.session.username = undefined;
                             res.redirect(loginPage);
                         }
                         else
                         {
-                            console.log('logged in as user: ' + username);
                             req.session.username = username;
                             res.redirect(mainPage_user);
                         }

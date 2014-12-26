@@ -20,13 +20,13 @@ describe.only 'build TM_4_0_Design |', ->
   build_Js_Jade   = build_Folder.path_Combine('jade_js')
   build_Js_Coffee = build_Folder.path_Combine('coffee_js')
 
-  scss_files    = ['app.scss'] #, 'custom-style.scss','custom-style-flare.scss','ie.scss', 'normalize.css', 'print,scss', 'screen.scss']
+  scss_files    = ['app.scss','custom-style.scss','custom-style-flare.scss','ie.scss', 'normalize.css', 'print.scss', 'screen.css']
 
   coffee_Compiler = new Coffee_Compiler()
   io_Actions      = new IO_Actions()
   jade_Compiler   = new Jade_Compiler()
 
-  it 'Clean target folders',->
+  xit 'Clean target folders',->
     build_Folder   .folder_Delete_Recursive().assert_Is_True()
     build_Folder   .folder_Create()          .assert_That_Folder_Exists()
     build_Assets   .folder_Create()          .assert_That_Folder_Exists()

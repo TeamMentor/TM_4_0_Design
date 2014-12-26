@@ -8,7 +8,7 @@ block content
 				.lge-container
 					if folder
 						h3= folder.name
-						.list-group
+						#nav.list-group
 							each view in folder.views
 								(href='owasp.html')= view.caption
 									span.badge= view.guidanceItems.length

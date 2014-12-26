@@ -19,7 +19,7 @@ describe 'user-account', ->
 
   it 'Login fail', (done)->
     jade.login 'aaaa'.add_5_Random_Letters(),'bbbb',  (html, $) ->
-      $('.alert').html().assert_Is('Login failed')
+      $('.alert').html().assert_Is('Login failed, please try again :(')
       done()
 
   it 'User Sign Up (with weak password)',(done)->
@@ -31,7 +31,7 @@ describe 'user-account', ->
       page.chrome.url (url)->
         url.assert_Contains('/guest/sign-up-OK.html')
         page.html (html,$)->
-          $('h3').html().assert_Is('Welcome to TEAM Mentor')
+          $('h3').html().assert_Is('Login')
           jade.login username, password, ->
             page.chrome.url (url)->
               url.assert_Contains('user/main.html')

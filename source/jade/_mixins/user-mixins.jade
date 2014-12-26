@@ -113,11 +113,22 @@ mixin team-mentor-summary
       td
         include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-3.md
 
-mixin alert
+mixin alert-login-failed
   .alert(role='alert')
-    | Login failed
+    | Login failed, please try again :(
 
-mixin alert-sign-up
+mixin alert-please-login
   .alert(role='alert')
-    | Sign Up failed
+    | You need to login to see that page :)
 
+mixin alert-pwd-sent
+  .alert(role='alert')
+    | We've sent you an email with instructions for resetting your password :)
+
+mixin alert-sign-up-failed
+  .alert(role='alert')
+    | Sign Up failed, please try again :(
+
+mixin alert-sign-up-OK
+  .alert(role='alert')
+    | Thanks for signing up to TEAM Mentor. Please login to access our libraries :)

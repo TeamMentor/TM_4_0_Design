@@ -2,45 +2,41 @@
 
 mixin usp-div
 	#usp
-		.row
-			.col-offset-2.col-8
-				h1 Instant resources that bridge the gap between developer questions and technical solutions
-				br
-				br
-				.row
-					.col-offset-2.col-8
-						a(href='/guest/sign-up.html')
-							button.btn-landing-page Start your free trial today
+		.lge-container
+			.row
+				.col-offset-2.col-8
+					include:md ../../flare/__ALL/content/teamMentor/landing-pages/usp.md
+					br
+					.row
+						.col-offset-2.col-8
+							a(href='/guest/sign-up.html')
+								button.btn-landing-page Start your free trial today
 
 mixin reasons-div
 	#reasons
 		.lge-container
-			h2 With TEAM Mentor, you can...
-
 			.row
-				.col-offset-3.col-1
-					img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-				.col-5
-					.lge-container
-						h4
-							include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-1.md
-			br
-			.row
-				.col-offset-3.col-1
-					img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
-				.col-5
-					.lge-container
-						h4
-							include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-2.md
-			br
-			.row
-				.col-offset-3.col-1
-					br
-					img(src='/deploy/assets/icons/integrate.png', alt="EXPAND the development team's knowledge and improve process")
-				.col-5
-					.lge-container
-						h4
-							include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-3.md
+				.col-offset-3.col-6
+					h2 With TEAM Mentor, you can
+					table
+						tr
+							td
+								img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
+							td
+								h4
+									include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-1.md
+						tr
+							td
+								img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
+							td
+								h4
+									include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-2.md
+						tr
+							td
+								img(src='/deploy/assets/icons/integrate.png', alt="EXPAND the development team's knowledge and improve process")
+							td
+								h4
+									include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-3.md
 
 mixin clients-div
 	#clients
@@ -63,65 +59,65 @@ mixin clients-div
 
 mixin about-div
 	#about
-		.row
-			.col-offset-2.col-8
-				h1 An interactive Application Security library with thousands of code samples and professional guidance when you need it.
+		.lge-container
+			.row
+				.col-offset-2.col-8
+					include:md ../../flare/__ALL/content/teamMentor/landing-pages/about-tm-tagline.md
 
 mixin about-us-div
 	#about-us
-			.container
-				.row
-					.col-offset-2.col-8
-						h4 TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.
-						p It contains over 4,000 articles with dynamic content across multiple development platforms including .NET, Java, C/C++, PHP, Android and iOS. TEAM Mentor is the In-Practice companion to our TEAM Professor eLearning courses, extending developers’ knowledge in combination with training.
-						p TeamMentor integrates with static analysis tools, such as Checkmarx and Fortify, helping teams make more sense of scan results and make critical decisions to fix software vulnerabilities.
+		.lge-container
+			.row
+				.col-offset-3.col-6
+					include:md ../../flare/__ALL/content/teamMentor/landing-pages/about-tm-summary.md
 
 mixin features-div
 	#features
-		br
-		br
-		br
-		h2 TEAM Mentor provides intelligence to fix vulnerabilities and comply
-		br
-		.row
-			.col-offset-3.col-1
-				img(src='/deploy/assets/icons/compliance.png', alt='Delivers compliance-specific secure coding guidance')
-			.col-5
-				h4 Delivers compliance-specific secure coding guidance for PCI-DSS, OWASP Top 10, CWE and other popular frameworks.
-		br
-		.row
-			.col-offset-3.col-1
-				img(src='/deploy/assets/icons/integrate.png', alt='Integrates with multiple static analysis tools and developer environments')
-			.col-5
-				h4 Integrates with multiple static analysis tools and developer environments (IDE’s) to map prescriptive coding guidance to scan results to fix vulnerabilities.
-		br
-		.row
-			.col-offset-3.col-1
-				img(src='/deploy/assets/icons/crossreferences.png', alt='Stores and cross-references your security policies')
-			.col-5
-				h4 Stores and cross-references your security policies with out-of-the-box secure coding checklists and examples.
-		br
-		.row
-			.col-offset-3.col-1
-				img(src='/deploy/assets/icons/reduces.png', alt='Provides guidance to assist developers')
-			.col-5
-				h4 Provides guidance to assist developers in reducing security vulnerabilities in software applications.
+		.lge-container
+			.row
+				.col-offset-3.col-6
+					h3.text-center TEAM Mentor provides intelligence to fix vulnerabilities and comply
+					br
+					table
+						tr
+							td
+								img(src='/deploy/assets/icons/compliance.png', alt='Delivers compliance-specific secure coding guidance')
+							td
+								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-1.md
+						tr
+							td
+								img(src='/deploy/assets/icons/integrate.png', alt='Integrates with multiple static analysis tools and developer environments')
+							td
+								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-2.md
+						tr
+							td
+								img(src='/deploy/assets/icons/crossreferences.png', alt='Stores and cross-references your security policies')
+							td
+								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-3.md
+						tr
+							td
+								img(src='/deploy/assets/icons/reduces.png', alt='Provides guidance to assist developers')
+							td
+								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-4.md
+
 
 mixin call-to-action-div
 	#call-to-action
-		.row
-			.col-offset-2.col-8
-				h1 Security Risk. Understood.
-				br
-				br
-				.row
-					.col-offset-2.col-8
-						a(href='/guest/sign-up.html')
-							button(type='button') See for yourself
+		.lge-container
+			.row
+				.col-offset-2.col-8
+					include:md ../../flare/__ALL/content/teamMentor/landing-pages/call-to-action.md
+					br
+					br
+					.row
+						.col-offset-2.col-8
+							a(href='/guest/sign-up.html')
+								button(type='button') See for yourself
 
 //- landing-page_footer
 mixin footer-div
 	#footer
-		.row
-			.col-offset-2.col-8
-				img(src='/static/assets/logos/si-logo.png')
+		.lge-container
+			.row
+				.col-offset-2.col-8
+					img(src='/static/assets/logos/si-logo.png')

@@ -7,10 +7,13 @@ block content
 					if library
 						each view in library.Views
 							h4= view.Title
-							.list-group
-								each article in view.Articles
-									a(href= '/help/' + article.Id)
-										= article.Title
+							.nav
+								table
+									each article in view.Articles
+										tr
+											td
+												a(href= '/help/' + article.Id)
+													= article.Title
 							// list-group
 				// lge-container
 			// column

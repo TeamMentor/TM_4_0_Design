@@ -2,27 +2,15 @@ include ../_mixins/images.jade
 include ../_mixins/links.jade
 
 .fixed
-	nav.top-bar(role='navigation', data-topbar='')
-		#customer-navigation
-			ul.title-area
-				li
-					+image-security-innovation-logo
-				// li-name
-			// ul-title-area
-		// customer-navigation
-		.clearfix
-		#team-mentor-navigation
-			ul.title-area
-				li
-					a(href='customer-main-app-view')
-						+image-teammentor-logo__default
-				// li
-			// ul.left
-			section.top-bar-section
-				ul.right.jade-icons
-					+links-navbar__home
-				// ul-right
-			// section
-		// teammentor-navigation
-	// nav
+	#customer-navigation
+		ul
+			+image-securityinnovation-logo
+	#team-mentor-navigation
+		#title-area
+			+image-teammentor-logo__default
+		// title-area
+		#links.icons
+			+links-navbar__home
+		// links
+	// team-mentor-navigation
 // fixed

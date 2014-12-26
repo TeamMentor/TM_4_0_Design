@@ -1,412 +1,151 @@
-// Variables
-$asset-path: '../../deploy/assets/';
-$font-stack: Helvetica, sans-serif;
-$nav-padding-top: 100px;
-$full-width: 100%;
+// HOW TO UNDERSTAND, USE AND EDIT THIS STYLESHEET
+
+// TEAM Mentor was built mobile first , so the structure of this file means that styles without media queries apply to mobile and carry out throughout the whole application ONLY if there are no over-riding styles in the media queries at the end of the file.
+
+// The structure for the file follows an hierarchal layout. Beginning from the top, everything is laid out in the order it appears. Styles are applied by how they affect the structure of an item followed by how they make an item appear.
+
+// |- Imports
+// |- Variables
+// |- Typography
+// |- Layout & Structure
+//  --|- Navigation
+//  ----|- Sub Navigation
+//  ----|- List Groups
+//  ----|- Tables
+//  ----|- Breadcrumbs
+//  --|- Application
+//  ----|- Forms
+//  ----|- Badges
+//  ----|- Alerts
+//  --|- Landing Pages
+// |- Media Queries
+
+// IMPORTS
 
 @import 'columns';
 @import 'colours';
 
-// Layout and Structure
+// VARIABLES
+$asset-path: '../../deploy/assets/';
+$font-stack: 100% Helvetica, sans-serif;
+$full-width: 100%;
+
+// TYPOGRAPHY
+
+h1 {
+	font-size: 2em;
+	line-height: 1.25em;
+	color: $grey;
+}
+
+h2 {
+	font-size: 1.625em;
+	line-height: 1.153em;
+	color: $grey;
+}
+
+h3 {
+	font-size: 1.375em;
+	line-height: 1.136em;
+	color: $grey;
+}
+
+h4 {
+	font-size: 1.125em;
+	line-height: 1.11em;
+	color: $dark-grey;
+}
+
+h5 {
+	font-size: 1.105em;
+	line-height: 1.11em;
+	color: $dark-grey;
+}
+
+p {
+	font-size: 1em;
+	line-height: 1.5em;
+	color: $dark-grey;
+}
+
+a {
+	text-decoration: underline;
+	color: $dark-grey;
+	&:hover, &:active, &:focus, a.action:hover, a.action:focus, a.action:active {
+		color: $dark-green;
+	}
+	&.action {
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 1px;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: $green;
+	}
+}
+
+ul, ol, ul ul, ol ul {
+	margin: 0;
+}
+
+code {
+	font-family: monospace, monospace;
+	font-size: 1em;
+	color: $dark-grey;
+}
+
+pre {
+	@extend code;
+	display: block;
+	overflow: auto;
+	margin: 30px 0 30px 0;
+	padding: 20px;
+	word-break: break-all;
+	word-wrap: break-word;
+	background-color: $light-grey;
+	border: 1px solid $grey;
+	border-radius: 0px;
+	line-height: 1.5em;
+}
+
+hr {
+	margin: 40px auto 40px auto;
+	width: 70%;
+	color: $light-grey;
+}
+
+// LAYOUT & STRUCTURE
 
 html {
-	font: 100% $font-stack;
+	font: $font-stack;
 }
 
 body {
-	max-width: $full-width;
-	margin: 0;
-	padding: 0;
-	line-height: 1.5;
 	background: $white;
+	margin: 0;
+	max-width: $full-width;
+	padding: 0;
 }
 
-#about {
-	background: url(#{$asset-path}/images/bgthree.jpg);
-}
-
-#about, #usp {
-	width: $full-width;
-	padding-top: $nav-padding-top;
-	padding-bottom: 80px;
-	background-color: $green;
-	text-align: center;
-
-	h1 {
-		color: $white;
-	}
-}
-
-#about-us {
-	padding: 40px 0 40px 0;
-}
-
-#application {
-	width: $full-width;
-	height: 100%;
-}
-
-#box {
-	width: 75%;
-	margin: 30px auto 30px auto !important;
-	border: 1px solid $green;
-	padding: 7px 40px 10px 40px;
-
-	h4 {
-		color: $green !important;
-	}
-}
-
-#call-to-action {
-	padding: 100px 0 110px 0;
-	background: url(#{$asset-path}/images/bgtwo.jpg);
-	background-color: $dark-green;
-	text-align: center;
-	width: $full-width;
-
-	h1 {
-		color: $white;
-	}
-}
-
-#clients {
-	width: $full-width;
-	padding: 40px 0 80px 0;
-	text-align: center;
+img {
+	height: auto;
+	margin: 0 auto;
 }
 
 .collapse {
 	margin-bottom: -50px;
 }
 
-#copyright {
-	width: $full-width;
-	padding-bottom: 30px;
-
-	p, a {
-		font-size: 12px;
-		text-align: center;
-		font-weight: normal;
-		letter-spacing: 0px;
-	}
-
-	a {
-		text-transform: none !important;
-		text-decoration: underline;
-	}
-}
-
-#description {
-	width: 100%;
-	margin-right: 15px;
-	padding: 5px 0 5px 0;
-	background-color: $light-grey;
-	text-align: center;
-}
-
-#details {
-	background: $green;
-}
-
-#features {
-	width: $full-width;
-	padding-bottom: 50px;
-
-	h2 {
-		text-align: center;
-	}
-
-	i {
-		font-size: 60px;
-		color: $green;
-		margin: 0 auto;
-	}
-}
-
-#footer {
-	width: $full-width;
-	padding: 10px 0 10px 0;
-	text-align: center;
-
-	a {
-		color: $dark-grey;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		font-size: 10px;
-	}
-}
-
-#instructions {
-	background: $white;
-	border: 1px solid $green;
-	padding: 0 20px 25px 20px;
-}
-
-#reasons {
-	width: $full-width;
-	padding-top: 70px;
-
-	h2, i {
-		text-align: center;
-	}
-
-	i {
-		font-size: 60px;
-		color: $green;
-		margin: 0 auto;
-	}
-}
-
-#usp {
-	background: url(#{$asset-path}/images/bgone.jpg);
-}
-
-#usp, #call-to-action {
-	button {
-		padding: 20px 0 20px 0;
-		background-color: $white;
-		border: none;
-
-		&:hover, &:active {
-			color: $white !important;
-			background-color: $green;
-		}
-	}
+.long {
+	height: 100px;
 }
 
 .vertical-align {
 	margin-top: 10px;
 }
 
-.lge-container {
-	max-width: 96%;
-	margin: 0 auto;
-}
-
-.right {
-	float: right !important;
-}
-
-.left {
-	float: left !important;
-}
-
-// Images
-
-img {
-	display: block;
-	max-width: $full-width;
-	height: auto;
-	margin: 0 auto;
-}
-
-.long {
-	height: 100px;
-}
-
 .short {
 	height: 40px;
-}
-
-// Forms
-
-form, .form-group {
-	margin-bottom: 15px;
-	list-style-type: none;
-}
-
-label {
-	display: inline-block;
-	padding: 3px 0 0 0;
-	margin-bottom: 5px;
-	font-weight: bold;
-	color: $dark-grey;
-}
-
-// Navigation
-
-.fixed {
-	position: fixed;
-	width: 100%;
-	height: 60px;
-	left: 0;
-	top: 0;
-	z-index: 99;
-}
-
-nav.top-bar {
-	z-index: 100000;
-	padding: 0;
-	margin-bottom: 100px;
-	background: $white;
-
-	ul.title-area {
-		padding: 5px 0 0 5px;
-		list-style-type: none;
-		float: left;
-	}
-
-	ul.menu-icon.right {
-		padding: 5px 0 0 5px;
-		float: right;
-	}
-
-	.jade-icons {
-		margin-top: 10px;
-	}
-
-	section.top-bar-section {
-		padding-left: 10%;
-		float: left;
-
-		li:not(.has-form) a:not(.button) {
-			line-height: 50px;
-		}
-		i {
-			font-size: 16px;
-		}
-		ul {
-			padding-top: 5px;
-			padding-left: 0;
-			display: inline-block !important;
-			list-style-type: none;
-			background: none;
-
-			li {
-				display: inline-block;
-				padding-right: 30px;
-				text-align: center;
-
-				a, p {
-					text-transform: uppercase;
-					text-decoration: none;
-					letter-spacing: 1px;
-					font-size: 14px;
-					font-weight: 700;
-					background: $white;
-					color: $green !important;
-					line-height: 0.5em;
-
-					&:hover {
-						color: $dark-green;
-					}
-				}
-			}
-		}
-	}
-}
-
-.right {
-	float: right;
-}
-
-#customer-navigation {
-	background-color: $white;
-	width: 100%;
-	height: 45px;
-
-	ul {
-		padding: 5px 0 0 25px;
-	}
-}
-
-#team-mentor-navigation {
-	background-color: $white;
-	padding-left: 20px;
-	width: 100%;
-	height: 70px;
-
-	ul {
-		&.menu-icon.right {
-			margin: 20px 25px 0 0;
-
-			li {
-				list-style-type: none;
-			}
-		}
-	}
-}
-
-// Typography
-
-h1 {
-	font-size: 36px;
-	font-weight: bold;
-	color: $grey;
-}
-
-h2 {
-	font-size: 30px;
-	font-weight: bold;
-	color: $grey;
-}
-
-h3 {
-	font-size: 24px;
-	font-weight: bold;
-	color: $grey;
-}
-
-h4 {
-	font-size: 18px;
-	font-weight: bold;
-	line-height: 1.5em;
-	color: $dark-grey;
-}
-
-h5 {
-	font-size: 16px;
-	font-weight: bold;
-	color: $dark-grey;
-}
-
-h1, h2, h3 {
-	margin-top: 20px;
-	margin-bottom: 10px;
-}
-
-h4, h5, h6 {
-	margin-top: 20px;
-	margin-bottom: 5px;
-}
-
-p, li {
-	font-size: 16px;
-	line-height: 1.5em;
-	color: $dark-grey;
-	orphans: 3;
-	widows: 3;
-}
-
-ul, ol {
-	margin-left: 0;
-	margin-bottom: 0;
-	margin-top: 0;
-
-	ul {
-		margin-bottom: 0;
-	}
-}
-
-code, pre {
-	font-family: monospace, monospace;
-	font-size: 1em;
-}
-
-pre {
-	display: block;
-	padding: 20px;
-	margin: 0 0 10px;
-	font-size: 13px;
-	line-height: 1.5;
-	color: $dark-grey;
-	word-break: break-all;
-	word-wrap: break-word;
-	background-color: $light-grey;
-	border: 1px solid $grey;
-	border-radius: 0px;
-	margin: 30px 0 30px 0;
-	overflow: auto;
 }
 
 .text-center {
@@ -422,259 +161,495 @@ pre {
 	font-weight: bold;
 }
 
-hr {
-	margin: 0 auto;
-	width: 70%;
-	color: $light-grey;
-	margin-top: 40px;
-	margin-bottom: 40px;
-}
+//--- NAVIGATION
 
-a {
-	color: $dark-grey;
-	text-decoration: underline;
+.fixed {
+	left: 0;
+	top: 0;
+	position: fixed;
+	width: $full-width;
+	z-index: 99;
 
-	&:hover, &:active, &:focus {
-		color: $dark-green;
-		text-decoration: underline;
-	}
-
-	&.action {
-		text-transform: uppercase;
-		text-decoration: none;
-		letter-spacing: 1px;
-		font-size: 14px;
-		font-weight: 700;
-		color: $green;
-
-		&:hover, &:focus, &:active {
-			color: $dark-green;
-		}
-	}
-}
-
-button, .button {
-	font-size: 14px;
-	background-color: $white;
-	color: $green;
-	width: 100% !important;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-
-	&:hover, &:focus {
+	#customer-navigation {
+		display: block;
+		max-height: 100px;
 		background-color: $white;
-		color: $dark-green !important;
-		text-decoration: none;
+		ul {
+			padding: 5px 0 0 25px;
+			text-align: center;
+		}
 	}
+	#team-mentor-navigation {
+		max-height: 150px;
+		text-align: center;
+		background-color: $white;
 
-	&.postfix {
-		color: $green !important;
-		font-size: 16px;
-		padding-top: 7px;
-		border: 1px solid $grey;
-		height: 3rem;
-		border-left: none;
+		#not-logged-in {
+			width: $full-width;
+			img {
+				float: left;
+				padding: 0 0 0 5px;
+			}
+			ul li {
+				float: right;
+				padding: 5px 5px 0 0;
+				list-style-type: none;
+			}
+		}
 
-		&:hover {
-			color: $dark-green !important;
-			background: $white;
+		#title-area {
+			float: left;
+			width: $full-width;
+		}
+
+		#links {
+			width: $full-width;
+			padding: 10px 0 5px 0;
+			text-align: center;
+			ul {
+				padding: 0;
+				width: $full-width;
+				list-style-type: none;
+			}
+			&.icons a img {
+				max-width: 40px;
+				display: inline-block;
+			}
+			ul li {
+				display: inline;
+				padding: 0 10px 0 0;
+				a {
+					@extend a.action;
+					font-size: 12px;
+					&:hover {
+						@extend a.action:hover;
+					}
+				}
+			}
 		}
 	}
 }
 
-// Input Groups
 
-input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
-	width: $full-width !important;
-	background-color: $white;
-	font-family: inherit;
-	border: 1px solid $grey;
-	box-shadow: none;
+//------ SUB-NAVIGATION
+//--------- LISTGROUPS
+
+.list-group {
+	height: auto;
+	h5, h4 {
+		margin: 5px 0 0 0;
+	}
+	a {
+		display: block;
+		padding: 11px;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+			background-color: $light-grey;
+		}
+	}
+	span.badge {
+		float: right;
+	}
+}
+
+//--------- TABLES
+
+table {
+	width: 100%;
+	font-size: 1em;
 	color: $dark-grey;
-	display: block;
-	font-size: 16px;
-	padding: 0.5rem;
-	height: 3rem;
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box;
+	td {
+		height: 30px;
+		padding: 0 10px 0 10px
+	}
+	.nav {
+		margin-top: -20px;
+		a {
+			text-decoration: none;
+		}
+		tr {
+			td {
+				padding: 5px;
+				border-bottom: 1px solid $light-grey;
+			}
+			&:last-child {
+				border-bottom: transparent;
+			}
+			&:hover {
+				background-color: $light-grey;
+				color: $dark-green;
+			}
+		}
+		span.badge {
+			float: right;
+		}
+	}
+}
 
-	&:focus {
+//--------- BREADCRUMBS
+
+.breadcrumbs {
+	padding: 0 0 0 10px;
+	background: $white;
+	border: none;
+	li {
+		display: inline-block;
+		&.current a {
+			color: $green;
+			text-decoration: none;
+		}
+		a {
+			@extend a.action;
+			color: $grey;
+			font-size: 12px;
+			&:hover {
+				color: $green;
+			}
+		}
+		&:first-child:before {
+			content: " ";
+			margin: 0px;
+		}
+		&:before {
+			content: "/";
+			margin: 0 20px;
+		}
+	}
+}
+
+//--- APPLICATION
+
+#application {
+	height: $full-width;
+	margin-top: 50px;
+	width: $full-width;
+}
+
+.lge-container {
+	margin: 0 auto;
+	max-width: 96%;
+}
+
+#loginwall, #summary {
+	margin: 0 auto;
+	max-width: 95%;
+	padding-top: 80px;
+}
+
+//------ FORMS
+
+form, .form-group {
+	list-style-type: none;
+	margin-bottom: 15px;
+}
+
+label {
+	display: inline-block;
+	padding: 3px 0 0 0;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: $dark-grey;
+}
+
+input {
+	&[type="checkbox"] {
+		margin-right: 20px;
+	}
+	&[type="text"], &[type="password"], &[type="date"], &[type="datetime"], &[type="datetime-local"], &[type="month"], &[type="week"], &[type="email"], &[type="number"], &[type="search"], &[type="tel"], &[type="time"], &[type="url"] {
+		display: block;
+		height: 3rem;
+		padding: 0.5rem;
+		width: $full-width;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		font-size: 1em;
+		background-color: $white;
+		border: 1px solid $grey;
+		box-shadow: none;
+		color: $dark-grey;
+	}
+	&[type="text"]:focus, &[type="password"]:focus, &[type="date"]:focus, &[type="datetime"]:focus, &[type="datetime-local"]:focus, &[type="month"]:focus, &[type="week"]:focus, &[type="email"]:focus, &[type="number"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="time"]:focus, &[type="url"]:focus {
 		background: $white;
 		border-color: $green;
 		outline: medium none;
 	}
 }
 
+textarea {
+	@extend input[type="text"];
+	height: auto;
+	&:focus {
+		@extend input[type="text"]:focus;
+	}
+}
+
 select {
-	width: $full-width;
-	height: 3em;
-	display: block;
-	background-color: $white;
-	font-family: inherit;
-	font-size: 16px;
-	border: 1px solid $grey;
-	box-shadow: none;
-	color: $dark-grey;
+	@extend input[type="text"];
 }
 
 .input-group {
 	display: table;
 	float: left;
 	width: $full-width;
-
 	.form-control {
 		display: table-cell;
 		height: 53px;
 	}
-
 	.input-group-btn {
 		display: table-cell;
-		border-left: none !important;
-		width: 100px;
 		max-width: $full-width;
 		vertical-align: middle;
+		width: 100px;
+		border-left: none !important;
 	}
 }
 
-
-// Buttons
+//------ BUTTONS
 
 button {
-	display: inline-block;
-	padding: 15px 0 15px 0;
-	font-size: 14px;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 700;
-	background: $white;
-	border: 1px solid $green;
-	color: $green;
-
-	&:hover, &:active {
-		color: $dark-green;
+	@extend a.action;
+	width: $full-width;
+	background-color: $white;
+	&:hover, &:focus, &:active {
+		@extend a.action:hover;
+		background-color: $white;
+	}
+	&.postfix {
+		height: 3rem;
+		padding-top: 7px;
+		border: 1px solid $grey;
+		border-left: none;
+		font-size: 1em;
+		color: $green;
+		&:hover {
+			background-color: $white;
+			color: $dark-green;
+		}
 	}
 }
 
-// Badges
+//------ BADGES
 
 .badge {
 	min-width: 10px;
 	padding: 3px 7px;
-	font-size: 12px;
-	color: $white;
-	background-color: $grey;
-	text-align: center;
 	border-radius: 10px;
-}
-
-// Progress Bar
-
-.progress {
-	height: 20px;
-	background-color: $light-grey;
-	border-radius: 4px;
-	box-shadow: none;
-}
-
-.progress-bar {
-	height: $full-width;
+	text-align: center;
+	font-size: 12px;
+	background-color: $grey;
 	color: $white;
+}
+
+//------ ALERTS
+
+.alert {
+	margin: 0;
+	padding: 15px;
+	border: none;
+	background: $white;
+	font-weight: 700;
+	color: $green;
+}
+
+//--- LANDING PAGES
+
+#about {
+	margin: 65px 0 0 0;
+	padding: 50px 0 80px 0;
+	width: $full-width;
+	text-align: center;
+	background: url(../assets/stock-img/bgthree.jpg);
 	background-color: $green;
 }
 
-// List Group and List Group Items
+#about h2, #usp h2 {
+	color: $white;
+}
 
-.list-group {
-	height: 100%;
-	h5, p {
-		margin-top: 0px;
-		margin-bottom: 0px;
+#about-us {
+	padding: 40px 0 40px 0;
+}
+
+#call-to-action {
+	padding: 100px 0 110px 0;
+	text-align: center;
+	background: url(../assets/stock-img/bgtwo.jpg);
+	background-color: $dark-green;
+	h1 {
+		color: $white;
 	}
+	button {
+		padding: 20px 0 20px 0;
+		background-color: $white;
+		border: none;
+		&:hover, &:active {
+			background-color: $green;
+			color: $white;
+		}
+	}
+}
 
+#clients {
+	padding: 40px 0 80px 0;
+	text-align: center;
+}
+
+#copyright {
+	padding-bottom: 30px;
 	a {
-		display: block;
-		padding: 10px;
-		margin-bottom: 5px;
-		text-decoration: none;
-
-		&:hover {
-			text-decoration: none;
-			background-color: $light-grey;
-		}
-	}
-
-	table {
-		border-color: transparent;
-	}
-
-	span.badge {
-		float: right;
+		@extend a;
+		font-size: 12px;
+		text-align: center;
 	}
 }
 
-// Alerts and Warnings
-
-.alert-box {
-	padding: 15px;
-	margin-bottom: 0px;
-	background: $white;
-	color: $green;
-	border: none;
-	font-size: inherit;
-	font-weight: 700;
-}
-
-// Tables and Table Cells
-
-table {
+#description {
+	margin: 0 15px 0 0;
+	padding: 5px 0 5px 0;
 	width: $full-width;
-	font-size: 16px;
-	color: $dark-grey;
+	text-align: center;
+	background-color: $light-grey;
+}
 
-	td {
-		padding-left: 10px;
-		padding-right: 10px;
-		height: 30px;
+#features {
+	padding: 100px 0 50px 0;
+	h2 {
+		text-align: center;
+	}
+	img {
+		vertical-align: middle;
 	}
 }
 
-// Breadcrumbs
+#footer {
+	padding: 15px 0 20px 0;
+	width: $full-width;
+	text-align: center;
+	a {
+		@extend a;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		font-size: 10px;
+	}
+}
 
-.breadcrumbs {
-	padding-left: 10px;
-	background: $white;
-	border: none;
+#reasons {
+	padding: 70px 0 0 0;
+	h2 {
+		text-align: center;
+	}
+}
 
-	li {
-		display: inline-block;
-
-		&.current a {
-			color: $green;
+#usp {
+	margin: 65px 0 0 0;
+	padding: 50px 0 80px 0;
+	width: $full-width;
+	text-align: center;
+	background: url(../assets/stock-img/bgone.jpg);
+	background-color: $green;
+	button {
+		padding: 20px 0 20px 0;
+		background-color: $white;
+		border: none;
+		&:hover, &:active {
+			background-color: $green;
+			color: $white;
 		}
+	}
+}
 
-		a {
-			font-size: 12px;
-			font-weight: 700;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-			text-decoration: none;
-			color: $grey;
+// MEDIA QUERIES
 
-			&:hover {
-				color: $green !important;
+@media (min-width: 650px) {
+	#application {
+		margin: 30px 0 0 0;
+	}
+	#customer-navigation ul {
+		text-align: left;
+	}
+	#title-area {
+		display: inline-block;
+		max-width: 35%;
+		img {
+			float: left;
+			max-width: $full-width;
+			padding: 0 0 0 20px;
+		}
+	}
+	#not-logged-in {
+		img {
+			padding: 0 0 0 20px;
+		}
+		ul li {
+			padding: 5px 10px 0 0;
+		}
+	}
+	#links {
+		display: inline-block;
+		max-width: 65%;
+		&.icons {
+			padding: 7px 0 0 0;
+			text-align: right;
+		}
+		&.text-links {
+			padding: 20px 0 0 0;
+			ul {
+				padding: 0 0 0 10px;
+				text-align: right;
 			}
 		}
-
-		&:first-child:before {
-			content: " ";
-			margin: 0px;
+		&.icons {
+			ul {
+				padding: 0;
+			}
+			a img {
+				max-width: 100%;
+			}
 		}
-
-		&:before {
-			content: "/";
-			margin: 0 20px;
+		ul li {
+			padding: 0 20px 0 0;
+			a {
+				font-size: 14px;
+			}
 		}
+	}
+	#loginwall, #summary {
+		max-width: 90%;
+	}
+}
+
+@media (min-width: 999px) {
+	#team-mentor-navigation {
+		height: 65px;
+	}
+	#links {
+		&.text-links ul li {
+			padding: 0 40px 0 0;
+		}
+		&.icons ul li {
+			padding: 0 30px 0 0;
+		}
+	}
+	h1 {
+		font-size: 3em;
+		line-height: 1em;
+	}
+	h2 {
+		font-size: 2.25em;
+		line-height: 1em;
+	}
+	h3 {
+		font-size: 1.75em;
+		line-height: 1em;
+	}
+	h4 {
+		font-size: 1.125em;
+		line-height: 1em;
+	}
+	h5 {
+		font-size: 1em;
+		line-height: 1em;
 	}
 }

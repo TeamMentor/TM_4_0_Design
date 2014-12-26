@@ -1,38 +1,25 @@
-/*jslint node: true , expr:true */
-/*global describe, it ,before, after */
-"use strict";
-
-var supertest         = require('supertest')   ,    
-    expect            = require('chai').expect ,
-    cheerio           = require('cheerio')     ,    
-    marked            = require('marked')      ,
-    request           = require('request')     , 
-    fs                = require('fs')          ,    
-    app               = require('../../server'),
-    Jade_Service      = require('../../services/Jade-Service'),
-    teamMentorContent = require('../../services/teamMentor-content.js'),
-    Help_Controller   = require('../../controllers/Help-Controller.js');
+supertest         = require('supertest')
+expect            = require('chai').expect
+cheerio           = require('cheerio')
+marked            = require('marked')
+request           = require('request')
+fs                = require('fs')
+app               = require('../../server')
+Jade_Service      = require('../../services/Jade-Service')
+teamMentorContent = require('../../services/teamMentor-content.js')
+Help_Controller   = require('../../controllers/Help-Controller.js')
     
 
-describe('routes |', function () 
-{
-    app.config.enable_Jade_Cache = true;                        // enable Jade compilation cache (which dramatically speeds up tests)
+describe 'routes |', ()->
+
+    app.config.enable_Jade_Cache = true;       # enable Jade compilation cache (which dramatically speeds up tests)
     
-    before(function() 
-    { 
+    before ->
         app.server = app.listen(app.port);
-        
-        //preCompiler.disableCache = false;  
-        
-        expect(teamMentorContent).to.be.an('Object'); 
-        
-        /*var targetPath = preCompiler.calculateTargetPath('/source/html/help/index.jade');
-        if(fs.existsSync(targetPath))
-        {
-            fs.unlinkSync(targetPath); 
-        }
-        expect(fs.existsSync(targetPath)).to.be.false;*/
-    });
+        #preCompiler.disableCache = false;
+        expect(teamMentorContent).to.be.an('Object');
+
+###
     after (function() { app.server.close();                  });
         
     describe('test-help.js |', function() 
@@ -40,47 +27,22 @@ describe('routes |', function ()
         it('should open page ok', function(done)
         {
             supertest(app).get('/help/index.html')
-                          .expect(200,done); 
+                          .expect(200,done);
         });
         
         it('open /default.html', function(done)
         {            
-            supertest(app).get('/default.html')
+            supertest(app).get('/guest/default.html')
                           .expect(200)
                           .end(function(err, res)
                                {
                                     if(err) { throw err; }
                                     var $ = cheerio.load(res.text);
-                                    expect($('a').length).to.be.above(10);
+                                    expect($('a').length).to.be.above(7);
                                     expect($("a[href='/help/aaaaa.html'] ").length).to.be.empty;
                                     expect($("a[href='/help/index.html']" ).length).to.be.not.empty;                                                                        
                                     done();
                                });
-        });        
-         
-        it('open help from /default.html', function(done)
-        {
-            supertest(app).get('/default.html')
-                          .expect(200)
-                          .end(function(err, res)
-                               {
-                                    var $ = cheerio.load(res.text);
-                                    var helpImgTag    = $("img[src='/deploy/assets/icons/help.png']").parent();
-                                    var helpAnchorTag = helpImgTag.parent();
-                
-                                    expect(helpImgTag   ).to.be.an('object');
-                                    expect(helpAnchorTag).to.be.an('object');
-                
-                                    expect(helpImgTag   .html()).to.equal('<img src="/deploy/assets/icons/help.png" alt="Help">');
-                                    expect(helpAnchorTag.html()).to.equal('<a href="/help/index.html"><img src="/deploy/assets/icons/help.png" alt="Help"></a>');
-                                    
-                                    var helpUrl = helpAnchorTag.find('a').attr('href');                          
-                                    expect(helpUrl).to.equal('/help/index.html');
-                                    
-                                    supertest(app).get(helpUrl)
-                                                 .expect(200, done);
-                
-                               });            
         });
     });
     describe('test-help (dynamic content) |', function() 
@@ -111,33 +73,7 @@ describe('routes |', function ()
             return $;
         };
     
-        it('check left-hand-side navivation', function () 
-        {                      
-            var $ = getHelpPageObject();
-                                     
-            //library.Views.forEach(function(view)    { });
-            //view.Articles.forEach(function(article) { });   // no need to do all of these all the time
-            
-            var view    = pageParams.library.Views[0];
-            var article = view.Articles[0];
-            
-            var h4 = $('h4:contains(' + view.Title + ')');                 
-            expect(h4.length).to.be.equal(1, 'could not find H4 with: "' + view.Title + '"');                 
-            
-            var li = $('li:contains(' + article.Title + ')'); 
-            expect(li.length).to.be.above(0, 'could not find li containing Tite: "' + article.Title + '"');
-            expect(li.length).to.be.above(0, 'could not find li containing Guid: "' + article.Id + '"');                
-            
-        });  
-        it('check mainContent', function () 
-        {              
-            var customContent  = '<h2>This is custom content....</h2>';  
-            pageParams.content = customContent;
-        
-            var $ = getHelpPageObject(); 
-            
-            expect($.html()).to.contain(customContent);                 
-        });
+
         it('check that index page markdown transform', function(done)
         {
             var page_index_File     = './source/content/page-index.md'   ; expect(fs.existsSync(page_index_File)).to.be.true;
@@ -210,3 +146,5 @@ describe('routes |', function ()
         });
     });
 });
+
+###

@@ -1,25 +1,16 @@
 extends ../_layouts/page_landing
+include ../_mixins/user-mixins
 block content
-   #application
-      .row
-         .col-3
-            .lge-container
-               br
-            // lge-container
-         // column
-         .col-6
-            .lge-container
-               br
-               h3 Welcome to TEAM Mentor
-               p Thank you for creating a new account.
-               p Please
-                  a(href='/guest/login.html')  Login
-            // lge-container
-         // column
-         .col-3
-            .lge-container
-               br
-            // lge-container
-         // column
-      // row
-   // application
+   .row
+      .col-6
+         #loginwall
+            +alert-sign-up-OK
+            +login-form
+         // loginwall
+      // column
+      .col-6
+         #summary
+            +team-mentor-summary
+         // summary
+      // column
+   // row

@@ -135,6 +135,6 @@ mixin breadcrumbs
     .breadcrumbs
         if breadcrumbs
             for breadcrumb,index in breadcrumbs
-                a(href=breadcrumb.href)= breadcrumb.title                
+                li
+                    a(href=breadcrumb.href)= breadcrumb.title
                 if index < breadcrumbs.length -1
-                    span  >                     

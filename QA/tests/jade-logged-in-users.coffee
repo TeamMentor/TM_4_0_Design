@@ -12,7 +12,7 @@ describe 'jade-logged-in-users', ->
       done()
 
   check_Top_Right_Navigation_Bar = ($)->                                    # confirm that all anonymous pages have the same top level menu
-    navBarLinks = $('.top-bar-section li a')                                            # get all top right links using a css selector
+    navBarLinks = $('#links li a')                                            # get all top right links using a css selector
     navBarLinks.length.assert_Is(4)                                         # there should be 6 links
     linksData = for link in navBarLinks                                     # for each link in navBarLinks
       {                                                                     # create a new object

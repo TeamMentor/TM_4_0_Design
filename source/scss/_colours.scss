@@ -3,13 +3,14 @@
 $white: #FFFFFF;
 $green: #8aaf3e;
 $dark-green: #49661f;
-$light-grey: #ececec;
+$light-grey: #e3e3e3;
 $grey: #aaaaaa;
 $dark-grey: #444444;
+$black: #000000;
 
 .black {
 	padding-top: 20px;
-	background-color: #000000;
+	background-color: $black;
 }
 
 .green {
@@ -27,41 +28,34 @@ $dark-grey: #444444;
 }
 
 #white {
-	width: 100%;
-	margin-right: 15px;
-	background-color: #FFFFFF;
-	border: 1px solid #000000;
+	background-color: $white;
+	border: 1px solid $black;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 }
 
 #green {
-	width: 100%;
-	margin-right: 15px;
-	background-color: #8aaf3e;
+	background-color: $green;
 }
 
 #dark-green {
-	width: 100%;
-	margin-right: 15px;
-	background-color: #49661f;
+	background-color: $dark-green;
 }
 
 #grey {
-	width: 100%;
-	margin-right: 15px;
-	background-color: #aaaaaa;
+	background-color: $grey;
 }
 
 #dark-grey {
-	width: 100%;
-	margin-right: 15px;
-	background-color: #444444;
+	background-color: $dark-grey;
 }
 
 #black {
+	background-color: $black;
+}
+
+#white, #green, #dark-green, #grey, #dark-grey, #black {
 	width: 100%;
 	margin-right: 15px;
-	background-color: #000000;
 }

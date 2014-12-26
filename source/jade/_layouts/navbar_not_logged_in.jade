@@ -2,19 +2,10 @@ include ../_mixins/links.jade
 include ../_mixins/images.jade
 
 .fixed
-	nav.top-bar(role='navigation', data-topbar='')
-		#team-mentor-navigation
-			ul.title-area
-				li.name
-					+image-teammentor-logo__default
-				// li-name
-			// ul-title-area
-			section.top-bar-section
-				// Right Nav Section
-				ul.right
-					+links-navbar__not_logged_in
-				// ul-right
-			// section
-		// team-mentor-navigation
-	// nav
+	#team-mentor-navigation
+		#not-logged-in
+			+image-teammentor-logo__default
+			+links-navbar__not_logged_in
+		// links
+	// team-mentor-navigation
 // fixed
