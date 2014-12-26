@@ -7,9 +7,10 @@ var users = [ { username : 'tm'   , password : 'tm'   } ,
               { username : 'roman', password : 'longpassword'     }
             ];
             
-var loginPage         = '/guest/login-Fail.html'
+var loginPage         = 'login-Fail.jade'
 var mainPage_user     = '/user/main.html'
 var mainPage_no_user  = '/guest/default.html'
+var loginSuccess      = 0
 
 var Login_Controller = function(req, res) 
     {
@@ -44,32 +45,44 @@ var Login_Controller = function(req, res)
                         return;
                     }
                 }
-
-
                 var username = req.body.username
                 var password = req.body.password
 
+                //Using new API methods
+                var loginUrl = 'https://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/Login_Response'
+                var options = {
+                                method: 'post',
+                                body: {username:username, password:password},
+                                json: true,
+                                url: loginUrl
+                              };
 
-                //major hack for demo (this needs to be done by consuming the GraphDB TeamMentor-Service)
-                var loginUrl = 'https://tmdev01-uno.teammentor.net/rest/login/' + username + '/' + password;
-                console.log(loginUrl)
-
-                request(loginUrl, function(error, response, body)
+                request(options, function(error, response, body)
+                {
+                    if(response.body!=null)
                     {
-                        if (error || body.indexOf('00000000-0000-0000-0000-00000000000') > -1 || body.indexOf('Endpoint not found.')>-1 )
+                        var loginResponse = response.body.d
+
+                        if(loginResponse!= null)
                         {
-                            //console.log('not logged in...')
-                            req.session.username = undefined;
-                            res.redirect(loginPage);
+                            var success = loginResponse.Login_Status
+                            if (success == loginSuccess)
+                            {
+                                req.session.username = username
+                                 res.redirect(mainPage_user)
+                            }
+                            else
+                            {
+                                console.log('not logged in...') 
+                                req.session.username = undefined
+                                req.errorMesage = loginResponse.Validation_Results[0].Message
+                                console.log(req.errorMesage)
+                                 res.render(loginPage,{errorMessage:req.errorMesage})
+                            }
                         }
-                        else
-                        {
-                            console.log('logged in as user: ' + username);
-                            req.session.username = username;
-                            res.redirect(mainPage_user);
-                        }
-                    });
-            };
+                    }
+                });
+        };
         this.logoutUser = function()
             {
                 req.session.username = undefined;
