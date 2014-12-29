@@ -317,6 +317,18 @@ body {
   font-size: 10px;
 }
 
+#help-nav, #help-docs {
+  margin-top: 60px;
+}
+
+#help-docs h1 {
+  font-size: 1.625em;
+}
+
+#help-docs h2 {
+  font-size: 2em;
+}
+
 #instructions {
   background: #FFFFFF;
   border: 1px solid #8aaf3e;
@@ -731,8 +743,7 @@ button:hover, button:active {
 .nav table a {
   text-decoration: none;
 }
-.nav table tr td {
-  padding: 5px;
+.nav table tr{
   border-bottom: 1px solid #e3e3e3;
 }
 
@@ -742,6 +753,10 @@ button:hover, button:active {
 .nav table tr:hover {
   background-color: #e3e3e3;
   color: #49661f;
+}
+
+.nav table tr td {
+  padding: 5px;
 }
 .nav table span.badge {
   float: right;
@@ -802,6 +817,9 @@ table td {
 @media (min-width: 650px) {
   #application {
     margin-top: 30px;
+  }
+  #help-nav, #help-docs {
+    margin-top:40px;
   }
   #customer-navigation ul {
     text-align: left;
@@ -865,6 +883,7 @@ table td {
 }
 
 @media (min-width: 999px) {
+
   #team-mentor-navigation {
     height: 65px;
   }
