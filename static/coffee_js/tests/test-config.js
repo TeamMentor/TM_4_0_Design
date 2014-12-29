@@ -20,7 +20,7 @@
       expect(config.cache_folder).to.equal(process.cwd() + "/.tmCache");
       expect(config.jade_Compilation).to.equal(config.cache_folder + "/jade_Compilation");
       expect(config.library_Data).to.equal(config.cache_folder + "/library_Data");
-      expect(config.version).to.equal('0.1.0');
+      expect(config.version).to.equal('0.1.1');
       return expect(config.enable_Jade_Cache).to.equal(false);
     });
     it("Ctor (w/ custom values)", function() {

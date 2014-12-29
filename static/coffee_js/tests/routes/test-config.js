@@ -7,7 +7,7 @@
 
   supertest = require('supertest');
 
-  describe("routes | test-config.coffee |", function() {
+  describe("routes | test-config |", function() {
     it("/version", function(done) {
       return supertest(app).get('/version').expect(200, app.config.version, done);
     });

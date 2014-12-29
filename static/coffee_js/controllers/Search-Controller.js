@@ -1,14 +1,16 @@
 (function() {
-  var Config, GitHub_Service, Graph_Service, Jade_Service, SearchController, breadcrumbs_Cache, fs, path, recentArticles_Cache, request,
+  var Config, GitHub_Service, Graph_Service, Jade_Service, SearchController, auth, breadcrumbs_Cache, fs, path, recentArticles_Cache, request,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   fs = require('fs');
 
   path = require('path');
 
+  request = require('request');
+
   Config = require('../Config');
 
-  request = require('request');
+  auth = require('../middleware/auth');
 
   Jade_Service = require('../services/Jade-Service');
 
@@ -25,7 +27,6 @@
       this.showArticle = __bind(this.showArticle, this);
       this.showMainAppView = __bind(this.showMainAppView, this);
       this.showSearchFromGraph = __bind(this.showSearchFromGraph, this);
-      this.search = __bind(this.search, this);
       this.req = req;
       this.res = res;
       this.config = config || new Config();
@@ -39,47 +40,33 @@
     }
 
     SearchController.prototype.renderPage = function() {
-      if (!this.searchData) {
-        this.loadSearchData();
-      }
       return this.jade_Service.renderJadeFile(this.jade_Page, this.searchData);
     };
 
-    SearchController.prototype.search = function() {
-      var server, text, url;
-      server = 'http://localhost:1332';
-      url = '/data/tm-uno/queries';
-      text = this.req.query.text;
-      return request(server + url, (function(_this) {
-        return function(error, response, data) {
-          var allQueries, foundQuery, graph, node_Labels, nodes, query, _i, _len;
-          graph = JSON.parse(data);
-          nodes = graph.nodes;
-          node_Labels = [];
-          nodes.forEach(function(node) {
-            return node_Labels.push(node.label);
-          });
-          allQueries = node_Labels.sort();
-          foundQuery = "";
-          if (allQueries.contains(text)) {
-            foundQuery = text;
-          } else {
-            text = text.lower();
-            for (_i = 0, _len = allQueries.length; _i < _len; _i++) {
-              query = allQueries[_i];
-              if (query.lower().indexOf(text) > -1) {
-                foundQuery = query;
-              }
-            }
-          }
-          if (foundQuery === "") {
-            return _this.res.redirect('/user/main.html');
-          } else {
-            return _this.res.redirect("/graph/" + foundQuery);
-          }
-        };
-      })(this));
-    };
+
+    /*
+     search : ()=>
+        server = 'http://localhost:1332';
+        url    = '/data/tm-uno/queries';
+        text = @req.query.text
+        
+        request server + url, (error, response,data) =>
+            graph = JSON.parse(data);
+            nodes = graph.nodes;
+            node_Labels = [];
+            nodes.forEach (node)=> node_Labels.push(node.label)
+            allQueries =  node_Labels.sort();
+            foundQuery = ""
+            if (allQueries.contains(text))
+                foundQuery = text
+            else
+                text = text.lower()
+                foundQuery = query for query in allQueries when query.lower().indexOf(text) > -1
+            if (foundQuery == "")
+                @res.redirect('/user/main.html')
+            else            
+                @res.redirect("/graph/#{foundQuery}")
+     */
 
     SearchController.prototype.showSearchFromGraph = function() {
       var filters, graphService, queryId;
@@ -109,10 +96,6 @@
       })(this));
     };
 
-    SearchController.prototype.showSearchData = function() {
-      return this.res.set('Content-Type', 'application/json').send(JSON.stringify(this.loadSearchData().searchData, null, ' '));
-    };
-
     SearchController.prototype.showMainAppView = function() {
       var topArticles;
       breadcrumbs_Cache.unshift({
@@ -126,10 +109,12 @@
           console.log("data" + data);
           jadePage = '../source/jade/user/main.jade';
           viewModel = {};
-          if (false) {
+          console.log('....');
+          if (true) {
             (function() {
               var item, recentArticle, recentArticles, searchTerms, _i, _j, _len, _len1;
               data = JSON.parse(data).splice(0, 4);
+              console.log(data);
               topArticles = [];
               for (_i = 0, _len = data.length; _i < _len; _i++) {
                 item = data[_i];
@@ -163,11 +148,12 @@
                   break;
                 }
               }
-              return viewModel = {
+              viewModel = {
                 recentArticles: recentArticles,
                 topArticles: topArticles,
                 searchTerms: searchTerms
               };
+              return log(viewModel);
             });
           }
           console.log("jadePage: " + jadePage);
@@ -192,19 +178,24 @@
   })();
 
   SearchController.registerRoutes = function(app) {
-    app.get('/search', function(req, res) {
-      return new SearchController(req, res, app.config).search();
-    });
-    app.get('/graph/:queryId', function(req, res) {
+    app.get('/graph/:queryId', (function(req, res, next) {
+      return auth.checkAuth(req, res, next, app.config);
+    }), function(req, res) {
       return new SearchController(req, res, app.config).showSearchFromGraph();
     });
-    app.get('/graph/:queryId/:filters', function(req, res) {
+    app.get('/graph/:queryId/:filters', (function(req, res, next) {
+      return auth.checkAuth(req, res, next, app.config);
+    }), function(req, res) {
       return new SearchController(req, res, app.config).showSearchFromGraph();
     });
-    app.get('/user/main.html', function(req, res) {
+    app.get('/user/main.html', (function(req, res, next) {
+      return auth.checkAuth(req, res, next, app.config);
+    }), function(req, res) {
       return new SearchController(req, res, app.config).showMainAppView();
     });
-    return app.get('/article/view/:guid/:title', function(req, res) {
+    return app.get('/article/view/:guid/:title', (function(req, res, next) {
+      return auth.checkAuth(req, res, next, app.config);
+    }), function(req, res) {
       return new SearchController(req, res, app.config).showArticle();
     });
   };

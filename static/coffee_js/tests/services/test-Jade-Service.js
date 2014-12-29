@@ -1,98 +1,88 @@
-/*jslint node: true , expr:true */
-/*global describe, it */
+(function() {
+  var Jade_Service, expect, fs;
 
-var fs           = require('fs'),
-    expect       = require("chai").expect,
-    Jade_Service = require('../../services/Jade-Service');
+  fs = require('fs');
 
+  expect = require("chai").expect;
 
-//used to understand better how jade compilation works (specialy how it compiles to java script) 
-describe("services > Jade-Service.js", function()
-{            
-    it('check Jade-Service ctor', function()
-    {   
-        var jadeService = new Jade_Service();
-        expect(jadeService).to.be.an('Object'); 
-        
-        expect(jadeService                      ).to.be.an('Object');
-        expect(jadeService.config               ).to.be.an('Object');
-        expect(jadeService.targetFolder         ).to.be.an('String');
-        
-        expect(jadeService.compileJadeFileToDisk).to.be.an('function');
-        expect(jadeService.calculateTargetPath  ).to.be.an('function');
-        expect(jadeService.enableCache          ).to.be.an('function');
-        expect(jadeService.cacheEnabled         ).to.be.an('function');
-                
-        //var myConfig = new Config();        
-        expect(jadeService.targetFolder         ).to.equal(jadeService.config.jade_Compilation);        
-    });    
-    
-    it('enableCache , cacheEnabled', function()
-    {
-        var jadeService = new Jade_Service();
-        expect(jadeService.cacheEnabled()     ).to.be.false;
-        expect(jadeService.enableCache ()     ).to.equal(jadeService);
-        expect(jadeService.cacheEnabled()     ).to.be.true;
-        expect(jadeService.enableCache (false)).to.equal(jadeService);
-        expect(jadeService.cacheEnabled()     ).to.be.false;
-        expect(jadeService.enableCache (true )).to.equal(jadeService);
-        expect(jadeService.cacheEnabled()     ).to.be.true;        
-    });
-    
-    it('calculateTargetPath', function()
-    {
-        var jadeService = new Jade_Service();        
-        var targetFolder        = jadeService.targetFolder;
+  Jade_Service = require('../../services/Jade-Service');
 
-        expect(targetFolder                   ).to.equal(jadeService.config.jade_Compilation);
-        expect(jadeService.calculateTargetPath).to.be.an('Function');
-        expect(jadeService.calculateTargetPath('aaa'             )).to.equal(targetFolder + 'aaa.txt'             );       // if the compiled jade file is 
-        expect(jadeService.calculateTargetPath('aaa/bbb'         )).to.equal(targetFolder + 'aaa_bbb.txt'         );       // and .js , we will have a circular auto compilation
-        expect(jadeService.calculateTargetPath('aaa/bbb/ccc'     )).to.equal(targetFolder + 'aaa_bbb_ccc.txt'     );       // when running the tests using (for example)
-        expect(jadeService.calculateTargetPath('aaa/bbb.jade'    )).to.equal(targetFolder + 'aaa_bbb_jade.txt'    );       //     mocha -w node/tests/**/*jade*.js -R list
-        expect(jadeService.calculateTargetPath('aaa/bbb.ccc.jade')).to.equal(targetFolder + 'aaa_bbb_ccc_jade.txt');
-  //      
+  describe("services > Jade-Service.js", function() {
+    it('check Jade-Service ctor', function() {
+      var jadeService;
+      jadeService = new Jade_Service();
+      expect(jadeService).to.be.an('Object');
+      expect(jadeService).to.be.an('Object');
+      expect(jadeService.config).to.be.an('Object');
+      expect(jadeService.targetFolder).to.be.an('String');
+      expect(jadeService.compileJadeFileToDisk).to.be.an('function');
+      expect(jadeService.calculateTargetPath).to.be.an('function');
+      expect(jadeService.enableCache).to.be.an('function');
+      expect(jadeService.cacheEnabled).to.be.an('function');
+      return expect(jadeService.targetFolder).to.equal(jadeService.config.jade_Compilation);
     });
-            
-    it('compileJadeFileToDisk', function()
-    {
-        var jadeService = new Jade_Service();
-        var defaultJadeFile = '/source/html/default.jade';
-                
-        expect(jadeService.compileJadeFileToDisk('a')).to.be.false;        
-        
-        var targetPath    = jadeService.calculateTargetPath(defaultJadeFile);
-                
-        if(fs.existsSync(targetPath)===false)        
-        {            
-            expect(jadeService.compileJadeFileToDisk(defaultJadeFile)).to.be.true;
-        }
-        var jadeTemplate  = require(targetPath);
-        expect(jadeTemplate  ).to.be.an('function');
-        expect(jadeTemplate()).to.be.an('string');
-        
-        var html = jadeTemplate();
-        expect(html).to.contain('<!DOCTYPE html><html lang="en"><head> ');        
+    it('enableCache , cacheEnabled', function() {
+      var jadeService;
+      jadeService = new Jade_Service();
+      expect(jadeService.cacheEnabled()).to.be["false"];
+      expect(jadeService.enableCache()).to.equal(jadeService);
+      expect(jadeService.cacheEnabled()).to.be["true"];
+      expect(jadeService.enableCache(false)).to.equal(jadeService);
+      expect(jadeService.cacheEnabled()).to.be["false"];
+      expect(jadeService.enableCache(true)).to.equal(jadeService);
+      return expect(jadeService.cacheEnabled()).to.be["true"];
     });
-    
-    it('renderJadeFile', function()
-    {    
-        var jadeService = new Jade_Service();
-        
-        jadeService.enableCache();
-        
-        var helpJadeFile    = '/source/html/help/index.jade'; 
-        
-        expect(jadeService.renderJadeFile('a')).to.be.equal("");
-        
-        expect(jadeService.renderJadeFile(helpJadeFile, { structure: []})).to.not.be.equal("");
-        expect(jadeService.renderJadeFile(helpJadeFile                 )).to.contain    ('<a href="/deploy/html/landing-pages/about.html">About</a>'); 
-        expect(jadeService.renderJadeFile(helpJadeFile,{loggedIn:false})).to.contain    ('<a href="/deploy/html/landing-pages/about.html">About</a>'); 
-        expect(jadeService.renderJadeFile(helpJadeFile,{loggedIn:true })).to.not.contain('<a href="/deploy/html/landing-pages/about.html">About</a>'); 
-        expect(jadeService.renderJadeFile(helpJadeFile,{loggedIn:false})).to.not.contain('<img src="/deploy/assets/icons/help.png" alt="Help">'); 
-        expect(jadeService.renderJadeFile(helpJadeFile,{loggedIn:true })).to.contain    ('<img src="/deploy/assets/icons/help.png" alt="Help">');         
+    it('calculateTargetPath', function() {
+      var jadeService, targetFolder;
+      jadeService = new Jade_Service();
+      targetFolder = jadeService.targetFolder;
+      expect(targetFolder).to.equal(jadeService.config.jade_Compilation);
+      expect(jadeService.calculateTargetPath).to.be.an('Function');
+      expect(jadeService.calculateTargetPath('aaa')).to.equal(targetFolder + 'aaa.txt');
+      expect(jadeService.calculateTargetPath('aaa/bbb')).to.equal(targetFolder + 'aaa_bbb.txt');
+      expect(jadeService.calculateTargetPath('aaa/bbb/ccc')).to.equal(targetFolder + 'aaa_bbb_ccc.txt');
+      expect(jadeService.calculateTargetPath('aaa/bbb.jade')).to.equal(targetFolder + 'aaa_bbb_jade.txt');
+      return expect(jadeService.calculateTargetPath('aaa/bbb.ccc.jade')).to.equal(targetFolder + 'aaa_bbb_ccc_jade.txt');
     });
-    
+    it('compileJadeFileToDisk', function() {
+      var defaultJadeFile, html, jadeService, jadeTemplate, targetPath;
+      jadeService = new Jade_Service();
+      defaultJadeFile = '/source/jade/guest/default.jade';
+      jadeService.compileJadeFileToDisk('a').assert_Is_False();
+      targetPath = jadeService.calculateTargetPath(defaultJadeFile);
+      if (fs.existsSync(targetPath) === false) {
+        jadeService.compileJadeFileToDisk(defaultJadeFile).assert_Is_True();
+      }
+      jadeTemplate = require(targetPath);
+      jadeTemplate.assert_Is_Function();
+      jadeTemplate().assert_Is_String();
+      html = jadeTemplate();
+      return html.assert_Contains('<!DOCTYPE html><html lang="en"><head>');
+    });
+    return it('renderJadeFile', function() {
+      var helpJadeFile, jadeService;
+      jadeService = new Jade_Service();
+      jadeService.enableCache();
+      helpJadeFile = '/source/jade/help/index.jade';
+      jadeService.renderJadeFile('a').assert_Is("");
+      jadeService.renderJadeFile(helpJadeFile, {
+        structure: []
+      }).assert_Is_Not('');
+      jadeService.renderJadeFile(helpJadeFile).assert_Contains('<a href="/guest/about.html">About</a>');
+      jadeService.renderJadeFile(helpJadeFile, {
+        loggedIn: false
+      }).assert_Contains('<a href="/guest/about.html">About</a>');
+      jadeService.renderJadeFile(helpJadeFile, {
+        loggedIn: true
+      }).assert_Not_Contains('<a href="/guest/about.html">About</a>');
+      jadeService.renderJadeFile(helpJadeFile, {
+        loggedIn: false
+      }).assert_Not_Contains('<img src="/static/assets/icons/help.png" alt="Help">');
+      return jadeService.renderJadeFile(helpJadeFile, {
+        loggedIn: true
+      }).assert_Contains('<img src="/static/assets/icons/help.png" alt="Help">');
+    });
+
     /*
     it('cleanCacheFolder', function()
     {
@@ -106,8 +96,8 @@ describe("services > Jade-Service.js", function()
         filesInCacheFolder = fs.readdirSync(cacheFolder);
         expect(filesInCacheFolder).to.be.an('Array');
         expect(filesInCacheFolder).to.be.empty;        
-    });*/
-    
+    });
+     */
+  });
 
-    //var targetFolder      = preCompiler.targetFolder()    
-});
+}).call(this);

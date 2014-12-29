@@ -194,14 +194,17 @@ var Library_Controller = function(req, res, config)
             return null;
         };
     };
-    
-    
+
+var auth                = require('../middleware/auth')
+
 Library_Controller.registerRoutes = function (app)
     {
         //console.log('registering routes for Library Controller');
-        app.get('/libraries'                       , function (req, res) { new Library_Controller(req, res, app.config).showLibraries  (); });
-        app.get('/library/queries'                 , function (req, res) { new Library_Controller(req, res, app.config).showQueries    (); });
-        app.get('/library/:name'                   , function (req, res) { new Library_Controller(req, res, app.config).showLibrary    (); });
-        app.get('/library/:library/folder/:folder' , function (req, res) { new Library_Controller(req, res, app.config).showFolder     (); });
+        app.get('/libraries'                       , function (req,res,next) { auth.checkAuth(req, res,next, app.config);}  , function (req, res) { new Library_Controller(req, res, app.config).showLibraries  (); });
+        app.get('/library/queries'                 , function (req,res,next) { auth.checkAuth(req, res,next, app.config);}  , function (req, res) { new Library_Controller(req, res, app.config).showQueries    (); });
+        app.get('/library/:name'                   , function (req,res,next) { auth.checkAuth(req, res,next, app.config);}  , function (req, res) { new Library_Controller(req, res, app.config).showLibrary    (); });
+        app.get('/library/:library/folder/:folder' , function (req,res,next) { auth.checkAuth(req, res,next, app.config);}  , function (req, res) { new Library_Controller(req, res, app.config).showFolder     (); });
     };
-module.exports = Library_Controller;  
+module.exports = Library_Controller;
+
+

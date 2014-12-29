@@ -1,99 +1,81 @@
-/*jslint node: true , expr:true */
-/*global describe, it ,before, after */
-"use strict";
+(function() {
+  var Help_Controller, app, expect, request, supertest;
 
-var supertest         = require('supertest')   ,    
-    expect            = require('chai').expect ,        
-    request           = require('request')     ,    
-    app               = require('../../server'),    
-    Help_Controller   = require('../../controllers/Help-Controller.js');
+  supertest = require('supertest');
 
-describe('controllers |', function () 
-{
-    describe('test-Help-Controller.js |', function() 
-    {   
-        this.timeout(3500)
-        
-        describe('content_cache', function() 
-        {
-            it('check ctor', function()
-                {
-                    var help_Controller = new Help_Controller();
-                    expect(Help_Controller).to.be.an("Function");
-                    expect(help_Controller).to.be.an("Object");            
-                    expect(help_Controller.content_cache).to.be.an("Object");
-                    expect(help_Controller.title        ).to.equal(null);
-                    expect(help_Controller.content      ).to.equal(null);
-                }); 
-            
-            it('request should add to cache', function(done)
-                {
-                    var page = 'index.html';
-                    var req = { params : { page : page              }};
-                    var res = { status : function() { return this;  }};
-                    var help_Controller = new Help_Controller(req,res);
+  expect = require('chai').expect;
 
-                    help_Controller.content_cache[page] = undefined;    
+  request = require('request');
 
-                    var checkRequestCache = function(html)
-                        {
-                            var cacheItem = help_Controller.content_cache[page];
-                            expect(cacheItem).to.be.an('Object');
-                            expect(cacheItem.title  ).to.equal(help_Controller.pageParams.title);
-                            expect(cacheItem.content).to.equal(help_Controller.pageParams.content); 
-                             
-                            help_Controller.clearContentCache();
-                            
-                            expect(help_Controller.content_cache[page]).to.be.undefined; 
-                            done();
-                        };                
+  app = require('../../server');
 
-                    res.send =  checkRequestCache;
+  Help_Controller = require('../../controllers/Help-Controller.js');
 
-                    expect(help_Controller.content_cache).to.be.an('Object');
-                    //expect(help_Controller.content_cache[page]).to.be.undefined;
-
-                    help_Controller.renderPage();
-                });
-            
-            /*it('cache should return value set in cache', function(done)
-                {
-                    var help_Controller = new Help_Controller();
-                    expect(help_Controller.content_cache["index.html"]).to.be.undefined;
-                    //addContent
-                    done();
-                });*/
+  describe('controllers |', function() {
+    return describe('test-Help-Controller.js |', function() {
+      this.timeout(3500);
+      describe('content_cache', function() {
+        it('check ctor', function() {
+          var help_Controller;
+          help_Controller = new Help_Controller();
+          expect(Help_Controller).to.be.an("Function");
+          expect(help_Controller).to.be.an("Object");
+          expect(help_Controller.content_cache).to.be.an("Object");
+          expect(help_Controller.title).to.equal(null);
+          return expect(help_Controller.content).to.equal(null);
         });
-        
-        
-        it('handle broken images bug', function(done)
-        {         
-            var gitHub_Path = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/';
-            var local_Path  = '/Image/';
-            var test_image  = 'signup1.jpg';
-            
-            var check_For_Redirect = function()
-                {                    
-                    supertest(app).get(local_Path + test_image)
-                                  .expect(302)
-                                  .end(function(error, response)
-                                        {
-                                            expect(response.headers         ).to.be.an('Object');
-                                            expect(response.headers.location).to.be.an('String');
-                                            expect(response.headers.location).to.equal(gitHub_Path + test_image);
-                                            check_That_Image_Exists(response.headers.location);
-                                        });
-                };
-            var check_That_Image_Exists = function(image_Path)
-                {                    
-                    request.get(image_Path, function(error, response)
-                        {
-                            expect(response.statusCode).to.equal(200);
-                            done();                         
-                        });                          
-                };
-            
-            check_For_Redirect();                            
+        return it('request should add to cache', function(done) {
+          var checkRequestCache, help_Controller, page, req, res;
+          page = 'index.html';
+          req = {
+            params: {
+              page: page
+            }
+          };
+          res = {
+            status: function() {
+              return this;
+            }
+          };
+          help_Controller = new Help_Controller(req, res);
+          help_Controller.content_cache[page] = void 0;
+          checkRequestCache = function(html) {
+            var cacheItem;
+            cacheItem = help_Controller.content_cache[page];
+            expect(cacheItem).to.be.an('Object');
+            expect(cacheItem.title).to.equal(help_Controller.pageParams.title);
+            expect(cacheItem.content).to.equal(help_Controller.pageParams.content);
+            help_Controller.clearContentCache();
+            expect(help_Controller.content_cache[page]).to.be.undefined;
+            return done();
+          };
+          res.send = checkRequestCache;
+          expect(help_Controller.content_cache).to.be.an('Object');
+          return help_Controller.renderPage();
         });
+      });
+      return it('handle broken images bug', function(done) {
+        var check_For_Redirect, check_That_Image_Exists, gitHub_Path, local_Path, test_image;
+        gitHub_Path = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/';
+        local_Path = '/Image/';
+        test_image = 'signup1.jpg';
+        check_For_Redirect = function() {
+          return supertest(app).get(local_Path + test_image).expect(302).end(function(error, response) {
+            expect(response.headers).to.be.an('Object');
+            expect(response.headers.location).to.be.an('String');
+            expect(response.headers.location).to.equal(gitHub_Path + test_image);
+            return check_That_Image_Exists(response.headers.location);
+          });
+        };
+        check_That_Image_Exists = function(image_Path) {
+          return request.get(image_Path, function(error, response) {
+            expect(response.statusCode).to.equal(200);
+            return done();
+          });
+        };
+        return check_For_Redirect();
+      });
     });
-});
+  });
+
+}).call(this);
