@@ -205,4 +205,6 @@ Library_Controller.registerRoutes = function (app)
         app.get('/library/:name'                   , function (req,res,next) { auth.checkAuth(req, res,next, app.config);}  , function (req, res) { new Library_Controller(req, res, app.config).showLibrary    (); });
         app.get('/library/:library/folder/:folder' , function (req,res,next) { auth.checkAuth(req, res,next, app.config);}  , function (req, res) { new Library_Controller(req, res, app.config).showFolder     (); });
     };
-module.exports = Library_Controller;  
+module.exports = Library_Controller;
+
+
