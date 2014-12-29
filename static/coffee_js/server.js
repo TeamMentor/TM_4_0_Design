@@ -17,7 +17,7 @@ app.use(session({secret           : '1234567890',
     saveUninitialized: true        ,
     resave           : true        }));
 
-app.engine('html', require('ejs').renderFile);
+
 app.set('views', path.join(__dirname,'../'));
 
 require('./routes/flare_routes')(app);
