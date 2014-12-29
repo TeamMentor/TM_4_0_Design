@@ -7,20 +7,24 @@ var express    = require('express'),
     bodyParser = require('body-parser'),
     app        = express(),
     session    = require('express-session'),
+    path       = require("path"),
     Config     = require('./Config');
 
-app.config = new Config();
+app.config = new Config(null, false);
 app.use(bodyParser.json()                        );     // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));     // to support URL-encoded bodies
-app.use(session({secret           : '1234567890', 
-                 saveUninitialized: true        ,
-                 resave           : true        }));
-app.set('views', '/Users/michaelhidalgo/TM4.0/TM_4_0_Design/source/jade/guest/');
-app.engine('html', require('ejs').renderFile);
+app.use(session({secret           : '1234567890',
+    saveUninitialized: true        ,
+    resave           : true        }));
 
+app.engine('html', require('ejs').renderFile);
+app.set('views', path.join(__dirname,'../'));
+
+require('./routes/flare_routes')(app);
 require('./routes/routes')(app);
 require('./routes/debug')(app);
 require('./routes/config')(app);
+
 
 
 app.use(express['static'](process.cwd()));
@@ -31,7 +35,7 @@ if        (process.mainModule.filename.indexOf('node_modules/mocha/bin/_mocha'  
 else if   (process.mainModule.filename.indexOf('node_modules/grunt-cli/bin/grunt') > 0) { console.log('[Running under Grunt]'); }
 else
 {
-    console.log("[Running localsly or in Azure] Starting 'TM Jade' Poc on port " + app.port);
+    console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + app.port);
     app.listen(app.port);
 }
 

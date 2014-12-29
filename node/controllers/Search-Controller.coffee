@@ -74,7 +74,7 @@ class SearchController
         #topArticles = 'https://tm-graph.herokuapp.com/data/tm-data/articles-by-weight'
         request topArticles, (err, response, data)=>
             console.log "data" + data
-            jadePage  = '../source/jade/user/main.jade'  # relative to the /views folder
+            jadePage  = 'source/jade/user/main.jade'  # relative to the /views folder
             viewModel = {}
             if false then ->
                 data = JSON.parse(data).splice(0,4)
