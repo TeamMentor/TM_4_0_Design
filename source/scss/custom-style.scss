@@ -269,9 +269,9 @@ table {
 			text-decoration: none;
 		}
 		tr {
+			border-bottom: 1px solid $light-grey;
 			td {
 				padding: 5px;
-				border-bottom: 1px solid $light-grey;
 			}
 			&:last-child {
 				border-bottom: transparent;
@@ -335,6 +335,18 @@ table {
 	margin: 0 auto;
 	max-width: 95%;
 	padding-top: 80px;
+}
+
+#help-nav, #help-docs {
+	margin-top: 60px;
+
+	h1 {
+		font-size: 1.625em;
+	}
+
+	h2 {
+		font-size: 2em;
+	}
 }
 
 //------ FORMS
@@ -565,6 +577,9 @@ button {
 @media (min-width: 650px) {
 	#application {
 		margin: 30px 0 0 0;
+	}
+	#help-nav, #help-docs {
+			margin-top:40px;
 	}
 	#customer-navigation ul {
 		text-align: left;
