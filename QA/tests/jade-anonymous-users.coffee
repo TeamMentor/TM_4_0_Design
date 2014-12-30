@@ -45,6 +45,7 @@ describe 'jade-anonymous-users', ->
     $('#call-to-action button').html()         .assert_Is('See for yourself'                     )
 
     $('#footer img'       ).get(0).attribs.src .assert_Is('/static/assets/logos/si-logo.png'     )
+    $('#footer h6'        ).html().assert_Contains('TEAM Mentor v')
 
 
   it '/',(done)->
