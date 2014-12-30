@@ -11,7 +11,9 @@ var express    = require('express'),
     Logger     = require('./services/Logger-Service')
 
 global.info = new Logger().setup().log
-console.log = global.info
+
+//console.log = global.info
+
 info('Starting Express server config')
 
 app.config = new Config(null, false);
