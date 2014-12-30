@@ -15,8 +15,8 @@
   "scripts": {
     "start": "npm run start-dev",
     "start_static": "node_modules/supervisor/lib/cli-wrapper.js -i node static/coffee_js/server.js",
-    "test": "node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register node/tests/**/**.*",
-    "test-watch": "mocha -w node/tests/**/**.** -R list",
+    "test": "node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register node/tests --recursive -R list",
+    "test-watch": "node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register node/tests --recursive -R list -w",
     "start_once": "node app.js",
     "start-dev": "node_modules/supervisor/lib/cli-wrapper.js node/server.js",
     "coverage": "./node/bin/publish-code-coverage.sh",
@@ -32,10 +32,11 @@
     "coffee-script": "^1.8.0",
     "express": "^4.8.7",
     "express-session": "^1.8.0",
-    "fluentnode": "^0.1.8",
+    "fluentnode": "*",
     "github": "^0.2.2",
     "jade": "^1.6.0",
     "marked": "^0.3.2",
+    "nedb": "^1.0.1",
     "request": "^2.42.0",
     "supervisor": "^0.6.0"
   },
