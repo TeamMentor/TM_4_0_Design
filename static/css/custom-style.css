@@ -930,3 +930,40 @@ table td {
     line-height: 1em;
   }
 }
+
+ul.lp-icons {
+  list-style: none outside;
+  padding-left: 1em;
+}
+
+ul.lp-icons li {
+  padding-left: 1em;
+}
+
+ul.lp-icons li:before {
+  content: "";
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin: 0 20px 0 0;
+  background: url(../assets/icons/lp-icons.png);
+}
+
+ul.lp-icons li.identify-fix:before {
+  background-position: 0 0;
+}
+ul.lp-icons li.reduce:before {
+  background-position: 0 -60px;
+}
+ul.lp-icons li.expand:before {
+  background-position: 0 65px;
+}
+ul.lp-icons li.compliance:before {
+  background-position: 0 -180px;
+}
+ul.lp-icons li.integrate:before {
+  background-position: 0 -120px;
+}
+ul.lp-icons li.cross-references:before {
+  background-position: 0 130px;
+}

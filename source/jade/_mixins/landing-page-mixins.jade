@@ -18,25 +18,16 @@ mixin reasons-div
 			.row
 				.col-offset-3.col-6
 					h2 With TEAM Mentor, you can
-					table
-						tr
-							td
-								img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-							td
-								h4
-									include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-1.md
-						tr
-							td
-								img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
-							td
-								h4
-									include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-2.md
-						tr
-							td
-								img(src='/deploy/assets/icons/integrate.png', alt="EXPAND the development team's knowledge and improve process")
-							td
-								h4
-									include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-3.md
+					ul.lp-icons
+						li.identify-fix
+							h4
+								include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-1.md
+						li.reduce
+							h4
+								include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-2.md
+						li.expand
+							h4
+								include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-3.md
 
 mixin clients-div
 	#clients
@@ -78,27 +69,18 @@ mixin features-div
 				.col-offset-3.col-6
 					h3.text-center TEAM Mentor provides intelligence to fix vulnerabilities and comply
 					br
-					table
-						tr
-							td
-								img(src='/deploy/assets/icons/compliance.png', alt='Delivers compliance-specific secure coding guidance')
-							td
-								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-1.md
-						tr
-							td
-								img(src='/deploy/assets/icons/integrate.png', alt='Integrates with multiple static analysis tools and developer environments')
-							td
-								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-2.md
-						tr
-							td
-								img(src='/deploy/assets/icons/crossreferences.png', alt='Stores and cross-references your security policies')
-							td
-								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-3.md
-						tr
-							td
-								img(src='/deploy/assets/icons/reduces.png', alt='Provides guidance to assist developers')
-							td
-								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-4.md
+					ul.lp-icons
+						li.compliance
+							include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-1.md
+						br
+						li.integrate
+							include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-2.md
+						br
+						li.cross-references
+							include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-3.md
+						br
+						li.reduce
+							include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-4.md
 
 
 mixin call-to-action-div
