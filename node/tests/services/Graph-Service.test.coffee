@@ -5,30 +5,13 @@ spawn         = require('child_process').spawn
 Graph_Service  = require('./../../services/Graph-Service')
 
 describe 'test-Graph-Service |', ->
-    graphService  = new Graph_Service()    
-    
-#    beforeEach ()->
-#        graphService.openDb()
-#
-#    afterEach (done)->
-#        graphService.closeDb(done)
-#
-#    after (done) ->
-#        done()
-#
-#    it 'deleteDb', (done) ->
-#      graphService.closeDb ->
-#        graphService.dbPath.assert_That_Folder_Exists()
-#        graphService.deleteDb ->
-#          graphService.dbPath.assert_That_Folder_Not_Exists()
-#          done()
-#
-#    it 'check ctor',->
-#        expect(Graph_Service       ).to.be.an('Function')
-#        expect(graphService       ).to.be.an('Object'  )
-#        expect(graphService.dbPath).to.be.an('String'  )
-#        expect(graphService.db    ).to.be.an('Object'  )
-#
+
+    graphService  = null
+
+    before ->
+        graphService  = new Graph_Service()
+        console.log
+
     it 'dataFromGitHub', (done)->
         expect(graphService.dataFromGitHub   ).to.be.an('Function')
         graphService.dataFromGitHub (data)->
@@ -40,6 +23,20 @@ describe 'test-Graph-Service |', ->
             expect(data.first().predicate).to.be.an('String')
             expect(data.first().object).to.be.an('String')
             done()
+
+    it 'graphDataFromGraphDB', (done)->
+        filters = {}
+        queryId = 'Logging'
+        graphService.graphDataFromGraphDB null, queryId, filters,  (searchData)=>
+          searchData.assert_Is_Object()
+          done()
+
+    it 'graphDataFromGraphDB (bad Server)', (done)->
+        graphService.server = 'http://aaaaaaaa.teammentor.net'
+        graphService.graphDataFromGraphDB null, '', '',  (searchData)=>
+            searchData.assert_Is({})
+            done()
+
 
 #   it 'loadTestData', (done)->
 #       expect(graphService.loadTestData).to.be.an('Function')

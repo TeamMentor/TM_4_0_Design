@@ -49,7 +49,6 @@ class TeamMentor_Service
     getGuiObjects_File  = @.calculateLocalPath('GetGUIObjects.json');
     if(fs.existsSync(getGuiObjects_File) == false)
       return null;
-    
     guiObjects = JSON.parse(fs.readFileSync(getGuiObjects_File));
     
     articlesMetadata = {};

@@ -44,7 +44,15 @@ describe "services > test-teamMentor-content.js", ()->
       wsName    = "GetGUIObjects";
       targetUrl = teamMentorContent.calculateTargetUrl(wsName);
       expect(targetUrl).to.be.equal('https://docs.teammentor.net/Aspx_Pages/TM_WebServices.asmx/GetGUIObjects');
-    
+
+    it 'getJsonAndSaveToDisk', (done)->
+      #this will trigger the ENOTFOUND
+      tmSite = teamMentorContent._tmSite
+      teamMentorContent._tmSite = 'http://aaaaaaabb.teammentor.net'
+      teamMentorContent.getJsonAndSaveToDisk 'aa',->
+        teamMentorContent._tmSite = tmSite
+        done()
+
     it 'update GetFolderStructure_Libraries', (done)->
       teamMentorContent.disableCache =true; # find a lighter request to test this
 
@@ -59,20 +67,29 @@ describe "services > test-teamMentor-content.js", ()->
         done()
 
     it 'getArticlesMetadata', ()->
-        articlesMetadata = teamMentorContent.getArticlesMetadata();
-        
-        expect(articlesMetadata                  ).to.be.an('Object')
-        expect(articlesMetadata._numberOfArticles).to.be.an('Number')
-        expect(articlesMetadata._numberOfArticles).to.be.above(100)
-        
-        metadata = articlesMetadata["23a3c023-fc74-46fe-9a6e-e7ec2d136335"]
-        
-        expect(metadata           ).to.be.an('Object')
-        expect(metadata.Title     ).to.be.equal('Installing TEAM Mentor Eclipse Plugin for Fortify')
-        expect(metadata.Technology).to.be.equal('Eclipse Plugin')
-        expect(metadata.Phase     ).to.be.equal('NA')
-        expect(metadata.Type      ).to.be.equal('Documentation')
-        expect(metadata.Category  ).to.be.equal('Administration')
+      articlesMetadata = teamMentorContent.getArticlesMetadata();
+      expect(articlesMetadata                  ).to.be.an('Object')
+      expect(articlesMetadata._numberOfArticles).to.be.an('Number')
+      expect(articlesMetadata._numberOfArticles).to.be.above(100)
+
+      metadata = articlesMetadata["23a3c023-fc74-46fe-9a6e-e7ec2d136335"]
+
+      expect(metadata           ).to.be.an('Object')
+      expect(metadata.Title     ).to.be.equal('Installing TEAM Mentor Eclipse Plugin for Fortify')
+      expect(metadata.Technology).to.be.equal('Eclipse Plugin')
+      expect(metadata.Phase     ).to.be.equal('NA')
+      expect(metadata.Type      ).to.be.equal('Documentation')
+      expect(metadata.Category  ).to.be.equal('Administration')
+
+      teamMentorContent._name='_tmp_Docs'
+      getGuiObjects_File  = teamMentorContent.calculateLocalPath('GetGUIObjects.json');
+      articlesMetadata = teamMentorContent.getArticlesMetadata();   #getLibraryData test will reload this
+      assert_Is_Null(articlesMetadata)
+      libraryData = teamMentorContent.getLibraryData()
+      assert_Is_Null(libraryData)
+      getGuiObjects_File.parent_Folder().delete_Folder().assert_True()
+      teamMentorContent._name='docs'
+
     
     it 'getLibraryData', ()->
         libraryData = teamMentorContent.getLibraryData()

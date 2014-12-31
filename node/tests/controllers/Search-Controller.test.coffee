@@ -47,6 +47,47 @@ describe "controllers | test-Search-Controller |", ->
   searchController = new Search_Controller()
   searchController.config.enable_Jade_Cache = true
 
+  it 'showSearchFromGraph', (done)->
+    req    = { params: queryId : 'Logging'}
+    res    =
+              send: (html)->
+                  html.assert_Is_String()
+                  done()
+    config = new Config()
+    searchController = new Search_Controller(req, res, config)
+    searchController.showSearchFromGraph()
+
+  it 'showSearchFromGraph (with filter)', (done)->
+    req    = { params: {queryId : 'Logging' , filters:'abc'}}
+    res    =
+        send: (html)->
+            html.assert_Is_String()
+            done()
+    config = new Config()
+    searchController = new Search_Controller(req, res, config)
+    searchController.showSearchFromGraph()
+
+  it  'showMainAppView', (done)->
+    req    = { params: queryId : 'Logging'}
+    res    =
+        render: (jadePage,viewModel)->
+            #html.assert_Is_String()
+            jadePage.assert_Is('../source/jade/user/main.jade')
+            viewModel.assert_Is({})
+            done()
+    config = new Config()
+    searchController = new Search_Controller(req, res, config)
+    searchController.showMainAppView()
+
+  it 'showArticle', (done)->
+    req = { params: queryId : 'Logging'}
+    res =
+        redirect: (url)->
+            url.assert_Is('https://tmdev01-uno.teammentor.net/undefined')
+            done()
+    config = new Config()
+    searchController = new Search_Controller(req, res, config)
+    searchController.showArticle()
   #to redo once we have better offline content mapped to this
 # xit 'renderPage (and check content)', ->
 #   searchController.config.enable_Jade_Cache = false
