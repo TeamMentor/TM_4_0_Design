@@ -210,7 +210,8 @@ body {
 }
 
 #about {
-  background: url(../../deploy/assets//images/bgthree.jpg);
+  background: url(../../deploy/assets/images/bg-img.jpg);
+  background-position: 0px 0px;
 }
 
 #about, #usp {

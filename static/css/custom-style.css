@@ -210,7 +210,8 @@ body {
 }
 
 #about {
-  background: url(../assets/stock-img/bgthree.jpg);
+  background: url(../assets/stock-img/bg-img.jpg);
+  background-position: 0px 600px;
 }
 
 #about, #usp {
@@ -246,7 +247,8 @@ body {
 
 #call-to-action {
   padding: 100px 0 110px 0;
-  background: url(../assets/stock-img/bgtwo.jpg);
+  background: url(../assets/stock-img/bg-img.jpg);
+  background-position: 0px 1200px;
   background-color: #49661f;
   text-align: center;
 }
@@ -355,7 +357,8 @@ body {
 }
 
 #usp {
-  background: url(../assets/stock-img/bgone.jpg);
+  background: url(../assets/stock-img/bg-img.jpg);
+  background-position: 0px 0px;
 }
 
 #usp button, #call-to-action button {
