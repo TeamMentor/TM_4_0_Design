@@ -47,11 +47,13 @@ describe("services > test-teamMentor-content.js", function()
     });
     
     it('update GetFolderStructure_Libraries', function(done)
-    {   
-                        
+    {
+        teamMentorContent.disableCache =true; // find a lighter request to test this
+
         teamMentorContent.getJsonAndSaveToDisk( "GetFolderStructure_Libraries",
             function(targetFile)  {
-                                        expect(fs.existsSync(targetFile)).to.to.be.true;
+                                        expect(fs.existsSync(targetFile)).to.be.true;
+                                        teamMentorContent.disableCache =false;
                                         done();
                                   });
     });    
@@ -60,7 +62,7 @@ describe("services > test-teamMentor-content.js", function()
     {                   
         teamMentorContent.getJsonAndSaveToDisk("GetGUIObjects", 
             function(targetFile)   {
-                                        expect(fs.existsSync(targetFile)).to.to.be.true;
+                                        expect(fs.existsSync(targetFile)).to.be.true;
                                         done();
                                    });
     });

@@ -48,61 +48,61 @@ describe "controllers | test-Search-Controller |", ->
   searchController.config.enable_Jade_Cache = true
 
   #to redo once we have better offline content mapped to this
-  xit 'renderPage (and check content)', ->
-    searchController.config.enable_Jade_Cache = false
-    console.log ('')
-    searchController.searchData = null;                         # renderPage() should call loadSearchData()
+# xit 'renderPage (and check content)', ->
+#   searchController.config.enable_Jade_Cache = false
+#   console.log ('')
+#   searchController.searchData = null;                         # renderPage() should call loadSearchData()
 
-    html       = searchController.renderPage()
-    searchData = searchController.searchData
+#   html       = searchController.renderPage()
+#   searchData = searchController.searchData
 
-    expect(searchData).to.be.an('Object')
-    expect(html      ).to.be.an  ('String')
-    expect(html      ).to.contain('<!DOCTYPE html>')
+#   expect(searchData).to.be.an('Object')
+#   expect(html      ).to.be.an  ('String')
+#   expect(html      ).to.contain('<!DOCTYPE html>')
 
-    $ = cheerio.load(html)
-    expect($).to.be.an('Function')
+#   $ = cheerio.load(html)
+#   expect($).to.be.an('Function')
 
-    #containers
-    expect($('#title').html()).to.be.equal(searchData.title)
-    expect($('#containers').html()).to.not.equal(null)
-    expect($('#containers a').length).to.be.above(0)
+#   #containers
+#   expect($('#title').html()).to.be.equal(searchData.title)
+#   expect($('#containers').html()).to.not.equal(null)
+#   expect($('#containers a').length).to.be.above(0)
 
-    for container in searchData.containers
-      element = $("#" + container.id)
-      expect(element.html()).to.not.be.null
-      expect(element.html()).to.contain(container.title)
-      expect(element.html()).to.contain(container.size)
+#   for container in searchData.containers
+#     element = $("#" + container.id)
+#     expect(element.html()).to.not.be.null
+#     expect(element.html()).to.contain(container.title)
+#     expect(element.html()).to.contain(container.size)
 
-    #results
-    expect($('#resultsTitle').html()).to.equal(searchData.resultsTitle)
+#   #results
+#   expect($('#resultsTitle').html()).to.equal(searchData.resultsTitle)
 
-    for result in searchData.results
-        element = $("#" + result.id)
-        expect(element.html()             ).to.not.be.null
-        expect(element.attr('id'  )       ).to.equal(result.id)
-        expect(element.attr('href')       ).to.equal(result.link)
-        expect(element.find('h4'  ).html()).to.equal(result.title)
-        expect(element.find('p'   ).html()).to.equal(result.summary)
+#   for result in searchData.results
+#       element = $("#" + result.id)
+#       expect(element.html()             ).to.not.be.null
+#       expect(element.attr('id'  )       ).to.equal(result.id)
+#       expect(element.attr('href')       ).to.equal(result.link)
+#       expect(element.find('h4'  ).html()).to.equal(result.title)
+#       expect(element.find('p'   ).html()).to.equal(result.summary)
 
-    #filters
-    mappedFilters = {}
-    for filter in searchData.filters
-        mappedFilters[filter.title] = filter
+#   #filters
+#   mappedFilters = {}
+#   for filter in searchData.filters
+#       mappedFilters[filter.title] = filter
 
-    expect($('#filters'     ).html()).to.not.equal(null)
-    expect($('#filters h3'  ).html()).to.equal('Filters')
-    expect($('#filters form').html()).to.not.equal(null)
-    expect($('#filters form .form-group').html()).to.not.equal(null)
+#   expect($('#filters'     ).html()).to.not.equal(null)
+#   expect($('#filters h3'  ).html()).to.equal('Filters')
+#   expect($('#filters form').html()).to.not.equal(null)
+#   expect($('#filters form .form-group').html()).to.not.equal(null)
 
-    formGroups = $('#filters form .form-group')
-    expect(formGroups.length).to.equal(searchData.filters.length)
-    for formGroup in formGroups
-        title = $(formGroup).find('h5').html()
-        expect(title).to.be.an('String')
-        mappedFilter = mappedFilters[title]
-        expect(mappedFilter).to.be.an('Object')
-        formGroupHtml = $(formGroup).html()
-        for result in mappedFilter.results
-            expect(formGroupHtml).to.contain(result.title)
-            expect(formGroupHtml).to.contain(result.size)
+#   formGroups = $('#filters form .form-group')
+#   expect(formGroups.length).to.equal(searchData.filters.length)
+#   for formGroup in formGroups
+#       title = $(formGroup).find('h5').html()
+#       expect(title).to.be.an('String')
+#       mappedFilter = mappedFilters[title]
+#       expect(mappedFilter).to.be.an('Object')
+#       formGroupHtml = $(formGroup).html()
+#       for result in mappedFilter.results
+#           expect(formGroupHtml).to.contain(result.title)
+#           expect(formGroupHtml).to.contain(result.size)

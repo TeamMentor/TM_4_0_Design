@@ -40,7 +40,7 @@ teamMentorContent.getJsonAndSaveToDisk = function(wsName, callback)
     {                        
         var targetFile = teamMentorContent.calculateLocalPath(wsName + '.json');
         var targetUrl  = teamMentorContent.calculateTargetUrl(wsName);
-    
+        console.log(targetFile)
         if(teamMentorContent.disableCache === false && fs.existsSync(targetFile))
         {
             callback(targetFile);
