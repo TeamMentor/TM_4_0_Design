@@ -34,12 +34,11 @@ app.use(express['static'](process.cwd()));
 
 app.port       = process.env.PORT || 1337;
 
-if        (process.mainModule.filename.indexOf('node_modules/mocha/bin/_mocha'   ) > 0) { console.log('[Running under Mocha]'); }
-else if   (process.mainModule.filename.indexOf('node_modules/grunt-cli/bin/grunt') > 0) { console.log('[Running under Grunt]'); }
+if(process.mainModule.filename.indexOf('node_modules/mocha/bin/_mocha'   ) > 0) { console.log('[Running under Mocha]'); }
 else
 {
     console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + app.port);
-    app.listen(app.port);
+    app.server = app.listen(app.port);
 }
 
 module.exports = app;
