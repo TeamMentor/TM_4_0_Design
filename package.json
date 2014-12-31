@@ -19,7 +19,8 @@
     "test-watch": "node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register node/tests --recursive -R list -w",
     "start_once": "node app.js",
     "start-dev": "node_modules/supervisor/lib/cli-wrapper.js node/server.js",
-    "coverage": "./node/bin/publish-code-coverage.sh",
+    "coverage-publish": "./node/bin/publish-code-coverage.sh",
+    "coverage": "./node/bin/local-code-coverage.sh",
     "QA": "cd QA && npm test && cd ..",
     "__start-dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' node/server.js"
   },

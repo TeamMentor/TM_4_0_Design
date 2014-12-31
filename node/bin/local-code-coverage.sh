@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -o errexit # Exit on error
+#set -o errexit # Exit on error
 echo 'Removing cache files'
 rm -R .tmCache
 
@@ -12,12 +12,13 @@ coffeeCoverage --path relative ./node ./node-cov/
 echo '    deleting node-cov *.coffee files'
 find . -path "./node-cov/**/*.coffee" -delete
 
-echo 'Running Tests and Publishing to coveralls'
-mocha -R mocha-lcov-reporter node-cov/tests --recursive | sed 's,SF:,SF:node/,' | ./node_modules/coveralls/bin/coveralls.js
+echo 'Running Tests locally with (html-file-cov)'
+mocha -R html-file-cov node-cov/tests  --recursive
 
 echo 'Removing instrumented node files'
 rm -R node-cov
+mv coverage.html .tmCache/coverage.html
 
-echo 'Opening browser with Coveralls page (refresh and the new data should be there)'
+echo 'Opening browser with coverage.html'
 
-open "https://coveralls.io/r/TeamMentor/TM_4_0_Design"
+#open .tmCache/coverage.html
