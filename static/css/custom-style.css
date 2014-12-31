@@ -325,6 +325,14 @@ body {
   color: #444444;
 }
 
+#si-logo {
+  width: 33%;
+  margin: 0 auto;
+  height: 55px;
+  background: url(../assets/logos/logos.jpg) no-repeat;
+  background-position: 0 -50px;
+}
+
 #help-nav, #help-docs {
   margin-top: 60px;
 }
@@ -435,7 +443,9 @@ label {
 #team-mentor-navigation {
   background-color: #FFFFFF;
   max-height: 150px;
-  text-align:center;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 #not-logged-in {
@@ -455,13 +465,16 @@ label {
 
 #title-area {
   width: 100%;
-  float: left;
+  height: 55px;
+  background: url(../assets/logos/logos.jpg) no-repeat;
+  background-position: 0 0;
+  margin-left: 15%;
 }
 
 #links {
   width: 100%;
   text-align: text-center;
-  padding: 10px 0 5px 0;
+  padding: 0px 0 5px 0;
 }
 
 #links ul {
@@ -835,13 +848,8 @@ table td {
   }
   #title-area {
     display: inline-block;
-    max-width: 35%;
-  }
-
-  #title-area img {
-    padding: 0 0 0 20px;
-    float: left;
-    max-width: 100%;
+    max-width: 36%;
+    margin-left: 0;
   }
 
   #not-logged-in img {
@@ -854,7 +862,7 @@ table td {
 
   #links {
     display: inline-block;
-    max-width: 65%;
+    max-width: 64%;
   }
 
   #links.icons {
