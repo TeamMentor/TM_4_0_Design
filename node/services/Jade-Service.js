@@ -65,7 +65,7 @@ var JadeService = function(config)
                 }
                 var targetFile_Path = this.calculateTargetPath(jadeFile);
                 if (fs.existsSync(targetFile_Path) === false)
-                {            
+                {
                     if (this.compileJadeFileToDisk(jadeFile) === false)
                     {
                         return "";

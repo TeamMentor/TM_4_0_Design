@@ -84,16 +84,21 @@ var Library_Controller = function(req, res, config)
             var that   = this;
             request(server + url, function(error, response,data)
                 {
-                    var graph = JSON.parse(data);
-                    var nodes = graph.nodes;
-                    var node_Labels = [];
-                    nodes.forEach(function(node){node_Labels.push(node.label);});                    
-                    var viewModel = {'queries' : node_Labels.sort()};
+                    var viewModel= {}
+
+                    if(data && data !=='')
+                        var graph = JSON.parse(data);
+                        if(graph)
+                            var nodes = graph.nodes;
+                            var node_Labels = [];
+                        if(nodes)
+                            nodes.forEach(function(node){node_Labels.push(node.label);});
+                            viewModel = {'queries' : node_Labels.sort()};
                     that.res.send(that.jade_Service.renderJadeFile('/source/jade/user/queries.jade', viewModel));
                     //that.res.send(nodes)
                 });            
         };
-        this.showFolder = function()
+       /* this.showFolder = function()
             {
                 var library_name = (req && req.params) ? req.params.library : "";
                 var folder_name = (req && req.params) ? req.params.folder : "";
@@ -133,8 +138,8 @@ var Library_Controller = function(req, res, config)
                 {
                     this.res.send('Library not found: ' + library_name);
                 }
-                
-            };
+
+            };*/
         
         this.mapLibraryData = function(library, next)
         {
@@ -203,7 +208,7 @@ Library_Controller.registerRoutes = function (app)
         app.get('/libraries'                       , function (req,res,next) { auth.checkAuth(req, res,next, app.config);}  , function (req, res) { new Library_Controller(req, res, app.config).showLibraries  (); });
         app.get('/library/queries'                 , function (req,res,next) { auth.checkAuth(req, res,next, app.config);}  , function (req, res) { new Library_Controller(req, res, app.config).showQueries    (); });
         app.get('/library/:name'                   , function (req,res,next) { auth.checkAuth(req, res,next, app.config);}  , function (req, res) { new Library_Controller(req, res, app.config).showLibrary    (); });
-        app.get('/library/:library/folder/:folder' , function (req,res,next) { auth.checkAuth(req, res,next, app.config);}  , function (req, res) { new Library_Controller(req, res, app.config).showFolder     (); });
+        //app.get('/library/:library/folder/:folder' , function (req,res,next) { auth.checkAuth(req, res,next, app.config);}  , function (req, res) { new Library_Controller(req, res, app.config).showFolder     (); });
     };
 module.exports = Library_Controller;
 

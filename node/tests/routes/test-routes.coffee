@@ -19,7 +19,6 @@ describe 'routes | test-routes.js |', ()->
                       '/help/:page*',
                       '/index.html',
                       '/libraries',
-                      '/library/:library/folder/:folder',
                       '/library/:name',
                       '/library/queries',
                       '/mainModule',

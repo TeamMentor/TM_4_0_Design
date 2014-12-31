@@ -5,13 +5,8 @@ var Jade_Service        = require('../services/Jade-Service'),
     loginEnabled = true;
 
 function checkAuth(req, res, next, config) 
-{        
-    if(config && config.disableAuth) 
-    {
-        next();
-        return;
-    }    
-    if (loginEnabled && !req.session.username) 
+{
+    if (loginEnabled && req && req.session &&!req.session.username)
     {        
         res.status(403) 
            .send(new Jade_Service(config).renderJadeFile('/source/jade/guest/login-required.jade'));

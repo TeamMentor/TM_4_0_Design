@@ -25,7 +25,7 @@ describe 'issues-sprint-1', ->                                                  
         #assert_Weak_Pwd_Fail  "!!123", ->
         done()
 
-  it.only 'Issue 151 - Add asserts for new Login page content ', (done)->
+  it 'Issue 151 - Add asserts for new Login page content ', (done)->
     jade.page_Login (html,$)->
       $('#summary h1').html().assert_Is('Security Risk. Understood.')
       $('#summary p').html().assert_Is('TEAM Mentor was created by developers for developers using secure coding standards, code snippets and checklists built from 10+ years of targeted security assessments for Fortune 500 organizations.')

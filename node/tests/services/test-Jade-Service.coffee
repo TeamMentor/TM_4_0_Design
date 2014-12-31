@@ -50,8 +50,8 @@ describe "services > Jade-Service.js", ()->
         jadeService.compileJadeFileToDisk('a').assert_Is_False()
         
         targetPath    = jadeService.calculateTargetPath(defaultJadeFile);
-        if(fs.existsSync(targetPath)==false)
-            jadeService.compileJadeFileToDisk(defaultJadeFile).assert_Is_True()
+        #if(fs.existsSync(targetPath)==false)
+        jadeService.compileJadeFileToDisk(defaultJadeFile).assert_Is_True()
         jadeTemplate  = require(targetPath);
         jadeTemplate.assert_Is_Function()
         jadeTemplate().assert_Is_String()
@@ -61,7 +61,9 @@ describe "services > Jade-Service.js", ()->
     
     it 'renderJadeFile', ()->
         jadeService = new Jade_Service();
-        
+
+        jadeService.renderJadeFile('a').assert_Is("");
+
         jadeService.enableCache();
         
         helpJadeFile    = '/source/jade/help/index.jade';
@@ -73,6 +75,8 @@ describe "services > Jade-Service.js", ()->
         jadeService.renderJadeFile(helpJadeFile,{loggedIn:true}  ).assert_Not_Contains('<a href="/guest/about.html">About</a>')
         jadeService.renderJadeFile(helpJadeFile,{loggedIn:false} ).assert_Not_Contains('<img src="/static/assets/icons/help.png" alt="Help">')
         jadeService.renderJadeFile(helpJadeFile,{loggedIn:true } ).assert_Contains    ('<img src="/static/assets/icons/help.png" alt="Help">')
+
+
 
     ###
     it('cleanCacheFolder', function()
