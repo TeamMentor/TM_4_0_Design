@@ -1,13 +1,13 @@
-fs                = require('fs')
-marked            = require('marked')
-request           = require('request')
-auth              = require('../middleware/auth')
-Jade_Service      = require('../services/Jade-Service')
-teamMentorContent = require(process.cwd() + '/node/services/teamMentor-content.js');
+fs                 = require('fs')
+marked             = require('marked')
+request            = require('request')
+auth               = require('../middleware/auth')
+Jade_Service       = require('../services/Jade-Service')
+TeamMentor_Service = require(process.cwd() + '/node/services/TeamMentor-Service');
 
 
 content_cache = {};
-libraryData    = teamMentorContent.getLibraryData_FromCache();
+libraryData    = new TeamMentor_Service().getLibraryData_FromCache();
 library        = libraryData[0];
 
 class Help_Controller

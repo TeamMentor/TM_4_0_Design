@@ -1,13 +1,12 @@
-supertest         = require('supertest')
-expect            = require('chai').expect
-cheerio           = require('cheerio')
-marked            = require('marked')
-request           = require('request')
-fs                = require('fs')
-app               = require('../../server')
-Jade_Service      = require('../../services/Jade-Service')
-teamMentorContent = require('../../services/teamMentor-content')
-Help_Controller   = require('../../controllers/Help-Controller')
+supertest          = require('supertest')
+expect             = require('chai').expect
+cheerio            = require('cheerio')
+marked             = require('marked')
+request            = require('request')
+fs                 = require('fs')
+app                = require('../../server')
+Jade_Service       = require('../../services/Jade-Service')
+Help_Controller    = require('../../controllers/Help-Controller')
     
 
 describe 'routes | test-help', ()->
@@ -17,7 +16,6 @@ describe 'routes | test-help', ()->
   before ->
     app.server = app.listen();
     #preCompiler.disableCache = false;
-    expect(teamMentorContent).to.be.an('Object');
 
 
   after ()->

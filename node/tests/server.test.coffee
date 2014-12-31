@@ -15,6 +15,7 @@ describe "test-server.js |", ->
     # for this to work we need to reload app and manipulate: process.mainModule.filename and process.env.PORT
 
     originalName = process.mainModule.filename
+
     process.mainModule.filename.assert_Contains('node_modules/mocha/bin/_mocha')
 
     process.mainModule.filename = '...'
@@ -23,11 +24,15 @@ describe "test-server.js |", ->
     url.GET (html)->
         assert_Is_Null(html)
 
-        pathToApp = 'node/server.js'.append_To_Process_Cwd_Path()
+        pathToApp = if 'node-cov'.folder_Exists() then 'node-cov/server.js'.append_To_Process_Cwd_Path() else 'node/server.js'.append_To_Process_Cwd_Path()
+
         require.cache[pathToApp].assert_Is_Object()
         delete require.cache[pathToApp]
+
         app = require '../server'
+
         url.GET (html)->
+
             app.server.assert_Is_Object()
             app.server.close()
             url.GET (html)->

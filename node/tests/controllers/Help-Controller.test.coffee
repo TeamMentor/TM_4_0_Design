@@ -4,7 +4,7 @@ request           = require('request')
 app               = require('../../server')
 marked            = require('marked')
 Help_Controller   = require('../../controllers/Help-Controller')
-teamMentorContent = require('../../services/teamMentor-content')
+TeamMentor_Service = require('../../services/TeamMentor-Service')
 
 describe 'controllers | Help-Controller.test', ()->
 
@@ -115,7 +115,7 @@ describe 'controllers | Help-Controller.test', ()->
       check_For_Redirect()
 
   describe 'test-help (dynamic content) |', ()->
-    libraryData  = teamMentorContent.getLibraryData_FromCache();
+    libraryData  = new TeamMentor_Service().getLibraryData_FromCache();
     pageParams   = { loggedIn : false};
     helpJadeFile = '/source/html/help/index.jade'
 
@@ -130,11 +130,6 @@ describe 'controllers | Help-Controller.test', ()->
 
       pageParams.library = library
       pageParams.content = "...."
-
-
-    getHelpPageObject = ()->
-      html = new Jade_Service().renderJadeFile(helpJadeFile, pageParams)
-      cheerio.load(html)
 
 
     it 'check that index page markdown transform', (done)->
