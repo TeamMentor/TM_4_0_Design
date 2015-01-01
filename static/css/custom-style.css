@@ -445,8 +445,6 @@ label {
   background-color: #FFFFFF;
   max-height: 150px;
   text-align: center;
-  padding: 0;
-  margin: 0;
 }
 
 #not-logged-in {
@@ -465,11 +463,9 @@ label {
 }
 
 #title-area {
-  width: 75%;
-  height: 55px;
-  margin: 5px auto 0 auto;
-  background: url(../assets/logos/logos.jpg) no-repeat;
-  background-position: 0 0;
+  width: 100%;
+  float: left;
+  background: none;
 }
 
 #links {
@@ -851,8 +847,12 @@ table td {
   #title-area {
     display: inline-block;
     max-width: 36%;
-    margin-top: 5px;
+  }
+
+  #title-area img {
+    padding: 0 0 0 20px;
     float: left;
+    max-width: 100%;
   }
 
   #not-logged-in img {
