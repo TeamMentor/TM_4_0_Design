@@ -481,9 +481,13 @@ label {
   padding: 0;
 }
 
-#links.icons a img {
+#links.icons {
   display: inline-block;
-  max-width: 40px;
+  margin-top: 15px;
+}
+
+#links.icons ul li i {
+  padding-right: 5px
 }
 
 #links ul li {
@@ -834,7 +838,7 @@ table td {
   margin: 0 20px;
 }
 
-@media (min-width: 699px) {
+@media (min-width: 768px) {
   #application {
     margin-top: 30px;
   }
@@ -847,7 +851,7 @@ table td {
   #title-area {
     display: inline-block;
     margin: 5px 0 0 20px;
-width: 36%;
+    width: 36%;
     float: left;
   }
 
@@ -861,7 +865,7 @@ width: 36%;
 
   #links {
     display: inline-block;
-    width: 60%;
+    width: 61%;
   }
 
   #links.icons {
@@ -882,12 +886,8 @@ width: 36%;
     padding: 0;
   }
 
-  #links.icons a img {
-    max-width: 100%;
-  }
-
   #links ul li {
-    padding: 0 20px 0 0;
+    padding: 0 15px 0 0;
   }
 
   #links ul li a{
