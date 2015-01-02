@@ -94,3 +94,8 @@ describe 'regression-sprint-1', ->                                              
     page.open '/guest/login-required.html', (html,$)->
       $('h3').html().assert_Is('Login')
       done()
+
+  it 'Issue 173 - Add TM release version number to a specific location',(done)->
+    jade.page_About (html, $)->
+      $("#footer h6").html().assert_Contains('TEAM Mentor v')
+      done()

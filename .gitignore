@@ -9,3 +9,4 @@ UNO_Library_Data.json
 #static
 QA/_screenshots
 bower_components
+.logs

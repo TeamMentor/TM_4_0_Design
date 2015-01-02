@@ -7,7 +7,14 @@ var express    = require('express'),
     bodyParser = require('body-parser'),
     app        = express(),
     session    = require('express-session'),
-    Config     = require('./Config');
+    Config     = require('./Config'),
+    Logger     = require('./services/Logger-Service')
+
+global.info = new Logger().setup().log
+
+//console.log = global.info
+
+info('Starting Express server config')
 
 app.config = new Config(null, false);
 app.use(bodyParser.json()                        );     // to support JSON-encoded bodies
@@ -27,12 +34,11 @@ app.use(express['static'](process.cwd()));
 
 app.port       = process.env.PORT || 1337;
 
-if        (process.mainModule.filename.indexOf('node_modules/mocha/bin/_mocha'   ) > 0) { console.log('[Running under Mocha]'); }
-else if   (process.mainModule.filename.indexOf('node_modules/grunt-cli/bin/grunt') > 0) { console.log('[Running under Grunt]'); }
+if(process.mainModule.filename.indexOf('node_modules/mocha/bin/_mocha'   ) > 0) { console.log('[Running under Mocha]'); }
 else
 {
     console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + app.port);
-    app.listen(app.port);
+    app.server = app.listen(app.port);
 }
 
 module.exports = app;

@@ -1,4 +1,6 @@
-TM 4.0 Design
+TM 4.0 Design   [![Build Status](https://travis-ci.org/TeamMentor/TM_4_0_Design.svg?branch=Issue_66_TopNav_Auth)](https://travis-ci.org/TeamMentor/TM_4_0_Design)
+[![Coverage Status](https://coveralls.io/repos/TeamMentor/TM_4_0_Design/badge.png?branch=master)](https://coveralls.io/r/TeamMentor/TM_4_0_Design?branch=master)
+
 =============
 
 Repo to hold files and designs for the 4.0 version of TeamMentor.
@@ -15,8 +17,6 @@ TeamCity CI is used to pull the changes and push/publish to Azure (for more deta
 * [IE CSS resources](https://github.com/TeamMentor/TM_4_0_Design/wiki/IE-CSS-resources)
 
 
-Build status: [![Build Status](https://travis-ci.org/TeamMentor/TM_4_0_Design.svg?branch=Issue_66_TopNav_Auth)](https://travis-ci.org/TeamMentor/TM_4_0_Design)
-Code coverage: [![Coverage Status](https://coveralls.io/repos/TeamMentor/TM_4_0_Design/badge.png?branch=Issue_68_Library_Rendering)](https://coveralls.io/r/TeamMentor/TM_4_0_Design?branch=Issue_68_Library_Rendering)
 
 **to run dev brach**
 

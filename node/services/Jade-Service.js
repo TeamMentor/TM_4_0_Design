@@ -52,6 +52,8 @@ var JadeService = function(config)
         
         this.renderJadeFile = function(jadeFile, params)
             {
+                if(info) info('[Jade-Service] rendering: '  + jadeFile)
+                
                 if (this.cacheEnabled() === false) 
                 {
                     var jadeFile_Path = path.join(process.cwd(), jadeFile);
@@ -63,7 +65,7 @@ var JadeService = function(config)
                 }
                 var targetFile_Path = this.calculateTargetPath(jadeFile);
                 if (fs.existsSync(targetFile_Path) === false)
-                {            
+                {
                     if (this.compileJadeFileToDisk(jadeFile) === false)
                     {
                         return "";

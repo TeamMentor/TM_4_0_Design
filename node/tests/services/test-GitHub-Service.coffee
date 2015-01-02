@@ -63,7 +63,10 @@ describe 'services | test-GitHub-Service |', ->
             
             expect(searchData      ).to.be.an('Object')
             expect(searchData.title).to.equal('Data Validation')
-            done()
+
+            gitHubService.gist gistId, 'abc', (data)->
+                assert_Is_Null(data)
+                done()
     
     it 'repo_Raw', (done)->
         expect(gitHubService.repo_Raw).to.be.an('Function')
