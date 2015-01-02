@@ -310,9 +310,12 @@ body {
 
 #footer {
   width: 100%;
+  margin: 0 auto;
   padding: 15px 0 0 0;
   text-align: center;
+  position: relative;
 }
+
 #footer a {
   color: #444444;
   text-transform: uppercase;
@@ -324,14 +327,6 @@ body {
   padding-top: 0;
   margin-top: 0;
   color: #444444;
-}
-
-#si-logo {
-  width: 32%;
-  margin: 0 auto;
-  height: 55px;
-  background: url(../assets/logos/logos.jpg) no-repeat;
-  background-position: 0 -50px;
 }
 
 #help-nav, #help-docs {
@@ -463,15 +458,32 @@ label {
 }
 
 #title-area {
-  width: 100%;
-  float: left;
-  background: none;
+  position: relative;
+  width: 250px;
+  height: 50px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#tm-logo {
+  background:url('../assets/logos/logos.jpg') no-repeat;
+  background-position: 0px 0px;
+  height: 50px;
+}
+
+#si-logo {
+  background:url('../assets/logos/logos.jpg') no-repeat;
+  background-position: 0px -50px;
+  height: 50px;
+  width: 250px;
+  margin: 0 auto;
 }
 
 #links {
+  position: relative;
   width: 100%;
   text-align: text-center;
-  padding: 0px 0 5px 0;
+  padding: 0 0 5px 0;
   background: transparent;
 }
 
@@ -834,7 +846,7 @@ table td {
   margin: 0 20px;
 }
 
-@media (min-width: 738px) {
+@media (min-width: 699px) {
   #application {
     margin-top: 30px;
   }
@@ -846,13 +858,9 @@ table td {
   }
   #title-area {
     display: inline-block;
-    max-width: 36%;
-  }
-
-  #title-area img {
-    padding: 0 0 0 20px;
+    margin: 5px 0 0 20px;
+width: 36%;
     float: left;
-    max-width: 100%;
   }
 
   #not-logged-in img {
@@ -865,7 +873,7 @@ table td {
 
   #links {
     display: inline-block;
-    max-width: 64%;
+    width: 60%;
   }
 
   #links.icons {
