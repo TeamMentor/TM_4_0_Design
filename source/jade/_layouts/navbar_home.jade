@@ -4,10 +4,24 @@ include ../_mixins/links.jade
 .fixed
 	#team-mentor-navigation
 		#title-area
-			+image-teammentor-logo__default
+			#tm-logo
 		// title-area
-		#links.icons
-			+links-navbar__home
+		ul#links
+			li
+				a(/library/Uno)
+					+navigate-icon
+			li
+				a(/user/main.html)
+					+home-icon
+			li
+				a(/help/index.html)
+					+help-icon
+			li
+				a(href='../user/user')
+					+user-icon
+			li
+				a(/user/logout)
+					+logout-icon
 		// links
 	// team-mentor-navigation
 // fixed
