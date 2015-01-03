@@ -12,6 +12,10 @@ nav a:active {
   text-decoration: none;
 }
 
+#application {
+  margin: 0;
+}
+
 #logo {
   padding: 5px 0 0 0;
 }
