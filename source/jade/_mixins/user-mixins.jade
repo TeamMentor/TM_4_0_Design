@@ -115,8 +115,7 @@ mixin team-mentor-summary
 
 mixin alert-login-failed
   .alert(role='alert')
-    p Error Logging In : #{errorMessage}
-
+      p Error Logging In : #{errorMessage}
 mixin alert-please-login
   .alert(role='alert')
     | You need to login to see that page :)
@@ -128,6 +127,7 @@ mixin alert-pwd-sent
 mixin alert-sign-up-failed
   .alert(role='alert')
     p Error Signing In : #{errorMessage}
+
 mixin alert-sign-up-OK
   .alert(role='alert')
     | Thanks for signing up to TEAM Mentor. Please login to access our libraries :)

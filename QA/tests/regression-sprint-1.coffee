@@ -69,6 +69,43 @@ describe 'regression-sprint-1', ->                                              
         $('#title-area a img').attr().assert_Is { src: '/static/assets/logos/tm-logo.jpg', alt: 'TEAM Mentor'  }
         done()
 
+  it 'Issue 105 - New users cannot be created with Weak Passwords', (done)->
+    assert_Weak_Pwd_Fail = (password)->
+      randomUser  = 'abc_'.add_5_Random_Letters();
+      randomEmail = "#{randomUser}@teammentor.net"
+      jade.user_Sign_Up randomUser, password,password, randomEmail, (html , $)->
+        html= $('.alert p').html();
+        html.assert_Is("Error Signing In : Password must be 8 to 256 character long");
+        done();
+    @timeout(4000)
+    assert_Weak_Pwd_Fail "1223", ->
+      done()
+
+
+  it 'Issue 303 -Error message should be displayed if username already exist', (done)->
+    assert_User_Already_Exit = (username)->
+      randomEmail = "#{username}@teammentor.net";
+      password= '!#$TM'.add_5_Random_Letters();
+      jade.user_Sign_Up username, password,password, randomEmail, (html , $)->
+        html= $('.alert p').html();
+        html.assert_Is("Error Signing In : Username already exist");
+        done();
+    assert_User_Already_Exit "tm", ->
+      done()
+
+
+  it 'Issue 303 -Error message should be displayed if passwords does not match already exist', (done)->
+    assert_Password_Does_Not_Match = (username)->
+      randomEmail = "#{username}@teammentor.net";
+      password= '!#$TM'.add_5_Random_Letters();
+      confirmationPassword= '!#$TM'.add_Random_Letters(15);
+      jade.user_Sign_Up username, password,confirmationPassword, randomEmail, (html , $)->
+        html= $('.alert p').html();
+        html.assert_Is("Error Signing In : Passwords don&apos;t match");
+        done();
+    assert_Password_Does_Not_Match "tm", ->
+      done()
+
   #it 'Issue 119 - /returning-user-login.html is Blank', (done)->
   #  jade.page_Sign_Up_OK (html, $)->                                                       # open sign-up ok page
   #    $('p a').attr('href').assert_Is('/guest/login.html')                                 # confirm link is now ok

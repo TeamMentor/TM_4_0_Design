@@ -19,7 +19,7 @@ describe 'user-account', ->
 
   it 'Login fail', (done)->
     jade.login 'aaaa'.add_5_Random_Letters(),'bbbb',  (html, $) ->
-      $('.alert').html().assert_Is('Login failed, please try again :(')
+      $('.alert p').html().assert_Is('Error Logging In : Username does not exist')
       done()
 
   it 'User Sign Up (with weak password)',(done)->
@@ -27,7 +27,7 @@ describe 'user-account', ->
     username = 'tm_qa_'.add_5_Random_Letters()
     password = '**tm**qa**USER'
     email    = "#{username}@teammentor.net"
-    jade.user_Sign_Up username, password, email, ->
+    jade.user_Sign_Up username, password,password, email, ->
       page.chrome.url (url)->
         url.assert_Contains('/guest/sign-up-OK.html')
         page.html (html,$)->
@@ -40,9 +40,9 @@ describe 'user-account', ->
   it 'User Sign Up Fail',(done)->
     @timeout(0)
     assert_User_Sign_Up_Fail = (username, password, email, next)->
-      jade.user_Sign_Up username, password, email, ->
+      jade.user_Sign_Up username, password,password, email, ->
         page.chrome.url (url)->
-          url.assert_Contains('/guest/sign-up-Fail.html')
+          url.assert_Contains('user/sign-up')
           next()
 
     randomUser  = 'abc_'.add_5_Random_Letters();

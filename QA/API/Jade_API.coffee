@@ -51,11 +51,11 @@ class Jade_API
                             callback(cookie)
                             return
                         callback(null)
-  user_Sign_Up    : (username, password, email, callback) =>
+  user_Sign_Up    : (username, password,confirmationPassword, email, callback) =>
                       @page_Sign_Up (html, $)=>
                         code = "document.querySelector('#new-user-username').value='#{username}';
                                 document.querySelector('#new-user-password').value='#{password}';
-                                document.querySelector('#new-user-confirm-password').value='#{password}';
+                                document.querySelector('#new-user-confirm-password').value='#{confirmationPassword}';
                                 document.querySelector('#new-user-email').value='#{email}';
                                 document.querySelector('#btn-sign-up').click()"
                         @page.chrome.eval_Script code, =>

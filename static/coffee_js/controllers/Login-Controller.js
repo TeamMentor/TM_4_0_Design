@@ -75,7 +75,14 @@ var Login_Controller = function(req, res)
                     {
                         console.log('not logged in...') 
                         req.session.username = undefined;
-                        req.errorMesage = loginResponse.Validation_Results[0].Message;
+                        if (loginResponse.Validation_Results !=null)
+                        {
+                            req.errorMesage = loginResponse.Validation_Results[0].Message;
+                        }
+                        else
+                        {
+                            req.errorMesage = loginResponse.Simple_Error_Message;
+                        }
                          res.render(loginPage,{errorMessage:req.errorMesage})
                     };;
                 }
@@ -137,10 +144,18 @@ var Login_Controller = function(req, res)
             if(response.body!=null && response.statusCode == 200)
             {
                 var signUpResponse = response.body.d;
+                var message= '';
                 console.log(signUpResponse)
                 if (signUpResponse.Signup_Status!=0)
                 {
-                    var message = signUpResponse.Validation_Results[0].Message;
+                    if (signUpResponse.Validation_Results!=null)
+                    {
+                         message = signUpResponse.Validation_Results[0].Message;
+                    }
+                    else
+                    {
+                        message = signUpResponse.Simple_Error_Message;
+                    }
                     res.render(signUpFailPage, {errorMessage: message})
                 }else
                     res.redirect('/guest/sign-up-OK.html');
