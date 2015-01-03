@@ -65,8 +65,8 @@ describe 'regression-sprint-1', ->                                              
   it 'Issue 118 - Clicking on TM logo while logged in should not bring back the main screen', (done)->
     jade.page_Home ->
       jade.login_As_QA (html,$)->
+
         $($('#title-area a').get(0)).attr().href.assert_Is('/user/main.html')
-        $('#title-area a img').attr().assert_Is { src: '/static/assets/logos/tm-logo.jpg', alt: 'TEAM Mentor'  }
         done()
 
   #it 'Issue 119 - /returning-user-login.html is Blank', (done)->

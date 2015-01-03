@@ -39,39 +39,59 @@ describe 'jade-anonymous-users', ->
     checkValues(4,'/guest/login.html'    , 'Login'   )
 
   check_Generic_Footer = ($)->
+    $('#call-to-action h1'      ).html()             .assert_Is('Security Risk. Understood.'           )
+    $('#call-to-action a'       ).get(0).attribs.href.assert_Is('/guest/sign-up.html'                  ) # BUG this is a broken link!
+    $('#call-to-action button'  ).text()             .assert_Is('See for yourself'                     )
+    $('#call-to-action button i').attr()             .assert_Is({ class: 'fi-eye' })
 
-    $('#call-to-action h1').html()             .assert_Is('Security Risk. Understood.'           )
-    $('#call-to-action a' ).get(0).attribs.href.assert_Is('/guest/sign-up.html'                  ) # BUG this is a broken link!
-    $('#call-to-action button').html()         .assert_Is('See for yourself'                     )
+    $('#footer #footer-img h6'        ).html().assert_Contains('TEAM Mentor v')
 
-    $('#footer img'       ).get(0).attribs.src .assert_Is('/static/assets/logos/si-logo.png'     )
-    $('#footer h6'        ).html().assert_Contains('TEAM Mentor v')
+  extract_Style_Data = (styleCss)->
+    items = {}
+    for item in styleCss.split(';')
+      if (item)
+        items[item.split(':').first().trim()] =item.split(':').second().trim()
+    return items
 
+  check_Generic_Footer_Css = (html, baseUrl, next)->
+    juice   = require('juice')
+    cheerio = require('cheerio')
+    juice.juiceContent html, { url: baseUrl}, (err, cssHtml)->
+      $css = cheerio.load(cssHtml)
+      footer_Attr = $css('#footer #footer-img #si-logo').attr()
+      footer_Attr.assert_Is {  id: 'si-logo'
+                             , style: 'background: url(../assets/logos/logos.jpg) no-repeat; background-position: 0px -50px; height: 50px; width: 250px; margin: 0 auto;' }
+
+      items = extract_Style_Data(footer_Attr.style)
+
+      items['background'].assert_Is('url(../assets/logos/logos.jpg) no-repeat' )
+      next()
 
   it '/',(done)->
     jade.page_Home (html,$)->
       $('#usp h2').html().assert_Is('Instant resources that bridge the gap between developer questions and technical solutions')
 
-      $('#usp a'     ).get(0).attribs.href       .assert_Is('/guest/sign-up.html')
-      $('#usp button').html()                    .assert_Is('Start your free trial today')
-      $('#reasons h2').html()                    .assert_Is('With TEAM Mentor, you can')
+      $('#usp a'       ).get(0).attribs.href       .assert_Is('/guest/sign-up.html')
+      $('#usp button'  ).text()                    .assert_Is('Start your free trial today')
+      $('#usp button i').attr()                  .assert_Is({ class: 'fi-key' })
+      $('#reasons h2'  ).html()                    .assert_Is('With TEAM Mentor, you can')
 
       $($('#reasons h4 p').get(0)).html()       .assert_Is('FIX vulnerabilities quicker than ever before with TEAM Mentor&apos;s seamless integration into a developer&apos;s IDE and daily workflow.')
       $($('#reasons h4 p').get(1)).html()       .assert_Is('REDUCE the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified.')
-      $($('#reasons h4 p').get(2)).html()       .assert_Is('EXPAND the development team&apos;s knowledge and improve process with instant access to thousands of specific remediation tactics, including the host organization&apos;s security policies and coding best practices.')
+      $($('#reasons h4 p').get(2)).html()       .assert_Is('EXPAND the development team&apos;s knowledge and improve process with access to thousands of specific remediation tactics, including the host organization&apos;s security policies and coding best practices.')
 
       $('#clients h2').html()                    .assert_Is('Our clients love us (and we think you will too!)')
       clientImages = $('#clients img')
 
-      clientImages[0].attribs.src                .assert_Is('/static/assets/clients/elsevier.png'  )
-      clientImages[1].attribs.src                .assert_Is('/static/assets/clients/fedex.png'     )
-      clientImages[2].attribs.src                .assert_Is('/static/assets/clients/massmutual.png')
-      clientImages[3].attribs.src                .assert_Is('/static/assets/clients/microsoft.png' )
-      clientImages[4].attribs.src                .assert_Is('/static/assets/clients/symantec.png'  )
-      clientImages[5].attribs.src                .assert_Is('/static/assets/clients/ubs.png'       )
+      clientImages[0].attribs.src                .assert_Is('/static/assets/clients/elsevier.jpg'  )
+      clientImages[1].attribs.src                .assert_Is('/static/assets/clients/fedex.jpg'     )
+      clientImages[2].attribs.src                .assert_Is('/static/assets/clients/massmutual.jpg')
+      clientImages[3].attribs.src                .assert_Is('/static/assets/clients/microsoft.jpg' )
+      clientImages[4].attribs.src                .assert_Is('/static/assets/clients/symantec.jpg'  )
+      clientImages[5].attribs.src                .assert_Is('/static/assets/clients/ubs.jpg'       )
 
       check_Generic_Footer($)
-      done()
+      check_Generic_Footer_Css($.html(), 'http://localhost:1337/', done)
 
   it 'About',(done)->
     jade.page_About (html,$)->

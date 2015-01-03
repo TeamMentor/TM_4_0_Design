@@ -73,8 +73,6 @@ describe "services > Jade-Service.js", ()->
         jadeService.renderJadeFile(helpJadeFile                  ).assert_Contains('<a href="/guest/about.html">About</a>')
         jadeService.renderJadeFile(helpJadeFile,{loggedIn:false} ).assert_Contains('<a href="/guest/about.html">About</a>')
         jadeService.renderJadeFile(helpJadeFile,{loggedIn:true}  ).assert_Not_Contains('<a href="/guest/about.html">About</a>')
-        jadeService.renderJadeFile(helpJadeFile,{loggedIn:false} ).assert_Not_Contains('<img src="/static/assets/icons/help.png" alt="Help">')
-        jadeService.renderJadeFile(helpJadeFile,{loggedIn:true } ).assert_Contains    ('<img src="/static/assets/icons/help.png" alt="Help">')
 
 
 
