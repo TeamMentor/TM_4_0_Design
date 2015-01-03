@@ -7,7 +7,7 @@ Config = require('../Config')
 describe "test-Config.js |", ->
 
     it "Ctor (w/ default values)", ->
-        expect(Config                  ).to.be.an('Function')
+        expect(Config                  ).to.be.an('FunctionAAAAA')
 
         config = new Config()
 
