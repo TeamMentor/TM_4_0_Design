@@ -17,9 +17,23 @@ mixin links-navbar__landing-page
         * [Sign Up](/guest/sign-up.html)
         * [Login](/guest/login.html)
 
-mixin links-navbar__not_logged_in
-    :markdown
-        * [![Help](/static/assets/icons/help.png)](#{help}/index.html)
+mixin links-navbar__home
+  ul
+    li
+      a(href='/library/Uno')
+        +navigate-icon
+    li
+      a(href='/user/main.html')
+        +home-icon
+    li
+      a(href='/help/index.html')
+        +help-icon
+    li
+      a(href='../user/user')
+        +user-icon
+    li
+      a(href='/user/logout')
+        +logout-icon
 
 //- git-repo-link
 mixin git-repo-link

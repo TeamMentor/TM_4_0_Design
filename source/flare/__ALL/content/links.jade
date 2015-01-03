@@ -34,24 +34,6 @@ mixin links-flare-navbar__home
 			+logout-icon
 			p Logout
 
-mixin links-navbar__home
-	ul
-		li
-			a(/library/Uno)
-				+navigate-icon
-		li
-			a(/user/main.html)
-				+home-icon
-		li
-			a(/help/index.html)
-				+help-icon
-		li
-			a(href='../user/user')
-				+user-icon
-		li
-			a(/user/logout)
-				+logout-icon
-
 mixin links-navbar__not_logged_in
 	:markdown
 		* [![Help](/deploy/assets/icons/help.png)](help/index)
