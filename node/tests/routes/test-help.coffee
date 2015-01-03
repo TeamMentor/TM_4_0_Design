@@ -32,7 +32,7 @@ describe 'routes | test-help', ()->
                   .end (err, res)->
                     throw err if(err)
                     $ = cheerio.load(res.text)
-                    expect($('a').length).to.be.above(7);
+                    expect($('a').length).to.be.above(6);
                     expect($("a[href='/help/aaaaa.html'] ").length).to.be.empty;
                     expect($("a[href='/help/index.html']" ).length).to.be.not.empty;
                     done()
