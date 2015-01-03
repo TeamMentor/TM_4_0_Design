@@ -626,17 +626,10 @@ button:hover, button:focus, .button:hover, .button:focus {
   color: #49661f !important;
   text-decoration: none;
 }
-button.postfix, .button.postfix {
-  color: #8aaf3e !important;
-  font-size: 16px;
-  padding-top: 7px;
-  border: 1px solid #aaaaaa;
-  height: 3rem;
+
+.btn-search-bar {
+  padding: 17px 0 17px 0;
   border-left: none;
-}
-button.postfix:hover, .button.postfix:hover {
-  color: #49661f !important;
-  background: #FFFFFF;
 }
 
 input[type="checkbox"] {
@@ -838,7 +831,7 @@ table td {
 
 @media (min-width: 768px) {
   #application {
-    margin-top: 30px;
+    margin-top: 70px;
   }
   #help-nav, #help-docs {
     margin-top:40px;

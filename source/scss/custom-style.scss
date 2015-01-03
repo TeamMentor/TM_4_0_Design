@@ -352,7 +352,7 @@ table {
 #application {
 	height: $full-width;
 	width: $full-width;
-	margin-top: 50px;
+	margin-top: 60px;
 }
 
 .lge-container {
@@ -457,17 +457,9 @@ button {
 		@extend a.action:hover;
 		background-color: $white;
 	}
-	&.postfix {
-		height: 3rem;
-		padding-top: 7px;
-		border: 1px solid $grey;
-		border-left: none;
-		font-size: 1em;
-		color: $green;
-		&:hover {
-			background-color: $white;
-			color: $dark-green;
-		}
+	&.btn-search-bar {
+	  padding: 17px 0 17px 0;
+	  border-left: none;
 	}
 }
 
