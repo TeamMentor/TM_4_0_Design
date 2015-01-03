@@ -10,7 +10,9 @@ mixin usp-div
 					.row
 						.col-offset-2.col-8
 							a(href='/guest/sign-up.html')
-								button Start your free trial today
+								button
+									i.fi-key
+									| Start your free trial today
 
 mixin reasons-div
 	#reasons
@@ -20,19 +22,19 @@ mixin reasons-div
 					h2 With TEAM Mentor, you can
 					table
 						tr
-							td.text-center.icons-green
+							td.text-center
 								i.fi-clipboard-pencil
 							td
 								h4
 									include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-1.md
 						tr
-							td.text-center.icons-green
+							td.text-center
 								i.fi-arrows-in
 							td
 								h4
 									include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-2.md
 						tr
-							td.text-center.icons-green
+							td.text-center
 								i.fi-checkbox
 							td
 								h4
@@ -80,22 +82,22 @@ mixin features-div
 					h3.text-center TEAM Mentor provides intelligence to fix vulnerabilities and comply
 					table
 						tr
-							td.text-center.icons-green
+							td.text-center
 								i.fi-check
 							td
 								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-1.md
 						tr
-							td.text-center.icons-green
+							td.text-center
 								i.fi-loop
 							td
 								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-2.md
 						tr
-							td.text-center.icons-green
+							td.text-center
 								i.fi-clipboard-notes
 							td
 								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-3.md
 						tr
-							td.text-center.icons-green
+							td.text-center
 								i.fi-arrows-in
 							td
 								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-4.md
@@ -112,7 +114,9 @@ mixin call-to-action-div
 					.row
 						.col-offset-2.col-8
 							a(href='/guest/sign-up.html')
-								button(type='button') See for yourself
+								button
+									i.fi-eye
+									| See for yourself
 
 //- landing-page_footer
 mixin footer-div

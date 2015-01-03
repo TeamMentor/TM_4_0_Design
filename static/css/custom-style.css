@@ -1532,6 +1532,14 @@ table td {
 
 
 
+.fixed li a {
+  color: #8baf3e !important;
+}
+
+.fixed li a:hover {
+  color: #6c9020 !important;
+}
+
 #features {
   padding: 0;
   margin: 150px 0 0 0;
@@ -1553,11 +1561,11 @@ table td {
 }
 #usp button:hover, #usp button:active, #call-to-action button:hover, #call-to-action button:active {
   background-color: #fcfcfc;
-  color: #444444 !important;
+  color: #6c9020 !important;
   border: 0;
-  border-bottom: 2px solid #444444;
-  -webkit-box-shadow: inset 0 -2px #444444;
-  box-shadow: inset 0 -2px #444444;
+  border-bottom: 2px solid #6c9020;
+  -webkit-box-shadow: inset 0 -2px #6c9020;
+  box-shadow: inset 0 -2px #6c9020;
 }
 
 #usp button i, #call-to-action button i {
@@ -1567,7 +1575,7 @@ table td {
 }
 
 #usp button:hover i, #usp button:active i, #call-to-action button:hover i, #call-to-action button:active i {
-  color: #444444 !important;
+  color: #6c9020 !important;
 }
 
 #footer a {
@@ -1575,3 +1583,8 @@ table td {
 }
 
 #footer a:hover { color: #7b9c38;}
+
+#features i, #reasons i {
+  color: #8baf3e;
+  font-size: 4em;
+}
