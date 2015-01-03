@@ -247,6 +247,7 @@ body {
 }
 
 #call-to-action {
+  width: 100%;
   padding: 100px 0 110px 0;
   background: url(../assets/stock-img/bg-img.jpg);
   background-position: 0px 1200px;
@@ -302,10 +303,6 @@ body {
   font-size: 60px;
   color: #8aaf3e;
   margin: 0 auto;
-}
-
-#features img {
-  vertical-align: middle;
 }
 
 #footer {
@@ -498,7 +495,6 @@ label {
   text-decoration: none;
   letter-spacing: 1px;
   font-size: 12px;
-  font-weight: 700;
   color: #8aaf3e;
   line-height: 1em;
 }
@@ -506,6 +502,15 @@ label {
 #links ul li a:hover {
   color: #49661f;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
 
 h1 {
   font-size: 2em;
@@ -698,7 +703,6 @@ button {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: 700;
   background: #FFFFFF;
   border: 1px solid #8aaf3e;
   color: #8aaf3e;
