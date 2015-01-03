@@ -440,7 +440,7 @@ label {
 
 #team-mentor-navigation {
   background-color: #FFFFFF;
-  max-height: 150px;
+  height: 80px;
   text-align: center;
 }
 
@@ -847,6 +847,9 @@ table td {
   }
   #customer-navigation ul {
     text-align: left;
+  }
+  #team-mentor-navigation {
+    height: 60px;
   }
   #title-area {
     display: inline-block;
