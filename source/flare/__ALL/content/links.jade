@@ -34,9 +34,22 @@ mixin links-flare-navbar__home
 			+logout-icon
 			p Logout
 
-mixin links-navbar__not_logged_in
-	:markdown
-		* [![Help](/deploy/assets/icons/help.png)](help/index)
+
+
+mixin links-navbar__landing-page
+	ul#lp-links
+		li
+			a(href='about/')
+				p About
+		li
+			a(href='features/')
+				p Features
+		li
+			a(href='../help/index')
+				p Help
+		li
+			a(href='../getting-started/index/')
+				p Get Started
 
 mixin links-home__navigate
 	#navigate-list

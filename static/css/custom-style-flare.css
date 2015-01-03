@@ -2,17 +2,33 @@ nav {
   z-index: 99;
 }
 
+nav a:hover {
+  color: #98c045;
+  text-decoration: none;
+}
+
+nav a:active {
+  color: #779736;
+  text-decoration: none;
+}
+
+#logo {
+  padding: 5px 0 0 0;
+}
+
 #usp {
   margin: 0;
   padding-top: 70px;
+}
+
+#about, #features {
+  margin: 0;
 }
 
 #landing-page i {
   color: #8aaf3e;
   font-size: 4em;
 }
-
-
 
 @font-face {
   font-family: "foundation-icons";
@@ -755,11 +771,6 @@ nav a p {
   font-size: 14px;
   color: #8aaf3e;
   letter-spacing: 1px;
-}
-
-nav a:hover, nav a p:hover {
-  text-decoration: none;
-  color: #49661f;
 }
 
 .center {
