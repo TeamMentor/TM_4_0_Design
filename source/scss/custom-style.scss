@@ -22,9 +22,11 @@
 
 // IMPORTS
 
+@import 'normalize';
 @import 'columns';
 @import 'colours';
-@import 'normalize';
+@import 'icons';
+
 
 // VARIABLES
 $asset-path: '../../deploy/assets/';
@@ -180,7 +182,7 @@ img {
 		}
 	}
 	#team-mentor-navigation {
-		max-height: 150px;
+		height: 80px;
 		text-align: center;
 		background-color: $white;
 
@@ -197,37 +199,66 @@ img {
 			}
 		}
 		#title-area {
-			float: left;
-			width: $full-width;
+			position: relative;
+			width: 250px;
+			height: 50px;
+			margin: 0 auto;
+			text-align: center;
+			#tm-logo {
+				background:url('../assets/logos/logos.jpg') no-repeat;
+				background-position: 0px 0px;
+				height: 50px;
+			}
 		}
 		#links {
+			position: relative;
 			width: $full-width;
-			padding: 10px 0 5px 0;
+			padding: 0 0 5px 0;
+			background: transparent;
 			text-align: center;
 			ul {
 				padding: 0;
 				width: $full-width;
 				list-style-type: none;
+				li {
+					display: inline;
+					padding: 0 10px 0 0;
+					a {
+						@extend a.action;
+						font-size: 12px;
+						&:hover {
+							@extend a.action:hover;
+						}
+					}
+				}
 			}
-			&.icons a img {
-				max-width: 40px;
+			&.icons {
 				display: inline-block;
-			}
-			ul li {
-				display: inline;
-				padding: 0 10px 0 0;
-				a {
-					@extend a.action;
-					font-size: 12px;
-					&:hover {
-						@extend a.action:hover;
+				margin-top: 15px;
+				ul li {
+					display: inline-block;
+					padding: 0 10px 0 0;
+
+					a {
+						text-transform: uppercase;
+						text-decoration: none;
+						letter-spacing: 1px;
+						font-size: 12px;
+						font-weight: 700;
+						color: $green;
+						line-height: 1em;
+						&:hover {
+							color: $dark-green;
+						}
+					}
+					i {
+						padding: 0 5px 0 0;
 					}
 				}
 			}
 		}
 	}
 }
-
 
 //------ SUB-NAVIGATION
 //--------- LISTGROUPS
@@ -320,8 +351,8 @@ table {
 
 #application {
 	height: $full-width;
-	margin-top: 50px;
 	width: $full-width;
+	margin-top: 50px;
 }
 
 .lge-container {
@@ -534,9 +565,18 @@ button {
 }
 
 #footer {
-	padding: 15px 0 20px 0;
+	position: relative;
+	padding: 15px 0 0 0;
+	margin: 0 auto;
 	width: $full-width;
 	text-align: center;
+	#si-logo {
+		background:url('../assets/logos/logos.jpg') no-repeat;
+		background-position: 0px -50px;
+		height: 50px;
+		width: 250px;
+		margin: 0 auto;
+	}
 	a {
 		@extend a;
 		letter-spacing: 1px;
@@ -587,49 +627,41 @@ button {
 	#customer-navigation ul {
 		text-align: left;
 	}
-	#title-area {
-		display: inline-block;
-		max-width: 35%;
-		img {
+	#team-mentor-navigation {
+			height: 60px;
+		#title-area {
+			display: inline-block;
+			margin: 5px 0 0 20px;
+			max-width: 36%;
 			float: left;
-			max-width: $full-width;
-			padding: 0 0 0 20px;
 		}
-	}
-	#not-logged-in {
-		img {
-			padding: 0 0 0 20px;
-		}
-		ul li {
-			padding: 5px 10px 0 0;
-		}
-	}
-	#links {
-		display: inline-block;
-		max-width: 65%;
-		&.icons {
-			padding: 7px 0 0 0;
-			text-align: right;
-		}
-		&.text-links {
-			padding: 20px 0 0 0;
-			ul {
-				padding: 0 0 0 10px;
+		#links {
+			display: inline-block;
+			max-width: 61%;
+			&.icons {
+				padding: 7px 0 0 0;
 				text-align: right;
 			}
-		}
-		&.icons {
-			ul {
-				padding: 0;
+			&.text-links {
+				padding: 20px 0 0 0;
+				ul {
+					padding: 0 0 0 10px;
+					text-align: right;
+				}
 			}
-			a img {
-				max-width: 100%;
+			&.icons {
+				ul {
+					padding: 0;
+				}
+				a img {
+					max-width: 100%;
+				}
 			}
-		}
-		ul li {
-			padding: 0 20px 0 0;
-			a {
-				font-size: 14px;
+			ul li {
+				padding: 0 15px 0 0;
+				a {
+					font-size: 14px;
+				}
 			}
 		}
 	}
