@@ -1,19 +1,18 @@
+require 'fluentnode'
 fs                 = require('fs')
 marked             = require('marked')
 request            = require('request')
 auth               = require('../middleware/auth')
 Jade_Service       = require('../services/Jade-Service')
-TeamMentor_Service = require(process.cwd() + '/node/services/TeamMentor-Service');
+TeamMentor_Service = require('../services/TeamMentor-Service');
 
 
 content_cache = {};
-libraryData    = new TeamMentor_Service().getLibraryData_FromCache();
-library        = libraryData[0];
+#libraryData    = new TeamMentor_Service().getLibraryData_FromCache();
+#library        = libraryData.first();
 
 class Help_Controller
   constructor: (req, res)->
-    @.library       = library
-    @.libraryData   = libraryData
     @.page          = if (req and req.params) then req.params.page else null
     @.pageParams    = {}
     @.req           = req
@@ -21,10 +20,11 @@ class Help_Controller
     @.content_cache = content_cache
     @.title         = null
     @.content       = null
+    @.teamMentor    = new TeamMentor_Service()
 
   renderPage: ()=>
     @.pageParams         = auth.mappedAuth(@req)
-    @.pageParams.library = library
+    #@.pageParams.library = library
     @.getContent(@.page)
 
   getContent: ()=>
@@ -34,17 +34,21 @@ class Help_Controller
       return;
 
     if (@.page == "index.html")
-      page_index_File     = './source/content/page-index.md'   ;
+      page_index_File     = __filename.parent_Folder().path_Combine('./../../source/content/page-index.md')
       page_index_Markdown = fs.readFileSync(page_index_File, 'utf8');
       page_index_Html     = marked(page_index_Markdown)             ;
       @addContent(null, page_index_Html);
     else
-      @.article = library.Articles[@.page];
-      if (@.article)
-        docs_Url   = 'https://docs.teammentor.net/content/' + @.page;
-        request.get(docs_Url, @.handleFetchedHtml);
-      else
-        @addContent("No content for the current page");
+      '....'.log()
+      @.teamMentor.getLibraryData (libraries)=>
+        library = libraries.first()
+        @.pageParams.library = library
+        @.article = library.Articles[@.page];
+        if (@.article)
+          docs_Url   = 'https://docs.teammentor.net/content/' + @.page;
+          request.get(docs_Url, @.handleFetchedHtml);
+        else
+          @addContent("No content for the current page");
 
 
 
@@ -64,7 +68,9 @@ class Help_Controller
     new Jade_Service().renderJadeFile('/source/jade/help/index.jade', params)
 
   sendResponse: (pageParams)=>
+    #log pageParams
     html = @getRenderedPage(pageParams);
+    #log html
     @.res.status(200)
          .send(html)
 

@@ -33,13 +33,14 @@
     "coffee-script": "latest",
     "express": "latest",
     "express-session": "latest",
-    "fluentnode": "latest",
+    "fluentnode": "^0.3.0",
     "github": "latest",
     "jade": "latest",
     "marked": "latest",
     "nedb": "latest",
     "request": "latest",
-    "supervisor": "latest"
+    "supervisor": "latest",
+    "teammentor": "^0.1.2"
   },
   "devDependencies": {
     "chai": "latest",

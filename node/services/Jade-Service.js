@@ -56,7 +56,8 @@ var JadeService = function(config)
                 
                 if (this.cacheEnabled() === false) 
                 {
-                    var jadeFile_Path = path.join(process.cwd(), jadeFile);
+                    root_Folder = __filename.parent_Folder().parent_Folder().parent_Folder()
+                    var jadeFile_Path = path.join(root_Folder, jadeFile);
                     if (fs.existsSync(jadeFile_Path))
                     {            
                         return jade.renderFile(jadeFile_Path,params);
