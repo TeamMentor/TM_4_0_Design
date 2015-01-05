@@ -327,7 +327,7 @@ body {
 }
 
 #help-nav, #help-docs {
-  margin-top: 40px;
+  margin-top: 90px;
 }
 
 #help-docs h1 {
@@ -836,7 +836,7 @@ table td {
     margin-top: 70px;
   }
   #help-nav, #help-docs {
-    margin-top:40px;
+    margin-top:50px;
   }
   #customer-navigation ul {
     text-align: left;
