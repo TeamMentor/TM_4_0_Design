@@ -23,8 +23,10 @@ describe "test-server.js |", ->
     url = "http://localhost:#{process.env.PORT}"
     url.GET (html)->
         assert_Is_Null(html)
-
-        pathToApp = if 'node-cov'.folder_Exists() then 'node-cov/server.js'.append_To_Process_Cwd_Path() else 'node/server.js'.append_To_Process_Cwd_Path()
+        for file in require.cache.keys()
+          if file.contains(['node/server.coffee']) or  file.contains(['node-cov/server.coffee'])
+            pathToApp = file
+            break
 
         require.cache[pathToApp].assert_Is_Object()
         delete require.cache[pathToApp]

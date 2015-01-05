@@ -115,33 +115,37 @@ describe 'controllers | Help-Controller.test', ()->
       check_For_Redirect()
 
   describe 'test-help (dynamic content) |', ()->
-    libraryData  = new TeamMentor_Service().getLibraryData_FromCache();
+    libraryData  = null
     pageParams   = { loggedIn : false};
     helpJadeFile = '/source/html/help/index.jade'
 
-    before ()->
-      expect(libraryData).to.be.an('Array');
-      expect(libraryData).to.not.be.empty;
+    before (done)->
+      new TeamMentor_Service().getLibraryData (libraryData)->
 
-      library = libraryData[0];
+        expect(libraryData).to.be.an('Array');
+        expect(libraryData).to.not.be.empty;
 
-      library.assert_Is_Object()
-      library.Views.assert_Is_Array()
+        library = libraryData[0];
 
-      pageParams.library = library
-      pageParams.content = "...."
+        library.assert_Is_Object()
+        library.Views.assert_Is_Array()
+
+        pageParams.library = library
+        pageParams.content = "...."
+        done()
 
 
     it 'check that index page markdown transform', (done)->
-      page_index_File     = './source/content/page-index.md'.assert_File_Exists()
+      root_Folder = __filename.parent_Folder().parent_Folder().parent_Folder().parent_Folder()
+      page_index_File     = root_Folder.path_Combine('source/content/page-index.md').assert_File_Exists()
       page_index_Markdown = page_index_File.file_Contents() .assert_Contains('## TEAM Mentor Documents')
       page_index_Html     = marked(page_index_Markdown)     .assert_Contains('<h2 id="team-mentor-documents">TEAM Mentor Documents</h2>')
 
       supertest(app).get('/help/index.html')
-      .end (error,response)->
-        throw error if(error)
-        response.text.assert_Contains(page_index_Html);
-        done()
+                    .end (error,response)->
+                      throw error if(error)
+                      response.text.assert_Contains(page_index_Html);
+                      done()
 
 
   it 'check that main content deliverer article', (done)->
@@ -151,10 +155,10 @@ describe 'controllers | Help-Controller.test', ()->
     article_Title = "<h2>Installation</h2>";
 
     supertest(app).get('/help/' + article_Id)
-    .end (error,response)->
-      expect(response.text).to.contain(article_Line);
-      expect(response.text).to.contain(article_Title);
-      done()
+                  .end (error,response)->
+                    expect(response.text).to.contain(article_Line);
+                    expect(response.text).to.contain(article_Title);
+                    done()
 
   it 'check content_cache', ()->
     help_Controller = new Help_Controller()

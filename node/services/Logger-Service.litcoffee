@@ -51,7 +51,7 @@ Set up default variables
         @
 
       log: (message, callback)=>
-        time = new Date().toJSON().after('T')
+        time = new Date().toJSON() #.after('T')   # was causing probs in heroku
         entry = {when: time, entry: message}
         @write(entry, callback)
 

@@ -18,33 +18,33 @@
     "test": "node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register node/tests --recursive -R list",
     "test-watch": "node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register node/tests --recursive -R list -w",
     "start_once": "node app.js",
-    "start-dev": "node_modules/supervisor/lib/cli-wrapper.js node/server.js",
     "coverage-publish": "./node/bin/publish-code-coverage.sh",
     "coverage": "./node/bin/local-code-coverage.sh",
-    "QA": "cd QA && npm test && cd ..",
-    "__start-dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' node/server.js"
+    "start-dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' app.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/TeamMentor/TM_4_0_Design.git"
   },
   "dependencies": {
-    "body-parser": "^1.8.1",
-    "coffee-script": "^1.8.0",
-    "express": "^4.8.7",
-    "express-session": "^1.8.0",
-    "fluentnode": "*",
-    "github": "^0.2.2",
-    "jade": "^1.6.0",
-    "marked": "^0.3.2",
-    "nedb": "^1.0.1",
-    "request": "^2.42.0",
-    "supervisor": "^0.6.0"
+    "body-parser": "latest",
+    "coffee-script": "latest",
+    "express": "latest",
+    "express-session": "latest",
+    "fluentnode": "^0.3.0",
+    "github": "latest",
+    "jade": "latest",
+    "marked": "latest",
+    "nedb": "latest",
+    "request": "latest",
+    "supervisor": "latest",
+    "teammentor": "^0.1.2"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
-    "cheerio": "^0.17.0",
-    "mocha": "^1.21.4",
-    "supertest": "^0.15.0"
+    "chai": "latest",
+    "cheerio": "latest",
+    "juice": "^0.5.0",
+    "mocha": "latest",
+    "supertest": "latest"
   }
 }

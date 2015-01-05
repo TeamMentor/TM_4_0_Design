@@ -3,7 +3,7 @@ supertest         = require('supertest')
 expect            = require('chai').expect
 cheerio           = require('cheerio')
 app               = require('../../server')
-Config            = require('../../Config')
+Config            = require('../../misc/Config')
 Search_Controller = require('../../controllers/Search-Controller')
 
 require('fluentnode')
