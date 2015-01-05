@@ -1,7 +1,7 @@
 Express_Service = require('../../services/Express-Service')
-express = require('express')
-session = require('express-session')
-request = require('supertest')
+express  = require('express')
+session  = require('express-session')
+supertest = require('supertest')
 
 describe 'services | Express-Service.test', ()->
   it 'constructor',->
@@ -61,13 +61,14 @@ describe 'services | Express-Service.test', ()->
       middleware = (req,res,next)->
         req.session.value = testValue;
         next()
+
       app.get '/session_values'     ,              (req,res)->  res.send req.session
       app.get '/session_get_userId' , middleware,  (req,res)->  res.send req.session.value
 
     it 'Check default session values', (done)->
-      request(app).get '/session_values'
-      .expect 200,sessionAsJson, done
+      supertest(app).get '/session_values'
+                    .expect 200,sessionAsJson, done
 
     it 'Check specific session value', (done)->
-      request(app).get '/session_get_userId'
-      .expect 200,testValue, done
+      supertest(app).get '/session_get_userId'
+                    .expect 200,testValue, done

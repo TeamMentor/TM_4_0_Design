@@ -1,7 +1,7 @@
 fs              = require('fs')
 path            = require('path')
 request         = require('request')
-Config          = require('../Config')
+Config          = require('../misc/Config')
 Express_Service = require('../services/Express-Service')
 Jade_Service    = require('../services/Jade-Service')
 GitHub_Service  = require('../services/GitHub-Service')

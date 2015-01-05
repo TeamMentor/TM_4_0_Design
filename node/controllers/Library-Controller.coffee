@@ -1,7 +1,7 @@
 fs            = require('fs')
 path          = require('path')
 request       = require('request')
-Config        = require('../Config')
+Config        = require('../misc/Config')
 Jade_Service  = require('../services/Jade-Service')
 
 libraries =
