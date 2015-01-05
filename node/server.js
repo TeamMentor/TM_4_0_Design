@@ -7,6 +7,7 @@ var express    = require('express'),
     bodyParser = require('body-parser'),
     app        = express(),
     session    = require('express-session'),
+    path       = require("path"),
     Config     = require('./Config'),
     Logger     = require('./services/Logger-Service')
 
@@ -23,6 +24,8 @@ app.use(session({secret           : '1234567890',
                  saveUninitialized: true        ,
                  resave           : true        }));
 
+
+app.set('views', path.join(__dirname,'../'));
 
 require('./routes/flare_routes')(app);
 require('./routes/routes')(app);

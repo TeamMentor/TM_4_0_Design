@@ -4,12 +4,13 @@ users = [ { username : 'tm'   , password : 'tm'   } ,
           { username : 'user' , password : 'a'     } ,
         ];
             
-loginPage         = '/guest/login-Fail.html'
+loginPage         = 'source/jade/guest/login-Fail.jade'
 mainPage_user     = '/user/main.html'
 mainPage_no_user  = '/guest/default.html'
 password_sent     = '/guest/pwd-sent.html'
-signUp_fail       = '/guest/sign-up-Fail.html'
-signUp_Ok         = '/guest/sign-up-OK.html'
+signUp_fail       = 'source/jade/guest/sign-up-Fail.jade'
+signUp_Ok         = 'source/jade/guest/sign-up-OK.html'
+loginSuccess      = 0
 
 class Login_Controller
   constructor: (req, res)->
@@ -39,15 +40,28 @@ class Login_Controller
 
 
     #major hack for demo (this needs to be done by consuming the GraphDB TeamMentor-Service)
-    loginUrl = 'https://tmdev01-uno.teammentor.net/rest/login/' + username + '/' + password;
+    options = {
+                  method: 'post',
+                  body: {username:username, password:password},
+                  json: true,
+                  url: @.webServices + '/Login_Response'
+    }
+    request options, (error, response, body)=>
+      if (response.body !=null && response.body.d !=null)
+          loginResponse = response.body.d
+          success = loginResponse.Login_Status
 
-    request loginUrl, (error, response, body)=>
-      if (error or body.indexOf('00000000-0000-0000-0000-00000000000') > -1 or body.indexOf('Endpoint not found.') >-1 )
-          @.req.session.username = undefined
-          @.res.redirect(loginPage)
-      else
-          @.req.session.username = username
-          @.res.redirect(mainPage_user)
+          if (success==loginSuccess)
+              @.req.session.username = username
+              @.res.redirect(mainPage_user)
+          else
+              @.req.session.username = username
+              if (loginResponse.Validation_Results !=null)
+                  @.req.errorMessage = loginResponse.Validation_Results[0].Message
+              else
+                  @.req.errorMessage = loginResponse.Simple_Error_Message
+
+          @.res.render(loginPage,{errorMessage:@.req.errorMessage})
 
   logoutUser: ()=>
     @.req.session.username = undefined
@@ -76,7 +90,7 @@ class Login_Controller
 
   userSignUp: ()=>
     if (@.req.body.password != @.req.body['password-confirm'])
-        @.res.redirect(signUp_fail); #
+        @res.render(signUp_fail, {errorMessage: 'Passwords don\'t match'})
         return                       #
 
     newUser =
@@ -89,17 +103,24 @@ class Login_Controller
                 method: 'post',
                 body: {newUser: newUser},
                 json: true,
-                url: @.webServices + '/CreateUser'
+                url: @.webServices + '/CreateUser_Response'
               };
 
     request options, (error, response, body)=>
       if (error and error.code=="ENOTFOUND")
-          @.res.send('could not connect with TM Uno server')
-          return
+        @.res.send('could not connect with TM Uno server')
+        return
 
-      if(response.body.d is 0)
-          @.res.redirect(signUp_fail)
-      else
-          @.res.redirect(signUp_Ok)
+      if (response.body!=null && response.statusCode == 200)
+        signUpResponse = response.body.d
+        message= ''
+        if (signUpResponse.Signup_Status!=0)
+          if (signUpResponse.Validation_Results!=null)
+              message = signUpResponse.Validation_Results[0].Message
+          else
+              message = signUpResponse.Simple_Error_Message
+          @res.render(signUp_fail, {errorMessage: message})
+        else
+          @res.redirect('/guest/sign-up-OK.html')
 
 module.exports = Login_Controller;

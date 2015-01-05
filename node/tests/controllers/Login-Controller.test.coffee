@@ -3,11 +3,11 @@ Login_Controller = require('../../controllers/Login-Controller')
 describe "controllers | test-Login-Controller |", ->
 
   #helper methods
-  loginPage         = '/guest/login-Fail.html'
+  loginPage         = 'source/jade/guest/login-Fail.jade'
   mainPage_user     = '/user/main.html'
   mainPage_no_user  = '/guest/default.html'
   password_sent     = '/guest/pwd-sent.html'
-  signUp_fail       = "/guest/sign-up-Fail.html"
+  signUp_fail       = "source/jade/guest/sign-up-Fail.jade"
   signUp_Ok         = '/guest/sign-up-OK.html'
 
   invoke_Method = (method, body, expected_Target, callback)->
@@ -18,6 +18,10 @@ describe "controllers | test-Login-Controller |", ->
           redirect: (target)->
             target.assert_Is(expected_Target)
             callback()
+          render : (value) ->
+            value.assert_Is(expected_Target)
+            callback()
+
     loginController = new Login_Controller(req, res)
     loginController[method]()
 
@@ -33,7 +37,7 @@ describe "controllers | test-Login-Controller |", ->
       expected_Target,
       callback
 
-  @.timeout(3500)
+  @.timeout(7000)
 
   it 'constructor', ->
     using new Login_Controller,->
@@ -93,7 +97,7 @@ describe "controllers | test-Login-Controller |", ->
     invoke_UserSignUp '','aa','aa@teammentor.net', signUp_fail, ->                # empty username
       invoke_UserSignUp 'aaa','','aa@teammentor.net', signUp_fail, ->             # empty password
         invoke_UserSignUp 'aa','aa','', signUp_fail, ->                           # empty email
-          done()
+        done()
 
   it 'userSignUp (good values)', (done)->
     user = "tm_ut_".add_5_Random_Letters()
@@ -108,6 +112,9 @@ describe "controllers | test-Login-Controller |", ->
     res =
       redirect: (data)->
         data.assert_Is(signUp_fail)
+        done()
+      render : (target) ->
+        target.assert_Contains(signUp_fail)
         done()
 
     using new Login_Controller(req,res),->

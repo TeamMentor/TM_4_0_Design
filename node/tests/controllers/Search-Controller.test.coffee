@@ -72,7 +72,7 @@ describe "controllers | test-Search-Controller |", ->
     res    =
         render: (jadePage,viewModel)->
             #html.assert_Is_String()
-            jadePage.assert_Is('../source/jade/user/main.jade')
+            jadePage.assert_Is('source/jade/user/main.jade')
             viewModel.assert_Is({})
             done()
     config = new Config()
