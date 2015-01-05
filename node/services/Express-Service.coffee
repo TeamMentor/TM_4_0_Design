@@ -12,7 +12,6 @@ class Express_Service
     @.app.port    = process.env.PORT || 1337;
 
   setup: (callback)=>
-    '****** in setup'.log()
     @set_BodyParser()
     @set_Config()
     @set_Static_Route()

@@ -36,7 +36,7 @@ add_Routes = (app)->
 
 
     #Redirect to Jade pages
-    app.get '/deploy/html/:area/:page.html'                 , (req, res)-> res.redirect('/' + req.params.area + '/' + req.params.page + '.html')
+    #app.get '/deploy/html/:area/:page.html'                 , (req, res)-> res.redirect('/' + req.params.area + '/' + req.params.page + '.html')
     
 
 module.exports = add_Routes
