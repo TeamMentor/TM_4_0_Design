@@ -405,6 +405,7 @@ input {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
+		border-radius: 3px;
 		font-size: 1em;
 		background-color: $white;
 		border: 1px solid $grey;
@@ -583,7 +584,6 @@ button {
 }
 
 #usp button, #call-to-action button {
-  padding: 15px 30px 15px 30px;
   color: $green;
   border: 0;
   background-color: $white;

@@ -608,7 +608,8 @@ a.action:hover, a.action:focus, a.action:active {
   color: #49661f;
 }
 
-button, .button {
+button {
+  width: 100%;
   border-radius: 3px;
   font-size: 14px;
   background-color: #FFFFFF;
@@ -639,13 +640,12 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   box-shadow: none;
   color: #444444;
   display: block;
+  border-radius: 3px;
   font-size: 16px;
   padding: 0.5rem;
   height: 3rem;
   -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
   box-sizing: border-box;
 }
 
