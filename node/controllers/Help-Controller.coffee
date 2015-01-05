@@ -2,7 +2,7 @@ require 'fluentnode'
 fs                 = require('fs')
 marked             = require('marked')
 request            = require('request')
-auth               = require('../middleware/auth')
+Express_Service    = require('../services/Express-Service')
 Jade_Service       = require('../services/Jade-Service')
 TeamMentor_Service = require('../services/TeamMentor-Service');
 
@@ -23,7 +23,7 @@ class Help_Controller
     @.teamMentor    = new TeamMentor_Service()
 
   renderPage: ()=>
-    @.pageParams         = auth.mappedAuth(@req)
+    @.pageParams         = new Express_Service().mappedAuth(@req)
     @.getContent(@.page)
 
   getContent: ()=>

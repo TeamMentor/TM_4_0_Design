@@ -115,10 +115,10 @@ class Library_Controller
 
 
 
-auth = require('../middleware/auth')
+Express_Service  = require('../services/Express-Service')
 
 Library_Controller.registerRoutes =  (app)=>
-  check_Auth = (req,res,next)-> auth.checkAuth(req, res,next, app.config)
+  check_Auth = (req,res,next)-> new Express_Service().checkAuth(req, res,next, app.config)
   app.get '/libraries'      , check_Auth, (req, res)=> new Library_Controller(req, res, app.config).showLibraries()
   app.get '/library/queries', check_Auth, (req, res)=> new Library_Controller(req, res, app.config).showQueries()
   app.get '/library/:name'  , check_Auth, (req, res)=> new Library_Controller(req, res, app.config).showLibrary()

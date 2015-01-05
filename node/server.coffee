@@ -27,9 +27,7 @@ app.use(express['static'](process.cwd()));
 
 app.port       = process.env.PORT || 1337;
 
-if(process.mainModule.filename.indexOf('node_modules/mocha/bin/_mocha'   ) > 0)
-  console.log('[Running under Mocha]');
-else
+if process.mainModule.filename.not_Contains('node_modules/mocha/bin/_mocha')
     console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + app.port)
     app.server = app.listen(app.port)
 

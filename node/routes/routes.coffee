@@ -1,5 +1,5 @@
 
-auth                = require('../middleware/auth')
+Express_Service     = require('../services/Express-Service')
 Jade_Service        = require('../services/Jade-Service')
 
 Help_Controller     = require('../controllers/Help-Controller')
