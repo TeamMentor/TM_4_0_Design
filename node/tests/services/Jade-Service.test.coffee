@@ -7,41 +7,56 @@ Jade_Service = require('../../services/Jade-Service')
 describe "services | Jade-Service.js", ()->
 
     it 'check Jade-Service ctor', ()->
-        jadeService = new Jade_Service();
-        expect(jadeService).to.be.an('Object'); 
-        
-        expect(jadeService                      ).to.be.an('Object');
-        expect(jadeService.config               ).to.be.an('Object');
-        expect(jadeService.targetFolder         ).to.be.an('String');
-        
-        expect(jadeService.compileJadeFileToDisk).to.be.an('function');
-        expect(jadeService.calculateTargetPath  ).to.be.an('function');
-        expect(jadeService.enableCache          ).to.be.an('function');
-        expect(jadeService.cacheEnabled         ).to.be.an('function');
+        using new Jade_Service(),->
+            @.assert_Is_Object()
 
-        expect(jadeService.targetFolder         ).to.equal(jadeService.config.jade_Compilation)
+            @.config       .assert_Is_Object()
+            @.targetFolder .assert_Is_String()
+        
+            @.compileJadeFileToDisk.assert_Is_Function()
+            @.calculateTargetPath  .assert_Is_Function()
+            @.enableCache          .assert_Is_Function()
+            @.cacheEnabled         .assert_Is_Function()
+
+            @.targetFolder         .assert_Is(@.config.jade_Compilation)
     
     it 'enableCache , cacheEnabled', ()->
-        jadeService = new Jade_Service();
-        expect(jadeService.cacheEnabled()    ).to.be.false;
-        expect(jadeService.enableCache()     ).to.equal(jadeService);
-        expect(jadeService.cacheEnabled()    ).to.be.true;
-        expect(jadeService.enableCache(false)).to.equal(jadeService);
-        expect(jadeService.cacheEnabled()    ).to.be.false;
-        expect(jadeService.enableCache(true )).to.equal(jadeService);
-        expect(jadeService.cacheEnabled()    ).to.be.true;
+        using new Jade_Service(),->
+          @.cacheEnabled()    .assert_Is_False()
+          @.enableCache()     .assert_Is(@)
+           .cacheEnabled()    .assert_Is_True()
+          @.enableCache(false)
+           .cacheEnabled()    .assert_Is_False()
+          @.enableCache(true )
+           .cacheEnabled()    .assert_Is_True()
     
     it 'calculateTargetPath', ()->
         jadeService = new Jade_Service();
         targetFolder        = jadeService.targetFolder;
 
-        expect(targetFolder                   ).to.equal(jadeService.config.jade_Compilation);
-        expect(jadeService.calculateTargetPath).to.be.an('Function');
-        expect(jadeService.calculateTargetPath('aaa'             )).to.equal(targetFolder + 'aaa.txt'             );       # if the compiled jade file is
-        expect(jadeService.calculateTargetPath('aaa/bbb'         )).to.equal(targetFolder + 'aaa_bbb.txt'         );       # and .js , we will have a circular auto compilation
-        expect(jadeService.calculateTargetPath('aaa/bbb/ccc'     )).to.equal(targetFolder + 'aaa_bbb_ccc.txt'     );       # when running the tests using (for example)
-        expect(jadeService.calculateTargetPath('aaa/bbb.jade'    )).to.equal(targetFolder + 'aaa_bbb_jade.txt'    );       #     mocha -w node/tests/**/*jade*.js -R list
-        expect(jadeService.calculateTargetPath('aaa/bbb.ccc.jade')).to.equal(targetFolder + 'aaa_bbb_ccc_jade.txt');
+        targetFolder.assert_Is jadeService.config.jade_Compilation
+
+        # if the compiled jade file is .js , we will have a circular auto compilation when running the tests using (for example) mocha -w node/tests/**/*jade*.js -R list
+        using jadeService, ->
+          @.calculateTargetPath('aaa'             ).assert_Is targetFolder.append('/aaa.txt'             )
+          @.calculateTargetPath('aaa/bbb'         ).assert_Is targetFolder.append('/aaa_bbb.txt'         )
+          @.calculateTargetPath('aaa/bbb/ccc'     ).assert_Is targetFolder.append('/aaa_bbb_ccc.txt'     )
+          @.calculateTargetPath('aaa/bbb.jade'    ).assert_Is targetFolder.append('/aaa_bbb_jade.txt'    )
+          @.calculateTargetPath('aaa/bbb.ccc.jade').assert_Is targetFolder.append('/aaa_bbb_ccc_jade.txt')
+
+    it 'repoPath', ()->
+        using new Jade_Service(), ->
+            @.repoPath().assert_Folder_Exists()
+            @.repoPath().file_Name().assert_Is('TM_4_0_Design')
+
+    it 'calculateJadePath',->
+        using new Jade_Service(), ->
+          @.calculateJadePath('.'        ).assert_Is(@.repoPath())
+          @.calculateJadePath('a.jade'   ).assert_Is(@.repoPath() + '/a.jade')
+          @.calculateJadePath('/a.jade'  ).assert_Is(@.repoPath() + '/a.jade')
+          @.calculateJadePath('a/b.jade' ).assert_Is(@.repoPath() + '/a/b.jade')
+          @.calculateJadePath('/a/b.jade').assert_Is(@.repoPath() + '/a/b.jade')
+
 
     it 'compileJadeFileToDisk', ()->
         jadeService = new Jade_Service();
@@ -58,7 +73,7 @@ describe "services | Jade-Service.js", ()->
         
         html = jadeTemplate();
         html.assert_Contains '<!DOCTYPE html><html lang="en"><head>'
-    
+
     it 'renderJadeFile', ()->
         jadeService = new Jade_Service();
 

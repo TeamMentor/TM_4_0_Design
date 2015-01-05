@@ -22,13 +22,21 @@ var JadeService = function(config)
             };
         this.calculateTargetPath   = function(fileToCompile) 
             {
-                return this.targetFolder + fileToCompile.replace(/\//g,'_')
-                                                        .replace(/\./g,'_') + '.txt';
+                return this.targetFolder.path_Combine(fileToCompile.replace(/\//g,'_')
+                                                                   .replace(/\./g,'_') + '.txt');
             };
-            
+        this.repoPath = function()
+            {
+                //calculate the repo path as 3 folders above the current path
+                return __filename.parent_Folder().parent_Folder().parent_Folder()
+            }
+        this.calculateJadePath = function(jadeFile)
+            {
+                return this.repoPath().path_Combine(jadeFile)
+            }
         this.compileJadeFileToDisk = function(fileToCompile)
             {
-                var fileToCompile_Path = path.join(process.cwd(), fileToCompile);
+                var fileToCompile_Path = this.calculateJadePath(fileToCompile)
 
 
                 if (fs.existsSync(fileToCompile_Path)===false)  {  return false;  }
@@ -56,8 +64,7 @@ var JadeService = function(config)
                 
                 if (this.cacheEnabled() === false) 
                 {
-                    root_Folder = __filename.parent_Folder().parent_Folder().parent_Folder()
-                    var jadeFile_Path = path.join(root_Folder, jadeFile);
+                    var jadeFile_Path = this.calculateJadePath(jadeFile)
                     if (fs.existsSync(jadeFile_Path))
                     {            
                         return jade.renderFile(jadeFile_Path,params);
