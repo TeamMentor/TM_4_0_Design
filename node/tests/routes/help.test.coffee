@@ -9,7 +9,7 @@ Jade_Service       = require('../../services/Jade-Service')
 Help_Controller    = require('../../controllers/Help-Controller')
     
 
-describe 'routes | test-help', ()->
+describe 'routes | help.test', ()->
 
   app.config.enable_Jade_Cache = true;       # enable Jade compilation cache (which dramatically speeds up tests)
     

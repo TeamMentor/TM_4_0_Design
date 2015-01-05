@@ -24,25 +24,24 @@ class Help_Controller
 
   renderPage: ()=>
     @.pageParams         = auth.mappedAuth(@req)
-    #@.pageParams.library = library
     @.getContent(@.page)
 
   getContent: ()=>
-    cachedData =  content_cache[@.page];
-    if(cachedData)
-      @addContent(cachedData.title, cachedData.content);
-      return;
+    cachedData = content_cache[@.page];
+    @.teamMentor.getLibraryData (libraries)=>
+      library = libraries.first()
+      @.pageParams.library = library
+      if(cachedData)
+        @addContent(cachedData.title, cachedData.content);
+        return;
 
-    if (@.page == "index.html")
-      page_index_File     = __filename.parent_Folder().path_Combine('./../../source/content/page-index.md')
-      page_index_Markdown = fs.readFileSync(page_index_File, 'utf8');
-      page_index_Html     = marked(page_index_Markdown)             ;
-      @addContent(null, page_index_Html);
-    else
-      '....'.log()
-      @.teamMentor.getLibraryData (libraries)=>
-        library = libraries.first()
-        @.pageParams.library = library
+      if (@.page == "index.html")
+        page_index_File     = __filename.parent_Folder().path_Combine('./../../source/content/page-index.md')
+        page_index_Markdown = fs.readFileSync(page_index_File, 'utf8');
+        page_index_Html     = marked(page_index_Markdown)             ;
+        @addContent(null, page_index_Html);
+      else
+
         @.article = library.Articles[@.page];
         if (@.article)
           docs_Url   = 'https://docs.teammentor.net/content/' + @.page;
@@ -68,9 +67,7 @@ class Help_Controller
     new Jade_Service().renderJadeFile('/source/jade/help/index.jade', params)
 
   sendResponse: (pageParams)=>
-    #log pageParams
     html = @getRenderedPage(pageParams);
-    #log html
     @.res.status(200)
          .send(html)
 

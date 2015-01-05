@@ -2,7 +2,7 @@ app       = require('../../server')
 expect    = require('chai').expect
 supertest = require('supertest')
 
-describe "routes | test-config |", ->
+describe "routes | config.test |", ->
 
     it "/version", (done) ->
         supertest(app).get('/version')
