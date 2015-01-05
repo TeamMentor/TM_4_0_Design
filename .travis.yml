@@ -1,5 +1,6 @@
 language: node_js
 node_js:
   - 0.10
-#before_install:
-#  - npm install -g coffee-script
+after_script:
+   - "echo 'Since tests passed: instrument files, rerun tests and publish results to coveralls' "
+   - "sh -e ./bin/publish-code-coverage.sh"
