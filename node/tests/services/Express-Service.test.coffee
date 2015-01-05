@@ -14,6 +14,21 @@ describe 'services | Express-Service.test', ()->
       @.checkAuth.assert_Is_Function()
       @.mappedAuth.assert_Is_Function()
 
+  describe 'session',->
+    expressService = new Express_Service()
+
+    it 'test',(done)->
+      expressService.setup()
+      file = './.tmCache/_sessionData'
+      file.file_Delete().assert_Is_True();
+      supertest(expressService.app)
+        .get '/'
+        .end (err,res)->
+          file.assert_File_Exists()
+          file.file_Contents().assert_Contains('sid')
+          file.file_Delete().assert_Is_True();
+          done()
+
   describe 'auth',->
     expressService = new Express_Service()
 

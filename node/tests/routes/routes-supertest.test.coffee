@@ -31,7 +31,11 @@ describe 'routes | routes-supertest.test |',  ()->
     expectedSessionValue = '{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"}}';
 
     supertest(app).get('/session')
-                  .expect(200, expectedSessionValue,done)
+                  .expect(200)
+                  .end (err, res)->
+                      res.text.assert_Contains("cookie")
+                              .assert_Contains("originalMaxAge")
+                      done()
 
   it "/version", (done) ->
     supertest(app).get('/version')

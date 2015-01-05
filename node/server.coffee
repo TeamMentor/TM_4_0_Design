@@ -1,6 +1,3 @@
-
-bodyParser      = require('body-parser')
-
 Logger          = require('./services/Logger-Service')
 Express_Service = require('./services/Express-Service')
 
@@ -11,24 +8,12 @@ info('Starting Express server config')
 
 expressService = new Express_Service()
 
-app = expressService.app
+using expressService,->
+    @.setup()
+    @.map_Route('../routes/flare_routes')
+    @.map_Route('../routes/routes')
+    @.map_Route('../routes/debug')
+    @.map_Route('../routes/config')
+    @.start()
 
-
-app.use(bodyParser.json()                        );     # to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({ extended: true }));     # to support URL-encoded bodies
-
-
-expressService.setup()
-
-require('./routes/flare_routes')(app);
-require('./routes/routes')(app);
-require('./routes/debug')(app);
-require('./routes/config')(app);
-
-app.port       = process.env.PORT || 1337;
-
-if process.mainModule.filename.not_Contains('node_modules/mocha/bin/_mocha')
-    console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + app.port)
-    app.server = app.listen(app.port)
-
-module.exports = expressService.app;
+module.exports = expressService.app

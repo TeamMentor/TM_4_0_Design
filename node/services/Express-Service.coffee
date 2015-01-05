@@ -1,26 +1,51 @@
-Config       = require('../misc/Config')
-Jade_Service = require('../services/Jade-Service')
-session      = require('express-session')
-express      = require('express')
+Config          = require('../misc/Config')
+Jade_Service    = require('../services/Jade-Service')
+Express_Session = require('../misc/Express-Session')
+bodyParser      = require('body-parser')
+session         = require('express-session')
+express         = require('express')
 
 class Express_Service
   constructor: ()->
     @.app         = express()
     @loginEnabled = true;
+    @.app.port    = process.env.PORT || 1337;
 
-  setup: ()=>
-    @add_Session()
+  setup: (callback)=>
+    '****** in setup'.log()
+    @set_BodyParser()
     @set_Config()
     @set_Static_Route()
+    @add_Session()      # for now not using the async version of add_Session
+    #callback()
 
-  add_Session: ()=>
-    @.app.use(session({secret: '1234567890', saveUninitialized: true , resave: true }));
+  add_Session: (callback)=>
+
+    expressSession = new Express_Session({ filename: './.tmCache/_sessionData' ,session:session})
+    @.app.use session({ secret: '1234567890', key: 'tm-session'
+                        ,saveUninitialized: true , resave: true
+                        , cookie: { path: '/' , httpOnly: true , maxAge: 365 * 24 * 3600 * 1000 }
+                        , store: expressSession })
+
+
+  set_BodyParser: ()=>
+    @.app.use(bodyParser.json()                        );     # to support JSON-encoded bodies
+    @.app.use(bodyParser.urlencoded({ extended: true }));     # to support URL-encoded bodies
 
   set_Config:()=>
     @.app.config = new Config(null, false);
 
   set_Static_Route:()=>
     @app.use(express['static'](process.cwd()));
+
+  map_Route: (file)=>
+    require(file)(@.app);
+    @
+
+  start:()=>
+    if process.mainModule.filename.not_Contains('node_modules/mocha/bin/_mocha')
+      console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + @app.port)
+      @app.server = @app.listen(@app.port)
 
   checkAuth: (req, res, next, config)=>
     if (@.loginEnabled and req and req.session and !req.session.username)
