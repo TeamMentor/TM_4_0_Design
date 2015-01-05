@@ -24,7 +24,7 @@ describe "test-server.js |", ->
     url.GET (html)->
         assert_Is_Null(html)
         for file in require.cache.keys()
-          if file.contains(['node/server.js']) or  file.contains(['node-cov/server.js'])
+          if file.contains(['node/server.coffee']) or  file.contains(['node-cov/server.coffee'])
             pathToApp = file
             break
 
