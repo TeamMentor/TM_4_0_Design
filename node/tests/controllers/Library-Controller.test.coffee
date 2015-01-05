@@ -4,7 +4,7 @@ cheerio            = require('cheerio')
 expect             = require('chai').expect
 app                = require('../../server')
 Config             = require('../../Config')
-Library_Controller = require('../../controllers/Library-Controller.js')
+Library_Controller = require('../../controllers/Library-Controller')
 
 describe 'controllers | Library-Controller.test.js |', ()->
     describe 'internal Functions.js |', ()->
