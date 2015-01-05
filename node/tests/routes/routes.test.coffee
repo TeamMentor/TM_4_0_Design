@@ -8,7 +8,6 @@ describe 'routes | routes.test |', ()->
                       '/Image/:name',
                       '/article/view/:guid/:title',
                       '/config',
-                      '/deploy/html/:area/:page.html',
                       '/dirName',
                       '/flare',
                       '/flare/all',

@@ -1,7 +1,7 @@
 fs     = require('fs')
 path   = require('path')
 jade   = require('jade')
-Config = require('../Config')
+Config = require('../misc/Config')
 
 class JadeService
     constructor: (config)->
