@@ -41,6 +41,7 @@ nav {
 	display: -webkit-flex;
 	-webkit-flex-wrap: wrap;
 	-webkit-flex-direction: row;
+	z-index: 99;
 	#customer {
 		-webkit-order: 2;
 		-webkit-flex: 100%;
@@ -51,7 +52,7 @@ nav {
 	#logo {
 		-webkit-order: 3;
 		-webkit-flex: 50%;
-		margin: 5px 0 0 0;
+		padding: 5px 0 0 0;
 		img {
 			margin: 0 0 0 10px;
 		}
@@ -100,18 +101,18 @@ nav {
 
 		&:hover {
 			text-decoration: none;
-			color: #49661f;
+			color: $dark-green;
 		}
 	}
 	p {
 		font-weight: 600;
 		font-size: 14px;
-		color: #8aaf3e;
+		color: $green;
 		letter-spacing: 1px;
 
 		&:hover {
 			text-decoration: none;
-			color: #49661f;
+			color: $dark-green;
 		}
 	}
 }
@@ -120,6 +121,7 @@ nav {
 
 #application {
 	-webkit-order: 6;
+	margin: 0;
 	padding: 10px;
 	max-height:90%;
 	display: -webkit-flex;
@@ -158,6 +160,23 @@ nav {
 	display: -webkit-flex;
 	-webkit-flex-wrap: wrap;
 	overflow-y: auto;
+	i {
+		color: #8baf3e;
+		font-size: 4em;
+	}
+	#usp {
+		margin: 0;
+		padding-top: 70px;
+	}
+	#about, #features {
+		margin: 0;
+	}
+	#footer {
+		padding: 0 0 10px 0;
+	}
+	#footer h6 {
+		margin: 0;
+	}
 }
 
 #loginwall {
