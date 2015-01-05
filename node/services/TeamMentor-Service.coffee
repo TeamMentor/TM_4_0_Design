@@ -33,11 +33,9 @@ class TeamMentor_Service
   calculateTargetUrl: (wsName)->
     @._tmSite + @._tmWebServices + wsName
 
-  getArticlesMetadata: (callback)=>
 
+  getArticlesMetadata: (callback)=>
     @asmx_GetGUIObjects (guiObjects)->
-      if ! guiObjects
-        callback(null)
 
       articlesMetadata = {};
       mappings      = guiObjects.d.GuidanceItemsMappings;
@@ -61,7 +59,6 @@ class TeamMentor_Service
       callback articlesMetadata;
 
   getLibraryData: (callback)->
-
     @asmx_GetFolderStructure_Libraries (getFolderStructure)=>
       @.getArticlesMetadata (articlesMetadata)=>
     

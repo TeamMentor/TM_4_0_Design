@@ -107,7 +107,6 @@ describe "services > test-teamMentor-content.js", ()->
         #assert_Is_Null(libraryData)
         #getGuiObjects_File.parent_Folder().delete_Folder().assert_True()
         #teamMentorContent._name='docs'
-
     
     it 'getLibraryData', ()->
         teamMentorContent.getLibraryData (libraryData)->
