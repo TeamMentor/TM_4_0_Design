@@ -1102,3 +1102,19 @@ nav a:hover {
   font-size: 14px;
   letter-spacing: 1px;
 }
+
+.accordion .accordion-navigation > a, .accordion dd > a {
+  background-color: white;
+}
+
+.accordion .accordion-navigation > a, .accordion dd > a:hover, .accordion .accordion-navigation > a, .accordion dd > a:active {
+  background-color: white !important;
+}
+
+button.dropdown {
+  border: 0;
+}
+
+ul#dropdown {
+  list-style-type: none;
+}

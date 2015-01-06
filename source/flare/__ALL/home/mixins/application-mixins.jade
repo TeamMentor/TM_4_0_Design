@@ -92,49 +92,15 @@ mixin flare-saved-articles-list
 mixin flare-article-preview-menu
 	.row.text-center
 		.small-12.large-4.columns
-			button.button.dropdown(href='#', data-dropdown='drop1', aria-controls='drop1', aria-expanded='false')
+			a.action(href='article-new-window-view', target='_blank')
 				+open-icon
-				br
-				ul#drop1.f-dropdown(data-dropdown-content='data-dropdown-content', aria-hidden='true', tabindex='-1')
-					li
-						a(href='../articles/article-new-window-view', target='_blank')
-							+aspnet-icon
-							|    ASP.NET
-					li
-						a(href='../articles/article-new-window-view', target='_blank')
-							+android-icon
-							|    Android
-					li
-						a(href='../articles/article-new-window-view', target='_blank')
-							+c-icon
-							|    C/C++
-					li
-						a(href='../articles/article-new-window-view', target='_blank')
-							+html5-icon
-							|    HTML5
-					li
-						a(href='../articles/article-new-window-view', target='_blank')
-							+iOS-icon
-							|    iOS
-					li
-						a(href='../articles/article-new-window-view', target='_blank')
-							+java-icon
-							|    Java
-					li
-						a(href='../articles/article-new-window-view', target='_blank')
-							+php-icon
-							|    PHP
-					li
-						a(href='../articles/article-new-window-view', target='_blank')
-							+scala-icon
-							|    Scala
 		// columns
 		.small-12.large-4.columns
-			a.button(href='app-keyword-search-save')
+			a.action(href='app-keyword-search-save')
 				+save-icon
 		// columns
 		.small-12.large-4.columns
-			a.button(href='app-keyword-search-share')
+			a.action(href='app-keyword-search-share')
 				+share-icon
 		// columns
 	// row

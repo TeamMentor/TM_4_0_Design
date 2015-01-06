@@ -56,11 +56,11 @@ mixin related-options
 			// dd
 		// dl-tabs
 		.tabs-content
-			#related-articles.content
+			#related-articles.content.active
 				dl.accordion(data-accordion='data-accordion')
 					dd.accordion-navigation
 						a(href='#article-1') Article Headline
-						#article-1.content
+						#article-1.content.active
 							include:md ../../content/teamMentor/articles/article-details.md
 							+flare-article-preview-menu
 						// article-1-content
