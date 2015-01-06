@@ -40,10 +40,10 @@ class SearchController
         
         graphService = new Graph_Service()
         graphService.graphDataFromGraphDB null, queryId, filters,  (searchData)=>
-                searchData.filter_container = filters
-                @searchData = searchData
-                searchData.breadcrumbs = breadcrumbs_Cache
-                @res.send(@renderPage())
+          searchData.filter_container = filters
+          @searchData = searchData
+          searchData.breadcrumbs = breadcrumbs_Cache
+          @res.send(@renderPage())
 
     showMainAppView: =>
         breadcrumbs_Cache.unshift {href:"/user/main.html", title: "Search Home"}
@@ -81,11 +81,16 @@ class SearchController
 
 SearchController.registerRoutes = (app) ->
 
-    checkAuth = ((req,res,next) -> new Express_Service().checkAuth(req, res,next, app.config))
+    checkAuth        =  (req,res,next) -> new Express_Service().checkAuth(req, res,next, app.config)
 
-    app.get('/graph/:queryId'           , checkAuth , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
-    app.get('/graph/:queryId/:filters'  , checkAuth , (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
-    app.get '/user/main.html'           , checkAuth , (req, res) -> new SearchController(req, res, app.config).showMainAppView()
-    app.get '/article/view/:guid/:title', checkAuth , (req, res) -> new SearchController(req, res, app.config).showArticle()
+    searchController = (method_Name) ->                                  # pins method_Name value
+        return (req, res) ->                                             # returns function for express
+            new SearchController(req, res, app.config)[method_Name]()    # creates SearchController object with live
+                                                                         # res,req and invokes method_Name
+
+    app.get '/graph/:queryId'           , checkAuth , searchController('showSearchFromGraph')
+    app.get '/graph/:queryId/:filters'  , checkAuth , searchController('showSearchFromGraph')
+    app.get '/user/main.html'           , checkAuth , searchController('showMainAppView')
+    app.get '/article/view/:guid/:title', checkAuth , searchController('showArticle')
                 
 module.exports = SearchController
