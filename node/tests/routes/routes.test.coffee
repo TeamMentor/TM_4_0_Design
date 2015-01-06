@@ -47,6 +47,7 @@ describe 'routes | routes.test |', ()->
 
         routes.forEach (item)->
             if (item.route)
+              console.log ("Route " + item.route.path)
               paths.push(item.route.path)
 
         #console.log(paths.sort())
@@ -54,6 +55,7 @@ describe 'routes | routes.test |', ()->
         paths.length.assert_Is(expectedPaths.length)
         paths.forEach (path)->
             expectedPaths.assert_Contains(path)
+
 
   #dynamically create the tests
     runTest = (originalPath) ->

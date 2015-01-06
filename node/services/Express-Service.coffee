@@ -9,9 +9,9 @@ express         = require('express')
 class Express_Service
   constructor: ()->
     @.app         = express()
-    @loginEnabled = true;
-    @.app.port    = process.env.PORT || 1337;
-	app.set('views', path.join(__dirname,'../'))
+    @loginEnabled = true
+    @.app.port    = process.env.PORT || 1337
+
 
   setup: (callback)=>
     @set_BodyParser()
@@ -19,6 +19,7 @@ class Express_Service
     @set_Static_Route()
     @add_Session()      # for now not using the async version of add_Session
     #callback()
+    @set_Views_Path()
 
   add_Session: (callback)=>
 
@@ -38,6 +39,9 @@ class Express_Service
 
   set_Static_Route:()=>
     @app.use(express['static'](process.cwd()));
+
+  set_Views_Path :()=>
+    @.app.set('views', path.join(__dirname,'../../'))
 
   map_Route: (file)=>
     require(file)(@.app);
