@@ -157,7 +157,7 @@ nav a p:hover, nav a:hover {
   width: 100%;
 }
 
-#directory-list .list-group, #navigate-list .list-group {
+#directory-list table, #navigate-list .list-group {
   display: none;
   margin-bottom: 0;
 }
@@ -451,6 +451,10 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
     width: 90%;
     margin: 0 auto;
     padding-top: 20px;
+  }
+
+  .breadcrumbs {
+    margin-top: 40px;
   }
 }
 
@@ -1117,4 +1121,9 @@ table {
   padding: 5px;
   border-radius: 0px;
   border-left: transparent;
+}
+
+.breadcrumbs {
+  padding-top: 0;
+  padding-bottom: 0;
 }

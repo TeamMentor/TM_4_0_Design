@@ -215,7 +215,7 @@ nav {
 //- Second Navigation
 //- List Group
 
-#directory-list .list-group, #navigate-list .list-group {
+#directory-list table, #navigate-list .list-group {
 	display: none;
 	margin-bottom: 0;
 }
@@ -419,5 +419,8 @@ nav {
 		width: 90%;
 		margin: 0 auto;
 		padding-top: 20px;
+	}
+	.breadcrumbs {
+    	margin-top: 40px;
 	}
 }
