@@ -17,7 +17,7 @@ class Login_Controller
     @.users              = users
     @.req                = req || {}
     @.res                = res || {}
-    @.webServices        = 'https://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx'
+    @.webServices        = 'http://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx'
         
   redirectToLoginPage:  ()=>
     @.res.redirect(loginPage)
@@ -115,11 +115,12 @@ class Login_Controller
         signUpResponse = response.body.d
         message= ''
         if (signUpResponse.Signup_Status!=0)
-          if (signUpResponse.Validation_Results!=null)
+          if (signUpResponse.Validation_Results!=null && signUpResponse.Validation_Results.length > 0)
               message = signUpResponse.Validation_Results[0].Message
           else
               message = signUpResponse.Simple_Error_Message
-          @res.render(signUp_fail, {errorMessage: message})
+              @res.render(signUp_fail, {errorMessage: message})
+          return;
         else
           @res.redirect('/guest/sign-up-OK.html')
 
