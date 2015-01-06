@@ -1,6 +1,6 @@
 fs     = require 'fs'
 expect = require('chai').expect
-Config = require('../Config')
+Config = require('../misc/Config')
 
 
 

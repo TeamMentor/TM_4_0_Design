@@ -1,19 +1,18 @@
+require 'fluentnode'
 fs                 = require('fs')
 marked             = require('marked')
 request            = require('request')
-auth               = require('../middleware/auth')
+Express_Service    = require('../services/Express-Service')
 Jade_Service       = require('../services/Jade-Service')
-TeamMentor_Service = require(process.cwd() + '/node/services/TeamMentor-Service');
+TeamMentor_Service = require('../services/TeamMentor-Service');
 
 
 content_cache = {};
-libraryData    = new TeamMentor_Service().getLibraryData_FromCache();
-library        = libraryData[0];
+#libraryData    = new TeamMentor_Service().getLibraryData_FromCache();
+#library        = libraryData.first();
 
 class Help_Controller
   constructor: (req, res)->
-    @.library       = library
-    @.libraryData   = libraryData
     @.page          = if (req and req.params) then req.params.page else null
     @.pageParams    = {}
     @.req           = req
@@ -21,30 +20,34 @@ class Help_Controller
     @.content_cache = content_cache
     @.title         = null
     @.content       = null
+    @.teamMentor    = new TeamMentor_Service()
 
   renderPage: ()=>
-    @.pageParams         = auth.mappedAuth(@req)
-    @.pageParams.library = library
+    @.pageParams         = new Express_Service().mappedAuth(@req)
     @.getContent(@.page)
 
   getContent: ()=>
-    cachedData =  content_cache[@.page];
-    if(cachedData)
-      @addContent(cachedData.title, cachedData.content);
-      return;
+    cachedData = content_cache[@.page];
+    @.teamMentor.getLibraryData (libraries)=>
+      library = libraries.first()
+      @.pageParams.library = library
+      if(cachedData)
+        @addContent(cachedData.title, cachedData.content);
+        return;
 
-    if (@.page == "index.html")
-      page_index_File     = './source/content/page-index.md'   ;
-      page_index_Markdown = fs.readFileSync(page_index_File, 'utf8');
-      page_index_Html     = marked(page_index_Markdown)             ;
-      @addContent(null, page_index_Html);
-    else
-      @.article = library.Articles[@.page];
-      if (@.article)
-        docs_Url   = 'https://docs.teammentor.net/content/' + @.page;
-        request.get(docs_Url, @.handleFetchedHtml);
+      if (@.page == "index.html")
+        page_index_File     = __filename.parent_Folder().path_Combine('./../../source/content/page-index.md')
+        page_index_Markdown = fs.readFileSync(page_index_File, 'utf8');
+        page_index_Html     = marked(page_index_Markdown)             ;
+        @addContent(null, page_index_Html);
       else
-        @addContent("No content for the current page");
+
+        @.article = library.Articles[@.page];
+        if (@.article)
+          docs_Url   = 'https://docs.teammentor.net/content/' + @.page;
+          request.get(docs_Url, @.handleFetchedHtml);
+        else
+          @addContent("No content for the current page");
 
 
 

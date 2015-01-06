@@ -56,11 +56,11 @@ mixin related-options
 			// dd
 		// dl-tabs
 		.tabs-content
-			#related-articles.content
+			#related-articles.content.active
 				dl.accordion(data-accordion='data-accordion')
 					dd.accordion-navigation
 						a(href='#article-1') Article Headline
-						#article-1.content
+						#article-1.content.active
 							include:md ../../content/teamMentor/articles/article-details.md
 							+flare-article-preview-menu
 						// article-1-content
@@ -112,117 +112,56 @@ mixin related-options
 mixin flare-directory-list
 	#directory-list
 		h3 Fundamentals of Security
-		.list-group
-			a(href='fundamentals-of-security')
-				table
-					tr
-						td A New ID Is Assigned on Login A New ID Is Assigned on Login
-						td
-							span.round.label 14
-					// tr
-				// table
-			// link
-			a(href='fundamentals-of-security')
-				table
-					tr
-						td Second Level Directory
-						td
-							span.round.label 14
-					// tr
-				// table
-			// link
-			a(href='fundamentals-of-security')
-				table
-					tr
-						td Second Level Directory
-						td
-							span.round.label 14
-					// tr
-				// table
-			// link
-			a(href='fundamentals-of-security')
-				table
-					tr
-						td Second Level Directory
-						td
-							span.round.label 14
-					// tr
-				// table
-			// link
-			a(href='fundamentals-of-security')
-				table
-					tr
-						td Second Level Directory
-						td
-							span.round.label 14
-					// tr
-				// table
-			// link
-			a(href='fundamentals-of-security')
-				table
-					tr
-						td Second Level Directory
-						td
-							span.round.label 14
-					// tr
-				// table
-			// link
-			a(href='fundamentals-of-security')
-				table
-					tr
-						td Second Level Directory
-						td
-							span.round.label 14
-					// tr
-				// table
-			// link
-		// list-group
-		button.button.dropdown(href='#', data-dropdown='directory-button', aria-controls='directory-button', aria-expanded='false') Select a Directory
+		.nav
+			table
+				tr
+					td
+						a(href='fundamentals-of-security')
+							A New ID Is Assigned on Login A New ID Is Assigned on Login
+					// td
+					td
+						span.round.label 14
+					// td
+				// tr
+				tr
+					td
+						a(href='fundamentals-of-security')
+							A New ID Is Assigned on Login A New ID Is Assigned on Login
+					// td
+					td
+						span.round.label 14
+					// td
+				// tr
+				tr
+					td
+						a(href='fundamentals-of-security')
+							A New ID Is Assigned on Login A New ID Is Assigned on Login
+					// td
+					td
+						span.round.label 14
+					// td
+				// tr
+				tr
+					td
+						a(href='fundamentals-of-security')
+							A New ID Is Assigned on Login A New ID Is Assigned on Login
+					// td
+					td
+						span.round.label 14
+					// td
+				// tr
+			// table
+		// nav
+		button.button.dropdown(href='#', data-dropdown='drop1', aria-controls='drop1', aria-expanded='false') Select a Directory
 		br
-		ul#directory-button.f-dropdown(data-dropdown-content='', aria-hidden='true', tabindex='-1')
+		ul#drop1.f-dropdown(data-dropdown-content='', aria-hidden='true', tabindex='-1')
 			li
-				a(href='#')
-					table
-						tr
-							td A New ID Is Assigned on Login A New ID Is Assigned on Login
-							td
-								span.round.label 14
-						// tr
-					// table
-				// link
-			// li
+				a(href='#') A New ID Is Assigned on Login A New ID Is Assigned on Login
+			|   
 			li
-				a(href='#')
-					table
-						tr
-							td Second Level Directory
-							td
-								span.round.label 14
-						// tr
-					// table
-				// link
-			// li
+				a(href='#') A New ID Is Assigned on Login A New ID Is Assigned on Login
+			|   
 			li
-				a(href='#')
-					table
-						tr
-							td Second Level Directory
-							td
-								span.round.label 14
-						// tr
-					// table
-				// link
-			// li
-			li
-				a(href='#')
-					table
-						tr
-							td Second Level Directory
-							td
-								span.round.label 14
-						// tr
-					// table
-				// link
-			// li
-		// ul
+				a(href='#') A New ID Is Assigned on Login A New ID Is Assigned on Login
+
 	// directory-list

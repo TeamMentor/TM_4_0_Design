@@ -1,4 +1,4 @@
-extends ../_layouts/flare_page_not_logged_in
+extends ../_layouts/flare_page_landing
 include mixins/getting-started-mixins
 
 block content
@@ -15,12 +15,10 @@ block content
 			.tabs-content
 				#signup.content.active
 					+flare-alert
-					br
 					+sign-up-form
 				// sign-up-content
 				#login.content
 					+flare-alert
-					br
 					+login-form
 				// login-content
 			// tabs-content

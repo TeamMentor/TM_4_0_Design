@@ -37,7 +37,7 @@ describe "controllers | test-Login-Controller |", ->
       expected_Target,
       callback
 
-  @.timeout(7000)
+  @.timeout(10000)
 
   it 'constructor', ->
     using new Login_Controller,->

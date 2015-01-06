@@ -4,7 +4,7 @@ expect        = require('chai'         ).expect
 spawn         = require('child_process').spawn
 Graph_Service  = require('./../../services/Graph-Service')
 
-describe 'test-Graph-Service |', ->
+describe 'services | Graph-Service.test |', ->
 
     graphService  = null
 
@@ -25,11 +25,20 @@ describe 'test-Graph-Service |', ->
             done()
 
     it 'graphDataFromGraphDB', (done)->
-        filters = {}
+        filters = ""
         queryId = 'Logging'
         graphService.graphDataFromGraphDB null, queryId, filters,  (searchData)=>
           searchData.assert_Is_Object()
           done()
+
+    it 'graphDataFromGraphDB (non existent query)', (done)->
+        queryId = 'AAAAAAA'.add_5_Random_Letters()
+        graphService.graphDataFromGraphDB null, queryId, "",  (searchData)=>
+            if (searchData.containers)
+                searchData.containers.assert_Size_Is(0)          # regression test for [bug #128]
+                searchData.filters.assert_Size_Is(0)
+                searchData.results.assert_Size_Is(0)
+            done()
 
     it 'graphDataFromGraphDB (bad Server)', (done)->
         graphService.server = 'http://aaaaaaaa.teammentor.net'

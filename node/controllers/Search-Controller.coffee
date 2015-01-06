@@ -1,11 +1,11 @@
 fs              = require('fs')
 path            = require('path')
 request         = require('request')
-Config          = require('../Config')
-auth            = require('../middleware/auth')
+Config          = require('../misc/Config')
+Express_Service = require('../services/Express-Service')
 Jade_Service    = require('../services/Jade-Service')
 GitHub_Service  = require('../services/GitHub-Service')
-Graph_Service  = require('../services/Graph-Service')
+Graph_Service   = require('../services/Graph-Service')
 
 recentArticles_Cache = []
 breadcrumbs_Cache    = []
@@ -40,10 +40,10 @@ class SearchController
         
         graphService = new Graph_Service()
         graphService.graphDataFromGraphDB null, queryId, filters,  (searchData)=>
-                searchData.filter_container = filters
-                @searchData = searchData
-                searchData.breadcrumbs = breadcrumbs_Cache
-                @res.send(@renderPage())
+          searchData.filter_container = filters
+          @searchData = searchData
+          searchData.breadcrumbs = breadcrumbs_Cache
+          @res.send(@renderPage())
 
     showMainAppView: =>
         breadcrumbs_Cache.unshift {href:"/user/main.html", title: "Search Home"}
@@ -80,14 +80,17 @@ class SearchController
 
 
 SearchController.registerRoutes = (app) ->
-    #app.get('/search'                  , (req, res) -> new SearchController(req, res, app.config).search())
 
-    app.get('/graph/:queryId'          , ((req,res,next) -> auth.checkAuth(req, res,next, app.config)) ,  (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
-    app.get('/graph/:queryId/:filters' , ((req,res,next) -> auth.checkAuth(req, res,next, app.config)) ,  (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
-    
-    app.get '/user/main.html'           , ((req,res,next) -> auth.checkAuth(req, res,next, app.config)) , (req,res) -> new SearchController(req, res, app.config).showMainAppView()
+    checkAuth        =  (req,res,next) -> new Express_Service().checkAuth(req, res,next, app.config)
 
-    app.get '/article/view/:guid/:title', ((req,res,next) -> auth.checkAuth(req, res,next, app.config)) , (req,res) -> new SearchController(req, res, app.config).showArticle()
-    #app.get('/search' , (req, res) -> res.send('a'))
+    searchController = (method_Name) ->                                  # pins method_Name value
+        return (req, res) ->                                             # returns function for express
+            new SearchController(req, res, app.config)[method_Name]()    # creates SearchController object with live
+                                                                         # res,req and invokes method_Name
+
+    app.get '/graph/:queryId'           , checkAuth , searchController('showSearchFromGraph')
+    app.get '/graph/:queryId/:filters'  , checkAuth , searchController('showSearchFromGraph')
+    app.get '/user/main.html'           , checkAuth , searchController('showMainAppView')
+    app.get '/article/view/:guid/:title', checkAuth , searchController('showArticle')
                 
 module.exports = SearchController

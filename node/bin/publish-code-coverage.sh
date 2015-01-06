@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if [ ! -f ./node_modules/mocha-lcov-reporter/package.json ]; then
+  echo 'Installing coverage dependencies'
+  npm install jscover
+  npm install coffee-coverage
+  npm install mocha-lcov-reporter
+  npm install coveralls
+fi
+
 set -o errexit # Exit on error
 echo 'Removing cache files'
 rm -R .tmCache
@@ -17,7 +25,3 @@ mocha -R mocha-lcov-reporter node-cov/tests --recursive | sed 's,SF:,SF:node/,' 
 
 echo 'Removing instrumented node files'
 rm -R node-cov
-
-echo 'Opening browser with Coveralls page (refresh and the new data should be there)'
-
-open "https://coveralls.io/r/TeamMentor/TM_4_0_Design"

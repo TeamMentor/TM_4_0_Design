@@ -1,4 +1,4 @@
 /*jslint node: true */
 "use strict";
-
-require('./node/server.js');
+require('coffee-script/register');                      // enabled coffee-script support
+require('./node/server');

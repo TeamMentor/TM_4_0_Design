@@ -327,7 +327,7 @@ body {
 }
 
 #help-nav, #help-docs {
-  margin-top: 40px;
+  margin-top: 90px;
 }
 
 #help-docs h1 {
@@ -344,8 +344,11 @@ body {
   padding: 0 20px 25px 20px;
 }
 
+#loginwall {
+  padding: 80px 0 20px 0;
+}
+
 #loginwall, #summary {
-  padding-top: 80px;
   max-width: 95%;
   margin: 0 auto;
 }
@@ -601,7 +604,6 @@ a.action {
   text-decoration: none;
   letter-spacing: 1px;
   font-size: 14px;
-  font-weight: 700;
   color: #8aaf3e;
 }
 a.action:hover, a.action:focus, a.action:active {
@@ -609,6 +611,7 @@ a.action:hover, a.action:focus, a.action:active {
 }
 
 button, .button {
+  width: 100%;
   border-radius: 3px;
   font-size: 14px;
   background-color: #FFFFFF;
@@ -625,13 +628,16 @@ button:hover, button:focus, .button:hover, .button:focus {
 .btn-search-bar {
   padding: 17px 0 17px 0;
   border-left: none;
+  border-radius: 0px;
 }
 
 input[type="checkbox"] {
   margin-right: 20px;
 }
 
-input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], 
+input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], 
+input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
   width: 100% !important;
   background-color: #FFFFFF;
   font-family: inherit;
@@ -639,17 +645,19 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   box-shadow: none;
   color: #444444;
   display: block;
+  border-radius: 3px;
   font-size: 16px;
   padding: 0.5rem;
   height: 3rem;
   -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
   box-sizing: border-box;
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, 
+input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, 
+input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, 
+input[type="url"]:focus, textarea:focus {
   background: #FFFFFF;
   border-color: #8aaf3e;
   outline: medium none;
@@ -752,6 +760,10 @@ button:hover, button:active {
 .nav table a {
   text-decoration: none;
 }
+
+.nav table label {
+  font-weight: normal;
+}
 .nav table tr{
   border-bottom: 1px solid #e3e3e3;
 }
@@ -796,9 +808,6 @@ table td {
   background: #FFFFFF;
   border: none;
 }
-.breadcrumbs li {
-  display: inline-block;
-}
 .breadcrumbs li.current a {
   color: #8aaf3e;
   text-decoration: none;
@@ -828,7 +837,7 @@ table td {
     margin-top: 70px;
   }
   #help-nav, #help-docs {
-    margin-top:40px;
+    margin-top:50px;
   }
   #customer-navigation ul {
     text-align: left;
@@ -883,6 +892,9 @@ table td {
   }
   #loginwall, #summary {
     max-width: 90%;
+  }
+  #summary {
+    padding: 80px 0 0 0;
   }
 }
 

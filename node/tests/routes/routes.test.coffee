@@ -1,14 +1,13 @@
 supertest = require('supertest')
 app      = require('../../server')
     
-describe 'routes | test-routes.js |', ()->
+describe 'routes | routes.test |', ()->
     expectedPaths = [ '/',
                       '/flare/:area/:page',
                       '/flare/default',
                       '/Image/:name',
                       '/article/view/:guid/:title',
                       '/config',
-                      '/deploy/html/:area/:page.html',
                       '/dirName',
                       '/flare',
                       '/flare/all',

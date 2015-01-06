@@ -18,11 +18,9 @@
     "test": "node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register node/tests --recursive -R list",
     "test-watch": "node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register node/tests --recursive -R list -w",
     "start_once": "node app.js",
-    "start-dev": "node_modules/supervisor/lib/cli-wrapper.js node/server.js",
     "coverage-publish": "./node/bin/publish-code-coverage.sh",
     "coverage": "./node/bin/local-code-coverage.sh",
-    "QA": "cd QA && npm test && cd ..",
-    "__start-dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' node/server.js"
+    "start-dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' app.js"
   },
   "repository": {
     "type": "git",
@@ -33,13 +31,14 @@
     "coffee-script": "latest",
     "express": "latest",
     "express-session": "latest",
-    "fluentnode": "latest",
+    "fluentnode": "^0.3.0",
     "github": "latest",
     "jade": "latest",
     "marked": "latest",
     "nedb": "latest",
     "request": "latest",
-    "supervisor": "latest"
+    "supervisor": "latest",
+    "teammentor": "^0.1.2"
   },
   "devDependencies": {
     "chai": "latest",
