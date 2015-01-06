@@ -17,7 +17,7 @@ class Login_Controller
     @.users              = users
     @.req                = req || {}
     @.res                = res || {}
-    @.webServices        = 'http://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx'
+    @.webServices        = 'https://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx'
         
   redirectToLoginPage:  ()=>
     @.res.redirect(loginPage)
