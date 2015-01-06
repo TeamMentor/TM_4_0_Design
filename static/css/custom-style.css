@@ -604,7 +604,6 @@ a.action {
   text-decoration: none;
   letter-spacing: 1px;
   font-size: 14px;
-  font-weight: 700;
   color: #8aaf3e;
 }
 a.action:hover, a.action:focus, a.action:active {
