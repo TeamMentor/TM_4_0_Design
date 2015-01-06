@@ -610,7 +610,7 @@ a.action:hover, a.action:focus, a.action:active {
   color: #49661f;
 }
 
-button {
+button, .button {
   width: 100%;
   border-radius: 3px;
   font-size: 14px;

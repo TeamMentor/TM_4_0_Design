@@ -90,10 +90,6 @@ nav {
   margin: 5px 0 5px 0;
 }
 
-#logo img {
-  margin: 0 0 0 10px;
-}
-
 #lp-menu-icon {
   -webkit-order: 4;
   -webkit-flex: 10%;
@@ -1111,10 +1107,14 @@ nav a:hover {
   background-color: white !important;
 }
 
-button.dropdown {
-  border: 0;
+table {
+  border: transparent;
 }
 
-ul#dropdown {
-  list-style-type: none;
+.button.postfix {
+  border: 1px solid #aaaaaa;
+  height: 48px;
+  padding: 5px;
+  border-radius: 0px;
+  border-left: transparent;
 }
