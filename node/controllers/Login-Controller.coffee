@@ -56,7 +56,7 @@ class Login_Controller
               @.res.redirect(mainPage_user)
           else
               @.req.session.username = username
-              if (loginResponse.Validation_Results !=null)
+              if (loginResponse.Validation_Results !=null && loginResponse.Validation_Results.length > 0)
                   @.req.errorMessage = loginResponse.Validation_Results[0].Message
               else
                   @.req.errorMessage = loginResponse.Simple_Error_Message
