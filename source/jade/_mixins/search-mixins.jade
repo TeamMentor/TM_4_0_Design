@@ -70,8 +70,8 @@ mixin filters-div
 											span.badge= result.size
 								else
 									td
-										input#technology1(type='checkbox', name='technology', value='Technology 1')
-										label(for='technology1')= result.title
+										input(type='checkbox', name='technology', id=result.title value=result.title)
+										label(for=result.title)= result.title
 									//td
 										a(href='/graph/' + title + '/'  + result.id, id=result.id)= result.title
 									td
