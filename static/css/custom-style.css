@@ -629,6 +629,7 @@ button:hover, button:focus, .button:hover, .button:focus {
 .btn-search-bar {
   padding: 17px 0 17px 0;
   border-left: none;
+  border-radius: 0px;
 }
 
 input[type="checkbox"] {
@@ -759,6 +760,10 @@ button:hover, button:active {
 }
 .nav table a {
   text-decoration: none;
+}
+
+.nav table label {
+  font-weight: normal;
 }
 .nav table tr{
   border-bottom: 1px solid #e3e3e3;

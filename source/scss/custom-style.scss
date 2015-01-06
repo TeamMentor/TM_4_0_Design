@@ -313,6 +313,9 @@ table {
 		span.badge {
 			float: right;
 		}
+		label {
+			font-weight: normal;
+		}
 	}
 }
 
@@ -462,6 +465,7 @@ button {
 	&.btn-search-bar {
 	  padding: 17px 0 17px 0;
 	  border-left: none;
+	  border-radius: 0px;
 	}
 }
 
