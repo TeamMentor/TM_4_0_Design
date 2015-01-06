@@ -226,6 +226,97 @@ nav a p:hover, nav a:hover {
   background-image:url('../assets/icons/tick.png');
 }
 
+.list-group table tr td {
+  padding: 0;
+  font-size: 16px;
+  height: auto;
+}
+
+.list-group table, #filters table {
+  margin-bottom: 0;
+  background: transparent;
+}
+
+#summary table, #filters table {
+  border: transparent;
+}
+
+#summary table tr.even, #summary table tr.alt, #summary table tr:nth-of-type(even), #filters table tr.even, 
+#filters table tr.alt, #filters table tr:nth-of-type(even) {
+  background: #FFFFFF !important;
+}
+
+#article-options table {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#article-options table h5 {
+  margin: 5px 0 0 10px;
+}
+
+#article-options table p {
+  margin: 5px 0 0 10px;
+}
+
+#related-options dl.tabs dd {
+  width: 100%;
+}
+
+.label {
+  float: right;
+  background-color: #aaaaaa;
+}
+
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+#loginwall dl.tabs dd {
+  width: 50%;
+  border: 1px solid #aaaaaa;
+}
+#loginwall dl.tabs .active {
+  background: #ececec;
+}
+#loginwall .tabs-content {
+  border: 1px solid #aaaaaa;
+  border-top: none;
+}
+
+.accordion dd > a {
+  background: #FFFFFF;
+  color: #444444;
+  font-weight: 700;
+  text-decoration: none;
+}
+.accordion dd > a:hover {
+  color: #49661f;
+  background: #FFFFFF;
+}
+.accordion dd > a table {
+  border-color: transparent;
+}
+.accordion dd > a table table tr:nth-of-type(even) {
+  background-color: #FFFFFF;
+}
+dl.tabs dd a {
+  font-size: 14px;
+  text-align: center !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 700;
+  background: #FFFFFF;
+  color: #8aaf3e;
+}
+dl.tabs dd a:hover, dl.tabs dd a:active {
+  color: #49661f !important;
+  background: #FFFFFF;
+}
+
+
 /* ===== == = === 20em (320px) === = == ===== */
 
 @media only screen and (min-width : 20em) {
@@ -338,6 +429,9 @@ nav a p:hover, nav a:hover {
   #article-options dl.tabs dd {
     width: 33%;
   }
+  #related-options dl.tabs dd {
+    width: 50%;
+  }
 
   #directory-list select {
     display: none;
@@ -362,96 +456,6 @@ nav a p:hover, nav a:hover {
     margin: 0 auto;
     padding-top: 20px;
   }
-}
-
-.list-group table tr td {
-  padding: 0;
-  font-size: 16px;
-  height: auto;
-}
-
-.list-group table, #filters table {
-  margin-bottom: 0;
-  background: transparent;
-}
-
-#summary table, #filters table {
-  border: transparent;
-}
-
-#summary table tr.even, #summary table tr.alt, #summary table tr:nth-of-type(even), #filters table tr.even, 
-#filters table tr.alt, #filters table tr:nth-of-type(even) {
-  background: #FFFFFF !important;
-}
-
-#article-options table {
-  width: 60%;
-  margin: 0 auto;
-}
-
-#article-options table h5 {
-  margin: 5px 0 0 10px;
-}
-
-#article-options table p {
-  margin: 5px 0 0 10px;
-}
-
-#related-options dl.tabs dd {
-  width: 50%;
-}
-
-.label {
-  float: right;
-  background-color: #aaaaaa;
-}
-
-
-#loginwall dl.tabs dd {
-  width: 50%;
-  border: 1px solid #aaaaaa;
-}
-#loginwall dl.tabs .active {
-  background: #ececec;
-}
-#loginwall .tabs-content {
-  border: 1px solid #aaaaaa;
-  border-top: none;
-}
-
-.accordion dd > a {
-  background: #FFFFFF;
-  color: #444444;
-  font-weight: 700;
-  text-decoration: none;
-}
-.accordion dd > a:hover {
-  color: #49661f;
-  background: #FFFFFF;
-}
-.accordion dd > a table {
-  border-color: transparent;
-}
-.accordion dd > a table table tr:nth-of-type(even) {
-  background-color: #FFFFFF;
-}
-
-dl.tabs dd.related-options-width {
-  width: 50%;
-}
-dl.tabs dd a {
-  font-size: 14px;
-  text-align: center !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 1px;
-  font-weight: 700;
-  background: #FFFFFF;
-  color: #8aaf3e;
-}
-dl.tabs dd a:hover, dl.tabs dd a:active {
-  color: #49661f !important;
-  background: #FFFFFF;
 }
 
 
@@ -1088,3 +1092,13 @@ nav a:hover {
 .fi-yen:before { content: "\f218"; }
 .fi-zoom-in:before { content: "\f219"; }
 .fi-zoom-out:before { content: "\f21a"; }
+
+
+
+.alert-box {
+  background-color: #FFF;
+  border: 1px solid #8baf3e;
+  color: #8baf3e;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
