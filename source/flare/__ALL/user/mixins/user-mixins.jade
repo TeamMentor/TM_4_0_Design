@@ -15,56 +15,24 @@ mixin user-details-heading
 mixin user-details-display
 	.row
 		.small-12.large-6.columns
-			.row
-				.small-2.columns
-					+user-icon-no-text
-				// column
-				.small-10.columns
-					p Name
-				// column
-			// row
-			.row
-				.small-2.columns
-					+company-icon
-				// column
-				.small-10.columns
-					p Title, Company
-				// column
-			// row
-			.row
-				.small-2.columns
-					+group-id-icon
-				// column
-				.small-10.columns
-					p Group ID
-				// column
-			// row
+			+user-icon-no-text
+			|    Name
+			br
+			+company-icon
+			|    Title, Company
+			br
+			+group-id-icon
+			|    Group ID
 		// column
 		.small-12.large-6.columns
-			.row
-				.small-2.columns
-					+email-icon
-				// column
-				.small-10.columns
-					p Email
-				// column
-			// row
-			.row
-				.small-2.columns
-					+navigate-icon-no-text
-				// column
-				.small-10.columns
-					p Location
-				// column
-			// row
-			.row
-				.small-2.columns
-					+filter-icon
-				// column
-				.small-10.columns
-					p Permanent Filters
-				// column
-			// row
+			+email-icon
+			|    Email
+			br
+			+navigate-icon-no-text
+			|    Location
+			br
+			+filter-icon
+			|    Permanent Filters
 		// column
 	// row
 

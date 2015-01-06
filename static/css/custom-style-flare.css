@@ -1118,3 +1118,11 @@ table {
   border-radius: 0px;
   border-left: transparent;
 }
+
+.tabs dd.active a, .tabs .tab-title.active a {
+  color: #aaaaaa !important;
+}
+
+i {
+  color: #8baf3e;
+}
