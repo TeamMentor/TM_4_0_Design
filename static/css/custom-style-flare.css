@@ -429,11 +429,7 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
     width: 50%;
   }
 
-  #directory-list select {
-    display: none;
-  }
-
-  #directory-list .list-group, #navigate-list .list-group {
+  #directory-list table, #navigate-list .list-group {
     display: block;
   }
 
@@ -1121,9 +1117,4 @@ table {
   padding: 5px;
   border-radius: 0px;
   border-left: transparent;
-}
-
-.breadcrumbs {
-  padding-top: 0;
-  padding-bottom: 0;
 }

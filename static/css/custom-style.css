@@ -808,9 +808,6 @@ table td {
   background: #FFFFFF;
   border: none;
 }
-.breadcrumbs li {
-  display: inline-block;
-}
 .breadcrumbs li.current a {
   color: #8aaf3e;
   text-decoration: none;
