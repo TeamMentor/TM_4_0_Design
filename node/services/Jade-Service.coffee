@@ -75,7 +75,7 @@ class JadeService
       return require(targetFile_Path)(params);
 
     renderMixin: (file, mixin, params)=>
-      safeFile     = file.to_Safe_String()              # only allow letter, numbers, comma and dash
+      safeFile     = file.to_Safe_String()              # only allow letter, numbers, comma, dash and underscore
       safeMixin    = mixin.to_Safe_String()
       mixinsFolder ='/source/jade/_mixins/tmp.jade'     # where the mixin file will be expected to exist
       dummyJade    = @.calculateJadePath(mixinsFolder)  # file to be provided to jade.compile

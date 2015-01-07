@@ -67,7 +67,7 @@ mixin filters-div
 						for result in filter.results
 							tr
 								if result.id == filter_container
-									td
+									//td
 										input(type='checkbox', checked=true, disabled=true)
 									td
 										b
@@ -76,7 +76,7 @@ mixin filters-div
 										b
 											span.badge= result.size
 								else
-									td
+									//td
 										input(type='checkbox', name='technology', id=result.id value=result.id)
 									td
 										a(href='/graph/' + title + '/'+result.id)= result.title
