@@ -384,6 +384,15 @@ table {
 	}
 }
 
+#filters {
+	table {
+		table-layout: auto;
+		td {
+			white-space:nowrap;
+		}
+	}
+}
+
 //------ FORMS
 
 form, .form-group {

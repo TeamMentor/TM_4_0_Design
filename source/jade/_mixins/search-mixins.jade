@@ -69,6 +69,7 @@ mixin filters-div
 								if result.id == filter_container
 									td
 										input(type='checkbox', checked=true, disabled=true)
+									td
 										b
 											a(href='/graph/' + title)= result.title
 									td
@@ -77,6 +78,7 @@ mixin filters-div
 								else
 									td
 										input(type='checkbox', name='technology', id=result.id value=result.id)
+									td
 										a(href='/graph/' + title + '/'+result.id)= result.title
 									//td
 										a(href='/graph/' + title + '/'  + result.id, id=result.id)= result.title

@@ -1601,14 +1601,8 @@ table td {
   font-size: 4em;
 }
 
-
-
-
-
-
-
-table { 
-    border-collapse: collapse; 
+table {
+    border-collapse: collapse;
 }
 
 .nav table td {
@@ -1621,4 +1615,12 @@ table {
 
 .breadcrumbs li a {
   font-weight: normal;
+}
+
+#filters table {
+  table-layout: auto;
+}
+
+#filters table td {
+  white-space:nowrap;
 }
