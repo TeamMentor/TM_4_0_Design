@@ -11,12 +11,12 @@ class Express_Service
     @loginEnabled = true;
     @.app.port    = process.env.PORT || 1337;
 
-  setup: (callback)=>
+  setup: ()=>
     @set_BodyParser()
     @set_Config()
     @set_Static_Route()
     @add_Session()      # for now not using the async version of add_Session
-    #callback()
+    @
 
   add_Session: (callback)=>
 
