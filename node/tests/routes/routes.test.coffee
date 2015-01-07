@@ -81,7 +81,7 @@ describe 'routes | routes.test |', ()->
           response.text.assert_Is_String()
           done()
         if (postRequest)
-          supertest(app).post(path).send({})
+          supertest(app).post(path).send('{Username: "adada", Password: "!!tmadmin", Email: "kasdjakdj@gmail.com", Firstname: "", Lastname:}')
                         .expect(expectedStatus,checkResponse)
         else
           supertest(app).get(path)

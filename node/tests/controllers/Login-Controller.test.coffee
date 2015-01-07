@@ -18,10 +18,9 @@ describe "controllers | test-Login-Controller |", ->
           redirect: (target)->
             target.assert_Is(expected_Target)
             callback()
-          render : (value) ->
-            value.assert_Is(expected_Target)
+          render : (target) ->
+            target.assert_Is(expected_Target)
             callback()
-
     loginController = new Login_Controller(req, res)
     loginController[method]()
 
@@ -94,17 +93,18 @@ describe "controllers | test-Login-Controller |", ->
     invoke_Method "redirectToLoginPage", { } ,loginPage,done
 
   it 'userSignUp (bad values)', (done)->
-    invoke_UserSignUp '','aa','aa@teammentor.net', signUp_fail, ->                # empty username
-      invoke_UserSignUp 'aaa','','aa@teammentor.net', signUp_fail, ->             # empty password
-        invoke_UserSignUp 'aa','aa','', signUp_fail, ->                           # empty email
-        done()
+    invoke_UserSignUp('','aa','aa@teammentor.net', signUp_fail, ->
+      invoke_UserSignUp('aaa','','aa@teammentor.net', signUp_fail, ->
+        invoke_UserSignUp('aa','aa','', signUp_fail,done)))
+
 
   it 'userSignUp (good values)', (done)->
     user = "tm_ut_".add_5_Random_Letters()
     pwd  = "**tm**pwd**"
     email = "#{user}@teammentor.net"
-    invoke_UserSignUp user, pwd, email, signUp_Ok, ->
-      invoke_LoginUser user, pwd, mainPage_user, done
+
+    invoke_UserSignUp(user,pwd,email,signUp_Ok,->
+        invoke_LoginUser(user,pwd,mainPage_user,done))
 
   it 'userSignUp (pwd dont match)', (done)->
     req =

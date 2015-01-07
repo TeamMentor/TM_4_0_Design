@@ -38,7 +38,6 @@ class Login_Controller
     username = @.req.body.username
     password = @.req.body.password
 
-
     #major hack for demo (this needs to be done by consuming the GraphDB TeamMentor-Service)
     options = {
                   method: 'post',
@@ -47,21 +46,22 @@ class Login_Controller
                   url: @.webServices + '/Login_Response'
     }
     request options, (error, response, body)=>
+
       if (response.body !=null && response.body.d !=null)
+
           loginResponse = response.body.d
           success = loginResponse.Login_Status
-
-          if (success==loginSuccess)
+          if (success == loginSuccess)
               @.req.session.username = username
               @.res.redirect(mainPage_user)
           else
-              @.req.session.username = username
+              @.req.session.username = undefined
+
               if (loginResponse.Validation_Results !=null && loginResponse.Validation_Results.length > 0)
                   @.req.errorMessage = loginResponse.Validation_Results[0].Message
               else
                   @.req.errorMessage = loginResponse.Simple_Error_Message
-
-          @.res.render(loginPage,{errorMessage:@.req.errorMessage})
+              @.res.render(loginPage,{errorMessage:@.req.errorMessage})
 
   logoutUser: ()=>
     @.req.session.username = undefined
@@ -92,7 +92,6 @@ class Login_Controller
     if (@.req.body.password != @.req.body['password-confirm'])
         @res.render(signUp_fail, {errorMessage: 'Passwords don\'t match'})
         return                       #
-
     newUser =
               {
                   username : @.req.body.username,
@@ -119,8 +118,7 @@ class Login_Controller
               message = signUpResponse.Validation_Results[0].Message
           else
               message = signUpResponse.Simple_Error_Message
-              @res.render(signUp_fail, {errorMessage: message})
-          return;
+          @res.render(signUp_fail, {errorMessage: message})
         else
           @res.redirect('/guest/sign-up-OK.html')
 
