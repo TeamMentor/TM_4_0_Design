@@ -1,0 +1,293 @@
+//- Contents
+//--- Base
+//----- Structure
+//----- Application
+//----- Landing Pages
+
+
+/* -----------------------------------*/
+/* -------->>> STRUCTURE <<<----------*/
+/* -----------------------------------*/
+
+html {
+	font: $font-stack;
+}
+
+body {
+	background: $white;
+	max-width: $full-width;
+}
+
+img {
+	margin: 0 auto;
+}
+
+/* -----------------------------------*/
+/* ------->>> APPLICATION <<<---------*/
+/* -----------------------------------*/
+
+#application {
+	height: $full-width;
+	margin: 80px 0 0 0;
+	width: $full-width;
+}
+
+#loginwall {
+	padding: 80px 0 20px 0;
+}
+
+#loginwall, #summary {
+	margin: 0 auto;
+	max-width: 95%;
+}
+
+#help-nav, #help-docs {
+	margin-top: 90px;
+	h1 {
+		font-size: 1.625em;
+	}
+	h2 {
+		font-size: 2em;
+	}
+}
+
+.lge-container {
+	margin: 0 auto;
+	max-width: 96%;
+}
+
+form, .form-group {
+	list-style-type: none;
+	margin: 0 0 15px 0;
+}
+
+label {
+	color: $dark-grey;
+	display: inline-block;
+	margin: 0 0 5px 0;
+	padding: 3px 0 0 0;
+}
+
+input {
+	&[type="checkbox"] {
+		margin: 0;
+	}
+	&[type="text"], &[type="password"], &[type="date"], &[type="datetime"], &[type="datetime-local"], &[type="month"], &[type="week"], &[type="email"], &[type="number"], &[type="search"], &[type="tel"], &[type="time"], &[type="url"] {
+		display: block;
+		height: 3rem;
+		padding: 0.5rem;
+		width: $full-width;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		border-radius: 3px;
+		font-size: 1em;
+		background-color: $white;
+		border: 1px solid $grey;
+		box-shadow: none;
+		color: $dark-grey;
+	}
+	&[type="text"]:focus, &[type="password"]:focus, &[type="date"]:focus, &[type="datetime"]:focus, &[type="datetime-local"]:focus, &[type="month"]:focus, &[type="week"]:focus, &[type="email"]:focus, &[type="number"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="time"]:focus, &[type="url"]:focus {
+		background: $white;
+		border-color: $green;
+		outline: medium none;
+	}
+}
+
+textarea {
+	@extend input[type="text"];
+	height: auto;
+	&:focus {
+		@extend input[type="text"]:focus;
+	}
+}
+
+select {
+	@extend input[type="text"];
+}
+
+.input-group {
+	display: table;
+	float: left;
+	width: $full-width;
+	.form-control {
+		display: table-cell;
+		height: 53px;
+	}
+	.input-group-btn {
+		display: table-cell;
+		max-width: $full-width;
+		vertical-align: middle;
+		width: 100px;
+		border-left: none !important;
+	}
+}
+
+//------ BUTTONS
+
+button {
+	@extend a.action;
+	width: $full-width;
+	background-color: $white;
+	&:hover, &:focus, &:active {
+		@extend a.action:hover;
+		background-color: $white;
+	}
+	&.btn-search-bar {
+	  padding: 17px 0 17px 0;
+	  border-left: none;
+	  border-radius: 0px;
+	}
+}
+
+//------ BADGES
+
+.badge {
+	min-width: 10px;
+	padding: 3px 7px;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 12px;
+	background-color: $grey;
+	color: $white;
+}
+
+//------ ALERTS
+
+.alert {
+	margin: 0;
+	padding: 15px;
+	border: none;
+	background: $white;
+	font-weight: 700;
+	color: $green;
+}
+
+
+/* -----------------------------------*/
+/* ------>>> LANDING PAGES <<<--------*/
+/* -----------------------------------*/
+
+#about {
+	width: 100%;
+	margin: 65px 0 0 0;
+	height: auto;
+	width: $full-width;
+	text-align: center;
+	background: url(../assets/stock-img/bg-img.jpg);
+	background-color: $green;
+	background-position: 0px 600px;
+}
+#about h2, #usp h2 {
+	color: $white;
+	line-height: 1.25em;
+}
+#about-us {
+	padding: 40px 0 40px 0;
+}
+
+#call-to-action {
+	width: 100%;
+	padding: 100px 0 110px 0;
+	text-align: center;
+	background: url(../assets/stock-img/bg-img.jpg);
+	background-position: 0px 1200px;
+	background-color: $dark-green;
+	h1 {
+		color: $white;
+	}
+}
+
+#clients {
+	padding: 40px 0 80px 0;
+	text-align: center;
+}
+
+#copyright {
+	padding-bottom: 30px;
+	a {
+		@extend a;
+		font-size: 12px;
+		text-align: center;
+	}
+}
+
+#features {
+	padding: 100px 0 50px 0;
+	h2 {
+		text-align: center;
+	}
+	img {
+		vertical-align: middle;
+	}
+}
+
+#footer {
+	position: relative;
+	padding: 15px 0 0 0;
+	margin: 0 auto;
+	width: $full-width;
+	text-align: center;
+	#si-logo {
+		background:url('../assets/logos/logos.jpg') no-repeat;
+		background-position: 0px -50px;
+		height: 50px;
+		width: 250px;
+		margin: 0 auto;
+	}
+	a {
+		@extend a;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		font-size: 10px;
+	}
+	h6 {
+		margin-top: 0;
+		color: $dark-grey;
+	}
+}
+
+#reasons {
+	padding: 70px 0 0 0;
+	h2 {
+		text-align: center;
+	}
+}
+
+#usp button, #call-to-action button {
+  color: $green;
+  border: 0;
+  background-color: $white;
+  border-bottom: 2px solid $green;
+  -webkit-box-shadow: inset 0 -2px $green;
+  box-shadow: inset 0 -2px $green;
+
+  	&:hover, &:active {
+  		background-color: $light-grey;
+  		color: $dark-green;
+  		border: 0;
+		border-bottom: 2px solid $dark-green;
+		-webkit-box-shadow: inset 0 -2px $dark-green;
+		box-shadow: inset 0 -2px $dark-green;
+  	}
+
+  	i {
+  		font-size: 18px;
+		padding: 0 10px 0 0;
+		color: $green;
+
+		&:hover, &:active {
+			color: $dark-green;
+		}
+  	}
+}
+
+#usp {
+	margin: 65px 0 0 0;
+	padding: 50px 0 80px 0;
+	width: $full-width;
+	text-align: center;
+	background: url(../assets/stock-img/bg-img.jpg);
+	background-position: 0px 0px;
+	background-color: $green;
+}

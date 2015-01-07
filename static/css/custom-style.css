@@ -632,7 +632,7 @@ button:hover, button:focus, .button:hover, .button:focus {
 }
 
 input[type="checkbox"] {
-  margin-right: 20px;
+  margin: 0px;
 }
 
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], 

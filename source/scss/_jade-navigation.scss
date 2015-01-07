@@ -1,0 +1,195 @@
+//- Contents
+//--- Navigation
+//----- Top Navigation
+//----- Sub Navigation
+//-------- List Groups
+//-------- Tables
+//-------- Breadcrumbs
+
+/* -----------------------------------*/
+/* ------>>> TOP NAVIGATION <<<-------*/
+/* -----------------------------------*/
+
+.fixed {
+	left: 0;
+	top: 0;
+	position: fixed;
+	width: $full-width;
+	z-index: 99;
+	#customer-navigation {
+		display: block;
+		max-height: 100px;
+		background-color: $white;
+		ul {
+			padding: 5px 0 0 25px;
+			text-align: center;
+		}
+	}
+	#team-mentor-navigation {
+		height: 80px;
+		text-align: center;
+		background-color: $white;
+
+		#not-logged-in {
+			width: $full-width;
+			img {
+				float: left;
+				padding: 0 0 0 5px;
+			}
+			ul li {
+				float: right;
+				padding: 5px 5px 0 0;
+				list-style-type: none;
+			}
+		}
+		#title-area {
+			position: relative;
+			width: 250px;
+			height: 50px;
+			margin: 0 auto;
+			text-align: center;
+			#tm-logo {
+				background:url('../assets/logos/logos.jpg') no-repeat;
+				background-position: 0px 0px;
+				height: 50px;
+			}
+		}
+		#links {
+			position: relative;
+			width: $full-width;
+			padding: 0 0 5px 0;
+			background: transparent;
+			text-align: center;
+			ul {
+				padding: 0;
+				width: $full-width;
+				list-style-type: none;
+				li {
+					display: inline;
+					padding: 0 10px 0 0;
+					a {
+						@extend a.action;
+						font-size: 12px;
+						&:hover {
+							@extend a.action:hover;
+						}
+					}
+				}
+			}
+			&.icons {
+				display: inline-block;
+				margin-top: 15px;
+				ul li {
+					display: inline-block;
+					padding: 0 10px 0 0;
+
+					a {
+						text-transform: uppercase;
+						text-decoration: none;
+						letter-spacing: 1px;
+						font-size: 12px;
+						font-weight: 700;
+						color: $green;
+						line-height: 1em;
+						&:hover {
+							color: $dark-green;
+						}
+					}
+					i {
+						padding: 0 5px 0 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* -----------------------------------*/
+/* ------>>> SUB NAVIGATION <<<-------*/
+/* -----------------------------------*/
+
+.list-group {
+	height: auto;
+	h5, h4 {
+		margin: 5px 0 0 0;
+	}
+	a {
+		display: block;
+		padding: 11px;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+			background-color: $light-grey;
+		}
+	}
+	span.badge {
+		float: right;
+	}
+}
+
+table {
+	width: 100%;
+	font-size: 1em;
+	color: $dark-grey;
+    border-collapse: collapse;
+	td {
+		height: 30px;
+		padding: 0 10px 0 10px
+	}
+	.nav {
+		margin-top: -20px;
+		a {
+			text-decoration: none;
+		}
+		tr {
+			border-bottom: 1px solid $light-grey;
+			td {
+				padding: 5px;
+				font-size: 14px
+			}
+			&:last-child {
+				border-bottom: transparent;
+			}
+			&:hover {
+				background-color: $light-grey;
+				color: $dark-green;
+			}
+		}
+		span.badge {
+			float: right;
+		}
+		label {
+			font-weight: normal;
+		}
+	}
+}
+
+.breadcrumbs {
+	padding: 0 0 0 10px;
+	background: $white;
+	border: none;
+	li {
+		display: inline-block;
+		&.current a {
+			color: $green;
+			text-decoration: none;
+		}
+		a {
+			@extend a.action;
+			color: $grey;
+			font-size: 12px;
+			font-weight: normal;
+			&:hover {
+				color: $green;
+			}
+		}
+		&:first-child:before {
+			content: " ";
+			margin: 0px;
+		}
+		&:before {
+			content: "/";
+			margin: 0 20px;
+		}
+	}
+}
