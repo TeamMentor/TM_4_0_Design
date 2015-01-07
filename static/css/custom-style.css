@@ -812,6 +812,9 @@ table td {
   color: #8aaf3e;
   text-decoration: none;
 }
+.breadcrumbs li {
+  display: inline-block;
+}
 .breadcrumbs li a {
   font-size: 12px;
   font-weight: 700;
@@ -819,6 +822,7 @@ table td {
   text-transform: uppercase;
   text-decoration: none;
   color: #aaaaaa;
+  display: inline-block;
 }
 .breadcrumbs li a:hover {
   color: #8aaf3e;
@@ -830,6 +834,10 @@ table td {
 .breadcrumbs li:before {
   content: "/";
   margin: 0 20px;
+}
+
+#application {
+  margin-top: 80px;
 }
 
 @media (min-width: 768px) {
@@ -850,14 +858,6 @@ table td {
     margin: 5px 0 0 20px;
     width: 36%;
     float: left;
-  }
-
-  #not-logged-in img {
-    padding: 0 0 0 20px;
-  }
-
-  #not-logged-in ul li {
-    padding: 5px 10px 0 0;
   }
 
   #links {
@@ -1600,3 +1600,9 @@ table td {
   color: #8baf3e;
   font-size: 4em;
 }
+
+
+
+
+
+
