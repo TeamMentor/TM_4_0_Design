@@ -91,7 +91,7 @@ class Login_Controller
   userSignUp: ()=>
     if (@.req.body.password != @.req.body['password-confirm'])
         @res.render(signUp_fail, {errorMessage: 'Passwords don\'t match'})
-        return                       #
+        return
     newUser =
               {
                   username : @.req.body.username,
@@ -113,6 +113,7 @@ class Login_Controller
       if (response.body!=null && response.statusCode == 200)
         signUpResponse = response.body.d
         message= ''
+
         if (signUpResponse.Signup_Status!=0)
           if (signUpResponse.Validation_Results!=null && signUpResponse.Validation_Results.length > 0)
               message = signUpResponse.Validation_Results[0].Message
