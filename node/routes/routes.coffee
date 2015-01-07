@@ -3,9 +3,11 @@ Express_Service     = require('../services/Express-Service')
 Jade_Service        = require('../services/Jade-Service')
 
 Help_Controller     = require('../controllers/Help-Controller')
+Jade_Controller     = require('../controllers/Jade-Controller')
 Login_Controller    = require('../controllers/Login-Controller')
 Library_Controller  = require('../controllers/Library-Controller')
 Search_Controller   = require('../controllers/Search-Controller')
+
 
 
 add_Routes = (app)->
@@ -34,7 +36,9 @@ add_Routes = (app)->
     app.get '/index.html'                                   , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/default.jade'
     app.get '/guest/:page.html'                             , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/' + req.params.page + '.jade'
 
+    #Jade render routes
 
+    Jade_Controller.registerRoutes(app)
     #Redirect to Jade pages
     #app.get '/deploy/html/:area/:page.html'                 , (req, res)-> res.redirect('/' + req.params.area + '/' + req.params.page + '.html')
     
