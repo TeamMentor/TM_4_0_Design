@@ -423,7 +423,7 @@ label {
   background-position: 0px 0px;
   height: 50px;
   margin: 0 auto;
-  width: 250px;
+  max-width: 250px;
 }
 
 #si-logo {
@@ -436,11 +436,9 @@ label {
 
 
 #links {
-  position: relative;
   width: 100%;
   text-align: text-center;
   padding: 0 0 5px 0;
-  background: transparent;
 }
 
 #links ul {
@@ -467,9 +465,7 @@ label {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-  font-size: 12px;
   color: #8aaf3e;
-  line-height: 1em;
 }
 
 #links ul li a:hover {
@@ -832,11 +828,13 @@ table td {
     display: inline-block;
     float: left;
     margin: 7px 0 0 20px;
+    width: 36%;
   }
 
   #links {
     display: inline-block;
     width: 61%;
+    float: right;
   }
 
   #links.icons {
@@ -849,16 +847,11 @@ table td {
   }
 
   #links.text-links ul {
-    padding: 0 0 0 10px;
     text-align: right;
   }
 
   #links.icons ul {
     padding: 0;
-  }
-
-  #links ul li {
-    padding: 0 15px 0 0;
   }
 
   #links ul li a{
@@ -873,10 +866,6 @@ table td {
 }
 
 @media (min-width: 999px) {
-
-  #team-mentor-navigation {
-    height: 65px;
-  }
 
   #links.text-links ul li {
     padding: 0 40px 0 0;

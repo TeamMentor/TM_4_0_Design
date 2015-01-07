@@ -171,10 +171,17 @@ button {
 /* ------>>> LANDING PAGES <<<--------*/
 /* -----------------------------------*/
 
-#about {
-	@extend .landing-page
-	background-position: 0px 600px;
+#about, #about-us, #call-to-action, #clients, #copyright, #features, #footer, #reasons, #usp {
+	text-align: center;
+	width: $full-width;
+}
+
+#about, #call-to-action, #usp {
 	background: url(../assets/stock-img/bg-img.jpg);
+}
+
+#about {
+	background-position: 0px 600px;
 	margin: 65px 0 0 0;
 }
 
@@ -183,24 +190,19 @@ button {
 	line-height: 1.25em;
 }
 #about-us {
-	@extend .landing-page
 	padding: 40px 0 40px 0;
 }
 
 #call-to-action {
-	@extend .landing-page
 	padding: 100px 0 110px 0;
-	background: url(../assets/stock-img/bg-img.jpg);
 	background-position: 0px 1200px;
 }
 
 #clients {
-	@extend .landing-page
 	padding: 40px 0 80px 0;
 }
 
 #copyright {
-	@extend .landing-page
 	padding-bottom: 30px;
 	a {
 		@extend a;
@@ -209,7 +211,6 @@ button {
 }
 
 #features {
-	@extend .landing-page
 	padding: 100px 0 50px 0;
 }
 
@@ -243,9 +244,7 @@ button {
 }
 
 #usp {
-	@extend .landing-page;
 	background-position: 0px 0px;
-	background: url(../assets/stock-img/bg-img.jpg);
 	margin: 65px 0 0 0;
 	padding: 50px 0 80px 0;
 }

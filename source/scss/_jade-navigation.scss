@@ -40,7 +40,6 @@
 			}
 		}
 		#links {
-			position: relative;
 			width: $full-width;
 			padding: 0 0 5px 0;
 			background: transparent;
@@ -53,10 +52,11 @@
 					display: inline;
 					padding: 0 10px 0 0;
 					a {
-						@extend a.action;
-						font-size: 12px;
+						text-transform: uppercase;
+						text-decoration: none;
+						letter-spacing: 1px;
 						&:hover {
-							@extend a.action:hover;
+							text-decoration: none;
 						}
 					}
 				}
@@ -67,19 +67,6 @@
 				ul li {
 					display: inline-block;
 					padding: 0 10px 0 0;
-
-					a {
-						text-transform: uppercase;
-						text-decoration: none;
-						letter-spacing: 1px;
-						font-size: 12px;
-						font-weight: 700;
-						color: $green;
-						line-height: 1em;
-						&:hover {
-							color: $dark-green;
-						}
-					}
 					i {
 						padding: 0 5px 0 0;
 					}
@@ -112,40 +99,35 @@
 	}
 }
 
-table {
+.nav table {
 	width: 100%;
 	font-size: 1em;
 	color: $dark-grey;
-    border-collapse: collapse;
-	td {
-		height: 30px;
-		padding: 0 10px 0 10px
+	border-collapse: collapse;
+	margin-top: -20px;
+	tr {
+		border-bottom: 1px solid $light-grey;
+		td {
+			height: 30px;
+			padding: 5px;
+			font-size: 14px;
+		}
+		&:last-child {
+			border-bottom: transparent;
+		}
+		&:hover {
+			background-color: $light-grey;
+			color: $dark-green;
+		}
 	}
-	.nav {
-		margin-top: -20px;
-		a {
-			text-decoration: none;
-		}
-		tr {
-			border-bottom: 1px solid $light-grey;
-			td {
-				padding: 5px;
-				font-size: 14px
-			}
-			&:last-child {
-				border-bottom: transparent;
-			}
-			&:hover {
-				background-color: $light-grey;
-				color: $dark-green;
-			}
-		}
-		span.badge {
-			float: right;
-		}
-		label {
-			font-weight: normal;
-		}
+	a {
+		text-decoration: none;
+	}
+	span.badge {
+		float: right;
+	}
+	label {
+		font-weight: normal;
 	}
 }
 

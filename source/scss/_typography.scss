@@ -11,42 +11,43 @@
 h1 {
 	font-size: 2em;
 	line-height: 1.25em;
-	color: $grey;
 }
 
 h2 {
 	font-size: 1.625em;
 	line-height: 1.153em;
-	color: $grey;
 }
 
 h3 {
 	font-size: 1.375em;
 	line-height: 1.136em;
+}
+
+h1, h2, h3 {
 	color: $grey;
 }
 
 h4 {
 	font-size: 1.125em;
 	line-height: 1.11em;
-	color: $dark-grey;
 }
 
 h5 {
 	font-size: 1.105em;
 	line-height: 1.11em;
-	color: $dark-grey;
 }
 
 p {
 	font-size: 1em;
 	line-height: 1.5em;
+}
+
+h4, h5, p, a, code {
 	color: $dark-grey;
 }
 
 a {
 	text-decoration: underline;
-	color: $dark-grey;
 	&:hover, &:active, &:focus, a.action:hover, a.action:focus, a.action:active {
 		color: $dark-green;
 	}
@@ -66,7 +67,6 @@ ul, ol {
 code {
 	font-family: monospace, monospace;
 	font-size: 1em;
-	color: $dark-grey;
 }
 
 pre {
