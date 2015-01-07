@@ -301,6 +301,7 @@ table {
 			border-bottom: 1px solid $light-grey;
 			td {
 				padding: 5px;
+				font-size: 14px
 			}
 			&:last-child {
 				border-bottom: transparent;
@@ -335,6 +336,7 @@ table {
 			@extend a.action;
 			color: $grey;
 			font-size: 12px;
+			font-weight: normal;
 			&:hover {
 				color: $green;
 			}

@@ -1610,3 +1610,15 @@ table td {
 table { 
     border-collapse: collapse; 
 }
+
+.nav table td {
+  font-size: 14px;
+}
+
+.nav h5 {
+  font-size: 14px;
+}
+
+.breadcrumbs li a {
+  font-weight: normal;
+}
