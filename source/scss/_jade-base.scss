@@ -69,28 +69,23 @@ label {
 }
 
 input {
-	&[type="checkbox"] {
-		margin: 0;
-	}
 	&[type="text"], &[type="password"], &[type="date"], &[type="datetime"], &[type="datetime-local"], &[type="month"], &[type="week"], &[type="email"], &[type="number"], &[type="search"], &[type="tel"], &[type="time"], &[type="url"] {
-		display: block;
-		height: 3rem;
-		padding: 0.5rem;
-		width: $full-width;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-		border-radius: 3px;
-		font-size: 1em;
+		@extend .border-box
 		background-color: $white;
+		border-radius: 3px;
 		border: 1px solid $grey;
-		box-shadow: none;
 		color: $dark-grey;
-	}
-	&[type="text"]:focus, &[type="password"]:focus, &[type="date"]:focus, &[type="datetime"]:focus, &[type="datetime-local"]:focus, &[type="month"]:focus, &[type="week"]:focus, &[type="email"]:focus, &[type="number"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="time"]:focus, &[type="url"]:focus {
-		background: $white;
-		border-color: $green;
-		outline: medium none;
+		font-size: 1em;
+		height: 3rem;
+		margin: 0;
+		padding: 0 0 0 0.5rem;
+		width: $full-width;
+
+		&:focus {
+			background: $white;
+			border-color: $green;
+			outline: medium none;
+		}
 	}
 }
 
@@ -115,52 +110,60 @@ select {
 		height: 53px;
 	}
 	.input-group-btn {
+		border-left: none;
 		display: table-cell;
 		max-width: $full-width;
 		vertical-align: middle;
 		width: 100px;
-		border-left: none !important;
 	}
 }
-
-//------ BUTTONS
 
 button {
 	@extend a.action;
-	width: $full-width;
 	background-color: $white;
-	&:hover, &:focus, &:active {
-		@extend a.action:hover;
-		background-color: $white;
+	width: $full-width;
+	border-bottom: 2px solid $green;
+	-webkit-box-shadow: inset 0 -2px $green;
+	box-shadow: inset 0 -2px $green;
+	&:hover, &:active {
+		background-color: $light-grey;
+		color: $dark-green;
+		border-bottom: 2px solid $dark-green;
+		-webkit-box-shadow: inset 0 -2px $dark-green;
+		box-shadow: inset 0 -2px $dark-green;
+	}
+	i {
+		font-size: 18px;
+	padding: 0 10px 0 0;
+	color: $green;
+
+	&:hover, &:active {
+		color: $dark-green;
 	}
 	&.btn-search-bar {
-	  padding: 17px 0 17px 0;
-	  border-left: none;
-	  border-radius: 0px;
+		border-left: none;
+		border-radius: 0px;
+		padding: 17px 0 17px 0;
 	}
 }
 
-//------ BADGES
-
 .badge {
+	background-color: $grey;
+	border-radius: 10px;
+	color: $white;
+	font-size: 12px;
 	min-width: 10px;
 	padding: 3px 7px;
-	border-radius: 10px;
 	text-align: center;
-	font-size: 12px;
-	background-color: $grey;
-	color: $white;
 }
 
-//------ ALERTS
-
 .alert {
+	background: $white;
+	border: none;
+	color: $green;
+	font-weight: 700;
 	margin: 0;
 	padding: 15px;
-	border: none;
-	background: $white;
-	font-weight: 700;
-	color: $green;
 }
 
 
@@ -169,77 +172,62 @@ button {
 /* -----------------------------------*/
 
 #about {
-	width: 100%;
-	margin: 65px 0 0 0;
-	height: auto;
-	width: $full-width;
-	text-align: center;
-	background: url(../assets/stock-img/bg-img.jpg);
-	background-color: $green;
+	@extend .landing-page
 	background-position: 0px 600px;
+	background: url(../assets/stock-img/bg-img.jpg);
+	margin: 65px 0 0 0;
 }
-#about h2, #usp h2 {
+
+#about h2, #usp h2, #call-to-action h1 {
 	color: $white;
 	line-height: 1.25em;
 }
 #about-us {
+	@extend .landing-page
 	padding: 40px 0 40px 0;
 }
 
 #call-to-action {
-	width: 100%;
+	@extend .landing-page
 	padding: 100px 0 110px 0;
-	text-align: center;
 	background: url(../assets/stock-img/bg-img.jpg);
 	background-position: 0px 1200px;
-	background-color: $dark-green;
-	h1 {
-		color: $white;
-	}
 }
 
 #clients {
+	@extend .landing-page
 	padding: 40px 0 80px 0;
-	text-align: center;
 }
 
 #copyright {
+	@extend .landing-page
 	padding-bottom: 30px;
 	a {
 		@extend a;
 		font-size: 12px;
-		text-align: center;
 	}
 }
 
 #features {
+	@extend .landing-page
 	padding: 100px 0 50px 0;
-	h2 {
-		text-align: center;
-	}
-	img {
-		vertical-align: middle;
-	}
 }
 
 #footer {
-	position: relative;
-	padding: 15px 0 0 0;
 	margin: 0 auto;
-	width: $full-width;
-	text-align: center;
+	padding: 15px 0 0 0;
 	#si-logo {
-		background:url('../assets/logos/logos.jpg') no-repeat;
 		background-position: 0px -50px;
+		background:url('../assets/logos/logos.jpg') no-repeat;
 		height: 50px;
-		width: 250px;
 		margin: 0 auto;
+		width: 250px;
 	}
 	a {
 		@extend a;
+		font-size: 10px;
 		letter-spacing: 1px;
 		text-transform: uppercase;
-		font-size: 10px;
 	}
 	h6 {
 		margin-top: 0;
@@ -254,40 +242,14 @@ button {
 	}
 }
 
-#usp button, #call-to-action button {
-  color: $green;
-  border: 0;
-  background-color: $white;
-  border-bottom: 2px solid $green;
-  -webkit-box-shadow: inset 0 -2px $green;
-  box-shadow: inset 0 -2px $green;
-
-  	&:hover, &:active {
-  		background-color: $light-grey;
-  		color: $dark-green;
-  		border: 0;
-		border-bottom: 2px solid $dark-green;
-		-webkit-box-shadow: inset 0 -2px $dark-green;
-		box-shadow: inset 0 -2px $dark-green;
-  	}
-
-  	i {
-  		font-size: 18px;
-		padding: 0 10px 0 0;
-		color: $green;
-
-		&:hover, &:active {
-			color: $dark-green;
-		}
-  	}
-}
-
 #usp {
+	@extend .landing-page;
+	background-position: 0px 0px;
+	background: url(../assets/stock-img/bg-img.jpg);
 	margin: 65px 0 0 0;
 	padding: 50px 0 80px 0;
-	width: $full-width;
-	text-align: center;
-	background: url(../assets/stock-img/bg-img.jpg);
-	background-position: 0px 0px;
-	background-color: $green;
+}
+
+#usp button, #call-to-action button {
+	border: 0;
 }
