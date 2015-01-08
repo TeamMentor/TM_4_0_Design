@@ -14,7 +14,8 @@ describe 'routes | routes.test |', ()->
                       '/flare/main-app-view',
                       '/graph/:queryId',
                       '/graph/:queryId/:filters',
-                      '/render/mixin/:file/:mixin',
+                      '/render/mixin/:file/:mixin',   # GET
+                      '/render/mixin/:file/:mixin',   # POST (test blind spot due to same name as GET)
                       '/guest/:page.html',
                       '/help/:page*',
                       '/index.html',
