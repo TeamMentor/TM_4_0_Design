@@ -1,4 +1,5 @@
 extends ../_layouts/page_home.jade
+include ../_mixins/user-mixins
 include ../_mixins/search-mixins
 
 block content
@@ -7,8 +8,6 @@ block content
       .col-3
         .lge-container
           br
-        // lge-container
-      // column
       .col-6
         .lge-container
           +search-bar-input
@@ -16,13 +15,5 @@ block content
           br
           br
           +main-app-view
-        // lge-container
-      // column
       .col-3
         .lge-container
-          //+filters-div
-          //+save-div
-        // lge-container
-      // column
-    // row
-  // application

@@ -3,6 +3,8 @@ path   = require('path')
 jade   = require('jade')
 Config = require('../misc/Config')
 
+require ('../_extra_fluentnode')
+
 class JadeService
     constructor: (config)->
       @.config = config || new Config();
@@ -25,8 +27,7 @@ class JadeService
                                                 .replace(/\./g,'_') + '.txt')
 
     repoPath: ()->
-       #calculate the repo path as 3 folders above the current path
-       __filename.parent_Folder().parent_Folder().parent_Folder()
+       __dirname.path_Combine('../..')          #calculate the repo path as 3 folders above the current path
 
     calculateJadePath: (jadeFile)->
       @.repoPath().path_Combine(jadeFile)
@@ -72,5 +73,19 @@ class JadeService
               return "";
 
       return require(targetFile_Path)(params);
+
+    renderMixin: (file, mixin, params)=>
+      safeFile     = file.to_Safe_String()              # only allow letter, numbers, comma, dash and underscore
+      safeMixin    = mixin.to_Safe_String()
+      mixinsFolder ='/source/jade/_mixins/tmp.jade'     # where the mixin file will be expected to exist
+      dummyJade    = @.calculateJadePath(mixinsFolder)  # file to be provided to jade.compile
+
+      code = "extends ../_layouts/page_clean\n" +           # add html head and body (with TM css, but no nav bar)
+             "include #{safeFile}.jade      \n" +           # imports mixin file
+             "block content                 \n" +           # where rendered mixin will be placed
+             "  +#{safeMixin}             "             # mixin to render
+
+      return jade.compile(code, {filename: dummyJade })(params)
+
 
 module.exports = JadeService;
