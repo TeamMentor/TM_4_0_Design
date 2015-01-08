@@ -6,6 +6,7 @@ Express_Service = require('../services/Express-Service')
 Jade_Service    = require('../services/Jade-Service')
 GitHub_Service  = require('../services/GitHub-Service')
 Graph_Service   = require('../services/Graph-Service')
+TeamMentor_Service = require('../services/TeamMentor-Service')
 
 recentArticles_Cache = []
 breadcrumbs_Cache    = []
@@ -17,9 +18,10 @@ class SearchController
         @config           = config || new Config()
         @jade_Page        = '/source/jade/user/search.jade'
         @jade_Service     = new Jade_Service(@config)
+        @teamMentor_Service = new TeamMentor_Service
         @searchData       = null
-        @defaultUser      = "TMContent"
-        @defaultRepo      = "TM_Test_GraphData"
+        @defaultUser        = 'TMContent'
+        @defaultRepo        = 'TM_Test_GraphData'
         @defaultFolder    = '/SearchData/'
         @defaultDataFile  = 'Data_Validation'        
     
@@ -52,7 +54,8 @@ class SearchController
         request topArticles, (err, response, data)=>
             console.log "data" + data
             jadePage  = 'source/jade/user/main.jade'  # relative to the /views folder
-            viewModel = {}
+            viewModel = { recentArticles: @recentArticles() }
+
             #if false then ->
             #    data = JSON.parse(data).splice(0,4)
             #    topArticles = []
@@ -71,11 +74,27 @@ class SearchController
             #console.log "jadePage: " + jadePage
             @res.render(jadePage, viewModel)
             
+    recentArticles: =>
+        @.req.session ?= {}
+        @.req.session.recent_Articles ?= []
+        recentArticles = []
+        for recentArticle in @.req.session.recent_Articles.take(2)
+            recentArticles.push({href : @.teamMentor_Service.tm_35_Server + '/' + recentArticle.id , title:recentArticle.title})
+        #        .push {href : 'https://tmdev01-uno.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
+        #        break if recentArticles.length >2
+        recentArticles
+
+    recentArticles_add: (id, title)=>
+        @.req.session.recent_Articles ?= []
+        @.req.session.recent_Articles.unshift { id: id , title:title}
+
     showArticle: =>
-        guid = @req.params.guid
+        id = @req.params.guid
         title = @req.params.title
-        recentArticles_Cache.unshift ({ guid: guid , title:title})
-        @res.redirect('https://tmdev01-uno.teammentor.net/'+guid)
+        #recentArticles_Cache.unshift ({ guid: guid , title:title})
+        @recentArticles_add id, title
+        #@res.send(@.req.session)
+        @res.redirect('https://tmdev01-uno.teammentor.net/'+id)
 
 
 

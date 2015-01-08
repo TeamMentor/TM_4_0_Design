@@ -6,46 +6,36 @@ app               = require('../../server')
 Config            = require('../../misc/Config')
 Search_Controller = require('../../controllers/Search-Controller')
 
-require('fluentnode')
 
 describe "controllers | test-Search-Controller |", ->
     
   @.timeout(3500)
 
-  it "Ctor values", ->
+  searchController = null
+
+  it "constructor", ->
       expect(Search_Controller).to.be.an('Function')
 
       req    = {}
       res    = {}
       config = new Config()
-      searchController = new Search_Controller(req, res, config)
 
-      expect(searchController             ).to.be.an     ('Object'  )
-      expect(searchController.req         ).to.be.an     ('Object'  )
-      expect(searchController.res         ).to.be.an     ('Object'  )
-      expect(searchController.config      ).to.be.an     ('Object'  )
-      expect(searchController.config      ).to.be.an     ('Object'  )
-      expect(searchController.jade_Service).to.be.an     ('Object'  )
-      expect(searchController.abc         ).to.not.be.an ('Object'  )
+      using new Search_Controller(req, res, config), ->
+        assert_Is_Null @.searchData
+        @.req               .assert_Is req
+        @.res               .assert_Is res
+        @.config            .assert_Is config
+        @.jade_Page         .assert_Is '/source/jade/user/search.jade'
+        @.jade_Service      .assert_Instance_Of require('../../services/Jade-Service')
+        @.teamMentor_Service.assert_Instance_Of require('../../services/TeamMentor-Service')
+        @.defaultUser       .assert_Is 'TMContent'
+        @.defaultRepo       .assert_Is 'TM_Test_GraphData'
+        @.defaultFolder     .assert_Is '/SearchData/'
+        @.defaultDataFile   .assert_Is 'Data_Validation'
 
-      expect(searchController.req         ).to.equal     (req       )
-      expect(searchController.res         ).to.equal     (res       )
-      expect(searchController.config      ).to.equal     (config    )
-      expect(searchController.searchData  ).to.equal     (null      )
-      expect(searchController.jade_Page   ).to.equal     ('/source/jade/user/search.jade')
+      using new Search_Controller(),->
+        @.config.assert_Is(new Config())
 
-      expect(searchController.defaultUser    ).to.be.an('String')
-      expect(searchController.defaultRepo    ).to.be.an('String')
-      expect(searchController.defaultFolder  ).to.be.an('String')
-      expect(searchController.defaultDataFile).to.be.an('String')
-
-      expect(searchController.renderPage ).to.be.an('Function')
-
-      expect(new Search_Controller().config).to.deep.equal(new Config())
-
-
-  searchController = new Search_Controller()
-  searchController.config.enable_Jade_Cache = true
 
   it 'showSearchFromGraph', (done)->
     req    = { params: queryId : 'Logging'}
@@ -54,8 +44,8 @@ describe "controllers | test-Search-Controller |", ->
                   html.assert_Is_String()
                   done()
     config = new Config()
-    searchController = new Search_Controller(req, res, config)
-    searchController.showSearchFromGraph()
+    using new Search_Controller(req, res, config),->
+      @.showSearchFromGraph()
 
   it 'showSearchFromGraph (with filter)', (done)->
     req    = { params: {queryId : 'Logging' , filters:'abc'}}
@@ -63,31 +53,52 @@ describe "controllers | test-Search-Controller |", ->
         send: (html)->
             html.assert_Is_String()
             done()
-    config = new Config()
-    searchController = new Search_Controller(req, res, config)
-    searchController.showSearchFromGraph()
+    using new Search_Controller(req, res),->
+      @.showSearchFromGraph()
 
   it  'showMainAppView', (done)->
     req    = { params: queryId : 'Logging'}
     res    =
         render: (jadePage,viewModel)->
             #html.assert_Is_String()
-            jadePage.assert_Is('source/jade/user/main.jade')
-            viewModel.assert_Is({})
+            jadePage.assert_Is('../source/jade/user/main.jade')
+            viewModel.assert_Is({recentArticles:[]})
             done()
-    config = new Config()
-    searchController = new Search_Controller(req, res, config)
-    searchController.showMainAppView()
+    using new Search_Controller(req, res),->
+      @.showMainAppView()
+
+  it 'recentArticles recentArticles_add', (done)->
+    id = 'aaaaaaaa_'.add_5_Letters()
+    title= 'an title_'.add_5_Letters()
+    req    = { session: {} }
+    using new Search_Controller(req),->
+      assert_Is_Undefined @.req.session.recent_Articles
+      @.recentArticles_add(id, title)
+      @.req.session.recent_Articles.assert_Is_Array()
+                   .first()        .assert_Is {id:id, title:title}
+      @.recentArticles_add('2', 'abc'); @.req.session.recent_Articles.assert_Size_Is 2
+      @.recentArticles_add(id , title); @.req.session.recent_Articles.assert_Size_Is 3
+
+      tm_35_Server = @.teamMentor_Service.tm_35_Server
+
+      using @.recentArticles(), ->
+        @.assert_Size_Is 2
+        @.first() .assert_Is { href: tm_35_Server + '/' + id , title: title }
+        @.second().assert_Is { href: tm_35_Server + '/' + '2', title: 'abc' }
+        done()
 
   it 'showArticle', (done)->
-    req = { params: queryId : 'Logging'}
+    req = {
+            params: queryId : 'Logging'
+            session: {}
+          }
     res =
         redirect: (url)->
             url.assert_Is('https://tmdev01-uno.teammentor.net/undefined')
             done()
-    config = new Config()
-    searchController = new Search_Controller(req, res, config)
-    searchController.showArticle()
+    using new Search_Controller(req, res),->
+      @.showArticle()
+
   #to redo once we have better offline content mapped to this
 # xit 'renderPage (and check content)', ->
 #   searchController.config.enable_Jade_Cache = false
