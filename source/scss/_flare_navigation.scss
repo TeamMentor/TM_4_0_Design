@@ -1,0 +1,100 @@
+//- Contents
+//--- Navigation
+//----- Top Navigation
+//----- Sub Navigation
+
+
+/* -----------------------------------*/
+/* -------->>> NAVIGATION <<<---------*/
+/* -----------------------------------*/
+
+nav, nav a, #customer, ul#links, ul#lp-links {
+	-webkit-flex: 100%;
+}
+nav {
+	-webkit-flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	-webkit-order: 1;
+	display: -webkit-flex;
+	height: auto;
+	z-index: 99;
+	a {
+		color: $green;
+		font-size: 20px;
+		text-decoration: none;
+		text-transform: uppercase;
+		&:hover {
+			color: $dark-green;
+			text-decoration: none;
+		}
+	}
+	p {
+		color: $green;
+		font-size: 14px;
+		letter-spacing: 1px;
+		&:hover {
+			@extend a:hover;
+		}
+	}
+}
+#customer {
+	-webkit-order: 2;
+	img {
+		margin: 5px 0 0 10px;
+	}
+}
+#logo {
+	-webkit-order: 3;
+	-webkit-flex: 50%;
+}
+#menu-icon, #lp-menu-icon {
+	-webkit-order: 4;
+	-webkit-flex: 10%;
+	text-align: right;
+	padding: 20px 10px 0 0;
+}
+ul#links, ul#lp-links {
+	-webkit-order: 5;
+	list-style-type: none;
+	text-align: center;
+}
+ul#links {
+	display: none;
+	margin: 0 auto;
+	padding-top: 18px;
+}
+ul#lp-links {
+	margin: 10px 10px 0 0;
+	display: none;
+}
+
+/* -----------------------------------*/
+/* ------>>> SUB-NAVIGATION <<<-------*/
+/* -----------------------------------*/
+
+ul.side-nav {
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	list-style-position: outside;
+	font-size: 14px;
+	li {
+		padding: 10px;
+		border-bottom: 1px solid $light-grey;
+		&::last-child {
+			border-bottom: transparent;
+		}
+		&li:hover {
+			background-color: #e3e3e3;
+		}
+		a {
+			text-decoration: none;
+		}
+	}
+	span.badge {
+		margin: 0 auto;
+		vertical-align: middle;
+		float: right;
+	}
+}

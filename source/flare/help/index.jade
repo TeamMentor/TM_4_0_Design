@@ -1,0 +1,13 @@
+extends ../_layouts/flare_page
+include ../getting-started/mixins/getting-started-mixins
+
+block content
+	#application
+		#left-nav
+			+help-navigation
+		#results
+			#summary
+				+team-mentor-summary
+			br
+			include:md ../content/teamMentor/help/video.md
+		#right-nav

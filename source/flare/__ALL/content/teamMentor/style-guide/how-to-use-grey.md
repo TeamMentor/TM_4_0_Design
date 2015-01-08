@@ -1,1 +1,0 @@
-The light grey should be used as the lead colour for the opening headline on a page. An article title, filters headline, navigate options, user settings etc. The first thing that users read will be in this colour.

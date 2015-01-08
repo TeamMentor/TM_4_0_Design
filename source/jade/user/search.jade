@@ -6,53 +6,19 @@ include ../_mixins/search-mixins.jade
 block content
 	//weird CSS fix to handle Chrome prob when <form> exists
 	style
-					|.pull-right { float  : right !important; }
-					|.navbar ul  { display: inline-block;     }
+		|.pull-right { float  : right !important; }
+		|.navbar ul  { display: inline-block;     }
 
 	#application
 		.row
 			.col-3
 				.lge-container
 					+directory-list
-					//pre
-						For QA (all data from Github):
-						br
-						br
-						b search data
-						br
-						a(href='/search') 'Data Validation'
-						br
-						a(href='/search/Input_Validation') 'Input Validation'
-						br
-						a(href='/search/No_Articles') 'No Articles'
-						br
-						br
-						b graph data
-						br
-						a(href='/graph') 'Data from Graph'
-						br
-						br
-						span  see
-						a(href='https://github.com/TMContent/TM_Test_GraphData', target='_blank') TM_Test_GraphData
-						span  repo
-				// lge-container
-			// column
 			.col-6
 				.lge-container
 					+breadcrumbs
-					//br
-					//+search-bar-input
-					//br
-					//br
-					//br
 					+results-save-clear
 					+articles-list
-				// lge-container
-			// column
 			.col-3
 				.lge-container
 					+filters-div
-				// lge-container
-			// column
-		// row
-	// application

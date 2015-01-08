@@ -1,0 +1,20 @@
+extends ../_layouts/flare_page_landing
+include mixins/getting-started-mixins
+
+block content
+	#application
+		#loginwall
+			dl.tabs(data-tab='data-tab')
+				dd.active
+					a(href='#signup') Sign Up
+				dd
+					a(href='#login') Login
+			.tabs-content
+				#signup.content.active
+					+flare-alert
+					+sign-up-form
+				#login.content
+					+flare-alert
+					+login-form
+		#summary
+			+team-mentor-summary

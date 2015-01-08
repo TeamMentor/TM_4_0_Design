@@ -12,9 +12,6 @@ block content
 							each view in folder.views
 								(href='owasp.html')= view.caption
 									span.badge= view.guidanceItems.length
-						// list-group
-				// lge-container
-			// column
 			.col-6
 				.lge-container
 					+search-bar-input
@@ -23,14 +20,7 @@ block content
 					br
 					+results-save-clear
 					+articles-list
-				// lge-container
-			// column
-
 			.column-3
 				.lge-container
 					+filters-div
 					+save-div
-				// lge-container
-			// column
-		// row
-	// application

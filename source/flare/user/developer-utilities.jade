@@ -1,0 +1,11 @@
+extends ../_layouts/flare_page
+include ../home/mixins/application-mixins
+include mixins/user-mixins
+
+block content
+	#application
+		#left-nav
+			+links_user_pages
+		#results
+			h3 Developer Utilities
+		#right-nav

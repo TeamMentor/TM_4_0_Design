@@ -36,12 +36,14 @@
 				background-position: 0px 0px;
 				background:url('../assets/logos/logos.jpg') no-repeat;
 				height: 50px;
+				margin: 0 auto;
 				width: 250px;
+  				margin-bottom: 10px;
 			}
 		}
 		#links {
 			width: $full-width;
-			padding: 0 0 5px 0;
+			padding: 0 10px 5px 0;
 			background: transparent;
 			text-align: center;
 			ul {
@@ -131,32 +133,43 @@
 	}
 }
 
-.breadcrumbs {
-	padding: 0 0 0 10px;
-	background: $white;
-	border: none;
-	li {
-		display: inline-block;
-		&.current a {
-			color: $green;
-			text-decoration: none;
-		}
+.sub-nav {
+	display: block;
+	width: auto;
+	overflow: hidden;
+	margin: 1.25rem 0 1.125rem;
+	padding: 1em;
+	border: 1px solid $light-grey;
+	border-radius: 3px;
+	dt {
+		text-transform: uppercase;
+		color: $grey;
+	}
+	dt, dd, li {
+		float: left;
+		display: inline;
+		margin-left: 1rem;
+		margin-bottom: 0;
+		font-weight: normal;
+		font-size: 12px;
 		a {
-			@extend a.action;
+			text-decoration: none;
 			color: $grey;
-			font-size: 12px;
-			font-weight: normal;
-			&:hover {
-				color: $green;
+			padding: 0.1875rem 1rem;
+			:hover {
+				color: $dark-green;
 			}
 		}
-		&:first-child:before {
-			content: " ";
-			margin: 0px;
-		}
-		&:before {
-			content: "/";
-			margin: 0 20px;
+		&:active a {
+			font-weight: normal;
+			border-bottom: 2px solid $green;
+			padding-bottom: 10px;
+			cursor: default;
+			color: $green;
+			&:hover {
+				border-bottom: 2px solid $dark-green;
+				color: $dark-green;
+			}
 		}
 	}
 }
