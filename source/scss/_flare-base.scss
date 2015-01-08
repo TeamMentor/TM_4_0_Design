@@ -1,0 +1,126 @@
+//- Contents
+//--- Base
+//----- Structure
+//----- Application
+//----- Landing Pages
+
+
+/* -----------------------------------*/
+/* -------->>> STRUCTURE <<<----------*/
+/* -----------------------------------*/
+
+body {
+	-webkit-flex-wrap: wrap;
+	display: -webkit-flex;
+	> * {
+		@extend .border-box;
+	}
+}
+
+/* -----------------------------------*/
+/* -------->>> APPLICATION <<<--------*/
+/* -----------------------------------*/
+
+#application, #landing-page {
+	-webkit-flex-wrap: wrap;
+	-webkit-order: 6;
+	display: -webkit-flex;
+	overflow-y: auto;
+}
+
+#application {
+	margin: 0;
+	max-height:90%;
+	padding: 10px;
+}
+
+#left-nav, #loginwall {
+	-webkit-order: 7;
+}
+
+#results {
+	-webkit-order: 9;
+	min-height: 70%;
+}
+
+#right-nav, #summary {
+	-webkit-order: 8;
+}
+
+#left-nav, #results, #right-nav, #loginwall, #summary {
+	-webkit-flex: $full-width;
+	overflow-y: auto;
+}
+
+#left-nav, #right-nav {
+	min-height: 1px;
+	&:empty {
+		display: none;
+	}
+}
+
+#landing-page {
+	height: 90%;
+	i {
+		color: $green;
+		font-size: 4em;
+	}
+}
+
+#usp {
+	margin: 0;
+	padding-top: 70px;
+}
+#about, #features {
+	margin: 0;
+}
+#footer {
+	padding: 0 0 10px 0;
+	h6 {
+		margin: 0;
+	}
+}
+
+#article-options dl.tabs dd, #related-options dl.tabs dd {
+	width: $full-width;
+}
+
+.alert-box {
+  background-color: $white;
+  border: 1px solid $green;
+  color: $green;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+button.postfix {
+  border-left: transparent;
+  border-radius: 0px;
+  border: 1px solid $grey;
+  height: 48px;
+  padding: 15px 5px 5px 5px;
+}
+
+#filters {
+	input[type=radio], input[type=checkbox] {
+		display: none;
+		+ label {
+			background-color: $grey;
+			background-repeat: no-repeat;
+			display: inline-block;
+			float: right;
+			line-height: 10px;
+			padding: 0 0 0 40px;
+		}
+		&:checked + label {
+			background-position: 0 -15px;
+		}
+	}
+	input[type=checkbox] + label {
+		background-image:url('../assets/icons/tick.png');
+	}
+	input[type=radio] + label {
+		background-image: url('../assets/icons/radio.png');
+		margin-left: 20px;
+	}
+}

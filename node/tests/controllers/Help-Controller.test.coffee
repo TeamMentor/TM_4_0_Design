@@ -136,8 +136,8 @@ describe 'controllers | Help-Controller.test', ()->
 
 
     it 'check that index page markdown transform', (done)->
-      root_Folder = __filename.parent_Folder().parent_Folder().parent_Folder().parent_Folder()
-      page_index_File     = root_Folder.path_Combine('source/content/page-index.md').assert_File_Exists()
+      root_Folder         = __dirname.path_Combine('../../..')
+      page_index_File     = root_Folder.path_Combine('source/content/help/page-index.md').assert_File_Exists()
       page_index_Markdown = page_index_File.file_Contents() .assert_Contains('## TEAM Mentor Documents')
       page_index_Html     = marked(page_index_Markdown)     .assert_Contains('<h2 id="team-mentor-documents">TEAM Mentor Documents</h2>')
 

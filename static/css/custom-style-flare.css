@@ -127,6 +127,7 @@ ul#lp-links {
   margin: 0px 20px 0 0;
   text-align: center;
   list-style-type: none;
+  display: none;
 }
 
 nav a {
@@ -193,13 +194,11 @@ nav a p:hover, nav a:hover {
   line-height: 10px;
   background-repeat: no-repeat;
   cursor: pointer;
+  background-image: url('../assets/icons/radio.png');
 }
 
 #filters input[type=radio]:checked + label {
   background-position: 0 -15px;
-}
-#filters label{
-  background-image: url('../assets/icons/radio.png');
 }
 
 #filters input[type=checkbox] {
@@ -212,14 +211,11 @@ nav a p:hover, nav a:hover {
   line-height:10px;
   background-repeat:no-repeat;
   cursor:pointer;
+  background-image:url('../assets/icons/tick.png');
 }
 
 #filters input[type=checkbox]:checked + label {
   background-position: 0 -15px;
-}
-
-#filters label.checkbox {
-  background-image:url('../assets/icons/tick.png');
 }
 
 .list-group table tr td {
@@ -405,10 +401,11 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 
   ul#lp-links {
     padding: 15px 0 0 0;
-    -webkit-flex: 60%;
+    -webkit-flex: 50%;
     -webkit-order: 4;
     text-align: right;
     justify-content: flex-end;
+    display: block;
   }
 
   ul#links li {
@@ -454,6 +451,48 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   }
 }
 
+.sub-nav {
+  display: block;
+  width: auto;
+  overflow: hidden;
+  margin: 1.25rem 0 1.125rem;
+  padding: 1em 1em 1em 0;
+  border-radius: 3px; }
+.sub-nav dt {
+  text-transform: uppercase;
+  color: #aaaaaa; }
+.sub-nav dt,
+.sub-nav dd,
+.sub-nav li {
+  float: left;
+  display: inline;
+  margin-left: 1rem;
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 12px; }
+.sub-nav dt a,
+.sub-nav dd a,
+.sub-nav li a {
+  text-decoration: none;
+  color: #aaaaaa;
+  padding: 0.1875rem 1rem; }
+.sub-nav dt a:hover,
+.sub-nav dd a:hover,
+.sub-nav li a:hover {
+  color: #6c9020; }
+.sub-nav dt.active a,
+.sub-nav dd.active a,
+.sub-nav li.active a {
+  font-weight: normal;
+  border-bottom: 2px solid #8aaf3e;
+  padding-bottom: 10px;
+  cursor: default;
+  color: #8aaf3e; }
+.sub-nav dt.active a:hover,
+.sub-nav dd.active a:hover,
+.sub-nav li.active a:hover {
+  border-bottom: 2px solid #6c9020;
+  color: #6c9020; }
 
 
 
@@ -1114,7 +1153,7 @@ table {
 .button.postfix {
   border: 1px solid #aaaaaa;
   height: 48px;
-  padding: 5px;
+  padding: 15px 5px 5px 5px;
   border-radius: 0px;
   border-left: transparent;
 }
@@ -1126,3 +1165,41 @@ table {
 i {
   color: #8baf3e;
 }
+
+
+table span.badge {
+  float: right;
+}
+
+ul.side-nav {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-position: outside;
+  font-size: 14px;
+}
+
+ul.side-nav li {
+  padding: 10px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+ul.side-nav li:last-child {
+  border-bottom: transparent;
+}
+
+ul.side-nav li:hover {
+  background-color: #e3e3e3;
+}
+
+ul.side-nav li a {
+  text-decoration: none;
+}
+
+ul.side-nav span.badge {
+  margin: 0 auto;
+  vertical-align: middle;
+  float: right;
+}
+

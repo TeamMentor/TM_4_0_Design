@@ -1,0 +1,91 @@
+//- Contents
+//--- Media Queries
+
+
+/* -----------------------------------*/
+/* ------>>> MEDIA QUERIES <<<--------*/
+/* -----------------------------------*/
+
+
+/* -------- 56.25em (900px) --------- */
+
+@media only screen and (min-width : 56.25em) {
+	nav {
+		max-height: 14%;
+		-webkit-flex-wrap: wrap;
+	}
+	#application {
+		max-height: 86%;
+		flex-direction: row;
+		-webkit-flex-wrap: nowrap;
+	}
+	#logo {
+		-webkit-flex: 24%;
+	}
+	#left-nav:empty, #right-nav:empty {
+		display: block;
+	}
+	#left-nav {
+		-webkit-flex: 25%;
+	}
+	#loginwall {
+		-webkit-order: 8;
+	}
+	#summary {
+		-webkit-order: 7;
+	}
+	#loginwall, #summary {
+		padding: 0 20px 20px 20px;
+	}
+	#results {
+		-webkit-order: 8;
+		-webkit-flex: 50%;
+	}
+	#menu-icon, #help-icon {
+		-webkit-order: 4;
+		-webkit-flex: 25%;
+		float: right;
+		padding: 20px 20px 0 0;
+	}
+	#lp-menu-icon {
+		-webkit-order: 3;
+		display: none;
+	}
+	#right-nav {
+		-webkit-order: 9;
+		-webkit-flex: 25%;
+	}
+	ul#links {
+		-webkit-order: 3;
+		-webkit-flex: 50%;
+		flex-direction: row;
+	}
+	ul#lp-links {
+		padding: 15px 0 0 0;
+		-webkit-flex: 50%;
+		-webkit-order: 4;
+		text-align: right;
+		justify-content: flex-end;
+		display:block;
+	}
+	ul#links li {
+		-webkit-flex-wrap: nowrap;
+		display: inline-block;
+	}
+	ul#lp-links li {
+		padding-left: 40px;
+		display: inline-block;
+		-webkit-flex-wrap: nowrap;
+	}
+	#article-options dl.tabs dd {
+		width: 33%;
+	}
+	#related-options dl.tabs dd {
+		width: 50%;
+	}
+	#loginwall > * {
+		width: 90%;
+		margin: 0 auto;
+		padding-top: 20px;
+	}
+}

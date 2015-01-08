@@ -1,1 +1,0 @@
-White should only be used a background colour or font colour in places where there are colours or images as backgrounds (eg. Landing Page).
