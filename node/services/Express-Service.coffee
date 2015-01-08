@@ -9,6 +9,8 @@ express         = require('express')
 class Express_Service
   constructor: ()->
     @.app         = express()
+    @loginEnabled = true;
+    @.app.port    = process.env.PORT || 1337;
 
   setup: ()=>
     @set_BodyParser()
@@ -16,7 +18,7 @@ class Express_Service
     @set_Static_Route()
     @add_Session()      # for now not using the async version of add_Session
     @set_Views_Path()
-
+    @
   add_Session: (callback)=>
 
     expressSession = new Express_Session({ filename: './.tmCache/_sessionData' ,session:session})
