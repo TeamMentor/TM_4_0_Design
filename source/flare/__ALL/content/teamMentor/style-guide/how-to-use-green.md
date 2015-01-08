@@ -1,1 +1,0 @@
-The brand colour should be used for the company name and for action links (save, login, start your free trial etc.) as well as icons.
