@@ -1,33 +1,23 @@
 extends ../_layouts/page
 block content
-	#application
-		.row
-			.col-3#help-nav
-				.lge-container
-					if library
-						each view in library.Views
-							h4= view.Title
-							.nav
-								table
-									each article in view.Articles
-										tr
-											td
-												a(href= '/help/' + article.Id)
-													= article.Title
-							// list-group
-				// lge-container
-			// column
-			.col-6#help-docs
-				.lge-container
-					if title
-						h2= title
-					!= content
-				// lge-container
-			// column
-			.col-3
-				.lge-container
-					br
-				// lge-container
-			// column
-		// row
-	// application
+	.row
+		.col-3#help-nav
+			.lge-container
+				if library
+					each view in library.Views
+						h4= view.Title
+						.nav
+							table
+								each article in view.Articles
+									tr
+										td
+											a(href= '/help/' + article.Id)
+												= article.Title
+		.col-6#help-docs
+			.lge-container
+				if title
+					h2= title
+				!= content
+		.col-3
+			.lge-container
+				br

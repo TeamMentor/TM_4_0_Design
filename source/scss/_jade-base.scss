@@ -1,0 +1,253 @@
+//- Contents
+//--- Base
+//----- Structure
+//----- Application
+
+
+/* -----------------------------------*/
+/* -------->>> STRUCTURE <<<----------*/
+/* -----------------------------------*/
+
+html {
+	font: $font-stack;
+}
+
+body {
+	background: $white;
+	max-width: $full-width;
+}
+
+img {
+	margin: 0 auto;
+}
+
+/* -----------------------------------*/
+/* ------->>> APPLICATION <<<---------*/
+/* -----------------------------------*/
+
+#application {
+	height: $full-width;
+	margin: 80px 0 0 0;
+	width: $full-width;
+}
+
+#loginwall {
+	padding: 80px 0 20px 0;
+}
+
+#loginwall, #summary {
+	margin: 0 auto;
+	max-width: 95%;
+}
+
+#help-nav, #help-docs {
+	margin-top: 90px;
+	h1 {
+		font-size: 1.625em;
+	}
+	h2 {
+		font-size: 2em;
+	}
+}
+
+.lge-container {
+	margin: 0 auto;
+	max-width: 96%;
+}
+
+form, .form-group {
+	list-style-type: none;
+	margin: 0 0 15px 0;
+}
+
+label {
+	color: $dark-grey;
+	display: inline-block;
+	margin: 0 0 5px 0;
+	padding: 3px 0 0 0;
+}
+
+input {
+	&[type="text"], &[type="password"], &[type="date"], &[type="datetime"], &[type="datetime-local"], &[type="month"], &[type="week"], &[type="email"], &[type="number"], &[type="search"], &[type="tel"], &[type="time"], &[type="url"] {
+		@extend .border-box
+		background-color: $white;
+		border-radius: 3px;
+		border: 1px solid $grey;
+		color: $dark-grey;
+		font-size: 1em;
+		height: 3rem;
+		margin: 0 0 10px 0;
+		padding: 0 0 0 0.5rem;
+		width: $full-width;
+
+		&:focus {
+			background: $white;
+			border-color: $green;
+			outline: medium none;
+		}
+	}
+}
+
+textarea {
+	@extend input[type="text"];
+	height: auto;
+	&:focus {
+		@extend input[type="text"]:focus;
+	}
+}
+
+select {
+	@extend input[type="text"];
+}
+
+.input-group {
+	display: table;
+	float: left;
+	width: $full-width;
+	.form-control {
+		display: table-cell;
+		height: 53px;
+	}
+	.input-group-btn {
+		border-left: none;
+		display: table-cell;
+		max-width: $full-width;
+		vertical-align: middle;
+		width: 100px;
+	}
+}
+
+button {
+	@extend a.action;
+	background-color: $white;
+	width: $full-width;
+	border-bottom: 2px solid $green;
+	-webkit-box-shadow: inset 0 -2px $green;
+	box-shadow: inset 0 -2px $green;
+	&:hover, &:active {
+		background-color: $light-grey;
+		color: $dark-green;
+		border-bottom: 2px solid $dark-green;
+		-webkit-box-shadow: inset 0 -2px $dark-green;
+		box-shadow: inset 0 -2px $dark-green;
+	}
+	i {
+		font-size: 18px;
+	padding: 0 10px 0 0;
+	color: $green;
+
+	&:hover, &:active {
+		color: $dark-green;
+	}
+	&.btn-search-bar {
+		border-left: none;
+		border-radius: 0px;
+		padding: 17px 0 17px 0;
+	}
+}
+
+.badge {
+	background-color: $grey;
+	border-radius: 10px;
+	color: $white;
+	font-size: 12px;
+	min-width: 10px;
+	padding: 3px 7px;
+	text-align: center;
+}
+
+.alert {
+	background: $white;
+	border: none;
+	color: $green;
+	font-weight: 700;
+	margin: 0;
+	padding: 15px;
+}
+
+
+/* -----------------------------------*/
+/* ------>>> LANDING PAGES <<<--------*/
+/* -----------------------------------*/
+
+#about, #about-us, #call-to-action, #clients, #copyright, #features, #footer, #reasons, #usp {
+	text-align: center;
+	width: $full-width;
+}
+
+#about, #call-to-action, #usp {
+	background: url(../assets/stock-img/bg-img.jpg);
+}
+
+#about {
+	background-position: 0px 600px;
+	margin: 65px 0 0 0;
+}
+
+#about h2, #usp h2, #call-to-action h1 {
+	color: $white;
+	line-height: 1.25em;
+}
+#about-us {
+	padding: 40px 0 40px 0;
+}
+
+#call-to-action {
+	padding: 100px 0 110px 0;
+	background-position: 0px 1200px;
+}
+
+#clients {
+	padding: 40px 0 80px 0;
+}
+
+#copyright {
+	padding-bottom: 30px;
+	a {
+		@extend a;
+		font-size: 12px;
+	}
+}
+
+#features {
+	padding: 100px 0 50px 0;
+}
+
+#footer {
+	margin: 0 auto;
+	padding: 15px 0 0 0;
+	#si-logo {
+		background-position: 0px -50px;
+		background:url('../assets/logos/logos.jpg') no-repeat;
+		height: 50px;
+		margin: 0 auto;
+		width: 250px;
+	}
+	a {
+		@extend a;
+		font-size: 10px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+	h6 {
+		margin-top: 0;
+		color: $dark-grey;
+	}
+}
+
+#reasons {
+	padding: 70px 0 0 0;
+	h2 {
+		text-align: center;
+	}
+}
+
+#usp {
+	background-position: 0px 0px;
+	margin: 65px 0 0 0;
+	padding: 50px 0 80px 0;
+}
+
+#usp button, #call-to-action button {
+	border: 0;
+}

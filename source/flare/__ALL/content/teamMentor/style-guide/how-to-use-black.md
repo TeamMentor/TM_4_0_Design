@@ -1,1 +1,0 @@
-Black is used very sparingly as it’s harsh on a straight white background. Only use it for real emphasis and always try to use the dark grey first.

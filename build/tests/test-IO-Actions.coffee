@@ -48,21 +48,16 @@ describe 'test-IO-Actions',->
     IO_Actions.assert_Is_Function().ctor().assert_Is_Object()
     io_Actions.assert_Is_Object()
 
-  test_Copy_1_file = (copy_Method, next)->
+  it 'copy_File', (done)->
+    io_Actions.copy_File.assert_Is_Function()
     target_File_1 = tmp_File_1.append('.new')
     target_File_1.file_Delete().assert_Is_True()
-    copy_Method tmp_File_1, target_File_1, ->
+    io_Actions.copy_File tmp_File_1, target_File_1, ->
       target_File_1.assert_File_Exists()
-                   .file_Contents().assert_Is(file_Contents_1)
+                  .file_Contents().assert_Is(file_Contents_1)
 
       target_File_1.file_Delete().assert_Is_True()
-      next()
-
-  it 'copy_File , file_Copy', (done)->
-    io_Actions.copy_File.assert_Is_Function()
-    io_Actions.file_Copy.assert_Is_Function()
-    test_Copy_1_file io_Actions.copy_File, ->
-      test_Copy_1_file io_Actions.file_Copy, done
+      done()
 
   it 'copy_Folder', (done)->
     io_Actions.copy_Folder source_Folder, target_Folder, ->

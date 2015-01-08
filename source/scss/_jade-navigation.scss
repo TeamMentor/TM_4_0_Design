@@ -1,0 +1,175 @@
+//- Contents
+//--- Navigation
+//----- Top Navigation
+//----- Sub Navigation
+//-------- List Groups
+//-------- Tables
+//-------- Breadcrumbs
+
+/* -----------------------------------*/
+/* ------>>> TOP NAVIGATION <<<-------*/
+/* -----------------------------------*/
+
+.fixed {
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: $full-width;
+	z-index: 99;
+	#customer-navigation {
+		background-color: $white;
+		display: block;
+		max-height: 100px;
+		ul {
+			padding: 5px 0 0 25px;
+			text-align: center;
+		}
+	}
+	#team-mentor-navigation {
+		background-color: $white;
+		height: 80px;
+		text-align: center;
+		#title-area {
+			margin: 0 auto;
+			width: 250px;
+			#tm-logo {
+				background-position: 0px 0px;
+				background:url('../assets/logos/logos.jpg') no-repeat;
+				height: 50px;
+				margin: 0 auto;
+				width: 250px;
+  				margin-bottom: 10px;
+			}
+		}
+		#links {
+			width: $full-width;
+			padding: 0 10px 5px 0;
+			background: transparent;
+			text-align: center;
+			ul {
+				padding: 0;
+				width: $full-width;
+				list-style-type: none;
+				li {
+					display: inline;
+					padding: 0 10px 0 0;
+					a {
+						text-transform: uppercase;
+						text-decoration: none;
+						letter-spacing: 1px;
+						&:hover {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+			&.icons {
+				display: inline-block;
+				margin-top: 15px;
+				ul li {
+					display: inline-block;
+					padding: 0 10px 0 0;
+					i {
+						padding: 0 5px 0 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* -----------------------------------*/
+/* ------>>> SUB NAVIGATION <<<-------*/
+/* -----------------------------------*/
+
+.list-group {
+	height: auto;
+	h5, h4 {
+		margin: 5px 0 0 0;
+	}
+	a {
+		display: block;
+		padding: 11px;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+			background-color: $light-grey;
+		}
+	}
+	span.badge {
+		float: right;
+	}
+}
+
+.nav table {
+	width: 100%;
+	font-size: 1em;
+	color: $dark-grey;
+	border-collapse: collapse;
+	margin-top: -20px;
+	tr {
+		border-bottom: 1px solid $light-grey;
+		td {
+			height: 30px;
+			padding: 5px;
+			font-size: 14px;
+		}
+		&:last-child {
+			border-bottom: transparent;
+		}
+		&:hover {
+			background-color: $light-grey;
+			color: $dark-green;
+		}
+	}
+	a {
+		text-decoration: none;
+	}
+	span.badge {
+		float: right;
+	}
+	label {
+		font-weight: normal;
+	}
+}
+
+.sub-nav {
+	display: block;
+	width: auto;
+	overflow: hidden;
+	margin: 1.25rem 0 1.125rem;
+	padding: 1em;
+	border: 1px solid $light-grey;
+	border-radius: 3px;
+	dt {
+		text-transform: uppercase;
+		color: $grey;
+	}
+	dt, dd, li {
+		float: left;
+		display: inline;
+		margin-left: 1rem;
+		margin-bottom: 0;
+		font-weight: normal;
+		font-size: 12px;
+		a {
+			text-decoration: none;
+			color: $grey;
+			padding: 0.1875rem 1rem;
+			:hover {
+				color: $dark-green;
+			}
+		}
+		&:active a {
+			font-weight: normal;
+			border-bottom: 2px solid $green;
+			padding-bottom: 10px;
+			cursor: default;
+			color: $green;
+			&:hover {
+				border-bottom: 2px solid $dark-green;
+				color: $dark-green;
+			}
+		}
+	}
+}

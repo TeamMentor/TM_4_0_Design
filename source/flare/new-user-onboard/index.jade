@@ -1,0 +1,11 @@
+extends ../_layouts/flare_page
+include mixins/new-user-onboard-mixins
+
+block content
+	#application
+		#left-nav
+		#results
+			include:md ../content/teamMentor/new-user-onboard/welcome.md
+			br
+			+new-user-onboard-welcome-buttons
+		#right-nav

@@ -1,0 +1,13 @@
+extends ../_layouts/flare_page
+include mixins/new-user-onboard-mixins
+include ../home/mixins/application-mixins
+
+block content
+	#application
+		#left-nav
+		#results
+			+flare-search-bar-input
+			+flare-results-save-clear
+			+flare-articles-list
+		#right-nav
+			+step-two-instructions

@@ -1,0 +1,10 @@
+extends ../_layouts/flare_page
+include mixins/articles-mixins
+
+block content
+	#application
+		#left-nav
+			+links-home__navigate
+		#results
+			+flare-saved-articles-list
+		#right-nav

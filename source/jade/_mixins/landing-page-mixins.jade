@@ -5,12 +5,14 @@ mixin usp-div
 		.lge-container
 			.row
 				.col-offset-2.col-8
-					include:md ../../flare/__ALL/content/teamMentor/landing-pages/usp.md
+					include:md ../../content/landing-pages/usp.md
 					br
 					.row
 						.col-offset-2.col-8
 							a(href='/guest/sign-up.html')
-								button.btn-landing-page Start your free trial today
+								button
+									i.fi-key
+									| Start your free trial today
 
 mixin reasons-div
 	#reasons
@@ -20,23 +22,24 @@ mixin reasons-div
 					h2 With TEAM Mentor, you can
 					table
 						tr
-							td
-								img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
+							td.text-center
+								i.fi-clipboard-pencil
 							td
 								h4
-									include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-1.md
+									include:md ../../content/landing-pages/selling-point-1.md
 						tr
-							td
-								img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
+							td.text-center
+								i.fi-arrows-in
 							td
 								h4
-									include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-2.md
+									include:md ../../content/landing-pages/selling-point-2.md
 						tr
-							td
-								img(src='/deploy/assets/icons/integrate.png', alt="EXPAND the development team's knowledge and improve process")
+							td.text-center
+								i.fi-checkbox
 							td
 								h4
-									include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-3.md
+									include:md ../../content/landing-pages/selling-point-3.md
+
 
 mixin clients-div
 	#clients
@@ -44,32 +47,32 @@ mixin clients-div
 			h2 Our clients love us (and we think you will too!)
 			.row
 				.col-4
-					img(src='/static/assets/clients/elsevier.png')
+					img(src='/static/assets/clients/elsevier.jpg')
 				.col-4
-					img(src='/static/assets/clients/fedex.png')
+					img(src='/static/assets/clients/fedex.jpg')
 				.col-4
-					img(src='/static/assets/clients/massmutual.png')
+					img(src='/static/assets/clients/massmutual.jpg')
 			.row
 				.col-4
-					img(src='/static/assets/clients/microsoft.png')
+					img(src='/static/assets/clients/microsoft.jpg')
 				.col-4
-					img(src='/static/assets/clients/symantec.png')
+					img(src='/static/assets/clients/symantec.jpg')
 				.col-4
-					img(src='/static/assets/clients/ubs.png')
+					img(src='/static/assets/clients/ubs.jpg')
 
 mixin about-div
 	#about
 		.lge-container
 			.row
 				.col-offset-2.col-8
-					include:md ../../flare/__ALL/content/teamMentor/landing-pages/about-tm-tagline.md
+					include:md ../../content/landing-pages/about-tm-tagline.md
 
 mixin about-us-div
 	#about-us
 		.lge-container
 			.row
 				.col-offset-3.col-6
-					include:md ../../flare/__ALL/content/teamMentor/landing-pages/about-tm-summary.md
+					include:md ../../content/landing-pages/about-tm-summary.md
 
 mixin features-div
 	#features
@@ -77,28 +80,27 @@ mixin features-div
 			.row
 				.col-offset-3.col-6
 					h3.text-center TEAM Mentor provides intelligence to fix vulnerabilities and comply
-					br
 					table
 						tr
+							td.text-center
+								i.fi-check
 							td
-								img(src='/deploy/assets/icons/compliance.png', alt='Delivers compliance-specific secure coding guidance')
-							td
-								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-1.md
+								include:md ../../content/landing-pages/feature-1.md
 						tr
+							td.text-center
+								i.fi-loop
 							td
-								img(src='/deploy/assets/icons/integrate.png', alt='Integrates with multiple static analysis tools and developer environments')
-							td
-								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-2.md
+								include:md ../../content/landing-pages/feature-2.md
 						tr
+							td.text-center
+								i.fi-clipboard-notes
 							td
-								img(src='/deploy/assets/icons/crossreferences.png', alt='Stores and cross-references your security policies')
-							td
-								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-3.md
+								include:md ../../content/landing-pages/feature-3.md
 						tr
+							td.text-center
+								i.fi-arrows-in
 							td
-								img(src='/deploy/assets/icons/reduces.png', alt='Provides guidance to assist developers')
-							td
-								include:md ../../flare/__ALL/content/teamMentor/landing-pages/feature-4.md
+								include:md ../../content/landing-pages/feature-4.md
 
 
 mixin call-to-action-div
@@ -106,18 +108,21 @@ mixin call-to-action-div
 		.lge-container
 			.row
 				.col-offset-2.col-8
-					include:md ../../flare/__ALL/content/teamMentor/landing-pages/call-to-action.md
+					include:md ../../content/landing-pages/call-to-action.md
 					br
 					br
 					.row
 						.col-offset-2.col-8
 							a(href='/guest/sign-up.html')
-								button(type='button') See for yourself
+								button
+									i.fi-eye
+									| See for yourself
 
 //- landing-page_footer
 mixin footer-div
 	#footer
 		.lge-container
-			.row
-				.col-offset-2.col-8
-					img(src='/static/assets/logos/si-logo.png')
+			#footer-img
+				#si-logo
+					br
+				h6 TEAM Mentor v 4.0

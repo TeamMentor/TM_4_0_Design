@@ -1,168 +1,138 @@
 /*jslint node: true */
 "use strict";
-var request = require('request');
+var request = require('request')
 
 var users = [ { username : 'tm'   , password : 'tm'   } ,
-    { username : 'user' , password : 'a'     } ,
-    { username : 'roman', password : 'longpassword'     }
-];
+              { username : 'user' , password : 'a'     } ,
+              { username : 'roman', password : 'longpassword'     }
+            ];
+            
+var loginPage         = '/guest/login-Fail.html'
+var mainPage_user     = '/user/main.html'
+var mainPage_no_user  = '/guest/default.html'
 
-var loginPage         = 'source/jade/guest/login-Fail.jade';
-var signUpFailPage    = 'source/jade/guest/sign-up-Fail.jade';
-var mainPage_user     = '/user/main.html';
-var mainPage_no_user  = '/guest/default.html';
-var loginSuccess      = 0;
-
-var Login_Controller = function(req, res)
-{
-    //var that  = this;
-
-    this.users              = users;
-    this.loginPage          = loginPage;
-    this.mainPage_user      = mainPage_user;
-    this.mainPage_no_user   = mainPage_no_user;
-    this.req                = req;
-    this.res                = res;
-
-    this.redirectToLoginPage = function()
+var Login_Controller = function(req, res) 
     {
-        this.res.redirect(this.loginPage);
-    };
-    this.loginUser = function() {
-        if (req.body.username === '' || req.body.password === '')
-        {
-            req.session.username = undefined;
-            res.redirect(loginPage);
-            return
-        }
-        //Temp QA logins
-        for(var index in users)
-        {
-            var user = users[index];
-            if (user.username === req.body.username && user.password === req.body.password)
+        //var that  = this;
+        
+        this.users              = users;
+        this.loginPage          = loginPage;
+        this.mainPage_user      = mainPage_user;
+        this.mainPage_no_user   = mainPage_no_user;
+        this.req                = req;
+        this.res                = res;          
+        
+        this.redirectToLoginPage = function()
             {
-                req.session.username = user.username;
-                res.redirect(mainPage_user);
-                return;
-            }
-        }
-        var username = req.body.username;
-        var password = req.body.password;
-
-        //Using new API methods
-        var loginUrl = 'https://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/Login_Response';
-        var options = {
-            method: 'post',
-            body: {username:username, password:password},
-            json: true,
-            url: loginUrl
-        };
-
-        request(options, function(error, response, body)
-        {
-            if(response.body!=null)
-            {
-                var loginResponse = response.body.d;
-                if(loginResponse!= null)
+                this.res.redirect(this.loginPage);
+            };
+        this.loginUser = function() {
+            if (req.body.username === '' || req.body.password === '')
                 {
-                    var success = loginResponse.Login_Status;
-                    if (success == loginSuccess)
+                    req.session.username = undefined;
+                    res.redirect(loginPage);
+                    return
+                }
+                //Temp QA logins
+                for(var index in users)
+                {
+                    var user = users[index];
+                    if (user.username === req.body.username && user.password === req.body.password)
                     {
-                        req.session.username = username;
+                        req.session.username = user.username;
                         res.redirect(mainPage_user);
+                        return;
                     }
-                    else
+                }
+
+
+                var username = req.body.username
+                var password = req.body.password
+
+
+                //major hack for demo (this needs to be done by consuming the GraphDB TeamMentor-Service)
+                var loginUrl = 'https://tmdev01-uno.teammentor.net/rest/login/' + username + '/' + password;
+
+                request(loginUrl, function(error, response, body)
                     {
-                        console.log('not logged in...') 
-                        req.session.username = undefined;
-                        if (loginResponse.Validation_Results !=null)
+                        if (error || body.indexOf('00000000-0000-0000-0000-00000000000') > -1 || body.indexOf('Endpoint not found.')>-1 )
                         {
-                            req.errorMesage = loginResponse.Validation_Results[0].Message;
+                            req.session.username = undefined;
+                            res.redirect(loginPage);
                         }
                         else
                         {
-                            req.errorMesage = loginResponse.Simple_Error_Message;
+                            req.session.username = username;
+                            res.redirect(mainPage_user);
                         }
-                         res.render(loginPage,{errorMessage:req.errorMesage})
-                    };;
-                }
-            }
-        });
-    };
-    this.logoutUser = function()
-    {
-        req.session.username = undefined;
-        res.redirect(mainPage_no_user);
-    };
-    this.passwordReset = function()
-    {
-        var email = req.body.email;
-
-        var options = {
-            method: 'post',
-            body: {email: email},
-            json: true,
-            url: 'https://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/SendPasswordReminder'
-        };
-        request(options, function(error, response, body)
-        {
-            if (error && error.code==="ENOTFOUND")
+                    });
+            };
+        this.logoutUser = function()
             {
-                res.send('could not connect with TM Uno server');
-                return;
-            }
-            if (response.statusCode == 200)
-                res.redirect('/guest/pwd-sent.html');
-            else
-                res.send(JSON.stringify(response));
-
-        });
-    };
-    this.userSignUp = function()
-    {
-        if (req.body.password != req.body['password-confirm'])
-        {
-            res.render(signUpFailPage, {errorMessage: 'Passwords don\'t match'})
-            return
-        }
-
-        var newUser =
-        {
-            username : req.body.username,
-            password : req.body.password,
-            email    : req.body.email
-        };
-        var options = {
-            method: 'post',
-            body: {newUser: newUser},
-            json: true,
-            url: 'https://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/CreateUser_Response'
-        };
-        console.log('about to process HTTP request')
-        request(options, function(error, response)
-        {
-            if(response.body!=null && response.statusCode == 200)
+                req.session.username = undefined;
+                res.redirect(mainPage_no_user);
+            };
+        this.passwordReset = function()
             {
-                var signUpResponse = response.body.d;
-                var message= '';
-                console.log(signUpResponse)
-                if (signUpResponse.Signup_Status!=0)
+                var email = req.body.email
+
+                var options = {
+                                method: 'post',
+                                body: {email: email},
+                                json: true,
+                                url: 'https://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/SendPasswordReminder'
+                          };
+                request(options, function(error, response, body)
                 {
-                    if (signUpResponse.Validation_Results!=null)
+                    if (error && error.code==="ENOTFOUND")
                     {
-                         message = signUpResponse.Validation_Results[0].Message;
+                        res.send('could not connect with TM Uno server');
+                        return;
                     }
+                    if (response.statusCode == 200)
+                        res.redirect('/guest/pwd-sent.html');
                     else
+                        res.send(JSON.stringify(response));
+
+                });
+            };
+        this.userSignUp = function()
+            {
+                if (req.body.password != req.body['password-confirm'])
+                {
+                    res.redirect('/guest/sign-up-Fail.html');
+                    return
+                }
+
+                var newUser =
                     {
-                        message = signUpResponse.Simple_Error_Message;
+                        username : req.body.username,
+                        password : req.body.password,
+                        email    : req.body.email
                     }
-                    res.render(signUpFailPage, {errorMessage: message})
-                }else
-                    res.redirect('/guest/sign-up-OK.html');
+                var options = {
+                    method: 'post',
+                    body: {newUser: newUser},
+                    json: true,
+                    url: 'https://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx/CreateUser'
+                };
+                request(options, function(error, response, body)
+                    {
+                        if (error && error.code==="ENOTFOUND")
+                        {
+                            res.send('could not connect with TM Uno server');
+                            return;
+                        }
+                        if (response.statusCode == 200)
+                            if(response.body.d == '0')
+                                res.redirect('/guest/sign-up-Fail.html');
+                            else
+                                res.redirect('/guest/sign-up-OK.html');
+                        else
+                            res.send(response)
+                    });
+                 //   res.send('user signup goes here for ' + newUser.json_pretty())
             }
-        });
-        //   res.send('user signup goes here for ' + newUser.json_pretty())
-    }
-};
+    };
 
 module.exports = Login_Controller;

@@ -7,24 +7,20 @@ var express    = require('express'),
     bodyParser = require('body-parser'),
     app        = express(),
     session    = require('express-session'),
-    path       = require("path"),
     Config     = require('./Config');
 
 app.config = new Config(null, false);
 app.use(bodyParser.json()                        );     // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));     // to support URL-encoded bodies
-app.use(session({secret           : '1234567890',
-    saveUninitialized: true        ,
-    resave           : true        }));
+app.use(session({secret           : '1234567890', 
+                 saveUninitialized: true        ,
+                 resave           : true        }));
 
-
-app.set('views', path.join(__dirname,'../'));
 
 require('./routes/flare_routes')(app);
 require('./routes/routes')(app);
 require('./routes/debug')(app);
 require('./routes/config')(app);
-
 
 
 app.use(express['static'](process.cwd()));

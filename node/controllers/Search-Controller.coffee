@@ -1,11 +1,11 @@
 fs              = require('fs')
 path            = require('path')
 request         = require('request')
-Config          = require('../Config')
-auth            = require('../middleware/auth')
+Config          = require('../misc/Config')
+Express_Service = require('../services/Express-Service')
 Jade_Service    = require('../services/Jade-Service')
 GitHub_Service  = require('../services/GitHub-Service')
-Graph_Service  = require('../services/Graph-Service')
+Graph_Service   = require('../services/Graph-Service')
 
 recentArticles_Cache = []
 breadcrumbs_Cache    = []
@@ -26,34 +26,11 @@ class SearchController
     renderPage: ()->
         @jade_Service.renderJadeFile(@jade_Page, @searchData)
 
-    ###
-     search : ()=>
-        server = 'http://localhost:1332';
-        url    = '/data/tm-uno/queries';
-        text = @req.query.text
-        
-        request server + url, (error, response,data) =>
-            graph = JSON.parse(data);
-            nodes = graph.nodes;
-            node_Labels = [];
-            nodes.forEach (node)=> node_Labels.push(node.label)
-            allQueries =  node_Labels.sort();
-            foundQuery = ""
-            if (allQueries.contains(text))
-                foundQuery = text
-            else
-                text = text.lower()
-                foundQuery = query for query in allQueries when query.lower().indexOf(text) > -1
-            if (foundQuery == "")
-                @res.redirect('/user/main.html')
-            else            
-                @res.redirect("/graph/#{foundQuery}")
-    ###
         
     showSearchFromGraph: ()=>        
         queryId = @req.params.queryId        
         filters = @req.params.filters
-        console.log queryId
+
         breadcrumbs_Cache = breadcrumbs_Cache.splice(0,3)
         if (filters)
             breadcrumbs_Cache.unshift  {href:"/graph/#{queryId}/#{filters}", title: filters}
@@ -63,10 +40,10 @@ class SearchController
         
         graphService = new Graph_Service()
         graphService.graphDataFromGraphDB null, queryId, filters,  (searchData)=>
-                searchData.filter_container = filters
-                @searchData = searchData
-                searchData.breadcrumbs = breadcrumbs_Cache
-                @res.send(@renderPage())
+          searchData.filter_container = filters
+          @searchData = searchData
+          searchData.breadcrumbs = breadcrumbs_Cache
+          @res.send(@renderPage())
 
     showMainAppView: =>
         breadcrumbs_Cache.unshift {href:"/user/main.html", title: "Search Home"}
@@ -76,22 +53,22 @@ class SearchController
             console.log "data" + data
             jadePage  = 'source/jade/user/main.jade'  # relative to the /views folder
             viewModel = {}
-            if false then ->
-                data = JSON.parse(data).splice(0,4)
-                topArticles = []
-                for item in data
-                    topArticles.push { href: "/article/view/#{item.guid}/#{item.title}", title: "#{item.title}", weight:"#{item.weight}"}
-
-                searchTerms = []
-                searchTerms.push { href: "/graph/Logging"                                   , title: "Logging"}
-                searchTerms.push { href: "/graph/Separation%20of%20Data%20and%20Control"    , title: "Separation of Data and Control"}
-                searchTerms.push { href: "/graph/(Web) Encoding"                            , title: "(Web) Encoding"}
-                recentArticles = []
-                for recentArticle in recentArticles_Cache
-                    recentArticles.push {href : 'https://tmdev01-uno.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
-                    break if recentArticles.length >2
-                viewModel = { recentArticles: recentArticles, topArticles : topArticles , searchTerms : searchTerms}
-            console.log "jadePage: " + jadePage
+            #if false then ->
+            #    data = JSON.parse(data).splice(0,4)
+            #    topArticles = []
+            #    for item in data
+            #        topArticles.push { href: "/article/view/#{item.guid}/#{item.title}", title: "#{item.title}", weight:"#{item.weight}"}
+            #
+            #    searchTerms = []
+            #    searchTerms.push { href: "/graph/Logging"                                   , title: "Logging"}
+            #    searchTerms.push { href: "/graph/Separation%20of%20Data%20and%20Control"    , title: "Separation of Data and Control"}
+            #    searchTerms.push { href: "/graph/(Web) Encoding"                            , title: "(Web) Encoding"}
+            #    recentArticles = []
+            #    for recentArticle in recentArticles_Cache
+            #        recentArticles.push {href : 'https://tmdev01-uno.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
+            #        break if recentArticles.length >2
+            #    viewModel = { recentArticles: recentArticles, topArticles : topArticles , searchTerms : searchTerms}
+            #console.log "jadePage: " + jadePage
             @res.render(jadePage, viewModel)
             
     showArticle: =>
@@ -103,14 +80,17 @@ class SearchController
 
 
 SearchController.registerRoutes = (app) ->
-    #app.get('/search'                  , (req, res) -> new SearchController(req, res, app.config).search())
 
-    app.get('/graph/:queryId'          , ((req,res,next) -> auth.checkAuth(req, res,next, app.config)) ,  (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
-    app.get('/graph/:queryId/:filters' , ((req,res,next) -> auth.checkAuth(req, res,next, app.config)) ,  (req, res) -> new SearchController(req, res, app.config).showSearchFromGraph())
-    
-    app.get '/user/main.html'           , ((req,res,next) -> auth.checkAuth(req, res,next, app.config)) , (req,res) -> new SearchController(req, res, app.config).showMainAppView()
+    checkAuth        =  (req,res,next) -> new Express_Service().checkAuth(req, res,next, app.config)
 
-    app.get '/article/view/:guid/:title', ((req,res,next) -> auth.checkAuth(req, res,next, app.config)) , (req,res) -> new SearchController(req, res, app.config).showArticle()
-    #app.get('/search' , (req, res) -> res.send('a'))
+    searchController = (method_Name) ->                                  # pins method_Name value
+        return (req, res) ->                                             # returns function for express
+            new SearchController(req, res, app.config)[method_Name]()    # creates SearchController object with live
+                                                                         # res,req and invokes method_Name
+
+    app.get '/graph/:queryId'           , checkAuth , searchController('showSearchFromGraph')
+    app.get '/graph/:queryId/:filters'  , checkAuth , searchController('showSearchFromGraph')
+    app.get '/user/main.html'           , checkAuth , searchController('showMainAppView')
+    app.get '/article/view/:guid/:title', checkAuth , searchController('showArticle')
                 
 module.exports = SearchController

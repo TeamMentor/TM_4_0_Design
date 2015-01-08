@@ -1,6 +1,6 @@
 mixin login-form
   h3 Login
-  include:md ../../flare/__ALL/content/teamMentor/getting-started/login-form.md
+  include:md ../../content/getting-started/login-form.md
   form#login-form(role='form' method='post' action='/user/login')
     .form-group
       label(for='new-user-username') Username
@@ -58,7 +58,7 @@ mixin new-password-form
 //- sign-up-form
 mixin sign-up-form
   h3 Sign Up
-  include:md ../../flare/__ALL/content/teamMentor/getting-started/sign-up-form.md
+  include:md ../../content/getting-started/sign-up-form.md
   form#sign-up-form(role='form', method='POST', action='/user/sign-up')
     .form-group
       label(for='new-user-username') Username
@@ -95,27 +95,29 @@ mixin forgot-password-button
 
 //- TEAM Mentor Summary
 mixin team-mentor-summary
-  include:md ../../flare/__ALL/content/teamMentor/getting-started/login-wall-summary.md
-  table
-    tr
-      td.center
-        img(src='/deploy/assets/icons/identifyfix.png', alt='Identify vulnerabilities and reduce time to fix them')
-      td
-        include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-1.md
-    tr
-      td.center
-        img(src='/deploy/assets/icons/reduces.png', alt='REDUCE the number of vulnerabilities over time')
-      td
-        include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-2.md
-    tr
-      td.center
-        img(src='/deploy/assets/icons/integrate.png', alt='EXPAND the development teams knowledge and improve process')
-      td
-        include:md ../../flare/__ALL/content/teamMentor/landing-pages/selling-point-3.md
+  #summary
+    include:md ../../content/getting-started/login-wall-summary.md
+    table
+      tr
+        td.text-center.icons-green
+          i.fi-page-edit
+        td
+          include:md ../../content/landing-pages/selling-point-1.md
+      tr
+        td.text-center.icons-green
+          i.fi-arrows-in
+        td
+          include:md ../../content/landing-pages/selling-point-2.md
+      tr
+        td.text-center.icons-green
+          i.fi-checkbox
+        td
+          include:md ../../content/landing-pages/selling-point-3.md
 
 mixin alert-login-failed
   .alert(role='alert')
-      p Error Logging In : #{errorMessage}
+    | Error Logging In : #{errorMessage}
+
 mixin alert-please-login
   .alert(role='alert')
     | You need to login to see that page :)
@@ -126,8 +128,34 @@ mixin alert-pwd-sent
 
 mixin alert-sign-up-failed
   .alert(role='alert')
-    p Error Signing In : #{errorMessage}
+    | Error Signing In : #{errorMessage}
 
 mixin alert-sign-up-OK
   .alert(role='alert')
     | Thanks for signing up to TEAM Mentor. Please login to access our libraries :)
+
+
+//- main-app-view
+mixin main-app-view
+    #recentlyViewedArticles
+        h4 Recently Viewed Articles
+        .list-group
+            if (recentArticles)
+                for recentArticle in recentArticles
+                    a(href=recentArticle.href, target='_blank')= recentArticle.title
+    h4 Popular Search Terms
+    .list-group
+        if (searchTerms)
+            for searchTerm in searchTerms
+                a(href=searchTerm.href)= searchTerm.title
+    h4 Top Articles
+    .list-group
+        if (topArticles)
+            for article in topArticles
+                a(href=article.href, target='_blank')= article.title
+                    span.badge= article.weight
+    h4 New Articles
+    .list-group
+        if (newArticles)
+            for newArticle in newArticles
+                a(href=newArticle.href, target='_blank')= newArticle.title

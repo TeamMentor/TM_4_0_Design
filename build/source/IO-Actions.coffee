@@ -1,14 +1,10 @@
 require 'fluentnode'
 
+
 class IO_Actions
 
     copy_File: (source_File, target_File_Or_Folder, callback)=>
-        if target_File_Or_Folder.folder_Exists()
-            target_File_Or_Folder = target_File_Or_Folder.path_Combine(source_File.file_Name())
-        else
-            target_File_Or_Folder.file_Parent_Folder().folder_Create()
-        source_File.file_Contents().saveAs(target_File_Or_Folder)
-
+        source_File.file_Copy(target_File_Or_Folder)
         callback() if callback
 
     copy_Files: ([source_Files], target_Folder, callback)=>
@@ -24,8 +20,6 @@ class IO_Actions
             @copy_File(file,target_Folder,null)
         callback() if callback
 
-    file_Copy: @::copy_File
-    files_Copy: @copy_File
     #IO_Actions::file_Copy = IO_Actions::copy_File
 
 

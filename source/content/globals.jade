@@ -1,0 +1,30 @@
+mixin navigate-icon
+    i.fi-map
+    | Navigate
+
+mixin search-icon
+    i.fi-magnifying-glass
+    | Search
+
+mixin help-icon
+    i.fi-info
+    | Help
+
+mixin logout-icon
+    i.fi-power
+    | Logout
+
+//- horizontal-rule
+mixin horizontal-rule
+    hr
+
+//- Breadcrumbs
+mixin breadcrumbs
+    dl.sub-nav
+        dt NAVIGATE:
+        dd
+            a(href='#') First Level
+        dd
+            a(href='#') Second Level
+        dd.active
+            a(href='#') Third Level

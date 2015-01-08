@@ -8,11 +8,12 @@ mixin directory-list
 					each container in containers
 						tr
 							if container.id == filter_container
-								a(href='/graph/' + title)
 									td
-										= container.title
+										b
+											a(href='/graph/' + title)= container.title
 									td
-										span.badge= container.size
+										b
+											span.badge= container.size
 							else
 								td
 									a(href='/graph/' + title + '/' + container.id, id=container.id)= container.title
@@ -36,11 +37,15 @@ mixin results-save-clear
 	table
 		tr
 			td
-				h4#resultsTitle= resultsTitle
+				h5#resultsTitle= resultsTitle
 			td
-				//a.action() Save
+				//a.action(href='#')
+					i.fi-bookmark
+					|   Save
 			td
-				a.action(href='/graph/' + title) Clear
+				a.action(href='/graph/' + title)
+					i.fi-trash
+					|   Clear
 
 //- articles-list
 mixin articles-list
@@ -62,14 +67,19 @@ mixin filters-div
 						for result in filter.results
 							tr
 								if result.id == filter_container
-									a(href='/graph/' + title)
-										td= result.title
-										td
+									//td
+										input(type='checkbox', checked=true, disabled=true)
+									td
+										b
+											a(href='/graph/' + title)= result.title
+									td
+										b
 											span.badge= result.size
 								else
+									//td
+										input(type='checkbox', name='technology', id=result.id value=result.id)
 									td
-										input#technology1(type='checkbox', name='technology', value='Technology 1')
-										label(for='technology1')= result.title
+										a(href='/graph/' + title + '/'+result.id)= result.title
 									//td
 										a(href='/graph/' + title + '/'  + result.id, id=result.id)= result.title
 									td
