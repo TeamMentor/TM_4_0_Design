@@ -36,12 +36,14 @@
 				background-position: 0px 0px;
 				background:url('../assets/logos/logos.jpg') no-repeat;
 				height: 50px;
+				margin: 0 auto;
 				width: 250px;
+  				margin-bottom: 10px;
 			}
 		}
 		#links {
 			width: $full-width;
-			padding: 0 0 5px 0;
+			padding: 0 10px 5px 0;
 			background: transparent;
 			text-align: center;
 			ul {

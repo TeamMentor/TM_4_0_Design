@@ -414,7 +414,7 @@ label {
 
 #team-mentor-navigation {
   background-color: #FFFFFF;
-  height: 80px;
+  height: auto;
   text-align: center;
 }
 
@@ -423,7 +423,8 @@ label {
   background-position: 0px 0px;
   height: 50px;
   margin: 0 auto;
-  max-width: 250px;
+  width: 250px;
+  margin-bottom: 10px;
 }
 
 #si-logo {
@@ -438,7 +439,7 @@ label {
 #links {
   width: 100%;
   text-align: text-center;
-  padding: 0 0 5px 0;
+  padding: 0 10px 5px 0;
 }
 
 #links ul {
@@ -607,6 +608,7 @@ button:hover, button:focus, .button:hover, .button:focus {
   border-radius: 0px;
 }
 
+
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], 
 input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], 
 input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
@@ -622,7 +624,7 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 0 10px 0;
 }
 
 input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, 
@@ -833,7 +835,7 @@ table td {
 
   #links {
     display: inline-block;
-    width: 61%;
+    width: 60%;
     float: right;
   }
 

@@ -435,13 +435,14 @@ mixin edit-button
 
 //- Breadcrumbs
 mixin breadcrumbs
-	ul.breadcrumbs
-		li
-			a(href='../home/navigate') Navigate
-		li
-			a(href='fundamentals-of-security') Principles & Standards
-		li.current
-			a(href='fundamentals-of-security') Fundamentals of Security
+	dl.sub-nav
+		dt NAVIGATE:
+		dd
+			a(href='#') First Level
+		dd
+			a(href='#') Second Level
+		dd.active
+			a(href='#') Third Level
 
 
 //- Copyright Information
