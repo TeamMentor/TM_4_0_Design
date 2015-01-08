@@ -7,6 +7,8 @@ describe 'routes | routes.test |', ()->
                       '/flare/default',
                       '/Image/:name',
                       '/article/view/:guid/:title',
+                      '/article/viewed.json',
+                      '/search',
                       '/config',
                       '/dirName',
                       '/flare',
@@ -73,7 +75,9 @@ describe 'routes | routes.test |', ()->
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
                                '/user/logout','/user/sign-up'                ].contains(path)
       expectedStatus = 403 if ['article', 'graph','library','libraries'      ].contains(path.split('/').second().lower())
-      expectedStatus = 403 if ['/user/main.html'].contains(path)
+      expectedStatus = 403 if ['/user/main.html', '/search'                  ].contains(path)
+      expectedStatus = 200 if ['/article/viewed.json'                        ].contains(path)
+
       postRequest = ['/user/pwd_reset','/user/sign-up'].contains(path)
 
       testName = "[#{expectedStatus}] #{originalPath}" + (if(path != originalPath) then "  (#{path})" else  "")

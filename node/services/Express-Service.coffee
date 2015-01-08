@@ -39,7 +39,7 @@ class Express_Service
     @app.use(express['static'](process.cwd()));
 
   map_Route: (file)=>
-    require(file)(@.app);
+    require(file)(@.app,@);
     @
 
   start:()=>

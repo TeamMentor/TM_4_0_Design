@@ -61,7 +61,7 @@ describe "controllers | test-Search-Controller |", ->
         render: (jadePage,viewModel)->
             #html.assert_Is_String()
             jadePage.assert_Is('../source/jade/user/main.jade')
-            viewModel.assert_Is({recentArticles:[]})
+            #viewModel.assert_Is({recentArticles:[]})
             done()
     using new Search_Controller(req, res),->
       @.showMainAppView()
@@ -81,7 +81,7 @@ describe "controllers | test-Search-Controller |", ->
       tm_35_Server = @.teamMentor_Service.tm_35_Server
 
       using @.recentArticles(), ->
-        @.assert_Size_Is 2
+        @.assert_Size_Is 3
         @.first() .assert_Is { href: tm_35_Server + '/' + id , title: title }
         @.second().assert_Is { href: tm_35_Server + '/' + '2', title: 'abc' }
         done()
@@ -100,38 +100,62 @@ describe "controllers | test-Search-Controller |", ->
 
 
 
-  describe 'using Express_Service',->
+  describe 'using Express_Service | ',->
 
     tmpSessionFile = './_tmp_Session'
 
     after ->
       tmpSessionFile.assert_File_Delete()
 
-    it 'Create Express_Service and register Search_Controller routes', (done)->
-      using new Express_Service(),->
-        @.add_Session()
-        @.app._router.stack.assert_Size_Is 3
-        Search_Controller.registerRoutes @.app
-        @.app._router.stack.assert_Size_Is 7
-        supertest(@.app)
-        .get('/user/main.html')
-        .end (err,res)->
-          res.text.assert_Contains('<li><a href="/guest/about.html">About</a></li>')
-          done()
-
-    it 'User views an article which is captured on the recent_Articles list', (done)->
+    using_Express_Service_With_Search_Controller = (callback)->
       using new Express_Service(),->
         @.add_Session(tmpSessionFile)
         @.loginEnabled = false
         Search_Controller.registerRoutes @.app, @
 
-        supertest(@.app)
-          .get('/article/view/this-is-an-guid/c')
+        @.open_Article = (id, title, callback)=>
+          supertest(@.app)
+          .get("/article/view/#{id}/#{title}")
           .end (err,res)=>
+            callback res
+
+        callback.apply @
+
+    it 'Create Express_Service and register Search_Controller routes', (done)->
+      using new Express_Service(),->
+        @.add_Session()
+        @.app._router.stack.assert_Size_Is 3
+        Search_Controller.registerRoutes @.app
+        @.app._router.stack.assert_Size_Is 9
+        supertest(@.app)
+          .get('/user/main.html')
+          .end (err,res)->
+            res.text.assert_Contains('<li><a href="/guest/about.html">About</a></li>')
+            done()
+
+    it 'User views an article which is captured on the recent_Articles list', (done)->
+
+      using_Express_Service_With_Search_Controller ()->
+
+        id    = 'this-is-an-guid'
+        title = 'c'
+        @.open_Article id, title, (res)=>
             res.text.assert_Contains ['Moved Temporarily. Redirecting to','this-is-an-guid']
             @.expressSession.db.find {}, (err,sessionData)->
               sessionData.first().data.recent_Articles.assert_Is [ { id: 'this-is-an-guid', title: 'c' } ]
               done()
+
+    it 'open multiple articles,  open article/viewed.json', (done)->
+      using_Express_Service_With_Search_Controller ()->
+        @.open_Article 'a', 'title 1', (res)=>
+          @.open_Article 'b', 'title 2', (res)=>
+            @.open_Article 'b', 'title 2', (res)=>
+              @.open_Article 'c', 'title 2', (res)=>
+                supertest(@.app).get('/article/viewed.json')
+                  .end (err, res)->
+                    data = JSON.parse res.text
+                    data.assert_Size_Is(5)
+                    done()
 
 
 
