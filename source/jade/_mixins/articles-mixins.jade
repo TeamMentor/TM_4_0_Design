@@ -131,8 +131,16 @@ mixin edit-links
 
 //- breadcrumnbs
 mixin breadcrumbs
-    br
-    .breadcrumbs
+    dl.sub-nav
+        dt NAVIGATE:
+        dd
+            a(href='#') First Level
+        dd
+            a(href='#') Second Level
+        dd.active
+            a(href='#') Third Level
+
+    // .breadcrumbs
         if breadcrumbs
             for breadcrumb,index in breadcrumbs
                 li
