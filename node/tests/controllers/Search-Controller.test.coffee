@@ -5,13 +5,12 @@ cheerio           = require('cheerio')
 app               = require('../../server')
 Config            = require('../../misc/Config')
 Search_Controller = require('../../controllers/Search-Controller')
+Express_Service   = require('../../services/Express-Service')
 
 
 describe "controllers | test-Search-Controller |", ->
     
   @.timeout(3500)
-
-  searchController = null
 
   it "constructor", ->
       expect(Search_Controller).to.be.an('Function')
@@ -98,6 +97,43 @@ describe "controllers | test-Search-Controller |", ->
             done()
     using new Search_Controller(req, res),->
       @.showArticle()
+
+
+
+  describe 'using Express_Service',->
+
+    tmpSessionFile = './_tmp_Session'
+
+    after ->
+      tmpSessionFile.assert_File_Delete()
+
+    it 'Create Express_Service and register Search_Controller routes', (done)->
+      using new Express_Service(),->
+        @.add_Session()
+        @.app._router.stack.assert_Size_Is 3
+        Search_Controller.registerRoutes @.app
+        @.app._router.stack.assert_Size_Is 7
+        supertest(@.app)
+        .get('/user/main.html')
+        .end (err,res)->
+          res.text.assert_Contains('<li><a href="/guest/about.html">About</a></li>')
+          done()
+
+    it 'User views an article which is captured on the recent_Articles list', (done)->
+      using new Express_Service(),->
+        @.add_Session(tmpSessionFile)
+        @.loginEnabled = false
+        Search_Controller.registerRoutes @.app, @
+
+        supertest(@.app)
+          .get('/article/view/this-is-an-guid/c')
+          .end (err,res)=>
+            res.text.assert_Contains ['Moved Temporarily. Redirecting to','this-is-an-guid']
+            @.expressSession.db.find {}, (err,sessionData)->
+              sessionData.first().data.recent_Articles.assert_Is [ { id: 'this-is-an-guid', title: 'c' } ]
+              done()
+
+
 
   #to redo once we have better offline content mapped to this
 # xit 'renderPage (and check content)', ->

@@ -52,7 +52,6 @@ class SearchController
         topArticles = 'http://localhost:1332/data/tm-data/articles-by-weight'
         #topArticles = 'https://tm-graph.herokuapp.com/data/tm-data/articles-by-weight'
         request topArticles, (err, response, data)=>
-            console.log "data" + data
             jadePage  = '../source/jade/user/main.jade'  # relative to the /views folder
             viewModel = { recentArticles: @recentArticles() }
 
@@ -91,16 +90,15 @@ class SearchController
     showArticle: =>
         id = @req.params.guid
         title = @req.params.title
-        #recentArticles_Cache.unshift ({ guid: guid , title:title})
         @recentArticles_add id, title
-        #@res.send(@.req.session)
         @res.redirect('https://tmdev01-uno.teammentor.net/'+id)
 
 
 
-SearchController.registerRoutes = (app) ->
+SearchController.registerRoutes = (app, expressService) ->
 
-    checkAuth        =  (req,res,next) -> new Express_Service().checkAuth(req, res,next, app.config)
+    expressService ?= new Express_Service()
+    checkAuth        =  (req,res,next) -> expressService.checkAuth(req, res,next, app.config)
 
     searchController = (method_Name) ->                                  # pins method_Name value
         return (req, res) ->                                             # returns function for express
