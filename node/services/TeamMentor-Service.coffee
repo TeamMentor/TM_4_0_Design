@@ -1,10 +1,11 @@
-fs      = require('fs')
-path    = require('path')
-request = require('request')
-Cache_Service      = require('teammentor').Cache_Service
+fs             = require('fs')
+path           = require('path')
+request        = require('request')
+Cache_Service  = require('teammentor').Cache_Service
     
 
-
+# this needs to me all moved into the 'teammentor' module
+# at the moment this could be called Docs_TM_Service and be an accurate representation of this code
 class TeamMentor_Service
 
   constructor: ->
@@ -12,16 +13,9 @@ class TeamMentor_Service
     @._name                  = 'docs'
     @._tmSite                = 'https://docs.teammentor.net'
     @._tmWebServices         = '/Aspx_Pages/TM_WebServices.asmx/'
-    #@._baseLocalDataFolder   = '/source/content/'
-    #@._libraryData_CacheFile = 'LibraryData.json'
-    @cache                   = new Cache_Service("docs_cache")
+    @.cache                  = new Cache_Service("docs_cache")
+    @.tm_35_Server           = 'https://tmdev01-uno.teammentor.net'   # starting to move this dependencies here
 
- #calculateLocalPath: (filename)->
- #  return null if(!filename)
-
- #  folder  = path.join(process.cwd(), @._baseLocalDataFolder, @._name);
- #  folder.folder_Create()
- #  path.join(folder, filename);
 
   asmx_GetFolderStructure_Libraries: (callback)=>
     @cache.json_POST @.calculateTargetUrl('GetFolderStructure_Libraries'), {}, callback
@@ -32,7 +26,6 @@ class TeamMentor_Service
 
   calculateTargetUrl: (wsName)->
     @._tmSite + @._tmWebServices + wsName
-
 
   getArticlesMetadata: (callback)=>
     @asmx_GetGUIObjects (guiObjects)->
@@ -83,14 +76,5 @@ class TeamMentor_Service
                 libraryData.push(library);
 
         callback libraryData
-
-  #getLibraryData_FromCache: ()->
-  #  libraryData_File = @calculateLocalPath(@._libraryData_CacheFile);
-  #  if(@.disableCache == false && fs.existsSync(libraryData_File))
-  #      return JSON.parse(fs.readFileSync(libraryData_File));
-  #  libraryData = @getLibraryData();
-#
-  #  fs.writeFileSync(libraryData_File, JSON.stringify(libraryData,null, " "));
-  #  return libraryData;
 
 module.exports = TeamMentor_Service;
