@@ -1,3 +1,5 @@
+include ../../content/globals.jade
+
 - var articles        = '/static/html/articles'
 - var getting_started = '/static/html/getting-started'
 - var home            = '/static/html/home'
@@ -17,7 +19,7 @@ mixin links-navbar__home
   ul
     li
       a(href='/user/main.html')
-        +home-icon
+        +search-icon
     li
       a(href='/library/Uno')
         +navigate-icon
@@ -31,7 +33,7 @@ mixin links-navbar__home
 //- git-repo-link
 mixin git-repo-link
   .list-group
-    a(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
+    a(href='https://github.com/TeamMentor/TM_4_0_Design') https://github.com/TeamMentor/TM_4_0_Design
 
 //- my-articles-edit-
 mixin my-articles-edit
