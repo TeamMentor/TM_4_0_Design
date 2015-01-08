@@ -16,6 +16,7 @@ describe 'routes | routes.test |', ()->
                       '/graph/:queryId/:filters',
                       '/render/mixin/:file/:mixin',   # GET
                       '/render/mixin/:file/:mixin',   # POST (test blind spot due to same name as GET)
+                      '/render/file/:file',
                       '/guest/:page.html',
                       '/help/:page*',
                       '/index.html',
