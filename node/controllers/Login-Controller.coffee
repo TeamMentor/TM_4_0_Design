@@ -57,10 +57,10 @@ class Login_Controller
           else
               @.req.session.username = undefined
 
-              if (loginResponse.Validation_Results !=null && loginResponse.Validation_Results.length > 0)
-                  @.req.errorMessage = loginResponse.Validation_Results[0].Message
+              if (loginResponse.Validation_Results !=null && loginResponse.Validation_Results.not_Empty())
+                  @.req.errorMessage  = loginResponse.Validation_Results.first().Message
               else
-                  @.req.errorMessage = loginResponse.Simple_Error_Message
+                  @.req.errorMessage  = loginResponse.Simple_Error_Message
               @.res.render(loginPage,{errorMessage:@.req.errorMessage})
 
   logoutUser: ()=>
@@ -115,8 +115,8 @@ class Login_Controller
         message= ''
 
         if (signUpResponse.Signup_Status!=0)
-          if (signUpResponse.Validation_Results!=null && signUpResponse.Validation_Results.length > 0)
-              message = signUpResponse.Validation_Results[0].Message
+          if (signUpResponse.Validation_Results!=null && signUpResponse.Validation_Results.not_Empty())
+              message = signUpResponse.Validation_Results.first().Message
           else
               message = signUpResponse.Simple_Error_Message
           @res.render(signUp_fail, {errorMessage: message})
