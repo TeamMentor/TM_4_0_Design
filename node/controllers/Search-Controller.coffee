@@ -77,6 +77,9 @@ class SearchController
     topArticles: (callback)=>
         topArticles_Url = "http://localhost:1337/article/viewed.json"
         topArticles_Url.GET_Json (data)=>
+            if (is_Null(data))
+                callback []
+                return
             results = {}
             for item in data
                 results[item.id] ?= { href: "/article/view/#{item.id}/#{item.title}", title: item.title, weight: 0}
