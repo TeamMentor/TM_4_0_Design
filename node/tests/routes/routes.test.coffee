@@ -14,6 +14,7 @@ describe 'routes | routes.test |', ()->
                       '/flare/main-app-view',
                       '/graph/:queryId',
                       '/graph/:queryId/:filters',
+                      '/render/mixin/:file/:mixin',
                       '/guest/:page.html',
                       '/help/:page*',
                       '/index.html',
@@ -60,10 +61,12 @@ describe 'routes | routes.test |', ()->
     runTest = (originalPath) ->
       path = originalPath.replace(':version','flare')
                          .replace(':area/:page','help/index')
+                         .replace(':file/:mixin', 'images/image-securityinnovation-logo')
                          #.replace(':area','help')
                          .replace(':page','default')
                          .replace(':queryId','AAAA')
                          .replace(':filters','BBBB')
+
       expectedStatus = 200;
       expectedStatus = 302 if ['image','deploy'                              ].contains(path.split('/').second().lower())
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',

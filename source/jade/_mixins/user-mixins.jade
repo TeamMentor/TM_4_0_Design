@@ -132,3 +132,29 @@ mixin alert-sign-up-failed
 mixin alert-sign-up-OK
   .alert(role='alert')
     | Thanks for signing up to TEAM Mentor. Please login to access our libraries :)
+
+
+//- main-app-view
+mixin main-app-view
+    #recentlyViewedArticles
+        h4 Recently Viewed Articles
+        .list-group
+            if (recentArticles)
+                for recentArticle in recentArticles
+                    a(href=recentArticle.href, target='_blank')= recentArticle.title
+    h4 Popular Search Terms
+    .list-group
+        if (searchTerms)
+            for searchTerm in searchTerms
+                a(href=searchTerm.href)= searchTerm.title
+    h4 Top Articles
+    .list-group
+        if (topArticles)
+            for article in topArticles
+                a(href=article.href, target='_blank')= article.title
+                    span.badge= article.weight
+    h4 New Articles
+    .list-group
+        if (newArticles)
+            for newArticle in newArticles
+                a(href=newArticle.href, target='_blank')= newArticle.title

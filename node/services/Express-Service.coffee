@@ -9,16 +9,12 @@ express         = require('express')
 class Express_Service
   constructor: ()->
     @.app         = express()
-    @loginEnabled = true
-    @.app.port    = process.env.PORT || 1337
 
-
-  setup: (callback)=>
+  setup: ()=>
     @set_BodyParser()
     @set_Config()
     @set_Static_Route()
     @add_Session()      # for now not using the async version of add_Session
-    #callback()
     @set_Views_Path()
 
   add_Session: (callback)=>

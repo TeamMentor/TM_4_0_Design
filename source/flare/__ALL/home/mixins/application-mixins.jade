@@ -7,34 +7,24 @@ mixin flare-search-bar-input
 			.row.collapse
 				.small-8.large-10.columns
 					input#search-bar(type='text', placeholder='Type keywords here')
-				// column
 				.small-2.large-1.columns
 					a.button.postfix#search-button(href='app-keyword-search')
 						+search-icon
-				// column
 				.small-2.large-1.columns
 					a.button.postfix(href='filters-div')
 						+filter-icon
-				// column
-			// row-collapse
-		// column
-	// row
 
 //- Flare Results-Save-Clear
 mixin flare-results-save-clear
 	.row
 		.small-12.medium-6.columns
 			h4 0/200 results showing
-		//column
 		.small-6.medium-3.columns.vertical-align
 			a.button(href='app-keyword-search-save')
 				+save-icon
-		// column
 		.small-6.medium-3.columns.vertical-align
 			a.button(href='main-app-view')
 				+clear-icon
-		// column
-	// row
 
 //- Articles List
 mixin flare-articles-list
@@ -44,23 +34,16 @@ mixin flare-articles-list
 			#panel1.content
 				include:md ../../content/teamMentor/articles/article-details.md
 				+flare-article-preview-menu
-			// panel1-content
-		// accordian-navigation
 		dd.accordion-navigation
 			a(href='#panel2') Article Headline
 			#panel2.content
 				include:md ../../content/teamMentor/articles/article-details.md
 				+flare-article-preview-menu
-			// panel2-content
-		// accordian-navigation
 		dd.accordion-navigation
 			a(href='#panel3') Article Headline
 			#panel3.content
 				include:md ../../content/teamMentor/articles/article-details.md
 				+flare-article-preview-menu
-			// panel3-content
-		// accordian-navigation
-	// accordian
 
 //- Flare Saved Articles List
 mixin flare-saved-articles-list
@@ -70,23 +53,16 @@ mixin flare-saved-articles-list
 			#panel1.content
 				include:md ../../content/teamMentor/articles/article-details.md
 				+saved-article-menu
-			// panel1-content
-		// accordian-navigation
 		dd.accordion-navigation
 			a(href='#panel2') Article Headline
 			#panel2.content
 				include:md ../../content/teamMentor/articles/article-details.md
 				+saved-article-menu
-			// panel2-content
-		// accordian-navigation
 		dd.accordion-navigation
 			a(href='#panel3') Article Headline
 			#panel3.content
 				include:md ../../content/teamMentor/articles/article-details.md
 				+saved-article-menu
-			// panel3-content
-		// accordian-navigation
-	// accordian
 
 //- Article Preview Menu
 mixin flare-article-preview-menu
@@ -94,16 +70,12 @@ mixin flare-article-preview-menu
 		.small-12.large-4.columns
 			a.action(href='article-new-window-view', target='_blank')
 				+open-icon
-		// columns
 		.small-12.large-4.columns
 			a.action(href='app-keyword-search-save')
 				+save-icon
-		// columns
 		.small-12.large-4.columns
 			a.action(href='app-keyword-search-share')
 				+share-icon
-		// columns
-	// row
 
 // Saved Article Menu
 mixin saved-article-menu
@@ -111,16 +83,12 @@ mixin saved-article-menu
 		.small-12.large-4.columns
 			a.button(href='article-new-window-view', target='_blank')
 				+open-icon
-		// column
 		.small-12.large-4.columns
 			a.button(href='../home/app-keyword-search-share')
 				+share-icon
-		// column
 		.small-12.large-4.columns
 			a.button(href='my-search-items')
 				+delete-icon
-		// column
-	// row
 
 //- Flare Main App View
 mixin flare-main-app-view
@@ -129,27 +97,18 @@ mixin flare-main-app-view
 			a(href='#recently-viewed-articles') Recently Viewed Articles
 			#recently-viewed-articles.content
 				+flare-articles-list
-			// recently-viewed-articles-content
-		// acordian-navigation
 		dd.accordion-navigation
 			a(href='#popular-search-terms') Popular Search Terms
 			#popular-search-terms.content
 				+flare-articles-list
-			// popular-search-terms-content
-		// accordian-navigation
 		dd.accordion-navigation
 			a(href='#top-articles') Top Articles
 			#top-articles.content
 				+flare-articles-list
-			// top-articles-content
-		// accordian-navigation
 		dd.accordion-navigation
 			a(href='#new-articles') New Articles
 			#new-articles.content
 				+flare-articles-list
-			// new-articles-content
-		// accordian-navigation
-	// accordian
 
 //- Flare Filters Div
 mixin flare-filters-div
@@ -171,9 +130,6 @@ mixin flare-filters-div
 											label(for='technology1') Technology 1
 										td
 											span.round.label 14
-									// tr
-								// table
-							// li
 							li
 								table
 									tr
@@ -182,9 +138,6 @@ mixin flare-filters-div
 											label(for='technology2') Technology 2
 										td
 											span.round.label 14
-									// tr
-								// table
-							// li
 							li
 								table
 									tr
@@ -193,9 +146,6 @@ mixin flare-filters-div
 											label(for='technology3') Technology 3
 										td
 											span.round.label 14
-									// tr
-								// table
-							// li
 							li
 								table
 									tr
@@ -204,12 +154,6 @@ mixin flare-filters-div
 											label(for='technology4') Technology 4
 										td
 											span.round.label 14
-									// tr
-								// table
-							// li
-						// ul
-					// technology-content
-				// accordian-navigation
 				dd.accordion-navigation
 					a(href='#type') Type
 					#type.content
@@ -220,24 +164,18 @@ mixin flare-filters-div
 									label.checkbox(for='type1') Type 1
 								td
 									span.badge 14
-							// tr
 							tr
 								td
 									input#type2(type='checkbox', name='type', value='Type 2')
 									label.checkbox(for='type2') Type 2
 								td
 									span.badge 14
-							// tr
 							tr
 								td
 									input#type3(type='checkbox', name='type', value='Type 3')
 									label.checkbox(for='type3') Type 3
 								td
 									span.badge 14
-							// tr
-						// table
-					// type-content
-				// accordian-navigation
 				dd.accordion-navigation
 					a(href='#phase') Phase
 					#phase.content
@@ -248,24 +186,18 @@ mixin flare-filters-div
 									label.checkbox(for='phase') Phase 1
 								td
 									span.badge 14
-							// tr
 							tr
 								td
 									input#phase(type='checkbox', name='phase', value='Phase 2')
 									label.checkbox(for='phase') Phase 2
 								td
 									span.badge 14
-							// tr
 							tr
 								td
 									input#phase(type='checkbox', name='phase', value='Phase 3')
 									label.checkbox(for='phase') Phase 3
 								td
 									span.badge 14
-							// tr
-						// table
-					// phase-content
-				// accordian-navigation
 				dd.accordion-navigation
 					a(href='#category') Category
 					#category.content
@@ -276,30 +208,21 @@ mixin flare-filters-div
 									label.checkbox(for='category') Category 1
 								td
 									span.badge 14
-							// tr
 							tr
 								td
 									input#category(type='checkbox', name='category', value='Category 2')
 									label.checkbox(for='category') Category 2
 								td
 									span.badge 14
-							// tr
 							tr
 								td
 									input#category(type='checkbox', name='category', value='Category 3')
 									label.checkbox(for='category') Category 3
 								td
 									span.badge 14
-							// tr
-						// table
-					// category-content
-				// accordian-content
-			// accordian
 			br
 			button(type='submit' href='filters-active')
 				| Ok, Done
-		// form
-	// filters-div
 
 //- Flare Filters Active
 mixin flare-filters-active
@@ -309,18 +232,14 @@ mixin flare-filters-active
 			.alert-box(data-alert='')
 				| Active Filter
 				a.close(href='#') ×
-		// column
 		.small-12.medium-6.large-4.columns
 			.alert-box(data-alert='')
 				| Active Filter
 				a.close(href='#') ×
-		// column
 		.small-12.medium-6.large-4.columns
 			.alert-box(data-alert='')
 				| Active Filter
 				a.close(href='#') ×
-		// column
-	// row
 
 // Save Div
 mixin save-div
@@ -328,12 +247,8 @@ mixin save-div
 		.row
 			.small-12.columns
 				+save-input
-			// column
 			.small-12.columns
 				+save-button
-			// column
-		// row
-	// form
 
 // Share Div
 mixin share-div
@@ -341,9 +256,5 @@ mixin share-div
 		.row
 			.small-12.columns
 				+share-input
-			// column
 			.small-12.columns
 				+share-button
-			// column
-		// row
-	// form

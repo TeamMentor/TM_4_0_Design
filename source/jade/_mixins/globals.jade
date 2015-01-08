@@ -13,29 +13,6 @@ mixin save-div
                 input#nickname.form-control(type='text', placeholder='Nickname')
             button(type='submit') Ok, Done
 
-//- main-app-view
-mixin main-app-view
-    h4 Recently Viewed Articles
-    .list-group
-        if (recentArticles)
-            for recentArticle in recentArticles
-                a(href=recentArticle.href, target='_blank')= recentArticle.title
-    h4 Popular Search Terms
-    .list-group
-        if (searchTerms)
-            for searchTerm in searchTerms
-                a(href=searchTerm.href)= searchTerm.title
-    h4 Top Articles
-    .list-group
-        if (topArticles)
-            for article in topArticles
-                a(href=article.href, target='_blank')= article.title
-                    span.badge= article.weight
-    h4 New Articles
-    .list-group
-        if (newArticles)
-            for newArticle in newArticles
-                a(href=newArticle.href, target='_blank')= newArticle.title
 
 //- horizontal-rule
 mixin horizontal-rule
@@ -46,8 +23,8 @@ mixin navigate-icon
     | Navigate
 
 mixin home-icon
-    i.fi-home
-    | Home
+    i.fi-magnifying-glass
+    | Search
 
 mixin help-icon
     i.fi-info
