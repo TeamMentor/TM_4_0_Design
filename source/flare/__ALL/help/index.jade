@@ -1,16 +1,13 @@
 extends ../_layouts/flare_page
+include ../getting-started/mixins/getting-started-mixins
 
 block content
 	#application
-		.row
-			.small-12.large-3.columns#left-nav
-				br
-			// column
-			.small-12.large-6.columns#results
-				br
-			// column
-			.small-12.large-3.columns#right-nav
-				br
-			// column
-		// row
-	// application
+		#left-nav
+			+help-navigation
+		#results
+			#summary
+				+team-mentor-summary
+			br
+			include:md ../content/teamMentor/help/video.md
+		#right-nav
