@@ -10,7 +10,7 @@ Search_Controller   = require('../controllers/Search-Controller')
 
 
 
-add_Routes = (app)->
+add_Routes = (app,searchController)->
     #login routes (and temporarily also user-sign-up)
     
     app.get  '/user/login'     , (req, res)-> new Login_Controller(req, res).redirectToLoginPage()
@@ -23,7 +23,7 @@ add_Routes = (app)->
     Library_Controller.registerRoutes(app)
     
     #search routes
-    Search_Controller.registerRoutes(app);
+    Search_Controller.registerRoutes(app, searchController);
     
     #help routes
     

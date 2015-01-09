@@ -11,6 +11,7 @@ class Express_Service
     @.app         = express()
     @loginEnabled = true;
     @.app.port    = process.env.PORT || 1337;
+    @.expressSession = null
 
   setup: ()=>
     @set_BodyParser()
@@ -19,13 +20,13 @@ class Express_Service
     @add_Session()      # for now not using the async version of add_Session
     @set_Views_Path()
     @
-  add_Session: (callback)=>
+  add_Session: (sessionFile)=>
 
-    expressSession = new Express_Session({ filename: './.tmCache/_sessionData' ,session:session})
+    @.expressSession = new Express_Session({ filename: sessionFile || './.tmCache/_sessionData' ,session:session})
     @.app.use session({ secret: '1234567890', key: 'tm-session'
                         ,saveUninitialized: true , resave: true
                         , cookie: { path: '/' , httpOnly: true , maxAge: 365 * 24 * 3600 * 1000 }
-                        , store: expressSession })
+                        , store: @.expressSession })
 
 
   set_BodyParser: ()=>
@@ -42,7 +43,7 @@ class Express_Service
     @.app.set('views', path.join(__dirname,'../../'))
 
   map_Route: (file)=>
-    require(file)(@.app);
+    require(file)(@.app,@);
     @
 
   start:()=>
