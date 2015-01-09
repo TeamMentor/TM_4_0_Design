@@ -52,7 +52,7 @@ class SearchController
     showMainAppView: =>
         breadcrumbs_Cache.unshift {href:"/user/main.html", title: "Search Home"}
 
-        jadePage  = '../source/jade/user/main.jade'  # relative to the /views folder
+        jadePage  = 'source/jade/user/main.jade'  # relative to the /views folder
         @topArticles (topArticles)=>
             viewModel = { recentArticles: @recentArticles() , topArticles : topArticles, searchTerms : @topSearches() }
             @res.render(jadePage, viewModel)

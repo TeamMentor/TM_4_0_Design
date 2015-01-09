@@ -3,11 +3,11 @@ Login_Controller = require('../../controllers/Login-Controller')
 describe "controllers | test-Login-Controller |", ->
 
   #helper methods
-  loginPage         = '/guest/login-Fail.html'
+  loginPage         = 'source/jade/guest/login-Fail.jade'
   mainPage_user     = '/user/main.html'
   mainPage_no_user  = '/guest/default.html'
   password_sent     = '/guest/pwd-sent.html'
-  signUp_fail       = "/guest/sign-up-Fail.html"
+  signUp_fail       = "source/jade/guest/sign-up-Fail.jade"
   signUp_Ok         = '/guest/sign-up-OK.html'
 
   invoke_Method = (method, body, expected_Target, callback)->
@@ -16,6 +16,9 @@ describe "controllers | test-Login-Controller |", ->
           session: {}
     res =
           redirect: (target)->
+            target.assert_Is(expected_Target)
+            callback()
+          render : (target) ->
             target.assert_Is(expected_Target)
             callback()
     loginController = new Login_Controller(req, res)
@@ -90,17 +93,20 @@ describe "controllers | test-Login-Controller |", ->
     invoke_Method "redirectToLoginPage", { } ,loginPage,done
 
   it 'userSignUp (bad values)', (done)->
-    invoke_UserSignUp '','aa','aa@teammentor.net', signUp_fail, ->                # empty username
-      invoke_UserSignUp 'aaa','','aa@teammentor.net', signUp_fail, ->             # empty password
-        invoke_UserSignUp 'aa','aa','', signUp_fail, ->                           # empty email
-          done()
+    invoke_UserSignUp '','aa','aa@teammentor.net', signUp_fail, ->                      #empty username
+      invoke_UserSignUp 'aaa','','aa@teammentor.net', signUp_fail, ->                   #empty password
+        invoke_UserSignUp 'aa','aa','', signUp_fail,->                                  #empty email
+          invoke_UserSignUp 'user','weakpwd','aa@teammentor.net', signUp_fail,->        #weak password
+            done()
+
 
   it 'userSignUp (good values)', (done)->
     user = "tm_ut_".add_5_Random_Letters()
     pwd  = "**tm**pwd**"
     email = "#{user}@teammentor.net"
-    invoke_UserSignUp user, pwd, email, signUp_Ok, ->
-      invoke_LoginUser user, pwd, mainPage_user, done
+
+    invoke_UserSignUp user,pwd,email,signUp_Ok,->
+        invoke_LoginUser user,pwd,mainPage_user,done
 
   it 'userSignUp (pwd dont match)', (done)->
     req =
@@ -108,6 +114,9 @@ describe "controllers | test-Login-Controller |", ->
     res =
       redirect: (data)->
         data.assert_Is(signUp_fail)
+        done()
+      render : (target) ->
+        target.assert_Contains(signUp_fail)
         done()
 
     using new Login_Controller(req,res),->

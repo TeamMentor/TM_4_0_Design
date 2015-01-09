@@ -3,13 +3,14 @@ Jade_Service    = require('../services/Jade-Service')
 Express_Session = require('../misc/Express-Session')
 bodyParser      = require('body-parser')
 session         = require('express-session')
+path            = require("path")
 express         = require('express')
 
 class Express_Service
   constructor: ()->
-    @.app            = express()
-    @loginEnabled    = true;
-    @.app.port       = process.env.PORT || 1337;
+    @.app         = express()
+    @loginEnabled = true;
+    @.app.port    = process.env.PORT || 1337;
     @.expressSession = null
 
   setup: ()=>
@@ -17,8 +18,8 @@ class Express_Service
     @set_Config()
     @set_Static_Route()
     @add_Session()      # for now not using the async version of add_Session
+    @set_Views_Path()
     @
-
   add_Session: (sessionFile)=>
 
     @.expressSession = new Express_Session({ filename: sessionFile || './.tmCache/_sessionData' ,session:session})
@@ -37,6 +38,9 @@ class Express_Service
 
   set_Static_Route:()=>
     @app.use(express['static'](process.cwd()));
+
+  set_Views_Path :()=>
+    @.app.set('views', path.join(__dirname,'../../'))
 
   map_Route: (file)=>
     require(file)(@.app,@);
