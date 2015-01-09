@@ -93,9 +93,11 @@ describe "controllers | test-Login-Controller |", ->
     invoke_Method "redirectToLoginPage", { } ,loginPage,done
 
   it 'userSignUp (bad values)', (done)->
-    invoke_UserSignUp('','aa','aa@teammentor.net', signUp_fail, ->
-      invoke_UserSignUp('aaa','','aa@teammentor.net', signUp_fail, ->
-        invoke_UserSignUp('aa','aa','', signUp_fail,done)))
+    invoke_UserSignUp '','aa','aa@teammentor.net', signUp_fail, ->                      #empty username
+      invoke_UserSignUp 'aaa','','aa@teammentor.net', signUp_fail, ->                   #empty password
+        invoke_UserSignUp 'aa','aa','', signUp_fail,->                                  #empty email
+          invoke_UserSignUp 'user','weakpwd','aa@teammentor.net', signUp_fail,->        #weak password
+            done()
 
 
   it 'userSignUp (good values)', (done)->
@@ -103,8 +105,8 @@ describe "controllers | test-Login-Controller |", ->
     pwd  = "**tm**pwd**"
     email = "#{user}@teammentor.net"
 
-    invoke_UserSignUp(user,pwd,email,signUp_Ok,->
-        invoke_LoginUser(user,pwd,mainPage_user,done))
+    invoke_UserSignUp user,pwd,email,signUp_Ok,->
+        invoke_LoginUser user,pwd,mainPage_user,done
 
   it 'userSignUp (pwd dont match)', (done)->
     req =
