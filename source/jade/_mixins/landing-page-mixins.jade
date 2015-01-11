@@ -1,4 +1,4 @@
-//- landing-page_call-to-action
+include ../../content/images.jade
 
 mixin usp-div
 	#usp
@@ -47,18 +47,18 @@ mixin clients-div
 			h2 Our clients love us (and we think you will too!)
 			.row
 				.col-4
-					img(src='/static/assets/clients/elsevier.jpg')
+					+image-elsevier-logo
 				.col-4
-					img(src='/static/assets/clients/fedex.jpg')
+					+image-fedex-logo
 				.col-4
-					img(src='/static/assets/clients/massmutual.jpg')
+					+image-mass-mutual-logo
 			.row
 				.col-4
-					img(src='/static/assets/clients/microsoft.jpg')
+					+image-microsoft-logo
 				.col-4
-					img(src='/static/assets/clients/symantec.jpg')
+					+image-symantec-logo
 				.col-4
-					img(src='/static/assets/clients/ubs.jpg')
+					+image-ubs-logo
 
 mixin about-div
 	#about
