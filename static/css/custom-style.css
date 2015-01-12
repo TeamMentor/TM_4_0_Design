@@ -604,7 +604,7 @@ button:hover, button:focus, .button:hover, .button:focus {
 }
 
 .btn-search-bar {
-  margin-top: -8px;
+  margin-top: -9px;
   padding: 17px 0 17px 0;
   border-left: none;
   border-radius: 0;
@@ -717,7 +717,6 @@ button:hover, button:active {
 }
 
 .list-group a {
-  height: 1em;
   display: block;
   padding: 5px 5px 10px 10px;
   text-decoration: none;
@@ -727,8 +726,13 @@ button:hover, button:active {
   background-color: #e3e3e3;
 }
 
+.list-group a:focus, .list-group a:hover, .list-group a:active {
+  outline: 0;
+}
+
 .list-group span.badge {
   float: right;
+  margin: 0 0 0 10px;
 }
 
 .nav table {
@@ -1625,3 +1629,9 @@ table {
 .sub-nav li.active a:hover {
   border-bottom: 2px solid #6c9020;
   color: #6c9020; }
+
+
+#search-bar {
+  width: 100%;
+  background-color: red;
+}

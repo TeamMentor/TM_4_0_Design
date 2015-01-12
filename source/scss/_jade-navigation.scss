@@ -89,16 +89,19 @@
 	}
 	a {
 		display: block;
-		height: 1em;
 		padding: 5px 5px 10px 10px;
 		text-decoration: none;
 		&:hover {
 			text-decoration: none;
 			background-color: $light-grey;
 		}
+		&:hover, &:focus, &:active, &:visited {
+			outline: none;
+		}
 	}
 	span.badge {
 		float: right;
+		margin: 0 0 0 10px
 	}
 }
 
