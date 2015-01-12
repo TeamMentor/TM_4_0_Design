@@ -708,16 +708,18 @@ button:hover, button:active {
 }
 
 .list-group {
-  height: auto;
+  margin: -15px 0 -15px 0;
 }
+
 .list-group h5, .list-group h4 {
   margin-top: 5px;
   margin-bottom: 0;
 }
 
 .list-group a {
+  height: 1em;
   display: block;
-  padding: 11px;
+  padding: 5px 5px 10px 10px;
   text-decoration: none;
 }
 .list-group a:hover {
