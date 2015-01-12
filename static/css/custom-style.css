@@ -359,6 +359,7 @@ body {
   max-width: 96%;
   margin: 0 auto;
   margin-bottom: 30px;
+  background: white;
 }
 
 .right {
@@ -732,7 +733,7 @@ button:hover, button:active {
 
 .list-group span.badge {
   float: right;
-  margin: 0 0 0 10px;
+  margin: 2px 10px 0 10px;
 }
 
 .nav table {
@@ -823,7 +824,7 @@ table td {
 
 @media (min-width: 768px) {
   #application {
-    margin-top: 70px;
+    margin-top: 100px;
   }
   #help-nav, #help-docs {
     margin-top:50px;
@@ -1632,6 +1633,6 @@ table {
 
 
 #search-bar {
-  width: 100%;
-  background-color: red;
+  background-color: white;
+  z-index: 96;
 }
