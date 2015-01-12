@@ -10,15 +10,18 @@ describe "services | Jade-Service.js", ()->
         using new Jade_Service(),->
             @.assert_Is_Object()
 
-            @.config       .assert_Is_Object()
-            @.targetFolder .assert_Is_String()
-        
+            @.config        .assert_Is_Object()
+            @.target_Folder .assert_Is_String()
+            @.repo_Path     .folder_Name().assert_Is('TM_4_0_Design')
+            @.mixins_Folder .folder_Name().assert_Is('_mixins')
+            @.mixin_Extends .assert_Is('../_layouts/page_clean')
+
             @.compileJadeFileToDisk.assert_Is_Function()
             @.calculateTargetPath  .assert_Is_Function()
             @.enableCache          .assert_Is_Function()
             @.cacheEnabled         .assert_Is_Function()
 
-            @.targetFolder         .assert_Is(@.config.jade_Compilation)
+            @.target_Folder         .assert_Is(@.config.jade_Compilation)
     
     it 'enableCache , cacheEnabled', ()->
         using new Jade_Service(),->
@@ -32,7 +35,7 @@ describe "services | Jade-Service.js", ()->
     
     it 'calculateTargetPath', ()->
         jadeService = new Jade_Service();
-        targetFolder        = jadeService.targetFolder;
+        targetFolder        = jadeService.target_Folder;
 
         targetFolder.assert_Is jadeService.config.jade_Compilation
 
@@ -44,18 +47,14 @@ describe "services | Jade-Service.js", ()->
           @.calculateTargetPath('aaa/bbb.jade'    ).assert_Is targetFolder.append('/aaa_bbb_jade.txt'    )
           @.calculateTargetPath('aaa/bbb.ccc.jade').assert_Is targetFolder.append('/aaa_bbb_ccc_jade.txt')
 
-    it 'repoPath', ()->
-        using new Jade_Service(), ->
-            @.repoPath().assert_Folder_Exists()
-            @.repoPath().file_Name().assert_Is('TM_4_0_Design')
 
     it 'calculateJadePath',->
         using new Jade_Service(), ->
-          @.calculateJadePath('.'        ).assert_Is(@.repoPath())
-          @.calculateJadePath('a.jade'   ).assert_Is(@.repoPath() + '/a.jade')
-          @.calculateJadePath('/a.jade'  ).assert_Is(@.repoPath() + '/a.jade')
-          @.calculateJadePath('a/b.jade' ).assert_Is(@.repoPath() + '/a/b.jade')
-          @.calculateJadePath('/a/b.jade').assert_Is(@.repoPath() + '/a/b.jade')
+          @.calculateJadePath('.'        ).assert_Is(@.repo_Path)
+          @.calculateJadePath('a.jade'   ).assert_Is(@.repo_Path + '/a.jade')
+          @.calculateJadePath('/a.jade'  ).assert_Is(@.repo_Path + '/a.jade')
+          @.calculateJadePath('a/b.jade' ).assert_Is(@.repo_Path + '/a/b.jade')
+          @.calculateJadePath('/a/b.jade').assert_Is(@.repo_Path + '/a/b.jade')
 
 
     it 'compileJadeFileToDisk', ()->

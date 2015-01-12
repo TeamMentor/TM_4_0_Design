@@ -10,7 +10,7 @@ block content
 						h3= folder.name
 						#nav.list-group
 							each view in folder.views
-								(href='owasp.html')= view.caption
+								a(href='owasp.html')= view.caption
 									span.badge= view.guidanceItems.length
 			.col-6
 				.lge-container

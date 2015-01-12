@@ -115,8 +115,8 @@ mixin team-mentor-summary
 					include:md ../../content/landing-pages/selling-point-3.md
 
 mixin alert-login-failed
-	.alert(role='alert')
-		| Login failed, please try again :(
+  .alert(role='alert')
+    | Error Logging In : #{errorMessage}
 
 mixin alert-please-login
 	.alert(role='alert')
@@ -127,8 +127,8 @@ mixin alert-pwd-sent
 		| We've sent you an email with instructions for resetting your password :)
 
 mixin alert-sign-up-failed
-	.alert(role='alert')
-		| Sign Up failed, please try again :(
+  .alert(role='alert')
+    | Error Signing In : #{errorMessage}
 
 mixin alert-sign-up-OK
 	.alert(role='alert')
@@ -137,97 +137,25 @@ mixin alert-sign-up-OK
 
 //- main-app-view
 mixin main-app-view
-	#recentlyViewedArticles
-		h4 Recently Viewed Articles
-		.list-group
-			a(href='#')
-				| Test
-				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
-				//if (recentArticles)
-						for recentArticle in recentArticles
-								a(href=recentArticle.href, target='_blank')= recentArticle.title
-	h4 Popular Search Terms
-	.list-group
-		a(href='#')
-			| Testing a longer title for bugs Testing a longer title for bugs
-			span.badge 12
-		a(href='#')
-			| Testing a longer title for bugs Testing a longer title for bugs
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-			//if (searchTerms)
-					for searchTerm in searchTerms
-							a(href=searchTerm.href)= searchTerm.title
-	h4 Top Articles
-	.list-group
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-			//if (topArticles)
-					for article in topArticles
-							a(href=article.href, target='_blank')= article.title
-									span.badge= article.weight
-	h4 New Articles
-	.list-group
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-			//if (newArticles)
-					for newArticle in newArticles
-							a(href=newArticle.href, target='_blank')= newArticle.title
+    #recentlyViewedArticles
+        h4 Recently Viewed Articles
+        .list-group
+            if (recentArticles)
+                for recentArticle in recentArticles
+                    a(href=recentArticle.href, target='_blank')= recentArticle.title
+    h4 Popular Search Terms
+    .list-group
+        if (searchTerms)
+            for searchTerm in searchTerms
+                a(href=searchTerm.href)= searchTerm.title
+    h4 Top Articles
+    .list-group
+        if (topArticles)
+            for article in topArticles
+                a(href=article.href, target='_blank')= article.title
+                    span.badge= article.weight
+    //h4 New Articles
+    //.list-group
+        if (newArticles)
+            for newArticle in newArticles
+                a(href=newArticle.href, target='_blank')= newArticle.title

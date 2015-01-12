@@ -36,7 +36,7 @@ class Help_Controller
         return;
 
       if (@.page == "index.html")
-        page_index_File     = __filename.parent_Folder().path_Combine('./../../source/content/page-index.md')
+        page_index_File     = __filename.parent_Folder().path_Combine('./../../source/content/help/page-index.md')
         page_index_Markdown = fs.readFileSync(page_index_File, 'utf8');
         page_index_Html     = marked(page_index_Markdown)             ;
         @addContent(null, page_index_Html);

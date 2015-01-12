@@ -8,8 +8,11 @@ require ('../_extra_fluentnode')
 class JadeService
     constructor: (config)->
       @.config = config || new Config();
-      @.targetFolder = this.config.jade_Compilation;
-      @.config.createCacheFolders() # ensure cache folders exists
+      @.repo_Path      = __dirname.path_Combine('../..')          #calculate the repo path as 3 folders above the current path
+      @.mixins_Folder = @.repo_Path.path_Combine('/source/jade/_mixins/')
+      @.target_Folder = @.config.jade_Compilation;
+      @.mixin_Extends = '../_layouts/page_clean'
+      @.config.createCacheFolders()                             # ensure cache folders exists
 
 
     enableCache: (value)->                           #set to true to allow caching of jade compiled files
@@ -23,14 +26,11 @@ class JadeService
       @.config.enable_Jade_Cache;
 
     calculateTargetPath: (fileToCompile)->
-      @targetFolder.path_Combine(fileToCompile.replace(/\//g,'_')
+      @.target_Folder.path_Combine(fileToCompile.replace(/\//g,'_')
                                                 .replace(/\./g,'_') + '.txt')
 
-    repoPath: ()->
-       __dirname.path_Combine('../..')          #calculate the repo path as 3 folders above the current path
-
     calculateJadePath: (jadeFile)->
-      @.repoPath().path_Combine(jadeFile)
+      @.repo_Path.path_Combine(jadeFile)
 
     compileJadeFileToDisk: (fileToCompile)->
 
@@ -75,16 +75,13 @@ class JadeService
       return require(targetFile_Path)(params);
 
     renderMixin: (file, mixin, params)=>
-      safeFile     = file.to_Safe_String()              # only allow letter, numbers, comma, dash and underscore
-      safeMixin    = mixin.to_Safe_String()
-      mixinsFolder ='/source/jade/_mixins/tmp.jade'     # where the mixin file will be expected to exist
-      dummyJade    = @.calculateJadePath(mixinsFolder)  # file to be provided to jade.compile
-
-      code = "extends ../_layouts/page_clean\n" +           # add html head and body (with TM css, but no nav bar)
-             "include #{safeFile}.jade      \n" +           # imports mixin file
-             "block content                 \n" +           # where rendered mixin will be placed
-             "  +#{safeMixin}             "             # mixin to render
-
+      safeFile      = file.to_Safe_String()                   # only allow letter, numbers, comma, dash and underscore
+      safeMixin     = mixin.to_Safe_String()
+      dummyJade     = @.mixins_Folder.path_Combine('/tmp.jade')  # file to be provided to jade.compile (used to resolve the mixin file path)
+      code = "extends #{@.mixin_Extends}    \n" +            # add html head and body (with TM css, but no nav bar)
+             "include #{safeFile}.jade      \n" +            # imports mixin file
+             "block content                 \n" +            # where rendered mixin will be placed
+             "  +#{safeMixin}                 "              # mixin to render
       return jade.compile(code, {filename: dummyJade })(params)
 
 

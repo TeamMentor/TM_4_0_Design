@@ -7,6 +7,8 @@ describe 'routes | routes.test |', ()->
                       '/flare/default',
                       '/Image/:name',
                       '/article/view/:guid/:title',
+                      '/article/viewed.json',
+                      '/search',
                       '/config',
                       '/dirName',
                       '/flare',
@@ -14,7 +16,9 @@ describe 'routes | routes.test |', ()->
                       '/flare/main-app-view',
                       '/graph/:queryId',
                       '/graph/:queryId/:filters',
-                      '/render/mixin/:file/:mixin',
+                      '/render/mixin/:file/:mixin',   # GET
+                      '/render/mixin/:file/:mixin',   # POST (test blind spot due to same name as GET)
+                      '/render/file/:file',
                       '/guest/:page.html',
                       '/help/:page*',
                       '/index.html',
@@ -69,10 +73,12 @@ describe 'routes | routes.test |', ()->
       expectedStatus = 200;
       expectedStatus = 302 if ['image','deploy'                              ].contains(path.split('/').second().lower())
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
-                               '/user/logout','/user/sign-up'                ].contains(path)
+                               '/user/logout'                                ].contains(path)
       expectedStatus = 403 if ['article', 'graph','library','libraries'      ].contains(path.split('/').second().lower())
-      expectedStatus = 403 if ['/user/main.html'].contains(path)
-      postRequest = ['/user/pwd_reset','/user/sign-up'].contains(path)
+      expectedStatus = 403 if ['/user/main.html', '/search'                  ].contains(path)
+      expectedStatus = 200 if ['/article/viewed.json'                        ].contains(path)
+
+      postRequest = ['/user/pwd_reset','/user/sign-up'                       ].contains(path)
 
       testName = "[#{expectedStatus}] #{originalPath}" + (if(path != originalPath) then "  (#{path})" else  "")
 
@@ -83,7 +89,9 @@ describe 'routes | routes.test |', ()->
           response.text.assert_Is_String()
           done()
         if (postRequest)
-          supertest(app).post(path).send({})
+          postData = {}
+          postData ={username:"test",password:"somevalues",email:"someemail"} if path == '/user/sign-up'
+          supertest(app).post(path).send(postData)
                         .expect(expectedStatus,checkResponse)
         else
           supertest(app).get(path)
