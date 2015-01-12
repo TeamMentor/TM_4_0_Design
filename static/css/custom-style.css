@@ -358,6 +358,7 @@ body {
 .lge-container {
   max-width: 96%;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .right {
