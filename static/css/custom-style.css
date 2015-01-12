@@ -104,7 +104,7 @@
   }
 }
 .row {
-  max-width: 100%;
+  width: 100%;
 }
 
 .clearfix:before,
@@ -359,7 +359,6 @@ body {
   max-width: 96%;
   margin: 0 auto;
   margin-bottom: 30px;
-  background: white;
 }
 
 .right {
@@ -733,7 +732,7 @@ button:hover, button:active {
 
 .list-group span.badge {
   float: right;
-  margin: 2px 10px 0 10px;
+  margin: 0 0 0 10px;
 }
 
 .nav table {
@@ -818,13 +817,19 @@ table td {
   margin: 0 20px;
 }
 
-#application {
-  margin-top: 80px;
-}
+#search-bar {
+    width: 95%;
+    background: white;
+    height: 50px;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 96;
+    padding: 30px 0 30px 0;
+  }
 
 @media (min-width: 768px) {
   #application {
-    margin-top: 100px;
+    margin-top: 60px;
   }
   #help-nav, #help-docs {
     margin-top:50px;
@@ -832,10 +837,13 @@ table td {
   #customer-navigation ul {
     text-align: left;
   }
+  #search-bar {
+    width: 48%;
+  }
   #team-mentor-navigation {
     height: 60px;
   }
-  #tm-logo{
+  #tm-logo {
     display: inline-block;
     float: left;
     margin: 7px 0 0 20px;
@@ -877,7 +885,6 @@ table td {
 }
 
 @media (min-width: 999px) {
-
   #links.text-links ul li {
     padding: 0 40px 0 0;
   }
@@ -911,6 +918,8 @@ table td {
     line-height: 1em;
   }
 }
+
+
 
 @font-face {
   font-family: "foundation-icons";
@@ -1632,7 +1641,3 @@ table {
   color: #6c9020; }
 
 
-#search-bar {
-  background-color: white;
-  z-index: 96;
-}
