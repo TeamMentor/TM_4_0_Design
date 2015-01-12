@@ -8,46 +8,46 @@ include ../../content/globals.jade
 - var user            = '/user'
 
 mixin links-navbar__landing-page
-	:markdown
-		* [About](/guest/about.html)
-		* [Features](/guest/features.html)
-		* [Help](/help/index.html)
-		* [Sign Up](/guest/sign-up.html)
-		* [Login](/guest/login.html)
+    :markdown
+        * [About](/guest/about.html)
+        * [Features](/guest/features.html)
+        * [Help](/help/index.html)
+        * [Sign Up](/guest/sign-up.html)
+        * [Login](/guest/login.html)
 
 mixin links-navbar__home
-	ul
-	li
-		a(href='/user/main.html')
-		+search-icon
-	li
-		a(href='/library/Uno')
-		+navigate-icon
-	li
-		a(href='/help/index.html')
-		+help-icon
-	li
-		a(href='/user/logout')
-		+logout-icon
+    ul
+        li
+            a(href='/user/main.html')
+                +search-icon
+        li
+            a(href='/library/Uno')
+                +navigate-icon
+        li
+            a(href='/help/index.html')
+                +help-icon
+        li
+            a(href='/user/logout')
+                +logout-icon
 
 //- git-repo-link
 mixin git-repo-link
-	.list-group
-	a(href='https://github.com/TeamMentor/TM_4_0_Design') https://github.com/TeamMentor/TM_4_0_Design
+    .list-group
+        a(href='https://github.com/TeamMentor/TM_4_0_Design') https://github.com/TeamMentor/TM_4_0_Design
 
 //- my-articles-edit-
 mixin my-articles-edit
-	#edit-links
-		a(href='my-articles-edit.html') Edit
+    #edit-links
+        a(href='my-articles-edit.html') Edit
 
 //- my-articles-edit-links
 mixin edit-links
-	#edit-links
-		br
-		.row
-			.col-4
-				a(href='#') Clear Selected
-			.col-4
-				a(href='navigate.html') Clear All
-			.col-4
-				a(href='my-articles.html') Ok, Done
+    #edit-links
+        br
+        .row
+            .col-4
+                a(href='#') Clear Selected
+            .col-4
+                a(href='navigate.html') Clear All
+            .col-4
+                a(href='my-articles.html') Ok, Done
