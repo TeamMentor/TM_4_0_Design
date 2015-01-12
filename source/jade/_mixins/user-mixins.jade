@@ -152,8 +152,9 @@ mixin main-app-view
 		.list-group
 			if (topArticles)
 				for article in topArticles
-					a(href=article.href, target='_blank')= article.title
-						span.badge= article.weight
+					if article
+						a(href=article.href, target='_blank')= article.title
+							span.badge= article.weight
 		//h4 New Articles
 		//.list-group
 			if (newArticles)
