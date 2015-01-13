@@ -1,11 +1,11 @@
-###Contributing to TeamMentor 4.0
+### Contributing to TeamMentor 4.0
 
 :+1: First off, thanks for taking the time to contribute! :+1:
 
 The following is a set of guidelines for contributing to TeamMentor and its packages,
 which are hosted in the [TeamMentor Organization](https://github.com/TeamMentor) on GitHub.
 
-## Submitting Issues
+#### Submitting Issues
 
 * Check the [GitHub Issues Definitions](https://github.com/TeamMentor/TM_4_0_Design/wiki/GitHub-Issues-Definitions) for
 our Issue's label defintions
@@ -18,14 +18,14 @@ our Issue's label defintions
   full stack trace and include it in the issue.
 * Perform a cursory search to see if a similar issue has already been submitted.
 
-### Package Repositories
+#### Package Repositories
 
 This is the repository for the TeamMentor 4.0 Design only.
 
 See [TM-Repos-build-status](https://github.com/TeamMentor/TM_4_0_Design/wiki/TM-Repos-build-status) for the
 other relevant repos
 
-## Pull Requests
+### Pull Requests
 
 * Include screenshots and animated GIFs in your pull request whenever possible.
 * Follow the [CoffeeScript](#coffeescript-styleguide),
@@ -34,14 +34,14 @@ other relevant repos
 * Include thoughtfully-worded, well-structured tests.
 * End files with a newline.
 
-## Git Commit Messages
+### Git Commit Messages
 
 * Use the present tense ("Add feature" not "Added feature")
 * Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
 * Limit the first line to 72 characters or less
 * Reference issues and pull requests liberally
 
-## CoffeeScript Styleguide
+### CoffeeScript Styleguide
 
 * Set parameter defaults without spaces around the equal sign
     * `clear = (count=1) ->` instead of `clear = (count = 1) ->`
