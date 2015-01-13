@@ -720,8 +720,8 @@ button:hover, button:active {
   background-color: #8aaf3e;
 }
 
-.list-group {
-  margin: -15px 0 -15px 0;
+.list-group a {
+  font-size: 0.95em;
 }
 
 .list-group h5, .list-group h4 {
@@ -731,7 +731,7 @@ button:hover, button:active {
 
 .list-group a {
   display: block;
-  padding: 5px 5px 10px 10px;
+  padding: 7px 5px 7px 10px;
   text-decoration: none;
 }
 .list-group a:hover {
