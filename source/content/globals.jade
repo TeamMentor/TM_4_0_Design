@@ -13,6 +13,7 @@ mixin breadcrumbs
 		dd.active
 			a(href='#') Third Level
 
+//- Form Inputs
 mixin username-input
 	label
 		| Username
@@ -33,6 +34,7 @@ mixin email-input
 		| Email Address
 	input(type='email', id='email', placeholder='Email Address')
 
+//- Form Buttons
 mixin login-button
 	button(type='submit', id='btn-login') Access TEAM Mentor
 
@@ -45,6 +47,7 @@ mixin sign-up-button
 mixin get-password-button
 	button(type='button') Get password
 
+//- Loginwall
 mixin team-mentor-summary
 	#summary
 		include:md getting-started/login-wall-summary.md
@@ -64,3 +67,14 @@ mixin team-mentor-summary
 					i.fi-checkbox
 				td
 					include:md landing-pages/selling-point-3.md
+
+// Other Buttons
+mixin start-trial-button
+	button
+		i.fi-key
+		| Start your free trial today
+
+mixin see-for-yourself-button
+	button
+		i.fi-eye
+		| See for yourself
