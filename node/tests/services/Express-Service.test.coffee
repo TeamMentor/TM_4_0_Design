@@ -68,7 +68,7 @@ describe 'services | Express-Service.test', ()->
     it 'checkAuth (no session username)', (done)->
 
       send = (html)->
-        html.assert_Contains('You need to login to see that page :)')
+        html.assert_Contains('You need to login to see that page.')
         done()
       res = {}
       res.status = (value)->
