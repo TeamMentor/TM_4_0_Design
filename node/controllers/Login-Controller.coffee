@@ -49,18 +49,18 @@ class Login_Controller
 
       if (response.body !=null && response.body.d !=null)
 
-          loginResponse = response.body.d
-          success = loginResponse.Login_Status
+          loginResponse = response?.body?.d
+          success = loginResponse?.Login_Status
           if (success == loginSuccess)
               @.req.session.username = username
               @.res.redirect(mainPage_user)
           else
               @.req.session.username = undefined
 
-              if (loginResponse.Validation_Results !=null && loginResponse.Validation_Results.not_Empty())
+              if (loginResponse?.Validation_Results !=null && loginResponse?.Validation_Results?.not_Empty())
                   @.req.errorMessage  = loginResponse.Validation_Results.first().Message
               else
-                  @.req.errorMessage  = loginResponse.Simple_Error_Message
+                  @.req.errorMessage  = loginResponse?.Simple_Error_Message
               @.res.render(loginPage,{errorMessage:@.req.errorMessage})
 
   logoutUser: ()=>
