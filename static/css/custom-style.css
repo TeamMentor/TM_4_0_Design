@@ -283,7 +283,7 @@ body {
 }
 
 #features {
-  padding: 100px 0 50px 0;
+  padding: 70px 0 50px 0;
 }
 #features h2 {
   text-align: center;
@@ -296,20 +296,32 @@ body {
 
 #footer {
   width: 100%;
-  padding: 15px 0 0 0;
+  padding: 5px 0 15px 0;
+}
+
+#footer {
   text-align: center;
 }
-
-#footer a {
-  color: #444444;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 10px;
+#footer .lge-container {
+  margin-bottom: 0;
 }
 
-#footer h6 {
-  margin-top: 0;
-  color: #444444;
+#footer ul {
+  list-style: none;
+  padding: 7px 0 0 0;
+}
+
+#footer li {
+  font-size: 0.75em;
+  margin: 0 0 5px 0;
+}
+
+#footer h5 {
+  margin-bottom: 15px;
+}
+
+#footer i {
+  margin-right: 10px;
 }
 
 #help-nav, #help-docs {
@@ -516,6 +528,7 @@ h5 {
 p {
   font-size: 1em;
   line-height: 1.5em;
+  color: #444444;
 }
 
 ul, ol {
@@ -621,12 +634,12 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
   color: #444444;
   border-radius: 3px;
   font-size: 1em;
+  margin: 0 0 5px 0;
   padding: 0 0 0 0.5rem;
   height: 3rem;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin: 0 0 10px 0;
 }
 
 input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, 
@@ -707,8 +720,8 @@ button:hover, button:active {
   background-color: #8aaf3e;
 }
 
-.list-group {
-  margin: -15px 0 -15px 0;
+.list-group a {
+  font-size: 0.95em;
 }
 
 .list-group h5, .list-group h4 {
@@ -718,7 +731,7 @@ button:hover, button:active {
 
 .list-group a {
   display: block;
-  padding: 5px 5px 10px 10px;
+  padding: 7px 5px 7px 10px;
   text-decoration: none;
 }
 .list-group a:hover {
@@ -881,6 +894,10 @@ table td {
   }
   #summary {
     padding: 80px 0 0 0;
+  }
+
+  #footer {
+    text-align: left;
   }
 }
 
@@ -1524,7 +1541,7 @@ table td {
 
 #features {
   padding: 0;
-  margin: 150px 0 0 0;
+  margin: 80px 0 0 0;
   padding: 0 0 70px 0;
 }
 
@@ -1561,12 +1578,6 @@ button:hover, button:active {
 #usp button:hover i, #usp button:active i, #call-to-action button:hover i, #call-to-action button:active i {
   color: #6c9020 !important;
 }
-
-#footer a {
-  text-decoration: none;
-}
-
-#footer a:hover { color: #7b9c38;}
 
 #features i, #reasons i {
   color: #8baf3e;
@@ -1639,5 +1650,13 @@ table {
 .sub-nav li.active a:hover {
   border-bottom: 2px solid #6c9020;
   color: #6c9020; }
+
+
+
+
+form p {
+  font-size: 0.75em;
+  margin-top: 0;
+}
 
 

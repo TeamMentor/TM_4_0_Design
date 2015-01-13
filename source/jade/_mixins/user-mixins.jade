@@ -1,59 +1,18 @@
+include ../../content/globals.jade
+
 mixin login-form
 	h3 Login
 	include:md ../../content/getting-started/login-form.md
 	form#login-form(role='form' method='post' action='/user/login')
 		.form-group
-			label(for='new-user-username') Username
-			input#new-user-username.form-control(type='text' name='username' placeholder='Username')
+			+username-input
 		.form-group
-			label(for='new-user-password') Password
-			input#new-user-password.form-control(type='password' name='password' placeholder='Password')
-		button(type='submit', id='btn-login') Login
+			+password-input
+		+login-button
 		br
 		br
 		a(href='/guest/pwd-forgot.html')
-			button(type='button', id='btn-forgot-pwd') Forgot your password?
-
-//- user-details-form
-mixin user-details-form
-	form(role='form', action='user.html')
-		.form-group
-			label(for='user-name') Name
-			input.form-control(type='text', id='user-name', placeholder='Name')
-		.form-group
-			label(for='user-email') Email Address
-			input.form-control(type='email', id='user-email', placeholder='Email Address')
-		.form-group
-			label(for='user-title') Title
-			input.form-control(type='text', id='user-title', placeholder='Title')
-		.form-group
-			label(for='user-company') Company
-			input.form-control(type='text', id='user-company', placeholder='Company')
-		.form-group
-			label(for='user-state') State
-			input.form-control(type='text', id='user-state', placeholder='State')
-		.form-group
-			label(for='user-country') Country
-			input.form-control(type='text', id='user-country', placeholder='Country')
-		.form-group
-			label(for='user-group-id') Group ID
-			input.form-control(type='text', id='user-group-id', placeholder='Group ID')
-		button(type='submit')
-			| Ok, Done
-
-//- new-password-form
-mixin new-password-form
-	form(role='form', action='user.html')
-		.form-group
-			label(for='user-current-password') Current Password
-			input.form-control(type='user-current-password', id='user-current-password', placeholder='Current Password')
-		.form-group
-			label(for='user-new-password') New Password
-			input.form-control(type='user-new-password', id='user-new-password', placeholder='New Password')
-		.form-group
-			label(for='user-confirm-new-password') Confirm New Password
-			input.form-control(type='user-confirm-new-password', id='user-confirm-new-password', placeholder='Confirm New Password')
-		button(type='submit') Save
+			+forgot-password-button
 
 //- sign-up-form
 mixin sign-up-form
@@ -61,58 +20,29 @@ mixin sign-up-form
 	include:md ../../content/getting-started/sign-up-form.md
 	form#sign-up-form(role='form', method='POST', action='/user/sign-up')
 		.form-group
-			label(for='new-user-username') Username
-			input#new-user-username.form-control(name='username', type='text', placeholder='Username')
+			+username-input
+			include:md ../../content/getting-started/username-prompt.md
 		.form-group
-			label(for='new-user-password') Password
-			input#new-user-password.form-control(name='password', type='password', placeholder='Password')
+			+email-input
+			include:md ../../content/getting-started/email-prompt.md
 		.form-group
-			label(for='new-user-confirm-password') Confirm Password
-			input#new-user-confirm-password.form-control(name='password-confirm', type='password', placeholder='Confirm Password')
+			+password-input
+			include:md ../../content/getting-started/password-prompt.md
 		.form-group
-			label(for='new-user-email') Email Address
-			input#new-user-email.form-control(name='email', type='email', placeholder='Email Address')
-		button#btn-sign-up(type='submit') Sign Up
+			+confirm-password-input
+		include:md ../../content/getting-started/agree-to-toc.md
+		+sign-up-button
 
 
 //- forgot-password-form
 mixin forgot-password-form
-	:markdown
-		### Forgot your password?
-		Too easy - just type in your email address and we'll send you an email with further instructions.
+	h3 Forgot your password?
+	include:md ../../content/getting-started/forgot-password-form.md
 	form#forgot-password(role='form', action='/user/pwd_reset' method='post')
 		.form-group
-			label(for='email') Email Address
-			input#email.form-control(type='email', name='email' placeholder='Email Address')
-		button#btn-get-password(type='submit') Get password
+			+email-input
+		+get-password-button
 
-
-//- forgot-password-button
-mixin forgot-password-button
-	form(role='form', action='returning-user-forgot-password.html', method='get')
-		button#btn-forgot-pwd(type='submit') Forgot your password?
-
-
-//- TEAM Mentor Summary
-mixin team-mentor-summary
-	#summary
-		include:md ../../content/getting-started/login-wall-summary.md
-		table
-			tr
-				td.text-center.icons-green
-					i.fi-page-edit
-				td
-					include:md ../../content/landing-pages/selling-point-1.md
-			tr
-				td.text-center.icons-green
-					i.fi-arrows-in
-				td
-					include:md ../../content/landing-pages/selling-point-2.md
-			tr
-				td.text-center.icons-green
-					i.fi-checkbox
-				td
-					include:md ../../content/landing-pages/selling-point-3.md
 
 mixin alert-login-failed
 	.alert(role='alert')
@@ -133,6 +63,10 @@ mixin alert-sign-up-failed
 mixin alert-sign-up-OK
 	.alert(role='alert')
 		| Thanks for signing up to TEAM Mentor. Please login to access our libraries.
+
+mixin alert-pw-requirements
+	.alert(role='alert')
+		| You need to login to see that page.
 
 
 //- main-app-view

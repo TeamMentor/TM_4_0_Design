@@ -58,6 +58,11 @@ img {
 form, .form-group {
 	list-style-type: none;
 	margin: 0 0 15px 0;
+
+	p {
+		font-size: 0.75em;
+		margin-top: 0;
+	}
 }
 
 label {
@@ -76,7 +81,7 @@ input {
 		color: $dark-grey;
 		font-size: 1em;
 		height: 3rem;
-		margin: 0 0 10px 0;
+		margin: 0 0 5px 0;
 		padding: 0 0 0 0.5rem;
 		width: $full-width;
 
@@ -225,8 +230,9 @@ button {
 }
 
 #footer {
-	margin: 0 auto;
-	padding: 15px 0 0 0;
+	width: $full-width;
+	padding: 5px 0 15px 0;
+	text-align: center;
 	#si-logo {
 		background-position: 0px -50px;
 		background:url('../assets/logos/logos.jpg') no-repeat;
@@ -234,15 +240,22 @@ button {
 		margin: 0 auto;
 		width: 250px;
 	}
-	a {
-		@extend a;
-		font-size: 10px;
-		letter-spacing: 1px;
-		text-transform: uppercase;
+	.lge-container {
+		margin: 0;
 	}
-	h6 {
-		margin-top: 0;
-		color: $dark-grey;
+	ul {
+		list-style: none;
+		padding: 7px 0 0 0;
+		li {
+			font-size: 0.75em;
+			margin: 0 0 5px 0;
+		}
+	}
+	h5 {
+		margin: 0 0 15px 0;
+	}
+	i {
+		margin: 0 10px 0 0;
 	}
 }
 

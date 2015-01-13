@@ -12,3 +12,69 @@ mixin breadcrumbs
 			a(href='#') Second Level
 		dd.active
 			a(href='#') Third Level
+
+//- Form Inputs
+mixin username-input
+	label
+		| Username
+	input(type='text', id='username', placeholder='Username')
+
+mixin password-input
+	label
+		| Password
+	input(type='password', id='password', placeholder='Password')
+
+mixin confirm-password-input
+	label
+		| Confirm Password
+	input(type='password', id='confirm-password', placeholder='Password')
+
+mixin email-input
+	label
+		| Email Address
+	input(type='email', id='email', placeholder='Email Address')
+
+//- Form Buttons
+mixin login-button
+	button(type='submit', id='btn-login') Access TEAM Mentor
+
+mixin forgot-password-button
+	button(type='button', id='btn-forgot-pwd') Forgot your password?
+
+mixin sign-up-button
+	button(type='submit', id='btn-sign-up') Start Fixing Vulnerabilities
+
+mixin get-password-button
+	button(type='button') Get password
+
+//- Loginwall
+mixin team-mentor-summary
+	#summary
+		include:md getting-started/login-wall-summary.md
+		table
+			tr
+				td.text-center.icons-green
+					i.fi-clipboard-pencil
+				td
+					include:md landing-pages/selling-point-1.md
+			tr
+				td.text-center.icons-green
+					i.fi-arrows-in
+				td
+					include:md landing-pages/selling-point-2.md
+			tr
+				td.text-center.icons-green
+					i.fi-checkbox
+				td
+					include:md landing-pages/selling-point-3.md
+
+// Other Buttons
+mixin start-trial-button
+	button
+		i.fi-key
+		| Start your free trial today
+
+mixin see-for-yourself-button
+	button
+		i.fi-eye
+		| See for yourself
