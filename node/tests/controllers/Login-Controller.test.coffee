@@ -32,7 +32,7 @@ describe "controllers | test-Login-Controller |", ->
 
   invoke_UserSignUp = (username, password, email, expected_Target, callback)->
     invoke_Method "userSignUp",
-      { username: username , password: password,'password-confirm':password , email: email } ,
+      { username: username , password: password,'confirm-password':password , email: email } ,
       expected_Target,
       callback
 
@@ -124,7 +124,7 @@ describe "controllers | test-Login-Controller |", ->
 
   it 'userSignUp (error handling)', (done)->
     req =
-      body   : { password:'aa' , 'password-confirm':'aa'}
+      body   : { password:'aa' , 'confirm-password':'aa'}
     res =
       send: (data)->
         data.assert_Is('could not connect with TM Uno server')
