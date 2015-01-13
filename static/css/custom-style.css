@@ -296,20 +296,32 @@ body {
 
 #footer {
   width: 100%;
-  padding: 15px 0 0 0;
+  padding: 5px 0 15px 0;
+}
+
+#footer {
   text-align: center;
 }
-
-#footer a {
-  color: #444444;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 10px;
+#footer .lge-container {
+  margin-bottom: 0;
 }
 
-#footer h6 {
-  margin-top: 0;
-  color: #444444;
+#footer ul {
+  list-style: none;
+  padding: 7px 0 0 0;
+}
+
+#footer li {
+  font-size: 0.75em;
+  margin: 0 0 5px 0;
+}
+
+#footer h5 {
+  margin-bottom: 15px;
+}
+
+#footer i {
+  margin-right: 10px;
 }
 
 #help-nav, #help-docs {
@@ -516,6 +528,7 @@ h5 {
 p {
   font-size: 1em;
   line-height: 1.5em;
+  color: #444444;
 }
 
 ul, ol {
@@ -881,6 +894,10 @@ table td {
   }
   #summary {
     padding: 80px 0 0 0;
+  }
+
+  #footer {
+    text-align: left;
   }
 }
 
@@ -1562,12 +1579,6 @@ button:hover, button:active {
   color: #6c9020 !important;
 }
 
-#footer a {
-  text-decoration: none;
-}
-
-#footer a:hover { color: #7b9c38;}
-
 #features i, #reasons i {
   color: #8baf3e;
   font-size: 4em;
@@ -1647,3 +1658,5 @@ form p {
   font-size: 0.75em;
   margin-top: 0;
 }
+
+
