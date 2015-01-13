@@ -1,4 +1,4 @@
- Contributing to TeamMentor 4.0
+###Contributing to TeamMentor 4.0
 
 :+1: First off, thanks for taking the time to contribute! :+1:
 
