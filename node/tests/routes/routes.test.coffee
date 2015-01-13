@@ -64,7 +64,7 @@ describe 'routes | routes.test |', ()->
     runTest = (originalPath) ->
       path = originalPath.replace(':version','flare')
                          .replace(':area/:page','help/index')
-                         .replace(':file/:mixin', 'images/image-securityinnovation-logo')
+                         .replace(':file/:mixin', 'globals/navigate-icon')
                          #.replace(':area','help')
                          .replace(':page','default')
                          .replace(':queryId','AAAA')
