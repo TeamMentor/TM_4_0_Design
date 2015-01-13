@@ -121,16 +121,22 @@ select {
 	width: $full-width;
 	.form-control {
 		display: table-cell;
-		height: 53px;
+		border-radius: 0;
 	}
 	.input-group-btn {
-		border-left: none;
 		display: table-cell;
-		max-width: $full-width;
-		vertical-align: middle;
+		vertical-align: top;
 		width: 100px;
 	}
+	.btn-search-bar {
+	  border-left: none;
+	  border-radius: 0;
+	  padding: 14px 0 14px 0;
+	}
 }
+
+
+
 
 button {
 	@extend a.action;
@@ -153,12 +159,6 @@ button {
 
 	&:hover, &:active {
 		color: $dark-green;
-	}
-	&.btn-search-bar {
-		border-left: none;
-		border-radius: 0px;
-		margin-top: -9px;
-		padding: 17px 0 17px 0;
 	}
 }
 

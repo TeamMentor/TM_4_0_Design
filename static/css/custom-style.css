@@ -616,13 +616,6 @@ button:hover, button:focus, .button:hover, .button:focus {
   text-decoration: none;
 }
 
-.btn-search-bar {
-  margin-top: -9px;
-  padding: 17px 0 17px 0;
-  border-left: none;
-  border-radius: 0;
-}
-
 
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], 
 input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], 
@@ -671,15 +664,19 @@ select {
 
 .input-group .form-control {
   display: table-cell;
-  height: 53px;
+  border-radius: 0;
 }
 
 .input-group .input-group-btn {
   display: table-cell;
-  border-left: none;
   width: 100px;
-  max-width: 100%;
-  vertical-align: middle;
+  vertical-align: top;
+}
+
+.btn-search-bar {
+  padding: 14px 0 14px 0;
+  border-left: none;
+  border-radius: 0;
 }
 
 button {
@@ -1658,5 +1655,3 @@ form p {
   font-size: 0.75em;
   margin-top: 0;
 }
-
-
