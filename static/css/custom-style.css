@@ -325,7 +325,7 @@ body {
 }
 
 #help-nav, #help-docs {
-  margin-top: 90px;
+  margin-top: 120px;
 }
 
 #help-docs h1 {
@@ -841,9 +841,6 @@ table td {
   #application {
     margin-top: 60px;
   }
-  #help-nav, #help-docs {
-    margin-top:50px;
-  }
   #customer-navigation ul {
     text-align: left;
   }
@@ -859,13 +856,11 @@ table td {
     margin: 7px 0 0 20px;
     width: 36%;
   }
-
   #links {
     display: inline-block;
     width: 60%;
     float: right;
   }
-
   #links.icons {
     padding-top: 7px;
     text-align: right;
@@ -892,9 +887,11 @@ table td {
   #summary {
     padding: 80px 0 0 0;
   }
-
   #footer {
     text-align: left;
+  }
+  #help-nav, #help-docs {
+    margin-top: 70px;
   }
 }
 
