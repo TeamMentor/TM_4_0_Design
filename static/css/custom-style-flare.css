@@ -1211,3 +1211,8 @@ ul.side-nav span.badge {
   float: right;
 }
 
+
+
+input#search-bar {
+  width: 50%;
+}
