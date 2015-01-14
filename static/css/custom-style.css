@@ -325,7 +325,7 @@ body {
 }
 
 #help-nav, #help-docs {
-  margin-top: 90px;
+  margin-top: 120px;
 }
 
 #help-docs h1 {
@@ -444,7 +444,7 @@ label {
   background:url('../assets/logos/logos.jpg') no-repeat;
   background-position: 0px -50px;
   height: 50px;
-  width: 250px;
+  width: 190px;
   margin: 0 auto;
 }
 
@@ -616,13 +616,6 @@ button:hover, button:focus, .button:hover, .button:focus {
   text-decoration: none;
 }
 
-.btn-search-bar {
-  margin-top: -9px;
-  padding: 17px 0 17px 0;
-  border-left: none;
-  border-radius: 0;
-}
-
 
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], 
 input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], 
@@ -671,15 +664,19 @@ select {
 
 .input-group .form-control {
   display: table-cell;
-  height: 53px;
+  border-radius: 0;
 }
 
 .input-group .input-group-btn {
   display: table-cell;
-  border-left: none;
   width: 100px;
-  max-width: 100%;
-  vertical-align: middle;
+  vertical-align: top;
+}
+
+.btn-search-bar {
+  padding: 14px 0 14px 0;
+  border-left: none;
+  border-radius: 0;
 }
 
 button {
@@ -830,7 +827,7 @@ table td {
   margin: 0 20px;
 }
 
-#search-bar {
+#search {
     width: 95%;
     background: white;
     height: 50px;
@@ -844,13 +841,13 @@ table td {
   #application {
     margin-top: 60px;
   }
-  #help-nav, #help-docs {
-    margin-top:50px;
-  }
   #customer-navigation ul {
     text-align: left;
   }
-  #search-bar {
+  #contact-information {
+    margin: 50px 0 0 0;
+  }
+  #search {
     width: 48%;
   }
   #team-mentor-navigation {
@@ -862,13 +859,14 @@ table td {
     margin: 7px 0 0 20px;
     width: 36%;
   }
-
+  #si-logo {
+    margin: 0;
+  }
   #links {
     display: inline-block;
     width: 60%;
     float: right;
   }
-
   #links.icons {
     padding-top: 7px;
     text-align: right;
@@ -895,9 +893,11 @@ table td {
   #summary {
     padding: 80px 0 0 0;
   }
-
   #footer {
     text-align: left;
+  }
+  #help-nav, #help-docs {
+    margin-top: 70px;
   }
 }
 
@@ -1659,4 +1659,12 @@ form p {
   margin-top: 0;
 }
 
-
+#article-i-definitions, #article-ii-deliverables, #article-iii-license-grant, #article-iv-ownership-of-intellectual-property, 
+#article-v-marketing-requirements, #article-vi-trademarks, #article-vii-support, #article-viii-fees-royalties-and-payments, 
+#article-ix-payment-instructions, #article-x-records-reports-and-audit-rights, #article-xi-contract-administrative-contacts, 
+#article-xii-assignment, #article-xiii-confidentiality, #article-xiv-warranties, #article-xv-indemnities, 
+#article-xvi-limitations, #article-xvii-terms-of-agreements, #article-xviii-terminiation, #article-xix-effect-of-termination, 
+#article-xx-general-provisions, #appendix-a, #appendix-b {
+  padding-top: 100px;
+  margin-top: -80px;
+}

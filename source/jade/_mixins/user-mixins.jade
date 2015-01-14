@@ -8,11 +8,14 @@ mixin login-form
 			+username-input
 		.form-group
 			+password-input
-		+login-button
-		br
-		br
-		a(href='/guest/pwd-forgot.html')
-			+forgot-password-button
+		.row
+			.col-6
+				.lge-container
+					+login-button
+			.col-6
+				.lge-container
+					a(href='/guest/pwd-forgot.html')
+						+forgot-password-button
 
 //- sign-up-form
 mixin sign-up-form
@@ -42,6 +45,17 @@ mixin forgot-password-form
 		.form-group
 			+email-input
 		+get-password-button
+
+//- pwd-reset-form
+mixin pwd-reset-form
+	h3 Reset your password
+	form#pwd-reset-form(role='form')
+		.form-group
+			+password-input
+			include:md ../../content/getting-started/password-prompt.md
+		.form-group
+			+confirm-password-input
+		+reset-password-button
 
 
 mixin alert-login-failed

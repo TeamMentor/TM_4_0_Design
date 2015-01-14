@@ -520,10 +520,12 @@ nav a:hover {
 #usp {
   margin: 0;
   padding-top: 70px;
+  width: 100%;
 }
 
-#about, #features {
+#about, #features, #about-us, #reasons, #clients {
   margin: 0;
+  width: 100%;
 }
 
 #landing-page i {
@@ -533,6 +535,12 @@ nav a:hover {
 
 #footer {
   padding: 0 0 10px 0;
+  width: 100%;
+}
+
+#footer i {
+  color: #444444;
+  font-size: 12px;
 }
 
 #footer h6 {
@@ -1203,3 +1211,8 @@ ul.side-nav span.badge {
   float: right;
 }
 
+
+
+input#search-bar {
+  width: 50%;
+}

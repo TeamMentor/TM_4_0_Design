@@ -1,10 +1,11 @@
 include ../../content/globals.jade
+include ../../content/images.jade
 
 //- flare-landing-page-usp-div
 mixin usp-div
 	#usp
 		.row
-			.small-12.large-offset-2.large-8.end.columns
+			.small-12.large-offset-1.large-10.end.columns
 				include:md ../../content/landing-pages/usp.md
 				br
 				br
@@ -18,7 +19,7 @@ mixin reasons-to-use-tm-div
 	#reasons
 		include:md ../../content/landing-pages/reasons-div-heading.md
 		.row
-			.small-12.medium-offset-1.medium-10.large-offset-3.large-6.end.columns
+			.small-12.medium-offset-1.medium-10.large-offset-2.large-8.end.columns
 				.row
 					.small-3.large-2.columns.text-center
 						i.fi-clipboard-pencil
@@ -76,7 +77,7 @@ mixin about-us-div
 mixin features-div
 	#features
 		.row
-			.small-12.large-offset-3.large-6.columns
+			.small-12.large-offset-2.large-8.columns
 				include:md ../../content/landing-pages/features-div-heading.md
 				br
 				.row
@@ -114,32 +115,33 @@ mixin call-to-action-div
 //- landing-page_footer
 mixin footer-div
 	#footer
-		h5 TEAM Mentor v 4.0
 		.row
-			.small-12.large-9.columns
+			.small-12.large-3.columns
+				h5 TEAM Mentor v 4.0
+				a(href='http://www.securityinnovation.com/', target='_blank')
+					#si-logo
+			
+			.small-12.large-9.columns#contact-information.text-center
 				.row
 					.small-12.large-4.columns
 						ul
 							li
-								i.fi-telephone
+								+i-phone
 								| +1.978.694.1008
 							li
-								i.fi-mail
-								| support@securityinnovation.com
+								+i-email
+								a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
 					.small-12.large-4.columns
 						ul
 							li
-								i.fi-marker
+								+i-marker
 								| 187 Ballardvale Street, Suite A202
 							li Wilmington, MA 01887
 					.small-12.large-4.columns
 						ul
 							li
-								i.fi-social-twitter
+								+i-twitter
 								a(href="http://www.twitter.com/SecInnovation", target="_blank") @SecInnovation
 							li
-								i.fi-paperclip
+								+i-toc
 								a(href="../guest/terms-and-conditions.html") Terms & Conditions
-			.small-12.large-3.columns
-				a(href='http://www.securityinnovation.com/', target='_blank')
-					#si-logo

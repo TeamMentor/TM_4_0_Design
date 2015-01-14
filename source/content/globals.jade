@@ -39,36 +39,38 @@ mixin login-button
 	button(type='submit', id='btn-login') Access TEAM Mentor
 
 mixin forgot-password-button
-	button(type='button', id='btn-forgot-pwd') Forgot your password?
+	button(type='button', id='btn-forgot-pwd') Forgot Your Password?
 
 mixin sign-up-button
 	button(type='submit', id='btn-sign-up') Start Fixing Vulnerabilities
 
 mixin get-password-button
-	button(type='submit' id='btn-get-password') Get password
+	button(type='submit' id='btn-get-password') Get Password
+
+mixin reset-password-button
+	button(type='submit' id='btn-reset-password') Reset Password
 
 //- Loginwall
 mixin team-mentor-summary
-	#summary
-		include:md getting-started/login-wall-summary.md
-		table
-			tr
-				td.text-center.icons-green
-					i.fi-clipboard-pencil
-				td
-					include:md landing-pages/selling-point-1.md
-			tr
-				td.text-center.icons-green
-					i.fi-arrows-in
-				td
-					include:md landing-pages/selling-point-2.md
-			tr
-				td.text-center.icons-green
-					i.fi-checkbox
-				td
-					include:md landing-pages/selling-point-3.md
+	include:md getting-started/login-wall-summary.md
+	table
+		tr
+			td.text-center.icons-green
+				i.fi-clipboard-pencil
+			td
+				include:md landing-pages/selling-point-1.md
+		tr
+			td.text-center.icons-green
+				i.fi-arrows-in
+			td
+				include:md landing-pages/selling-point-2.md
+		tr
+			td.text-center.icons-green
+				i.fi-checkbox
+			td
+				include:md landing-pages/selling-point-3.md
 
-// Other Buttons
+//- Other Buttons
 mixin start-trial-button
 	button
 		i.fi-key
@@ -78,3 +80,21 @@ mixin see-for-yourself-button
 	button
 		i.fi-eye
 		| See for yourself
+
+
+//- Icons
+
+mixin i-phone
+	i.fi-telephone
+
+mixin i-email
+	i.fi-mail
+
+mixin i-marker
+	i.fi-marker
+
+mixin i-twitter
+	i.fi-social-twitter
+
+mixin i-toc
+	i.fi-paperclip
