@@ -444,7 +444,7 @@ label {
   background:url('../assets/logos/logos.jpg') no-repeat;
   background-position: 0px -50px;
   height: 50px;
-  width: 250px;
+  width: 190px;
   margin: 0 auto;
 }
 
@@ -844,6 +844,9 @@ table td {
   #customer-navigation ul {
     text-align: left;
   }
+  #contact-information {
+    margin: 50px 0 0 0;
+  }
   #search {
     width: 48%;
   }
@@ -855,6 +858,9 @@ table td {
     float: left;
     margin: 7px 0 0 20px;
     width: 36%;
+  }
+  #si-logo {
+    margin: 0;
   }
   #links {
     display: inline-block;
