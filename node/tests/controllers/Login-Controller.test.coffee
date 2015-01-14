@@ -58,6 +58,9 @@ describe "controllers | test-Login-Controller |", ->
     invoke_LoginUser 'tm','tm', mainPage_user, ->
       invoke_LoginUser 'user','a', mainPage_user, done
 
+  it "LoginUser(undefined Login_Status using existential operator)", (done)->
+    invoke_LoginUser undefined ,undefined , loginPage, done
+
   it 'logoutUser', (done)->
     invoke_Method "logoutUser", {} ,mainPage_no_user,done
 
