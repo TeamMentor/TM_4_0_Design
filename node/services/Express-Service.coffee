@@ -5,6 +5,7 @@ bodyParser      = require('body-parser')
 session         = require('express-session')
 path            = require("path")
 express         = require('express')
+helmet          = require('helmet')
 
 class Express_Service
   constructor: ()->
@@ -19,6 +20,7 @@ class Express_Service
     @set_Static_Route()
     @add_Session()      # for now not using the async version of add_Session
     @set_Views_Path()
+    @set_CSP_Headers()
     @
   add_Session: (sessionFile)=>
 
@@ -41,6 +43,15 @@ class Express_Service
 
   set_Views_Path :()=>
     @.app.set('views', path.join(__dirname,'../../'))
+
+  set_CSP_Headers: ()=>
+    @.app.use(helmet.csp({
+      defaultSrc: [
+        "'self'",
+        "'unsafe-inline'",
+      ]
+      reportUri: '/csp'
+    }));
 
   map_Route: (file)=>
     require(file)(@.app,@);

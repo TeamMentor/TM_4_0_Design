@@ -33,6 +33,7 @@
     "express-session": "latest",
     "fluentnode": "^0.3.0",
     "github": "latest",
+    "helmet": "^0.5.4",
     "jade": "latest",
     "marked": "latest",
     "nedb": "latest",
