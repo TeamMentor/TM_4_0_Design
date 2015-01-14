@@ -89,7 +89,7 @@ class Login_Controller
 
 
   userSignUp: ()=>
-    if (@.req.body.password != @.req.body['password-confirm'])
+    if (@.req.body.password != @.req.body['confirm-password'])
         @res.render(signUp_fail, {errorMessage: 'Passwords don\'t match'})
         return
     newUser =
