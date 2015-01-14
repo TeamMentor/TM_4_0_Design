@@ -46,6 +46,17 @@ mixin forgot-password-form
 			+email-input
 		+get-password-button
 
+//- pwd-reset-form
+mixin pwd-reset-form
+	h3 Reset your password
+	form#pwd-reset-form(role='form')
+		.form-group
+			+password-input
+			include:md ../../content/getting-started/password-prompt.md
+		.form-group
+			+confirm-password-input
+		+reset-password-button
+
 
 mixin alert-login-failed
 	.alert(role='alert')
