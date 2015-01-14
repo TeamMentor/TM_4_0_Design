@@ -49,24 +49,23 @@ mixin get-password-button
 
 //- Loginwall
 mixin team-mentor-summary
-	#summary
-		include:md getting-started/login-wall-summary.md
-		table
-			tr
-				td.text-center.icons-green
-					i.fi-clipboard-pencil
-				td
-					include:md landing-pages/selling-point-1.md
-			tr
-				td.text-center.icons-green
-					i.fi-arrows-in
-				td
-					include:md landing-pages/selling-point-2.md
-			tr
-				td.text-center.icons-green
-					i.fi-checkbox
-				td
-					include:md landing-pages/selling-point-3.md
+	include:md getting-started/login-wall-summary.md
+	table
+		tr
+			td.text-center.icons-green
+				i.fi-clipboard-pencil
+			td
+				include:md landing-pages/selling-point-1.md
+		tr
+			td.text-center.icons-green
+				i.fi-arrows-in
+			td
+				include:md landing-pages/selling-point-2.md
+		tr
+			td.text-center.icons-green
+				i.fi-checkbox
+			td
+				include:md landing-pages/selling-point-3.md
 
 //- Other Buttons
 mixin start-trial-button
