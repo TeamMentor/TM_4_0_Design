@@ -7,6 +7,8 @@ describe 'routes | routes.test |', ()->
                       '/flare/default',
                       '/Image/:name',
                       '/article/view/:guid/:title',
+                      '/article/viewed.json',
+                      '/search',
                       '/config',
                       '/dirName',
                       '/flare',
@@ -58,12 +60,11 @@ describe 'routes | routes.test |', ()->
         paths.forEach (path)->
             expectedPaths.assert_Contains(path)
 
-
   #dynamically create the tests
     runTest = (originalPath) ->
       path = originalPath.replace(':version','flare')
                          .replace(':area/:page','help/index')
-                         .replace(':file/:mixin', 'images/image-securityinnovation-logo')
+                         .replace(':file/:mixin', 'globals/navigate-icon')
                          #.replace(':area','help')
                          .replace(':page','default')
                          .replace(':queryId','AAAA')
@@ -74,7 +75,9 @@ describe 'routes | routes.test |', ()->
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
                                '/user/logout'                                ].contains(path)
       expectedStatus = 403 if ['article', 'graph','library','libraries'      ].contains(path.split('/').second().lower())
-      expectedStatus = 403 if ['/user/main.html'                             ].contains(path)
+      expectedStatus = 403 if ['/user/main.html', '/search'                  ].contains(path)
+      expectedStatus = 200 if ['/article/viewed.json'                        ].contains(path)
+
       postRequest = ['/user/pwd_reset','/user/sign-up'                       ].contains(path)
 
       testName = "[#{expectedStatus}] #{originalPath}" + (if(path != originalPath) then "  (#{path})" else  "")

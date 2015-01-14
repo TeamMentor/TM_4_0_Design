@@ -5,9 +5,9 @@
 /* ------->>> MEDIA QUERIES <<<-------*/
 /* -----------------------------------*/
 
-@media (min-width: 650px) {
+@media (min-width: 768px) {
 	#application {
-		margin: 30px 0 0 0;
+		margin: 60px 0 0 0;
 	}
 	#help-nav, #help-docs {
 		margin-top: 50px;
@@ -50,6 +50,12 @@
 	}
 	#summary {
 		padding-top: 80px 0 0 0;
+	}
+	#search-bar {
+		width: 48%;
+	}
+	#features {
+		margin: 80px 0 50px 0;
 	}
 }
 

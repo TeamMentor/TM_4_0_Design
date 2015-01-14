@@ -104,7 +104,7 @@
   }
 }
 .row {
-  max-width: 100%;
+  width: 100%;
 }
 
 .clearfix:before,
@@ -283,7 +283,7 @@ body {
 }
 
 #features {
-  padding: 100px 0 50px 0;
+  padding: 70px 0 50px 0;
 }
 #features h2 {
   text-align: center;
@@ -296,20 +296,32 @@ body {
 
 #footer {
   width: 100%;
-  padding: 15px 0 0 0;
+  padding: 5px 0 15px 0;
+}
+
+#footer {
   text-align: center;
 }
-
-#footer a {
-  color: #444444;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 10px;
+#footer .lge-container {
+  margin-bottom: 0;
 }
 
-#footer h6 {
-  margin-top: 0;
-  color: #444444;
+#footer ul {
+  list-style: none;
+  padding: 7px 0 0 0;
+}
+
+#footer li {
+  font-size: 0.75em;
+  margin: 0 0 5px 0;
+}
+
+#footer h5 {
+  margin-bottom: 15px;
+}
+
+#footer i {
+  margin-right: 10px;
 }
 
 #help-nav, #help-docs {
@@ -358,6 +370,7 @@ body {
 .lge-container {
   max-width: 96%;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .right {
@@ -515,6 +528,7 @@ h5 {
 p {
   font-size: 1em;
   line-height: 1.5em;
+  color: #444444;
 }
 
 ul, ol {
@@ -603,9 +617,10 @@ button:hover, button:focus, .button:hover, .button:focus {
 }
 
 .btn-search-bar {
+  margin-top: -9px;
   padding: 17px 0 17px 0;
   border-left: none;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 
@@ -619,12 +634,12 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
   color: #444444;
   border-radius: 3px;
   font-size: 1em;
+  margin: 0 0 5px 0;
   padding: 0 0 0 0.5rem;
   height: 3rem;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin: 0 0 10px 0;
 }
 
 input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, 
@@ -705,9 +720,10 @@ button:hover, button:active {
   background-color: #8aaf3e;
 }
 
-.list-group {
-  height: auto;
+.list-group a {
+  font-size: 0.95em;
 }
+
 .list-group h5, .list-group h4 {
   margin-top: 5px;
   margin-bottom: 0;
@@ -715,7 +731,7 @@ button:hover, button:active {
 
 .list-group a {
   display: block;
-  padding: 11px;
+  padding: 7px 5px 7px 10px;
   text-decoration: none;
 }
 .list-group a:hover {
@@ -723,8 +739,13 @@ button:hover, button:active {
   background-color: #e3e3e3;
 }
 
+.list-group a:focus, .list-group a:hover, .list-group a:active {
+  outline: 0;
+}
+
 .list-group span.badge {
   float: right;
+  margin: 0 0 0 10px;
 }
 
 .nav table {
@@ -809,13 +830,19 @@ table td {
   margin: 0 20px;
 }
 
-#application {
-  margin-top: 80px;
-}
+#search-bar {
+    width: 95%;
+    background: white;
+    height: 50px;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 96;
+    padding: 30px 0 30px 0;
+  }
 
 @media (min-width: 768px) {
   #application {
-    margin-top: 70px;
+    margin-top: 60px;
   }
   #help-nav, #help-docs {
     margin-top:50px;
@@ -823,10 +850,13 @@ table td {
   #customer-navigation ul {
     text-align: left;
   }
+  #search-bar {
+    width: 48%;
+  }
   #team-mentor-navigation {
     height: 60px;
   }
-  #tm-logo{
+  #tm-logo {
     display: inline-block;
     float: left;
     margin: 7px 0 0 20px;
@@ -865,10 +895,13 @@ table td {
   #summary {
     padding: 80px 0 0 0;
   }
+
+  #footer {
+    text-align: left;
+  }
 }
 
 @media (min-width: 999px) {
-
   #links.text-links ul li {
     padding: 0 40px 0 0;
   }
@@ -902,6 +935,8 @@ table td {
     line-height: 1em;
   }
 }
+
+
 
 @font-face {
   font-family: "foundation-icons";
@@ -1506,7 +1541,7 @@ table td {
 
 #features {
   padding: 0;
-  margin: 150px 0 0 0;
+  margin: 80px 0 0 0;
   padding: 0 0 70px 0;
 }
 
@@ -1543,12 +1578,6 @@ button:hover, button:active {
 #usp button:hover i, #usp button:active i, #call-to-action button:hover i, #call-to-action button:active i {
   color: #6c9020 !important;
 }
-
-#footer a {
-  text-decoration: none;
-}
-
-#footer a:hover { color: #7b9c38;}
 
 #features i, #reasons i {
   color: #8baf3e;
@@ -1621,3 +1650,13 @@ table {
 .sub-nav li.active a:hover {
   border-bottom: 2px solid #6c9020;
   color: #6c9020; }
+
+
+
+
+form p {
+  font-size: 0.75em;
+  margin-top: 0;
+}
+
+

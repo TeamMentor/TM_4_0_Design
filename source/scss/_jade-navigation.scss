@@ -83,21 +83,25 @@
 /* -----------------------------------*/
 
 .list-group {
-	height: auto;
 	h5, h4 {
 		margin: 5px 0 0 0;
 	}
 	a {
 		display: block;
-		padding: 11px;
+		padding: 7px 5px 7px 10px;
 		text-decoration: none;
+		font-size: 0.95em;
 		&:hover {
 			text-decoration: none;
 			background-color: $light-grey;
 		}
+		&:hover, &:focus, &:active, &:visited {
+			outline: none;
+		}
 	}
 	span.badge {
 		float: right;
+		margin: 2px 10px 0 10px;
 	}
 }
 

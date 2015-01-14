@@ -1,4 +1,4 @@
-//- landing-page_call-to-action
+include ../../content/images.jade
 
 mixin usp-div
 	#usp
@@ -10,16 +10,14 @@ mixin usp-div
 					.row
 						.col-offset-2.col-8
 							a(href='/guest/sign-up.html')
-								button
-									i.fi-key
-									| Start your free trial today
+								+start-trial-button
 
 mixin reasons-div
 	#reasons
 		.lge-container
 			.row
 				.col-offset-3.col-6
-					h2 With TEAM Mentor, you can
+					include:md ../../content/landing-pages/reasons-div-heading.md
 					table
 						tr
 							td.text-center
@@ -44,21 +42,21 @@ mixin reasons-div
 mixin clients-div
 	#clients
 		.lge-container
-			h2 Our clients love us (and we think you will too!)
+			include:md ../../content/landing-pages/clients-div-heading.md
 			.row
 				.col-4
-					img(src='/static/assets/clients/elsevier.jpg')
+					+image-elsevier-logo
 				.col-4
-					img(src='/static/assets/clients/fedex.jpg')
+					+image-fedex-logo
 				.col-4
-					img(src='/static/assets/clients/massmutual.jpg')
+					+image-mass-mutual-logo
 			.row
 				.col-4
-					img(src='/static/assets/clients/microsoft.jpg')
+					+image-microsoft-logo
 				.col-4
-					img(src='/static/assets/clients/symantec.jpg')
+					+image-symantec-logo
 				.col-4
-					img(src='/static/assets/clients/ubs.jpg')
+					+image-ubs-logo
 
 mixin about-div
 	#about
@@ -79,7 +77,7 @@ mixin features-div
 		.lge-container
 			.row
 				.col-offset-3.col-6
-					h3.text-center TEAM Mentor provides intelligence to fix vulnerabilities and comply
+					include:md ../../content/landing-pages/features-div-heading.md
 					table
 						tr
 							td.text-center
@@ -114,15 +112,38 @@ mixin call-to-action-div
 					.row
 						.col-offset-2.col-8
 							a(href='/guest/sign-up.html')
-								button
-									i.fi-eye
-									| See for yourself
+								+see-for-yourself-button
 
 //- landing-page_footer
 mixin footer-div
 	#footer
 		.lge-container
-			#footer-img
-				#si-logo
-					br
-				h6 TEAM Mentor v 4.0
+			h5 TEAM Mentor v 4.0
+			.row
+				.col-9
+					.row
+						.col-4
+							ul
+								li
+									i.fi-telephone
+									| +1.978.694.1008
+								li
+									i.fi-mail
+									| support@securityinnovation.com
+						.col-4
+							ul
+								li
+									i.fi-marker
+									| 187 Ballardvale Street, Suite A202
+								li Wilmington, MA 01887
+						.col-4
+							ul
+								li
+									i.fi-social-twitter
+									a(href="http://www.twitter.com/SecInnovation", target="_blank") @SecInnovation
+								li
+									i.fi-paperclip
+									a(href="../guest/terms-and-conditions.html") Terms & Conditions
+				.col-3
+					a(href='http://www.securityinnovation.com/', target='_blank')
+						#si-logo

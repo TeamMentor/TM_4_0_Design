@@ -49,18 +49,18 @@ class Login_Controller
 
       if (response.body !=null && response.body.d !=null)
 
-          loginResponse = response.body.d
-          success = loginResponse.Login_Status
+          loginResponse = response?.body?.d
+          success = loginResponse?.Login_Status
           if (success == loginSuccess)
               @.req.session.username = username
               @.res.redirect(mainPage_user)
           else
               @.req.session.username = undefined
 
-              if (loginResponse.Validation_Results !=null && loginResponse.Validation_Results.length > 0)
-                  @.req.errorMessage = loginResponse.Validation_Results[0].Message
+              if (loginResponse?.Validation_Results !=null && loginResponse?.Validation_Results?.not_Empty())
+                  @.req.errorMessage  = loginResponse.Validation_Results.first().Message
               else
-                  @.req.errorMessage = loginResponse.Simple_Error_Message
+                  @.req.errorMessage  = loginResponse?.Simple_Error_Message
               @.res.render(loginPage,{errorMessage:@.req.errorMessage})
 
   logoutUser: ()=>
@@ -89,7 +89,7 @@ class Login_Controller
 
 
   userSignUp: ()=>
-    if (@.req.body.password != @.req.body['password-confirm'])
+    if (@.req.body.password != @.req.body['confirm-password'])
         @res.render(signUp_fail, {errorMessage: 'Passwords don\'t match'})
         return
     newUser =
@@ -115,8 +115,8 @@ class Login_Controller
         message= ''
 
         if (signUpResponse.Signup_Status!=0)
-          if (signUpResponse.Validation_Results!=null && signUpResponse.Validation_Results.length > 0)
-              message = signUpResponse.Validation_Results[0].Message
+          if (signUpResponse.Validation_Results!=null && signUpResponse.Validation_Results.not_Empty())
+              message = signUpResponse.Validation_Results.first().Message
           else
               message = signUpResponse.Simple_Error_Message
           @res.render(signUp_fail, {errorMessage: message})

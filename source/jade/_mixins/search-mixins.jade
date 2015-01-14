@@ -26,11 +26,12 @@ mixin directory-list
 
 //- search-bar-input
 mixin search-bar-input
-	form(action='/search', method='GET')
-		.input-group
-			input.form-control(type='text', placeholder='Type keywords here', name='text')
-			span.input-group-btn
-				button.btn-search-bar(type='submit') SEARCH
+	#search-bar
+		form(action='/search', method='GET')
+			.input-group
+				input.form-control(type='text', placeholder='Type keywords here', name='text')
+				span.input-group-btn
+					button.btn-search-bar(type='submit') SEARCH
 
 //- results-save-clear
 mixin results-save-clear

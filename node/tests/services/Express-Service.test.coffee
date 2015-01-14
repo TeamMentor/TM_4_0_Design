@@ -6,7 +6,10 @@ supertest = require('supertest')
 describe 'services | Express-Service.test', ()->
   it 'constructor',->
     using new Express_Service(),->
+      @.app        .assert_Is_Function() # can't seem to have define type(yet)
+      @.app.port   .assert_Is_Number()
       @loginEnabled.assert_Is_True()
+      assert_Is_Null(@.expressSession)
 
   it 'test exports',->
     Express_Service.assert_Is_Function()
@@ -29,6 +32,27 @@ describe 'services | Express-Service.test', ()->
           file.file_Delete().assert_Is_True();
           done()
 
+    it 'Directly access session data', (done)->
+      using expressService.expressSession,->
+        @.constructor.name.assert_Is 'Express_Session'
+        @.db.constructor.name.assert_Is 'Datastore'
+
+        @.db.find {},  (err, docs) ->
+          assert_Is_Null err
+          docs.assert_Size_Is(1)
+          using docs.first(),->
+            @.sid.assert_Is_String()
+            @._id.assert_Is_String()
+            @.data.assert_Is_Object()
+
+            using @.data.cookie,->
+              @.path.assert_Is '/'
+              @._expires.assert_Instance_Of(Date)
+              @.originalMaxAge.assert_Bigger_Than 3153600000
+              @.httpOnly.assert_Is_True()
+
+              done()
+
   describe 'auth',->
     expressService = new Express_Service()
 
@@ -44,7 +68,7 @@ describe 'services | Express-Service.test', ()->
     it 'checkAuth (no session username)', (done)->
 
       send = (html)->
-        html.assert_Contains('You need to login to see that page :)')
+        html.assert_Contains('You need to login to see that page.')
         done()
       res = {}
       res.status = (value)->
