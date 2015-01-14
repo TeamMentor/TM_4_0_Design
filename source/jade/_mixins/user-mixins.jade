@@ -8,11 +8,14 @@ mixin login-form
 			+username-input
 		.form-group
 			+password-input
-		+login-button
-		br
-		br
-		a(href='/guest/pwd-forgot.html')
-			+forgot-password-button
+		.row
+			.col-6
+				.lge-container
+					+login-button
+			.col-6
+				.lge-container
+					a(href='/guest/pwd-forgot.html')
+						+forgot-password-button
 
 //- sign-up-form
 mixin sign-up-form

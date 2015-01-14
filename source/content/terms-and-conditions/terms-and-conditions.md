@@ -21,15 +21,15 @@ For the purposes of this Agreement, the following words and phrases shall have t
 * 1.3 “Deliverables” means the items listed in a Product Order to be delivered by Security Innovation or its representatives or resellers to Licensee pursuant to Article II of this Agreement.
 
 * 1.4 "End-User" means an individual or employee or affiliate of Licensee who consumes paid for Licensed Products, for use within the bounds of the Permitted Use.
-							
+
 * 1.5 “Licensee” means the organization or individual subscribing to or otherwise licensing the Security Innovation Product as well as its respective employees, affiliates and subcontractors.
 
 * 1.6 "Security Innovation Product" means Security Innovation's proprietary multimedia training and reference systems and includes Security Innovation proprietary content and the software delivery system including, but not limited to, TEAM Processor, TEAM Mentor, TEAM Academy, PCI Essentials, and Safelight
-							
+
 * 1.7 “Permitted use” means the following application areas: (a) Internal training of Licensee employees, (b) Internal training of Licensee affiliates, (c) Training of Licensee
 
 * 1.8 “Internal” means within the Licensee organization and not part of a public or external event where the Security Innovation Product is used to train individuals who are not End-Users.
-							
+
 * 1.9 “Subscription” means an annually renewable or fixed term license for a specific number of End-Users and Content for a fixed fee. A subscription includes maintenance and support , but not including installation or customization costs, as part of the annual fixed fee and is hosted by Security Innovation or installed on the Licensee’s Learning Management System (LMS).
 
 * 1.10 “On-Site” means an annually renewable or fixed term license for a specific number of End-Users and Content for a fixed fee, not including installation or customization costs, exclusively for use in the Licensee’s Learning Management System (LMS). An on-site license does not include maintenance or support after the first year and must be purchased annually on the anniversary of the Effective Date by Licensee.
@@ -71,7 +71,7 @@ For the purposes of this Agreement, the following words and phrases shall have t
 #### Article VII - Support
 
 * 7.1 Internal Technology Support. Support will be provided to Licensee as described in APPENDIX B
-							
+
 * 7.2 Internal Technology Support Term. After the first year of this Agreement, Licensee shall obtain support for the On-Site license of Security Innovation Product from Security Innovation or its representatives or its resellers for the purpose of Licensee’s provision of support to its End Users. For any subsequent years, Licensee may, but shall not be required to, obtain Support Services, provided the Security Innovation still provides such Support Services.
 
 #### Article VIII - Fees, Royalties and Payments
@@ -94,7 +94,7 @@ Payments shall be made to Security Innovation or its representatives or its rese
 
 #### Article XI - Contract Administrative Contacts
 
-* 11.1 Notices. Any notice or other communication pursuant to this Agreement (other than payments pursuant to Section 9.1) shall be sent to such party by overnight courier, or regular mail, addressed to it at its address below or as it shall designate by written notice given to the other party. Any such communication shall be effective upon receipt by the party to whom it is addressed. 
+* 11.1 Notices. Any notice or other communication pursuant to this Agreement (other than payments pursuant to Section 9.1) shall be sent to such party by overnight courier, or regular mail, addressed to it at its address below or as it shall designate by written notice given to the other party. Any such communication shall be effective upon receipt by the party to whom it is addressed.
 
 * Notices to Security Innovation shall be addressed to: SECURITY INNOVATION, Inc. 187 Ballardvale St, Suite A202 Wilmington, MA 01887 Attn: Ombudsman
 
@@ -104,22 +104,23 @@ Payments shall be made to Security Innovation or its representatives or its rese
 
 * 12.1 Assignment. This Agreement and the license contained herein are personal to Licensee and may not be assigned or transferred by Licensee, without the prior written consent of Security Innovation. For purposes hereof, an “assignment” shall include any change in control of Licensee whereby another person or entity acquires 50% or greater ownership of Licensee.
 
+
 #### Article XIII - Confidentiality
 
 * 13.1 Treatment of Confidential Information. Each party hereto shall maintain the Confidential Information of the other party in confidence, and shall not disclose, divulge, or otherwise communicate such Confidential Information, including but not limited to the terms of this Agreement, to others, or use it for any purpose, except pursuant to, and in order to carry out, the terms and objectives of this Agreement or the written consent of the other party. Each party hereby agrees to exercise every reasonable precaution to prevent and restrain the unauthorized disclosure of such Confidential Information by any of its directors, officers, employees, consultants, subcontractors, licensees, or agents.
 
 * 13.2 Release from Restrictions. The provisions of Section 13.1 shall not apply to Confidential Information disclosed hereunder which; (a) was known or used by the receiving party prior to its date of disclosure to the receiving party; or (b) either before or after the date of disclosure to the receiving party is lawfully disclosed to the receiving party by sources rightfully in possession of such Confidential Information other than the disclosing party; or (c) either before or after the date of disclosure to the receiving party, becomes published or generally known to the public, through no fault of the receiving party, its Affiliates or sub-licensees; or (d) is required to be disclosed by the receiving party to comply with applicable laws or applicable rules of any securities exchange on which the receiving party’s securities are traded, to defend or prosecute litigation, or to comply with governmental regulations, provided however that the receiving party provides prior written notice of such disclosure to the other party and takes reasonable and lawful actions to avoid and/or minimize the degree of such disclosure.
 
-#### Article XIV - Warranties 
+#### Article XIV - Warranties
 
 * 14.1 Representations and Warranties of Security Innovation. (a) Security Innovation represents and warrants to Licensee that all corporate action on the part of Security Innovation, its officers, directors and stockholders necessary for: (i) the authorization, execution and delivery of this Agreement and (ii) the performance of all obligations of Security Innovation hereunder has been taken and this Agreement constitutes the legal and binding obligation of Security Innovation, enforceable against Security Innovation in accordance with its terms. (b) Security Innovation further represents and warrants to Licensee that: (i) it has sufficient right, title and interest in the Security Innovation Product to enter into this Agreement; and (ii) the Security Innovation Product is the original work of Security Innovation and its licensors and was developed without unauthorized access to or knowledge of any third party confidential materials. (c) THE SECURITY INNOVATION PRODUCT AND THE DELIVERABLES ARE PROVIDED AS IS. SECURITY INNOVATION DISCLAIMS ALL OTHER WARRANTIES, WHETHER EXPRESS OR IMPLIED WITH RESPECT TO THE SECURITY INNOVATION PRODUCT OR THE DELIVERABLES, INCLUDING, WITHOUT LIMITATION, WHETHER THE LICENSEE PRODUCTS CAN BE SUCCESSFULLY DEVELOPED OR MARKETED, THE ACCURACY, PERFORMANCE, SECURITY, UTILITY, RELIABILITY, TECHNOLOGICAL OR COMMERCIAL VALUE, COMPREHENSIVENESS, INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE WHATSOEVER OF THE LICENSEE PRODUCTS AND VALIDITY OF PATENT RIGHTS, ISSUED OR PENDING.
-							
+
 * Representations and Warranties of Licensee. Licensee represents and warrants to Security Innovation that all corporate action on the part of Licensee, its officers, directors and stockholders necessary for: (i) the authorization, execution and delivery of this Agreement and (ii) the performance of all obligations of Licensee hereunder has been taken and this Agreement constitutes the legal and binding obligation of Licensee, enforceable against Licensee in accordance with its terms. The execution of this Agreement and the performance of the transactions contemplated by this Agreement by Licensee will not conflict with or result in a breach of any of the terms, conditions or provisions of, or constitute a default under, or require a consent under its Certificate of Incorporation or Bylaws (as amended or restated to date) or any agreement or other instrument to which Licensee is a party or by which it or any of its property is bound.
 
 #### Article XV - Indemnities
 
 * 15.1 Infringement Indemnification by Security Innovation. Security Innovation agrees that it shall, at its own expense, defend, or at its option settle, any action or claim instituted against Licensee, and pay any award or damages assessed or settled upon against Licensee resulting from such action or claim, insofar as the same is based upon a claim that the Security Innovation Product as delivered to Licensee infringes any United States patent, trademark, copyright or trade secret of a third party or a claim that Security Innovation has no right to license the Security Innovation Product to Licensee hereunder. Such obligation is subject to the following conditions: (i) Licensee shall notify Security Innovation in writing immediately after Licensee first becomes aware of a claim; (ii) Security Innovation shall have the right to control and direct the investigation, preparation, defense and settlement of the action; and (iii) Licensee shall give Security Innovation all reasonably available information, assistance and authority. The foregoing indemnity shall not apply if the alleged infringement claim arises from use of other than the current unaltered release of the Security Innovation Product, or combination of the Security Innovation Product with other software or hardware not provided by Security Innovation, if such action would have been avoided but for such use or combination.
-							
+
 * 15.2 Infringement Indemnification by Licensee. Licensee agrees to indemnify and hold Security Innovation harmless from and against all damages, costs and expenses (including legal fees) incurred by Security Innovation to the extent they arise out of a claim that the Licensee Product infringes a patent, copyright, trademark or trade secret or other intellectual property right of a third party. Such obligation is subject to the following conditions: (i) Security Innovation shall notify Licensee in writing immediately after the date Security Innovation first becomes aware of a claim; (ii) Licensee has sole control of the settlement, compromise, negotiation and defense of any such action; and (iii) Security Innovation gives Licensee all reasonably available information, assistance and authority, at Licensee’s expense, to enable Licensee to do so. THE FOREGOING STATES THE ENTIRE AND EXCLUSIVE OBLIGATION OF LICENSEE TO SECURITY INNOVATION RELATING TO ANY ALLEGED INFRINGEMENT OF PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER INTELLECTUAL PROPERTY RIGHTS.
 
 * 15.3. Exclusive Sole Remedy. If as a result of any binding settlement among the parties or a final determination by a court of competent jurisdiction, the Security Innovation Product is held to infringe a third party’s United States patent, trademark, copyright or trade secret and its use is enjoined, or if Security Innovation reasonably determines in its sole discretion that the Software may become subject to an injunction, Security Innovation shall have the option to: (a) obtain for Licensee the right to continued use of the Security Innovation Product; (b) replace or modify the Security Innovation Product so it is no longer infringing and is substantially similar in functionality to the enjoined Security Innovation Product; or (c) refund the license fees paid by Licensee hereunder less depreciation for use assuming straight line depreciation over a five year useful life and terminate this Agreement. NOTWITHSTANDING ANYTHING TO THE CONTRARY IN THIS AGREEMENT, THE FOREGOING STATES SECURITY INNOVATION'S ENTIRE LIABILITY AND LICENSEE'S SOLE AND EXCLUSIVE REMEDY WITH RESPECT TO CLAIMS OF INFRINGEMENT OF THIRD PARTY PROPRIETARY OR INTELLECTUAL PROPERTY RIGHTS OF ANY KIND, AND Security Innovation EXPRESSLY DISCLAIMS ANY IMPLIED WARRANTY OF NONINFRINGEMENT.
@@ -214,4 +215,4 @@ Technical Support Service Levels. On receiving a request for technical support, 
 
 * Level C: your operations that use the Service are not significantly impacted by the error, but there continues to be a problem that is a nuisance. For example, graphics are missing, certificates do not print, or a small number of learners are affected.
 
-* Level D: any error that is not a severity A, B, or C error is a severity D error. In the event you report an error with low severity that becomes more critical, you may contact Blatant’s technical support and request that the severity level for the error be upgraded. For example, spelling errors or errors not related to recording of learner data. Technical Support Action Times. 
+* Level D: any error that is not a severity A, B, or C error is a severity D error. In the event you report an error with low severity that becomes more critical, you may contact Blatant’s technical support and request that the severity level for the error be upgraded. For example, spelling errors or errors not related to recording of learner data. Technical Support Action Times.
