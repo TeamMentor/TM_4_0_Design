@@ -50,7 +50,7 @@ class Express_Service
         "'self'",
         "'unsafe-inline'",
       ]
-      reportUri: '/csp'
+      #reportUri: '/csp'
     }));
 
   map_Route: (file)=>
