@@ -50,14 +50,15 @@ mixin forgot-password-form
 
 //- pwd-reset-form
 mixin pwd-reset-form
-	h3 Reset your password
-	form#pwd-reset-form(role='form')
-		.form-group
-			+password-input
-			include:md ../../content/getting-started/password-prompt.md
-		.form-group
-			+confirm-password-input
-		+reset-password-button
+	fieldset
+		h3 Reset your password
+		form#pwd-reset-form(role='form')
+			.form-group
+				+password-input
+				include:md ../../content/getting-started/password-prompt.md
+			.form-group
+				+confirm-password-input
+			+reset-password-button
 
 
 mixin alert-login-failed
@@ -84,6 +85,13 @@ mixin alert-pw-requirements
 	.alert(role='alert')
 		| You need to login to see that page.
 
+mixin alert-pwd-reset-failed
+	.alert(role='alert')
+		| Error here
+
+mixin alert-pwd-reset-OK
+	.alert(role='alert')
+		| Error here
 
 //- main-app-view
 mixin main-app-view
