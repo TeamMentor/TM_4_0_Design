@@ -13,8 +13,8 @@ Search_Controller   = require('../controllers/Search-Controller')
 add_Routes = (app,searchController)->
     #Route for CSP (Content Security Policy) violations to post
 
-    app.post '/csp' , (req, res)-> console.log req.body
-
+    app.post '/csp' , (req, res)-> console.log req.body #res.json(req.body)
+    
     #login routes (and temporarily also user-sign-up)
 
     app.get  '/user/login'     , (req, res)-> new Login_Controller(req, res).redirectToLoginPage()

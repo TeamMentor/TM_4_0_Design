@@ -3,6 +3,7 @@ app      = require('../../server')
     
 describe 'routes | routes.test |', ()->
     expectedPaths = [ '/',
+                      '/csp',
                       '/flare/:area/:page',
                       '/flare/default',
                       '/Image/:name',
