@@ -14,6 +14,7 @@ describe "controllers | test-Login-Controller |", ->
     req =
           body   : body
           session: {}
+          url    : '/passwordReset/temp/00000000-0000-0000-0000-000000000000'
     res =
           redirect: (target)->
             target.assert_Is(expected_Target)
@@ -33,6 +34,12 @@ describe "controllers | test-Login-Controller |", ->
   invoke_UserSignUp = (username, password, email, expected_Target, callback)->
     invoke_Method "userSignUp",
       { username: username , password: password,'confirm-password':password , email: email } ,
+      expected_Target,
+      callback
+
+  invoke_PasswordReset = (password, confirmPassword,expected_Target,callback)->
+    invoke_Method "passwordResetToken",
+      { password: password,'confirm-password': confirmPassword } ,
       expected_Target,
       callback
 
@@ -92,6 +99,36 @@ describe "controllers | test-Login-Controller |", ->
       @.webServices = 'https://aaaaaaaa.teammentor.net/'
       @passwordReset()
 
+  it 'passwordReset with Token (error handling)', (done)->
+    req =
+      url    : '/passwordReset/demo/00000000-0000-0000-0000-000000000000'
+      body   : {}
+    res =
+      send: (data)->
+        json = data.json_Parse()
+        json.statusCode.assert_Is(500)
+        json.body.Message.assert_Is('Invalid web service call, missing value for parameter: \'email\'.')
+        done()
+      render: (data)->
+        done()
+
+    using new Login_Controller(req,res),->
+      @passwordResetToken()
+
+
+  it 'passwordReset with Token (bad server)', (done)->
+    req =
+      url    : '/passwordReset/demo/00000000-0000-0000-0000-000000000000'
+      body   : {}
+    res =
+      send: (data)->
+        data.assert_Is('could not connect with TM Uno server')
+        done()
+
+    using new Login_Controller(req,res),->
+      @.webServices = 'https://aaaaaaaa.teammentor.net/'
+      @passwordResetToken()
+
   it 'redirectToLoginPage', (done)->
     invoke_Method "redirectToLoginPage", { } ,loginPage,done
 
@@ -102,6 +139,9 @@ describe "controllers | test-Login-Controller |", ->
           invoke_UserSignUp 'user','weakpwd','aa@teammentor.net', signUp_fail,->        #weak password
             done()
 
+  it.only 'passwordReset(bad values)', (done)->
+    invoke_PasswordReset 'a','b',signUp_Ok,->
+      done()
 
   it 'userSignUp (good values)', (done)->
     user = "tm_ut_".add_5_Random_Letters()
@@ -135,3 +175,4 @@ describe "controllers | test-Login-Controller |", ->
     using new Login_Controller(req,res),->
       @.webServices = 'https://aaaaaaaa.teammentor.net/'
       @userSignUp()
+

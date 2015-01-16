@@ -18,6 +18,8 @@ add_Routes = (app,searchController)->
     app.get  '/user/logout'    , (req, res)-> new Login_Controller(req, res).logoutUser()
     app.post '/user/pwd_reset' , (req, res)-> new Login_Controller(req, res).passwordReset()
     app.post '/user/sign-up'   , (req, res)-> new Login_Controller(req, res).userSignUp()
+    app.post '/passwordReset/:username/:token'   , (req, res)-> new Login_Controller(req, res).passwordResetToken()
+
     
     #library routes
     Library_Controller.registerRoutes(app)
@@ -36,6 +38,8 @@ add_Routes = (app,searchController)->
     app.get '/index.html'                                   , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/default.jade'
     app.get '/guest/:page.html'                             , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/' + req.params.page + '.jade'
 
+    # password reset
+    app.get '/passwordReset/:username/:token'               , (req, res)->  res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/pwd-reset.jade'
     #Jade render routes
 
     Jade_Controller.registerRoutes(app)
