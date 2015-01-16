@@ -484,7 +484,7 @@ label {
   color: #8aaf3e;
 }
 
-#links ul li a:hover {
+#links ul li a:hover, #links ul li a:focus, #links ul li a:active {
   color: #49661f;
 }
 
@@ -532,7 +532,6 @@ p {
   line-height: 1.5em;
   color: #444444;
 }
-
 ul, ol {
   margin-left: 0;
   margin-bottom: 0;
@@ -583,7 +582,6 @@ hr {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-
 a {
   color: #444444;
   text-decoration: underline;
@@ -1696,4 +1694,3 @@ fieldset legend {
   background: #f3f3f3;
   padding: 10px;
 }
-
