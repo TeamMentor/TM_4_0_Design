@@ -1,40 +1,42 @@
 include ../../content/globals.jade
 
 mixin login-form
-	h3 Login
-	include:md ../../content/getting-started/login-form.md
-	form#login-form(role='form' method='post' action='/user/login')
-		.form-group
-			+username-input
-		.form-group
-			+password-input
-		.row
-			.col-6
-				.lge-container
-					+login-button
-			.col-6
-				.lge-container
-					a(href='/guest/pwd-forgot.html')
-						+forgot-password-button
+	fieldset
+		h3 Login
+		include:md ../../content/getting-started/login-form.md
+		form#login-form(role='form' method='post' action='/user/login')
+			.form-group
+				+username-input
+			.form-group
+				+password-input
+			.row
+				.col-6
+					.lge-container
+						+login-button
+				.col-6
+					.lge-container
+						a(href='/guest/pwd-forgot.html')
+							+forgot-password-button
 
 //- sign-up-form
 mixin sign-up-form
-	h3 Sign Up
-	include:md ../../content/getting-started/sign-up-form.md
-	form#sign-up-form(role='form', method='POST', action='/user/sign-up')
-		.form-group
-			+username-input
-			include:md ../../content/getting-started/username-prompt.md
-		.form-group
-			+email-input
-			include:md ../../content/getting-started/email-prompt.md
-		.form-group
-			+password-input
-			include:md ../../content/getting-started/password-prompt.md
-		.form-group
-			+confirm-password-input
-		include:md ../../content/getting-started/agree-to-toc.md
-		+sign-up-button
+	fieldset
+		h3 Sign Up
+		include:md ../../content/getting-started/sign-up-form.md
+		form#sign-up-form(role='form', method='POST', action='/user/sign-up')
+			.form-group
+				+username-input
+				include:md ../../content/getting-started/username-prompt.md
+			.form-group
+				+email-input
+				include:md ../../content/getting-started/email-prompt.md
+			.form-group
+				+password-input
+				include:md ../../content/getting-started/password-prompt.md
+			.form-group
+				+confirm-password-input
+			include:md ../../content/getting-started/agree-to-toc.md
+			+sign-up-button
 
 
 //- forgot-password-form
@@ -48,14 +50,15 @@ mixin forgot-password-form
 
 //- pwd-reset-form
 mixin pwd-reset-form
-	h3 Reset your password
-	form#pwd-reset-form(role='form')
-		.form-group
-			+password-input
-			include:md ../../content/getting-started/password-prompt.md
-		.form-group
-			+confirm-password-input
-		+reset-password-button
+	fieldset
+		h3 Reset your password
+		form#pwd-reset-form(role='form')
+			.form-group
+				+password-input
+				include:md ../../content/getting-started/password-prompt.md
+			.form-group
+				+confirm-password-input
+			+reset-password-button
 
 
 mixin alert-login-failed
@@ -82,10 +85,17 @@ mixin alert-pw-requirements
 	.alert(role='alert')
 		| You need to login to see that page.
 
+mixin alert-pwd-reset-failed
+	.alert(role='alert')
+		| Error here
+
+mixin alert-pwd-reset-OK
+	.alert(role='alert')
+		| Your password has been updated. Please login to access our libraries.
 
 //- main-app-view
 mixin main-app-view
-	//#recentlyViewedArticles
+	#recentlyViewedArticles
 		h4 Recently Viewed Articles
 		.list-group
 			a(href='#')
@@ -106,8 +116,8 @@ mixin main-app-view
 			a(href='#')
 				| Test
 				span.badge 12
-	//h4 Popular Search Terms
-	//.list-group
+	h4 Popular Search Terms
+	.list-group
 		a(href='#')
 			| Testing a longer title for bugs Testing a longer title for bugs
 			span.badge 12
@@ -126,8 +136,8 @@ mixin main-app-view
 		a(href='#')
 			| Test
 			span.badge 12
-	//h4 Top Articles
-	//.list-group
+	h4 Top Articles
+	.list-group
 		a(href='#')
 			| Test
 			span.badge 12
@@ -147,8 +157,8 @@ mixin main-app-view
 			| Test
 			span.badge 12
 
-	//h4 New Articles
-	//.list-group
+	h4 New Articles
+	.list-group
 		a(href='#')
 			| Test
 			span.badge 12
