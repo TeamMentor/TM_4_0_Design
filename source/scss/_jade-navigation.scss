@@ -87,10 +87,14 @@
 		margin: 5px 0 0 0;
 	}
 	a {
+		border-bottom: 1px solid $light-grey;
 		display: block;
+		font-size: 0.95em;
 		padding: 7px 5px 7px 10px;
 		text-decoration: none;
-		font-size: 0.95em;
+		&:last-child{
+	 		border: 0;
+		}
 		&:hover {
 			text-decoration: none;
 			background-color: $light-grey;
