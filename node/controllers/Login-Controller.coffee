@@ -4,13 +4,14 @@ users = [ { username : 'tm'   , password : 'tm'   } ,
           { username : 'user' , password : 'a'     } ,
         ];
             
-loginPage         = 'source/jade/guest/login-Fail.jade'
-mainPage_user     = '/user/main.html'
-mainPage_no_user  = '/guest/default.html'
-password_sent     = '/guest/pwd-sent.html'
-signUp_fail       = 'source/jade/guest/sign-up-Fail.jade'
-signUp_Ok         = 'source/jade/guest/sign-up-OK.html'
-loginSuccess      = 0
+loginPage           = 'source/jade/guest/login-Fail.jade'
+mainPage_user       = '/user/main.html'
+mainPage_no_user    = '/guest/default.html'
+password_sent       = '/guest/pwd-sent.html'
+signUp_fail         = 'source/jade/guest/sign-up-Fail.jade'
+signUp_Ok           = 'source/jade/guest/sign-up-OK.html'
+password_reset_fail = 'source/jade/guest/pwd-reset.jade'
+loginSuccess        = 0
 
 class Login_Controller
   constructor: (req, res)->
@@ -86,6 +87,44 @@ class Login_Controller
             @.res.redirect(password_sent);
         else
             @.res.send(JSON.stringify(response));
+
+  passwordResetToken : ()=>
+    #Parsing URL
+    url = @.req?.url?.split('/')
+    username = url[2]?.toString()
+    token    = url[3]?.toString()
+    #Validating token
+    if (token == null)
+      @res.render(password_reset_fail, {errorMessage: 'Token is invalid'})
+      return
+    #validating username
+    if (username == null)
+      @res.render(password_reset_fail, {errorMessage: 'Username is invalid'})
+      return
+    #Passwords must match
+    if (@.req.body.password != @.req.body['confirm-password'])
+      @res.render(password_reset_fail, {errorMessage: 'Passwords don\'t match'})
+      return
+    #request options
+    options = {
+                   method: 'post'
+                   body: {userName: username,token: token,newPassword:@.req.body.password}
+                   json: true
+                   url: @.webServices + '/PasswordReset'
+              }
+
+    request options, (error, response, body)=>
+      console.log(response)
+      if (error and error.code=="ENOTFOUND")
+        @.res.send('could not connect with TM Uno server');
+        return;
+      if (response.statusCode == 200)
+        result = response?.body.d;
+        if(result)
+          @res.redirect('/guest/login.html')
+        else
+        @res.render(password_reset_fail, {errorMessage: 'Error occurred.'})
+      @res.render(password_reset_fail, {errorMessage: 'Error occurred.'})
 
 
   userSignUp: ()=>
