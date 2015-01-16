@@ -10,7 +10,8 @@ mainPage_no_user    = '/guest/default.html'
 password_sent       = '/guest/pwd-sent.html'
 signUp_fail         = 'source/jade/guest/sign-up-Fail.jade'
 signUp_Ok           = 'source/jade/guest/sign-up-OK.html'
-password_reset_fail = 'source/jade/guest/pwd-reset.jade'
+password_reset_fail = 'source/jade/guest/pwd-reset-fail.jade'
+password_reset_ok   = 'source/jade/guest/login-pwd-reset.html'
 loginSuccess        = 0
 
 class Login_Controller
@@ -94,17 +95,15 @@ class Login_Controller
     username = url[2]?.toString()
     token    = url[3]?.toString()
     #Validating token
-    if (token == null)
+    if (token == null || username == null )
       @res.render(password_reset_fail, {errorMessage: 'Token is invalid'})
       return
-    #validating username
-    if (username == null)
-      @res.render(password_reset_fail, {errorMessage: 'Username is invalid'})
-      return
+
     #Passwords must match
     if (@.req.body.password != @.req.body['confirm-password'])
       @res.render(password_reset_fail, {errorMessage: 'Passwords don\'t match'})
       return
+
     #request options
     options = {
                    method: 'post'
@@ -118,12 +117,13 @@ class Login_Controller
       if (error and error.code=="ENOTFOUND")
         @.res.send('could not connect with TM Uno server');
         return;
+
       if (response.statusCode == 200)
         result = response?.body.d;
         if(result)
-          @res.redirect('/guest/login.html')
+          @res.redirect(password_reset_ok)
         else
-        @res.render(password_reset_fail, {errorMessage: 'Error occurred.'})
+          @res.render(password_reset_fail,{errorMessage: 'Error occurred.'})
       @res.render(password_reset_fail, {errorMessage: 'Error occurred.'})
 
 
