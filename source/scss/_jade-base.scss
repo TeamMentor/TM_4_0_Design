@@ -27,8 +27,12 @@ img {
 
 #application {
 	height: $full-width;
-	margin: 80px 0 0 0;
+	margin: 107px 0 0 0;
 	width: $full-width;
+}
+
+#landing-page {
+	margin-top: 185px;
 }
 
 #loginwall {
@@ -59,11 +63,40 @@ form, .form-group {
 	list-style-type: none;
 	margin: 0 0 15px 0;
 
+	input {
+		border: none;
+		&:focus {
+			background: $light-grey;
+				color: $dark-grey;
+		}
+	}
+	label {
+		font-size: 14px;
+	}
 	p {
 		font-size: 0.75em;
 		margin-top: 0;
 	}
 }
+
+fieldset {
+	background: $light-grey;
+	border-radius: 3px;
+	border: transparent;
+	margin: 20px 0 0 0;
+	padding: 0 20px 0 20px;
+	input {
+		border: none;
+		&:focus {
+			background: $light-grey;
+  			color: $grey;
+		}
+	}
+	label {
+		font-size: 14px;
+	}
+}
+
 
 label {
 	color: $dark-grey;
@@ -106,14 +139,17 @@ select {
 }
 
 #search {
-	background: white;
+	background: $light-grey;
 	height: 50px;
 	margin: 0 auto;
-	padding: 30px 0 30px 0;
+	padding: 10px;
 	position: fixed;
-	width: 95%;
+	width: 92%;
 	z-index: 96;
 }
+
+
+
 
 .input-group {
 	display: table;
@@ -129,22 +165,25 @@ select {
 		width: 100px;
 	}
 	.btn-search-bar {
-	  border-left: none;
-	  border-radius: 0;
-	  padding: 14px 0 14px 0;
+		border: 1px solid $green;
+		border-left: none;
+		border-radius: 0;
+		padding: 14px 0 15px 0;
 	}
 }
+
 
 button {
 	@extend a.action;
 	background-color: $white;
 	width: $full-width;
+	border-radius: 3px;
 	border-bottom: 2px solid $green;
 	-webkit-box-shadow: inset 0 -2px $green;
 	box-shadow: inset 0 -2px $green;
 	&:hover, &:active {
-		background-color: $light-grey;
-		color: $dark-green;
+		background-color: $green;
+		color: $white;
 		border-bottom: 2px solid $dark-green;
 		-webkit-box-shadow: inset 0 -2px $dark-green;
 		box-shadow: inset 0 -2px $dark-green;
@@ -155,7 +194,7 @@ button {
 	color: $green;
 
 	&:hover, &:active {
-		color: $dark-green;
+		color: $white;
 	}
 }
 
