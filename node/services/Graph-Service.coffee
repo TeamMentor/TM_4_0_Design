@@ -23,9 +23,11 @@ class GraphService
 
     #server = 'https://tm-graph.herokuapp.com'
     dataId = dataId || 'tm-uno'
-    graphDataUrl = "#{@server}/data/#{dataId}/query/filter/tm-search?show=#{queryId}"
-    if (filters)
-        graphDataUrl += "&filters=#{filters}"
+    #graphDataUrl = "#{@server}/data/#{dataId}/query/filter/tm-search?show=#{queryId}"
+    graphDataUrl = "#{@server}/view/tm-search/#{queryId}"
+    log graphDataUrl
+    #if (filters)
+    #    graphDataUrl += "&filters=#{filters}"
     #console.log("****:   " + graphDataUrl)
     require('request').get graphDataUrl, (err,response,body)->
         if (err)
