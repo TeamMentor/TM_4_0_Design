@@ -96,28 +96,17 @@ mixin alert-pwd-reset-OK
 //- main-app-view
 mixin main-app-view
 	#recentlyViewedArticles
-		h4 Recently Viewed Articles
-		.list-group
+		//h4 Recently Viewed Articles
+		//.list-group
 			a(href='#')
 				| Test
 				span.badge 12
 			a(href='#')
 				| Test
 				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
-	h4 Popular Search Terms
-	.list-group
+
+	//h4 Popular Search Terms
+	//.list-group
 		a(href='#')
 			| Testing a longer title for bugs Testing a longer title for bugs
 			span.badge 12
@@ -127,29 +116,9 @@ mixin main-app-view
 		a(href='#')
 			| Test
 			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-	h4 Top Articles
-	.list-group
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
+
+	//h4 Top Articles
+	//.list-group
 		a(href='#')
 			| Test
 			span.badge 12
@@ -157,37 +126,29 @@ mixin main-app-view
 			| Test
 			span.badge 12
 
-	h4 New Articles
-	.list-group
+
+	//h4 New Articles
+	//.list-group
 		a(href='#')
 			| Test
 			span.badge 12
 		a(href='#')
 			| Test
 			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
+
 	#recentlyViewedArticles
 		h4 Recently Viewed Articles
 		.list-group
 			if (recentArticles)
 				for recentArticle in recentArticles
 					a(href=recentArticle.href, target='_blank')= recentArticle.title
+						span.badge 12
 	h4 Popular Search Terms
 	.list-group
 		if (searchTerms)
 			for searchTerm in searchTerms
 				a(href=searchTerm.href)= searchTerm.title
+					span.badge 12
 	h4 Top Articles
 	.list-group
 		if (topArticles)
