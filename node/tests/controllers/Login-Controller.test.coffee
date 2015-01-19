@@ -9,11 +9,14 @@ describe "controllers | test-Login-Controller |", ->
   password_sent     = '/guest/pwd-sent.html'
   signUp_fail       = "source/jade/guest/sign-up-Fail.jade"
   signUp_Ok         = '/guest/sign-up-OK.html'
+  password_reset_fail = 'source/jade/guest/pwd-reset-fail.jade'
+  password_reset_ok   = 'source/jade/guest/login-pwd-reset.html'
 
   invoke_Method = (method, body, expected_Target, callback)->
     req =
           body   : body
           session: {}
+          url    : '/passwordReset/temp/00000000-0000-0000-0000-000000000000'
     res =
           redirect: (target)->
             target.assert_Is(expected_Target)
@@ -33,6 +36,12 @@ describe "controllers | test-Login-Controller |", ->
   invoke_UserSignUp = (username, password, email, expected_Target, callback)->
     invoke_Method "userSignUp",
       { username: username , password: password,'confirm-password':password , email: email } ,
+      expected_Target,
+      callback
+
+  invoke_PasswordReset = (password, confirmPassword,expected_Target,callback)->
+    invoke_Method "passwordResetToken",
+      { password: password,'confirm-password': confirmPassword } ,
       expected_Target,
       callback
 
@@ -80,7 +89,7 @@ describe "controllers | test-Login-Controller |", ->
     using new Login_Controller(req,res),->
       @passwordReset()
 
-  it 'passwordReset (bad server)', (done)->
+  it 'passwordReset(bad server)', (done)->
     req =
       body   : {}
     res =
@@ -92,6 +101,21 @@ describe "controllers | test-Login-Controller |", ->
       @.webServices = 'https://aaaaaaaa.teammentor.net/'
       @passwordReset()
 
+  it 'passwordReset with Token (bad server)', (done)->
+    req =
+      url    : '/passwordReset/demo/00000000-0000-0000-0000-000000000000'
+      body   : {password:'!!TmAdmin24**','confirm-password':'!!TmAdmin24**'}
+    res =
+      send: (data)->
+        data.assert_Is('could not connect with TM Uno server')
+        done()
+    render: (data)->
+      done()
+
+    using new Login_Controller(req,res),->
+      @.webServices = 'https://dadadaea.teammentor.net/'
+      @passwordResetToken()
+
   it 'redirectToLoginPage', (done)->
     invoke_Method "redirectToLoginPage", { } ,loginPage,done
 
@@ -102,6 +126,28 @@ describe "controllers | test-Login-Controller |", ->
           invoke_UserSignUp 'user','weakpwd','aa@teammentor.net', signUp_fail,->        #weak password
             done()
 
+  it 'passwordReset fail (Passwords do not match)', (done)->
+    invoke_PasswordReset 'a','b',password_reset_fail,->
+      done()
+
+  it 'passwordReset fail (Weak Password)', (done)->
+    invoke_PasswordReset 'abcdefghi','abcdefghi',password_reset_fail,->
+      done()
+  it 'passwordReset fail (short Password)', (done)->
+    invoke_PasswordReset 'abc','abc',password_reset_fail,->
+      done()
+
+  it 'passwordReset fail (Password not provided)', (done)->
+    invoke_PasswordReset '','',password_reset_fail,->
+      done()
+
+  it 'passwordReset fail (Confirmation password not provided)', (done)->
+    invoke_PasswordReset '!!Sifsj487(*&','',password_reset_fail,->
+      done()
+
+  it 'passwordReset fail (Token is not valid)', (done)->
+    invoke_PasswordReset '!!**&DH25cRuz1','!!**&DH25cRuz1',password_reset_fail,->
+      done()
 
   it 'userSignUp (good values)', (done)->
     user = "tm_ut_".add_5_Random_Letters()
@@ -135,3 +181,4 @@ describe "controllers | test-Login-Controller |", ->
     using new Login_Controller(req,res),->
       @.webServices = 'https://aaaaaaaa.teammentor.net/'
       @userSignUp()
+
