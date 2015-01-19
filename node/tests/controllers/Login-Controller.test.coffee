@@ -141,6 +141,10 @@ describe "controllers | test-Login-Controller |", ->
     invoke_PasswordReset '','',password_reset_fail,->
       done()
 
+  it 'passwordReset fail (Confirmation password not provided)', (done)->
+    invoke_PasswordReset '!!Sifsj487(*&','',password_reset_fail,->
+      done()
+
   it 'passwordReset fail (Token is not valid)', (done)->
     invoke_PasswordReset '!!**&DH25cRuz1','!!**&DH25cRuz1',password_reset_fail,->
       done()
