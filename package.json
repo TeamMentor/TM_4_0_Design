@@ -30,6 +30,7 @@
     "body-parser": "latest",
     "coffee-script": "latest",
     "express": "latest",
+    "express-enforces-ssl": "^1.1.0",
     "express-session": "latest",
     "fluentnode": "^0.3.0",
     "github": "latest",
