@@ -26,6 +26,7 @@ class Express_Service
     @set_Views_Path()
     @set_Secure_Headers()
     @
+
   add_Session: (sessionFile)=>
 
     @.expressSession = new Express_Session({ filename: sessionFile || './.tmCache/_sessionData' ,session:session})
@@ -53,19 +54,19 @@ class Express_Service
       defaultSrc: ["'self'"],
       scriptSrc: ["'none'"],
       styleSrc: ["'self'",
-                 "'unsafe-inline'"],
+                 "'unsafe-inline'"], # Re-design of the inline CSS style sheets to external sources should be considered to prevent xss attacks
       imgSrc: ["'self'"],
       objectSrc: ["'self'"],
       mediaSrc: ["'none'"],
       frameSrc: ["'self'"]
       #reportUri: '/csp' # Browser will POST reports of policy failures to this URI
     }));
-    @.app.use(helmet.hsts({
+    @.app.use(helmet.hsts({    #http://tools.ietf.org/html/rfc6797 - HTTP Strict Transport Security
       maxAge: 10886400000,     # Milliseconds - must be at least 18 weeks to be approved by Google
       includeSubdomains: true, # Must be enabled to be approved by Google
       preload: true # Submits site for baked-into-Chrome HSTS by adding preload to header - https://hstspreload.appspot.com/
     }));
-    @.app.use(helmet.hidePoweredBy());
+    @.app.use(helmet.hidePoweredBy()); # hides "X-Powered-By: Express" set by default in Express header
     #@.app.use(enforce_ssl());
 
   map_Route: (file)=>
@@ -75,14 +76,7 @@ class Express_Service
   start:()=>
     if process.mainModule.filename.not_Contains('node_modules/mocha/bin/_mocha')
       console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + @app.port)
-      if @app.port == '443'
-        httpsOptions =
-          key: fs.readFileSync('/Users/salle/Documents/Creds/SelfSignCert/private.key'),
-          cert: fs.readFileSync('/Users/salle/Documents/Creds/SelfSignCert/public.cert')
-        @app.server = https.createServer(httpsOptions, @app).listen(@app.port)
-        console.log("Running over https")
-      else
-        @app.server = @app.listen(@app.port)
+    @app.server = @app.listen(@app.port)
 
   checkAuth: (req, res, next, config)=>
     if (@.loginEnabled and req and req.session and !req.session.username)
