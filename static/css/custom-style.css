@@ -343,7 +343,7 @@ body {
 }
 
 #loginwall {
-  padding: 80px 0 20px 0;
+  padding: 180px 0 20px 0;
 }
 
 #landing-page {
@@ -896,6 +896,9 @@ table td {
   }
   #loginwall, #summary {
     max-width: 90%;
+  }
+  #loginwall {
+    padding: 100px 0 0 0;
   }
   #summary {
     padding: 80px 0 0 0;
@@ -1667,21 +1670,20 @@ fieldset label {
 }
 
 fieldset input:focus {
-  background: #e3e3e3;
+  background: #aaaaaa;
+  color: #444444;
+}
+
+fieldset h3 {
   color: #444444;
 }
 
 fieldset {
   border: transparent;
-  background: #fafafa;
+  background: #dbdbdb;
   border-radius: 3px;
   padding: 0 20px 0 20px;
   margin: 20px 0 0 0;
-}
-
-fieldset legend {
-  background: white;
-  padding: 0px 10px 0px 10px;
 }
 
 .btn-search-bar {
