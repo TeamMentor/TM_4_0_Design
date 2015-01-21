@@ -16,15 +16,16 @@ mixin flare-search-bar-input
 
 //- Flare Results-Save-Clear
 mixin flare-results-save-clear
-	.row
-		.small-12.medium-6.columns
-			h4 0/200 results showing
-		.small-6.medium-3.columns
-			a.button(href='app-keyword-search-save')
-				+save-icon
-		.small-6.medium-3.columns
-			a.button(href='main-app-view')
-				+clear-icon
+	table
+		tr
+			td
+				h4 0/200 results showing
+			td
+				a.action(href='app-keyword-search-save')
+					+save-icon
+			td
+				a.action(href='main-app-view')
+					+clear-icon
 
 //- Articles List
 mixin flare-articles-list
