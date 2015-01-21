@@ -1216,3 +1216,35 @@ ul.side-nav span.badge {
 input#search-bar {
   width: 50%;
 }
+
+button, .button {
+  display: inline-block;
+  padding: 15px 0 15px 0;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #FFFFFF;
+  border: transparent;
+  border-radius: 3px;
+  color: #8aaf3e;
+  width: 100%;
+  border:1px solid #aaaaaa;
+  border-bottom: 2px solid #8aaf3e;
+  -webkit-box-shadow: inset 0 -2px #8aaf3e;
+  box-shadow: inset 0 -2px #8aaf3e;
+}
+button:hover, button:active, .button:hover, .button:active {
+  color: #ffffff;
+  background: #8aaf3e;
+  border: transparent;
+  border-color: #6c9020;
+  border-bottom: 2px solid #6c9020;
+  -webkit-box-shadow: inset 0 -2px #6c9020;
+  box-shadow: inset 0 -2px #6c9020;
+  text-decoration: none;
+}
+
+button:hover i, button:active i , .button:hover i, .button:active i {
+  color: white;
+}
