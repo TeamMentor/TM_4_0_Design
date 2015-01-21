@@ -1195,13 +1195,6 @@ select {
     opacity: 0; }
 
 button, .button {
-  border-style: solid;
-  border-width: 0;
-  cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-weight: normal;
-  line-height: normal;
-  margin: 0 0 1.25rem;
   position: relative;
   text-decoration: none;
   text-align: center;
@@ -1213,12 +1206,8 @@ button, .button {
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
   font-size: 1rem;
-  background-color: #2ba6cb;
-  border-color: #2285a2;
   color: #FFFFFF;
   transition: background-color 300ms ease-out; }
-  button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #2285a2; }
   button:hover, button:focus, .button:hover, .button:focus {
     color: #FFFFFF; }
   button.secondary, .button.secondary {
