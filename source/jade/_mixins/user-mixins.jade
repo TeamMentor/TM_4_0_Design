@@ -1,9 +1,9 @@
-include ../../content/globals.jade
+include ../../shared-mixins/globals.jade
 
 mixin login-form
-	fieldset
-		h3 Login
-		include:md ../../content/getting-started/login-form.md
+	#form
+		#heading
+			include:md ../../content/getting-started/login-form.md
 		form#login-form(role='form' method='post' action='/user/login')
 			.form-group
 				+username-input
@@ -20,9 +20,9 @@ mixin login-form
 
 //- sign-up-form
 mixin sign-up-form
-	fieldset
-		h3 Sign Up
-		include:md ../../content/getting-started/sign-up-form.md
+	#form
+		#heading
+			include:md ../../content/getting-started/sign-up-form.md
 		form#sign-up-form(role='form', method='POST', action='/user/sign-up')
 			.form-group
 				+username-input
