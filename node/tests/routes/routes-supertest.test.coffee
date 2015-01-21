@@ -8,7 +8,7 @@ describe 'routes | routes-supertest.test |',  ()->
 
   app.config.enable_Jade_Cache = true;
 
-  it.only 'verify security headers in response', (done)->
+  it 'verify security headers in response', (done)->
     assert = require('assert')
     supertest(app).get('/')
                   .expect('Content-Security-Policy', "default-src 'self';script-src 'none';object-src 'self';img-src 'self';media-src 'none';frame-src 'self';style-src 'self' 'unsafe-inline'")
