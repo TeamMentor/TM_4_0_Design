@@ -14,13 +14,15 @@
   "main": "node/server.js",
   "scripts": {
     "start": "npm run start-dev",
-    "start_static": "node_modules/supervisor/lib/cli-wrapper.js -i node static/coffee_js/server.js",
-    "test": "node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register node/tests --recursive -R list",
-    "test-watch": "node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register node/tests --recursive -R list -w",
+    "start_static": "node ./node_modules/supervisor/lib/cli-wrapper.js -i node static/coffee_js/server.js",
+    "test": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register node/tests --recursive -R list",
+    "test-watch": "node ./node_modules/mocha/bin/mocha --compilers coffee:coffee-script/register node/tests --recursive -R list -w",
     "start_once": "node app.js",
+    "installWinSvc": "node ./node_modules/winser/bin/winser -i",
+    "uninstallWinSvc": "node ./node_modules/winser/bin/winser -r",
     "coverage-publish": "./node/bin/publish-code-coverage.sh",
     "coverage": "./node/bin/local-code-coverage.sh",
-    "start-dev": "node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' app.js"
+    "start-dev": "node ./node_modules/supervisor/lib/cli-wrapper.js -i node/tests/ --extensions 'coffee,js' app.js"
   },
   "repository": {
     "type": "git",
@@ -40,6 +42,7 @@
     "nedb": "latest",
     "request": "latest",
     "supervisor": "latest",
+    "winser": "latest",
     "teammentor": "^0.1.2"
   },
   "devDependencies": {

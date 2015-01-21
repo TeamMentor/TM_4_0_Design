@@ -24,7 +24,9 @@ class GraphService
     #server = 'https://tm-graph.herokuapp.com'
     dataId = dataId || 'tm-uno'
     #graphDataUrl = "#{@server}/data/#{dataId}/query/filter/tm-search?show=#{queryId}"
-    graphDataUrl = "#{@server}/view/tm-search/#{queryId}"
+    #graphDataUrl = "#{@server}/view/tm-search/#{queryId}"
+    graphDataUrl = "#{@server}/graph-db/filter/#{queryId}"
+
     log graphDataUrl
     #if (filters)
     #    graphDataUrl += "&filters=#{filters}"
