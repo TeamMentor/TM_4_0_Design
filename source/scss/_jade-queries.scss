@@ -59,11 +59,14 @@
 	#loginwall, #summary {
 		max-width: 90%;
 	}
+	#loginwall {
+		padding: 100px 0 0 0;
+	}
 	#summary {
-		padding-top: 80px 0 0 0;
+		padding: 80px 0 0 0;
 	}
 	#search {
-		width: 47%;
+		width: 48%;
 	}
 	#si-logo {
 		margin: 0;
