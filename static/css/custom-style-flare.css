@@ -1214,7 +1214,14 @@ ul.side-nav span.badge {
 
 
 input#search-bar {
-  width: 50%;
+  width: 100%;
+  border: 1px solid #aaaaaa;
+  border-radius: 0px;
+}
+
+input#search-bar:active, input#search-bar:focus {
+  border-bottom: 3px solid #8aaf3e;
+  background: white;
 }
 
 button, .button {
