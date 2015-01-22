@@ -51,8 +51,7 @@ class Library_Controller
 
   showQueries: ()=>
     server = 'http://localhost:1332';
-    url    = '/data/tm-uno/queries'
-
+    url    = '/graph-db/queries/'
     request(server + url, (error, response,data)=>
       viewModel= {}
 
