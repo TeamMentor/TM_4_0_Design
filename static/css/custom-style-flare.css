@@ -1164,6 +1164,7 @@ table {
   padding: 15px 5px 5px 5px;
   border-radius: 0px;
   border-left: transparent;
+  width: 50%;
 }
 
 .tabs dd.active a, .tabs .tab-title.active a {
@@ -1255,3 +1256,94 @@ button:hover, button:active, .button:hover, .button:active {
 button:hover i, button:active i , .button:hover i, .button:active i {
   color: white;
 }
+
+
+
+
+
+#tm-logo {
+  background:url('../assets/logos/logos.jpg') no-repeat;
+  background-position: 0px 0px;
+  height: 50px;
+  margin: 0 auto;
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#si-logo {
+  background:url('../assets/logos/logos.jpg') no-repeat;
+  background-position: 0px -50px;
+  height: 50px;
+  width: 190px;
+  margin: 0 auto;
+}
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], 
+input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], 
+input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+  width: 100%;
+  background-color: #FFFFFF;
+  font-family: inherit;
+  border: 1px solid #aaaaaa;
+  border: none;
+  color: #444444;
+  border-radius: 3px;
+  font-size: 1em;
+  margin: 0 0 5px 0;
+  padding: 0 0 0 0.5rem;
+  height: 3rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, 
+input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, 
+input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, 
+input[type="url"]:focus, textarea:focus {
+  background: #f3f3f3;
+  border-color: #8aaf3e;
+  outline: medium none;
+}
+
+#copyright {
+  padding-bottom: 30px;
+}
+#copyright p, #copyright a {
+  font-size: 12px;
+  text-align: center;
+  font-weight: normal;
+  letter-spacing: 0px;
+}
+#copyright a {
+  text-transform: none !important;
+  text-decoration: underline;
+}
+
+a {
+  color: #444444;
+  text-decoration: underline;
+}
+a:hover, a:active, a:focus {
+  color: #49661f;
+  text-decoration: underline;
+}
+a.action {
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #8aaf3e;
+}
+a.action:hover, a.action:focus, a.action:active {
+  color: #49661f;
+}
+
+hr {
+  margin: 0 auto;
+  width: 70%;
+  color: #ececec;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
