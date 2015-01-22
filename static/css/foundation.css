@@ -1150,7 +1150,6 @@ select {
   position: relative;
   padding: 0.875rem 1.5rem 0.875rem 0.875rem;
   font-size: 0.8125rem;
-  transition: opacity 300ms ease-out;
   background-color: #2ba6cb;
   border-color: #258faf;
   color: #FFFFFF; }
@@ -1206,8 +1205,7 @@ button, .button {
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
   font-size: 1rem;
-  color: #FFFFFF;
-  transition: background-color 300ms ease-out; }
+  color: #FFFFFF; }
   button:hover, button:focus, .button:hover, .button:focus {
     color: #FFFFFF; }
   button.secondary, .button.secondary {
