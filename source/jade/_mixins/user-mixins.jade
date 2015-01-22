@@ -95,20 +95,17 @@ mixin alert-pwd-reset-OK
 
 //- main-app-view
 mixin main-app-view
-
 	#recentlyViewedArticles
 		h4 Recently Viewed Articles
 		.list-group
 			if (recentArticles)
 				for recentArticle in recentArticles
 					a(href=recentArticle.href, target='_blank')= recentArticle.title
-						span.badge 12
 	h4 Popular Search Terms
 	.list-group
 		if (searchTerms)
 			for searchTerm in searchTerms
 				a(href=searchTerm.href)= searchTerm.title
-					span.badge 12
 	h4 Top Articles
 	.list-group
 		if (topArticles)
