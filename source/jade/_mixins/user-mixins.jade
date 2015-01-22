@@ -52,7 +52,7 @@ mixin forgot-password-form
 mixin pwd-reset-form
 	fieldset
 		h3 Reset your password
-		form#pwd-reset-form(role='form')
+		form#pwd-reset-form(role='form' method='post')
 			.form-group
 				+password-input
 				include:md ../../content/getting-started/password-prompt.md
@@ -87,7 +87,7 @@ mixin alert-pw-requirements
 
 mixin alert-pwd-reset-failed
 	.alert(role='alert')
-		| Error here
+		| Error: #{errorMessage}
 
 mixin alert-pwd-reset-OK
 	.alert(role='alert')
@@ -102,11 +102,13 @@ mixin main-app-view
 			if (recentArticles)
 				for recentArticle in recentArticles
 					a(href=recentArticle.href, target='_blank')= recentArticle.title
+						span.badge 12
 	h4 Popular Search Terms
 	.list-group
 		if (searchTerms)
 			for searchTerm in searchTerms
 				a(href=searchTerm.href)= searchTerm.title
+					span.badge 12
 	h4 Top Articles
 	.list-group
 		if (topArticles)
