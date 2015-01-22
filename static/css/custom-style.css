@@ -1,11 +1,6 @@
-.col-1:empty, .col-2:empty, .col-3:empty, .col-4:empty, .col-5:empty, .col-6:empty, .col-7:empty, .col-8:empty, .col-9:empty, .col-10:empty, .col-11:empty, .col-12:empty {
-  display: none;
-}
-
 @media (min-width: 853px) {
   .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
     float: left;
-    display: block;
   }
 
   .col-12 {
