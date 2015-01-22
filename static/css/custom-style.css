@@ -1,6 +1,11 @@
-@media (min-width: 768px) {
+.col-1:empty, .col-2:empty, .col-3:empty, .col-4:empty, .col-5:empty, .col-6:empty, .col-7:empty, .col-8:empty, .col-9:empty, .col-10:empty, .col-11:empty, .col-12:empty {
+  display: none;
+}
+
+@media (min-width: 853px) {
   .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
     float: left;
+    display: block;
   }
 
   .col-12 {
@@ -232,7 +237,7 @@ body {
 #application {
   width: 100%;
   height: 100%;
-  margin-top: 107px;
+  margin-top: 150px;
 }
 
 #call-to-action {
@@ -324,8 +329,8 @@ body {
   margin-right: 10px;
 }
 
-#help-nav, #help-docs {
-  margin-top: 120px;
+#help-nav{
+  margin-top: 170px;
 }
 
 #help-docs h1 {
@@ -615,6 +620,7 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
   margin: 0 0 5px 0;
   padding: 0 0 0 0.5rem;
   height: 3rem;
+  box-shadow: 1px 1px 6px #444444;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -660,7 +666,7 @@ select {
 }
 
 .btn-search-bar {
-  padding: 14px 0 14px 0;
+  padding: 20px 0 20px 0;
   border-left: none;
   border-radius: 0;
   border-color: #8aaf3e;
@@ -674,7 +680,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 1px;
   background: #FFFFFF;
-  border: transparent;
+  border: 1px solid #aaaaaa;
   border-radius: 3px;
   color: #8aaf3e;
   width: 100%;
@@ -694,26 +700,11 @@ button:hover, button:active {
 }
 
 .badge {
-  min-width: 10px;
-  padding: 3px 7px;
   font-size: 12px;
-  color: #FFFFFF;
-  background-color: #aaaaaa;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.progress {
-  height: 20px;
-  background-color: #ececec;
-  border-radius: 4px;
-  box-shadow: none;
-}
-
-.progress-bar {
-  height: 100%;
-  color: #FFFFFF;
-  background-color: #8aaf3e;
+  color: #8aaf3e;
+  text-align: right;
+  font-weight: 700;
+  padding: 3px;
 }
 
 .list-group {
@@ -842,7 +833,7 @@ table td {
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 853px) {
   #application {
     margin-top: 60px;
   }
@@ -853,7 +844,7 @@ table td {
     margin: 50px 0 0 0;
   }
   #search {
-    width: 47%;
+    width: 48%;
   }
   #team-mentor-navigation {
     height: 60px;
@@ -1663,7 +1654,7 @@ form p {
 }
 
 .btn-search-bar {
-  padding: 14px 0 15px 0;
+  padding: 14px 0 16px 0;
   border: 1px solid #8aaf3e;
   border-radius: 0;
 }
@@ -1679,13 +1670,9 @@ form {
   padding: 20px;
 }
 
-form input[type="text"], form input[type="password"], form input[type="email"]{
-  border-bottom: 1px solid #aaaaaa;
-}
-
 form input[type="text"]:active, form input[type="text"]:focus, form input[type="password"]:active, form input[type="password"]:focus, form input[type="email"]:active, form input[type="email"]:focus{
   background: white;
-  border-bottom: 3px solid #8aaf3e;
+  border-bottom: 2px solid #8aaf3e;
 }
 
 #heading {

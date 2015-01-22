@@ -27,7 +27,7 @@ img {
 
 #application {
 	height: $full-width;
-	margin: 107px 0 0 0;
+	margin: 150px 0 0 0;
 	width: $full-width;
 }
 
@@ -44,8 +44,11 @@ img {
 	max-width: 95%;
 }
 
-#help-nav, #help-docs {
-	margin-top: 90px;
+#help-nav {
+	margin: 170px 0 0 0;
+}
+
+#help-docs {
 	h1 {
 		font-size: 1.625em;
 	}
@@ -156,7 +159,7 @@ select {
 		border: 1px solid $green;
 		border-left: none;
 		border-radius: 0;
-		padding: 14px 0 15px 0;
+		padding: 14px 0 16px 0;
 	}
 }
 
@@ -188,13 +191,11 @@ button {
 }
 
 .badge {
-	background-color: $grey;
-	border-radius: 10px;
-	color: $white;
+	@extend a.action;
 	font-size: 12px;
-	min-width: 10px;
-	padding: 3px 7px;
-	text-align: center;
+	text-align: right;
+	font-weight: 700;
+	padding: 3px;
 }
 
 .alert {
