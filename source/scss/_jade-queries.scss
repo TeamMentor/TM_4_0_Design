@@ -15,6 +15,9 @@
 	#customer-navigation ul {
 		text-align: left;
 	}
+	#contact-information {
+		margin: 50px 0 0 0;
+	}
 	#team-mentor-navigation {
 		height: 60px;
 		#tm-logo {
@@ -28,12 +31,13 @@
 			float: right;
 			max-width: 60%;
 			&.icons {
-				padding: 7px 0 0 0;
+				padding: 20px 0 0 0;
 				text-align: right;
 				ul {
 					padding: 0;
 					li {
 						padding: 0 30px 0 0;
+						display: inline-block;
 					}
 				}
 			}
@@ -41,18 +45,31 @@
 				padding: 20px 0 0 0;
 				ul {
 					text-align: right;
+					li {
+						display: inline;
+						width: 100%;
+					}
 				}
 			}
 		}
 	}
+	#landing-page {
+		margin-top: 0;
+	}
 	#loginwall, #summary {
 		max-width: 90%;
 	}
+	#loginwall {
+		padding: 100px 0 0 0;
+	}
 	#summary {
-		padding-top: 80px 0 0 0;
+		padding: 80px 0 0 0;
 	}
 	#search {
 		width: 48%;
+	}
+	#si-logo {
+		margin: 0;
 	}
 	#features {
 		margin: 80px 0 50px 0;

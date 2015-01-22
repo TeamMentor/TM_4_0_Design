@@ -232,7 +232,7 @@ body {
 #application {
   width: 100%;
   height: 100%;
-  margin-top: 50px;
+  margin-top: 107px;
 }
 
 #call-to-action {
@@ -343,7 +343,11 @@ body {
 }
 
 #loginwall {
-  padding: 80px 0 20px 0;
+  padding: 180px 0 0 0;
+}
+
+#landing-page {
+  margin-top: 185px;
 }
 
 #loginwall, #summary {
@@ -444,28 +448,26 @@ label {
   background:url('../assets/logos/logos.jpg') no-repeat;
   background-position: 0px -50px;
   height: 50px;
-  width: 250px;
+  width: 190px;
   margin: 0 auto;
 }
-
-
 #links {
-  width: 100%;
   text-align: text-center;
   padding: 0 10px 5px 0;
 }
-
 #links ul {
   list-style-type: none;
-  width: 100%;
   padding: 0;
 }
-
+#links.text-links ul li {
+  display: block;
+}
 #links.icons {
   display: inline-block;
-  margin-top: 15px;
 }
-
+#links.icons ul li {
+  display: block;
+}
 #links.icons ul li i {
   padding-right: 5px
 }
@@ -482,7 +484,7 @@ label {
   color: #8aaf3e;
 }
 
-#links ul li a:hover {
+#links ul li a:hover, #links ul li a:focus, #links ul li a:active {
   color: #49661f;
 }
 
@@ -530,7 +532,6 @@ p {
   line-height: 1.5em;
   color: #444444;
 }
-
 ul, ol {
   margin-left: 0;
   margin-bottom: 0;
@@ -581,7 +582,6 @@ hr {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-
 a {
   color: #444444;
   text-decoration: underline;
@@ -601,29 +601,14 @@ a.action:hover, a.action:focus, a.action:active {
   color: #49661f;
 }
 
-button, .button {
-  width: 100%;
-  border-radius: 3px;
-  font-size: 14px;
-  background-color: #FFFFFF;
-  color: #8aaf3e;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-button:hover, button:focus, .button:hover, .button:focus {
-  background-color: #FFFFFF;
-  color: #49661f !important;
-  text-decoration: none;
-}
-
-
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], 
 input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], 
 input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
-  width: 100% !important;
+  width: 100%;
   background-color: #FFFFFF;
   font-family: inherit;
   border: 1px solid #aaaaaa;
+  border: none;
   color: #444444;
   border-radius: 3px;
   font-size: 1em;
@@ -635,11 +620,12 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
   box-sizing: border-box;
 }
 
+
 input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, 
 input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, 
 input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, 
 input[type="url"]:focus, textarea:focus {
-  background: #FFFFFF;
+  background: #f3f3f3;
   border-color: #8aaf3e;
   outline: medium none;
 }
@@ -677,6 +663,7 @@ select {
   padding: 14px 0 14px 0;
   border-left: none;
   border-radius: 0;
+  border-color: #8aaf3e;
 }
 
 button {
@@ -687,11 +674,23 @@ button {
   text-transform: uppercase;
   letter-spacing: 1px;
   background: #FFFFFF;
-  border: 1px solid #8aaf3e;
+  border: transparent;
+  border-radius: 3px;
   color: #8aaf3e;
+  width: 100%;
+  border:1px solid #aaaaaa;
+  border-bottom: 2px solid #8aaf3e;
+  -webkit-box-shadow: inset 0 -2px #8aaf3e;
+  box-shadow: inset 0 -2px #8aaf3e;
 }
 button:hover, button:active {
-  color: #49661f;
+  color: #ffffff;
+  background: #8aaf3e;
+  border: transparent;
+  border-color: #6c9020;
+  border-bottom: 2px solid #6c9020;
+  -webkit-box-shadow: inset 0 -2px #6c9020;
+  box-shadow: inset 0 -2px #6c9020;
 }
 
 .badge {
@@ -717,8 +716,8 @@ button:hover, button:active {
   background-color: #8aaf3e;
 }
 
-.list-group a {
-  font-size: 0.95em;
+.list-group {
+  margin-top: -20px;
 }
 
 .list-group h5, .list-group h4 {
@@ -728,8 +727,14 @@ button:hover, button:active {
 
 .list-group a {
   display: block;
+  font-size: 0.95em;
   padding: 7px 5px 7px 10px;
   text-decoration: none;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.list-group a:last-child{
+  border: 0;
 }
 .list-group a:hover {
   text-decoration: none;
@@ -828,14 +833,14 @@ table td {
 }
 
 #search {
-    width: 95%;
-    background: white;
-    height: 50px;
-    margin: 0 auto;
-    position: fixed;
-    z-index: 96;
-    padding: 30px 0 30px 0;
-  }
+  width: 95%;
+  background: white;
+  height: 50px;
+  margin: 0 auto;
+  position: fixed;
+  z-index: 96;
+}
+
 
 @media (min-width: 768px) {
   #application {
@@ -844,8 +849,11 @@ table td {
   #customer-navigation ul {
     text-align: left;
   }
+  #contact-information {
+    margin: 50px 0 0 0;
+  }
   #search {
-    width: 48%;
+    width: 47%;
   }
   #team-mentor-navigation {
     height: 60px;
@@ -856,26 +864,33 @@ table td {
     margin: 7px 0 0 20px;
     width: 36%;
   }
+  #si-logo {
+    margin: 0;
+  }
+  #landing-page {
+    margin: 0;
+  }
   #links {
     display: inline-block;
     width: 60%;
     float: right;
   }
   #links.icons {
-    padding-top: 7px;
+    padding-top: 20px;
     text-align: right;
   }
-
+  #links.icons ul li {
+    display: inline-block;
+  }
   #links.text-links {
     padding-top: 20px;
   }
-
   #links.text-links ul {
     text-align: right;
   }
-
-  #links.icons ul {
-    padding: 0;
+  #links.text-links ul li {
+    display: inline !important;
+    width: 100%;
   }
 
   #links ul li a{
@@ -883,6 +898,9 @@ table td {
   }
   #loginwall, #summary {
     max-width: 90%;
+  }
+  #loginwall {
+    padding: 100px 0 0 0;
   }
   #summary {
     padding: 80px 0 0 0;
@@ -1547,22 +1565,6 @@ table td {
   border: 0;
 }
 
-button {
-  padding: 15px 30px 15px 30px;
-  color: #8aaf3e;
-  background-color: #FFFFFF;
-  border-bottom: 2px solid #8aaf3e;
-  -webkit-box-shadow: inset 0 -2px #8aaf3e;
-  box-shadow: inset 0 -2px #8aaf3e;
-}
-button:hover, button:active {
-  background-color: #fcfcfc;
-  color: #6c9020 !important;
-  border-bottom: 2px solid #6c9020;
-  -webkit-box-shadow: inset 0 -2px #6c9020;
-  box-shadow: inset 0 -2px #6c9020;
-}
-
 #usp button i, #call-to-action button i {
   font-size: 18px;
   padding: 0 10px 0 0;
@@ -1570,7 +1572,7 @@ button:hover, button:active {
 }
 
 #usp button:hover i, #usp button:active i, #call-to-action button:hover i, #call-to-action button:active i {
-  color: #6c9020 !important;
+  color: #ffffff;
 }
 
 #features i, #reasons i {
@@ -1645,10 +1647,54 @@ table {
   border-bottom: 2px solid #6c9020;
   color: #6c9020; }
 
-
-
-
 form p {
   font-size: 0.75em;
   margin-top: 0;
+}
+
+#article-i-definitions, #article-ii-deliverables, #article-iii-license-grant, #article-iv-ownership-of-intellectual-property, 
+#article-v-marketing-requirements, #article-vi-trademarks, #article-vii-support, #article-viii-fees-royalties-and-payments, 
+#article-ix-payment-instructions, #article-x-records-reports-and-audit-rights, #article-xi-contract-administrative-contacts, 
+#article-xii-assignment, #article-xiii-confidentiality, #article-xiv-warranties, #article-xv-indemnities, 
+#article-xvi-limitations, #article-xvii-terms-of-agreements, #article-xviii-terminiation, #article-xix-effect-of-termination, 
+#article-xx-general-provisions, #appendix-a, #appendix-b {
+  padding-top: 100px;
+  margin-top: -80px;
+}
+
+.btn-search-bar {
+  padding: 14px 0 15px 0;
+  border: 1px solid #8aaf3e;
+  border-radius: 0;
+}
+
+#search {
+  background: #fafafa;
+  padding: 0px 0 40px 0;
+}
+
+form {
+  border-radius: 3px;
+  background: #fafafa;
+  padding: 20px;
+}
+
+form input[type="text"], form input[type="password"], form input[type="email"]{
+  border-bottom: 1px solid #aaaaaa;
+}
+
+form input[type="text"]:active, form input[type="text"]:focus, form input[type="password"]:active, form input[type="password"]:focus, form input[type="email"]:active, form input[type="email"]:focus{
+  background: white;
+  border-bottom: 3px solid #8aaf3e;
+}
+
+#heading {
+  background-color: #8aaf3e;
+  max-width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+#heading p {
+  color: white;
 }

@@ -27,12 +27,16 @@ img {
 
 #application {
 	height: $full-width;
-	margin: 80px 0 0 0;
+	margin: 107px 0 0 0;
 	width: $full-width;
 }
 
+#landing-page {
+	margin-top: 185px;
+}
+
 #loginwall {
-	padding: 80px 0 20px 0;
+	padding: 180px 0 20px 0;
 }
 
 #loginwall, #summary {
@@ -59,6 +63,16 @@ form, .form-group {
 	list-style-type: none;
 	margin: 0 0 15px 0;
 
+	input {
+		border: none;
+		&:focus {
+			background: $light-grey;
+				color: $dark-grey;
+		}
+	}
+	label {
+		font-size: 14px;
+	}
 	p {
 		font-size: 0.75em;
 		margin-top: 0;
@@ -72,12 +86,22 @@ label {
 	padding: 3px 0 0 0;
 }
 
+#heading {
+	background-color: $green;
+	max-width: $full-width;
+	padding: 20px;
+	text-align: center;
+	p {
+		color: $white
+	}
+}
+
 input {
 	&[type="text"], &[type="password"], &[type="date"], &[type="datetime"], &[type="datetime-local"], &[type="month"], &[type="week"], &[type="email"], &[type="number"], &[type="search"], &[type="tel"], &[type="time"], &[type="url"] {
 		@extend .border-box
 		background-color: $white;
 		border-radius: 3px;
-		border: 1px solid $grey;
+		border-bottom: 1px solid $grey;
 		color: $dark-grey;
 		font-size: 1em;
 		height: 3rem;
@@ -85,9 +109,9 @@ input {
 		padding: 0 0 0 0.5rem;
 		width: $full-width;
 
-		&:focus {
+		&:focus, &:active {
 			background: $white;
-			border-color: $green;
+			border-bottom: 3px solid $green.
 			outline: medium none;
 		}
 	}
@@ -106,10 +130,10 @@ select {
 }
 
 #search {
-	background: white;
+	background: $light-grey;
 	height: 50px;
 	margin: 0 auto;
-	padding: 30px 0 30px 0;
+	padding: 0 0 40px 0;
 	position: fixed;
 	width: 95%;
 	z-index: 96;
@@ -129,9 +153,10 @@ select {
 		width: 100px;
 	}
 	.btn-search-bar {
-	  border-left: none;
-	  border-radius: 0;
-	  padding: 14px 0 14px 0;
+		border: 1px solid $green;
+		border-left: none;
+		border-radius: 0;
+		padding: 14px 0 15px 0;
 	}
 }
 
@@ -139,12 +164,15 @@ button {
 	@extend a.action;
 	background-color: $white;
 	width: $full-width;
+	border-radius: 3px;
+	border: 1px solid $grey;
 	border-bottom: 2px solid $green;
 	-webkit-box-shadow: inset 0 -2px $green;
 	box-shadow: inset 0 -2px $green;
 	&:hover, &:active {
-		background-color: $light-grey;
-		color: $dark-green;
+		background-color: $green;
+		color: $white;
+		border: transparent;
 		border-bottom: 2px solid $dark-green;
 		-webkit-box-shadow: inset 0 -2px $dark-green;
 		box-shadow: inset 0 -2px $dark-green;
@@ -155,7 +183,7 @@ button {
 	color: $green;
 
 	&:hover, &:active {
-		color: $dark-green;
+		color: $white;
 	}
 }
 
@@ -235,7 +263,7 @@ button {
 		background:url('../assets/logos/logos.jpg') no-repeat;
 		height: 50px;
 		margin: 0 auto;
-		width: 250px;
+		width: 190px;
 	}
 	.lge-container {
 		margin: 0;

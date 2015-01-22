@@ -1,37 +1,42 @@
-include ../../content/globals.jade
+include ../../shared-mixins/globals.jade
 
 mixin login-form
-	h3 Login
-	include:md ../../content/getting-started/login-form.md
-	form#login-form(role='form' method='post' action='/user/login')
-		.form-group
-			+username-input
-		.form-group
-			+password-input
-		+login-button
-		br
-		br
-		a(href='/guest/pwd-forgot.html')
-			+forgot-password-button
+	#form
+		#heading
+			include:md ../../content/getting-started/login-form.md
+		form#login-form(role='form' method='post' action='/user/login')
+			.form-group
+				+username-input
+			.form-group
+				+password-input
+			.row
+				.col-6
+					.lge-container
+						+login-button
+				.col-6
+					.lge-container
+						a(href='/guest/pwd-forgot.html')
+							+forgot-password-button
 
 //- sign-up-form
 mixin sign-up-form
-	h3 Sign Up
-	include:md ../../content/getting-started/sign-up-form.md
-	form#sign-up-form(role='form', method='POST', action='/user/sign-up')
-		.form-group
-			+username-input
-			include:md ../../content/getting-started/username-prompt.md
-		.form-group
-			+email-input
-			include:md ../../content/getting-started/email-prompt.md
-		.form-group
-			+password-input
-			include:md ../../content/getting-started/password-prompt.md
-		.form-group
-			+confirm-password-input
-		include:md ../../content/getting-started/agree-to-toc.md
-		+sign-up-button
+	#form
+		#heading
+			include:md ../../content/getting-started/sign-up-form.md
+		form#sign-up-form(role='form', method='POST', action='/user/sign-up')
+			.form-group
+				+username-input
+				include:md ../../content/getting-started/username-prompt.md
+			.form-group
+				+email-input
+				include:md ../../content/getting-started/email-prompt.md
+			.form-group
+				+password-input
+				include:md ../../content/getting-started/password-prompt.md
+			.form-group
+				+confirm-password-input
+			include:md ../../content/getting-started/agree-to-toc.md
+			+sign-up-button
 
 
 //- forgot-password-form
@@ -42,6 +47,18 @@ mixin forgot-password-form
 		.form-group
 			+email-input
 		+get-password-button
+
+//- pwd-reset-form
+mixin pwd-reset-form
+	fieldset
+		h3 Reset your password
+		form#pwd-reset-form(role='form' method='post')
+			.form-group
+				+password-input
+				include:md ../../content/getting-started/password-prompt.md
+			.form-group
+				+confirm-password-input
+			+reset-password-button
 
 
 mixin alert-login-failed
@@ -68,30 +85,26 @@ mixin alert-pw-requirements
 	.alert(role='alert')
 		| You need to login to see that page.
 
+mixin alert-pwd-reset-failed
+	.alert(role='alert')
+		| Error: #{errorMessage}
+
+mixin alert-pwd-reset-OK
+	.alert(role='alert')
+		| Your password has been updated. Please login to access our libraries.
 
 //- main-app-view
 mixin main-app-view
-	//#recentlyViewedArticles
-		h4 Recently Viewed Articles
-		.list-group
+	#recentlyViewedArticles
+		//h4 Recently Viewed Articles
+		//.list-group
 			a(href='#')
 				| Test
 				span.badge 12
 			a(href='#')
 				| Test
 				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
-			a(href='#')
-				| Test
-				span.badge 12
+
 	//h4 Popular Search Terms
 	//.list-group
 		a(href='#')
@@ -103,15 +116,7 @@ mixin main-app-view
 		a(href='#')
 			| Test
 			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
+
 	//h4 Top Articles
 	//.list-group
 		a(href='#')
@@ -120,18 +125,7 @@ mixin main-app-view
 		a(href='#')
 			| Test
 			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
+
 
 	//h4 New Articles
 	//.list-group
@@ -141,29 +135,20 @@ mixin main-app-view
 		a(href='#')
 			| Test
 			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
-		a(href='#')
-			| Test
-			span.badge 12
+
 	#recentlyViewedArticles
 		h4 Recently Viewed Articles
 		.list-group
 			if (recentArticles)
 				for recentArticle in recentArticles
 					a(href=recentArticle.href, target='_blank')= recentArticle.title
+						span.badge 12
 	h4 Popular Search Terms
 	.list-group
 		if (searchTerms)
 			for searchTerm in searchTerms
 				a(href=searchTerm.href)= searchTerm.title
+					span.badge 12
 	h4 Top Articles
 	.list-group
 		if (topArticles)

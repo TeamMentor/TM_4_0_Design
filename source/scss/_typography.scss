@@ -57,6 +57,9 @@ a {
 		text-decoration: none;
 		text-transform: uppercase;
 		color: $green;
+		&:hover, &:active, &:focus {
+			color: #49661f;
+		}
 	}
 }
 

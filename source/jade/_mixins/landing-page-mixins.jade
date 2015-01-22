@@ -1,4 +1,4 @@
-include ../../content/images.jade
+include ../../shared-mixins/images.jade
 
 mixin usp-div
 	#usp
@@ -118,10 +118,14 @@ mixin call-to-action-div
 mixin footer-div
 	#footer
 		.lge-container
-			h5 TEAM Mentor v 4.0
 			.row
-				.col-9
+				.col-offset-1.col-2
+					h5 TEAM Mentor v 4.0
+					a(href='http://www.securityinnovation.com/', target='_blank')
+						#si-logo
+				.col-offset-1.col-8
 					.row
+						#contact-information
 						.col-4
 							ul
 								li
@@ -144,6 +148,3 @@ mixin footer-div
 								li
 									+i-toc
 									a(href="../guest/terms-and-conditions.html") Terms & Conditions
-				.col-3
-					a(href='http://www.securityinnovation.com/', target='_blank')
-						#si-logo

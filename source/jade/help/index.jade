@@ -7,13 +7,10 @@ block content
 				if library
 					each view in library.Views
 						h4= view.Title
-						.nav
-							table
-								each article in view.Articles
-									tr
-										td
-											a(href= '/help/' + article.Id)
-												= article.Title
+						.list-group
+							each article in view.Articles
+								a(href= '/help/' + article.Id)
+									= article.Title
 		.col-6#help-docs
 			.lge-container
 				if title

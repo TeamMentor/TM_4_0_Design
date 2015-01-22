@@ -57,15 +57,15 @@
 						text-transform: uppercase;
 						text-decoration: none;
 						letter-spacing: 1px;
-						&:hover {
+						&:hover, &:focus, &:active {
 							text-decoration: none;
+							color: $dark-green
 						}
 					}
 				}
 			}
 			&.icons {
 				display: inline-block;
-				margin-top: 15px;
 				ul li {
 					display: inline-block;
 					padding: 0 10px 0 0;
@@ -87,10 +87,14 @@
 		margin: 5px 0 0 0;
 	}
 	a {
+		border-bottom: 1px solid $light-grey;
 		display: block;
+		font-size: 0.95em;
 		padding: 7px 5px 7px 10px;
 		text-decoration: none;
-		font-size: 0.95em;
+		&:last-child{
+	 		border: 0;
+		}
 		&:hover {
 			text-decoration: none;
 			background-color: $light-grey;
@@ -176,4 +180,14 @@
 			}
 		}
 	}
+}
+
+#article-i-definitions, #article-ii-deliverables, #article-iii-license-grant, #article-iv-ownership-of-intellectual-property, 
+#article-v-marketing-requirements, #article-vi-trademarks, #article-vii-support, #article-viii-fees-royalties-and-payments, 
+#article-ix-payment-instructions, #article-x-records-reports-and-audit-rights, #article-xi-contract-administrative-contacts, 
+#article-xii-assignment, #article-xiii-confidentiality, #article-xiv-warranties, #article-xv-indemnities, 
+#article-xvi-limitations, #article-xvii-terms-of-agreements, #article-xviii-terminiation, #article-xix-effect-of-termination, 
+#article-xx-general-provisions, #appendix-a, #appendix-b {
+  padding-top: 100px;
+  margin-top: -80px;
 }
