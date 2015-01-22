@@ -53,13 +53,12 @@ class Express_Service
     @.app.use(helmet.csp({
       defaultSrc: ["'self'"],
       scriptSrc: ["'none'"],
-      styleSrc: ["'self'",
-                 "'unsafe-inline'"], # Re-design of the inline CSS style sheets to external sources should be considered to prevent xss attacks
+      styleSrc: ["'self'"]
       imgSrc: ["'self'"],
       objectSrc: ["'self'"],
       mediaSrc: ["'none'"],
       frameSrc: ["'self'"]
-      #reportUri: '/csp' # Browser will POST reports of policy failures to this URI
+      reportUri: '/csp' # Browser will POST reports of policy failures to this URI
     }));
     @.app.use(helmet.hsts({    #http://tools.ietf.org/html/rfc6797 - HTTP Strict Transport Security
       maxAge: 10886400000,     # Milliseconds - must be at least 18 weeks to be approved by Google
