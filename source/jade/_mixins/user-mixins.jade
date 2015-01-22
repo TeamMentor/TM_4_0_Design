@@ -112,7 +112,7 @@ mixin main-app-view
 			for article in topArticles
 				if article
 					a(href=article.href, target='_blank')= article.title
-						span.badge= '# ' + article.weight
+						span.rank= '# ' + article.weight
 	//h4 New Articles
 	//.list-group
 		if (newArticles)
