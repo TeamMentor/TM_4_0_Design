@@ -18,6 +18,7 @@ nav {
 	display: -webkit-flex;
 	height: auto;
 	z-index: 99;
+	margin: 0 0 0 10px;
 	a {
 		color: $green;
 		font-size: 20px;
@@ -61,7 +62,6 @@ ul#links, ul#lp-links {
 ul#links {
 	display: none;
 	margin: 0 auto;
-	padding-top: 18px;
 }
 ul#lp-links {
 	margin: 10px 10px 0 0;

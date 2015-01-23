@@ -1309,17 +1309,6 @@ hr {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-
-ul#links span a {
-  margin: 10px 20px 0 0;
-  padding: 18px 20px;
-  text-decoration: none;
-}
-
-nav span a:hover {
-  text-decoration: none !important;
-}
-
 .list-group {
   margin-top: -20px;
 }
@@ -1336,12 +1325,10 @@ nav span a:hover {
   text-decoration: none;
   border-bottom: 1px solid #e5e5e5;
 }
-
 table {
   width: 100%;
   padding: 0 12px;
 }
-
 .button.app {
   margin-top: 15px;
   height: auto !important;
