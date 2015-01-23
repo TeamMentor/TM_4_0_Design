@@ -1341,21 +1341,38 @@ nav span a:hover {
 
 table {
   width: 100%;
-  padding: 0 25px 0 20px;
+  padding: 0 12px;
 }
 
 table td {
   vertical-align: middle;
 }
 
-.text-right {
+table button.app {
+  height: auto;
+  padding: 5px 15px;
+  width: auto;
+  border: transparent;
+  background: #bbd38a;
+  color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin-right: 20px;
+}
+
+table button.app i {
+  color: white;
+}
+
+table button.app:hover {
+  background: #8aaf3e;
+  color: white;
+  border: transparent;
+}
+table button.app:last-child {
+  margin-right: 0;
+}
+
+td.text-right {
   text-align: right;
-}
-
-table td a.action {
-  padding-right:20px;
-}
-
-table td a.action:last-child {
-  padding: 0;
 }
