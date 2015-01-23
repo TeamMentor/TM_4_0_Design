@@ -1343,11 +1343,13 @@ table {
 }
 
 .button.app {
-  height: auto;
+  margin-top: 15px;
+  height: auto !important;
+  padding: 5px 0 !important;
   max-width: 100%;
-  padding: 5px 0;
   background: #b4cf7b;
   border: 1px solid white !important;
+  border-radius: 3px !important;
   color: white;
   -webkit-box-shadow: none;
   box-shadow: none;
