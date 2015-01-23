@@ -32,8 +32,8 @@ class Library_Controller
     @.config       = config || new Config();
     @.jade_Service = new Jade_Service(@.config);
 
-    for library in @.libraries
-      library.site = @.config.tm_35_Server
+
+
 
   showLibraries: ()=>
 
