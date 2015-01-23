@@ -12,8 +12,6 @@ mixin flare-search-bar-input
 						+search-icon
 					a.button.postfix#filters-button(href='filters-div')
 						+filter-icon
-				.small-2.large-1.columns
-					
 
 //- Flare Results-Save-Clear
 mixin flare-results-save-clear
@@ -21,10 +19,10 @@ mixin flare-results-save-clear
 		tr
 			td
 				h4 0/200 results showing
-			td
+			td.text-right
 				a.action(href='app-keyword-search-save')
 					+save-icon
-			td
+			td.text-right
 				a.action(href='main-app-view')
 					+clear-icon
 

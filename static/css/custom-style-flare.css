@@ -1321,3 +1321,33 @@ ul#links span a {
 nav span a:hover {
   text-decoration: none !important;
 }
+
+.list-group {
+  margin-top: -20px;
+}
+
+.list-group h5, .list-group h4 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.list-group a {
+  display: block;
+  font-size: 0.95em;
+  padding: 7px 5px 7px 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+table {
+  width: 100%;
+  padding: 0 25px 0 20px;
+}
+
+td {
+  max-width: 100%;
+}
+
+.text-right {
+  text-align: right;
+}
