@@ -1344,11 +1344,7 @@ table {
   padding: 0 12px;
 }
 
-table td {
-  vertical-align: middle;
-}
-
-table button.app {
+button.app {
   height: auto;
   padding: 5px 15px;
   width: auto;
@@ -1360,11 +1356,11 @@ table button.app {
   margin-right: 20px;
 }
 
-table button.app i {
+button.app i {
   color: white;
 }
 
-table button.app:hover {
+button.app:hover, table button.app:active {
   background: #8aaf3e;
   color: white;
   border: transparent;
