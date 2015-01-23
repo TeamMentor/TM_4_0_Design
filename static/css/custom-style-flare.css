@@ -1208,8 +1208,8 @@ button, .button {
   transition: all 0.5s;
 }
 button:hover, button:active, .button:hover, .button:active {
-  color: #ffffff;
-  background: #8aaf3e;
+  color: #6c9020;
+  background: #fafafa;
   border-color: #6c9020;
   border-bottom: 2px solid #6c9020;
   -webkit-box-shadow: inset 0 -2px #6c9020;
@@ -1219,7 +1219,7 @@ button:hover, button:active, .button:hover, .button:active {
 }
 
 button:hover i, button:active i , .button:hover i, .button:active i {
-  color: white;
+  color: #6c9020;
 }
 
 
@@ -1344,12 +1344,16 @@ table {
   padding: 0 12px;
 }
 
+button i {
+  color: white !important;
+}
+
 button.app {
   height: auto;
   padding: 5px 15px;
   width: auto;
+  background: #b4cf7b;
   border: transparent;
-  background: #bbd38a;
   color: white;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1363,7 +1367,7 @@ button.app i {
 button.app:hover, table button.app:active {
   background: #8aaf3e;
   color: white;
-  border: transparent;
+  border-color: #6c9020;
 }
 table button.app:last-child {
   margin-right: 0;
