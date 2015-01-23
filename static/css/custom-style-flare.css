@@ -342,7 +342,6 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
     float: right;
     padding: 20px 20px 0 0;
   }
-
   #lp-menu-icon {
     -webkit-order: 3;
     display: none;
@@ -1122,7 +1121,7 @@ table {
   border: transparent;
 }
 
-.button.postfix {
+#search-button, #filters-button {
   border: 1px solid #aaaaaa;
   height: 48px;
   padding: 15px 5px 5px 5px;
@@ -1138,7 +1137,6 @@ table {
 i {
   color: #8baf3e;
 }
-
 
 table span.badge {
   float: right;
@@ -1344,35 +1342,25 @@ table {
   padding: 0 12px;
 }
 
-button i {
-  color: white !important;
-}
-
-button.app {
+.button.app {
   height: auto;
-  padding: 5px 15px;
-  width: auto;
+  max-width: 100%;
+  padding: 5px 0;
   background: #b4cf7b;
-  border: transparent;
+  border: 1px solid white !important;
   color: white;
   -webkit-box-shadow: none;
   box-shadow: none;
-  margin-right: 20px;
+  text-align: center;
 }
 
-button.app i {
+.button.app i {
   color: white;
+  text-align: center;
+  margin: 0 auto;
 }
-
-button.app:hover, table button.app:active {
+.button.app:hover, .button.app:active {
   background: #8aaf3e;
   color: white;
   border-color: #6c9020;
-}
-table button.app:last-child {
-  margin-right: 0;
-}
-
-td.text-right {
-  text-align: right;
 }
