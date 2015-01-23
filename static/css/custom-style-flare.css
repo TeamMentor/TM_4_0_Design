@@ -267,7 +267,9 @@ dd {
   border: 1px solid #aaaaaa;
   border-top: none;
 }
-
+.accordion .accordion-navigation > .content.active, .accordion dd > .content.active {
+  padding-top: 0;
+}
 .accordion dd > a {
   background: #FFFFFF;
   color: #444444;

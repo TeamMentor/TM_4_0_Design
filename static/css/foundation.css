@@ -1876,9 +1876,8 @@ button::-moz-focus-inner {
       padding: 0.9375em; }
       .accordion .accordion-navigation > .content.active, .accordion dd > .content.active {
         display: block;
-        background: #FFFFFF; }
-
-
+        background: #FFFFFF;
+        padding-top: 0; }
 /* Foundation Dropdowns */
 .f-dropdown {
   position: absolute;
