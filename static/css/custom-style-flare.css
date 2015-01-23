@@ -1344,10 +1344,18 @@ table {
   padding: 0 25px 0 20px;
 }
 
-td {
-  max-width: 100%;
+table td {
+  vertical-align: middle;
 }
 
 .text-right {
   text-align: right;
+}
+
+table td a.action {
+  padding-right: 30px;
+}
+
+table td a.action:last-child {
+  padding: 0;
 }
