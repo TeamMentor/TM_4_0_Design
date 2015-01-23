@@ -9,6 +9,7 @@ which are hosted in the [TeamMentor Organization](https://github.com/TeamMentor)
 
 * Check the [GitHub Issues Definitions](https://github.com/TeamMentor/TM_4_0_Design/wiki/GitHub-Issues-Definitions) for
 our Issue's label defintions
+* Estimate the level of effort the issue will take and select apropriate label.
 * Include screenshots and animated GIFs whenever possible; they are immensely
   helpful.
 * Include the behavior you expected and other places you've seen that behavior
