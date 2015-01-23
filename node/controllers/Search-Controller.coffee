@@ -105,7 +105,7 @@ class SearchController
         @.req.session.recent_Articles ?= []
         recentArticles = []
         for recentArticle in @.req.session.recent_Articles.take(3)
-            recentArticles.push({href : @.teamMentor_Service.tm_35_Server + '/' + recentArticle.id , title:recentArticle.title})
+            recentArticles.push({href : @config.tm_35_Server + recentArticle.id , title:recentArticle.title})
         recentArticles
 
     recentArticles_add: (id, title)=>
@@ -116,7 +116,7 @@ class SearchController
         id = @req.params.guid
         title = @req.params.title
         @recentArticles_add id, title
-        @res.redirect('https://tmdev01-uno.teammentor.net/'+id)
+        @res.redirect(@config.tm_35_Server+id)
 
     search: =>
         target = @.req.query.text

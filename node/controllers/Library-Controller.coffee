@@ -9,14 +9,14 @@ libraries =
                           name : 'Uno'
                           id   : 'be5273b1-d682-4361-99d9-6234f2d47eb7'
                           repo : 'https://github.com/TMContent/Lib_UNO'
-                          site : 'https://tmdev01-uno.teammentor.net/'
+                          site : new Config().tm_35_Server
                           title: 'Index'
                           data : null
               "html5" :
                           name : 'html5'
                           id   : '7d2d0571-e542-45cd-9335-d7a0556c2bea'
                           repo : 'https://github.com/TMContent/Lib_Html5'
-                          site : 'https://tmdev01-sme.teammentor.net/'
+                          site : new Config().tm_35_Server
                           title: 'Html 5'
                           data : null
 
@@ -31,6 +31,9 @@ class Library_Controller
     @.libraries    = libraries;
     @.config       = config || new Config();
     @.jade_Service = new Jade_Service(@.config);
+
+    for library in @.libraries
+      library.site = @.config.tm_35_Server
 
   showLibraries: ()=>
 
