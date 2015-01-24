@@ -82,14 +82,27 @@ nav {
   -webkit-flex: 100%;
 }
 
-#customer img {
-  margin: 5px 0 0 10px;
-}
-
 #logo {
   -webkit-order: 3;
   -webkit-flex: 50%;
   margin: 5px 0 5px 0;
+}
+
+#tm-logo {
+  background:url('../assets/logos/logos.jpg') no-repeat;
+  background-position: 0px 0px;
+  height: 50px;
+  margin: 0 auto;
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#si-logo {
+  background:url('../assets/logos/logos.jpg') no-repeat;
+  background-position: 0px -50px;
+  height: 50px;
+  width: 190px;
+  margin: 0 auto;
 }
 
 #lp-menu-icon {
@@ -1163,15 +1176,17 @@ ul.side-nav span.badge {
   float: right;
 }
 
-
-
-input#search-bar {
+input#search {
   width: 100%;
   border: 1px solid #aaaaaa;
   border-radius: 0px;
 }
 
-input#search-bar:active, input#search-bar:focus {
+input#search, a.button {
+  box-shadow: 1px 1px 6px #aaaaaa;
+}
+
+input#search:active, input#search:focus {
   border-bottom: 3px solid #8aaf3e;
   background: white;
 }
@@ -1207,23 +1222,6 @@ button:hover, button:active, .button:hover, .button:active {
 
 button:hover i, button:active i , .button:hover i, .button:active i {
   color: #6c9020;
-}
-
-#tm-logo {
-  background:url('../assets/logos/logos.jpg') no-repeat;
-  background-position: 0px 0px;
-  height: 50px;
-  margin: 0 auto;
-  width: 250px;
-  margin-bottom: 10px;
-}
-
-#si-logo {
-  background:url('../assets/logos/logos.jpg') no-repeat;
-  background-position: 0px -50px;
-  height: 50px;
-  width: 190px;
-  margin: 0 auto;
 }
 
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], 
@@ -1410,4 +1408,14 @@ pre {
   border-radius: 0px;
   margin: 30px 0 30px 0;
   overflow: auto;
+}
+
+#search-bar {
+  width: 100%;
+  background: #fafafa;
+  padding: 10px 5px 5px 5px;
+}
+
+#results-save-clear {
+  padding: 5px;
 }

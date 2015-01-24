@@ -103,6 +103,17 @@ body {
 #article-options dl.tabs dd, #related-options dl.tabs dd {
 	width: $full-width;
 }
+#search-bar {
+	width: $full-width;
+	background: $off-white;
+	padding: 10px 5px 5px 5px;
+	input#search, a.button {
+		box-shadow: 1px 1px 6px $grey;
+	}
+}
+#results-save-clear {
+	padding: 5px;
+}
 .alert-box {
 	background-color: $white;
 	border: 1px solid $green;
@@ -191,7 +202,7 @@ input {
 			outline: medium none;
 		}
 	}
-	#search-bar {
+	#search {
 		border-radius: 0px;
 		border: 1px solid $grey;
 		width: $full-width;
