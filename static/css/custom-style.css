@@ -487,16 +487,12 @@ label {
 #links ul li a:hover, #links ul li a:focus, #links ul li a:active {
   color: #49661f;
 }
-
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
 }
-
 h1, h2, h3 {
   font-weight: normal;
 }
-
-
 h1 {
   font-size: 2em;
   line-height: 1.25em;
@@ -830,14 +826,13 @@ table td {
 }
 
 #search {
-  width: 95%;
+  width: 96%;
   background: white;
   height: 50px;
   margin: 0 auto;
   position: fixed;
   z-index: 96;
 }
-
 
 @media (min-width: 853px) {
   #application {
@@ -1668,6 +1663,7 @@ form p {
 #search {
   background: #fafafa;
   padding: 0px 0 40px 0;
+  margin-top: -13px;
 }
 
 form {
