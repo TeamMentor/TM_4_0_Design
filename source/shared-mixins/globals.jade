@@ -6,12 +6,15 @@ mixin horizontal-rule
 mixin breadcrumbs
 	dl.sub-nav
 		dt NAVIGATE:
-		dd
-			a(href='#') First Level
-		dd
-			a(href='#') Second Level
-		dd.active
-			a(href='#') Third Level
+		//if breadcrumbs.third()
+			dd
+				a(href= breadcrumbs.first().href)= breadcrumbs.third().title
+		//if breadcrumbs.second()
+			dd
+				a(href= breadcrumbs.first().href)= breadcrumbs.second().title
+		if breadcrumbs.first()
+			dd.active
+				a= breadcrumbs.first().title
 
 //- Form Inputs
 mixin username-input

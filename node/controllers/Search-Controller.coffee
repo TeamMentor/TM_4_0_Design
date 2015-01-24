@@ -30,23 +30,37 @@ class SearchController
     renderPage: ()->
         @jade_Service.renderJadeFile(@jade_Page, @searchData)
 
-        
+    get_Navigation: (queryId, title)=>
+      item = {href:"/graph/#{queryId}", title: title}
+      breadcrumbs_Cache[0] = item
+
+      #if breadcrumbs_Cache.empty()
+      #  breadcrumbs_Cache[2] = item
+      #  breadcrumbs_Cache[1] = item
+      #else
+      #  breadcrumbs_Cache[1] = breadcrumbs_Cache[0]
+      #  breadcrumbs_Cache[0] = item
+
+
+      breadcrumbs_Cache
+
     showSearchFromGraph: ()=>        
         queryId = @req.params.queryId        
         filters = @req.params.filters
 
-        breadcrumbs_Cache = breadcrumbs_Cache.splice(0,3)
-        if (filters)
-            breadcrumbs_Cache.unshift  {href:"/graph/#{queryId}/#{filters}", title: filters}
-        else
-            breadcrumbs_Cache.unshift  {href:"/graph/#{queryId}", title: queryId}
+
+        #breadcrumbs_Cache = breadcrumbs_Cache.splice(0,3)
+        #if (filters)
+        #    breadcrumbs_Cache.unshift  {href:"/graph/#{queryId}/#{filters}", title: filters}
+        #else
+        #    breadcrumbs_Cache.unshift  {href:"/graph/#{queryId}", title: queryId}
         
         
         graphService = new Graph_Service()
         graphService.graphDataFromGraphDB null, queryId, filters,  (searchData)=>
           searchData.filter_container = filters
           @searchData = searchData
-          searchData.breadcrumbs = breadcrumbs_Cache
+          searchData.breadcrumbs = @get_Navigation(queryId, searchData.title)
           @res.send(@renderPage())
 
     showMainAppView: =>

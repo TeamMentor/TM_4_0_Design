@@ -21,21 +21,31 @@ class GraphService
 
   graphDataFromGraphDB: (dataId, queryId, filters, callback)->
 
-    #server = 'https://tm-graph.herokuapp.com'
-    dataId = dataId || 'tm-uno'
-    #graphDataUrl = "#{@server}/data/#{dataId}/query/filter/tm-search?show=#{queryId}"
-    #graphDataUrl = "#{@server}/view/tm-search/#{queryId}"
-    graphDataUrl = "#{@server}/graph-db/filter/#{queryId}"
+    object_Data = "#{@server}/graph-db/object/#{queryId}"
+    object_Data.GET_Json (json)=>
 
-    log graphDataUrl
-    #if (filters)
-    #    graphDataUrl += "&filters=#{filters}"
-    #console.log("****:   " + graphDataUrl)
-    require('request').get graphDataUrl, (err,response,body)->
-        if (err)
-            callback {}
-        else
-            callback JSON.parse(body)
+      log json
+      if json and json.not_Empty() and (json.first().predicate is 'title')
+        queryId = json.first().subject
+      log json and (json.predicate is 'title')
+      log queryId
+
+      #server = 'https://tm-graph.herokuapp.com'
+      dataId = dataId || 'tm-uno'
+      #graphDataUrl = "#{@server}/data/#{dataId}/query/filter/tm-search?show=#{queryId}"
+      #graphDataUrl = "#{@server}/view/tm-search/#{queryId}"
+      #graphDataUrl = "#{@server}/graph-db/filter/#{queryId}"
+      graphDataUrl = "#{@server}/data/query_tree/#{queryId}"
+
+      #log graphDataUrl
+      #if (filters)
+      #    graphDataUrl += "&filters=#{filters}"
+      #console.log("****:   " + graphDataUrl)
+      require('request').get graphDataUrl, (err,response,body)->
+          if (err)
+              callback {}
+          else
+              callback JSON.parse(body)
 
 
 module.exports = GraphService
