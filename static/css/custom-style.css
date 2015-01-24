@@ -837,6 +837,7 @@ table td {
   }
   #search {
     width: 48%;
+    margin-top: 0px !important;
   }
   #team-mentor-navigation {
     height: 60px;
