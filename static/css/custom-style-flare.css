@@ -1411,9 +1411,12 @@ pre {
 }
 
 #search-bar {
-  width: 100%;
+  width: 49%;
   background: #fafafa;
   padding: 10px 5px 5px 5px;
+  margin: 0 auto;
+  position: fixed;
+  z-index: 96;
 }
 
 #results-save-clear {

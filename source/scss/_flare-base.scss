@@ -107,6 +107,9 @@ body {
 	width: $full-width;
 	background: $off-white;
 	padding: 10px 5px 5px 5px;
+	margin: 0 auto;
+	position: fixed;
+	z-index: 96;
 	input#search, a.button {
 		box-shadow: 1px 1px 6px $grey;
 	}
