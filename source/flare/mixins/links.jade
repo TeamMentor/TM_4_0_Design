@@ -1,36 +1,31 @@
 mixin links-flare-navbar__home
-	ul#links
-		li
-			a(href='main-app-view')
-				+search-nav-icon
-		li
-			a(href='navigate/')
-				+navigate-icon
-		li
-			a(href='../help/index')
-				+help-icon
-		li
-			a(href='../user/user')
-				+user-icon
-		li
-			a(href='../getting-started/index')
-				+logout-icon
+	li
+		a(href='main-app-view')
+			+search-nav-icon
+	li
+		a(href='navigate/')
+			+navigate-icon
+	li
+		a(href='../help/index')
+			+help-icon
+	li
+		a(href='../user/user')
+			+user-icon
+	li
+		a(href='../getting-started/index')
+			+logout-icon
 
 
 mixin links-navbar__landing-page
 	ul#lp-links
 		li
-			a(href='about/')
-				p About
+			a(href='about/') About
 		li
-			a(href='features/')
-				p Features
+			a(href='features/') Features
 		li
-			a(href='../help/index')
-				p Help
+			a(href='../help/index') Help
 		li
-			a(href='../getting-started/index/')
-				p Get Started
+			a(href='../getting-started/index/') Get Started
 
 
 mixin links-home__navigate

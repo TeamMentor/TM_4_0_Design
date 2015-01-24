@@ -61,7 +61,7 @@
 		flex-direction: row;
 	}
 	ul#lp-links {
-		padding: 15px 0 0 0;
+		padding: 20px 0 0 0;
 		-webkit-flex: 50%;
 		-webkit-order: 4;
 		text-align: right;
@@ -71,11 +71,15 @@
 	ul#links li {
 		-webkit-flex-wrap: nowrap;
 		display: inline-block;
+		padding: 0 30px 0 0;
 	}
 	ul#lp-links li {
-		padding-left: 40px;
+		padding: 0 30px 0 0;
 		display: inline-block;
 		-webkit-flex-wrap: nowrap;
+	}
+	ul#links li:last-child, ul#lp-links li:last-child {
+		padding-right: 0;
 	}
 	#article-options dl.tabs dd {
 		width: 33%;
