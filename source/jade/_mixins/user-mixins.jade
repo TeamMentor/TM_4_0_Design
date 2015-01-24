@@ -111,8 +111,14 @@ mixin main-app-view
 		if (topArticles)
 			for article in topArticles
 				if article
-					a(href=article.href, target='_blank')= article.title
-						span.rank= '# ' + article.weight
+					a(href=article.href, target='_blank')
+						.row
+							.col-12
+								.row
+									.col-11
+										= article.title
+									.col-1
+										span.badge= article.weight
 	//h4 New Articles
 	//.list-group
 		if (newArticles)

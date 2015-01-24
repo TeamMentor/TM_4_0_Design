@@ -267,7 +267,9 @@ dd {
   border: 1px solid #aaaaaa;
   border-top: none;
 }
-
+.accordion .accordion-navigation > .content.active, .accordion dd > .content.active {
+  padding-top: 0;
+}
 .accordion dd > a {
   background: #FFFFFF;
   color: #444444;
@@ -1220,10 +1222,6 @@ button:hover i, button:active i , .button:hover i, .button:active i {
   color: #6c9020;
 }
 
-
-
-
-
 #tm-logo {
   background:url('../assets/logos/logos.jpg') no-repeat;
   background-position: 0px 0px;
@@ -1309,17 +1307,6 @@ hr {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-
-ul#links span a {
-  margin: 10px 20px 0 0;
-  padding: 18px 20px;
-  text-decoration: none;
-}
-
-nav span a:hover {
-  text-decoration: none !important;
-}
-
 .list-group {
   margin-top: -20px;
 }
@@ -1336,12 +1323,10 @@ nav span a:hover {
   text-decoration: none;
   border-bottom: 1px solid #e5e5e5;
 }
-
 table {
   width: 100%;
   padding: 0 12px;
 }
-
 .button.app {
   margin-top: 15px;
   height: auto !important;
@@ -1365,4 +1350,77 @@ table {
   background: #8aaf3e;
   color: white;
   border-color: #6c9020;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+
+h1 {
+  font-size: 2em;
+  line-height: 1.25em;
+  color: #aaaaaa;
+}
+
+h2 {
+  font-size: 1.625em;
+  line-height: 1.153em;
+  color: #aaaaaa;
+}
+
+h3 {
+  font-size: 1.375em;
+  line-height: 1.136em;
+  color: #aaaaaa;
+}
+
+h4 {
+  font-size: 1.125em;
+  line-height: 1.11em;
+  color: #444444;
+}
+
+h5 {
+  font-size: 1.105em;
+  line-height: 1.11em;
+  color: #444444;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #444444;
+}
+ul, ol {
+  margin-left: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+ul ul, ol ul {
+  margin-bottom: 0;
+}
+
+code, pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+pre {
+  display: block;
+  padding: 20px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #444444;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #ececec;
+  border: 1px solid #aaaaaa;
+  border-radius: 0px;
+  margin: 30px 0 30px 0;
+  overflow: auto;
 }
