@@ -19,9 +19,8 @@ nav {
 	height: auto;
 	z-index: 99;
 	margin: 0 0 0 10px;
-	a {
+	a, p {
 		color: $green;
-		font-size: 20px;
 		text-decoration: none;
 		text-transform: uppercase;
 		&:hover {
@@ -29,13 +28,12 @@ nav {
 			text-decoration: none;
 		}
 	}
+	a {
+		font-size: 20px;
+	}
 	p {
-		color: $green;
 		font-size: 14px;
 		letter-spacing: 1px;
-		&:hover {
-			@extend a:hover;
-		}
 	}
 }
 #customer {
@@ -62,6 +60,7 @@ ul#links, ul#lp-links {
 ul#links {
 	display: none;
 	margin: 0 auto;
+	padding: 0;
 }
 ul#lp-links {
 	margin: 10px 10px 0 0;
