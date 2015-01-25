@@ -43,8 +43,8 @@ describe 'services | Graph-Service.test |', ->
     it 'graphDataFromGraphDB (bad Server)', (done)->
         graphService.server = 'http://aaaaaaaa.teammentor.net'
         graphService.graphDataFromGraphDB null, '', '',  (searchData)=>
-            searchData.assert_Is({})
-            done()
+          searchData.assert_Is({})
+          done()
 
 
 #   it 'loadTestData', (done)->

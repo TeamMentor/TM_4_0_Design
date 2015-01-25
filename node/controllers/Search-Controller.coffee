@@ -9,7 +9,6 @@ Graph_Service      = require('../services/Graph-Service')
 TeamMentor_Service = require('../services/TeamMentor-Service')
 
 recentArticles_Cache = []
-breadcrumbs_Cache    = []
 
 recentSearches_Cache = ["Logging","Authorization","Administrative Controls"]
 
@@ -21,58 +20,48 @@ class SearchController
         @jade_Page          = '/source/jade/user/search.jade'
         @jade_Service       = new Jade_Service(@config)
         @teamMentor_Service = new TeamMentor_Service
+        @graphService       = new Graph_Service()
         @searchData         = null
         @defaultUser        = 'TMContent'
         @defaultRepo        = 'TM_Test_GraphData'
         @defaultFolder      = '/SearchData/'
         @defaultDataFile    = 'Data_Validation'
+
     
     renderPage: ()->
         @jade_Service.renderJadeFile(@jade_Page, @searchData)
 
-        
+    get_Navigation: (queryId, callback)=>
+
+      @graphService.resolve_To_Ids queryId, (data)=>
+        navigation = []
+        path = null
+        for key in data.keys()
+          item = data[key]
+          path = if path then "#{path},#{key}" else "#{key}"
+          navigation.push {href:"/graph/#{path}", title: item.title , id: item.id }
+
+        callback navigation
+
     showSearchFromGraph: ()=>        
-        queryId = @req.params.queryId        
+        queryId = @req.params.queryId
         filters = @req.params.filters
 
-        breadcrumbs_Cache = breadcrumbs_Cache.splice(0,3)
-        if (filters)
-            breadcrumbs_Cache.unshift  {href:"/graph/#{queryId}/#{filters}", title: filters}
-        else
-            breadcrumbs_Cache.unshift  {href:"/graph/#{queryId}", title: queryId}
-        
-        
-        graphService = new Graph_Service()
-        graphService.graphDataFromGraphDB null, queryId, filters,  (searchData)=>
-          searchData.filter_container = filters
-          @searchData = searchData
-          searchData.breadcrumbs = breadcrumbs_Cache
-          @res.send(@renderPage())
+        @get_Navigation queryId, (navigation)=>
+          target = navigation.last() || {}
+          @graphService.graphDataFromGraphDB null, target.id, filters,  (searchData)=>
+            searchData.filter_container = filters
+            @searchData = searchData
+            @searchData.breadcrumbs = navigation #@get_Navigation(queryId, searchData.title)
+            @searchData.href = target.href
+            @res.send(@renderPage())
 
     showMainAppView: =>
-        breadcrumbs_Cache.unshift {href:"/user/main.html", title: "Search Home"}
 
         jadePage  = 'source/jade/user/main.jade'  # relative to the /views folder
         @topArticles (topArticles)=>
             viewModel = { recentArticles: @recentArticles() , topArticles : topArticles, searchTerms : @topSearches() }
             @res.render(jadePage, viewModel)
-        #if false then ->
-        #    data = JSON.parse(data).splice(0,4)
-        #    topArticles = []
-        #    for item in data
-        #        topArticles.push { href: "/article/view/#{item.guid}/#{item.title}", title: "#{item.title}", weight:"#{item.weight}"}
-        #
-        #    searchTerms = []
-        #    searchTerms.push { href: "/graph/Logging"                                   , title: "Logging"}
-        #    searchTerms.push { href: "/graph/Separation%20of%20Data%20and%20Control"    , title: "Separation of Data and Control"}
-        #    searchTerms.push { href: "/graph/(Web) Encoding"                            , title: "(Web) Encoding"}
-        #    recentArticles = []
-        #    for recentArticle in recentArticles_Cache
-        #        recentArticles.push {href : 'https://tmdev01-uno.teammentor.net/'+recentArticle.guid , title:recentArticle.title}
-        #        break if recentArticles.length >2
-        #    viewModel = { recentArticles: recentArticles, topArticles : topArticles , searchTerms : searchTerms}
-        #console.log "jadePage: " + jadePage
-
 
     topArticles: (callback)=>
         topArticles_Url = "http://localhost:1337/article/viewed.json"

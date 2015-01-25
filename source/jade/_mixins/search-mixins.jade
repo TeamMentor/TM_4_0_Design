@@ -16,7 +16,7 @@ mixin directory-list
 											span.badge= container.size
 							else
 								td
-									a(href='/graph/' + title + '/' + container.id, id=container.id)= container.title
+									a(href=href + ',' +container.id, id=container.id)= container.title
 								if filter_container
 									td
 										span.badge= '0'
@@ -38,7 +38,8 @@ mixin results-save-clear
 	table
 		tr
 			td
-				h5#resultsTitle= resultsTitle
+				if results
+					h5#resultsTitle= 'Showing ' + results.take(20).size() + ' of '  + results.size()
 			td
 				//a.action(href='#')
 					i.fi-bookmark
@@ -51,11 +52,12 @@ mixin results-save-clear
 //- articles-list
 mixin articles-list
 	.list-group
-		if results
-			each result in results
-				a(href='/article/view/' + result.guid +'/'+result.title, id=result.id, target='_blank')
-					h4= result.title
-					p= result.summary + '...'
+		#articles
+			if results
+				each result in results.take(20)
+					a(href='/article/view/' + result.guid +'/'+result.title, id=result.id, target='_blank')
+						h4=  result.title
+						p= result.summary + '...'
 
 //- filters
 mixin filters-div
