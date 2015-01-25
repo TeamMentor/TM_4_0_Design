@@ -48,7 +48,7 @@ class SearchController
         filters = @req.params.filters
 
         @get_Navigation queryId, (navigation)=>
-          target = navigation.last()
+          target = navigation.last() || {}
           @graphService.graphDataFromGraphDB null, target.id, filters,  (searchData)=>
             searchData.filter_container = filters
             @searchData = searchData
