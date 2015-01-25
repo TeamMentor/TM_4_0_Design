@@ -126,7 +126,7 @@ describe "controllers | test-Search-Controller |", ->
         @.add_Session()
         @.app._router.stack.assert_Size_Is 3
         Search_Controller.registerRoutes @.app
-        @.app._router.stack.assert_Size_Is 9
+        @.app._router.stack.assert_Size_Is 10
         supertest(@.app)
           .get('/user/main.html')
           .end (err,res)->
