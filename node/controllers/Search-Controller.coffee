@@ -132,6 +132,7 @@ SearchController.registerRoutes = (app, expressService) ->
                             recent_Articles.add(recent_article)
             res.send(recent_Articles)
 
+    app.get '/'                         , checkAuth , searchController('showMainAppView')
     app.get '/graph/:queryId'           , checkAuth , searchController('showSearchFromGraph')
     app.get '/graph/:queryId/:filters'  , checkAuth , searchController('showSearchFromGraph')
     app.get '/user/main.html'           , checkAuth , searchController('showMainAppView')
