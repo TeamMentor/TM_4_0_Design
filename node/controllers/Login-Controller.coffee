@@ -1,4 +1,5 @@
 request = require('request')
+Config        = require('../misc/Config')
 
 users = [ { username : 'tm'   , password : 'tm'   } ,
           { username : 'user' , password : 'a'     } ,
@@ -19,7 +20,8 @@ class Login_Controller
     @.users              = users
     @.req                = req || {}
     @.res                = res || {}
-    @.webServices        = 'https://tmdev01-uno.teammentor.net/Aspx_Pages/TM_WebServices.asmx'
+    @.config             = new Config();
+    @.webServices        = @.config.tm_35_Server + @.config.tmWebServices
         
   redirectToLoginPage:  ()=>
     @.res.redirect(loginPage)
