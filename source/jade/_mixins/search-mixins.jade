@@ -16,7 +16,7 @@ mixin directory-list
 											span.badge= container.size
 							else
 								td
-									a(href='/graph/' + container.id, id=container.id)= container.title
+									a(href=href + ',' +container.id, id=container.id)= container.title
 								if filter_container
 									td
 										span.badge= '0'
