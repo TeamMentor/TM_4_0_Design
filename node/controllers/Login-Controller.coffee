@@ -153,6 +153,7 @@ class Login_Controller
 
         if(result)
           @res.redirect(password_reset_ok)
+          return;
         else
           @res.render(password_reset_fail,{errorMessage: 'Invalid token, perhaps it has expired'})
           return;
