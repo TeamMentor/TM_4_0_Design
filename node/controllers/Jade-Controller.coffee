@@ -25,7 +25,6 @@ class Jade_Controller
   renderFile: (viewModel)=>
     file_Raw  =  @.req.params.file.to_Safe_String().replace(/_/g,'/')
     file      = "/source/#{file_Raw}.jade"
-    log file
     html      =  @.jade_Service.renderJadeFile(file, viewModel || {})
     @.res.send(html)
 

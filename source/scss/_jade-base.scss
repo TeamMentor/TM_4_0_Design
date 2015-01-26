@@ -27,7 +27,7 @@ img {
 
 #application {
 	height: $full-width;
-	margin: 107px 0 0 0;
+	margin: 120px 0 0 0;
 	width: $full-width;
 }
 
@@ -44,8 +44,11 @@ img {
 	max-width: 95%;
 }
 
-#help-nav, #help-docs {
-	margin-top: 90px;
+#help-nav {
+	margin: 170px 0 0 0;
+}
+
+#help-docs {
 	h1 {
 		font-size: 1.625em;
 	}
@@ -102,6 +105,7 @@ input {
 		background-color: $white;
 		border-radius: 3px;
 		border-bottom: 1px solid $grey;
+		box-shadow: 1px 1px 6px $grey;
 		color: $dark-grey;
 		font-size: 1em;
 		height: 3rem;
@@ -134,6 +138,7 @@ select {
 	height: 50px;
 	margin: 0 auto;
 	padding: 0 0 40px 0;
+	margin: -13px 0 0 0;
 	position: fixed;
 	width: 95%;
 	z-index: 96;
@@ -156,7 +161,7 @@ select {
 		border: 1px solid $green;
 		border-left: none;
 		border-radius: 0;
-		padding: 14px 0 15px 0;
+		padding: 14px 0 16px 0;
 	}
 }
 
@@ -188,13 +193,13 @@ button {
 }
 
 .badge {
-	background-color: $grey;
-	border-radius: 10px;
-	color: $white;
-	font-size: 12px;
-	min-width: 10px;
-	padding: 3px 7px;
-	text-align: center;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  color: $white;
+  background-color: $grey;
+  text-align: center;
+  border-radius: 10px;
 }
 
 .alert {

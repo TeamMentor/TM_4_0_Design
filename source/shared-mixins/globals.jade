@@ -1,100 +1,103 @@
 //- horizontal-rule
 mixin horizontal-rule
-	hr
+    hr
 
 //- Breadcrumbs
 mixin breadcrumbs
-	dl.sub-nav
-		dt NAVIGATE:
-		dd
-			a(href='#') First Level
-		dd
-			a(href='#') Second Level
-		dd.active
-			a(href='#') Third Level
+  dl.sub-nav
+    #navigation
+      dt NAVIGATE:
+        if breadcrumbs
+          for item,index in breadcrumbs
+            if index == breadcrumbs.size() -1
+              dd.active
+                a(href= item.href)= item.title
+            else
+              dd
+                a(href= item.href)= item.title
 
 //- Form Inputs
 mixin username-input
-	label(for='username')
-		| Username
-	input(type='text', id='username', name='username', placeholder='Username')
+    label(for='username')
+        | Username
+    input(type='text', id='username', name='username', placeholder='Username')
 
 mixin password-input
-	label(for='password')
-		| Password
-	input(type='password', id='password', name='password', placeholder='Password')
+    label(for='password')
+        | Password
+    input(type='password', id='password', name='password', placeholder='Password')
 
 mixin confirm-password-input
-	label(for='confirm-password')
-		| Confirm Password
-	input(type='password', id='confirm-password', name='confirm-password',placeholder='Password')
+    label(for='confirm-password')
+        | Confirm Password
+    input(type='password', id='confirm-password', name='confirm-password',placeholder='Password')
 
 mixin email-input
-	label(for='email')
-		| Email Address
-	input(type='email', id='email', name='email', placeholder='Email Address')
+    label(for='email')
+        | Email Address
+    input(type='email', id='email', name='email', placeholder='Email Address')
 
 //- Form Buttons
 mixin login-button
-	button(type='submit', id='btn-login') Access TEAM Mentor
+    button(type='submit', id='btn-login') Access TEAM Mentor
 
 mixin forgot-password-button
-	button(type='button', id='btn-forgot-pwd') Forgot Your Password?
+    button(type='button', id='btn-forgot-pwd') Forgot Your Password?
 
 mixin sign-up-button
-	button(type='submit', id='btn-sign-up') Start Fixing Vulnerabilities
+    button(type='submit', id='btn-sign-up') Start Fixing Vulnerabilities
 
 mixin get-password-button
-	button(type='submit' id='btn-get-password') Get Password
+    button(type='submit' id='btn-get-password') Get Password
 
 mixin reset-password-button
-	button(type='submit' id='btn-reset-password') Reset Password
+    button(type='submit' id='btn-reset-password') Reset Password
 
 //- Loginwall
 mixin team-mentor-summary
-	include:md ../content/getting-started/login-wall-summary.md
-	table
-		tr
-			td.text-center.icons-green
-				i.fi-clipboard-pencil
-			td
-				include:md ../content/landing-pages/selling-point-1.md
-		tr
-			td.text-center.icons-green
-				i.fi-arrows-in
-			td
-				include:md ../content/landing-pages/selling-point-2.md
-		tr
-			td.text-center.icons-green
-				i.fi-checkbox
-			td
-				include:md ../content/landing-pages/selling-point-3.md
+    include:md ../content/getting-started/login-wall-summary.md
+    table
+        tr
+            td.text-center.icons-green
+                i.fi-clipboard-pencil
+            td
+                include:md ../content/landing-pages/selling-point-1.md
+        tr
+            td.text-center.icons-green
+                i.fi-arrows-in
+            td
+                include:md ../content/landing-pages/selling-point-2.md
+        tr
+            td.text-center.icons-green
+                i.fi-checkbox
+            td
+                include:md ../content/landing-pages/selling-point-3.md
 
 //- Other Buttons
 mixin start-trial-button
-	button
-		i.fi-key
-		| Start your free trial today
+    button
+        i.fi-key
+        | Start your free trial today
 
 mixin see-for-yourself-button
-	button
-		i.fi-eye
-		| See for yourself
+    button
+        i.fi-eye
+        | See for yourself
 
 
 //- Icons
 
 mixin i-phone
-	i.fi-telephone
+    i.fi-telephone
 
 mixin i-email
-	i.fi-mail
+    i.fi-mail
 
 mixin i-marker
-	i.fi-marker
+    i.fi-marker
 
 mixin i-twitter
-	i.fi-social-twitter
+    i.fi-social-twitter
 
 mixin i-toc
-	i.fi-paperclip
+    i.fi-paperclip
