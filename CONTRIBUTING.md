@@ -9,6 +9,7 @@ which are hosted in the [TeamMentor Organization](https://github.com/TeamMentor)
 
 * Check the [GitHub Issues Definitions](https://github.com/TeamMentor/TM_4_0_Design/wiki/GitHub-Issues-Definitions) for
 our Issue's label defintions
+* Estimate the level of effort the issue will take and select apropriate label.
 * Include screenshots and animated GIFs whenever possible; they are immensely
   helpful.
 * Include the behavior you expected and other places you've seen that behavior
@@ -41,17 +42,6 @@ other relevant repos
 * Limit the first line to 72 characters or less
 * Reference issues and pull requests liberally
 
-### CoffeeScript Styleguide
+### Styleguides
 
-* Set parameter defaults without spaces around the equal sign
-    * `clear = (count=1) ->` instead of `clear = (count = 1) ->`
-* Use parentheses if it improves code clarity.
-* Prefer alphabetic keywords to symbolic keywords:
-    * `a is b` instead of `a == b`
-* Avoid spaces inside the curly-braces of hash literals:
-    * `{a: 1, b: 2}` instead of `{ a: 1, b: 2 }`
-* Include a single line of whitespace between methods.
-* Capitalize initialisms and acronyms in names, except for the first word, which
-  should be lower-case:
-  * `getURI` instead of `getUri`
-  * `uriToOpen` instead of `URIToOpen`
+See [Development Style Guide](/TeamMentor/TM_4_0_Design/wiki/Development-Style-Guide) Wiki page

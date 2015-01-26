@@ -37,8 +37,8 @@ describe 'services | test-GitHub-Service |', ->
             expect(data.resources.core      ).to.be.an('Object')
             expect(data.resources.core.limit).to.be.an('number')
             #console.log(data.resources.core)
-            console.log("\n remaining : " + data.resources.core.remaining)
-            console.log(" next reset: " + new Date(data.resources.core.reset * 1000).toLocaleTimeString())
+            #console.log("\n remaining : " + data.resources.core.remaining)
+            #console.log(" next reset: " + new Date(data.resources.core.reset * 1000).toLocaleTimeString())
             done()
             
     it 'gist_Raw', (done)->

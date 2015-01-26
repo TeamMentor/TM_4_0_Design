@@ -2,30 +2,31 @@ include ../../shared-mixins/globals.jade
 
 //- Flare Search Bar Input
 mixin flare-search-bar-input
-	.row
-		.large-12.columns
-			.row.collapse
-				.small-8.large-10.columns
-					input#search-bar(type='text', placeholder='Type keywords here')
-				.small-2.large-1.columns
-					a.button.postfix#search-button(href='app-keyword-search')
-						+search-icon
-				.small-2.large-1.columns
-					a.button.postfix(href='filters-div')
-						+filter-icon
+	#search-bar
+		.row
+			.large-12.columns
+				.row.collapse
+					.small-8.large-10.columns
+						input#search(type='text', placeholder='Type keywords here')
+					.small-4.large-2.columns
+						a.button.postfix#search-button(href='app-keyword-search')
+							+search-icon
+						a.button.postfix#filters-button(href='filters-div')
+							+filter-icon
 
 //- Flare Results-Save-Clear
 mixin flare-results-save-clear
-	table
-		tr
-			td
-				h4 0/200 results showing
-			td
-				a.action(href='app-keyword-search-save')
-					+save-icon
-			td
-				a.action(href='main-app-view')
-					+clear-icon
+	#results-save-clear
+		.row
+			.large-12.columns
+				.row.collapse
+					.small-8.large-10.columns
+						h4 0/200 results showing
+					.small-4.large-2.columns
+						a.button.app#search-button(href='app-keyword-search')
+							+save-icon
+						a.button.app#filters-button(href='filters-div')
+							+clear-icon
 
 //- Articles List
 mixin flare-articles-list
@@ -89,7 +90,7 @@ mixin saved-article-menu
 				+share-icon
 		.small-12.large-4.columns
 			a.button(href='my-search-items')
-				+delete-icon
+				+clear-icon
 
 //- Flare Main App View
 mixin flare-main-app-view

@@ -8,7 +8,9 @@ class Config
         @library_Data      = path.join(@cache_folder, "library_Data")
         @version           = '0.1.1'
         @enable_Jade_Cache = enable_Jade_Cache || false
-        
+        @tm_35_Server      ='https://tmdev01-uno.teammentor.net/'
+        @tmWebServices     ='Aspx_Pages/TM_WebServices.asmx'
+
     createCacheFolders : ()->
         if not fs.existsSync(@cache_folder)
             fs.mkdirSync(@cache_folder)

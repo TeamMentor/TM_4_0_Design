@@ -73,7 +73,7 @@ describe 'routes | routes.test |', ()->
                          .replace(':filters','BBBB')
 
       expectedStatus = 200;
-      expectedStatus = 302 if ['image','deploy'                              ].contains(path.split('/').second().lower())
+      expectedStatus = 302 if ['','image','deploy'                           ].contains(path.split('/').second().lower())
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
                                '/user/logout'                                ].contains(path)
       expectedStatus = 403 if ['article', 'graph','library','libraries'      ].contains(path.split('/').second().lower())

@@ -4,7 +4,7 @@ module.exports =  (app)->
 
   preCompiler =
       renderJadeFile: (path)->
-        console.log('[renderJadeFile]' + path)
+        #console.log('[renderJadeFile]' + path)
         return new Jade_Service(app.config).renderJadeFile(path)
 
       cleanCacheFolder: ()->
