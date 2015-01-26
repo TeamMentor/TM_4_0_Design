@@ -180,21 +180,21 @@ describe 'controllers | Library-Controller.test.js |', ()->
             libraryController = new Library_Controller(req, res);
             libraryController.showLibrary()
 
-        it 'showQueries',(done)->
-
-            send = (html)->
-                $ = cheerio.load(html)
-                $('title').html().assert_Is('TEAM Mentor 4.0 (Html version)')
-                $('#link-my-articles').attr().assert_Is( { id: 'link-my-articles', href: '/library/Uno' });
-                #html.assert_Contains('<a href="/graph/Administrative Controls">Administrative Controls</a>')
-                #html.assert_Contains('<a href="/graph/Separate XML Data from Markup">Separate XML Data from Markup</a>')
-                done()
-
-            req = {}
-            res = { send: send }
-
-            libraryController = new Library_Controller(req, res);
-            libraryController.showQueries()
+        #it 'showQueries',(done)->
+#
+        #    send = (html)->
+        #        $ = cheerio.load(html)
+        #        $('title').html().assert_Is('TEAM Mentor 4.0 (Html version)')
+        #        $('#link-my-articles').attr().assert_Is( { id: 'link-my-articles', href: '/library/Uno' });
+        #        #html.assert_Contains('<a href="/graph/Administrative Controls">Administrative Controls</a>')
+        #        #html.assert_Contains('<a href="/graph/Separate XML Data from Markup">Separate XML Data from Markup</a>')
+        #        done()
+#
+        #    req = {}
+        #    res = { send: send }
+#
+        #    libraryController = new Library_Controller(req, res);
+        #    libraryController.showQueries()
 
      #  it.only 'showFolder',(done)->
 
