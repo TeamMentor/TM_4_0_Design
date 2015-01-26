@@ -23,7 +23,11 @@ class GraphService
     #graphDataUrl = "#{@server}/data/#{dataId}/query/filter/tm-search?show=#{queryId}"
     #graphDataUrl = "#{@server}/view/tm-search/#{queryId}"
     #graphDataUrl = "#{@server}/graph-db/filter/#{queryId}"
-    graphDataUrl = "#{@server}/data/query_tree/#{queryId}"
+
+    if filters
+      graphDataUrl = "#{@server}/data/query_tree_filtered/#{queryId}/#{filters}"
+    else
+      graphDataUrl = "#{@server}/data/query_tree/#{queryId}"
 
     graphDataUrl.GET_Json (json)->
       callback json || {}
