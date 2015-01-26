@@ -36,9 +36,9 @@ mixin results-save-clear
             td
                 if results
                     if results.size() > 250
-                        h5#resultsTitle= 'Showing ' + results.take(20).size() + ' of '  + results.size()
+                        h5#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
                     else
-                        h5#resultsTitle= 'Showing ' + results.size() + ' Articles'
+                        h5#resultsTitle= 'Showing ' + results.size() + ' articles'
             td
                 //a.action(href='#')
                     i.fi-bookmark
