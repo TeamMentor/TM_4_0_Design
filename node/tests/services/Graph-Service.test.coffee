@@ -40,13 +40,21 @@ describe 'services | Graph-Service.test |', ->
                 searchData.results.assert_Size_Is(0)
             done()
 
-    it 'root_Queries',(done)->
-      graphService.root_Queries (root_Queries)->
-        using root_Queries,->
-          @.id        .assert_Is 'Root-Queries'
-          @.title     .assert_Is 'Root Queries'
-          @.containers.assert_Size_Is_Bigger_Than 4
-          done()
+    # This test to work will need a mocked (or real) tm graph instance running
+
+    #it.only 'root_Queries',(done)->
+    #  graphService.root_Queries (root_Queries)->
+    #    log root_Queries
+    #    done()
+    #    return
+    #    if not root_Queries
+    #      done()
+    #    else
+    #      using root_Queries,->
+    #        @.id        .assert_Is 'Root-Queries'
+    #        @.title     .assert_Is 'Root Queries'
+    #        @.containers.assert_Size_Is_Bigger_Than 4
+    #        done()
 
     # move test below to a different describe since is affecting the graphService object
     it 'graphDataFromGraphDB (bad Server)', (done)->
