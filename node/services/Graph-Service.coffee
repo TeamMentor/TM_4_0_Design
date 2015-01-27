@@ -23,7 +23,6 @@ class GraphService
     #graphDataUrl = "#{@server}/data/#{dataId}/query/filter/tm-search?show=#{queryId}"
     #graphDataUrl = "#{@server}/view/tm-search/#{queryId}"
     #graphDataUrl = "#{@server}/graph-db/filter/#{queryId}"
-
     if filters
       graphDataUrl = "#{@server}/data/query_tree_filtered/#{queryId}/#{filters}"
     else
@@ -43,5 +42,17 @@ class GraphService
     url_root_queries.GET (root_queries)->
       url_query_Tree.GET_Json (json)->
         callback json || {}
+
+  query_From_Text_Search: (text, callback)=>
+    url_Convert = "#{@server}/convert/to_ids/#{text}"
+    url_Search = "#{@server}/search/query_from_text_search/#{text}"
+
+    url_Convert.GET_Json (json)->
+      mapping = json[json.keys().first()]
+      if mapping.id
+        callback mapping.id
+      else
+        url_Search.GET_Json (json)->
+          callback json || {}
 
 module.exports = GraphService

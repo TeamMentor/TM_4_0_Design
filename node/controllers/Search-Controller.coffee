@@ -59,12 +59,21 @@ class SearchController
             @searchData.href = target.href
             @res.send(@renderPage())
 
+    search: =>
+        target = @.req.query.text
+        if not target
+          target = @req.params.text
+        recentSearches_Cache.push(target)
+        @graphService.query_From_Text_Search target,  (query_Id)=>
+          @res.redirect("/#{@urlPrefix}/" + query_Id)
+
     showRootQueries: ()=>
       @graphService.root_Queries (root_Queries)=>
         @searchData = root_Queries
         @searchData.breadcrumbs = [{href:"/#{@urlPrefix}/", title: '/' , id: '/' }]
         @searchData.href = "/#{@urlPrefix}/"
         @res.send(@renderPage())
+
 
     showMainAppView: =>
 
@@ -117,11 +126,6 @@ class SearchController
         @recentArticles_add id, title
         @res.redirect(@config.tm_35_Server+id)
 
-    search: =>
-        target = @.req.query.text
-        recentSearches_Cache.push(target)
-        @res.redirect("/#{@urlPrefix}/" + target)
-
 SearchController.registerRoutes = (app, expressService) ->
 
     expressService ?= new Express_Service()
@@ -151,5 +155,6 @@ SearchController.registerRoutes = (app, expressService) ->
     app.get "/article/view/:guid/:title"     , checkAuth , searchController('showArticle')
     app.get "/article/viewed.json"           ,             viewedArticles_json
     app.get "/search"                        , checkAuth,  searchController('search')
+    app.get "/search/:text"                  , checkAuth,  searchController('search')
 
 module.exports = SearchController
