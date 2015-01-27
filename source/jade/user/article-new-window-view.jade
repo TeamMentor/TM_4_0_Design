@@ -1,0 +1,20 @@
+extends ../_layouts/page_home.jade
+include ../mixins/articles-mixins
+
+block content
+  #application
+    .row
+      .col-3
+        .lge-container
+          br
+      .col-6
+        .lge-container
+          #article
+            include:md ../../content/articles/article-new-window.md
+          +horizontal-rule
+          +article-options
+          +horizontal-rule
+          +related-articles
+      .col-3
+        .lge-container
+          br
