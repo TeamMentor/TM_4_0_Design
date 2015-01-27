@@ -1,126 +1,126 @@
 include ../../shared-mixins/globals.jade
 
 mixin login-form
-	#form
-		#heading
-			include:md ../../content/getting-started/login-form.md
-		form#login-form(role='form' method='post' action='/user/login')
-			.form-group
-				+username-input
-			.form-group
-				+password-input
-			.row
-				.col-6
-					.lge-container
-						+login-button
-				.col-6
-					.lge-container
-						a(href='/guest/pwd-forgot.html')
-							+forgot-password-button
+    #form
+        #heading
+            include:md ../../content/getting-started/login-form.md
+        form#login-form(role='form' method='post' action='/user/login')
+            .form-group
+                +username-input
+            .form-group
+                +password-input
+            .row
+                .col-6
+                    .lge-container
+                        +login-button
+                .col-6
+                    .lge-container
+                        a(href='/guest/pwd-forgot.html')
+                            +forgot-password-button
 
 //- sign-up-form
 mixin sign-up-form
-	#form
-		#heading
-			include:md ../../content/getting-started/sign-up-form.md
-		form#sign-up-form(role='form', method='POST', action='/user/sign-up')
-			.form-group
-				+username-input
-				include:md ../../content/getting-started/username-prompt.md
-			.form-group
-				+email-input
-				include:md ../../content/getting-started/email-prompt.md
-			.form-group
-				+password-input
-				include:md ../../content/getting-started/password-prompt.md
-			.form-group
-				+confirm-password-input
-			include:md ../../content/getting-started/agree-to-toc.md
-			+sign-up-button
+    #form
+        #heading
+            include:md ../../content/getting-started/sign-up-form.md
+        form#sign-up-form(role='form', method='POST', action='/user/sign-up')
+            .form-group
+                +username-input
+                include:md ../../content/getting-started/username-prompt.md
+            .form-group
+                +email-input
+                include:md ../../content/getting-started/email-prompt.md
+            .form-group
+                +password-input
+                include:md ../../content/getting-started/password-prompt.md
+            .form-group
+                +confirm-password-input
+            include:md ../../content/getting-started/agree-to-toc.md
+            +sign-up-button
 
 
 //- forgot-password-form
 mixin forgot-password-form
-	h3 Forgot your password?
-	include:md ../../content/getting-started/forgot-password-form.md
-	form#forgot-password(role='form', action='/user/pwd_reset' method='post')
-		.form-group
-			+email-input
-		+get-password-button
+    h3 Forgot your password?
+    include:md ../../content/getting-started/forgot-password-form.md
+    form#forgot-password(role='form', action='/user/pwd_reset' method='post')
+        .form-group
+            +email-input
+        +get-password-button
 
 //- pwd-reset-form
 mixin pwd-reset-form
-	fieldset
-		h3 Reset your password
-		form#pwd-reset-form(role='form' method='post')
-			.form-group
-				+password-input
-				include:md ../../content/getting-started/password-prompt.md
-			.form-group
-				+confirm-password-input
-			+reset-password-button
+    fieldset
+        h3 Reset your password
+        form#pwd-reset-form(role='form' method='post')
+            .form-group
+                +password-input
+                include:md ../../content/getting-started/password-prompt.md
+            .form-group
+                +confirm-password-input
+            +reset-password-button
 
 
 mixin alert-login-failed
-	.alert(role='alert')
-		| Error: #{errorMessage}
+    .alert(role='alert')
+        | Error: #{errorMessage}
 
 mixin alert-please-login
-	.alert(role='alert')
-		| You need to login to see that page.
+    .alert(role='alert')
+        | You need to login to see that page.
 
 mixin alert-pwd-sent
-	.alert(role='alert')
-		| If you entered a valid address, then a password reset link has been sent to your email address.
+    .alert(role='alert')
+        | If you entered a valid address, then a password reset link has been sent to your email address.
 
 mixin alert-sign-up-failed
-	.alert(role='alert')
-		| Error: #{errorMessage}
+    .alert(role='alert')
+        | Error: #{errorMessage}
 
 mixin alert-sign-up-OK
-	.alert(role='alert')
-		| Thanks for signing up to TEAM Mentor. Please login to access our libraries.
+    .alert(role='alert')
+        | Thanks for signing up to TEAM Mentor. Please login to access our libraries.
 
 mixin alert-pw-requirements
-	.alert(role='alert')
-		| You need to login to see that page.
+    .alert(role='alert')
+        | You need to login to see that page.
 
 mixin alert-pwd-reset-failed
-	.alert(role='alert')
-		| Error: #{errorMessage}
+    .alert(role='alert')
+        | Error: #{errorMessage}
 
 mixin alert-pwd-reset-OK
-	.alert(role='alert')
-		| Your password has been updated. Please login to access our libraries.
+    .alert(role='alert')
+        | Your password has been updated. Please login to access our libraries.
 
 //- main-app-view
 mixin main-app-view
-	#recentlyViewedArticles
-		h4 Recently Viewed Articles
-		.list-group
-			if (recentArticles)
-				for recentArticle in recentArticles
-					a(href=recentArticle.href, target='_blank')= recentArticle.title
-	h4 Popular Search Terms
-	.list-group
-		if (searchTerms)
-			for searchTerm in searchTerms
-				a(href=searchTerm.href)= searchTerm.title
-	h4 Top Articles
-	.list-group
-		if (topArticles)
-			for article in topArticles
-				if article
-					a(href=article.href, target='_blank')
-						.row
-							.col-12
-								.row
-									.col-11
-										= article.title
-									.col-1
-										span.badge= article.weight
-	//h4 New Articles
-	//.list-group
-		if (newArticles)
-			for newArticle in newArticles
-				a(href=newArticle.href, target='_blank')= newArticle.title
+    #recentlyViewedArticles
+        h4 Recently Viewed Articles
+        .list-group
+            if (recentArticles)
+                for recentArticle in recentArticles
+                    a(href=recentArticle.href, target='_blank')= recentArticle.title
+    h4 Popular Search Terms
+    .list-group
+        if (searchTerms)
+            for searchTerm in searchTerms
+                a(href=searchTerm.href)= searchTerm.title
+    h4 Top Articles
+    .list-group
+        if (topArticles)
+            for article in topArticles
+                if article
+                    a(href=article.href, target='_blank')
+                        .row
+                            .col-12
+                                .row
+                                    .col-11
+                                        = article.title
+                                    .col-1
+                                        span.badge= article.weight
+    //h4 New Articles
+    //.list-group
+        if (newArticles)
+            for newArticle in newArticles
+                a(href=newArticle.href, target='_blank')= newArticle.title

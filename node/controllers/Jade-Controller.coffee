@@ -11,6 +11,8 @@ class Jade_Controller
 
 
   renderMixin: (viewModel)=>
+    if viewModel and viewModel.viewModel
+      viewModel = JSON.parse viewModel.viewModel
     file  = @req.params.file
     mixin = @req.params.mixin
     html  = @.jade_Service.renderMixin(file, mixin,viewModel || {})
@@ -38,4 +40,4 @@ Jade_Controller.registerRoutes =  (app)=>
   app.get  '/render/file/:file'         ,    (req, res)=> new Jade_Controller(req, res, app.config).renderFile_GET()
 
 
-module.exports = Jade_Controller;
+module.exports = Jade_Controller
