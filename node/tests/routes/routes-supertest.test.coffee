@@ -11,7 +11,7 @@ describe 'routes | routes-supertest.test |',  ()->
   it 'verify security headers in response', (done)->
     assert = require('assert')
     supertest(app).get('/')
-                  .expect('Content-Security-Policy', "default-src 'self';script-src 'none';object-src 'self';img-src 'self';media-src 'none';frame-src 'self';style-src 'self' 'unsafe-inline'")
+                  .expect('Content-Security-Policy', "default-src 'self';script-src 'none';object-src 'self';img-src 'self';media-src 'none';frame-src 'self';style-src 'self';report-uri /csp")
                   .end (err)->
                     throw err if(err)
                     done()
