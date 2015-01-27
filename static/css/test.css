@@ -160,9 +160,6 @@ nav {
     -webkit-order: 9;
     -webkit-flex: 100%;
   }
-  .fixed {
-    width: 50%;
-  }
   #right-nav {
     -webkit-order: 8;
     -webkit-flex: 50%;
@@ -179,6 +176,9 @@ nav {
   #results {
     flex: 2;
     -webkit-order: 8;
+  }
+  .fixed {
+    width: 50%;
   }
   #right-nav {
     -webkit-order: 9;
