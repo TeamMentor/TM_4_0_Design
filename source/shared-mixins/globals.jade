@@ -9,14 +9,6 @@ mixin breadcrumbs
       dt Path:
       if breadcrumbs
         .bc-container
-          dd
-            a(href='#') Example of Longer Title
-          dd
-            a(href='#') Example of Longer Title
-          dd
-            a(href='#') Example of
-          dd
-            a(href='#') Example of Longer Title
           for item,index in breadcrumbs
             if index == breadcrumbs.size() -1
               dd.active
