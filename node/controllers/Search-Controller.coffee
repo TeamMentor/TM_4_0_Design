@@ -12,6 +12,7 @@ recentArticles_Cache = []
 
 recentSearches_Cache = ["Logging","Authorization","Administrative Controls"]
 
+
 class SearchController
     constructor: (req, res, config)->
         @req                = req
@@ -26,6 +27,7 @@ class SearchController
         @defaultRepo        = 'TM_Test_GraphData'
         @defaultFolder      = '/SearchData/'
         @defaultDataFile    = 'Data_Validation'
+        @urlPrefix          = '-'
 
     
     renderPage: ()->
@@ -40,7 +42,7 @@ class SearchController
           item = data[key]
           path = if path then "#{path},#{key}" else "#{key}"
           if item and path
-            navigation.push {href:"/graph/#{path}", title: item.title , id: item.id }
+            navigation.push {href:"/#{@urlPrefix}/#{path}", title: item.title , id: item.id }
 
         callback navigation
 
@@ -60,8 +62,8 @@ class SearchController
     showRootQueries: ()=>
       @graphService.root_Queries (root_Queries)=>
         @searchData = root_Queries
-        @searchData.breadcrumbs = [{href:"/graph/", title: '/' , id: '/' }]
-        @searchData.href = '/graph/'
+        @searchData.breadcrumbs = [{href:"/#{@urlPrefix}/", title: '/' , id: '/' }]
+        @searchData.href = "/#{@urlPrefix}/"
         @res.send(@renderPage())
 
     showMainAppView: =>
@@ -93,7 +95,7 @@ class SearchController
     topSearches: =>
         searchTerms = []
         for search in recentSearches_Cache
-            searchTerms.unshift { href: "/graph/#{search}", title: search}
+            searchTerms.unshift { href: "/#{@urlPrefix}/#{search}", title: search}
 
         return searchTerms.take(3)
 
@@ -118,12 +120,13 @@ class SearchController
     search: =>
         target = @.req.query.text
         recentSearches_Cache.push(target)
-        @res.redirect('/graph/' + target)
+        @res.redirect("/#{@urlPrefix}/" + target)
 
 SearchController.registerRoutes = (app, expressService) ->
 
     expressService ?= new Express_Service()
-    checkAuth        =  (req,res,next) -> expressService.checkAuth(req, res,next, app.config)
+    checkAuth       =  (req,res,next) -> expressService.checkAuth(req, res,next, app.config)
+    urlPrefix       = new SearchController().urlPrefix                   # urlPrefix should be moved to a global static var
 
     searchController = (method_Name) ->                                  # pins method_Name value
         return (req, res) ->                                             # returns function for express
@@ -140,12 +143,13 @@ SearchController.registerRoutes = (app, expressService) ->
                             recent_Articles.add(recent_article)
             res.send(recent_Articles)
 
-    app.get '/'                         , checkAuth , searchController('showMainAppView')
-    app.get '/graph'                    , checkAuth , searchController('showRootQueries')
-    app.get '/graph/:queryId'           , checkAuth , searchController('showSearchFromGraph')
-    app.get '/graph/:queryId/:filters'  , checkAuth , searchController('showSearchFromGraph')
-    app.get '/user/main.html'           , checkAuth , searchController('showMainAppView')
-    app.get '/article/view/:guid/:title', checkAuth , searchController('showArticle')
-    app.get '/article/viewed.json'      ,             viewedArticles_json
-    app.get '/search'                   , checkAuth,  searchController('search')
+    app.get "/"                              , checkAuth , searchController('showMainAppView')
+    app.get "/#{urlPrefix}"                  , checkAuth , searchController('showRootQueries')
+    app.get "/#{urlPrefix}/:queryId"         , checkAuth , searchController('showSearchFromGraph')
+    app.get "/#{urlPrefix}/:queryId/:filters", checkAuth , searchController('showSearchFromGraph')
+    app.get "/user/main.html"                , checkAuth , searchController('showMainAppView')
+    app.get "/article/view/:guid/:title"     , checkAuth , searchController('showArticle')
+    app.get "/article/viewed.json"           ,             viewedArticles_json
+    app.get "/search"                        , checkAuth,  searchController('search')
+
 module.exports = SearchController
