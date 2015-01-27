@@ -58,7 +58,11 @@ class Express_Service
       objectSrc: ["'self'"],
       mediaSrc: ["'none'"],
       frameSrc: ["'self'"]
-      reportUri: '/csp' # Browser will POST reports of policy failures to this URI
+      reportUri: '/csp', # Browser will POST reports of policy failures to this URI
+      reportOnly: false, # set to true if you only want to report errors; site will still function
+      setAllHeaders: false, # helmet sniffs user-agent of browser and sets appropriate header values;
+                            # if no user-agent matched, it will set ALL headers w/ 1.0 spec
+      disableAndroid: false # set to true to disable CSP on Android (can be flaky)
     }));
     @.app.use(helmet.hsts({    #http://tools.ietf.org/html/rfc6797 - HTTP Strict Transport Security
       maxAge: 10886400000,     # Milliseconds - must be at least 18 weeks to be approved by Google
