@@ -8,6 +8,13 @@ describe 'routes | routes-supertest.test |',  ()->
 
   app.config.enable_Jade_Cache = true;
 
+  it 'verify security headers in response', (done)->
+    assert = require('assert')
+    supertest(app).get('/')
+                  .expect('Content-Security-Policy', "default-src 'self';script-src 'none';object-src 'self';img-src 'self';media-src 'none';frame-src 'self';style-src 'self' 'unsafe-inline'")
+                  .end (err)->
+                    throw err if(err)
+                    done()
 
   it 'should open page ok', (done)->
     supertest(app).get('/help/index.html')
