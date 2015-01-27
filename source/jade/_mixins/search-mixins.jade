@@ -1,89 +1,88 @@
 //- directory-list
 mixin directory-list
-	h3#title= title
-	.nav
-		#containers
-			if(containers)
-				table
-					each container in containers
-						tr
-							if container.id == filter_container
-									td
-										b
-											a(href='/graph/' + title)= container.title
-									td
-										b
-											span.badge= container.size
-							else
-								td
-									a(href=href + ',' +container.id, id=container.id)= container.title
-								if filter_container
-									td
-										span.badge= '0'
-								else
-									td
-										span.badge= container.size
+    h3#title= title
+    .nav
+        #containers
+            if(containers)
+                table
+                    each container in containers
+                        tr
+                            //if container.id == filter_container
+                                    td
+                                        b
+                                            a(href='/graph/' + title)= container.title
+                                    td
+                                        b
+                                            span.badge= container.size
+                            //else
+                            td
+                                a(href= href + ',' +container.id, id=container.id)= container.title
+                            td
+                                span.badge= container.size
 
 //- search-bar-input
 mixin search-bar-input
-	#search
-		form(action='/search', method='GET')
-			.input-group
-				input.form-control(type='text', placeholder='Type keywords here', name='text')
-				span.input-group-btn
-					button.btn-search-bar(type='submit') SEARCH
+    #search
+        form(action='/search', method='GET')
+            .input-group
+                input.form-control(type='text', placeholder='Type keywords here', name='text')
+                span.input-group-btn
+                    button.btn-search-bar(type='submit') SEARCH
 
 //- results-save-clear
 mixin results-save-clear
-	table
-		tr
-			td
-				if results
-					h5#resultsTitle= 'Showing ' + results.take(20).size() + ' of '  + results.size()
-			td
-				//a.action(href='#')
-					i.fi-bookmark
-					|   Save
-			td
-				a.action(href='/graph/' + title)
-					i.fi-trash
-					|   Clear
+    table
+        tr
+            td
+                if results
+                    if results.size() > 250
+                        h5#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
+                    else
+                        h5#resultsTitle= 'Showing ' + results.size() + ' articles'
+            td
+                //a.action(href='#')
+                    i.fi-bookmark
+                    |   Save
+            td
+                a.action(href='/graph/' + title)
+                    i.fi-trash
+                    |   Clear
 
 //- articles-list
 mixin articles-list
-	.list-group
-		#articles
-			if results
-				each result in results.take(20)
-					a(href='/article/view/' + result.guid +'/'+result.title, id=result.id, target='_blank')
-						h4=  result.title
-						p= result.summary + '...'
+    .list-group
+        #articles
+            if results
+                each result in results.take(250)
+                    a(href='/article/view/' + result.guid +'/'+result.title, id=result.id, target='_blank')
+                        h4=  result.title
+                        p= result.summary + '...'
 
 //- filters
 mixin filters-div
-		h3 Filters
-		.nav#filters
-			if filters
-				for filter in filters
-					table
-						h5= filter.title
-						for result in filter.results
-							tr
-								if result.id == filter_container
-									//td
-										input(type='checkbox', checked=true, disabled=true)
-									td
-										b
-											a(href='/graph/' + title)= result.title
-									td
-										b
-											span.badge= result.size
-								else
-									//td
-										input(type='checkbox', name='technology', id=result.id value=result.id)
-									td
-										a(href='/graph/' + title + '/'+result.id)= result.title
-									//td
-										a(href='/graph/' + title + '/'  + result.id, id=result.id)= result.title
-									td
-										span.badge= result.size
+        h3 Filters
+        .nav#filters
+            if filters
+                for filter in filters
+                    table
+                        h5= filter.title
+                        for result in filter.results
+                            tr
+                                if result.id == filter_container
+                                    //td
+                                        input(type='checkbox', checked=true, disabled=true)
+                                    td
+                                        b
+                                            a(href= href )= result.title
+                                    td
+                                        b
+                                            span.badge= result.size
+                                else
+                                    //td
+                                        input(type='checkbox', name='technology', id=result.id value=result.id)
+                                    td
+                                        a(href=href + '/'+result.id)= result.title
+                                    //td
+                                        a(href='/graph/' + title + '/'  + result.id, id=result.id)= result.title
+                                    td
+                                        span.badge= result.size

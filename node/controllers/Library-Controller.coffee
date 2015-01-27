@@ -52,24 +52,24 @@ class Library_Controller
         @.res.redirect('/Libraries')
 
 
-  showQueries: ()=>
-    server = 'http://localhost:1332';
-    url    = '/graph-db/queries/'
-    request(server + url, (error, response,data)=>
-      viewModel= {}
-
-      if(data && data !='')
-        graph = JSON.parse(data)
-        if (graph)
-          nodes = graph.nodes;
-          node_Labels = [];
-          if (nodes)
-            nodes.forEach (node)->
-              node_Labels.push(node.label);
-
-          viewModel = {'queries': node_Labels.sort()};
-
-      @.res.send @.jade_Service.renderJadeFile('/source/jade/user/queries.jade', viewModel))
+  #showQueries: ()=>
+  #  server = 'http://localhost:1332';
+  #  url    = '/graph-db/queries/'
+  #  request(server + url, (error, response,data)=>
+  #    viewModel= {}
+#
+  #    if(data && data !='')
+  #      graph = JSON.parse(data)
+  #      if (graph)
+  #        nodes = graph.nodes;
+  #        node_Labels = [];
+  #        if (nodes)
+  #          nodes.forEach (node)->
+  #            node_Labels.push(node.label);
+#
+  #        viewModel = {'queries': node_Labels.sort()};
+#
+  #    @.res.send @.jade_Service.renderJadeFile('/source/jade/user/queries.jade', viewModel))
 
 
 
@@ -122,7 +122,7 @@ Express_Service  = require('../services/Express-Service')
 Library_Controller.registerRoutes =  (app)=>
   check_Auth = (req,res,next)-> new Express_Service().checkAuth(req, res,next, app.config)
   app.get '/libraries'      , check_Auth, (req, res)=> new Library_Controller(req, res, app.config).showLibraries()
-  app.get '/library/queries', check_Auth, (req, res)=> new Library_Controller(req, res, app.config).showQueries()
+  #app.get '/library/queries', check_Auth, (req, res)=> new Library_Controller(req, res, app.config).showQueries()
   app.get '/library/:name'  , check_Auth, (req, res)=> new Library_Controller(req, res, app.config).showLibrary()
 
 module.exports = Library_Controller

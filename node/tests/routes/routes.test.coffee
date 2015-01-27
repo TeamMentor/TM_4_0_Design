@@ -14,6 +14,7 @@ describe 'routes | routes.test |', ()->
                       '/flare',
                       '/flare/all',
                       '/flare/main-app-view',
+                      '/graph',
                       '/graph/:queryId',
                       '/graph/:queryId/:filters',
                       '/render/mixin/:file/:mixin',   # GET
@@ -25,7 +26,7 @@ describe 'routes | routes.test |', ()->
                       '/index.html',
                       '/libraries',
                       '/library/:name',
-                      '/library/queries',
+                      #'/library/queries',
                       '/mainModule',
                       '/module',
                       '/ping',

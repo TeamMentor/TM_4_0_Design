@@ -12,7 +12,7 @@ password_sent       = '/guest/pwd-sent.html'
 signUp_fail         = 'source/jade/guest/sign-up-Fail.jade'
 signUp_Ok           = 'source/jade/guest/sign-up-OK.html'
 password_reset_fail = 'source/jade/guest/pwd-reset-fail.jade'
-password_reset_ok   = 'source/jade/guest/login-pwd-reset.html'
+password_reset_ok   = '/guest/login-pwd-reset.html'
 loginSuccess        = 0
 
 class Login_Controller
@@ -153,6 +153,7 @@ class Login_Controller
 
         if(result)
           @res.redirect(password_reset_ok)
+          return;
         else
           @res.render(password_reset_fail,{errorMessage: 'Invalid token, perhaps it has expired'})
           return;
