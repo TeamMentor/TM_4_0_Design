@@ -39,7 +39,8 @@ class SearchController
         for key in data.keys()
           item = data[key]
           path = if path then "#{path},#{key}" else "#{key}"
-          navigation.push {href:"/graph/#{path}", title: item.title , id: item.id }
+          if item and path
+            navigation.push {href:"/graph/#{path}", title: item.title , id: item.id }
 
         callback navigation
 
@@ -52,9 +53,16 @@ class SearchController
           @graphService.graphDataFromGraphDB null, target.id, filters,  (searchData)=>
             searchData.filter_container = filters
             @searchData = searchData
-            @searchData.breadcrumbs = navigation #@get_Navigation(queryId, searchData.title)
+            @searchData.breadcrumbs = navigation
             @searchData.href = target.href
             @res.send(@renderPage())
+
+    showRootQueries: ()=>
+      @graphService.root_Queries (root_Queries)=>
+        @searchData = root_Queries
+        @searchData.breadcrumbs = [{href:"/graph/", title: '/' , id: '/' }]
+        @searchData.href = '/graph/'
+        @res.send(@renderPage())
 
     showMainAppView: =>
 
@@ -133,6 +141,7 @@ SearchController.registerRoutes = (app, expressService) ->
             res.send(recent_Articles)
 
     app.get '/'                         , checkAuth , searchController('showMainAppView')
+    app.get '/graph'                    , checkAuth , searchController('showRootQueries')
     app.get '/graph/:queryId'           , checkAuth , searchController('showSearchFromGraph')
     app.get '/graph/:queryId/:filters'  , checkAuth , searchController('showSearchFromGraph')
     app.get '/user/main.html'           , checkAuth , searchController('showMainAppView')
