@@ -27,7 +27,7 @@ img {
 
 #application {
 	height: $full-width;
-	margin: 120px 0 0 0;
+	margin: 140px 0 0 0;
 	width: $full-width;
 }
 
@@ -204,10 +204,10 @@ button {
 
 .alert {
 	background: $white;
-	border: none;
+	border: 1px solid $green
 	color: $green;
 	font-weight: 700;
-	margin: 0;
+	margin: 0 0 10px 0;
 	padding: 15px;
 }
 

@@ -29,8 +29,8 @@ mixin search-bar-input
                 span.input-group-btn
                     button.btn-search-bar(type='submit') SEARCH
 
-//- results-save-clear
-mixin results-save-clear
+//- results
+mixin results
     table
         tr
             td
@@ -39,15 +39,6 @@ mixin results-save-clear
                         h5#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
                     else
                         h5#resultsTitle= 'Showing ' + results.size() + ' articles'
-            td
-                //a.action(href='#')
-                    i.fi-bookmark
-                    |   Save
-            td
-                a.action(href='/graph/' + title)
-                    i.fi-trash
-                    |   Clear
-
 //- articles-list
 mixin articles-list
     .list-group

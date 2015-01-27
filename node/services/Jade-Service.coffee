@@ -85,4 +85,4 @@ class JadeService
       return jade.compile(code, {filename: dummyJade })(params)
 
 
-module.exports = JadeService;
+module.exports = JadeService

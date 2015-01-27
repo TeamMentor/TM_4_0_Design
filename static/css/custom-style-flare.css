@@ -325,7 +325,7 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   nav {
     -webkit-flex: 100%;
     max-height: 14%;
-    -webkit-flex-wrap: wrap;
+    -webkit-flex-wrap: nowrap;
   }
   #application {
     -webkit-flex: 100%;
@@ -427,9 +427,6 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 
   .breadcrumbs {
     margin-top: 40px;
-  }
-  #search-bar {
-    width: 49%;
   }
 }
 
@@ -1416,5 +1413,3 @@ pre {
 #results-save-clear {
   padding: 5px;
 }
-
-

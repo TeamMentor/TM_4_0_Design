@@ -6,8 +6,9 @@ mixin horizontal-rule
 mixin breadcrumbs
   dl.sub-nav
     #navigation
-      dt NAVIGATE:
-        if breadcrumbs
+      dt Path:
+      if breadcrumbs
+        .bc-container
           for item,index in breadcrumbs
             if index == breadcrumbs.size() -1
               dd.active

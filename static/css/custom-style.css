@@ -232,7 +232,7 @@ body {
 #application {
   width: 100%;
   height: 100%;
-  margin-top: 120px;
+  margin-top: 140px;
 }
 
 #call-to-action {
@@ -660,6 +660,7 @@ select {
   border-left: none;
   border-radius: 0;
   border-color: #8aaf3e;
+  box-shadow: 1px 1px 6px #aaaaaa;
 }
 
 button {
@@ -764,10 +765,10 @@ button i {
 }
 .alert {
   padding: 15px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
   background: #FFFFFF;
   color: #8aaf3e;
-  border: none;
+  border: 1px solid #8aaf3e;
   font-size: inherit;
   font-weight: 700;
 }
@@ -1592,27 +1593,43 @@ table {
   display: block;
   width: auto;
   overflow: hidden;
-  margin: 1.25rem 0 1.125rem;
-  padding: 1em 1em 1em 0;
-  border-radius: 3px; }
+  padding: 1em;
+  background: #fafafa; }
 .sub-nav dt {
   text-transform: uppercase;
-  color: #aaaaaa; }
+  color: #ffffff;
+  background: #b4cf7b;
+  padding: 10px 10px;
+  margin: 0;
+  border: 1px solid #8baf3e;
+  letter-spacing: 1px;
+   box-shadow: 1px 1px 6px #aaaaaa; }
+.sub-nav dd {
+  padding: 12px 0;
+  margin: 0 0 0 20px;
+}
+.sub-nav a:after { content: " / "; padding-left: 10px; color: #aaaaaa;}
+.sub-nav a:before { content: " "; }
+.sub-nav dd:last-child > a:after { content: "" }
+.bc-container {
+  background-color: white;
+  max-width: 100%;
+  height: 2.75em;
+  margin-left: 80px;
+}
 .sub-nav dt,
 .sub-nav dd,
 .sub-nav li {
   float: left;
   display: inline;
-  margin-left: 1rem;
-  margin-bottom: 0;
   font-weight: normal;
-  font-size: 12px; }
+  font-size: 14px; }
 .sub-nav dt a,
 .sub-nav dd a,
 .sub-nav li a {
+  text-align: left;
   text-decoration: none;
-  color: #aaaaaa;
-  padding: 0.1875rem 1rem; }
+  color: #aaaaaa; }
 .sub-nav dt a:hover,
 .sub-nav dd a:hover,
 .sub-nav li a:hover {
@@ -1620,15 +1637,10 @@ table {
 .sub-nav dt.active a,
 .sub-nav dd.active a,
 .sub-nav li.active a {
-  font-weight: normal;
-  border-bottom: 2px solid #8aaf3e;
-  padding-bottom: 10px;
-  cursor: default;
   color: #8aaf3e; }
 .sub-nav dt.active a:hover,
 .sub-nav dd.active a:hover,
 .sub-nav li.active a:hover {
-  border-bottom: 2px solid #6c9020;
   color: #6c9020; }
 
 form p {
@@ -1650,6 +1662,7 @@ form p {
   padding: 14px 0 16px 0;
   border: 1px solid #8aaf3e;
   border-radius: 0;
+
 }
 
 #search {

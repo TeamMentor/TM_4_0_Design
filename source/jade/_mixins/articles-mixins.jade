@@ -110,21 +110,3 @@ mixin edit-links
                 a(href='navigate.html') Clear All
             .column-4
                 a(href='my-articles.html') Ok, Done
-
-//- breadcrumnbs
-mixin breadcrumbs
-    dl.sub-nav
-        dt NAVIGATE:
-        dd
-            a(href='#') First Level
-        dd
-            a(href='#') Second Level
-        dd.active
-            a(href='#') Third Level
-
-    // .breadcrumbs
-        if breadcrumbs
-            for breadcrumb,index in breadcrumbs
-                li
-                    a(href=breadcrumb.href)= breadcrumb.title
-                if index < breadcrumbs.length -1

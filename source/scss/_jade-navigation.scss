@@ -142,37 +142,55 @@
 }
 
 .sub-nav {
+	background: $light-grey;
 	display: block;
-	width: auto;
 	overflow: hidden;
-	margin: 1.25rem 0 1.125rem;
 	padding: 1em;
-	border: 1px solid $light-grey;
-	border-radius: 3px;
+	width: auto;
 	dt {
+		background: $light-green;
+		border: 1px solid $green;
+		box-shadow: 1px 1px 6px $grey;
+		color: $white;
+		letter-spacing: 1px;
+		margin: 0;
+		padding: 10px 10px;
 		text-transform: uppercase;
+	}
+	dd {
+		padding: 12px 0;
+		margin: 0 0 0 20px;
+	}
+	a:after {
+		content: " / ";
+		padding-left: 10px;
 		color: $grey;
+	}
+	a:before {
+		content: " ";
+	}
+	dd:last-child > a:after {
+		content: ""
+	}
+	.bc-container {
+		background-color: white;
+		height: 2.75em;
+		margin-left: 80px;
+		max-width: 100%;
 	}
 	dt, dd, li {
 		float: left;
 		display: inline;
-		margin-left: 1rem;
-		margin-bottom: 0;
 		font-weight: normal;
-		font-size: 12px;
+		font-size: 14px;
 		a {
 			text-decoration: none;
 			color: $grey;
-			padding: 0.1875rem 1rem;
 			:hover {
 				color: $dark-green;
 			}
 		}
 		&:active a {
-			font-weight: normal;
-			border-bottom: 2px solid $green;
-			padding-bottom: 10px;
-			cursor: default;
 			color: $green;
 			&:hover {
 				border-bottom: 2px solid $dark-green;
