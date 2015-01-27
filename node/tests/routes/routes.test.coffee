@@ -77,7 +77,7 @@ describe 'routes | routes.test |', ()->
       expectedStatus = 302 if ['','image','deploy'                           ].contains(path.split('/').second().lower())
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
                                '/user/logout'                                ].contains(path)
-      expectedStatus = 403 if ['article', '-','library','libraries'      ].contains(path.split('/').second().lower())
+      expectedStatus = 403 if ['article', '-','library','libraries'          ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search'                  ].contains(path)
       expectedStatus = 200 if ['/article/viewed.json'                        ].contains(path)
 
