@@ -45,7 +45,8 @@ mixin articles-list
         #articles
             if results
                 each result in results.take(250)
-                    a(href='/article/view/' + result.guid +'/'+result.title, id=result.id, target='_blank')
+                    if result
+                      a(href='/article/view/' + result.guid +'/'+result.title, id=result.id, target='_blank')
                         h4=  result.title
                         p= result.summary + '...'
 
