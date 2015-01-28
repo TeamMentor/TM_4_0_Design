@@ -82,6 +82,7 @@ nav a:hover, nav p:hover {
   -webkit-order: 4;
   -webkit-flex: 20%;
   text-align: right;
+  padding: 15px 10px 0 0;
 }
 
 #lp-menu-icon {
@@ -211,7 +212,6 @@ nav a:hover, nav p:hover {
   #menu-icon {
     -webkit-order: 5;
     flex: 1;
-    padding: 15px 10px 0 0;
   }
   #lp-menu-icon {
     display: none;
