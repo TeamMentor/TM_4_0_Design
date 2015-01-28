@@ -19,6 +19,7 @@ nav {
   display: -webkit-flex;
   z-index: 99;
   margin: 0 0 5px 0;
+  box-shadow: 1px 1px 6px #aaaaaa;
 }
 
 nav a, nav p {
@@ -1434,4 +1435,72 @@ pre {
 
 #results-save-clear {
   padding: 5px;
+}
+
+
+
+.navbar-button {
+  background: #ffffff;
+  color: #8aaf3e;
+  border: none;
+  width: 25%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  transition: all 0.5s;
+}
+
+.navbar-button:active, .navbar-button:hover {
+  background: #ffffff;
+  top: 2px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}
+
+.navbar-button span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s;
+  -webkit-backface-visibility: hidden;
+  -moz-transition: all 0.3s;
+  -moz-backface-visibility: hidden;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+}
+
+.navbar-button:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 2;
+  font-size: 180%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.navbar-button:active:before {
+  color: #703b87;
+}
+
+/* Button 5a */
+.effect:hover span {
+  -webkit-transform: translateY(300%);
+  -moz-transform: translateY(300%);
+  -ms-transform: translateY(300%);
+  transform: translateY(300%);
+}
+
+.effect:before {
+  left: 0;
+  top: -100%;
+}
+
+.effect:hover:before {
+  top: 0;
 }

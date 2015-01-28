@@ -1,20 +1,14 @@
 mixin links-flare-navbar__home
-	li
-		a(href='main-app-view')
-			+search-nav-icon
-	li
-		a(href='navigate/')
-			+navigate-icon
-	li
-		a(href='../help/index')
-			+help-icon
-	li
-		a(href='../user/user')
-			+user-icon
-	li
-		a(href='../getting-started/index')
-			+logout-icon
-
+	button.navbar-button.effect.fi-magnifying-glass
+		span Search
+	button.navbar-button.effect.fi-map
+		span Navigate
+	button.navbar-button.effect.fi-info
+		span Help
+	button.navbar-button.effect.fi-torso
+		span User
+	button.navbar-button.effect.fi-power
+		span Logout
 
 mixin links-navbar__landing-page
 	li
