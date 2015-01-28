@@ -100,7 +100,8 @@ nav {
   z-index: 1;
 }
 
-#copyright {}
+#copyright {
+}
 
 #right-nav {
   -webkit-order: 8;

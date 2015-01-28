@@ -25,26 +25,38 @@ body {
 	-webkit-flex-wrap: wrap;
 	-webkit-order: 6;
 	display: -webkit-flex;
+	height: 90%;
 	overflow-y: auto;
-}
-#application {
-	margin: 0;
-	height:90%;
-	padding: 10px;
 	-webkit-flex: $full-width;
 }
+#landing-page {
+	i {
+		color: $green;
+		font-size: 4em;
+	}
+}
+#results {
+  -webkit-order: 9;
+  display: block;
+  min-height: 1px;
+  -webkit-flex-wrap: nowrap;
+  -webkit-flex-direction: column;
+}
+.fixed {
+  position: fixed;
+  z-index: 90;
+  width: 100%;
+}
+#search-bar {
+}
+#results-save-clear {
+}
+#articles {
+  position: relative;
+  margin-top: 50px;
+  z-index: 1;
+}
 #copyright {
-	padding-bottom: 30px;
-	a, p {
-		font-size: 12px;
-		text-align: center;
-		font-weight: normal;
-		letter-spacing: 0px;
-	}
-	a {
-		text-transform: none;
-		text-decoration: underline;
-	}
 }
 #left-nav, #loginwall {
 	-webkit-order: 7;
@@ -66,13 +78,6 @@ body {
 		display: none;
 	}
 }
-#landing-page {
-	height: 90%;
-	i {
-		color: $green;
-		font-size: 4em;
-	}
-}
 #usp {
 	margin: 0;
 	padding-top: 70px;
@@ -85,20 +90,6 @@ body {
 	h6 {
 		margin: 0;
 	}
-}
-#tm-logo, #si-logo {
-	background:url('../assets/logos/logos.jpg') no-repeat;
-	height: 50px;
-	margin: 0 auto;
-}
-#tm-logo {
-	background-position: 0px 0px;
-	margin-bottom: 10px;
-	width: 250px;
-}
-#si-logo {
-	background-position: 0px -50px;
-	width: 190px;
 }
 #article-options dl.tabs dd, #related-options dl.tabs dd {
 	width: $full-width;
