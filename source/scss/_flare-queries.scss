@@ -7,79 +7,73 @@
 /* -----------------------------------*/
 
 
-/* -------- 56.25em (900px) --------- */
-
-@media only screen and (min-width : 56.25em) {
+@media only screen and (min-width : 600px) {
 	nav {
-		max-height: 14%;
-		-webkit-flex-wrap: wrap;
-	}
-	#application {
-		max-height: 86%;
-		flex-direction: row;
 		-webkit-flex-wrap: nowrap;
 	}
+	#application {
+		flex-direction: row;
+		-webkit-flex-wrap: wrap;
+	}
 	#logo {
-		-webkit-flex: 24%;
+		-webkit-order: 2;
+		flex: 1;
+	}
+	#links {
+		-webkit-order: 3;
+		text-align: center;
+		flex: 2;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-direction: row /* works with row or column */
+		flex-direction: row;
+		-webkit-align-items: center;
+		align-items: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+	}
+	#links li {
+		padding-left: 30px;
+	}
+	#links li:-child {
+		padding-left: 0;
+	}
+	#menu-icon {
+		-webkit-order: 4;
+		flex: 1;
+	}
+	#left-nav {
+		-webkit-flex: 50%;
 	}
 	#left-nav:empty, #right-nav:empty {
 		display: block;
 	}
-	#left-nav {
-		-webkit-flex: 25%;
-	}
-	#loginwall {
-		-webkit-order: 8;
-	}
-	#summary {
-		-webkit-order: 7;
-	}
-	#loginwall, #summary {
-		padding: 0 20px 20px 20px;
-	}
 	#results {
+		-webkit-order: 9;
+		-webkit-flex: $full-width;
+	}
+	#right-nav {
 		-webkit-order: 8;
 		-webkit-flex: 50%;
 	}
-	#menu-icon, #help-icon {
-		-webkit-order: 4;
-		-webkit-flex: 25%;
-		float: right;
-		padding: 20px 20px 0 0;
+}
+
+@media only screen and (min-width : 900px) {
+	#application {
+		-webkit-flex-wrap: nowrap;
 	}
-	#lp-menu-icon {
-		-webkit-order: 3;
-		display: none;
+	#left-nav, #right-nav {
+		flex: 1;
+	}
+	#results {
+		flex: 2;
+		-webkit-order: 8;
+	}
+	.fixed {
+		width: 50%;
 	}
 	#right-nav {
 		-webkit-order: 9;
-		-webkit-flex: 25%;
-	}
-	ul#links {
-		-webkit-order: 3;
-		-webkit-flex: 50%;
-		flex-direction: row;
-	}
-	ul#lp-links {
-		padding: 20px 0 0 0;
-		-webkit-flex: 50%;
-		-webkit-order: 4;
-		text-align: right;
-		justify-content: flex-end;
-		display:block;
-	}
-	ul#links li {
-		-webkit-flex-wrap: nowrap;
-		display: inline-block;
-		padding: 0 30px 0 0;
-	}
-	ul#lp-links li {
-		padding: 0 30px 0 0;
-		display: inline-block;
-		-webkit-flex-wrap: nowrap;
-	}
-	ul#links li:last-child, ul#lp-links li:last-child {
-		padding-right: 0;
 	}
 	#article-options dl.tabs dd {
 		width: 33%;

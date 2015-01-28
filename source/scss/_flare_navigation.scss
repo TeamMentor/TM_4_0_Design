@@ -8,7 +8,7 @@
 /* -------->>> NAVIGATION <<<---------*/
 /* -----------------------------------*/
 
-nav, nav a, #customer, ul#links, ul#lp-links {
+nav, nav a, #customer, #links, #lp-links {
 	-webkit-flex: 100%;
 }
 nav {
@@ -16,9 +16,7 @@ nav {
 	-webkit-flex-wrap: wrap;
 	-webkit-order: 1;
 	display: -webkit-flex;
-	height: auto;
 	z-index: 99;
-	margin: 0 0 0 10px;
 	a, p {
 		color: $green;
 		text-decoration: none;
@@ -38,33 +36,60 @@ nav {
 }
 #customer {
 	-webkit-order: 2;
-	img {
-		margin: 5px 0 0 10px;
-	}
+	-webkit-flex: 110%;
 }
 #logo {
 	-webkit-order: 3;
-	-webkit-flex: 50%;
+	-webkit-flex: 80%;
 }
-#menu-icon, #lp-menu-icon {
-	-webkit-order: 4;
-	-webkit-flex: 10%;
-	text-align: right;
-	padding: 20px 10px 0 0;
-}
-ul#links, ul#lp-links {
-	-webkit-order: 5;
-	list-style-type: none;
-	text-align: center;
-}
-ul#links {
-	display: none;
+#tm-logo, #si-logo {
+	background:url('../assets/logos/logos.jpg') no-repeat;
+	height: 50px;
 	margin: 0 auto;
-	padding: 0;
 }
-ul#lp-links {
-	margin: 10px 10px 0 0;
-	display: none;
+#tm-logo {
+	background-position: 0px 0px;
+	margin-bottom: 10px;
+	width: 250px;
+}
+#si-logo {
+	background-position: 0px -50px;
+	width: 190px;
+}
+
+#links {
+  -webkit-order: 5;
+  -webkit-flex: 100%;
+}
+
+#links li {
+  display: block;
+  text-align: center;
+  margin: 0;
+}
+
+#links p {
+  padding: 0;
+  margin: 0;
+}
+
+#lp-links {
+  -webkit-order: 5;
+  -webkit-flex: 100%;
+  text-align: center;
+  list-style-type: none;
+}
+
+#menu-icon, #lp-menu-icon {
+  -webkit-order: 4;
+  -webkit-flex: 20%;
+  text-align: right;
+}
+
+#lp-menu-icon {
+  -webkit-order: 4;
+  -webkit-flex: 20%;
+  text-align: right;
 }
 
 /* -----------------------------------*/
