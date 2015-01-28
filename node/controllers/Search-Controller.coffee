@@ -126,6 +126,16 @@ class SearchController
         @recentArticles_add id, title
         @res.redirect(@config.tm_35_Server+id)
 
+
+    poc_Search_Two_Column: =>
+      target = @.req.query.text
+      jade_Page = '/source/jade/-poc-/search/two-columns.jade'
+      @graphService.query_From_Text_Search target,  (query_Id)=>
+        @graphService.graphDataFromGraphDB null, query_Id, null,  (searchData)=>
+          searchData.text = @.req.query.text
+          html = @jade_Service.renderJadeFile(jade_Page, searchData)
+          @res.send html
+
 SearchController.registerRoutes = (app, expressService) ->
 
     expressService ?= new Express_Service()
@@ -156,5 +166,7 @@ SearchController.registerRoutes = (app, expressService) ->
     app.get "/article/viewed.json"           ,             viewedArticles_json
     app.get "/search"                        , checkAuth,  searchController('search')
     app.get "/search/:text"                  , checkAuth,  searchController('search')
+
+    app.get "/-poc-/search-two-column"       , checkAuth,  searchController('poc_Search_Two_Column')
 
 module.exports = SearchController
