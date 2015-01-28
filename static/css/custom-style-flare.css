@@ -159,6 +159,7 @@ nav a:hover, nav p:hover {
 #landing-page {
   height: 90%;
   -webkit-order: 6;
+  -webkit-flex: 100%;
   display: -webkit-flex;
   -webkit-flex-wrap: wrap;
   overflow-y: auto;
@@ -509,12 +510,6 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 
 #logo {
   padding: 5px 0 0 0;
-}
-
-#usp {
-  margin: 0;
-  padding-top: 70px;
-  width: 100%;
 }
 
 #about, #features, #about-us, #reasons, #clients {
@@ -1445,8 +1440,6 @@ pre {
 }
 #about, #usp {
   width: 100%;
-  height: 300px;
-  padding: 90px;
   text-align: center;
 }
 #about h2, #usp h2 {
@@ -1533,6 +1526,10 @@ pre {
 #usp {
   background: url(../assets/stock-img/bg-img.jpg);
   background-position: 0px 0px;
+  height: 70%;
+}
+#usp h2 {
+  padding-top: 18%;
 }
 #si-logo {
   background:url('../assets/logos/logos.jpg') no-repeat;
