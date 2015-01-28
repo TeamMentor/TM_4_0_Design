@@ -58,6 +58,7 @@ nav a:hover, nav p:hover {
 #links {
   -webkit-order: 5;
   -webkit-flex: 100%;
+  display: none;
 }
 
 #links button {
