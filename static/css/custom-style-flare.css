@@ -1451,7 +1451,7 @@ pre {
   width: 100%;
   text-align: center;
 }
-#about h2, #usp h2 {
+#about h2, #usp h1 p {
   color: #FFFFFF;
 }
 #about-us {
@@ -1527,6 +1527,7 @@ pre {
 }
 #reasons {
   padding-top: 70px;
+  z-index: 5;
 }
 #reasons h2 {
   text-align: center;
@@ -1535,10 +1536,11 @@ pre {
 #usp {
   background: url(../assets/stock-img/bg-img.jpg);
   background-position: 0px 0px;
-  height: 70%;
+  height: 500px;
+  z-index: 4;
 }
-#usp h2 {
-  padding-top: 18%;
+#usp h1 {
+  padding-top: 10%;
 }
 #si-logo {
   background:url('../assets/logos/logos.jpg') no-repeat;
