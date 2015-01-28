@@ -18,7 +18,7 @@ nav {
   -webkit-order: 1;
   display: -webkit-flex;
   z-index: 99;
-  margin: 0 0 5px 0;
+  box-shadow: 1px 1px 6px #aaaaaa;
 }
 
 nav a, nav p {
@@ -60,10 +60,10 @@ nav a:hover, nav p:hover {
   -webkit-flex: 100%;
 }
 
-#links li {
+#links button {
   display: block;
   text-align: center;
-  margin: 0;
+  margin: 0 auto;
 }
 
 #links p {
@@ -76,6 +76,21 @@ nav a:hover, nav p:hover {
   -webkit-flex: 100%;
   text-align: center;
   list-style-type: none;
+}
+
+#lp-links button {
+  width: auto;
+  padding: 10px;
+  background: #b4cf7b;
+  color: white;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+#lp-links button:hover {
+  background: #8aaf3e;
+  border: none;
 }
 
 #menu-icon {
@@ -153,6 +168,7 @@ nav a:hover, nav p:hover {
 #landing-page {
   height: 90%;
   -webkit-order: 6;
+  -webkit-flex: 100%;
   display: -webkit-flex;
   -webkit-flex-wrap: wrap;
   overflow-y: auto;
@@ -209,9 +225,13 @@ nav a:hover, nav p:hover {
     display: inline-block;
     padding: 15px 10px 0 0;
   }
+  #lp-links button {
+    margin: 0 15px 0 0;
+  }
   #menu-icon {
     -webkit-order: 5;
     flex: 1;
+    visibility: hidden;
   }
   #lp-menu-icon {
     display: none;
@@ -234,10 +254,7 @@ nav a:hover, nav p:hover {
 
 @media only screen and (min-width : 900px) {
   #lp-links li {
-    padding: 15px 30px 0 0;
-  }
-  #lp-links li:last-child {
-    padding-right: 10px;
+    padding: 20px 30px 0 0;
   }
   #application {
     -webkit-flex-wrap: nowrap;
@@ -502,12 +519,6 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 
 #logo {
   padding: 5px 0 0 0;
-}
-
-#usp {
-  margin: 0;
-  padding-top: 70px;
-  width: 100%;
 }
 
 #about, #features, #about-us, #reasons, #clients {
@@ -1432,6 +1443,178 @@ pre {
   overflow: auto;
 }
 
-#results-save-clear {
-  padding: 5px;
+#about {
+  background: url(../assets/stock-img/bg-img.jpg);
+  background-position: 0px 600px;
+}
+#about, #usp {
+  width: 100%;
+  text-align: center;
+}
+#about h2, #usp h2 {
+  color: #FFFFFF;
+}
+#about-us {
+  padding: 40px 0 40px 0;
+}
+#call-to-action {
+  width: 100%;
+  padding: 100px 0 110px 0;
+  background: url(../assets/stock-img/bg-img.jpg);
+  background-position: 0px 1200px;
+  background-color: #49661f;
+  text-align: center;
+}
+#call-to-action h1 {
+  color: #FFFFFF;
+}
+#clients {
+  padding: 40px 0 80px 0;
+  text-align: center;
+}
+#copyright {
+  padding-bottom: 30px;
+}
+#copyright p, #copyright a {
+  font-size: 12px;
+  text-align: center;
+  font-weight: normal;
+  letter-spacing: 0px;
+}
+#copyright a {
+  text-transform: none !important;
+  text-decoration: underline;
+}
+#features {
+  padding: 70px 0 50px 0;
+}
+#features h2 {
+  text-align: center;
+}
+#features i {
+  font-size: 60px;
+  color: #8aaf3e;
+  margin: 0 auto;
+}
+#footer {
+  width: 100%;
+  padding: 5px 0 15px 0;
+}
+
+#footer {
+  text-align: center;
+}
+#footer .lge-container {
+  margin-bottom: 0;
+}
+
+#footer ul {
+  list-style: none;
+  padding: 7px 0 0 0;
+}
+
+#footer li {
+  font-size: 0.75em;
+  margin: 0 0 5px 0;
+}
+
+#footer h5 {
+  margin-bottom: 15px;
+}
+
+#footer i {
+  margin-right: 10px;
+}
+#reasons {
+  padding-top: 70px;
+}
+#reasons h2 {
+  text-align: center;
+}
+
+#usp {
+  background: url(../assets/stock-img/bg-img.jpg);
+  background-position: 0px 0px;
+  height: 70%;
+}
+#usp h2 {
+  padding-top: 18%;
+}
+#si-logo {
+  background:url('../assets/logos/logos.jpg') no-repeat;
+  background-position: 0px -50px;
+  height: 50px;
+  width: 190px;
+  margin: 0 auto;
+}
+
+button i {
+  font-size: 1.5em !important;
+  padding-right: 20px;
+}
+
+.flare-button {
+  background: #ffffff;
+  color: #8aaf3e;
+  border: none;
+  width: 25%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  transition: all 0.5s;
+}
+
+.flare-button:active, .flare-button:hover {
+  background: #ffffff;
+  top: 2px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}
+
+.flare-button span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s;
+  -webkit-backface-visibility: hidden;
+  -moz-transition: all 0.3s;
+  -moz-backface-visibility: hidden;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+}
+
+.flare-button:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 2;
+  font-size: 180%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.flare-button:active:before {
+  color: #703b87;
+}
+
+/* Button 5a */
+.effect:hover span {
+  -webkit-transform: translateY(300%);
+  -moz-transform: translateY(300%);
+  -ms-transform: translateY(300%);
+  transform: translateY(300%);
+}
+
+.effect:before {
+  left: 0;
+  top: -100%;
+}
+
+.effect:hover:before {
+  top: 0;
 }

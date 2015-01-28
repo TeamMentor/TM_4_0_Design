@@ -1,12 +1,14 @@
 
-Express_Service     = require('../services/Express-Service')
-Jade_Service        = require('../services/Jade-Service')
+Express_Service       = require('../services/Express-Service')
+Jade_Service          = require('../services/Jade-Service')
 
-Help_Controller     = require('../controllers/Help-Controller')
-Jade_Controller     = require('../controllers/Jade-Controller')
-Login_Controller    = require('../controllers/Login-Controller')
-Library_Controller  = require('../controllers/Library-Controller')
-Search_Controller   = require('../controllers/Search-Controller')
+Help_Controller       = require('../controllers/Help-Controller')
+Jade_Controller       = require('../controllers/Jade-Controller')
+Login_Controller      = require('../controllers/Login-Controller')
+Library_Controller    = require('../controllers/Library-Controller')
+Search_Controller     = require('../controllers/Search-Controller')
+
+Search_Controller_PoC = require('../poc/Search-Controller.PoC')
 
 
 
@@ -24,13 +26,13 @@ add_Routes = (app,searchController)->
     app.post '/user/sign-up'   , (req, res)-> new Login_Controller(req, res).userSignUp()
     app.post '/passwordReset/:username/:token'   , (req, res)-> new Login_Controller(req, res).passwordResetToken()
 
-    
+
     #library routes
     Library_Controller.registerRoutes(app)
     
     #search routes
     Search_Controller.registerRoutes(app, searchController);
-    
+
     #help routes
     
     app.get '/help/:page*' , (req, res)-> new Help_Controller(req, res).renderPage()
@@ -50,5 +52,7 @@ add_Routes = (app,searchController)->
     #Redirect to Jade pages
     #app.get '/deploy/html/:area/:page.html'                 , (req, res)-> res.redirect('/' + req.params.area + '/' + req.params.page + '.html')
     
+    #PoCs
+    Search_Controller_PoC.registerRoutes(app)
 
 module.exports = add_Routes
