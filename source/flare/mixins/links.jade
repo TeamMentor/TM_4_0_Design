@@ -1,13 +1,13 @@
 mixin links-flare-navbar__home
-	button.flare-button.effect.fi-magnifying-glass
+	button.flare-button.effect.fi-magnifying-glass(action='../home/main-app-view')
 		span Search
-	button.flare-button.effect.fi-map
+	button.flare-button.effect.fi-map(action='../home/navigate')
 		span Navigate
-	button.flare-button.effect.fi-info
+	button.flare-button.effect.fi-info(action='../help/index')
 		span Help
-	button.flare-button.effect.fi-torso
+	button.flare-button.effect.fi-torso(action='../user/index')
 		span User
-	button.flare-button.effect.fi-power
+	button.flare-button.effect.fi-power(action='../getting-started/login')
 		span Logout
 
 mixin links-navbar__landing-page

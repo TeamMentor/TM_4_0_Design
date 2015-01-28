@@ -82,6 +82,15 @@ nav a:hover, nav p:hover {
   width: auto;
   padding: 10px;
   background: #b4cf7b;
+  color: white;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+#lp-links button:hover {
+  background: #8aaf3e;
+  border: none;
 }
 
 #menu-icon {
