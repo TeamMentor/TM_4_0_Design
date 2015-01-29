@@ -52,7 +52,7 @@ class SearchController
 
         @get_Navigation queryId, (navigation)=>
           target = navigation.last() || {}
-          @graphService.graphDataFromGraphDB null, target.id, filters,  (searchData)=>
+          @graphService.graphDataFromGraphDB target.id, filters,  (searchData)=>
             searchData.filter_container = filters
             @searchData = searchData
             @searchData.breadcrumbs = navigation

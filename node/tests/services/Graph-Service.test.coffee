@@ -27,13 +27,13 @@ describe 'services | Graph-Service.test |', ->
     it 'graphDataFromGraphDB', (done)->
         filters = ""
         queryId = 'Logging'
-        graphService.graphDataFromGraphDB null, queryId, filters,  (searchData)=>
+        graphService.graphDataFromGraphDB queryId, filters,  (searchData)=>
           searchData.assert_Is_Object()
           done()
 
     it 'graphDataFromGraphDB (non existent query)', (done)->
         queryId = 'AAAAAAA'.add_5_Random_Letters()
-        graphService.graphDataFromGraphDB null, queryId, "",  (searchData)=>
+        graphService.graphDataFromGraphDB queryId, "",  (searchData)=>
             if (searchData.containers)
                 searchData.containers.assert_Size_Is(0)          # regression test for [bug #128]
                 searchData.filters.assert_Size_Is(0)
@@ -59,7 +59,7 @@ describe 'services | Graph-Service.test |', ->
     # move test below to a different describe since is affecting the graphService object
     it 'graphDataFromGraphDB (bad Server)', (done)->
         graphService.server = 'http://aaaaaaaa.teammentor.net'
-        graphService.graphDataFromGraphDB null, '', '',  (searchData)=>
+        graphService.graphDataFromGraphDB '', '',  (searchData)=>
           searchData.assert_Is({})
           done()
 

@@ -16,11 +16,18 @@ class Search_Controller_PoC
     poc_Search_Two_Column: =>
       target = @.req.query.text
       jade_Page = '/source/jade/-poc-/search/two-columns.jade'
+
+      render_Page = (data)=>
+        data.text = @.req.query.text
+        html = @jade_Service.renderJadeFile(jade_Page, data)
+        @res.send html
+
+
       @graphService.query_From_Text_Search target,  (query_Id)=>
-        @graphService.graphDataFromGraphDB null, query_Id, null,  (searchData)=>
-          searchData.text = @.req.query.text
-          html = @jade_Service.renderJadeFile(jade_Page, searchData)
-          @res.send html
+        @graphService.graphDataFromGraphDB query_Id, null,  (searchData)=>
+          render_Page searchData
+
+
 
 
 Search_Controller_PoC.registerRoutes = (app, expressService) ->
