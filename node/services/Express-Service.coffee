@@ -6,10 +6,6 @@ session         = require('express-session')
 path            = require("path")
 express         = require('express')
 helmet          = require('helmet')
-https           = require('https')
-fs              = require('fs')
-enforce_ssl     = require('express-enforces-ssl')
-
 
 class Express_Service
   constructor: ()->
@@ -70,7 +66,6 @@ class Express_Service
       preload: true # Submits site for baked-into-Chrome HSTS by adding preload to header - https://hstspreload.appspot.com/
     }));
     @.app.use(helmet.hidePoweredBy()); # hides "X-Powered-By: Express" set by default in Express header
-    #@.app.use(enforce_ssl());
 
   map_Route: (file)=>
     require(file)(@.app,@);
