@@ -18,11 +18,12 @@ class GraphService
     path   = 'GraphData/article_Data.json'
     new GitHub_Service().file user, repo, path, (data)-> callback(JSON.parse(data))
 
-  graphDataFromGraphDB: (dataId, queryId, filters, callback)=>
-    dataId = dataId || 'tm-uno'
-    #graphDataUrl = "#{@server}/data/#{dataId}/query/filter/tm-search?show=#{queryId}"
-    #graphDataUrl = "#{@server}/view/tm-search/#{queryId}"
-    #graphDataUrl = "#{@server}/graph-db/filter/#{queryId}"
+  graphDataFromGraphDB: ( queryId, filters, callback)=>
+
+    if not queryId
+      callback {}
+      return
+
     if filters
       graphDataUrl = "#{@server}/data/query_tree_filtered/#{queryId}/#{filters}"
     else
@@ -44,6 +45,10 @@ class GraphService
         callback json || {}
 
   query_From_Text_Search: (text, callback)=>
+    if not text
+      callback null
+      return
+
     url_Convert = "#{@server}/convert/to_ids/#{text}"
     url_Search = "#{@server}/search/query_from_text_search/#{text}"
 
@@ -53,6 +58,6 @@ class GraphService
         callback mapping.id
       else
         url_Search.GET_Json (json)->
-          callback json || {}
+          callback json || null
 
 module.exports = GraphService

@@ -1,0 +1,21 @@
+//extends ../_layouts/page_just_css.jade
+extends ../_layouts/page_home
+
+block content
+  #application
+    .row
+      .col-2
+        .lge-container
+      .col-6
+        .lge-container
+          h3 PoCs
+          p This page contains links to multiple design experiments and tests that we are currently doing.
+          p Please try them out and let us know what you think of it
+          h4 Pages:
+          br.
+          .list-group
+            if pages
+              for page in pages
+                a(href=page.link)= page.name
+      .col-2
+        .lge-container

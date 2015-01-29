@@ -52,7 +52,7 @@ class SearchController
 
         @get_Navigation queryId, (navigation)=>
           target = navigation.last() || {}
-          @graphService.graphDataFromGraphDB null, target.id, filters,  (searchData)=>
+          @graphService.graphDataFromGraphDB target.id, filters,  (searchData)=>
             searchData.filter_container = filters
             @searchData = searchData
             @searchData.breadcrumbs = navigation
@@ -63,9 +63,12 @@ class SearchController
         target = @.req.query.text
         if not target
           target = @req.params.text
-        recentSearches_Cache.push(target)
         @graphService.query_From_Text_Search target,  (query_Id)=>
-          @res.redirect("/#{@urlPrefix}/" + query_Id)
+          if query_Id
+            recentSearches_Cache.push(target)
+            @res.redirect("/#{@urlPrefix}/" + query_Id)
+          else
+            @res.redirect "/user/main.html"
 
     showRootQueries: ()=>
       @graphService.root_Queries (root_Queries)=>

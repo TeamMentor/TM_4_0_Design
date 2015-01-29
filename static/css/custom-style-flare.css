@@ -58,6 +58,7 @@ nav a:hover, nav p:hover {
 #links {
   -webkit-order: 5;
   -webkit-flex: 100%;
+  display: none;
 }
 
 #links button {
@@ -144,14 +145,17 @@ nav a:hover, nav p:hover {
 }
 
 #search-bar {
+  padding: 20px 0;
+  background: #fafafa;
 }
 
 #results-save-clear {
+  background: white;
 }
 
 #articles {
   position: relative;
-  margin-top: 50px;
+  margin-top: 170px;
   z-index: 1;
 }
 
@@ -1157,12 +1161,26 @@ table {
 }
 
 #search-button, #filters-button {
-  border: 1px solid #aaaaaa;
   height: 48px;
   padding: 15px 5px 5px 5px;
   border-radius: 0px;
-  border-left: transparent;
+  outline: 1px solid #dbdbdb;
+  border: transparent;
   width: 50%;
+  background: #b4cf7b;
+  color: #fff;
+}
+
+#search-button:hover, #filters-button:hover {
+  background: #8aaf3e;
+  color: white;
+  border-color: #6c9020;
+}
+
+#search-button i, #filters-button i, .button.app i, .button.app i:hover {
+  color: #ffffff !important;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .tabs dd.active a, .tabs .tab-title.active a {
@@ -1213,14 +1231,11 @@ input#search {
   width: 100%;
   border: 1px solid #aaaaaa;
   border-radius: 0px;
-}
-
-input#search, a.button {
   box-shadow: 1px 1px 6px #aaaaaa;
 }
 
 input#search:active, input#search:focus {
-  border-bottom: 3px solid #8aaf3e;
+  border-bottom: 2px solid #8aaf3e;
   background: white;
 }
 
@@ -1345,30 +1360,6 @@ table {
   width: 100%;
   padding: 0 12px;
 }
-.button.app {
-  margin-top: 15px;
-  height: auto !important;
-  padding: 5px 0 !important;
-  max-width: 100%;
-  background: #b4cf7b;
-  border: 1px solid white !important;
-  border-radius: 3px !important;
-  color: white;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-align: center;
-}
-
-.button.app i {
-  color: white;
-  text-align: center;
-  margin: 0 auto;
-}
-.button.app:hover, .button.app:active {
-  background: #8aaf3e;
-  color: white;
-  border-color: #6c9020;
-}
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
 }
@@ -1451,7 +1442,7 @@ pre {
   width: 100%;
   text-align: center;
 }
-#about h2, #usp h2 {
+#about h2, #usp h1 p {
   color: #FFFFFF;
 }
 #about-us {
@@ -1527,6 +1518,7 @@ pre {
 }
 #reasons {
   padding-top: 70px;
+  z-index: 5;
 }
 #reasons h2 {
   text-align: center;
@@ -1535,10 +1527,11 @@ pre {
 #usp {
   background: url(../assets/stock-img/bg-img.jpg);
   background-position: 0px 0px;
-  height: 70%;
+  height: 500px;
+  z-index: 4;
 }
-#usp h2 {
-  padding-top: 18%;
+#usp h1 {
+  padding-top: 10%;
 }
 #si-logo {
   background:url('../assets/logos/logos.jpg') no-repeat;
@@ -1551,6 +1544,24 @@ pre {
 button i {
   font-size: 1.5em !important;
   padding-right: 20px;
+}
+
+.button.app {
+  margin-top: 15px;
+  height: auto !important;
+  padding: 5px 0 !important;
+  width:50%;
+  background: #b4cf7b;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-align: center;
+}
+.button.app:hover, .button.app:active {
+  background: #8aaf3e;
+  color: white;
 }
 
 .flare-button {

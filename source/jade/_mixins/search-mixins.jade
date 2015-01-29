@@ -39,6 +39,9 @@ mixin results
                         h5#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
                     else
                         h5#resultsTitle= 'Showing ' + results.size() + ' articles'
+            td.text-right
+                span.filtered Active filters:
+                span.badge Filter here
 //- articles-list
 mixin articles-list
     .list-group
@@ -52,9 +55,24 @@ mixin articles-list
 
 //- filters
 mixin filters-div
-        h3 Filters
+        h3 Filter by
         .nav#filters
             if filters
+                for filter in filters
+                    .dropdown
+                        button= filter.title
+                            span.right
+                                i.fi-arrow-down
+                        ul.dropdown-menu
+                            for result in filter.results
+                                li
+                                    if result.id == filter_container
+                                        a(href= href )= result.title
+                                            span.right.badge= result.size
+                                    else
+                                        a(href=href + '/'+result.id)= result.title
+                                            span.right.badge= result.size
+            //if filters
                 for filter in filters
                     table
                         h5= filter.title

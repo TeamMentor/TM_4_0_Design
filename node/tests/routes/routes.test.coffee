@@ -42,7 +42,8 @@ describe 'routes | routes.test |', ()->
                       '/user/sign-up',
                       '/passwordReset/:username/:token'
                       '/version',
-                       '/-poc-/search-two-column']
+                       '/-poc-/search-two-column',
+                       '/-poc-']
 
     before ()->
       app.server = app.listen();
@@ -81,7 +82,7 @@ describe 'routes | routes.test |', ()->
                                '/user/logout'                                ].contains(path)
       expectedStatus = 403 if ['article', '-','library','libraries'          ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
-      expectedStatus = 403 if ['/-poc-/search-two-column'                    ].contains(path)
+      expectedStatus = 403 if ['/-poc-/search-two-column','/-poc-'           ].contains(path)
 
       expectedStatus = 200 if ['/article/viewed.json'                        ].contains(path)
 
