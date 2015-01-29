@@ -7,14 +7,6 @@ mixin directory-list
                 table
                     each container in containers
                         tr
-                            //if container.id == filter_container
-                                    td
-                                        b
-                                            a(href='/graph/' + title)= container.title
-                                    td
-                                        b
-                                            span.badge= container.size
-                            //else
                             td
                                 a(href= href + ',' +container.id, id=container.id)= container.title
                             td

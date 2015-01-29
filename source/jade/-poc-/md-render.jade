@@ -1,0 +1,32 @@
+extends ../_layouts/page_home.jade
+block content
+  #application
+    .row
+        .col-6
+            .lge-container
+                h3 Render Markdown PoC
+    .row
+        .col-6
+              .lge-container
+                  label Raw markdown:
+                  form(action='md-render', method='POST')
+                    .input-group
+                        textarea#text_md.form-control(type='text', placeholder='write markdown here', name='md_text')= md_text
+                        span.input-group-btn
+                            button#btn_render.btn-search-bar(type='submit') Render
+
+        .col-3
+            .lge-container
+                label Rendered markdown:
+                .input-group
+                    p!= md_html
+        //.col-3
+            .lge-container
+                label Rendered wikitext:
+                .input-group
+                    p!= md_html
+    //.row
+        .col-6
+              .lge-container
+                  label markdown:
+                  pre= lexer
