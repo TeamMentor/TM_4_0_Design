@@ -212,6 +212,7 @@ body {
 
 #about {
   background: url(../assets/stock-img/bg-img.jpg);
+  background-repeat: no-repeat;
   background-position: 0px 600px;
 }
 
@@ -239,8 +240,8 @@ body {
   width: 100%;
   padding: 100px 0 110px 0;
   background: url(../assets/stock-img/bg-img.jpg);
-  background-position: 0px 1200px;
-  background-color: #49661f;
+  background-repeat: no-repeat;
+  background-position: 0px -800px;
   text-align: center;
 }
 #call-to-action h1 {
@@ -364,6 +365,7 @@ body {
 
 #usp {
   background: url(../assets/stock-img/bg-img.jpg);
+  background-repeat: no-repeat;
   background-position: 0px 0px;
 }
 
