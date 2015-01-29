@@ -1720,7 +1720,6 @@ form input[type="text"]:active, form input[type="text"]:focus, form input[type="
 
 .dropdown button:hover {
   background: #dbdbdb;
-  border-bottom: 1px solid #aaaaaa;
 }
 
 .dropdown .dropdown-menu {
@@ -1728,13 +1727,19 @@ form input[type="text"]:active, form input[type="text"]:focus, form input[type="
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background: #fafafa;
+  background: #fff;
   font-size: 14px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
 }
 
 .dropdown .dropdown-menu li {
   padding: 5px 15px 5px 15px;
   border-bottom: 1px solid #dbdbdb;
+}
+
+.dropdown .dropdown-menu li:last-child {
+  border-bottom: none;
 }
 
 .dropdown .dropdown-menu li a {
