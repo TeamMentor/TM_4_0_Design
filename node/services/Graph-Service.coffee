@@ -53,6 +53,6 @@ class GraphService
         callback mapping.id
       else
         url_Search.GET_Json (json)->
-          callback json || {}
+          callback json || null
 
 module.exports = GraphService
