@@ -1,0 +1,25 @@
+//extends ../_layouts/page_just_css.jade
+extends ../_layouts/page_home.jade
+include ../_mixins/articles-mixins.jade
+include ../_mixins/search-mixins.jade
+
+block content
+	//weird CSS fix to handle Chrome prob when <form> exists
+	style
+		|.pull-right { float  : right !important; }
+		|.navbar ul  { display: inline-block;     }
+
+	#application
+		.row
+			.col-3
+				.lge-container
+					h3 Containing Directory Title
+					include:md ../../content/application/no-more-directories.md
+			.col-6
+				.lge-container
+					+breadcrumbs
+					+results
+					include:md ../../content/application/no-search-results.md
+			.col-3
+				.lge-container
+					+filters-div

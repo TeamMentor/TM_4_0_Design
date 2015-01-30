@@ -1597,7 +1597,7 @@ table {
   overflow:auto;
   text-transform: uppercase;
   font-size: 12px;
-  letter-spacing: 1px; }
+  white-space: pre-wrap; }
 .sub-nav dd {
   padding: 12px 0;
   margin: 0 0 0 20px;
