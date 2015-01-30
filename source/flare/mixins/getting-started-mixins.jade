@@ -1,6 +1,5 @@
 include ../../shared-mixins/globals.jade
 
-//- Flare Login Form
 mixin login-form
 	include:md ../../content/getting-started/login-form.md
 	form(role='form' method='post' action='/flare/home/main-app-view')
@@ -10,16 +9,13 @@ mixin login-form
 		.row
 			.small-12.columns
 				+password-input
-		.row
-			.small-12.columns
-				+login-button
 		br
 		.row
-			.small-12.columns
-				a(href='/guest/pwd-forgot.html')
-					+forgot-password-button
+			.small-12.large-3.columns.vertical-align
+				a.minor(href='/guest/pwd-forgot.html') Forgot password?
+			.small-12.large-7.columns
+				+login-button
 
-//- Flare Sign Up Form
 mixin sign-up-form
 	include:md ../../content/getting-started/sign-up-form.md
 	form(action='../home/main-app-view')
@@ -39,7 +35,6 @@ mixin sign-up-form
 			.small-12.columns
 				+sign-up-button
 
-//- Flare Sign Up Form Prompts
 mixin sign-up-form-prompts
 	include:md ../../content/getting-started/sign-up-form.md
 	form(action='../../home/main-app-view')
@@ -62,7 +57,6 @@ mixin sign-up-form-prompts
 			.small-12.columns
 				+sign-up-button
 
-//- Flare Forgot Password Form
 mixin flare-forgot-password-form
 	include:md ../../content/getting-started/forgot-password-form.md
 	form(action='index-validation')
