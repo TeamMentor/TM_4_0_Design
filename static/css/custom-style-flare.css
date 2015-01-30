@@ -41,7 +41,7 @@ nav a:hover, nav p:hover {
 #logo {
   -webkit-order: 3;
   -webkit-flex: 70%;
-  margin: 0 0 0 5px;
+  margin: 5px 0 0 5px;
 }
 #tm-logo {
   background:url('../assets/logos/logos.jpg') no-repeat;
@@ -245,7 +245,7 @@ nav a:hover, nav p:hover {
 #features {
   padding: 50px 0;
 }
-#features i, #reasons i {
+#features i, #reasons i, #summary i {
   font-size: 60px;
 }
 #footer {
@@ -482,6 +482,14 @@ a.action {
 a.action:hover, a.action:focus, a.action:active {
   color: #49661f;
 }
+a.minor{
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 14px;
+}
+a.minor:hover {
+  color: #444444;
+}
 .text-center {
   text-align: center;
   margin: 0 auto;
@@ -494,6 +502,9 @@ a.action:hover, a.action:focus, a.action:active {
   color: #aaaaaa;
   padding-right: 20px;
   text-transform: uppercase;
+}
+.vertical-align {
+  padding-top: 12px;
 }
 /*------------------------------------*
    ACCORDIONS
@@ -520,44 +531,47 @@ a.action:hover, a.action:focus, a.action:active {
 /*------------------------------------*
    TABS
 *------------------------------------*/
+dl.tabs {
+  padding: 0;
+}
 dd {
   margin: 0;
-  padding: 0;
+  border: 1px solid #dbdbdb;
+  width: 50%;
 }
 dl.tabs dd a {
   font-size: 14px;
-  text-align: center !important;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-  font-weight: 700;
-  background: #FFFFFF;
-  color: #8aaf3e;
+  background: #b4cf7b;
+  color: #fff;
+  text-align: center;
+  transition: all 0.5s;
+}
+dl.tabs dd:last-child {
+  border-left: none;
 }
 .tabs dd.active a, .tabs .tab-title.active a {
-  color: #aaaaaa !important;
+  color: #fff;
+  background: #8aaf3e;
+  transition: all 0.5s
 }
 dl.tabs dd a:hover, dl.tabs dd a:active {
-  color: #49661f !important;
-  background: #FFFFFF;
+  background: #8aaf3e;
 }
-#article-options dl.tabs dd {
+.tabs-content {
+  border: 1px solid #dbdbdb;
+  border-top: none;
+  background:#fafafa;
+  padding: 10px;
+}
+/*#article-options dl.tabs dd {
   width: 100%;
 }
 #related-options dl.tabs dd {
   width: 100%;
-}
-#loginwall dl.tabs dd {
-  width: 50%;
-  border: 1px solid #aaaaaa;
-}
-#loginwall dl.tabs .active {
-  background: #ececec;
-}
-#loginwall .tabs-content {
-  border: 1px solid #aaaaaa;
-  border-top: none;
-}
+}*/
 /*------------------------------------*
    TABLES
 *------------------------------------*/
@@ -602,6 +616,7 @@ button, .button {
   text-transform: uppercase;
   transition: all 0.5s;
   width: 100%;
+  margin: 2px;
 }
 button:hover, button:active, .button:hover, .button:active {
   -webkit-box-shadow: inset 0 -2px #6c9020;
@@ -633,6 +648,11 @@ button i {
 .app:hover, .app:active {
   background: #8aaf3e;
   color: white;
+}
+.postfix {
+  height: 3.5em;
+  margin: 5px 0 0 0;
+  border-radius: 0;
 }
 #directory-list button, #navigate-list button {
   display: block;
@@ -675,7 +695,9 @@ button i {
 /*------------------------------------*
    FORMS
 *------------------------------------*/
-input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"],
+input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"],
+input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
   width: 100%;
   background-color: #FFFFFF;
   font-family: inherit;
@@ -684,18 +706,37 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   color: #444444;
   border-radius: 3px;
   font-size: 1em;
-  margin: 0 0 5px 0;
+  margin: 5px 0 15px 0;
   padding: 0 0 0 0.5rem;
   height: 3rem;
+  box-shadow: 1px 1px 6px #aaaaaa;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  transition: all 0.5s;
 }
-
-input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
-  background: #f3f3f3;
-  border-color: #8aaf3e;
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus,
+input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus,
+input[type="url"]:focus, textarea:focus {
+  background: #fff;
+  border-bottom: 2px solid #8aaf3e;
   outline: medium none;
+  transition: all 0.5s;
+}
+select {
+  width: 100%;
+  height: 3em;
+  display: block;
+  background: #FFFFFF;
+  font-family: inherit;
+  font-size: 16px;
+  border: 1px solid #aaaaaa;
+  box-shadow: none;
+  color: #444444;
+}
+label {
+  font-weight: 500;
+  color: #444444;
 }
 input#search {
   width: 100%;
@@ -735,10 +776,6 @@ input#search:active, input#search:focus {
 }
 #filters input[type=checkbox]:checked + label {
   background-position: 0 -15px;
-}
-.label {
-  float: right;
-  background-color: #aaaaaa;
 }
 /*------------------------------------*
    MICRO-ELEMENTS
@@ -820,27 +857,11 @@ input#search:active, input#search:focus {
   #contact-information {
     margin: 50px 0 0 0;
   }
-  #article-options dl.tabs dd {
-    width: 33%;
+  #loginwall, #summary {
+    padding: 20px;
   }
-  #related-options dl.tabs dd {
-    width: 50%;
-  }
-  #directory-list table, #navigate-list .list-group {
-    display: block;
-  }
-  #directory-list button, #navigate-list button {
-    display: none;
-  }
-  .tabs-content .content {
-    padding: 40px;
-    padding-bottom: 0px;
-    padding-top: 20px;
-  }
-  #loginwall > * {
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 20px;
+  .tabs-content {
+    padding: 10px 40px;
   }
 }
 @media only screen and (min-width : 900px) {
