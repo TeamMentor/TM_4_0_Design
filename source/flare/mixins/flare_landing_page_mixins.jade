@@ -1,7 +1,6 @@
 include ../../shared-mixins/globals.jade
 include ../../shared-mixins/images.jade
 
-//- flare-landing-page-usp-div
 mixin usp-div
 	#usp
 		.row
@@ -15,7 +14,6 @@ mixin usp-div
 						a(href='../getting-started/index')
 							+start-trial-button
 
-//- reasons-to-use-tm-div
 mixin reasons-to-use-tm-div
 	#reasons
 		include:md ../../content/landing-pages/reasons-div-heading.md
@@ -42,7 +40,6 @@ mixin reasons-to-use-tm-div
 						h4
 							include:md ../../content/landing-pages/selling-point-3.md
 
-//- clients-div
 mixin clients-div
 	#clients
 		include:md ../../content/landing-pages/clients-div-heading.md
@@ -60,25 +57,22 @@ mixin clients-div
 			.small-6.large-4.columns
 				+image-ubs-logo
 
-//- about-tagline-div
 mixin about-tagline-div
 	#about
 		.row
 			.small-12.large-offset-1.large-10.end.columns
 				include:md ../../content/landing-pages/about-tm-tagline.md
 
-// about-us-div
 mixin about-us-div
 	#about-us
 		.row
 			.small-12.large-offset-2.large-8.end.columns
 				include:md ../../content/landing-pages/about-tm-summary.md
 
-// features-div
 mixin features-div
 	#features
 		.row
-			.small-12.large-offset-2.large-8.columns
+			.small-12.large-offset-1.large-10.columns
 				include:md ../../content/landing-pages/features-div-heading.md
 				br
 				.row
@@ -102,7 +96,6 @@ mixin features-div
 					.small-9.large-10.columns
 						include:md ../../content/landing-pages/feature-4.md
 
-//- landing-page_call-to-action
 mixin call-to-action-div
 	#call-to-action
 		.row
@@ -113,7 +106,6 @@ mixin call-to-action-div
 				a(href='../getting-started/index')
 					+see-for-yourself-button
 
-//- landing-page_footer
 mixin footer-div
 	#footer
 		.row
@@ -121,8 +113,7 @@ mixin footer-div
 				h5 TEAM Mentor v 4.0
 				a(href='http://www.securityinnovation.com/', target='_blank')
 					#si-logo
-			
-			.small-12.large-9.columns#contact-information.text-center
+			.small-12.large-9.columns#contact-information
 				.row
 					.small-12.large-4.columns
 						ul

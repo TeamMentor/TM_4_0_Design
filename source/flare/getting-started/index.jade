@@ -5,14 +5,14 @@ block content
 	#application
 		#loginwall
 			dl.tabs(data-tab='data-tab')
-				dd.active
-					a(href='#signup') Sign Up
 				dd
+					a(href='#signup') Sign Up
+				dd.active
 					a(href='#login') Login
 			.tabs-content
-				#signup.content.active
+				#signup.content
 					+sign-up-form
-				#login.content
+				#login.content.active
 					+login-form
 		#summary
 			+team-mentor-summary
