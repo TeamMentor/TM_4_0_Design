@@ -212,49 +212,44 @@ nav a:hover, nav p:hover {
   -webkit-flex-wrap: wrap;
   overflow-y: auto;
 }
+#about, #about-us, #call-to-action, #clients, #features, #footer, #reasons, #usp {
+  width: 100%;
+}
 #about {
   background: url(../assets/stock-img/bg-img.jpg);
   background-position: 0px 600px;
+  height: 300px;
 }
-#about, #usp {
-  width: 100%;
-  text-align: center;
+#usp h1, #about h2 {
+  padding-top: 10%;
 }
-#about h2, #usp h1 p {
+#about h2, #usp h1 p, #call-to-action h1  {
   color: #FFFFFF;
+}
+#about h2, #usp h1 p, #call-to-action h1, #clients, #features h2, #footer, #reasons h2 {
+  text-align: center;
 }
 #about-us {
   padding: 40px 0 40px 0;
 }
 #call-to-action {
-  width: 100%;
   padding: 100px 0 110px 0;
   background: url(../assets/stock-img/bg-img.jpg);
   background-position: 0px 1200px;
   background-color: #49661f;
   text-align: center;
 }
-#call-to-action h1 {
-  color: #FFFFFF;
-}
 #clients {
   padding: 40px 0 80px 0;
-  text-align: center;
 }
 #features {
   padding: 70px 0 50px 0;
 }
-#features h2 {
-  text-align: center;
-}
-#features i {
+#features i, #reasons i {
   font-size: 60px;
-  margin: 0 auto;
 }
 #footer {
-  width: 100%;
   padding: 5px 0 15px 0;
-  text-align: center;
 }
 #footer ul {
   list-style: none;
@@ -266,25 +261,21 @@ nav a:hover, nav p:hover {
 }
 #footer h5 {
   margin-bottom: 15px;
+  margin-left: 15px;
 }
 #footer i {
   margin-right: 10px;
+  color: #444444;
 }
 #reasons {
   padding-top: 70px;
   z-index: 5;
-}
-#reasons h2 {
-  text-align: center;
 }
 #usp {
   background: url(../assets/stock-img/bg-img.jpg);
   background-position: 0px 0px;
   height: 500px;
   z-index: 4;
-}
-#usp h1 {
-  padding-top: 10%;
 }
 #si-logo {
   background:url('../assets/logos/logos.jpg') no-repeat;
@@ -596,37 +587,33 @@ table {
    BUTTONS
 *------------------------------------*/
 button, .button {
+  -webkit-box-shadow: inset 0 -2px #8aaf3e;
+  background: #b4cf7b;
+  border-bottom: 2px solid #8aaf3e;
+  border-radius: 3px;
+  border: 1px solid #aaaaaa;
+  box-shadow: inset 0 -2px #8aaf3e;
+  color: white;
   display: inline-block;
-  padding: 15px 0 15px 0;
   font-size: 14px;
+  letter-spacing: 1px;
+  padding: 15px 0 15px 0;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  background: #FFFFFF;
-  border: transparent;
-  border-radius: 3px;
-  color: #8aaf3e;
-  width: 100%;
-  border:1px solid #aaaaaa;
-  border-bottom: 2px solid #8aaf3e;
-  -webkit-box-shadow: inset 0 -2px #8aaf3e;
-  box-shadow: inset 0 -2px #8aaf3e;
   transition: all 0.5s;
+  width: 100%;
 }
 button:hover, button:active, .button:hover, .button:active {
-  color: #6c9020;
-  background: #fafafa;
-  border-color: #6c9020;
-  border-bottom: 2px solid #6c9020;
   -webkit-box-shadow: inset 0 -2px #6c9020;
+  background: #8aaf3e;
+  border-bottom: 2px solid #6c9020;
+  border-color: #6c9020;
   box-shadow: inset 0 -2px #6c9020;
   text-decoration: none;
   transition: all 0.5s;
 }
-button:hover i, button:active i , .button:hover i, .button:active i {
-  color: #6c9020;
-}
 button i {
+  color: white;
   font-size: 1.5em !important;
   padding-right: 20px;
 }
@@ -829,6 +816,9 @@ input#search:active, input#search:focus {
   #right-nav {
     -webkit-order: 8;
     -webkit-flex: 50%;
+  }
+  #contact-information {
+    margin: 50px 0 0 0;
   }
   #article-options dl.tabs dd {
     width: 33%;
