@@ -219,7 +219,7 @@ describe "controllers | test-Login-Controller |", ->
     loginController = new Login_Controller(req, res);
     loginController.userSignUp()
 
-  it 'Persist HTML form fields on error (Password too short)',(done)->
+  it 'Persist HTML form fields on error (Password is weak)',(done)->
     newUsername         ='xy'.add_5_Letters()
     newPassword         ='aaa'.add_5_Letters()
     newEmail            ='ab'.add_5_Letters()+'@mailinator.com'
