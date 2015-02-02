@@ -105,7 +105,7 @@ describe "controllers | test-Search-Controller |", ->
     tmpSessionFile = './_tmp_Session'
 
     after ->
-      tmpSessionFile.assert_File_Delete()
+      tmpSessionFile.assert_File_Deleted()
 
     using_Express_Service_With_Search_Controller = (callback)->
       using new Express_Service(),->
@@ -154,7 +154,7 @@ describe "controllers | test-Search-Controller |", ->
                 supertest(@.app).get('/article/viewed.json')
                   .end (err, res)->
                     data = JSON.parse res.text
-                    data.assert_Size_Is(5)
+                    data.assert_Size_Is_Bigger_Than(3)
                     done()
 
 

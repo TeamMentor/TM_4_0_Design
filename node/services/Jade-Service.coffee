@@ -3,7 +3,6 @@ path   = require('path')
 jade   = require('jade')
 Config = require('../misc/Config')
 
-require ('../_extra_fluentnode')
 
 class JadeService
     constructor: (config)->
