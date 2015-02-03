@@ -814,9 +814,9 @@ input#search:active, input#search:focus {
   font-size: 12px;
   min-width: 10px;
   padding: 3px 7px;
+  margin: 0 20px 0 0;
   text-align: center;
   float: left;
-  margin-top: 15px;
 }
 /*------------------------------------*
    MEDIA QUERIES
