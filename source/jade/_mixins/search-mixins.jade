@@ -42,7 +42,7 @@ mixin articles-list
             if results
                 each result in results.take(250)
                     if result
-                      a(href='/article/view/' + result.guid +'/'+result.title, id=result.id, target='_blank')
+                      a(href='/article/' + result.id, id=result.id)
                         h4=  result.title
                         p= result.summary + '...'
 
@@ -94,3 +94,11 @@ mixin filters-div
                                         a(href='/graph/' + title + '/'  + result.id, id=result.id)= result.title
                                     td
                                         span.badge= result.size
+mixin breadcrumbs_search
+    dl.sub-nav
+        #navigation
+            form(action='search', method='GET')
+                .input-group
+                    input.form-control(type='text', placeholder='Type keywords here', name='text', value=text)
+                    span.input-group-btn
+                        button.btn-search-bar(type='submit') SEARCH

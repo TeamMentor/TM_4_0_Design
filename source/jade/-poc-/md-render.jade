@@ -9,7 +9,7 @@ block content
         .col-6
               .lge-container
                   label Raw markdown:
-                  form(action='md-render', method='POST')
+                  form(action='', method='POST')
                     .input-group
                         textarea#text_md.form-control(type='text', placeholder='write markdown here', name='md_text')= md_text
                         span.input-group-btn
@@ -20,6 +20,12 @@ block content
                 label Rendered markdown:
                 .input-group
                     p!= md_html
+                    pre= md_html
+                    pre= tokens.json_Pretty()
+                    if tokens
+                        for token in tokens
+                            li
+                                ul= token.json_Str()
         //.col-3
             .lge-container
                 label Rendered wikitext:

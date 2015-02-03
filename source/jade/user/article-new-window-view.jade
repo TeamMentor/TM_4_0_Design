@@ -1,5 +1,5 @@
 extends ../_layouts/page_home.jade
-include ../mixins/articles-mixins
+include ../_mixins/articles-mixins.jade
 
 block content
   #application
@@ -10,11 +10,13 @@ block content
       .col-6
         .lge-container
           #article
-            include:md ../../content/articles/article-new-window.md
+              h2= title
+              != article_Html
           +horizontal-rule
-          +article-options
-          +horizontal-rule
-          +related-articles
+
+          //+article-options
+          //+horizontal-rule
+          //+related-articles
       .col-3
         .lge-container
           br

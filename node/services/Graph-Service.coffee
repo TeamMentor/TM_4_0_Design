@@ -18,9 +18,9 @@ class GraphService
     path   = 'GraphData/article_Data.json'
     new GitHub_Service().file user, repo, path, (data)-> callback(JSON.parse(data))
 
-  graphDataFromGraphDB: ( queryId, filters, callback)=>
+  graphDataFromGraphDB: (queryId, filters, callback)=>
 
-    if not queryId
+    if not queryId or queryId.trim() is ''
       callback {}
       return
 
@@ -49,15 +49,41 @@ class GraphService
       callback null
       return
 
+
     url_Convert = "#{@server}/convert/to_ids/#{text}"
     url_Search = "#{@server}/search/query_from_text_search/#{text}"
 
     url_Convert.GET_Json (json)->
+
       mapping = json[json.keys().first()]
       if mapping.id
         callback mapping.id
       else
-        url_Search.GET_Json (json)->
-          callback json || null
+        url_Search.GET (search_Id)->
+          callback search_Id
+
+  article_Html: (article_Id, callback)=>
+    if not article_Id
+      callback ''
+      return
+
+    url_Article_Html = "#{@server}/data/article_Html/#{article_Id}"
+
+    url_Article_Html.GET_Json (json)->
+      callback json || ''
+
+  node_Data: (id, callback)=>
+    if not id
+      callback ''
+      return
+
+    url_Node_Data = "#{@server}/data/id/#{id}"
+
+    url_Node_Data.GET_Json (json)->
+      if json and json.values()
+        callback json.values().first()
+      else
+        callback {}
+
 
 module.exports = GraphService
