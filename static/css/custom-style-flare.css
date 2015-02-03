@@ -541,9 +541,14 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   padding: 10px;
 }
 #articles .tabs dd {
-  width: auto;
+  width: 25%;
   border: none;
+  border-bottom: 1px solid #aaaaaa;
   padding: 0 0 10px 20px;
+  margin: 10px 0 0 0;
+}
+#articles .tabs dd:first-child {
+  padding: 0 0 10px 0;
 }
 #articles .tabs dd a {
   font-size: 12px;
@@ -554,15 +559,13 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   border: none;
 }
 #articles .tabs dd a:hover, #articles .tabs dd a:active {
-  padding: 0 0 2px 0;
-  border-bottom: 1px solid #b4cf7b;
   color: #6c9020;
 }
 #articles .tabs-content {
   background: white;
   border: none;
   padding: 0;
-  margin: 0;
+  margin-top: -10px;
 }
 #articles h3 {
   padding-top: 0;
@@ -804,32 +807,16 @@ input#search:active, input#search:focus {
   font-size: 14px;
   letter-spacing: 1px;
 }
-.circle {
-  width:100%;
+.badge {
+  background-color: #aaaaaa;
+  border-radius: 10px;
+  color: #FFFFFF;
   font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 20px;
-}
-.circle:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height:0;
-  padding-bottom: 100%;
-  background: #8baf3e;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-.circle div {
-  float:left;
-  width:100%;
-  padding-top:50%;
-  line-height:1.25em;
-  margin-top:-1em;
-  text-align:center;
-  color:white;
+  min-width: 10px;
+  padding: 3px 7px;
+  margin: 0 20px 0 0;
+  text-align: center;
+  float: left;
 }
 /*------------------------------------*
    MEDIA QUERIES
