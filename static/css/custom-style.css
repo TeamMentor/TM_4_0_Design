@@ -297,16 +297,17 @@ img {
   text-transform: uppercase;
   font-size: 12px;
   white-space: pre-wrap;
+  padding: 12px 0;
 }
-.sub-nav a:after { content: " / "; padding-left: 20px; color: #aaaaaa;}
+.sub-nav a:after { content: " / "; padding-left: 10px; color: #aaaaaa;}
 .sub-nav a:before { content: " "; }
 .sub-nav dd:last-child > a:after { content: "" }
 .sub-nav dt, .sub-nav dd, .sub-nav li {
   float: left;
   display: inline;
   font-weight: normal;
-  padding: 12px 0;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 10px;
+  line-height: 2em;
 }
 .sub-nav dt a, .sub-nav dd a, .sub-nav li a {
   text-align: left;

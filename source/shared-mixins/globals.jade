@@ -7,14 +7,13 @@ mixin breadcrumbs
   dl.sub-nav
     #navigation
       if breadcrumbs
-        .bc-container
-          for item,index in breadcrumbs
-            if index == breadcrumbs.size() -1
-              dd.active
-                a(href= item.href)= item.title
-            else
-              dd
-                a(href= item.href)= item.title
+        for item,index in breadcrumbs
+          if index == breadcrumbs.size() -1
+            dd.active
+              a(href= item.href)= item.title
+          else
+            dd
+              a(href= item.href)= item.title
 
 //- Form Inputs
 mixin username-input
