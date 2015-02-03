@@ -115,15 +115,24 @@ mixin flare-main-app-view
 					.small-12.medium-2.columns
 						.row
 							.small-12.columns
-								button.button.dropdown(href='#', data-dropdown='drop1', aria-controls='drop1', aria-expanded='false') Open
-								ul#drop1.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
-								li
-									a(href='#') C++
-								li
-									a(href='#') This is another
-								li
-									a(href='#') Yet another
-
+								button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false') Open
+								ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
+									li
+										a(href='#') ASP.NET
+									li
+										a(href='#') Android
+									li
+										a(href='#') C++
+									li
+										a(href='#') HTML5
+									li
+										a(href='#') iOS
+									li
+										a(href='#') Java
+									li
+										a(href='#') PHP
+									li
+										a(href='#') Scala
 							.small-12.columns
 								button.controls Save
 							.small-12.columns
