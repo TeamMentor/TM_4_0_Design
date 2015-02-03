@@ -42,7 +42,6 @@ class Login_Controller
     username = @.req.body.username
     password = @.req.body.password
 
-    #major hack for demo (this needs to be done by consuming the GraphDB TeamMentor-Service)
     options = {
                   method: 'post',
                   body: {username:username, password:password},

@@ -32,8 +32,9 @@ mixin results
                     else
                         h5#resultsTitle= 'Showing ' + results.size() + ' articles'
             td.text-right
-                span.filtered Active filters:
-                span.badge Filter here
+                if activeFilter
+                    span.filtered Active filter:
+                    span#activeFilter.badge= activeFilter.title
 //- articles-list
 mixin articles-list
     .list-group
@@ -57,13 +58,18 @@ mixin filters-div
                                 i.fi-arrow-down
                         ul.dropdown-menu
                             for result in filter.results
-                                li
-                                    if result.id == filter_container
-                                        a(href= href )= result.title
+                                if activeFilter && result.id == activeFilter.id
+                                    a(href= href )
+                                        li
+                                            b= result.title
+                                                span.right.badge= result.size
+                                else
+                                    a(href=href + '/'+result.id)
+                                        li= result.title
                                             span.right.badge= result.size
-                                    else
-                                        a(href=href + '/'+result.id)= result.title
-                                            span.right.badge= result.size
+            button
+                i.fi-trash
+                |     Clear Filters
             //if filters
                 for filter in filters
                     table

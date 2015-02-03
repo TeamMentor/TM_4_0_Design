@@ -1722,25 +1722,13 @@ button::-moz-focus-inner {
   .button-bar .button-group div {
     overflow: hidden; }
 
-.dropdown.button, button.dropdown {
-  position: relative;
-  outline: none;
-  padding-right: 3.5625rem; }
   .dropdown.button::after, button.dropdown::after {
     position: absolute;
     content: "";
     width: 0;
     height: 0;
     display: block;
-    border-style: solid;
-    border-color: #FFFFFF transparent transparent transparent;
     top: 50%; }
-  .dropdown.button::after, button.dropdown::after {
-    border-width: 0.375rem;
-    right: 1.40625rem;
-    margin-top: -0.15625rem; }
-  .dropdown.button::after, button.dropdown::after {
-    border-color: #FFFFFF transparent transparent transparent; }
   .dropdown.button.tiny, button.dropdown.tiny {
     padding-right: 2.625rem; }
     .dropdown.button.tiny:after, button.dropdown.tiny:after {

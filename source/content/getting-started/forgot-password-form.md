@@ -1,1 +1,1 @@
-Just type in your email address and we'll send you an email with further instructions.
+Type in your email address and we'll send you an email with further instructions.

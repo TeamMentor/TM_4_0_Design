@@ -57,7 +57,12 @@ class SearchController
             @searchData = searchData
             @searchData.breadcrumbs = navigation
             @searchData.href = target.href
-            @res.send(@renderPage())
+            if filters
+              @graphService.resolve_To_Ids filters, (results)=>
+                @searchData.activeFilter = results.values()?.first()
+                @res.send(@renderPage())
+            else
+              @res.send(@renderPage())
 
     search: =>
         target = @.req.query.text

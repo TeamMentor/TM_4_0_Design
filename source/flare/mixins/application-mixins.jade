@@ -34,7 +34,7 @@ mixin flare-articles-list
 		dl.accordion(data-accordion='data-accordion')
 			dd.accordion-navigation
 				a(href='#panel1') Article Headline
-				#panel1.content
+				#panel1.content.active
 					include:md ../../content/articles/article-details.md
 					+flare-article-preview-menu
 			dd.accordion-navigation
@@ -95,7 +95,145 @@ mixin saved-article-menu
 
 //- Flare Main App View
 mixin flare-main-app-view
-	dl.accordion(data-accordion='data-accordion')
+	#articles
+		dl.tabs(data-tab='data-tab')
+			dd.active
+				a(href='#recently-viewed-articles') Recently Viewed Articles
+			dd
+				a(href='#popular-search-terms') Popular Search Terms
+			dd
+				a(href='#top-articles') Top Articles
+			dd
+				a(href='#new-articles') New Articles
+		.tabs-content
+			#recently-viewed-articles.content.active
+				.row
+					.small-12.columns
+						h3 Article Headline
+					.small-12.medium-10.columns
+						include:md ../../content/articles/article-details.md
+					.small-12.medium-2.columns
+						.row
+							.small-12.columns
+								button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false') Open
+								ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
+									li
+										a(href='#') ASP.NET
+									li
+										a(href='#') Android
+									li
+										a(href='#') C++
+									li
+										a(href='#') HTML5
+									li
+										a(href='#') iOS
+									li
+										a(href='#') Java
+									li
+										a(href='#') PHP
+									li
+										a(href='#') Scala
+							.small-12.columns
+								button.controls Save
+							.small-12.columns
+								button.controls Share
+				.row
+					.small-12.columns
+						h3 Article Headline
+					.small-12.medium-10.columns
+						include:md ../../content/articles/article-details.md
+					.small-12.medium-2.columns
+						.row
+							.small-12.columns
+								button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false') Open
+								ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
+									li
+										a(href='#') ASP.NET
+									li
+										a(href='#') Android
+									li
+										a(href='#') C++
+									li
+										a(href='#') HTML5
+									li
+										a(href='#') iOS
+									li
+										a(href='#') Java
+									li
+										a(href='#') PHP
+									li
+										a(href='#') Scala
+							.small-12.columns
+								button.controls Save
+							.small-12.columns
+								button.controls Share
+				.row
+					.small-12.columns
+						h3 Article Headline
+					.small-12.medium-10.columns
+						include:md ../../content/articles/article-details.md
+					.small-12.medium-2.columns
+						.row
+							.small-12.columns
+								button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false') Open
+								ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
+									li
+										a(href='#') ASP.NET
+									li
+										a(href='#') Android
+									li
+										a(href='#') C++
+									li
+										a(href='#') HTML5
+									li
+										a(href='#') iOS
+									li
+										a(href='#') Java
+									li
+										a(href='#') PHP
+									li
+										a(href='#') Scala
+							.small-12.columns
+								button.controls Save
+							.small-12.columns
+								button.controls Share
+				.row
+					.small-12.columns
+						h3 Article Headline
+					.small-12.medium-10.columns
+						include:md ../../content/articles/article-details.md
+					.small-12.medium-2.columns
+						.row
+							.small-12.columns
+								button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false') Open
+								ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
+									li
+										a(href='#') ASP.NET
+									li
+										a(href='#') Android
+									li
+										a(href='#') C++
+									li
+										a(href='#') HTML5
+									li
+										a(href='#') iOS
+									li
+										a(href='#') Java
+									li
+										a(href='#') PHP
+									li
+										a(href='#') Scala
+							.small-12.columns
+								button.controls Save
+							.small-12.columns
+								button.controls Share
+			#popular-search-terms.content
+				p Hello
+			#top-articles.content
+				p Hello
+			#new-articles.content
+				p Hello
+	// dl.accordion(data-accordion='data-accordion')
 		dd.accordion-navigation
 			a(href='#recently-viewed-articles') Recently Viewed Articles
 			#recently-viewed-articles.content

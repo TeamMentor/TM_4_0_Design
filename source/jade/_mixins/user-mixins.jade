@@ -10,13 +10,13 @@ mixin login-form
             .form-group
                 +password-input
             .row
-                .col-6
+                .col-7
                     .lge-container
                         +login-button
-                .col-6
+                    br
+                .col-5.text-right
                     .lge-container
-                        a(href='/guest/pwd-forgot.html')
-                            +forgot-password-button
+                        a.minor(href='/guest/pwd-forgot.html') Forgot password?
 
 //- sign-up-form
 mixin sign-up-form
