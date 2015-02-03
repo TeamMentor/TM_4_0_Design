@@ -67,6 +67,9 @@ mixin filters-div
                                     a(href=href + '/'+result.id)
                                         li= result.title
                                             span.right.badge= result.size
+            button 
+                i.fi-trash
+                |     Clear Filters
             //if filters
                 for filter in filters
                     table

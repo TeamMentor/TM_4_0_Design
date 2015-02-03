@@ -348,7 +348,6 @@ img {
   outline: 0;
 }
 .list-group span.badge {
-  float: right;
   margin: 0 0 0 10px;
 }
 .nav table {
@@ -373,9 +372,6 @@ img {
 }
 .nav table tr td {
   padding: 5px;
-}
-.nav table span.badge {
-  float: right;
 }
 /*------------------------------------*
    FORMS
@@ -661,6 +657,7 @@ button i {
   min-width: 10px;
   padding: 3px 7px;
   text-align: center;
+  float: right;
 }
 .alert {
   padding: 15px;
