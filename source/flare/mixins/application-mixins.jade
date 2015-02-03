@@ -97,16 +97,16 @@ mixin saved-article-menu
 mixin flare-main-app-view
 	#articles
 		dl.tabs(data-tab='data-tab')
+			dd
+				a(href='#recently-viewed-articles') Recently Viewed
 			dd.active
-				a(href='#recently-viewed-articles') Recently Viewed Articles
+				a(href='#popular-search-terms') Popular Searches
 			dd
-				a(href='#popular-search-terms') Popular Search Terms
-			dd
-				a(href='#top-articles') Top Articles
+				a(href='#top-articles') Popular Articles
 			dd
 				a(href='#new-articles') New Articles
 		.tabs-content
-			#recently-viewed-articles.content.active
+			#recently-viewed-articles.content
 				.row
 					.small-12.columns
 						h3 Article Headline
@@ -227,8 +227,12 @@ mixin flare-main-app-view
 								button.controls Save
 							.small-12.columns
 								button.controls Share
-			#popular-search-terms.content
-				p Hello
+			#popular-search-terms.content.active
+				.row
+					.small-1.columns
+						span.badge #4
+					.small-11.columns
+						p Search Term Here
 			#top-articles.content
 				p Hello
 			#new-articles.content
