@@ -623,18 +623,18 @@ button i {
   background: #dbdbdb;
 }
 .dropdown .dropdown-menu {
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
   display: none;
+  font-size: 14px;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background: #fff;
-  font-size: 14px;
-  border: 1px solid #dbdbdb;
-  border-radius: 3px;
 }
 .dropdown .dropdown-menu li {
-  padding: 5px 15px 5px 15px;
   border-bottom: 1px solid #dbdbdb;
+  padding: 5px 15px 5px 15px;
 }
 .dropdown .dropdown-menu li:last-child {
   border-bottom: none;
