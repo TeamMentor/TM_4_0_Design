@@ -115,25 +115,19 @@ mixin flare-main-app-view
 					.small-12.medium-2.columns
 						.row
 							.small-12.columns
-								button.controls Open
-							.small-12.columns
-								button.controls Save
-							.small-12.columns
-								button.controls Share
-				.row
-					.small-12.columns
-						h3 Article Headline
-					.small-12.medium-10.columns
-						include:md ../../content/articles/article-details.md
-					.small-12.medium-2.columns
-						.row
-							.small-12.columns
-								button.controls Open
-							.small-12.columns
-								button.controls Save
-							.small-12.columns
-								button.controls Share
+								button.button.dropdown(href='#', data-dropdown='drop1', aria-controls='drop1', aria-expanded='false') Open
+								ul#drop1.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
+								li
+									a(href='#') C++
+								li
+									a(href='#') This is another
+								li
+									a(href='#') Yet another
 
+							.small-12.columns
+								button.controls Save
+							.small-12.columns
+								button.controls Share
 			#popular-search-terms.content
 				p Hello
 			#top-articles.content

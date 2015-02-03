@@ -541,9 +541,9 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   padding: 10px;
 }
 #articles .tabs dd {
-  width: 25%;
+  width: auto;
   border: none;
-  padding: 0 0 10px 0;
+  padding: 0 0 10px 20px;
 }
 #articles .tabs dd a {
   font-size: 12px;
