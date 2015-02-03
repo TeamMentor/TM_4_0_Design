@@ -607,36 +607,37 @@ button i {
 }
 .dropdown button {
   background: #fafafa;
+  color: #444444;
   border: none;
   box-shadow: none;
-  color: #444444;
   width: 100%;
   padding: 15px;
-  text-transform: none;
+  font-size: 14px;
   text-align: left;
   border-radius: 0px;
 }
-.dropdown button i {
-  color: #444444 !important;
-}
 .dropdown button:hover {
   background: #dbdbdb;
+}
+.dropdown button i {
+  color: #444444 !important;
 }
 .dropdown .dropdown-menu {
   background: #fff;
   border-radius: 3px;
   border: 1px solid #dbdbdb;
+  border-bottom: none;
   display: none;
   font-size: 14px;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-.dropdown .dropdown-menu li {
+.dropdown .dropdown-menu a li {
   border-bottom: 1px solid #dbdbdb;
   padding: 5px 15px 5px 15px;
 }
-.dropdown .dropdown-menu li:last-child {
+.dropdown .dropdown-menu a:last-child {
   border-bottom: none;
 }
 .dropdown .dropdown-menu a {
