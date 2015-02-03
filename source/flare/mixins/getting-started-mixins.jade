@@ -11,10 +11,10 @@ mixin login-form
 				+password-input
 		br
 		.row
-			.small-12.large-3.columns.vertical-align
-				a.minor(href='/guest/pwd-forgot.html') Forgot password?
 			.small-12.large-7.columns
 				+login-button
+			.small-12.large-5.columns.text-right.vertical-align
+				a.minor(href='/guest/pwd-forgot.html') Forgot password?
 
 mixin sign-up-form
 	include:md ../../content/getting-started/sign-up-form.md
