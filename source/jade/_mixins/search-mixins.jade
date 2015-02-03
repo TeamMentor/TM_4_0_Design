@@ -58,13 +58,14 @@ mixin filters-div
                                 i.fi-arrow-down
                         ul.dropdown-menu
                             for result in filter.results
-                                li
-                                    if activeFilter && result.id == activeFilter.id
-                                        b
-                                            a(href= href )= result.title
+                                if activeFilter && result.id == activeFilter.id
+                                    a(href= href )
+                                        li
+                                            b= result.title
                                                 span.right.badge= result.size
-                                    else
-                                        a(href=href + '/'+result.id)= result.title
+                                else
+                                    a(href=href + '/'+result.id)
+                                        li= result.title
                                             span.right.badge= result.size
             //if filters
                 for filter in filters

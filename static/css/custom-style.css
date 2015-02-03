@@ -639,7 +639,7 @@ button i {
 .dropdown .dropdown-menu li:last-child {
   border-bottom: none;
 }
-.dropdown .dropdown-menu li a {
+.dropdown .dropdown-menu a {
   text-decoration: none;
 }
 .dropdown .dropdown-menu li:hover {
