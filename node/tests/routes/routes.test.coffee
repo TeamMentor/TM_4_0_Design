@@ -7,7 +7,6 @@ describe 'routes | routes.test |', ()->
                       '/flare/default',
                       '/Image/:name',
                       '/article/:id'
-                      '/article/view/:guid/:title',
                       '/article/viewed.json',
                       '/search',
                       '/config',

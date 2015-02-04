@@ -31,6 +31,9 @@ add_Routes = (app,searchController)->
     #search routes
     Search_Controller.registerRoutes(app, searchController);
 
+    #article routes
+    Article_Controller.registerRoutes(app, searchController)
+
     #help routes
     
     app.get '/help/:page*' , (req, res)-> new Help_Controller(req, res).renderPage()
@@ -49,10 +52,6 @@ add_Routes = (app,searchController)->
     Jade_Controller.registerRoutes(app)
     #Redirect to Jade pages
     #app.get '/deploy/html/:area/:page.html'                 , (req, res)-> res.redirect('/' + req.params.area + '/' + req.params.page + '.html')
-
-    #article routes
-
-    Article_Controller.registerRoutes(app)
 
     #PoCs
     Search_Controller_PoC.registerRoutes(app)
