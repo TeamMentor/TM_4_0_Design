@@ -28,25 +28,82 @@ mixin flare-results-save-clear
 						a.button.app(href='filters-div')
 							+clear-icon
 
-//- Articles List
-mixin flare-articles-list
+//- Flare Main App View
+mixin flare-main-app-view
 	#articles
-		dl.accordion(data-accordion='data-accordion')
-			dd.accordion-navigation
-				a(href='#panel1') Article Headline
-				#panel1.content.active
-					include:md ../../content/articles/article-details.md
-					+flare-article-preview-menu
-			dd.accordion-navigation
-				a(href='#panel2') Article Headline
-				#panel2.content
-					include:md ../../content/articles/article-details.md
-					+flare-article-preview-menu
-			dd.accordion-navigation
-				a(href='#panel3') Article Headline
-				#panel3.content
-					include:md ../../content/articles/article-details.md
-					+flare-article-preview-menu
+		dl.tabs(data-tab='data-tab')
+			dd.active
+				a(href='#recently-viewed-articles') Recently Viewed
+			dd
+				a(href='#popular-search-terms') Popular Searches
+			dd
+				a(href='#top-articles') Popular Articles
+			dd
+				a(href='#new-articles') New Articles
+		.tabs-content
+			#recently-viewed-articles.content.active
+				+articles-list
+			#popular-search-terms.content
+				+search-results
+			#top-articles.content
+				+articles-list
+			#new-articles.content
+				+articles-list
+
+//- Articles List
+mixin articles-list
+	.row
+		.small-12.columns
+			h3 Article Headline
+		.small-12.medium-10.columns
+			include:md ../../content/articles/article-details.md
+		.small-12.medium-2.columns
+			+article-controls
+	.row
+		.small-12.columns
+			h3 Article Headline
+		.small-12.medium-10.columns
+			include:md ../../content/articles/article-details.md
+		.small-12.medium-2.columns
+			+article-controls
+	.row
+		.small-12.columns
+			h3 Article Headline
+		.small-12.medium-10.columns
+			include:md ../../content/articles/article-details.md
+		.small-12.medium-2.columns
+			+article-controls
+
+//- Articles List Control
+mixin article-controls
+	.row
+		.small-4.medium-12.columns
+			+open-icon
+		.small-4.medium-12.columns
+			button.controls
+				+save-icon
+		.small-4.medium-12.columns
+			button.controls
+				+share-icon
+
+//- Search Results List
+mixin search-results
+	.list-group
+		a(href='#')
+			span.icon
+				+search-icon
+			| Search Term Here
+			span.badge #4
+		a(href='#')
+			span.icon
+				+search-icon
+			| Search Term Here
+			span.badge #4
+		a(href='#')
+			span.icon
+				+search-icon
+			| Search Term Here
+			span.badge #4
 
 //- Flare Saved Articles List
 mixin flare-saved-articles-list
@@ -92,167 +149,6 @@ mixin saved-article-menu
 		.small-12.large-4.columns
 			a.button(href='my-search-items')
 				+clear-icon
-
-//- Flare Main App View
-mixin flare-main-app-view
-	#articles
-		dl.tabs(data-tab='data-tab')
-			dd
-				a(href='#recently-viewed-articles') Recently Viewed
-			dd.active
-				a(href='#popular-search-terms') Popular Searches
-			dd
-				a(href='#top-articles') Popular Articles
-			dd
-				a(href='#new-articles') New Articles
-		.tabs-content
-			#recently-viewed-articles.content
-				.row
-					.small-12.columns
-						h3 Article Headline
-					.small-12.medium-10.columns
-						include:md ../../content/articles/article-details.md
-					.small-12.medium-2.columns
-						.row
-							.small-12.columns
-								button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false') Open
-								ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
-									li
-										a(href='#') ASP.NET
-									li
-										a(href='#') Android
-									li
-										a(href='#') C++
-									li
-										a(href='#') HTML5
-									li
-										a(href='#') iOS
-									li
-										a(href='#') Java
-									li
-										a(href='#') PHP
-									li
-										a(href='#') Scala
-							.small-12.columns
-								button.controls Save
-							.small-12.columns
-								button.controls Share
-				.row
-					.small-12.columns
-						h3 Article Headline
-					.small-12.medium-10.columns
-						include:md ../../content/articles/article-details.md
-					.small-12.medium-2.columns
-						.row
-							.small-12.columns
-								button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false') Open
-								ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
-									li
-										a(href='#') ASP.NET
-									li
-										a(href='#') Android
-									li
-										a(href='#') C++
-									li
-										a(href='#') HTML5
-									li
-										a(href='#') iOS
-									li
-										a(href='#') Java
-									li
-										a(href='#') PHP
-									li
-										a(href='#') Scala
-							.small-12.columns
-								button.controls Save
-							.small-12.columns
-								button.controls Share
-				.row
-					.small-12.columns
-						h3 Article Headline
-					.small-12.medium-10.columns
-						include:md ../../content/articles/article-details.md
-					.small-12.medium-2.columns
-						.row
-							.small-12.columns
-								button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false') Open
-								ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
-									li
-										a(href='#') ASP.NET
-									li
-										a(href='#') Android
-									li
-										a(href='#') C++
-									li
-										a(href='#') HTML5
-									li
-										a(href='#') iOS
-									li
-										a(href='#') Java
-									li
-										a(href='#') PHP
-									li
-										a(href='#') Scala
-							.small-12.columns
-								button.controls Save
-							.small-12.columns
-								button.controls Share
-				.row
-					.small-12.columns
-						h3 Article Headline
-					.small-12.medium-10.columns
-						include:md ../../content/articles/article-details.md
-					.small-12.medium-2.columns
-						.row
-							.small-12.columns
-								button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false') Open
-								ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
-									li
-										a(href='#') ASP.NET
-									li
-										a(href='#') Android
-									li
-										a(href='#') C++
-									li
-										a(href='#') HTML5
-									li
-										a(href='#') iOS
-									li
-										a(href='#') Java
-									li
-										a(href='#') PHP
-									li
-										a(href='#') Scala
-							.small-12.columns
-								button.controls Save
-							.small-12.columns
-								button.controls Share
-			#popular-search-terms.content.active
-				.list-group
-					a(href='#')
-						span.badge #4
-						Search Term Here
-			#top-articles.content
-				p Hello
-			#new-articles.content
-				p Hello
-	// dl.accordion(data-accordion='data-accordion')
-		dd.accordion-navigation
-			a(href='#recently-viewed-articles') Recently Viewed Articles
-			#recently-viewed-articles.content
-				+flare-articles-list
-		dd.accordion-navigation
-			a(href='#popular-search-terms') Popular Search Terms
-			#popular-search-terms.content
-				+flare-articles-list
-		dd.accordion-navigation
-			a(href='#top-articles') Top Articles
-			#top-articles.content
-				+flare-articles-list
-		dd.accordion-navigation
-			a(href='#new-articles') New Articles
-			#new-articles.content
-				+flare-articles-list
 
 //- Flare Filters Div
 mixin flare-filters-div

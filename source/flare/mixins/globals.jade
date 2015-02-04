@@ -11,12 +11,27 @@ mixin save-icon
 
 mixin share-icon
 	i.fi-share
-	|    Share
 
 mixin open-icon
-	i.fi-plus
-	|     Open
-
+	button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false')
+		i.fi-plus
+	ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
+		li
+			a(href='#') ASP.NET
+		li
+			a(href='#') Android
+		li
+			a(href='#') C++
+		li
+			a(href='#') HTML5
+		li
+			a(href='#') iOS
+		li
+			a(href='#') Java
+		li
+			a(href='#') PHP
+		li
+			a(href='#') Scala
 mixin search-icon
 	i.fi-magnifying-glass
 
