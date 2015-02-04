@@ -575,7 +575,7 @@ a.minor:hover {
   text-align: right;
   text-decoration: none;
   margin: 0 0 0 10px;
-  padding: 0 3px 0 10px;
+  padding: 0 5px 0 10px;
   color: white;
   border-left: 1px solid white;
 }
@@ -667,9 +667,10 @@ button i {
   color: #FFFFFF;
   font-size: 12px;
   min-width: 10px;
-  padding: 5px 7px 3px 7px;
+  padding: 4px 7px 2px;
   text-align: center;
   vertical-align: baseline;
+  float: right;
 }
 .alert {
   padding: 15px;
