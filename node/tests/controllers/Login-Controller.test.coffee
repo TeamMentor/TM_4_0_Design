@@ -66,7 +66,7 @@ describe "controllers | test-Login-Controller |", ->
               invoke_LoginUser 'aa','', loginPage, ->    # blank password
                 invoke_LoginUser '','', loginPage,done   # blank credentials
 
-  it.only "loginUser (local-good username, password)", (done)->
+  it "loginUser (local-good username, password)", (done)->
     invoke_LoginUser 'tm','tm', mainPage_user, ->
       invoke_LoginUser 'user','a', mainPage_user, done
 
