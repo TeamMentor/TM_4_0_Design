@@ -56,6 +56,9 @@ body {
   padding-top: 100px;
   margin-top: -80px;
 }
+#articles-2 {
+  margin-top: 100px;
+}
 #about {
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
@@ -191,6 +194,16 @@ body {
   margin: 0 auto;
   padding: 0 0 40px 0;
   margin-top: -13px;
+  position: fixed;
+  z-index: 96;
+}
+#search-2 {
+  width: 96%;
+  background: #fafafa;
+  height: 50px;
+  margin: 0 auto;
+  padding: 0 0 40px 0;
+  margin: 20px 0 0 0;
   position: fixed;
   z-index: 96;
 }
@@ -711,6 +724,10 @@ table td {
   #search {
     width: 48%;
     margin-top: 0px !important;
+  }
+  #search-2 {
+    width: 72%;
+    margin: 0;
   }
   #team-mentor-navigation {
     height: 60px;

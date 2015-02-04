@@ -23,20 +23,21 @@ mixin search-bar-input
 
 //- results
 mixin results
-    table
-        tr
-            td
-                if results
-                    if results.size() > 250
-                        h5#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
-                    else
-                        h5#resultsTitle= 'Showing ' + results.size() + ' articles'
-            td.text-right
-                if activeFilter
-                    span.filtered Active filter:
-                    span#activeFilter.badge= activeFilter.title
-                        span.close
-                            a(href='#') x
+    #results
+        table
+            tr
+                td
+                    if results
+                        if results.size() > 250
+                            h5#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
+                        else
+                            h5#resultsTitle= 'Showing ' + results.size() + ' articles'
+                td.text-right
+                    if activeFilter
+                        span.filtered Active filter:
+                        span#activeFilter.badge= activeFilter.title
+                            span.close
+                                a(href='#') x
 //- articles-list
 mixin articles-list
     .list-group
