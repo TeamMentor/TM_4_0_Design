@@ -682,7 +682,7 @@ button i {
   text-align: center;
   margin: 0 auto;
 }
-#save-button, #share-button {
+#save-button, #share-button, #navigate-button {
   width: 100%;
 }
 .dropdown:after {

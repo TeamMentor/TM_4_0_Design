@@ -358,17 +358,17 @@ mixin save-input
 	input(type='text', id='save-input', placeholder='Save to Dashboard')
 
 mixin share-input
-	input(type='text', id='share-input', placeholder='Share via Email')
+	input(type='email', id='share-input', placeholder='Share via Email')
 
 
 //- Form Buttons
 
 mixin save-button
-	a.button.postfix#save-button(href='alert-application')
+	button.controls(href='app-keyword-search-save')
 		+save-icon
 
 mixin share-button
-	a.button.postfix#share-button(href='alert-application')
+	button.controls
 		+share-icon
 
 mixin ok-button
@@ -383,7 +383,6 @@ mixin clear-all-button
 mixin edit-button
 	button(type='submit', id='btn-clear-all') Edit
 
-
 //- Copyright Information
 mixin copyright
 	#copyright
@@ -394,7 +393,3 @@ mixin flare-alert
 	.alert-box(data-alert='')
 		| Error, Validation or Alert Message Here
 		a.close(href='#') ×
-
-mixin jade-alert
-	.alert-box(data-alert='')
-		| Error, Validation or Alert Message Here
