@@ -355,9 +355,7 @@ mixin country-input
 		option(value='zimbabwe') Zimbabwe
 
 mixin save-input
-	label
-		| Save to Dashboard
-	input(type='text', id='nickname', placeholder='Quick reference nickname (optional)')
+	input(type='text', id='save-input', placeholder='Save to Dashboard')
 
 mixin share-input
 	label
@@ -368,7 +366,8 @@ mixin share-input
 //- Form Buttons
 
 mixin save-button
-	button(type='submit', id='btn-save') Save for later
+	a.button.postfix#save-button(href='alert-application')
+		+save-icon
 
 mixin share-button
 	button(type='submit', id='btn-share') Share it

@@ -283,12 +283,14 @@ mixin flare-filters-active
 
 // Save Div
 mixin save-div
-	form
+	#save
 		.row
-			.small-12.columns
-				+save-input
-			.small-12.columns
-				+save-button
+			.large-12.columns
+				.row.collapse
+					.small-10.columns
+						+save-input
+					.small-2.columns
+						+save-button
 
 // Share Div
 mixin share-div
