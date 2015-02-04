@@ -64,16 +64,34 @@ class SearchController
             else
               @res.send(@renderPage())
 
+    #search: =>
+    #    target = @.req.query.text
+    #    if not target
+    #      target = @req.params.text
+    #    @graphService.query_From_Text_Search target,  (query_Id)=>
+    #      if query_Id
+    #        recentSearches_Cache.push(target)
+    #        @res.redirect("/#{@urlPrefix}/" + query_Id)
+    #      else
+    #        @res.redirect "/user/main.html"
     search: =>
-        target = @.req.query.text
-        if not target
-          target = @req.params.text
-        @graphService.query_From_Text_Search target,  (query_Id)=>
-          if query_Id
-            recentSearches_Cache.push(target)
-            @res.redirect("/#{@urlPrefix}/" + query_Id)
+      target = @.req.query.text
+      filter = @.req.query.filter?.substring(1)
+      jade_Page = '/source/jade/user/search-two-columns.jade'
+
+      @graphService.query_From_Text_Search target,  (query_Id)=>
+        query_Id = query_Id?.remove '"'
+        @graphService.graphDataFromGraphDB query_Id, filter,  (searchData)=>
+          log searchData
+          searchData.text         =  target
+          searchData.href         = "/search?text=#{target}&filter="
+          if filter
+            @graphService.resolve_To_Ids filter, (results)=>
+              searchData.activeFilter = results.values()?.first()
+              #searchData.activeFilter = { id: filter, title: filter }
+              @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
           else
-            @res.redirect "/user/main.html"
+            @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
 
     showRootQueries: ()=>
       @graphService.root_Queries (root_Queries)=>
@@ -163,6 +181,6 @@ SearchController.registerRoutes = (app, expressService) ->
     app.get "/article/view/:guid/:title"     , checkAuth , searchController('showArticle')
     app.get "/article/viewed.json"           ,             viewedArticles_json
     app.get "/search"                        , checkAuth,  searchController('search')
-    app.get "/search/:text"                  , checkAuth,  searchController('search')
+    #app.get "/search/:text"                  , checkAuth,  searchController('search')
 
 module.exports = SearchController

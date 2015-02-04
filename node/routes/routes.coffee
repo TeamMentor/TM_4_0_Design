@@ -2,6 +2,7 @@
 Express_Service       = require('../services/Express-Service')
 Jade_Service          = require('../services/Jade-Service')
 
+Article_Controller    = require('../controllers/Article-Controller')
 Help_Controller       = require('../controllers/Help-Controller')
 Jade_Controller       = require('../controllers/Jade-Controller')
 Login_Controller      = require('../controllers/Login-Controller')
@@ -21,6 +22,7 @@ add_Routes = (app,searchController)->
     app.post '/user/pwd_reset' , (req, res)-> new Login_Controller(req, res).passwordReset()
     app.post '/user/sign-up'   , (req, res)-> new Login_Controller(req, res).userSignUp()
     app.post '/passwordReset/:username/:token'   , (req, res)-> new Login_Controller(req, res).passwordResetToken()
+
 
 
     #library routes
@@ -47,7 +49,11 @@ add_Routes = (app,searchController)->
     Jade_Controller.registerRoutes(app)
     #Redirect to Jade pages
     #app.get '/deploy/html/:area/:page.html'                 , (req, res)-> res.redirect('/' + req.params.area + '/' + req.params.page + '.html')
-    
+
+    #article routes
+
+    Article_Controller.registerRoutes(app)
+
     #PoCs
     Search_Controller_PoC.registerRoutes(app)
 
