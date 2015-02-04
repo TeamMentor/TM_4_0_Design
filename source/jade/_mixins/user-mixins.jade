@@ -75,7 +75,7 @@ mixin alert-pwd-sent
 
 mixin alert-sign-up-failed
     .alert(role='alert')
-        | Error: #{errorMessage}
+        | Error: #{viewModel.errorMessage}
 
 mixin alert-sign-up-OK
     .alert(role='alert')
