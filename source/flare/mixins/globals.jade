@@ -358,9 +358,7 @@ mixin save-input
 	input(type='text', id='save-input', placeholder='Save to Dashboard')
 
 mixin share-input
-	label
-		| Share via Email
-	input(type='text', id='share', placeholder='Email address to link article to')
+	input(type='text', id='share-input', placeholder='Share via Email')
 
 
 //- Form Buttons
@@ -370,7 +368,8 @@ mixin save-button
 		+save-icon
 
 mixin share-button
-	button(type='submit', id='btn-share') Share it
+	a.button.postfix#share-button(href='alert-application')
+		+share-icon
 
 mixin ok-button
 	button(type='submit', id='btn-ok') OK, Save

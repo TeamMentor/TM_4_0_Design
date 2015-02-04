@@ -204,7 +204,7 @@ nav a:hover, nav p:hover {
   overflow-y: auto;
   min-height: 1px;
 }
-#save {
+#save, #share {
   background: #fafafa;
   padding: 20px 0 20px 0
 }
@@ -682,7 +682,7 @@ button i {
   text-align: center;
   margin: 0 auto;
 }
-#save-button {
+#save-button, #share-button {
   width: 100%;
 }
 .dropdown:after {
