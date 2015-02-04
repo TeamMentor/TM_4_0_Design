@@ -47,8 +47,8 @@ describe 'controllers | Jade-Controller.test.js |', ()->
         callback.apply(@)
 
     after ->
-      mixin_File.assert_File_Delete()
-      extends_File.assert_File_Delete()
+      mixin_File.assert_File_Deleted()
+      extends_File.assert_File_Deleted()
 
 
     it 'renderMixin', (done)->

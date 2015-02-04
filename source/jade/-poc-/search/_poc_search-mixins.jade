@@ -1,8 +1,7 @@
-mixin breadcrumbs_poc
-  dl.sub-nav
-    #navigation
-      form(action='search-two-column', method='GET')
-        .input-group
-          input.form-control(type='text', placeholder='Type keywords here', name='text', value=text)
-          span.input-group-btn
-            button.btn-search-bar(type='submit') SEARCH
+mixin search-poc
+    #search
+        form(action='/search', method='GET')
+            .input-group
+                input.form-control(type='text', placeholder='Type keywords here', name='text')
+                span.input-group-btn
+                    button.btn-search-bar(type='submit') SEARCH

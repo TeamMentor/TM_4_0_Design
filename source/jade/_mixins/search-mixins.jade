@@ -32,8 +32,11 @@ mixin results
                     else
                         h5#resultsTitle= 'Showing ' + results.size() + ' articles'
             td.text-right
-                span.filtered Active filters:
-                span.badge Filter here
+                if activeFilter
+                    span.filtered Active filter:
+                    span#activeFilter.badge= activeFilter.title
+                        span.close
+                            a(href='#') x
 //- articles-list
 mixin articles-list
     .list-group
@@ -41,7 +44,7 @@ mixin articles-list
             if results
                 each result in results.take(250)
                     if result
-                      a(href='/article/view/' + result.guid +'/'+result.title, id=result.id, target='_blank')
+                      a(href='/article/' + result.id, id=result.id)
                         h4=  result.title
                         p= result.summary + '...'
 
@@ -57,12 +60,14 @@ mixin filters-div
                                 i.fi-arrow-down
                         ul.dropdown-menu
                             for result in filter.results
-                                li
-                                    if result.id == filter_container
-                                        a(href= href )= result.title
-                                            span.right.badge= result.size
-                                    else
-                                        a(href=href + '/'+result.id)= result.title
+                                if activeFilter && result.id == activeFilter.id
+                                    a(href= href )
+                                        li
+                                            b= result.title
+                                                span.right.badge= result.size
+                                else
+                                    a(href=href + '/'+result.id)
+                                        li= result.title
                                             span.right.badge= result.size
             //if filters
                 for filter in filters
@@ -88,3 +93,11 @@ mixin filters-div
                                         a(href='/graph/' + title + '/'  + result.id, id=result.id)= result.title
                                     td
                                         span.badge= result.size
+mixin breadcrumbs_search
+    dl.sub-nav
+        #navigation
+            form(action='search', method='GET')
+                .input-group
+                    input.form-control(type='text', placeholder='Type keywords here', name='text', value=text)
+                    span.input-group-btn
+                        button.btn-search-bar(type='submit') SEARCH
