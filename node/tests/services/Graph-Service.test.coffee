@@ -4,6 +4,7 @@ expect        = require('chai'         ).expect
 spawn         = require('child_process').spawn
 Graph_Service  = require('./../../services/Graph-Service')
 
+# These are Graph-Service methods missing from here since they need either a live or a mocked version of TM_Graph
 describe 'services | Graph-Service.test |', ->
 
     graphService  = null
@@ -62,6 +63,7 @@ describe 'services | Graph-Service.test |', ->
         graphService.graphDataFromGraphDB '', '',  (searchData)=>
           searchData.assert_Is({})
           done()
+
 
 
 

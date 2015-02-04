@@ -12,15 +12,15 @@ mixin article-options
                 [Share](#)
 
 //- related-articles
-//mixin related-articles
-//    h4 Related Articles
-//    .list-group
-//        a(href='#{link_article_new_window}', target='_blank')
-//            include:md ../../content/teamMentor/article-details.md
-//        a(href='#{link_article_new_window}', target='_blank')
-//            include:md ../../content/teamMentor/article-details.md
-//        a(href='#{link_article_new_window}', target='_blank')
-//            include:md ../../content/teamMentor/article-details.md
+mixin related-articles
+    h4 Related Articles
+    .list-group
+        a(href='#{link_article_new_window}', target='_blank')
+            include:md ../../content/articles/article-details.md
+        a(href='#{link_article_new_window}', target='_blank')
+            include:md ../../content/articles/article-details.md
+        a(href='#{link_article_new_window}', target='_blank')
+            include:md ../../content/articles/article-details.md
 
 //- my-articles-edit
 mixin edit-my-articles

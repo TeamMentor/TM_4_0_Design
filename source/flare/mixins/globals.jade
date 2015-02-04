@@ -11,12 +11,27 @@ mixin save-icon
 
 mixin share-icon
 	i.fi-share
-	|    Share
 
 mixin open-icon
-	i.fi-plus
-	|     Open
-
+	button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false')
+		i.fi-plus
+	ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
+		li
+			a(href='#') ASP.NET
+		li
+			a(href='#') Android
+		li
+			a(href='#') C++
+		li
+			a(href='#') HTML5
+		li
+			a(href='#') iOS
+		li
+			a(href='#') Java
+		li
+			a(href='#') PHP
+		li
+			a(href='#') Scala
 mixin search-icon
 	i.fi-magnifying-glass
 
@@ -340,23 +355,21 @@ mixin country-input
 		option(value='zimbabwe') Zimbabwe
 
 mixin save-input
-	label
-		| Save to Dashboard
-	input(type='text', id='nickname', placeholder='Quick reference nickname (optional)')
+	input(type='text', id='save-input', placeholder='Save to Dashboard')
 
 mixin share-input
-	label
-		| Share via Email
-	input(type='text', id='share', placeholder='Email address to link article to')
+	input(type='email', id='share-input', placeholder='Share via Email')
 
 
 //- Form Buttons
 
 mixin save-button
-	button(type='submit', id='btn-save') Save for later
+	button.controls(href='app-keyword-search-save')
+		+save-icon
 
 mixin share-button
-	button(type='submit', id='btn-share') Share it
+	button.controls
+		+share-icon
 
 mixin ok-button
 	button(type='submit', id='btn-ok') OK, Save
@@ -370,7 +383,6 @@ mixin clear-all-button
 mixin edit-button
 	button(type='submit', id='btn-clear-all') Edit
 
-
 //- Copyright Information
 mixin copyright
 	#copyright
@@ -381,7 +393,3 @@ mixin flare-alert
 	.alert-box(data-alert='')
 		| Error, Validation or Alert Message Here
 		a.close(href='#') ×
-
-mixin jade-alert
-	.alert-box(data-alert='')
-		| Error, Validation or Alert Message Here

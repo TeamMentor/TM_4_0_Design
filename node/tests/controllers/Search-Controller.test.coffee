@@ -66,7 +66,7 @@ describe "controllers | test-Search-Controller |", ->
     using new Search_Controller(req, res),->
       @.showMainAppView()
 
-  it 'recentArticles recentArticles_add', (done)->
+  xit 'recentArticles recentArticles_add', (done)->
     id = 'aaaaaaaa_'.add_5_Letters()
     title= 'an title_'.add_5_Letters()
     req    = { session: {} }
@@ -86,7 +86,7 @@ describe "controllers | test-Search-Controller |", ->
         @.second().assert_Is { href: tm_35_Server + '/' + '2', title: 'abc' }
         done()
 
-  it 'showArticle', (done)->
+  xit 'showArticle', (done)->
     req = {
             params: queryId : 'Logging'
             session: {}
@@ -126,14 +126,14 @@ describe "controllers | test-Search-Controller |", ->
         @.add_Session()
         @.app._router.stack.assert_Size_Is 3
         Search_Controller.registerRoutes @.app
-        @.app._router.stack.assert_Size_Is 12
+        @.app._router.stack.assert_Size_Is 9
         supertest(@.app)
           .get('/user/main.html')
           .end (err,res)->
             res.text.assert_Contains('<li><a href="/guest/about.html">About</a></li>')
             done()
 
-    it 'User views an article which is captured on the recent_Articles list', (done)->
+    xit 'User views an article which is captured on the recent_Articles list', (done)->
 
       using_Express_Service_With_Search_Controller ()->
 
@@ -145,7 +145,7 @@ describe "controllers | test-Search-Controller |", ->
               sessionData.first().data.recent_Articles.assert_Is [ { id: 'this-is-an-guid', title: 'c' } ]
               done()
 
-    it 'open multiple articles,  open article/viewed.json', (done)->
+    xit 'open multiple articles,  open article/viewed.json', (done)->
       using_Express_Service_With_Search_Controller ()->
         @.open_Article 'a', 'title 1', (res)=>
           @.open_Article 'b', 'title 2', (res)=>

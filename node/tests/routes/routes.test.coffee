@@ -6,10 +6,9 @@ describe 'routes | routes.test |', ()->
                       '/flare/:area/:page',
                       '/flare/default',
                       '/Image/:name',
-                      '/article/view/:guid/:title',
+                      '/article/:id'
                       '/article/viewed.json',
                       '/search',
-                      '/search/:text'
                       '/config',
                       '/dirName',
                       '/flare',
@@ -42,10 +41,7 @@ describe 'routes | routes.test |', ()->
                       '/user/sign-up',
                       '/passwordReset/:username/:token'
                       '/version',
-                       '/-poc-/search-two-column',
-                       '/-poc-',
-                       '/-poc-/md-render',
-                       '/-poc-/md-render']
+                       '/-poc-']
 
     before ()->
       app.server = app.listen();
@@ -66,7 +62,7 @@ describe 'routes | routes.test |', ()->
 
         paths.length.assert_Is(expectedPaths.length)
         paths.forEach (path)->
-            expectedPaths.assert_Contains(path)
+            expectedPaths.assert_Contains(path,"Path not found: #{path}")
 
   #dynamically create the tests
     runTest = (originalPath) ->

@@ -8,9 +8,8 @@ GitHub_Service     = require('../services/GitHub-Service')
 Graph_Service      = require('../services/Graph-Service')
 TeamMentor_Service = require('../services/TeamMentor-Service')
 
-recentArticles_Cache = []
 
-recentSearches_Cache = ["Logging","Authorization","Administrative Controls"]
+recentSearches_Cache = ["Logging","Struts","Administrative Controls"]
 
 
 class SearchController
@@ -65,15 +64,25 @@ class SearchController
               @res.send(@renderPage())
 
     search: =>
-        target = @.req.query.text
-        if not target
-          target = @req.params.text
-        @graphService.query_From_Text_Search target,  (query_Id)=>
-          if query_Id
-            recentSearches_Cache.push(target)
-            @res.redirect("/#{@urlPrefix}/" + query_Id)
+      target = @.req.query.text
+      filter = @.req.query.filter?.substring(1)
+      jade_Page = '/source/jade/user/search-two-columns.jade'
+
+      @graphService.query_From_Text_Search target,  (query_Id)=>
+        query_Id = query_Id?.remove '"'
+        @graphService.graphDataFromGraphDB query_Id, filter,  (searchData)=>
+
+          searchData.text         =  target
+          searchData.href         = "/search?text=#{target}&filter="
+          if searchData?.id
+            recentSearches_Cache.push target
+          if filter
+            @graphService.resolve_To_Ids filter, (results)=>
+              searchData.activeFilter = results.values()?.first()
+              #searchData.activeFilter = { id: filter, title: filter }
+              @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
           else
-            @res.redirect "/user/main.html"
+            @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
 
     showRootQueries: ()=>
       @graphService.root_Queries (root_Queries)=>
@@ -87,7 +96,8 @@ class SearchController
 
         jadePage  = 'source/jade/user/main.jade'  # relative to the /views folder
         @topArticles (topArticles)=>
-            viewModel = { recentArticles: @recentArticles() , topArticles : topArticles, searchTerms : @topSearches() }
+            #recentArticles =  @recentArticles()
+            viewModel = {  recentArticles: {}, topArticles : topArticles, searchTerms : @topSearches() }
             @res.render(jadePage, viewModel)
 
     topArticles: (callback)=>
@@ -98,7 +108,7 @@ class SearchController
                 return
             results = {}
             for item in data
-                results[item.id] ?= { href: "/article/view/#{item.id}/#{item.title}", title: item.title, weight: 0}
+                results[item.id] ?= { href: "/article/#{item.id}", title: item.title, weight: 0}
                 results[item.id].weight++
             results = (results[key] for key in results.keys())
 
@@ -112,27 +122,11 @@ class SearchController
     topSearches: =>
         searchTerms = []
         for search in recentSearches_Cache
-            searchTerms.unshift { href: "/#{@urlPrefix}/#{search}", title: search}
+            searchTerms.unshift { href: "/search?text=#{search}", title: search}
 
         return searchTerms.take(3)
 
-    recentArticles: =>
-        @.req.session ?= {}
-        @.req.session.recent_Articles ?= []
-        recentArticles = []
-        for recentArticle in @.req.session.recent_Articles.take(3)
-            recentArticles.push({href : @config.tm_35_Server + recentArticle.id , title:recentArticle.title})
-        recentArticles
 
-    recentArticles_add: (id, title)=>
-        @.req.session.recent_Articles ?= []
-        @.req.session.recent_Articles.unshift { id: id , title:title}
-
-    showArticle: =>
-        id = @req.params.guid
-        title = @req.params.title
-        @recentArticles_add id, title
-        @res.redirect(@config.tm_35_Server+id)
 
 SearchController.registerRoutes = (app, expressService) ->
 
@@ -145,24 +139,13 @@ SearchController.registerRoutes = (app, expressService) ->
             new SearchController(req, res, app.config)[method_Name]()    # creates SearchController object with live
                                                                          # res,req and invokes method_Name
 
-    viewedArticles_json = (req,res)=>
-        expressService.expressSession.db.find {}, (err,sessionData)->
-            recent_Articles = []
-            if sessionData
-                for session in sessionData
-                    if session.data.recent_Articles
-                        for recent_article in session.data.recent_Articles
-                            recent_Articles.add(recent_article)
-            res.send(recent_Articles)
 
     app.get "/"                              , checkAuth , searchController('showMainAppView')
     app.get "/#{urlPrefix}"                  , checkAuth , searchController('showRootQueries')
     app.get "/#{urlPrefix}/:queryId"         , checkAuth , searchController('showSearchFromGraph')
     app.get "/#{urlPrefix}/:queryId/:filters", checkAuth , searchController('showSearchFromGraph')
     app.get "/user/main.html"                , checkAuth , searchController('showMainAppView')
-    app.get "/article/view/:guid/:title"     , checkAuth , searchController('showArticle')
-    app.get "/article/viewed.json"           ,             viewedArticles_json
     app.get "/search"                        , checkAuth,  searchController('search')
-    app.get "/search/:text"                  , checkAuth,  searchController('search')
+    #app.get "/search/:text"                  , checkAuth,  searchController('search')
 
 module.exports = SearchController

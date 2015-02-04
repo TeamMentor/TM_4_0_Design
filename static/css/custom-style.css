@@ -571,6 +571,14 @@ a.minor:hover {
   padding-right: 20px;
   text-transform: uppercase;
 }
+.close a {
+  text-align: right;
+  text-decoration: none;
+  margin: 0 0 0 10px;
+  padding: 0 5px 0 10px;
+  color: white;
+  border-left: 1px solid white;
+}
 /*------------------------------------*
    BUTTONS
 *------------------------------------*/
@@ -659,8 +667,9 @@ button i {
   color: #FFFFFF;
   font-size: 12px;
   min-width: 10px;
-  padding: 3px 7px;
+  padding: 4px 7px 2px;
   text-align: center;
+  vertical-align: baseline;
   float: right;
 }
 .alert {

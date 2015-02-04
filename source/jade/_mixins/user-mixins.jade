@@ -16,7 +16,7 @@ mixin login-form
                     br
                 .col-5.text-right
                     .lge-container
-                        a.minor(href='/guest/pwd-forgot.html') Forgot password?
+                        a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot password?
 
 //- sign-up-form
 mixin sign-up-form
@@ -96,11 +96,11 @@ mixin alert-pwd-reset-OK
 //- main-app-view
 mixin main-app-view
     #recentlyViewedArticles
+      if (recentArticles && recentArticles.values().not_Empty())
         h4 Recently Viewed Articles
-        .list-group
-            if (recentArticles)
-                for recentArticle in recentArticles
-                    a(href=recentArticle.href, target='_blank')= recentArticle.title
+          .list-group
+            for recentArticle in recentArticles
+              a(href=recentArticle.href, target='_blank')= recentArticle.title
     h4 Popular Search Terms
     .list-group
         if (searchTerms)
