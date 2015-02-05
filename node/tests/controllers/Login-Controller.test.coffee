@@ -3,14 +3,15 @@ Login_Controller = require('../../controllers/Login-Controller')
 describe "controllers | test-Login-Controller |", ->
 
   #helper methods
-  loginPage         = 'source/jade/guest/login-Fail.jade'
-  mainPage_user     = '/user/main.html'
-  mainPage_no_user  = '/guest/default.html'
-  password_sent     = '/guest/pwd-sent.html'
-  signUp_fail       = "source/jade/guest/sign-up-Fail.jade"
-  signUp_Ok         = '/guest/sign-up-OK.html'
-  password_reset_fail = 'source/jade/guest/pwd-reset-fail.jade'
-  password_reset_ok   = 'source/jade/guest/login-pwd-reset.html'
+  loginPage                 = 'source/jade/guest/login-Fail.jade'
+  mainPage_user             = '/user/main.html'
+  mainPage_no_user          = '/guest/default.html'
+  password_sent             = '/guest/pwd-sent.html'
+  signUp_fail               = "source/jade/guest/sign-up-Fail.jade"
+  signUp_Ok                 = '/guest/sign-up-OK.html'
+  password_reset_fail       = 'source/jade/guest/pwd-reset-fail.jade'
+  password_reset_ok         = 'source/jade/guest/login-pwd-reset.html'
+  blank_credentials_message = 'Invalid Username or Password'
 
   invoke_Method = (method, body, expected_Target, callback)->
     req =
@@ -239,3 +240,48 @@ describe "controllers | test-Login-Controller |", ->
     res = {render: render}
     loginController = new Login_Controller(req, res);
     loginController.userSignUp()
+
+  it 'Invalid Username or Password (missing username)',(done)->
+    newUsername         =''
+    newPassword         ='aaa'.add_5_Letters()
+
+    #render contains the file to render and the view model object
+    render = (html,model)->
+      #Verifying the message from the backend.
+      model.errorMessage.assert_Is(blank_credentials_message)
+      html.assert_Is('source/jade/guest/login-Fail.jade')
+      done()
+    req = body:{username:newUsername,password:newPassword},session:'';
+    res = {render: render}
+    loginController = new Login_Controller(req, res);
+    loginController.loginUser()
+
+  it 'Invalid Username or Password (missing password)',(done)->
+    newUsername         ='aaa'.add_5_Letters()
+    newPassword         =''
+
+    #render contains the file to render and the view model object
+    render = (html,model)->
+      model.errorMessage.assert_Is(blank_credentials_message)
+      #Verifying the message from the backend.
+      html.assert_Is('source/jade/guest/login-Fail.jade')
+      done()
+    req = body:{username:newUsername,password:newPassword},session:'';
+    res = {render: render}
+    loginController = new Login_Controller(req, res);
+    loginController.loginUser()
+
+  it 'Invalid Username or Password (missing both username and password)',(done)->
+    newUsername         ='aaa'.add_5_Letters()
+    newPassword         =''
+
+    #render contains the file to render and the view model object
+    render = (html,model)->
+      #Verifying the message from the backend.
+      model.errorMessage.assert_Is(blank_credentials_message)
+      html.assert_Is('source/jade/guest/login-Fail.jade')
+      done()
+    req = body:{username:newUsername,password:newPassword},session:'';
+    res = {render: render}
+    loginController = new Login_Controller(req, res);
+    loginController.loginUser()
