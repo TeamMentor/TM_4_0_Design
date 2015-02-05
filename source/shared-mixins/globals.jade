@@ -15,6 +15,10 @@ mixin breadcrumbs
                         dd
                             a(href= item.href)= item.title
 
+mixin copyright
+    #copyright
+        include:md ../content/articles/copyright-information.md
+
 //- Form Inputs
 mixin username-input
     label(for='username')
