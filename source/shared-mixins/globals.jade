@@ -19,7 +19,7 @@ mixin breadcrumbs
 mixin username-input
     label(for='username')
         | Username
-    input(type='text', id='username', name='username', placeholder='Username',value='#{viewModel?viewModel.username:""}')
+    input(type='text', id='username', name='username', placeholder='Username',value='#{viewModel?viewModel.username:""}',required)
 
 mixin password-input
     label(for='password')
