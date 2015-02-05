@@ -272,7 +272,7 @@ describe "controllers | test-Login-Controller |", ->
     loginController.loginUser()
 
   it 'Invalid Username or Password (missing both username and password)',(done)->
-    newUsername         ='aaa'.add_5_Letters()
+    newUsername         =''
     newPassword         =''
 
     #render contains the file to render and the view model object
