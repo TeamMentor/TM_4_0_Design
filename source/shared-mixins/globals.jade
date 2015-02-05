@@ -19,12 +19,12 @@ mixin breadcrumbs
 mixin username-input
     label(for='username')
         | Username
-    input(type='text', id='username', name='username', placeholder='Username',value='#{viewModel?viewModel.username:""}')
+    input(type='text', id='username', name='username', placeholder='Username',value='#{viewModel?viewModel.username:""}',required)
 
 mixin password-input
     label(for='password')
         | Password
-    input(type='password', id='password', name='password', placeholder='Password',value='#{viewModel?viewModel.password:""}')
+    input(type='password', id='password', name='password', placeholder='Password',value='#{viewModel?viewModel.password:""}',required)
 
 mixin confirm-password-input
     label(for='confirm-password')

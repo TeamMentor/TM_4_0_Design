@@ -5,14 +5,15 @@ users = [ { username : 'tm'   , password : 'tm'   } ,
           { username : 'user' , password : 'a'     } ,
         ];
             
-loginPage           = 'source/jade/guest/login-Fail.jade'
-mainPage_user       = '/user/main.html'
-mainPage_no_user    = '/guest/default.html'
-password_sent       = '/guest/pwd-sent.html'
-signUp_fail         = 'source/jade/guest/sign-up-Fail.jade'
-signUp_Ok           = 'source/jade/guest/sign-up-OK.html'
-password_reset_fail = 'source/jade/guest/pwd-reset-fail.jade'
-password_reset_ok   = '/guest/login-pwd-reset.html'
+loginPage                  = 'source/jade/guest/login-Fail.jade'
+mainPage_user              = '/user/main.html'
+mainPage_no_user           = '/guest/default.html'
+password_sent              = '/guest/pwd-sent.html'
+signUp_fail                = 'source/jade/guest/sign-up-Fail.jade'
+signUp_Ok                  = 'source/jade/guest/sign-up-OK.html'
+password_reset_fail        = 'source/jade/guest/pwd-reset-fail.jade'
+password_reset_ok          = '/guest/login-pwd-reset.html'
+blank_credentials_message  = 'Invalid Username or Password'
 loginSuccess        = 0
 
 class Login_Controller
@@ -29,7 +30,7 @@ class Login_Controller
   loginUser: ()=>
     if (@.req.body.username == '' or @.req.body.password == '')
         @.req.session.username = undefined;
-        @.res.redirect(loginPage);
+        @.res.render(loginPage,{errorMessage:blank_credentials_message})
         return
 
     #Temp QA logins
