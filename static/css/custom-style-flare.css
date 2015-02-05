@@ -653,7 +653,7 @@ button i {
   box-shadow: none;
   text-align: center;
 }
-.app:hover, .app:active, .controls:active {
+.app:hover, .app:active {
   background: #8aaf3e;
   color: white;
   border: 1px solid white;
@@ -689,6 +689,7 @@ button i {
   content: '';
 }
 .controls {
+  background: #dbdbdb;
   width: 100%;
   padding: 5px 0;
   margin: 5px 0;
@@ -697,6 +698,7 @@ button i {
   border: none;
 }
 .controls:hover {
+  background: #aaaaaa;
   -webkit-box-shadow: none;
   box-shadow: none;
   border: none;
@@ -812,8 +814,10 @@ input#search:active, input#search:focus {
    MICRO-ELEMENTS
 *------------------------------------*/
 .alert-box {
+  margin-top: 10px;
   background-color: #FFF;
   border: 1px solid #8baf3e;
+  border-radius: 3px;
   color: #8baf3e;
   font-size: 14px;
   letter-spacing: 1px;
