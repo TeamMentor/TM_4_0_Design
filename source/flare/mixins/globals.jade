@@ -92,7 +92,7 @@ mixin flare-password-input
 		.small-10.columns
 			input(type='password', placeholder='Password')
 		.small-2.columns
-			a.button.postfix(href='#') SHOW
+			a.button.postfix#save-button(href='#') SHOW
 
 mixin flare-new-password-input
 	label
@@ -101,7 +101,7 @@ mixin flare-new-password-input
 		.small-9.columns
 			input(type='password', placeholder='New Password')
 		.small-3.columns
-			.button.postfix(href='#') Show
+			.button.postfix#save-button(href='#') Show
 
 mixin password-input
 	label

@@ -497,12 +497,6 @@ a.minor:hover {
 .text-right {
   text-align: right !important;
 }
-.filtered {
-  font-size: 12px;
-  color: #aaaaaa;
-  padding-right: 20px;
-  text-transform: uppercase;
-}
 .vertical-align {
   padding-top: 10px;
 }
@@ -653,7 +647,7 @@ button i {
   box-shadow: none;
   text-align: center;
 }
-.app:hover, .app:active, .controls:active {
+.app:hover, .app:active {
   background: #8aaf3e;
   color: white;
   border: 1px solid white;
@@ -682,13 +676,14 @@ button i {
   text-align: center;
   margin: 0 auto;
 }
-#save-button, #share-button, #navigate-button {
+#save-button, #share-button, #navigate-button, #show-button {
   width: 100%;
 }
 .dropdown:after {
   content: '';
 }
 .controls {
+  background: #dbdbdb;
   width: 100%;
   padding: 5px 0;
   margin: 5px 0;
@@ -697,6 +692,7 @@ button i {
   border: none;
 }
 .controls:hover {
+  background: #aaaaaa;
   -webkit-box-shadow: none;
   box-shadow: none;
   border: none;
@@ -812,11 +808,24 @@ input#search:active, input#search:focus {
    MICRO-ELEMENTS
 *------------------------------------*/
 .alert-box {
+  margin: 10px 0 0 0;
   background-color: #FFF;
   border: 1px solid #8baf3e;
+  border-radius: 3px;
   color: #8baf3e;
   font-size: 14px;
   letter-spacing: 1px;
+  position: relative;
+}
+.filtered {
+  margin-top: 10px;
+  background: #FFF;
+  border: 1px solid #8baf3e;
+  border-radius: 3px;
+  color: #8baf3e;
+  padding-right: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .badge {
   background-color: #aaaaaa;
@@ -826,7 +835,6 @@ input#search:active, input#search:focus {
   min-width: 10px;
   padding: 3px 7px;
   text-align: center;
-  float: right;
 }
 .icon {
   padding-right: 20px;
