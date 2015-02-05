@@ -189,6 +189,9 @@ body {
 #reasons h2 {
   text-align: center;
 }
+#results-2 {
+  padding-top:100px;
+}
 #usp {
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
