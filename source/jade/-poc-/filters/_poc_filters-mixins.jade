@@ -1,0 +1,15 @@
+mixin poc-filters
+    h3 Filter by
+    #filters
+        if filters
+            for filter in filters
+                p= filter.title
+                .list-group
+                    for result in filter.results
+                        if activeFilter && result.id == activeFilter.id
+                            b
+                                a(href= href )= result.title
+                                    span.badge= result.size
+                        else
+                            a(href=href + '/'+result.id)= result.title
+                                span.badge= result.size

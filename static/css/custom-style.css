@@ -127,6 +127,13 @@ body {
 #features h2 {
   text-align: center;
 }
+#filters p {
+  background: #fafafa;
+  color: #444444;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 15px;
+}
 #footer {
   width: 100%;
   padding: 5px 0 15px 0;
@@ -333,7 +340,7 @@ img {
   color: #6c9020;
 }
 .list-group {
-  margin-top: -20px;
+  margin-top: -15px;
 }
 .list-group h5, .list-group h4 {
   margin-top: 5px;
