@@ -4,16 +4,16 @@ mixin horizontal-rule
 
 //- Breadcrumbs
 mixin breadcrumbs
-  dl.sub-nav
-    #navigation
-      if breadcrumbs.size() > 1
-        for item,index in breadcrumbs
-          if index == breadcrumbs.size() -1
-            dd.active
-              a(href= item.href)= item.title
-          else
-            dd
-              a(href= item.href)= item.title
+    if breadcrumbs.size() > 1
+        dl.sub-nav
+            #navigation
+                for item,index in breadcrumbs
+                    if index == breadcrumbs.size() -1
+                        dd.active
+                            a(href= item.href)= item.title
+                    else
+                        dd
+                            a(href= item.href)= item.title
 
 //- Form Inputs
 mixin username-input
