@@ -17,15 +17,3 @@ mixin help-icon
 mixin logout-icon
     i.fi-power
     | Logout
-
-//- save to dashboard
-mixin save-div
-    #save-to-dashboard
-        :markdown
-            ### Save to Dashboard
-        form(role='form')
-            .form-group
-                label(for='nickname') Give it a nickname
-                input#nickname.form-control(type='text', placeholder='Nickname')
-            button(type='submit') Ok, Done
-
