@@ -817,15 +817,10 @@ input#search:active, input#search:focus {
   letter-spacing: 1px;
   position: relative;
 }
-.filtered {
-  margin-top: 10px;
-  background: #FFF;
-  border: 1px solid #8baf3e;
-  border-radius: 3px;
-  color: #8baf3e;
-  padding-right: 20px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.active {
+  background-color: #fafafa;
+  color: #aaaaaa;
+  border: 1px solid #aaaaaa;
 }
 .badge {
   background-color: #aaaaaa;

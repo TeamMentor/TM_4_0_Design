@@ -269,10 +269,17 @@ mixin flare-filters-div
 mixin flare-filters-active
     .row
         .small-12.medium-6.large-4.columns
-            .alert-box(data-alert='')
-                | Error, Validation or Alert Message Here
+            .alert-box.active(data-alert='')
+                | Filter Here
                 a.close(href='#') ×
-        .small-12.columns
+        .small-12.medium-6.large-4.columns
+            .alert-box.active(data-alert='')
+                | Filter Here
+                a.close(href='#') ×
+        .small-12.medium-6.large-4.columns
+            .alert-box.active(data-alert='')
+                | Filter Here
+                a.close(href='#') ×
 
 // Save Div
 mixin save-div
