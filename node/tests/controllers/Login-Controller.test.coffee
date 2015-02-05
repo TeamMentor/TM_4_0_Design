@@ -182,3 +182,57 @@ describe "controllers | test-Login-Controller |", ->
       @.webServices = 'https://aaaaaaaa.teammentor.net/'
       @userSignUp()
 
+  it 'Persist HTML form fields on error (Passwords do not match)',(done)->
+    newUsername         ='xy'.add_5_Letters()
+    newPassword         ='aa'.add_5_Letters()
+    newConfirmPassword  ='bb'.add_5_Letters()
+    newEmail            ='ab'.add_5_Letters()+'@mailinator.com'
+
+    #render contains the file to render and the view model object
+    render = (html,model)->
+        model.viewModel.username.assert_Is(newUsername)
+        model.viewModel.password.assert_Is(newPassword)
+        model.viewModel.confirmpassword.assert_Is(newConfirmPassword)
+        model.viewModel.email.assert_Is(newEmail)
+        model.viewModel.errorMessage.assert_Is('Passwords don\'t match')
+        done()
+    req = body:{username:newUsername,password:newPassword,'confirm-password':newConfirmPassword, email:newEmail};
+    res = {render: render}
+    loginController = new Login_Controller(req, res);
+    loginController.userSignUp()
+
+  it 'Persist HTML form fields on error (Password too short)',(done)->
+    newUsername         ='xy'.add_5_Letters()
+    newPassword         ='aa'.add_5_Letters()
+    newEmail            ='ab'.add_5_Letters()+'@mailinator.com'
+
+    #render contains the file to render and the view model object
+    render = (html,model)->
+      model.viewModel.username.assert_Is(newUsername)
+      model.viewModel.password.assert_Is(newPassword)
+      model.viewModel.confirmpassword.assert_Is(newPassword)
+      model.viewModel.email.assert_Is(newEmail)
+      model.viewModel.errorMessage.assert_Is('Password must be 8 to 256 character long')
+      done()
+    req = body:{username:newUsername,password:newPassword,'confirm-password':newPassword, email:newEmail};
+    res = {render: render}
+    loginController = new Login_Controller(req, res);
+    loginController.userSignUp()
+
+  it 'Persist HTML form fields on error (Password is weak)',(done)->
+    newUsername         ='xy'.add_5_Letters()
+    newPassword         ='aaa'.add_5_Letters()
+    newEmail            ='ab'.add_5_Letters()+'@mailinator.com'
+
+    #render contains the file to render and the view model object
+    render = (html,model)->
+      model.viewModel.username.assert_Is(newUsername)
+      model.viewModel.password.assert_Is(newPassword)
+      model.viewModel.confirmpassword.assert_Is(newPassword)
+      model.viewModel.email.assert_Is(newEmail)
+      model.viewModel.errorMessage.assert_Is('Password must contain a non-letter and a non-number character')
+      done()
+    req = body:{username:newUsername,password:newPassword,'confirm-password':newPassword, email:newEmail};
+    res = {render: render}
+    loginController = new Login_Controller(req, res);
+    loginController.userSignUp()

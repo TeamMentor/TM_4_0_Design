@@ -4,37 +4,37 @@ mixin horizontal-rule
 
 //- Breadcrumbs
 mixin breadcrumbs
-  dl.sub-nav
-    #navigation
-      if breadcrumbs
-        for item,index in breadcrumbs
-          if index == breadcrumbs.size() -1
-            dd.active
-              a(href= item.href)= item.title
-          else
-            dd
-              a(href= item.href)= item.title
+    if breadcrumbs.size() > 1
+        dl.sub-nav
+            #navigation
+                for item,index in breadcrumbs
+                    if index == breadcrumbs.size() -1
+                        dd.active
+                            a(href= item.href)= item.title
+                    else
+                        dd
+                            a(href= item.href)= item.title
 
 //- Form Inputs
 mixin username-input
     label(for='username')
         | Username
-    input(type='text', id='username', name='username', placeholder='Username')
+    input(type='text', id='username', name='username', placeholder='Username',value='#{viewModel?viewModel.username:""}')
 
 mixin password-input
     label(for='password')
         | Password
-    input(type='password', id='password', name='password', placeholder='Password')
+    input(type='password', id='password', name='password', placeholder='Password',value='#{viewModel?viewModel.password:""}')
 
 mixin confirm-password-input
     label(for='confirm-password')
         | Confirm Password
-    input(type='password', id='confirm-password', name='confirm-password',placeholder='Password')
+    input(type='password', id='confirm-password', name='confirm-password',placeholder='Password',value='#{viewModel?viewModel.confirmpassword:""}')
 
 mixin email-input
     label(for='email')
         | Email Address
-    input(type='email', id='email', name='email', placeholder='Email Address')
+    input(type='email', id='email', name='email', placeholder='Email Address',value='#{viewModel?viewModel.email:""}')
 
 //- Form Buttons
 mixin login-button

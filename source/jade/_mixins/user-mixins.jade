@@ -62,63 +62,68 @@ mixin pwd-reset-form
 
 
 mixin alert-login-failed
+  if errorMessage
     .alert(role='alert')
-        | Error: #{errorMessage}
+        #message= 'Error: ' + errorMessage
 
 mixin alert-please-login
     .alert(role='alert')
-        | You need to login to see that page.
+        #message You need to login to see that page.
 
 mixin alert-pwd-sent
     .alert(role='alert')
-        | If you entered a valid address, then a password reset link has been sent to your email address.
+        #message If you entered a valid address, then a password reset link has been sent to your email address.
 
 mixin alert-sign-up-failed
+  if viewModel && viewModel.errorMessage
     .alert(role='alert')
-        | Error: #{errorMessage}
+      #message= 'Error: ' + viewModel.errorMessage
 
 mixin alert-sign-up-OK
     .alert(role='alert')
-        | Thanks for signing up to TEAM Mentor. Please login to access our libraries.
+        #message Thanks for signing up to TEAM Mentor. Please login to access our libraries.
 
 mixin alert-pw-requirements
     .alert(role='alert')
-        | You need to login to see that page.
+        #message You need to login to see that page.
 
 mixin alert-pwd-reset-failed
-    .alert(role='alert')
-        | Error: #{errorMessage}
+ if errorMessage
+   .alert(role='alert')
+     #message= 'Error: ' + errorMessage
 
 mixin alert-pwd-reset-OK
     .alert(role='alert')
-        | Your password has been updated. Please login to access our libraries.
+        div Your password has been updated. Please login to access our libraries.
 
 //- main-app-view
 mixin main-app-view
-    #recentlyViewedArticles
+    #recently-Viewed-Articles
       if (recentArticles && recentArticles.values().not_Empty())
         h4 Recently Viewed Articles
           .list-group
             for recentArticle in recentArticles
               a(href=recentArticle.href, target='_blank')= recentArticle.title
-    h4 Popular Search Terms
-    .list-group
-        if (searchTerms)
-            for searchTerm in searchTerms
-                a(href=searchTerm.href)= searchTerm.title
-    h4 Top Articles
-    .list-group
-        if (topArticles)
-            for article in topArticles
-                if article
-                    a(href=article.href, target='_blank')
-                        .row
-                            .col-12
-                                .row
-                                    .col-11
-                                        = article.title
-                                    .col-1
-                                        span.badge= article.weight
+    #popular-Search-Terms
+        h4 Popular Search Terms
+        .list-group
+            if (searchTerms)
+                for searchTerm in searchTerms
+                    a(href=searchTerm.href)= searchTerm.title
+    #top-articles
+        h4 Top Articles
+        .list-group
+            if (topArticles)
+                for article in topArticles
+                    if article
+                        a(href=article.href, target='_blank')
+                            .row
+                                .col-12
+                                    .row
+                                        .col-11
+                                            = article.title
+                                        .col-1
+                                            span.badge= article.weight
     //h4 New Articles
     //.list-group
         if (newArticles)

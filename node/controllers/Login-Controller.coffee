@@ -161,8 +161,17 @@ class Login_Controller
 
 
   userSignUp: ()=>
+    userViewModel =
+                    {
+                        username        : @.req.body.username,
+                        password        : @.req.body.password,
+                        confirmpassword : @.req.body['confirm-password']
+                        email           : @.req.body.email
+                        errorMessage    :''
+                    }
     if (@.req.body.password != @.req.body['confirm-password'])
-        @res.render(signUp_fail, {errorMessage: 'Passwords don\'t match'})
+        userViewModel.errorMessage='Passwords don\'t match'
+        @res.render(signUp_fail,viewModel: userViewModel)
         return
     newUser =
               {
@@ -191,7 +200,8 @@ class Login_Controller
               message = signUpResponse.Validation_Results.first().Message
           else
               message = signUpResponse.Simple_Error_Message
-          @res.render(signUp_fail, {errorMessage: message})
+          userViewModel.errorMessage=message
+          @res.render(signUp_fail, {viewModel:userViewModel})
         else
           @res.redirect('/guest/sign-up-OK.html')
 

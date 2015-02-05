@@ -23,20 +23,21 @@ mixin search-bar-input
 
 //- results
 mixin results
-    table
-        tr
-            td
-                if results
-                    if results.size() > 250
-                        h5#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
-                    else
-                        h5#resultsTitle= 'Showing ' + results.size() + ' articles'
-            td.text-right
-                if activeFilter
-                    span.filtered Active filter:
-                    span#activeFilter.badge= activeFilter.title
-                        span.close
-                            a(href='#') x
+    #results
+        table
+            tr
+                td
+                    if results
+                        if results.size() > 250
+                            h5#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
+                        else
+                            h5#resultsTitle= 'Showing ' + results.size() + ' articles'
+                td.text-right
+                    if activeFilter
+                        span.filtered Active filter:
+                        span#activeFilter.badge= activeFilter.title
+                            span.close
+                                a(href=href) x
 //- articles-list
 mixin articles-list
     .list-group
@@ -64,40 +65,16 @@ mixin filters-div
                                     a(href= href )
                                         li
                                             b= result.title
-                                                span.right.badge= result.size
+                                                span.badge= result.size
                                 else
                                     a(href=href + '/'+result.id)
                                         li= result.title
-                                            span.right.badge= result.size
-            //if filters
-                for filter in filters
-                    table
-                        h5= filter.title
-                        for result in filter.results
-                            tr
-                                if result.id == filter_container
-                                    //td
-                                        input(type='checkbox', checked=true, disabled=true)
-                                    td
-                                        b
-                                            a(href= href )= result.title
-                                    td
-                                        b
                                             span.badge= result.size
-                                else
-                                    //td
-                                        input(type='checkbox', name='technology', id=result.id value=result.id)
-                                    td
-                                        a(href=href + '/'+result.id)= result.title
-                                    //td
-                                        a(href='/graph/' + title + '/'  + result.id, id=result.id)= result.title
-                                    td
-                                        span.badge= result.size
-mixin breadcrumbs_search
-    dl.sub-nav
-        #navigation
-            form(action='search', method='GET')
-                .input-group
-                    input.form-control(type='text', placeholder='Type keywords here', name='text', value=text)
-                    span.input-group-btn
-                        button.btn-search-bar(type='submit') SEARCH
+
+mixin search-poc
+    #search-2
+        form(action='/search', method='GET')
+            .input-group
+                input.form-control(type='text', placeholder='Type keywords here', name='text')
+                span.input-group-btn
+                    button.btn-search-bar(type='submit') SEARCH

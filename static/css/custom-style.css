@@ -52,9 +52,23 @@ body {
   line-height: 1.5;
   background: #FFFFFF;
 }
+#article h1 {
+  margin-bottom: 0;
+}
+#article h2 {
+  font-size: 2em;
+  padding: 0;
+  margin-bottom: 0;
+}
+#article p {
+  margin-top: 0;
+}
 #article-i-definitions, #article-ii-deliverables, #article-iii-license-grant, #article-iv-ownership-of-intellectual-property, #article-v-marketing-requirements, #article-vi-trademarks, #article-vii-support, #article-viii-fees-royalties-and-payments, #article-ix-payment-instructions, #article-x-records-reports-and-audit-rights, #article-xi-contract-administrative-contacts, #article-xii-assignment, #article-xiii-confidentiality, #article-xiv-warranties, #article-xv-indemnities, #article-xvi-limitations, #article-xvii-terms-of-agreements, #article-xviii-terminiation, #article-xix-effect-of-termination, #article-xx-general-provisions, #appendix-a, #appendix-b {
   padding-top: 100px;
   margin-top: -80px;
+}
+#articles-2 {
+  margin-top: 100px;
 }
 #about {
   background: url(../assets/stock-img/bg-img.jpg);
@@ -124,6 +138,13 @@ body {
 #features h2 {
   text-align: center;
 }
+#filters p {
+  background: #fafafa;
+  color: #444444;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 15px;
+}
 #footer {
   width: 100%;
   padding: 5px 0 15px 0;
@@ -191,6 +212,16 @@ body {
   margin: 0 auto;
   padding: 0 0 40px 0;
   margin-top: -13px;
+  position: fixed;
+  z-index: 96;
+}
+#search-2 {
+  width: 96%;
+  background: #fafafa;
+  height: 50px;
+  margin: 0 auto;
+  padding: 0 0 40px 0;
+  margin: 20px 0 0 0;
   position: fixed;
   z-index: 96;
 }
@@ -320,7 +351,7 @@ img {
   color: #6c9020;
 }
 .list-group {
-  margin-top: -20px;
+  margin-top: -15px;
 }
 .list-group h5, .list-group h4 {
   margin-top: 5px;
@@ -712,6 +743,10 @@ table td {
     width: 48%;
     margin-top: 0px !important;
   }
+  #search-2 {
+    width: 72%;
+    margin: 0;
+  }
   #team-mentor-navigation {
     height: 60px;
   }
@@ -781,19 +816,19 @@ table td {
   }
   h1 {
     font-size: 3em;
-    line-height: 1em;
+    line-height: 1.5em;
   }
   h2 {
     font-size: 2.25em;
-    line-height: 1em;
+    line-height: 1.5em;
   }
   h3 {
     font-size: 1.75em;
-    line-height: 1em;
+    line-height: 1.5em;
   }
   h4 {
     font-size: 1.125em;
-    line-height: 1em;
+    line-height: 1.5em;
   }
   h5 {
     font-size: 1em;
