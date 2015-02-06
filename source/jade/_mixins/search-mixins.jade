@@ -101,8 +101,13 @@ mixin filters-div
 
 mixin search-poc
     #search-2
-        form(action='/search', method='GET')
-            .input-group
-                input.form-control(type='text', placeholder='Type keywords here', name='text')
-                span.input-group-btn
-                    button.btn-search-bar(type='submit') SEARCH
+        .lge-container
+            .row
+                .col-9
+                    #search-bar
+                        form(action='/search', method='GET')
+                            .input-group
+                                input.form-control(type='text', placeholder='Type keywords here', name='text')
+                                span.input-group-btn
+                                    button#search-button(type='submit')
+                                        i.fi-magnifying-glass
