@@ -30,47 +30,70 @@ mixin results
                 td
                     if results
                         if results.size() > 250
-                            h5#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
+                            p.label#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
                         else
-                            h5#resultsTitle= 'Showing ' + results.size() + ' articles'
+                            p.label#resultsTitle= 'Showing ' + results.size() + ' articles'
                 td.text-right
                     if activeFilter
-                        span.filtered Active filter:
                         span#activeFilter.badge= activeFilter.title
                             span.close
                                 a(href=href) x
 //- articles-list
 mixin articles-list
-    .list-group
-        #articles
-            if results
-                each result in results.take(250)
+    #articles
+        if results
+            each result in results.take(250)
+                #list-view-article
                     if result
-                      a(href='/article/' + result.id, id=result.id)
-                        h4=  result.title
-                        p= result.summary + '...'
+                        table
+                            tr
+                                td
+                                    h4=  result.title
+                                td
+                                    a(href='/article/' + result.id, id=result.id)
+                                        i.fi-plus
+                            tr
+                                td
+                                    p= result.summary + '...'
 
 //- filters
 mixin filters-div
-        h3 Filter by
-        .nav#filters
-            if filters
+    if filters
+        #content
+            h3 Filter by
+            .nav#filters
                 for filter in filters
-                    .dropdown
+                    h4.label= filter.title
+                    table.nav
+                        for result in filter.results
+                            tr
+                                if activeFilter && result.id == activeFilter.id
+                                    td
+                                        a(href= href )
+                                            b= result.title
+                                    td
+                                        span.right.badge= result.size
+                                else
+                                    td
+                                        a(href=href + '/'+result.id)= result.title
+                                    td
+                                        span.right.badge= result.size
+                    //.dropdown
                         button= filter.title
                             span.right
                                 i.fi-arrow-down
                         ul.dropdown-menu
-                            for result in filter.results
-                                if activeFilter && result.id == activeFilter.id
-                                    a(href= href )
-                                        li
-                                            b= result.title
+                            table.nav
+                                for result in filter.results
+                                    if activeFilter && result.id == activeFilter.id
+                                        a(href= href )
+                                            li
+                                                b= result.title
+                                                    span.badge= result.size
+                                    else
+                                        a(href=href + '/'+result.id)
+                                            li= result.title
                                                 span.badge= result.size
-                                else
-                                    a(href=href + '/'+result.id)
-                                        li= result.title
-                                            span.badge= result.size
 
 mixin search-poc
     #search-2

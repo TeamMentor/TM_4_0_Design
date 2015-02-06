@@ -117,9 +117,9 @@ body > * {
   background: white;
   padding: 5px;
   border-radius: 3px;
-  box-shadow: 1px 1px 6px #aaaaaa;
   margin-bottom: 20px;
   padding: 20px;
+  border: 1px solid #dbdbdb;
   padding-top: 5px;
 }
 #copyright {
@@ -193,6 +193,28 @@ body > * {
 #landing-page {
   margin-top: 185px;
 }
+#list-view-article {
+  background: white;
+  padding: 10px;
+  padding-top: 1px;
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+  margin-bottom: 20px;
+}
+#list-view-article h4 {
+  padding: 0 0 10px 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #dbdbdb;
+}
+#list-view-article p {
+  margin-top: 0;
+}
+#list-view-article a {
+  color: #8aaf3e;
+}
+#list-view-article a:hover {
+  color: #6c9020;
+}
 #loginwall, #summary {
   max-width: 95%;
   margin: 0 auto;
@@ -205,6 +227,11 @@ body > * {
 }
 #reasons h2 {
   text-align: center;
+}
+#results {
+  background: white;
+  margin: 0 0 10px 0;
+  border: 1px solid #dbdbdb;
 }
 #results-2 {
   padding-top:100px;
@@ -440,7 +467,6 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
   margin: 0 0 5px 0;
   padding: 0 0 0 0.5rem;
   height: 3rem;
-  box-shadow: 1px 1px 6px #aaaaaa;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -515,7 +541,7 @@ h4 {
   font-size: 1.125em;
   line-height: 1.11em;
 }
-h4.label {
+.label {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -701,6 +727,7 @@ button i {
   padding: 5px;
   color: #fff;
   font-size: 12px;
+  vertical-align: middle;
 }
 .alert {
   padding: 15px;
