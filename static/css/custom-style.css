@@ -50,7 +50,12 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  background: #FFFFFF;
+  background: #Fafafa;
+}
+body > * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 #article h1 {
   margin-bottom: 0;
@@ -107,6 +112,15 @@ body {
 #clients {
   padding: 40px 0 80px 0;
   text-align: center;
+}
+#content {
+  background: white;
+  padding: 5px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 6px #aaaaaa;
+  margin-bottom: 20px;
+  padding: 20px;
+  padding-top: 5px;
 }
 #copyright {
   padding-bottom: 30px;
@@ -183,6 +197,9 @@ body {
   max-width: 95%;
   margin: 0 auto;
 }
+#main-app-view {
+  margin-top: 100px;
+}
 #reasons {
   padding-top: 70px;
 }
@@ -209,17 +226,19 @@ body {
   color: #ffffff;
 }
 #search {
-  width: 96%;
-  background: #fafafa;
+  width: 100%;
+  background: #fff;
   height: 50px;
-  margin: 0 auto;
   padding: 0 0 40px 0;
-  margin-top: -13px;
+  margin-top: 15px;
   position: fixed;
   z-index: 96;
 }
+#search form, #search-2 form {
+  background: #FFF;
+}
 #search-2 {
-  width: 96%;
+  width: 100%;
   background: #fafafa;
   height: 50px;
   margin: 0 auto;
@@ -232,7 +251,8 @@ body {
   margin-top: 10px;
 }
 .lge-container {
-  max-width: 96%;
+  max-width: 100%;
+  padding: 15px;
   margin: 0 auto;
 }
 .right {
@@ -354,17 +374,14 @@ img {
   color: #6c9020;
 }
 .list-group {
-  margin-top: -15px;
-}
-.list-group h5, .list-group h4 {
-  margin-top: 5px;
-  margin-bottom: 0;
+  border: 1px solid #dbdbdb;
+  background: #fafafa;
 }
 .list-group a {
   border-bottom: 1px solid #e5e5e5;
   display: block;
-  font-size: 0.95em;
-  padding: 7px 5px 7px 10px;
+  font-size: 14px;
+  padding: 5px;
   text-decoration: none;
 }
 .list-group a:last-child{
@@ -376,32 +393,6 @@ img {
 }
 .list-group a:focus, .list-group a:hover, .list-group a:active {
   outline: 0;
-}
-.list-group span.badge {
-  margin: 0 0 0 10px;
-}
-.nav table {
-  margin-top: -20px;
-  font-size: 14px;
-}
-.nav table a {
-  text-decoration: none;
-}
-.nav table label {
-  font-weight: normal;
-}
-.nav table tr{
-  border-bottom: 1px solid #e3e3e3;
-}
-.nav table tr:last-child {
-  border-bottom: transparent;
-}
-.nav table tr:hover {
-  background-color: #e3e3e3;
-  color: #49661f;
-}
-.nav table tr td {
-  padding: 5px;
 }
 /*------------------------------------*
    FORMS
@@ -523,6 +514,14 @@ h3 {
 h4 {
   font-size: 1.125em;
   line-height: 1.11em;
+}
+h4.label {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #444444;
 }
 h5 {
   font-size: 1.105em;
@@ -696,15 +695,12 @@ button i {
    MICRO-ELEMENTS
 *------------------------------------*/
 .badge {
-  background-color: #aaaaaa;
+  width: auto;
+  background: #aaaaaa;
   border-radius: 10px;
-  color: #FFFFFF;
+  padding: 5px;
+  color: #fff;
   font-size: 12px;
-  min-width: 10px;
-  padding: 4px 7px 2px;
-  text-align: center;
-  vertical-align: baseline;
-  float: right;
 }
 .alert {
   padding: 15px;
@@ -729,6 +725,26 @@ table td {
   padding-right: 10px;
   height: 30px;
 }
+table.nav {
+  margin-top: 10px;
+  background: #fafafa;
+  font-size: 14px;
+  border-radius: 3px;
+}
+table.nav, table.nav tr {
+  border: 1px solid #dbdbdb;
+}
+table.nav tr:hover {
+  background: #dbdbdb;
+}
+table.nav a {
+  text-decoration: none;
+}
+table.nav h3 {
+  margin-top: 0;
+  padding: 0;
+  line-height: 0;
+}
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
@@ -743,8 +759,8 @@ table td {
     margin: 50px 0 0 0;
   }
   #search {
-    width: 48%;
-    margin-top: 0px !important;
+    width: 100%;
+    margin-top: -5px !important;
   }
   #search-2 {
     width: 72%;

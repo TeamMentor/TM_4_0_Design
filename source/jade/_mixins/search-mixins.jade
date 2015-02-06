@@ -1,25 +1,26 @@
 //- directory-list
 mixin directory-list
     h3#title= title
-    .nav
-        #containers
             if(containers)
-                table
-                    each container in containers
-                        tr
-                            td
-                                a(href= href + ',' +container.id, id=container.id)= container.title
-                            td
-                                span.badge= container.size
+                #containers
+                    table.nav
+                        each container in containers
+                            tr
+                                td
+                                    a(href= href + ',' +container.id, id=container.id)= container.title
+                                td.right
+                                    span.badge= container.size
 
 //- search-bar-input
 mixin search-bar-input
     #search
-        form(action='/search', method='GET')
-            .input-group
-                input.form-control(type='text', placeholder='Type keywords here', name='text')
-                span.input-group-btn
-                    button.btn-search-bar(type='submit') SEARCH
+        .row
+            .col-offset-3.col-6
+                form(action='/search', method='GET')
+                    .input-group
+                        input.form-control(type='text', placeholder='Type keywords here', name='text')
+                        span.input-group-btn
+                            button.btn-search-bar(type='submit') SEARCH
 
 //- results
 mixin results

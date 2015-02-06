@@ -21,7 +21,6 @@ nav {
   display: -webkit-flex;
   z-index: 99;
   background: white;
-  box-shadow: 1px 1px 6px #aaaaaa;
 }
 nav a, nav p {
   color: #8aaf3e;
@@ -183,7 +182,7 @@ nav a:hover, nav p:hover {
   -webkit-flex-wrap: nowrap;
   -webkit-flex-direction: column;
 }
-#list-view-article {
+#list-view-article, #content {
   background: white;
   padding: 5px;
   border-radius: 3px;
@@ -196,12 +195,10 @@ nav a:hover, nav p:hover {
   margin-bottom: 10px;
 }
 #list-view-article p {
-  padding-top: 0;
-  margin-top: 0;
+  margin-top: 10px;
 }
-#articles {
-  position: relative;
-  z-index: 1;
+#content {
+  padding: 20px;
 }
 #copyright {
   padding-bottom: 30px;
@@ -540,7 +537,7 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 .tabs-content {
   border: 1px solid #dbdbdb;
   border-top: none;
-  background:#fafafa;
+  background:#fff;
   padding: 10px;
 }
 #articles .tabs dd {
@@ -556,7 +553,7 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   font-size: 12px;
   letter-spacing: 0px;
   padding: 0 0 10px 0;
-  background: white;
+  background: transparent;
   color: #aaaaaa;
   border: none;
   border-bottom: 1px solid #dbdbdb;
@@ -566,7 +563,7 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   border-bottom: 1px solid #6c9020;
 }
 #articles .tabs-content {
-  background: white;
+  background: transparent;
   border: none;
   padding: 0;
   margin-top: -10px;
@@ -832,8 +829,8 @@ input#search:active, input#search:focus {
   position: relative;
 }
 .alert-box.active {
-  background-color: #fafafa;
-  color: #aaaaaa;
+  background-color: #dbdbdb;
+  color: #fff;
   border: 1px solid #dbdbdb;
 }
 .badge {
