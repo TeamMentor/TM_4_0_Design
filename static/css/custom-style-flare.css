@@ -6,6 +6,7 @@ body {
   padding: 0;
   display: -webkit-flex;
   -webkit-flex-wrap: wrap;
+  background-color: #fafafa;
 }
 body > * {
   -webkit-box-sizing: border-box;
@@ -19,7 +20,7 @@ nav {
   -webkit-order: 1;
   display: -webkit-flex;
   z-index: 99;
-  box-shadow: 1px 1px 6px #aaaaaa;
+  background: white;
 }
 nav a, nav p {
   color: #8aaf3e;
@@ -148,15 +149,23 @@ nav a:hover, nav p:hover {
   margin: 12px 12px 0 0;
 }
 #application {
-  -webkit-order: 6;
-  height: 90%;
+  -webkit-order: 7;
+  height: 78%;
   -webkit-flex: 100%;
   display: -webkit-flex;
   -webkit-flex-wrap: wrap;
   overflow-y: auto;
 }
+#search-bar {
+  background: #fff;
+  -webkit-order: 6;
+  -webkit-flex: 100%;
+}
+#left-nav, #results, #right-nav {
+  padding: 2px;
+}
 #left-nav {
-  -webkit-order: 7;
+  -webkit-order: 8;
   -webkit-flex: 100%;
   overflow-y: auto;
   min-height: 1px;
@@ -173,17 +182,23 @@ nav a:hover, nav p:hover {
   -webkit-flex-wrap: nowrap;
   -webkit-flex-direction: column;
 }
-#search-bar {
-  padding: 20px 0;
-  background: #fafafa;
-  width: 100%;
-}
-#results-save-clear {
+#list-view-article, #content {
   background: white;
+  padding: 5px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 6px #aaaaaa;
+  margin-bottom: 20px;
 }
-#articles {
-  position: relative;
-  z-index: 1;
+#list-view-article h3 {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 0 0 10px 0;
+  margin-bottom: 10px;
+}
+#list-view-article p {
+  margin-top: 10px;
+}
+#content {
+  padding: 20px;
 }
 #copyright {
   padding-bottom: 30px;
@@ -199,7 +214,7 @@ nav a:hover, nav p:hover {
   text-decoration: underline;
 }
 #right-nav {
-  -webkit-order: 8;
+  -webkit-order: 10;
   -webkit-flex: 100%;
   overflow-y: auto;
   min-height: 1px;
@@ -377,19 +392,6 @@ ul.side-nav span.badge {
   text-decoration: none;
   background: #fafafa;
 }
-#directory-list table, #navigate-list .list-group {
-  display: none;
-  margin-bottom: 0;
-}
-.list-group table tr td {
-  padding: 0;
-  font-size: 16px;
-  height: auto;
-}
-.list-group table, #filters table {
-  margin-bottom: 0;
-  background: transparent;
-}
 /*------------------------------------*
    TYPOGRAPHY
 *------------------------------------*/
@@ -535,7 +537,7 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 .tabs-content {
   border: 1px solid #dbdbdb;
   border-top: none;
-  background:#fafafa;
+  background:#fff;
   padding: 10px;
 }
 #articles .tabs dd {
@@ -551,7 +553,7 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   font-size: 12px;
   letter-spacing: 0px;
   padding: 0 0 10px 0;
-  background: white;
+  background: transparent;
   color: #aaaaaa;
   border: none;
   border-bottom: 1px solid #dbdbdb;
@@ -561,7 +563,7 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   border-bottom: 1px solid #6c9020;
 }
 #articles .tabs-content {
-  background: white;
+  background: transparent;
   border: none;
   padding: 0;
   margin-top: -10px;
@@ -570,36 +572,42 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   padding-top: 0;
   margin-bottom: 0;
 }
-/*#article-options dl.tabs dd {
-  width: 100%;
+/*------------------------------------*
+   ACCORDION
+*------------------------------------*/
+.accordion .accordion-navigation, .accordion dd {
+  margin: 0;
 }
-#related-options dl.tabs dd {
-  width: 100%;
-}*/
+
+.accordion .accordion-navigation > a, .accordion dd > a {
+  background: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #444444;
+}
+.accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
+  background: white;
+}
 /*------------------------------------*
    TABLES
 *------------------------------------*/
 table {
-  border: transparent;
   width: 100%;
   padding: 0 12px;
+  border-collapse: collapse;
 }
-#summary table, #filters table {
-  border: transparent;
+#filters table {
+  background: #fafafa;
 }
-#summary table tr.even, #summary table tr.alt, #summary table tr:nth-of-type(even), #filters table tr.even, 
-#filters table tr.alt, #filters table tr:nth-of-type(even) {
-  background: #FFFFFF !important;
+#filters table, #filters th, #filters tr {
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
 }
-#article-options table {
-  width: 60%;
-  margin: 0 auto;
-}
-#article-options table h5 {
-  margin: 5px 0 0 10px;
-}
-#article-options table p {
-  margin: 5px 0 0 10px;
+#filters td {
+  padding: 5px;
 }
 /*------------------------------------*
    BUTTONS
@@ -640,7 +648,7 @@ button i {
   padding: 5px 0;
   width:50%;
   background: #b4cf7b;
-  border: 1px solid white;
+  border: 1px solid #fafafa;
   border-radius: 3px;
   color: white;
   -webkit-box-shadow: none;
@@ -650,7 +658,7 @@ button i {
 .app:hover, .app:active {
   background: #8aaf3e;
   color: white;
-  border: 1px solid white;
+  border: 1px solid #fafafa;
   box-shadow: none;
 }
 .postfix {
@@ -779,10 +787,9 @@ input#search:active, input#search:focus {
   display: none;
 }
 #filters input[type=radio] + label{
-  margin-left: 20px;
   padding-left: 40px;
   display: inline-block;
-  line-height: 10px;
+  line-height: 15px;
   background-repeat: no-repeat;
   cursor: pointer;
   background-image: url('../assets/icons/radio.png');
@@ -796,13 +803,17 @@ input#search:active, input#search:focus {
 #filters input[type=checkbox] + label {
   padding-left:40px;
   display:inline-block;
-  line-height:10px;
+  line-height:15px;
   background-repeat:no-repeat;
   cursor:pointer;
   background-image:url('../assets/icons/tick.png');
 }
 #filters input[type=checkbox]:checked + label {
   background-position: 0 -15px;
+}
+#filters label {
+  font-size: 14px;
+  font-weight: 400;
 }
 /*------------------------------------*
    MICRO-ELEMENTS
@@ -817,15 +828,10 @@ input#search:active, input#search:focus {
   letter-spacing: 1px;
   position: relative;
 }
-.filtered {
-  margin-top: 10px;
-  background: #FFF;
-  border: 1px solid #8baf3e;
-  border-radius: 3px;
-  color: #8baf3e;
-  padding-right: 20px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.alert-box.active {
+  background-color: #dbdbdb;
+  color: #fff;
+  border: 1px solid #dbdbdb;
 }
 .badge {
   background-color: #aaaaaa;
@@ -835,6 +841,7 @@ input#search:active, input#search:focus {
   min-width: 10px;
   padding: 3px 7px;
   text-align: center;
+  float: right;
 }
 .icon {
   padding-right: 20px;

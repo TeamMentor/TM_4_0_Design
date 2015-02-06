@@ -1848,8 +1848,6 @@ button::-moz-focus-inner {
   .accordion .accordion-navigation, .accordion dd {
     display: block;
     margin-bottom: 0 !important; }
-    .accordion .accordion-navigation.active > a, .accordion dd.active > a {
-      background: #e8e8e8; }
     .accordion .accordion-navigation > a, .accordion dd > a {
       background: #EFEFEF;
       color: #222222;

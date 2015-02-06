@@ -7,22 +7,20 @@ block content
             .col-3
                 .lge-container
                     if folder
-                        h3= folder.name
-                        #nav.list-group
-                            each view in folder.views
-                                a(href='owasp.html')= view.caption
-                                    span.badge= view.guidanceItems.length
+                        #content
+                            h3= folder.name
+                            #nav.list-group
+                                each view in folder.views
+                                    a(href='owasp.html')= view.caption
+                                        span.badge= view.guidanceItems.length
             .col-6
                 .lge-container
                     +search-bar-input
-                    br
-                    br
-                    br
                     +results
                     +articles-list
                     +horizontal-rule
-                    +copyright
-            .column-3
+            .col-3
                 .lge-container
                     +filters-div
                     +save-div
+    +copyright
