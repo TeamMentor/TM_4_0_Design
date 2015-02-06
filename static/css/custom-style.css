@@ -128,10 +128,17 @@ body > * {
   width: 100%;
   padding: 0px 0 15px 0;
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  height: 60px;
 }
 #copyright ul {
   list-style: none;
-  padding: 7px 0 0 0;
+  padding: 0;
+  margin-top: -5px;
+}
+#copyright li {
+  display: block;
 }
 #copyright p, #copyright a {
   font-size: 12px;
