@@ -41,12 +41,15 @@ mixin sign-up-form
 
 //- forgot-password-form
 mixin forgot-password-form
-    h3 Forgot your password?
-    include:md ../../content/getting-started/forgot-password-form.md
-    form#forgot-password(role='form', action='/user/pwd_reset' method='post')
-        .form-group
-            +email-input
-        +get-password-button
+    #form
+        #heading
+            include:md ../../content/getting-started/forgot-password-form.md
+        form#forgot-password(role='form', action='/user/pwd_reset' method='post')
+            .form-group
+                +email-input
+            .row
+                .col-7
+                    +get-password-button
 
 //- pwd-reset-form
 mixin pwd-reset-form
