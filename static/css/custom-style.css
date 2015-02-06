@@ -189,6 +189,7 @@ body > * {
   margin-bottom: 15px;
 }
 #footer i {
+  font-size: 16px;
   margin-right: 10px;
 }
 #form {
@@ -261,7 +262,7 @@ body > * {
   background-position: 0px 0px;
 }
 #usp button i, #call-to-action button i {
-  font-size: 18px;
+  font-size: 20px;
   padding: 0 10px 0 0;
 }
 #search {
@@ -494,7 +495,6 @@ input[type="url"]:focus, textarea:focus {
   background: #fff;
   outline: none;
   border-bottom: 2px solid #dbdbdb;
-  background: #fafafa;
 }
 select {
   width: 100%;
