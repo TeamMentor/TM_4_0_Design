@@ -1,3 +1,4 @@
+include ../_mixins/user-mixins
 //- directory-list
 mixin directory-list
     if(containers)
@@ -14,13 +15,16 @@ mixin directory-list
 //- search-bar-input
 mixin search-bar-input
     #search
-        .row
-            .col-offset-3.col-6
-                form(action='/search', method='GET')
-                    .input-group
-                        input.form-control(type='text', placeholder='Type keywords here', name='text')
-                        span.input-group-btn
-                            button.btn-search-bar(type='submit') SEARCH
+        .lge-container
+            .row
+                .col-offset-3.col-6
+                    #search-bar
+                        form(action='/search', method='GET')
+                            .input-group
+                                input.form-control(type='text', placeholder='Type keywords here', name='text')
+                                span.input-group-btn
+                                    button#search-button(type='submit')
+                                        i.fi-magnifying-glass
 
 //- results
 mixin results
