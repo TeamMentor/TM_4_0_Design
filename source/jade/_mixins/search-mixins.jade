@@ -1,15 +1,15 @@
 //- directory-list
 mixin directory-list
-    h3#title= title
-            if(containers)
-                #containers
-                    table.nav
-                        each container in containers
-                            tr
-                                td
-                                    a(href= href + ',' +container.id, id=container.id)= container.title
-                                td.right
-                                    span.badge= container.size
+    if(containers)
+        h3#title= title
+        #containers
+            table.nav
+                each container in containers
+                    tr
+                        td
+                            a(href= href + ',' +container.id, id=container.id)= container.title
+                        td.right
+                            span.right.badge= container.size
 
 //- search-bar-input
 mixin search-bar-input
@@ -61,7 +61,7 @@ mixin filters-div
     if filters
         #content
             h3 Filter by
-            .nav#filters
+            #filters
                 for filter in filters
                     h4.label= filter.title
                     table.nav

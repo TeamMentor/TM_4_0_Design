@@ -66,7 +66,7 @@ body > * {
   margin-bottom: 0;
 }
 #article p {
-  margin-top: 0;
+  margin-top: 5px;
 }
 #article-i-definitions, #article-ii-deliverables, #article-iii-license-grant, #article-iv-ownership-of-intellectual-property, #article-v-marketing-requirements, #article-vi-trademarks, #article-vii-support, #article-viii-fees-royalties-and-payments, #article-ix-payment-instructions, #article-x-records-reports-and-audit-rights, #article-xi-contract-administrative-contacts, #article-xii-assignment, #article-xiii-confidentiality, #article-xiv-warranties, #article-xv-indemnities, #article-xvi-limitations, #article-xvii-terms-of-agreements, #article-xviii-terminiation, #article-xix-effect-of-termination, #article-xx-general-provisions, #appendix-a, #appendix-b {
   padding-top: 100px;
@@ -123,17 +123,22 @@ body > * {
   padding-top: 5px;
 }
 #copyright {
-  padding-bottom: 30px;
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  width: 100%;
+  padding: 0px 0 15px 0;
+  text-align: center;
+}
+#copyright ul {
+  list-style: none;
+  padding: 7px 0 0 0;
 }
 #copyright p, #copyright a {
   font-size: 12px;
-  text-align: center;
-  font-weight: normal;
-  letter-spacing: 0px;
+  margin: 0 0 5px 0;
 }
-#copyright a {
-  text-transform: none !important;
-  text-decoration: underline;
+#copyright i {
+  margin-right: 10px;
 }
 #features {
   padding: 0;
@@ -160,6 +165,7 @@ body > * {
   padding: 15px;
 }
 #footer {
+  background: #fff;
   width: 100%;
   padding: 5px 0 15px 0;
   text-align: center;
@@ -301,6 +307,7 @@ img {
   left: 0;
   top: 0;
   z-index: 99;
+  border-bottom: 1px solid #dbdbdb;
 }
 #customer-navigation {
   background-color: #FFFFFF;
@@ -322,7 +329,6 @@ img {
   height: 50px;
   margin: 0 auto;
   width: 250px;
-  margin-bottom: 10px;
 }
 #si-logo {
   background:url('../assets/logos/logos.jpg') no-repeat;
@@ -799,11 +805,11 @@ table.nav h3 {
   #tm-logo {
     display: inline-block;
     float: left;
-    margin: 7px 0 0 20px;
+    margin: 3px 0 0 20px;
     width: 36%;
   }
   #si-logo {
-    margin: 0;
+    margin: 0 auto;
   }
   #landing-page {
     margin: 0;
