@@ -59,6 +59,7 @@ body > * {
 }
 #article h1 {
   margin-bottom: 0;
+  font-size: 2.5em;
 }
 #article h2 {
   font-size: 2em;
