@@ -775,10 +775,9 @@ input#search:active, input#search:focus {
   display: none;
 }
 #filters input[type=radio] + label{
-  margin-left: 20px;
   padding-left: 40px;
   display: inline-block;
-  line-height: 10px;
+  line-height: 15px;
   background-repeat: no-repeat;
   cursor: pointer;
   background-image: url('../assets/icons/radio.png');
