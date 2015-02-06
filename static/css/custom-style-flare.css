@@ -155,6 +155,9 @@ nav a:hover, nav p:hover {
   -webkit-flex-wrap: wrap;
   overflow-y: auto;
 }
+#left-nav, #results, #right-nav {
+  padding: 2px;
+}
 #left-nav {
   -webkit-order: 7;
   -webkit-flex: 100%;
@@ -377,19 +380,6 @@ ul.side-nav span.badge {
   text-decoration: none;
   background: #fafafa;
 }
-#directory-list table, #navigate-list .list-group {
-  display: none;
-  margin-bottom: 0;
-}
-.list-group table tr td {
-  padding: 0;
-  font-size: 16px;
-  height: auto;
-}
-.list-group table, #filters table {
-  margin-bottom: 0;
-  background: transparent;
-}
 /*------------------------------------*
    TYPOGRAPHY
 *------------------------------------*/
@@ -570,36 +560,42 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   padding-top: 0;
   margin-bottom: 0;
 }
-/*#article-options dl.tabs dd {
-  width: 100%;
+/*------------------------------------*
+   ACCORDION
+*------------------------------------*/
+.accordion .accordion-navigation, .accordion dd {
+  margin: 0;
 }
-#related-options dl.tabs dd {
-  width: 100%;
-}*/
+
+.accordion .accordion-navigation > a, .accordion dd > a {
+  background: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #444444;
+}
+.accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
+  background: white;
+}
 /*------------------------------------*
    TABLES
 *------------------------------------*/
 table {
-  border: transparent;
   width: 100%;
   padding: 0 12px;
+  border-collapse: collapse;
 }
-#summary table, #filters table {
-  border: transparent;
+#filters table {
+  background: #fafafa;
 }
-#summary table tr.even, #summary table tr.alt, #summary table tr:nth-of-type(even), #filters table tr.even, 
-#filters table tr.alt, #filters table tr:nth-of-type(even) {
-  background: #FFFFFF !important;
+#filters table, #filters th, #filters tr {
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
 }
-#article-options table {
-  width: 60%;
-  margin: 0 auto;
-}
-#article-options table h5 {
-  margin: 5px 0 0 10px;
-}
-#article-options table p {
-  margin: 5px 0 0 10px;
+#filters td {
+  padding: 5px;
 }
 /*------------------------------------*
    BUTTONS
@@ -796,13 +792,17 @@ input#search:active, input#search:focus {
 #filters input[type=checkbox] + label {
   padding-left:40px;
   display:inline-block;
-  line-height:10px;
+  line-height:15px;
   background-repeat:no-repeat;
   cursor:pointer;
   background-image:url('../assets/icons/tick.png');
 }
 #filters input[type=checkbox]:checked + label {
   background-position: 0 -15px;
+}
+#filters label {
+  font-size: 14px;
+  font-weight: 400;
 }
 /*------------------------------------*
    MICRO-ELEMENTS
@@ -817,10 +817,10 @@ input#search:active, input#search:focus {
   letter-spacing: 1px;
   position: relative;
 }
-.active {
+.alert-box.active {
   background-color: #fafafa;
   color: #aaaaaa;
-  border: 1px solid #aaaaaa;
+  border: 1px solid #dbdbdb;
 }
 .badge {
   background-color: #aaaaaa;
@@ -830,6 +830,7 @@ input#search:active, input#search:focus {
   min-width: 10px;
   padding: 3px 7px;
   text-align: center;
+  float: right;
 }
 .icon {
   padding-right: 20px;

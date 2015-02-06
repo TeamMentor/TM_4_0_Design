@@ -154,8 +154,42 @@ mixin saved-article-menu
 //- Flare Filters Div
 mixin flare-filters-div
     #filters
-        h3 Filters
-        form
+        dl.accordion(data-accordion='data-accordion')
+            dd.accordion-navigation.active
+                a(href='#and-filters')
+                    i.fi-arrow-down.icon
+                    | And filters
+                #and-filters.content.active
+                    table
+                        tr
+                            td
+                                input#type1(type='checkbox', name='type', value='Type 1')
+                                label(for='type1') Type 1
+                            td
+                                span.badge 14
+                        tr
+                            td
+                                input#type2(type='checkbox', name='type', value='Type 2')
+                                label.checkbox(for='type2') Type 2
+                            td
+                                span.badge 14
+                        tr
+                            td
+                                input#type3(type='checkbox', name='type', value='Type 3')
+                                label.checkbox(for='type3') Type 3
+                            td
+                                span.badge 14
+            dd.accordion-navigation
+                a(href='#or-filters')
+                    i.fi-arrow-down.icon
+                    | Or filters
+                #or-filters.content.active
+
+
+
+
+
+        //form
             dl.accordion(data-accordion='data-accordion')
                 dd.accordion-navigation
                     a(href='#technology') Technnology
