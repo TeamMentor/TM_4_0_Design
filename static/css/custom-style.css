@@ -495,7 +495,7 @@ input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"
 input[type="url"]:focus, textarea:focus {
   background: #fff;
   outline: none;
-  border-bottom: 2px solid #dbdbdb;
+  border: 3px solid #aaaaaa;
 }
 select {
   width: 100%;
