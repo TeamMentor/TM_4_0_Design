@@ -9,8 +9,6 @@ describe 'routes | routes.test |', ()->
                       '/article/:id'
                       '/article/viewed.json',
                       '/search',
-                      '/config',
-                      '/dirName',
                       '/flare',
                       '/flare/all',
                       '/flare/main-app-view',
@@ -26,13 +24,6 @@ describe 'routes | routes.test |', ()->
                       '/index.html',
                       '/libraries',
                       '/library/:name',
-                      #'/library/queries',
-                      '/mainModule',
-                      '/module',
-                      '/ping',
-                      '/pwd',
-                      '/session',
-                      '/test',
                       '/user/login',
                       '/user/login',
                       '/user/logout',
@@ -40,8 +31,8 @@ describe 'routes | routes.test |', ()->
                       '/user/pwd_reset',
                       '/user/sign-up',
                       '/passwordReset/:username/:token'
-                      '/version',
-                       '/-poc-']
+                       '/-poc-'
+                       '/*']
 
     before ()->
       app.server = app.listen();
@@ -73,6 +64,7 @@ describe 'routes | routes.test |', ()->
                          .replace(':page','default')
                          .replace(':queryId','AAAA')
                          .replace(':filters','BBBB')
+                         .replace('.*','aaaaa')
 
       expectedStatus = 200;
       expectedStatus = 302 if ['','image','deploy'                           ].contains(path.split('/').second().lower())
@@ -83,6 +75,8 @@ describe 'routes | routes.test |', ()->
       expectedStatus = 403 if ['/-poc-/search-two-column','/-poc-','/-poc-/md-render'].contains(path)
 
       expectedStatus = 200 if ['/article/viewed.json'                        ].contains(path)
+
+      expectedStatus = 404 if ['/aaaaa'                                      ].contains(path)
 
       postRequest = ['/user/pwd_reset','/user/sign-up'                       ].contains(path)
 

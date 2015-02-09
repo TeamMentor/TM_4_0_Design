@@ -1,5 +1,6 @@
 extends ../_layouts/page_home.jade
 include ../_mixins/articles-mixins.jade
+include ../../shared-mixins/globals.jade
 
 block content
   #application
@@ -10,13 +11,10 @@ block content
       .col-6
         .lge-container
           #article
+            #content
               h1= title
               != article_Html
-          +horizontal-rule
-
-          //+article-options
-          //+horizontal-rule
-          //+related-articles
       .col-3
         .lge-container
           br
+  +copyright

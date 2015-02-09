@@ -4,7 +4,7 @@ include ../../shared-mixins/globals.jade
 mixin flare-search-bar-input
     #search-bar
         .row
-            .large-12.columns
+            .small-12.large-offset-1.large-10.end.columns
                 .row.collapse
                     .small-1.columns
                         a.button.postfix#navigate-button
@@ -55,21 +55,21 @@ mixin flare-main-app-view
 
 //- Articles List
 mixin articles-list
-    .row
+    #list-view-article.row
         .small-12.columns
             h3 Article Headline
         .small-12.medium-10.columns
             include:md ../../content/articles/article-details.md
         .small-12.medium-2.columns
             +article-controls
-    .row
+    #list-view-article.row
         .small-12.columns
             h3 Article Headline
         .small-12.medium-10.columns
             include:md ../../content/articles/article-details.md
         .small-12.medium-2.columns
             +article-controls
-    .row
+    #list-view-article.row
         .small-12.columns
             h3 Article Headline
         .small-12.medium-10.columns
@@ -154,125 +154,71 @@ mixin saved-article-menu
 //- Flare Filters Div
 mixin flare-filters-div
     #filters
-        h3 Filters
-        form
-            dl.accordion(data-accordion='data-accordion')
-                dd.accordion-navigation
-                    a(href='#technology') Technnology
-                    #technology.content
-                        button.button.dropdown(href='#', data-dropdown='technology-button', aria-controls='technology-button', aria-expanded='false') Select a technology
-                        br
-                        ul#technology-button.f-dropdown(data-dropdown-content='', aria-hidden='true', tabindex='-1')
-                            li
-                                table
-                                    tr
-                                        td
-                                            input#technology1(type='radio', name='technology', value='Technology 1')
-                                            label(for='technology1') Technology 1
-                                        td
-                                            span.round.label 14
-                            li
-                                table
-                                    tr
-                                        td
-                                            input#technology2(type='radio', name='technology', value='Technology 2')
-                                            label(for='technology2') Technology 2
-                                        td
-                                            span.round.label 14
-                            li
-                                table
-                                    tr
-                                        td
-                                            input#technology3(type='radio', name='technology', value='Technology 3')
-                                            label(for='technology3') Technology 3
-                                        td
-                                            span.round.label 14
-                            li
-                                table
-                                    tr
-                                        td
-                                            input#technology4(type='radio', name='technology', value='Technology 4')
-                                            label(for='technology4') Technology 4
-                                        td
-                                            span.round.label 14
-                dd.accordion-navigation
-                    a(href='#type') Type
-                    #type.content.active
-                        table
-                            tr
-                                td
-                                    input#type1(type='checkbox', name='type', value='Type 1')
-                                    label(for='type1') Type 1
-                                td
-                                    span.badge 14
-                            tr
-                                td
-                                    input#type2(type='checkbox', name='type', value='Type 2')
-                                    label.checkbox(for='type2') Type 2
-                                td
-                                    span.badge 14
-                            tr
-                                td
-                                    input#type3(type='checkbox', name='type', value='Type 3')
-                                    label.checkbox(for='type3') Type 3
-                                td
-                                    span.badge 14
-                dd.accordion-navigation
-                    a(href='#phase') Phase
-                    #phase.content
-                        table
-                            tr
-                                td
-                                    input#phase(type='checkbox', name='phase', value='Phase 1')
-                                    label.checkbox(for='phase') Phase 1
-                                td
-                                    span.badge 14
-                            tr
-                                td
-                                    input#phase(type='checkbox', name='phase', value='Phase 2')
-                                    label.checkbox(for='phase') Phase 2
-                                td
-                                    span.badge 14
-                            tr
-                                td
-                                    input#phase(type='checkbox', name='phase', value='Phase 3')
-                                    label.checkbox(for='phase') Phase 3
-                                td
-                                    span.badge 14
-                dd.accordion-navigation
-                    a(href='#category') Category
-                    #category.content
-                        table
-                            tr
-                                td
-                                    input#category(type='checkbox', name='category', value='Category 1')
-                                    label.checkbox(for='category') Category 1
-                                td
-                                    span.badge 14
-                            tr
-                                td
-                                    input#category(type='checkbox', name='category', value='Category 2')
-                                    label.checkbox(for='category') Category 2
-                                td
-                                    span.badge 14
-                            tr
-                                td
-                                    input#category(type='checkbox', name='category', value='Category 3')
-                                    label.checkbox(for='category') Category 3
-                                td
-                                    span.badge 14
-            br
-            button(type='submit' href='filters-active')
-                | Ok, Done
+        dl.accordion(data-accordion='data-accordion')
+            dd.accordion-navigation.active
+                a(href='#and-filters')
+                    i.fi-arrow-down.icon
+                    | And filters
+                #and-filters.content.active
+                    table
+                        tr
+                            td
+                                input#and-type1(type='checkbox', name='and-type', value='And Type 1')
+                                label(for='and-type1') And Type 1
+                            td
+                                span.badge 14
+                        tr
+                            td
+                                input#and-type2(type='checkbox', name='and-type', value='And Type 2')
+                                label.checkbox(for='and-type2') And Type 2
+                            td
+                                span.badge 14
+                        tr
+                            td
+                                input#and-type3(type='checkbox', name='and-type', value='And Type 3')
+                                label.checkbox(for='and-type3') And Type 3
+                            td
+                                span.badge 14
+            dd.accordion-navigation
+                a(href='#or-filters')
+                    i.fi-arrow-down.icon
+                    | Or filters
+                #or-filters.content.active
+                    table
+                        tr
+                            td
+                                input#or-type1(type='radio', name='or-type', value='Or Type 1')
+                                label(for='or-type-1') Or Type 1
+                            td
+                                span.badge 14
+                        tr
+                            td
+                                input#or-type2(type='radio', name='or-type', value='Or Type 2')
+                                label(for='or-type-2') Or Type 2
+                            td
+                                span.badge 14
+                        tr
+                            td
+                                input#or-type3(type='radio', name='or-type', value='Or Type 3')
+                                label(for='or-type-3') Or Type 3
+                            td
+                                span.badge 14
 
 //- Flare Filters Active
 mixin flare-filters-active
     .row
         .small-12.medium-6.large-4.columns
-            .alert-box(data-alert='')
-                | Error, Validation or Alert Message Here
+            .alert-box.active(data-alert='')
+                | Filter Here
                 a.close(href='#') ×
-        .small-12.columns
+        .small-12.medium-6.large-4.columns
+            .alert-box.active(data-alert='')
+                | Filter Here
+                a.close(href='#') ×
+        .small-12.medium-6.large-4.columns
+            .alert-box.active(data-alert='')
+                | Filter Here
+                a.close(href='#') ×
 
 // Save Div
 mixin save-div

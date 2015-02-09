@@ -60,4 +60,13 @@ add_Routes = (app,searchController)->
     #PoCs
     Search_Controller_PoC.registerRoutes(app)
 
+    #404
+    app.get '/*', (req,res)-> res.render 'source/jade/guest/404.jade'
+
+    app.use (err, req, res, next)->
+      console.error(err.stack)
+      res.status(500)
+         .render 'source/jade/guest/404.jade'
+
+
 module.exports = add_Routes

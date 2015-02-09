@@ -13,13 +13,16 @@ block content
 		.row
 			.col-3
 				.lge-container
-					h3 Containing Directory Title
-					include:md ../../content/application/no-more-directories.md
+					#content
+						h3 Containing Directory Title
+						include:md ../../content/application/no-more-directories.md
 			.col-6
 				.lge-container
 					+breadcrumbs
 					+results
 					include:md ../../content/application/no-search-results.md
+					+horizontal-rule
+                    +copyright
 			.col-3
 				.lge-container
 					+filters-div

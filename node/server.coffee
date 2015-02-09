@@ -12,8 +12,6 @@ using expressService,->
     @.setup()
     @.map_Route('../routes/flare_routes')
     @.map_Route('../routes/routes')
-    @.map_Route('../routes/debug')
-    @.map_Route('../routes/config')
     @.start()
 
 module.exports = expressService.app

@@ -5,25 +5,15 @@ include ../_mixins/articles-mixins
 include ../_mixins/search-mixins
 
 block content
-    //weird CSS fix to handle Chrome prob when <form> exists
-    style
-        |.pull-right { float  : right !important; }
-        |.navbar ul  { display: inline-block;     }
-
+    +search-poc
     #application
         .row
             .col-9
                 .lge-container
-                    +search-poc
-                    br
-                    br
-                    br
-                    +results
+                    #results-2
+                        +results
                     +articles-list
             .col-3
                 .lge-container
-                    br
-                    br
-                    br
-                    br
                     +filters-div
+    +copyright

@@ -1,25 +1,30 @@
+include ../_mixins/user-mixins
 //- directory-list
 mixin directory-list
-    h3#title= title
-    .nav
+    if(containers)
+        h3#title= title
         #containers
-            if(containers)
-                table
-                    each container in containers
-                        tr
-                            td
-                                a(href= href + ',' +container.id, id=container.id)= container.title
-                            td
-                                span.badge= container.size
+            table.nav
+                each container in containers
+                    tr
+                        td
+                            a(href= href + ',' +container.id, id=container.id)= container.title
+                        td.right
+                            span.right.badge= container.size
 
 //- search-bar-input
 mixin search-bar-input
     #search
-        form(action='/search', method='GET')
-            .input-group
-                input.form-control(type='text', placeholder='Type keywords here', name='text')
-                span.input-group-btn
-                    button.btn-search-bar(type='submit') SEARCH
+        .lge-container
+            .row
+                .col-offset-3.col-6
+                    #search-bar
+                        form(action='/search', method='GET')
+                            .input-group
+                                input.form-control(type='text', placeholder='Type keywords here', name='text')
+                                span.input-group-btn
+                                    button#search-button(type='submit')
+                                        i.fi-magnifying-glass
 
 //- results
 mixin results
@@ -29,52 +34,80 @@ mixin results
                 td
                     if results
                         if results.size() > 250
-                            h5#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
+                            p.label#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
                         else
-                            h5#resultsTitle= 'Showing ' + results.size() + ' articles'
+                            p.label#resultsTitle= 'Showing ' + results.size() + ' articles'
                 td.text-right
                     if activeFilter
-                        span.filtered Active filter:
-                        span#activeFilter.badge= activeFilter.title
+                        span#activeFilter.filter= activeFilter.title
                             span.close
                                 a(href=href) x
 //- articles-list
 mixin articles-list
-    .list-group
-        #articles
-            if results
-                each result in results.take(250)
+    #articles
+        if results
+            each result in results.take(250)
+                #list-view-article
                     if result
-                      a(href='/article/' + result.id, id=result.id)
-                        h4=  result.title
-                        p= result.summary + '...'
+                        table
+                            tr
+                                td
+                                    h4=  result.title
+                                td
+                                    a(href='/article/' + result.id, id=result.id)
+                                        i.fi-plus
+                            tr
+                                td
+                                    p= result.summary + '...'
 
 //- filters
 mixin filters-div
-        h3 Filter by
-        .nav#filters
-            if filters
+    if filters
+        #content
+            h3 Filter by
+            #filters
                 for filter in filters
-                    .dropdown
+                    h4.label= filter.title
+                    table.nav
+                        for result in filter.results
+                            tr
+                                if activeFilter && result.id == activeFilter.id
+                                    td
+                                        a(href= href )
+                                            b= result.title
+                                    td
+                                        span.right.badge= result.size
+                                else
+                                    td
+                                        a(href=href + '/'+result.id)= result.title
+                                    td
+                                        span.right.badge= result.size
+                    //.dropdown
                         button= filter.title
                             span.right
                                 i.fi-arrow-down
                         ul.dropdown-menu
-                            for result in filter.results
-                                if activeFilter && result.id == activeFilter.id
-                                    a(href= href )
-                                        li
-                                            b= result.title
+                            table.nav
+                                for result in filter.results
+                                    if activeFilter && result.id == activeFilter.id
+                                        a(href= href )
+                                            li
+                                                b= result.title
+                                                    span.badge= result.size
+                                    else
+                                        a(href=href + '/'+result.id)
+                                            li= result.title
                                                 span.badge= result.size
-                                else
-                                    a(href=href + '/'+result.id)
-                                        li= result.title
-                                            span.badge= result.size
 
 mixin search-poc
     #search-2
-        form(action='/search', method='GET')
-            .input-group
-                input.form-control(type='text', placeholder='Type keywords here', name='text')
-                span.input-group-btn
-                    button.btn-search-bar(type='submit') SEARCH
+        .lge-container
+            .row
+                .col-9
+                    #search-bar
+                        form(action='/search', method='GET')
+                            .input-group
+                                input.form-control(type='text', placeholder='Type keywords here', name='text')
+                                span.input-group-btn
+                                    button#search-button(type='submit')
+                                        i.fi-magnifying-glass
