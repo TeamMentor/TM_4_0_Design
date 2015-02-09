@@ -197,7 +197,7 @@ body > * {
   background: #fafafa;
 }
 #help-nav{
-  margin-top: 170px;
+  margin-top: 20px;
 }
 #help-docs h1 {
   font-size: 1.625em;
@@ -876,8 +876,8 @@ table.nav h3 {
   #footer {
     text-align: left;
   }
-  #help-nav, #help-docs {
-    margin-top: 70px;
+  #help-docs {
+    margin-top: 20px;
   }
   a.minor {
     line-height: 3.75em;
