@@ -762,6 +762,9 @@ button:hover, button:active {
   color:#fff;
   font-size: 12px;
 }
+span.rwd-line {
+  display: block;
+}
 /*------------------------------------*
    TABLES
 *------------------------------------*/
@@ -866,7 +869,7 @@ table.nav h3 {
     margin-top: 100px;
   }
   #summary {
-    padding: 80px 0 0 0;
+    padding: 90px 0 0 0;
   }
   #footer {
     text-align: left;
@@ -905,6 +908,11 @@ table.nav h3 {
   h5 {
     font-size: 1em;
     line-height: 1em;
+  }
+}
+@media (min-width: 1301px) {
+  span.rwd-line {
+    display: inline;
   }
 }
 /*------------------------------------*
