@@ -129,12 +129,9 @@ body > * {
   background: #fff;
   border: 1px solid #dbdbdb;
   width: 100%;
-  padding: 0px 0 15px 0;
+  padding: 15px 0 15px 0;
   text-align: center;
-  position: fixed;
-  bottom: 0;
   height: 60px;
-  margin-top: 50px;
 }
 #copyright ul {
   list-style: none;
