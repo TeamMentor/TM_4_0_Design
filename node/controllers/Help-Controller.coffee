@@ -21,6 +21,7 @@ class Help_Controller
     @.title         = null
     @.content       = null
     @.teamMentor    = new TeamMentor_Service()
+    @.docs_Server   = 'https://docs.teammentor.net'
 
   renderPage: ()=>
     @.pageParams         = new Express_Service().mappedAuth(@req)
@@ -44,7 +45,7 @@ class Help_Controller
 
         @.article = library.Articles[@.page];
         if (@.article)
-          docs_Url   = 'https://docs.teammentor.net/content/' + @.page;
+          docs_Url   = @.docs_Server + '/content/' + @.page;
           request.get(docs_Url, @.handleFetchedHtml);
         else
           @addContent("No content for the current page");

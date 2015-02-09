@@ -75,6 +75,6 @@ mixin search-poc
     #search-2
         form(action='/search', method='GET')
             .input-group
-                input.form-control(type='text', placeholder='Type keywords here', name='text', value= text)
+                input.form-control(type='text', placeholder='Type keywords here', name='text', value= text, required)
                 span.input-group-btn
                     button.btn-search-bar(type='submit') SEARCH

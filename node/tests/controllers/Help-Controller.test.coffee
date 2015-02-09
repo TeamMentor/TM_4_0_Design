@@ -8,7 +8,19 @@ TeamMentor_Service = require('../../services/TeamMentor-Service')
 
 describe 'controllers | Help-Controller.test', ()->
 
+
+  help_Server_Online = ->
+    log new Help_Controller().docs_Server
+
   describe 'methods',->
+
+    before (done)->
+      new Help_Controller().docs_Server.GET (html)=>
+        if not html
+          for test in @.test.parent.tests
+            test.pending = true
+        done()
+      #@.test.parent.tests = []
 
     it 'ctor', ()->
       req = { a :42 }
@@ -19,6 +31,7 @@ describe 'controllers | Help-Controller.test', ()->
         @.pageParams.assert_Is({})
         @.req.assert_Is(req)
         @.res.assert_Is(res)
+        @.docs_Server.assert_Is 'https://docs.teammentor.net'
         assert_Is_Null(@.content)
         assert_Is_Null(@.page)
         assert_Is_Null(@.title)
