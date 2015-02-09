@@ -17,3 +17,21 @@ mixin help-icon
 mixin logout-icon
     i.fi-power
     | Logout
+
+mixin copyright
+    #copyright
+        .lge-container
+            .row
+                .col-offset-1.col-2
+                    a(href='http://www.securityinnovation.com/', target='_blank')
+                        #si-logo
+                .col-6
+                    include:md ../../content/articles/copyright-information.md
+                .col-2
+                    ul
+                        li
+                            +i-email
+                            a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
+                        li
+                            +i-toc
+                            a(href="../guest/terms-and-conditions.html") Terms & Conditions

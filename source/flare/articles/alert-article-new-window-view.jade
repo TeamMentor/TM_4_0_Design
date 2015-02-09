@@ -2,11 +2,13 @@ extends ../_layouts/flare_page
 include ../mixins/articles-mixins
 
 block content
+	+flare-search-bar-input
 	#application
 		#left-nav
 		#results
-			+flare-alert
-			+article
+			#content
+				+flare-alert
+				+article
 			br
 			+article-options
 			+horizontal-rule
