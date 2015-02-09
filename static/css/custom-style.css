@@ -229,10 +229,7 @@ body > * {
   margin-top: 0;
 }
 #list-view-article a {
-  color: #8aaf3e;
-}
-#list-view-article a:hover {
-  color: #6c9020;
+  text-decoration: none;
 }
 #loginwall, #summary {
   max-width: 95%;

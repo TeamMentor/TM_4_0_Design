@@ -52,10 +52,8 @@ mixin articles-list
                         table
                             tr
                                 td
-                                    h4=  result.title
-                                td
                                     a(href='/article/' + result.id, id=result.id)
-                                        i.fi-plus
+                                        h4=  result.title
                             tr
                                 td
                                     p= result.summary + '...'
