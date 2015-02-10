@@ -302,7 +302,7 @@ nav a:hover, nav p:hover {
 #features {
   padding: 50px 0;
 }
-#features i, #reasons i, #summary i {
+#features i, #reasons i {
   font-size: 60px;
 }
 #footer {
@@ -625,6 +625,8 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 *------------------------------------*/
 .accordion .accordion-navigation, .accordion dd {
   margin: 0;
+  border: 1px solid #dbdbdb;
+  margin: 20px 0;
 }
 
 .accordion .accordion-navigation > a, .accordion dd > a {
@@ -646,6 +648,10 @@ table {
   width: 100%;
   padding: 0 12px;
   border-collapse: collapse;
+}
+table i {
+  font-size: 60px;
+  padding-right: 80px;
 }
 #filters table {
   background: #fafafa;
