@@ -53,7 +53,7 @@ html, body {
 }
 body {
   line-height: 1.5;
-  background: #fff;
+  background: #fafafa;
 }
 body > * {
   -webkit-box-sizing: border-box;
@@ -99,6 +99,7 @@ body > * {
 }
 #application {
   width: 100%;
+  max-height: 100%;
   margin-top: 140px;
   background: #fafafa;
 }
@@ -130,10 +131,9 @@ body > * {
 #copyright {
   background: #fff;
   border: 1px solid #dbdbdb;
-  width: 100%;
-  padding: 15px 0 15px 0;
+  max-height: 100%;
+  padding: 20px 0 5px 0;
   text-align: center;
-  height: 60px;
 }
 #copyright ul {
   list-style: none;
@@ -237,7 +237,7 @@ body > * {
   margin: 0 auto;
 }
 #main-app-view {
-  margin-top: 90px;
+  margin-top: 110px;
 }
 #reasons {
   padding-top: 40px;
@@ -275,9 +275,16 @@ body > * {
   z-index: 96;
 }
 #search-bar {
-  height: 90px;
+  height: 110px;
   border: 1px solid #dbdbdb;
   background: white;
+}
+#search-bar input {
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+}
+#search-bar input:focus, #search-bar input:focus {
+  border-bottom: 2px solid #aaaaaa;
 }
 #search-2 {
   width: 100%;
@@ -521,8 +528,7 @@ select {
 }
 .input-group .input-group-btn {
   display: table-cell;
-  width: 50px;
-  vertical-align: top;
+  vertical-align: bottom;
 }
 /*------------------------------------*
    TYPOGRAPHY
@@ -868,7 +874,7 @@ table.nav h3 {
     padding: 100px 0 0 0;
   }
   #main-app-view {
-    margin-top: 100px;
+    margin-top: 120px;
   }
   #summary {
     padding: 90px 0 0 0;
