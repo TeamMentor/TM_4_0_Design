@@ -33,7 +33,7 @@
     "coffee-script": "latest",
     "express": "latest",
     "express-session": "latest",
-    "fluentnode": "^0.3.0",
+    "fluentnode": "latest",
     "github": "latest",
     "jade": "latest",
     "marked": "latest",
