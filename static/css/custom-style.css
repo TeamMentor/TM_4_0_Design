@@ -82,7 +82,8 @@ body > * {
 #about {
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
-  background-position: 0px -1380px;
+  background-position: 0px -850px;
+  background-size: 100%;
 }
 #about, #usp {
   width: 100%;
@@ -105,11 +106,12 @@ body > * {
 }
 #call-to-action {
   width: 100%;
-  padding: 100px 0 110px 0;
+  padding: 80px 0 75px 0;
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
-  background-position: 0px -800px;
+  background-position: 0px -425px;
   text-align: center;
+  background-size: 100%;
 }
 #call-to-action h1 {
   color: #FFFFFF;
@@ -260,6 +262,7 @@ body > * {
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
   background-position: 0px 0px;
+  background-size: 100%;
 }
 #usp button i, #call-to-action button i {
   font-size: 20px;
