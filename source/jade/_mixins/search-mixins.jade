@@ -22,7 +22,7 @@ mixin search-bar-input
                         form(action='/search', method='GET')
                             .input-group
                                 label(for='search-input') Get started by searching
-                                input.form-control(type='text', id='search-input', placeholder='Type keywords here', name='text')
+                                input.form-control(type='text', id='search-input', placeholder='Type keywords here', name='text' value=text)
                                 span.input-group-btn
                                     button#search-button(type='submit')
                                         i.fi-magnifying-glass
@@ -32,6 +32,10 @@ mixin results
     #results
         table
             tr
+                if no_Results
+                    td
+                        p.label#no_results No Results
+                        p Please try again
                 td
                     if results
                         if results.size() > 250
@@ -106,7 +110,7 @@ mixin search-poc
                     #search-bar
                         form(action='/search', method='GET')
                             .input-group
-                                input.form-control(type='text', placeholder='Type keywords here', name='text')
+                                input.form-control(type='text', placeholder='Type keywords here', name='text', value= text)
                                 span.input-group-btn
                                     button#search-button(type='submit')
                                         i.fi-magnifying-glass
