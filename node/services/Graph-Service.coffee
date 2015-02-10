@@ -1,9 +1,5 @@
 require('fluentnode')
 fs       = require('fs')
-#levelup    = require("levelup")
-#levelup    = require("level"        )
-#levelgraph      = require('levelgraph'   )
-GitHub_Service  = require('./GitHub-Service')
 
 class GraphService
 
@@ -12,11 +8,8 @@ class GraphService
     @data       = null
     @server     = 'http://localhost:1332'
 
-  dataFromGitHub: (callback)=>
-    user   = "TMContent"
-    repo   = "TM_Test_GraphData"
-    path   = 'GraphData/article_Data.json'
-    new GitHub_Service().file user, repo, path, (data)-> callback(JSON.parse(data))
+  server_Online: (callback)=>
+    callback(false)
 
   graphDataFromGraphDB: (queryId, filters, callback)=>
 

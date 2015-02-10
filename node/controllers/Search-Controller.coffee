@@ -4,7 +4,6 @@ request            = require('request')
 Config             = require('../misc/Config')
 Express_Service    = require('../services/Express-Service')
 Jade_Service       = require('../services/Jade-Service')
-GitHub_Service     = require('../services/GitHub-Service')
 Graph_Service      = require('../services/Graph-Service')
 TeamMentor_Service = require('../services/TeamMentor-Service')
 

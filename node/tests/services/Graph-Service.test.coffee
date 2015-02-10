@@ -7,23 +7,20 @@ Graph_Service  = require('./../../services/Graph-Service')
 # These are Graph-Service methods missing from here since they need either a live or a mocked version of TM_Graph
 describe 'services | Graph-Service.test |', ->
 
-    graphService  = null
+    graphService = null
+    offline_Url  = 'http://aaaaa.bbbb.ccc'
 
     before ->
         graphService  = new Graph_Service()
-        console.log
+        graphService.server = offline_Url       # all TM_Design tests expect the main TM Server to be offline
 
-    it 'dataFromGitHub', (done)->
-        expect(graphService.dataFromGitHub   ).to.be.an('Function')
-        graphService.dataFromGitHub (data)->
-            expect(data        ).to.be.an('Array')
-            expect(data        ).to.not.be.empty
-            expect(data.first()).to.not.be.empty
-            
-            expect(data.first().subject).to.be.an('String')
-            expect(data.first().predicate).to.be.an('String')
-            expect(data.first().object).to.be.an('String')
-            done()
+    it 'server_Online', (done)->
+      using graphService,->
+        @.server.assert_Is offline_Url
+        @.server_Online (online)->
+          online.assert_False()
+          done()
+
 
     it 'graphDataFromGraphDB', (done)->
         filters = ""
