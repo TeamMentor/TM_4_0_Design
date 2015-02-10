@@ -626,6 +626,7 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 .accordion .accordion-navigation, .accordion dd {
   margin: 0;
   border: 1px solid #dbdbdb;
+  border-bottom: none;
   margin: 20px 0;
 }
 
@@ -637,9 +638,14 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   font-size: 12px;
   font-weight: 700;
   color: #444444;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #dbdbdb;
 }
 .accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
-  background: white;
+  background: #fafafa;
+}
+.accordion .accordion-navigation > a:active, .accordion dd > a:active {
+  background: #8aaf3e;
 }
 /*------------------------------------*
    TABLES
