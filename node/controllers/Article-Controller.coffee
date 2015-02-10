@@ -7,20 +7,26 @@ Config           = require('../misc/Config')
 class Article_Controller
   constructor: (req, res, config)->
 
-    @.req          = req;
-    @.res          = res;
-    @.config       = config || new Config()
-    @.jade_Page     = '/source/jade/user/article-new-window-view.jade'
-    @.jade_Service = new Jade_Service(@.config);
-    @.graphService  = new Graph_Service()
+    @.req              = req;
+    @.res              = res;
+    @.config           = config || new Config()
+    @.jade_Article     = '/source/jade/user/article.jade'
+    @.jade_No_Article  = '/source/jade/user/no-article.jade'
+    @.jade_Service     = new Jade_Service(@.config);
+    @.graphService     = new Graph_Service()
 
   article: =>
     article_Id = @req.params.id
     @graphService.node_Data article_Id, (article_Data)=>
-      @graphService.article_Html article_Id, (article_Html)=>
-        view_Model = { id : article_Id, title: article_Data.title, article_Html: article_Html}
-        @recentArticles_add article_Id, article_Data.title
-        @res.send @jade_Service.renderJadeFile(@jade_Page, view_Model)
+      if article_Data and article_Data.title
+        title = article_Data.title
+        @graphService.article_Html article_Id, (html)=>
+          @recentArticles_add article_Id, title
+          view_Model = { id : article_Id, title: title,  article_Html: html}
+          @res.send @jade_Service.renderJadeFile(@jade_Article, view_Model)
+      else
+        @res.send @jade_Service.renderJadeFile(@jade_No_Article)
+
 
   recentArticles: =>
     @.req.session ?= {}
