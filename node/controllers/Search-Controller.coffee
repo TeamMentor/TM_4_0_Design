@@ -4,7 +4,6 @@ request            = require('request')
 Config             = require('../misc/Config')
 Express_Service    = require('../services/Express-Service')
 Jade_Service       = require('../services/Jade-Service')
-GitHub_Service     = require('../services/GitHub-Service')
 Graph_Service      = require('../services/Graph-Service')
 TeamMentor_Service = require('../services/TeamMentor-Service')
 
@@ -74,8 +73,13 @@ class SearchController
 
           searchData.text         =  target
           searchData.href         = "/search?text=#{target}&filter="
+          log searchData
           if searchData?.id
             recentSearches_Cache.push target
+          else
+            searchData.no_Results = true
+            @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
+            return
           if filter
             @graphService.resolve_To_Ids filter, (results)=>
               searchData.activeFilter = results.values()?.first()

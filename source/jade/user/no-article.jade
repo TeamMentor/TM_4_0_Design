@@ -5,16 +5,12 @@ include ../../shared-mixins/globals.jade
 block content
   #application
     .row
-      .col-3
+      .col-2
         .lge-container
-          br
-      .col-6
+      .col-8
         .lge-container
           #article
             #content
-              h1= title
-              != article_Html
-      .col-3
+              include:md ../../content/articles/no-article.md
+      .col-2
         .lge-container
-          br
-  +copyright

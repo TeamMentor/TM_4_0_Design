@@ -74,7 +74,7 @@ describe 'routes | routes.test |', ()->
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
       expectedStatus = 403 if ['/-poc-/search-two-column','/-poc-','/-poc-/md-render'].contains(path)
 
-      expectedStatus = 200 if ['/article/viewed.json'                        ].contains(path)
+      expectedStatus = 403 if ['/article/viewed.json'                        ].contains(path)
 
       expectedStatus = 404 if ['/aaaaa'                                      ].contains(path)
 

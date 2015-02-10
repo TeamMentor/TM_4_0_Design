@@ -6,9 +6,28 @@ marked            = require('marked')
 Help_Controller   = require('../../controllers/Help-Controller')
 TeamMentor_Service = require('../../services/TeamMentor-Service')
 
+
+skip_Tests_If_Offline = (testSuite,next)=>
+  url = "https://www.google.com"
+  url.GET (html)=>
+        if not html
+          for test in testSuite.tests
+            test.pending = true
+        next()
+
 describe 'controllers | Help-Controller.test', ()->
 
+  #help_Server_Online = ->
+  #  log new Help_Controller().docs_Server
+
   describe 'methods',->
+
+    before (done)->
+      skip_Tests_If_Offline @.test.parent, done
+
+
+      #new Help_Controller().docs_Server.GET
+      #@.test.parent.tests = []
 
     it 'ctor', ()->
       req = { a :42 }
@@ -19,6 +38,7 @@ describe 'controllers | Help-Controller.test', ()->
         @.pageParams.assert_Is({})
         @.req.assert_Is(req)
         @.res.assert_Is(res)
+        @.docs_Server.assert_Is 'https://docs.teammentor.net'
         assert_Is_Null(@.content)
         assert_Is_Null(@.page)
         assert_Is_Null(@.title)
@@ -49,6 +69,7 @@ describe 'controllers | Help-Controller.test', ()->
         @.getContent()
 
     it 'getContent (323dae88-b74b-465c-a949-d48c33f4ac85)', (done)->
+      @timeout 3500
       req      = { params: page: '323dae88-b74b-465c-a949-d48c33f4ac85' }  # 323dae88-b74b-465c-a949-d48c33f4ac85 is 'Support' page
       res_Index = res('To contact Security Innovation TEAM Mentor support please email',done)
       using new Help_Controller(req,res_Index),->
@@ -66,7 +87,11 @@ describe 'controllers | Help-Controller.test', ()->
       using new Help_Controller(req,res_Index),->
         @handleFetchedHtml({ code: 'ENOTFOUND'})
 
+
   describe 'misc workflows', ()->
+
+    before (done)->
+      skip_Tests_If_Offline @.test.parent, done
 
     this.timeout(3500)
 
@@ -115,6 +140,10 @@ describe 'controllers | Help-Controller.test', ()->
       check_For_Redirect()
 
   describe 'test-help (dynamic content) |', ()->
+
+    before (done)->
+      skip_Tests_If_Offline @.test.parent, done
+
     libraryData  = null
     pageParams   = { loggedIn : false};
     helpJadeFile = '/source/html/help/index.jade'
@@ -148,20 +177,20 @@ describe 'controllers | Help-Controller.test', ()->
                       done()
 
 
-  it 'check that main content deliverer article', (done)->
-    this.timeout(5000);
-    article_Id    = 'dac20027-6138-4cd1-8888-3b7e6a007ea5';
-    article_Line  = "<p><strong>To install TEAM Mentor Fortify SCA UI Integration</strong></p>";
-    article_Title = "<h2>Installation</h2>";
+    it 'check that main content deliverer article', (done)->
+      this.timeout(5000);
+      article_Id    = 'dac20027-6138-4cd1-8888-3b7e6a007ea5';
+      article_Line  = "<p><strong>To install TEAM Mentor Fortify SCA UI Integration</strong></p>";
+      article_Title = "<h2>Installation</h2>";
 
-    supertest(app).get('/help/' + article_Id)
-                  .end (error,response)->
-                    expect(response.text).to.contain(article_Line);
-                    expect(response.text).to.contain(article_Title);
-                    done()
+      supertest(app).get('/help/' + article_Id)
+                    .end (error,response)->
+                      expect(response.text).to.contain(article_Line);
+                      expect(response.text).to.contain(article_Title);
+                      done()
 
-  it 'check content_cache', ()->
-    help_Controller = new Help_Controller()
-    expect(Help_Controller).to.be.an("Function")
-    expect(help_Controller).to.be.an("Object")
-    expect(help_Controller.content_cache).to.be.an("Object")
+    it 'check content_cache', ()->
+      help_Controller = new Help_Controller()
+      expect(Help_Controller).to.be.an("Function")
+      expect(help_Controller).to.be.an("Object")
+      expect(help_Controller.content_cache).to.be.an("Object")

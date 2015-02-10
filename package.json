@@ -34,7 +34,7 @@
     "express": "latest",
     "express-enforces-ssl": "^1.1.0",
     "express-session": "latest",
-    "fluentnode": "^0.3.0",
+    "fluentnode": "latest",
     "github": "latest",
     "helmet": "^0.5.4",
     "jade": "latest",
