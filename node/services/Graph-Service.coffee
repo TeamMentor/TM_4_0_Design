@@ -46,7 +46,7 @@ class GraphService
 
     url_Convert.GET_Json (json)->
       mapping = json[json.keys().first()]
-      if mapping.id
+      if mapping?.id
         callback mapping.id
       else
         url_Search.GET (search_Id)->
