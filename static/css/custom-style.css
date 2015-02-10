@@ -82,7 +82,7 @@ body > * {
 #about {
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
-  background-position: 0px -850px;
+  background-position: 0px -1350px;
   background-size: 100%;
 }
 #about, #usp {
@@ -109,7 +109,7 @@ body > * {
   padding: 80px 0 75px 0;
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
-  background-position: 0px -425px;
+  background-position: 0px -800px;
   text-align: center;
   background-size: 100%;
 }
