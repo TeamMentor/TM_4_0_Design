@@ -17,11 +17,12 @@ mixin search-bar-input
     #search
         .lge-container
             .row
-                .col-offset-3.col-6
+                .col-offset-2.col-8
                     #search-bar
                         form(action='/search', method='GET')
                             .input-group
-                                input.form-control(type='text', placeholder='Type keywords here', name='text')
+                                label(for='search-input') Get started by searching
+                                input.form-control(type='text', id='search-input', placeholder='Type keywords here', name='text')
                                 span.input-group-btn
                                     button#search-button(type='submit')
                                         i.fi-magnifying-glass
@@ -52,10 +53,8 @@ mixin articles-list
                         table
                             tr
                                 td
-                                    h4=  result.title
-                                td
                                     a(href='/article/' + result.id, id=result.id)
-                                        i.fi-plus
+                                        h4=  result.title
                             tr
                                 td
                                     p= result.summary + '...'

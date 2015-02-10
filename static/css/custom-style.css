@@ -45,12 +45,15 @@
 html {
   font: 100% Helvetica, sans-serif;
 }
-body {
-  max-width: 100%;
+html, body {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
+}
+body {
   line-height: 1.5;
-  background: #Fafafa;
+  background: #fafafa;
 }
 body > * {
   -webkit-box-sizing: border-box;
@@ -79,7 +82,8 @@ body > * {
 #about {
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
-  background-position: 0px -1380px;
+  background-position: 0px -1350px;
+  background-size: 100%;
 }
 #about, #usp {
   width: 100%;
@@ -96,17 +100,18 @@ body > * {
 }
 #application {
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   margin-top: 140px;
-  margin-bottom: 50px;
+  background: #fafafa;
 }
 #call-to-action {
   width: 100%;
-  padding: 100px 0 110px 0;
+  padding: 80px 0 75px 0;
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
   background-position: 0px -800px;
   text-align: center;
+  background-size: 100%;
 }
 #call-to-action h1 {
   color: #FFFFFF;
@@ -126,20 +131,13 @@ body > * {
   padding-top: 5px;
 }
 #copyright {
-  background: #fff;
-  border: 1px solid #dbdbdb;
-  width: 100%;
-  padding: 0px 0 15px 0;
+  max-height: 100%;
+  padding: 20px 0 5px 0;
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  height: 60px;
-  margin-top: 50px;
 }
 #copyright ul {
   list-style: none;
   padding: 0;
-  margin-top: -5px;
 }
 #copyright li {
   display: block;
@@ -195,10 +193,10 @@ body > * {
 }
 #form {
   border: 1px solid #dbdbdb;
-  background: white;
+  background: #fafafa;
 }
 #help-nav{
-  margin-top: 170px;
+  margin-top: 20px;
 }
 #help-docs h1 {
   font-size: 1.625em;
@@ -211,6 +209,8 @@ body > * {
 }
 #landing-page {
   margin-top: 185px;
+  background: white;
+  height: 100%;
 }
 #list-view-article {
   background: white;
@@ -229,17 +229,14 @@ body > * {
   margin-top: 0;
 }
 #list-view-article a {
-  color: #8aaf3e;
-}
-#list-view-article a:hover {
-  color: #6c9020;
+  text-decoration: none;
 }
 #loginwall, #summary {
   max-width: 95%;
   margin: 0 auto;
 }
 #main-app-view {
-  margin-top: 70px;
+  margin-top: 110px;
 }
 #reasons {
   padding-top: 40px;
@@ -251,6 +248,7 @@ body > * {
 #results {
   background: white;
   margin: 0 0 10px 0;
+  border-radius: 3px;
   border: 1px solid #dbdbdb;
   width: 100%;
 }
@@ -261,6 +259,7 @@ body > * {
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
   background-position: 0px 0px;
+  background-size: 100%;
 }
 #usp button i, #call-to-action button i {
   font-size: 20px;
@@ -276,9 +275,16 @@ body > * {
   z-index: 96;
 }
 #search-bar {
-  height: 90px;
+  height: 110px;
   border: 1px solid #dbdbdb;
   background: white;
+}
+#search-bar input {
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+}
+#search-bar input:focus, #search-bar input:focus {
+  border-bottom: 2px solid #aaaaaa;
 }
 #search-2 {
   width: 100%;
@@ -334,17 +340,16 @@ img {
   text-align: center;
 }
 #tm-logo {
-  background:url('../assets/logos/logos.jpg') no-repeat;
+  background:url('../assets/logos/logos.png') no-repeat;
   background-position: 0px 0px;
-  height: 50px;
+  height: 40px;
   margin: 0 auto;
-  width: 250px;
 }
 #si-logo {
-  background:url('../assets/logos/logos.jpg') no-repeat;
-  background-position: 0px -50px;
+  background:url('../assets/logos/logos.png') no-repeat;
+  background-position: 0px -43px;
   height: 50px;
-  width: 190px;
+  width: 160px;
   margin: 0 auto;
 }
 #links {
@@ -386,11 +391,14 @@ img {
 .sub-nav {
   display: block;
   border: 1px solid #dbdbdb;
+  background: #ffffff;
+  border-radius: 3px;
   overflow:auto;
   text-transform: uppercase;
   font-size: 12px;
   white-space: pre-wrap;
   padding: 12px 0;
+  width: 100%;
 }
 .sub-nav a:after { content: " / "; padding-left: 10px; color: #aaaaaa;}
 .sub-nav a:before { content: " "; }
@@ -479,7 +487,7 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
   background-color: #FFFFFF;
   font-family: inherit;
   border: none;
-  border-bottom: 1px solid #dbdbdb;
+  border: 2px solid #dbdbdb;
   color: #444444;
   border-radius: 3px;
   font-size: 1em;
@@ -495,7 +503,7 @@ input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"
 input[type="url"]:focus, textarea:focus {
   background: #fff;
   outline: none;
-  border-bottom: 2px solid #dbdbdb;
+  border: 3px solid #aaaaaa;
 }
 select {
   width: 100%;
@@ -519,8 +527,7 @@ select {
 }
 .input-group .input-group-btn {
   display: table-cell;
-  width: 50px;
-  vertical-align: top;
+  vertical-align: bottom;
 }
 /*------------------------------------*
    TYPOGRAPHY
@@ -762,6 +769,9 @@ button:hover, button:active {
   color:#fff;
   font-size: 12px;
 }
+span.rwd-line {
+  display: block;
+}
 /*------------------------------------*
    TABLES
 *------------------------------------*/
@@ -809,9 +819,6 @@ table.nav h3 {
   #contact-information {
     margin: 50px 0 0 0;
   }
-  #copyright {
-    height: 70px;
-  }
   #search {
     margin-top: -5px !important;
   }
@@ -825,11 +832,8 @@ table.nav h3 {
   #tm-logo {
     display: inline-block;
     float: left;
-    margin: 3px 0 0 20px;
+    margin: 7px 0 0 20px;
     width: 36%;
-  }
-  #si-logo {
-    margin: 0 auto;
   }
   #landing-page {
     margin: 0;
@@ -859,23 +863,20 @@ table.nav h3 {
   #links ul li a{
     font-size: 14px;
   }
-  #loginwall, #summary {
-    max-width: 90%;
-  }
   #loginwall {
     padding: 100px 0 0 0;
   }
   #main-app-view {
-    margin-top: 100px;
+    margin-top: 120px;
   }
   #summary {
-    padding: 80px 0 0 0;
+    padding: 90px 0 0 0;
   }
   #footer {
     text-align: left;
   }
-  #help-nav, #help-docs {
-    margin-top: 70px;
+  #help-docs {
+    margin-top: 20px;
   }
   a.minor {
     line-height: 3.75em;
@@ -908,6 +909,11 @@ table.nav h3 {
   h5 {
     font-size: 1em;
     line-height: 1em;
+  }
+}
+@media (min-width: 1301px) {
+  span.rwd-line {
+    display: inline;
   }
 }
 /*------------------------------------*
