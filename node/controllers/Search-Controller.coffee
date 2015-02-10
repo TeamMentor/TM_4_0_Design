@@ -73,7 +73,7 @@ class SearchController
 
           searchData.text         =  target
           searchData.href         = "/search?text=#{target}&filter="
-          log searchData
+          
           if searchData?.id
             recentSearches_Cache.push target
           else
