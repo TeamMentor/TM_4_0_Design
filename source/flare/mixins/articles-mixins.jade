@@ -7,25 +7,18 @@ mixin article
 //- Article Options
 mixin article-options
 	#article-options
-		dl.tabs(data-tab='data-tab')
-			dd
-				a(href='#metadata')
-					+metadata-icon
-			dd
-				a(href='#save')
-					+save-icon
-			dd
-				a(href='#share')
-					+share-icon
-		.tabs-content
-			#metadata.content
-				+metadata-table
-			#save.content
-				a(href='alert-article-new-window-view')
-					+save-div
-			#share.content
-				a(href='alert-article-new-window-view')
-					+share-div
+		.row
+			.small-12.medium-6.columns
+				ul
+					li #technology
+					li #phase
+					li #type
+			.small-12.medium-6.columns
+				.row
+					.small-6.columns
+						+save-button
+					.small-6.columns
+						+share-button
 
 
 //- Related Courses and Articles
@@ -33,7 +26,7 @@ mixin related-options
 	#related-options
 		h3 You might also like
 		dl.tabs(data-tab='data-tab' class='related-options-width')
-			dd
+			dd.active
 				a(href='#related-articles')
 					+articles-icon
 			dd
@@ -41,40 +34,9 @@ mixin related-options
 					+courses-icon
 		.tabs-content
 			#related-articles.content.active
-				dl.accordion(data-accordion='data-accordion')
-					dd.accordion-navigation
-						a(href='#article-1') Article Headline
-						#article-1.content.active
-							include:md ../../content/articles/article-details.md
-							+flare-article-preview-menu
-					dd.accordion-navigation
-						a(href='#article-2') Article Headline
-						#article-2.content
-							include:md ../../content/articles/article-details.md
-							+flare-article-preview-menu
-					dd.accordion-navigation
-						a(href='#article-3') Article Headline
-						#article-3.content
-							include:md ../../content/articles/article-details.md
-							+flare-article-preview-menu
-
+				+articles-list
 			#related-courses.content
-				dl.accordion(data-accordion='data-accordion')
-					dd.accordion-navigation
-						a(href='#courses-1') Course Headline
-						#courses-1.content
-							include:md ../../content/articles/article-details.md
-							+flare-article-preview-menu
-					dd.accordion-navigation
-						a(href='#courses-2') Course Headline
-						#courses-2.content
-							include:md ../../content/articles/article-details.md
-							+flare-article-preview-menu
-					dd.accordion-navigation
-						a(href='#courses-3') Course Headline
-						#courses-3.content
-							include:md ../../content/articles/article-details.md
-							+flare-article-preview-menu
+				+articles-list
 
 mixin flare-directory-list
 	#directory-list
@@ -101,30 +63,6 @@ mixin flare-directory-list
 				a(href='#') A New ID Is Assigned on Login A New ID Is Assigned on Login
 			li
 				a(href='#') A New ID Is Assigned on Login A New ID Is Assigned on Login
-
-//- Metadata Table
-mixin metadata-table
-	table
-		tr
-			td
-				h5 Technology:
-			td
-				p Any
-		tr
-			td
-				h5 Category:
-			td
-				p Authentication
-		tr
-			td
-				h5 Phase:
-			td
-				p Implementation
-		tr
-			td
-				h5 Type:
-			td
-				p Attack
 
 //- Directory List
 mixin directory-list

@@ -393,3 +393,18 @@ mixin flare-alert
 	.alert-box(data-alert='')
 		| Error, Validation or Alert Message Here
 		a.close(href='#') ×
+
+mixin copyright
+	#copyright
+		.row
+			.small-12
+				a(href='http://www.securityinnovation.com/', target='_blank')
+					#si-logo
+				include:md ../../content/articles/copyright-information.md
+				ul
+					li
+						+i-email
+						a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
+					li
+						+i-toc
+						a(href="../guest/terms-and-conditions.html") Terms & Conditions

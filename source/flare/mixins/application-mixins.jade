@@ -125,19 +125,6 @@ mixin flare-saved-articles-list
                 include:md ../../content/articles/article-details.md
                 +saved-article-menu
 
-//- Article Preview Menu
-mixin flare-article-preview-menu
-    .row.text-center
-        .small-12.large-4.columns
-            a.action(href='article-new-window-view', target='_blank')
-                +open-icon
-        .small-12.large-4.columns
-            a.action(href='app-keyword-search-save')
-                +save-icon
-        .small-12.large-4.columns
-            a.action(href='app-keyword-search-share')
-                +share-icon
-
 // Saved Article Menu
 mixin saved-article-menu
     .row.text-center
