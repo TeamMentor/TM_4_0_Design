@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f ./node_modules/html-file-covpackage.json ]; then
+if [ ! -f ./node_modules/html-file-cov/package.json ]; then
   echo 'Installing coverage dependencies'
   npm install jscover
   npm install coffee-coverage
