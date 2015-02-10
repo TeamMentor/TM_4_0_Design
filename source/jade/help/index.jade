@@ -5,7 +5,7 @@ block content
 			.col-3#help-nav
 				.lge-container
 					if library
-						#content
+						.content
 							each view in library.Views
 								h4.label= view.Title
 								.list-group
@@ -14,7 +14,7 @@ block content
 											= article.Title
 			.col-6#help-docs
 				.lge-container
-					#content
+					.content
 						if title
 							h2= title
 						!= content
