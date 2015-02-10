@@ -121,7 +121,7 @@ body > * {
   text-align: center;
   background: white;
 }
-#content {
+.content {
   background: white;
   padding: 5px;
   border-radius: 3px;

@@ -1,71 +1,153 @@
 require('fluentnode')
-fs            = require('fs'           )
-expect        = require('chai'         ).expect
-spawn         = require('child_process').spawn
+fs             = require('fs'           )
+http           = require('http'         )
+expect         = require('chai'         ).expect
+spawn          = require('child_process').spawn
 Graph_Service  = require('./../../services/Graph-Service')
+Server         = http.Server
 
-# These are Graph-Service methods missing from here since they need either a live or a mocked version of TM_Graph
+Server::respond_With_Request_Url = (value)->
+  delete @._events.request
+  simple_Response = (req, res) ->
+    res.writeHead(200, {'Content-Type': 'application/json'})
+    data = { url: req.url}
+    res.end(data.json_Str())
+  @.addListener('request', simple_Response)
+  @
+
+
 describe 'services | Graph-Service.test |', ->
 
-    graphService  = null
+  test_Port    = 45566 + Math.floor((Math.random() * 1000) + 1)
+  test_Ip      = '127.0.0.1'
+  test_Data    = 'mocked server'
+  test_Server  = "http://#{test_Ip}:#{test_Port}"
+  server       = null
+  graphService = null
 
-    before ->
-        graphService  = new Graph_Service()
-        console.log
+  before (done)->
+    test_Server.assert_Contains(test_Ip).assert_Contains(test_Port)
+    server = http.createServer(null)
+    server.listen_OnPort_Saying test_Port, test_Data, ()=>
+      graphService  = new Graph_Service( { server: test_Server})
+      done()
 
-    it 'dataFromGitHub', (done)->
-        expect(graphService.dataFromGitHub   ).to.be.an('Function')
-        graphService.dataFromGitHub (data)->
-            expect(data        ).to.be.an('Array')
-            expect(data        ).to.not.be.empty
-            expect(data.first()).to.not.be.empty
-            
-            expect(data.first().subject).to.be.an('String')
-            expect(data.first().predicate).to.be.an('String')
-            expect(data.first().object).to.be.an('String')
-            done()
+  after (done)->
+    server.close_And_Destroy_Sockets ()->
+      done()
 
-    it 'graphDataFromGraphDB', (done)->
-        filters = ""
-        queryId = 'Logging'
-        graphService.graphDataFromGraphDB queryId, filters,  (searchData)=>
-          searchData.assert_Is_Object()
-          done()
+  it 'server_Online (on live server)', (done)->
+    using graphService,->
+      @.server.assert_Is test_Server
+      @.server_Online (online)->
+        online.assert_True()
+        done()
 
-    it 'graphDataFromGraphDB (non existent query)', (done)->
-        queryId = 'AAAAAAA'.add_5_Random_Letters()
-        graphService.graphDataFromGraphDB queryId, "",  (searchData)=>
-            if (searchData.containers)
-                searchData.containers.assert_Size_Is(0)          # regression test for [bug #128]
-                searchData.filters.assert_Size_Is(0)
-                searchData.results.assert_Size_Is(0)
-            done()
+  it 'server_Online (on not live server)', (done)->
+    using new Graph_Service({ server: 'http://aaaa.bbbb.ccc.ddd'}),->
+      @.server_Online (online)->
+        online.assert_False()
+        done()
 
-    # This test to work will need a mocked (or real) tm graph instance running
+  it 'graphDataFromGraphDB (no queryId and no filters)', (done)->
+    graphService.graphDataFromGraphDB null, null,  (searchData)=>
+      searchData.assert_Is {}
+      done()
 
-    #it.only 'root_Queries',(done)->
-    #  graphService.root_Queries (root_Queries)->
-    #    log root_Queries
-    #    done()
-    #    return
-    #    if not root_Queries
-    #      done()
-    #    else
-    #      using root_Queries,->
-    #        @.id        .assert_Is 'Root-Queries'
-    #        @.title     .assert_Is 'Root Queries'
-    #        @.containers.assert_Size_Is_Bigger_Than 4
-    #        done()
+  it 'graphDataFromGraphDB (with queryId and no filters)', (done)->
+    server.respond_With_Request_Url()
 
-    # move test below to a different describe since is affecting the graphService object
-    it 'graphDataFromGraphDB (bad Server)', (done)->
-        graphService.server = 'http://aaaaaaaa.teammentor.net'
-        graphService.graphDataFromGraphDB '', '',  (searchData)=>
-          searchData.assert_Is({})
-          done()
+    query_Id = 'AAAAAA'.add_5_Letters()
+    graphService.graphDataFromGraphDB query_Id, null,  (data)=>
+      data.url.assert_Is "/data/query_tree/#{query_Id}"
+      server.respond_With_String_As_Text(null)
+      graphService.graphDataFromGraphDB query_Id, null,  (data)=>
+        data.assert_Is {}
+        done()
+
+  it 'graphDataFromGraphDB (with queryId no filters)', (done)->
+    server.respond_With_Request_Url()
+
+    query_Id = 'AAAAAA'.add_5_Letters()
+    filters  = 'AAAAAA'.add_5_Letters()
+    graphService.graphDataFromGraphDB query_Id, filters,  (data)=>
+      data.url.assert_Is "/data/query_tree_filtered/#{query_Id}/#{filters}"
+      done()
+
+  it 'graphDataFromGraphDB (with queryId no filters)', (done)->
+    server.respond_With_Request_Url()
+
+    query_Id = 'abc_'.add_5_Letters()
+    filters  = 'abc_'.add_5_Letters()
+    graphService.graphDataFromGraphDB query_Id, filters,  (data)=>
+      data.url.assert_Is "/data/query_tree_filtered/#{query_Id}/#{filters}"
+      done()
+
+  it 'resolve_To_Ids', (done)->
+    values = 'abc_'.add_5_Letters()
+    graphService.resolve_To_Ids values,  (data)=>
+      data.url.assert_Is "/convert/to_ids/#{values}"
+      done()
+
+  it 'root_Queries', (done)->
+    graphService.root_Queries (data)=>
+        data.url.assert_Is "/data/query_tree/Root-Queries"
+        done()
+
+  it 'query_From_Text_Search (bad text)', (done)->
+    graphService.query_From_Text_Search null,  (data)=>
+      assert_Is_Null data
+      done()
+
+  it 'query_From_Text_Search (to_ids returns a valid mapping)', (done)->
+    mappings = {'aaa': id :'123'.add_5_Letters()}
+    server.respond_With_Object_As_Json mappings
+    text = 'abc_'.add_5_Letters()
+    graphService.query_From_Text_Search text,  (data)=>
+      data.assert_Is mappings.aaa.id
+      done()
+
+  it 'query_From_Text_Search (to_ids returns a string)', (done)->
+    server.respond_With_Request_Url()
+    text = 'abc_'.add_5_Letters()
+    graphService.query_From_Text_Search text,  (data)=>
+      data.json_Parse().url.assert_Is "/search/query_from_text_search/#{text}"
+      done()
+
+   it 'article_Html (bad id)', (done)->
+    graphService.article_Html null,  (data)=>
+      data.assert_Is ''
+      done()
+
+  it 'article_Html (good id)', (done)->
+    server.respond_With_Request_Url()
+    article_Id = 'abc_'.add_5_Letters()
+    graphService.article_Html article_Id,  (data)=>
+      data.url.assert_Is "/data/article_Html/#{article_Id}"
+      done()
+
+   it 'node_Data (bad id)', (done)->
+    graphService.node_Data null,  (data)=>
+      data.assert_Is ''
+      done()
+
+  it 'node_Data (good id)', (done)->
+    server.respond_With_Request_Url()
+    article_Id = 'abc_'.add_5_Letters()
+    graphService.node_Data article_Id,  (data)=>
+      data.assert_Is "/data/id/#{article_Id}"
+      done()
+
+  it 'node_Data (good id, bad response)', (done)->
+    server.respond_With_String_As_Text 'aaaa'
+    article_Id = 'abc_'.add_5_Letters()
+    graphService.node_Data article_Id,  (data)=>
+      data.assert_Is {}
+      done()
 
 
 
+# Move code below to GraphDB since those test have access to library data
 
 #   it 'loadTestData', (done)->
 #       expect(graphService.loadTestData).to.be.an('Function')
