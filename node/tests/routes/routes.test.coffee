@@ -7,7 +7,6 @@ describe 'routes | routes.test |', ()->
                       '/flare/default',
                       '/Image/:name',
                       '/article/:id'
-                      '/article/viewed.json',
                       '/search',
                       '/flare',
                       '/flare/all',
@@ -73,8 +72,6 @@ describe 'routes | routes.test |', ()->
       expectedStatus = 403 if ['article', 'show','library','libraries'          ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
       expectedStatus = 403 if ['/-poc-/search-two-column','/-poc-','/-poc-/md-render'].contains(path)
-
-      expectedStatus = 403 if ['/article/viewed.json'                        ].contains(path)
 
       expectedStatus = 404 if ['/aaaaa'                                      ].contains(path)
 

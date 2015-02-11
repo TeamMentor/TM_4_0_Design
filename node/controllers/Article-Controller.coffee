@@ -5,7 +5,7 @@ Config           = require('../misc/Config')
 
 
 class Article_Controller
-  constructor: (req, res, config, expressService)->
+  constructor: (req, res, config)->
 
     @.req              = req;
     @.res              = res;
@@ -14,7 +14,6 @@ class Article_Controller
     @.jade_No_Article  = '/source/jade/user/no-article.jade'
     @.jade_Service     = new Jade_Service(@.config);
     @.graphService     = new Graph_Service()
-    @.expressService   = expressService
 
   article: =>
     article_Id = @req.params.id
@@ -41,20 +40,6 @@ class Article_Controller
     @.req.session.recent_Articles ?= []
     @.req.session.recent_Articles.unshift { id: id , title:title}
 
-
-  viewedArticles: ()=>
-    if not @.expressSession
-      @res.send {}
-    else
-      @.expressSession.db.find {}, (err,sessionData)=>
-          recent_Articles = []
-          if sessionData
-              for session in sessionData
-                  if session.data.recent_Articles
-                      for recent_article in session.data.recent_Articles
-                          recent_Articles.add(recent_article)
-          @res.send(recent_Articles)
-
 Article_Controller.registerRoutes = (app, expressService) ->
 
   expressService ?= new Express_Service()
@@ -62,11 +47,9 @@ Article_Controller.registerRoutes = (app, expressService) ->
 
   articleController = (method_Name) ->                                  # pins method_Name value
         return (req, res) ->                                             # returns function for express
-            new Article_Controller(req, res, app.config, expressService)[method_Name]()    # creates SearchController object with live
+            new Article_Controller(req, res, app.config)[method_Name]()    # creates SearchController object with live
 
 
-
-  app.get "/article/viewed.json" , checkAuth, articleController('viewedArticles')
   app.get "/article/:id"         , checkAuth, articleController('article')
 
 
