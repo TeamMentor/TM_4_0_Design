@@ -3,12 +3,6 @@ extends ../_layouts/page_home.jade
 include ../_mixins/articles-mixins.jade
 include ../_mixins/search-mixins.jade
 
-block content
-	//weird CSS fix to handle Chrome prob when <form> exists
-	style
-		|.pull-right { float  : right !important; }
-		|.navbar ul  { display: inline-block;     }
-
 	#application
 		.row
 			.col-3

@@ -193,7 +193,7 @@ nav a:hover, nav p:hover {
 #results-save-clear h4 {
   padding-top: 10px;
 }
-#list-view-article, #content {
+#list-view-article, .content {
   background: white;
   padding: 5px;
   border-radius: 3px;
@@ -208,7 +208,7 @@ nav a:hover, nav p:hover {
 #list-view-article p {
   margin-top: 10px;
 }
-#content {
+.content {
   padding: 20px;
   margin-top: 20px;
 }
@@ -721,12 +721,13 @@ button i {
   padding: 10px 5px 5px 5px;
   border-radius: 0px;
   width: 50%;
-  color: #8aaf3e;
   background: transparent;
 }
-.postfix:hover {
-  color: #b4cf7b;
+a.postfix:hover {
   background: transparent;
+}
+.postfix i:hover {
+  color: #b4cf7b;
 }
 .postfix i, .app i {
   text-align: center;
