@@ -32,11 +32,11 @@
 }
 .row { width: 100%; }
 .collapse { margin-bottom: -50px; }
-.clearfix:before, .clearfix:after, .container:before, .container:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after {
+.clearfix:before, .clearfix:after, .container:before, .container:after, .row:before, .row:after {
   display: table;
   content: " ";
 }
-.clearfix:after, .container:after, .row:after, .navbar:after, .navbar-header:after, .navbar-collapse:after {
+.clearfix:after, .container:after, .row:after {
   clear: both;
 }
 /*------------------------------------*
@@ -48,6 +48,9 @@ html {
 html, body {
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 body {
   line-height: 1.5;
@@ -266,21 +269,21 @@ body > * {
 #search {
   width: 100%;
   background: #fafafa;
-  height: 50px;
-  padding: 0 0 40px 0;
-  margin-top: 12px;
   position: fixed;
+  top: 140px;
+  left: 0;
   z-index: 96;
 }
 #search-bar {
-  height: 110px;
   border: 1px solid #dbdbdb;
   background: white;
   border-radius: 3px;
-  width: 100%;
 }
 #search-bar input {
-  border-right: none;
+  border:none;
+}
+#search-bar input:active + .input-group {
+  border: 2px solid #aaaaaa;
 }
 #search-2 {
   background: #fafafa;
@@ -514,6 +517,7 @@ select {
 .input-group {
   display: table;
   width: 100%;
+  border: 1px solid #dbdbdb;
 }
 .input-group .form-control {
   display: table-cell;
@@ -673,9 +677,8 @@ button:hover, button:active {
   background: transparent;
   border: none;
   border-radius: 3px;
-  border-left: none;
-  box-shadow: none;
   text-align: center;
+  float: right;
 }
 #search-button i {
   color:#8aaf3e;
@@ -814,7 +817,7 @@ table.nav h3 {
     margin: 50px 0 0 0;
   }
   #search {
-    margin-top: -5px !important;
+    top: 60px;
   }
   #search-2 {
     width: 75%;
@@ -861,7 +864,7 @@ table.nav h3 {
     padding: 100px 0 0 0;
   }
   #main-app-view {
-    margin-top: 120px;
+    margin-top: 160px;
   }
   #summary {
     padding: 90px 0 0 0;

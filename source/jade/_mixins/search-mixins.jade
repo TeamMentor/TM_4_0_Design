@@ -21,8 +21,8 @@ mixin search-bar-input
                 .col-offset-2.col-8
                     #search-bar
                         form(action='/search', method='GET')
+                            label(for='search-input') Type keywords here
                             .input-group
-                                label(for='search-input') Type keywords here
                                 input.form-control(type='text', id='search-input', name='text')
                                 span.input-group-btn
                                     button#search-button(type='submit')
