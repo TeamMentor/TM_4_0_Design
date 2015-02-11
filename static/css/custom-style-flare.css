@@ -157,9 +157,10 @@ nav a:hover, nav p:hover {
   overflow-y: auto;
 }
 #search-bar {
-  background: #fff;
   -webkit-order: 6;
   -webkit-flex: 100%;
+  background: white;
+  padding: 5px;
 }
 #left-nav, #results, #right-nav {
   padding: 2px;
@@ -715,26 +716,25 @@ button i {
   box-shadow: none;
 }
 .postfix {
-  height: 3em;
-  margin: 5px 0 0 0;
   border-radius: 0;
-  height: 48px;
-  padding: 15px 5px 5px 5px;
-  border-radius: 3px;
-  border: transparent;
+  height: 3.75em;
+  padding: 10px 5px 5px 5px;
+  border-radius: 0px;
   width: 50%;
-  background: #b4cf7b;
-  color: #fff;
+  color: #8aaf3e;
+  background: transparent;
 }
 .postfix:hover {
-  background: #8aaf3e;
-  color: white;
-  border-color: #6c9020;
+  color: #b4cf7b;
+  background: transparent;
 }
 .postfix i, .app i {
-  color: #ffffff !important;
   text-align: center;
   margin: 0 auto;
+  font-size: 20px;
+}
+.app i {
+  color: #ffffff !important;
 }
 #save-button, #share-button, #navigate-button, #show-button {
   width: 100%;
@@ -775,7 +775,6 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
   color: #444444;
   border-radius: 3px;
   font-size: 1em;
-  margin: 5px 0 15px 0;
   padding: 0 0 0 0.5rem;
   height: 3rem;
   border: 1px solid #dbdbdb;
@@ -789,7 +788,6 @@ input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"
 input[type="url"]:focus, textarea:focus {
   background: #fff;
   border: 2px solid #aaaaaa;
-  outline: medium none;
   transition: all 0.5s;
 }
 select {
@@ -809,13 +807,13 @@ label {
 }
 input#search {
   width: 100%;
-  border: 1px solid #aaaaaa;
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
   border-radius: 0px;
-  box-shadow: 1px 1px 6px #aaaaaa;
+  outline: none;
 }
 input#search:active, input#search:focus {
-  border-bottom: 2px solid #8aaf3e;
-  background: white;
+  border-bottom: 2px solid #aaaaaa;
 }
 #filters input[type=radio] {
   display: none;
