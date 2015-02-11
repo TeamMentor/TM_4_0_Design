@@ -161,6 +161,8 @@ nav a:hover, nav p:hover {
   -webkit-flex: 100%;
   background: white;
   padding: 5px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
 }
 #left-nav, #results, #right-nav {
   padding: 2px;
@@ -193,7 +195,7 @@ nav a:hover, nav p:hover {
 #results-save-clear h4 {
   padding-top: 10px;
 }
-#list-view-article, .content {
+#list-view-article, .content-pane {
   background: white;
   padding: 5px;
   border-radius: 3px;
@@ -208,7 +210,7 @@ nav a:hover, nav p:hover {
 #list-view-article p {
   margin-top: 10px;
 }
-.content {
+.content-pane {
   padding: 20px;
   margin-top: 20px;
 }
@@ -259,6 +261,7 @@ nav a:hover, nav p:hover {
   min-height: 1px;
 }
 #save, #share {
+  border: 1px solid #dbdbdb;
   background: #fafafa;
   padding: 20px 0 20px 0
 }
