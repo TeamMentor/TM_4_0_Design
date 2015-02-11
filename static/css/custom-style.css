@@ -255,6 +255,7 @@ body > * {
 #results-2 {
   width: 100%;
   padding-top: 140px;
+  border-radius: 3px;
   margin: 0 auto;
 }
 #usp {
@@ -280,6 +281,7 @@ body > * {
   height: 110px;
   border: 1px solid #dbdbdb;
   background: white;
+  border-radius: 3px;
 }
 #search-bar input {
   border: none;
@@ -289,14 +291,11 @@ body > * {
   border-bottom: 2px solid #aaaaaa;
 }
 #search-2 {
-  width: 100%;
   background: #fafafa;
-  height: 50px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 0 40px 0;
-  margin: 12px 0 50px 0;
+  margin: 12px 0 10px 0;
   position: fixed;
-  border-radius: 3px;
   z-index: 96;
 }
 .vertical-align {
@@ -826,7 +825,7 @@ table.nav h3 {
     margin-top: -5px !important;
   }
   #search-2 {
-    width: 100%;
+    width: 75%;
     margin: 0;
   }
   #team-mentor-navigation {
