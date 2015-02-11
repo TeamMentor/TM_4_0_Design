@@ -33,8 +33,8 @@ mixin search-poc
         .lge-container
             #search-bar
                 form(action='/search', method='GET')
+                    label(for='search-input') Get started by searching
                     .input-group
-                        label(for='search-input') Get started by searching
                         input.form-control(type='text', name='text', value= text)
                         span.input-group-btn
                             button#search-button(type='submit')
@@ -127,9 +127,9 @@ mixin articles-list
 //- filters
 mixin filters-div
     if filters
-        .content
-            h3 Filter by
-            #filters
+        #filters
+            .content
+                h3 Filter by
                 for filter in filters
                     h4.label= filter.title
                     table.nav
