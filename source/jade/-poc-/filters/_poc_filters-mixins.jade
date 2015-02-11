@@ -16,13 +16,13 @@ mixin poc-filters
 
 mixin poc-filters-2
     h3 Filter by
-    .nav#filters
+    #filters
         if filters
             for filter in filters
                 .dropdown
-+                   button= filter.title
+                    button= filter.title
                         span.right
-                            i.fi-arrow-down
+                            +arrow-down
                         for result in filter.results
                             ul.dropdown-menu
                                 li

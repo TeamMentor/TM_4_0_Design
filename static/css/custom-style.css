@@ -48,8 +48,6 @@ html {
 html, body {
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
 }
 body {
   line-height: 1.5;
@@ -76,14 +74,11 @@ body > * {
   padding-top: 100px;
   margin-top: -80px;
 }
-#articles-2 {
-  margin-top: 100px;
-}
 #about {
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
-  background-position: 0px -1350px;
-  background-size: 100%;
+  background-position: 0px -1400px;
+  background-size: auto;
 }
 #about, #usp {
   width: 100%;
@@ -101,7 +96,7 @@ body > * {
 #application {
   width: 100%;
   max-height: 100%;
-  margin-top: 140px;
+  margin-top: 160px;
   background: #fafafa;
 }
 #call-to-action {
@@ -111,7 +106,7 @@ body > * {
   background-repeat: no-repeat;
   background-position: 0px -800px;
   text-align: center;
-  background-size: 100%;
+  background-size: auto;
 }
 #call-to-action h1 {
   color: #FFFFFF;
@@ -208,7 +203,7 @@ body > * {
   padding: 180px 0 0 0;
 }
 #landing-page {
-  margin-top: 185px;
+  margin-top: 160px;
   background: white;
   height: 100%;
 }
@@ -262,7 +257,7 @@ body > * {
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
   background-position: 0px 0px;
-  background-size: 100%;
+  background-size: auto;
 }
 #usp button i, #call-to-action button i {
   font-size: 20px;
@@ -282,6 +277,7 @@ body > * {
   border: 1px solid #dbdbdb;
   background: white;
   border-radius: 3px;
+  width: 100%;
 }
 #search-bar input {
   border: none;
@@ -429,6 +425,7 @@ img {
 .list-group {
   border: 1px solid #dbdbdb;
   background: #fafafa;
+  margin-top: -10px;
 }
 .list-group a {
   border-bottom: 1px solid #e5e5e5;

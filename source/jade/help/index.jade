@@ -2,17 +2,19 @@ extends ../_layouts/page
 block content
 	#application
 		.row
-			.col-3#help-nav
+			.col-3
 				.lge-container
 					if library
 						.content
 							each view in library.Views
 								h4.label= view.Title
-								.list-group
+								table.nav
 									each article in view.Articles
-										a(href= '/help/' + article.Id)
-											= article.Title
-			.col-6#help-docs
+										tr
+											td
+												a(href= '/help/' + article.Id)
+													= article.Title
+			.col-6
 				.lge-container
 					.content
 						if title
@@ -20,4 +22,3 @@ block content
 						!= content
 			.col-3
 				.lge-container
-					br
