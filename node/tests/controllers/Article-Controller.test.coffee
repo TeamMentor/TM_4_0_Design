@@ -20,8 +20,8 @@ describe '| services | Article-Controller.test', ->
     res =
       send : (data)->
         $ = cheerio.load(data)
-        $('#content #oops').html().assert_Is 'Oops'
-        $('#content p'    ).html().assert_Is 'That article doesn&apos;t exist.'
+        $('.content #oops').html().assert_Is 'Oops'
+        $('.content p'    ).html().assert_Is 'That article doesn&apos;t exist.'
         done()
 
     using new Article_Controller(req,res), ->
@@ -40,8 +40,8 @@ describe '| services | Article-Controller.test', ->
     res =
       send : (data)->
         $ = cheerio.load(data)
-        $('#content #title').html().assert_Is article_Title
-        $('#content #html' ).html().assert_Is article_Html
+        $('#article #title').html().assert_Is article_Title
+        $('#article #html' ).html().assert_Is article_Html
         done()
 
     graphService =

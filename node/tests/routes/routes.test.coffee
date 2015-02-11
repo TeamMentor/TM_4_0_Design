@@ -12,9 +12,9 @@ describe 'routes | routes.test |', ()->
                       '/flare',
                       '/flare/all',
                       '/flare/main-app-view',
-                      '/-',
-                      '/-/:queryId',
-                      '/-/:queryId/:filters',
+                      '/show',
+                      '/show/:queryId',
+                      '/show/:queryId/:filters',
                       '/render/mixin/:file/:mixin',   # GET
                       '/render/mixin/:file/:mixin',   # POST (test blind spot due to same name as GET)
                       '/render/file/:file',
@@ -70,7 +70,7 @@ describe 'routes | routes.test |', ()->
       expectedStatus = 302 if ['','image','deploy'                           ].contains(path.split('/').second().lower())
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
                                '/user/logout'                                ].contains(path)
-      expectedStatus = 403 if ['article', '-','library','libraries'          ].contains(path.split('/').second().lower())
+      expectedStatus = 403 if ['article', 'show','library','libraries'          ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
       expectedStatus = 403 if ['/-poc-/search-two-column','/-poc-','/-poc-/md-render'].contains(path)
 

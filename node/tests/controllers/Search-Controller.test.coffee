@@ -8,7 +8,7 @@ Search_Controller = require('../../controllers/Search-Controller')
 Express_Service   = require('../../services/Express-Service')
 
 
-describe.only "controllers | test-Search-Controller |", ->
+describe "controllers | test-Search-Controller |", ->
 
   @.timeout(3500)
 
@@ -45,15 +45,15 @@ describe.only "controllers | test-Search-Controller |", ->
       html = @.renderPage()
       $    = cheerio.load html
       $('#results' ).html().assert_Is_String()
-      $('#content' ).html().assert_Is_String()
+      #$('#filters' ).html().assert_Is_String()
       $('#articles').html().assert_Is_String()
       done()
 
-  it 'get_Navigation', (done)->
+  xit 'get_Navigation', (done)->
     log 'asd'
     done()
 
-  return
+
 
 
   it 'showSearchFromGraph', (done)->
