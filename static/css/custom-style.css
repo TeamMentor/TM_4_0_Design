@@ -276,6 +276,7 @@ body > * {
 #search-bar input {
   border:none;
   background: none;
+  padding-top: 5px;
 }
 #search-2 {
   background: #fafafa;
