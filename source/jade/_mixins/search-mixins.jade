@@ -105,13 +105,11 @@ mixin filters-div
 mixin search-poc
     #search-2
         .lge-container
-            .row
-                .col-9
-                    #search-bar
-                        form(action='/search', method='GET')
-                            .input-group
-                                label(for='search-input') Get started by searching
-                                input.form-control(type='text', name='text', value= text)
-                                span.input-group-btn
-                                    button#search-button(type='submit')
-                                        i.fi-magnifying-glass
+            #search-bar
+                form(action='/search', method='GET')
+                    .input-group
+                        label(for='search-input') Get started by searching
+                        input.form-control(type='text', name='text', value= text)
+                        span.input-group-btn
+                            button#search-button(type='submit')
+                                i.fi-magnifying-glass
