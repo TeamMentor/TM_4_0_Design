@@ -476,7 +476,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"],
 input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
   width: 100%;
-  background-color: #FFFFFF;
+  background-color: #fafafa;
   font-family: inherit;
   border: none;
   border: 2px solid #dbdbdb;
@@ -493,9 +493,8 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
 input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus,
 input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus,
 input[type="url"]:focus, textarea:focus {
-  background: #fff;
   outline: none;
-  border: 3px solid #aaaaaa;
+  border: 2px solid #aaaaaa;
 }
 select {
   width: 100%;

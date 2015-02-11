@@ -11,12 +11,10 @@ mixin login-form
                 +password-input
             .row
                 .col-7
-                    .lge-container
-                        +login-button
-                    br
+                    +login-button
+                        br
                 .col-5.text-right
-                    .lge-container
-                        a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot password?
+                    a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot password?
 
 //- sign-up-form
 mixin sign-up-form
@@ -36,7 +34,9 @@ mixin sign-up-form
             .form-group
                 +confirm-password-input
             include:md ../../content/getting-started/agree-to-toc.md
-            +sign-up-button
+            .row
+                .col-7
+                    +sign-up-button
 
 
 //- forgot-password-form
