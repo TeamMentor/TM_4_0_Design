@@ -2,7 +2,11 @@ Search_Controller_PoC = require '../../poc/Search-Controller.PoC'
 Express_Service       = require('../../services/Express-Service')
 supertest             = require('supertest')
 
-describe 'poc | Search-Controller.PoC.test' ,->
+describe.only 'poc | Search-Controller.PoC.test' ,->
+  tmpSessionFile = './_tmp_Session'
+
+  after ->
+    tmpSessionFile.assert_File_Deleted()
 
   it 'constructor',->
     using new Search_Controller_PoC('a','b') ,->
@@ -10,7 +14,6 @@ describe 'poc | Search-Controller.PoC.test' ,->
       @.res.assert_Is 'b'
 
   it 'Create Express_Service and open /poc', (done)->
-    tmpSessionFile = './_tmp_Session'
     using new Express_Service(),->
       @.add_Session(tmpSessionFile)
       @.loginEnabled = false
