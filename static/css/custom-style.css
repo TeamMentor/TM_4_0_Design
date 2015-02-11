@@ -80,20 +80,24 @@ body > * {
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
   background-position: 0px -1400px;
-  background-size: auto;
+  height: 400px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 #about, #usp {
   width: 100%;
   margin-top: 60px;
-  padding: 40px 0 50px 0;
+  padding: 0px 0 50px 0;
   text-align: center;
 }
 #about h2, #usp h2 p {
   color: #FFFFFF;
   line-height: 1.25em;
+  padding-top: 100px;
 }
 #about-us {
   padding: 40px 0 40px 0;
+  background: white;
 }
 #application {
   width: 100%;
@@ -103,15 +107,16 @@ body > * {
 }
 #call-to-action {
   width: 100%;
-  padding: 80px 0 75px 0;
   background: url(../assets/stock-img/bg-img.jpg);
   background-repeat: no-repeat;
   background-position: 0px -800px;
+  height: 400px;
   text-align: center;
-  background-size: auto;
+  background-repeat: no-repeat;
 }
 #call-to-action h1 {
   color: #FFFFFF;
+  padding-top: 80px;
 }
 #clients {
   padding: 0 0 80px 0;
@@ -166,7 +171,7 @@ body > * {
 #footer {
   background: #fff;
   width: 100%;
-  padding: 5px 0 15px 0;
+  padding: 0;
   text-align: center;
 }
 #footer ul {
@@ -251,9 +256,10 @@ body > * {
 }
 #usp {
   background: url(../assets/stock-img/bg-img.jpg);
-  background-repeat: no-repeat;
   background-position: 0px 0px;
-  background-size: auto;
+  height: 450px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 #usp button i, #call-to-action button i {
   font-size: 20px;
@@ -632,7 +638,6 @@ a.minor:hover {
 }
 .text-center {
   text-align: center;
-  margin: 0 auto;
 }
 .text-right {
   text-align: right !important;
@@ -810,9 +815,6 @@ table.nav h3 {
   }
   #customer-navigation ul {
     text-align: left;
-  }
-  #contact-information {
-    margin: 50px 0 0 0;
   }
   #search {
     top: 60px;
