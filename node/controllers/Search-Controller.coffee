@@ -13,19 +13,19 @@ recentSearches_Cache = ["Logging","Struts","Administrative Controls"]
 
 class SearchController
     constructor: (req, res, config)->
-        @req                = req
-        @res                = res
-        @config             = config || new Config()
-        @jade_Page          = '/source/jade/user/search.jade'
-        @jade_Service       = new Jade_Service(@config)
-        @teamMentor_Service = new TeamMentor_Service
-        @graphService       = new Graph_Service()
-        @searchData         = null
-        @defaultUser        = 'TMContent'
-        @defaultRepo        = 'TM_Test_GraphData'
-        @defaultFolder      = '/SearchData/'
-        @defaultDataFile    = 'Data_Validation'
-        @urlPrefix          = '-'
+        @.req                = req
+        @.res                = res
+        @.config             = config || new Config()
+        @.jade_Page          = '/source/jade/user/search.jade'
+        @.jade_Service       = new Jade_Service(@config)
+        @.teamMentor_Service = new TeamMentor_Service
+        @.graph_Service      = new Graph_Service()
+        @.defaultUser        = 'TMContent'
+        @.defaultRepo        = 'TM_Test_GraphData'
+        @.defaultFolder      = '/SearchData/'
+        @.defaultDataFile    = 'Data_Validation'
+        @.urlPrefix          = 'show'
+        @.searchData         = null
 
     
     renderPage: ()->
@@ -33,7 +33,7 @@ class SearchController
 
     get_Navigation: (queryId, callback)=>
 
-      @graphService.resolve_To_Ids queryId, (data)=>
+      @graph_Service.resolve_To_Ids queryId, (data)=>
         navigation = []
         path = null
         for key in data.keys()
@@ -50,13 +50,13 @@ class SearchController
 
         @get_Navigation queryId, (navigation)=>
           target = navigation.last() || {}
-          @graphService.graphDataFromGraphDB target.id, filters,  (searchData)=>
+          @graph_Service.graphDataFromGraphDB target.id, filters,  (searchData)=>
             searchData.filter_container = filters
             @searchData = searchData
             @searchData.breadcrumbs = navigation
             @searchData.href = target.href
             if filters
-              @graphService.resolve_To_Ids filters, (results)=>
+              @graph_Service.resolve_To_Ids filters, (results)=>
                 @searchData.activeFilter = results.values()?.first()
                 @res.send(@renderPage())
             else
@@ -67,9 +67,9 @@ class SearchController
       filter = @.req.query.filter?.substring(1)
       jade_Page = '/source/jade/user/search-two-columns.jade'
 
-      @graphService.query_From_Text_Search target,  (query_Id)=>
+      @graph_Service.query_From_Text_Search target,  (query_Id)=>
         query_Id = query_Id?.remove '"'
-        @graphService.graphDataFromGraphDB query_Id, filter,  (searchData)=>
+        @graph_Service.graphDataFromGraphDB query_Id, filter,  (searchData)=>
 
           searchData.text         =  target
           searchData.href         = "/search?text=#{target}&filter="
@@ -81,7 +81,7 @@ class SearchController
             @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
             return
           if filter
-            @graphService.resolve_To_Ids filter, (results)=>
+            @graph_Service.resolve_To_Ids filter, (results)=>
               searchData.activeFilter = results.values()?.first()
               #searchData.activeFilter = { id: filter, title: filter }
               @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
@@ -89,7 +89,7 @@ class SearchController
             @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
 
     showRootQueries: ()=>
-      @graphService.root_Queries (root_Queries)=>
+      @graph_Service.root_Queries (root_Queries)=>
         @searchData = root_Queries
         @searchData.breadcrumbs = [{href:"/#{@urlPrefix}/", title: '/' , id: '/' }]
         @searchData.href = "/#{@urlPrefix}/"

@@ -8,8 +8,8 @@ Search_Controller = require('../../controllers/Search-Controller')
 Express_Service   = require('../../services/Express-Service')
 
 
-describe "controllers | test-Search-Controller |", ->
-    
+describe.only "controllers | test-Search-Controller |", ->
+
   @.timeout(3500)
 
   it "constructor", ->
@@ -27,13 +27,33 @@ describe "controllers | test-Search-Controller |", ->
         @.jade_Page         .assert_Is '/source/jade/user/search.jade'
         @.jade_Service      .assert_Instance_Of require('../../services/Jade-Service')
         @.teamMentor_Service.assert_Instance_Of require('../../services/TeamMentor-Service')
+        @.graph_Service     .assert_Instance_Of require('../../services/Graph-Service')
         @.defaultUser       .assert_Is 'TMContent'
         @.defaultRepo       .assert_Is 'TM_Test_GraphData'
         @.defaultFolder     .assert_Is '/SearchData/'
         @.defaultDataFile   .assert_Is 'Data_Validation'
+        @.urlPrefix         .assert_Is 'show'
+        assert_Is_Null @.searchData
 
       using new Search_Controller(),->
         @.config.assert_Is(new Config())
+
+  it 'renderPage', (done)->
+    req = {}
+    res = {}
+    using new Search_Controller(req,res),->
+      html = @.renderPage()
+      $    = cheerio.load html
+      $('#results' ).html().assert_Is_String()
+      $('#content' ).html().assert_Is_String()
+      $('#articles').html().assert_Is_String()
+      done()
+
+  it 'get_Navigation', (done)->
+    log 'asd'
+    done()
+
+  return
 
 
   it 'showSearchFromGraph', (done)->
