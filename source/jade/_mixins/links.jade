@@ -1,4 +1,5 @@
 include ../../shared-mixins/globals.jade
+include globals.jade
 
 - var articles        = '/static/html/articles'
 - var getting_started = '/static/html/getting-started'
@@ -19,62 +20,40 @@ mixin links-navbar__home
 	ul
 		li
 			a(href='/user/main.html')
-				+home-icon
+				+search-link
 		li
 			a(href='/-/Guidance')
-				+navigate-icon
+				+navigate-link
 		li
 			a(href='/help/index.html')
-				+help-icon
+				+help-link
 		li
 			a(href='/user/logout')
-				+logout-icon
+				+logout-link
 
-//- Terms and Conditions Links
 mixin terms-and-conditions-links
-	h3 Terms & Conditions
-	.list-group
-		a(href='#article-i-definitions') Article I - Definitions
-		a(href='#article-ii-deliverables') Article II - Deliverables
-		a(href='#article-iii-license-grant') Article III - License Grant
-		a(href='#article-iv-ownership-of-intellectual-property') Article IV - Ownership of Intellectual Property
-		a(href='#article-v-marketing-requirements') Article V - Marketing Requirements
-		a(href='#article-vi-trademarks') Article VI - Trademarks
-		a(href='#article-vii-support') Article VII - Support
-		a(href='#article-viii-fees-royalties-and-payments') Article VIII - Fees, Royalties and Payments
-		a(href='#article-ix-payment-instructions') Article IX - Payment Instructions
-		a(href='#article-x-records-reports-and-audit-rights') Article X - Records, Reports and Audit Rights
-		a(href='#article-xi-contract-administrative-contacts') Article XI - Contract Administrative Contacts
-		a(href='#article-xii-assignment') Article XII - Assignment
-		a(href='#article-xiii-confidentiality') Article XIII - Confidentiality
-		a(href='#article-xiv-warranties') Article XIV - Warranties
-		a(href='#article-xv-indemnities') Article XV - Indemnities
-		a(href='#article-xvi-limitations') Article XVI - Limitations
-		a(href='#article-xvii-terms-of-agreements') Article XVII - Terms of Agreements
-		a(href='#article-xviii-termination') Article XVIII - Termination
-		a(href='#article-xix-effect-of-termination') Article XIX - Effect of Termination
-		a(href='#article-xx-general-provisions') Article XX - General Provisions
-		a(href='#appendix-a') Appendix A
-		a(href='#appendix-b') Appendix B
-
-//- git-repo-link
-mixin git-repo-link
-	.list-group
-		a(href='https://github.com/TeamMentor/TM_4_0_Design') https://github.com/TeamMentor/TM_4_0_Design
-
-//- my-articles-edit-
-mixin my-articles-edit
-	#edit-links
-		a(href='my-articles-edit.html') Edit
-
-//- my-articles-edit-links
-mixin edit-links
-	#edit-links
-		br
-		.row
-			.col-4
-				a(href='#') Clear Selected
-			.col-4
-				a(href='navigate.html') Clear All
-			.col-4
-				a(href='my-articles.html') Ok, Done
+	.content
+		h3 Terms & Conditions
+		.list-group
+			a(href='#article-i-definitions') Article I - Definitions
+			a(href='#article-ii-deliverables') Article II - Deliverables
+			a(href='#article-iii-license-grant') Article III - License Grant
+			a(href='#article-iv-ownership-of-intellectual-property') Article IV - Ownership of Intellectual Property
+			a(href='#article-v-marketing-requirements') Article V - Marketing Requirements
+			a(href='#article-vi-trademarks') Article VI - Trademarks
+			a(href='#article-vii-support') Article VII - Support
+			a(href='#article-viii-fees-royalties-and-payments') Article VIII - Fees, Royalties and Payments
+			a(href='#article-ix-payment-instructions') Article IX - Payment Instructions
+			a(href='#article-x-records-reports-and-audit-rights') Article X - Records, Reports and Audit Rights
+			a(href='#article-xi-contract-administrative-contacts') Article XI - Contract Administrative Contacts
+			a(href='#article-xii-assignment') Article XII - Assignment
+			a(href='#article-xiii-confidentiality') Article XIII - Confidentiality
+			a(href='#article-xiv-warranties') Article XIV - Warranties
+			a(href='#article-xv-indemnities') Article XV - Indemnities
+			a(href='#article-xvi-limitations') Article XVI - Limitations
+			a(href='#article-xvii-terms-of-agreements') Article XVII - Terms of Agreements
+			a(href='#article-xviii-termination') Article XVIII - Termination
+			a(href='#article-xix-effect-of-termination') Article XIX - Effect of Termination
+			a(href='#article-xx-general-provisions') Article XX - General Provisions
+			a(href='#appendix-a') Appendix A
+			a(href='#appendix-b') Appendix B
