@@ -22,7 +22,7 @@ mixin search-bar-input
                         form(action='/search', method='GET')
                             .input-group
                                 label(for='search-input') Get started by searching
-                                input.form-control(type='text', id='search-input', placeholder='Type keywords here', name='text' value=text)
+                                input.form-control(type='text', id='search-input', name='text')
                                 span.input-group-btn
                                     button#search-button(type='submit')
                                         i.fi-magnifying-glass
@@ -66,7 +66,7 @@ mixin articles-list
 //- filters
 mixin filters-div
     if filters
-        #content
+        .content
             h3 Filter by
             #filters
                 for filter in filters
@@ -110,7 +110,8 @@ mixin search-poc
                     #search-bar
                         form(action='/search', method='GET')
                             .input-group
-                                input.form-control(type='text', placeholder='Type keywords here', name='text', value= text)
+                                label(for='search-input') Get started by searching
+                                input.form-control(type='text', name='text', value= text)
                                 span.input-group-btn
                                     button#search-button(type='submit')
                                         i.fi-magnifying-glass

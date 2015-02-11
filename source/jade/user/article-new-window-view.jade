@@ -11,6 +11,8 @@ block content
         .lge-container
           #article
             .content
-              include:md ../../content/articles/no-article.md
+              h1= title
+              != article_Html
       .col-2
         .lge-container
+    +copyright

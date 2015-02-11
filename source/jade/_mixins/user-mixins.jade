@@ -103,7 +103,7 @@ mixin alert-pwd-reset-OK
 mixin main-app-view
     #main-app-view
         if (recentArticles && recentArticles.values().not_Empty())
-            #content
+            .content
                 #recently-Viewed-Articles
                     h4.label Recently Viewed Articles
                     table.nav
@@ -113,7 +113,7 @@ mixin main-app-view
                                 a(href=recentArticle.href, target='_blank')= recentArticle.title
 
         if (searchTerms)
-            #content
+            .content
                 #popular-Search-Terms
                     h4.label Popular Search Terms
                     table.nav
@@ -122,7 +122,7 @@ mixin main-app-view
                                 td
                                     a(href=searchTerm.href)= searchTerm.title
         if (topArticles)
-            #content
+            .content
                 #top-articles
                     h4.label Top Articles
                     table.nav
@@ -134,7 +134,7 @@ mixin main-app-view
                                     td
                                         span.right.badge= article.weight
         //if (newArticles)
-            #content
+            .content
                 h4.label New Articles
                     table.nav
                         for newArticle in newArticles

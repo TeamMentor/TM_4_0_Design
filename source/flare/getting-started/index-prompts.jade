@@ -4,7 +4,6 @@ include ../mixins/getting-started-mixins
 block content
 	#application
 		#loginwall
-			br
 			dl.tabs(data-tab='data-tab')
 				dd.active
 					a(href='#signup') Sign Up
@@ -17,5 +16,5 @@ block content
 				#login.content
 					+login-form
 		#summary
-			#content
+			.content
 				+team-mentor-summary

@@ -2,21 +2,19 @@
 extends ../_layouts/page_home.jade
 include ../_mixins/articles-mixins.jade
 include ../_mixins/search-mixins.jade
+include _poc_filters-mixins.jade
 
+block content
 	#application
 		.row
 			.col-3
 				.lge-container
-					.content
-						h3 Containing Directory Title
-						include:md ../../content/application/no-more-directories.md
+					+directory-list
 			.col-6
 				.lge-container
 					+breadcrumbs
 					+results
-					include:md ../../content/application/no-search-results.md
-					+horizontal-rule
-                    +copyright
+					+articles-list
 			.col-3
 				.lge-container
-					+filters-div
+					+poc-filters-2

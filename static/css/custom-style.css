@@ -121,7 +121,7 @@ body > * {
   text-align: center;
   background: white;
 }
-#content {
+.content {
   background: white;
   padding: 5px;
   border-radius: 3px;
@@ -193,7 +193,7 @@ body > * {
 }
 #form {
   border: 1px solid #dbdbdb;
-  background: #fafafa;
+  background: #fff;
 }
 #help-nav{
   margin-top: 20px;
@@ -253,7 +253,9 @@ body > * {
   width: 100%;
 }
 #results-2 {
-  padding-top: 100px;
+  width: 100%;
+  padding-top: 140px;
+  margin: 0 auto;
 }
 #usp {
   background: url(../assets/stock-img/bg-img.jpg);
@@ -292,8 +294,9 @@ body > * {
   height: 50px;
   margin: 0 auto;
   padding: 0 0 40px 0;
-  margin: 20px 0 0 0;
+  margin: 12px 0 50px 0;
   position: fixed;
+  border-radius: 3px;
   z-index: 96;
 }
 .vertical-align {
@@ -880,6 +883,9 @@ table.nav h3 {
   }
   a.minor {
     line-height: 3.75em;
+  }
+  #results-2 {
+    padding-top: 130px;
   }
 }
 
