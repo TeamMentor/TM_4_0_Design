@@ -280,11 +280,7 @@ body > * {
   width: 100%;
 }
 #search-bar input {
-  border: none;
-  border-bottom: 1px solid #dbdbdb;
-}
-#search-bar input:focus, #search-bar input:focus {
-  border-bottom: 2px solid #aaaaaa;
+  border-right: none;
 }
 #search-2 {
   background: #fafafa;
@@ -517,12 +513,10 @@ select {
 }
 .input-group {
   display: table;
-  float: left;
   width: 100%;
 }
 .input-group .form-control {
   display: table-cell;
-  border-radius: 0;
 }
 .input-group .input-group-btn {
   display: table-cell;
@@ -677,10 +671,11 @@ button:hover, button:active {
 #search-button {
   -webkit-box-shadow: none;
   background: transparent;
-  border-bottom: none;
   border: none;
+  border-radius: 3px;
+  border-left: none;
   box-shadow: none;
-  text-align: right;
+  text-align: center;
 }
 #search-button i {
   color:#8aaf3e;
