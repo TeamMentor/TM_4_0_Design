@@ -84,6 +84,7 @@ body > * {
 #about, #usp, #call-to-action {
   padding: 100px 0;
   text-align: center;
+  background-size: cover;
 }
 #about h2, #usp h2 p {
   color: #FFFFFF;
@@ -103,6 +104,7 @@ body > * {
 #call-to-action {
   background: url(../assets/stock-img/bg-img.jpg) no-repeat;
   background-position: 0px -800px;
+  background-size: cover;
   text-align: center;
 }
 #call-to-action h1 {
