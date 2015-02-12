@@ -21,7 +21,7 @@ mixin search-bar-input
                 .col-offset-2.col-8
                     #search-input
                         form(action='/search', method='GET')
-                            label(for='search-input') Type keywords here
+                            label(for='search-input') Search here
                             .input-group
                                 input.form-control(type='text', id='search-input', name='text')
                                 span.input-group-btn
@@ -33,7 +33,7 @@ mixin search-poc
         .lge-container
             #search-input
                 form(action='/search', method='GET')
-                    label(for='search-input') Get started by searching
+                    label(for='search-input') Search here
                     .input-group
                         input.form-control(type='text', name='text', value= text)
                         span.input-group-btn
