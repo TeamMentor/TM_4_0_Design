@@ -28,3 +28,23 @@ mixin links-queries
         .list-group
             each query in queries
                 a(href='/graph/' + query)= query
+
+mixin help-navigation
+    if library
+        .bg
+            each view in library.Views
+                h4.label= view.Title
+                ul.side-nav
+                    each article in view.Articles
+                        li
+                            a(href= '/help/' + article.Id)= article.Title
+
+mixin help-content
+    .bg
+        if title
+            h2= title
+        != content
+
+mixin terms-and-conditions-content
+    #toc-content.bg
+        include:md ../../content/terms-and-conditions/terms-and-conditions.md

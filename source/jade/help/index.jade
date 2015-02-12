@@ -1,23 +1,13 @@
 extends ../_layouts/page
+include ../_mixins/view-blocks.jade
 block content
 	#application
 		.row
-			.col-3#help-nav
-				.lge-container
-					if library
-						#content
-							each view in library.Views
-								h4.label= view.Title
-								.list-group
-									each article in view.Articles
-										a(href= '/help/' + article.Id)
-											= article.Title
-			.col-6#help-docs
-				.lge-container
-					#content
-						if title
-							h2= title
-						!= content
 			.col-3
 				.lge-container
-					br
+					+help-navigation
+			.col-6
+				.lge-container
+					+help-content
+			.col-3
+				.lge-container

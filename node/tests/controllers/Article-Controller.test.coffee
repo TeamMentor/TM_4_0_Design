@@ -20,8 +20,8 @@ describe '| services | Article-Controller.test', ->
     res =
       send : (data)->
         $ = cheerio.load(data)
-        $('#content #oops').html().assert_Is 'Oops'
-        $('#content p'    ).html().assert_Is 'That article doesn&apos;t exist.'
+        $('.content #oops').html().assert_Is 'Oops'
+        $('.content p'    ).html().assert_Is 'That article doesn&apos;t exist.'
         done()
 
     using new Article_Controller(req,res), ->
@@ -40,8 +40,8 @@ describe '| services | Article-Controller.test', ->
     res =
       send : (data)->
         $ = cheerio.load(data)
-        $('#content #title').html().assert_Is article_Title
-        $('#content #html' ).html().assert_Is article_Html
+        $('#article #title').html().assert_Is article_Title
+        $('#article #html' ).html().assert_Is article_Html
         done()
 
     graphService =
@@ -98,28 +98,6 @@ describe '| services | Article-Controller.test', ->
 
       @article()
 
-  it 'viewedArticles', (done)->
-    graphService =
-      node_Data   : (id, callback) -> callback {title: '' }
-      article_Html: (id, callback) -> callback null
-
-    req =
-      params: id : ''
-      session: recent_Articles: []
-
-    res =
-      send: (json)->
-        json.json_Str().assert_Contains ['id_1','id_2', 'id_3', 'id_4','title_1','title_2', 'title_3', 'title_4']
-        done()
-
-    using new Article_Controller(req,res), ->
-      @.expressSession = new Express_Session()
-      @.expressSession.set 'sid-1', {recent_Articles: [{id: 'id_1', title: 'title_1'}]}, =>
-        @.expressSession.set 'sid-2', {recent_Articles: [{id: 'id_2', title: 'title_2'}]}, =>
-          @.expressSession.set 'sid-3', {recent_Articles: [{id: 'id_3', title: 'title_3'}]}, =>
-            @.expressSession.set 'sid-4', {recent_Articles: [{id: 'id_4', title: 'title_4'}]}, =>
-              @.expressSession.db.find {}, (err,sessionData)=>
-                @viewedArticles()
 
   describe 'using Express_Service | ',->
 
@@ -132,7 +110,7 @@ describe '| services | Article-Controller.test', ->
         @.loginEnabled = false
         @.app._router.stack.assert_Size_Is 3
         Article_Controller.registerRoutes @.app, @
-        @.app._router.stack.assert_Size_Is 5
+        @.app._router.stack.assert_Size_Is 4
         app = @.app
         done()
 
@@ -144,11 +122,5 @@ describe '| services | Article-Controller.test', ->
                       .end (err,res)->
                         res.text.assert_Contains('<a href="/user/main.html">')    # article page ('post login')
                                 .assert_Contains('Oops')                          # only exists on the no-article page
-                        done()
-
-    it '/article/viewed.json', (done)->
-        supertest(app).get('/article/viewed.json')
-                      .end (err,res)->
-                        res.text.assert_Is "{}"
                         done()
 

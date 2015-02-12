@@ -1,5 +1,3 @@
-include ../_mixins/globals
-
 head
     meta(charset    ="utf-8"                                                                     )
     meta(http-equiv ="X-UA-Compatible"  content="IE=edge"                                        )
@@ -29,8 +27,3 @@ head
 
     // Custom Styles
     link(href="/static/css/custom-style.css" rel="stylesheet")
-
-    //weird CSS fix to handle Chrome prob when <form> exists
-    style
-        |.pull-right { float  : right !important; }
-        |.navbar ul  { display: inline-block;     }

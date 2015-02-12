@@ -383,13 +383,23 @@ mixin clear-all-button
 mixin edit-button
 	button(type='submit', id='btn-clear-all') Edit
 
-//- Copyright Information
-mixin copyright
-	#copyright
-		include:md ../../content/articles/copyright-information.md
-
 //- Alert System
 mixin flare-alert
-	.alert-box(data-alert='')
+	.alert(data-alert='')
 		| Error, Validation or Alert Message Here
 		a.close(href='#') ×
+
+mixin copyright
+	#copyright
+		.row
+			.small-12
+				a(href='http://www.securityinnovation.com/', target='_blank')
+					#si-logo
+				include:md ../../content/articles/copyright-information.md
+				ul
+					li
+						+i-email
+						a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
+					li
+						+i-toc
+						a(href="../guest/terms-and-conditions.html") Terms & Conditions

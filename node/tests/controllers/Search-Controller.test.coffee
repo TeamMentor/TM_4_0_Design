@@ -9,7 +9,7 @@ Express_Service   = require('../../services/Express-Service')
 
 
 describe "controllers | test-Search-Controller |", ->
-    
+
   @.timeout(3500)
 
   it "constructor", ->
@@ -27,17 +27,36 @@ describe "controllers | test-Search-Controller |", ->
         @.jade_Page         .assert_Is '/source/jade/user/search.jade'
         @.jade_Service      .assert_Instance_Of require('../../services/Jade-Service')
         @.teamMentor_Service.assert_Instance_Of require('../../services/TeamMentor-Service')
+        @.graph_Service     .assert_Instance_Of require('../../services/Graph-Service')
         @.defaultUser       .assert_Is 'TMContent'
         @.defaultRepo       .assert_Is 'TM_Test_GraphData'
         @.defaultFolder     .assert_Is '/SearchData/'
         @.defaultDataFile   .assert_Is 'Data_Validation'
+        @.urlPrefix         .assert_Is 'show'
+        assert_Is_Null @.searchData
 
       using new Search_Controller(),->
         @.config.assert_Is(new Config())
 
+  it 'renderPage', (done)->
+    using new Search_Controller(),->
+      html = @.renderPage()
+      $    = cheerio.load html
+      $('#results' ).html().assert_Is_String()
+      $('#articles').html().assert_Is_String()
+      done()
+
+  it 'get_Navigation', (done)->
+    using new Search_Controller(),->
+      @.graph_Service.resolve_To_Ids = (query_Id,callback)->
+        callback { query_Id : { id: 'id-123', title: 'title-123'}}
+      @.get_Navigation 'query-id-123', (data)->
+        data.assert_Is [ { href: '/show/query_Id', title: 'title-123', id: 'id-123' } ]
+        done()
+
 
   it 'showSearchFromGraph', (done)->
-    req    = { params: queryId : 'Logging'}
+    req    = { params: queryId : 'query-id'}
     res    =
               send: (html)->
                   html.assert_Is_String()
@@ -46,59 +65,222 @@ describe "controllers | test-Search-Controller |", ->
     using new Search_Controller(req, res, config),->
       @.showSearchFromGraph()
 
-  it 'showSearchFromGraph (with filter)', (done)->
-    req    = { params: {queryId : 'Logging' , filters:'abc'}}
-    res    =
-        send: (html)->
-            html.assert_Is_String()
-            done()
-    using new Search_Controller(req, res),->
-      @.showSearchFromGraph()
 
-  it  'showMainAppView', (done)->
+  it 'showRootQueries',(done)->
+    req    = { params: queryId : 'query-id'}
+    res    =
+              send: (html)->
+                  html.assert_Is_String()
+                  done()
+    using new Search_Controller(req,res),->
+      @.graph_Service.root_Queries = (callback)->
+        callback  {"id": "Root-Queries", "title": "Root Queries","queries": [ {"is": [ "Metadata","Query"],"title": "Technology","id": "query-0281ff895ef1","queries":[]} ]}
+      @showRootQueries()
+
+  it 'showMainAppView', (done)->
     req    = { params: queryId : 'Logging'}
     res    =
         render: (jadePage,viewModel)->
-            #html.assert_Is_String()
             jadePage.assert_Is('source/jade/user/main.jade')
-            #viewModel.assert_Is({recentArticles:[]})
             done()
     using new Search_Controller(req, res),->
       @.showMainAppView()
 
-  xit 'recentArticles recentArticles_add', (done)->
-    id = 'aaaaaaaa_'.add_5_Letters()
-    title= 'an title_'.add_5_Letters()
-    req    = { session: {} }
-    using new Search_Controller(req),->
-      assert_Is_Undefined @.req.session.recent_Articles
-      @.recentArticles_add(id, title)
-      @.req.session.recent_Articles.assert_Is_Array()
-                   .first()        .assert_Is {id:id, title:title}
-      @.recentArticles_add('2', 'abc'); @.req.session.recent_Articles.assert_Size_Is 2
-      @.recentArticles_add(id , title); @.req.session.recent_Articles.assert_Size_Is 3
-
-      tm_35_Server = @.teamMentor_Service.tm_35_Server
-
-      using @.recentArticles(), ->
-        @.assert_Size_Is 3
-        @.first() .assert_Is { href: tm_35_Server + '/' + id , title: title }
-        @.second().assert_Is { href: tm_35_Server + '/' + '2', title: 'abc' }
+  it 'topArticles (no expressService)', (done)->
+    using new Search_Controller(),->
+      @.topArticles (data)->
+        data.assert_Is []
         done()
 
-  xit 'showArticle', (done)->
-    req = {
-            params: queryId : 'Logging'
-            session: {}
-          }
-    res =
-        redirect: (url)->
-            url.assert_Is('https://tmdev01-uno.teammentor.net/undefined')
-            done()
-    using new Search_Controller(req, res),->
-      @.showArticle()
+  it 'topArticles (with expressService, null viewedArticles)', (done)->
+    express_Service =
+      viewedArticles: (callback)-> callback null
+    using new Search_Controller(),->
+      @.express_Service = express_Service
+      @.topArticles (data)->
+        data.assert_Is []
+        done()
+
+  it 'topArticles (with expressService, valid viewedArticles)', (done)->
+    express_Service =
+      viewedArticles: (callback)-> callback [ { id:'id-1', title:'title-1'}, {id:'id-2',title:'title-2'}]
+    using new Search_Controller(),->
+      @.express_Service = express_Service
+      @.topArticles (data)->
+        data.assert_Is  [{"href":"/article/id-2","title":"title-2","weight":1},{"href":"/article/id-1","title":"title-1","weight":1},undefined,undefined,undefined]
+        done()
+
+  it 'topSearches', (done)->
+      #req    = { params: {}}
+      #res    =
+      #  send: (html)->
+      #    html.assert_Contains 'results'
+      #    done()
+      #
+      using new Search_Controller(),->
+        @topSearches().assert_Is [ { href: '/search?text=Administrative Controls',title: 'Administrative Controls' },
+                                   { href: '/search?text=Struts', title: 'Struts' },
+                                   { href: '/search?text=Logging', title: 'Logging' } ]
+
+        done()
 
 
+
+
+  describe 'showSearchFromGraph |', ->
+
+    graph_Service = (on_GraphDataFromGraphDB)->
+        resolve_To_Ids: (query_Id,callback)->
+          callback { query_Id : { id: 'id-123', title: 'title-123'}}
+        graphDataFromGraphDB: (query_Id, filters, callback)->
+          searchData = on_GraphDataFromGraphDB(query_Id, filters)
+          callback(searchData)
+
+    it 'no query-name and filter (searchData is null)', (done)->
+      req    = { params: {}}
+      res    =
+        send: (html)->
+          $    = cheerio.load html
+          $('#results').html().assert_Is_String()
+          $('#articles').html().assert_Is_String()
+          done()
+
+
+      using new Search_Controller(req, res),->
+        @.graph_Service = graph_Service ()->
+          return null
+
+        @.showSearchFromGraph()
+
+    it 'with query-name and filter (searchData is null)', (done)->
+      req    = { params: {queryId : 'query-name' , filters:'filters-abc'}}
+      res    =
+        send: (html)->
+          $    = cheerio.load html
+          $('#results' ).text().assert_Is ''
+          $('#articles').text().assert_Is ''
+          done()
+
+
+      using new Search_Controller(req, res),->
+        @.graph_Service = graph_Service ()->
+          return null
+
+        @.showSearchFromGraph()
+
+    it 'with query-name no filter (valid searchData)', (done)->
+      req    = { params: {queryId : 'query-name' , filters:null}}
+      res    =
+        send: (html)->
+          $    = cheerio.load html
+          $('#resultsTitle').text().assert_Is 'Showing 1 articles'
+          $('#results'     ).html().contains('Showing 1 articles')
+          $('#articles #list-view-article').html().assert_Is_String()
+          $('#list-view-article #result-id-1 h4').html().assert_Is 'result-title-1'
+          done()
+
+      using new Search_Controller(req, res),->
+        @.graph_Service = graph_Service (query_Id, filters)->
+          query_Id.assert_Is 'id-123'
+          return { results: [ {id:'result-id-1', title:'result-title-1'}]}
+
+        @.showSearchFromGraph()
+
+    it 'with query-name and filter (valid searchData)', (done)->
+      req    = { params: {queryId : 'query-name' , filters:'abc'}}
+      res    =
+        send: (html)->
+          $    = cheerio.load html
+          $('#resultsTitle').text().assert_Is 'Showing 1 articles'
+          $('#results'     ).html().contains('Showing 1 articles')
+          $('#articles #list-view-article').html().assert_Is_String()
+          $('#list-view-article #result-id-1 h4').html().assert_Is 'result-title-1'
+          $('#activeFilter').html().assert_Is 'title-123<span class="close"><a href="/show/query_Id">x</a></span>'
+          done()
+
+      using new Search_Controller(req, res),->
+        @.graph_Service = graph_Service (query_Id, filters)->
+          query_Id.assert_Is 'id-123'
+          return { results: [ {id:'result-id-1', title:'result-title-1'}]}
+
+        @.showSearchFromGraph()
+
+
+  describe 'search |', ->
+
+    graph_Service = (on_Query_From_Text_Search,on_GraphDataFromGraphDB)->
+      query_From_Text_Search: (text, callback)->
+        callback on_Query_From_Text_Search(text)
+      resolve_To_Ids: (query_Id,callback)->
+        callback { query_Id : { id: 'id-123', title: 'title-123'}}
+      graphDataFromGraphDB: (query_Id, filters, callback)->
+        callback on_GraphDataFromGraphDB(query_Id, filters)
+
+    it 'no search text and null searchData', (done)->
+      req    = { params: {}}
+      res    =
+        send: (html)->
+          cheerio.load html.assert_Contains 'results'
+          done()
+
+      using new Search_Controller(req, res),->
+        @.graph_Service = graph_Service (()-> null) , (()-> null )
+        @.search()
+
+    it 'no search text but {} as searchData', (done)->
+      req    = { params: {}}
+      res    =
+        send: (html)->
+          html.assert_Contains 'results'
+          done()
+
+      using new Search_Controller(req, res),->
+        @.graph_Service = graph_Service (()-> '') , (()-> {} )
+        @.search()
+
+    it 'search text but {} as searchData', (done)->
+      req    = { query: text: 'text-search' }
+      res    =
+        send: (html)->
+          html.assert_Contains 'results'
+          $ = cheerio.load html
+          $('#search-input').attr().assert_Is { id: 'search-input', type: 'text', name: 'text', value: 'text-search', class: 'form-control' }
+          $('#results p').text().assert_Is 'No ResultsPlease try again'
+          done()
+
+      using new Search_Controller(req, res),->
+        @.graph_Service = graph_Service (()-> '') , (()-> {} )
+        @.search()
+
+    it 'search text, no filter, valid searchData', (done)->
+      req    = { query: text: 'text-search' }
+      res    =
+        send: (html)->
+          html.assert_Contains 'results'
+          $ = cheerio.load html
+          $('#articles #list-view-article #result-id').attr().assert_Is { href: '/article/result-id', id: 'result-id' }
+          $('#list-view-article h4').html().assert_Is 'title-id'
+          $('#activeFilter').text().assert_Is ''
+          done()
+
+      using new Search_Controller(req, res),->
+        @.graph_Service = graph_Service (()-> '') , (()-> { id:'search-id', results: [{id:'result-id', title:'title-id'}]} )
+        @.search()
+
+    it 'search text, filter, valid searchData', (done)->
+      req    = { query: text: 'text-search' , filter: '/filter-text'}
+      res    =
+        send: (html)->
+          html.assert_Contains 'results'
+          $ = cheerio.load html
+          $('#articles #list-view-article #result-id').attr().assert_Is { href: '/article/result-id', id: 'result-id' }
+          $('#list-view-article h4').html().assert_Is 'title-id'
+          $('#activeFilter').text().assert_Is 'title-123x'
+          done()
+
+      using new Search_Controller(req, res),->
+        @.graph_Service = graph_Service (()-> '') , (()-> { id:'search-id', results: [{id:'result-id', title:'title-id'}]} )
+        @.search()
 
   describe 'using Express_Service | ',->
 
@@ -106,20 +288,6 @@ describe "controllers | test-Search-Controller |", ->
 
     after ->
       tmpSessionFile.assert_File_Deleted()
-
-    using_Express_Service_With_Search_Controller = (callback)->
-      using new Express_Service(),->
-        @.add_Session(tmpSessionFile)
-        @.loginEnabled = false
-        Search_Controller.registerRoutes @.app, @
-
-        @.open_Article = (id, title, callback)=>
-          supertest(@.app)
-          .get("/article/view/#{id}/#{title}")
-          .end (err,res)=>
-            callback res
-
-        callback.apply @
 
     it 'Create Express_Service and register Search_Controller routes', (done)->
       using new Express_Service(),->
@@ -133,30 +301,69 @@ describe "controllers | test-Search-Controller |", ->
             res.text.assert_Contains('<li><a href="/guest/about.html">About</a></li>')
             done()
 
-    xit 'User views an article which is captured on the recent_Articles list', (done)->
+    it '/user/main.html', (done)->
+      using new Express_Service(),->
+        @.add_Session(tmpSessionFile)
+        @.loginEnabled = false
+        @.set_Views_Path()
+        Search_Controller.registerRoutes @.app, @
 
-      using_Express_Service_With_Search_Controller ()->
+        supertest(@.app).get("/user/main.html")
+                        .end (err,res)=>
+                          assert_Is_Null err
+                          res.text.contains 'Top Articles'
+                          done()
 
-        id    = 'this-is-an-guid'
-        title = 'c'
-        @.open_Article id, title, (res)=>
-            res.text.assert_Contains ['Moved Temporarily. Redirecting to','this-is-an-guid']
-            @.expressSession.db.find {}, (err,sessionData)->
-              sessionData.first().data.recent_Articles.assert_Is [ { id: 'this-is-an-guid', title: 'c' } ]
-              done()
+  # using_Express_Service_With_Search_Controller = (callback)->
+  #   using new Express_Service(),->
+  #     @.add_Session(tmpSessionFile)
+  #     @.loginEnabled = false
+  #     Search_Controller.registerRoutes @.app, @
 
-    xit 'open multiple articles,  open article/viewed.json', (done)->
-      using_Express_Service_With_Search_Controller ()->
-        @.open_Article 'a', 'title 1', (res)=>
-          @.open_Article 'b', 'title 2', (res)=>
-            @.open_Article 'b', 'title 2', (res)=>
-              @.open_Article 'c', 'title 2', (res)=>
-                supertest(@.app).get('/article/viewed.json')
-                  .end (err, res)->
-                    data = JSON.parse res.text
-                    data.assert_Size_Is_Bigger_Than(3)
-                    done()
+  #     @.open_Article = (id, title, callback)=>
+  #       supertest(@.app)
+  #       .get("/article/view/#{id}/#{title}")
+  #       .end (err,res)=>
+  #         callback res
 
+  #     callback.apply @
+
+#
+#      using_Express_Service_With_Search_Controller ()->
+#
+#        id    = 'this-is-an-guid'
+#        title = 'c'
+#        @.open_Article id, title, (res)=>
+#            res.text.assert_Contains ['Moved Temporarily. Redirecting to','this-is-an-guid']
+#            @.expressSession.db.find {}, (err,sessionData)->
+#              sessionData.first().data.recent_Articles.assert_Is [ { id: 'this-is-an-guid', title: 'c' } ]
+#              done()
+
+
+#    xit 'User views an article which is captured on the recent_Articles list', (done)->
+#
+#      using_Express_Service_With_Search_Controller ()->
+#
+#        id    = 'this-is-an-guid'
+#        title = 'c'
+#        @.open_Article id, title, (res)=>
+#            res.text.assert_Contains ['Moved Temporarily. Redirecting to','this-is-an-guid']
+#            @.expressSession.db.find {}, (err,sessionData)->
+#              sessionData.first().data.recent_Articles.assert_Is [ { id: 'this-is-an-guid', title: 'c' } ]
+#              done()
+#
+#    xit 'open multiple articles,  open article/viewed.json', (done)->
+#      using_Express_Service_With_Search_Controller ()->
+#        @.open_Article 'a', 'title 1', (res)=>
+#          @.open_Article 'b', 'title 2', (res)=>
+#            @.open_Article 'b', 'title 2', (res)=>
+#              @.open_Article 'c', 'title 2', (res)=>
+#                supertest(@.app).get('/article/viewed.json')
+#                  .end (err, res)->
+#                    data = JSON.parse res.text
+#                    data.assert_Size_Is_Bigger_Than(3)
+#                    done()
+#
 
 
   #to redo once we have better offline content mapped to this

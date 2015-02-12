@@ -1,307 +1,84 @@
 //- Contents
 //--- Base
-//----- Structure
 //----- Application
-
-
-/* -----------------------------------*/
-/* -------->>> STRUCTURE <<<----------*/
-/* -----------------------------------*/
-
-html {
-	font: $font-stack;
-}
-
-body {
-	background: $white;
-	max-width: $full-width;
-}
-
-img {
-	margin: 0 auto;
-}
 
 /* -----------------------------------*/
 /* ------->>> APPLICATION <<<---------*/
 /* -----------------------------------*/
-
 #application {
-	height: $full-width;
-	margin: 140px 0 0 0;
-	width: $full-width;
+	margin-top: 160px;
 }
-
-#landing-page {
-	margin-top: 185px;
+#form {
+	border: 1px solid $light-grey;
+	background: $white;
 }
-
 #loginwall {
-	padding: 180px 0 20px 0;
+	margin-top: 180px;
 }
-
+#toc-content {
+	h4 {
+		padding-top: 100px;
+		margin-top: -80px;
+	}
+}
+#landing-page {
+  margin-top: 160px;
+  background: $white;
+  height: 100%;
+}
+.lge-container {
+  max-width: 100%;
+  padding: 15px;
+  margin: 0 auto;
+}
 #loginwall, #summary {
 	margin: 0 auto;
 	max-width: 95%;
 }
-
-#help-nav {
-	margin: 170px 0 0 0;
+#main-app-view {
+  margin-top: 110px;
 }
-
-#help-docs {
-	h1 {
-		font-size: 1.625em;
-	}
-	h2 {
-		font-size: 2em;
-	}
+#reasons {
+	padding-top: 40px;
 }
-
-.lge-container {
-	margin: 0 auto;
-	max-width: 96%;
+#results {
+	background: $white;
+	margin: 0 0 10px 0;
+	border-radius: $border;
+	border: 1px solid $light-grey;
+	width: 100%;
 }
-
-form, .form-group {
-	list-style-type: none;
-	margin: 0 0 15px 0;
-
-	input {
-		border: none;
-		&:focus {
-			background: $light-grey;
-				color: $dark-grey;
-		}
-	}
-	label {
-		font-size: 14px;
-	}
-	p {
-		font-size: 0.75em;
-		margin-top: 0;
-	}
+#results-2 {
+	margin-top: 140px;
+	border-radius: $border;
 }
-
-label {
-	color: $dark-grey;
-	display: inline-block;
-	margin: 0 0 5px 0;
-	padding: 3px 0 0 0;
-}
-
-#heading {
-	background-color: $green;
-	max-width: $full-width;
-	padding: 20px;
-	text-align: center;
-	p {
-		color: $white
-	}
-}
-
-input {
-	&[type="text"], &[type="password"], &[type="date"], &[type="datetime"], &[type="datetime-local"], &[type="month"], &[type="week"], &[type="email"], &[type="number"], &[type="search"], &[type="tel"], &[type="time"], &[type="url"] {
-		@extend .border-box
-		background-color: $white;
-		border-radius: 3px;
-		border-bottom: 1px solid $grey;
-		box-shadow: 1px 1px 6px $grey;
-		color: $dark-grey;
-		font-size: 1em;
-		height: 3rem;
-		margin: 0 0 5px 0;
-		padding: 0 0 0 0.5rem;
-		width: $full-width;
-
-		&:focus, &:active {
-			background: $white;
-			border-bottom: 3px solid $green.
-			outline: medium none;
-		}
-	}
-}
-
-textarea {
-	@extend input[type="text"];
-	height: auto;
-	&:focus {
-		@extend input[type="text"]:focus;
-	}
-}
-
-select {
-	@extend input[type="text"];
-}
-
-#search {
-	background: $light-grey;
-	height: 50px;
-	margin: 0 auto;
-	padding: 0 0 40px 0;
-	margin: -13px 0 0 0;
+#search-div, #search-div-2 {
+	background: $off-white;
+	width: 100%;
 	position: fixed;
-	width: 95%;
+	top: 140px;
+	left: 0;
 	z-index: 96;
 }
-
-.input-group {
-	display: table;
-	float: left;
-	width: $full-width;
-	.form-control {
-		display: table-cell;
-		border-radius: 0;
-	}
-	.input-group-btn {
-		display: table-cell;
-		vertical-align: top;
-		width: 100px;
-	}
-	.btn-search-bar {
-		border: 1px solid $green;
-		border-left: none;
-		border-radius: 0;
-		padding: 14px 0 16px 0;
-	}
+#search-div-2 {
+  margin: 0 auto;
 }
-
-button {
-	@extend a.action;
-	background-color: $white;
-	width: $full-width;
-	border-radius: 3px;
-	border: 1px solid $grey;
-	border-bottom: 2px solid $green;
-	-webkit-box-shadow: inset 0 -2px $green;
-	box-shadow: inset 0 -2px $green;
-	&:hover, &:active {
-		background-color: $green;
-		color: $white;
-		border: transparent;
-		border-bottom: 2px solid $dark-green;
-		-webkit-box-shadow: inset 0 -2px $dark-green;
-		box-shadow: inset 0 -2px $dark-green;
-	}
-	i {
-		font-size: 18px;
-	padding: 0 10px 0 0;
-	color: $green;
-
-	&:hover, &:active {
-		color: $white;
-	}
+#search-input {
+  border: 1px solid $light-grey;
+  background: $white;
+  border-radius: $border;
+  input {
+  	border: none;
+  	background: none;
+  	padding-top: 5px;
+  }
 }
-
-.badge {
-  min-width: 10px;
-  padding: 3px 7px;
-  font-size: 12px;
-  color: $white;
-  background-color: $grey;
-  text-align: center;
-  border-radius: 10px;
+.vertical-align {
+  margin-top: 10px;
 }
-
-.alert {
-	background: $white;
-	border: 1px solid $green
-	color: $green;
-	font-weight: 700;
-	margin: 0 0 10px 0;
-	padding: 15px;
+.right {
+  float: right !important;
 }
-
-
-/* -----------------------------------*/
-/* ------>>> LANDING PAGES <<<--------*/
-/* -----------------------------------*/
-
-#about, #about-us, #call-to-action, #clients, #copyright, #features, #footer, #reasons, #usp {
-	text-align: center;
-	width: $full-width;
-}
-
-#about, #call-to-action, #usp {
-	background: url(../assets/stock-img/bg-img.jpg);
-}
-
-#about {
-	background-position: 0px 600px;
-	margin: 65px 0 0 0;
-}
-
-#about h2, #usp h2, #call-to-action h1 {
-	color: $white;
-	line-height: 1.25em;
-}
-#about-us {
-	padding: 40px 0 40px 0;
-}
-
-#call-to-action {
-	padding: 100px 0 110px 0;
-	background-position: 0px 1200px;
-}
-
-#clients {
-	padding: 40px 0 80px 0;
-}
-
-#copyright {
-	padding-bottom: 30px;
-	a {
-		@extend a;
-		font-size: 12px;
-	}
-}
-
-#features {
-	padding: 100px 0 50px 0;
-}
-
-#footer {
-	width: $full-width;
-	padding: 5px 0 15px 0;
-	text-align: center;
-	#si-logo {
-		background-position: 0px -50px;
-		background:url('../assets/logos/logos.jpg') no-repeat;
-		height: 50px;
-		margin: 0 auto;
-		width: 190px;
-	}
-	.lge-container {
-		margin: 0;
-	}
-	ul {
-		list-style: none;
-		padding: 7px 0 0 0;
-		li {
-			font-size: 0.75em;
-			margin: 0 0 5px 0;
-		}
-	}
-	h5 {
-		margin: 0 0 15px 0;
-	}
-	i {
-		margin: 0 10px 0 0;
-	}
-}
-
-#reasons {
-	padding: 70px 0 0 0;
-	h2 {
-		text-align: center;
-	}
-}
-
-#usp {
-	background-position: 0px 0px;
-	margin: 65px 0 0 0;
-	padding: 50px 0 80px 0;
-}
-
-#usp button, #call-to-action button {
-	border: 0;
+.left {
+  float: left !important;
 }

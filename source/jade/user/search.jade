@@ -1,6 +1,5 @@
 //extends ../_layouts/page_just_css.jade
 extends ../_layouts/page_home.jade
-include ../_mixins/articles-mixins.jade
 include ../_mixins/search-mixins.jade
 
 block content
@@ -8,8 +7,7 @@ block content
         .row
             .col-3
                 .lge-container
-                    #content
-                        +directory-list
+                    +directory-list
             .col-6
                 .lge-container
                     +breadcrumbs

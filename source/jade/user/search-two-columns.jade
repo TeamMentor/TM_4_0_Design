@@ -5,13 +5,12 @@ include ../_mixins/articles-mixins
 include ../_mixins/search-mixins
 
 block content
-    +search-poc
     #application
         .row
             .col-9
+                +search-poc
                 .lge-container
-                    #results-2
-                        +results
+                    +results-2
                     +articles-list
             .col-3
                 .lge-container

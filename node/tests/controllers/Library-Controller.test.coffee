@@ -145,40 +145,40 @@ describe 'controllers | Library-Controller.test.js |', ()->
             expect(library_Controller.cachedLibraryData_File(null)).to.equal(null);
             expect(library_Controller.cachedLibraryData_File(library)).to.equal(expectedPath)
 
-        it 'showLibraries',(done)->
-            send = (html)->
-                $ = cheerio.load(html)
-                $('title').html().assert_Is('TEAM Mentor 4.0 (Html version)')
-                $('#link-my-articles').attr().assert_Is( { id: 'link-my-articles', href: '/library/Uno' });
-                done()
-            req = {};
-            res = { send: send }
-
-            libraryController = new Library_Controller(req, res);
-            libraryController.showLibraries()
-
-        it 'showLibrary (redirect)',(done)->
-            redirect = (target)->
-                target.assert_Is('/Libraries')
-                done()
-            req = {};
-            res = { redirect: redirect }
-
-            libraryController = new Library_Controller(req, res);
-            libraryController.showLibrary()
-
-        it 'showLibrary (with name)',(done)->
-            send = (html)->
-                $ = cheerio.load(html)
-                $('title').html().assert_Is('TEAM Mentor 4.0 (Html version)')
-                $('#link-my-articles').attr().assert_Is( { id: 'link-my-articles', href: '/library/Uno' });
-                html.assert_Contains('<a href="/graph/Administrative Controls">Administrative Controls</a>')
-                done()
-            req = { params: { name: 'Uno'}}
-            res = { send: send }
-
-            libraryController = new Library_Controller(req, res);
-            libraryController.showLibrary()
+        #it 'showLibraries',(done)->
+        #    send = (html)->
+        #        $ = cheerio.load(html)
+        #        $('title').html().assert_Is('TEAM Mentor 4.0 (Html version)')
+        #        $('#link-my-articles').attr().assert_Is( { id: 'link-my-articles', href: '/library/Uno' });
+        #        done()
+        #    req = {};
+        #    res = { send: send }
+#
+        #    libraryController = new Library_Controller(req, res);
+        #    libraryController.showLibraries()
+#
+        #it 'showLibrary (redirect)',(done)->
+        #    redirect = (target)->
+        #        target.assert_Is('/Libraries')
+        #        done()
+        #    req = {};
+        #    res = { redirect: redirect }
+#
+        #    libraryController = new Library_Controller(req, res);
+        #    libraryController.showLibrary()
+#
+        #it 'showLibrary (with name)',(done)->
+        #    send = (html)->
+        #        $ = cheerio.load(html)
+        #        $('title').html().assert_Is('TEAM Mentor 4.0 (Html version)')
+        #        $('#link-my-articles').attr().assert_Is( { id: 'link-my-articles', href: '/library/Uno' });
+        #        html.assert_Contains('<a href="/graph/Administrative Controls">Administrative Controls</a>')
+        #        done()
+        #    req = { params: { name: 'Uno'}}
+        #    res = { send: send }
+#
+        #    libraryController = new Library_Controller(req, res);
+        #    libraryController.showLibrary()
 
         #it 'showQueries',(done)->
 #

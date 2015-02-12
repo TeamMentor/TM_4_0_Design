@@ -2,14 +2,14 @@ extends ../_layouts/flare_page
 include ../mixins/application-mixins
 
 block content
-    +flare-search-bar-input
     #application
         #left-nav
         #results
+            +flare-search-bar-input
             +flare-alert
             +flare-results-save-clear
             #articles
                 +articles-list
-            +horizontal-rule
+            br
             +copyright
         #right-nav

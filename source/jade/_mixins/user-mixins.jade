@@ -11,12 +11,10 @@ mixin login-form
                 +password-input
             .row
                 .col-7
-                    .lge-container
-                        +login-button
-                    br
+                    +login-button
+                        br
                 .col-5.text-right
-                    .lge-container
-                        a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot password?
+                    a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot password?
 
 //- sign-up-form
 mixin sign-up-form
@@ -36,7 +34,9 @@ mixin sign-up-form
             .form-group
                 +confirm-password-input
             include:md ../../content/getting-started/agree-to-toc.md
-            +sign-up-button
+            .row
+                .col-7
+                    +sign-up-button
 
 
 //- forgot-password-form
@@ -62,7 +62,6 @@ mixin pwd-reset-form
             .form-group
                 +confirm-password-input
             +reset-password-button
-
 
 mixin alert-login-failed
   if errorMessage
@@ -98,46 +97,3 @@ mixin alert-pwd-reset-failed
 mixin alert-pwd-reset-OK
     .alert(role='alert')
         div Your password has been updated. Please login to access our libraries.
-
-//- main-app-view
-mixin main-app-view
-    #main-app-view
-        if (recentArticles && recentArticles.values().not_Empty())
-            #content
-                #recently-Viewed-Articles
-                    h4.label Recently Viewed Articles
-                    table.nav
-                        for recentArticle in recentArticles
-                          tr
-                            td
-                                a(href=recentArticle.href, target='_blank')= recentArticle.title
-
-        if (searchTerms)
-            #content
-                #popular-Search-Terms
-                    h4.label Popular Search Terms
-                    table.nav
-                        for searchTerm in searchTerms
-                            tr
-                                td
-                                    a(href=searchTerm.href)= searchTerm.title
-        if (topArticles)
-            #content
-                #top-articles
-                    h4.label Top Articles
-                    table.nav
-                        for article in topArticles
-                            tr
-                                if article
-                                    td
-                                        a(href=article.href, target='_blank')= article.title
-                                    td
-                                        span.right.badge= article.weight
-        //if (newArticles)
-            #content
-                h4.label New Articles
-                    table.nav
-                        for newArticle in newArticles
-                            tr
-                                td
-                                    a(href=newArticle.href, target='_blank')= newArticle.title
