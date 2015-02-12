@@ -393,35 +393,22 @@ img {
 .sub-nav dt.active a:hover, .sub-nav dd.active a:hover, .sub-nav li.active a:hover {
   color: #6c9020;
 }
-ul.side-nav {
-  display: block;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  list-style-position: outside;
-  font-size: 14px;
-  background: #fafafa;
-  border-radius: 3px;
-  margin-top: -5px;
-}
-ul.side-nav li {
-  padding: 7px;
+table.nav {
   border: 1px solid #dbdbdb;
-  border-bottom: none;
+  background: #fafafa;
+  font-size: 14px;
 }
-ul.side-nav li:last-child {
-  border-bottom:1px solid #dbdbdb;
+table.nav tr {
+  border: 1px solid #dbdbdb;
 }
-ul.side-nav li:hover {
-  background-color: #dbdbdb;
+table.nav tr:hover {
+  background: #dbdbdb;
 }
-ul.side-nav li a {
-  text-decoration: none;
+table.nav td {
+  padding: 5px 10px;
 }
-ul.side-nav span.badge {
-  margin: 0 auto;
-  vertical-align: middle;
-  float: right;
+table.nav td a {
+  display:block;
 }
 /*------------------------------------*
    FORMS
@@ -715,7 +702,6 @@ button:hover, button:active {
   border-radius:10px;
   font-size: 12px;
   padding: 2px 2px 2px 1px;
-  margin-top: 3px;
 }
 .alert {
   padding: 15px;
