@@ -14,7 +14,7 @@ html, body {
   width: 100%;
 }
 body {
-  background: #fafafa;
+  background: $off-white;
 }
 body > * {
   @include border-box;

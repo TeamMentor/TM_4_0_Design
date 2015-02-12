@@ -72,7 +72,7 @@ body > * {
 #article p {
   margin-top: 5px;
 }
-#article-i-definitions, #article-ii-deliverables, #article-iii-license-grant, #article-iv-ownership-of-intellectual-property, #article-v-marketing-requirements, #article-vi-trademarks, #article-vii-support, #article-viii-fees-royalties-and-payments, #article-ix-payment-instructions, #article-x-records-reports-and-audit-rights, #article-xi-contract-administrative-contacts, #article-xii-assignment, #article-xiii-confidentiality, #article-xiv-warranties, #article-xv-indemnities, #article-xvi-limitations, #article-xvii-terms-of-agreements, #article-xviii-terminiation, #article-xix-effect-of-termination, #article-xx-general-provisions, #appendix-a, #appendix-b {
+#toc-content h4 {
   padding-top: 100px;
   margin-top: -80px;
 }
@@ -237,7 +237,7 @@ body > * {
   width: 100%;
 }
 #results-2 {
-  padding-top: 125px;
+  margin-top: 140px;
   border-radius: 3px;
 }
 #usp {
@@ -251,33 +251,26 @@ body > * {
   font-size: 20px;
   padding: 0 10px 0 0;
 }
-#search {
-  width: 100%;
+#search-div, #search-div-2 {
   background: #fafafa;
+  width: 100%;
   position: fixed;
   top: 140px;
   left: 0;
   z-index: 96;
 }
-#search-bar {
+#search-input {
   border: 1px solid #dbdbdb;
   background: white;
   border-radius: 3px;
-  height: 125px;
 }
-#search-bar input {
+#search-input input {
   border:none;
   background: none;
   padding-top: 5px;
 }
-#search-2 {
-  background: #fafafa;
-  width: 100%;
+#search-div-2 {
   margin: 0 auto;
-  position: fixed;
-  top: 140px;
-  left: 0;
-  z-index: 96;
 }
 .vertical-align {
   margin-top: 10px;
@@ -484,7 +477,7 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
   font-size: 1em;
   margin: 0 0 5px 0;
   padding: 0 0 0 0.5rem;
-  height: 3rem;
+  height: 3em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -774,10 +767,10 @@ table td {
   #customer-navigation ul {
     text-align: left;
   }
-  #search {
+  #search-div {
     top: 60px;
   }
-  #search-2 {
+  #search-div-2 {
     width: 75%;
     top: 60px;
   }
@@ -838,7 +831,7 @@ table td {
     line-height: 3.75em;
   }
   #results-2 {
-    padding-top: 145px;
+    margin-top: 160px;
   }
 }
 

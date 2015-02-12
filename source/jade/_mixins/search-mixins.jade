@@ -15,11 +15,11 @@ mixin directory-list
 
 //- search-bar-input
 mixin search-bar-input
-    #search
+    #search-div
         .lge-container
             .row
                 .col-offset-2.col-8
-                    #search-bar
+                    #search-input
                         form(action='/search', method='GET')
                             label(for='search-input') Type keywords here
                             .input-group
@@ -29,9 +29,9 @@ mixin search-bar-input
                                         +search-icon
 
 mixin search-poc
-    #search-2
+    #search-div-2
         .lge-container
-            #search-bar
+            #search-input
                 form(action='/search', method='GET')
                     label(for='search-input') Get started by searching
                     .input-group
