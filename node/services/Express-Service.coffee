@@ -30,8 +30,9 @@ class Express_Service
 
 
   set_BodyParser: ()=>
-    @.app.use(bodyParser.json()                        );     # to support JSON-encoded bodies
-    @.app.use(bodyParser.urlencoded({ extended: true }));     # to support URL-encoded bodies
+    @.app.use(bodyParser.json({limit:'1kb'})                       );     # to support JSON-encoded bodies
+    @.app.use(bodyParser.urlencoded({limit:'1kb', extended: true }));     # to support URL-encoded bodies
+
 
   set_Config:()=>
     @.app.config = new Config(null, false);
