@@ -1,80 +1,137 @@
+include ../_mixins/user-mixins
 //- directory-list
 mixin directory-list
-    h3#title= title
-    .nav
-        #containers
-            if(containers)
-                table
+    if(containers)
+        .bg
+            h3#title= title
+            #containers
+                table.nav
                     each container in containers
                         tr
                             td
                                 a(href= href + ',' +container.id, id=container.id)= container.title
                             td
-                                span.badge= container.size
+                                span.right.badge= container.size
 
 //- search-bar-input
 mixin search-bar-input
-    #search
-        form(action='/search', method='GET')
-            .input-group
-                input.form-control(type='text', placeholder='Type keywords here', name='text')
-                span.input-group-btn
-                    button.btn-search-bar(type='submit') SEARCH
+    #search-div
+        .lge-container
+            .row
+                .col-offset-2.col-8
+                    #search-input
+                        form(action='/search', method='GET')
+                            label(for='search-input') Type keywords here
+                            .input-group
+                                input.form-control(type='text', id='search-input', name='text')
+                                span.input-group-btn
+                                    button#search-button(type='submit')
+                                        +search-icon
+
+mixin search-poc
+    #search-div-2
+        .lge-container
+            #search-input
+                form(action='/search', method='GET')
+                    label(for='search-input') Get started by searching
+                    .input-group
+                        input.form-control(type='text', name='text', value= text)
+                        span.input-group-btn
+                            button#search-button(type='submit')
+                                +search-icon
 
 //- results
 mixin results
     #results
         table
             tr
+                if no_Results
+                    td
+                        p.label#no_results No Results
+                        p Please try again
                 td
                     if results
                         if results.size() > 250
-                            h5#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
+                            p.label#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
                         else
-                            h5#resultsTitle= 'Showing ' + results.size() + ' articles'
+                            p.label#resultsTitle= 'Showing ' + results.size() + ' articles'
                 td.text-right
                     if activeFilter
-                        span.filtered Active filter:
-                        span#activeFilter.badge= activeFilter.title
+                        span#activeFilter.filter= activeFilter.title
                             span.close
                                 a(href=href) x
+
+mixin results-2
+    #results-2
+        +results
+
+//- main-app-view
+mixin main-app-view
+    #main-app-view
+        if (recentArticles && recentArticles.values().not_Empty())
+            .bg
+                #recently-Viewed-Articles
+                    h4.label Recently Viewed Articles
+                    ul.side-nav
+                        for recentArticle in recentArticles
+                          li
+                            a(href=recentArticle.href, target='_blank')= recentArticle.title
+        if (searchTerms)
+            .bg
+                #popular-Search-Terms
+                    h4.label Popular Search Terms
+                    ul.side-nav
+                        for searchTerm in searchTerms
+                            li
+                                a(href=searchTerm.href)= searchTerm.title
+        if (topArticles)
+            .bg
+                #top-articles
+                    h4.label Top Articles
+                    ul.side-nav
+                        for article in topArticles
+                            if article
+                                li a(href=article.href, target='_blank')= article.title
+                                    span.right.badge= article.weight
+        //if (newArticles)
+            .bg
+                h4.label New Articles
+                    ul.side-nav
+                        for newArticle in newArticles
+                            li
+                                a(href=newArticle.href, target='_blank')= newArticle.title
+
 //- articles-list
 mixin articles-list
-    .list-group
-        #articles
-            if results
-                each result in results.take(250)
+    #articles
+        if results
+            each result in results.take(250)
+                #list-view-article
                     if result
-                      a(href='/article/' + result.id, id=result.id)
-                        h4=  result.title
-                        p= result.summary + '...'
+                        table
+                            tr
+                                td
+                                    a(href='/article/' + result.id, id=result.id)
+                                        h4=  result.title
+                            tr
+                                td
+                                    p= result.summary + '...'
 
 //- filters
 mixin filters-div
-        h3 Filter by
-        .nav#filters
-            if filters
+    if filters
+        #filters
+            .bg
+                h3 Filter by
                 for filter in filters
-                    .dropdown
-                        button= filter.title
-                            span.right
-                                i.fi-arrow-down
-                        ul.dropdown-menu
-                            for result in filter.results
+                    h4.label= filter.title
+                    ul.side-nav
+                        for result in filter.results
+                            li
                                 if activeFilter && result.id == activeFilter.id
                                     a(href= href )
-                                        li
-                                            b= result.title
-                                                span.badge= result.size
+                                        b= result.title
+                                        span.right.badge= result.size
                                 else
-                                    a(href=href + '/'+result.id)
-                                        li= result.title
-                                            span.badge= result.size
-
-mixin search-poc
-    #search-2
-        form(action='/search', method='GET')
-            .input-group
-                input.form-control(type='text', placeholder='Type keywords here', name='text')
-                span.input-group-btn
-                    button.btn-search-bar(type='submit') SEARCH
+                                    a(href=href + '/'+result.id)= result.title
+                                        span.right.badge= result.size

@@ -1,4 +1,5 @@
 Express_Service = require('../../services/Express-Service')
+Express_Session = require('../../misc/Express-Session')
 express  = require('express')
 session  = require('express-session')
 supertest = require('supertest')
@@ -111,3 +112,16 @@ describe 'services | Express-Service.test', ()->
     it 'Check specific session value', (done)->
       supertest(app).get '/session_get_userId'
                     .expect 200,testValue, done
+
+  describe 'methods |',->
+    it 'viewedArticles', (done)->
+      using new Express_Service(), ->
+        @.expressSession = new Express_Session()
+        @.expressSession.set 'sid-1', {recent_Articles: [{id: 'id_1', title: 'title_1'}]}, =>
+          @.expressSession.set 'sid-2', {recent_Articles: [{id: 'id_2', title: 'title_2'}]}, =>
+            @.expressSession.set 'sid-3', {recent_Articles: [{id: 'id_3', title: 'title_3'}]}, =>
+              @.expressSession.set 'sid-4', {recent_Articles: [{id: 'id_4', title: 'title_4'}]}, =>
+                @.expressSession.db.find {}, (err,sessionData)=>
+                  @viewedArticles (data)->
+                    data.json_Str().assert_Contains ['id_1','id_2', 'id_3', 'id_4','title_1','title_2', 'title_3', 'title_4']
+                    done()

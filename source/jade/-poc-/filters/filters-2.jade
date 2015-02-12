@@ -1,20 +1,20 @@
+//extends ../_layouts/page_just_css.jade
 extends ../_layouts/page_home.jade
 include ../_mixins/articles-mixins.jade
 include ../_mixins/search-mixins.jade
-include ../_mixins/error-mixins.jade
+include _poc_filters-mixins.jade
 
 block content
 	#application
 		.row
 			.col-3
 				.lge-container
-					+no-more-directories
+					+directory-list
 			.col-6
 				.lge-container
 					+breadcrumbs
 					+results
-					include:md ../../content/application/no-search-results.md
-                    +copyright
+					+articles-list
 			.col-3
 				.lge-container
-					+filters-div
+					+poc-filters-2

@@ -4,7 +4,7 @@ mixin horizontal-rule
 
 //- Breadcrumbs
 mixin breadcrumbs
-    if breadcrumbs.size() > 1
+    if breadcrumbs && breadcrumbs.size() > 1
         dl.sub-nav
             #navigation
                 for item,index in breadcrumbs
@@ -52,27 +52,6 @@ mixin get-password-button
 mixin reset-password-button
     button(type='submit' id='btn-reset-password') Reset Password
 
-//- Loginwall
-mixin team-mentor-summary
-    include:md ../content/getting-started/login-wall-summary.md
-    table
-        tr
-            td.text-center
-                i.fi-clipboard-pencil
-            td
-                include:md ../content/landing-pages/selling-point-1.md
-        tr
-            td.text-center
-                i.fi-arrows-in
-            td
-                include:md ../content/landing-pages/selling-point-2.md
-        tr
-            td.text-center
-                i.fi-checkbox
-            td
-                include:md ../content/landing-pages/selling-point-3.md
-
-//- Other Buttons
 mixin start-trial-button
     button
         i.fi-key
@@ -83,7 +62,26 @@ mixin see-for-yourself-button
         i.fi-eye
         | See for yourself
 
-//- Icons
+//- Loginwall
+mixin team-mentor-summary
+    .bg
+        include:md ../content/getting-started/login-wall-summary.md
+        table
+            tr
+                td.text-center
+                    i.fi-clipboard-pencil
+                td
+                    include:md ../content/landing-pages/selling-point-1.md
+            tr
+                td.text-center
+                    i.fi-arrows-in
+                td
+                    include:md ../content/landing-pages/selling-point-2.md
+            tr
+                td.text-center
+                    i.fi-checkbox
+                td
+                    include:md ../content/landing-pages/selling-point-3.md
 
 mixin i-phone
     i.fi-telephone
@@ -99,3 +97,9 @@ mixin i-twitter
 
 mixin i-toc
     i.fi-paperclip
+
+mixin arrow-down
+    i.fi-arrow-down
+
+mixin search-icon
+    i.fi-magnifying-glass

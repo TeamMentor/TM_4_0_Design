@@ -4,10 +4,11 @@ include ../mixins/application-mixins
 block content
 	#application
 		#left-nav
-			+links-home__navigate
+			.bg
+				+links-home__navigate
 		#results
 			#articles
 				+articles-list
-			+horizontal-rule
+			br
 			+copyright
 		#right-nav

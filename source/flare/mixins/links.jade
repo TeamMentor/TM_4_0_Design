@@ -21,17 +21,16 @@ mixin links-navbar__landing-page
 
 
 mixin links-home__navigate
-	#navigate-list
-		h3 Navigate TEAM Mentor
-		.list-group
-			a(href='../articles/fundamentals-of-security')
-				| Attacks & Vulnerabilites
-			a(href='../articles/fundamentals-of-security')
-				| Principles & Standards
-			a(href='../articles/my-articles')
-				| My Articles
-			a(href='../articles/my-search-items')
-				| My Saved Searches
+	h3 Navigate
+	.list-group
+		a(href='../articles/fundamentals-of-security')
+			| Attacks & Vulnerabilites
+		a(href='../articles/fundamentals-of-security')
+			| Principles & Standards
+		a(href='../articles/my-articles')
+			| My Articles
+		a(href='../articles/my-search-items')
+			| My Saved Searches
 
 
 mixin links_user_pages
@@ -128,177 +127,98 @@ mixin git-repo-link
 mixin help-navigation
 	dl.accordion(data-accordion='data-accordion')
 		dd.accordion-navigation
-			a(href='#panel1') About TEAM Mentor
+			a.active(href='#panel1') About TEAM Mentor
 			#panel1.content.active
-				ul.side-nav
-					li
-						a(href='#') What is new in this release?
-					li
-						a(href='#') Introduction to TEAM Mentor
-					li
-						a(href='#') Quick Start Guide
-					li
-						a(href='#') Support
-			// panel1-content
-		// accordian-navigation
+				.list-group
+					a(href='#') What is new in this release?
+					a(href='#') Introduction to TEAM Mentor
+					a(href='#') Quick Start Guide
+					a(href='#') Support
 		dd.accordion-navigation
 			a(href='#panel2') Installation
 			#panel2.content
-				ul.side-nav
-					li
-						a(href='#') Minimum Requirements
-					li
-						a(href='#') Installing TEAM Mentor on IIS 6.0
-					li
-						a(href='#') Installing TEAM Mentor on IIS 7.0 and 7.5
-					li
-						a(href='#') Running TEAM Mentor locally (using Cassini)
-					li
-						a(href='#') Upgrading TEAM Mentor
-			// panel2-content
-		// accordian-navigation
+				.list-group
+					a(href='#') Minimum Requirements
+					a(href='#') Installing TEAM Mentor on IIS 6.0
+					a(href='#') Installing TEAM Mentor on IIS 7.0 and 7.5
+					a(href='#') Running TEAM Mentor locally (using Cassini)
+					a(href='#') Upgrading TEAM Mentor
 		dd.accordion-navigation
 			a(href='#panel3') Administration
 			#panel3.content
-				ul.side-nav
-					li
-						a(href='#') Managing Users
-					li
-						a(href='#') Installing Libraries
-					li
-						a(href='#') Removing Libraries
-					li
-						a(href='#') Editing the Default Configuration
-					li
-						a(href='#') Troubleshooting
-					li
-						a(href='#') User_Data Git Support
-					li
-						a(href='#') TM_Libraries Git Support
-					li
-						a(href='#') Configuring Email
-					li
-						a(href='#') Google Analytics
-					li
-						a(href='#') Active Directory Support
-			// panel3-content
-		// accordian-navigation
+				.list-group
+					a(href='#') Managing Users
+					a(href='#') Installing Libraries
+					a(href='#') Removing Libraries
+					a(href='#') Editing the Default Configuration
+					a(href='#') Troubleshooting
+					a(href='#') User_Data Git Support
+					a(href='#') TM_Libraries Git Support
+					a(href='#') Configuring Email
+					a(href='#') Google Analytics
+					a(href='#') Active Directory Support
 		dd.accordion-navigation
 			a(href='#panel4') UI Elements
 			#panel4.content
-				ul.side-nav
-					li
-						a(href='#') Using the Control Panel
-					li
-						a(href='#') User Interface Overview
-					li
-						a(href='#') Signing Up for Regular Accounts
-					li
-						a(href='#') Article List Pane
-					li
-						a(href='#') Banner Pane
-					li
-						a(href='#') Filters Pane
-					li
-						a(href='#') Navigation Pane
-					li
-						a(href='#') Preview Pane
-					li
-						a(href='#') Forgot Password
-			// panel4-content
-		// accordian-navigation
+				.list-group
+					a(href='#') Using the Control Panel
+					a(href='#') User Interface Overview
+					a(href='#') Signing Up for Regular Accounts
+					a(href='#') Article List Pane
+					a(href='#') Banner Pane
+					a(href='#') Filters Pane
+					a(href='#') Navigation Pane
+					a(href='#') Preview Pane
+					a(href='#') Forgot Password
 		dd.accordion-navigation
 			a(href='#panel5') Reading Content
 			#panel5.content
-				ul.side-nav
-					li
-						a(href='#') Navigating
-					li
-						a(href='#') Using the Search Function
-					li
-						a(href='#') Using the Filters
-					li
-						a(href='#') Opening an Article
-					li
-						a(href='#') Changing Layout and Collaborating
-			// panel5-content
-		// accordian-navigation
+				.list-group
+					a(href='#') Navigating
+					a(href='#') Using the Search Function
+					a(href='#') Using the Filters
+					a(href='#') Opening an Article
+					a(href='#') Changing Layout and Collaborating
 		dd.accordion-navigation
 			a(href='#panel6') Editing Content
 			#panel6.content
-				ul.side-nav
-					li
-						a(href='#') Editing Overview
-					li
-						a(href='#') Editing Views
-					li
-						a(href='#') Editing Folders
-					li
-						a(href='#') Editing Libraries
-					li
-						a(href='#') Editing WikiText Articles
-					li
-						a(href='#') Editing HTML Articles
-					li
-						a(href='#') Edit Article Metadata
-					li
-						a(href='#') Linking Articles in WikiText
-					li
-						a(href='#') TEAM Mentor Wiki Markup
-			// panel6-content
-		// accordian-navigation
+				.list-group
+					a(href='#') Editing Overview
+					a(href='#') Editing Views
+					a(href='#') Editing Folders
+					a(href='#') Editing Libraries
+					a(href='#') Editing WikiText Articles
+					a(href='#') Editing HTML Articles
+					a(href='#') Edit Article Metadata
+					a(href='#') Linking Articles in WikiText
+					a(href='#') TEAM Mentor Wiki Markup
 		dd.accordion-navigation
 			a(href='#panel7') Eclipse for Fortify plugin
 			#panel7.content
-				ul.side-nav
-					li
-						a(href='#') About Eclipse Plugin
-					li
-						a(href='#') Requirements
-					li
-						a(href='#') Quick Start Installation
-					li
-						a(href='#') Installing TEAM Mentor Eclipse Plugin for Fortify
-					li
-						a(href='#') Updating
-					li
-						a(href='#') Using the TEAM Mentor Eclipse Plugin for Fortify
-					li
-						a(href='#') Using a Sample Vulnerable Application
-					li
-						a(href='#') How to Evaluate and What to Expect
-					li
-						a(href='#') Configuring TEAM Mentor Eclipse Plugin for Fortify
-					li
-						a(href='#') Linking TEAM Mentor instance account with the Eclipse Plugin
-			// panel7-content
-		// accordian-navigation
+				.list-group
+					a(href='#') About Eclipse Plugin
+					a(href='#') Requirements
+					a(href='#') Quick Start Installation
+					a(href='#') Installing TEAM Mentor Eclipse Plugin for Fortify
+					a(href='#') Updating
+					a(href='#') Using the TEAM Mentor Eclipse Plugin for Fortify
+					a(href='#') Using a Sample Vulnerable Application
+					a(href='#') How to Evaluate and What to Expect
+					a(href='#') Configuring TEAM Mentor Eclipse Plugin for Fortify
+					a(href='#') Linking TEAM Mentor instance account with the Eclipse Plugin
 		dd.accordion-navigation
 			a(href='#panel8') HP Fortify SCA UI Integration
 			#panel8.content
-				ul.side-nav
-					li
-						a(href='#') About TEAM Mentor HP Fortify SCA UI Integration
-					li
-						a(href='#') Installation
-					li
-						a(href='#') Updating TEAM Mentor Custom Rulepack
-					li
-						a(href='#') Using a Sample Vulnerable Application
-					li
-						a(href='#') How to Evaluate and What to Expect
-					li
-						a(href='#') Using TEAM Mentor Fortify SCA UI Integration
-			// panel8-content
-		// accordian-navigation
+				.list-group
+					a(href='#') About TEAM Mentor HP Fortify SCA UI Integration
+					a(href='#') Installation
+					a(href='#') Updating TEAM Mentor Custom Rulepack
+					a(href='#') Using a Sample Vulnerable Application
+					a(href='#') How to Evaluate and What to Expect
+					a(href='#') Using TEAM Mentor Fortify SCA UI Integration
 		dd.accordion-navigation
 			a(href='#panel9') Visual Studio Plugin
 			#panel9.content
-				ul.side-nav
-					li
-						a(href='#') TEAM Mentor Plugin for Visual Studio
-					li
-						a(href='#') Visual Studio Plugin FAQ
-			// panel9-content
-		// accordian-navigation
-	// accordian
+				.list-group
+					a(href='#') TEAM Mentor Plugin for Visual Studio
+					a(href='#') Visual Studio Plugin FAQ

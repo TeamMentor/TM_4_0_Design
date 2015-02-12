@@ -7,16 +7,13 @@ describe 'routes | routes.test |', ()->
                       '/flare/default',
                       '/Image/:name',
                       '/article/:id'
-                      '/article/viewed.json',
                       '/search',
-                      '/config',
-                      '/dirName',
                       '/flare',
                       '/flare/all',
                       '/flare/main-app-view',
-                      '/-',
-                      '/-/:queryId',
-                      '/-/:queryId/:filters',
+                      '/show',
+                      '/show/:queryId',
+                      '/show/:queryId/:filters',
                       '/render/mixin/:file/:mixin',   # GET
                       '/render/mixin/:file/:mixin',   # POST (test blind spot due to same name as GET)
                       '/render/file/:file',
@@ -24,15 +21,8 @@ describe 'routes | routes.test |', ()->
                       '/passwordReset/:username/:token',
                       '/help/:page*',
                       '/index.html',
-                      '/libraries',
-                      '/library/:name',
-                      #'/library/queries',
-                      '/mainModule',
-                      '/module',
-                      '/ping',
-                      '/pwd',
-                      '/session',
-                      '/test',
+                      #'/libraries',
+                      #'/library/:name',
                       '/user/login',
                       '/user/login',
                       '/user/logout',
@@ -40,8 +30,8 @@ describe 'routes | routes.test |', ()->
                       '/user/pwd_reset',
                       '/user/sign-up',
                       '/passwordReset/:username/:token'
-                      '/version',
-                       '/-poc-']
+                       '/poc'
+                       '/*']
 
     before ()->
       app.server = app.listen();
@@ -68,21 +58,22 @@ describe 'routes | routes.test |', ()->
     runTest = (originalPath) ->
       path = originalPath.replace(':version','flare')
                          .replace(':area/:page','help/index')
-                         .replace(':file/:mixin', 'globals/navigate-icon')
+                         .replace(':file/:mixin', 'globals/navigate-link')
                          #.replace(':area','help')
                          .replace(':page','default')
                          .replace(':queryId','AAAA')
                          .replace(':filters','BBBB')
+                         .replace('.*','aaaaa')
 
       expectedStatus = 200;
       expectedStatus = 302 if ['','image','deploy'                           ].contains(path.split('/').second().lower())
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
                                '/user/logout'                                ].contains(path)
-      expectedStatus = 403 if ['article', '-','library','libraries'          ].contains(path.split('/').second().lower())
+      expectedStatus = 403 if ['article', 'show','library','libraries'       ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
-      expectedStatus = 403 if ['/-poc-/search-two-column','/-poc-','/-poc-/md-render'].contains(path)
+      expectedStatus = 403 if ['/poc'                                        ].contains(path)
 
-      expectedStatus = 200 if ['/article/viewed.json'                        ].contains(path)
+      expectedStatus = 404 if ['/aaaaa'                                      ].contains(path)
 
       postRequest = ['/user/pwd_reset','/user/sign-up'                       ].contains(path)
 

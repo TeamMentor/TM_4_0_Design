@@ -1,1 +1,1 @@
-There's no more directories in here!
+No further directories

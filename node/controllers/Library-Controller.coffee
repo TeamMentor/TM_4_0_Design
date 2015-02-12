@@ -35,21 +35,21 @@ class Library_Controller
 
 
 
-  showLibraries: ()=>
+  #showLibraries: ()=>
+  #
+  #  viewModel = {'libraries' : @.libraries};
+  #
+  #  @.res.send @.jade_Service.renderJadeFile('/source/jade/user/list.jade', viewModel)
 
-    viewModel = {'libraries' : @.libraries};
-
-    @.res.send @.jade_Service.renderJadeFile('/source/jade/user/list.jade', viewModel)
-
-  showLibrary: ()=>
-    name = if (@.req && @.req.params) then @.req.params.name else "";
-    library = @.libraries[name];
-    if(library)
-        viewModel = {'libraries' : @.libraries , library : library};
-        @.mapLibraryData library, ()=>
-          @.res.send @.jade_Service.renderJadeFile('/source/jade/user/library.jade', viewModel)
-    else
-        @.res.redirect('/Libraries')
+  #showLibrary: ()=>
+  #  name = if (@.req && @.req.params) then @.req.params.name else "";
+  #  library = @.libraries[name];
+  #  if(library)
+  #      viewModel = {'libraries' : @.libraries , library : library};
+  #      @.mapLibraryData library, ()=>
+  #        @.res.send @.jade_Service.renderJadeFile('/source/jade/user/library.jade', viewModel)
+  #  else
+  #      @.res.redirect('/Libraries')
 
 
   #showQueries: ()=>
@@ -121,9 +121,9 @@ Express_Service  = require('../services/Express-Service')
 
 Library_Controller.registerRoutes =  (app)=>
   check_Auth = (req,res,next)-> new Express_Service().checkAuth(req, res,next, app.config)
-  app.get '/libraries'      , check_Auth, (req, res)=> new Library_Controller(req, res, app.config).showLibraries()
+  #app.get '/libraries'      , check_Auth, (req, res)=> new Library_Controller(req, res, app.config).showLibraries()
   #app.get '/library/queries', check_Auth, (req, res)=> new Library_Controller(req, res, app.config).showQueries()
-  app.get '/library/:name'  , check_Auth, (req, res)=> new Library_Controller(req, res, app.config).showLibrary()
+  #app.get '/library/:name'  , check_Auth, (req, res)=> new Library_Controller(req, res, app.config).showLibrary()
 
 module.exports = Library_Controller
 

@@ -11,12 +11,10 @@ mixin login-form
                 +password-input
             .row
                 .col-7
-                    .lge-container
-                        +login-button
-                    br
+                    +login-button
+                        br
                 .col-5.text-right
-                    .lge-container
-                        a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot password?
+                    a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot password?
 
 //- sign-up-form
 mixin sign-up-form
@@ -36,17 +34,22 @@ mixin sign-up-form
             .form-group
                 +confirm-password-input
             include:md ../../content/getting-started/agree-to-toc.md
-            +sign-up-button
+            .row
+                .col-7
+                    +sign-up-button
 
 
 //- forgot-password-form
 mixin forgot-password-form
-    h3 Forgot your password?
-    include:md ../../content/getting-started/forgot-password-form.md
-    form#forgot-password(role='form', action='/user/pwd_reset' method='post')
-        .form-group
-            +email-input
-        +get-password-button
+    #form
+        #heading
+            include:md ../../content/getting-started/forgot-password-form.md
+        form#forgot-password(role='form', action='/user/pwd_reset' method='post')
+            .form-group
+                +email-input
+            .row
+                .col-7
+                    +get-password-button
 
 //- pwd-reset-form
 mixin pwd-reset-form
@@ -59,7 +62,6 @@ mixin pwd-reset-form
             .form-group
                 +confirm-password-input
             +reset-password-button
-
 
 mixin alert-login-failed
   if errorMessage
@@ -95,37 +97,3 @@ mixin alert-pwd-reset-failed
 mixin alert-pwd-reset-OK
     .alert(role='alert')
         div Your password has been updated. Please login to access our libraries.
-
-//- main-app-view
-mixin main-app-view
-    #recently-Viewed-Articles
-      if (recentArticles && recentArticles.values().not_Empty())
-        h4 Recently Viewed Articles
-          .list-group
-            for recentArticle in recentArticles
-              a(href=recentArticle.href, target='_blank')= recentArticle.title
-    #popular-Search-Terms
-        h4 Popular Search Terms
-        .list-group
-            if (searchTerms)
-                for searchTerm in searchTerms
-                    a(href=searchTerm.href)= searchTerm.title
-    #top-articles
-        h4 Top Articles
-        .list-group
-            if (topArticles)
-                for article in topArticles
-                    if article
-                        a(href=article.href, target='_blank')
-                            .row
-                                .col-12
-                                    .row
-                                        .col-11
-                                            = article.title
-                                        .col-1
-                                            span.badge= article.weight
-    //h4 New Articles
-    //.list-group
-        if (newArticles)
-            for newArticle in newArticles
-                a(href=newArticle.href, target='_blank')= newArticle.title

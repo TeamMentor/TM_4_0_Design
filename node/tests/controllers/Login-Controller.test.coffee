@@ -246,10 +246,10 @@ describe "controllers | test-Login-Controller |", ->
     newPassword         ='aaa'.add_5_Letters()
 
     #render contains the file to render and the view model object
-    render = (html,model)->
+    render = (jadePage,model)->
       #Verifying the message from the backend.
       model.errorMessage.assert_Is(blank_credentials_message)
-      html.assert_Is('source/jade/guest/login-Fail.jade')
+      jadePage.assert_Is('source/jade/guest/login-Fail.jade')
       done()
     req = body:{username:newUsername,password:newPassword},session:'';
     res = {render: render}
@@ -261,10 +261,10 @@ describe "controllers | test-Login-Controller |", ->
     newPassword         =''
 
     #render contains the file to render and the view model object
-    render = (html,model)->
+    render = (jadePage,model)->
       model.errorMessage.assert_Is(blank_credentials_message)
       #Verifying the message from the backend.
-      html.assert_Is('source/jade/guest/login-Fail.jade')
+      jadePage.assert_Is('source/jade/guest/login-Fail.jade')
       done()
     req = body:{username:newUsername,password:newPassword},session:'';
     res = {render: render}
@@ -272,14 +272,14 @@ describe "controllers | test-Login-Controller |", ->
     loginController.loginUser()
 
   it 'Invalid Username or Password (missing both username and password)',(done)->
-    newUsername         ='aaa'.add_5_Letters()
+    newUsername         =''
     newPassword         =''
 
     #render contains the file to render and the view model object
-    render = (html,model)->
+    render = (jadePage,model)->
       #Verifying the message from the backend.
       model.errorMessage.assert_Is(blank_credentials_message)
-      html.assert_Is('source/jade/guest/login-Fail.jade')
+      jadePage.assert_Is('source/jade/guest/login-Fail.jade')
       done()
     req = body:{username:newUsername,password:newPassword},session:'';
     res = {render: render}

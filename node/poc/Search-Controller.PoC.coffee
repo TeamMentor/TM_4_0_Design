@@ -65,7 +65,7 @@ Search_Controller_PoC.registerRoutes = (app, expressService) ->
             new Search_Controller_PoC(req, res, app.config)[method_Name]()
 
 
-    app.get  "/-poc-"                         , checkAuth,  searchController_PoC('poc_Pages')
+    app.get  "/poc"                         , checkAuth,  searchController_PoC('poc_Pages')
 #    app.get  "/-poc-/md-render"               , checkAuth,  searchController_PoC('md_Render')
 #    app.post "/-poc-/md-render"               , checkAuth,  searchController_PoC('md_Render')
 
