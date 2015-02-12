@@ -1,10 +1,10 @@
 mixin article
     #article
-        .content
+        .bg
             h1#title= title
             #html!= article_Html
 
 mixin no-article
     #article
-        .content
+        .bg
             include:md ../../content/articles/no-article.md

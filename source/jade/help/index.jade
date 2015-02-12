@@ -1,24 +1,13 @@
 extends ../_layouts/page
+include ../_mixins/view-blocks.jade
 block content
 	#application
 		.row
 			.col-3
 				.lge-container
-					if library
-						.content
-							each view in library.Views
-								h4.label= view.Title
-								table.nav
-									each article in view.Articles
-										tr
-											td
-												a(href= '/help/' + article.Id)
-													= article.Title
+					+help-navigation
 			.col-6
 				.lge-container
-					.content
-						if title
-							h2= title
-						!= content
+					+help-content
 			.col-3
 				.lge-container

@@ -1,21 +1,19 @@
 extends ../_layouts/page_home.jade
 include ../_mixins/articles-mixins.jade
 include ../_mixins/search-mixins.jade
+include ../_mixins/error-mixins.jade
 
 block content
 	#application
 		.row
 			.col-3
 				.lge-container
-					.content
-						h3 Containing Directory Title
-						include:md ../../content/application/no-more-directories.md
+					+no-more-directories
 			.col-6
 				.lge-container
 					+breadcrumbs
 					+results
 					include:md ../../content/application/no-search-results.md
-					+horizontal-rule
                     +copyright
 			.col-3
 				.lge-container
