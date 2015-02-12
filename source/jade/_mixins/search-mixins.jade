@@ -91,7 +91,8 @@ mixin main-app-view
                     ul.side-nav
                         for article in topArticles
                             if article
-                                li a(href=article.href, target='_blank')= article.title
+                                li
+                                  a(href=article.href, target='_blank')= article.title
                                     span.right.badge= article.weight
         //if (newArticles)
             .bg
