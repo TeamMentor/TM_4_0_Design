@@ -70,4 +70,17 @@ class Express_Service
       }
     return data
 
+  viewedArticles: (callback)=>
+    if not @.expressSession
+      callback {}
+    else
+      @.expressSession.db.find {}, (err,sessionData)=>
+          recent_Articles = []
+          if sessionData
+              for session in sessionData
+                  if session.data.recent_Articles
+                      for recent_article in session.data.recent_Articles
+                          recent_Articles.add(recent_article)
+          callback recent_Articles
+
 module.exports = Express_Service
