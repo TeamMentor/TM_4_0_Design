@@ -77,22 +77,18 @@ body > * {
   margin-top: -80px;
 }
 #about {
+  background: url(../assets/stock-img/bg-img.jpg) no-repeat;
   background-attachment: fixed;
-  background-position: 0px -1400px;
-  background-repeat: no-repeat;
-  background: url(../assets/stock-img/bg-img.jpg);
-  height: 400px;
+  background-position: 0px -1350px;
 }
-#about, #usp {
-  width: 100%;
-  margin-top: 60px;
-  padding: 0px 0 50px 0;
+#about, #usp, #call-to-action {
+  padding: 100px 0;
   text-align: center;
 }
 #about h2, #usp h2 p {
   color: #FFFFFF;
   line-height: 1.25em;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 #about-us {
   padding: 40px 0 40px 0;
@@ -105,17 +101,12 @@ body > * {
   background: #fafafa;
 }
 #call-to-action {
-  width: 100%;
-  background: url(../assets/stock-img/bg-img.jpg);
-  background-repeat: no-repeat;
+  background: url(../assets/stock-img/bg-img.jpg) no-repeat;
   background-position: 0px -800px;
-  height: 400px;
   text-align: center;
-  background-repeat: no-repeat;
 }
 #call-to-action h1 {
   color: #FFFFFF;
-  padding-top: 80px;
 }
 #clients {
   padding: 0 0 80px 0;
@@ -241,11 +232,9 @@ body > * {
   border-radius: 3px;
 }
 #usp {
-  background: url(../assets/stock-img/bg-img.jpg);
+  background: url(../assets/stock-img/bg-img.jpg) no-repeat;
   background-position: 0px 0px;
-  height: 450px;
   background-attachment: fixed;
-  background-repeat: no-repeat;
 }
 #usp button i, #call-to-action button i {
   font-size: 20px;
