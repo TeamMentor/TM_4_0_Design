@@ -814,10 +814,6 @@ table td {
   #footer {
     text-align: left;
   }
-  #filters {
-    position: fixed;
-    width: 22%;
-  }
   a.minor {
     line-height: 3.75em;
   }
