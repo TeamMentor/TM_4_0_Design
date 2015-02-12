@@ -74,15 +74,8 @@ mixin main-app-view
                     h4.label Recently Viewed Articles
                     ul.side-nav
                         for recentArticle in recentArticles
-<<<<<<< HEAD
                           li
                             a(href=recentArticle.href, target='_blank')= recentArticle.title
-=======
-                          tr
-                            td
-                                a(href=recentArticle.href)= recentArticle.title
-
->>>>>>> Dev
         if (searchTerms)
             .bg
                 #popular-Search-Terms
@@ -97,31 +90,16 @@ mixin main-app-view
                     h4.label Top Articles
                     ul.side-nav
                         for article in topArticles
-<<<<<<< HEAD
                             if article
                                 li a(href=article.href, target='_blank')= article.title
                                     span.right.badge= article.weight
-=======
-                            tr
-                                if article
-                                    td
-                                        a(href=article.href)= article.title
-                                    td
-                                        span.right.badge= article.weight
->>>>>>> Dev
         //if (newArticles)
             .bg
                 h4.label New Articles
                     ul.side-nav
                         for newArticle in newArticles
-<<<<<<< HEAD
                             li
                                 a(href=newArticle.href, target='_blank')= newArticle.title
-=======
-                            tr
-                                td
-                                    a(href=newArticle.href)= newArticle.title
->>>>>>> Dev
 
 //- articles-list
 mixin articles-list
