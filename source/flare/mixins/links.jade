@@ -47,50 +47,112 @@ mixin links_user_pages
 
 //- Flare Page Links
 mixin flare-all-pages-links
-	.list-group
-		a(href='articles/alert-article-new-window-view'                   ) articles/alert-article-new-window-view
-		a(href='articles/article-new-window-view'                         ) articles/article-new-window-view
-		a(href='articles/fundamentals-of-security'                        ) articles/fundamentals-of-security
-		a(href='articles/my-articles'                                     ) articles/my-articles
-		a(href='articles/my-search-items'                                 ) articles/my-search-items
-		a(href='error-pages/error-occurred'                               ) error-pages/error-occurred
-		a(href='error-pages/unavailable'                                  ) error-pages/unavailable
-		a(href='error-pages/upgraded'                                     ) error-pages/upgraded
-		a(href='getting-started/forgot-password'                          ) getting-started/forgot-password
-		a(href='getting-started/index-prompts'                            ) getting-started/index-prompts
-		a(href='getting-started/index-validation'                         ) getting-started/index-validation
-		a(href='getting-started/index'                                    ) getting-started/index
-		a(href='help/index'                                               ) help/index
-		a(href='home/alert-application'                                   ) home/alert-application
-		a(href='home/app-keyword-search-save'                             ) home/app-keyword-search-save
-		a(href='home/app-keyword-search-share'                            ) home/app-keyword-search-share
-		a(href='home/app-keyword-search'                                  ) home/app-keyword-search
-		a(href='home/customer-main-app-view'                              ) home/customer-main-app-view
-		a(href='home/filters-active'                                      ) home/filters-active
-		a(href='home/filters-div'                                         ) home/filters-div
-		a(href='home/main-app-view'                                       ) home/main-app-view
-		a(href='home/navigate'                                            ) home/navigate
-		a(href='landing-pages/about'                                      ) landing-pages/about
-		a(href='landing-pages/features'                                   ) landing-pages/features
-		a(href='landing-pages/index'                                      ) landing-pages/index
-		a(href='new-user-onboard/index'                                   ) new-user-onboard/index
-		a(href='new-user-onboard/step-one-search'                         ) new-user-onboard/step-one-search
-		a(href='new-user-onboard/step-two-filter-button'                  ) new-user-onboard/step-two-filter-button
-		a(href='new-user-onboard/step-four-filters-active'                ) new-user-onboard/step-four-filters-active
-		a(href='new-user-onboard/step-three-filters-div'                  ) new-user-onboard/step-three-filters-div
-		a(href='new-user-onboard/step-five-navigate'                      ) new-user-onboard/step-five-navigate
-		a(href='new-user-onboard/step-six-navigate-page'                  ) new-user-onboard/step-six-navigate-page
-		a(href='new-user-onboard/finish'                                  ) new-user-onboard/finish
-		a(href='style-guide/index'                                        ) style-guide/index
-		a(href='user/alert-user'                                          ) user/alert-user
-		a(href='user/backend'                                             ) user/backend
-		a(href='user/developer-utilities'                                 ) user/developer-utilities
-		a(href='user/other'                                               ) user/other
-		a(href='user/terms-and-conditions'                                ) user/terms-and-conditions
-		a(href='user/user-add-filter'                                     ) user/user-add-filter
-		a(href='user/user-edit'                                           ) user/user-edit
-		a(href='user/user-new-password'                                   ) user/user-new-password
-		a(href='user/user'                                                ) user/user
+	ul.side-nav
+		li
+			a(href='articles/alert-article-new-window-view') articles/alert-article-new-window-view
+		li
+			a(href='articles/article-new-window-view') articles/article-new-window-view
+		li
+			a(href='articles/fundamentals-of-security') articles/fundamentals-of-security
+		li
+			a(href='articles/my-articles') articles/my-articles
+		li
+			a(href='articles/my-search-items') articles/my-search-items
+		li
+			a(href='error-pages/error-occurred') error-pages/error-occurred
+		li
+			a(href='error-pages/unavailable') error-pages/unavailable
+		li
+			a(href='error-pages/upgraded') error-pages/upgraded
+		li
+			a(href='getting-started/forgot-password') getting-started/forgot-password
+		li
+			a(href='articles/alert-article-new-window-view') articles/alert-article-new-window-view
+		li
+			a(href='articles/article-new-window-view') articles/article-new-window-view
+		li
+			a(href='articles/fundamentals-of-security') articles/fundamentals-of-security
+		li
+			a(href='articles/my-articles') articles/my-articles
+		li
+			a(href='articles/my-search-items') articles/my-search-items
+		li
+			a(href='error-pages/error-occurred') error-pages/error-occurred
+		li
+			a(href='error-pages/unavailable') error-pages/unavailable
+		li
+			a(href='error-pages/upgraded') error-pages/upgraded
+		li
+			a(href='getting-started/forgot-password') getting-started/forgot-password
+		li
+			a(href='getting-started/index-prompts') getting-started/index-prompts
+		li
+			a(href='getting-started/index-validation') getting-started/index-validation
+		li
+			a(href='getting-started/index') getting-started/index
+		li
+			a(href='help/index') help/index
+		li
+			a(href='home/alert-application') home/alert-application
+		li
+			a(href='home/app-keyword-search-save') home/app-keyword-search-save
+		li
+			a(href='home/app-keyword-search-share') home/app-keyword-search-share
+		li
+			a(href='home/app-keyword-search') home/app-keyword-search
+		li
+			a(href='home/customer-main-app-view') home/customer-main-app-view
+		li
+			a(href='home/filters-active') home/filters-active
+		li
+			a(href='home/filters-div') home/filters-div
+		li
+			a(href='home/main-app-view') home/main-app-view
+		li
+			a(href='home/navigate') home/navigate
+		li
+			a(href='landing-pages/about') landing-pages/about
+		li
+			a(href='landing-pages/features') landing-pages/features
+		li
+			a(href='landing-pages/index') landing-pages/index
+		li
+			a(href='new-user-onboard/index') new-user-onboard/index
+		li
+			a(href='new-user-onboard/step-one-search') new-user-onboard/step-one-search
+		li
+			a(href='new-user-onboard/step-two-filter-button') new-user-onboard/step-two-filter-button
+		li
+			a(href='new-user-onboard/step-four-filters-active') new-user-onboard/step-four-filters-active
+		li
+			a(href='new-user-onboard/step-three-filters-div') new-user-onboard/step-three-filters-div
+		li
+			a(href='new-user-onboard/step-five-navigate') new-user-onboard/step-five-navigate
+		li
+			a(href='new-user-onboard/step-six-navigate-page') new-user-onboard/step-six-navigate-page
+		li
+			a(href='new-user-onboard/finish') new-user-onboard/finish
+		li
+			a(href='style-guide/index') style-guide/index
+		li
+			a(href='user/alert-user') user/alert-user
+		li
+			a(href='user/backend') user/backend
+		li
+			a(href='user/developer-utilities') user/developer-utilities
+		li
+			a(href='user/other') user/other
+		li
+			a(href='user/terms-and-conditions') user/terms-and-conditions
+		li
+			a(href='user/user-add-filter') user/user-add-filter
+		li
+			a(href='user/user-edit') user/user-edit
+		li
+			a(href='user/user-new-password') user/user-new-password
+		li
+			a(href='user/user') user/user
+
 
 //- my-articles-links
 mixin my-articles-links
