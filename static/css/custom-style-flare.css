@@ -413,6 +413,7 @@ ul.side-nav li:hover {
   background-color: #dbdbdb;
 }
 ul.side-nav li a {
+  display: block;
   text-decoration: none;
 }
 ul.side-nav span.badge {
@@ -729,6 +730,14 @@ a.postfix:hover {
 #save-button, #share-button, #navigate-button, #show-button {
   width: 100%;
 }
+#save-button {
+  background: #8aaf3e;
+  padding-top: 12px;
+  height: 3.4em;
+}
+#save-button:hover {
+  background: #b4cf7b;
+}
 .dropdown:after {
   content: '';
 }
@@ -842,6 +851,7 @@ input#search:active, input#search:focus {
   font-size: 14px;
   letter-spacing: 1px;
   position: relative;
+  padding: 10px;
 }
 .alert-box.active {
   background-color: #dbdbdb;

@@ -22,15 +22,19 @@ mixin links-navbar__landing-page
 
 mixin links-home__navigate
 	h3 Navigate
-	.list-group
-		a(href='../articles/fundamentals-of-security')
-			| Attacks & Vulnerabilites
-		a(href='../articles/fundamentals-of-security')
-			| Principles & Standards
-		a(href='../articles/my-articles')
-			| My Articles
-		a(href='../articles/my-search-items')
-			| My Saved Searches
+	ul.side-nav
+		li
+			a(href='../articles/fundamentals-of-security')
+				| Attacks & Vulnerabilites
+		li
+			a(href='../articles/fundamentals-of-security')
+				| Principles & Standards
+		li
+			a(href='../articles/my-articles')
+				| My Articles
+		li
+			a(href='../articles/my-search-items')
+				| My Saved Searches
 
 
 mixin links_user_pages
@@ -48,24 +52,6 @@ mixin links_user_pages
 //- Flare Page Links
 mixin flare-all-pages-links
 	ul.side-nav
-		li
-			a(href='articles/alert-article-new-window-view') articles/alert-article-new-window-view
-		li
-			a(href='articles/article-new-window-view') articles/article-new-window-view
-		li
-			a(href='articles/fundamentals-of-security') articles/fundamentals-of-security
-		li
-			a(href='articles/my-articles') articles/my-articles
-		li
-			a(href='articles/my-search-items') articles/my-search-items
-		li
-			a(href='error-pages/error-occurred') error-pages/error-occurred
-		li
-			a(href='error-pages/unavailable') error-pages/unavailable
-		li
-			a(href='error-pages/upgraded') error-pages/upgraded
-		li
-			a(href='getting-started/forgot-password') getting-started/forgot-password
 		li
 			a(href='articles/alert-article-new-window-view') articles/alert-article-new-window-view
 		li
