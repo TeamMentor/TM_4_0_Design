@@ -21,6 +21,7 @@ nav {
   display: -webkit-flex;
   z-index: 99;
   background: white;
+  border: 1px solid #dbdbdb;
 }
 nav a, nav p {
   color: #8aaf3e;
@@ -159,9 +160,11 @@ nav a:hover, nav p:hover {
 #search-bar {
   -webkit-order: 6;
   -webkit-flex: 100%;
-  background: white;
-  padding: 5px;
-  border: 1px solid #dbdbdb;
+}
+#search-bar > div {
+  background: #fff;
+  border:1px solid #dbdbdb;
+  padding: 5px 3px 2px;
   border-radius: 3px;
 }
 #left-nav, #results, #right-nav {
@@ -210,9 +213,12 @@ nav a:hover, nav p:hover {
 #list-view-article p {
   margin-top: 10px;
 }
+#filters {
+  margin-top: -36px;
+}
 .bg {
   padding: 20px;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 #article-options {
   margin: 20px 0;
@@ -260,11 +266,6 @@ nav a:hover, nav p:hover {
   overflow-y: auto;
   min-height: 1px;
 }
-#save, #share {
-  border: 1px solid #dbdbdb;
-  background: #fafafa;
-  padding: 20px 0 20px 0
-}
 #landing-page {
   height: 90%;
   -webkit-order: 6;
@@ -275,19 +276,21 @@ nav a:hover, nav p:hover {
 }
 #about, #about-us, #call-to-action, #clients, #features, #footer, #reasons, #usp {
   width: 100%;
+  background: white;
 }
 #about {
   background: url(../assets/stock-img/bg-img.jpg);
   background-position: 0px 600px;
   height: 300px;
 }
-#usp h1, #about h2 {
-  padding-top: 10%;
+#usp h2, #about h2 {
+  padding-top: 5%;
+  color: white;
 }
-#about h2, #usp h1 p, #call-to-action h1  {
+#about h2, #usp h2, #call-to-action h1  {
   color: #FFFFFF;
 }
-#about h2, #usp h1 p, #call-to-action h1, #clients, #features h2, #footer, #reasons h2 {
+#about h2, #usp h2, #call-to-action h1, #clients, #features h2, #footer, #reasons h2 {
   text-align: center;
 }
 #about-us {
@@ -304,7 +307,8 @@ nav a:hover, nav p:hover {
   padding: 40px 0 80px 0;
 }
 #features {
-  padding: 50px 0;
+  padding: 20px 0 40px 0;
+  background: white;
 }
 #features i, #reasons i {
   font-size: 60px;
@@ -321,8 +325,7 @@ nav a:hover, nav p:hover {
   margin: 0 0 5px 0;
 }
 #footer h5 {
-  margin-bottom: 15px;
-  margin-left: 15px;
+  margin: 50px 0 10px 15px;
 }
 #footer i {
   margin-right: 10px;
@@ -335,8 +338,9 @@ nav a:hover, nav p:hover {
 #usp {
   background: url(../assets/stock-img/bg-img.jpg);
   background-position: 0px 0px;
-  height: 500px;
+  padding-bottom: 100px;
   z-index: 4;
+  text-align: center;
 }
 #si-logo {
   background:url('../assets/logos/logos.png') no-repeat;
@@ -617,10 +621,8 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 .accordion .accordion-navigation, .accordion dd {
   margin: 0;
   border: 1px solid #dbdbdb;
-  border-bottom: none;
   margin: 20px 0;
 }
-
 .accordion .accordion-navigation > a, .accordion dd > a {
   background: white;
   text-decoration: none;
@@ -629,14 +631,18 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   font-size: 12px;
   font-weight: 700;
   color: #444444;
-  margin-bottom: 5px;
   border-bottom: 1px solid #dbdbdb;
+  border-radius; 3px;
 }
 .accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
   background: #fafafa;
 }
 .accordion .accordion-navigation > a:active, .accordion dd > a:active {
   background: #8aaf3e;
+}
+.accordion .accordion-navigation > .content.active, .accordion dd > .content.active {
+  padding-top: 10px;
+  b
 }
 /*------------------------------------*
    TABLES
@@ -649,16 +655,6 @@ table {
 table i {
   font-size: 60px;
   padding-right: 80px;
-}
-#filters table {
-  background: #fafafa;
-}
-#filters table, #filters th, #filters tr {
-  border: 1px solid #dbdbdb;
-  border-radius: 3px;
-}
-#filters td {
-  padding: 5px;
 }
 /*------------------------------------*
    BUTTONS
@@ -687,9 +683,9 @@ button i {
   color: white;
 }
 .app {
-  margin-top: 15px;
   height: auto;
   padding: 5px 0;
+  margin-top: 10px;
   width:50%;
   background: #b4cf7b;
   border: 1px solid #fafafa;
@@ -729,14 +725,7 @@ a.postfix:hover {
 }
 #save-button, #share-button, #navigate-button, #show-button {
   width: 100%;
-}
-#save-button {
-  background: #8aaf3e;
-  padding-top: 12px;
-  height: 3.4em;
-}
-#save-button:hover {
-  background: #b4cf7b;
+  text-align: center;
 }
 .dropdown:after {
   content: '';
@@ -803,6 +792,7 @@ input#search {
   border-bottom: 1px solid #dbdbdb;
   border-radius: 0px;
   outline: none;
+  background: white;
 }
 input#search:active, input#search:focus {
   border-bottom: 2px solid #aaaaaa;
@@ -813,7 +803,7 @@ input#search:active, input#search:focus {
 #filters input[type=radio] + label{
   padding-left: 40px;
   display: inline-block;
-  line-height: 15px;
+  line-height: 12px;
   background-repeat: no-repeat;
   cursor: pointer;
   background-image: url('../assets/icons/radio.png');
@@ -827,7 +817,7 @@ input#search:active, input#search:focus {
 #filters input[type=checkbox] + label {
   padding-left:40px;
   display:inline-block;
-  line-height:15px;
+  line-height:12px;
   background-repeat:no-repeat;
   cursor:pointer;
   background-image:url('../assets/icons/tick.png');
@@ -844,10 +834,10 @@ input#search:active, input#search:focus {
 *------------------------------------*/
 .alert-box {
   margin: 10px 0 0 0;
-  background-color: #FFF;
+  background-color: #8baf3e;
   border: 1px solid #8baf3e;
   border-radius: 3px;
-  color: #8baf3e;
+  color: #ffffff;
   font-size: 14px;
   letter-spacing: 1px;
   position: relative;
@@ -963,6 +953,12 @@ input#search:active, input#search:focus {
   }
   .fixed {
     width: 50%;
+  }
+  #footer {
+    text-align: left;
+  }
+  #footer #si-logo {
+    margin-left: 15px;
   }
   #right-nav {
     -webkit-order: 9;
