@@ -123,10 +123,3 @@ describe '| services | Article-Controller.test', ->
                         res.text.assert_Contains('<a href="/user/main.html">')    # article page ('post login')
                                 .assert_Contains('Oops')                          # only exists on the no-article page
                         done()
-
-    it.only 'Request limit set to 1Kb', (done)->
-        payload = { username : 'abc', password : 'abc'};
-        supertest(app).post('/user/login')
-                      .end (err,res)->
-                        console.log (res)                         # only exists on the no-article page
-                        done()
