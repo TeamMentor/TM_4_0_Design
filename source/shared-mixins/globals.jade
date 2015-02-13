@@ -19,22 +19,22 @@ mixin breadcrumbs
 mixin username-input
     label(for='username')
         | Username
-    input(type='text', id='username', name='username', placeholder='Username',value='#{viewModel?viewModel.username:""}',required)
+    input(type='text', id='username', name='username', placeholder='Username',value='#{viewModel?viewModel.username:""}',required,maxlength='256')
 
 mixin password-input
     label(for='password')
         | Password
-    input(type='password', id='password', name='password', placeholder='Password',value='#{viewModel?viewModel.password:""}',required)
+    input(type='password', id='password', name='password', placeholder='Password',value='#{viewModel?viewModel.password:""}',required,maxlength='256')
 
 mixin confirm-password-input
     label(for='confirm-password')
         | Confirm Password
-    input(type='password', id='confirm-password', name='confirm-password',placeholder='Password',value='#{viewModel?viewModel.confirmpassword:""}')
+    input(type='password', id='confirm-password', name='confirm-password',placeholder='Password',value='#{viewModel?viewModel.confirmpassword:""}',maxlength='256')
 
 mixin email-input
     label(for='email')
         | Email Address
-    input(type='email', id='email', name='email', placeholder='Email Address',value='#{viewModel?viewModel.email:""}')
+    input(type='email', id='email', name='email', placeholder='Email Address',value='#{viewModel?viewModel.email:""}',maxlength='256')
 
 //- Form Buttons
 mixin login-button
