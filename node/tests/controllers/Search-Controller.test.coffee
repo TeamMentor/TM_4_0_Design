@@ -244,7 +244,7 @@ describe "controllers | test-Search-Controller |", ->
         send: (html)->
           html.assert_Contains 'results'
           $ = cheerio.load html
-          $('#search-input').attr().assert_Is { id: 'search-input', type: 'text', name: 'text', value: 'text-search', class: 'form-control' }
+          $('#search-input').attr().assert_Is { id: 'search-input' }
           $('#results p').text().assert_Is 'No ResultsPlease try again'
           done()
 

@@ -78,13 +78,13 @@ body > * {
 }
 #about {
   background: url(../assets/stock-img/bg-img.jpg) no-repeat;
-  background-attachment: fixed;
   background-position: 0px -1350px;
 }
 #about, #usp, #call-to-action {
   padding: 100px 0;
   text-align: center;
-  background-size: cover;
+  background-position: fixed;
+  background-size: auto;
 }
 #about h2, #usp h2 p {
   color: #FFFFFF;
@@ -104,8 +104,8 @@ body > * {
 #call-to-action {
   background: url(../assets/stock-img/bg-img.jpg) no-repeat;
   background-position: 0px -800px;
-  background-size: cover;
   text-align: center;
+
 }
 #call-to-action h1 {
   color: #FFFFFF;
@@ -170,8 +170,10 @@ body > * {
   font-size: 0.75em;
   margin: 0 0 5px 0;
 }
-#footer h5 {
-  margin-bottom: 15px;
+#footer h4 {
+  margin: 0;
+  margin: 10px 0;
+
 }
 #footer i {
   font-size: 16px;
@@ -391,35 +393,22 @@ img {
 .sub-nav dt.active a:hover, .sub-nav dd.active a:hover, .sub-nav li.active a:hover {
   color: #6c9020;
 }
-ul.side-nav {
-  display: block;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  list-style-position: outside;
-  font-size: 14px;
-  background: #fafafa;
-  border-radius: 3px;
-  margin-top: -5px;
-}
-ul.side-nav li {
-  padding: 7px;
+table.nav {
   border: 1px solid #dbdbdb;
-  border-bottom: none;
+  background: #fafafa;
+  font-size: 14px;
 }
-ul.side-nav li:last-child {
-  border-bottom:1px solid #dbdbdb;
+table.nav tr {
+  border: 1px solid #dbdbdb;
 }
-ul.side-nav li:hover {
-  background-color: #dbdbdb;
+table.nav tr:hover {
+  background: #dbdbdb;
 }
-ul.side-nav li a {
-  text-decoration: none;
+table.nav td {
+  padding: 5px 10px;
 }
-ul.side-nav span.badge {
-  margin: 0 auto;
-  vertical-align: middle;
-  float: right;
+table.nav td a {
+  display:block;
 }
 /*------------------------------------*
    FORMS
@@ -713,7 +702,6 @@ button:hover, button:active {
   border-radius:10px;
   font-size: 12px;
   padding: 2px 2px 2px 1px;
-  margin-top: 3px;
 }
 .alert {
   padding: 15px;
@@ -813,10 +801,6 @@ table td {
   }
   #footer {
     text-align: left;
-  }
-  #filters {
-    position: fixed;
-    width: 22%;
   }
   a.minor {
     line-height: 3.75em;
