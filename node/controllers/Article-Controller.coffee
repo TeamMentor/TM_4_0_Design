@@ -1,12 +1,16 @@
-Express_Service  = require('../services/Express-Service')
-Jade_Service     = require('../services/Jade-Service')
-Graph_Service    = require('../services/Graph-Service')
-Config           = require('../misc/Config')
+Express_Service  = null
+Jade_Service     = null
+Graph_Service    = null
+Config           = null
 
 
 class Article_Controller
   constructor: (req, res, config)->
 
+    Express_Service  = require('../services/Express-Service')
+    Jade_Service     = require('../services/Jade-Service')
+    Graph_Service    = require('../services/Graph-Service')
+    Config           = require('../misc/Config')
     @.req              = req;
     @.res              = res;
     @.config           = config || new Config()

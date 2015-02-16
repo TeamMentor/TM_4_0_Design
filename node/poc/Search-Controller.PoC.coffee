@@ -1,12 +1,19 @@
-Config          = require('../misc/Config')
-Express_Service = require('../services/Express-Service')
-Jade_Service    = require('../services/Jade-Service')
-Graph_Service   = require('../services/Graph-Service')
-marked = require('marked');
+Config          = null
+Express_Service = null
+Jade_Service    = null
+Graph_Service   = null
+marked          = null
 
 class Search_Controller_PoC
 
   constructor: (req, res)->
+
+    Config          = require('../misc/Config')
+    Express_Service = require('../services/Express-Service')
+    Jade_Service    = require('../services/Jade-Service')
+    Graph_Service   = require('../services/Graph-Service')
+    marked          = require('marked');
+
     @req                = req
     @res                = res
 

@@ -1,6 +1,8 @@
-Jade_Service        = require('../services/Jade-Service')
+Jade_Service = null
 
-module.exports =  (app)->
+register_Routes =   (app)->
+
+  Jade_Service = require('../services/Jade-Service')
 
   preCompiler =
       renderJadeFile: (path)->
@@ -18,3 +20,4 @@ module.exports =  (app)->
   app.get '/flare'              , (req, res)->  res.redirect '/flare/all'
   app.get '/flare/main-app-view', (req, res)->  res.redirect '/flare/index'
 
+module.exports = register_Routes

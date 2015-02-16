@@ -1,38 +1,29 @@
 
-Express_Service       = require('../services/Express-Service')
-Jade_Service          = require('../services/Jade-Service')
-
-Article_Controller    = require('../controllers/Article-Controller')
-Help_Controller       = require('../controllers/Help-Controller')
-Jade_Controller       = require('../controllers/Jade-Controller')
-Login_Controller      = require('../controllers/Login-Controller')
-Library_Controller    = require('../controllers/Library-Controller')
-Search_Controller     = require('../controllers/Search-Controller')
-
-Search_Controller_PoC = require('../poc/Search-Controller.PoC')
-
-
-
 add_Routes = (app,searchController)->
+    Express_Service       = require '../services/Express-Service'
+    Jade_Service          = require '../services/Jade-Service'
+    Article_Controller    = require '../controllers/Article-Controller'
+    Help_Controller       = require '../controllers/Help-Controller'
+    Jade_Controller       = require '../controllers/Jade-Controller'
+    Login_Controller      = require '../controllers/Login-Controller'
+    Search_Controller     = require '../controllers/Search-Controller'
+    Pwd_Reset_Controller  = require '../controllers/Pwd-Reset-Controller'
+
+    Search_Controller_PoC = require('../poc/Search-Controller.PoC')
+
     #login routes (and temporarily also user-sign-up)
     
     app.get  '/user/login'     , (req, res)-> new Login_Controller(req, res).redirectToLoginPage()
     app.post '/user/login'     , (req, res)-> new Login_Controller(req, res).loginUser()
     app.get  '/user/logout'    , (req, res)-> new Login_Controller(req, res).logoutUser()
-    app.post '/user/pwd_reset' , (req, res)-> new Login_Controller(req, res).passwordReset()
     app.post '/user/sign-up'   , (req, res)-> new Login_Controller(req, res).userSignUp()
-    app.post '/passwordReset/:username/:token'   , (req, res)-> new Login_Controller(req, res).passwordResetToken()
 
+    #app.post '/user/pwd_reset' , (req, res)-> new Login_Controller(req, res).passwordReset()
+    #app.post '/passwordReset/:username/:token'   , (req, res)-> new Login_Controller(req, res).passwordResetToken()
 
-
-    #library routes
-    Library_Controller.registerRoutes(app)
-    
-    #search routes
-    Search_Controller.registerRoutes(app, searchController);
-
-    #article routes
-    Article_Controller.registerRoutes(app, searchController)
+    Search_Controller.registerRoutes(app, searchController);  # search routes
+    Article_Controller.registerRoutes(app, searchController)  # article routes
+    Pwd_Reset_Controller.register_Routes(app)
 
     #help routes
     
@@ -54,15 +45,20 @@ add_Routes = (app,searchController)->
     #app.get '/deploy/html/:area/:page.html'                 , (req, res)-> res.redirect('/' + req.params.area + '/' + req.params.page + '.html')
 
     #PoCs
-    Search_Controller_PoC.registerRoutes(app)
+    Search_Controller_PoC.registerRoutes(app, searchController)
 
-    #404
-    app.get '/*', (req,res)-> res.render 'source/jade/guest/404.jade'
+    #errors 404 and 500
+    app.get '/error', (req,res)-> res.render 'source/jade/guest/500.jade'
+    app.get '/*'    , (req,res)-> res.render 'source/jade/guest/404.jade'
 
     app.use (err, req, res, next)->
-      console.error(err.stack)
+      #console.error(err.stack)
+      console.log "Error with request url: #{req.url} \n
+                      #{err.stack.split_Lines().take(4).join('\n')}"
+      #console.error(err)
       res.status(500)
-         .render 'source/jade/guest/404.jade'
+         .render 'source/jade/guest/500.jade'
+
 
 
 module.exports = add_Routes
