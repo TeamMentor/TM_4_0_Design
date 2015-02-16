@@ -124,4 +124,3 @@ describe '| services | Article-Controller.test', ->
                         res.text.assert_Contains('<a href="/user/main.html">')    # article page ('post login')
                                 .assert_Contains('Oops')                          # only exists on the no-article page
                         done()
-
