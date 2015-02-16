@@ -1,6 +1,6 @@
 Login_Controller = require('../../controllers/Login-Controller')
 
-describe "controllers | test-Login-Controller |", ->
+describe "| controllers | Login-Controller.test |", ->
 
   #helper methods
   loginPage                 = 'source/jade/guest/login-Fail.jade'
@@ -13,18 +13,22 @@ describe "controllers | test-Login-Controller |", ->
   password_reset_ok         = 'source/jade/guest/login-pwd-reset.html'
   blank_credentials_message = 'Invalid Username or Password'
 
+
+  #describe
+
   invoke_Method = (method, body, expected_Target, callback)->
     req =
-          body   : body
-          session: {}
-          url    : '/passwordReset/temp/00000000-0000-0000-0000-000000000000'
+      session: {}
+      url    : '/passwordReset/temp/00000000-0000-0000-0000-000000000000'
+      body   : body
+
     res =
-          redirect: (target)->
-            target.assert_Is(expected_Target)
-            callback()
-          render : (target) ->
-            target.assert_Is(expected_Target)
-            callback()
+      redirect: (target)->
+        target.assert_Is(expected_Target)
+        callback()
+      render : (target) ->
+        target.assert_Is(expected_Target)
+        callback()
     loginController = new Login_Controller(req, res)
     loginController[method]()
 
@@ -40,11 +44,7 @@ describe "controllers | test-Login-Controller |", ->
       expected_Target,
       callback
 
-  invoke_PasswordReset = (password, confirmPassword,expected_Target,callback)->
-    invoke_Method "passwordResetToken",
-      { password: password,'confirm-password': confirmPassword } ,
-      expected_Target,
-      callback
+
 
   @.timeout(10000)
 
@@ -77,48 +77,7 @@ describe "controllers | test-Login-Controller |", ->
   it 'logoutUser', (done)->
     invoke_Method "logoutUser", {} ,mainPage_no_user,done
 
-  it 'passwordReset', (done)->
-    invoke_Method "passwordReset", { email : 'aaaaaa@teammentor.net'  } ,password_sent,done
-
-  it 'passwordReset (error handling)', (done)->
-    req =
-      body   : {}
-    res =
-      send: (data)->
-        json = data.json_Parse()
-        json.statusCode.assert_Is(500)
-        json.body.Message.assert_Is('Invalid web service call, missing value for parameter: \'email\'.')
-        done()
-
-    using new Login_Controller(req,res),->
-      @passwordReset()
-
-  it 'passwordReset(bad server)', (done)->
-    req =
-      body   : {}
-    res =
-      send: (data)->
-        data.assert_Is('could not connect with TM Uno server')
-        done()
-
-    using new Login_Controller(req,res),->
-      @.webServices = 'https://aaaaaaaa.teammentor.net/'
-      @passwordReset()
-
-  it 'passwordReset with Token (bad server)', (done)->
-    req =
-      url    : '/passwordReset/demo/00000000-0000-0000-0000-000000000000'
-      body   : {password:'!!TmAdmin24**','confirm-password':'!!TmAdmin24**'}
-    res =
-      send: (data)->
-        data.assert_Is('could not connect with TM Uno server')
-        done()
-    render: (data)->
-      done()
-
-    using new Login_Controller(req,res),->
-      @.webServices = 'https://dadadaea.teammentor.net/'
-      @passwordResetToken()
+  return
 
   it 'redirectToLoginPage', (done)->
     invoke_Method "redirectToLoginPage", { } ,loginPage,done
@@ -130,28 +89,7 @@ describe "controllers | test-Login-Controller |", ->
           invoke_UserSignUp 'user','weakpwd','aa@teammentor.net', signUp_fail,->        #weak password
             done()
 
-  it 'passwordReset fail (Passwords do not match)', (done)->
-    invoke_PasswordReset 'a','b',password_reset_fail,->
-      done()
 
-  it 'passwordReset fail (Weak Password)', (done)->
-    invoke_PasswordReset 'abcdefghi','abcdefghi',password_reset_fail,->
-      done()
-  it 'passwordReset fail (short Password)', (done)->
-    invoke_PasswordReset 'abc','abc',password_reset_fail,->
-      done()
-
-  it 'passwordReset fail (Password not provided)', (done)->
-    invoke_PasswordReset '','',password_reset_fail,->
-      done()
-
-  it 'passwordReset fail (Confirmation password not provided)', (done)->
-    invoke_PasswordReset '!!Sifsj487(*&','',password_reset_fail,->
-      done()
-
-  it 'passwordReset fail (Token is not valid)', (done)->
-    invoke_PasswordReset '!!**&DH25cRuz1','!!**&DH25cRuz1',password_reset_fail,->
-      done()
 
   it 'userSignUp (good values)', (done)->
     user = "tm_ut_".add_5_Random_Letters()
