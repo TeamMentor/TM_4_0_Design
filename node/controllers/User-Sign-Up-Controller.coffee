@@ -1,7 +1,8 @@
 
-signUp_fail                = 'source/jade/guest/sign-up-Fail.jade'
-signUp_Ok                  = 'source/jade/guest/sign-up-OK.html'
-
+signUp_fail = 'source/jade/guest/sign-up-Fail.jade'
+signUp_Ok   = 'source/jade/guest/sign-up-OK.html'
+request     = null
+Config      = null
 
 class User_Sign_Up_Controller
 
@@ -24,10 +25,12 @@ class User_Sign_Up_Controller
                         email           : @.req.body.email
                         errorMessage    :''
                     }
+
     if (@.req.body.password != @.req.body['confirm-password'])
-        userViewModel.errorMessage='Passwords don\'t match'
+        userViewModel.errorMessage = 'Passwords don\'t match'
         @res.render(signUp_fail,viewModel: userViewModel)
         return
+
     newUser =
               {
                   username : @.req.body.username,
@@ -55,7 +58,7 @@ class User_Sign_Up_Controller
               message = signUpResponse.Validation_Results.first().Message
           else
               message = signUpResponse.Simple_Error_Message
-          userViewModel.errorMessage=message
+          userViewModel.errorMessage = message
           @res.render(signUp_fail, {viewModel:userViewModel})
         else
           @res.redirect('/guest/sign-up-OK.html')
