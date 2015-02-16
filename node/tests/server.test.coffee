@@ -1,10 +1,14 @@
 require 'fluentnode'
 
-app = require('../server')
-
-expect =  require('chai').expect
+app    = null
+expect =  null
 
 describe "test-server.js |", ->
+
+  before ->
+    app  = require('../server')
+    expect = require('chai').expect
+
 
   it "Ctor values", ->
     expect(app              ).to.be.an('Function')
@@ -19,12 +23,13 @@ describe "test-server.js |", ->
     process.mainModule.filename.assert_Contains('node_modules/mocha/bin/_mocha')
 
     process.mainModule.filename = '...'
-    process.env.PORT            = 1337 + 10
+    process.env.PORT            = (10000).random().add 10000
+
     url = "http://localhost:#{process.env.PORT}"
-    url.GET (html)->
+    url.http_GET_With_Timeout (html)->
         assert_Is_Null(html)
         for file in require.cache.keys()
-          if file.contains(['node/server.coffee']) or  file.contains(['node-cov/server.js'])
+          if file.contains(['TM_4_0_Design','node','server.js']) or   file.contains(['TM_4_0_Design','node','server.coffee']) or file.contains(['node-cov/server.js'])
             pathToApp = file
             break
 
@@ -33,8 +38,9 @@ describe "test-server.js |", ->
 
         app = require '../server'
 
-        url.GET (html)->
+        global.info.assert_Is console.log
 
+        url.http_GET_With_Timeout (html)->
             app.server.assert_Is_Object()
             app.server.close()
             url.GET (html)->

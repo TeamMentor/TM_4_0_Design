@@ -1,0 +1,14 @@
+extends ../_layouts/page_home
+
+block content
+	#application
+		.row
+			.col-3
+				.lge-container
+					br
+			.col-6
+				.lge-container#404-message
+					include:md ../../content/error-pages/error-500.md
+			.col-3
+				.lge-container
+					br

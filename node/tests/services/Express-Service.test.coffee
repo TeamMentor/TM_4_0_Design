@@ -1,10 +1,11 @@
 Express_Service = require('../../services/Express-Service')
 Express_Session = require('../../misc/Express-Session')
-express  = require('express')
-session  = require('express-session')
-supertest = require('supertest')
+express         = require('express')
+session         = require('express-session')
+supertest       = require('supertest')
 
 describe 'services | Express-Service.test', ()->
+
   it 'constructor',->
     using new Express_Service(),->
       @.app        .assert_Is_Function() # can't seem to have define type(yet)
@@ -19,7 +20,11 @@ describe 'services | Express-Service.test', ()->
       @.mappedAuth.assert_Is_Function()
 
   describe 'session',->
-    expressService = new Express_Service()
+
+    expressService = null
+
+    before ->
+      expressService = new Express_Service()
 
     it 'test',(done)->
       expressService.setup()
@@ -55,8 +60,10 @@ describe 'services | Express-Service.test', ()->
               done()
 
   describe 'auth',->
-    expressService = new Express_Service()
+    expressService = null
 
+    before ->
+      expressService = new Express_Service()
     it 'checkAuth (all null)', (done)->
       expressService.checkAuth(null,null, done,null)
 

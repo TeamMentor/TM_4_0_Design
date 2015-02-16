@@ -3,15 +3,18 @@ http           = require 'http'
 
 describe '| security | url-generation |', ->
 
-  test_Port    = (10000).random().add 10000
+  test_Port    = null
   test_Ip      = '127.0.0.1'
-  test_Server  = "http://#{test_Ip}:#{test_Port}"
+  test_Server  = null
   server       = null
   graphService = null
 
   payload = 'sdfasdf - %3Casdf98y345£$%@$£^£$%& ../..\\ " < > ! = '
 
   before (done)->
+    test_Port   = (10000).random().add 10000
+    test_Server = "http://#{test_Ip}:#{test_Port}"
+
     test_Server.assert_Contains(test_Ip).assert_Contains(test_Port)
     graphService  = new Graph_Service( { server: test_Server})
     server = http.createServer(null)

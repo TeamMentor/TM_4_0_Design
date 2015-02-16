@@ -2,11 +2,15 @@ cheerio   = require('cheerio')
 expect    = require('chai').expect
 marked    = require('marked')
 supertest = require('supertest')
-app       = require('../../server')
+#app       = require('../../server')
 
 describe 'routes | routes-supertest.test |',  ()->
 
-  app.config.enable_Jade_Cache = true;
+  before ->
+    app.config.enable_Jade_Cache = true
+
+  after ->
+    app.config.enable_Jade_Cache = false
 
 
   it 'should open page ok', (done)->

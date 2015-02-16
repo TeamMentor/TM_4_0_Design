@@ -1,12 +1,12 @@
 Article_Controller = require '../../controllers/Article-Controller'
 Express_Service    = require '../../services/Express-Service'
 Express_Session    = require('../../misc/Express-Session')
-app                = require '../../server'
 cheerio            = require 'cheerio'
 
 supertest = require 'supertest'
 
 describe '| services | Article-Controller.test', ->
+
   it 'constructor', (done)->
     using new Article_Controller(), ->
       @.jade_Article.assert_Is    '/source/jade/user/article.jade'

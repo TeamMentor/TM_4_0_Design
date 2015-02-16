@@ -1,7 +1,7 @@
 supertest         = require('supertest')
 expect            = require('chai').expect
 request           = require('request')
-app               = require('../../server')
+#app               = require('../../server')
 marked            = require('marked')
 Help_Controller   = require('../../controllers/Help-Controller')
 TeamMentor_Service = require('../../services/TeamMentor-Service')

@@ -1,17 +1,20 @@
-Logger          = require('./services/Logger-Service')
+require 'fluentnode'
+console.time('at-server')
+#Logger          = require('./services/Logger-Service')
 Express_Service = require('./services/Express-Service')
 
-global.info = new Logger().setup().log
+#global.info     = new Logger().setup().log
 
 #console.log = global.info
-info('Starting Express server config')
+
+global.info = console.log
+asd.asd()
+info('Configuring TM_Design Express server')
 
 expressService = new Express_Service()
 
 using expressService,->
     @.setup()
-    @.map_Route('../routes/flare_routes')
-    @.map_Route('../routes/routes')
     @.start()
 
 module.exports = expressService.app
