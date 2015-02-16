@@ -394,7 +394,6 @@ img {
   color: #6c9020;
 }
 table.nav {
-  border: 1px solid #dbdbdb;
   background: #fafafa;
   font-size: 14px;
 }
@@ -406,6 +405,7 @@ table.nav tr:hover {
 }
 table.nav td {
   padding: 5px 10px;
+  word-wrap: break-word;
 }
 table.nav td a {
   display:block;

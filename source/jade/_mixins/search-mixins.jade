@@ -136,8 +136,10 @@ mixin filters-div
                                     td
                                         a(href= href )
                                             b= result.title
-                                            span.right.badge= result.size
+                                    td
+                                        span.right.badge= result.size
                                 else
                                     td
                                         a(href=href + '/'+result.id)= result.title
-                                            span.right.badge= result.size
+                                    td
+                                        span.right.badge= result.size
