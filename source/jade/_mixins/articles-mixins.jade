@@ -2,7 +2,7 @@ mixin article
     #article
         .bg
             h1#title.article-title= title
-            #html!= article_Html
+            #html.article-content!= article_Html
 
 mixin no-article
     #article
