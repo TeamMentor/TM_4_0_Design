@@ -21,7 +21,7 @@ mixin search-bar-input
                 .col-offset-2.col-8
                     #search-input
                         form(action='/search', method='GET')
-                            label(for='search-input') Type keywords here
+                            label(for='search-input') Search here
                             .input-group
                                 input.form-control(type='text', id='search-input', name='text')
                                 span.input-group-btn
@@ -33,7 +33,7 @@ mixin search-poc
         .lge-container
             #search-input
                 form(action='/search', method='GET')
-                    label(for='search-input') Get started by searching
+                    label(for='search-input') Search here
                     .input-group
                         input.form-control(type='text', name='text', value= text)
                         span.input-group-btn
@@ -72,34 +72,39 @@ mixin main-app-view
             .bg
                 #recently-Viewed-Articles
                     h4.label Recently Viewed Articles
-                    ul.side-nav
+                    table.nav
                         for recentArticle in recentArticles
-                          li
-                            a(href=recentArticle.href, target='_blank')= recentArticle.title
+                          tr
+                            td
+                                a(href=recentArticle.href, target='_blank')= recentArticle.title
         if (searchTerms)
             .bg
                 #popular-Search-Terms
                     h4.label Popular Search Terms
-                    ul.side-nav
+                    table.nav
                         for searchTerm in searchTerms
-                            li
-                                a(href=searchTerm.href)= searchTerm.title
+                            tr
+                                td
+                                    a(href=searchTerm.href)= searchTerm.title
         if (topArticles)
             .bg
                 #top-articles
                     h4.label Top Articles
-                    ul.side-nav
+                    table.nav
                         for article in topArticles
                             if article
-                                li a(href=article.href, target='_blank')= article.title
-                                    span.right.badge= article.weight
+                                tr
+                                    td
+                                        a(href=article.href, target='_blank')= article.title
+                                            span.right.badge= article.weight
         //if (newArticles)
             .bg
                 h4.label New Articles
-                    ul.side-nav
+                    table.nav
                         for newArticle in newArticles
-                            li
-                                a(href=newArticle.href, target='_blank')= newArticle.title
+                            tr
+                                td
+                                    a(href=newArticle.href, target='_blank')= newArticle.title
 
 //- articles-list
 mixin articles-list
@@ -125,13 +130,15 @@ mixin filters-div
                 h3 Filter by
                 for filter in filters
                     h4.label= filter.title
-                    ul.side-nav
+                    table.nav
                         for result in filter.results
-                            li
+                            tr
                                 if activeFilter && result.id == activeFilter.id
-                                    a(href= href )
-                                        b= result.title
-                                        span.right.badge= result.size
+                                    td
+                                        a(href= href )
+                                            b= result.title
+                                            span.right.badge= result.size
                                 else
-                                    a(href=href + '/'+result.id)= result.title
-                                        span.right.badge= result.size
+                                    td
+                                        a(href=href + '/'+result.id)= result.title
+                                            span.right.badge= result.size

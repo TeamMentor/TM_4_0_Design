@@ -192,35 +192,6 @@ img {
 .sub-nav dt.active a:hover, .sub-nav dd.active a:hover, .sub-nav li.active a:hover,  {
   color: $dark-green;
 }
-ul.side-nav {
-  display: block;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  list-style-position: outside;
-  font-size: 14px;
-  background: $off-white;
-  border-radius: $border;
-}
-ul.side-nav li {
-  padding: 10px;
-  border: 1px solid $light-grey;
-  border-bottom: none;
-}
-ul.side-nav li:last-child {
-  border-bottom:1px solid $light-grey;
-}
-ul.side-nav li:hover {
-  background-color: $light-grey;
-}
-ul.side-nav li a {
-  text-decoration: none;
-}
-ul.side-nav span.badge {
-  margin: 0 auto;
-  vertical-align: middle;
-  float: right;
-}
 /*------------------------------------*
    FORMS AND INPUTS
 *------------------------------------*/

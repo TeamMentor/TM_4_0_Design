@@ -34,10 +34,11 @@ mixin help-navigation
         .bg
             each view in library.Views
                 h4.label= view.Title
-                ul.side-nav
+                table.nav
                     each article in view.Articles
-                        li
-                            a(href= '/help/' + article.Id)= article.Title
+                        tr
+                            td
+                                a(href= '/help/' + article.Id)= article.Title
 
 mixin help-content
     .bg
