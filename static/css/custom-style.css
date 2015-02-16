@@ -60,11 +60,11 @@ body > * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#article h1 {
-  margin-bottom: 0;
+#article h1.article-title {
   font-size: 2.5em;
+  margin-bottom: 0;
 }
-#article h2 {
+#article h1, #article h2 {
   font-size: 2em;
   padding: 0;
   margin-bottom: 0;
@@ -72,6 +72,7 @@ body > * {
 #article p {
   margin-top: 5px;
 }
+
 #toc-content h4 {
   padding-top: 100px;
   margin-top: -80px;
