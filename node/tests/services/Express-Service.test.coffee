@@ -133,3 +133,9 @@ describe 'services | Express-Service.test', ()->
                   @viewedArticles (data)->
                     data.json_Str().assert_Contains ['id_1','id_2', 'id_3', 'id_4','title_1','title_2', 'title_3', 'title_4']
                     done()
+
+    it 'viewedArticles (no express session)', (done)->
+      using new Express_Service(), ->
+        @viewedArticles (data)->
+          data.assert_Is {}
+          done()
