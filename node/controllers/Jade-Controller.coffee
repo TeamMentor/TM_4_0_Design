@@ -1,9 +1,12 @@
-Config        = require('../misc/Config')
-Jade_Service  = require('../services/Jade-Service')
-
+Config       = null
+Jade_Service = null
 
 class Jade_Controller
   constructor: (req, res, config)->
+
+    Config        = require('../misc/Config')
+    Jade_Service  = require('../services/Jade-Service')
+
     @.req          = req;
     @.res          = res;
     @.config       = config || new Config();

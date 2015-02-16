@@ -1,3 +1,5 @@
+require 'fluentnode'
+
 fs     = require 'fs'
 expect = require('chai').expect
 Config = require('../misc/Config')

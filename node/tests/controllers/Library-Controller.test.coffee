@@ -2,7 +2,6 @@ fs                 = require('fs')
 path               = require('path')
 cheerio            = require('cheerio')
 expect             = require('chai').expect
-app                = require('../../server')
 Config             = require('../../misc/Config')
 Library_Controller = require('../../controllers/Library-Controller')
 

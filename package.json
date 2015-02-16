@@ -11,7 +11,7 @@
   "keywords": [
     "TeamMentor"
   ],
-  "main": "node/server.js",
+  "main": "node/tm-server.js",
   "scripts": {
     "start": "npm run start-dev",
     "start_static": "node ./node_modules/supervisor/lib/cli-wrapper.js -i node static/coffee_js/server.js",

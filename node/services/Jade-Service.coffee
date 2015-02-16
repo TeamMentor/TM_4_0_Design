@@ -1,11 +1,17 @@
-fs     = require('fs')
-path   = require('path')
-jade   = require('jade')
-Config = require('../misc/Config')
+fs     = null
+path   = null
+jade   = null
+Config = null
 
 
 class JadeService
     constructor: (config)->
+
+      fs     = require('fs')
+      path   = require('path')
+      jade   = require('jade')
+      Config = require('../misc/Config')
+
       @.config = config || new Config();
       @.repo_Path      = __dirname.path_Combine('../..')          #calculate the repo path as 3 folders above the current path
       @.mixins_Folder = @.repo_Path.path_Combine('/source/jade/_mixins/')
@@ -56,9 +62,8 @@ class JadeService
 
 
     renderJadeFile: (jadeFile, params)->
-
-      if(info)
-        info('[Jade-Service] rendering: '  + jadeFile)
+      #if(global.info)
+      #  info('[Jade-Service] rendering: '  + jadeFile)
 
       if (this.cacheEnabled() == false)
         jadeFile_Path = @.calculateJadePath(jadeFile)

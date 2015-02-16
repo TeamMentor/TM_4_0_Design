@@ -1,7 +1,7 @@
 require('fluentnode')
 fs            = require('fs')
 #Cache_Service = require('teammentor').Cache_Service
-class GraphService
+class Graph_Service
 
   constructor: (options)->
     @.options    = options || {}
@@ -21,13 +21,13 @@ class GraphService
       return
 
     if filters
-      graphDataUrl = "#{@server}/data/query_tree_filtered/#{queryId}/#{filters}"
+      graphDataUrl = "#{@server}/data/query_tree_filtered/#{queryId.url_Encode()}/#{filters.url_Encode()}"
     else
-      graphDataUrl = "#{@server}/data/query_tree/#{queryId}"
+      graphDataUrl = "#{@server}/data/query_tree/#{queryId.url_Encode()}"
     graphDataUrl.GET_Json callback
 
   resolve_To_Ids: (values, callback)=>
-    url = "#{@server}/convert/to_ids/#{values}"
+    url = "#{@server}/convert/to_ids/#{values.url_Encode()}"
     url.GET_Json callback
 
   root_Queries: (callback)=>
@@ -41,8 +41,8 @@ class GraphService
       callback null
       return
 
-    url_Convert = "#{@server}/convert/to_ids/#{text}"
-    url_Search = "#{@server}/search/query_from_text_search/#{text}"
+    url_Convert = "#{@server}/convert/to_ids/#{text.url_Encode()}"
+    url_Search = "#{@server}/search/query_from_text_search/#{text.url_Encode()}"
 
     url_Convert.GET_Json (json)->
       mapping = json[json.keys().first()]
@@ -57,7 +57,7 @@ class GraphService
       callback ''
       return
 
-    url_Article_Html = "#{@server}/data/article_Html/#{article_Id}"
+    url_Article_Html = "#{@server}/data/article_Html/#{article_Id.url_Encode()}"
 
     url_Article_Html.GET_Json callback
 
@@ -72,8 +72,8 @@ class GraphService
       callback ''
       return
 
-    url_Node_Data = "#{@server}/data/id/#{id}"
-
+    url_Node_Data = "#{@server}/data/id/#{id.str().url_Encode()}"
+    
     url_Node_Data.GET_Json (json)->
       if json and json.values().not_Empty()
         callback json.values().first()
@@ -81,4 +81,4 @@ class GraphService
         callback {}
 
 
-module.exports = GraphService
+module.exports = Graph_Service

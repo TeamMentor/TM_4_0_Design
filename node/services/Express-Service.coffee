@@ -1,16 +1,24 @@
-Config          = require('../misc/Config')
-Jade_Service    = require('../services/Jade-Service')
-Express_Session = require('../misc/Express-Session')
-bodyParser      = require('body-parser')
-session         = require('express-session')
-path            = require("path")
-express         = require('express')
+Config          = null
+Jade_Service    = null
+Express_Session = null
+bodyParser      = null
+session         = null
+path            = null
+express         = null
 
 class Express_Service
+
   constructor: ()->
-    @.app         = express()
-    @loginEnabled = true;
-    @.app.port    = process.env.PORT || 1337;
+    Config           = require '../misc/Config'
+    Jade_Service     = require '../services/Jade-Service'
+    Express_Session  = require '../misc/Express-Session'
+    bodyParser       = require 'body-parser'
+    session          = require 'express-session'
+    path             = require "path"
+    express          = require 'express'
+    @.app            = express()
+    @loginEnabled    = true;
+    @.app.port       = process.env.PORT || 1337;
     @.expressSession = null
 
   setup: ()=>
@@ -19,7 +27,10 @@ class Express_Service
     @set_Static_Route()
     @add_Session()      # for now not using the async version of add_Session
     @set_Views_Path()
+    @.map_Route('../routes/flare_routes')
+    @.map_Route('../routes/routes')
     @
+
   add_Session: (sessionFile)=>
 
     @.expressSession = new Express_Session({ filename: sessionFile || './.tmCache/_sessionData' ,session:session})
@@ -30,8 +41,9 @@ class Express_Service
 
 
   set_BodyParser: ()=>
-    @.app.use(bodyParser.json()                        );     # to support JSON-encoded bodies
-    @.app.use(bodyParser.urlencoded({ extended: true }));     # to support URL-encoded bodies
+    @.app.use(bodyParser.json({limit:'1kb'})                       );     # to support JSON-encoded bodies
+    @.app.use(bodyParser.urlencoded({limit:'1kb', extended: true }));     # to support URL-encoded bodies
+
 
   set_Config:()=>
     @.app.config = new Config(null, false);
@@ -47,7 +59,7 @@ class Express_Service
     @
 
   start:()=>
-    if process.mainModule.filename.not_Contains('node_modules/mocha/bin/_mocha')
+    if process.mainModule.filename.not_Contains(['node_modules','mocha','bin','_mocha'])
       console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + @app.port)
       @app.server = @app.listen(@app.port)
 

@@ -1,12 +1,12 @@
 Article_Controller = require '../../controllers/Article-Controller'
 Express_Service    = require '../../services/Express-Service'
 Express_Session    = require('../../misc/Express-Session')
-app                = require '../../server'
 cheerio            = require 'cheerio'
 
 supertest = require 'supertest'
 
 describe '| services | Article-Controller.test', ->
+
   it 'constructor', (done)->
     using new Article_Controller(), ->
       @.jade_Article.assert_Is    '/source/jade/user/article.jade'
@@ -105,11 +105,12 @@ describe '| services | Article-Controller.test', ->
     app            = null
 
     before (done)->
+      graph_Options = { server: 'http://aaaa.localhost'}
       using new Express_Service(),->
         @.add_Session(tmpSessionFile)
         @.loginEnabled = false
         @.app._router.stack.assert_Size_Is 3
-        Article_Controller.registerRoutes @.app, @
+        Article_Controller.registerRoutes @.app, @, graph_Options
         @.app._router.stack.assert_Size_Is 4
         app = @.app
         done()
@@ -118,9 +119,8 @@ describe '| services | Article-Controller.test', ->
       tmpSessionFile.assert_File_Deleted()
 
     it '/article/:id', (done)->
-        supertest(app).get('/article/aaaa')
-                      .end (err,res)->
+      supertest(app).get('/article/aaaa')
+                    .end (err,res)->
                         res.text.assert_Contains('<a href="/user/main.html">')    # article page ('post login')
                                 .assert_Contains('Oops')                          # only exists on the no-article page
                         done()
-
