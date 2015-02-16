@@ -1,5 +1,19 @@
 
+signUp_fail                = 'source/jade/guest/sign-up-Fail.jade'
+signUp_Ok                  = 'source/jade/guest/sign-up-OK.html'
+
+
 class User_Sign_Up_Controller
+
+  constructor: (req, res)->
+
+    request = require('request')
+    Config  = require('../misc/Config')
+
+    @.req                = req || {}
+    @.res                = res || {}
+    @.config             = new Config();
+    @.webServices        = @.config.tm_35_Server + @.config.tmWebServices
 
   userSignUp: ()=>
     userViewModel =

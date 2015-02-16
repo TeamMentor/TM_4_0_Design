@@ -62,9 +62,8 @@ class JadeService
 
 
     renderJadeFile: (jadeFile, params)->
-
-      if(info)
-        info('[Jade-Service] rendering: '  + jadeFile)
+      #if(global.info)
+      #  info('[Jade-Service] rendering: '  + jadeFile)
 
       if (this.cacheEnabled() == false)
         jadeFile_Path = @.calculateJadePath(jadeFile)

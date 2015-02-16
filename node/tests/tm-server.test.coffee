@@ -1,12 +1,12 @@
 require 'fluentnode'
 
-app    = null
+app    = require '../tm-server'
 expect =  null
 
-describe "test-server.js |", ->
+describe "| tm-server.test |", ->
 
   before ->
-    app  = require('../server')
+    app  = require('../tm-server')
     expect = require('chai').expect
 
 
@@ -16,6 +16,7 @@ describe "test-server.js |", ->
     expect(app._router.stack).to.be.an('Array')
 
   it 'start when not in mocha', (done)->
+
     # for this to work we need to reload app and manipulate: process.mainModule.filename and process.env.PORT
 
     originalName = process.mainModule.filename
@@ -26,17 +27,20 @@ describe "test-server.js |", ->
     process.env.PORT            = (10000).random().add 10000
 
     url = "http://localhost:#{process.env.PORT}"
-    url.http_GET_With_Timeout (html)->
+    url.GET (html)->
+        (done(); return;)  if (html) # log "Server already running
+
         assert_Is_Null(html)
         for file in require.cache.keys()
-          if file.contains(['TM_4_0_Design','node','server.js']) or   file.contains(['TM_4_0_Design','node','server.coffee']) or file.contains(['node-cov/server.js'])
+          if file.contains(['TM_4_0_Design','node','tm-server']) and file.not_Contains(['.test.'])
             pathToApp = file
             break
 
+        pathToApp.assert_File_Exists()
         require.cache[pathToApp].assert_Is_Object()
         delete require.cache[pathToApp]
 
-        app = require '../server'
+        app = require '../tm-server'
 
         global.info.assert_Is console.log
 

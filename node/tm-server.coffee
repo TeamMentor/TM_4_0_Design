@@ -1,5 +1,5 @@
 require 'fluentnode'
-console.time('at-server')
+
 #Logger          = require('./services/Logger-Service')
 Express_Service = require('./services/Express-Service')
 
@@ -8,7 +8,7 @@ Express_Service = require('./services/Express-Service')
 #console.log = global.info
 
 global.info = console.log
-asd.asd()
+
 info('Configuring TM_Design Express server')
 
 expressService = new Express_Service()

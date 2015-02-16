@@ -5,7 +5,7 @@ Config           = null
 
 
 class Article_Controller
-  constructor: (req, res, config)->
+  constructor: (req, res, config,graph_Options)->
 
     Express_Service  = require('../services/Express-Service')
     Jade_Service     = require('../services/Jade-Service')
@@ -17,7 +17,7 @@ class Article_Controller
     @.jade_Article     = '/source/jade/user/article.jade'
     @.jade_No_Article  = '/source/jade/user/no-article.jade'
     @.jade_Service     = new Jade_Service(@.config);
-    @.graphService     = new Graph_Service()
+    @.graphService     = new Graph_Service(graph_Options)
 
   article: =>
     article_Id = @req.params.id
@@ -44,14 +44,14 @@ class Article_Controller
     @.req.session.recent_Articles ?= []
     @.req.session.recent_Articles.unshift { id: id , title:title}
 
-Article_Controller.registerRoutes = (app, expressService) ->
+Article_Controller.registerRoutes = (app, expressService,graph_Options) ->
 
   expressService ?= new Express_Service()
   checkAuth       =  (req,res,next) -> expressService.checkAuth(req, res,next, app?.config)
 
   articleController = (method_Name) ->                                  # pins method_Name value
         return (req, res) ->                                             # returns function for express
-            new Article_Controller(req, res, app.config)[method_Name]()    # creates SearchController object with live
+            new Article_Controller(req, res, app.config,graph_Options)[method_Name]()    # creates SearchController object with live
 
 
   app.get "/article/:id"         , checkAuth, articleController('article')

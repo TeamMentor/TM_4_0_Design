@@ -1,14 +1,15 @@
 extends ../_layouts/page_home
+include ../_mixins/error-mixins.jade
 
 block content
-	#application
-		.row
-			.col-3
-				.lge-container
-					br
-			.col-6
-				.lge-container#404-message
-					include:md ../../content/error-pages/error-500.md
-			.col-3
-				.lge-container
-					br
+    #application
+        .row
+            .col-3
+                .lge-container
+                    br
+            .col-6
+                .lge-container
+                    +error_500
+            .col-3
+                .lge-container
+                    br

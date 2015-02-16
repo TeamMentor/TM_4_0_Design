@@ -9,29 +9,25 @@ express         = null
 class Express_Service
 
   constructor: ()->
-    console.time('Express-Service ctor')
-    Config          = require '../misc/Config'
-    Jade_Service    = require '../services/Jade-Service'
-    Express_Session = require '../misc/Express-Session'
-    bodyParser      = require 'body-parser'
-    session         = require 'express-session'
-    path            = require "path"
-    express         = require 'express'
-    @.app         = express()
-    @loginEnabled = true;
-    @.app.port    = process.env.PORT || 1337;
+    Config           = require '../misc/Config'
+    Jade_Service     = require '../services/Jade-Service'
+    Express_Session  = require '../misc/Express-Session'
+    bodyParser       = require 'body-parser'
+    session          = require 'express-session'
+    path             = require "path"
+    express          = require 'express'
+    @.app            = express()
+    @loginEnabled    = true;
+    @.app.port       = process.env.PORT || 1337;
     @.expressSession = null
-    console.timeEnd('Express-Service ctor')
 
   setup: ()=>
-    console.timeEnd('at-server')
     @set_BodyParser()
     @set_Config()
     @set_Static_Route()
     @add_Session()      # for now not using the async version of add_Session
     @set_Views_Path()
     @.map_Route('../routes/flare_routes')
-    console.timeEnd('at-server')
     @.map_Route('../routes/routes')
     @
 
@@ -62,7 +58,7 @@ class Express_Service
     @
 
   start:()=>
-    if process.mainModule.filename.not_Contains('node_modules/mocha/bin/_mocha')
+    if process.mainModule.filename.not_Contains(['node_modules','mocha','bin','_mocha'])
       console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + @app.port)
       @app.server = @app.listen(@app.port)
 

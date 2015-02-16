@@ -89,9 +89,11 @@ describe 'controllers | Help-Controller.test', ()->
 
 
   describe 'misc workflows', ()->
+    app = null
 
     before (done)->
       skip_Tests_If_Offline @.test.parent, done
+      app   = require('../../tm-server')
 
     this.timeout(3500)
 
@@ -140,9 +142,11 @@ describe 'controllers | Help-Controller.test', ()->
       check_For_Redirect()
 
   describe 'test-help (dynamic content) |', ()->
+    app = null
 
     before (done)->
       skip_Tests_If_Offline @.test.parent, done
+      app   = require('../../tm-server')
 
     libraryData  = null
     pageParams   = { loggedIn : false};

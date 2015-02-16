@@ -3,7 +3,7 @@ express    = require 'express'
 supertest  = require 'supertest'
 bodyParser = require('body-parser')
 
-describe.only "| controllers | Pwd-Reset-Controller.test |", ->
+describe "| controllers | Pwd-Reset-Controller.test |", ->
 
   url_password_sent          = '/guest/pwd-sent.html'
   #helper methods

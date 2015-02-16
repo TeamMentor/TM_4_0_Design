@@ -1,7 +1,7 @@
 require('fluentnode')
 fs            = require('fs')
 #Cache_Service = require('teammentor').Cache_Service
-class GraphService
+class Graph_Service
 
   constructor: (options)->
     @.options    = options || {}
@@ -73,7 +73,7 @@ class GraphService
       return
 
     url_Node_Data = "#{@server}/data/id/#{id.str().url_Encode()}"
-
+    
     url_Node_Data.GET_Json (json)->
       if json and json.values().not_Empty()
         callback json.values().first()
@@ -81,4 +81,4 @@ class GraphService
         callback {}
 
 
-module.exports = GraphService
+module.exports = Graph_Service
