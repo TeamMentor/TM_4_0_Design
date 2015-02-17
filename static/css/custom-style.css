@@ -60,19 +60,6 @@ body > * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#article h1.article-title {
-  font-size: 2.5em;
-  margin-bottom: 0;
-}
-#html.article-content h1, #html.article-content h2 {
-  font-size: 2em;
-  padding: 0;
-  margin-bottom: 0;
-}
-#article p {
-  margin-top: 5px;
-}
-
 #toc-content h4 {
   padding-top: 100px;
   margin-top: -80px;
@@ -581,9 +568,11 @@ hr {
 a {
   color: #444444;
   text-decoration: none;
+  outline: none;
 }
 a:hover, a:active, a:focus {
   color: #6c9020;
+  outline: none;
 }
 a.action {
   text-transform: uppercase;
@@ -871,6 +860,24 @@ table td {
   span.rwd-line {
     display: inline;
   }
+}
+/*------------------------------------*
+  HACKS
+*------------------------------------*/
+#article h1.article-title {
+  font-size: 2.5em;
+  margin-bottom: 0;
+}
+#html > h1, #html > h2 {
+  font-size: 2em !important;
+  padding: 0;
+  margin-bottom: 0;
+}
+#article p {
+  margin-top: 5px;
+}
+#article a {
+  text-decoration: underline;
 }
 /*------------------------------------*
    GLYPHICONS
