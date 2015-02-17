@@ -43,7 +43,7 @@ nav a:hover, nav p:hover {
 #logo {
   -webkit-order: 3;
   -webkit-flex: 70%;
-  margin: 5px 0 0 5px;
+  margin: 5px 0 0 15px;
 }
 #tm-logo {
   background:url('../assets/logos/logos.png') no-repeat;
@@ -160,6 +160,7 @@ nav a:hover, nav p:hover {
 #search-bar {
   -webkit-order: 6;
   -webkit-flex: 100%;
+  margin-bottom: 20px;
 }
 #search-bar > div {
   background: #fff;
@@ -192,7 +193,7 @@ nav a:hover, nav p:hover {
   background: white;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
-  margin: 20px 0;
+  margin: 0 0 20px 0;
   padding-bottom: 7px;
 }
 #results-save-clear h4 {
@@ -213,8 +214,8 @@ nav a:hover, nav p:hover {
 #list-view-article p {
   margin-top: 10px;
 }
-#filters {
-  margin-top: -36px;
+#filters-active {
+  margin-bottom: 20px;
 }
 .bg {
   padding: 20px;
@@ -497,6 +498,7 @@ i {
 a {
   color: #444444;
   text-decoration: underline;
+  transition: 0.3s;
 }
 a:hover, a:active, a:focus {
   color: #49661f;
@@ -519,6 +521,7 @@ a.action:hover, a.action:focus, a.action:active {
 }
 .minor:hover {
   color: #444444;
+  text-decoration: none;
 }
 .text-center {
   text-align: center;
@@ -543,6 +546,7 @@ a.action:hover, a.action:focus, a.action:active {
 *------------------------------------*/
 dl.tabs {
   padding: 0;
+  margin: 0;
 }
 .tabs dd {
   margin: 0;
@@ -618,6 +622,10 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 /*------------------------------------*
    ACCORDION
 *------------------------------------*/
+.accordion {
+  margin: 0;
+  padding: 0;
+}
 .accordion .accordion-navigation, .accordion dd {
   margin: 0;
   border: 1px solid #dbdbdb;
@@ -703,14 +711,10 @@ button i {
 }
 .postfix {
   border-radius: 0;
-  height: 3.75em;
-  padding: 10px 5px 5px 5px;
+  height: 3.4em;
+  padding: 13px 5px 5px 5px;
   border-radius: 0px;
   width: 50%;
-  background: transparent;
-}
-a.postfix:hover {
-  background: transparent;
 }
 .postfix i:hover {
   color: #b4cf7b;
@@ -726,6 +730,9 @@ a.postfix:hover {
 #save-button, #share-button, #navigate-button, #show-button {
   width: 100%;
   text-align: center;
+}
+#search-bar .button, #save-button, #share-button {
+  background: transparent;
 }
 .dropdown:after {
   content: '';
@@ -828,12 +835,13 @@ input#search:active, input#search:focus {
 #filters label {
   font-size: 14px;
   font-weight: 400;
+  text-transform: capitalize;
 }
 /*------------------------------------*
    MICRO-ELEMENTS
 *------------------------------------*/
 .alert-box {
-  margin: 10px 0 0 0;
+  margin: 10px 0;
   background-color: #8baf3e;
   border: 1px solid #8baf3e;
   border-radius: 3px;
@@ -965,9 +973,6 @@ input#search:active, input#search:focus {
   }
   #contact-information {
     margin: 50px 0 0 0;
-  }
-  #loginwall {
-    margin-top: 5px;
   }
   #loginwall, #summary {
     padding: 20px;

@@ -1,44 +1,43 @@
-//- Flare User Details Heading
-mixin user-details-heading
-	.row
-		.small-12.large-9.columns
-			h3 User Details
-		.small-12.large-3.columns.text-center
-			br
-			a.action(href='user-edit')
-				+edit-icon
-
 //- Flare User Details Display
 mixin user-details-display
-	.row
-		.small-12.large-6.columns
-			+user-icon
-			|    Name
-			br
-			+company-icon
-			|    Title, Company
-			br
-			+group-id-icon
-			|    Group ID
-		.small-12.large-6.columns
-			+email-icon
-			|    Email
-			br
-			+navigate-icon
-			|    Location
-			br
-			+filter-icon
-			|    Permanent Filters
+	.bg
+		h3 User Details
+		.row
+			.small-12.large-6.columns
+				+user-icon
+				|    Name
+				br
+				+company-icon
+				|    Title, Company
+				br
+				+group-id-icon
+				|    Group ID
+			.small-12.large-6.columns
+				+email-icon
+				|    Email
+				br
+				+navigate-icon
+				|    Location
+
+// Permanent Filters
+mixin permanent-filters
+	.bg
+		h3 Permanent Filters
+		+flare-filters-active
+		br
+		a.action(href='user-add-filter')
+			+change-filters-icon
 
 //- Flare Other User Settings
 mixin other-user-settings
-	.row
-		.small-12.large-6.columns
-			a.action(href='user-new-password')
-				+new-pw-icon
-		.small-12.large-6.columns
-			a.action(href='user-add-filter')
-				+change-filters-icon
+	.bg
+		.row
+			.small-12.large-6.columns
+				a.action(href='user-edit')
+					+edit-icon
+			.small-12.large-6.columns
+				a.action(href='user-new-password')
+					+new-pw-icon
 
 //- Flare Edit User Details
 mixin flare-edit-user-details
@@ -60,8 +59,9 @@ mixin flare-edit-user-details
 				+country-input
 			.small-12.large-6.columns
 				+state-input
+		br
 		.row
-			.small-12.columns
+			.small-12.medium-6.end.columns
 				+ok-button
 
 //- Flare Change Password
@@ -74,6 +74,7 @@ mixin flare-change-password
 		.row
 			.small-12.columns
 				+flare-new-password-input
+		br
 		.row
-			.small-12.columns
+			.small-12.medium-6.end.columns
 				+ok-button
