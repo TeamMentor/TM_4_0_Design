@@ -338,8 +338,6 @@ img {
 #links.text-links ul li {
   display: inline-block;
   margin-bottom: 5px;
-}
-#links.text-links ul li:nth-child(-n+3) {
   width: 30%;
 }
 #links.text-links ul li:nth-child(n+4) {
@@ -347,6 +345,7 @@ img {
 }
 #links button {
   padding: 5px 20px;
+  width: 100%;
 }
 #links.icons {
   display: inline-block;
