@@ -221,6 +221,9 @@ nav a:hover, nav p:hover {
   padding: 20px;
   margin-bottom: 20px;
 }
+.bg h3 {
+  margin-top: 0;
+}
 #article-options {
   margin: 20px 0;
   width: 100%;
