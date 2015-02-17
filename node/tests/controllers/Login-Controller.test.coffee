@@ -277,6 +277,7 @@ describe "| controllers | Login-Controller.test |", ->
       #render contains the file to render and the view model object
       render = (html,model)->
         model.viewModel.username.assert_Is(newUsername)
+        model.viewModel.password.assert_Is('')
         model.viewModel.errorMessage.assert_Is('Wrong Password')
         done()
       req = body:{username:newUsername,password:newPassword}, session:''
