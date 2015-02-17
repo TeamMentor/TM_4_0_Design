@@ -123,6 +123,9 @@ body > * {
   margin-bottom: 20px;
   border: 1px solid #dbdbdb;
 }
+.bg h3 {
+  margin-top: 5px;
+}
 #copyright {
   max-height: 100%;
   padding: 20px 0 5px 0;
