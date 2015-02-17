@@ -4,7 +4,7 @@ express         = require('express')
 session         = require('express-session')
 supertest       = require('supertest')
 
-describe 'services | Express-Service.test', ()->
+describe '| services | Express-Service.test', ()->
 
   it 'constructor',->
 

@@ -87,7 +87,7 @@ describe 'controllers | Jade-Controller.test.js |', ()->
 
       res =
             send: (html)->
-              html.assert_Contains('<li><a href="/guest/about.html">About</a></li>')
+              html.assert_Contains('<li><a id="nav-about" href="/guest/about.html">About</a></li>')
               done()
 
       using new Jade_Controller(req, res),->
