@@ -1,10 +1,11 @@
 include ../_mixins/user-mixins
 //- directory-list
 mixin directory-list
-    if(containers)
-        .bg
+    .bg
+        if title
             h3#title= title
-            #containers
+        #containers
+            if(containers)
                 table.nav
                     each container in containers
                         tr
