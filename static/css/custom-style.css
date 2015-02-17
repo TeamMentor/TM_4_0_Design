@@ -312,7 +312,7 @@ img {
   background:url('../assets/logos/logos.png') no-repeat;
   height: 40px;
   margin: 0 auto;
-  background-position: 0px 0px;
+  background-position: top center;
   margin-bottom: 10px;
 }
 #si-logo {
@@ -774,6 +774,7 @@ table td {
     height: 60px;
   }
   #tm-logo {
+    background-position: 0px 0px;
     display: inline-block;
     float: left;
     margin: 7px 0 0 20px;
