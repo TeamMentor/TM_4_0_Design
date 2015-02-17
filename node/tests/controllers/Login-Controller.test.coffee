@@ -82,7 +82,7 @@ describe "| controllers | Login-Controller.test |", ->
       #render contains the file to render and the view model object
       render = (jadePage,model)->
         #Verifying the message from the backend.
-        model.errorMessage.assert_Is(blank_credentials_message)
+        model.viewModel.errorMessage.assert_Is(blank_credentials_message)
         jadePage.assert_Is('source/jade/guest/login-Fail.jade')
         done()
       req = body:{username:newUsername,password:newPassword},session:'';
@@ -98,7 +98,7 @@ describe "| controllers | Login-Controller.test |", ->
 
       #render contains the file to render and the view model object
       render = (jadePage,model)->
-        model.errorMessage.assert_Is(blank_credentials_message)
+        model.viewModel.errorMessage.assert_Is(blank_credentials_message)
         #Verifying the message from the backend.
         jadePage.assert_Is('source/jade/guest/login-Fail.jade')
         done()
@@ -115,7 +115,7 @@ describe "| controllers | Login-Controller.test |", ->
       #render contains the file to render and the view model object
       render = (jadePage,model)->
         #Verifying the message from the backend.
-        model.errorMessage.assert_Is(blank_credentials_message)
+        model.viewModel.errorMessage.assert_Is(blank_credentials_message)
         jadePage.assert_Is('source/jade/guest/login-Fail.jade')
         done()
       req = body:{username:newUsername,password:newPassword},session:'';
@@ -269,4 +269,19 @@ describe "| controllers | Login-Controller.test |", ->
       using new User_Sign_Up_Controller(req, res), ->
         @.userSignUp()
 
+
+    it 'Login form persist HTML form fields on error (Wrong Password)',(done)->
+      newUsername         ='tm'
+      newPassword         ='aaa'.add_5_Letters()
+
+      #render contains the file to render and the view model object
+      render = (html,model)->
+        model.viewModel.username.assert_Is(newUsername)
+        model.viewModel.errorMessage.assert_Is('Wrong Password')
+        done()
+      req = body:{username:newUsername,password:newPassword}, session:''
+      res = {render: render}
+
+      using new Login_Controller(req, res), ->
+        @.loginUser()
 
