@@ -82,7 +82,7 @@ body > * {
   background-position: 0px -1400px;
 }
 #about, #usp, #call-to-action {
-  padding: 100px 0;
+  padding: 40px 0;
   text-align: center;
   background-position: fixed;
   background-size: auto;
@@ -90,7 +90,6 @@ body > * {
 #about h2, #usp h2 p {
   color: #FFFFFF;
   line-height: 1.25em;
-  padding-top: 50px;
 }
 #about-us {
   padding: 40px 0 40px 0;
@@ -743,6 +742,12 @@ table td {
 @media (min-width: 853px) {
   #application {
     margin-top: 60px;
+  }
+  #about, #usp, #call-to-action {
+    padding: 100px 0;
+  }
+  #about h2, #usp h2 {
+    padding-top: 40px;
   }
   #customer-navigation ul {
     text-align: left;
