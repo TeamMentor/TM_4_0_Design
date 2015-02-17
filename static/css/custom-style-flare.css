@@ -687,7 +687,7 @@ button:hover, button:active, .button:hover, .button:active {
   text-decoration: none;
   transition: all 0.5s;
 }
-button i {
+button i, .button i {
   color: white;
 }
 .app {

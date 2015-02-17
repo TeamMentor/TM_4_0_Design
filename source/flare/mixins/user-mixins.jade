@@ -1,43 +1,57 @@
 //- Flare User Details Display
 mixin user-details-display
 	.bg
-		h3 User Details
 		.row
+			.small-10.columns
+				h3 User Details
+			.small-2.columns
+				a.button.controls(href='/user-edit')
+					+edit-icon
+		.row
+			.small-12.columns
+				.label Name
+				p Name
+				br
+				.label Email
+				p Email
+				br
+		.row
+			.small-12.medium-6.columns
+				.label Title
+				p Title
+				br
+				.label Country
+				p Country
+				br
 			.small-12.large-6.columns
-				+user-icon
-				|    Name
+				.label Company
+				p Company
 				br
-				+company-icon
-				|    Title, Company
+				.label State
+				p State
 				br
-				+group-id-icon
-				|    Group ID
-			.small-12.large-6.columns
-				+email-icon
-				|    Email
-				br
-				+navigate-icon
-				|    Location
 
 // Permanent Filters
 mixin permanent-filters
 	.bg
-		h3 Permanent Filters
+		.row
+			.small-10.columns
+				h3 Permanent Filters
+			.small-2.columns
+				a.action(href='user-add-filter')
+					+open-icon
 		+flare-filters-active
-		br
-		a.action(href='user-add-filter')
-			+change-filters-icon
 
 //- Flare Other User Settings
 mixin other-user-settings
 	.bg
+		h3 Danger Zone
 		.row
 			.small-12.large-6.columns
-				a.action(href='user-edit')
-					+edit-icon
-			.small-12.large-6.columns
-				a.action(href='user-new-password')
+				a.button.controls(href='user-new-password')
 					+new-pw-icon
+			.small-12.large-6.columns
+				a.button.controls(href='#') Delete your account
 
 //- Flare Edit User Details
 mixin flare-edit-user-details
