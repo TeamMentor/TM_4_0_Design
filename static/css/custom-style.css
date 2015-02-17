@@ -64,7 +64,7 @@ body > * {
   font-size: 2.5em;
   margin-bottom: 0;
 }
-#article.article-content h1, #article.article-content h2 {
+#html.article-content h1, #html.article-content h2 {
   font-size: 2em;
   padding: 0;
   margin-bottom: 0;
