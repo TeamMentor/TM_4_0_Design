@@ -725,6 +725,7 @@ button:hover, button:active {
   color: #8aaf3e;
   border: 1px solid #8aaf3e;
   font-size: inherit;
+  border-radius: 3px;
 }
 .filter {
   padding: 5px 5px 5px 9px;
