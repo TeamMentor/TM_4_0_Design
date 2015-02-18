@@ -425,12 +425,12 @@ ul.side-nav li {
 ul.side-nav li:last-child {
   border-bottom:1px solid #dbdbdb;
 }
-ul.side-nav li:hover {
-  background-color: #dbdbdb;
-}
 ul.side-nav li a {
   display: block;
   text-decoration: none;
+}
+ul.side-nav li a:hover {
+  background-color: #dbdbdb;
 }
 ul.side-nav span.badge {
   margin: 0 auto;
