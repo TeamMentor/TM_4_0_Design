@@ -15,19 +15,14 @@ skip_Tests_If_Offline = (testSuite,next)=>
             test.pending = true
         next()
 
-describe 'controllers | Help-Controller.test', ()->
+describe '| controllers | Help-Controller.test', ()->
 
-  #help_Server_Online = ->
-  #  log new Help_Controller().docs_Server
+  @.timeout(3500)
 
   describe 'methods',->
 
     before (done)->
       skip_Tests_If_Offline @.test.parent, done
-
-
-      #new Help_Controller().docs_Server.GET
-      #@.test.parent.tests = []
 
     it 'ctor', ()->
       req = { a :42 }
@@ -94,8 +89,6 @@ describe 'controllers | Help-Controller.test', ()->
     before (done)->
       skip_Tests_If_Offline @.test.parent, done
       app   = require('../../tm-server')
-
-    this.timeout(3500)
 
     it 'request should add to cache', (done)->
       page = 'index.html'

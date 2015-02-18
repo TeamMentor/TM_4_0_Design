@@ -6,7 +6,7 @@ spawn          = require('child_process').spawn
 Graph_Service  = require('./../../services/Graph-Service')
 Server         = http.Server
 
-describe 'services | Graph-Service.test |', ->
+describe '| services | Graph-Service.test |', ->
 
   test_Port    = 45566 + Math.floor((Math.random() * 1000) + 1)
   test_Ip      = '127.0.0.1'
@@ -26,18 +26,24 @@ describe 'services | Graph-Service.test |', ->
     server.close_And_Destroy_Sockets ()->
       done()
 
-  it 'server_Online (on live server)', (done)->
-    using graphService,->
-      @.server.assert_Is test_Server
-      @.server_Online (online)->
-        online.assert_True()
-        done()
+  it 'article_Html (bad id)', (done)->
+    graphService.article_Html null,  (data)=>
+      data.assert_Is ''
+      done()
 
-  it 'server_Online (on not live server)', (done)->
-    using new Graph_Service({ server: 'http://aaaa.bbbb.ccc.ddd'}),->
-      @.server_Online (online)->
-        online.assert_False()
-        done()
+  it 'article_Html (good id)', (done)->
+    server.respond_With_Request_Url()
+    article_Id = 'abc_'.add_5_Letters()
+    graphService.article_Html article_Id,  (data)=>
+      data.url.assert_Is "/data/article_Html/#{article_Id}"
+      done()
+
+  it 'articles', (done)->
+    graphService.articles (data)=>
+      data.assert_Is { url: '/data/articles/' }
+      done()
+
+
 
   it 'graphDataFromGraphDB (no queryId and no filters)', (done)->
     graphService.graphDataFromGraphDB null, null,  (searchData)=>
@@ -89,8 +95,8 @@ describe 'services | Graph-Service.test |', ->
       assert_Is_Null data
       done()
 
-  it 'query_From_Text_Search (to_ids returns a valid mapping)', (done)->
-    mappings = {'aaa': id :'123'.add_5_Letters()}
+  it 'query_From_Text_Search (to_ids returns a valid mapping with "query-")', (done)->
+    mappings = {'aaa': id :'query-'.add_5_Letters()}
     server.respond_With_Object_As_Json mappings
     text = 'abc_'.add_5_Letters()
     graphService.query_From_Text_Search text,  (data)=>
@@ -102,18 +108,6 @@ describe 'services | Graph-Service.test |', ->
     text = 'abc_'.add_5_Letters()
     graphService.query_From_Text_Search text,  (data)=>
       data.json_Parse().url.assert_Is "/search/query_from_text_search/#{text}"
-      done()
-
-   it 'article_Html (bad id)', (done)->
-    graphService.article_Html null,  (data)=>
-      data.assert_Is ''
-      done()
-
-  it 'article_Html (good id)', (done)->
-    server.respond_With_Request_Url()
-    article_Id = 'abc_'.add_5_Letters()
-    graphService.article_Html article_Id,  (data)=>
-      data.url.assert_Is "/data/article_Html/#{article_Id}"
       done()
 
    it 'node_Data (bad id)', (done)->
@@ -134,3 +128,16 @@ describe 'services | Graph-Service.test |', ->
     graphService.node_Data article_Id,  (data)=>
       data.assert_Is {}
       done()
+
+  it 'server_Online (on live server)', (done)->
+    using graphService,->
+      @.server.assert_Is test_Server
+      @.server_Online (online)->
+        online.assert_True()
+        done()
+
+  it 'server_Online (on not live server)', (done)->
+    using new Graph_Service({ server: 'http://aaaa.bbbb.ccc.ddd'}),->
+      @.server_Online (online)->
+        online.assert_False()
+        done()

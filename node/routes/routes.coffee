@@ -23,7 +23,7 @@ add_Routes = (app,searchController)->
     #app.post '/passwordReset/:username/:token'   , (req, res)-> new Login_Controller(req, res).passwordResetToken()
 
     Search_Controller.registerRoutes(app, searchController);  # search routes
-    Article_Controller.registerRoutes(app, searchController)  # article routes
+    Article_Controller.register_Routes(app, searchController)  # article routes
     Pwd_Reset_Controller.register_Routes(app)
 
     #help routes

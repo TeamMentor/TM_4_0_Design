@@ -4,7 +4,7 @@ Jade_Service = require('../../services/Jade-Service')
 
 
 #used to understand better how jade compilation works (specialy how it compiles to java script)
-describe "services | Jade-Service.js", ()->
+describe "| services | Jade-Service |", ()->
 
     it 'check Jade-Service ctor', ()->
         using new Jade_Service(),->

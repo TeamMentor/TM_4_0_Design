@@ -28,7 +28,7 @@ class Search_Controller_PoC
     target    = @.req.query.text
     jade_Page = '/source/jade/-poc-/poc-pages.jade'
     data =
-      pages: [{ name: 'PoC pages'           , link: ''}]
+      pages: [{ name: 'Articles' , link: '/articles'}]
     @render_Page jade_Page, data
 
 

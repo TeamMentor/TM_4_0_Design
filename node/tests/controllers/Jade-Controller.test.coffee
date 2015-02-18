@@ -1,7 +1,8 @@
+require 'fluentnode'
 Jade_Controller = require('../../controllers/Jade-Controller')
 cheerio = require 'cheerio'
 
-describe 'controllers | Jade-Controller.test.js |', ()->
+describe '| controllers | Jade-Controller.test.js |', ()->
 
   describe 'render mixin', ->
     mixin_File   = null
@@ -15,8 +16,6 @@ describe 'controllers | Jade-Controller.test.js |', ()->
     extends_Code = "h1 static h1 (in extends)\n" +
                    "block content \n"
     dynamic_h2   = 'from test_'.add_5_Random_Letters()
-
-
 
     before ->
       mixin_File   = ".".temp_Name_In_Folder().append('.jade')
