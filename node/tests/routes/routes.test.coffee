@@ -11,6 +11,7 @@ describe 'routes | routes.test |', ()->
                       '/flare/default',
                       '/Image/:name',
                       '/article/:id',
+                      '/articles',
                       '/search',
                       '/flare',
                       '/flare/all',
@@ -72,7 +73,7 @@ describe 'routes | routes.test |', ()->
       expectedStatus = 302 if ['','image','deploy'                           ].contains(path.split('/').second().lower())
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
                                '/user/logout', '/user/pwd_reset'             ].contains(path)
-      expectedStatus = 403 if ['article', 'show','library','libraries'       ].contains(path.split('/').second().lower())
+      expectedStatus = 403 if ['article','articles','show'                   ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
       expectedStatus = 403 if ['/poc'                                        ].contains(path)
 

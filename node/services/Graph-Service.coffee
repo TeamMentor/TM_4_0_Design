@@ -17,6 +17,10 @@ class Graph_Service
       url_Article_Html = "#{@server}/data/article_Html/#{article_Id.url_Encode()}"
       url_Article_Html.GET_Json callback
 
+  articles: (callback)=>
+    url = "#{@server}/data/articles/"
+    url.GET_Json callback
+
   server_Online: (callback)=>
     @.server.GET (html)->
       callback html isnt null

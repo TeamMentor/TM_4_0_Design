@@ -38,6 +38,10 @@ describe 'services | Graph-Service.test |', ->
       data.url.assert_Is "/data/article_Html/#{article_Id}"
       done()
 
+  it 'articles', (done)->
+    graphService.articles (data)=>
+      data.assert_Is { url: '/data/articles/' }
+      done()
 
 
 

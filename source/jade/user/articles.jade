@@ -1,0 +1,11 @@
+extends ../_layouts/page_home
+include ../_mixins/articles-mixins
+include ../_mixins/search-mixins
+
+block content
+    #application
+        .row
+            .col-12
+                .lge-container
+                    +results
+                    +articles-list

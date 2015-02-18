@@ -15,6 +15,7 @@ class Article_Controller
     @.res              = res;
     @.config           = config || new Config()
     @.jade_Article     = '/source/jade/user/article.jade'
+    @.jade_Articles    = '/source/jade/user/articles.jade'
     @.jade_No_Article  = '/source/jade/user/no-article.jade'
     @.jade_Service     = new Jade_Service(@.config);
     @.graphService     = new Graph_Service(graph_Options)
@@ -31,6 +32,10 @@ class Article_Controller
       else
         @res.send @jade_Service.renderJadeFile(@jade_No_Article)
 
+  articles: =>
+    @graphService.articles (articles)=>
+      view_Model = { results: articles.values()}
+      @res.send @jade_Service.renderJadeFile(@jade_Articles, view_Model)
 
   recentArticles: =>
     @.req.session ?= {}
@@ -54,6 +59,7 @@ Article_Controller.register_Routes = (app, expressService,graph_Options) ->
 
 
   app.get "/article/:id"  , checkAuth, articleController('article')
+  app.get "/articles"     , checkAuth, articleController('articles')
 
 
 module.exports = Article_Controller
