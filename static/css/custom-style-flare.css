@@ -190,7 +190,7 @@ nav a:hover, nav p:hover {
 }
 #results {
   -webkit-flex: 100%;
-  -webkit-order: 9;
+  -webkit-order: 10;
   display: block;
   min-height: 1px;
   overflow-y: auto;
@@ -273,7 +273,7 @@ nav a:hover, nav p:hover {
   color: #444444;
 }
 #right-nav {
-  -webkit-order: 10;
+  -webkit-order: 9;
   -webkit-flex: 100%;
   overflow-y: auto;
   min-height: 1px;
