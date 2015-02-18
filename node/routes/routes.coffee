@@ -1,6 +1,5 @@
 
 add_Routes = (app,searchController)->
-
     Express_Service         = require '../services/Express-Service'
     Jade_Service            = require '../services/Jade-Service'
     Article_Controller      = require '../controllers/Article-Controller'

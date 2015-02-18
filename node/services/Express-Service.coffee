@@ -1,11 +1,11 @@
-Config          = require('../misc/Config')
-Jade_Service    = require('../services/Jade-Service')
-Express_Session = require('../misc/Express-Session')
-bodyParser      = require('body-parser')
-session         = require('express-session')
-path            = require("path")
-express         = require('express')
-helmet          = require('helmet')
+Config          = null
+Jade_Service    = null
+Express_Session = null
+bodyParser      = null
+session         = null
+path            = null
+express         = null
+helmet          = null
 
 class Express_Service
 
@@ -17,6 +17,7 @@ class Express_Service
     session          = require 'express-session'
     path             = require "path"
     express          = require 'express'
+    helmet           = require 'helmet'
     @.app            = express()
     @loginEnabled    = true;
     @.app.port       = process.env.PORT || 1337;
