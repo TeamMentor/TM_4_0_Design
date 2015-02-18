@@ -55,7 +55,7 @@ class Graph_Service
 
     url_Convert.GET_Json (json)->
       mapping = json[json.keys().first()]
-      if mapping?.id
+      if mapping?.id?.contains 'query-'
         callback mapping.id
       else
         url_Search.GET (search_Id)->
