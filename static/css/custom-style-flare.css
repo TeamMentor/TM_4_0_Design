@@ -271,7 +271,7 @@ nav a:hover, nav p:hover {
   min-height: 1px;
 }
 #landing-page {
-  height: 90%;
+  height: 100%;
   -webkit-order: 6;
   -webkit-flex: 100%;
   display: -webkit-flex;
