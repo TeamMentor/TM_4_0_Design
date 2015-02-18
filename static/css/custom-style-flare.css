@@ -170,6 +170,12 @@ nav a:hover, nav p:hover {
   padding: 5px 3px 2px;
   border-radius: 3px;
 }
+#search-bar .button i {
+  color: #8aaf3e;
+}
+#search-bar .button:hover i {
+  color: #b4cf7b;
+}
 #left-nav, #results, #right-nav {
   padding: 2px;
 }
