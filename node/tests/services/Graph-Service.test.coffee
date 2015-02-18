@@ -6,7 +6,7 @@ spawn          = require('child_process').spawn
 Graph_Service  = require('./../../services/Graph-Service')
 Server         = http.Server
 
-describe 'services | Graph-Service.test |', ->
+describe '| services | Graph-Service.test |', ->
 
   test_Port    = 45566 + Math.floor((Math.random() * 1000) + 1)
   test_Ip      = '127.0.0.1'

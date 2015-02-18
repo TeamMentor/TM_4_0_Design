@@ -1,6 +1,6 @@
 supertest = require('supertest')
 
-describe 'routes | routes.test |', ()->
+describe '| routes | routes.test |', ()->
     app =null
 
     before ->
