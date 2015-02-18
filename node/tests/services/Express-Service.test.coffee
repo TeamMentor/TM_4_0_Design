@@ -1,11 +1,13 @@
 Express_Service = require('../../services/Express-Service')
 Express_Session = require('../../misc/Express-Session')
-express  = require('express')
-session  = require('express-session')
-supertest = require('supertest')
+express         = require('express')
+session         = require('express-session')
+supertest       = require('supertest')
 
-describe 'services | Express-Service.test', ()->
+describe '| services | Express-Service.test', ()->
+
   it 'constructor',->
+
     using new Express_Service(),->
       @.app        .assert_Is_Function() # can't seem to have define type(yet)
       @.app.port   .assert_Is_Number()
@@ -19,7 +21,11 @@ describe 'services | Express-Service.test', ()->
       @.mappedAuth.assert_Is_Function()
 
   describe 'session',->
-    expressService = new Express_Service()
+
+    expressService = null
+
+    before ->
+      expressService = new Express_Service()
 
     it 'test',(done)->
       expressService.setup()
@@ -55,8 +61,10 @@ describe 'services | Express-Service.test', ()->
               done()
 
   describe 'auth',->
-    expressService = new Express_Service()
+    expressService = null
 
+    before ->
+      expressService = new Express_Service()
     it 'checkAuth (all null)', (done)->
       expressService.checkAuth(null,null, done,null)
 
@@ -125,3 +133,9 @@ describe 'services | Express-Service.test', ()->
                   @viewedArticles (data)->
                     data.json_Str().assert_Contains ['id_1','id_2', 'id_3', 'id_4','title_1','title_2', 'title_3', 'title_4']
                     done()
+
+    it 'viewedArticles (no express session)', (done)->
+      using new Express_Service(), ->
+        @viewedArticles (data)->
+          data.assert_Is {}
+          done()

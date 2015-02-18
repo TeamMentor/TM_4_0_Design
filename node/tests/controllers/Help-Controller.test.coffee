@@ -1,7 +1,7 @@
 supertest         = require('supertest')
 expect            = require('chai').expect
 request           = require('request')
-app               = require('../../server')
+#app               = require('../../server')
 marked            = require('marked')
 Help_Controller   = require('../../controllers/Help-Controller')
 TeamMentor_Service = require('../../services/TeamMentor-Service')
@@ -15,19 +15,14 @@ skip_Tests_If_Offline = (testSuite,next)=>
             test.pending = true
         next()
 
-describe 'controllers | Help-Controller.test', ()->
+describe '| controllers | Help-Controller.test', ()->
 
-  #help_Server_Online = ->
-  #  log new Help_Controller().docs_Server
+  @.timeout(3500)
 
   describe 'methods',->
 
     before (done)->
       skip_Tests_If_Offline @.test.parent, done
-
-
-      #new Help_Controller().docs_Server.GET
-      #@.test.parent.tests = []
 
     it 'ctor', ()->
       req = { a :42 }
@@ -89,11 +84,11 @@ describe 'controllers | Help-Controller.test', ()->
 
 
   describe 'misc workflows', ()->
+    app = null
 
     before (done)->
       skip_Tests_If_Offline @.test.parent, done
-
-    this.timeout(3500)
+      app   = require('../../tm-server')
 
     it 'request should add to cache', (done)->
       page = 'index.html'
@@ -140,9 +135,11 @@ describe 'controllers | Help-Controller.test', ()->
       check_For_Redirect()
 
   describe 'test-help (dynamic content) |', ()->
+    app = null
 
     before (done)->
       skip_Tests_If_Offline @.test.parent, done
+      app   = require('../../tm-server')
 
     libraryData  = null
     pageParams   = { loggedIn : false};

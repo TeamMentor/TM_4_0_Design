@@ -22,15 +22,19 @@ mixin links-navbar__landing-page
 
 mixin links-home__navigate
 	h3 Navigate
-	.list-group
-		a(href='../articles/fundamentals-of-security')
-			| Attacks & Vulnerabilites
-		a(href='../articles/fundamentals-of-security')
-			| Principles & Standards
-		a(href='../articles/my-articles')
-			| My Articles
-		a(href='../articles/my-search-items')
-			| My Saved Searches
+	ul.side-nav
+		li
+			a(href='../articles/fundamentals-of-security')
+				| Attacks & Vulnerabilites
+		li
+			a(href='../articles/fundamentals-of-security')
+				| Principles & Standards
+		li
+			a(href='../articles/my-articles')
+				| My Articles
+		li
+			a(href='../articles/my-search-items')
+				| My Saved Searches
 
 
 mixin links_user_pages
@@ -47,50 +51,94 @@ mixin links_user_pages
 
 //- Flare Page Links
 mixin flare-all-pages-links
-	.list-group
-		a(href='articles/alert-article-new-window-view'                   ) articles/alert-article-new-window-view
-		a(href='articles/article-new-window-view'                         ) articles/article-new-window-view
-		a(href='articles/fundamentals-of-security'                        ) articles/fundamentals-of-security
-		a(href='articles/my-articles'                                     ) articles/my-articles
-		a(href='articles/my-search-items'                                 ) articles/my-search-items
-		a(href='error-pages/error-occurred'                               ) error-pages/error-occurred
-		a(href='error-pages/unavailable'                                  ) error-pages/unavailable
-		a(href='error-pages/upgraded'                                     ) error-pages/upgraded
-		a(href='getting-started/forgot-password'                          ) getting-started/forgot-password
-		a(href='getting-started/index-prompts'                            ) getting-started/index-prompts
-		a(href='getting-started/index-validation'                         ) getting-started/index-validation
-		a(href='getting-started/index'                                    ) getting-started/index
-		a(href='help/index'                                               ) help/index
-		a(href='home/alert-application'                                   ) home/alert-application
-		a(href='home/app-keyword-search-save'                             ) home/app-keyword-search-save
-		a(href='home/app-keyword-search-share'                            ) home/app-keyword-search-share
-		a(href='home/app-keyword-search'                                  ) home/app-keyword-search
-		a(href='home/customer-main-app-view'                              ) home/customer-main-app-view
-		a(href='home/filters-active'                                      ) home/filters-active
-		a(href='home/filters-div'                                         ) home/filters-div
-		a(href='home/main-app-view'                                       ) home/main-app-view
-		a(href='home/navigate'                                            ) home/navigate
-		a(href='landing-pages/about'                                      ) landing-pages/about
-		a(href='landing-pages/features'                                   ) landing-pages/features
-		a(href='landing-pages/index'                                      ) landing-pages/index
-		a(href='new-user-onboard/index'                                   ) new-user-onboard/index
-		a(href='new-user-onboard/step-one-search'                         ) new-user-onboard/step-one-search
-		a(href='new-user-onboard/step-two-filter-button'                  ) new-user-onboard/step-two-filter-button
-		a(href='new-user-onboard/step-four-filters-active'                ) new-user-onboard/step-four-filters-active
-		a(href='new-user-onboard/step-three-filters-div'                  ) new-user-onboard/step-three-filters-div
-		a(href='new-user-onboard/step-five-navigate'                      ) new-user-onboard/step-five-navigate
-		a(href='new-user-onboard/step-six-navigate-page'                  ) new-user-onboard/step-six-navigate-page
-		a(href='new-user-onboard/finish'                                  ) new-user-onboard/finish
-		a(href='style-guide/index'                                        ) style-guide/index
-		a(href='user/alert-user'                                          ) user/alert-user
-		a(href='user/backend'                                             ) user/backend
-		a(href='user/developer-utilities'                                 ) user/developer-utilities
-		a(href='user/other'                                               ) user/other
-		a(href='user/terms-and-conditions'                                ) user/terms-and-conditions
-		a(href='user/user-add-filter'                                     ) user/user-add-filter
-		a(href='user/user-edit'                                           ) user/user-edit
-		a(href='user/user-new-password'                                   ) user/user-new-password
-		a(href='user/user'                                                ) user/user
+	ul.side-nav
+		li
+			a(href='articles/alert-article-new-window-view') articles/alert-article-new-window-view
+		li
+			a(href='articles/article-new-window-view') articles/article-new-window-view
+		li
+			a(href='articles/fundamentals-of-security') articles/fundamentals-of-security
+		li
+			a(href='articles/my-articles') articles/my-articles
+		li
+			a(href='articles/my-search-items') articles/my-search-items
+		li
+			a(href='error-pages/error-occurred') error-pages/error-occurred
+		li
+			a(href='error-pages/unavailable') error-pages/unavailable
+		li
+			a(href='error-pages/upgraded') error-pages/upgraded
+		li
+			a(href='getting-started/forgot-password') getting-started/forgot-password
+		li
+			a(href='getting-started/index-prompts') getting-started/index-prompts
+		li
+			a(href='getting-started/index-validation') getting-started/index-validation
+		li
+			a(href='getting-started/index') getting-started/index
+		li
+			a(href='help/index') help/index
+		li
+			a(href='home/alert-application') home/alert-application
+		li
+			a(href='home/app-keyword-search-save') home/app-keyword-search-save
+		li
+			a(href='home/app-keyword-search-share') home/app-keyword-search-share
+		li
+			a(href='home/app-keyword-search') home/app-keyword-search
+		li
+			a(href='home/customer-main-app-view') home/customer-main-app-view
+		li
+			a(href='home/filters-active') home/filters-active
+		li
+			a(href='home/filters-div') home/filters-div
+		li
+			a(href='home/main-app-view') home/main-app-view
+		li
+			a(href='home/navigate') home/navigate
+		li
+			a(href='landing-pages/about') landing-pages/about
+		li
+			a(href='landing-pages/features') landing-pages/features
+		li
+			a(href='landing-pages/index') landing-pages/index
+		li
+			a(href='new-user-onboard/index') new-user-onboard/index
+		li
+			a(href='new-user-onboard/step-one-search') new-user-onboard/step-one-search
+		li
+			a(href='new-user-onboard/step-two-filter-button') new-user-onboard/step-two-filter-button
+		li
+			a(href='new-user-onboard/step-four-filters-active') new-user-onboard/step-four-filters-active
+		li
+			a(href='new-user-onboard/step-three-filters-div') new-user-onboard/step-three-filters-div
+		li
+			a(href='new-user-onboard/step-five-navigate') new-user-onboard/step-five-navigate
+		li
+			a(href='new-user-onboard/step-six-navigate-page') new-user-onboard/step-six-navigate-page
+		li
+			a(href='new-user-onboard/finish') new-user-onboard/finish
+		li
+			a(href='style-guide/index') style-guide/index
+		li
+			a(href='user/alert-user') user/alert-user
+		li
+			a(href='user/backend') user/backend
+		li
+			a(href='user/developer-utilities') user/developer-utilities
+		li
+			a(href='user/other') user/other
+		li
+			a(href='user/terms-and-conditions') user/terms-and-conditions
+		li
+			a(href='user/user-add-filter') user/user-add-filter
+		li
+			a(href='user/user-edit') user/user-edit
+		li
+			a(href='user/user-new-password') user/user-new-password
+		li
+			a(href='user/user') user/user
+
 
 //- my-articles-links
 mixin my-articles-links
@@ -129,96 +177,156 @@ mixin help-navigation
 		dd.accordion-navigation
 			a.active(href='#panel1') About TEAM Mentor
 			#panel1.content.active
-				.list-group
-					a(href='#') What is new in this release?
-					a(href='#') Introduction to TEAM Mentor
-					a(href='#') Quick Start Guide
-					a(href='#') Support
+				ul.side-nav
+					li
+						a(href='#') What is new in this release?
+					li
+						a(href='#') Introduction to TEAM Mentor
+					li
+						a(href='#') Quick Start Guide
+					li
+						a(href='#') Support
 		dd.accordion-navigation
 			a(href='#panel2') Installation
 			#panel2.content
-				.list-group
-					a(href='#') Minimum Requirements
-					a(href='#') Installing TEAM Mentor on IIS 6.0
-					a(href='#') Installing TEAM Mentor on IIS 7.0 and 7.5
-					a(href='#') Running TEAM Mentor locally (using Cassini)
-					a(href='#') Upgrading TEAM Mentor
+				ul.side-nav
+					li
+						a(href='#') Minimum Requirements
+					li
+						a(href='#') Installing TEAM Mentor on IIS 6.0
+					li
+						a(href='#') Installing TEAM Mentor on IIS 7.0 and 7.5
+					li
+						a(href='#') Running TEAM Mentor locally (using Cassini)
+					li
+						a(href='#') Upgrading TEAM Mentor
 		dd.accordion-navigation
 			a(href='#panel3') Administration
 			#panel3.content
-				.list-group
-					a(href='#') Managing Users
-					a(href='#') Installing Libraries
-					a(href='#') Removing Libraries
-					a(href='#') Editing the Default Configuration
-					a(href='#') Troubleshooting
-					a(href='#') User_Data Git Support
-					a(href='#') TM_Libraries Git Support
-					a(href='#') Configuring Email
-					a(href='#') Google Analytics
-					a(href='#') Active Directory Support
+				ul.side-nav
+					li
+						a(href='#') Managing Users
+					li
+						a(href='#') Installing Libraries
+					li
+						a(href='#') Removing Libraries
+					li
+						a(href='#') Editing the Default Configuration
+					li
+						a(href='#') Troubleshooting
+					li
+						a(href='#') User_Data Git Support
+					li
+						a(href='#') TM_Libraries Git Support
+					li
+						a(href='#') Configuring Email
+					li
+						a(href='#') Google Analytics
+					li
+						a(href='#') Active Directory Support
 		dd.accordion-navigation
 			a(href='#panel4') UI Elements
 			#panel4.content
-				.list-group
-					a(href='#') Using the Control Panel
-					a(href='#') User Interface Overview
-					a(href='#') Signing Up for Regular Accounts
-					a(href='#') Article List Pane
-					a(href='#') Banner Pane
-					a(href='#') Filters Pane
-					a(href='#') Navigation Pane
-					a(href='#') Preview Pane
-					a(href='#') Forgot Password
+				ul.side-nav
+					li
+						a(href='#') Using the Control Panel
+					li
+						a(href='#') User Interface Overview
+					li
+						a(href='#') Signing Up for Regular Accounts
+					li
+						a(href='#') Article List Pane
+					li
+						a(href='#') Banner Pane
+					li
+						a(href='#') Filters Pane
+					li
+						a(href='#') Navigation Pane
+					li
+						a(href='#') Preview Pane
+					li
+						a(href='#') Forgot Password
 		dd.accordion-navigation
 			a(href='#panel5') Reading Content
 			#panel5.content
-				.list-group
-					a(href='#') Navigating
-					a(href='#') Using the Search Function
-					a(href='#') Using the Filters
-					a(href='#') Opening an Article
-					a(href='#') Changing Layout and Collaborating
+				ul.side-nav
+					li
+						a(href='#') Navigating
+					li
+						a(href='#') Using the Search Function
+					li
+						a(href='#') Using the Filters
+					li
+						a(href='#') Opening an Article
+					li
+						a(href='#') Changing Layout and Collaborating
 		dd.accordion-navigation
 			a(href='#panel6') Editing Content
 			#panel6.content
-				.list-group
-					a(href='#') Editing Overview
-					a(href='#') Editing Views
-					a(href='#') Editing Folders
-					a(href='#') Editing Libraries
-					a(href='#') Editing WikiText Articles
-					a(href='#') Editing HTML Articles
-					a(href='#') Edit Article Metadata
-					a(href='#') Linking Articles in WikiText
-					a(href='#') TEAM Mentor Wiki Markup
+				ul.side-nav
+					li
+						a(href='#') Editing Overview
+					li
+						a(href='#') Editing Views
+					li
+						a(href='#') Editing Folders
+					li
+						a(href='#') Editing Libraries
+					li
+						a(href='#') Editing WikiText Articles
+					li
+						a(href='#') Editing HTML Articles
+					li
+						a(href='#') Edit Article Metadata
+					li
+						a(href='#') Linking Articles in WikiText
+					li
+						a(href='#') TEAM Mentor Wiki Markup
 		dd.accordion-navigation
 			a(href='#panel7') Eclipse for Fortify plugin
 			#panel7.content
-				.list-group
-					a(href='#') About Eclipse Plugin
-					a(href='#') Requirements
-					a(href='#') Quick Start Installation
-					a(href='#') Installing TEAM Mentor Eclipse Plugin for Fortify
-					a(href='#') Updating
-					a(href='#') Using the TEAM Mentor Eclipse Plugin for Fortify
-					a(href='#') Using a Sample Vulnerable Application
-					a(href='#') How to Evaluate and What to Expect
-					a(href='#') Configuring TEAM Mentor Eclipse Plugin for Fortify
-					a(href='#') Linking TEAM Mentor instance account with the Eclipse Plugin
+				ul.side-nav
+					li
+						a(href='#') About Eclipse Plugin
+					li
+						a(href='#') Requirements
+					li
+						a(href='#') Quick Start Installation
+					li
+						a(href='#') Installing TEAM Mentor Eclipse Plugin for Fortify
+					li
+						a(href='#') Updating
+					li
+						a(href='#') Using the TEAM Mentor Eclipse Plugin for Fortify
+					li
+						a(href='#') Using a Sample Vulnerable Application
+					li
+						a(href='#') How to Evaluate and What to Expect
+					li
+						a(href='#') Configuring TEAM Mentor Eclipse Plugin for Fortify
+					li
+						a(href='#') Linking TEAM Mentor instance account with the Eclipse Plugin
 		dd.accordion-navigation
 			a(href='#panel8') HP Fortify SCA UI Integration
 			#panel8.content
-				.list-group
-					a(href='#') About TEAM Mentor HP Fortify SCA UI Integration
-					a(href='#') Installation
-					a(href='#') Updating TEAM Mentor Custom Rulepack
-					a(href='#') Using a Sample Vulnerable Application
-					a(href='#') How to Evaluate and What to Expect
-					a(href='#') Using TEAM Mentor Fortify SCA UI Integration
+				ul.side-nav
+					li
+						a(href='#') About TEAM Mentor HP Fortify SCA UI Integration
+					li
+						a(href='#') Installation
+					li
+						a(href='#') Updating TEAM Mentor Custom Rulepack
+					li
+						a(href='#') Using a Sample Vulnerable Application
+					li
+						a(href='#') How to Evaluate and What to Expect
+					li
+						a(href='#') Using TEAM Mentor Fortify SCA UI Integration
 		dd.accordion-navigation
 			a(href='#panel9') Visual Studio Plugin
 			#panel9.content
-				.list-group
-					a(href='#') TEAM Mentor Plugin for Visual Studio
-					a(href='#') Visual Studio Plugin FAQ
+				ul.side-nav
+					li
+						a(href='#') TEAM Mentor Plugin for Visual Studio
+					li
+						a(href='#') Visual Studio Plugin FAQ

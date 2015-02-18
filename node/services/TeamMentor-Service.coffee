@@ -1,14 +1,19 @@
-fs             = require('fs')
-path           = require('path')
-request        = require('request')
-Cache_Service  = require('teammentor').Cache_Service
-    
+fs             = null
+path           = null
+request        = null
+Cache_Service  = null
 
 # this needs to me all moved into the 'teammentor' module
 # at the moment this could be called Docs_TM_Service and be an accurate representation of this code
 class TeamMentor_Service
 
   constructor: ->
+
+    fs             = require('fs')
+    path           = require('path')
+    request        = require('request')
+    Cache_Service  = require('teammentor').Cache_Service
+
     @.disableCache           = false
     @._name                  = 'docs'
     @._tmSite                = 'https://docs.teammentor.net'

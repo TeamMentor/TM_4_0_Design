@@ -2,11 +2,15 @@ cheerio   = require('cheerio')
 expect    = require('chai').expect
 marked    = require('marked')
 supertest = require('supertest')
-app       = require('../../server')
 
-describe 'routes | routes-supertest.test |',  ()->
+describe '| routes | routes-supertest.test |',  ()->
+  app =null
+  before ->
+    app      = require('../../tm-server')
+    app.config.enable_Jade_Cache = true
 
-  app.config.enable_Jade_Cache = true;
+  after ->
+    app.config.enable_Jade_Cache = false
 
   it 'verify security headers in response', (done)->
     assert = require('assert')

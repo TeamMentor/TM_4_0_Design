@@ -5,10 +5,10 @@ include ../mixins/application-mixins
 block content
 	#application
 		#left-nav
-			+links_user_pages
+			.bg
+				+links_user_pages
 		#results
-			+user-details-heading
 			+user-details-display
-			br
+			+permanent-filters
 			+other-user-settings
 		#right-nav

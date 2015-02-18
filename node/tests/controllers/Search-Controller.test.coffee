@@ -2,13 +2,13 @@ fs                = require('fs')
 supertest         = require('supertest')
 expect            = require('chai').expect
 cheerio           = require('cheerio')
-app               = require('../../server')
+#app               = require('../../server')
 Config            = require('../../misc/Config')
 Search_Controller = require('../../controllers/Search-Controller')
 Express_Service   = require('../../services/Express-Service')
 
 
-describe "controllers | test-Search-Controller |", ->
+describe "| controllers | Search-Controller.test |", ->
 
   @.timeout(3500)
 
@@ -293,12 +293,12 @@ describe "controllers | test-Search-Controller |", ->
       using new Express_Service(),->
         @.add_Session()
         @.app._router.stack.assert_Size_Is 3
-        Search_Controller.registerRoutes @.app
+        Search_Controller.registerRoutes @.app,@
         @.app._router.stack.assert_Size_Is 9
         supertest(@.app)
           .get('/user/main.html')
           .end (err,res)->
-            res.text.assert_Contains('<li><a href="/guest/about.html">About</a></li>')
+            res.text.assert_Contains('<li><a id="nav-about" href="/guest/about.html">About</a></li>')
             done()
 
     it '/user/main.html', (done)->

@@ -1,10 +1,11 @@
 include ../_mixins/user-mixins
 //- directory-list
 mixin directory-list
-    if(containers)
-        .bg
+    .bg
+        if title
             h3#title= title
-            #containers
+        #containers
+            if(containers)
                 table.nav
                     each container in containers
                         tr
@@ -76,7 +77,7 @@ mixin main-app-view
                         for recentArticle in recentArticles
                           tr
                             td
-                                a(href=recentArticle.href, target='_blank')= recentArticle.title
+                                a(href=recentArticle.href)= recentArticle.title
         if (searchTerms)
             .bg
                 #popular-Search-Terms
@@ -95,8 +96,7 @@ mixin main-app-view
                             if article
                                 tr
                                     td
-                                        a(href=article.href, target='_blank')= article.title
-                                            span.right.badge= article.weight
+                                        a(href=article.href)= article.title
         //if (newArticles)
             .bg
                 h4.label New Articles
@@ -104,7 +104,7 @@ mixin main-app-view
                         for newArticle in newArticles
                             tr
                                 td
-                                    a(href=newArticle.href, target='_blank')= newArticle.title
+                                    a(href=newArticle.href)= newArticle.title
 
 //- articles-list
 mixin articles-list

@@ -4,7 +4,7 @@ Jade_Service = require('../../services/Jade-Service')
 
 
 #used to understand better how jade compilation works (specialy how it compiles to java script)
-describe "services | Jade-Service.js", ()->
+describe "| services | Jade-Service |", ()->
 
     it 'check Jade-Service ctor', ()->
         using new Jade_Service(),->
@@ -84,9 +84,9 @@ describe "services | Jade-Service.js", ()->
 
           @.renderJadeFile('a').assert_Is("");
           @.renderJadeFile(helpJadeFile, { structure: []}).assert_Is_Not('')
-          @.renderJadeFile(helpJadeFile                  ).assert_Contains('<a href="/guest/about.html">About</a>')
-          @.renderJadeFile(helpJadeFile,{loggedIn:false} ).assert_Contains('<a href="/guest/about.html">About</a>')
-          @.renderJadeFile(helpJadeFile,{loggedIn:true}  ).assert_Not_Contains('<a href="/guest/about.html">About</a>')
+          @.renderJadeFile(helpJadeFile                  ).assert_Contains(    '<a id="nav-about" href="/guest/about.html">About</a>')
+          @.renderJadeFile(helpJadeFile,{loggedIn:false} ).assert_Contains(    '<a id="nav-about" href="/guest/about.html">About</a>')
+          @.renderJadeFile(helpJadeFile,{loggedIn:true}  ).assert_Not_Contains('<a id="nav-about" href="/guest/about.html">About</a>')
 
     it 'renderMixin', (done)->
       using new Jade_Service(),->

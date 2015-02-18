@@ -4,6 +4,7 @@ include ../mixins/getting-started-mixins
 block content
 	#application
 		#loginwall
+			+flare-alert
 			dl.tabs(data-tab='data-tab')
 				dd.active
 					a(href='#signup') Sign Up
@@ -11,7 +12,6 @@ block content
 					a(href='#login') Login
 			.tabs-content
 				#signup.content.active
-					+flare-alert
 					+sign-up-form
 				#login.content
 					+flare-alert

@@ -1,15 +1,16 @@
 extends ../_layouts/flare_page
+include ../mixins/links
 include ../mixins/user-mixins
 include ../mixins/application-mixins
 
 block content
 	#application
 		#left-nav
-			+links_user_pages
+			.bg
+				+links_user_pages
 		#results
 			+flare-alert
-			+user-details-heading
 			+user-details-display
-			br
+			+permanent-filters
 			+other-user-settings
 		#right-nav

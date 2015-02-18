@@ -1,12 +1,12 @@
 Article_Controller = require '../../controllers/Article-Controller'
 Express_Service    = require '../../services/Express-Service'
 Express_Session    = require('../../misc/Express-Session')
-app                = require '../../server'
 cheerio            = require 'cheerio'
 
 supertest = require 'supertest'
 
 describe '| services | Article-Controller.test', ->
+
   it 'constructor', (done)->
     using new Article_Controller(), ->
       @.jade_Article.assert_Is    '/source/jade/user/article.jade'
@@ -56,6 +56,38 @@ describe '| services | Article-Controller.test', ->
       @.graphService = graphService
       @.article()
 
+  it 'articles', (done)->
+
+    article_Id      = 'article-12345'
+    article_Title   = 'this is an title'
+    article_Summary = 'html summary is here'
+
+    req =
+
+    res =
+      send : (data)->
+        $ = cheerio.load(data)
+        $('#articles').html()
+        $('#articles').html().assert_Contains 'list-view-article'
+        $('#articles #list-view-article a').attr().assert_Is { href: '/article/article-12345', id: 'article-12345' }
+        $('#articles #list-view-article a h4').html().assert_Is 'this is an title'
+        $('#articles #list-view-article p').html().assert_Is 'html summary is here...'
+        done()
+
+    graphService =
+      articles: (callback)->
+        callback { article_Id: {
+                    guid    : "00000000-0000-0000-0000-000000026eca",
+                    title   : article_Title
+                    summary : article_Summary
+                    is      : "Article",
+                    id      : article_Id
+                  }}
+
+    using new Article_Controller(req,res), ->
+      @.graphService = graphService
+      @.articles()
+
   it 'recentArticles, recentArticles_add', (done)->
     article_Id    = 'id-aaaaaaaa'
     article_Title = 'title-bbbbb'
@@ -99,28 +131,17 @@ describe '| services | Article-Controller.test', ->
       @article()
 
 
-  describe 'using Express_Service | ',->
+  describe 'routes |',->
 
-    tmpSessionFile = './_tmp_Session'
-    app            = null
+    it 'register_Routes',->
+      route_Inner_Code = 'new Article_Controller(req, res, app.config, graph_Options)[method_Name]();'
+      routes = {}
+      app    =
+        get: (url, checkAuth,target)->
+          checkAuth.assert_Is_Function()
+          routes[url] = target
 
-    before (done)->
-      using new Express_Service(),->
-        @.add_Session(tmpSessionFile)
-        @.loginEnabled = false
-        @.app._router.stack.assert_Size_Is 3
-        Article_Controller.registerRoutes @.app, @
-        @.app._router.stack.assert_Size_Is 4
-        app = @.app
-        done()
-
-    after ->
-      tmpSessionFile.assert_File_Deleted()
-
-    it '/article/:id', (done)->
-        supertest(app).get('/article/aaaa')
-                      .end (err,res)->
-                        res.text.assert_Contains('<a href="/user/main.html">')    # article page ('post login')
-                                .assert_Contains('Oops')                          # only exists on the no-article page
-                        done()
-
+      Article_Controller.register_Routes app
+      routes.keys().assert_Is [ '/article/:id', '/articles' ]
+      routes['/article/:id'].source_Code().assert_Contains route_Inner_Code
+      routes['/articles'   ].source_Code().assert_Contains route_Inner_Code

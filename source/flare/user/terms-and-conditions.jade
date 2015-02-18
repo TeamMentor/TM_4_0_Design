@@ -1,8 +1,9 @@
 extends ../_layouts/flare_page_landing
+include ../mixins/articles-mixins
 
 block content
 	#application
 		#left-nav
 		#results
-			include:md ../../content/terms-and-conditions/terms-and-conditions.md
+			+terms-and-conditions
 		#right-nav

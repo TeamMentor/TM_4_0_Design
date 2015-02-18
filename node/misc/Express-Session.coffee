@@ -1,8 +1,10 @@
-Nedb    = require('nedb')
-
+Nedb = null
 
 class Express_Session
   constructor: (options, cb)->
+
+    Nedb    = require('nedb')
+
     callback = cb ||  ()->
     @.options = options || {}
     @.filename = @.options.filename || "_session_Data"

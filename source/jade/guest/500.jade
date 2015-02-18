@@ -1,0 +1,15 @@
+extends ../_layouts/page
+include ../_mixins/error-mixins.jade
+
+block content
+    #application
+        .row
+            .col-3
+                .lge-container
+                    br
+            .col-6
+                .lge-container
+                    +error_500
+            .col-3
+                .lge-container
+                    br

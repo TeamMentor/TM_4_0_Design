@@ -5,8 +5,14 @@ include ../mixins/application-mixins
 block content
 	#application
 		#left-nav
-			+links_user_pages
+			.bg
+				+links_user_pages
 		#results
-			h3 Add or Remove Permanent Filters
-			+flare-filters-div
+			.bg
+				h3 Add or Remove Permanent Filters
+				+flare-filters-div
+				br
+				.row
+					.small-12.medium-6.end.columns
+						+ok-button
 		#right-nav

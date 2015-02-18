@@ -1,44 +1,57 @@
-//- Flare User Details Heading
-mixin user-details-heading
-	.row
-		.small-12.large-9.columns
-			h3 User Details
-		.small-12.large-3.columns.text-center
-			br
-			a.action(href='user-edit')
-				+edit-icon
-
 //- Flare User Details Display
 mixin user-details-display
-	.row
-		.small-12.large-6.columns
-			+user-icon-no-text
-			|    Name
-			br
-			+company-icon
-			|    Title, Company
-			br
-			+group-id-icon
-			|    Group ID
-		.small-12.large-6.columns
-			+email-icon
-			|    Email
-			br
-			+navigate-icon-no-text
-			|    Location
-			br
-			+filter-icon
-			|    Permanent Filters
+	.bg
+		.row
+			.small-10.columns
+				h3 User Details
+			.small-2.columns
+				a.button.controls(href='/user-edit')
+					+edit-icon
+		.row
+			.small-12.columns
+				.label Name
+				p Name
+				br
+				.label Email
+				p Email
+				br
+		.row
+			.small-12.medium-6.columns
+				.label Title
+				p Title
+				br
+				.label Country
+				p Country
+				br
+			.small-12.large-6.columns
+				.label Company
+				p Company
+				br
+				.label State
+				p State
+				br
+
+// Permanent Filters
+mixin permanent-filters
+	.bg
+		.row
+			.small-10.columns
+				h3 Permanent Filters
+			.small-2.columns
+				a.action(href='user-add-filter')
+					+open-icon
+		+flare-filters-active
 
 //- Flare Other User Settings
 mixin other-user-settings
-	.row
-		.small-12.large-6.columns
-			a.action(href='user-new-password')
-				+new-pw-icon
-		.small-12.large-6.columns
-			a.action(href='user-add-filter')
-				+change-filters-icon
+	.bg
+		h3 Danger Zone
+		.row
+			.small-12.large-6.columns
+				a.button.controls(href='user-new-password')
+					+new-pw-icon
+			.small-12.large-6.columns
+				a.button.controls(href='#') Delete your account
 
 //- Flare Edit User Details
 mixin flare-edit-user-details
@@ -60,8 +73,9 @@ mixin flare-edit-user-details
 				+country-input
 			.small-12.large-6.columns
 				+state-input
+		br
 		.row
-			.small-12.columns
+			.small-12.medium-6.end.columns
 				+ok-button
 
 //- Flare Change Password
@@ -74,6 +88,7 @@ mixin flare-change-password
 		.row
 			.small-12.columns
 				+flare-new-password-input
+		br
 		.row
-			.small-12.columns
+			.small-12.medium-6.end.columns
 				+ok-button

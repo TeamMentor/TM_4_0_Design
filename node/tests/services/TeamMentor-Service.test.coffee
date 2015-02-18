@@ -3,7 +3,7 @@ path              = require('path')
 expect            = require("chai").expect
 TeamMentor_Service = require('../../services/TeamMentor-Service')
 
-describe "services > test-teamMentor-content.js", ()->
+describe "| services | TeamMentor-Service.test", ()->
 
     teamMentorContent = null
 

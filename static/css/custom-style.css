@@ -60,28 +60,16 @@ body > * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#article h1 {
-  margin-bottom: 0;
-  font-size: 2.5em;
-}
-#article h2 {
-  font-size: 2em;
-  padding: 0;
-  margin-bottom: 0;
-}
-#article p {
-  margin-top: 5px;
-}
 #toc-content h4 {
   padding-top: 100px;
   margin-top: -80px;
 }
 #about {
   background: url(../assets/stock-img/bg-img.jpg) no-repeat;
-  background-position: 0px -1350px;
+  background-position: 0px -1400px;
 }
 #about, #usp, #call-to-action {
-  padding: 100px 0;
+  padding: 40px 0;
   text-align: center;
   background-position: fixed;
   background-size: auto;
@@ -89,7 +77,6 @@ body > * {
 #about h2, #usp h2 p {
   color: #FFFFFF;
   line-height: 1.25em;
-  padding-top: 50px;
 }
 #about-us {
   padding: 40px 0 40px 0;
@@ -122,6 +109,9 @@ body > * {
   border-radius: 3px;
   margin-bottom: 20px;
   border: 1px solid #dbdbdb;
+}
+.bg h3 {
+  margin-top: 5px;
 }
 #copyright {
   max-height: 100%;
@@ -182,12 +172,13 @@ body > * {
 #form {
   border: 1px solid #dbdbdb;
   background: #fff;
+  margin-bottom: 20px;
 }
 #loginwall {
-  padding: 180px 0 0 0;
+  padding: 140px 0 0 0;
 }
 #landing-page {
-  margin-top: 160px;
+  margin-top: 120px;
   background: white;
   height: 100%;
 }
@@ -281,6 +272,7 @@ body > * {
 }
 img {
   height: auto;
+  width: 100%;
   margin: 0 auto;
 }
 /*------------------------------------*
@@ -310,9 +302,10 @@ img {
 }
 #tm-logo {
   background:url('../assets/logos/logos.png') no-repeat;
-  background-position: 0px 0px;
   height: 40px;
   margin: 0 auto;
+  background-position: top center;
+  margin-bottom: 10px;
 }
 #si-logo {
   background:url('../assets/logos/logos.png') no-repeat;
@@ -330,7 +323,16 @@ img {
   padding: 0;
 }
 #links.text-links ul li {
-  display: block;
+  display: inline-block;
+  margin-bottom: 5px;
+  width: 30%;
+}
+#links.text-links ul li:nth-child(n+4) {
+  padding-top: 10px;
+}
+#links button {
+  padding: 5px 20px;
+  width: 100%;
 }
 #links.icons {
   display: inline-block;
@@ -394,7 +396,6 @@ img {
   color: #6c9020;
 }
 table.nav {
-  border: 1px solid #dbdbdb;
   background: #fafafa;
   font-size: 14px;
 }
@@ -406,6 +407,7 @@ table.nav tr:hover {
 }
 table.nav td {
   padding: 5px 10px;
+  word-wrap: break-word;
 }
 table.nav td a {
   display:block;
@@ -566,9 +568,11 @@ hr {
 a {
   color: #444444;
   text-decoration: none;
+  outline: none;
 }
 a:hover, a:active, a:focus {
   color: #6c9020;
+  outline: none;
 }
 a.action {
   text-transform: uppercase;
@@ -710,6 +714,7 @@ button:hover, button:active {
   color: #8aaf3e;
   border: 1px solid #8aaf3e;
   font-size: inherit;
+  border-radius: 3px;
 }
 .filter {
   padding: 5px 5px 5px 9px;
@@ -743,6 +748,12 @@ table td {
   #application {
     margin-top: 60px;
   }
+  #about, #usp, #call-to-action {
+    padding: 100px 0;
+  }
+  #about h2, #usp h2 {
+    padding-top: 40px;
+  }
   #customer-navigation ul {
     text-align: left;
   }
@@ -757,6 +768,7 @@ table td {
     height: 60px;
   }
   #tm-logo {
+    background-position: 0px 0px;
     display: inline-block;
     float: left;
     margin: 7px 0 0 20px;
@@ -770,6 +782,9 @@ table td {
     width: 60%;
     float: right;
   }
+  #links button {
+    width: auto;
+  }
   #links.icons {
     padding-top: 20px;
     text-align: right;
@@ -778,7 +793,7 @@ table td {
     display: inline-block;
   }
   #links.text-links {
-    padding-top: 20px;
+    padding-top: 15px;
   }
   #links.text-links ul {
     text-align: right;
@@ -787,11 +802,14 @@ table td {
     display: inline !important;
     width: 100%;
   }
+  #links.text-links ul li:last-child {
+    padding-right: 15px;
+  }
   #links ul li a{
     font-size: 14px;
   }
   #loginwall {
-    padding: 100px 0 0 0;
+    padding: 90px 0 0 0;
   }
   #main-app-view {
     margin-top: 160px;
@@ -842,6 +860,24 @@ table td {
   span.rwd-line {
     display: inline;
   }
+}
+/*------------------------------------*
+  HACKS
+*------------------------------------*/
+#article h1.article-title {
+  font-size: 2.5em;
+  margin-bottom: 0;
+}
+#html > h1, #html > h2 {
+  font-size: 2em !important;
+  padding: 0;
+  margin-bottom: 0;
+}
+#article p {
+  margin-top: 5px;
+}
+#article a {
+  text-decoration: underline;
 }
 /*------------------------------------*
    GLYPHICONS

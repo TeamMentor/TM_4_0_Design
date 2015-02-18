@@ -9,12 +9,19 @@ include globals.jade
 - var user            = '/user'
 
 mixin links-navbar__landing-page
-	:markdown
-		* [About](/guest/about.html)
-		* [Features](/guest/features.html)
-		* [Help](/help/index.html)
-		* [Sign Up](/guest/sign-up.html)
-		* [Login](/guest/login.html)
+	ul
+		li
+			a#nav-about(href='/guest/about.html') About
+		li
+			a#nav-features(href='/guest/features.html') Features
+		li
+			a#nav-help(href='/help/index.html') Help
+		li
+			a#nav-sign-up(href='/guest/sign-up.html')
+				button Sign Up
+		li
+			a#nav-log-in(href='/guest/login.html')
+				button Login
 
 mixin links-navbar__home
 	ul

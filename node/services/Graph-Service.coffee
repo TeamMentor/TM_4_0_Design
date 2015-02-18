@@ -1,7 +1,7 @@
 require('fluentnode')
 fs            = require('fs')
 #Cache_Service = require('teammentor').Cache_Service
-class GraphService
+class Graph_Service
 
   constructor: (options)->
     @.options    = options || {}
@@ -10,6 +10,16 @@ class GraphService
     @.server     = @.options.server || 'http://localhost:1332'
     #@.cache      = new Cache_Service('graph-service')
 
+  article_Html: (article_Id, callback)=>
+    if not article_Id
+      callback ''
+    else
+      url_Article_Html = "#{@server}/data/article_Html/#{article_Id.url_Encode()}"
+      url_Article_Html.GET_Json callback
+
+  articles: (callback)=>
+    url = "#{@server}/data/articles/"
+    url.GET_Json callback
 
   server_Online: (callback)=>
     @.server.GET (html)->
@@ -18,13 +28,12 @@ class GraphService
   graphDataFromGraphDB: (queryId, filters, callback)=>
     if not queryId or queryId.trim() is ''
       callback {}
-      return
-
-    if filters
-      graphDataUrl = "#{@server}/data/query_tree_filtered/#{queryId.url_Encode()}/#{filters.url_Encode()}"
     else
-      graphDataUrl = "#{@server}/data/query_tree/#{queryId.url_Encode()}"
-    graphDataUrl.GET_Json callback
+      if filters
+        graphDataUrl = "#{@server}/data/query_tree_filtered/#{queryId.url_Encode()}/#{filters.url_Encode()}"
+      else
+        graphDataUrl = "#{@server}/data/query_tree/#{queryId.url_Encode()}"
+      graphDataUrl.GET_Json callback
 
   resolve_To_Ids: (values, callback)=>
     url = "#{@server}/convert/to_ids/#{values.url_Encode()}"
@@ -52,28 +61,13 @@ class GraphService
         url_Search.GET (search_Id)->
           callback search_Id
 
-  article_Html: (article_Id, callback)=>
-    if not article_Id
-      callback ''
-      return
-
-    url_Article_Html = "#{@server}/data/article_Html/#{article_Id.url_Encode()}"
-
-    url_Article_Html.GET_Json callback
-
-    #url_Article_Html.GET (data)->
-    #  try
-    #    callback data.json_Parse() || ''
-    #  catch
-    #    callback ''
-
   node_Data: (id, callback)=>
     if not id
       callback ''
       return
 
     url_Node_Data = "#{@server}/data/id/#{id.str().url_Encode()}"
-
+    
     url_Node_Data.GET_Json (json)->
       if json and json.values().not_Empty()
         callback json.values().first()
@@ -81,4 +75,4 @@ class GraphService
         callback {}
 
 
-module.exports = GraphService
+module.exports = Graph_Service

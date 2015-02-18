@@ -1,12 +1,17 @@
 supertest = require('supertest')
-app      = require('../../server')
-    
-describe 'routes | routes.test |', ()->
+
+describe '| routes | routes.test |', ()->
+    app =null
+
+    before ->
+      app      = require('../../tm-server')
+
     expectedPaths = [ '/',
                       '/flare/:area/:page',
                       '/flare/default',
                       '/Image/:name',
-                      '/article/:id'
+                      '/article/:id',
+                      '/articles',
                       '/search',
                       '/flare',
                       '/flare/all',
@@ -21,8 +26,6 @@ describe 'routes | routes.test |', ()->
                       '/passwordReset/:username/:token',
                       '/help/:page*',
                       '/index.html',
-                      #'/libraries',
-                      #'/library/:name',
                       '/user/login',
                       '/user/login',
                       '/user/logout',
@@ -30,6 +33,7 @@ describe 'routes | routes.test |', ()->
                       '/user/pwd_reset',
                       '/user/sign-up',
                       '/passwordReset/:username/:token'
+                      '/error',
                        '/poc'
                        '/*']
 
@@ -63,17 +67,18 @@ describe 'routes | routes.test |', ()->
                          .replace(':page','default')
                          .replace(':queryId','AAAA')
                          .replace(':filters','BBBB')
-                         .replace('.*','aaaaa')
+                         .replace('*','aaaaa')
 
       expectedStatus = 200;
       expectedStatus = 302 if ['','image','deploy'                           ].contains(path.split('/').second().lower())
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
-                               '/user/logout'                                ].contains(path)
-      expectedStatus = 403 if ['article', 'show','library','libraries'       ].contains(path.split('/').second().lower())
+                               '/user/logout', '/user/pwd_reset'             ].contains(path)
+      expectedStatus = 403 if ['article','articles','show'                   ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
       expectedStatus = 403 if ['/poc'                                        ].contains(path)
 
       expectedStatus = 404 if ['/aaaaa'                                      ].contains(path)
+      expectedStatus = 500 if ['/error'                                      ].contains(path)
 
       postRequest = ['/user/pwd_reset','/user/sign-up'                       ].contains(path)
 

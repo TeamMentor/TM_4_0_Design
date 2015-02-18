@@ -32,6 +32,7 @@ mixin open-icon
 			a(href='#') PHP
 		li
 			a(href='#') Scala
+
 mixin search-icon
 	i.fi-magnifying-glass
 
@@ -43,7 +44,6 @@ mixin clear-icon
 
 mixin edit-icon
 	i.fi-pencil
-	|     Edit Details
 
 mixin new-pw-icon
 	i.fi-key
@@ -58,18 +58,6 @@ mixin navigate-icon
 
 mixin help-icon
 	i.fi-info
-
-mixin user-icon
-	i.fi-torso
-
-mixin company-icon
-	i.fi-lock
-
-mixin group-id-icon
-	i.fi-star
-
-mixin email-icon
-	i.fi-at-sign
 
 mixin articles-icon
 	i.fi-book
@@ -98,10 +86,10 @@ mixin flare-new-password-input
 	label
 		| New Password
 	.row.collapse
-		.small-9.columns
+		.small-10.columns
 			input(type='password', placeholder='New Password')
-		.small-3.columns
-			.button.postfix#save-button(href='#') Show
+		.small-2.columns
+			.button.postfix#show-button(href='#') Show
 
 mixin password-input
 	label
@@ -385,7 +373,7 @@ mixin edit-button
 
 //- Alert System
 mixin flare-alert
-	.alert(data-alert='')
+	.alert-box(data-alert='')
 		| Error, Validation or Alert Message Here
 		a.close(href='#') ×
 

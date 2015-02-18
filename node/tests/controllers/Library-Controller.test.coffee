@@ -2,11 +2,10 @@ fs                 = require('fs')
 path               = require('path')
 cheerio            = require('cheerio')
 expect             = require('chai').expect
-app                = require('../../server')
 Config             = require('../../misc/Config')
 Library_Controller = require('../../controllers/Library-Controller')
 
-describe 'controllers | Library-Controller.test.js |', ()->
+describe '| controllers | Library-Controller.test.js |', ()->
     describe 'internal Functions.js |', ()->
 
         @timeout(15000)  # give 15 secs to start the TM 3.5 server

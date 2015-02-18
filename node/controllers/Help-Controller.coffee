@@ -1,18 +1,22 @@
-require 'fluentnode'
-fs                 = require('fs')
-marked             = require('marked')
-request            = require('request')
-Express_Service    = require('../services/Express-Service')
-Jade_Service       = require('../services/Jade-Service')
-TeamMentor_Service = require('../services/TeamMentor-Service');
-
+fs                 = null
+marked             = null
+request            = null
+Express_Service    = null
+Jade_Service       = null
+TeamMentor_Service = null
 
 content_cache = {};
-#libraryData    = new TeamMentor_Service().getLibraryData_FromCache();
-#library        = libraryData.first();
 
 class Help_Controller
+
   constructor: (req, res)->
+    fs                 = require('fs')
+    marked             = require('marked')
+    request            = require('request')
+    Express_Service    = require('../services/Express-Service')
+    Jade_Service       = require('../services/Jade-Service')
+    TeamMentor_Service = require('../services/TeamMentor-Service');
+
     @.page          = if (req and req.params) then req.params.page else null
     @.pageParams    = {}
     @.req           = req
@@ -80,5 +84,4 @@ class Help_Controller
     gitHubImagePath = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/';
     @.res.redirect(gitHubImagePath + @.req.params.name);
 
-
-module.exports = Help_Controller;
+module.exports = Help_Controller

@@ -1,6 +1,6 @@
 Logger_Service = require('./../../services/Logger-Service')
 
-describe 'Logger-Service.test', ->
+describe '| services | Logger-Service.test |', ->
 
   it 'constructor()',->
     using new Logger_Service(),->
