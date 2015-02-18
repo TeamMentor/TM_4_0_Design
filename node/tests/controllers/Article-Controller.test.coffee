@@ -99,28 +99,17 @@ describe '| services | Article-Controller.test', ->
       @article()
 
 
-  describe 'using Express_Service | ',->
+  describe 'routes |',->
 
-    tmpSessionFile = './_tmp_Session'
-    app            = null
+    it 'register_Routes',->
+      route_Inner_Code = 'new Article_Controller(req, res, app.config, graph_Options)[method_Name]();'
+      routes = {}
+      app    =
+        get: (url, checkAuth,target)->
+          checkAuth.assert_Is_Function()
+          routes[url] = target
 
-    before (done)->
-      graph_Options = { server: 'http://aaaa.localhost'}
-      using new Express_Service(),->
-        @.add_Session(tmpSessionFile)
-        @.loginEnabled = false
-        @.app._router.stack.assert_Size_Is 3
-        Article_Controller.registerRoutes @.app, @, graph_Options
-        @.app._router.stack.assert_Size_Is 4
-        app = @.app
-        done()
-
-    after ->
-      tmpSessionFile.assert_File_Deleted()
-
-    it '/article/:id', (done)->
-      supertest(app).get('/article/aaaa')
-                    .end (err,res)->
-                        res.text.assert_Contains('<a href="/user/main.html">')    # article page ('post login')
-                                .assert_Contains('Oops')                          # only exists on the no-article page
-                        done()
+      Article_Controller.register_Routes app
+      routes.keys().assert_Is [ '/article/:id', '/articles' ]
+      routes['/article/:id'].source_Code().assert_Contains route_Inner_Code
+      routes['/articles'   ].source_Code().assert_Contains route_Inner_Code

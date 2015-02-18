@@ -1,7 +1,7 @@
 require 'fluentnode'
 
-app    = require '../tm-server'
-expect =  null
+app    = null
+expect = null
 
 describe "| tm-server.test |", ->
 

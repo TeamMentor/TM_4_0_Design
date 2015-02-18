@@ -44,17 +44,16 @@ class Article_Controller
     @.req.session.recent_Articles ?= []
     @.req.session.recent_Articles.unshift { id: id , title:title}
 
-Article_Controller.registerRoutes = (app, expressService,graph_Options) ->
+Article_Controller.register_Routes = (app, expressService,graph_Options) ->
 
-  expressService ?= new Express_Service()
-  checkAuth       =  (req,res,next) -> expressService.checkAuth(req, res,next, app?.config)
+  checkAuth       =  (req,res,next) -> expressService.checkAuth(req, res, next, app?.config)
 
   articleController = (method_Name) ->                                  # pins method_Name value
         return (req, res) ->                                             # returns function for express
             new Article_Controller(req, res, app.config,graph_Options)[method_Name]()    # creates SearchController object with live
 
 
-  app.get "/article/:id"         , checkAuth, articleController('article')
+  app.get "/article/:id"  , checkAuth, articleController('article')
 
 
 module.exports = Article_Controller

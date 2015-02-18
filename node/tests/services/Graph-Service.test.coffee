@@ -26,18 +26,20 @@ describe 'services | Graph-Service.test |', ->
     server.close_And_Destroy_Sockets ()->
       done()
 
-  it 'server_Online (on live server)', (done)->
-    using graphService,->
-      @.server.assert_Is test_Server
-      @.server_Online (online)->
-        online.assert_True()
-        done()
+  it 'article_Html (bad id)', (done)->
+    graphService.article_Html null,  (data)=>
+      data.assert_Is ''
+      done()
 
-  it 'server_Online (on not live server)', (done)->
-    using new Graph_Service({ server: 'http://aaaa.bbbb.ccc.ddd'}),->
-      @.server_Online (online)->
-        online.assert_False()
-        done()
+  it 'article_Html (good id)', (done)->
+    server.respond_With_Request_Url()
+    article_Id = 'abc_'.add_5_Letters()
+    graphService.article_Html article_Id,  (data)=>
+      data.url.assert_Is "/data/article_Html/#{article_Id}"
+      done()
+
+
+
 
   it 'graphDataFromGraphDB (no queryId and no filters)', (done)->
     graphService.graphDataFromGraphDB null, null,  (searchData)=>
@@ -104,18 +106,6 @@ describe 'services | Graph-Service.test |', ->
       data.json_Parse().url.assert_Is "/search/query_from_text_search/#{text}"
       done()
 
-   it 'article_Html (bad id)', (done)->
-    graphService.article_Html null,  (data)=>
-      data.assert_Is ''
-      done()
-
-  it 'article_Html (good id)', (done)->
-    server.respond_With_Request_Url()
-    article_Id = 'abc_'.add_5_Letters()
-    graphService.article_Html article_Id,  (data)=>
-      data.url.assert_Is "/data/article_Html/#{article_Id}"
-      done()
-
    it 'node_Data (bad id)', (done)->
     graphService.node_Data null,  (data)=>
       data.assert_Is ''
@@ -134,3 +124,16 @@ describe 'services | Graph-Service.test |', ->
     graphService.node_Data article_Id,  (data)=>
       data.assert_Is {}
       done()
+
+  it 'server_Online (on live server)', (done)->
+    using graphService,->
+      @.server.assert_Is test_Server
+      @.server_Online (online)->
+        online.assert_True()
+        done()
+
+  it 'server_Online (on not live server)', (done)->
+    using new Graph_Service({ server: 'http://aaaa.bbbb.ccc.ddd'}),->
+      @.server_Online (online)->
+        online.assert_False()
+        done()

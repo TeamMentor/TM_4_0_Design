@@ -10,6 +10,12 @@ class Graph_Service
     @.server     = @.options.server || 'http://localhost:1332'
     #@.cache      = new Cache_Service('graph-service')
 
+  article_Html: (article_Id, callback)=>
+    if not article_Id
+      callback ''
+    else
+      url_Article_Html = "#{@server}/data/article_Html/#{article_Id.url_Encode()}"
+      url_Article_Html.GET_Json callback
 
   server_Online: (callback)=>
     @.server.GET (html)->
@@ -18,13 +24,12 @@ class Graph_Service
   graphDataFromGraphDB: (queryId, filters, callback)=>
     if not queryId or queryId.trim() is ''
       callback {}
-      return
-
-    if filters
-      graphDataUrl = "#{@server}/data/query_tree_filtered/#{queryId.url_Encode()}/#{filters.url_Encode()}"
     else
-      graphDataUrl = "#{@server}/data/query_tree/#{queryId.url_Encode()}"
-    graphDataUrl.GET_Json callback
+      if filters
+        graphDataUrl = "#{@server}/data/query_tree_filtered/#{queryId.url_Encode()}/#{filters.url_Encode()}"
+      else
+        graphDataUrl = "#{@server}/data/query_tree/#{queryId.url_Encode()}"
+      graphDataUrl.GET_Json callback
 
   resolve_To_Ids: (values, callback)=>
     url = "#{@server}/convert/to_ids/#{values.url_Encode()}"
@@ -51,21 +56,6 @@ class Graph_Service
       else
         url_Search.GET (search_Id)->
           callback search_Id
-
-  article_Html: (article_Id, callback)=>
-    if not article_Id
-      callback ''
-      return
-
-    url_Article_Html = "#{@server}/data/article_Html/#{article_Id.url_Encode()}"
-
-    url_Article_Html.GET_Json callback
-
-    #url_Article_Html.GET (data)->
-    #  try
-    #    callback data.json_Parse() || ''
-    #  catch
-    #    callback ''
 
   node_Data: (id, callback)=>
     if not id
