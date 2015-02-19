@@ -38,6 +38,13 @@ describe '| services | Graph-Service.test |', ->
       data.url.assert_Is "/data/article_Html/#{article_Id}"
       done()
 
+  it 'article', (done)->
+    server.respond_With_Request_Url()
+    ref = 'abc_'.add_5_Letters()
+    graphService.article ref, (data)=>
+      data.url.assert_Is "/data/article/#{ref}"
+      done()
+
   it 'articles', (done)->
     graphService.articles (data)=>
       data.assert_Is { url: '/data/articles/' }
