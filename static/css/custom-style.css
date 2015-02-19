@@ -325,7 +325,7 @@ img {
 #links.text-links ul li {
   display: inline-block;
   margin: 0 10px 5px 0;
-  font-size:10px;
+  font-size:8px;
 }
 #links.text-links ul li:last-child {
   margin-right: 0;
