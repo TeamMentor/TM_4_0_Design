@@ -862,11 +862,11 @@ table td {
   HACKS
 *------------------------------------*/
 #article h1.article-title {
-  font-size: 2.5em;
+  font-size: 2em;
   margin-bottom: 0;
 }
 #html > h1, #html > h2 {
-  font-size: 2em !important;
+  font-size: 1.5em !important;
   padding: 0;
   margin-bottom: 0;
 }
