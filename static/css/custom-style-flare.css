@@ -22,6 +22,8 @@ nav {
   z-index: 99;
   background: white;
   border: 1px solid #dbdbdb;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 nav a, nav p {
   color: #8aaf3e;
@@ -168,6 +170,12 @@ nav a:hover, nav p:hover {
   padding: 5px 3px 2px;
   border-radius: 3px;
 }
+#search-bar .button i {
+  color: #8aaf3e;
+}
+#search-bar .button:hover i {
+  color: #b4cf7b;
+}
 #left-nav, #results, #right-nav {
   padding: 2px;
 }
@@ -182,7 +190,7 @@ nav a:hover, nav p:hover {
 }
 #results {
   -webkit-flex: 100%;
-  -webkit-order: 9;
+  -webkit-order: 10;
   display: block;
   min-height: 1px;
   overflow-y: auto;
@@ -265,13 +273,13 @@ nav a:hover, nav p:hover {
   color: #444444;
 }
 #right-nav {
-  -webkit-order: 10;
+  -webkit-order: 9;
   -webkit-flex: 100%;
   overflow-y: auto;
   min-height: 1px;
 }
 #landing-page {
-  height: 90%;
+  height: 100%;
   -webkit-order: 6;
   -webkit-flex: 100%;
   display: -webkit-flex;
@@ -417,12 +425,12 @@ ul.side-nav li {
 ul.side-nav li:last-child {
   border-bottom:1px solid #dbdbdb;
 }
-ul.side-nav li:hover {
-  background-color: #dbdbdb;
-}
 ul.side-nav li a {
   display: block;
   text-decoration: none;
+}
+ul.side-nav li a:hover {
+  background-color: #dbdbdb;
 }
 ul.side-nav span.badge {
   margin: 0 auto;
