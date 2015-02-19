@@ -582,12 +582,12 @@ a.action:hover, a.action:focus, a.action:active {
   color: #49661f;
 }
 a.minor{
-  color: #aaaaaa;
+  color: #8aaf3e;
   text-decoration: none;
   font-size: 14px;
 }
 a.minor:hover {
-  color: #444444;
+  color: #b4cf7b;
 }
 .text-center {
   text-align: center;
