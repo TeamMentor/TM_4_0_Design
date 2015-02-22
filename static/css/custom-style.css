@@ -325,7 +325,7 @@ img {
 #links.text-links ul li {
   display: inline-block;
   margin: 0 10px 5px 0;
-  font-size:8px;
+  font-size: 10px;
 }
 #links.text-links ul li:last-child {
   margin-right: 0;
@@ -335,7 +335,7 @@ img {
 }
 #links.icons ul li {
   display: inline-block;
-  font-size: 10px;
+  font-size: 12px;
 }
 #links.icons ul li i {
   padding-right: 5px
@@ -790,7 +790,7 @@ table td {
     display: inline-block;
   }
   #links.text-links {
-    padding-top: 15px;
+    padding-top: 20px;
   }
   #links.text-links ul {
     text-align: right;
