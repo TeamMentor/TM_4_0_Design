@@ -65,8 +65,8 @@ Article_Controller.register_Routes = (app, expressService,graph_Options) ->
             new Article_Controller(req, res, app.config,graph_Options)[method_Name]()    # creates SearchController object with live
 
 
-  app.get "/article/:ref" , checkAuth, articleController('article')
-  app.get "/articles"     , checkAuth, articleController('articles')
-
+  app.get "/article/:ref/:title", checkAuth, articleController('article')
+  app.get "/article/:ref"       , checkAuth, articleController('article')
+  app.get "/articles"           , checkAuth, articleController('articles')
 
 module.exports = Article_Controller

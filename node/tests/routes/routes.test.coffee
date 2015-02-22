@@ -10,6 +10,7 @@ describe '| routes | routes.test |', ()->
                       '/flare/:area/:page',
                       '/flare/default',
                       '/Image/:name',
+                      '/article/:ref/:title',
                       '/article/:ref',
                       '/articles',
                       '/search',

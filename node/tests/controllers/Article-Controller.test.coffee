@@ -146,6 +146,7 @@ describe '| services | Article-Controller.test', ->
           routes[url] = target
 
       Article_Controller.register_Routes app
-      routes.keys().assert_Is [ '/article/:ref', '/articles' ]
-      routes['/article/:ref'].source_Code().assert_Contains route_Inner_Code
-      routes['/articles'   ].source_Code().assert_Contains route_Inner_Code
+      routes.keys().assert_Is [ '/article/:ref/:title','/article/:ref', '/articles' ]
+      routes['/article/:ref/:title'].source_Code().assert_Contains route_Inner_Code
+      routes['/article/:ref'       ].source_Code().assert_Contains route_Inner_Code
+      routes['/articles'           ].source_Code().assert_Contains route_Inner_Code
