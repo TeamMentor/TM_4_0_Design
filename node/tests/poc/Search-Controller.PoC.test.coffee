@@ -2,7 +2,7 @@ Search_Controller_PoC = require '../../poc/Search-Controller.PoC'
 Express_Service       = require('../../services/Express-Service')
 supertest             = require('supertest')
 
-describe 'poc | Search-Controller.PoC.test' ,->
+describe '| poc | Search-Controller.PoC.test' ,->
   tmpSessionFile = './_tmp_Session'
 
   after ->
