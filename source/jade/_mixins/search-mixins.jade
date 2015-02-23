@@ -142,3 +142,23 @@ mixin filters-div
                                     td
                                         a(href=href + '/'+result.id)= result.title
                                             span.right.badge= result.size
+
+mixin filters-div-2
+    if filters
+        #filters
+            .bg
+                h3 Filter by
+                for filter in filters
+                    h4.label= filter.title
+                    ul.side-nav
+                        for result in filter.results
+                            if activeFilter && result.id == activeFilter.id
+                                a(href= href )
+                                    li
+                                        b= result.title
+                                        span.right.badge= result.size
+                            else
+                                a(href=href + '/'+result.id)
+                                    li
+                                        = result.title
+                                        span.right.badge= result.size

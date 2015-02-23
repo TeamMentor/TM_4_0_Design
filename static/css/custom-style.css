@@ -325,7 +325,7 @@ img {
 #links.text-links ul li {
   display: inline-block;
   margin: 0 10px 5px 0;
-  font-size: 10px;
+  font-size: 11px;
 }
 #links.text-links ul li:last-child {
   margin-right: 0;
@@ -408,6 +408,37 @@ table.nav td {
 }
 table.nav td a {
   display:block;
+}
+ul.side-nav {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-position: outside;
+  font-size: 14px;
+  background: #fafafa;
+  border-radius: 3px;
+  margin-top: -5px;
+}
+ul.side-nav li {
+  padding: 7px;
+  border-bottom: none;
+  border: 1px solid #dbdbdb;
+  border-bottom: none;
+}
+ul.side-nav li:last-child {
+}
+ul.side-nav li a {
+  display: block;
+  text-decoration: none;
+}
+ul.side-nav li:hover {
+  background-color: #dbdbdb;
+}
+ul.side-nav span.badge {
+  margin: 0 auto;
+  vertical-align: middle;
+  float: right;
 }
 /*------------------------------------*
    FORMS
