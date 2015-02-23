@@ -22,7 +22,6 @@ nav {
   z-index: 99;
   background: white;
   border: 1px solid #dbdbdb;
-  margin-bottom: 10px;
   padding-bottom: 10px;
 }
 nav a, nav p {
@@ -125,6 +124,7 @@ nav a:hover, nav p:hover {
   -webkit-flex: 100%;
   text-align: center;
   list-style-type: none;
+  display: none;
 }
 #lp-links button {
   width: auto;
@@ -291,29 +291,34 @@ nav a:hover, nav p:hover {
   background: white;
 }
 #about {
-  background: url(../assets/stock-img/bg-img.jpg);
-  background-position: 0px 600px;
-  height: 300px;
+  background-image: url(../assets/stock-img/bg-img-small.jpg);
+  height: auto;
+  background-position: 0px 900px;
+  text-align: center;
+  padding-bottom: 5%;
 }
-#usp h2, #about h2 {
-  padding-top: 5%;
+#about h2 {
+  padding-top: 7%;
   color: white;
+  font-size: 24px;
 }
-#about h2, #usp h2, #call-to-action h1  {
-  color: #FFFFFF;
+#call-to-action h1 {
+  padding-top: 10%;
+  color: white;
+  font-size: 24px;
 }
-#about h2, #usp h2, #call-to-action h1, #clients, #features h2, #footer, #reasons h2 {
+#clients, #features h2, #reasons h2 {
   text-align: center;
 }
 #about-us {
-  padding: 40px 0 40px 0;
+  padding: 40px 0 10px 0;
 }
 #call-to-action {
-  padding: 100px 0 110px 0;
-  background: url(../assets/stock-img/bg-img.jpg);
-  background-position: 0px 1200px;
-  background-color: #49661f;
+  background-image: url(../assets/stock-img/bg-img-small.jpg);
+  background-position: 0px 1120px;
+  height: auto;
   text-align: center;
+  padding-bottom: 6%;
 }
 #clients {
   padding: 40px 0 80px 0;
@@ -327,6 +332,7 @@ nav a:hover, nav p:hover {
 }
 #footer {
   padding: 5px 0 15px 0;
+  text-align: center;
 }
 #footer ul {
   list-style: none;
@@ -348,11 +354,16 @@ nav a:hover, nav p:hover {
   z-index: 5;
 }
 #usp {
-  background: url(../assets/stock-img/bg-img.jpg);
+  background-image: url(../assets/stock-img/bg-img-small.jpg);
   background-position: 0px 0px;
-  padding-bottom: 100px;
   z-index: 4;
   text-align: center;
+  height: auto;
+  padding-bottom: 5%;
+}
+#usp h2 {
+  color: white;
+  font-size: 24px;
 }
 #si-logo {
   background:url('../assets/logos/logos.png') no-repeat;
@@ -883,26 +894,60 @@ input#search:active, input#search:focus {
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
-
+@media only screen and (min-width : 600px) {
+  #usp, #call-to-action, #about {
+    background-image: url(../assets/stock-img/bg-img-medium.jpg);
+  }
+  #usp {
+    background-position: 0px 1000px;
+    height: auto;
+    padding-bottom: 5%;
+  }
+  #call-to-action {
+    background-position: 0px 700px;
+  }
+  #about {
+    background-position: 0px 350px;
+  }
+  #usp h2 {
+    padding-top: 2%;
+    font-size: 1.75em;
+  }
+  #call-to-action h1 {
+    padding-top: 7%;
+  }
+}
 @media only screen and (min-width : 900px) {
+  #usp, #call-to-action, #about {
+    background-image: url(../assets/stock-img/bg-img-large.jpg);
+  }
+  #about {
+    background-position: 0px 600px;
+  }
+  #call-to-action {
+    background-position: 0px 1100px;
+  }
+  #usp {
+    background-position: 0px -300px;
+  }
   h1 {
-    font-size: 3em;
+    font-size: 3em !important;
     line-height: 1.5em;
   }
   h2 {
-    font-size: 2.25em;
+    font-size: 2.25em !important;
     line-height: 1.5em;
   }
   h3 {
-    font-size: 1.75em;
+    font-size: 1.75em !important;
     line-height: 1.5em;
   }
   h4 {
-    font-size: 1.125em;
+    font-size: 1.125em !important;
     line-height: 1.5em;
   }
   h5 {
-    font-size: 1em;
+    font-size: 1em !important;
     line-height: 1em;
   }
   #application {
@@ -938,6 +983,7 @@ input#search:active, input#search:focus {
     -webkit-order: 4;
     text-align: right;
     flex: 2;
+    display: block;
   }
   #lp-links li {
     display: inline-block;
