@@ -1,7 +1,7 @@
 Express_Session = require('../../misc/Express-Session')
 session         = require('express-session')
 
-describe 'services | Express-Session.test', ()->
+describe '| misc | Express-Session.test', ()->
   it 'constructor',->
     using new Express_Session(),->
       @.filename.assert_Is('_session_Data')

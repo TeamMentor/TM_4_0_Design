@@ -3,7 +3,6 @@ Jade_Service     = null
 Graph_Service    = null
 Config           = null
 
-
 class Article_Controller
   constructor: (req, res, config,graph_Options)->
 
@@ -21,16 +20,24 @@ class Article_Controller
     @.graphService     = new Graph_Service(graph_Options)
 
   article: =>
-    article_Id = @req.params.id
-    @graphService.node_Data article_Id, (article_Data)=>
-      if article_Data and article_Data.title
-        title = article_Data.title
-        @graphService.article_Html article_Id, (html)=>
-          @recentArticles_Add article_Id, title
-          view_Model = { id : article_Id, title: title,  article_Html: html}
-          @res.send @jade_Service.renderJadeFile(@jade_Article, view_Model)
+    send_Article = (view_Model)=>
+      if view_Model
+        @res.send @jade_Service.renderJadeFile(@jade_Article, view_Model)
       else
         @res.send @jade_Service.renderJadeFile(@jade_No_Article)
+
+    article_Ref = @req.params.ref
+
+    @.graphService.article article_Ref, (data)=>
+      article_Id = data.article_Id
+      if article_Id
+        @graphService.node_Data article_Id, (article_Data)=>
+            title = article_Data?.title
+            @graphService.article_Html article_Id, (data)=>
+              @recentArticles_Add article_Id, title
+              send_Article { id : article_Id, title: title,  article_Html: data.html}
+      else
+        send_Article null
 
   articles: =>
     @graphService.articles (articles)=>
@@ -58,8 +65,8 @@ Article_Controller.register_Routes = (app, expressService,graph_Options) ->
             new Article_Controller(req, res, app.config,graph_Options)[method_Name]()    # creates SearchController object with live
 
 
-  app.get "/article/:id"  , checkAuth, articleController('article')
-  app.get "/articles"     , checkAuth, articleController('articles')
-
+  app.get "/article/:ref/:title", checkAuth, articleController('article')
+  app.get "/article/:ref"       , checkAuth, articleController('article')
+  app.get "/articles"           , checkAuth, articleController('articles')
 
 module.exports = Article_Controller

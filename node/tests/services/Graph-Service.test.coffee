@@ -38,6 +38,13 @@ describe '| services | Graph-Service.test |', ->
       data.url.assert_Is "/data/article_Html/#{article_Id}"
       done()
 
+  it 'article', (done)->
+    server.respond_With_Request_Url()
+    ref = 'abc_'.add_5_Letters()
+    graphService.article ref, (data)=>
+      data.url.assert_Is "/data/article/#{ref}"
+      done()
+
   it 'articles', (done)->
     graphService.articles (data)=>
       data.assert_Is { url: '/data/articles/' }
@@ -95,8 +102,8 @@ describe '| services | Graph-Service.test |', ->
       assert_Is_Null data
       done()
 
-  it 'query_From_Text_Search (to_ids returns a valid mapping)', (done)->
-    mappings = {'aaa': id :'123'.add_5_Letters()}
+  it 'query_From_Text_Search (to_ids returns a valid mapping with "query-")', (done)->
+    mappings = {'aaa': id :'query-'.add_5_Letters()}
     server.respond_With_Object_As_Json mappings
     text = 'abc_'.add_5_Letters()
     graphService.query_From_Text_Search text,  (data)=>

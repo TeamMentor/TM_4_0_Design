@@ -17,6 +17,13 @@ class Graph_Service
       url_Article_Html = "#{@server}/data/article_Html/#{article_Id.url_Encode()}"
       url_Article_Html.GET_Json callback
 
+  article: (article_Ref, callback)=>
+    if not article_Ref
+      callback ''
+    else
+      url_Article = "#{@server}/data/article/#{article_Ref.str().url_Encode()}"
+      url_Article.GET_Json callback
+
   articles: (callback)=>
     url = "#{@server}/data/articles/"
     url.GET_Json callback
@@ -55,7 +62,7 @@ class Graph_Service
 
     url_Convert.GET_Json (json)->
       mapping = json[json.keys().first()]
-      if mapping?.id
+      if mapping?.id?.contains 'query-'
         callback mapping.id
       else
         url_Search.GET (search_Id)->

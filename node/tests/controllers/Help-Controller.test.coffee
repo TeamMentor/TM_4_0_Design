@@ -21,10 +21,10 @@ describe '| controllers | Help-Controller.test', ()->
 
   describe 'methods',->
 
-    before (done)->
-      skip_Tests_If_Offline @.test.parent, done
+    #before (done)->
+    #  skip_Tests_If_Offline @.test.parent, done
 
-    it 'ctor', ()->
+    it 'ctor', (done)->
       req = { a :42 }
       res = { b: 42 }
       using new Help_Controller(req,res),->
@@ -37,6 +37,7 @@ describe '| controllers | Help-Controller.test', ()->
         assert_Is_Null(@.content)
         assert_Is_Null(@.page)
         assert_Is_Null(@.title)
+        done()
 
     res = (text, done)->
             { status: (value)->

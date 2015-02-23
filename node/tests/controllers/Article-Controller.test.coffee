@@ -15,7 +15,7 @@ describe '| services | Article-Controller.test', ->
 
   it 'article (bad id)', (done)->
     req =
-      params: id: 123
+      params: ref: 123
       session: recent_Articles: []
     res =
       send : (data)->
@@ -34,7 +34,7 @@ describe '| services | Article-Controller.test', ->
     article_Html  = 'html is here'
 
     req =
-      params: id: article_Id
+      params: ref: article_Id
       session: recent_Articles: []
 
     res =
@@ -45,12 +45,15 @@ describe '| services | Article-Controller.test', ->
         done()
 
     graphService =
+      article:  (id, callback)->
+        if id is article_Id
+          callback { article_Id: id }
       node_Data: (id, callback)->
         if id is article_Id
           callback { title: article_Title }
       article_Html: (id, callback)->
         if id is article_Id
-          callback article_Html
+          callback { html: article_Html }
 
     using new Article_Controller(req,res), ->
       @.graphService = graphService
@@ -99,8 +102,9 @@ describe '| services | Article-Controller.test', ->
     res = {}
 
     graphService =
-      node_Data   : (id, callback) -> callback {title: article_Title }
-      article_Html: (id, callback) -> callback null
+      article     : (id, callback) -> callback {article_Id: article_Id }
+      node_Data   : (id, callback) -> callback {title     : article_Title }
+      article_Html: (id, callback) -> callback {html      : null }
 
     using new Article_Controller(req,res), ->
       @recentArticles().assert_Is []                        # check default value and using recentArticles_Add directly
@@ -142,6 +146,7 @@ describe '| services | Article-Controller.test', ->
           routes[url] = target
 
       Article_Controller.register_Routes app
-      routes.keys().assert_Is [ '/article/:id', '/articles' ]
-      routes['/article/:id'].source_Code().assert_Contains route_Inner_Code
-      routes['/articles'   ].source_Code().assert_Contains route_Inner_Code
+      routes.keys().assert_Is [ '/article/:ref/:title','/article/:ref', '/articles' ]
+      routes['/article/:ref/:title'].source_Code().assert_Contains route_Inner_Code
+      routes['/article/:ref'       ].source_Code().assert_Contains route_Inner_Code
+      routes['/articles'           ].source_Code().assert_Contains route_Inner_Code

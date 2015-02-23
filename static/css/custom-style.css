@@ -85,7 +85,7 @@ body > * {
 #application {
   width: 100%;
   max-height: 100%;
-  margin-top: 160px;
+  margin-top: 80px;
   background: #fafafa;
 }
 #call-to-action {
@@ -175,10 +175,10 @@ body > * {
   margin-bottom: 20px;
 }
 #loginwall {
-  padding: 140px 0 0 0;
+  padding: 90px 0 0 0;
 }
 #landing-page {
-  margin-top: 120px;
+  margin-top: 70px;
   background: white;
   height: 100%;
 }
@@ -206,7 +206,7 @@ body > * {
   margin: 0 auto;
 }
 #main-app-view {
-  margin-top: 110px;
+  margin-top: 130px;
 }
 #reasons {
   padding-top: 40px;
@@ -217,7 +217,7 @@ body > * {
 }
 #results {
   background: white;
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
   border-radius: 3px;
   border: 1px solid #dbdbdb;
   width: 100%;
@@ -239,7 +239,7 @@ body > * {
   background: #fafafa;
   width: 100%;
   position: fixed;
-  top: 140px;
+  top: 80px;
   left: 0;
   z-index: 96;
 }
@@ -316,7 +316,7 @@ img {
 }
 #links {
   text-align: text-center;
-  padding: 0 10px 5px 0;
+  width: 100%;
 }
 #links ul {
   list-style-type: none;
@@ -324,21 +324,18 @@ img {
 }
 #links.text-links ul li {
   display: inline-block;
-  margin-bottom: 5px;
-  width: 30%;
+  margin: 0 10px 5px 0;
+  font-size:8px;
 }
-#links.text-links ul li:nth-child(n+4) {
-  padding-top: 10px;
-}
-#links button {
-  padding: 5px 20px;
-  width: 100%;
+#links.text-links ul li:last-child {
+  margin-right: 0;
 }
 #links.icons {
   display: inline-block;
 }
 #links.icons ul li {
-  display: block;
+  display: inline-block;
+  font-size: 10px;
 }
 #links.icons ul li i {
   padding-right: 5px
@@ -549,11 +546,11 @@ pre {
   display: block;
   padding: 20px;
   line-height: 1.5;
-  color: $grey;
+  color: #aaaaaa;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: $off-white;
-  border: 1px solid $light-grey;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
   border-radius: $border;
   margin: 30px 0 30px 0;
   overflow: auto;
@@ -585,12 +582,12 @@ a.action:hover, a.action:focus, a.action:active {
   color: #49661f;
 }
 a.minor{
-  color: #aaaaaa;
+  color: #8aaf3e;
   text-decoration: none;
   font-size: 14px;
 }
 a.minor:hover {
-  color: #444444;
+  color: #b4cf7b;
 }
 .text-center {
   text-align: center;
@@ -865,11 +862,11 @@ table td {
   HACKS
 *------------------------------------*/
 #article h1.article-title {
-  font-size: 2.5em;
+  font-size: 2em;
   margin-bottom: 0;
 }
 #html > h1, #html > h2 {
-  font-size: 2em !important;
+  font-size: 1.5em !important;
   padding: 0;
   margin-bottom: 0;
 }
