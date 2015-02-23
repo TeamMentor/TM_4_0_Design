@@ -22,7 +22,6 @@ nav {
   z-index: 99;
   background: white;
   border: 1px solid #dbdbdb;
-  margin-bottom: 10px;
   padding-bottom: 10px;
 }
 nav a, nav p {
@@ -291,28 +290,31 @@ nav a:hover, nav p:hover {
   background: white;
 }
 #about {
-  background: url(../assets/stock-img/bg-img.jpg);
-  background-position: 0px 600px;
-  height: 300px;
+  background-image: url(../assets/stock-img/bg-img-small.jpg);
+  height: 25%;
+  background-position: 0px 900px;
+  text-align: center;
 }
-#usp h2, #about h2 {
-  padding-top: 5%;
+#about h2 {
+  padding-top: 7%;
   color: white;
+  font-size: 24px;
 }
-#about h2, #usp h2, #call-to-action h1  {
-  color: #FFFFFF;
+#call-to-action h1 {
+  padding-top: 13%;
+  color: white;
+  font-size: 24px;
 }
-#about h2, #usp h2, #call-to-action h1, #clients, #features h2, #footer, #reasons h2 {
+#clients, #features h2, #reasons h2 {
   text-align: center;
 }
 #about-us {
   padding: 40px 0 40px 0;
 }
 #call-to-action {
-  padding: 100px 0 110px 0;
-  background: url(../assets/stock-img/bg-img.jpg);
-  background-position: 0px 1200px;
-  background-color: #49661f;
+  background-image: url(../assets/stock-img/bg-img-small.jpg);
+  background-position: 0px 1120px;
+  height: 25%;
   text-align: center;
 }
 #clients {
@@ -327,6 +329,7 @@ nav a:hover, nav p:hover {
 }
 #footer {
   padding: 5px 0 15px 0;
+  text-align: center;
 }
 #footer ul {
   list-style: none;
@@ -348,11 +351,15 @@ nav a:hover, nav p:hover {
   z-index: 5;
 }
 #usp {
-  background: url(../assets/stock-img/bg-img.jpg);
+  background-image: url(../assets/stock-img/bg-img-small.jpg);
   background-position: 0px 0px;
-  padding-bottom: 100px;
   z-index: 4;
   text-align: center;
+  height: 30%;
+}
+#usp h2 {
+  color: white;
+  font-size: 24px;
 }
 #si-logo {
   background:url('../assets/logos/logos.png') no-repeat;
