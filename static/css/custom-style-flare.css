@@ -124,6 +124,7 @@ nav a:hover, nav p:hover {
   -webkit-flex: 100%;
   text-align: center;
   list-style-type: none;
+  display: none;
 }
 #lp-links button {
   width: auto;
@@ -291,9 +292,10 @@ nav a:hover, nav p:hover {
 }
 #about {
   background-image: url(../assets/stock-img/bg-img-small.jpg);
-  height: 25%;
+  height: auto;
   background-position: 0px 900px;
   text-align: center;
+  padding-bottom: 5%;
 }
 #about h2 {
   padding-top: 7%;
@@ -301,7 +303,7 @@ nav a:hover, nav p:hover {
   font-size: 24px;
 }
 #call-to-action h1 {
-  padding-top: 13%;
+  padding-top: 10%;
   color: white;
   font-size: 24px;
 }
@@ -309,13 +311,14 @@ nav a:hover, nav p:hover {
   text-align: center;
 }
 #about-us {
-  padding: 40px 0 40px 0;
+  padding: 40px 0 10px 0;
 }
 #call-to-action {
   background-image: url(../assets/stock-img/bg-img-small.jpg);
   background-position: 0px 1120px;
-  height: 25%;
+  height: auto;
   text-align: center;
+  padding-bottom: 6%;
 }
 #clients {
   padding: 40px 0 80px 0;
@@ -355,7 +358,8 @@ nav a:hover, nav p:hover {
   background-position: 0px 0px;
   z-index: 4;
   text-align: center;
-  height: 30%;
+  height: auto;
+  padding-bottom: 5%;
 }
 #usp h2 {
   color: white;
@@ -891,14 +895,41 @@ input#search:active, input#search:focus {
    MEDIA QUERIES
 *------------------------------------*/
 @media only screen and (min-width : 600px) {
+  #usp, #call-to-action, #about {
+    background-image: url(../assets/stock-img/bg-img-medium.jpg);
+  }
+  #usp {
+    background-position: 0px 1000px;
+    height: auto;
+    padding-bottom: 5%;
+  }
+  #call-to-action {
+    background-position: 0px 700px;
+  }
+  #about {
+    background-position: 0px 350px;
+  }
   #usp h2 {
     padding-top: 2%;
+    font-size: 1.75em;
   }
   #call-to-action h1 {
     padding-top: 7%;
   }
 }
 @media only screen and (min-width : 900px) {
+  #usp, #call-to-action, #about {
+    background-image: url(../assets/stock-img/bg-img-large.jpg);
+  }
+  #about {
+    background-position: 0px 600px;
+  }
+  #call-to-action {
+    background-position: 0px 1100px;
+  }
+  #usp {
+    background-position: 0px -300px;
+  }
   h1 {
     font-size: 3em;
     line-height: 1.5em;
@@ -952,6 +983,7 @@ input#search:active, input#search:focus {
     -webkit-order: 4;
     text-align: right;
     flex: 2;
+    display: block;
   }
   #lp-links li {
     display: inline-block;
