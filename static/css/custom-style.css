@@ -172,6 +172,9 @@ body > * {
   background: #fff;
   margin-bottom: 20px;
 }
+#form p a {
+  text-decoration: underline;
+}
 #loginwall {
   padding: 90px 0 0 0;
 }
