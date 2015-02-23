@@ -890,7 +890,14 @@ input#search:active, input#search:focus {
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
-
+@media only screen and (min-width : 600px) {
+  #usp h2 {
+    padding-top: 2%;
+  }
+  #call-to-action h1 {
+    padding-top: 7%;
+  }
+}
 @media only screen and (min-width : 900px) {
   h1 {
     font-size: 3em;
