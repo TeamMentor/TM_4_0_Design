@@ -92,7 +92,6 @@ body > * {
   background: url(../assets/stock-img/bg-img.jpg) no-repeat;
   background-position: 0px -800px;
   text-align: center;
-
 }
 #call-to-action h1 {
   color: #FFFFFF;
@@ -163,7 +162,6 @@ body > * {
 #footer h4 {
   margin: 0;
   margin: 10px 0;
-
 }
 #footer i {
   font-size: 16px;
@@ -325,7 +323,7 @@ img {
 #links.text-links ul li {
   display: inline-block;
   margin: 0 10px 5px 0;
-  font-size: 11px;
+  font-size: 10px;
 }
 #links.text-links ul li:last-child {
   margin-right: 0;
@@ -772,6 +770,16 @@ table td {
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
+@media (min-width: 450px) {
+  #links.text-links ul li {
+    font-size: 12px;
+  }
+}
+@media (min-width: 500px) {
+  #links.text-links ul li {
+    font-size: 14px;
+  }
+}
 @media (min-width: 853px) {
   #application {
     margin-top: 60px;

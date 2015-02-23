@@ -931,23 +931,23 @@ input#search:active, input#search:focus {
     background-position: 0px -300px;
   }
   h1 {
-    font-size: 3em;
+    font-size: 3em !important;
     line-height: 1.5em;
   }
   h2 {
-    font-size: 2.25em;
+    font-size: 2.25em !important;
     line-height: 1.5em;
   }
   h3 {
-    font-size: 1.75em;
+    font-size: 1.75em !important;
     line-height: 1.5em;
   }
   h4 {
-    font-size: 1.125em;
+    font-size: 1.125em !important;
     line-height: 1.5em;
   }
   h5 {
-    font-size: 1em;
+    font-size: 1em !important;
     line-height: 1em;
   }
   #application {
