@@ -4,7 +4,7 @@
 //- Icons
 mixin metadata-icon
 	i.fi-list-bullet
-	|     Data
+	span Data
 
 mixin save-icon
 	i.fi-bookmark
@@ -47,11 +47,11 @@ mixin edit-icon
 
 mixin new-pw-icon
 	i.fi-key
-	|     Change Password
+	span Change Password
 
 mixin change-filters-icon
 	i.fi-results
-	|     Add/Remove Permanent Filters
+	span Add/Remove Permanent Filters
 
 mixin navigate-icon
 	i.fi-map
@@ -61,21 +61,19 @@ mixin help-icon
 
 mixin articles-icon
 	i.fi-book
-	|    Related Articles
+	span Related Articles
 
 mixin courses-icon
 	i.fi-paperclip
-	|    Related Courses
+	span Related Courses
 
 //- Form Inputs
 mixin username-input
-	label
-		| Username
+	label Username
 	input(type='text', id='username', placeholder='Username')
 
 mixin flare-password-input
-	label
-		| Password
+	label Password
 	.row.collapse
 		.small-10.columns
 			input(type='password', placeholder='Password')
@@ -83,8 +81,7 @@ mixin flare-password-input
 			a.button.postfix#save-button(href='#') SHOW
 
 mixin flare-new-password-input
-	label
-		| New Password
+	label New Password
 	.row.collapse
 		.small-10.columns
 			input(type='password', placeholder='New Password')
@@ -92,43 +89,35 @@ mixin flare-new-password-input
 			.button.postfix#show-button(href='#') Show
 
 mixin password-input
-	label
-		| Password
+	label Password
 	input(type='password', id='password', placeholder='Password')
 
 mixin new-password-input
-	label(for='user-new-password')
-		| New Password
+	label(for='user-new-password') New Password
 	input(type='password', id='user-new-password', placeholder='New Password')
 
 mixin confirm-new-password-input
-	label(for='user-confirm-new-password')
-		| Confirm New Password
+	label(for='user-confirm-new-password') Confirm New Password
 	input(type='password', id='user-confirm-new-password', placeholder='Confirm New Password')
 
 mixin email-input
-	label
-		| Email Address
+	label Email Address
 	input(type='email', id='email', placeholder='Email Address')
 
 mixin name-input
-	label
-		| Name
+	label Name
 	input(type='text', id='name', placeholder='Full Name')
 
 mixin title-input
-	label
-		| Title
+	label Title
 	input(type='text', id='title', placeholder='Title')
 
 mixin company-input
-	label
-		| Company
+	label Company
 	input(type='text', id='company', placeholder='Company')
 
 mixin state-input
-	label
-		| State
+	label State
 	select
 		option(value='ms') Filtered
 		option(value='miss') By
@@ -136,8 +125,7 @@ mixin state-input
 		option(value='Mr') Chosen
 
 mixin country-input
-	label
-		| Country
+	label Country
 	select
 		option(value='Afghanistan') Afghanistan
 		option(value='Albania') Albania
@@ -348,7 +336,6 @@ mixin save-input
 mixin share-input
 	input(type='email', id='share-input', placeholder='Share via Email')
 
-
 //- Form Buttons
 mixin save-button
 	button.controls(href='app-keyword-search-save')
@@ -373,7 +360,7 @@ mixin edit-button
 //- Alert System
 mixin flare-alert
 	.alert-box(data-alert='')
-		| Error, Validation or Alert Message Here
+		span Error, Validation or Alert Message Here
 		a.close(href='#') ×
 
 mixin copyright

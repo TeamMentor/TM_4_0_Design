@@ -92,13 +92,13 @@ mixin search-results
             a(href='#')
                 span.icon
                     +search-icon
-                | Search Term Here
+                span Search Term Here
                 span.badge #4
         li
             a(href='#')
                 span.icon
                     +search-icon
-                | Search Term Here
+                span Search Term Here
                 span.badge #4
 
 //- Flare Saved Articles List
@@ -145,7 +145,7 @@ mixin flare-filters-div
             dd.accordion-navigation.active
                 a(href='#and-filters')
                     i.fi-arrow-down.icon
-                    | And filters
+                    span And filters
                 #and-filters.content.active
                     table
                         tr
@@ -169,7 +169,7 @@ mixin flare-filters-div
             dd.accordion-navigation
                 a(href='#or-filters')
                     i.fi-arrow-down.icon
-                    | Or filters
+                    span Or filters
                 #or-filters.content.active
                     table
                         tr
@@ -197,15 +197,15 @@ mixin flare-filters-active
         .row
             .small-12.medium-6.large-4.columns
                 .alert-box.active(data-alert='')
-                    | Filter Here
+                    span Filter Here
                     a.close(href='#') ×
             .small-12.medium-6.large-4.columns
                 .alert-box.active(data-alert='')
-                    | Filter Here
+                    span Filter Here
                     a.close(href='#') ×
             .small-12.medium-6.large-4.columns
                 .alert-box.active(data-alert='')
-                    | Filter Here
+                    span Filter Here
                     a.close(href='#') ×
 
 // Save Div
