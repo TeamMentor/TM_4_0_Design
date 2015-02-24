@@ -43,8 +43,8 @@ mixin help-navigation
 mixin help-content
     .bg
         if title
-            h2= title
-        != content
+            h2#help-title= title
+        #help-content!= content
 
 mixin terms-and-conditions-content
     #toc-content.bg

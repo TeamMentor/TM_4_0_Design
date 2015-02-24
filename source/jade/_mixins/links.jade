@@ -19,21 +19,21 @@ mixin links-navbar__landing-page
 		li
 			a#nav-sign-up(href='/guest/sign-up.html') Sign Up
 		li
-			a#nav-log-in(href='/guest/login.html') Login
+			a#nav-login(href='/guest/login.html') Login
 
 mixin links-navbar__home
 	ul
 		li
-			a(href='/user/main.html')
+			a#nav-user-main(href='/user/main.html')
 				+search-link
 		li
-			a(href='/show/Guidance')
+			a#nav-user-guidance(href='/show/Guidance')
 				+navigate-link
 		li
-			a(href='/help/index.html')
+			a#nav-user-help(href='/help/index.html')
 				+help-link
 		li
-			a(href='/user/logout')
+			a#nav-user-logout(href='/user/logout')
 				+logout-link
 
 mixin terms-and-conditions-links
