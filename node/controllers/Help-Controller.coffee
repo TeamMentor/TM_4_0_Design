@@ -34,9 +34,18 @@ class Help_Controller
     @.index_Md_Page   = './../../source/content/help/page-index.md'
     @.jade_Page       = '/source/jade/misc/help.jade'
 
-  renderPage: ()=>
-    @.pageParams         = new Express_Service().mappedAuth(@req)
-    @.getContent(@.page)
+  addContent: (title, content)=>
+    content_cache[this.page] = { title: title,  content : content };
+    @.pageParams.title   = title;
+    @.pageParams.content = content;
+    @sendResponse(@.pageParams);
+
+  clearContentCache: ()=>
+    @.content_cache = {}
+    content_cache   = {}
+
+  getRenderedPage: (params)=>
+    new Jade_Service().renderJadeFile(@.jade_Page, params)
 
   getContent: ()=>
     cachedData = content_cache[@.page];
@@ -66,25 +75,17 @@ class Help_Controller
     else
         @addContent(@.article.Title, body)
 
-  addContent: (title, content)=>
-    content_cache[this.page] = { title: title,  content : content };
-    @.pageParams.title   = title;
-    @.pageParams.content = content;
-    @sendResponse(@.pageParams);
-
-  getRenderedPage: (params)=>
-    new Jade_Service().renderJadeFile(@.jade_Page, params)
-
   sendResponse: (pageParams)=>
     html = @getRenderedPage(pageParams);
     @.res.status(200)
          .send(html)
 
-  clearContentCache: ()=>
-    @.content_cache = {}
-    content_cache   = {}
-
   redirectImagesToGitHub: ()=>
     @.res.redirect(@.gitHubImagePath + @.req.params.name);
+
+  renderPage: ()=>
+    @.pageParams         = new Express_Service().mappedAuth(@req)
+    @.getContent(@.page)
+
 
 module.exports = Help_Controller
