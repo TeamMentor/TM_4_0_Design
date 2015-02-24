@@ -578,11 +578,11 @@ pre {
   display: block;
   padding: 20px;
   line-height: 1.5;
-  color: #aaaaaa;
+  color: #444444;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #dbdbdb;
-  border: 1px solid #aaaaaa;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
   border-radius: $border;
   margin: 30px 0 30px 0;
   overflow: auto;
