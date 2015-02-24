@@ -1,43 +1,79 @@
-supertest         = require('supertest')
+cheerio           = require 'cheerio'
+supertest         = require 'supertest'
 expect            = require('chai').expect
-request           = require('request')
-#app               = require('../../server')
-marked            = require('marked')
+request           = require 'request'
+marked            = require 'marked'
 Help_Controller   = require('../../controllers/Help-Controller')
-TeamMentor_Service = require('../../services/TeamMentor-Service')
+
+describe.only '| controllers | Help-Controller.test', ()->
+
+  help_Controller = null
+  on_Res_Send     = -> @
+  on_Res_Status   = -> @
+  req             = {}
+  res             = {}
+    #send:
+    #status: -> @
+
+  docs_TM_Service =
+    getLibraryData: (callback)->
+      library =
+        Title    : 'library title'
+        Articles : []
+        Folders  : []
+        Views    : []
+        content  : 'library index page content'
+      callback [library]
+
+  before (done)->
+    using new Help_Controller(req,res), ->
+      help_Controller = @
+      @.docs_TM_Service = docs_TM_Service
+      done()
+
+  it 'constructor', (done)->
+    using new Help_Controller(req,res),->
+
+      @.content_cache   .assert_Is {}
+      @.pageParams      .assert_Is({})
+      @.req             .assert_Is(req)
+      @.res             .assert_Is(res)
+      @.docs_TM_Service.assert_Instance_Of require('../../services/Docs-TM-Service')
+      @.docs_Server     .assert_Is 'https://docs.teammentor.net'
+      @.gitHubImagePath .assert_Is 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/'
+      @.index_Md_Page   .assert_Is './../../source/content/help/page-index.md'
+      @.jade_Page       .assert_Is '/source/jade/misc/help.jade'
+
+      assert_Is_Null(@.content)
+      assert_Is_Null(@.page)
+      assert_Is_Null(@.title)
+
+      done()
+
+  it 'getContent', (done)->
+    using help_Controller,->
+      @.getContent()
+      done()
+
+  it 'renderPage' , (done)->
+    using help_Controller,->
+      @.res.status = (status)->
+        status.assert_Is '200'
+        @
+      @.res.send = (html)->
+        $ = cheerio.load(html)
+        $('#help-title').text().assert_Is 'No content for the current page'
+        done()
+      @renderPage()
 
 
-skip_Tests_If_Offline = (testSuite,next)=>
-  url = "https://www.google.com"
-  url.GET (html)=>
-        if not html
-          for test in testSuite.tests
-            test.pending = true
-        next()
 
-describe '| controllers | Help-Controller.test', ()->
-
+  return
   @.timeout(3500)
 
   describe 'methods',->
 
-    #before (done)->
-    #  skip_Tests_If_Offline @.test.parent, done
 
-    it 'ctor', (done)->
-      req = { a :42 }
-      res = { b: 42 }
-      using new Help_Controller(req,res),->
-        @.assert_Is_Object()
-        @.content_cache.assert_Is_Object()
-        @.pageParams.assert_Is({})
-        @.req.assert_Is(req)
-        @.res.assert_Is(res)
-        @.docs_Server.assert_Is 'https://docs.teammentor.net'
-        assert_Is_Null(@.content)
-        assert_Is_Null(@.page)
-        assert_Is_Null(@.title)
-        done()
 
     res = (text, done)->
             { status: (value)->

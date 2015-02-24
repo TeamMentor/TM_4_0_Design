@@ -3,29 +3,36 @@ marked             = null
 request            = null
 Express_Service    = null
 Jade_Service       = null
-TeamMentor_Service = null
+Docs_TM_Service = null
 
 content_cache = {};
 
 class Help_Controller
 
-  constructor: (req, res)->
+  dependencies: ->
     fs                 = require('fs')
     marked             = require('marked')
     request            = require('request')
     Express_Service    = require('../services/Express-Service')
     Jade_Service       = require('../services/Jade-Service')
-    TeamMentor_Service = require('../services/TeamMentor-Service');
+    Docs_TM_Service    = require('../services/Docs-TM-Service');
 
-    @.page          = if (req and req.params) then req.params.page else null
-    @.pageParams    = {}
-    @.req           = req
-    @.res           = res
-    @.content_cache = content_cache
-    @.title         = null
-    @.content       = null
-    @.teamMentor    = new TeamMentor_Service()
-    @.docs_Server   = 'https://docs.teammentor.net'
+  constructor: (req, res)->
+    @dependencies()
+    @.content_cache    = content_cache
+    @.pageParams       = {}
+    @.req              = req
+    @.res              = res
+    @.docs_TM_Service  = new Docs_TM_Service()
+
+    @.page             = req?.params?.page || null
+    @.title            = null
+    @.content          = null
+
+    @.docs_Server     = 'https://docs.teammentor.net'
+    @.gitHubImagePath = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/'
+    @.index_Md_Page   = './../../source/content/help/page-index.md'
+    @.jade_Page       = '/source/jade/misc/help.jade'
 
   renderPage: ()=>
     @.pageParams         = new Express_Service().mappedAuth(@req)
@@ -33,7 +40,7 @@ class Help_Controller
 
   getContent: ()=>
     cachedData = content_cache[@.page];
-    @.teamMentor.getLibraryData (libraries)=>
+    @.docs_TM_Service.getLibraryData (libraries)=>
       library = libraries.first()
       @.pageParams.library = library
       if(cachedData)
@@ -41,12 +48,11 @@ class Help_Controller
         return;
 
       if (@.page == "index.html")
-        page_index_File     = __filename.parent_Folder().path_Combine('./../../source/content/help/page-index.md')
-        page_index_Markdown = fs.readFileSync(page_index_File, 'utf8');
+        page_index_File     = __dirname.path_Combine(@.index_Md_Page)
+        page_index_Markdown = page_index_File.file_Contents()
         page_index_Html     = marked(page_index_Markdown)             ;
         @addContent(null, page_index_Html);
       else
-
         @.article = library.Articles[@.page];
         if (@.article)
           docs_Url   = @.docs_Server + '/content/' + @.page;
@@ -54,10 +60,8 @@ class Help_Controller
         else
           @addContent("No content for the current page");
 
-
-
   handleFetchedHtml: (error, response, body)=>
-    if (error && error.code=="ENOTFOUND")
+    if (error && error.code is "ENOTFOUND")
         @addContent("Error fetching page from docs site")
     else
         @addContent(@.article.Title, body)
@@ -69,7 +73,7 @@ class Help_Controller
     @sendResponse(@.pageParams);
 
   getRenderedPage: (params)=>
-    new Jade_Service().renderJadeFile('/source/jade/help/index.jade', params)
+    new Jade_Service().renderJadeFile(@.jade_Page, params)
 
   sendResponse: (pageParams)=>
     html = @getRenderedPage(pageParams);
@@ -81,7 +85,6 @@ class Help_Controller
     content_cache   = {}
 
   redirectImagesToGitHub: ()=>
-    gitHubImagePath = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/';
-    @.res.redirect(gitHubImagePath + @.req.params.name);
+    @.res.redirect(@.gitHubImagePath + @.req.params.name);
 
 module.exports = Help_Controller
