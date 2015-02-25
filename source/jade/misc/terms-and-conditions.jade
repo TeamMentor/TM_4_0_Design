@@ -1,0 +1,12 @@
+extends ../_layouts/page
+include ../_mixins/links
+include ../_mixins/view-blocks
+block content
+	#application
+		.row
+			.col-3
+				.lge-container
+					+terms-and-conditions-links
+			.col-9
+				.lge-container
+					+terms-and-conditions-content

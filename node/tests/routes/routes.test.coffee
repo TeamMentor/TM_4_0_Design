@@ -27,6 +27,7 @@ describe '| routes | routes.test |', ()->
                       '/passwordReset/:username/:token',
                       '/help/index.html',
                       '/help/:page*',
+                      '/misc/:page',
                       '/index.html',
                       '/user/login',
                       '/user/login',
