@@ -769,8 +769,8 @@ table td {
   #application {
     margin-top: 40px;
   }
-  #help-nav {
-    margin-top: 0px;
+  #help-nav, #help-docs, #help-index {
+    margin-top: 20px;
   }
   #about, #usp, #call-to-action {
     padding: 100px 0;
