@@ -66,13 +66,13 @@ body > * {
 }
 #about {
   background: url(../assets/stock-img/bg-img-large.jpg) no-repeat;
-  background-position: 0px -1400px;
+  background-position: 0px -1450px;
 }
 #about, #usp, #call-to-action {
   padding: 40px 0;
   text-align: center;
   background-position: fixed;
-  background-size: auto;
+  background-size: 100%;
 }
 #about h2, #usp h2 p {
   color: #FFFFFF;
