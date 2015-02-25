@@ -91,10 +91,8 @@ describe "| services | Jade-Service |", ()->
     it 'renderMixin', (done)->
       using new Jade_Service(),->
         @.renderMixin('search-mixins', 'results', {resultsTitle : 'AAAA'})
-            .assert_Contains ['<!DOCTYPE html><html lang="en"', 'link href="/static/css/custom-style.css']
+          .assert_Contains ['<!DOCTYPE html><html lang="en"', 'link href="/static/css/custom-style.css']
             #                 '<h5 id="resultsTitle">AAAA</h5>']
-
-
         done()
 
     ###

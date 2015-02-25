@@ -66,6 +66,13 @@ describe '| controllers | Jade-Controller.test.js |', ()->
         @.req.query = {}
         @.renderMixin_GET({dynamic_h2 : dynamic_h2})
 
+    it 'renderMixin_GET (with view model)', (done)->
+      viewModel_Data = { resultsTitle : 'AAAA'}.json_Str()
+      dynamic_h2 = ''
+      using_Jade_Controller done, ()->
+        @.req.query = {viewModel : viewModel_Data}
+        @.renderMixin_GET({dynamic_h2 : dynamic_h2})
+
     it 'renderMixin_POST (valid params)', (done)->
       dynamic_h2 = 'now_on_post_'.add_5_Letters()
       using_Jade_Controller done, ()->
