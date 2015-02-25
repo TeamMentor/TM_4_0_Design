@@ -1,288 +1,209 @@
+express                 = require 'express'
+bodyParser              = require('body-parser')
 Login_Controller        = require('../../controllers/Login-Controller')
-User_Sign_Up_Controller = require('../../controllers/User-Sign-Up-Controller')
 
-describe "| controllers | Login-Controller.test |", ->
 
-  #helper methods
+describe '| controllers | Login-Controller.test |', ->
+
+  #consts
   loginPage                 = 'source/jade/guest/login-Fail.jade'
   mainPage_user             = '/user/main.html'
   mainPage_no_user          = '/guest/default.html'
   password_sent             = '/guest/pwd-sent.html'
-  signUp_fail               = "source/jade/guest/sign-up-Fail.jade"
-  signUp_Ok                 = '/guest/sign-up-OK.html'
   password_reset_fail       = 'source/jade/guest/pwd-reset-fail.jade'
   password_reset_ok         = 'source/jade/guest/login-pwd-reset.html'
   blank_credentials_message = 'Invalid Username or Password'
 
+  #mocked server
+  server                   = null
+  url_WebServices          = null
+  users                    =  { tm: 'tm' , user: 'a'  }
+  on_Login_Response        = null
 
-  #describe
-  describe 'login user', ->
+  add_TM_WebServices_Routes = (app)=>
+    app.post '/Aspx_Pages/TM_WebServices.asmx/Login_Response', (req,res)=>
+      if on_Login_Response
+        return on_Login_Response(req, res)
+      username = req.body.username
+      password = req.body.password
+      if users[username]
+        if users[username] is password
+          res.send { d: { Login_Status: 0}  }
+        else
+          res.send { d: { Login_Status: 1, Simple_Error_Message: 'Wrong Password'  } }
+      else
+        res.send { d: { Login_Status: 1, Validation_Results: [{Message: 'Bad user and pwd'} ] } }
 
-    invoke_Method = (method, body, expected_Target, callback)->
-      req =
-        session: {}
-        url    : '/passwordReset/temp/00000000-0000-0000-0000-000000000000'
-        body   : body
+  before (done)->
+    random_Port     = 10000.random().add(10000)
+    url_WebServices = "http://localhost:#{random_Port}/Aspx_Pages/TM_WebServices.asmx"
+    app             = new express().use(bodyParser.json())
+    add_TM_WebServices_Routes(app)
+    server          = app.listen(random_Port)
 
-      res =
-        redirect: (target)->
-          target.assert_Is(expected_Target)
-          callback()
-        render : (target) ->
-          target.assert_Is(expected_Target)
-          callback()
-      loginController = new Login_Controller(req, res)
-      loginController[method]()
+    url_WebServices.GET (html)->
+      html.assert_Is 'Cannot GET /Aspx_Pages/TM_WebServices.asmx\n'
+      done()
 
-    invoke_LoginUser = (username, password, expected_Target, callback)->
-      invoke_Method "loginUser",
-                    { username : username , password : password } ,
-                    expected_Target,
-                    callback
+  after ->
+    server.close()
 
-    @.timeout(10000)
+  invoke_Method = (method, body, expected_Target, callback)->
+    req =
+      session: {}
+      url    : '/passwordReset/temp/00000000-0000-0000-0000-000000000000'
+      body   : body
 
-    it 'constructor', ->
-      using new Login_Controller,->
-        @.users           .assert_Is_Array().second().username.assert_Is 'user'
-        @.req             .assert_Is {}
-        @.res             .assert_Is {}
+    res =
+      redirect: (target)->
+        target.assert_Is(expected_Target)
+        callback()
+      render : (target) ->
+        target.assert_Is(expected_Target)
+        callback()
 
-      using new Login_Controller('req', 'res'),->
-        @.req             .assert_Is 'req'
-        @.res             .assert_Is 'res'
+    using new Login_Controller(req, res), ->
+      @.webServices = url_WebServices
+      @[method]()
 
-    it "loginUser (bad username, password)", (done)->
-      invoke_LoginUser '','', loginPage, ->                # empty username and pwd
-        invoke_LoginUser 'aaa','', loginPage, ->           # empty pwd
-          invoke_LoginUser '','bbb', loginPage, ->         # empty username
-            invoke_LoginUser 'aaa','bbb', loginPage, ->    # bad username and pwd
-              invoke_LoginUser '','bb', loginPage, ->      # blank username
-                invoke_LoginUser 'aa','', loginPage, ->    # blank password
-                  invoke_LoginUser '','', loginPage,done   # blank credentials
+  invoke_LoginUser = (username, password, expected_Target, callback)->
+    invoke_Method "loginUser",
+                  { username : username , password : password } ,
+                  expected_Target,
+                  callback
 
-    it "loginUser (local-good username, password)", (done)->
-      invoke_LoginUser 'tm','tm', mainPage_user, ->
-        invoke_LoginUser 'user','a', mainPage_user, done
+  it 'constructor', ->
+    using new Login_Controller,->
+      #@.users           .assert_Is_Array().second().username.assert_Is 'user'
+      @.req             .assert_Is {}
+      @.res             .assert_Is {}
 
-    it "LoginUser(undefined Login_Status using existential operator)", (done)->
-      invoke_LoginUser undefined ,undefined , loginPage, done
+    using new Login_Controller('req', 'res'),->
+      @.req             .assert_Is 'req'
+      @.res             .assert_Is 'res'
 
-    it 'logoutUser', (done)->
-      invoke_Method "logoutUser", {} ,mainPage_no_user,done
-
-
-    it 'redirectToLoginPage', (done)->
-      invoke_Method "redirectToLoginPage", { } ,loginPage,done
-
-    it 'Invalid Username or Password (missing username)',(done)->
-      newUsername  =''
-      newPassword  = 'aaa'.add_5_Letters()
-
-      #render contains the file to render and the view model object
-      render = (jadePage,model)->
-        #Verifying the message from the backend.
-        model.viewModel.errorMessage.assert_Is(blank_credentials_message)
-        jadePage.assert_Is('source/jade/guest/login-Fail.jade')
+  it "loginUser (server not ok)", (done)->
+    req = body: {username:'aaaa', password:'bbb'}
+    res =
+      render: (jade_Page, params)->
+        jade_Page.assert_Is loginPage
+        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
         done()
-      req = body:{username:newUsername,password:newPassword},session:'';
-      res = {render: render}
 
-      using new Login_Controller(req, res) ,->
-        @.loginUser()
+    using new Login_Controller(req, res), ->
+      @.webServices = 'http://aaaaaabbb.teammentor.net'
+      @.loginUser()
 
+  it "loginUser (server ok - null response)", (done)->
+    on_Login_Response = (req,res)->
+      res.send null
 
-    it 'Invalid Username or Password (missing password)',(done)->
-      newUsername         = 'aaa'.add_5_Letters()
-      newPassword         =''
+    invoke_LoginUser 'aaa','bbb', loginPage, ->
+      on_Login_Response = null
+      done()
 
-      #render contains the file to render and the view model object
-      render = (jadePage,model)->
-        model.viewModel.errorMessage.assert_Is(blank_credentials_message)
-        #Verifying the message from the backend.
-        jadePage.assert_Is('source/jade/guest/login-Fail.jade')
-        done()
-      req = body:{username:newUsername,password:newPassword},session:'';
-      res = {render: render}
+  it "loginUser (bad username, password)", (done)->
+    invoke_LoginUser '','', loginPage, ->                # empty username and pwd
+      invoke_LoginUser 'aaa','', loginPage, ->           # empty pwd
+        invoke_LoginUser '','bbb', loginPage, ->         # empty username
+          invoke_LoginUser 'aaa','bbb', loginPage, ->    # bad username and pwd
+            invoke_LoginUser '','bb', loginPage, ->      # blank username
+              invoke_LoginUser 'aa','', loginPage, ->    # blank password
+                invoke_LoginUser '','', loginPage,done   # blank credentials
 
-      using new Login_Controller(req, res) ,->
-        @.loginUser()
+  it "loginUser (local-good username, password)", (done)->
+    invoke_LoginUser 'tm','tm', mainPage_user, ->
+      invoke_LoginUser 'user','a', mainPage_user, done
 
-    it 'Invalid Username or Password (missing both username and password)',(done)->
-      newUsername         =''
-      newPassword         =''
+  it "loginUser (undefined Login_Status using existential operator)", (done)->
+    invoke_LoginUser undefined ,undefined , loginPage, done
 
-      #render contains the file to render and the view model object
-      render = (jadePage,model)->
-        #Verifying the message from the backend.
-        model.viewModel.errorMessage.assert_Is(blank_credentials_message)
-        jadePage.assert_Is('source/jade/guest/login-Fail.jade')
-        done()
-      req = body:{username:newUsername,password:newPassword},session:'';
-      res = {render: render}
+  it 'logoutUser', (done)->
+    invoke_Method "logoutUser", {} ,mainPage_no_user,done
 
-      using new Login_Controller(req, res) ,->
-        @.loginUser()
+  it 'redirectToLoginPage', (done)->
+    invoke_Method "redirectToLoginPage", { } ,loginPage,done
 
-  describe 'user sign-up', ->
-    @.timeout(10000)
+  it 'invalid Username or Password (missing username)',(done)->
+    newUsername  =''
+    newPassword  = 'aaa'.add_5_Letters()
 
-    invoke_Method = (method, body, expected_Target, callback)->
-      req =
-        session: {}
-        url    : '/passwordReset/temp/00000000-0000-0000-0000-000000000000'
-        body   : body
+    #render contains the file to render and the view model object
+    render = (jadePage,model)->
+      #Verifying the message from the backend.
+      model.viewModel.errorMessage.assert_Is(blank_credentials_message)
+      jadePage.assert_Is('source/jade/guest/login-Fail.jade')
+      done()
+    req = body:{username:newUsername,password:newPassword},session:'';
+    res = {render: render}
 
-      res =
-        redirect: (target)->
-          target.assert_Is(expected_Target)
-          callback()
-        render : (target) ->
-          target.assert_Is(expected_Target)
-          callback()
-      using new User_Sign_Up_Controller(req, res), ->
-        @[method]()
-
-    invoke_UserSignUp = (username, password, email, expected_Target, callback)->
-      invoke_Method "userSignUp",
-        { username: username , password: password,'confirm-password':password , email: email } ,
-        expected_Target,
-        callback
-
-    invoke_Login_Method = (method, body, expected_Target, callback)->
-      req =
-        session: {}
-        url    : '/passwordReset/temp/00000000-0000-0000-0000-000000000000'
-        body   : body
-
-      res =
-        redirect: (target)->
-          target.assert_Is(expected_Target)
-          callback()
-
-      loginController = new Login_Controller(req, res)
-      loginController[method]()
-
-    invoke_LoginUser = (username, password, expected_Target, callback)->
-      invoke_Login_Method "loginUser",
-                          { username : username , password : password } ,
-                          expected_Target,
-                          callback
+    using new Login_Controller(req, res) ,->
+      @.loginUser()
 
 
+  it 'invalid Username or Password (missing password)',(done)->
+    newUsername         = 'aaa'.add_5_Letters()
+    newPassword         =''
 
+    #render contains the file to render and the view model object
+    render = (jadePage,model)->
+      model.viewModel.errorMessage.assert_Is(blank_credentials_message)
+      #Verifying the message from the backend.
+      jadePage.assert_Is('source/jade/guest/login-Fail.jade')
+      done()
+    req = body:{username:newUsername,password:newPassword},session:'';
+    res = {render: render}
 
-    it 'userSignUp (bad values)', (done)->
-      invoke_UserSignUp '','aa','aa@teammentor.net', signUp_fail, ->                      #empty username
-        invoke_UserSignUp 'aaa','','aa@teammentor.net', signUp_fail, ->                   #empty password
-          invoke_UserSignUp 'aa','aa','', signUp_fail,->                                  #empty email
-            invoke_UserSignUp 'user','weakpwd','aa@teammentor.net', signUp_fail,->        #weak password
-              done()
+    using new Login_Controller(req, res) ,->
+      @.loginUser()
 
+  it 'invalid Username or Password (missing both username and password)',(done)->
+    newUsername         =''
+    newPassword         =''
 
+    #render contains the file to render and the view model object
+    render = (jadePage,model)->
+      #Verifying the message from the backend.
+      model.viewModel.errorMessage.assert_Is(blank_credentials_message)
+      jadePage.assert_Is('source/jade/guest/login-Fail.jade')
+      done()
+    req = body:{username:newUsername,password:newPassword},session:'';
+    res = {render: render}
 
-    it 'userSignUp (good values)', (done)->
-      user = "tm_ut_".add_5_Random_Letters()
-      pwd  = "**tm**pwd**"
-      email = "#{user}@teammentor.net"
+    using new Login_Controller(req, res) ,->
+      @.loginUser()
 
-      invoke_UserSignUp user,pwd,email,signUp_Ok,->
-          invoke_LoginUser user,pwd,mainPage_user,done
+  it 'login form persist HTML form fields on error (Wrong Password)',(done)->
+    newUsername         ='tm'
+    newPassword         ='aaa'.add_5_Letters()
 
-    it 'userSignUp (pwd dont match)', (done)->
-      req =
-        body   : { password:'aa' , 'password-confirm':'bb'}
-      res =
-        render : (target) ->
-          target.assert_Contains(signUp_fail)
-          done()
+    #render contains the file to render and the view model object
+    render = (html,model)->
+      model.viewModel.username.assert_Is(newUsername)
+      model.viewModel.password.assert_Is('')
+      model.viewModel.errorMessage.assert_Is('Wrong Password')
+      done()
+    req = body:{username:newUsername,password:newPassword}, session:''
+    res = render: render
 
-      using new User_Sign_Up_Controller(req,res),->
-        @userSignUp()
+    using new Login_Controller(req, res), ->
+      @.webServices = url_WebServices
+      @.loginUser()
 
-    it 'userSignUp (error handling)', (done)->
-      req =
-        body   : { password:'aa' , 'confirm-password':'aa'}
-      res =
-        send: (data)->
-          data.assert_Is('could not connect with TM Uno server')
-          done()
-      using new User_Sign_Up_Controller(req,res),->
-        @.webServices = 'https://aaaaaaaa.teammentor.net/'
-        @userSignUp()
+  it 'login form persist HTML form fields on error (Wrong username)',(done)->
+    newUsername         = 'aaa'.add_5_Letters()
+    newPassword         = 'bbb'.add_5_Letters()
 
-    it 'Persist HTML form fields on error (Passwords do not match)',(done)->
-      newUsername         ='xy'.add_5_Letters()
-      newPassword         ='aa'.add_5_Letters()
-      newConfirmPassword  ='bb'.add_5_Letters()
-      newEmail            ='ab'.add_5_Letters()+'@mailinator.com'
+    render = (jade_Page,params)->
+      jade_Page.assert_Is loginPage
+      params.viewModel.errorMessage.assert_Is 'Bad user and pwd'
+      done()
 
-      #render contains the file to render and the view model object
-      render = (html,model)->
-          model.viewModel.username.assert_Is(newUsername)
-          model.viewModel.password.assert_Is(newPassword)
-          model.viewModel.confirmpassword.assert_Is(newConfirmPassword)
-          model.viewModel.email.assert_Is(newEmail)
-          model.viewModel.errorMessage.assert_Is('Passwords don\'t match')
-          done()
-      req = body:{username:newUsername,password:newPassword,'confirm-password':newConfirmPassword, email:newEmail};
-      res = {render: render}
+    req = body: {username:newUsername, password:newPassword}, session:''
+    res = render: render
 
-      using new User_Sign_Up_Controller(req, res), ->
-        @.userSignUp()
+    using new Login_Controller(req, res), ->
+      @.webServices = url_WebServices
+      @.loginUser()
 
-    it 'Persist HTML form fields on error (Password too short)',(done)->
-      newUsername         ='xy'.add_5_Letters()
-      newPassword         ='aa'.add_5_Letters()
-      newEmail            ='ab'.add_5_Letters()+'@mailinator.com'
-
-      #render contains the file to render and the view model object
-      render = (html,model)->
-        model.viewModel.username.assert_Is(newUsername)
-        model.viewModel.password.assert_Is(newPassword)
-        model.viewModel.confirmpassword.assert_Is(newPassword)
-        model.viewModel.email.assert_Is(newEmail)
-        model.viewModel.errorMessage.assert_Is('Password must be 8 to 256 character long')
-        done()
-      req = body:{username:newUsername,password:newPassword,'confirm-password':newPassword, email:newEmail};
-      res = {render: render}
-
-      using new User_Sign_Up_Controller(req, res), ->
-        @.userSignUp()
-
-    it 'Persist HTML form fields on error (Password is weak)',(done)->
-      newUsername         ='xy'.add_5_Letters()
-      newPassword         ='aaa'.add_5_Letters()
-      newEmail            ='ab'.add_5_Letters()+'@mailinator.com'
-
-      #render contains the file to render and the view model object
-      render = (html,model)->
-        model.viewModel.username.assert_Is(newUsername)
-        model.viewModel.password.assert_Is(newPassword)
-        model.viewModel.confirmpassword.assert_Is(newPassword)
-        model.viewModel.email.assert_Is(newEmail)
-        model.viewModel.errorMessage.assert_Is('Password must contain a non-letter and a non-number character')
-        done()
-      req = body:{username:newUsername,password:newPassword,'confirm-password':newPassword, email:newEmail};
-      res = {render: render}
-
-      using new User_Sign_Up_Controller(req, res), ->
-        @.userSignUp()
-
-
-    it 'Login form persist HTML form fields on error (Wrong Password)',(done)->
-      newUsername         ='tm'
-      newPassword         ='aaa'.add_5_Letters()
-
-      #render contains the file to render and the view model object
-      render = (html,model)->
-        model.viewModel.username.assert_Is(newUsername)
-        model.viewModel.password.assert_Is('')
-        model.viewModel.errorMessage.assert_Is('Wrong Password')
-        done()
-      req = body:{username:newUsername,password:newPassword}, session:''
-      res = {render: render}
-
-      using new Login_Controller(req, res), ->
-        @.loginUser()
 

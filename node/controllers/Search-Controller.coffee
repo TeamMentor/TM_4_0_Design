@@ -5,7 +5,6 @@ Config             = null
 Express_Service    = null
 Jade_Service       = null
 Graph_Service      = null
-TeamMentor_Service = null
 
 
 recentSearches_Cache = ["Logging","Struts","Administrative Controls"]
@@ -21,13 +20,11 @@ class SearchController
         Express_Service    = require('../services/Express-Service')
         Jade_Service       = require('../services/Jade-Service')
         Graph_Service      = require('../services/Graph-Service')
-        TeamMentor_Service = require('../services/TeamMentor-Service')
         @.req                = req
         @.res                = res
         @.config             = config || new Config()
         @.express_Service    = express_Service
         @.jade_Service       = new Jade_Service(@config)
-        @.teamMentor_Service = new TeamMentor_Service
         @.graph_Service      = new Graph_Service()
         @.jade_Page          = '/source/jade/user/search.jade'
         @.defaultUser        = 'TMContent'

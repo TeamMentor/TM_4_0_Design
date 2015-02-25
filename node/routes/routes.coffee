@@ -25,11 +25,12 @@ add_Routes = (app,searchController)->
     Search_Controller.registerRoutes(app, searchController);  # search routes
     Article_Controller.register_Routes(app, searchController)  # article routes
     Pwd_Reset_Controller.register_Routes(app)
+    Help_Controller.register_Routes(app)
 
     #help routes
     
-    app.get '/help/:page*' , (req, res)-> new Help_Controller(req, res).renderPage()
-    app.get '/Image/:name' , (req, res)-> new Help_Controller(req, res).redirectImagesToGitHub()
+    #app.get '/help/:page*' , (req, res)-> new Help_Controller(req, res).renderPage()
+    #app.get '/Image/:name' , (req, res)-> new Help_Controller(req, res).redirectImagesToGitHub()
 
     # jade (pre-compiled) pages (these have to be the last set of routes)
 

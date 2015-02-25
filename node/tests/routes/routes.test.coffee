@@ -25,6 +25,7 @@ describe '| routes | routes.test |', ()->
                       '/render/file/:file',
                       '/guest/:page.html',
                       '/passwordReset/:username/:token',
+                      '/help/index.html',
                       '/help/:page*',
                       '/index.html',
                       '/user/login',

@@ -26,7 +26,6 @@ describe "| controllers | Search-Controller.test |", ->
         @.config            .assert_Is config
         @.jade_Page         .assert_Is '/source/jade/user/search.jade'
         @.jade_Service      .assert_Instance_Of require('../../services/Jade-Service')
-        @.teamMentor_Service.assert_Instance_Of require('../../services/TeamMentor-Service')
         @.graph_Service     .assert_Instance_Of require('../../services/Graph-Service')
         @.defaultUser       .assert_Is 'TMContent'
         @.defaultRepo       .assert_Is 'TM_Test_GraphData'
