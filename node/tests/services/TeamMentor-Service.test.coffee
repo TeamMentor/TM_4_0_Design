@@ -12,7 +12,7 @@ describe "| services | Docs-TM-Service.test", ()->
       @timeout(4000)
 
     it 'check docs_TM_Service default fields', ()->
-      using new TeamMentor_Service(),->
+      using new Docs_TM_Service(),->
         expect(@                         ).to.be.an('object')
         expect(@._tmSite                 ).to.be.an('string')
         expect(@._tmWebServices          ).to.be.an('string')

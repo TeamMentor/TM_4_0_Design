@@ -5,25 +5,48 @@ request           = require 'request'
 marked            = require 'marked'
 Help_Controller   = require('../../controllers/Help-Controller')
 
-describe.only '| controllers | Help-Controller.test', ()->
+describe '| controllers | Help-Controller.test |', ()->
 
   help_Controller = null
   on_Res_Send     = -> @
   on_Res_Status   = -> @
   req             = {}
-  res             = {}
+  res             =
+    status: (status)->
+      status.assert_Is '200'
+      @
     #send:
     #status: -> @
+  library =
+    Title    : 'library title'
+    Articles : { 'article_id_2': { title: 'article_title_2'} }
+    Folders  : []
+    Views    : [ { Title: 'an view title', Articles: [ {Title:'an article title', Id: 'an article id'}]}]
+    content  : 'library index page content'
 
   docs_TM_Service =
     getLibraryData: (callback)->
-      library =
-        Title    : 'library title'
-        Articles : []
-        Folders  : []
-        Views    : []
-        content  : 'library index page content'
       callback [library]
+
+  check_Help_Page_Contents = (html, loggedIn, title, content, next)->
+    $ = cheerio.load(html)
+    # check top nav links
+    if loggedIn
+      $('#nav-user-logout').text().assert_Is 'Logout'
+    else
+      $('#nav-login'              ).text().assert_Is 'Login'
+    # check right nav links
+    $('#help-navigation h4'     ).html().assert_Is 'an view title'
+    $('#help-navigation tr td a').attr().assert_Is { href: '/help/an article id' }
+    $('#help-navigation tr td a').html().assert_Is 'an article title'
+    # check content
+    if (title or content)
+      $('#help-title'  ).text().assert_Is title
+      $('#help-content').text().assert_Is content
+    else
+      $('#help-index h2'          ).html().assert_Is 'TEAM Mentor Documents'
+      $('#help-index p'           ).html().assert_Is 'Welcome to the TEAM Mentor Documentation Website where you will find detailed information on how to install TEAM Mentor, how it works and how to customize it.'
+    next()
 
   before (done)->
     using new Help_Controller(req,res), ->
@@ -34,197 +57,221 @@ describe.only '| controllers | Help-Controller.test', ()->
   it 'constructor', (done)->
     using new Help_Controller(req,res),->
 
-      @.content_cache   .assert_Is {}
       @.pageParams      .assert_Is({})
       @.req             .assert_Is(req)
       @.res             .assert_Is(res)
       @.docs_TM_Service.assert_Instance_Of require('../../services/Docs-TM-Service')
-      @.docs_Server     .assert_Is 'https://docs.teammentor.net'
-      @.gitHubImagePath .assert_Is 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/'
-      @.index_Md_Page   .assert_Is './../../source/content/help/page-index.md'
-      @.jade_Page       .assert_Is '/source/jade/misc/help.jade'
 
       assert_Is_Null(@.content)
-      assert_Is_Null(@.page)
+      assert_Is_Null(@.docs_Library)
       assert_Is_Null(@.title)
 
+      @.docs_Server     .assert_Is 'https://docs.teammentor.net'
+      @.gitHubImagePath .assert_Is 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/'
+      @.jade_Help_Index .assert_Is '/source/jade/misc/help-index.jade'
+      @.jade_Help_Page  .assert_Is '/source/jade/misc/help-page.jade'
+
       done()
 
-  it 'getContent', (done)->
+  it 'content_Cache_Get, content_Cache_Set', (done)->
+    content = 'content_'.add_5_Letters()
+    page_Id = 'id'     .add_5_Letters()
+    title   = 'title_' .add_5_Letters()
+
     using help_Controller,->
-      @.getContent()
+      @.req      = { params: page: page_Id }
+      @.content_Cache_Set title, content
+      @.content_Cache_Get().assert_Is { title: title, content: content}
       done()
 
-  it 'renderPage' , (done)->
+  it 'content_Cache', ->
     using help_Controller,->
-      @.res.status = (status)->
-        status.assert_Is '200'
-        @
-      @.res.send = (html)->
-        $ = cheerio.load(html)
-        $('#help-title').text().assert_Is 'No content for the current page'
+      for key in @.content_Cache().keys()
+        delete @.content_Cache()[key]
+      @.content_Cache().assert_Is {}
+
+  it 'map_Docs_Library', (done)->
+    using help_Controller,->
+      @.docs_Library = null
+      @.map_Docs_Library =>
+        @.docs_Library.Title.assert_Is 'library title'
         done()
-      @renderPage()
 
+  it 'page_Id', (done)->
+    page_Id = 'id'     .add_5_Letters()
+    using help_Controller,->
+      @.req      = { params: page: page_Id }
+      @.page_Id().assert_Is page_Id
+      done()
 
+  it 'render_Jade_and_Send', (done)->
+    view_Model =
+      title:   'title_'.add_5_Letters()
+      content: 'content_'.add_5_Letters()
+    using help_Controller,->
+      @.res.send = (html)->
+        check_Help_Page_Contents html, false, view_Model.title, view_Model.content, done
+      @.render_Jade_and_Send @.jade_Help_Page, view_Model
 
-  return
-  @.timeout(3500)
+  it 'redirect_Images_to_GitHub', (done)->
+    using help_Controller,->
+      @.req = { params: name: 'req_param_value'}
+      @.res.redirect = (value)=>
+        value.assert_Is @.gitHubImagePath + 'req_param_value'
+        done()
+      @.redirect_Images_to_GitHub()
 
-  describe 'methods',->
+  it 'show_Content', (done)->
+    page_Id = 'id'     .add_5_Letters()
+    title   = 'title_' .add_5_Letters()
+    content = 'content_'.add_5_Letters()
+    using help_Controller,->
+      @.req      = { params: page: page_Id }
+      @.res.send = (html)=>
+        check_Help_Page_Contents html, false, title, content, =>
+        done()
+      @.show_Content title, content
 
+  it 'show_Help_Page (no content)' , (done)->
+    using help_Controller,->
+      @.req      = {}
+      @.res.send = (html)-> check_Help_Page_Contents html, false, 'No content for the current page', '', done
+      @show_Help_Page()
 
+  it 'show_Help_Page (from content_Cache)' , (done)->
+    page_Id = 'id'     .add_5_Letters()
+    title   = 'title_' .add_5_Letters()
+    content = 'content_'.add_5_Letters()
+    using help_Controller,->
+      @.req      = { params: page: page_Id }
+      @.content_Cache()[page_Id] = { title: title, content: content }
+      @.res.send = (html)-> check_Help_Page_Contents html, false, title,content, done
+      @show_Help_Page()
 
-    res = (text, done)->
-            { status: (value)->
-                          value.assert_Is(200)
-                          @
-              send: (html)->
-                html.assert_Contains(text)
-                done()
-            }
+  it 'show_Index_Page (anonymous users)', (done)->
+    using help_Controller,->
+      @.req      = {}
+      @.res.send = (html)-> check_Help_Page_Contents html, false, null, null, done
+      @.show_Index_Page()
 
-    it 'getContent (index.html)', (done)->
-      req      = { params: page: 'index.html' }
-      res_Index = res('Welcome to the TEAM Mentor Documentation Website ',done)
-      using new Help_Controller(req,res_Index),->
-        @.page.assert_Is req.params.page
-        @.getContent()
+  it 'show_Index_Page (logged in users)', (done)->
+    using help_Controller,->
+      @.req      = { session : username : 'aaaa' }
+      @.res.send = (html)-> check_Help_Page_Contents html, true, null, null, done
+      @.show_Index_Page()
 
-    it 'getContent (index.html, from cache)', (done)->
-      req      = { params: page: 'index.html' }
-      res_Index = res('Welcome to the TEAM Mentor Documentation Website ',done)
-      using new Help_Controller(req,res_Index),->
-        @.content_cache.keys().assert_Not_Empty()
-        @.content_cache['index.html'].assert_Is_Object()
-        @.content_cache['index.html'].content.assert_Is_String()
-        @.getContent()
+  it 'user_Logged_In',(done)->
+    using help_Controller,->
+      @.req = {}
+      @.user_Logged_In().assert_False()
+      @.req = session: null
+      @.user_Logged_In().assert_False()
+      @.req = session: username: 'a'
+      @.user_Logged_In().assert_True()
+      done()
 
-    it 'getContent (323dae88-b74b-465c-a949-d48c33f4ac85)', (done)->
-      @timeout 3500
-      req      = { params: page: '323dae88-b74b-465c-a949-d48c33f4ac85' }  # 323dae88-b74b-465c-a949-d48c33f4ac85 is 'Support' page
-      res_Index = res('To contact Security Innovation TEAM Mentor support please email',done)
-      using new Help_Controller(req,res_Index),->
-        @.getContent()
+  describe 'using mocked docs tm server |', ->
 
-    it 'getContent (non existing article)', (done)->
-      req      = { params: page: 'abcdef' }
-      res_Index = res('No content for the current page',done)
-      using new Help_Controller(req,res_Index),->
-        @.getContent()
+    express    = require 'express'
+    supertest  = require 'supertest'
 
-    it 'handleFetchedHtml (with error',(done)->
-      req      = { params: page: 'abcdef' }
-      res_Index = res('Error fetching page from docs site',done)
-      using new Help_Controller(req,res_Index),->
-        @handleFetchedHtml({ code: 'ENOTFOUND'})
-
-
-  describe 'misc workflows', ()->
-    app = null
+    app               = null
+    server            = null
+    url_Mocked_Server = null
+    on_Content        = ->
+    help_Controller   = null
 
     before (done)->
-      skip_Tests_If_Offline @.test.parent, done
-      app   = require('../../tm-server')
-
-    it 'request should add to cache', (done)->
-      page = 'index.html'
-      req = { params : { page : page}}
-      res = { status : ()-> @ }
-      help_Controller = new Help_Controller(req,res)
-
-      help_Controller.content_cache[page] = undefined;
-
-      checkRequestCache = (html)->
-          cacheItem = help_Controller.content_cache[page];
-          expect(cacheItem).to.be.an('Object');
-          expect(cacheItem.title  ).to.equal(help_Controller.pageParams.title);
-          expect(cacheItem.content).to.equal(help_Controller.pageParams.content);
-
-          help_Controller.clearContentCache();
-
-          expect(help_Controller.content_cache[page]).to.be.undefined;
+      random_Port       = 10000.random().add(10000)
+      url_Mocked_Server = "http://localhost:#{random_Port}"
+      app               = new express()
+      app.get           '/content/:page', (req,res)-> on_Content(req,res)
+      server            = app.listen(random_Port)
+      using new Help_Controller(req,res), ->
+        help_Controller = @
+        @.docs_TM_Service = docs_TM_Service
+        @.map_Docs_Library ->
           done()
 
-      res.send =  checkRequestCache;
-      expect(help_Controller.content_cache).to.be.an('Object')
-      help_Controller.renderPage();
+    after ->
+      server.close()
 
+    check_Show_Content = (expected_Title, expected_html, errorMessage, next)->
+      using help_Controller,->
+        @.show_Content = (article_Title, body)->
+          if errorMessage
+            article_Title.assert_Is errorMessage
+          else
+            article_Title.assert_Is expected_Title
+            body         .assert_Is expected_html
+          next()
+        @.fetch_Article_and_Show(expected_Title)
 
-    it 'handle broken images bug', (done)->
-      gitHub_Path = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/'
-      local_Path  = '/Image/'
-      test_image  = 'signup1.jpg'
+    it 'fetch_Article_and_Show (no title)', (done)->
+      check_Show_Content null, null, 'No content for the current page', done
 
-      check_For_Redirect = ()->
-              supertest(app).get(local_Path + test_image)
-                            .expect(302)
-                            .end (error, response)->
-                                      expect(response.headers         ).to.be.an('Object')
-                                      expect(response.headers.location).to.be.an('String')
-                                      expect(response.headers.location).to.equal(gitHub_Path + test_image)
-                                      check_That_Image_Exists(response.headers.location)
+    it 'fetch_Article_and_Show (bad server)', (done)->
+      using help_Controller, ->
+        @.docs_Server = 'http://aaaaaaaa.teammentor.net'
+        check_Show_Content 'aaaa','', 'Error fetching page from docs site', done
 
-      check_That_Image_Exists = (image_Path)->
-              request.get image_Path, (error, response)->
-                      expect(response.statusCode).to.equal(200);
-                      done();
-      check_For_Redirect()
+    it 'fetch_Article_and_Show (valid server, good response)', (done)->
+      article_Title = 'an_title_'.add_5_Letters()
+      page_Id       = 'an_id_'.add_5_Letters()
+      help_Content  = 'an_content_'.add_5_Letters()
 
-  describe 'test-help (dynamic content) |', ()->
-    app = null
+      on_Content        = (req,res)->
+        req.params.page.assert_Is page_Id
+        res.send(help_Content)
 
-    before (done)->
-      skip_Tests_If_Offline @.test.parent, done
-      app   = require('../../tm-server')
+      using help_Controller, ->
+        @.docs_Server     = url_Mocked_Server
+        @.req = { params: page: page_Id }
+        check_Show_Content article_Title,help_Content, null, done
 
-    libraryData  = null
-    pageParams   = { loggedIn : false};
-    helpJadeFile = '/source/html/help/index.jade'
+    it 'fetch_Article_and_Show (valid server, bad response)', (done)->
 
-    before (done)->
-      new TeamMentor_Service().getLibraryData (libraryData)->
+      on_Content        = (req,res)->
+        res.send(null)
 
-        expect(libraryData).to.be.an('Array');
-        expect(libraryData).to.not.be.empty;
+      using help_Controller, ->
+        @.docs_Server     = url_Mocked_Server
+        @.req = { params: page: 'abc' }
+        check_Show_Content 'a','', 'Error fetching page from docs site', done
 
-        library = libraryData[0];
+    it 'show_Help_Page (valid server, good response)', (done)->
+      page_Id       = library.Articles.keys().first()
+      article_Title = library.Articles[page_Id].title
+      help_Content  = 'an_content_'.add_5_Letters()
 
-        library.assert_Is_Object()
-        library.Views.assert_Is_Array()
+      on_Content        = (req,res)->
+        req.params.page.assert_Is page_Id
+        res.send(help_Content)
 
-        pageParams.library = library
-        pageParams.content = "...."
-        done()
+      using new Help_Controller(req,res), ->
 
+        @.docs_TM_Service = docs_TM_Service
+        @.docs_Server     = url_Mocked_Server
+        @.req = { params: page: page_Id }
 
-    it 'check that index page markdown transform', (done)->
-      root_Folder         = __dirname.path_Combine('../../..')
-      page_index_File     = root_Folder.path_Combine('source/content/help/page-index.md').assert_File_Exists()
-      page_index_Markdown = page_index_File.file_Contents() .assert_Contains('## TEAM Mentor Documents')
-      page_index_Html     = marked(page_index_Markdown)     .assert_Contains('<h2 id="team-mentor-documents">TEAM Mentor Documents</h2>')
+        @.render_Jade_and_Send = (jade_Page, view_Model)=>
+          jade_Page         .assert_Is @.jade_Help_Page
+          view_Model.title  .assert_Is article_Title
+          view_Model.content.assert_Is help_Content
+          @.content_Cache()[page_Id].assert_Is view_Model
+          done()
 
-      supertest(app).get('/help/index.html')
-                    .end (error,response)->
-                      throw error if(error)
-                      response.text.assert_Contains(page_index_Html);
-                      done()
+        @.show_Help_Page()
 
+  describe 'routes',->
+    it 'register_Routes',->
+      routes = {}
+      app    =
+        get: (url, target)->
+          routes[url] = target
 
-    it 'check that main content deliverer article', (done)->
-      this.timeout(5000);
-      article_Id    = 'dac20027-6138-4cd1-8888-3b7e6a007ea5';
-      article_Line  = "<p><strong>To install TEAM Mentor Fortify SCA UI Integration</strong></p>";
-      article_Title = "<h2>Installation</h2>";
-
-      supertest(app).get('/help/' + article_Id)
-                    .end (error,response)->
-                      expect(response.text).to.contain(article_Line);
-                      expect(response.text).to.contain(article_Title);
-                      done()
-
-    it 'check content_cache', ()->
-      help_Controller = new Help_Controller()
-      expect(Help_Controller).to.be.an("Function")
-      expect(help_Controller).to.be.an("Object")
-      expect(help_Controller.content_cache).to.be.an("Object")
+      Help_Controller.register_Routes app
+      routes.keys().assert_Is [ '/help/index.html', '/help/:page*', '/Image/:name' ]
+      routes['/help/index.html'].source_Code().assert_Contains 'return new Help_Controller(req, res).show_Index_Page();'
+      routes['/help/:page*'    ].source_Code().assert_Contains 'return new Help_Controller(req, res).show_Help_Page();'
+      routes['/Image/:name'    ].source_Code().assert_Contains 'return new Help_Controller(req, res).redirect_Images_to_GitHub();'
