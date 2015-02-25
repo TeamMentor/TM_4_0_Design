@@ -80,7 +80,7 @@ describe "| services | Jade-Service |", ()->
 
           @.enableCache();
 
-          helpJadeFile    = '/source/jade/help/index.jade';
+          helpJadeFile    = '/source/jade/misc/help-index.jade';
 
           @.renderJadeFile('a').assert_Is("");
           @.renderJadeFile(helpJadeFile, { structure: []}).assert_Is_Not('')
