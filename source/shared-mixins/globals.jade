@@ -17,23 +17,19 @@ mixin breadcrumbs
 
 //- Form Inputs
 mixin username-input
-    label(for='username')
-        | Username
+    label(for='username') Username
     input(type='text', id='username', name='username', placeholder='Username',value='#{viewModel?viewModel.username:""}',required,maxlength='256')
 
 mixin password-input
-    label(for='password')
-        | Password
+    label(for='password') Password
     input(type='password', id='password', name='password', placeholder='Password',value='#{viewModel?viewModel.password:""}',required,maxlength='256')
 
 mixin confirm-password-input
-    label(for='confirm-password')
-        | Confirm Password
+    label(for='confirm-password') Confirm Password
     input(type='password', id='confirm-password', name='confirm-password',placeholder='Password',value='#{viewModel?viewModel.confirmpassword:""}',maxlength='256')
 
 mixin email-input
-    label(for='email')
-        | Email Address
+    label(for='email') Email Address
     input(type='email', id='email', name='email', placeholder='Email Address',value='#{viewModel?viewModel.email:""}',maxlength='256')
 
 //- Form Buttons
@@ -55,12 +51,12 @@ mixin reset-password-button
 mixin start-trial-button
     button
         i.fi-key
-        | Start your free trial today
+        span Start your free trial today
 
 mixin see-for-yourself-button
     button
         i.fi-eye
-        | See for yourself
+        span See for yourself
 
 //- Loginwall
 mixin team-mentor-summary

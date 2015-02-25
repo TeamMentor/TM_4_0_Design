@@ -85,7 +85,7 @@ body > * {
 #application {
   width: 100%;
   max-height: 100%;
-  margin-top: 80px;
+  margin-top: 170px;
   background: #fafafa;
 }
 #call-to-action {
@@ -172,11 +172,14 @@ body > * {
   background: #fff;
   margin-bottom: 20px;
 }
+#form p a {
+  text-decoration: underline;
+}
 #loginwall {
-  padding: 90px 0 0 0;
+  padding: 240px 0 0 0;
 }
 #landing-page {
-  margin-top: 70px;
+  margin-top: 220px;
   background: white;
   height: 100%;
 }
@@ -237,7 +240,7 @@ body > * {
   background: #fafafa;
   width: 100%;
   position: fixed;
-  top: 80px;
+  top: 160px;
   left: 0;
   z-index: 96;
 }
@@ -270,7 +273,7 @@ body > * {
 }
 img {
   height: auto;
-  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
 }
 /*------------------------------------*
@@ -282,6 +285,7 @@ img {
   left: 0;
   top: 0;
   z-index: 99;
+  background: white;
   border-bottom: 1px solid #dbdbdb;
 }
 #customer-navigation {
@@ -321,9 +325,8 @@ img {
   padding: 0;
 }
 #links.text-links ul li {
-  display: inline-block;
-  margin: 0 10px 5px 0;
-  font-size: 10px;
+  display: block;
+  margin: 10px 0;
 }
 #links.text-links ul li:last-child {
   margin-right: 0;
@@ -332,8 +335,8 @@ img {
   display: inline-block;
 }
 #links.icons ul li {
-  display: inline-block;
-  font-size: 12px;
+  display: block;
+  margin: 2px 0;
 }
 #links.icons ul li i {
   padding-right: 5px
@@ -575,11 +578,11 @@ pre {
   display: block;
   padding: 20px;
   line-height: 1.5;
-  color: #aaaaaa;
+  color: #444444;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #dbdbdb;
-  border: 1px solid #aaaaaa;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
   border-radius: $border;
   margin: 30px 0 30px 0;
   overflow: auto;
@@ -770,16 +773,6 @@ table td {
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
-@media (min-width: 450px) {
-  #links.text-links ul li {
-    font-size: 12px;
-  }
-}
-@media (min-width: 500px) {
-  #links.text-links ul li {
-    font-size: 14px;
-  }
-}
 @media (min-width: 853px) {
   #application {
     margin-top: 60px;
@@ -822,7 +815,7 @@ table td {
     width: auto;
   }
   #links.icons {
-    padding-top: 20px;
+    padding-top: 17px;
     text-align: right;
   }
   #links.icons ul li {
@@ -863,7 +856,6 @@ table td {
     margin-top: 160px;
   }
 }
-
 @media (min-width: 999px) {
   #links.text-links ul li {
     padding: 0 40px 0 0;
