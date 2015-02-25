@@ -88,6 +88,9 @@ body > * {
   margin-top: 170px;
   background: #fafafa;
 }
+#help-nav {
+  margin-top: 60px;
+}
 #call-to-action {
   background: url(../assets/stock-img/bg-img-large.jpg) no-repeat;
   background-position: 0px -800px;
@@ -781,6 +784,9 @@ table td {
 @media (min-width: 853px) {
   #application {
     margin-top: 60px;
+  }
+  #help-nav {
+    margin-top: 0px;
   }
   #about, #usp, #call-to-action {
     padding: 100px 0;
