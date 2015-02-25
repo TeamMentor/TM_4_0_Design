@@ -30,16 +30,22 @@ mixin links-queries
                 a(href='/graph/' + query)= query
 
 mixin help-navigation
-  #help-navigation
-    if library
-        .bg
-            each view in library.Views
-                h4.label= view.Title
-                table.nav
-                    each article in view.Articles
-                        tr
-                            td
-                                a(href= '/help/' + article.Id)= article.Title
+    #help-nav
+        #help-navigation
+            if library
+                .bg
+                    each view in library.Views
+                        h4.label= view.Title
+                        table.nav
+                            each article in view.Articles
+                                tr
+                                    td
+                                        a(href= '/help/' + article.Id)= article.Title
+mixin help-index
+    .bg
+        #help-docs
+            #help-index
+              include:md ../../content/help/page-index.md
 
 mixin help-content
     .bg
