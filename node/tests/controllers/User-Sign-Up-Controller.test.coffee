@@ -4,7 +4,7 @@ Login_Controller        = require('../../controllers/Login-Controller')
 User_Sign_Up_Controller = require('../../controllers/User-Sign-Up-Controller')
 
 
-describe 'user sign-up', ->
+describe '| controllers | User-Sign-Up-Controller', ->
 
   signUp_fail    = "source/jade/guest/sign-up-Fail.jade"
   signUp_Ok      = '/guest/sign-up-OK.html'
@@ -112,6 +112,7 @@ describe 'user sign-up', ->
         html.assert_Is 'Could not connect with TM 3.5 server'
         done()
     using new User_Sign_Up_Controller(req,res),->
+      @.webServices = "http://aaaaaaa.teammentor.net"
       @userSignUp()
 
   it 'userSignUp (webServices - non 200 response)', (done)->
