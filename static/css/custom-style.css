@@ -176,10 +176,10 @@ body > * {
   text-decoration: underline;
 }
 #loginwall {
-  padding: 90px 0 0 0;
+  padding: 240px 0 0 0;
 }
 #landing-page {
-  margin-top: 170px;
+  margin-top: 220px;
   background: white;
   height: 100%;
 }
@@ -240,7 +240,7 @@ body > * {
   background: #fafafa;
   width: 100%;
   position: fixed;
-  top: 170px;
+  top: 160px;
   left: 0;
   z-index: 96;
 }
@@ -327,7 +327,6 @@ img {
 #links.text-links ul li {
   display: block;
   margin: 10px 0;
-  font-size: 10px;
 }
 #links.text-links ul li:last-child {
   margin-right: 0;
@@ -337,8 +336,7 @@ img {
 }
 #links.icons ul li {
   display: block;
-  margin: 10px 0;
-  font-size: 12px;
+  margin: 2px 0;
 }
 #links.icons ul li i {
   padding-right: 5px
@@ -775,16 +773,6 @@ table td {
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
-@media (min-width: 450px) {
-  #links.text-links ul li {
-    font-size: 12px;
-  }
-}
-@media (min-width: 500px) {
-  #links.text-links ul li {
-    font-size: 14px;
-  }
-}
 @media (min-width: 853px) {
   #application {
     margin-top: 60px;
@@ -827,7 +815,7 @@ table td {
     width: auto;
   }
   #links.icons {
-    padding-top: 20px;
+    padding-top: 17px;
     text-align: right;
   }
   #links.icons ul li {
