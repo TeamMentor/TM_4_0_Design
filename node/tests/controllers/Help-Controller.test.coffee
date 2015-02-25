@@ -19,7 +19,7 @@ describe '| controllers | Help-Controller.test |', ()->
     #status: -> @
   library =
     Title    : 'library title'
-    Articles : { 'article_id_2': { title: 'article_title_2'} }
+    Articles : { 'article_id_2': { Title: 'article_title_2'} }
     Folders  : []
     Views    : [ { Title: 'an view title', Articles: [ {Title:'an article title', Id: 'an article id'}]}]
     content  : 'library index page content'
@@ -241,7 +241,7 @@ describe '| controllers | Help-Controller.test |', ()->
 
     it 'show_Help_Page (valid server, good response)', (done)->
       page_Id       = library.Articles.keys().first()
-      article_Title = library.Articles[page_Id].title
+      article_Title = library.Articles[page_Id].Title
       help_Content  = 'an_content_'.add_5_Letters()
 
       on_Content        = (req,res)->

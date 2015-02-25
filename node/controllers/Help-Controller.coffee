@@ -84,7 +84,7 @@ class Help_Controller
         @.show_Content(cachedData.title, cachedData.content);
         return;
 
-      @.fetch_Article_and_Show @.docs_Library?.Articles[@.page_Id()]?.title || null
+      @.fetch_Article_and_Show @.docs_Library?.Articles[@.page_Id()]?.Title || null
 
   show_Index_Page: ()=>
     @map_Docs_Library =>
