@@ -66,13 +66,13 @@ body > * {
 }
 #about {
   background: url(../assets/stock-img/bg-img-large.jpg) no-repeat;
-  background-position: 0px -1400px;
+  background-position: 0px -1450px;
 }
 #about, #usp, #call-to-action {
   padding: 40px 0;
   text-align: center;
   background-position: fixed;
-  background-size: auto;
+  background-size: 100%;
 }
 #about h2, #usp h2 p {
   color: #FFFFFF;
@@ -85,8 +85,11 @@ body > * {
 #application {
   width: 100%;
   max-height: 100%;
-  margin-top: 170px;
+  margin-top: 140px;
   background: #fafafa;
+}
+#help-nav {
+  margin-top: 20px;
 }
 #call-to-action {
   background: url(../assets/stock-img/bg-img-large.jpg) no-repeat;
@@ -176,10 +179,10 @@ body > * {
   text-decoration: underline;
 }
 #loginwall {
-  padding: 240px 0 0 0;
+  padding: 200px 0 0 0;
 }
 #landing-page {
-  margin-top: 220px;
+  margin-top: 180px;
   background: white;
   height: 100%;
 }
@@ -317,37 +320,21 @@ img {
   margin: 0 auto;
 }
 #links {
-  text-align: text-center;
   width: 100%;
 }
 #links ul {
   list-style-type: none;
   padding: 0;
 }
-#links.text-links ul li {
-  display: block;
-  margin: 10px 0;
-}
-#links.text-links ul li:last-child {
-  margin-right: 0;
-}
-#links.icons {
-  display: inline-block;
-}
-#links.icons ul li {
+#links.text-links ul li, #links.icons ul li {
   display: block;
   margin: 2px 0;
 }
 #links.icons ul li i {
-  padding-right: 5px
-}
-#links ul li {
-  display: inline;
-  padding: 0 10px 0 0;
+  padding-right: 10px
 }
 #links ul li a {
   text-transform: uppercase;
-  text-decoration: none;
   letter-spacing: 1px;
   color: #8aaf3e;
 }
@@ -450,7 +437,7 @@ form, .form-group {
 }
 form {
   border-radius: 3px;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
 }
 form p {
   font-size: 0.75em;
@@ -617,9 +604,14 @@ a.minor{
   color: #8aaf3e;
   text-decoration: none;
   font-size: 14px;
+  line-height: 4.5em;
+  display: block;
 }
 a.minor:hover {
   color: #b4cf7b;
+}
+#link-forgot-pwd {
+  text-align: center;
 }
 .text-center {
   text-align: center;
@@ -775,7 +767,10 @@ table td {
 *------------------------------------*/
 @media (min-width: 853px) {
   #application {
-    margin-top: 60px;
+    margin-top: 40px;
+  }
+  #help-nav {
+    margin-top: 0px;
   }
   #about, #usp, #call-to-action {
     padding: 100px 0;
@@ -811,34 +806,30 @@ table td {
     width: 60%;
     float: right;
   }
-  #links button {
-    width: auto;
-  }
-  #links.icons {
-    padding-top: 17px;
-    text-align: right;
+  #links.text-links, #links.icons {
+    padding-top: 20px;
   }
   #links.icons ul li {
     display: inline-block;
   }
-  #links.text-links {
-    padding-top: 20px;
-  }
-  #links.text-links ul {
+  #links.text-links ul, #links.icons ul {
     text-align: right;
   }
-  #links.text-links ul li {
-    display: inline !important;
-    width: 100%;
+  #links.text-links ul li,  #links.icons ul li {
+    display: inline-block;
+    padding: 0 20px 0 0;
   }
-  #links.text-links ul li:last-child {
-    padding-right: 15px;
+  #links.text-links ul li:last-child, #links.icons ul li:last-child {
+    padding-right: 20px;
   }
   #links ul li a{
     font-size: 14px;
   }
   #loginwall {
     padding: 90px 0 0 0;
+  }
+  #link-forgot-pwd {
+    text-align: right;
   }
   #main-app-view {
     margin-top: 160px;
@@ -857,10 +848,7 @@ table td {
   }
 }
 @media (min-width: 999px) {
-  #links.text-links ul li {
-    padding: 0 40px 0 0;
-  }
-  #links.icons ul li {
+  #links.text-links ul li, #links.icons ul li {
     padding: 0 30px 0 0;
   }
   h1 {
