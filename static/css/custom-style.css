@@ -450,7 +450,7 @@ form, .form-group {
 }
 form {
   border-radius: 3px;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
 }
 form p {
   font-size: 0.75em;
@@ -617,9 +617,14 @@ a.minor{
   color: #8aaf3e;
   text-decoration: none;
   font-size: 14px;
+  line-height: 4.5em;
+  display: block;
 }
 a.minor:hover {
   color: #b4cf7b;
+}
+#link-forgot-pwd {
+  text-align: center;
 }
 .text-center {
   text-align: center;
@@ -839,6 +844,9 @@ table td {
   }
   #loginwall {
     padding: 90px 0 0 0;
+  }
+  #link-forgot-pwd {
+    text-align: right;
   }
   #main-app-view {
     margin-top: 160px;
