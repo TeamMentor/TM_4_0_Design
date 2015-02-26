@@ -6,6 +6,7 @@ add_Routes = (app,searchController)->
     Help_Controller         = require '../controllers/Help-Controller'
     Jade_Controller         = require '../controllers/Jade-Controller'
     Login_Controller        = require '../controllers/Login-Controller'
+    Misc_Controller         = require '../controllers/Misc-Controller'
     Search_Controller       = require '../controllers/Search-Controller'
     Pwd_Reset_Controller    = require '../controllers/Pwd-Reset-Controller'
     User_Sign_Up_Controller = require '../controllers/User-Sign-Up-Controller'
@@ -27,11 +28,13 @@ add_Routes = (app,searchController)->
     Search_Controller.registerRoutes(app, searchController);  # search routes
     Article_Controller.register_Routes(app, searchController)  # article routes
     Pwd_Reset_Controller.register_Routes(app)
+    Help_Controller.register_Routes(app)
+    Misc_Controller.register_Routes(app)
 
     #help routes
     
-    app.get '/help/:page*' , (req, res)-> new Help_Controller(req, res).renderPage()
-    app.get '/Image/:name' , (req, res)-> new Help_Controller(req, res).redirectImagesToGitHub()
+    #app.get '/help/:page*' , (req, res)-> new Help_Controller(req, res).renderPage()
+    #app.get '/Image/:name' , (req, res)-> new Help_Controller(req, res).redirectImagesToGitHub()
 
     # jade (pre-compiled) pages (these have to be the last set of routes)
 

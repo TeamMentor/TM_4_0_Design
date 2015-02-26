@@ -1,91 +1,47 @@
 fs                = require('fs')
 path              = require('path')
 expect            = require("chai").expect
-TeamMentor_Service = require('../../services/TeamMentor-Service')
+Docs_TM_Service   = require('../../services/Docs-TM-Service')
 
-describe "| services | TeamMentor-Service.test", ()->
+describe "| services | Docs-TM-Service.test", ()->
 
-    teamMentorContent = null
+    docs_TM_Service = null
 
     before ->
-      teamMentorContent = new TeamMentor_Service()
+      docs_TM_Service = new Docs_TM_Service()
       @timeout(4000)
 
-    it 'check teamMentorContent default fields', ()->
-      using new TeamMentor_Service(),->
+    it 'check docs_TM_Service default fields', ()->
+      using new Docs_TM_Service(),->
         expect(@                         ).to.be.an('object')
-
         expect(@._tmSite                 ).to.be.an('string')
         expect(@._tmWebServices          ).to.be.an('string')
-        #expect(@._baseLocalDataFolder    ).to.be.an('string')
-        #expect(@._libraryData_CacheFile  ).to.be.an('string')
-
-        #expect(@.calculateLocalPath      ).to.be.an('function')
         expect(@.calculateTargetUrl      ).to.be.an('function')
         expect(@.getArticlesMetadata     ).to.be.an('function')
         expect(@.getLibraryData          ).to.be.an('function')
-        #expect(@.getLibraryData_FromCache).to.be.an('function')
-        #expect(@.getJsonAndSaveToDisk    ).to.be.an('function')
 
         @.disableCache = false
-    
-    
-  #  it 'calculateLocalPath', ()->
-  #    fileName   = "abc.json"
-  #    localPath  = teamMentorContent.calculateLocalPath(fileName)
-#
-  #    baseFolder = process.cwd() + teamMentorContent._baseLocalDataFolder +  teamMentorContent._name
-#
-  #    expect(fs.existsSync(baseFolder)).to.be.true
-  #    expect(localPath).to.be.equal(path.join(baseFolder, fileName))
 
-    
     it 'calculateTargetUrl', ()->
       wsName    = "GetGUIObjects";
-      targetUrl = teamMentorContent.calculateTargetUrl(wsName);
+      targetUrl = docs_TM_Service.calculateTargetUrl(wsName);
       expect(targetUrl).to.be.equal('https://docs.teammentor.net/Aspx_Pages/TM_WebServices.asmx/GetGUIObjects');
 
 
     it 'asmx_GetFolderStructure_Libraries', (done)->
-      using teamMentorContent, ->
+      using docs_TM_Service, ->
         @.asmx_GetFolderStructure_Libraries =>
           @.cache.path_Key('json_post_' + @.calculateTargetUrl('GetFolderStructure_Libraries')).assert_File_Exists()
           done()
 
     it 'asmx_GetGUIObjects', (done)->
-      using teamMentorContent, ->
+      using docs_TM_Service, ->
         @.asmx_GetGUIObjects =>
           @.cache.path_Key('json_post_' + @.calculateTargetUrl('GetGUIObjects'               )).assert_File_Exists()
           done();
 
-    #it 'getJsonAndSaveToDisk', (done)->
-    #  teamMentorContent.getJsonAndSaveToDisk 'GetGUIObjects', (body,request)->
-    #    log body
-    #    done()
-
-    #it 'getJsonAndSaveToDisk (bad tmSite)', (done)->
-    #  #this will trigger the ENOTFOUND
-    #  tmSite = teamMentorContent._tmSite
-    #  teamMentorContent._tmSite = 'http://aaaaaaabb.teammentor.net'
-    #  teamMentorContent.getJsonAndSaveToDisk 'aa',->
-    #    teamMentorContent._tmSite = tmSite
-    #    done()
-
-    #it 'update GetFolderStructure_Libraries', (done)->
-    #  teamMentorContent.disableCache =true; # find a lighter request to test this
-#
-    #  teamMentorContent.getJsonAndSaveToDisk "GetFolderStructure_Libraries", (targetFile)->
-    #    expect(fs.existsSync(targetFile)).to.be.true;
-    #    teamMentorContent.disableCache =false;
-    #    done();
-#
-    #it 'update GetGUIObjects', (done)->
-    #  teamMentorContent.getJsonAndSaveToDisk "GetGUIObjects", (targetFile)->
-    #    targetFile.assert_File_Exists()
-    #    done()
-
     it 'getArticlesMetadata', ()->
-      teamMentorContent.getArticlesMetadata (articlesMetadata)->
+      docs_TM_Service.getArticlesMetadata (articlesMetadata)->
         expect(articlesMetadata                  ).to.be.an('Object')
         expect(articlesMetadata._numberOfArticles).to.be.an('Number')
         expect(articlesMetadata._numberOfArticles).to.be.above(100)
@@ -98,18 +54,9 @@ describe "| services | TeamMentor-Service.test", ()->
         expect(metadata.Phase     ).to.be.equal('NA')
         expect(metadata.Type      ).to.be.equal('Documentation')
         expect(metadata.Category  ).to.be.equal('Administration')
-
-        #teamMentorContent._name='_tmp_Docs'
-        #getGuiObjects_File  = teamMentorContent.calculateLocalPath('GetGUIObjects.json');
-        #articlesMetadata = teamMentorContent.getArticlesMetadata();   #getLibraryData test will reload this
-        #assert_Is_Null(articlesMetadata)
-        #libraryData = teamMentorContent.getLibraryData()
-        #assert_Is_Null(libraryData)
-        #getGuiObjects_File.parent_Folder().delete_Folder().assert_True()
-        #teamMentorContent._name='docs'
     
     it 'getLibraryData', ()->
-        teamMentorContent.getLibraryData (libraryData)->
+        docs_TM_Service.getLibraryData (libraryData)->
         
           #check libraryData object types
           expect(libraryData).to.be.an('Array');
@@ -145,17 +92,3 @@ describe "| services | TeamMentor-Service.test", ()->
           expect(article.Phase     ).to.be.equal('NA');
           expect(article.Type      ).to.be.equal('Documentation');
           expect(article.Category  ).to.be.equal('Administration');
-
-    
-  #  it 'getLibraryData_FromCache', ()->
-  #    targetFile = teamMentorContent.calculateLocalPath(teamMentorContent._libraryData_CacheFile)
-  #    targetFile.file_Delete() if targetFile.file_Exists()
-#
-  #    expect(fs.existsSync(targetFile)).to.be.false;
-#
-  #    libraryData = teamMentorContent.getLibraryData_FromCache();
-#
-  #    expect(fs.existsSync(targetFile)).to.be.true;
-  #    expect(libraryData   ).to.be.an('Array');
-  #    expect(libraryData[0]).to.be.an('Object');
-  #    expect(libraryData).to.deep.equal(teamMentorContent.getLibraryData_FromCache())

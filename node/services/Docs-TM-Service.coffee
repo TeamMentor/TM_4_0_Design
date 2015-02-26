@@ -3,9 +3,7 @@ path           = null
 request        = null
 Cache_Service  = null
 
-# this needs to me all moved into the 'teammentor' module
-# at the moment this could be called Docs_TM_Service and be an accurate representation of this code
-class TeamMentor_Service
+class Docs_TM_Service
 
   constructor: ->
 
@@ -19,7 +17,6 @@ class TeamMentor_Service
     @._tmSite                = 'https://docs.teammentor.net'
     @._tmWebServices         = '/Aspx_Pages/TM_WebServices.asmx/'
     @.cache                  = new Cache_Service("docs_cache")
-    @.tm_35_Server           = 'https://tmdev01-uno.teammentor.net'   # starting to move this dependencies here
 
 
   asmx_GetFolderStructure_Libraries: (callback)=>
@@ -59,7 +56,7 @@ class TeamMentor_Service
   getLibraryData: (callback)->
     @asmx_GetFolderStructure_Libraries (getFolderStructure)=>
       @.getArticlesMetadata (articlesMetadata)=>
-    
+
         libraryData = [];
         getFolderStructure.d.forEach (tmLibrary)->
                 library =
@@ -67,12 +64,12 @@ class TeamMentor_Service
                             Folders : [],
                             Views   : [],
                             Articles: {}
-                
+
                 tmLibrary.guidanceItems = [];
-                
+
                 tmLibrary.views.forEach (tmView)->
                         view = { Title: tmView.caption, Articles: [] };
-                    
+
                         tmView.guidanceItems.forEach (guidanceItemId)->
                                 articleMetadata = articlesMetadata[guidanceItemId];
                                 view   .Articles.push(articleMetadata);
@@ -82,4 +79,4 @@ class TeamMentor_Service
 
         callback libraryData
 
-module.exports = TeamMentor_Service;
+module.exports = Docs_TM_Service

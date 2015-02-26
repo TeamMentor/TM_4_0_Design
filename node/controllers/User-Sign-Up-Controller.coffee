@@ -45,22 +45,35 @@ class User_Sign_Up_Controller
               };
 
     request options, (error, response, body)=>
-      if (error and error.code=="ENOTFOUND")
-        @.res.send('could not connect with TM Uno server')
+      if (error and error.code is "ENOTFOUND")
+        #[QA] ADD ISSUE: Refactor this to show TM 500 error message
+        @.res.send('Could not connect with TM 3.5 server')
         return
 
-      if (response.body!=null && response.statusCode == 200)
-        signUpResponse = response.body.d
-        message= ''
+      if (error or response.body is null or response.statusCode isnt 200)
+        @.res.send('Bad response received from TM 3.5 server')
+        return
 
-        if (signUpResponse.Signup_Status!=0)
-          if (signUpResponse.Validation_Results!=null && signUpResponse.Validation_Results.not_Empty())
-              message = signUpResponse.Validation_Results.first().Message
-          else
-              message = signUpResponse.Simple_Error_Message
-          userViewModel.errorMessage = message
-          @res.render(signUp_fail, {viewModel:userViewModel})
-        else
-          @res.redirect('/guest/sign-up-OK.html')
+      signUpResponse = response.body?.d
+
+      if (not signUpResponse) or (not signUpResponse.Validation_Results)
+        @.res.send('Bad data received from TM 3.5 server')
+        return
+
+      message = ''
+
+      #log signUpResponse
+
+      if (signUpResponse.Signup_Status is 0)
+        @res.redirect('/guest/sign-up-OK.html')
+        return
+      if (signUpResponse.Validation_Results.empty())
+        message = signUpResponse.Simple_Error_Message || 'An error occurred'
+      else
+        message = signUpResponse.Validation_Results.first().Message
+      userViewModel.errorMessage = message
+      @res.render(signUp_fail, {viewModel:userViewModel})
+
+
 
 module.exports = User_Sign_Up_Controller

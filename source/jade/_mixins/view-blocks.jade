@@ -1,51 +1,58 @@
 mixin links-libraries
-    //if libraries
-        each library in libraries
-            p
-                a(href="/library/" + library.name, id="link-library-" + library.id)= library.title
-    .list-group
-        a#link-my-articles(href='/library/Uno') Guidance
-        a#link-my-articles(href='/library/queries') Library Queries
-    //p
-        a#link-my-articles(href='/library/my-articles') My Articles
-    //p
-        a#link-my-search-items(href='/library/my-search-items') My Search Items
+  //if libraries
+    each library in libraries
+      p
+        a(href="/library/" + library.name, id="link-library-" + library.id)= library.title
+  .list-group
+    a#link-my-articles(href='/library/Uno') Guidance
+    a#link-my-articles(href='/library/queries') Library Queries
+  //p
+    a#link-my-articles(href='/library/my-articles') My Articles
+  //p
+    a#link-my-search-items(href='/library/my-search-items') My Search Items
 
 mixin links-library
-    if(library)
-        //div= library
-        .list-group
-            each view in library.data.views
-                a(href='#{link_fundamentals_of_security}')= view.caption
-        .list-group
-            each folder in library.data.subFolders
-                //a(href='/library/'+library.name + '/folder/' + folder.name)= folder.name
-                a(href='/graph/'+ folder.name)= folder.name
+  if(library)
+    //div= library
+    .list-group
+      each view in library.data.views
+        a(href='#{link_fundamentals_of_security}')= view.caption
+    .list-group
+      each folder in library.data.subFolders
+        //a(href='/library/'+library.name + '/folder/' + folder.name)= folder.name
+        a(href='/graph/'+ folder.name)= folder.name
 
 mixin links-queries
-    if(queries)
-        //div= library
-        .list-group
-            each query in queries
-                a(href='/graph/' + query)= query
+  if(queries)
+    //div= library
+    .list-group
+      each query in queries
+        a(href='/graph/' + query)= query
 
 mixin help-navigation
-    if library
+  #help-nav
+    #help-navigation
+      if library
         .bg
-            each view in library.Views
-                h4.label= view.Title
-                table.nav
-                    each article in view.Articles
-                        tr
-                            td
-                                a(href= '/help/' + article.Id)= article.Title
+          each view in library.Views
+            h4.label= view.Title
+            table.nav
+              each article in view.Articles
+                tr
+                  td
+                    a(href= '/help/' + article.Id)= article.Title
+mixin help-index
+  #help-index
+    .bg
+      include:md ../../content/help/page-index.md
 
 mixin help-content
+  #help-docs
     .bg
-        if title
-            h2= title
-        != content
+      if title
+        h1#help-title= title
+      #help-content!= content
 
 mixin terms-and-conditions-content
-    #toc-content.bg
-        include:md ../../content/terms-and-conditions/terms-and-conditions.md
+  #toc-content.bg
+    include:md ../../content/terms-and-conditions/terms-and-conditions.md

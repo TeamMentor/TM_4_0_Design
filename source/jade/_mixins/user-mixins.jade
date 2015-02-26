@@ -1,80 +1,80 @@
 include ../../shared-mixins/globals.jade
 
 mixin login-form
-    #form
-        #heading
-            include:md ../../content/getting-started/login-form.md
-        form#login-form(role='form' method='post' action='/user/login')
-            .form-group
-                +username-input
-            .form-group
-                +password-input
-            .row
-                .col-7
-                    +login-button
-                        br
-                .col-5.text-right
-                    a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot password?
+  #form
+    #heading
+      include:md ../../content/getting-started/login-form.md
+    form#login-form(role='form' method='post' action='/user/login')
+      .form-group
+        +username-input
+      .form-group
+        +password-input
+      .form-group
+        .row
+          .col-5
+            +login-button
+          .col-7
+            a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot password?
 
 //- sign-up-form
 mixin sign-up-form
-    #form
-        #heading
-            include:md ../../content/getting-started/sign-up-form.md
-        form#sign-up-form(role='form', method='POST', action='/user/sign-up')
-            .form-group
-                +username-input
-                include:md ../../content/getting-started/username-prompt.md
-            .form-group
-                +email-input
-                include:md ../../content/getting-started/email-prompt.md
-            .form-group
-                +password-input
-                include:md ../../content/getting-started/password-prompt.md
-            .form-group
-                +confirm-password-input
-            include:md ../../content/getting-started/agree-to-toc.md
-            .row
-                .col-7
-                    +sign-up-button
+  #form
+    #heading
+      include:md ../../content/getting-started/sign-up-form.md
+    form#sign-up-form(role='form', method='POST', action='/user/sign-up')
+      .form-group
+        +username-input
+        include:md ../../content/getting-started/username-prompt.md
+      .form-group
+        +email-input
+        include:md ../../content/getting-started/email-prompt.md
+      .form-group
+        +password-input
+        include:md ../../content/getting-started/password-prompt.md
+      .form-group
+        +confirm-password-input
+      include:md ../../content/getting-started/agree-to-toc.md
+      .row
+        .col-5
+          +sign-up-button
 
 
 //- forgot-password-form
 mixin forgot-password-form
-    #form
-        #heading
-            include:md ../../content/getting-started/forgot-password-form.md
-        form#forgot-password(role='form', action='/user/pwd_reset' method='post')
-            .form-group
-                +email-input
-            .row
-                .col-7
-                    +get-password-button
+  #form
+    #heading
+      include:md ../../content/getting-started/forgot-password-form.md
+    form#forgot-password(role='form', action='/user/pwd_reset' method='post')
+      .form-group
+        +email-input
+      .row
+        .col-7
+          +get-password-button
 
 //- pwd-reset-form
 mixin pwd-reset-form
-    fieldset
-        h3 Reset your password
-        form#pwd-reset-form(role='form' method='post')
-            .form-group
-                +password-input
-                include:md ../../content/getting-started/password-prompt.md
-            .form-group
-                +confirm-password-input
-            +reset-password-button
+  fieldset
+    h3 Reset your password
+    form#pwd-reset-form(role='form' method='post')
+      .form-group
+        +password-input
+        include:md ../../content/getting-started/password-prompt.md
+      .form-group
+        +confirm-password-input
+      +reset-password-button
 
 mixin alert-login-failed
   if viewModel && viewModel.errorMessage
     .alert(role='alert')
-        #message= 'Error: ' + viewModel.errorMessage
+      #message= 'Error: ' + viewModel.errorMessage
 
 mixin alert-please-login
-    .alert(role='alert')
-        #message You need to login to see that page.
+  .alert(role='alert')
+    #message You need to login to see that page.
 
 mixin alert-pwd-sent
-    .alert(role='alert')
-        #message If you entered a valid address, then a password reset link has been sent to your email address.
+  .alert(role='alert')
+    #message If you entered a valid address, then a password reset link has been sent to your email address.
 
 mixin alert-sign-up-failed
   if viewModel && viewModel.errorMessage
@@ -82,12 +82,12 @@ mixin alert-sign-up-failed
       #message= 'Error: ' + viewModel.errorMessage
 
 mixin alert-sign-up-OK
-    .alert(role='alert')
-        #message Thanks for signing up to TEAM Mentor. Please login to access our libraries.
+  .alert(role='alert')
+    #message Thanks for signing up to TEAM Mentor. Please login to access our libraries.
 
 mixin alert-pw-requirements
-    .alert(role='alert')
-        #message You need to login to see that page.
+  .alert(role='alert')
+    #message You need to login to see that page.
 
 mixin alert-pwd-reset-failed
  if errorMessage
@@ -95,5 +95,5 @@ mixin alert-pwd-reset-failed
      #message= 'Error: ' + errorMessage
 
 mixin alert-pwd-reset-OK
-    .alert(role='alert')
-        div Your password has been updated. Please login to access our libraries.
+  .alert(role='alert')
+    div Your password has been updated. Please login to access our libraries.

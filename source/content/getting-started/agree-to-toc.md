@@ -1,1 +1,1 @@
-By signing up, you agree to our [Terms and Conditions](/guest/terms-and-conditions.html).
+By signing up, you agree to our [Terms and Conditions](/misc/terms-and-conditions).

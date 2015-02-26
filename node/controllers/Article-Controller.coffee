@@ -4,12 +4,15 @@ Graph_Service    = null
 Config           = null
 
 class Article_Controller
-  constructor: (req, res, config,graph_Options)->
 
+  dependencies: ()->
     Express_Service  = require('../services/Express-Service')
     Jade_Service     = require('../services/Jade-Service')
     Graph_Service    = require('../services/Graph-Service')
     Config           = require('../misc/Config')
+
+  constructor: (req, res, config,graph_Options)->
+    @dependencies()
     @.req              = req;
     @.res              = res;
     @.config           = config || new Config()
