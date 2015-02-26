@@ -69,17 +69,15 @@ body > * {
   background-position: 0px -480px;
 }
 #about, #usp, #call-to-action {
-  padding: 5% 0;
-  text-align: center;
+  padding: 2% 0;
   background-size: auto;
-}
-#about h2, #usp h1 p {
-  color: #FFFFFF;
-  line-height: 1.25em;
 }
 #about-us {
   padding: 2% 0;
   background: white;
+}
+#about h3, #usp h2, #call-to-action h2 {
+  color: white;
 }
 #application {
   width: 100%;
@@ -92,16 +90,15 @@ body > * {
 }
 #call-to-action {
   background: url(../assets/stock-img/bg-img-small.jpg) no-repeat;
-  background-position: 0px -280px;
-  text-align: center;
-}
-#call-to-action h1 {
-  color: #FFFFFF;
+  background-position: 0px -275px;
 }
 #clients {
   padding: 2% 0;
-  text-align: center;
   background: white;
+  text-align: center;
+}
+#clients h2 {
+  text-align: left !important;
 }
 .bg {
   background: white;
@@ -136,15 +133,13 @@ body > * {
 }
 #features {
   background: white;
-  padding: 0;
-  padding: 7% 0;
 }
 #features i, #reasons i, #summary i {
   color: #8baf3e;
   font-size: 4em;
 }
 #features h2 {
-  text-align: center;
+  text-align: left;
 }
 #footer {
   background: #fff;
@@ -167,6 +162,9 @@ body > * {
 #footer i {
   font-size: 16px;
   margin-right: 10px;
+}
+#contact-information {
+  margin-top: -20px;
 }
 #form {
   border: 1px solid #dbdbdb;
@@ -213,9 +211,6 @@ body > * {
 #reasons {
   padding: 2% 0;
   background: white;
-}
-#reasons h2 {
-  text-align: center;
 }
 #results {
   background: white;
@@ -611,9 +606,6 @@ a.minor:hover {
 #help-docs a {
   text-decoration: underline;
 }
-#link-forgot-pwd {
-  text-align: center;
-}
 .text-center {
   text-align: center;
 }
@@ -643,12 +635,12 @@ button {
   border: none;
   color: white;
   display: inline-block;
-  font-size: 14px;
+  font-size: 0.875em;
   letter-spacing: 1px;
-  padding: 15px 0 15px 0;
+  padding: 15px;
   text-align: center;
   text-transform: uppercase;
-  width: 100%;
+  width: auto;
 }
 button:hover, button:active {
   background: #b4cf7b;
@@ -767,58 +759,66 @@ table td {
    MEDIA QUERIES
 *------------------------------------*/
 @media (min-width: 550px) {
-  #about, #call-to-action {
-    padding: 7% 0;
+  #about, #call-to-action, #usp {
+    padding: 7% 0 5% 0;
+  }
+  #about, #call-to-action, #usp {
+    background: url(../assets/stock-img/bg-img-medium.jpg) no-repeat;
+    text-align: center;
   }
   #about {
-    background: url(../assets/stock-img/bg-img-medium.jpg) no-repeat;
     background-position: 0px -820px;
   }
   #call-to-action {
-    background: url(../assets/stock-img/bg-img-medium.jpg) no-repeat;
     background-position: 0px -500px;
   }
-  #usp {
-    background: url(../assets/stock-img/bg-img-medium.jpg) no-repeat;
+  #features {
+    margin-top: 50px;
+  }
+  button, .button {
+    width: 100%;
   }
 }
 @media (min-width: 850px) {
-    h1 {
+  h1 {
     font-size: 2.25em;
-    line-height: 1.25em;
+    line-height: 2.5em;
   }
   h2 {
     font-size: 2em;
-    line-height: 1.153em;
+    line-height: 1.5em;
   }
   h3 {
     font-size: 1.75em;
-    line-height: 1.136em;
+    line-height: 1.5em;
   }
   h4 {
     font-size: 1.5em;
-    line-height: 1.11em;
   }
   h5 {
     font-size: 1.25em;
-    line-height: 1.11em;
+    line-height: 1.5em;
   }
   p {
     font-size: 1em;
-    line-height: 1.5em;
+    line-height: 1.75em;
+  }
+  #about, #call-to-action, #usp {
+    background: url(../assets/stock-img/bg-img-large.jpg) no-repeat;
+    padding: 8% 0;
   }
   #about {
-    background: url(../assets/stock-img/bg-img-large.jpg) no-repeat;
     background-position: 0px -1350px;
     background-attachment: fixed;
   }
   #call-to-action {
-    background: url(../assets/stock-img/bg-img-large.jpg) no-repeat;
     background-position: 0px -800px;
   }
   #usp {
-    background: url(../assets/stock-img/bg-img-large.jpg) no-repeat;
     background-attachment: fixed;
+  }
+  #contact-information {
+    margin-top: 0;
   }
   #application {
     margin-top: 60px;
