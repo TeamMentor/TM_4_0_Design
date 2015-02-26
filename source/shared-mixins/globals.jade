@@ -1,101 +1,97 @@
-//- horizontal-rule
-mixin horizontal-rule
-    hr
-
 //- Breadcrumbs
 mixin breadcrumbs
-    if breadcrumbs && breadcrumbs.size() > 1
-        dl.sub-nav
-            #navigation
-                for item,index in breadcrumbs
-                    if index == breadcrumbs.size() -1
-                        dd.active
-                            a(href= item.href)= item.title
-                    else
-                        dd
-                            a(href= item.href)= item.title
+  if breadcrumbs && breadcrumbs.size() > 1
+    dl.sub-nav
+      #navigation
+        for item,index in breadcrumbs
+          if index == breadcrumbs.size() -1
+            dd.active
+              a(href= item.href)= item.title
+          else
+            dd
+              a(href= item.href)= item.title
 
 //- Form Inputs
 mixin username-input
-    label(for='username') Username
-    input(type='text', id='username', name='username', placeholder='Username',value='#{viewModel?viewModel.username:""}',required,maxlength='256')
+  label(for='username') Username
+  input(type='text', id='username', name='username', placeholder='Username',value='#{viewModel?viewModel.username:""}',required,maxlength='256')
 
 mixin password-input
-    label(for='password') Password
-    input(type='password', id='password', name='password', placeholder='Password',value='#{viewModel?viewModel.password:""}',required,maxlength='256')
+  label(for='password') Password
+  input(type='password', id='password', name='password', placeholder='Password',value='#{viewModel?viewModel.password:""}',required,maxlength='256')
 
 mixin confirm-password-input
-    label(for='confirm-password') Confirm Password
-    input(type='password', id='confirm-password', name='confirm-password',placeholder='Password',value='#{viewModel?viewModel.confirmpassword:""}',maxlength='256')
+  label(for='confirm-password') Confirm Password
+  input(type='password', id='confirm-password', name='confirm-password',placeholder='Password',value='#{viewModel?viewModel.confirmpassword:""}',maxlength='256')
 
 mixin email-input
-    label(for='email') Email Address
-    input(type='email', id='email', name='email', placeholder='Email Address',value='#{viewModel?viewModel.email:""}',maxlength='256')
+  label(for='email') Email Address
+  input(type='email', id='email', name='email', placeholder='Email Address',value='#{viewModel?viewModel.email:""}',maxlength='256')
 
 //- Form Buttons
 mixin login-button
-    button(type='submit', id='btn-login') Login
+  button(type='submit', id='btn-login') Login
 
 mixin forgot-password-button
-    button(type='button', id='btn-forgot-pwd') Forgot Your Password?
+  button(type='button', id='btn-forgot-pwd') Forgot Your Password?
 
 mixin sign-up-button
-    button(type='submit', id='btn-sign-up') Sign Up
+  button(type='submit', id='btn-sign-up') Sign Up
 
 mixin get-password-button
-    button(type='submit' id='btn-get-password') Get Password
+  button(type='submit' id='btn-get-password') Get Password
 
 mixin reset-password-button
-    button(type='submit' id='btn-reset-password') Reset Password
+  button(type='submit' id='btn-reset-password') Reset Password
 
 mixin start-trial-button
-    button
-        i.fi-key
-        span Start your free trial today
+  button
+    i.fi-key
+    span Start your free trial today
 
 mixin see-for-yourself-button
-    button
-        i.fi-eye
-        span See for yourself
+  button
+    i.fi-eye
+    span See for yourself
 
 //- Loginwall
 mixin team-mentor-summary
-    .bg
-        include:md ../content/getting-started/login-wall-summary.md
-        table
-            tr
-                td.text-center
-                    i.fi-clipboard-pencil
-                td
-                    include:md ../content/landing-pages/selling-point-1.md
-            tr
-                td.text-center
-                    i.fi-arrows-in
-                td
-                    include:md ../content/landing-pages/selling-point-2.md
-            tr
-                td.text-center
-                    i.fi-checkbox
-                td
-                    include:md ../content/landing-pages/selling-point-3.md
+  .bg
+    include:md ../content/getting-started/login-wall-summary.md
+    table
+      tr
+        td.text-center
+          i.fi-clipboard-pencil
+        td
+          include:md ../content/landing-pages/selling-point-1.md
+      tr
+        td.text-center
+          i.fi-arrows-in
+        td
+          include:md ../content/landing-pages/selling-point-2.md
+      tr
+        td.text-center
+          i.fi-checkbox
+        td
+          include:md ../content/landing-pages/selling-point-3.md
 
 mixin i-phone
-    i.fi-telephone
+  i.fi-telephone
 
 mixin i-email
-    i.fi-mail
+  i.fi-mail
 
 mixin i-marker
-    i.fi-marker
+  i.fi-marker
 
 mixin i-twitter
-    i.fi-social-twitter
+  i.fi-social-twitter
 
 mixin i-toc
-    i.fi-paperclip
+  i.fi-paperclip
 
 mixin arrow-down
-    i.fi-arrow-down
+  i.fi-arrow-down
 
 mixin search-icon
-    i.fi-magnifying-glass
+  i.fi-magnifying-glass
