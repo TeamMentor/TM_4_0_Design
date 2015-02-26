@@ -1,12 +1,16 @@
-request = null
-Config  = null
+request      = null
+Config       = null
+Jade_Service = null
 
 class Pwd_Reset_Controller
 
-  constructor: (req, res, options)->
+  dependencies: ->
+    request      = require('request')
+    Config       = require('../misc/Config')
+    Jade_Service = require('../services/Jade-Service')
 
-    request = require('request')
-    Config  = require('../misc/Config')
+  constructor: (req, res, options)->
+    @.dependencies()
 
     @.options                     = options || {}
     @.req                         = req
@@ -21,7 +25,7 @@ class Pwd_Reset_Controller
     @.url_WS_PasswordReset        = @.webServices + '/PasswordReset'
     @.url_error_page              = '/error'
 
-  passwordReset: ()=>
+  password_Reset: ()=>
 
     email = @.req?.body?.email
 
@@ -38,8 +42,11 @@ class Pwd_Reset_Controller
       else
           @.res.redirect(@.url_error_page );
 
+  password_Reset_Page: ()=>
+    html = new Jade_Service().renderJadeFile '/source/jade/guest/pwd-reset.jade'
+    @.res.send html
 
-  passwordResetToken : ()=>
+  password_Reset_Token : ()=>
 
     username = @.req.params?.username
     token    = @.req.params?.token
@@ -101,7 +108,8 @@ class Pwd_Reset_Controller
 
 Pwd_Reset_Controller.register_Routes =  (app)=>
 
-  app.post '/user/pwd_reset'                  , (req, res)-> new Pwd_Reset_Controller(req, res).passwordReset()
-  app.post '/passwordReset/:username/:token'  , (req, res)-> new Pwd_Reset_Controller(req, res).passwordResetToken()
+  app.post '/user/pwd_reset'                  , (req, res)-> new Pwd_Reset_Controller(req, res).password_Reset()
+  app.post '/passwordReset/:username/:token'  , (req, res)-> new Pwd_Reset_Controller(req, res).password_Reset_Token()
+  app.get '/passwordReset/:username/:token'   , (req, res)-> new Pwd_Reset_Controller(req, res).password_Reset_Page()
 
 module.exports = Pwd_Reset_Controller

@@ -36,7 +36,7 @@ class Jade_Controller
   renderFile_GET: ()=>
     @.renderFile @.req.query
 
-Jade_Controller.registerRoutes =  (app)=>
+Jade_Controller.register_Routes =  (app)=>
 
   app.get  '/render/mixin/:file/:mixin' ,    (req, res)=> new Jade_Controller(req, res, app.config).renderMixin_GET()
   app.post '/render/mixin/:file/:mixin' ,    (req, res)=> new Jade_Controller(req, res, app.config).renderMixin_POST()

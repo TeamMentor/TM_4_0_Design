@@ -6,14 +6,6 @@ bodyParser = require('body-parser')
 describe "| controllers | Pwd-Reset-Controller.test |", ->
 
   url_password_sent          = '/guest/pwd-sent.html'
-  #helper methods
-  #loginPage                 = 'source/jade/guest/login-Fail.jade'
-  #mainPage_user             = '/user/main.html'
-  #mainPage_no_user          = '/guest/default.html'
-
-  #signUp_fail               = "source/jade/guest/sign-up-Fail.jade"
-  #signUp_Ok                 = '/guest/sign-up-OK.html'
-
   #blank_credentials_message = 'Invalid Username or Password'
   app                     = null
   server                  = null
@@ -59,7 +51,7 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
         ws_Called = true
         ws_res.status(201).send()
 
-      @.passwordReset()
+      @.password_Reset()
 
   it 'passwordReset (valid email, 200 ws response)', (done)->
     ws_Called = false
@@ -77,7 +69,7 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
         ws_Called = true
         ws_res.status(200).send()
 
-      @.passwordReset()
+      @.password_Reset()
 
   it 'passwordReset(bad server)', (done)->
     req =
@@ -91,9 +83,9 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
         tm_35_Server   : 'http://aaaaa.teammentor.net/'
         tmWebServices  : 'tmWebServices'
     using new Pwd_Reset_Controller(req,res, options),->
-      @passwordReset()
+      @password_Reset()
 
-  it 'passwordResetToken (no body)', (done)->
+  it 'password_Reset_Token (no body)', (done)->
 
     using pwd_Reset_Controller,->
       @.req = {}
@@ -104,9 +96,9 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
           view_Model.assert_Is { errorMessage: 'Your password should be at least 8 characters long. It should have one uppercase and one lowercase letter, a number and a special character' }
           done()
 
-      @passwordResetToken()
+      @password_Reset_Token()
 
-  it 'passwordResetToken (empty body)', (done)->
+  it 'password_Reset_Token (empty body)', (done)->
 
     using pwd_Reset_Controller,->
       @.req = { body: {}}
@@ -117,9 +109,9 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
           view_Model.assert_Is { errorMessage: 'Your password should be at least 8 characters long. It should have one uppercase and one lowercase letter, a number and a special character' }
           done()
 
-      @passwordResetToken()
+      @password_Reset_Token()
 
-  it 'passwordResetToken (valid data, {d:true ws response})', (done)->
+  it 'password_Reset_Token (valid data, {d:true ws response})', (done)->
     using pwd_Reset_Controller,->
       @.req =
         params : { username: 'demo' , token: '00000000-0000-0000-0000-000000000000'}
@@ -133,9 +125,9 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
       on_PasswordReset = (ws_Req, ws_Res)->
         ws_Res.send {d:true}
 
-      @passwordResetToken()
+      @password_Reset_Token()
 
-  it 'passwordResetToken (valid data, {d:false ws response})', (done)->
+  it 'password_Reset_Token (valid data, {d:false ws response})', (done)->
     using pwd_Reset_Controller,->
       @.req =
         params : { username: 'demo' , token: '00000000-0000-0000-0000-000000000000'}
@@ -150,9 +142,9 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
       on_PasswordReset = (ws_Req, ws_Res)->
         ws_Res.send {d:false}
 
-      @passwordResetToken()
+      @password_Reset_Token()
 
-  it 'passwordResetToken (valid data, {null ws response})', (done)->
+  it 'password_Reset_Token (valid data, {null ws response})', (done)->
     using pwd_Reset_Controller,->
       @.req =
         params : { username: 'demo' , token: '00000000-0000-0000-0000-000000000000'}
@@ -167,9 +159,9 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
       on_PasswordReset = (ws_Req, ws_Res)->
         ws_Res.send null
 
-      @passwordResetToken()
+      @password_Reset_Token()
 
-  it 'passwordReset(bad server)', (done)->
+  it 'password_Reset(bad server)', (done)->
     req =
       params : { username: 'aaaa' , token: 'bbbb'}
       body   : { password: '!!TmAdmin24**','confirm-password':'!!TmAdmin24**'}
@@ -182,9 +174,9 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
         tm_35_Server   : 'http://aaaaa.teammentor.net/'
         tmWebServices  : 'bbbbbb'
     using new Pwd_Reset_Controller(req,res, options),->
-      @passwordResetToken()
+      @password_Reset_Token()
 
-  describe 'Check passwordResetToken method validation',->
+  describe 'Check password_Reset_Token method validation',->
 
     password_reset_fail       = 'source/jade/guest/pwd-reset-fail.jade'
     password_reset_ok         = 'source/jade/guest/login-pwd-reset.html'
@@ -201,10 +193,10 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
             view_Model.assert_Is { errorMessage: expected_Message }
             callback()
 
-        @passwordResetToken()
+        @password_Reset_Token()
 
 
-      #invoke_Method "passwordResetToken",
+      #invoke_Method "password_Reset_Token",
       #  { password: password,'confirm-password': confirmPassword } ,
       #  expected_Target,
       #  callback
@@ -216,33 +208,33 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
     text_No_Pwd_Confirm  = 'Confirmation Password must not be empty'
     text_Bad_Password    = 'Your password should be at least 8 characters long. It should have one uppercase and one lowercase letter, a number and a special character'
 
-    it 'passwordReset fail (no user)', (done)->
+    it 'password_Reset fail (no user)', (done)->
       invoke_PasswordReset null,'AAA','','',password_reset_fail, text_Invalid_Token, ->
         invoke_PasswordReset '','AAA','','',password_reset_fail, text_Invalid_Token, ->
           done()
 
-    it 'passwordReset fail (no token)', (done)->
+    it 'password_Reset fail (no token)', (done)->
       invoke_PasswordReset 'user',null,'','',password_reset_fail, text_Invalid_Token, ->
         invoke_PasswordReset 'user','','','',password_reset_fail, text_Invalid_Token, ->
           done()
 
-    it 'passwordReset fail (Passwords do not match)', (done)->
+    it 'password_Reset fail (Passwords do not match)', (done)->
       invoke_PasswordReset 'user','token','a','b',password_reset_fail, text_Password_Match, ->
         done()
 
-    it 'passwordReset fail (Weak Password)', (done)->
+    it 'password_Reset fail (Weak Password)', (done)->
       invoke_PasswordReset 'user','token','abcdefghi','abcdefghi',password_reset_fail,text_Bad_Password,->
         done()
 
-    it 'passwordReset fail (short Password)', (done)->
+    it 'password_Reset fail (short Password)', (done)->
       invoke_PasswordReset 'user','token','abc','abc',password_reset_fail, text_Password_Length,->
         done()
 
-    it 'passwordReset fail (Password not provided)', (done)->
+    it 'password_Reset fail (Password not provided)', (done)->
       invoke_PasswordReset 'user','token','','',password_reset_fail, text_Password_Empty, ->
         done()
 
-    it 'passwordReset fail (Confirmation password not provided)', (done)->
+    it 'password_Reset fail (Confirmation password not provided)', (done)->
       invoke_PasswordReset 'user','token','!!Sifsj487(*&','',password_reset_fail, text_No_Pwd_Confirm, ->
         done()
 
@@ -250,10 +242,11 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
     it 'register_Routes',->
       routes = {}
       app    =
-        post: (url, target)->
-          routes[url] = target
+        post: (url, target)-> routes['post:'+ url] = target
+        get:  (url, target)-> routes['get:' + url] = target
 
       Pwd_Reset_Controller.register_Routes app
-      routes.keys().assert_Is [ '/user/pwd_reset', '/passwordReset/:username/:token' ]
-      routes['/user/pwd_reset'                ].source_Code().assert_Contains 'return new Pwd_Reset_Controller(req, res).passwordReset();'
-      routes['/passwordReset/:username/:token'].source_Code().assert_Contains 'return new Pwd_Reset_Controller(req, res).passwordResetToken();'
+      routes.keys().assert_Is [ 'post:/user/pwd_reset', 'post:/passwordReset/:username/:token','get:/passwordReset/:username/:token'  ]
+      routes['post:/user/pwd_reset'                ].source_Code().assert_Contains 'return new Pwd_Reset_Controller(req, res).password_Reset();'
+      routes['post:/passwordReset/:username/:token'].source_Code().assert_Contains 'return new Pwd_Reset_Controller(req, res).password_Reset_Token();'
+      routes['get:/passwordReset/:username/:token' ].source_Code().assert_Contains 'return new Pwd_Reset_Controller(req, res).password_Reset_Page();'

@@ -1,44 +1,47 @@
 supertest = require('supertest')
 
 describe '| routes | routes.test |', ()->
-    app =null
+
+    @.timeout 4000
+    app = null
 
     before ->
-      app      = require('../../tm-server')
+      app = require('../../tm-server')
 
-    expectedPaths = [ '/',
-                      '/flare/:area/:page',
-                      '/flare/default',
-                      '/Image/:name',
-                      '/article/:ref/:title',
-                      '/article/:ref',
-                      '/articles',
-                      '/search',
-                      '/flare',
-                      '/flare/all',
-                      '/flare/main-app-view',
-                      '/show',
-                      '/show/:queryId',
-                      '/show/:queryId/:filters',
-                      '/render/mixin/:file/:mixin',   # GET
-                      '/render/mixin/:file/:mixin',   # POST (test blind spot due to same name as GET)
-                      '/render/file/:file',
-                      '/guest/:page.html',
-                      '/passwordReset/:username/:token',
-                      '/help/index.html',
-                      '/help/:page*',
-                      '/misc/:page',
-                      '/index.html',
-                      '/user/login',
-                      '/user/login',
-                      '/user/logout',
-                      '/user/main.html',
-                      '/user/pwd_reset',
-                      '/user/sign-up',
+    expectedPaths = [ '/'
+                      '/flare/:area/:page'
+                      '/flare/default'
+                      '/Image/:name'
+                      '/article/:ref/:title'
+                      '/article/:ref'
+                      '/articles'
+                      '/search'
+                      '/flare'
+                      '/flare/all'
+                      '/flare/main-app-view'
+                      '/show'
+                      '/show/:queryId'
+                      '/show/:queryId/:filters'
+                      '/render/mixin/:file/:mixin'   # GET
+                      '/render/mixin/:file/:mixin'   # POST (test blind spot due to same name as GET)
+                      '/render/file/:file'
+                      '/guest/:page.html'
                       '/passwordReset/:username/:token'
-                      '/error',
-                       '/poc'
-                       '/*']
+                      '/help/index.html'
+                      '/help/:page*'
+                      '/misc/:page'
+                      '/index.html'
+                      '/user/login'
+                      '/user/login'
+                      '/user/logout'
+                      '/user/main.html'
+                      '/user/pwd_reset'
+                      '/user/sign-up'
+                      '/passwordReset/:username/:token'
+                      '/error'
+                      '/poc'
+                      '/poc/:page'
+                      '/*']
 
     before ()->
       app.server = app.listen();
@@ -78,7 +81,7 @@ describe '| routes | routes.test |', ()->
                                '/user/logout', '/user/pwd_reset'             ].contains(path)
       expectedStatus = 403 if ['article','articles','show'                   ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
-      expectedStatus = 403 if ['/poc'                                        ].contains(path)
+      expectedStatus = 403 if ['/poc','/poc/default'                         ].contains(path)
 
       expectedStatus = 404 if ['/aaaaa'                                      ].contains(path)
       expectedStatus = 500 if ['/error'                                      ].contains(path)

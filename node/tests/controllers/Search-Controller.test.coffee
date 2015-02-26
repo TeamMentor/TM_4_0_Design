@@ -292,7 +292,7 @@ describe "| controllers | Search-Controller.test |", ->
       using new Express_Service(),->
         @.add_Session()
         @.app._router.stack.assert_Size_Is 3
-        Search_Controller.registerRoutes @.app,@
+        Search_Controller.register_Routes @.app,@
         @.app._router.stack.assert_Size_Is 9
         supertest(@.app)
           .get('/user/main.html')
@@ -305,7 +305,7 @@ describe "| controllers | Search-Controller.test |", ->
         @.add_Session(tmpSessionFile)
         @.loginEnabled = false
         @.set_Views_Path()
-        Search_Controller.registerRoutes @.app, @
+        Search_Controller.register_Routes @.app, @
 
         supertest(@.app).get("/user/main.html")
                         .end (err,res)=>

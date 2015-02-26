@@ -148,7 +148,7 @@ class SearchController
 
 
 
-SearchController.registerRoutes = (app, expressService) ->
+SearchController.register_Routes = (app, expressService) ->
 
     expressService ?= new Express_Service()
     checkAuth       =  (req,res,next) -> expressService.checkAuth(req, res,next, app.config)
