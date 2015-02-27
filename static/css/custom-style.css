@@ -550,7 +550,7 @@ ul ul, ol ul {
   margin-bottom: 0;
 }
 code, pre {
-  font-family: monospace, monospace;
+  font-family: Lucida Console, monospace;
   font-size: 1em;
 }
 pre {
@@ -558,10 +558,14 @@ pre {
   padding: 20px;
   line-height: 1.5;
   color: #444444;
-  word-break: break-all;
+  letter-spacing: 1px;
+  white-space: pre-wrap;                 /* CSS3 browsers  */
+  white-space: -moz-pre-wrap !important; /* 1999+ Mozilla  */
+  white-space: -pre-wrap;                /* Opera 4 thru 6 */
+  white-space: -o-pre-wrap;              /* Opera 7 and up */
   word-wrap: break-word;
-  background-color: #b4cf7b;
-  border: 1px solid #8aaf3e;
+  background-color: #fafafa;
+  border: 1px solid #aaaaaa;
   border-radius: 3px;
   margin: 30px 0;
   overflow: auto;
@@ -932,6 +936,15 @@ table td {
     border: 1px solid #dbdbdb;
   }
 }
+@media (min-width: 2000px) {
+  #landing-page {
+    width: 60%;
+  }
+  .fixed.landing-page {
+    width: 60%;
+    left: 20%;
+  }
+}
 /*------------------------------------*
   HACKS
 *------------------------------------*/
@@ -942,10 +955,6 @@ table td {
 #html > h1, #html > h2 {
   font-size: 1.5em !important;
   padding: 0;
-  margin-bottom: 0;
-}
-#article p {
-  margin-top: 5px;
 }
 #article a {
   text-decoration: underline;
