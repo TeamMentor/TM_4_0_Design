@@ -951,10 +951,6 @@ table td {
 #html > h1, #html > h2 {
   font-size: 1.5em !important;
   padding: 0;
-  margin-bottom: 0;
-}
-#article p {
-  margin-top: 5px;
 }
 #article a {
   text-decoration: underline;
