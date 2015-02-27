@@ -13,6 +13,13 @@ describe '| poc | Controller-PoC.test' ,->
       @.req.assert_Is 'a'
       @.res.assert_Is 'b'
 
+  it 'top-articles', (done)->
+    req:
+    res:
+    using new PoC_Controller(req, res) ,->
+      'here'.log()
+      done()
+
   it 'Create Express_Service and open /poc', (done)->
     using new Express_Service(),->
       @.add_Session(tmpSessionFile)
