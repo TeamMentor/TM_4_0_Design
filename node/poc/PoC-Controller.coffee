@@ -1,5 +1,11 @@
 Jade_Service    = null
 
+#without
+
+Array::remove_If_Contains = (value)->
+  @.valueOf().filter (word) -> word.not_Contains(value)
+
+
 class PoC_Controller
 
   dependencies: ->
@@ -7,8 +13,13 @@ class PoC_Controller
 
   constructor: (req, res)->
     @.dependencies()
-    @.req = req || {}
-    @.res = res || {}
+    @.req           = req || {}
+    @.res           = res || {}
+    @.dir_Poc_Pages = __dirname.path_Combine '../../source/jade/-poc-'
+
+  availalble_Pages: =>
+    log @.dir_Poc_Pages
+    @.dir_Poc_Pages.files_Recursive().remove_If_Contains('mixin')
 
   poc_Pages: =>
     view_Model =

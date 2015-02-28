@@ -2,7 +2,7 @@ PoC_Controller   = require '../../poc/PoC-Controller'
 Express_Service  = require('../../services/Express-Service')
 supertest        = require('supertest')
 
-describe '| poc | Controller-PoC.test' ,->
+describe.only '| poc | Controller-PoC.test' ,->
   tmpSessionFile = './_tmp_Session'
 
   after ->
@@ -13,11 +13,18 @@ describe '| poc | Controller-PoC.test' ,->
       @.req.assert_Is 'a'
       @.res.assert_Is 'b'
 
-  it 'top-articles', (done)->
-    req = {}
-    res = {}
-    using new PoC_Controller(req, res) ,->
+  it 'available_Pages', (done)=>
+    using new PoC_Controller() ,->
+      log @.availalble_Pages()
+      #log @.availalble_Pages().assert_Size_Is @.dir_Poc_Pages.files_Recursive().size()
       done()
+
+
+  #it 'top-articles', (done)->
+  #  req = {}
+  #  res = {}
+  #  using new PoC_Controller(req, res) ,->
+  #    done()
 
   it 'Create Express_Service and open /poc', (done)->
     using new Express_Service(),->
