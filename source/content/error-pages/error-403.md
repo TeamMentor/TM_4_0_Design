@@ -1,4 +1,4 @@
-# An error occurred
-It's a HTTP 404 error - check the URL and refresh the browser.
+# Unauthorized
+It's a HTTP 403 error - you need to [Login](guest/login.html) to access this page.
 
 If this continues, please contact your [TEAM Mentor Support Team](mailto:support@securityinnovation.com).
