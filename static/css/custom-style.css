@@ -220,7 +220,7 @@ body > * {
   width: 100%;
 }
 #results-2 {
-  margin-top: 140px;
+  margin-top: 170px;
   border-radius: 3px;
 }
 #usp {
@@ -821,13 +821,9 @@ table td {
   }
   #about {
     background-position: 0px -1350px;
-    background-attachment: fixed;
   }
   #call-to-action {
     background-position: 0px -800px;
-  }
-  #usp {
-    background-attachment: fixed;
   }
   #contact-information {
     margin-top: 0;
