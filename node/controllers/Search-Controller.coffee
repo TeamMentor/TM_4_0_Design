@@ -89,11 +89,16 @@ class SearchController
           searchData.href         = "/search?text=#{target}&filter="
 
           if searchData?.id
-            recentSearches_Cache.push target
+            @.req.session.user_Searches ?= []
+            user_Search = { id: searchData.id, title: searchData.title, results: searchData.results.size(), username: @.req.session.username }
+            @.req.session.user_Searches.push user_Search
           else
+            user_Search = { title: target, results: 0, username: @.req.session.username }
+            @.req.session.user_Searches.push user_Search
             searchData.no_Results = true
             @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
             return
+
           if filter
             @graph_Service.resolve_To_Ids filter, (results)=>
               searchData.activeFilter = results.values()?.first()
@@ -111,33 +116,35 @@ class SearchController
 
 
     showMainAppView: =>
-
         jadePage  = 'source/jade/user/main.jade'  # relative to the /views folder
         @topArticles (topArticles)=>
+          @.express_Service.session_Service.user_Data @.req.session, (user_Data)=>
             #recentArticles =  @recentArticles()
-            viewModel = {  recentArticles: {}, topArticles : topArticles, searchTerms : @topSearches() }
+            viewModel = user_Data #{  recentArticles: {}, topArticles : topArticles, searchTerms : @topSearches() }
             @res.render(jadePage, viewModel)
 
     topArticles: (callback)=>
-      if not @.express_Service
+      if not (@.express_Service?.session_Service)
         callback []
         return
-      @.express_Service.viewedArticles (data)->
-        if (is_Null(data))
-            callback []
-            return
-        results = {}
-        for item in data
-            results[item.id] ?= { href: "/article/#{item.id}", title: item.title, weight: 0}
-            results[item.id].weight++
-        results = (results[key] for key in results.keys())
+      callback []
 
-        results = results.sort (a,b)-> a.weight > b.weight
-        topResults = []
-        topResults.add(results.pop()).add(results.pop())
-                  .add(results.pop()).add(results.pop())
-                  .add(results.pop())
-        callback topResults
+      #@.express_Service.session_Service.viewed_Articles (data)->
+      #  if (is_Null(data))
+      #      callback []
+      #      return
+      #  results = {}
+      #  for item in data
+      #      results[item.id] ?= { href: "/article/#{item.id}", title: item.title, weight: 0}
+      #      results[item.id].weight++
+      #  results = (results[key] for key in results.keys())
+
+      #  results = results.sort (a,b)-> a.weight > b.weight
+      #  topResults = []
+      #  topResults.add(results.pop()).add(results.pop())
+      #            .add(results.pop()).add(results.pop())
+      #            .add(results.pop())
+      #  callback topResults
 
     topSearches: =>
         searchTerms = []

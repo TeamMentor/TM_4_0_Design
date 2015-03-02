@@ -23,6 +23,7 @@ describe '| routes | routes.test |', ()->
                       '/render/mixin/:file/:mixin'   # POST (test blind spot due to same name as GET)
                       '/render/file/:file'
                       '/guest/:page.html'
+                      '/guest/:page'
                       '/passwordReset/:username/:token'
                       '/help/index.html'
                       '/help/:page*'

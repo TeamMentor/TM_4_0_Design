@@ -8,12 +8,12 @@ block content
         .lge-container
           .bg
             h2= title
-            if top_Articles
+            if top_Searches
               table
                 tr
                   th title (href)
                   th weight
-                for item in top_Articles
+                for item in top_Searches
                   tr
                     td
                       a(href=item.html)= item.title

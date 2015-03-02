@@ -91,18 +91,17 @@ describe "| controllers | Search-Controller.test |", ->
         data.assert_Is []
         done()
 
-  it 'topArticles (with expressService, null viewedArticles)', (done)->
-    express_Service =
-      viewedArticles: (callback)-> callback null
+  it 'topArticles (with expressService, null session_Service)', (done)->
     using new Search_Controller(),->
-      @.express_Service = express_Service
       @.topArticles (data)->
         data.assert_Is []
         done()
 
-  it 'topArticles (with expressService, valid viewedArticles)', (done)->
+  it 'topArticles (with expressService, valid session_Service.viewed_Articles)', (done)->
     express_Service =
-      viewedArticles: (callback)-> callback [ { id:'id-1', title:'title-1'}, {id:'id-2',title:'title-2'}]
+      session_Service :
+        viewed_Articles: (callback)-> callback [ { id:'id-1', title:'title-1'}, {id:'id-2',title:'title-2'}]
+
     using new Search_Controller(),->
       @.express_Service = express_Service
       @.topArticles (data)->

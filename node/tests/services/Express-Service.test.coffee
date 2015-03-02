@@ -1,5 +1,5 @@
 Express_Service = require('../../services/Express-Service')
-Express_Session = require('../../misc/Express-Session')
+Session_Service = require('../../services/Session-Service')
 express         = require('express')
 session         = require('express-session')
 supertest       = require('supertest')
@@ -12,7 +12,7 @@ describe '| services | Express-Service.test', ()->
       @.app        .assert_Is_Function() # can't seem to have define type(yet)
       @.app.port   .assert_Is_Number()
       @loginEnabled.assert_Is_True()
-      assert_Is_Null(@.expressSession)
+      assert_Is_Null @.session_Service
 
   it 'test exports',->
     Express_Service.assert_Is_Function()
@@ -27,21 +27,22 @@ describe '| services | Express-Service.test', ()->
     before ->
       expressService = new Express_Service()
 
-    it 'test',(done)->
-      expressService.setup()
-      file = './.tmCache/_sessionData'
-      file.file_Delete().assert_Is_True();
+    it 'Create temp session file',(done)->
+      session_File = './.tmCache/_test_sessionData'
+      expressService.add_Session(session_File)
+      session_File.file_Delete().assert_Is_True();
       supertest(expressService.app)
         .get '/'
         .end (err,res)->
-          file.assert_File_Exists()
-          file.file_Contents().assert_Contains('sid')
-          file.file_Delete().assert_Is_True();
+          using session_File, ->
+            @.assert_File_Exists()
+            @.file_Contents().assert_Contains('sid')
+            @.file_Delete().assert_Is_True();
           done()
 
     it 'Directly access session data', (done)->
-      using expressService.expressSession,->
-        @.constructor.name.assert_Is 'Express_Session'
+      using expressService.session_Service,->
+        @.constructor.name.assert_Is 'Session_Service'
         @.db.constructor.name.assert_Is 'Datastore'
 
         @.db.find {},  (err, docs) ->
@@ -89,7 +90,6 @@ describe '| services | Express-Service.test', ()->
       expressService.checkAuth(req,res, null,config)
 
 
-
   describe 'testing behaviour of express-session', ()->
 
     app = express()
@@ -120,22 +120,3 @@ describe '| services | Express-Service.test', ()->
     it 'Check specific session value', (done)->
       supertest(app).get '/session_get_userId'
                     .expect 200,testValue, done
-
-  describe 'methods |',->
-    it 'viewedArticles', (done)->
-      using new Express_Service(), ->
-        @.expressSession = new Express_Session()
-        @.expressSession.set 'sid-1', {recent_Articles: [{id: 'id_1', title: 'title_1'}]}, =>
-          @.expressSession.set 'sid-2', {recent_Articles: [{id: 'id_2', title: 'title_2'}]}, =>
-            @.expressSession.set 'sid-3', {recent_Articles: [{id: 'id_3', title: 'title_3'}]}, =>
-              @.expressSession.set 'sid-4', {recent_Articles: [{id: 'id_4', title: 'title_4'}]}, =>
-                @.expressSession.db.find {}, (err,sessionData)=>
-                  @viewedArticles (data)->
-                    data.json_Str().assert_Contains ['id_1','id_2', 'id_3', 'id_4','title_1','title_2', 'title_3', 'title_4']
-                    done()
-
-    it 'viewedArticles (no express session)', (done)->
-      using new Express_Service(), ->
-        @viewedArticles (data)->
-          data.assert_Is {}
-          done()
