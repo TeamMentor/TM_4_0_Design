@@ -206,7 +206,7 @@ body > * {
   margin: 0 auto;
 }
 #main-app-view {
-  margin-top: 130px;
+  margin-top: 150px;
 }
 #reasons {
   padding: 2% 0;
@@ -220,7 +220,7 @@ body > * {
   width: 100%;
 }
 #results-2 {
-  margin-top: 140px;
+  margin-top: 170px;
   border-radius: 3px;
 }
 #usp {
@@ -235,7 +235,7 @@ body > * {
   background: #fafafa;
   width: 100%;
   position: fixed;
-  top: 160px;
+  top: 155px;
   left: 0;
   z-index: 96;
 }
@@ -551,14 +551,12 @@ ul ul, ol ul {
 }
 code, pre {
   font-family: Lucida Console, monospace;
-  font-size: 1em;
-}
-pre {
+  font-size: 0.8em;
   display: block;
   padding: 20px;
   line-height: 1.5;
   color: #444444;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   white-space: pre-wrap;                 /* CSS3 browsers  */
   white-space: -moz-pre-wrap !important; /* 1999+ Mozilla  */
   white-space: -pre-wrap;                /* Opera 4 thru 6 */
@@ -821,13 +819,9 @@ table td {
   }
   #about {
     background-position: 0px -1350px;
-    background-attachment: fixed;
   }
   #call-to-action {
     background-position: 0px -800px;
-  }
-  #usp {
-    background-attachment: fixed;
   }
   #contact-information {
     margin-top: 0;
