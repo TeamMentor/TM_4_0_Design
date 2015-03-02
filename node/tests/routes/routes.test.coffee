@@ -5,9 +5,6 @@ describe '| routes | routes.test |', ()->
     @.timeout 4000
     app = null
 
-    before ->
-      app = require('../../tm-server')
-
     expectedPaths = [ '/'
                       '/flare/:area/:page'
                       '/flare/default'
@@ -39,15 +36,19 @@ describe '| routes | routes.test |', ()->
                       '/user/sign-up'
                       '/passwordReset/:username/:token'
                       '/error'
+                      '/poc*'
                       '/poc'
                       '/poc/:page'
                       '/*']
 
     before ()->
-      app.server = app.listen();
+      process.env.PORT = (10000).random().add 10000
+      app              = require('../../tm-server')
+      app.server       = app.listen();
 
     after ()->
       app.server.close()
+      delete process.env.PORT
 
 
     it 'Check expected paths', ()->
@@ -76,12 +77,12 @@ describe '| routes | routes.test |', ()->
                          .replace('*','aaaaa')
 
       expectedStatus = 200;
-      expectedStatus = 302 if ['','image','deploy'                           ].contains(path.split('/').second().lower())
+      expectedStatus = 302 if ['','image','deploy', 'poc'                    ].contains(path.split('/').second().lower())
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
-                               '/user/logout', '/user/pwd_reset'             ].contains(path)
+                               '/user/logout', '/user/pwd_reset','/pocaaaaa' ].contains(path)
+
       expectedStatus = 403 if ['article','articles','show'                   ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
-      expectedStatus = 403 if ['/poc','/poc/default'                         ].contains(path)
 
       expectedStatus = 404 if ['/aaaaa'                                      ].contains(path)
       expectedStatus = 500 if ['/error'                                      ].contains(path)

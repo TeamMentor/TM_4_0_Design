@@ -74,7 +74,6 @@ class Help_Controller
     view_Model =
       title:   title
       content: content
-
     @.render_Jade_and_Send @.jade_Help_Page, view_Model
 
   show_Help_Page: ()=>

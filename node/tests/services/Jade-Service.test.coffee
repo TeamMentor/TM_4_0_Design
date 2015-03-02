@@ -50,11 +50,10 @@ describe "| services | Jade-Service |", ()->
 
     it 'calculateJadePath',->
         using new Jade_Service(), ->
-          @.calculateJadePath('.'        ).assert_Is(@.repo_Path)
-          @.calculateJadePath('a.jade'   ).assert_Is(@.repo_Path + '/a.jade')
-          @.calculateJadePath('/a.jade'  ).assert_Is(@.repo_Path + '/a.jade')
-          @.calculateJadePath('a/b.jade' ).assert_Is(@.repo_Path + '/a/b.jade')
-          @.calculateJadePath('/a/b.jade').assert_Is(@.repo_Path + '/a/b.jade')
+          @.calculateJadePath('a.jade'       ).assert_Is(@.repo_Path + '/a.jade')
+          @.calculateJadePath('/a.jade'      ).assert_Is(@.repo_Path + '/a.jade')
+          @.calculateJadePath('a/b.jade'     ).assert_Is(@.repo_Path + '/a/b.jade')
+          @.calculateJadePath('/a/b.jade'    ).assert_Is(@.repo_Path + '/a/b.jade')
 
 
     it 'compileJadeFileToDisk', ()->

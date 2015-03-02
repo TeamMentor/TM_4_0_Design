@@ -30,7 +30,7 @@ add_Routes = (app,searchController)->
     Help_Controller     .register_Routes(app                  )
     Misc_Controller     .register_Routes(app                  )
     Jade_Controller     .register_Routes(app                  )
-    PoC_Controller      .register_Routes(app, searchController)
+    new PoC_Controller().register_Routes(app)
 
     #app.get '/passwordReset/:username/:token'               , (req, res)->  res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/pwd-reset.jade'
 
