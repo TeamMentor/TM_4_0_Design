@@ -34,8 +34,10 @@ class JadeService
       @.target_Folder.path_Combine(fileToCompile.replace(/\//g,'_')
                                                 .replace(/\./g,'_') + '.txt')
 
-    calculateJadePath: (jadeFile)->
-      @.repo_Path.path_Combine(jadeFile)
+    calculateJadePath: (jade_File)->
+      if jade_File.file_Exists()
+        return jade_File
+      @.repo_Path.path_Combine(jade_File)
 
     compileJadeFileToDisk: (fileToCompile)->
 
@@ -61,11 +63,8 @@ class JadeService
       return fs.existsSync(targetFile_Path);
 
 
-    renderJadeFile: (jadeFile, params)->
-      #if(global.info)
-      #  info('[Jade-Service] rendering: '  + jadeFile)
-
-      if (this.cacheEnabled() == false)
+    renderJadeFile: (jadeFile, params)=>
+      if (@.cacheEnabled() is false)
         jadeFile_Path = @.calculateJadePath(jadeFile)
         if (fs.existsSync(jadeFile_Path))
             return jade.renderFile(jadeFile_Path,params)

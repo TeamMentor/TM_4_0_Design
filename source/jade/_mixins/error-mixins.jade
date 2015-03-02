@@ -6,12 +6,16 @@ mixin unavailable
     .bg
         include:md ../../content/error-pages/unavailable.md
 
+mixin error_403
+    #403-message.bg
+        include:md ../../content/error-pages/error-403.md
+
 mixin error_404
     #404-message.bg
         include:md ../../content/error-pages/error-404.md
 
 mixin error_500
-    #404-message.bg
+    #500-message.bg
         include:md ../../content/error-pages/error-500.md
 
 mixin no-more-directories

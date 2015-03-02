@@ -5,7 +5,7 @@ cheerio            = require 'cheerio'
 
 supertest = require 'supertest'
 
-describe '| services | Article-Controller.test', ->
+describe '| controllers | Article-Controller.test', ->
 
   it 'constructor', (done)->
     using new Article_Controller(), ->
