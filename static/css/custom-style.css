@@ -213,15 +213,19 @@ body > * {
   background: white;
 }
 #results {
-  background: white;
+  background: transparent;
   margin: 0 0 20px 0;
-  border-radius: 3px;
-  border: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
   width: 100%;
+  color: #aaaaaa;
 }
 #results-2 {
   margin-top: 140px;
   border-radius: 3px;
+}
+#results .label {
+  font-weight: normal;
+  color: #aaaaaa;
 }
 #usp {
   background: url(../assets/stock-img/bg-img-small.jpg) no-repeat;
@@ -240,9 +244,12 @@ body > * {
   z-index: 96;
 }
 #search-input {
-  border: 1px solid #dbdbdb;
-  background: white;
+  border: 1px solid #8aaf3e;
+  background: #b4cf7b;
   border-radius: 3px;
+}
+#search-input .input-group {
+  border: 1px solid #8aaf3e;
 }
 #search-input input {
   border:none;
@@ -539,7 +546,6 @@ p {
   letter-spacing: 1px;
   font-size: 0.75em;
   font-weight: 700;
-  color: #444444;
 }
 ul, ol {
   margin-left: 0;
@@ -550,10 +556,15 @@ ul ul, ol ul {
   margin-bottom: 0;
 }
 code, pre {
+<<<<<<< Updated upstream
   font-family: Lucida Console, monospace;
   font-size: 1em;
 }
 pre {
+=======
+  font-family: Lucida Console, Courier, monospace;
+  font-size: 0.8em;
+>>>>>>> Stashed changes
   display: block;
   padding: 20px;
   line-height: 1.5;
