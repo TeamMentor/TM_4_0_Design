@@ -208,6 +208,12 @@ body > * {
 #main-app-view {
   margin-top: 150px;
 }
+#main-app-view h5 {
+  margin: 15px 0;
+}
+#main-app-view i {
+  padding-right: 15px;
+}
 #reasons {
   padding: 2% 0;
   background: white;
@@ -244,12 +250,12 @@ body > * {
   z-index: 96;
 }
 #search-input {
-  border: 1px solid #8aaf3e;
-  background: #b4cf7b;
+  border: 1px solid #dbdbdb;
+  background: white;
   border-radius: 3px;
 }
 #search-input .input-group {
-  border: 1px solid #8aaf3e;
+  border: 1px solid #dbdbdb;
 }
 #search-input input {
   border:none;
@@ -509,7 +515,7 @@ input[type="url"]:focus, textarea:focus, select:focus {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
 }
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   font-weight: normal;
   color: #aaaaaa;
 }

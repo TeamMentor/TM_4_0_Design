@@ -72,21 +72,25 @@ mixin main-app-view
         if (recentArticles && recentArticles.values().not_Empty())
             .bg
                 #recently-Viewed-Articles
-                    h4.label Recently Viewed Articles
+                    h4 Recently Viewed Articles
                     table.nav
                         for recentArticle in recentArticles
                           tr
                             td
-                                a(href=recentArticle.href)= recentArticle.title
+                                a(href=recentArticle.href)
+                                    +article-icon
+                                    = recentArticle.title
         if (searchTerms)
             .bg
                 #popular-Search-Terms
-                    h4.label Popular Search Terms
+                    h5 Popular Search Terms
                     table.nav
                         for searchTerm in searchTerms
                             tr
                                 td
-                                    a(href=searchTerm.href)= searchTerm.title
+                                    a(href=searchTerm.href)
+                                        +search-icon
+                                        = searchTerm.title
         if (topArticles)
             .bg
                 #top-articles
@@ -96,7 +100,9 @@ mixin main-app-view
                             if article
                                 tr
                                     td
-                                        a(href=article.href)= article.title
+                                        a(href=article.href)
+                                            +article-icon
+                                            = article.title
         //if (newArticles)
             .bg
                 h4.label New Articles
@@ -104,7 +110,9 @@ mixin main-app-view
                         for newArticle in newArticles
                             tr
                                 td
-                                    a(href=newArticle.href)= newArticle.title
+                                    a(href=newArticle.href)
+                                        +article-icon
+                                        = newArticle.title
 
 //- articles-list
 mixin articles-list
