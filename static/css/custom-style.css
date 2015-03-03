@@ -930,11 +930,6 @@ table td {
     margin: 0 auto;
     border: 1px solid #dbdbdb;
   }
-  #reasons, #clients, #footer {
-    border: 1px solid #dbdbdb;
-    border-top: none;
-    border-bottom: none;
-  }
   .fixed.landing-page {
     width: 80%;
     margin: 0 auto;
