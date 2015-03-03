@@ -69,29 +69,39 @@ mixin results-2
 //- main-app-view
 mixin main-app-view
     #main-app-view
-        if (recentArticles && recentArticles.values().not_Empty())
+        if (recent_Articles && recent_Articles.values().not_Empty())
             .bg
                 #recently-Viewed-Articles
                     h4 Recently Viewed Articles
                     table.nav
-                        for recentArticle in recentArticles
+                        for recent_Article in recent_Articles
                           tr
                             td
                                 a(href=recentArticle.href)
                                     +article-icon
                                     = recentArticle.title
-        if (searchTerms)
+
+        //if (recent_Searches && recent_Searches.values().not_Empty())
+            .bg
+                #recent-Searches
+                    h4.label Recent Searches
+                    table.nav
+                        for recent_Search in recent_Searches
+                            tr
+                                td
+                                    a(href='/search?text=' + recent_Search)= recent_Search
+        if (top_Searches)
             .bg
                 #popular-Search-Terms
                     h5 Popular Search Terms
                     table.nav
-                        for searchTerm in searchTerms
+                        for top_Search in top_Searches
                             tr
                                 td
                                     a(href=searchTerm.href)
                                         +search-icon
                                         = searchTerm.title
-        if (topArticles)
+        if (top_Articles)
             .bg
                 #top-articles
                     h4.label Top Articles

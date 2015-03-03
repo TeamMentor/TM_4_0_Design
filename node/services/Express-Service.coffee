@@ -1,44 +1,42 @@
 Config          = null
 Jade_Service    = null
-Express_Session = null
+Session_Service = null
 bodyParser      = null
-session         = null
+
 path            = null
 express         = null
 
 class Express_Service
 
-  constructor: ()->
+  dependencies: ()->
     Config           = require '../misc/Config'
     Jade_Service     = require '../services/Jade-Service'
-    Express_Session  = require '../misc/Express-Session'
+    Session_Service  = require '../services/Session-Service'
     bodyParser       = require 'body-parser'
-    session          = require 'express-session'
     path             = require "path"
     express          = require 'express'
-    @.app            = express()
-    @loginEnabled    = true;
-    @.app.port       = process.env.PORT || 1337;
-    @.expressSession = null
+
+  constructor: ()->
+    @.dependencies()
+    @.app             = express()
+    @loginEnabled     = true;
+    @.app.port        = process.env.PORT || 1337;
+    @.session_Service = null
 
   setup: ()=>
-    @set_BodyParser()
-    @set_Config()
-    @set_Static_Route()
-    @add_Session()      # for now not using the async version of add_Session
-    @set_Views_Path()
+    @.set_BodyParser()
+    @.set_Config()
+    @.set_Static_Route()
+    @.add_Session()      # for now not using the async version of add_Session
+    @.set_Views_Path()
     @.map_Route('../routes/flare_routes')
     @.map_Route('../routes/routes')
     @
 
-  add_Session: (sessionFile)=>
-
-    @.expressSession = new Express_Session({ filename: sessionFile || './.tmCache/_sessionData' ,session:session})
-    @.app.use session({ secret: '1234567890', key: 'tm-session'
-                        ,saveUninitialized: true , resave: true
-                        , cookie: { path: '/' , httpOnly: true , maxAge: 365 * 24 * 3600 * 1000 }
-                        , store: @.expressSession })
-
+  add_Session: (session_File)=>
+    @.session_Service = new Session_Service({filename:session_File}).setup()
+    @.app.use @.session_Service.session
+    @
 
   set_BodyParser: ()=>
     @.app.use(bodyParser.json({limit:'1kb'})                       );     # to support JSON-encoded bodies
@@ -55,7 +53,7 @@ class Express_Service
     @.app.set('views', path.join(__dirname,'../../'))
 
   map_Route: (file)=>
-    require(file)(@.app,@);
+    require(file)(@)
     @
 
   start:()=>
@@ -81,18 +79,5 @@ class Express_Service
         loggedIn  : (req.session.username != undefined)
       }
     return data
-
-  viewedArticles: (callback)=>
-    if not @.expressSession
-      callback {}
-    else
-      @.expressSession.db.find {}, (err,sessionData)=>
-          recent_Articles = []
-          if sessionData
-              for session in sessionData
-                  if session.data.recent_Articles
-                      for recent_article in session.data.recent_Articles
-                          recent_Articles.add(recent_article)
-          callback recent_Articles
 
 module.exports = Express_Service

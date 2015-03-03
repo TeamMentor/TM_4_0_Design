@@ -1,5 +1,4 @@
 PoC_Controller   = require '../../poc/PoC-Controller'
-#Express_Service  = require '../../services/Express-Service'
 supertest        = require 'supertest'
 express          = require 'express'
 cheerio          = require 'cheerio'
@@ -14,12 +13,13 @@ describe '| poc | Controller-PoC.test' ,->
   it 'register_Routes', ()->
     routes     = {}
     auth_Check = null
-    app =
-      get: (path,target)-> routes[path] = target
-    using new PoC_Controller().register_Routes(app) ,->
+    express_Service =
+      app:
+        get: (path,target)-> routes[path] = target
+    using new PoC_Controller({ express_Service: express_Service}).register_Routes() ,->
       routes.assert_Is
-        '/poc*': @.check_Auth
-        '/poc': @.show_Index
+        '/poc*'     : @.check_Auth
+        '/poc'      : @.show_Index
         '/poc/:page': @.show_Page
 
   it 'check_Auth (anonymous)', (done)->
@@ -28,7 +28,7 @@ describe '| poc | Controller-PoC.test' ,->
         value.assert_Is 403
         @
       redirect: (value)->
-        value.assert_Is '/guest/403'
+        value.assert_Is '/guest/404'
         done()
 
     new PoC_Controller().check_Auth(null,res,null)
@@ -67,7 +67,8 @@ describe '| poc | Controller-PoC.test' ,->
     new PoC_Controller().show_Index(req,res)
 
   it 'show_Page (good link)', (done)->
-    using new PoC_Controller(), ->
+    express_Service = session_Service: users_Searches: (callback) -> callback []
+    using new PoC_Controller({ express_Service: express_Service}), ->
 
       req = params : page : @.map_Files_As_Pages().last().name
       res =
@@ -99,10 +100,11 @@ describe '| poc | Controller-PoC.test' ,->
   describe 'using Express |', ->
     it 'check Auth redirect', (done)->
       app = new express()
-      new PoC_Controller().register_Routes(app)
+      express_Service = app : app
+      new PoC_Controller({express_Service:express_Service}).register_Routes()
       supertest(app)
         .get('/poc')
         .end (err, response, html)->
-          response.text.assert_Is 'Moved Temporarily. Redirecting to /guest/403'
+          response.text.assert_Is 'Moved Temporarily. Redirecting to /guest/404'
           done()
 

@@ -1,5 +1,5 @@
 
-add_Routes = (app,searchController)->
+add_Routes = (express_Service)->
     Express_Service         = require '../services/Express-Service'
     Jade_Service            = require '../services/Jade-Service'
     Article_Controller      = require '../controllers/Article-Controller'
@@ -10,8 +10,9 @@ add_Routes = (app,searchController)->
     Search_Controller       = require '../controllers/Search-Controller'
     Pwd_Reset_Controller    = require '../controllers/Pwd-Reset-Controller'
     User_Sign_Up_Controller = require '../controllers/User-Sign-Up-Controller'
-
     PoC_Controller          = require('../poc/PoC-Controller')
+
+    app                     = express_Service.app
 
     #login routes
     
@@ -20,17 +21,19 @@ add_Routes = (app,searchController)->
     app.get  '/user/logout'    , (req, res)-> new Login_Controller(req, res).logoutUser()
     app.post '/user/sign-up'   , (req, res)-> new User_Sign_Up_Controller(req, res).userSignUp()
 
-    app.get '/index.html'                                   , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/default.jade'
-    app.get '/guest/:page.html'                             , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/' + req.params.page + '.jade'
+    app.get '/index.html'      , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/default.jade'
+    app.get '/guest/:page.html', (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/' + req.params.page + '.jade'
+    app.get '/guest/:page'     , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/' + req.params.page + '.jade'
 
 
-    Search_Controller   .register_Routes(app, searchController)
-    Article_Controller  .register_Routes(app, searchController)
-    Pwd_Reset_Controller.register_Routes(app                  )
-    Help_Controller     .register_Routes(app                  )
-    Misc_Controller     .register_Routes(app                  )
-    Jade_Controller     .register_Routes(app                  )
-    new PoC_Controller().register_Routes(app)
+    options = { express_Service: express_Service }
+    Search_Controller                  .register_Routes(app, express_Service)
+    Article_Controller                 .register_Routes(app, express_Service)
+    Pwd_Reset_Controller               .register_Routes(app                  )
+    Help_Controller                    .register_Routes(app                  )
+    Misc_Controller                    .register_Routes(app                  )
+    Jade_Controller                    .register_Routes(app                  )
+    new PoC_Controller(options)        .register_Routes()
 
     #app.get '/passwordReset/:username/:token'               , (req, res)->  res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/pwd-reset.jade'
 

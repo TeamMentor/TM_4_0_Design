@@ -1,8 +1,9 @@
 Jade_Service = null
 
-register_Routes =   (app)->
+register_Routes =   (express_Service)->
 
   Jade_Service = require('../services/Jade-Service')
+  app          = express_Service.app
 
   preCompiler =
       renderJadeFile: (path)->
