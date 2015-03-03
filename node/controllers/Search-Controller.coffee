@@ -88,12 +88,13 @@ class SearchController
           searchData.text         =  target
           searchData.href         = "/search?text=#{target}&filter="
 
+          @.req.session.user_Searches ?= []
+
           if searchData?.id
-            @.req.session.user_Searches ?= []
             user_Search = { id: searchData.id, title: searchData.title, results: searchData.results.size(), username: @.req.session.username }
             @.req.session.user_Searches.push user_Search
           else
-            user_Search = { title: target, results: 0, username: @.req.session.username }
+            user_Search = { title: target, results: 0, username: @.req.session?.username }
             @.req.session.user_Searches.push user_Search
             searchData.no_Results = true
             @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
@@ -117,17 +118,11 @@ class SearchController
 
     showMainAppView: =>
         jadePage  = 'source/jade/user/main.jade'  # relative to the /views folder
-        @topArticles (topArticles)=>
-          @.express_Service.session_Service.user_Data @.req.session, (user_Data)=>
-            #recentArticles =  @recentArticles()
-            viewModel = user_Data #{  recentArticles: {}, topArticles : topArticles, searchTerms : @topSearches() }
-            @res.render(jadePage, viewModel)
 
-    topArticles: (callback)=>
-      if not (@.express_Service?.session_Service)
-        callback []
-        return
-      callback []
+        @.express_Service.session_Service.user_Data @.req.session, (user_Data)=>
+          viewModel = user_Data
+          @res.render(jadePage, viewModel)
+
 
       #@.express_Service.session_Service.viewed_Articles (data)->
       #  if (is_Null(data))

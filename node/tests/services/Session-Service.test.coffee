@@ -63,9 +63,3 @@ describe '| services | Session.test', ()->
                 @.viewed_Articles (data)->
                   data.json_Str().assert_Contains ['id_1','id_2', 'id_3', 'id_4','title_1','title_2', 'title_3', 'title_4']
                   done()
-
-  it 'viewed_Articles (no express session)', (done)->
-    using new Session_Service(), ->
-      @viewed_Articles (data)->
-        data.assert_Is {}
-        done()

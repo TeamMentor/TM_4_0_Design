@@ -77,44 +77,22 @@ describe "| controllers | Search-Controller.test |", ->
       @showRootQueries()
 
   it 'showMainAppView', (done)->
-    req    = { params: queryId : 'Logging'}
+    req    = { params: queryId : 'Logging', session: {}}
     res    =
         render: (jadePage,viewModel)->
             jadePage.assert_Is('source/jade/user/main.jade')
             done()
-    using new Search_Controller(req, res),->
-      @.showMainAppView()
-
-  it 'topArticles (no expressService)', (done)->
-    using new Search_Controller(),->
-      @.topArticles (data)->
-        data.assert_Is []
-        done()
-
-  it 'topArticles (with expressService, null session_Service)', (done)->
-    using new Search_Controller(),->
-      @.topArticles (data)->
-        data.assert_Is []
-        done()
-
-  it 'topArticles (with expressService, valid session_Service.viewed_Articles)', (done)->
     express_Service =
       session_Service :
-        viewed_Articles: (callback)-> callback [ { id:'id-1', title:'title-1'}, {id:'id-2',title:'title-2'}]
+        user_Data: (session, callback) ->
+          callback {}
 
-    using new Search_Controller(),->
+    using new Search_Controller(req, res),->
       @.express_Service = express_Service
-      @.topArticles (data)->
-        data.assert_Is  [{"href":"/article/id-2","title":"title-2","weight":1},{"href":"/article/id-1","title":"title-1","weight":1},undefined,undefined,undefined]
-        done()
+      @.showMainAppView()
+
 
   it 'topSearches', (done)->
-      #req    = { params: {}}
-      #res    =
-      #  send: (html)->
-      #    html.assert_Contains 'results'
-      #    done()
-      #
       using new Search_Controller(),->
         @topSearches().assert_Is [ { href: '/search?text=Administrative Controls',title: 'Administrative Controls' },
                                    { href: '/search?text=Struts', title: 'Struts' },
@@ -215,7 +193,7 @@ describe "| controllers | Search-Controller.test |", ->
         callback on_GraphDataFromGraphDB(query_Id, filters)
 
     it 'no search text and null searchData', (done)->
-      req    = { params: {}}
+      req    = { params: {}, session:{}}
       res    =
         send: (html)->
           cheerio.load html.assert_Contains 'results'
@@ -226,7 +204,7 @@ describe "| controllers | Search-Controller.test |", ->
         @.search()
 
     it 'no search text but {} as searchData', (done)->
-      req    = { params: {}}
+      req    = { params: {}, session:{}}
       res    =
         send: (html)->
           html.assert_Contains 'results'
@@ -237,7 +215,7 @@ describe "| controllers | Search-Controller.test |", ->
         @.search()
 
     it 'search text but {} as searchData', (done)->
-      req    = { query: text: 'text-search' }
+      req    = { session:{}, query: text: 'text-search' }
       res    =
         send: (html)->
           html.assert_Contains 'results'
@@ -251,7 +229,7 @@ describe "| controllers | Search-Controller.test |", ->
         @.search()
 
     it 'search text, no filter, valid searchData', (done)->
-      req    = { query: text: 'text-search' }
+      req    = { session:{}, query: text: 'text-search' }
       res    =
         send: (html)->
           html.assert_Contains 'results'
@@ -266,7 +244,7 @@ describe "| controllers | Search-Controller.test |", ->
         @.search()
 
     it 'search text, filter, valid searchData', (done)->
-      req    = { query: text: 'text-search' , filter: '/filter-text'}
+      req    = { session:{}, query: text: 'text-search' , filter: '/filter-text'}
       res    =
         send: (html)->
           html.assert_Contains 'results'

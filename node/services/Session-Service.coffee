@@ -31,13 +31,13 @@ class Session_Service
 
   viewed_Articles: (callback)=>
     @.db.find {}, (err,sessionData)=>
-        viewed_Articles = []
-        if sessionData
-            for session in sessionData
-                if session.data.recent_Articles
-                    for recent_article in session.data.recent_Articles
-                        viewed_Articles.add(recent_article)
-        callback viewed_Articles
+      viewed_Articles = []
+      if sessionData
+          for session in sessionData
+              if session.data.recent_Articles
+                  for recent_article in session.data.recent_Articles
+                      viewed_Articles.add(recent_article)
+      callback viewed_Articles
 
   users_Searches: (callback)=>
     @.db.find {}, (err,sessionData)=>
@@ -85,19 +85,21 @@ class Session_Service
     data.username        = session.username
 
     data.recent_Searches = []
-    for user_Search in session.user_Searches
-      if user_Search.results > 0 and data.recent_Searches.not_Contains(user_Search.title)
-        data.recent_Searches.push user_Search.title
-    log data.recent_Searches
-    data.recent_Searches.reverse().splice(3,data.recent_Searches.size())
+    if session.user_Searches
+      for user_Search in session.user_Searches
+        if user_Search.results > 0 and data.recent_Searches.not_Contains(user_Search.title)
+          data.recent_Searches.push user_Search.title
+      log data.recent_Searches
+      data.recent_Searches.reverse().splice(3,data.recent_Searches.size())
 
     data.recent_Articles = []
     mapped_Articles = {}
-    for recent_Article in session.recent_Articles
-      if not mapped_Articles[recent_Article.id]
-        data.recent_Articles.push recent_Article
-        mapped_Articles[recent_Article.id] = recent_Article
-    data.recent_Articles = data.recent_Articles.slice(0,3)
+    if session.recent_Articles
+      for recent_Article in session.recent_Articles
+        if not mapped_Articles[recent_Article.id]
+          data.recent_Articles.push recent_Article
+          mapped_Articles[recent_Article.id] = recent_Article
+      data.recent_Articles = data.recent_Articles.slice(0,3)
 
     @.top_Searches (top_Searches)=>
       data.top_Searches = top_Searches.slice(0,3)

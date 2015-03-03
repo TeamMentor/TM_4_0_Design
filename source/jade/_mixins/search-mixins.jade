@@ -96,7 +96,7 @@ mixin main-app-view
                         for top_Search in top_Searches
                             tr
                                 td
-                                    a(href=top_Search.href)= top_Search.title
+                                    a(href='/search?text=' + top_Search.title)= top_Search.title
         if (top_Articles)
             .bg
                 #top-articles

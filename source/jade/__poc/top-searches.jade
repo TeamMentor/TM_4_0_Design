@@ -16,7 +16,7 @@ block content
                 for item in top_Searches
                   tr
                     td
-                      a(href=item.html)= item.title
+                      a(href='/search?text='+item.title)= item.title
                     td= item.weight
 
 
