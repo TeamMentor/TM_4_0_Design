@@ -22,7 +22,7 @@ nav {
   z-index: 99;
   background: white;
   border: 1px solid #dbdbdb;
-  padding-bottom: 10px;
+  padding-bottom: 7px;
 }
 nav a, nav p {
   color: #8aaf3e;
@@ -47,11 +47,15 @@ nav a:hover, nav p:hover {
   margin: 5px 0 0 15px;
 }
 #tm-logo {
-  background:url('../assets/logos/logos.png') no-repeat;
-  background-position: 0px 0px;
-  height: 40px;
-  width: 200px;
-  margin: 0;
+  height: 0;             /* collapse the container's height */
+  width: width-value;    /* specify any width you want (a percentage value, basically) */
+    /* apply a padding using the following formula */
+    /* this formula makes sure the aspect ratio of the container equals that of the svg graphic */
+  padding-top: (svg height / svg width) * width-value;
+  position: relative;    /* create positioning context for svg */
+}
+object {
+  width: 100%;
 }
 #links {
   -webkit-order: 5;

@@ -1,131 +1,135 @@
 include ../../shared-mixins/globals.jade
 include ../../shared-mixins/images.jade
 
+mixin tm-logo
+    object(type='image/svg+xml' data='../../../static/assets/logos/tmlogo.svg')
+        img(src='../../../static/assets/logos/TMLogo.jpg')
+
 mixin usp-div
-	#usp
-		.row
-			.small-12.large-offset-1.large-10.end.columns
-				h2
-					include:md ../../content/landing-pages/usp.md
-				.row
-					.small-12.medium-offset-3.medium-6.end.columns
-						a(href='../getting-started/index')
-							+start-trial-button
+    #usp
+        .row
+            .small-12.large-offset-1.large-10.end.columns
+                h2
+                    include:md ../../content/landing-pages/usp.md
+                .row
+                    .small-12.medium-offset-3.medium-6.end.columns
+                        a(href='../getting-started/index')
+                            +start-trial-button
 
 mixin reasons-to-use-tm-div
-	#reasons
-		include:md ../../content/landing-pages/reasons-div-heading.md
-		.row
-			.small-12.medium-offset-1.medium-10.large-offset-2.large-8.end.columns
-				.row
-					.small-3.large-2.columns.text-center
-						i.fi-clipboard-pencil
-					.small-9.large-10.columns
-						include:md ../../content/landing-pages/selling-point-1.md
-				br
-				.row
-					.small-3.large-2.columns.text-center
-						i.fi-arrows-in
-					.small-9.large-10.columns
-						include:md ../../content/landing-pages/selling-point-2.md
-				br
-				.row
-					.small-3.large-2.columns.text-center
-						i.fi-checkbox
-					.small-9.large-10.columns
-						include:md ../../content/landing-pages/selling-point-3.md
+    #reasons
+        include:md ../../content/landing-pages/reasons-div-heading.md
+        .row
+            .small-12.medium-offset-1.medium-10.large-offset-2.large-8.end.columns
+                .row
+                    .small-3.large-2.columns.text-center
+                        i.fi-clipboard-pencil
+                    .small-9.large-10.columns
+                        include:md ../../content/landing-pages/selling-point-1.md
+                br
+                .row
+                    .small-3.large-2.columns.text-center
+                        i.fi-arrows-in
+                    .small-9.large-10.columns
+                        include:md ../../content/landing-pages/selling-point-2.md
+                br
+                .row
+                    .small-3.large-2.columns.text-center
+                        i.fi-checkbox
+                    .small-9.large-10.columns
+                        include:md ../../content/landing-pages/selling-point-3.md
 
 mixin clients-div
-	#clients
-		include:md ../../content/landing-pages/clients-div-heading.md
-		.row
-			.small-6.large-4.columns
-				+image-elsevier-logo
-			.small-6.large-4.columns
-				+image-fedex-logo
-			.small-6.large-4.columns
-				+image-mass-mutual-logo
-			.small-6.large-4.columns
-				+image-microsoft-logo
-			.small-6.large-4.columns
-				+image-symantec-logo
-			.small-6.large-4.columns
-				+image-ubs-logo
+    #clients
+        include:md ../../content/landing-pages/clients-div-heading.md
+        .row
+            .small-6.large-4.columns
+                +image-elsevier-logo
+            .small-6.large-4.columns
+                +image-fedex-logo
+            .small-6.large-4.columns
+                +image-mass-mutual-logo
+            .small-6.large-4.columns
+                +image-microsoft-logo
+            .small-6.large-4.columns
+                +image-symantec-logo
+            .small-6.large-4.columns
+                +image-ubs-logo
 
 mixin about-tagline-div
-	#about
-		.row
-			.small-12.large-offset-1.large-10.end.columns
-				include:md ../../content/landing-pages/about-tm-tagline.md
+    #about
+        .row
+            .small-12.large-offset-1.large-10.end.columns
+                include:md ../../content/landing-pages/about-tm-tagline.md
 
 mixin about-us-div
-	#about-us
-		.row
-			.small-12.large-offset-2.large-8.end.columns
-				include:md ../../content/landing-pages/about-tm-summary.md
+    #about-us
+        .row
+            .small-12.large-offset-2.large-8.end.columns
+                include:md ../../content/landing-pages/about-tm-summary.md
 
 mixin features-div
-	#features
-		.row
-			.small-12.large-offset-1.large-10.columns
-				include:md ../../content/landing-pages/features-div-heading.md
-				.row
-					.small-3.large-2.columns.text-center
-						i.fi-check
-					.small-9.large-10.columns
-						include:md ../../content/landing-pages/feature-1.md
-				.row
-					.small-3.large-2.columns.text-center
-						i.fi-loop
-					.small-9.large-10.columns
-						include:md ../../content/landing-pages/feature-2.md
-				.row
-					.small-3.large-2.columns.text-center
-						i.fi-clipboard-notes
-					.small-9.large-10.columns
-						include:md ../../content/landing-pages/feature-3.md
-				.row
-					.small-3.large-2.columns.text-center
-						i.fi-arrows-in
-					.small-9.large-10.columns
-						include:md ../../content/landing-pages/feature-4.md
+    #features
+        .row
+            .small-12.large-offset-1.large-10.columns
+                include:md ../../content/landing-pages/features-div-heading.md
+                .row
+                    .small-3.large-2.columns.text-center
+                        i.fi-check
+                    .small-9.large-10.columns
+                        include:md ../../content/landing-pages/feature-1.md
+                .row
+                    .small-3.large-2.columns.text-center
+                        i.fi-loop
+                    .small-9.large-10.columns
+                        include:md ../../content/landing-pages/feature-2.md
+                .row
+                    .small-3.large-2.columns.text-center
+                        i.fi-clipboard-notes
+                    .small-9.large-10.columns
+                        include:md ../../content/landing-pages/feature-3.md
+                .row
+                    .small-3.large-2.columns.text-center
+                        i.fi-arrows-in
+                    .small-9.large-10.columns
+                        include:md ../../content/landing-pages/feature-4.md
 
 mixin call-to-action-div
-	#call-to-action
-		.row
-			.small-12.medium-offset-2.medium-8.end.columns
-				include:md ../../content/landing-pages/call-to-action.md
-				a(href='../getting-started/index')
-					+see-for-yourself-button
+    #call-to-action
+        .row
+            .small-12.medium-offset-2.medium-8.end.columns
+                include:md ../../content/landing-pages/call-to-action.md
+                a(href='../getting-started/index')
+                    +see-for-yourself-button
 
 mixin footer-div
-	#footer
-		.row
-			#contact-information
-				.small-12.medium-3.columns
-					ul
-						li
-							a(href='http://www.securityinnovation.com/', target='_blank')
-								#si-logo
-				.small-12.medium-3.columns
-					ul
-						li
-							+i-phone
-							span +1.978.694.1008
-						li
-							+i-email
-							a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
-				.small-12.medium-3.columns
-					ul
-						li
-							+i-marker
-							span 187 Ballardvale Street, Suite A202
-						li Wilmington, MA 01887
-				.small-12.medium-3.columns
-					ul
-						li
-							+i-twitter
-							a(href="http://www.twitter.com/SecInnovation", target="_blank") @SecInnovation
-						li
-							+i-toc
-							a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions
+    #footer
+        .row
+            #contact-information
+                .small-12.medium-3.columns
+                    ul
+                        li
+                            a(href='http://www.securityinnovation.com/', target='_blank')
+                                #si-logo
+                .small-12.medium-3.columns
+                    ul
+                        li
+                            +i-phone
+                            span +1.978.694.1008
+                        li
+                            +i-email
+                            a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
+                .small-12.medium-3.columns
+                    ul
+                        li
+                            +i-marker
+                            span 187 Ballardvale Street, Suite A202
+                        li Wilmington, MA 01887
+                .small-12.medium-3.columns
+                    ul
+                        li
+                            +i-twitter
+                            a(href="http://www.twitter.com/SecInnovation", target="_blank") @SecInnovation
+                        li
+                            +i-toc
+                            a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions
