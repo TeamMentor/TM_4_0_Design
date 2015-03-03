@@ -72,12 +72,14 @@ mixin main-app-view
         if (recent_Articles && recent_Articles.values().not_Empty())
             .bg
                 #recently-Viewed-Articles
-                    h4.label Recently Viewed Articles
+                    h5 Recently Viewed Articles
                     table.nav
                         for recent_Article in recent_Articles
                           tr
                             td
-                                a(href='/article/' + recent_Article.id)= recent_Article.title
+                                a(href='/article/' + recent_Article.id)
+                                    +article-icon
+                                    = recent_Article.title
 
         //if (recent_Searches && recent_Searches.values().not_Empty())
             .bg
@@ -87,25 +89,30 @@ mixin main-app-view
                         for recent_Search in recent_Searches
                             tr
                                 td
-                                    a(href='/search?text=' + recent_Search)= recent_Search
+                                    a(href='/search?text=' + recent_Search)
+                                        +search-icon
+                                        = recent_Search
         if (top_Searches)
             .bg
                 #popular-Search-Terms
-                    h4.label Popular Search Terms
+                    h5 Popular Search Terms
                     table.nav
                         for top_Search in top_Searches
                             tr
                                 td
-                                    a(href='/search?text=' + top_Search.title)= top_Search.title
-        if (top_Articles)
+                                    a(href='/search?text=' + top_Search.title)
+                                        +article-icon
+                                        = top_Search.title
             .bg
                 #top-articles
-                    h4.label Top Articles
+                    h5 Top Articles
                     table.nav
                         for top_Article in top_Articles
                             tr
                                 td
-                                    a(href=top_Article.href)= top_Article.title
+                                    a(href=top_Article.href)
+                                        +article-icon
+                                        = top_Article.title
         //if (newArticles)
             .bg
                 h4.label New Articles
@@ -113,7 +120,9 @@ mixin main-app-view
                         for newArticle in newArticles
                             tr
                                 td
-                                    a(href=newArticle.href)= newArticle.title
+                                    a(href=newArticle.href)
+                                        +article-icon
+                                        = newArticle.title
 
 //- articles-list
 mixin articles-list

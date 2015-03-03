@@ -208,20 +208,30 @@ body > * {
 #main-app-view {
   margin-top: 150px;
 }
+#main-app-view h5 {
+  margin: 15px 0;
+}
+#main-app-view i {
+  padding-right: 15px;
+}
 #reasons {
   padding: 2% 0;
   background: white;
 }
 #results {
-  background: white;
+  background: transparent;
   margin: 0 0 20px 0;
-  border-radius: 3px;
-  border: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
   width: 100%;
+  color: #aaaaaa;
 }
 #results-2 {
   margin-top: 170px;
   border-radius: 3px;
+}
+#results .label {
+  font-weight: normal;
+  color: #aaaaaa;
 }
 #usp {
   background: url(../assets/stock-img/bg-img-small.jpg) no-repeat;
@@ -243,6 +253,9 @@ body > * {
   border: 1px solid #dbdbdb;
   background: white;
   border-radius: 3px;
+}
+#search-input .input-group {
+  border: 1px solid #dbdbdb;
 }
 #search-input input {
   border:none;
@@ -271,6 +284,9 @@ img {
   height: auto;
   max-width: 100%;
   margin: 0 auto;
+}
+object {
+  width: 100%;
 }
 /*------------------------------------*
    NAVIGATION
@@ -502,7 +518,7 @@ input[type="url"]:focus, textarea:focus, select:focus {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
 }
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   font-weight: normal;
   color: #aaaaaa;
 }
@@ -539,7 +555,6 @@ p {
   letter-spacing: 1px;
   font-size: 0.75em;
   font-weight: 700;
-  color: #444444;
 }
 ul, ol {
   margin-left: 0;
@@ -550,7 +565,7 @@ ul ul, ol ul {
   margin-bottom: 0;
 }
 code, pre {
-  font-family: Lucida Console, monospace;
+  font-family: Lucida Console, Courier, monospace;
   font-size: 0.8em;
   display: block;
   padding: 20px;
@@ -917,11 +932,6 @@ table td {
     width: 80%;
     margin: 0 auto;
     border: 1px solid #dbdbdb;
-  }
-  #reasons, #clients, #footer {
-    border: 1px solid #dbdbdb;
-    border-top: none;
-    border-bottom: none;
   }
   .fixed.landing-page {
     width: 80%;

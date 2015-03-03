@@ -10,11 +10,12 @@ block content
           .bg
             include:md ../../content/poc/poc.md
             h4 PoC Pages:
-            #poc-pages.list-group
-              if pages
-                ul
+            if pages
+              #poc-pages
+                table.nav
                   for page in pages
-                    li
-                      a(href=page.link)= page.name
+                    tr
+                      td
+                        a(href=page.link)= page.name
       .col-2
         .lge-container

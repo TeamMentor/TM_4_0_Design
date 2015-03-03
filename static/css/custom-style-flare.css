@@ -1,6 +1,13 @@
 /*------------------------------------*
    STRUCTURE
 *------------------------------------*/
+html, body {
+  height: 100%;
+  width: 100%;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+}
 body {
   margin: 0;
   padding: 0;
@@ -22,7 +29,7 @@ nav {
   z-index: 99;
   background: white;
   border: 1px solid #dbdbdb;
-  padding-bottom: 10px;
+  padding-bottom: 7px;
 }
 nav a, nav p {
   color: #8aaf3e;
@@ -44,14 +51,12 @@ nav a:hover, nav p:hover {
 #logo {
   -webkit-order: 3;
   -webkit-flex: 70%;
-  margin: 5px 0 0 15px;
+  margin: 10px 0 10px 10px;
+  background: url('../assets/logos/tm-logo.svg') no-repeat;
+  background-size: contain;
 }
-#tm-logo {
-  background:url('../assets/logos/logos.png') no-repeat;
-  background-position: 0px 0px;
-  height: 40px;
-  width: 200px;
-  margin: 0;
+object {
+  width: 100%;
 }
 #links {
   -webkit-order: 5;
@@ -124,6 +129,7 @@ nav a:hover, nav p:hover {
   -webkit-flex: 100%;
   text-align: center;
   list-style-type: none;
+  margin-top: 10px;
   display: none;
 }
 #lp-links button {
@@ -147,9 +153,9 @@ nav a:hover, nav p:hover {
 }
 #lp-menu-icon {
   -webkit-order: 4;
-  -webkit-flex: 20%;
+  -webkit-flex: 23%;
   text-align: right;
-  margin: 12px 12px 0 0;
+  margin: 20px 12px 0 0;
 }
 #application {
   -webkit-order: 7;
@@ -279,7 +285,7 @@ nav a:hover, nav p:hover {
   min-height: 1px;
 }
 #landing-page {
-  height: 100%;
+  height: 90%;
   -webkit-order: 6;
   -webkit-flex: 100%;
   display: -webkit-flex;
@@ -292,83 +298,82 @@ nav a:hover, nav p:hover {
 }
 #about {
   background-image: url(../assets/stock-img/bg-img-small.jpg);
-  height: auto;
   background-position: 0px 900px;
-  text-align: center;
-  padding-bottom: 5%;
 }
-#about h2 {
-  padding-top: 7%;
-  color: white;
-}
-#call-to-action h1 {
-  padding-top: 10%;
-  color: white;
-}
-#clients, #features h2, #reasons h2 {
-  text-align: center;
+#about, #usp, #call-to-action {
+  padding: 1% 0 5% 0;
+  background-size: auto;
 }
 #about-us {
-  padding: 40px 0 10px 0;
+  background: white;
+}
+#about h3, #usp h2, #call-to-action h2 {
+  color: white;
+}
+#about-us {
+  padding: 40px 0;
 }
 #call-to-action {
   background-image: url(../assets/stock-img/bg-img-small.jpg);
   background-position: 0px 1120px;
-  height: auto;
-  text-align: center;
-  padding-bottom: 6%;
+}
+#call-to-action button i, #usp button i {
+  padding-right: 10px;
 }
 #clients {
-  padding: 40px 0 80px 0;
-}
-#features {
-  padding: 20px 0 40px 0;
+  padding: 2% 2% 7% 2%;
   background: white;
 }
-#features i, #reasons i {
-  font-size: 60px;
+#clients h2 {
+  text-align: left !important;
+}
+#features {
+  background: white;
+}
+#features i, #reasons i, #summary i {
+  color: #8baf3e;
+  font-size: 3em;
+}
+#features h2 {
+  text-align: left;
 }
 #footer {
-  padding: 5px 0 15px 0;
+  padding: 0 0 15px 0;
   text-align: center;
+}
+#contact-information {
+  margin-top: 20px;
 }
 #footer ul {
   list-style: none;
-  padding: 7px 0 0 0;
+  padding: 0px 0 0 0;
 }
 #footer li {
   font-size: 0.75em;
   margin: 0 0 5px 0;
 }
-#footer h5 {
-  margin: 50px 0 10px 15px;
+#footer img {
+  margin: 0 auto;
+  max-width: 40%;
+  padding-bottom: 10px;
 }
 #footer i {
   margin-right: 10px;
   color: #444444;
 }
 #reasons {
-  padding-top: 70px;
-  z-index: 5;
+  padding: 2%;
+  background: white;
 }
 #usp {
   background-image: url(../assets/stock-img/bg-img-small.jpg);
   background-position: 0px 0px;
-  z-index: 4;
-  text-align: center;
-  height: auto;
-  padding-bottom: 5%;
-}
-#usp h2 {
-  color: white;
-  font-size: 24px;
 }
 #si-logo {
-  background:url('../assets/logos/logos.png') no-repeat;
-  background-position: 0px -43px;
+  width: 100%;
   height: 50px;
-  width: 150px;
-  margin: 0 auto;
+  background: url('../assets/logos/si-logo.svg') no-repeat;
+  background-size: contain;
 }
 #loginwall {
   -webkit-order: 7;
@@ -452,11 +457,11 @@ ul.side-nav span.badge {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
 }
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-weight: normal;
   color: #aaaaaa;
 }
-h4, h5, h6 {
+h4, h5 {
   color: #444444;
 }
 h1 {
@@ -464,23 +469,23 @@ h1 {
   line-height: 1.25em;
 }
 h2 {
-  font-size: 1.625em;
+  font-size: 1.75em;
   line-height: 1.153em;
 }
 h3 {
-  font-size: 1.375em;
+  font-size: 1.5em;
   line-height: 1.136em;
 }
 h4 {
-  font-size: 1.125em;
+  font-size: 1.25em;
   line-height: 1.11em;
 }
 h5 {
-  font-size: 1.105em;
+  font-size: 1em;
   line-height: 1.11em;
 }
 p {
-  font-size: 1em;
+  font-size: 0.85em;
   line-height: 1.5em;
 }
 ul, ol {
@@ -695,11 +700,11 @@ button, .button {
   display: inline-block;
   font-size: 14px;
   letter-spacing: 1px;
-  padding: 15px 0 15px 0;
+  padding: 15px;
   text-align: center;
   text-transform: uppercase;
   transition: all 0.5s;
-  width: 100%;
+  max-width: 100%;
   display: inline-block;
 }
 button:hover, button:active, .button:hover, .button:active {
@@ -892,62 +897,85 @@ input#search:active, input#search:focus {
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
-@media only screen and (min-width : 600px) {
-  #usp, #call-to-action, #about {
-    background-image: url(../assets/stock-img/bg-img-medium.jpg);
+@media (min-width: 550px) {
+  #about, #call-to-action, #usp {
+    padding: 5% 0 8% 0;
   }
-  #usp {
-    background-position: 0px 1000px;
-    height: auto;
-    padding-bottom: 5%;
-  }
-  #call-to-action {
-    background-position: 0px 700px;
+  #about, #call-to-action, #usp {
+    background: url(../assets/stock-img/bg-img-medium.jpg) no-repeat;
   }
   #about {
-    background-position: 0px 350px;
+    background-position: 0px -850px;
   }
-  #usp h2 {
-    padding-top: 2%;
+  #call-to-action {
+    background-position: 0px -500px;
+  }
+  button, .button {
+    width: 100%;
+  }
+}
+@media (min-width: 643px) {
+  #footer img {
+    max-width: 80%;
+  }
+}
+@media (min-width: 850px) {
+  #landing-page h1 {
+    line-height: 2.5em;
+  }
+  #landing-page h2 {
+    line-height: 1.5em;
+  }
+  #landing-page h3 {
+    line-height: 1.5em;
+  }
+  #landing-page h5 {
+    line-height: 1.5em;
+  }
+  h1 {
+    font-size: 2.25em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  h3 {
     font-size: 1.75em;
   }
-  #call-to-action h1 {
-    padding-top: 7%;
+  h4 {
+    font-size: 1.5em;
+  }
+  h5 {
+    font-size: 1.25em;
+  }
+  p {
+    font-size: 1em;
+    line-height: 1.75em;
+  }
+  #about, #call-to-action, #usp {
+    background: url(../assets/stock-img/bg-img-large.jpg) no-repeat;
+    padding: 8% 0;
+    text-align: center;
+  }
+  #about {
+    background-position: 0px -1450px;
+  }
+  #call-to-action {
+    background-position: 0px -850px;
+  }
+  #clients, #reasons h2 {
+    text-align: center;
+  }
+  #reasons i {
+    font-size: 4em;
+  }
+  #footer {
+    text-align: left;
+  }
+  #footer #si-logo {
+    margin-top: 10px;
   }
 }
 @media only screen and (min-width : 900px) {
-  #usp, #call-to-action, #about {
-    background-image: url(../assets/stock-img/bg-img-large.jpg);
-  }
-  #about {
-    background-position: 0px 600px;
-  }
-  #call-to-action {
-    background-position: 0px 1100px;
-  }
-  #usp {
-    background-position: 0px -300px;
-  }
-  h1 {
-    font-size: 3em !important;
-    line-height: 1.5em;
-  }
-  h2 {
-    font-size: 2.25em !important;
-    line-height: 1.5em;
-  }
-  h3 {
-    font-size: 1.75em !important;
-    line-height: 1.5em;
-  }
-  h4 {
-    font-size: 1.125em !important;
-    line-height: 1.5em;
-  }
-  h5 {
-    font-size: 1em !important;
-    line-height: 1em;
-  }
   #application {
     -webkit-flex: 100%;
     min-height: 50%;
@@ -955,7 +983,6 @@ input#search:active, input#search:focus {
     -webkit-flex-wrap: wrap;
   }
   #logo {
-    -webkit-flex: 100%;
     flex: 1;
   }
   #links {
@@ -974,7 +1001,7 @@ input#search:active, input#search:focus {
   #links li {
     padding-left: 30px;
   }
-  #links li:-child {
+  #links li:first-child {
     padding-left: 0;
   }
   #lp-links {
@@ -985,7 +1012,7 @@ input#search:active, input#search:focus {
   }
   #lp-links li {
     display: inline-block;
-    padding: 15px 10px 0 0;
+    padding: 15px 30px 0 0;
   }
   #lp-links button {
     margin: 0 15px 0 0;
@@ -1017,17 +1044,8 @@ input#search:active, input#search:focus {
   .fixed {
     width: 50%;
   }
-  #footer {
-    text-align: left;
-  }
-  #footer #si-logo {
-    margin-left: 15px;
-  }
   #right-nav {
     -webkit-order: 9;
-  }
-  #contact-information {
-    margin: 50px 0 0 0;
   }
   #loginwall, #summary {
     padding: 20px;
