@@ -1,10 +1,6 @@
 include ../../shared-mixins/globals.jade
 include ../../shared-mixins/images.jade
 
-mixin tm-logo
-    object(type='image/svg+xml' data='../../../static/assets/logos/tmlogo.svg')
-        img(src='../../../static/assets/logos/TMLogo.jpg')
-
 mixin usp-div
     #usp
         .row
@@ -110,7 +106,7 @@ mixin footer-div
                     ul
                         li
                             a(href='http://www.securityinnovation.com/', target='_blank')
-                                #si-logo
+                                img(src='../../../static/assets/logos/silogo.svg')
                 .small-12.medium-3.columns
                     ul
                         li
