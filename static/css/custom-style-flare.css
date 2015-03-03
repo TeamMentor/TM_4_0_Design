@@ -51,7 +51,7 @@ nav a:hover, nav p:hover {
 #logo {
   -webkit-order: 3;
   -webkit-flex: 70%;
-  margin: 10px 0 0 10px;
+  margin: 10px 0 10px 10px;
   background: url('../assets/logos/tm-logo.svg') no-repeat;
   background-size: contain;
 }
@@ -285,7 +285,7 @@ object {
   min-height: 1px;
 }
 #landing-page {
-  height: 100%;
+  height: 90%;
   -webkit-order: 6;
   -webkit-flex: 100%;
   display: -webkit-flex;
