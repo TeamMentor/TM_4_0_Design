@@ -72,7 +72,7 @@ class Session_Service
       results = {}
       for item in data
         if item.title
-          results[item.id] ?= { href: "/article/#{item.id}", title: item.title, weight: 0}
+          results[item.id] ?= { title: item.title, weight: 0}
           results[item.id].weight++
       results = (results[key] for key in results.keys())
 
@@ -86,11 +86,11 @@ class Session_Service
 
     data.recent_Searches = []
     if session.user_Searches
-      for user_Search in session.user_Searches
+      for user_Search in (session.user_Searches.reverse())
         if user_Search.results > 0 and data.recent_Searches.not_Contains(user_Search.title)
           data.recent_Searches.push user_Search.title
-      log data.recent_Searches
-      data.recent_Searches.reverse().splice(3,data.recent_Searches.size())
+      data.recent_Searches = data.recent_Searches.slice(0,3)
+      session.user_Searches.reverse()   # restore original order
 
     data.recent_Articles = []
     mapped_Articles = {}

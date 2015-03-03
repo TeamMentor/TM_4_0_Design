@@ -74,7 +74,6 @@ class PoC_Controller
       when 'top-articles'
         view_Model.title = 'Top Articles'
         @.express_Service.session_Service.top_Articles (data)->
-          log data
           view_Model.top_Articles = data
           callback view_Model
       when 'top-searches'
@@ -92,14 +91,12 @@ class PoC_Controller
       when 'user-data'
         view_Model.title = 'User Data'
         @.express_Service.session_Service.user_Data session, (data)->
-          log data
           view_Model.user_Data = data
           callback view_Model
 
       when 'users-searches'
         view_Model.title = 'User\'s Searches'
         @.express_Service.session_Service.users_Searches (data)->
-          log data
           view_Model.users_Searches = data
           callback view_Model
 
