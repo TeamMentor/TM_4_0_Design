@@ -801,6 +801,45 @@ table td {
     width: 100%;
   }
 }
+@media (min-width: 660px) {
+  #team-mentor-navigation {
+    height: 60px;
+  }
+  #tm-logo {
+    background-position: 0px 0px;
+    display: inline-block;
+    float: left;
+    margin: 7px 0 0 20px;
+    width: 36%;
+  }
+  #landing-page {
+    margin: 0;
+  }
+  #links {
+    display: inline-block;
+    width: 60%;
+    float: right;
+  }
+  #links.text-links, #links.icons {
+    padding-top: 20px;
+  }
+  #links.icons ul li {
+    display: inline-block;
+  }
+  #links.text-links ul, #links.icons ul {
+    text-align: right;
+  }
+  #links.text-links ul li,  #links.icons ul li {
+    display: inline-block;
+    padding: 0 20px 0 0;
+  }
+  #links.text-links ul li:last-child, #links.icons ul li:last-child {
+    padding-right: 20px;
+  }
+  #links ul li a{
+    font-size: 14px;
+  }
+}
 @media (min-width: 850px) {
   #landing-page h1 {
     line-height: 2.5em;
@@ -864,43 +903,6 @@ table td {
   #search-div-2 {
     width: 75%;
     top: 60px;
-  }
-  #team-mentor-navigation {
-    height: 60px;
-  }
-  #tm-logo {
-    background-position: 0px 0px;
-    display: inline-block;
-    float: left;
-    margin: 7px 0 0 20px;
-    width: 36%;
-  }
-  #landing-page {
-    margin: 0;
-  }
-  #links {
-    display: inline-block;
-    width: 60%;
-    float: right;
-  }
-  #links.text-links, #links.icons {
-    padding-top: 20px;
-  }
-  #links.icons ul li {
-    display: inline-block;
-  }
-  #links.text-links ul, #links.icons ul {
-    text-align: right;
-  }
-  #links.text-links ul li,  #links.icons ul li {
-    display: inline-block;
-    padding: 0 20px 0 0;
-  }
-  #links.text-links ul li:last-child, #links.icons ul li:last-child {
-    padding-right: 20px;
-  }
-  #links ul li a{
-    font-size: 14px;
   }
   #loginwall {
     padding: 90px 0 0 0;
