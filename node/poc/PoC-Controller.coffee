@@ -1,5 +1,5 @@
 Jade_Service    = null
-
+Graph_Service   = null
 #without
 
 Array::remove_If_Contains = (value)->
@@ -9,7 +9,8 @@ Array::remove_If_Contains = (value)->
 class PoC_Controller
 
   dependencies: ->
-    Jade_Service       = require('../services/Jade-Service')
+    Jade_Service     = require('../services/Jade-Service')
+    Graph_Service    = require('../services/Graph-Service')
 
   constructor: (options)->
     @.dependencies()
@@ -17,14 +18,16 @@ class PoC_Controller
     @.dir_Poc_Pages   = __dirname.path_Combine '../../source/jade/__poc'
     @.jade_Service    = new Jade_Service()
     @.express_Service = @.options.express_Service
-    @
+    @.graph_Service   = new Graph_Service()
 
   register_Routes: () =>
     app = @.express_Service?.app
     if app
-      app.get '/poc*'           , @.check_Auth
-      app.get '/poc'            , @.show_Index
-      app.get '/poc/:page'      , @.show_Page
+      app.get '/poc*'             , @.check_Auth
+      app.get '/poc'              , @.show_Index
+      app.get '/poc/filters:page' , @.show_Filters
+      app.get '/poc/:page'        , @.show_Page
+
     @
 
   check_Auth: (req,res,next)=>
@@ -57,6 +60,20 @@ class PoC_Controller
         return
     res.redirect '/guest/404'
 
+  show_Filters: (req,res)=>
+
+    req.params.queryId = 'Guidance'
+    req.params.filters = ''
+
+    page               = req.params.page
+    jade_Page          = "/source/jade/__poc/filters/filters#{page}.jade"
+    log jade_Page
+    Search_Controller  = require('../controllers/Search-Controller')
+
+    using new Search_Controller(req,res), ->
+      @.jade_Page = jade_Page
+      @.showSearchFromGraph()
+
   render_Jade: (res, jade_Page, view_Model)=>
     view_Model.loggedIn = true
     res.status(200)
@@ -68,6 +85,17 @@ class PoC_Controller
     view_Model = {}
 
     Express_Service = require('../services/Express-Service')
+
+    if page.contains 'article-'
+      @.graph_Service.articles (articles)=>
+        article_Id = articles.keys()[100.random()]
+        article = articles[article_Id]
+        @.graph_Service.article_Html article_Id, (data)->
+          view_Model.title        = article.title
+          view_Model.article_Html = data.html
+          view_Model.article      = article
+          callback view_Model
+      return
 
     switch page
 

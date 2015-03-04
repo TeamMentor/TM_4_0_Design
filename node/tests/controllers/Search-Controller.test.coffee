@@ -92,17 +92,6 @@ describe "| controllers | Search-Controller.test |", ->
       @.showMainAppView()
 
 
-  it 'topSearches', (done)->
-      using new Search_Controller(),->
-        @topSearches().assert_Is [ { href: '/search?text=Administrative Controls',title: 'Administrative Controls' },
-                                   { href: '/search?text=Struts', title: 'Struts' },
-                                   { href: '/search?text=Logging', title: 'Logging' } ]
-
-        done()
-
-
-
-
   describe 'showSearchFromGraph |', ->
 
     graph_Service = (on_GraphDataFromGraphDB)->

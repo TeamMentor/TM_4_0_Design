@@ -123,33 +123,6 @@ class SearchController
           viewModel = user_Data
           @res.render(jadePage, viewModel)
 
-
-      #@.express_Service.session_Service.viewed_Articles (data)->
-      #  if (is_Null(data))
-      #      callback []
-      #      return
-      #  results = {}
-      #  for item in data
-      #      results[item.id] ?= { href: "/article/#{item.id}", title: item.title, weight: 0}
-      #      results[item.id].weight++
-      #  results = (results[key] for key in results.keys())
-
-      #  results = results.sort (a,b)-> a.weight > b.weight
-      #  topResults = []
-      #  topResults.add(results.pop()).add(results.pop())
-      #            .add(results.pop()).add(results.pop())
-      #            .add(results.pop())
-      #  callback topResults
-
-    topSearches: =>
-        searchTerms = []
-        for search in recentSearches_Cache
-            searchTerms.unshift { href: "/search?text=#{search}", title: search}
-
-        return searchTerms.take(3)
-
-
-
 SearchController.register_Routes = (app, expressService) ->
 
     expressService ?= new Express_Service()
@@ -160,7 +133,6 @@ SearchController.register_Routes = (app, expressService) ->
         return (req, res) ->                                             # returns function for express
             new SearchController(req, res, app.config,expressService)[method_Name]()    # creates SearchController object with live
                                                                          # res,req and invokes method_Name
-
 
     app.get "/"                              , checkAuth , searchController('showMainAppView')
     app.get "/#{urlPrefix}"                  , checkAuth , searchController('showRootQueries')

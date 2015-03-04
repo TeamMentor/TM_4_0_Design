@@ -1,6 +1,6 @@
-extends ../_layouts/page_home.jade
-include ../_mixins/articles-mixins.jade
-include ../../shared-mixins/globals.jade
+extends ../../_layouts/page_home.jade
+include ../../_mixins/articles-mixins.jade
+include ../../../shared-mixins/globals.jade
 block content
   #application
     .row
@@ -8,6 +8,8 @@ block content
         .lge-container
       .col-8
         .lge-container
+          h4 Article data
+          pre= article.json_Pretty()
           +article
           +copyright
       .col-2
