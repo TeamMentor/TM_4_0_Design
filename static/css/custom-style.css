@@ -241,7 +241,7 @@ body > * {
   padding: 0 10px 0 0;
 }
 #search-div, #search-div-2 {
-  background: #b4cf7b;
+  background: #fafafa;
   margin-bottom: 20px;
   width: 100%;
   position: fixed;
@@ -249,9 +249,14 @@ body > * {
   left: 0;
   z-index: 96;
 }
+#search-input {
+  background: white;
+  border: 1px solid #dbdbdb;
+  padding-bottom: 14px;
+}
 #search-input .input-group {
   border: 1px solid #dbdbdb;
-  background: white;
+  background: #fafafa;
 }
 #search-input input {
   border:none;
