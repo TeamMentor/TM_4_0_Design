@@ -242,7 +242,7 @@ body > * {
 }
 #search-div, #search-div-2 {
   background: #b4cf7b;
-  border: 1px solid #dbdbdb;
+  margin-bottom: 20px;
   width: 100%;
   position: fixed;
   top: 155px;
@@ -260,6 +260,7 @@ body > * {
 }
 #search-div-2 {
   margin: 0 auto;
+  margin-bottom: 20px;
   top: 155px;
 }
 .vertical-align {
@@ -912,7 +913,7 @@ table td {
     line-height: 3.75em;
   }
   #results-2 {
-    margin-top: 140px;
+    margin-top: 160px;
   }
 }
 @media (min-width: 999px) {
