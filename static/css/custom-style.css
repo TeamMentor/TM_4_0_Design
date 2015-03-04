@@ -85,6 +85,13 @@ body > * {
   margin-top: 130px;
   background: #fafafa;
 }
+#article #title {
+  border-bottom: 1px solid #8aaf3e;
+  border-top: 1px solid #8aaf3e;
+  padding: 25px 0;
+  margin-bottom: 40px;
+  color: #8aaf3e;
+}
 #help-nav {
   margin-top: 20px;
 }
