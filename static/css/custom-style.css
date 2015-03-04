@@ -220,11 +220,10 @@ body > * {
   background: white;
 }
 #results {
-  background: transparent;
+  background: white;
   margin: 0 0 20px 0;
-  border-bottom: 1px solid #dbdbdb;
+  border: 1px solid #dbdbdb;
   width: 100%;
-  color: #aaaaaa;
 }
 #results-2 {
   margin-top: 170px;
@@ -232,7 +231,6 @@ body > * {
 }
 #results .label {
   font-weight: normal;
-  color: #aaaaaa;
 }
 #usp {
   background: url(../assets/stock-img/bg-img-small.jpg) no-repeat;
@@ -243,20 +241,17 @@ body > * {
   padding: 0 10px 0 0;
 }
 #search-div, #search-div-2 {
-  background: #fafafa;
+  background: #b4cf7b;
+  border: 1px solid #dbdbdb;
   width: 100%;
   position: fixed;
   top: 155px;
   left: 0;
   z-index: 96;
 }
-#search-input {
-  border: 1px solid #dbdbdb;
-  background: white;
-  border-radius: 3px;
-}
 #search-input .input-group {
   border: 1px solid #dbdbdb;
+  background: white;
 }
 #search-input input {
   border:none;
@@ -365,6 +360,7 @@ object {
   white-space: pre-wrap;
   padding: 12px 0;
   width: 100%;
+  margin-top: 0;
 }
 .sub-nav a:after { content: " / "; padding-left: 10px; color: #aaaaaa;}
 .sub-nav a:before { content: " "; }
@@ -420,9 +416,7 @@ ul.side-nav {
 }
 ul.side-nav li {
   padding: 7px;
-  border-bottom: none;
   border: 1px solid #dbdbdb;
-  border-bottom: none;
 }
 ul.side-nav li:last-child {
 }
@@ -672,7 +666,7 @@ button:hover, button:active {
   width: 4em;
 }
 #search-button i {
-  color:#8aaf3e;
+  color: #8aaf3e;
   font-size: 20px;
 }
 .dropdown {
@@ -752,8 +746,9 @@ button:hover, button:active {
   padding: 5px 5px 5px 9px;
   background: #aaaaaa;
   border-radius:10px;
+  border: 1px solid transparent;
   text-align: center;
-  color:#fff;
+  color: white !important;
   font-size: 12px;
 }
 span.rwd-line {
