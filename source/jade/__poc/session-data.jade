@@ -9,13 +9,12 @@ block content
             if session_Data
               table
                 tr
-                  th _id
-                  th sid
-                  th cookie
-                  th username
-                  th recent articles
-                  th user Searches
-                  //th data
+                  th _ID
+                  th SID
+                  th Cookie
+                  th Username
+                  th Recent Articles
+                  th User Searches
                 for item in session_Data
                   tr
                     td= item._id
@@ -23,11 +22,11 @@ block content
                     td
                       pre= item.data.cookie.json_Pretty()
                     td= item.data.username
-                    if item.data.recent_Articles
-                        td
-                          pre= item.data.recent_Articles.json_Pretty()
+                    td
+                      if item.data.recent_Articles
+                        pre= item.data.recent_Articles.json_Pretty()
+                    td
                       if item.data.user_Searches
-                          td
-                              pre= item.data.user_Searches.json_Pretty()
+                        pre= item.data.user_Searches.json_Pretty()
 
 

@@ -4,17 +4,18 @@ block content
     .row
       .col-2
         .lge-container
-      .col-10
+      .col-8
         .lge-container
           .bg
             h2= title
             if users_Searches
               table
-                tr
-                  th title
-                  th results size
-                  th id
-                  th username
+                thead
+                  tr
+                    th Title
+                    th Results size
+                    th ID
+                    th Username
 
                 for item in users_Searches
                   tr
