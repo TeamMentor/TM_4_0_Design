@@ -82,7 +82,7 @@ body > * {
 #application {
   width: 100%;
   max-height: 100%;
-  margin-top: 130px;
+  padding-top: 130px;
   background: #fafafa;
 }
 #help-nav {
@@ -107,9 +107,6 @@ body > * {
   border-radius: 3px;
   margin-bottom: 20px;
   border: 1px solid #dbdbdb;
-}
-.bg h3 {
-  margin-top: 15px;
 }
 #copyright {
   max-height: 100%;
@@ -763,14 +760,24 @@ span.rwd-line {
 *------------------------------------*/
 table {
   width: 100%;
-  font-size: 16px;
   color: #444444;
   border-collapse: collapse;
 }
-table td {
-  padding-left: 10px;
-  padding-right: 10px;
+.data thead {
+  background: #fafafa;
+  text-align: left;
+  border: 1px solid #dbdbdb;
+  letter-spacing: 1px;
+}
+td, th {
+  padding: 10px;
   height: 30px;
+}
+.data tr {
+  border: 1px solid #dbdbdb;
+}
+.data tr:nth-child(even) {
+  background: #fafafa;
 }
 /*------------------------------------*
    MEDIA QUERIES
@@ -842,7 +849,7 @@ table td {
     margin-top: 0;
   }
   #application {
-    margin-top: 60px;
+    padding-top: 60px;
   }
   #help-nav {
     margin: 0;
