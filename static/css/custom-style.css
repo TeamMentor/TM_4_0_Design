@@ -86,11 +86,13 @@ body > * {
   background: #fafafa;
 }
 #article #title {
-  border-bottom: 1px solid #8aaf3e;
-  border-top: 1px solid #8aaf3e;
+  border-bottom: 1px solid #dbdbdb;
   padding: 25px 0;
   margin-bottom: 40px;
-  color: #8aaf3e;
+  color: #444444
+}
+.article-content {
+  padding-bottom: 35px;
 }
 #help-nav {
   margin-top: 20px;
