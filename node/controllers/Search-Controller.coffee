@@ -86,7 +86,7 @@ class SearchController
             return
 
           searchData.text         =  target
-          searchData.href         = "/search?text=#{target}&filter="
+          searchData.href         = "/search?text=#{target?.url_Encode()}&filter="
 
           @.req.session.user_Searches ?= []
 
