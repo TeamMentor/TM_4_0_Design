@@ -712,9 +712,9 @@ button:hover, button:active {
   margin: 0;
   padding: 0;
 }
-.dropdown .dropdown-menu a li {
+.dropdown .dropdown-menu li a {
   border-bottom: 1px solid #dbdbdb;
-  padding: 5px 15px 5px 15px;
+  padding: 5px 15px;
 }
 .dropdown .dropdown-menu a:last-child {
   border-bottom: none;
