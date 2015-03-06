@@ -72,7 +72,7 @@ mixin main-app-view
         if (recent_Articles && recent_Articles.values().not_Empty())
             .bg
                 #recently-Viewed-Articles
-                    h5 Recently Viewed Articles
+                    h5.label Recently Viewed Articles
                     table.nav
                         for recent_Article in recent_Articles
                           tr
@@ -84,7 +84,7 @@ mixin main-app-view
         //if (recent_Searches && recent_Searches.values().not_Empty())
             .bg
                 #recent-Searches
-                    h4.label Recent Searches
+                    h5.label Recent Searches
                     table.nav
                         for recent_Search in recent_Searches
                             tr
@@ -95,7 +95,7 @@ mixin main-app-view
         if (top_Searches)
             .bg
                 #popular-Search-Terms
-                    h5 Popular Search Terms
+                    h5.label Popular Search Terms
                     table.nav
                         for top_Search in top_Searches
                             tr
@@ -105,7 +105,7 @@ mixin main-app-view
                                         = top_Search.title
             .bg
                 #top-articles
-                    h5 Top Articles
+                    h5.label Top Articles
                     table.nav
                         for top_Article in top_Articles
                             tr
@@ -115,7 +115,7 @@ mixin main-app-view
                                         = top_Article.title
         //if (newArticles)
             .bg
-                h4.label New Articles
+                h5.label New Articles
                     table.nav
                         for newArticle in newArticles
                             tr
