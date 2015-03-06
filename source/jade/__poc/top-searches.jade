@@ -4,15 +4,16 @@ block content
     .row
       .col-2
         .lge-container
-      .col-10
+      .col-8
         .lge-container
           .bg
             h2= title
             if top_Searches
-              table
-                tr
-                  th title (href)
-                  th weight
+              table.data
+                thead
+                  tr
+                    th Title (href)
+                    th Weight
                 for item in top_Searches
                   tr
                     td

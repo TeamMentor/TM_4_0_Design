@@ -39,6 +39,7 @@ describe '| routes | routes.test |', ()->
                       '/error'
                       '/poc*'
                       '/poc'
+                      '/poc/filters:page'
                       '/poc/:page'
                       '/*']
 
