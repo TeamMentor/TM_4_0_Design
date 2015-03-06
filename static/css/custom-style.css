@@ -611,14 +611,14 @@ a.action:hover, a.action:focus, a.action:active {
   color: #49661f;
 }
 a.minor{
-  color: #8aaf3e;
+  color: #444444;
   text-decoration: none;
   font-size: 14px;
   line-height: 4.5em;
   display: block;
 }
 a.minor:hover {
-  color: #b4cf7b;
+  color: #aaaaaa;
 }
 #help-docs a {
   text-decoration: underline;
