@@ -1,15 +1,34 @@
-mixin poc-filters
-    .bg
-        h3 Filter by
+mixin poc-filters-div
+    if filters
         #filters
-            if filters
+            .bg
+                h3 Filter by
                 for filter in filters
-                    .dropdown
-                        button= filter.title
-                            span.right
-                                +arrow-down
-                            for result in filter.results
-                                ul.dropdown-menu
+                    h4.label= filter.title
+                    ul.side-nav
+                        for result in filter.results
+                            if activeFilter && result.id == activeFilter.id
+                                a(href= href )
                                     li
-                                        a(href= href )= result.title
-                                            span.right.badge= result.size
+                                        b= result.title
+                                        span.right.badge= result.size
+                            else
+                                a(href=href + '/'+result.id)
+                                    li
+                                        = result.title
+                                        span.right.badge= result.size
+
+mixin poc-filters-2
+    h3 Filter by
+    #filters
+        if filters
+            for filter in filters
+                .dropdown
+                    button= filter.title
+                        span.right
+                            +arrow-down
+                        for result in filter.results
+                            ul.dropdown-menu
+                                li
+                                    a(href= href )= result.title
+                                        span.right.badge= result.size
