@@ -85,6 +85,13 @@ body > * {
   padding-top: 130px;
   background: #fafafa;
 }
+#article #title {
+  border-bottom: 1px solid #8aaf3e;
+  border-top: 1px solid #8aaf3e;
+  padding: 25px 0;
+  margin-bottom: 40px;
+  color: #8aaf3e;
+}
 #help-nav {
   margin-top: 20px;
 }
@@ -216,11 +223,10 @@ body > * {
   background: white;
 }
 #results {
-  background: transparent;
+  background: white;
   margin: 0 0 20px 0;
-  border-bottom: 1px solid #dbdbdb;
+  border: 1px solid #dbdbdb;
   width: 100%;
-  color: #aaaaaa;
 }
 #results-2 {
   margin-top: 170px;
@@ -228,7 +234,6 @@ body > * {
 }
 #results .label {
   font-weight: normal;
-  color: #aaaaaa;
 }
 #usp {
   background: url(../assets/stock-img/bg-img-small.jpg) no-repeat;
@@ -240,6 +245,7 @@ body > * {
 }
 #search-div, #search-div-2 {
   background: #fafafa;
+  margin-bottom: 20px;
   width: 100%;
   position: fixed;
   top: 155px;
@@ -247,12 +253,13 @@ body > * {
   z-index: 96;
 }
 #search-input {
-  border: 1px solid #dbdbdb;
   background: white;
-  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+  padding-bottom: 14px;
 }
 #search-input .input-group {
   border: 1px solid #dbdbdb;
+  background: #fafafa;
 }
 #search-input input {
   border:none;
@@ -261,6 +268,7 @@ body > * {
 }
 #search-div-2 {
   margin: 0 auto;
+  margin-bottom: 20px;
   top: 155px;
 }
 .vertical-align {
@@ -361,6 +369,7 @@ object {
   white-space: pre-wrap;
   padding: 12px 0;
   width: 100%;
+  margin-top: 0;
 }
 .sub-nav a:after { content: " / "; padding-left: 10px; color: #aaaaaa;}
 .sub-nav a:before { content: " "; }
@@ -416,9 +425,7 @@ ul.side-nav {
 }
 ul.side-nav li {
   padding: 7px;
-  border-bottom: none;
   border: 1px solid #dbdbdb;
-  border-bottom: none;
 }
 ul.side-nav li:last-child {
 }
@@ -581,11 +588,11 @@ code, pre {
   overflow: auto;
 }
 hr {
-  margin: 0 auto;
-  width: 70%;
-  color: #fafafa;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  background-color: #aaaaaa;
+  color: #aaaaaa;
+  height: 1px;
+  margin: 40px 0;
+  border: 0;
 }
 a {
   color: #444444;
@@ -607,14 +614,14 @@ a.action:hover, a.action:focus, a.action:active {
   color: #49661f;
 }
 a.minor{
-  color: #8aaf3e;
+  color: #444444;
   text-decoration: none;
   font-size: 14px;
   line-height: 4.5em;
   display: block;
 }
 a.minor:hover {
-  color: #b4cf7b;
+  color: #aaaaaa;
 }
 #help-docs a {
   text-decoration: underline;
@@ -668,7 +675,7 @@ button:hover, button:active {
   width: 4em;
 }
 #search-button i {
-  color:#8aaf3e;
+  color: #8aaf3e;
   font-size: 20px;
 }
 .dropdown {
@@ -748,8 +755,9 @@ button:hover, button:active {
   padding: 5px 5px 5px 9px;
   background: #aaaaaa;
   border-radius:10px;
+  border: 1px solid transparent;
   text-align: center;
-  color:#fff;
+  color: white !important;
   font-size: 12px;
 }
 span.rwd-line {
@@ -801,6 +809,45 @@ td, th {
   }
   button, .button {
     width: 100%;
+  }
+}
+@media (min-width: 660px) {
+  #team-mentor-navigation {
+    height: 60px;
+  }
+  #tm-logo {
+    background-position: 0px 0px;
+    display: inline-block;
+    float: left;
+    margin: 7px 0 0 20px;
+    width: 36%;
+  }
+  #landing-page {
+    margin: 0;
+  }
+  #links {
+    display: inline-block;
+    width: 60%;
+    float: right;
+  }
+  #links.text-links, #links.icons {
+    padding-top: 20px;
+  }
+  #links.icons ul li {
+    display: inline-block;
+  }
+  #links.text-links ul, #links.icons ul {
+    text-align: right;
+  }
+  #links.text-links ul li,  #links.icons ul li {
+    display: inline-block;
+    padding: 0 20px 0 0;
+  }
+  #links.text-links ul li:last-child, #links.icons ul li:last-child {
+    padding-right: 20px;
+  }
+  #links ul li a{
+    font-size: 14px;
   }
 }
 @media (min-width: 850px) {
@@ -867,43 +914,6 @@ td, th {
     width: 75%;
     top: 60px;
   }
-  #team-mentor-navigation {
-    height: 60px;
-  }
-  #tm-logo {
-    background-position: 0px 0px;
-    display: inline-block;
-    float: left;
-    margin: 7px 0 0 20px;
-    width: 36%;
-  }
-  #landing-page {
-    margin: 0;
-  }
-  #links {
-    display: inline-block;
-    width: 60%;
-    float: right;
-  }
-  #links.text-links, #links.icons {
-    padding-top: 20px;
-  }
-  #links.icons ul li {
-    display: inline-block;
-  }
-  #links.text-links ul, #links.icons ul {
-    text-align: right;
-  }
-  #links.text-links ul li,  #links.icons ul li {
-    display: inline-block;
-    padding: 0 20px 0 0;
-  }
-  #links.text-links ul li:last-child, #links.icons ul li:last-child {
-    padding-right: 20px;
-  }
-  #links ul li a{
-    font-size: 14px;
-  }
   #loginwall {
     padding: 90px 0 0 0;
   }
@@ -923,7 +933,7 @@ td, th {
     line-height: 3.75em;
   }
   #results-2 {
-    margin-top: 140px;
+    margin-top: 160px;
   }
 }
 @media (min-width: 999px) {
