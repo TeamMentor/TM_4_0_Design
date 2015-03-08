@@ -89,7 +89,7 @@ body > * {
   border-bottom: 1px solid #dbdbdb;
   padding: 25px 0;
   margin-bottom: 40px;
-  color: #444444
+  color: #5c5c5c;
 }
 .article-content {
   padding-bottom: 37px;
@@ -116,6 +116,9 @@ body > * {
   border-radius: 3px;
   margin-bottom: 20px;
   border: 1px solid #dbdbdb;
+}
+#article.bg, #help-docs.bg, #help-index.bg, #summary.bg {
+  padding: 1em 3em;
 }
 #copyright {
   max-height: 100%;
@@ -206,10 +209,6 @@ body > * {
 }
 #list-view-article a {
   text-decoration: none;
-}
-#loginwall, #summary {
-  max-width: 95%;
-  margin: 0 auto;
 }
 #main-app-view {
   margin-top: 150px;
@@ -524,12 +523,13 @@ input[type="url"]:focus, textarea:focus, select:focus {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
 }
-h1, h2, h3, h4, h5 {
+h1, h2, h3 {
   font-weight: normal;
-  color: #aaaaaa;
+  color: #7b7b7b;
 }
 h4, h5 {
-  color: #444444;
+  font-weight: normal;
+  color: #565656;
 }
 h1 {
   font-size: 2em;
@@ -554,6 +554,7 @@ h5 {
 p {
   font-size: 0.85em;
   line-height: 1.5em;
+  color: #444444;
 }
 .label {
   text-decoration: none;
@@ -914,7 +915,7 @@ table td {
     margin-top: 160px;
   }
   #summary {
-    padding: 90px 0 0 0;
+    margin-top: 90px;
   }
   #footer {
     text-align: left;
