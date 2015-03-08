@@ -60,7 +60,7 @@ class Session_Service
           results[item.id].weight++
       results = (results[key] for key in results.keys())
 
-      results = results.sort (a,b)-> a.weight > b.weight
+      results = results.sort (a,b)-> a.weight - b.weight
 
       callback results.reverse()
 
@@ -76,7 +76,7 @@ class Session_Service
           results[item.id].weight++
       results = (results[key] for key in results.keys())
 
-      results = results.sort (a,b)-> a.weight > b.weight
+      results = results.sort (a,b)-> a.weight - b.weight
 
       callback results.reverse()
 
