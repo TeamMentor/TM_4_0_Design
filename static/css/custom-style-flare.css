@@ -51,12 +51,19 @@ nav a:hover, nav p:hover {
 #logo {
   -webkit-order: 3;
   -webkit-flex: 50%;
+  margin: 10px 0 10px 10px;
   background: url('../assets/logos/tm-logo.svg') no-repeat;
-  background-size: 100%;
+  background-size: contain;
+}
+.logo {
+  width: 50%;
+  margin: 0 auto;
 }
 .si-logo {
-  padding-top: 20%;
-  background-position: 0% 55%;
+  background: url('../assets/logos/si-logo.svg') no-repeat;
+  background-size: contain;
+  padding-top: 10%;
+  height: 0;
 }
 #links {
   -webkit-order: 5;
@@ -374,16 +381,12 @@ section {
 }
 .footer ul {
   list-style: none;
-  padding: 0px 0 0 0;
+  padding: 0;
+  margin: 0;
 }
 .footer li {
   font-size: 0.75em;
   margin: 0 0 5px 0;
-}
-.footer img {
-  margin: 0 auto;
-  max-width: 40%;
-  padding-bottom: 10px;
 }
 .footer i {
   margin-right: 10px;
@@ -392,12 +395,6 @@ section {
 .reasons {
   padding: 2em;
   background: white;
-}
-#si-logo {
-  width: 100%;
-  height: 50px;
-  background: url('../assets/logos/si-logo.svg') no-repeat;
-  background-size: contain;
 }
 #loginwall {
   -webkit-order: 7;
@@ -921,8 +918,6 @@ input#search:active, input#search:focus {
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
-@media (min-width: 500px) {
-}
 @media (min-width: 550px) {
   .about, .call-to-action, .usp {
     padding: 5% 0 8% 0;
@@ -938,6 +933,14 @@ input#search:active, input#search:focus {
   }
   button, .button {
     width: 100%;
+  }
+}
+@media (min-width: 641px) {
+  .logo {
+    width: 100%;
+  }
+  .si-logo {
+    padding-top: 20%;
   }
 }
 @media (min-width: 850px) {
@@ -972,12 +975,12 @@ input#search:active, input#search:focus {
     font-size: 1em;
     line-height: 1.75em;
   }
-  #about, .call-to-action, .usp {
+  .about, .call-to-action, .usp {
     background: url(../assets/stock-img/bg-img-large.jpg) no-repeat;
     padding: 8% 0;
     text-align: center;
   }
-  #about {
+  .about {
     background-position: 0px -1450px;
   }
   .call-to-action {
