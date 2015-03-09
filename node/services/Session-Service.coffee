@@ -46,7 +46,8 @@ class Session_Service
           for session in sessionData
               if session.data.user_Searches
                 for user_Search in session.data.user_Searches
-                  users_Searches.push(user_Search)
+                  if user_Search.results
+                    users_Searches.push(user_Search)
         callback users_Searches
 
   top_Articles: (callback)=>
