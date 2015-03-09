@@ -27,8 +27,10 @@ nav {
   -webkit-order: 1;
   display: -webkit-flex;
   z-index: 99;
+}
+.landing-page {
   background: white;
-  border: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
   padding-bottom: 7px;
 }
 nav a, nav p {
@@ -985,6 +987,7 @@ input#search:active, input#search:focus {
   }
   .call-to-action {
     background-position: 0em -50em;
+    padding: 6% 0;
   }
   .clients, .reasons h2 {
     text-align: center;
@@ -1076,6 +1079,15 @@ input#search:active, input#search:focus {
   }
 }
 @media only screen and (min-width : 1200px) {
+  .landing-page {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 2000px) {
+  .landing-page {
+    width: 60%;
+  }
 }
 /*------------------------------------*
    GLYPHICONS
