@@ -53,14 +53,10 @@ nav a:hover, nav p:hover {
   -webkit-flex: 50%;
 }
 .logo {
-  background: url('../assets/logos/logos.svg') no-repeat;
-  background-size: 83%;
-  width: 100%;
+  background: url('../assets/logos/tm-logo.svg') no-repeat;
+  background-size: 80%;
   height: 0;
-}
-.tm-logo {
-  padding-top: 2.2em;
-  background-position: 0 0;
+  padding-top: 3em;
 }
 .si-logo {
   padding-top: 20%;
@@ -929,6 +925,8 @@ input#search:active, input#search:focus {
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
+@media (min-width: 500px) {
+}
 @media (min-width: 550px) {
   .about, .call-to-action, .usp {
     padding: 5% 0 8% 0;
