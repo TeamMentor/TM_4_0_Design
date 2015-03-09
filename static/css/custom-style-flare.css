@@ -51,12 +51,8 @@ nav a:hover, nav p:hover {
 #logo {
   -webkit-order: 3;
   -webkit-flex: 50%;
-}
-.logo {
   background: url('../assets/logos/tm-logo.svg') no-repeat;
-  background-size: 80%;
-  height: 0;
-  padding-top: 3em;
+  background-size: 100%;
 }
 .si-logo {
   padding-top: 20%;
