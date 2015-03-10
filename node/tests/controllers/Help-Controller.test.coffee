@@ -48,6 +48,8 @@ describe '| controllers | Help-Controller.test |', ()->
       $('#help-index p'           ).html().assert_Is 'Welcome to the TEAM Mentor Documentation Website where you will find detailed information on how to install TEAM Mentor, how it works and how to customize it.'
     next()
 
+  @.timeout 5000
+
   before (done)->
     using new Help_Controller(req,res), ->
       help_Controller = @
