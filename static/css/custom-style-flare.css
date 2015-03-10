@@ -158,7 +158,7 @@ nav a:hover, nav p:hover {
 }
 #menu-icon {
   -webkit-order: 4;
-  -webkit-flex: 67%;
+  -webkit-flex: 23%;
   text-align: right;
   padding: 15px 10px 0 0;
 }

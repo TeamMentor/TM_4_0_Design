@@ -1,0 +1,19 @@
+mixin poc-active-filters
+    #results
+        table
+            tr
+                if no_Results
+                    td
+                        p.label#no_results No Results
+                        p Please try again
+                td
+                    if results
+                        if results.size() > 250
+                            p.label#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
+                        else
+                            p.label#resultsTitle= 'Showing ' + results.size() + ' articles'
+                td.text-right
+                    if activeFilter
+                        span#activeFilter.filter-2= activeFilter.title
+                            span.close-2
+                                a(href=href) x

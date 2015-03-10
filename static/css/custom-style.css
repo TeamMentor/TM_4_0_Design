@@ -147,7 +147,7 @@ body > * {
 #features {
   background: white;
 }
-#features i, #reasons i,  {
+#features i, #reasons i {
   color: #8baf3e;
   font-size: 4em;
 }
@@ -191,9 +191,6 @@ body > * {
 #form p a {
   text-decoration: underline;
 }
-#loginwall {
-  padding: 200px 0 0 0;
-}
 #landing-page {
   margin-top: 180px;
   background: white;
@@ -219,9 +216,12 @@ body > * {
 #list-view-article a {
   text-decoration: none;
 }
-#loginwall, #summary {
+#summary {
   max-width: 98%;
   margin: 0 auto;
+}
+#loginwall {
+  margin: 200px auto 0 auto;
 }
 #main-app-view {
   margin-top: 150px;
@@ -317,7 +317,7 @@ object {
   top: 0;
   z-index: 99;
   background: white;
-  border: 1px solid #dbdbdb;
+  outline: 1px solid #dbdbdb;
 }
 #customer-navigation {
   background-color: #FFFFFF;
@@ -662,6 +662,15 @@ a.minor:hover {
   color: white;
   border-left: 1px solid white;
 }
+.close-2 a {
+  background: #aaaaaa;
+  text-align: right;
+  text-decoration: none;
+  margin: 0 0 0 10px;
+  padding: 5px 7px;
+  border-radius: 50%;
+  color: white;
+}
 /*------------------------------------*
    BUTTONS
 *------------------------------------*/
@@ -767,6 +776,15 @@ button:hover, button:active {
   color: white !important;
   font-size: 12px;
 }
+.filter-2 {
+  padding: 10px 10px 10px 14px;
+  background: #d1d1d1;
+  border-radius:17px;
+  border: 1px solid #dbdbdb;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
 span.rwd-line {
   display: block;
 }
@@ -856,6 +874,9 @@ td, th {
   #links ul li a{
     font-size: 14px;
   }
+  #loginwall, #summary {
+    margin: 70px 0 0 0;
+  }
 }
 @media (min-width: 850px) {
   #landing-page h1 {
@@ -863,9 +884,11 @@ td, th {
   }
   #landing-page h2 {
     line-height: 1.5em;
+    text-align: center;
   }
   #landing-page h3 {
     line-height: 1.5em;
+    text-align: center;
   }
   #landing-page h5 {
     line-height: 1.5em;
@@ -921,23 +944,11 @@ td, th {
     width: 75%;
     top: 60px;
   }
-  #loginwall, #summary {
-    padding: 80px 0 0 0;
-  }
   #link-forgot-pwd {
     text-align: right;
   }
   #main-app-view {
     margin-top: 160px;
-  }
-<<<<<<< HEAD
-  #summary {
-    margin-top: 90px;
-  }
-=======
->>>>>>> Issue_356
-  #footer {
-    text-align: left;
   }
   a.minor {
     line-height: 3.75em;
@@ -955,16 +966,17 @@ td, th {
   span.rwd-line {
     display: inline;
   }
-  .landing-page {
-    width: 80% !important;
+  .landing-page, #landing-page {
+    width: 80%;
     margin: 0 auto;
-    left: 10%;
+    left: 10.1%;
   }
 }
 @media (min-width: 2000px) {
-  .landing-page {
+  .landing-page, #landing-page {
     width: 60%;
     left: 20%;
+    margin: 0 auto;
   }
 }
 /*------------------------------------*
