@@ -19,16 +19,20 @@ mixin poc-filters-div
                                         span.right.badge= result.size
 
 mixin poc-filters-2
-    h3 Filter by
-    #filters
-        if filters
-            for filter in filters
-                .dropdown
-                    button= filter.title
-                        span.right
-                            +arrow-down
-                        for result in filter.results
+    if filters
+        #filters
+            .bg
+                h3 Filter by
+                for filter in filters
+                    .dropdown
+                        button= filter.title
+                            span.right
+                                +arrow-down
                             ul.dropdown-menu
-                                li
-                                    a(href= href )= result.title
-                                        span.right.badge= result.size
+                                table.nav
+                                    for result in filter.results
+                                        tr
+                                            td
+                                                a(href= href )= result.title
+                                            td
+                                                span.right.badge= result.size
