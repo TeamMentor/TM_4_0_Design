@@ -662,6 +662,15 @@ a.minor:hover {
   color: white;
   border-left: 1px solid white;
 }
+.close-2 a {
+  background: #aaaaaa;
+  text-align: right;
+  text-decoration: none;
+  margin: 0 0 0 10px;
+  padding: 5px 7px;
+  border-radius: 50%;
+  color: white;
+}
 /*------------------------------------*
    BUTTONS
 *------------------------------------*/
