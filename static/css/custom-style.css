@@ -138,9 +138,13 @@ body > * {
 #features {
   background: white;
 }
-#features i, #reasons i, #summary i {
+#features i, #reasons i,  {
   color: #8baf3e;
   font-size: 4em;
+}
+#summary i {
+  font-size: 2em;
+  color: #8baf3e;
 }
 #features h2 {
   text-align: left;
@@ -185,6 +189,7 @@ body > * {
   margin-top: 180px;
   background: white;
   height: 100%;
+  width: 100%;
 }
 #list-view-article {
   background: white;
@@ -206,7 +211,7 @@ body > * {
   text-decoration: none;
 }
 #loginwall, #summary {
-  max-width: 95%;
+  max-width: 98%;
   margin: 0 auto;
 }
 #main-app-view {
@@ -303,7 +308,7 @@ object {
   top: 0;
   z-index: 99;
   background: white;
-  border-bottom: 1px solid #dbdbdb;
+  border: 1px solid #dbdbdb;
 }
 #customer-navigation {
   background-color: #FFFFFF;
@@ -914,17 +919,14 @@ td, th {
     width: 75%;
     top: 60px;
   }
-  #loginwall {
-    padding: 90px 0 0 0;
+  #loginwall, #summary {
+    padding: 80px 0 0 0;
   }
   #link-forgot-pwd {
     text-align: right;
   }
   #main-app-view {
     margin-top: 160px;
-  }
-  #summary {
-    padding: 90px 0 0 0;
   }
   #footer {
     text-align: left;
@@ -945,23 +947,14 @@ td, th {
   span.rwd-line {
     display: inline;
   }
-  #landing-page {
-    width: 80%;
-    margin: 0 auto;
-    border: 1px solid #dbdbdb;
-  }
-  .fixed.landing-page {
-    width: 80%;
+  .landing-page {
+    width: 80% !important;
     margin: 0 auto;
     left: 10%;
-    border: 1px solid #dbdbdb;
   }
 }
 @media (min-width: 2000px) {
-  #landing-page {
-    width: 60%;
-  }
-  .fixed.landing-page {
+  .landing-page {
     width: 60%;
     left: 20%;
   }
