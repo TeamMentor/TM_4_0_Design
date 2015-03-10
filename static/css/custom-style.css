@@ -694,7 +694,7 @@ button:hover, button:active {
 .dropdown button {
   background: #fafafa;
   color: #444444;
-  border: none;
+  border: 1px solid #dbdbdb;
   box-shadow: none;
   width: 100%;
   padding: 15px;
@@ -703,34 +703,25 @@ button:hover, button:active {
   border-radius: 0px;
 }
 .dropdown button:hover {
-  background: #dbdbdb;
+  background: #fafafa;
 }
 .dropdown button i {
   color: #444444 !important;
 }
 .dropdown .dropdown-menu {
-  background: #fff;
+  background: #fafafa;
   border-radius: 3px;
-  border: 1px solid #dbdbdb;
+  border: none;
   border-bottom: none;
   display: none;
   font-size: 14px;
   list-style-type: none;
   margin: 0;
+  margin-top: 20px;
   padding: 0;
 }
-.dropdown .dropdown-menu li a {
-  border-bottom: 1px solid #dbdbdb;
-  padding: 5px 15px;
-}
-.dropdown .dropdown-menu a:last-child {
-  border-bottom: none;
-}
-.dropdown .dropdown-menu a {
-  text-decoration: none;
-}
-.dropdown .dropdown-menu li:hover {
-  background: #dbdbdb;
+.dropdown .dropdown-menu table.nav {
+  background: white;
 }
 .dropdown:hover .dropdown-menu {
   display: block;
