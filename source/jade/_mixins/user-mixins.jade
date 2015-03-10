@@ -53,15 +53,18 @@ mixin forgot-password-form
 
 //- pwd-reset-form
 mixin pwd-reset-form
-  fieldset
-    h3 Reset your password
+  #form
+    #heading
+      p Reset your password
     form#pwd-reset-form(role='form' method='post')
       .form-group
         +password-input
         include:md ../../content/getting-started/password-prompt.md
       .form-group
         +confirm-password-input
-      +reset-password-button
+      .row
+        .col-5
+          +reset-password-button
 
 mixin alert-login-failed
   if viewModel && viewModel.errorMessage
