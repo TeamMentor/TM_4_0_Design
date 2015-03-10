@@ -206,8 +206,8 @@ body > * {
   margin-bottom: 20px;
 }
 #list-view-article h4 {
-  padding: 0 0 10px 0;
-  margin-bottom: 15px;
+  padding: 0 0 20px 0;
+  margin-bottom: 0px;
   border-bottom: 1px solid #dbdbdb;
 }
 #list-view-article p {
@@ -215,6 +215,9 @@ body > * {
 }
 #list-view-article a {
   text-decoration: none;
+}
+#list-view-article span.badge {
+  margin-top: 10px;
 }
 #summary {
   max-width: 98%;
