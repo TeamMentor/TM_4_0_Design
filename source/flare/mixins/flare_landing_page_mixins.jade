@@ -2,18 +2,18 @@ include ../../shared-mixins/globals.jade
 include ../../shared-mixins/images.jade
 
 mixin usp-div
-    #usp
-        .row
-            .small-12.large-offset-1.large-10.end.columns
-                h2
-                    include:md ../../content/landing-pages/usp.md
-                .row
-                    .small-12.medium-offset-3.medium-6.end.columns
-                        a(href='../getting-started/index')
-                            +start-trial-button
+    section.usp
+            .row
+                .small-12.large-offset-1.large-10.end.columns
+                    h2
+                        include:md ../../content/landing-pages/usp.md
+                    .row
+                        .small-12.medium-offset-3.medium-6.end.columns
+                            a(href='../getting-started/index')
+                                +start-trial-button
 
 mixin reasons-to-use-tm-div
-    #reasons
+    section.reasons
         include:md ../../content/landing-pages/reasons-div-heading.md
         .row
             .small-12.medium-offset-1.medium-10.large-offset-2.large-8.end.columns
@@ -36,38 +36,38 @@ mixin reasons-to-use-tm-div
                         include:md ../../content/landing-pages/selling-point-3.md
 
 mixin clients-div
-    #clients
+    section.clients
         include:md ../../content/landing-pages/clients-div-heading.md
         .row
             .small-6.large-4.columns
-                +image-elsevier-logo
+                .client-logo.elsevier
             .small-6.large-4.columns
-                +image-fedex-logo
+                .client-logo.fedex
             .small-6.large-4.columns
-                +image-mass-mutual-logo
+                .client-logo.mass-mutual
             .small-6.large-4.columns
-                +image-microsoft-logo
+                .client-logo.microsoft
             .small-6.large-4.columns
-                +image-symantec-logo
+                .client-logo.symantec
             .small-6.large-4.columns
-                +image-ubs-logo
+                .client-logo.ubs
 
 mixin about-tagline-div
-    #about
+    section.about
         .row
             .small-12.large-offset-1.large-10.end.columns
                 include:md ../../content/landing-pages/about-tm-tagline.md
 
 mixin about-us-div
-    #about-us
+    section.about-us
         .row
             .small-12.large-offset-2.large-8.end.columns
                 include:md ../../content/landing-pages/about-tm-summary.md
 
 mixin features-div
-    #features
+    section.features
         .row
-            .small-12.large-offset-1.large-10.columns
+            .small-12.large-offset-2.large-8.columns
                 include:md ../../content/landing-pages/features-div-heading.md
                 .row
                     .small-3.large-2.columns.text-center
@@ -91,7 +91,7 @@ mixin features-div
                         include:md ../../content/landing-pages/feature-4.md
 
 mixin call-to-action-div
-    #call-to-action
+    section.call-to-action
         .row
             .small-12.medium-offset-2.medium-8.end.columns
                 include:md ../../content/landing-pages/call-to-action.md
@@ -99,14 +99,14 @@ mixin call-to-action-div
                     +see-for-yourself-button
 
 mixin footer-div
-    #footer
+    section.footer
         .row
             #contact-information
                 .small-12.medium-3.columns
                     ul
                         li
                             a(href='http://www.securityinnovation.com/', target='_blank')
-                                img(src='../../../static/assets/logos/silogo.svg')
+                                .logo.si-logo
                 .small-12.medium-3.columns
                     ul
                         li

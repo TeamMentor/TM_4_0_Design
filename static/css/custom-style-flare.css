@@ -29,6 +29,10 @@ nav {
   z-index: 99;
   background: white;
   border: 1px solid #dbdbdb;
+}
+.landing-page {
+  background: #fafafa;
+  border-bottom: 1px solid #dbdbdb;
   padding-bottom: 7px;
 }
 nav a, nav p {
@@ -50,13 +54,20 @@ nav a:hover, nav p:hover {
 }
 #logo {
   -webkit-order: 3;
-  -webkit-flex: 70%;
+  -webkit-flex: 50%;
   margin: 10px 0 10px 10px;
   background: url('../assets/logos/tm-logo.svg') no-repeat;
   background-size: contain;
 }
-object {
-  width: 100%;
+.logo {
+  width: 50%;
+  margin: 0 auto;
+}
+.si-logo {
+  background: url('../assets/logos/si-logo.svg') no-repeat;
+  background-size: contain;
+  padding-top: 10%;
+  height: 0;
 }
 #links {
   -webkit-order: 5;
@@ -147,7 +158,7 @@ object {
 }
 #menu-icon {
   -webkit-order: 4;
-  -webkit-flex: 20%;
+  -webkit-flex: 67%;
   text-align: right;
   padding: 15px 10px 0 0;
 }
@@ -292,88 +303,102 @@ object {
   -webkit-flex-wrap: wrap;
   overflow-y: auto;
 }
-#about, #about-us, #call-to-action, #clients, #features, #footer, #reasons, #usp {
+section {
   width: 100%;
+  display: block;
+  overflow: auto;
   background: white;
 }
-#about {
+.about, .call-to-action, .usp {
   background-image: url(../assets/stock-img/bg-img-small.jpg);
+}
+.about {
   background-position: 0px 900px;
 }
-#about, #usp, #call-to-action {
-  padding: 1% 0 5% 0;
+.about, .usp, .call-to-action {
+  padding: 1em 0 2em 0;
   background-size: auto;
 }
-#about-us {
-  background: white;
-}
-#about h3, #usp h2, #call-to-action h2 {
+.about h3, .usp h2, .call-to-action h2 {
   color: white;
 }
-#about-us {
-  padding: 40px 0;
+.about-us {
+  padding: 2% 0;
 }
-#call-to-action {
-  background-image: url(../assets/stock-img/bg-img-small.jpg);
-  background-position: 0px 1120px;
+.call-to-action {
+  background-position: 0em -18em;
 }
-#call-to-action button i, #usp button i {
+.call-to-action button i, .usp button i {
   padding-right: 10px;
 }
-#clients {
-  padding: 2% 2% 7% 2%;
+.usp {
+  background-position: 0em 0em;
+}
+.clients {
+  padding: 0em 2em 3em 2em;
   background: white;
 }
-#clients h2 {
+.clients h2 {
   text-align: left !important;
 }
-#features {
+.client-logo {
+  background: url(../assets/clients/logos.jpg) no-repeat;
+  background-size: 100%;
+  width: 100%;
+  padding-top: 33%;
+  height: 0;
+}
+.elsevier {
+  background-position: 0% 0%;
+}
+.fedex {
+  background-position: 0% 20%;
+}
+.mass-mutual {
+  background-position: 0% 40%;
+}
+.microsoft {
+  background-position: 0% 60%;
+}
+.symantec {
+  background-position: 0% 80%;
+}
+.ubs {
+  background-position: 0% 100%;
+}
+.features {
   background: white;
 }
-#features i, #reasons i, #summary i {
+.features i, .reasons i, #summary i {
   color: #8baf3e;
   font-size: 3em;
 }
 #features h2 {
   text-align: left;
 }
-#footer {
+.footer {
   padding: 0 0 15px 0;
   text-align: center;
 }
 #contact-information {
   margin-top: 20px;
 }
-#footer ul {
+.footer ul {
   list-style: none;
-  padding: 0px 0 0 0;
+  padding: 0;
+  margin: 0;
 }
-#footer li {
+.footer li {
   font-size: 0.75em;
   margin: 0 0 5px 0;
 }
-#footer img {
-  margin: 0 auto;
-  max-width: 40%;
-  padding-bottom: 10px;
-}
-#footer i {
+.footer i {
   margin-right: 10px;
   color: #444444;
 }
-#reasons {
-  padding: 2%;
+.reasons {
+  padding: 2em;
   background: white;
-}
-#usp {
-  background-image: url(../assets/stock-img/bg-img-small.jpg);
-  background-position: 0px 0px;
-}
-#si-logo {
-  width: 100%;
-  height: 50px;
-  background: url('../assets/logos/si-logo.svg') no-repeat;
-  background-size: contain;
 }
 #loginwall {
   -webkit-order: 7;
@@ -898,25 +923,28 @@ input#search:active, input#search:focus {
    MEDIA QUERIES
 *------------------------------------*/
 @media (min-width: 550px) {
-  #about, #call-to-action, #usp {
+  .about, .call-to-action, .usp {
     padding: 5% 0 8% 0;
   }
-  #about, #call-to-action, #usp {
+  .about, .call-to-action, .usp {
     background: url(../assets/stock-img/bg-img-medium.jpg) no-repeat;
   }
-  #about {
+  .about {
     background-position: 0px -850px;
   }
-  #call-to-action {
-    background-position: 0px -500px;
+  .call-to-action {
+    background-position: 0em -32em;
   }
   button, .button {
     width: 100%;
   }
 }
-@media (min-width: 643px) {
-  #footer img {
-    max-width: 80%;
+@media (min-width: 641px) {
+  .logo {
+    width: 100%;
+  }
+  .si-logo {
+    padding-top: 20%;
   }
 }
 @media (min-width: 850px) {
@@ -925,6 +953,7 @@ input#search:active, input#search:focus {
   }
   #landing-page h2 {
     line-height: 1.5em;
+    text-align: center;
   }
   #landing-page h3 {
     line-height: 1.5em;
@@ -951,28 +980,26 @@ input#search:active, input#search:focus {
     font-size: 1em;
     line-height: 1.75em;
   }
-  #about, #call-to-action, #usp {
+  .about, .call-to-action, .usp {
     background: url(../assets/stock-img/bg-img-large.jpg) no-repeat;
     padding: 8% 0;
     text-align: center;
   }
-  #about {
+  .about {
     background-position: 0px -1450px;
   }
-  #call-to-action {
-    background-position: 0px -850px;
+  .call-to-action {
+    background-position: 0em -50em;
+    padding: 6% 0;
   }
-  #clients, #reasons h2 {
+  .clients {
     text-align: center;
   }
-  #reasons i {
+  .reasons i {
     font-size: 4em;
   }
-  #footer {
+  .footer {
     text-align: left;
-  }
-  #footer #si-logo {
-    margin-top: 10px;
   }
 }
 @media only screen and (min-width : 900px) {
@@ -1052,6 +1079,17 @@ input#search:active, input#search:focus {
   }
   .tabs-content {
     padding: 10px 40px;
+  }
+}
+@media only screen and (min-width : 1200px) {
+  .landing-page {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 2000px) {
+  .landing-page {
+    width: 60%;
   }
 }
 /*------------------------------------*
