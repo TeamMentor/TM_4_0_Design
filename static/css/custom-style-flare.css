@@ -27,9 +27,11 @@ nav {
   -webkit-order: 1;
   display: -webkit-flex;
   z-index: 99;
+  background: white;
+  border: 1px solid #dbdbdb;
 }
 .landing-page {
-  background: white;
+  background: #fafafa;
   border-bottom: 1px solid #dbdbdb;
   padding-bottom: 7px;
 }
@@ -951,6 +953,7 @@ input#search:active, input#search:focus {
   }
   #landing-page h2 {
     line-height: 1.5em;
+    text-align: center;
   }
   #landing-page h3 {
     line-height: 1.5em;
@@ -989,7 +992,7 @@ input#search:active, input#search:focus {
     background-position: 0em -50em;
     padding: 6% 0;
   }
-  .clients, .reasons h2 {
+  .clients {
     text-align: center;
   }
   .reasons i {
