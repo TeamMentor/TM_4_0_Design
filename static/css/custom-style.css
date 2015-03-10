@@ -767,6 +767,15 @@ button:hover, button:active {
   color: white !important;
   font-size: 12px;
 }
+.filter-2 {
+  padding: 10px 10px 10px 14px;
+  background: #d1d1d1;
+  border-radius:17px;
+  border: 1px solid #dbdbdb;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
 span.rwd-line {
   display: block;
 }
