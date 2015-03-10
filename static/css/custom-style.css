@@ -85,9 +85,13 @@ body > * {
   padding-top: 130px;
   background: #fafafa;
 }
+#article {
+  padding: 0 15px 15px 15px;
+}
 #article #title {
   border-bottom: 1px solid #dbdbdb;
-  padding: 25px 0;
+  padding-bottom: 25px;
+  line-height: 1.5em;
   margin-bottom: 40px;
   color: #5c5c5c;
 }
