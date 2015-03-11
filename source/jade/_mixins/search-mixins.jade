@@ -77,21 +77,11 @@ mixin main-app-view
                         for recent_Article in recent_Articles
                           tr
                             td
-                                a(href='/article/' + recent_Article.id)
+                                //a(href='/article/' + recent_Article.id)
+                                a(href='/article/' + recent_Article.id.remove('article-') + '/' + recent_Article.title.replace(/ /g,'-'), id=recent_Article.id)
                                     +article-icon
                                     = recent_Article.title
 
-        //if (recent_Searches && recent_Searches.values().not_Empty())
-            .bg
-                #recent-Searches
-                    h5.label Recent Searches
-                    table.nav
-                        for recent_Search in recent_Searches
-                            tr
-                                td
-                                    a(href='/search?text=' + recent_Search)
-                                        +search-icon
-                                        = recent_Search
         if (top_Searches)
             .bg
                 #popular-Search-Terms
@@ -110,7 +100,8 @@ mixin main-app-view
                         for top_Article in top_Articles
                             tr
                                 td
-                                    a(href=top_Article.href)
+                                    //a(href=top_Article.href)
+                                    a(href= top_Article.href.remove('article-') + '/' + top_Article.title.replace(/ /g,'-'), id=top_Article.id)
                                         +article-icon
                                         = top_Article.title
         //if (newArticles)
@@ -134,7 +125,7 @@ mixin articles-list
                         table
                             tr
                                 td
-                                    a(href='/article/' + result.id, id=result.id)
+                                    a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-'), id=result.id)
                                         h4=  result.title
                             tr
                                 td

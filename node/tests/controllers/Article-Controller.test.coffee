@@ -72,7 +72,7 @@ describe '| controllers | Article-Controller.test', ->
         $ = cheerio.load(data)
         $('#articles').html()
         $('#articles').html().assert_Contains 'list-view-article'
-        $('#articles #list-view-article a').attr().assert_Is { href: '/article/article-12345', id: 'article-12345' }
+        $('#articles #list-view-article a').attr().assert_Is { href: '/article/12345/this-is-an-title', id: 'article-12345' }
         $('#articles #list-view-article a h4').html().assert_Is 'this is an title'
         $('#articles #list-view-article p').html().assert_Is 'html summary is here...'
         done()

@@ -236,7 +236,7 @@ describe "| controllers | Search-Controller.test |", ->
         send: (html)->
           html.assert_Contains 'results'
           $ = cheerio.load html
-          $('#articles #list-view-article #result-id').attr().assert_Is { href: '/article/result-id', id: 'result-id' }
+          $('#articles #list-view-article #result-id').attr().assert_Is { href: '/article/result-id/title-id', id: 'result-id' }
           $('#list-view-article h4').html().assert_Is 'title-id'
           $('#activeFilter').text().assert_Is ''
           done()
@@ -251,7 +251,7 @@ describe "| controllers | Search-Controller.test |", ->
         send: (html)->
           html.assert_Contains 'results'
           $ = cheerio.load html
-          $('#articles #list-view-article #result-id').attr().assert_Is { href: '/article/result-id', id: 'result-id' }
+          $('#articles #list-view-article #result-id').attr().assert_Is { href: '/article/result-id/title-id', id: 'result-id' }
           $('#list-view-article h4').html().assert_Is 'title-id'
           $('#activeFilter').text().assert_Is 'title-123x'
           done()
