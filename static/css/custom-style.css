@@ -147,11 +147,7 @@ body > * {
 #features {
   background: white;
 }
-#features i, #reasons i {
-  color: #8baf3e;
-  font-size: 4em;
-}
-#summary i {
+#summary i, #features i, #reasons i {
   font-size: 2em;
   color: #8baf3e;
 }
@@ -323,7 +319,7 @@ object {
   top: 0;
   z-index: 99;
   background: white;
-  outline: 1px solid #dbdbdb;
+  border: 1px solid white;
 }
 #customer-navigation {
   background-color: #FFFFFF;
@@ -977,7 +973,7 @@ td, th {
   .landing-page, #landing-page {
     width: 80%;
     margin: 0 auto;
-    left: 10.1%;
+    left: 10%;
   }
 }
 @media (min-width: 2000px) {
