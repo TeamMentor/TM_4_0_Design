@@ -223,6 +223,9 @@ body > * {
   max-width: 98%;
   margin: 0 auto;
 }
+#summary table td {
+  padding: 0 10px;
+}
 #loginwall {
   margin: 200px auto 0 auto;
 }

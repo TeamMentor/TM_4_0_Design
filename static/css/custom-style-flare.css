@@ -1085,7 +1085,7 @@ input#search:active, input#search:focus {
     margin: 0 auto;
   }
 }
-@media (min-width: 2000px) and (-webkit-device-pixel-ratio: 1.5) {
+@media (min-width: 2000px) and (-webkit-device-pixel-ratio: 1.5)   {
   .landing-page {
     width: 60%;
   }
