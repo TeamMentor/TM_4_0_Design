@@ -13,6 +13,7 @@ describe '| routes | routes.test |', ()->
                       '/article/:ref'
                       '/articles'
                       '/search'
+                      '/search/:text'
                       '/flare'
                       '/flare/all'
                       '/flare/main-app-view'

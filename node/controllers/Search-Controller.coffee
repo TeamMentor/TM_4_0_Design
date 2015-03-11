@@ -73,6 +73,10 @@ class SearchController
             else
               @res.send(@renderPage())
 
+    search_Via_Url: =>
+      @.req.query.text = @.req.params.text
+      @.search()
+
     search: =>
       target = @.req.query?.text
       filter = @.req.query?.filter?.substring(1)
@@ -138,5 +142,6 @@ SearchController.register_Routes = (app, expressService) ->
     app.get "/#{urlPrefix}/:queryId/:filters", checkAuth , searchController('showSearchFromGraph')
     app.get "/user/main.html"                , checkAuth , searchController('showMainAppView')
     app.get "/search"                        , checkAuth,  searchController('search')
+    app.get "/search/:text"                  , checkAuth,  searchController('search_Via_Url')
 
 module.exports = SearchController

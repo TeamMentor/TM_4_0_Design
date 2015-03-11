@@ -71,7 +71,6 @@ describe "| controllers | Search-Controller.test |", ->
     req    = { params: queryId : 'query-id'}
     res    =
               send: (html)->
-                log html
                 html.assert_Contains test_Title
                 done()
 
@@ -260,6 +259,20 @@ describe "| controllers | Search-Controller.test |", ->
         @.graph_Service = graph_Service (()-> '') , (()-> { id:'search-id', results: [{id:'result-id', title:'title-id'}]} )
         @.search()
 
+    it 'search using url', (done)->
+      req    = { session:{}, query: {}, params: text: 'text-search' }
+      res    =
+        send: (html)->
+          html.assert_Contains 'results'
+          $ = cheerio.load html
+          $('#articles #list-view-article #result-id').attr().assert_Is { href: '/article/result-id/title-id', id: 'result-id' }
+          done()
+
+      using new Search_Controller(req, res),->
+        @.graph_Service = graph_Service (()-> '') , (()-> { id:'search-id', results: [{id:'result-id', title:'title-id'}]} )
+        @.search_Via_Url()
+
+
   describe 'using Express_Service | ',->
 
     tmpSessionFile = './_tmp_Session'
@@ -272,7 +285,7 @@ describe "| controllers | Search-Controller.test |", ->
         @.add_Session()
         @.app._router.stack.assert_Size_Is 3
         Search_Controller.register_Routes @.app,@
-        @.app._router.stack.assert_Size_Is 9
+        @.app._router.stack.assert_Size_Is 10
         supertest(@.app)
           .get('/user/main.html')
           .end (err,res)->
