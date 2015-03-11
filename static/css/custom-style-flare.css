@@ -744,7 +744,7 @@ button i, .button i {
   height: auto;
   padding: 5px 0;
   margin-top: 10px;
-  width:50%;
+  width:50% !important;
   background: #b4cf7b;
   border: 1px solid #fafafa;
   border-radius: 3px;
@@ -764,7 +764,6 @@ button i, .button i {
   height: 3.4em;
   padding: 13px 5px 5px 5px;
   border-radius: 0px;
-  width: 50%;
 }
 .postfix i:hover {
   color: #b4cf7b;
@@ -782,9 +781,6 @@ button i, .button i {
 }
 #search-bar .button, #save-button, #share-button {
   background: transparent;
-}
-#search-button, #filters-button {
-  width: 50%;
 }
 .dropdown:after {
   content: '';
