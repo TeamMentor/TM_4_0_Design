@@ -82,7 +82,7 @@ body > * {
 #application {
   width: 100%;
   max-height: 100%;
-  padding-top: 130px;
+  padding-top: 170px;
   background: #fafafa;
 }
 #article {
@@ -227,7 +227,7 @@ body > * {
   margin: 200px auto 0 auto;
 }
 #main-app-view {
-  margin-top: 150px;
+  margin-top: 120px;
 }
 #main-app-view h5 {
   margin: 15px 0;
@@ -246,7 +246,7 @@ body > * {
   width: 100%;
 }
 #results-2 {
-  margin-top: 170px;
+  margin-top: 140px;
   border-radius: 3px;
 }
 #results .label {
@@ -880,6 +880,18 @@ td, th {
   #loginwall, #summary {
     margin: 70px 0 0 0;
   }
+  #application {
+    padding-top: 60px;
+  }
+  #search-div {
+    top: 60px;
+  }
+  #search-div-2 {
+    top: 60px;
+  }
+  #results-2 {
+    margin-top: 160px;
+  }
 }
 @media (min-width: 850px) {
   #landing-page h1 {
@@ -928,9 +940,6 @@ td, th {
   #contact-information {
     margin-top: 0;
   }
-  #application {
-    padding-top: 60px;
-  }
   #help-nav {
     margin: 0;
   }
@@ -939,13 +948,6 @@ td, th {
   }
   #customer-navigation ul {
     text-align: left;
-  }
-  #search-div {
-    top: 60px;
-  }
-  #search-div-2 {
-    width: 75%;
-    top: 60px;
   }
   #link-forgot-pwd {
     text-align: right;
@@ -956,8 +958,8 @@ td, th {
   a.minor {
     line-height: 3.75em;
   }
-  #results-2 {
-    margin-top: 160px;
+  #search-div-2 {
+    width: 75%;
   }
 }
 @media (min-width: 999px) {
