@@ -65,16 +65,29 @@ describe "| controllers | Search-Controller.test |", ->
       @.showSearchFromGraph()
 
 
-  it 'showRootQueries',(done)->
+  it 'show_Root_Query',(done)->
+    test_Query_Id = 'query-'.add_5_Letters()
+    test_Title    = 'query-title'.add_5_Letters()
     req    = { params: queryId : 'query-id'}
     res    =
               send: (html)->
-                  html.assert_Is_String()
-                  done()
+                log html
+                html.assert_Contains test_Title
+                done()
+
     using new Search_Controller(req,res),->
-      @.graph_Service.root_Queries = (callback)->
-        callback  {"id": "Root-Queries", "title": "Root Queries","queries": [ {"is": [ "Metadata","Query"],"title": "Technology","id": "query-0281ff895ef1","queries":[]} ]}
-      @showRootQueries()
+
+      @.graph_Service =
+        library_Query: (callback)->
+          callback  { queryId  : test_Query_Id}
+        resolve_To_Ids: (query_Id,callback)->
+          query_Id.assert_Is test_Query_Id
+          callback { query_Id : { id: test_Query_Id, title: test_Title }}
+        graphDataFromGraphDB: (query_Id, filters, callback)->
+          query_Id.assert_Is test_Query_Id
+          callback {title:test_Title }
+
+      @show_Root_Query()
 
   it 'showMainAppView', (done)->
     req    = { params: queryId : 'Logging', session: {}}

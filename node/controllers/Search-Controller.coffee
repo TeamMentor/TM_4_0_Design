@@ -108,13 +108,11 @@ class SearchController
           else
             @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
 
-    showRootQueries: ()=>
-      @graph_Service.root_Queries (root_Queries)=>
-        @searchData = root_Queries
-        @searchData.breadcrumbs = [{href:"/#{@urlPrefix}/", title: '/' , id: '/' }]
-        @searchData.href = "/#{@urlPrefix}/"
-        @res.send(@renderPage())
 
+    show_Root_Query: ()=>
+      @.graph_Service.library_Query (data)=>
+        @.req.params.queryId = data.queryId
+        @.showSearchFromGraph()
 
     showMainAppView: =>
         jadePage  = 'source/jade/user/main.jade'  # relative to the /views folder
@@ -135,7 +133,7 @@ SearchController.register_Routes = (app, expressService) ->
                                                                          # res,req and invokes method_Name
 
     app.get "/"                              , checkAuth , searchController('showMainAppView')
-    app.get "/#{urlPrefix}"                  , checkAuth , searchController('showRootQueries')
+    app.get "/#{urlPrefix}"                  , checkAuth , searchController('show_Root_Query')
     app.get "/#{urlPrefix}/:queryId"         , checkAuth , searchController('showSearchFromGraph')
     app.get "/#{urlPrefix}/:queryId/:filters", checkAuth , searchController('showSearchFromGraph')
     app.get "/user/main.html"                , checkAuth , searchController('showMainAppView')

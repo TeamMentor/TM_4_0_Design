@@ -51,7 +51,6 @@ describe '| services | Graph-Service.test |', ->
       done()
 
 
-
   it 'graphDataFromGraphDB (no queryId and no filters)', (done)->
     graphService.graphDataFromGraphDB null, null,  (searchData)=>
       searchData.assert_Is {}
@@ -84,6 +83,11 @@ describe '| services | Graph-Service.test |', ->
     filters  = 'abc_'.add_5_Letters()
     graphService.graphDataFromGraphDB query_Id, filters,  (data)=>
       data.url.assert_Is "/data/query_tree_filtered/#{query_Id}/#{filters}"
+      done()
+
+  it 'library_Query',(done)->
+    graphService.library_Query (data)->
+      data.url.assert_Is '/data/library_Query'
       done()
 
   it 'resolve_To_Ids', (done)->

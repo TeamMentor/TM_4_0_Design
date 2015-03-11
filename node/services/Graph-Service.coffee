@@ -42,6 +42,10 @@ class Graph_Service
         graphDataUrl = "#{@server}/data/query_tree/#{queryId.url_Encode()}"
       graphDataUrl.GET_Json callback
 
+  library_Query: (callback)=>
+    url = "#{@server}/data/library_Query"
+    url.GET_Json callback
+
   resolve_To_Ids: (values, callback)=>
     url = "#{@server}/convert/to_ids/#{values.url_Encode()}"
     url.GET_Json callback
