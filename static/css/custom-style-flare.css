@@ -652,8 +652,8 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   border: none;
   border-bottom: 1px solid #dbdbdb;
 }
-#articles .tabs dd a:hover, #articles .tabs dd a:active {
-  color: #6c9020;
+#articles .tabs dd a:hover, #articles dl.tabs dd.active a {
+  color: #6c9020 !important;
   border-bottom: 1px solid #6c9020;
 }
 #articles .tabs-content {
@@ -778,11 +778,13 @@ button i, .button i {
   color: #ffffff !important;
 }
 #save-button, #share-button, #navigate-button, #show-button {
-  width: 100%;
   text-align: center;
 }
 #search-bar .button, #save-button, #share-button {
   background: transparent;
+}
+#search-button, #filters-button {
+  width: 50%;
 }
 .dropdown:after {
   content: '';
