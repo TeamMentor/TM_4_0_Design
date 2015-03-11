@@ -652,8 +652,8 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   border: none;
   border-bottom: 1px solid #dbdbdb;
 }
-#articles .tabs dd a:hover, #articles .tabs dd a:active {
-  color: #6c9020;
+#articles .tabs dd a:hover, #articles dl.tabs dd.active a {
+  color: #6c9020 !important;
   border-bottom: 1px solid #6c9020;
 }
 #articles .tabs-content {
@@ -744,7 +744,7 @@ button i, .button i {
   height: auto;
   padding: 5px 0;
   margin-top: 10px;
-  width:50%;
+  width:50% !important;
   background: #b4cf7b;
   border: 1px solid #fafafa;
   border-radius: 3px;
@@ -764,7 +764,6 @@ button i, .button i {
   height: 3.4em;
   padding: 13px 5px 5px 5px;
   border-radius: 0px;
-  width: 50%;
 }
 .postfix i:hover {
   color: #b4cf7b;
@@ -778,7 +777,6 @@ button i, .button i {
   color: #ffffff !important;
 }
 #save-button, #share-button, #navigate-button, #show-button {
-  width: 100%;
   text-align: center;
 }
 #search-bar .button, #save-button, #share-button {
@@ -1081,13 +1079,13 @@ input#search:active, input#search:focus {
     padding: 10px 40px;
   }
 }
-@media only screen and (min-width : 1200px) {
+@media (min-width : 1200px) and (-webkit-device-pixel-ratio: 1.5) {
   .landing-page {
     width: 80%;
     margin: 0 auto;
   }
 }
-@media (min-width: 2000px) {
+@media (min-width: 2000px) and (-webkit-device-pixel-ratio: 1.5)   {
   .landing-page {
     width: 60%;
   }
