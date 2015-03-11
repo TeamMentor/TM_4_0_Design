@@ -1079,13 +1079,13 @@ input#search:active, input#search:focus {
     padding: 10px 40px;
   }
 }
-@media only screen and (min-width : 1200px) {
+@media (min-width : 1200px) and (-webkit-device-pixel-ratio: 1.5) {
   .landing-page {
     width: 80%;
     margin: 0 auto;
   }
 }
-@media (min-width: 2000px) {
+@media (min-width: 2000px) and (-webkit-device-pixel-ratio: 1.5) {
   .landing-page {
     width: 60%;
   }
