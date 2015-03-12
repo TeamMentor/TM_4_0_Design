@@ -48,7 +48,6 @@ img, object {
   border: 1px solid #dbdbdb;
 }
 #team-mentor-navigation {
-  background-color: white;
   height: auto;
   text-align: center;
 }
@@ -93,7 +92,6 @@ img, object {
 *------------------------------------*/
 #landing-page {
   margin-top: 180px;
-  background: white;
   height: 100%;
   width: 100%;
 }
@@ -170,9 +168,6 @@ img, object {
 }
 #summary table td {
   padding: 0 10px;
-}
-#loginwall {
-  margin: 200px auto 0 auto;
 }
 #form {
   border: 1px solid #dbdbdb;
@@ -705,9 +700,8 @@ button:hover, button:active {
 .alert {
   padding: 15px;
   margin-bottom: 10px;
-  background: white;
-  color: #8aaf3e;
-  border: 1px solid #8aaf3e;
+  background: #8aaf3e;
+  color: white;
   font-size: inherit;
   border-radius: 3px;
 }
@@ -809,8 +803,8 @@ td, th {
   #links ul li a{
     font-size: 14px;
   }
-  #loginwall, #summary {
-    margin: 70px 0 0 0;
+  #loginwall {
+    margin: 0px 0 0 0;
   }
   #application {
     padding-top: 60px;
