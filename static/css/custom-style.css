@@ -95,9 +95,6 @@ img, object {
   height: 100%;
   width: 100%;
 }
-#about {
-  background-position: 0px -480px;
-}
 #about, #usp, #call-to-action, #about-us, #clients {
   padding: 2% 0;
 }
@@ -108,27 +105,31 @@ img, object {
 #about-us, #clients, #features, #footer, #reasons {
   background: white;
 }
+#footer, #clients {
+  text-align: center;
+}
 #about h3, #usp h2, #call-to-action h2 {
   color: white;
+}
+#usp button i, #call-to-action button i {
+  font-size: 1.5em;
+  padding: 0 10px 0 0;
+}
+#about {
+  background-position: 0px -480px;
 }
 #call-to-action {
   background-position: 0px -275px;
 }
+#usp {
+  background-position: 0px 0px;
+}
 #clients {
-  text-align: center;
   padding-top: 0;
-}
-#summary i, #features i, #reasons i {
-  font-size: 2em;
-  color: #8baf3e;
-}
-#features h2 {
-  text-align: left;
 }
 #footer {
   width: 100%;
   padding: 0;
-  text-align: center;
 }
 #footer ul {
   list-style: none;
@@ -143,7 +144,7 @@ img, object {
   margin: 10px 0;
 }
 #footer i {
-  font-size: 16px;
+  font-size: 1em;
   margin-right: 10px;
 }
 #contact-information {
@@ -152,23 +153,9 @@ img, object {
 #reasons {
   padding: 2% 0 0 0;
 }
-#usp {
-  background-position: 0px 0px;
-}
-#usp button i, #call-to-action button i {
-  font-size: 20px;
-  padding: 0 10px 0 0;
-}
 /*------------------------------------*
   GETTING STARTED
 *------------------------------------*/
-#summary {
-  max-width: 98%;
-  margin: 0 auto;
-}
-#summary table td {
-  padding: 0 10px;
-}
 #form {
   border: 1px solid #dbdbdb;
   background: white;
@@ -176,6 +163,13 @@ img, object {
 }
 #form p a {
   text-decoration: underline;
+}
+#summary {
+  max-width: 98%;
+  margin: 0 auto;
+}
+#summary table td {
+  padding: 0 10px;
 }
 #heading {
   background-color: #8aaf3e;
@@ -610,6 +604,10 @@ a.minor:hover {
   border-radius: 50%;
   color: white;
 }
+i.landing-page {
+  font-size: 2em;
+  color: #8baf3e;
+}
 /*------------------------------------*
    BUTTONS
 *------------------------------------*/
@@ -774,7 +772,7 @@ td, th {
     width: 36%;
   }
   #landing-page {
-    margin: 0;
+    margin: 50px 0 0 0;
   }
   #links {
     display: inline-block;
@@ -892,19 +890,15 @@ td, th {
   span.rwd-line {
     display: inline;
   }
-  #landing-page, .fixed.landing-page {
+  #landing-page, .fixed.landing-page, .landing-page {
     max-width: 1280px;
     margin: 0 auto;
   }
+  .landing-page #application {
+    padding: 0;
+  }
   .fixed.landing-page {
     position: relative;
-  }
-}
-@media (min-width: 2000px) {
-  .landing-page, #landing-page {
-    width: 60%;
-    left: 20%;
-    margin: 0 auto;
   }
 }
 /*------------------------------------*
