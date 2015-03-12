@@ -47,17 +47,7 @@ img, object {
   background: white;
   border: 1px solid #dbdbdb;
 }
-#customer-navigation {
-  background-color: white;
-  max-height: 100px;
-  display: block;
-}
-#customer-navigation ul {
-  padding: 5px 0 0 25px;
-  text-align: center;
-}
 #team-mentor-navigation {
-  background-color: white;
   height: auto;
   text-align: center;
 }
@@ -71,7 +61,7 @@ img, object {
 #si-logo {
   background:url('../assets/logos/logos.png') no-repeat;
   background-position: 0px -43px;
-  height: 50px;
+  height: 30px;
   width: 160px;
   margin: 0 auto;
 }
@@ -102,14 +92,10 @@ img, object {
 *------------------------------------*/
 #landing-page {
   margin-top: 180px;
-  background: white;
   height: 100%;
   width: 100%;
 }
-#about {
-  background-position: 0px -480px;
-}
-#about, #usp, #call-to-action, #about-us, #clients {
+#about, #usp, #call-to-action, #about-us, #clients, #reasons {
   padding: 2% 0;
 }
 #about, #usp, #call-to-action {
@@ -119,27 +105,33 @@ img, object {
 #about-us, #clients, #features, #footer, #reasons {
   background: white;
 }
+#footer, #clients {
+  text-align: center;
+}
 #about h3, #usp h2, #call-to-action h2 {
   color: white;
+}
+#usp button i, #call-to-action button i {
+  font-size: 1.5em;
+  padding: 0 10px 0 0;
+}
+#about {
+  background-position: 0px -480px;
 }
 #call-to-action {
   background-position: 0px -275px;
 }
+#usp {
+  background-position: 0px 0px;
+}
 #clients {
-  text-align: center;
   padding-top: 0;
 }
-#summary i, #features i, #reasons i {
-  font-size: 2em;
-  color: #8baf3e;
-}
-#features h2 {
-  text-align: left;
+#reasons {
+  padding-bottom: 0;
 }
 #footer {
-  width: 100%;
   padding: 0;
-  text-align: center;
 }
 #footer ul {
   list-style: none;
@@ -154,41 +146,21 @@ img, object {
   margin: 10px 0;
 }
 #footer i {
-  font-size: 16px;
+  font-size: 1em;
   margin-right: 10px;
 }
 #contact-information {
   margin-top: -20px;
 }
-#reasons {
-  padding: 2% 0 0 0;
-}
-#usp {
-  background-position: 0px 0px;
-}
-#usp button i, #call-to-action button i {
-  font-size: 20px;
-  padding: 0 10px 0 0;
-}
 /*------------------------------------*
   GETTING STARTED
 *------------------------------------*/
-#summary {
-  max-width: 98%;
-  margin: 0 auto;
-}
-#summary table td {
-  padding: 0 10px;
-}
-#loginwall {
-  margin: 200px auto 0 auto;
-}
 #form {
   border: 1px solid #dbdbdb;
   background: white;
   margin-bottom: 20px;
 }
-#form p a {
+#form a {
   text-decoration: underline;
 }
 #heading {
@@ -200,6 +172,13 @@ img, object {
 #heading p {
   color: white;
 }
+#summary {
+  max-width: 98%;
+  margin: 0 auto;
+}
+#summary table td {
+  padding: 0 10px;
+}
 /*------------------------------------*
    APPLICATION
 *------------------------------------*/
@@ -209,32 +188,33 @@ img, object {
   padding-top: 170px;
   background: #fafafa;
 }
-#article {
-  padding: 0 15px 15px 15px;
-}
-#article #title {
-  border-bottom: 1px solid #dbdbdb;
-  padding-bottom: 25px;
-  line-height: 1.5em;
-  margin-bottom: 40px;
-  color: #5c5c5c;
-}
-.article-content {
-  padding-bottom: 37px;
-}
-#help-nav {
-  margin-top: 20px;
+.bg, #results, #results-2, #search-input, #search-input .input-group {
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
 }
 .bg {
-  background: white;
   padding: 20px;
   padding-top: 5px;
-  border-radius: 3px;
   margin-bottom: 20px;
-  border: 1px solid #dbdbdb;
 }
-#article.bg, #help-docs.bg, #help-index.bg, #summary.bg {
-  padding: 1em 3em;
+.bg.content {
+  padding: 1em 3em 2em 3em;
+}
+.bg.list-view-article {
+  padding: 10px;
+  padding-top: 1px;
+}
+.bg.list-view-article h4 {
+  padding: 0 0 20px 0;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #dbdbdb;
+}
+.bg.list-view-article p {
+  margin-top: 0;
+}
+.bg.list-view-article span.badge {
+  margin-top: 10px;
 }
 #copyright {
   max-height: 100%;
@@ -248,35 +228,12 @@ img, object {
 #copyright li {
   display: block;
 }
-#copyright p, #copyright a {
-  font-size: 12px;
-  margin: 0 0 5px 0;
+#copyright p, #copyright a, #copyright i {
+  font-size: 0.75em;
+  margin: 5px 0;
 }
-#copyright i {
-  margin-right: 10px;
-  font-size: 14px;
-}
-#list-view-article {
-  background: white;
-  padding: 10px;
-  padding-top: 1px;
-  border-radius: 3px;
-  border: 1px solid #dbdbdb;
-  margin-bottom: 20px;
-}
-#list-view-article h4 {
-  padding: 0 0 20px 0;
-  margin-bottom: 0px;
-  border-bottom: 1px solid #dbdbdb;
-}
-#list-view-article p {
-  margin-top: 0;
-}
-#list-view-article a {
-  text-decoration: none;
-}
-#list-view-article span.badge {
-  margin-top: 10px;
+#copyright i, #main-app-view i {
+  margin: 0 10px 0 0;
 }
 #main-app-view {
   margin-top: 120px;
@@ -284,22 +241,40 @@ img, object {
 #main-app-view h5 {
   margin: 15px 0;
 }
-#main-app-view i {
-  padding-right: 15px;
-}
 #results {
-  background: white;
   margin: 0 0 20px 0;
-  border: 1px solid #dbdbdb;
   width: 100%;
-  border-radius: 3px;
 }
 #results-2 {
   margin-top: 140px;
-  border-radius: 3px;
 }
-#results .label {
-  font-weight: normal;
+#search-input {
+  padding-bottom: 14px;
+}
+#search-input .input-group {
+  background: #fafafa;
+}
+#search-div #search-input input {
+  padding-top: 20px;
+}
+#search-input input {
+  border: none;
+  background: none;
+}
+#search-div-2 {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  top: 155px;
+}
+/*------------------------------------*
+  ARTICLES
+*------------------------------------*/
+#article #title {
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 25px;
+  line-height: 1.5em;
+  margin-bottom: 40px;
+  color: #5c5c5c;
 }
 #search-div, #search-div-2 {
   background: #fafafa;
@@ -309,27 +284,6 @@ img, object {
   top: 155px;
   left: 0;
   z-index: 96;
-}
-#search-input {
-  background: white;
-  border: 1px solid #dbdbdb;
-  padding-bottom: 14px;
-}
-#search-input .input-group {
-  border: 1px solid #dbdbdb;
-  background: #fafafa;
-}
-#search-div #search-input input {
-  padding-top: 20px;
-}
-#search-input input {
-  border:none;
-  background: none;
-}
-#search-div-2 {
-  margin: 0 auto;
-  margin-bottom: 20px;
-  top: 155px;
 }
 /*------------------------------------*
    SUB-NAVIGATION
@@ -373,7 +327,7 @@ img, object {
 }
 table.nav {
   background: #fafafa;
-  font-size: 14px;
+  font-size: 0.9em;
 }
 table.nav tr {
   border: 1px solid #dbdbdb;
@@ -432,13 +386,13 @@ form p {
   font-size: 0.75em;
   margin-top: 0;
 }
-label {
+label, .label {
   display: inline-block;
   padding: 3px 0 0 0;
   margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 0.75em;
   font-weight: 700;
   color: #444444;
 }
@@ -522,13 +476,6 @@ p {
   line-height: 1.5em;
   color: #444444;
 }
-.label {
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.75em;
-  font-weight: 700;
-}
 ul, ol {
   margin-left: 0;
   margin-bottom: 0;
@@ -592,7 +539,7 @@ a.minor{
 a.minor:hover {
   color: #aaaaaa;
 }
-#help-docs a {
+#article a, #help-docs a {
   text-decoration: underline;
 }
 .text-center {
@@ -623,6 +570,10 @@ a.minor:hover {
   padding: 5px 7px;
   border-radius: 50%;
   color: white;
+}
+i.landing-page {
+  font-size: 2em;
+  color: #8baf3e;
 }
 /*------------------------------------*
    BUTTONS
@@ -714,9 +665,8 @@ button:hover, button:active {
 .alert {
   padding: 15px;
   margin-bottom: 10px;
-  background: white;
-  color: #8aaf3e;
-  border: 1px solid #8aaf3e;
+  background: #8aaf3e;
+  color: white;
   font-size: inherit;
   border-radius: 3px;
 }
@@ -773,9 +723,6 @@ td, th {
   #call-to-action {
     background-position: 0px -500px;
   }
-  #features {
-    margin-top: 50px;
-  }
   button, .button {
     width: 100%;
   }
@@ -792,7 +739,7 @@ td, th {
     width: 36%;
   }
   #landing-page {
-    margin: 0;
+    margin: 50px 0 0 0;
   }
   #links {
     display: inline-block;
@@ -818,8 +765,8 @@ td, th {
   #links ul li a{
     font-size: 14px;
   }
-  #loginwall, #summary {
-    margin: 70px 0 0 0;
+  #loginwall {
+    margin: 0px 0 0 0;
   }
   #application {
     padding-top: 60px;
@@ -840,14 +787,15 @@ td, th {
   }
   #landing-page h2 {
     line-height: 1.5em;
-    text-align: center;
   }
   #landing-page h3 {
     line-height: 1.5em;
-    text-align: center;
   }
   #landing-page h5 {
     line-height: 1.5em;
+  }
+  #reasons h2, #features h2 {
+    text-align: center;
   }
   h1 {
     font-size: 2.25em;
@@ -873,16 +821,13 @@ td, th {
     padding: 8% 0;
   }
   #about {
-    background-position: 0px -1350px;
+    background-position: 0px -1400px;
   }
   #call-to-action {
     background-position: 0px -800px;
   }
   #contact-information {
     margin-top: 0;
-  }
-  #help-nav {
-    margin: 0;
   }
   #about h2, #usp h1 {
     padding-top: 40px;
@@ -912,17 +857,15 @@ td, th {
   span.rwd-line {
     display: inline;
   }
-  .landing-page, #landing-page {
-    width: 80%;
+  #landing-page, .fixed.landing-page, .landing-page {
+    max-width: 1280px;
     margin: 0 auto;
-    left: 10%;
   }
-}
-@media (min-width: 2000px) {
-  .landing-page, #landing-page {
-    width: 60%;
-    left: 20%;
-    margin: 0 auto;
+  .landing-page #application {
+    padding: 0;
+  }
+  .fixed.landing-page {
+    position: relative;
   }
 }
 /*------------------------------------*

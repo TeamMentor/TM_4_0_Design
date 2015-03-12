@@ -1,10 +1,8 @@
 mixin article
-    .bg
-        #article
-            h1#title.article-title= title
-            #html.article-content!= article_Html
+    #article.bg.content
+        h1#title.article-title= title
+        #html.article-content!= article_Html
 
 mixin no-article
-    #article
-        .bg
-            include:md ../../content/articles/no-article.md
+    #article.bg.content
+        include:md ../../content/articles/no-article.md
