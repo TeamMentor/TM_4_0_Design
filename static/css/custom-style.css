@@ -47,15 +47,6 @@ img, object {
   background: white;
   border: 1px solid #dbdbdb;
 }
-#customer-navigation {
-  background-color: white;
-  max-height: 100px;
-  display: block;
-}
-#customer-navigation ul {
-  padding: 5px 0 0 25px;
-  text-align: center;
-}
 #team-mentor-navigation {
   background-color: white;
   height: auto;
