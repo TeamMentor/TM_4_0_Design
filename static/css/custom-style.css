@@ -61,7 +61,7 @@ img, object {
 #si-logo {
   background:url('../assets/logos/logos.png') no-repeat;
   background-position: 0px -43px;
-  height: 50px;
+  height: 30px;
   width: 160px;
   margin: 0 auto;
 }
@@ -95,7 +95,7 @@ img, object {
   height: 100%;
   width: 100%;
 }
-#about, #usp, #call-to-action, #about-us, #clients {
+#about, #usp, #call-to-action, #about-us, #clients, #reasons {
   padding: 2% 0;
 }
 #about, #usp, #call-to-action {
@@ -127,8 +127,10 @@ img, object {
 #clients {
   padding-top: 0;
 }
+#reasons {
+  padding-bottom: 0;
+}
 #footer {
-  width: 100%;
   padding: 0;
 }
 #footer ul {
@@ -150,9 +152,6 @@ img, object {
 #contact-information {
   margin-top: -20px;
 }
-#reasons {
-  padding: 2% 0 0 0;
-}
 /*------------------------------------*
   GETTING STARTED
 *------------------------------------*/
@@ -161,15 +160,8 @@ img, object {
   background: white;
   margin-bottom: 20px;
 }
-#form p a {
+#form a {
   text-decoration: underline;
-}
-#summary {
-  max-width: 98%;
-  margin: 0 auto;
-}
-#summary table td {
-  padding: 0 10px;
 }
 #heading {
   background-color: #8aaf3e;
@@ -180,6 +172,13 @@ img, object {
 #heading p {
   color: white;
 }
+#summary {
+  max-width: 98%;
+  margin: 0 auto;
+}
+#summary table td {
+  padding: 0 10px;
+}
 /*------------------------------------*
    APPLICATION
 *------------------------------------*/
@@ -189,32 +188,33 @@ img, object {
   padding-top: 170px;
   background: #fafafa;
 }
-#article {
-  padding: 0 15px 15px 15px;
-}
-#article #title {
-  border-bottom: 1px solid #dbdbdb;
-  padding-bottom: 25px;
-  line-height: 1.5em;
-  margin-bottom: 40px;
-  color: #5c5c5c;
-}
-.article-content {
-  padding-bottom: 37px;
+.bg, #results, #results-2, #search-input, #search-input .input-group {
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
 }
 .bg {
-  background: white;
   padding: 20px;
   padding-top: 5px;
-  border-radius: 3px;
   margin-bottom: 20px;
-  border: 1px solid #dbdbdb;
 }
-#help-docs, #help-index {
-  text-align: left !important;
+.bg.content {
+  padding: 1em 3em 2em 3em;
 }
-#article.bg, #help-docs.bg, #help-index.bg, #summary.bg {
-  padding: 1em 3em;
+.bg.list-view-article {
+  padding: 10px;
+  padding-top: 1px;
+}
+.bg.list-view-article h4 {
+  padding: 0 0 20px 0;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #dbdbdb;
+}
+.bg.list-view-article p {
+  margin-top: 0;
+}
+.bg.list-view-article span.badge {
+  margin-top: 10px;
 }
 #copyright {
   max-height: 100%;
@@ -228,35 +228,12 @@ img, object {
 #copyright li {
   display: block;
 }
-#copyright p, #copyright a {
-  font-size: 12px;
-  margin: 0 0 5px 0;
+#copyright p, #copyright a, #copyright i {
+  font-size: 0.75em;
+  margin: 5px 0;
 }
-#copyright i {
-  margin-right: 10px;
-  font-size: 14px;
-}
-#list-view-article {
-  background: white;
-  padding: 10px;
-  padding-top: 1px;
-  border-radius: 3px;
-  border: 1px solid #dbdbdb;
-  margin-bottom: 20px;
-}
-#list-view-article h4 {
-  padding: 0 0 20px 0;
-  margin-bottom: 0px;
-  border-bottom: 1px solid #dbdbdb;
-}
-#list-view-article p {
-  margin-top: 0;
-}
-#list-view-article a {
-  text-decoration: none;
-}
-#list-view-article span.badge {
-  margin-top: 10px;
+#copyright i, #main-app-view i {
+  margin: 0 10px 0 0;
 }
 #main-app-view {
   margin-top: 120px;
@@ -264,22 +241,40 @@ img, object {
 #main-app-view h5 {
   margin: 15px 0;
 }
-#main-app-view i {
-  padding-right: 15px;
-}
 #results {
-  background: white;
   margin: 0 0 20px 0;
-  border: 1px solid #dbdbdb;
   width: 100%;
-  border-radius: 3px;
 }
 #results-2 {
   margin-top: 140px;
-  border-radius: 3px;
 }
-#results .label {
-  font-weight: normal;
+#search-input {
+  padding-bottom: 14px;
+}
+#search-input .input-group {
+  background: #fafafa;
+}
+#search-div #search-input input {
+  padding-top: 20px;
+}
+#search-input input {
+  border: none;
+  background: none;
+}
+#search-div-2 {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  top: 155px;
+}
+/*------------------------------------*
+  ARTICLES
+*------------------------------------*/
+#article #title {
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 25px;
+  line-height: 1.5em;
+  margin-bottom: 40px;
+  color: #5c5c5c;
 }
 #search-div, #search-div-2 {
   background: #fafafa;
@@ -289,27 +284,6 @@ img, object {
   top: 155px;
   left: 0;
   z-index: 96;
-}
-#search-input {
-  background: white;
-  border: 1px solid #dbdbdb;
-  padding-bottom: 14px;
-}
-#search-input .input-group {
-  border: 1px solid #dbdbdb;
-  background: #fafafa;
-}
-#search-div #search-input input {
-  padding-top: 20px;
-}
-#search-input input {
-  border:none;
-  background: none;
-}
-#search-div-2 {
-  margin: 0 auto;
-  margin-bottom: 20px;
-  top: 155px;
 }
 /*------------------------------------*
    SUB-NAVIGATION
@@ -353,7 +327,7 @@ img, object {
 }
 table.nav {
   background: #fafafa;
-  font-size: 14px;
+  font-size: 0.9em;
 }
 table.nav tr {
   border: 1px solid #dbdbdb;
@@ -412,13 +386,13 @@ form p {
   font-size: 0.75em;
   margin-top: 0;
 }
-label {
+label, .label {
   display: inline-block;
   padding: 3px 0 0 0;
   margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 0.75em;
   font-weight: 700;
   color: #444444;
 }
@@ -502,13 +476,6 @@ p {
   line-height: 1.5em;
   color: #444444;
 }
-.label {
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.75em;
-  font-weight: 700;
-}
 ul, ol {
   margin-left: 0;
   margin-bottom: 0;
@@ -572,7 +539,7 @@ a.minor{
 a.minor:hover {
   color: #aaaaaa;
 }
-#help-docs a {
+#article a, #help-docs a {
   text-decoration: underline;
 }
 .text-center {
