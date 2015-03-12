@@ -201,19 +201,19 @@ img, object {
 .bg.content {
   padding: 1em 3em 2em 3em;
 }
-.bg.list-view-article {
+.bg#list-view-article {
   padding: 10px;
   padding-top: 1px;
 }
-.bg.list-view-article h4 {
+.bg#list-view-article h4 {
   padding: 0 0 20px 0;
   margin-bottom: 0px;
   border-bottom: 1px solid #dbdbdb;
 }
-.bg.list-view-article p {
+.bg#list-view-article p {
   margin-top: 0;
 }
-.bg.list-view-article span.badge {
+.bg#list-view-article span.badge {
   margin-top: 10px;
 }
 #copyright {
