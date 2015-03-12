@@ -208,9 +208,6 @@ img, object {
 .article-content {
   padding-bottom: 37px;
 }
-#help-nav {
-  margin-top: 20px;
-}
 .bg {
   background: white;
   padding: 20px;
@@ -218,6 +215,9 @@ img, object {
   border-radius: 3px;
   margin-bottom: 20px;
   border: 1px solid #dbdbdb;
+}
+#help-docs, #help-index {
+  text-align: left !important;
 }
 #article.bg, #help-docs.bg, #help-index.bg, #summary.bg {
   padding: 1em 3em;
@@ -758,9 +758,6 @@ td, th {
   #call-to-action {
     background-position: 0px -500px;
   }
-  #features {
-    margin-top: 50px;
-  }
   button, .button {
     width: 100%;
   }
@@ -825,14 +822,15 @@ td, th {
   }
   #landing-page h2 {
     line-height: 1.5em;
-    text-align: center;
   }
   #landing-page h3 {
     line-height: 1.5em;
-    text-align: center;
   }
   #landing-page h5 {
     line-height: 1.5em;
+  }
+  #reasons h2, #features h2 {
+    text-align: center;
   }
   h1 {
     font-size: 2.25em;
@@ -858,16 +856,13 @@ td, th {
     padding: 8% 0;
   }
   #about {
-    background-position: 0px -1350px;
+    background-position: 0px -1400px;
   }
   #call-to-action {
     background-position: 0px -800px;
   }
   #contact-information {
     margin-top: 0;
-  }
-  #help-nav {
-    margin: 0;
   }
   #about h2, #usp h1 {
     padding-top: 40px;
