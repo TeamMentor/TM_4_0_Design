@@ -912,10 +912,12 @@ td, th {
   span.rwd-line {
     display: inline;
   }
-  .landing-page, #landing-page {
-    width: 80%;
+  #landing-page, .fixed.landing-page {
+    max-width: 1280px;
     margin: 0 auto;
-    left: 10%;
+  }
+  .fixed.landing-page {
+    position: relative;
   }
 }
 @media (min-width: 2000px) {
