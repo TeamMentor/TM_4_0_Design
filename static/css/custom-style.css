@@ -945,8 +945,6 @@ ul.side-nav li {
   padding: 7px;
   border: 1px solid #dbdbdb;
 }
-ul.side-nav li:last-child {
-}
 ul.side-nav li a {
   display: block;
   text-decoration: none;
@@ -969,9 +967,6 @@ ul.side-nav span.badge {
 #html > h1, #html > h2 {
   font-size: 1.5em !important;
   padding: 0;
-}
-#article a {
-  text-decoration: underline;
 }
 #toc-content h4 {
   padding-top: 100px;
