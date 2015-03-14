@@ -104,12 +104,18 @@ img, object {
 }
 #about-us, #clients, #features, #footer, #reasons {
   background: white;
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
 }
 #footer, #clients {
   text-align: center;
 }
 #about h3, #usp h2, #call-to-action h2 {
   color: white;
+}
+i.landing-page {
+  font-size: 2em;
+  color: #8baf3e;
 }
 #usp button i, #call-to-action button i {
   font-size: 1.5em;
@@ -182,9 +188,6 @@ img, object {
   border: 1px solid #dbdbdb;
   background: white;
   margin-bottom: 5px;
-}
-#loginwall a {
-  text-decoration: underline;
 }
 #heading {
   background-color: #8aaf3e;
@@ -291,10 +294,15 @@ img, object {
   border: none;
   background: none;
 }
-#search-div-2 {
-  margin: 0 auto;
+#search-div, #search-div-2 {
+  background: #fafafa;
   margin-bottom: 5px;
+  width: 100%;
+  position: fixed;
   top: 155px;
+  left: 0;
+  z-index: 96;
+  margin: 0 auto;
 }
 /*------------------------------------*
   ARTICLES
@@ -305,15 +313,6 @@ img, object {
   line-height: 1.5em;
   margin-bottom: 40px;
   color: #5c5c5c;
-}
-#search-div, #search-div-2 {
-  background: #fafafa;
-  margin-bottom: 5px;
-  width: 100%;
-  position: fixed;
-  top: 155px;
-  left: 0;
-  z-index: 96;
 }
 /*------------------------------------*
    SUB-NAVIGATION
@@ -371,35 +370,6 @@ table.nav td {
 }
 table.nav td a {
   display:block;
-}
-ul.side-nav {
-  display: block;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  list-style-position: outside;
-  font-size: 14px;
-  background: #fafafa;
-  border-radius: 3px;
-  margin-top: -5px;
-}
-ul.side-nav li {
-  padding: 7px;
-  border: 1px solid #dbdbdb;
-}
-ul.side-nav li:last-child {
-}
-ul.side-nav li a {
-  display: block;
-  text-decoration: none;
-}
-ul.side-nav li:hover {
-  background-color: #dbdbdb;
-}
-ul.side-nav span.badge {
-  margin: 0 auto;
-  vertical-align: middle;
-  float: right;
 }
 /*------------------------------------*
    FORMS
@@ -472,13 +442,12 @@ input[type="url"]:focus, textarea:focus, select:focus {
 *------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+  font-weight: normal;
 }
 h1, h2, h3 {
-  font-weight: normal;
   color: #7b7b7b;
 }
 h4, h5 {
-  font-weight: normal;
   color: #565656;
 }
 h1 {
@@ -569,41 +538,14 @@ a.minor{
 a.minor:hover {
   color: #7b7b7b;
 }
-#article a, #help-docs a {
+#article a, #help-docs a, #loginwall a {
   text-decoration: underline;
 }
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 .text-right {
   text-align: right !important;
-}
-.filtered {
-  font-size: 12px;
-  color: #aaaaaa;
-  padding-right: 20px;
-  text-transform: uppercase;
-}
-.close a {
-  text-align: right;
-  text-decoration: none;
-  margin: 0 0 0 10px;
-  padding: 0 5px 0 10px;
-  color: white;
-  border-left: 1px solid white;
-}
-.close-2 a {
-  background: #aaaaaa;
-  text-align: right;
-  text-decoration: none;
-  margin: 0 0 0 10px;
-  padding: 5px 7px;
-  border-radius: 50%;
-  color: white;
-}
-i.landing-page {
-  font-size: 2em;
-  color: #8baf3e;
 }
 /*------------------------------------*
    BUTTONS
@@ -640,47 +582,6 @@ button:hover, button:active {
   color: #8aaf3e;
   font-size: 20px;
 }
-.dropdown {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 10px;
-}
-.dropdown button {
-  background: #fafafa;
-  color: #444444;
-  border: 1px solid #dbdbdb;
-  box-shadow: none;
-  width: 100%;
-  padding: 15px;
-  font-size: 14px;
-  text-align: left;
-  border-radius: 0px;
-}
-.dropdown button:hover {
-  background: #fafafa;
-}
-.dropdown button i {
-  color: #444444 !important;
-}
-.dropdown .dropdown-menu {
-  background: #fafafa;
-  border-radius: 3px;
-  border: none;
-  border-bottom: none;
-  display: none;
-  font-size: 14px;
-  list-style-type: none;
-  margin: 0;
-  margin-top: 5px;
-  padding: 0;
-}
-.dropdown .dropdown-menu table.nav {
-  background: white;
-}
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
 /*------------------------------------*
    MICRO-ELEMENTS
 *------------------------------------*/
@@ -715,6 +616,29 @@ button:hover, button:active {
 }
 span.rwd-line {
   display: block;
+}
+.filtered {
+  font-size: 12px;
+  color: #aaaaaa;
+  padding-right: 20px;
+  text-transform: uppercase;
+}
+.close a {
+  text-align: right;
+  text-decoration: none;
+  margin: 0 0 0 10px;
+  padding: 0 5px 0 10px;
+  color: white;
+  border-left: 1px solid white;
+}
+.close-2 a {
+  background: #aaaaaa;
+  text-align: right;
+  text-decoration: none;
+  margin: 0 0 0 10px;
+  padding: 5px 7px;
+  border-radius: 50%;
+  color: white;
 }
 /*------------------------------------*
    TABLES
@@ -964,6 +888,76 @@ td, th {
   text-align: center;
   letter-spacing: 1px;
   font-size: 12px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.dropdown button {
+  background: #fafafa;
+  color: #444444;
+  border: 1px solid #dbdbdb;
+  box-shadow: none;
+  width: 100%;
+  padding: 15px;
+  font-size: 14px;
+  text-align: left;
+  border-radius: 0px;
+}
+.dropdown button:hover {
+  background: #fafafa;
+}
+.dropdown button i {
+  color: #444444 !important;
+}
+.dropdown .dropdown-menu {
+  background: #fafafa;
+  border-radius: 3px;
+  border: none;
+  border-bottom: none;
+  display: none;
+  font-size: 14px;
+  list-style-type: none;
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+}
+.dropdown .dropdown-menu table.nav {
+  background: white;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+ul.side-nav {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-position: outside;
+  font-size: 14px;
+  background: #fafafa;
+  border-radius: 3px;
+  margin-top: -5px;
+}
+ul.side-nav li {
+  padding: 7px;
+  border: 1px solid #dbdbdb;
+}
+ul.side-nav li:last-child {
+}
+ul.side-nav li a {
+  display: block;
+  text-decoration: none;
+}
+ul.side-nav li:hover {
+  background-color: #dbdbdb;
+}
+ul.side-nav span.badge {
+  margin: 0 auto;
+  vertical-align: middle;
+  float: right;
 }
 /*------------------------------------*
   HACKS
