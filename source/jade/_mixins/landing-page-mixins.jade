@@ -40,19 +40,16 @@ mixin clients-div
 		.lge-container
 			include:md ../../content/landing-pages/clients-div-heading.md
 			.row
-				.col-4
-					+image-elsevier-logo
-				.col-4
-					+image-fedex-logo
-				.col-4
-					+image-mass-mutual-logo
-			.row
-				.col-4
-					+image-microsoft-logo
-				.col-4
-					+image-symantec-logo
-				.col-4
-					+image-ubs-logo
+				.col-offset-1.col-2
+					.client-logo.elsevier
+				.col-2
+					.client-logo.fedex
+				.col-2
+					.client-logo.mass-mutual
+				.col-2
+					.client-logo.microsoft
+				.col-2
+					.client-logo.ubs
 
 mixin about-div
 	#about

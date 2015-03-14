@@ -95,8 +95,8 @@ img, object {
   height: 100%;
   width: 100%;
 }
-#about, #usp, #call-to-action, #about-us, #clients, #reasons {
-  padding: 2% 0;
+#about, #usp, #call-to-action, #about-us, #reasons {
+  padding: 1% 0 2% 0;
 }
 #about, #usp, #call-to-action {
   background: url(../assets/stock-img/bg-img-small.jpg) no-repeat;
@@ -125,7 +125,30 @@ img, object {
   background-position: 0px 0px;
 }
 #clients {
-  padding-top: 0;
+  padding: 0 0 5% 0;
+}
+.client-logo {
+  background: url(../assets/clients/logos.jpg) no-repeat;
+  background-size: 100%;
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 18%;
+  height: 0;
+}
+.elsevier {
+  background-position: 0% 0%;
+}
+.fedex {
+  background-position: 0% 20%;
+}
+.mass-mutual {
+  background-position: 0% 40%;
+}
+.microsoft {
+  background-position: 0% 60%;
+}
+.ubs {
+  background-position: 0% 100%;
 }
 #reasons {
   padding-bottom: 0;
@@ -178,6 +201,9 @@ img, object {
 }
 #summary table td {
   padding: 0 10px;
+}
+#message i {
+  font-size: 1.5em;
 }
 /*------------------------------------*
    APPLICATION
@@ -665,8 +691,8 @@ button:hover, button:active {
 .alert {
   padding: 15px;
   margin-bottom: 10px;
-  background: #8aaf3e;
-  color: white;
+  background: #b4cf7b;
+  color: #565656;
   font-size: inherit;
   border-radius: 3px;
 }
@@ -780,8 +806,12 @@ td, th {
   #results-2 {
     margin-top: 160px;
   }
+  .client-logo {
+    width: 30%;
+    padding-top: 10%;
+  }
 }
-@media (min-width: 850px) {
+@media (min-width: 860px) {
   #landing-page h1 {
     line-height: 2.5em;
   }
@@ -832,9 +862,6 @@ td, th {
   #about h2, #usp h1 {
     padding-top: 40px;
   }
-  #customer-navigation ul {
-    text-align: left;
-  }
   #link-forgot-pwd {
     text-align: right;
   }
@@ -846,6 +873,10 @@ td, th {
   }
   #search-div-2 {
     width: 75%;
+  }
+  .client-logo {
+    width: 100%;
+    padding-top: 33%;
   }
 }
 @media (min-width: 999px) {
@@ -859,13 +890,12 @@ td, th {
   }
   #landing-page, .landing-page {
     width: 80%;
-    margin: 0 auto;
+  }
+  #landing-page {
+    margin: 60px auto 0 auto;
   }
   .fixed.landing-page {
     left: 10%;
-  }
-  .landing-page #application {
-    padding: 0;
   }
 }
 @media (min-width: 2000px) {
