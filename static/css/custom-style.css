@@ -857,15 +857,23 @@ td, th {
   span.rwd-line {
     display: inline;
   }
-  #landing-page, .fixed.landing-page, .landing-page {
-    max-width: 1280px;
+  #landing-page, .landing-page {
+    width: 80%;
     margin: 0 auto;
+  }
+  .fixed.landing-page {
+    left: 10%;
   }
   .landing-page #application {
     padding: 0;
   }
+}
+@media (min-width: 2000px) {
+  .landing-page, #landing-page {
+    width: 60%;
+  }
   .fixed.landing-page {
-    position: relative;
+    left: 20%;
   }
 }
 /*------------------------------------*
