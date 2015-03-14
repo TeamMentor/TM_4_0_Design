@@ -204,6 +204,10 @@ img, object {
 }
 #message i {
   font-size: 1.5em;
+  padding: 10px;
+}
+#message td {
+  padding: 0;
 }
 /*------------------------------------*
    APPLICATION
@@ -689,7 +693,7 @@ button:hover, button:active {
   padding: 2px 2px 2px 1px;
 }
 .alert {
-  padding: 15px;
+  padding: 5px 15px;
   margin-bottom: 10px;
   background: #b4cf7b;
   color: #565656;
@@ -765,7 +769,7 @@ td, th {
     width: 36%;
   }
   #landing-page {
-    margin: 50px 0 0 0;
+    margin: 60px 0 0 0;
   }
   #links {
     display: inline-block;
