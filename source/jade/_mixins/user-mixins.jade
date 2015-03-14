@@ -1,55 +1,52 @@
 include ../../shared-mixins/globals.jade
 
 mixin login-form
-  #form
-    #heading
-      include:md ../../content/getting-started/login-form.md
-    form#login-form(role='form' method='post' action='/user/login')
-      .form-group
-        +username-input
-      .form-group
-        +password-input
-      .form-group
-        .row
-          .col-5
-            +login-button
-          .col-7
-            a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot password?
+  #heading
+    include:md ../../content/getting-started/login-form.md
+  form#login-form(role='form' method='post' action='/user/login')
+    .form-group
+      +username-input
+    .form-group
+      +password-input
+    .form-group
+      .row
+        .col-5
+          +login-button
+        .col-7
+          a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot your password?
 
 //- sign-up-form
 mixin sign-up-form
-  #form
-    #heading
-      include:md ../../content/getting-started/sign-up-form.md
-    form#sign-up-form(role='form', method='POST', action='/user/sign-up')
-      .form-group
-        +username-input
-        include:md ../../content/getting-started/username-prompt.md
-      .form-group
-        +email-input
-        include:md ../../content/getting-started/email-prompt.md
-      .form-group
-        +password-input
-        include:md ../../content/getting-started/password-prompt.md
-      .form-group
-        +confirm-password-input
-      include:md ../../content/getting-started/agree-to-toc.md
-      .row
-        .col-5
-          +sign-up-button
+  #heading
+    include:md ../../content/getting-started/sign-up-form.md
+  form#sign-up-form(role='form', method='POST', action='/user/sign-up')
+    .form-group
+      +username-input
+      include:md ../../content/getting-started/username-prompt.md
+    .form-group
+      +email-input
+      include:md ../../content/getting-started/email-prompt.md
+    .form-group
+      +password-input
+      include:md ../../content/getting-started/password-prompt.md
+    .form-group
+      +confirm-password-input
+    include:md ../../content/getting-started/agree-to-toc.md
+    .row
+      .col-5
+        +sign-up-button
 
 
 //- forgot-password-form
 mixin forgot-password-form
-  #form
-    #heading
-      include:md ../../content/getting-started/forgot-password-form.md
-    form#forgot-password(role='form', action='/user/pwd_reset' method='post')
-      .form-group
-        +email-input
-      .row
-        .col-7
-          +get-password-button
+  #heading
+    include:md ../../content/getting-started/forgot-password-form.md
+  form#forgot-password(role='form', action='/user/pwd_reset' method='post')
+    .form-group
+      +email-input
+    .row
+      .col-7
+        +get-password-button
 
 //- pwd-reset-form
 mixin pwd-reset-form

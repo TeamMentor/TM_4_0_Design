@@ -91,7 +91,7 @@ img, object {
    LANDING PAGES
 *------------------------------------*/
 #landing-page {
-  margin-top: 180px;
+  margin-top: 175px;
   height: 100%;
   width: 100%;
 }
@@ -178,18 +178,18 @@ img, object {
 /*------------------------------------*
   GETTING STARTED
 *------------------------------------*/
-#form {
+#loginwall {
   border: 1px solid #dbdbdb;
   background: white;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
-#form a {
+#loginwall a {
   text-decoration: underline;
 }
 #heading {
   background-color: #8aaf3e;
   max-width: 100%;
-  padding: 20px;
+  padding: 5px;
   text-align: center;
 }
 #heading p {
@@ -226,7 +226,7 @@ img, object {
 .bg {
   padding: 20px;
   padding-top: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .bg.content {
   padding: 1em 3em 2em 3em;
@@ -272,7 +272,7 @@ img, object {
   margin: 15px 0;
 }
 #results {
-  margin: 0 0 20px 0;
+  margin: 0 0 5px 0;
   width: 100%;
 }
 #results-2 {
@@ -293,7 +293,7 @@ img, object {
 }
 #search-div-2 {
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   top: 155px;
 }
 /*------------------------------------*
@@ -308,7 +308,7 @@ img, object {
 }
 #search-div, #search-div-2 {
   background: #fafafa;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   width: 100%;
   position: fixed;
   top: 155px;
@@ -433,7 +433,7 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
   background-color: #fafafa;
   font-family: inherit;
   border: none;
-  border: 2px solid #dbdbdb;
+  border: 1px solid #dbdbdb;
   color: #444444;
   border-radius: 3px;
   font-size: 1em;
@@ -448,7 +448,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus
 input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus,
 input[type="url"]:focus, textarea:focus, select:focus {
   outline: none;
-  border: 2px solid #aaaaaa;
+  border: 1px solid #aaaaaa;
 }
 .input-group {
   display: table;
@@ -546,7 +546,7 @@ a {
   outline: none;
 }
 a:hover, a:active, a:focus {
-  color: #6c9020;
+  color: #b4cf7b;
   outline: none;
 }
 a.action {
@@ -557,17 +557,17 @@ a.action {
   color: #8aaf3e;
 }
 a.action:hover, a.action:focus, a.action:active {
-  color: #49661f;
+  color: #b4cf7b;
 }
 a.minor{
-  color: #444444;
-  text-decoration: none;
+  color: #565656;
+  text-decoration: none !important;
   font-size: 14px;
   line-height: 4.5em;
   display: block;
 }
 a.minor:hover {
-  color: #aaaaaa;
+  color: #7b7b7b;
 }
 #article a, #help-docs a {
   text-decoration: underline;
@@ -624,6 +624,9 @@ button {
 button:hover, button:active {
   background: #b4cf7b;
 }
+.full-width {
+  width: 100% !important;
+}
 #search-button {
   -webkit-box-shadow: none;
   background: transparent;
@@ -669,7 +672,7 @@ button:hover, button:active {
   font-size: 14px;
   list-style-type: none;
   margin: 0;
-  margin-top: 20px;
+  margin-top: 5px;
   padding: 0;
 }
 .dropdown .dropdown-menu table.nav {
@@ -693,8 +696,8 @@ button:hover, button:active {
   padding: 2px 2px 2px 1px;
 }
 .alert {
-  padding: 5px 15px;
-  margin-bottom: 10px;
+  padding: 10px 15px 5px 15px;
+  margin-bottom: 5px;
   background: #b4cf7b;
   color: #565656;
   font-size: inherit;
@@ -769,7 +772,7 @@ td, th {
     width: 36%;
   }
   #landing-page {
-    margin: 60px 0 0 0;
+    margin: 55px auto 0 auto;
   }
   #links {
     display: inline-block;
@@ -796,7 +799,7 @@ td, th {
     font-size: 14px;
   }
   #loginwall {
-    margin: 0px 0 0 0;
+    margin: 0;
   }
   #application {
     padding-top: 60px;
@@ -861,13 +864,10 @@ td, th {
     background-position: 0px -800px;
   }
   #contact-information {
-    margin-top: 0;
+    margin-top: 10px;
   }
   #about h2, #usp h1 {
     padding-top: 40px;
-  }
-  #link-forgot-pwd {
-    text-align: right;
   }
   #main-app-view {
     margin-top: 160px;
@@ -894,9 +894,7 @@ td, th {
   }
   #landing-page, .landing-page {
     width: 80%;
-  }
-  #landing-page {
-    margin: 60px auto 0 auto;
+    left: 10%;
   }
   .fixed.landing-page {
     left: 10%;
@@ -914,6 +912,9 @@ td, th {
    COLUMNS
 *------------------------------------*/
 @media (min-width: 853px) {
+  #link-forgot-pwd {
+    text-align: right;
+  }
   .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 { float: left;
  }
   .col-12 { width: 100%; }
