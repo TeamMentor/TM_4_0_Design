@@ -30,19 +30,16 @@ mixin email-input
 
 //- Form Buttons
 mixin login-button
-  button(type='submit', id='btn-login') Login
-
-mixin forgot-password-button
-  button(type='button', id='btn-forgot-pwd') Forgot Your Password?
+  button.full-width(type='submit', id='btn-login') Login
 
 mixin sign-up-button
-  button(type='submit', id='btn-sign-up') Sign Up
+  button.full-width(type='submit', id='btn-sign-up') Sign Up
 
 mixin get-password-button
-  button(type='submit' id='btn-get-password') Get Password
+  button.full-width(type='submit' id='btn-get-password') Get Password
 
 mixin reset-password-button
-  button(type='submit' id='btn-reset-password') Reset Password
+  button.full-width(type='submit' id='btn-reset-password') Reset Password
 
 mixin start-trial-button
   button
@@ -101,3 +98,6 @@ mixin search-icon
 
 mixin article-icon
   i.fi-page
+
+mixin alert-icon
+  i.fi-megaphone

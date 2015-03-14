@@ -1,55 +1,52 @@
 include ../../shared-mixins/globals.jade
 
 mixin login-form
-  #form
-    #heading
-      include:md ../../content/getting-started/login-form.md
-    form#login-form(role='form' method='post' action='/user/login')
-      .form-group
-        +username-input
-      .form-group
-        +password-input
-      .form-group
-        .row
-          .col-5
-            +login-button
-          .col-7
-            a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot password?
+  #heading
+    include:md ../../content/getting-started/login-form.md
+  form#login-form(role='form' method='post' action='/user/login')
+    .form-group
+      +username-input
+    .form-group
+      +password-input
+    .form-group
+      .row
+        .col-5
+          +login-button
+        .col-7
+          a#link-forgot-pwd.minor(href='/guest/pwd-forgot.html') Forgot your password?
 
 //- sign-up-form
 mixin sign-up-form
-  #form
-    #heading
-      include:md ../../content/getting-started/sign-up-form.md
-    form#sign-up-form(role='form', method='POST', action='/user/sign-up')
-      .form-group
-        +username-input
-        include:md ../../content/getting-started/username-prompt.md
-      .form-group
-        +email-input
-        include:md ../../content/getting-started/email-prompt.md
-      .form-group
-        +password-input
-        include:md ../../content/getting-started/password-prompt.md
-      .form-group
-        +confirm-password-input
-      include:md ../../content/getting-started/agree-to-toc.md
-      .row
-        .col-5
-          +sign-up-button
+  #heading
+    include:md ../../content/getting-started/sign-up-form.md
+  form#sign-up-form(role='form', method='POST', action='/user/sign-up')
+    .form-group
+      +username-input
+      include:md ../../content/getting-started/username-prompt.md
+    .form-group
+      +email-input
+      include:md ../../content/getting-started/email-prompt.md
+    .form-group
+      +password-input
+      include:md ../../content/getting-started/password-prompt.md
+    .form-group
+      +confirm-password-input
+    include:md ../../content/getting-started/agree-to-toc.md
+    .row
+      .col-5
+        +sign-up-button
 
 
 //- forgot-password-form
 mixin forgot-password-form
-  #form
-    #heading
-      include:md ../../content/getting-started/forgot-password-form.md
-    form#forgot-password(role='form', action='/user/pwd_reset' method='post')
-      .form-group
-        +email-input
-      .row
-        .col-7
-          +get-password-button
+  #heading
+    include:md ../../content/getting-started/forgot-password-form.md
+  form#forgot-password(role='form', action='/user/pwd_reset' method='post')
+    .form-group
+      +email-input
+    .row
+      .col-7
+        +get-password-button
 
 //- pwd-reset-form
 mixin pwd-reset-form
@@ -66,6 +63,7 @@ mixin pwd-reset-form
         .col-5
           +reset-password-button
 
+//- Alerts
 mixin alert-login-failed
   if viewModel && viewModel.errorMessage
     .alert(role='alert')
@@ -73,11 +71,13 @@ mixin alert-login-failed
 
 mixin alert-please-login
   .alert(role='alert')
-    #message You need to login to see that page.
+    #message
+      span You need to login to see that page.
 
 mixin alert-pwd-sent
   .alert(role='alert')
-    #message If you entered a valid address, then a password reset link has been sent to your email address.
+    #message
+      span If you entered a valid address, then a password reset link has been sent to your email address.
 
 mixin alert-sign-up-failed
   if viewModel && viewModel.errorMessage
@@ -86,11 +86,8 @@ mixin alert-sign-up-failed
 
 mixin alert-sign-up-OK
   .alert(role='alert')
-    #message Thanks for signing up to TEAM Mentor. Please login to access our libraries.
-
-mixin alert-pw-requirements
-  .alert(role='alert')
-    #message You need to login to see that page.
+    #message
+      span Thanks for signing up to TEAM Mentor. Please login to access our libraries.
 
 mixin alert-pwd-reset-failed
  if errorMessage
@@ -99,4 +96,5 @@ mixin alert-pwd-reset-failed
 
 mixin alert-pwd-reset-OK
   .alert(role='alert')
-    div Your password has been updated. Please login to access our libraries.
+    #message
+      span Your password has been updated. Please login to access our libraries.

@@ -1,12 +1,12 @@
 extends ../_layouts/page_landing
 include ../_mixins/user-mixins
 block content
-    .row
-        #landing-page
+    #landing-page
+        .row
             .col-6
                 .lge-container
+                    +alert-pwd-reset-OK
                     #loginwall
-                        +alert-pwd-reset-OK
                         +login-form
             .col-6
                 .lge-container
