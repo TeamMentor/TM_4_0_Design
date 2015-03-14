@@ -67,69 +67,34 @@ mixin pwd-reset-form
 mixin alert-login-failed
   if viewModel && viewModel.errorMessage
     .alert(role='alert')
-      #message
-        table
-          tr
-            td
-              +alert-icon
-            td= 'Error: ' + viewModel.errorMessage
+      #message= 'Error: ' + viewModel.errorMessage
 
 mixin alert-please-login
   .alert(role='alert')
     #message
-      table
-        tr
-          td
-            +alert-icon
-          td
-            span You need to login to see that page.
+      span You need to login to see that page.
 
 mixin alert-pwd-sent
   .alert(role='alert')
     #message
-      table
-        tr
-          td
-            +alert-icon
-          td
-            span If you entered a valid address, then a password reset link has been sent to your email address.
+      span If you entered a valid address, then a password reset link has been sent to your email address.
 
 mixin alert-sign-up-failed
   if viewModel && viewModel.errorMessage
     .alert(role='alert')
-      #message
-        table
-          tr
-            td
-              +alert-icon
-            td= 'Error: ' + viewModel.errorMessage
+      #message= 'Error: ' + viewModel.errorMessage
 
 mixin alert-sign-up-OK
   .alert(role='alert')
     #message
-      table
-        tr
-          td
-            +alert-icon
-          td
-            span Thanks for signing up to TEAM Mentor. Please login to access our libraries.
+      span Thanks for signing up to TEAM Mentor. Please login to access our libraries.
 
 mixin alert-pwd-reset-failed
  if errorMessage
    .alert(role='alert')
-     #message
-      table
-        tr
-          td
-            +alert-icon
-          td= 'Error: ' + errorMessage
+     #message= 'Error: ' + errorMessage
 
 mixin alert-pwd-reset-OK
   .alert(role='alert')
     #message
-      table
-        tr
-          td
-            +alert-icon
-          td
-            span Your password has been updated. Please login to access our libraries.
+      span Your password has been updated. Please login to access our libraries.
