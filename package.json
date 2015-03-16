@@ -42,7 +42,7 @@
     "supervisor": "latest",
     "teammentor": "^0.1.2",
     "winser": "latest",
-    "winston": "^0.9.0",
+    "winston": "^0.9.0"
   },
   "devDependencies": {
     "chai": "latest",
