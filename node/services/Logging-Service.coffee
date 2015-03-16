@@ -26,7 +26,7 @@ class Logging_Service
 
   hook_Console: =>
     @.original_Console = console.log
-    console.log        = (args...)-> @.info args...
+    console.log        = (args...)=> @.info args...
     global.logger      = @
     log '[Logging-Service] console hooked'
 
