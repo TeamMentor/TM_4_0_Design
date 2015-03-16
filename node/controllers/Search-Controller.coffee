@@ -56,6 +56,8 @@ class SearchController
         queryId = @req.params.queryId
         filters = @req.params.filters
 
+        logger?.info {user: @.req.session?.username, action:'show', queryId: queryId, filters:filters}
+
         @get_Navigation queryId, (navigation)=>
           target = navigation.last() || {}
           @graph_Service.graphDataFromGraphDB target.id, filters,  (searchData)=>
@@ -80,6 +82,10 @@ class SearchController
     search: =>
       target = @.req.query?.text
       filter = @.req.query?.filter?.substring(1)
+
+
+      logger?.info {user: @.req.session?.username, action:'search', target: target, filter:filter}
+
       jade_Page = '/source/jade/user/search-two-columns.jade'
 
       @graph_Service.query_From_Text_Search target,  (query_Id)=>

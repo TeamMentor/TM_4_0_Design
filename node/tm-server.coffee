@@ -1,13 +1,13 @@
 require 'fluentnode'
 
-#Logger          = require('./services/Logger-Service')
+Logging_Service = require('./services/Logging-Service')
 Express_Service = require('./services/Express-Service')
 
-#global.info     = new Logger().setup().log
+new Logging_Service().setup()
 
-#console.log = global.info
+logger?.info('[TM-Server] Log is setup')
 
-global.info = console.log
+global.info = console.log                   # legacy, global.info calls need to be changed to logger?.info
 
 info('Configuring TM_Design Express server')
 

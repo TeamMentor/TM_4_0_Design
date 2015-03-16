@@ -14,6 +14,10 @@ add_Routes = (express_Service)->
 
     app                     = express_Service.app
 
+
+    app.use (req,res,next)->
+      logger?.info {url: req.url , ip: req.connection.remoteAddress,  agent: req.headers.agent }
+      next()
     #login routes
     
     app.get  '/user/login'     , (req, res)-> new Login_Controller(req, res).redirectToLoginPage()
