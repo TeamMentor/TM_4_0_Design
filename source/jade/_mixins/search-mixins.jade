@@ -78,7 +78,7 @@ mixin main-app-view
                           tr
                             td
                                 //a(href='/article/' + recent_Article.id)
-                                a(href='/article/' + recent_Article.id.remove('article-') + '/' + recent_Article.title.replace(/ /g,'-'), id=recent_Article.id)
+                                a(href='/article/' + recent_Article.id.remove('article-') + '/' + recent_Article.title.replace(/ /g,'-').remove('.'), id=recent_Article.id)
                                     +article-icon
                                     = recent_Article.title
 
@@ -101,7 +101,7 @@ mixin main-app-view
                             tr
                                 td
                                     //a(href=top_Article.href)
-                                    a(href= top_Article.href.remove('article-') + '/' + top_Article.title.replace(/ /g,'-'), id=top_Article.id)
+                                    a(href= top_Article.href.remove('article-') + '/' + top_Article.title.replace(/ /g,'-').remove('.'), id=top_Article.id)
                                         +article-icon
                                         = top_Article.title
         //if (newArticles)
@@ -125,7 +125,7 @@ mixin articles-list
                         table
                             tr
                                 td
-                                    a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-'), id=result.id)
+                                    a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                                         h4=  result.title
                             tr
                                 td
