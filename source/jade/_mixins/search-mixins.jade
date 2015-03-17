@@ -58,7 +58,7 @@ mixin results
                             p.label#resultsTitle= 'Showing ' + results.size() + ' articles'
                 td.text-right
                     if activeFilter
-                        span#activeFilter.filter= activeFilter.title
+                        span#activeFilter.filter= activeFilter.titles
                             span.close
                                 a(href=href) x
 
@@ -142,11 +142,17 @@ mixin filters-div
                     table.nav
                         for result in filter.results
                             tr
-                                if activeFilter && result.id == activeFilter.id
-                                    td
-                                        a(href= href )
-                                            b= result.title
-                                            span.right.badge= result.size
+                                if activeFilter
+                                    if activeFilter.ids.contains(result.id)
+                                        td
+                                            a(href= href )
+                                                b= result.title
+                                                span.right.badge= result.size
+                                    else
+                                        if result.size > 0
+                                            td
+                                                a(href=href + '/' + activeFilter.filters + ',' + result.id)= result.title
+                                                    span.right.badge= result.size
                                 else
                                     td
                                         a(href=href + '/'+result.id)= result.title
