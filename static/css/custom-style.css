@@ -640,12 +640,15 @@ span.rwd-line {
   border-radius: 50%;
   color: white;
 }
-.type {
+.circle {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  background:red;
+  width: 10px;
+  height: 10px;
+  background: red;
 }
+.guideline {}
+.checklist {}
+.how-to {}
 /*------------------------------------*
    TABLES
 *------------------------------------*/
