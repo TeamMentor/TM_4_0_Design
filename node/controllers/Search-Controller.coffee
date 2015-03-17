@@ -70,7 +70,7 @@ class SearchController
             @searchData.href = target.href
             if filters
               @graph_Service.resolve_To_Ids filters, (results)=>
-                @searchData.activeFilter         = results.values() 
+                @searchData.activeFilter         = results.values()
                 @searchData.activeFilter.ids     = (value.id for value in results.values())
                 @searchData.activeFilter.titles  = (value.title for value in results.values())
                 @searchData.activeFilter.filters = filters
