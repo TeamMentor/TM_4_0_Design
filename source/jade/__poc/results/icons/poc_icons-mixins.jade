@@ -1,0 +1,44 @@
+mixin articles-list-poc
+    #articles
+        if results
+            each result in results.take(250)
+                .bg#list-view-article
+                    if result
+                        table
+                            tr
+                                td
+                                    a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-'), id=result.id)
+                                        h4=  result.title
+                                td
+                                    .circle.guideline
+                            tr
+                                td
+                                    p= result.summary + '...'
+
+mixin icons-results-poc
+        #results
+        table
+            tr
+                if no_Results
+                    td
+                        p.label#no_results No Results
+                        p Please try again
+                if results
+                    td
+                        if results.size() > 250
+                            p.label#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
+                        else
+                            p.label#resultsTitle= 'Showing ' + results.size() + ' articles'
+                    td
+                        ul.legend
+                            li.guideline
+                                span.label.normal Guideline
+                            li.checklist
+                                span.label.normal Checklist
+                            li.how-to
+                                span.label.normal How to
+                td.text-right
+                    if activeFilter
+                        span#activeFilter.filter= activeFilter.title
+                            span.close
+                                a(href=href) x

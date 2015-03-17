@@ -128,7 +128,7 @@ mixin articles-list
                                     a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-'), id=result.id)
                                         h4=  result.title
                                 td
-                                    .circle
+                                    .circle.guideline
                             tr
                                 td
                                     p= result.summary + '...'

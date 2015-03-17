@@ -268,6 +268,9 @@ i.landing-page {
 #copyright i, #main-app-view i {
   margin: 0 10px 0 0;
 }
+#filters h3 {
+  line-height: 0em;
+}
 #main-app-view {
   margin-top: 120px;
 }
@@ -280,6 +283,9 @@ i.landing-page {
 }
 #results-2 {
   margin-top: 140px;
+}
+#results-2 .label {
+  padding-top: 0;
 }
 #search-input {
   padding-bottom: 14px;
@@ -547,6 +553,9 @@ a.minor:hover {
 .text-right {
   text-align: right !important;
 }
+.normal {
+  font-weight: normal;
+}
 /*------------------------------------*
    BUTTONS
 *------------------------------------*/
@@ -640,15 +649,34 @@ span.rwd-line {
   border-radius: 50%;
   color: white;
 }
-.circle {
-  border-radius: 50%;
+ul.legend {
+  list-style-type: none;
+  display: inline-block;
+  float: right;
+  padding-top: 5px;
+}
+ul.legend li {
+  display: inline-block;
+  padding: 0 10px 0 0;
+}
+ul.legend li:before {
+  content: "";
+  line-height: 1em;
   width: 10px;
   height: 10px;
-  background: red;
+  float: left;
+  margin: 6px 5px 0 15px;
+  border-radius: 50%;
 }
-.guideline {}
-.checklist {}
-.how-to {}
+ul.legend li.guideline:before{
+  background-color: #af3e3e;
+}
+ul.legend li.checklist:before {
+  background-color: #3e66af;
+}
+ul.legend li.how-to:before {
+  background-color: #3eaf4e;
+}
 /*------------------------------------*
    TABLES
 *------------------------------------*/
