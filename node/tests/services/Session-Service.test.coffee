@@ -1,5 +1,7 @@
 Session_Service = require('../../services/Session-Service')
 session         = require('express-session')
+express         = require 'express'
+supertest       = require 'supertest'
 
 describe '| services | Session.test', ()->
 
@@ -63,3 +65,34 @@ describe '| services | Session.test', ()->
                 @.viewed_Articles (data)->
                   data.json_Str().assert_Contains ['id_1','id_2', 'id_3', 'id_4','title_1','title_2', 'title_3', 'title_4']
                   done()
+
+  describe 'testing behaviour of express-session', ()->
+
+    app           = null
+    testValue     = 'this is a session value';
+    sessionAsJson = '{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"}}';
+
+
+    before ()->                            # recrete the config used on server.js and add a couple test routes
+      app     = express()
+      options =
+        secret           : '1234567890'
+        saveUninitialized: true
+        resave           : true
+
+      app.use session(options)
+
+      middleware = (req,res,next)->
+        req.session.value = testValue;
+        next()
+
+      app.get '/session_values'     ,              (req,res)->  res.send req.session
+      app.get '/session_get_userId' , middleware,  (req,res)->  res.send req.session.value
+
+    it 'Check default session values', (done)->
+      supertest(app).get '/session_values'
+                    .expect 200,sessionAsJson, done
+
+    it 'Check specific session value', (done)->
+      supertest(app).get '/session_get_userId'
+                    .expect 200,testValue, done
