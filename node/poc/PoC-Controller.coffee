@@ -62,7 +62,7 @@ class PoC_Controller
 
   show_Filters: (req,res)=>
 
-    req.params.queryId = 'Guidance'
+    req.params.queryId = 'Index'
     req.params.filters = ''
 
     page               = req.params.page
