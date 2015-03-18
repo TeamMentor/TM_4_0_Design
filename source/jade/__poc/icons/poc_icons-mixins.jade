@@ -6,12 +6,15 @@ mixin articles-list-poc
                     if result
                         table
                             tr
-                                td
-                                    a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-'), id=result.id)
-                                        h4=  result.title
-                                td
+                                td.small
                                     br
                                     +guideline-icon
+                                td
+                                    span
+                                        a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
+                                        h4=  result.title
                             tr
+                                td
+
                                 td
                                     p= result.summary + '...'
