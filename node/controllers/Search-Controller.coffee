@@ -86,7 +86,6 @@ class SearchController
       target = @.req.query?.text
       filters = @.req.query?.filters?.substring(1)
 
-
       logger?.info {user: @.req.session?.username, action:'search', target: target, filters:filters}
 
       jade_Page = '/source/jade/user/search-two-columns.jade'

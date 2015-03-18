@@ -8,7 +8,6 @@ describe '| services | Logging-Service.test |', ->
     logging_Service = new Logging_Service().setup()
 
   after ()->
-    #console.log       .assert_Is global.info
     logging_Service.assert_Is_Object()
     logging_Service.original_Console.assert_Is_Function()
     logging_Service.restore_Console()

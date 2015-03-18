@@ -245,7 +245,7 @@ describe "| controllers | Search-Controller.test |", ->
         @.search()
 
     it 'search text, filter, valid searchData', (done)->
-      req    = { session:{}, query: text: 'text-search' , filter: '/filter-text'}
+      req    = { session:{}, query: text: 'text-search' , filters: '/filter-text'}
       res    =
         send: (html)->
           html.assert_Contains 'results'
