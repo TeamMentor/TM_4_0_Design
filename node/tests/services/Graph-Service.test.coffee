@@ -152,3 +152,8 @@ describe '| services | Graph-Service.test |', ->
       @.server_Online (online)->
         online.assert_False()
         done()
+
+  it 'Issue 595 - Bug in GraphDB Service resolve_To_Ids method', (done)->
+    graphService.resolve_To_Ids undefined,  (data)=>
+      data.assert_Is {}
+      done()
