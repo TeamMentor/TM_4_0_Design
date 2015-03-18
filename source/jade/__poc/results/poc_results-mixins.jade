@@ -1,16 +1,17 @@
 mixin articles-list-poc
-	   #articles
+    #articles
         if results
             each result in results.take(250)
-                .bg.list-view-article
+                .bg#list-view-article
                     if result
                         table
                             tr
                                 td
-                                    a(href='/article/' + result.id, id=result.id)
+                                    a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                                         h4=  result.title
                                 td
-                                    span.right.badge 00
+                                    br
+                                    span.label #21
                             tr
                                 td
                                     p= result.summary + '...'

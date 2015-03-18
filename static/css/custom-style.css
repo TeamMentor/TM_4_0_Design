@@ -735,6 +735,9 @@ td, th {
   padding: 10px;
   height: 30px;
 }
+td.small {
+  width: 10px;
+}
 .data tr {
   border: 1px solid #dbdbdb;
 }

@@ -125,11 +125,9 @@ mixin articles-list
                         table
                             tr
                                 td
-                                    a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
+                                    span
+                                        a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                                         h4=  result.title
-                                td
-                                    br
-                                    span.label #21
                             tr
                                 td
                                     p= result.summary + '...'
