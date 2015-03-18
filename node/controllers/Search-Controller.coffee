@@ -84,22 +84,22 @@ class SearchController
 
     search: =>
       target = @.req.query?.text
-      filter = @.req.query?.filter?.substring(1)
+      filters = @.req.query?.filters?.substring(1)
 
 
-      logger?.info {user: @.req.session?.username, action:'search', target: target, filter:filter}
+      logger?.info {user: @.req.session?.username, action:'search', target: target, filters:filters}
 
       jade_Page = '/source/jade/user/search-two-columns.jade'
 
       @graph_Service.query_From_Text_Search target,  (query_Id)=>
         query_Id = query_Id?.remove '"'
-        @graph_Service.graphDataFromGraphDB query_Id, filter,  (searchData)=>
+        @graph_Service.graphDataFromGraphDB query_Id, filters,  (searchData)=>
           if not searchData
             @res.send @jade_Service.renderJadeFile(jade_Page, {})
             return
 
           searchData.text         =  target
-          searchData.href         = "/search?text=#{target?.url_Encode()}&filter="
+          searchData.href         = "/search?text=#{target?.url_Encode()}&filters="
 
           @.req.session.user_Searches ?= []
 
@@ -113,10 +113,13 @@ class SearchController
             @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
             return
 
-          if filter
-            @graph_Service.resolve_To_Ids filter, (results)=>
-              searchData.activeFilter = results.values()?.first()
-              #searchData.activeFilter = { id: filter, title: filter }
+          if filters
+            @graph_Service.resolve_To_Ids filters, (results)=>
+              #searchData.activeFilter = results.values()?.first()
+              searchData.activeFilter         = results.values()
+              searchData.activeFilter.ids     = (value.id for value in results.values())
+              searchData.activeFilter.titles  = (value.title for value in results.values())
+              searchData.activeFilter.filters = filters
               @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
           else
             @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
