@@ -1,0 +1,16 @@
+mixin articles-list-poc
+    #articles
+        if results
+            each result in results.take(250)
+                .bg#list-view-article
+                    if result
+                        table
+                            tr
+                                td
+                                    a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-'), id=result.id)
+                                        h4=  result.title
+                                td
+                                    i.fi-page
+                            tr
+                                td
+                                    p= result.summary + '...'

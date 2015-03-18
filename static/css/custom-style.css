@@ -283,6 +283,7 @@ i.landing-page {
 }
 #results-2 {
   margin-top: 140px;
+  border: none;
 }
 #results-2 .label {
   padding-top: 0;
@@ -648,34 +649,6 @@ span.rwd-line {
   padding: 5px 7px;
   border-radius: 50%;
   color: white;
-}
-ul.legend {
-  list-style-type: none;
-  display: inline-block;
-  float: right;
-  padding-top: 5px;
-}
-ul.legend li {
-  display: inline-block;
-  padding: 0 10px 0 0;
-}
-ul.legend li:before {
-  content: "";
-  line-height: 1em;
-  width: 10px;
-  height: 10px;
-  float: left;
-  margin: 6px 5px 0 15px;
-  border-radius: 50%;
-}
-ul.legend li.guideline:before{
-  background-color: #af3e3e;
-}
-ul.legend li.checklist:before {
-  background-color: #3e66af;
-}
-ul.legend li.how-to:before {
-  background-color: #3eaf4e;
 }
 /*------------------------------------*
    TABLES
