@@ -10,7 +10,8 @@ mixin articles-list-poc
                                     a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-'), id=result.id)
                                         h4=  result.title
                                 td
-                                    i.fi-page
+                                    br
+                                    +guideline-icon
                             tr
                                 td
                                     p= result.summary + '...'
