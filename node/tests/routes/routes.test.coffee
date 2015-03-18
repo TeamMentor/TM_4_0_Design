@@ -3,7 +3,8 @@ supertest = require('supertest')
 describe '| routes | routes.test |', ()->
 
     @.timeout 4000
-    app = null
+    express_Service = null
+    app             = null
 
     expectedPaths = [ '/'
                       '/flare/:area/:page'
@@ -46,12 +47,14 @@ describe '| routes | routes.test |', ()->
 
     before ()->
       process.env.PORT = (10000).random().add 10000
-      app              = require('../../tm-server')
+      express_Service  = require('../../tm-server')
+      app              = express_Service.app
       app.server       = app.listen();
 
     after ()->
       app.server.close()
       delete process.env.PORT
+      express_Service.logging_Service.restore_Console()
 
 
     it 'Check expected paths', ()->

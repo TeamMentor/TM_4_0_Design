@@ -30,6 +30,10 @@ class Logging_Service
     global.logger      = @
     log '[Logging-Service] console hooked'
 
+  restore_Console: =>
+    console.log = @.original_Console
+    log 'Console restored'
+
   info: (data)=>
     @.logger.info data
 
