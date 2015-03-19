@@ -1,0 +1,60 @@
+extends ../../_layouts/page_home
+include ../../_mixins/search-mixins.jade
+
+mixin directory-list
+    .bg
+        if title
+            h3#title= title
+        #containers
+            if(containers)
+                table.nav
+                    each container in containers
+                        tr
+                            td
+                                if activeFilter
+                                    a(href= href + ',' +container.id + '/' + activeFilter.ids, id=container.id)= container.title
+                                else
+                                    a(href= href + ',' +container.id , id=container.id)= container.title
+                            td
+                                span.right.badge= container.size
+
+
+mixin filters-div
+    if filters
+        #filters
+            .bg
+                h3 Filter by
+                for filter in filters
+                    h4.label= filter.title
+                    table.nav
+                        for result in filter.results
+                            tr
+                                if activeFilter
+                                    if activeFilter.ids.contains(result.id)
+                                        td
+                                            b= result.title
+                                            span.right.badge= result.size
+                                    else
+                                        //if result.size > 0
+                                        td
+                                            a(href=href + '/' + activeFilter.filters + ',' + result.id)= result.title
+                                            span.right.badge= result.size
+                                else
+                                    td
+                                        a(href=href + '/'+result.id)= result.title
+                                        span.right.badge= result.size
+
+block content
+    #application
+        .row
+            .col-3
+                .lge-container
+                    +directory-list
+            .col-6
+                .lge-container
+                    +breadcrumbs
+                    +results
+                    +articles-list
+            .col-3
+                .lge-container
+                    +filters-div

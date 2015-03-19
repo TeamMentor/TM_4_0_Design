@@ -23,10 +23,11 @@ class PoC_Controller
   register_Routes: () =>
     app = @.express_Service?.app
     if app
-      app.get '/poc*'             , @.check_Auth
-      app.get '/poc'              , @.show_Index
-      app.get '/poc/filters:page' , @.show_Filters
-      app.get '/poc/:page'        , @.show_Page
+      app.get '/poc*'                      , @.check_Auth
+      app.get '/poc'                       , @.show_Index
+      app.get '/poc/filters:page'          , @.show_Filters
+      app.get '/poc/filters:page/:filters' , @.show_Filters
+      app.get '/poc/:page'                 , @.show_Page
 
     @
 
@@ -63,7 +64,7 @@ class PoC_Controller
   show_Filters: (req,res)=>
 
     req.params.queryId = 'Index'
-    req.params.filters = ''
+    req.params.filters = req.params.filters || ''
 
     page               = req.params.page
     jade_Page          = "/source/jade/__poc/filters/filters#{page}.jade"
