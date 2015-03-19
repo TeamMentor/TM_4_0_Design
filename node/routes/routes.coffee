@@ -51,6 +51,6 @@ add_Routes = (express_Service)->
                       #{err.stack.split_Lines().take(4).join('\n')}"
       #console.error(err)
       res.status(501)
-         .render 'source/jade/guest/500.jade'
+         .redirect('/error')
 
 module.exports = add_Routes
