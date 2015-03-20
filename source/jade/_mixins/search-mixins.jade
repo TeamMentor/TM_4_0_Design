@@ -8,11 +8,16 @@ mixin directory-list
             if(containers)
                 table.nav
                     each container in containers
-                        tr
-                            td
-                                a(href= href + ',' +container.id, id=container.id)= container.title
-                            td
-                                span.right.badge= container.size
+                        if container.size > 0
+                            tr
+                                td
+                                    if activeFilter
+                                        a(href= href + ',' +container.id + '/' + activeFilter.ids, id=container.id)= container.title
+                                    else
+                                        a(href= href + ',' +container.id , id=container.id)= container.title
+                                td
+                                    span.right.badge= container.size
+
 
 //- search-bar-input
 mixin search-bar-input
@@ -58,7 +63,7 @@ mixin results
                             p.label#resultsTitle= 'Showing ' + results.size() + ' articles'
                 td.text-right
                     if activeFilter
-                        span#activeFilter.filter= activeFilter.title
+                        span#activeFilter.filter= activeFilter.titles
                             span.close
                                 a(href=href) x
 
@@ -142,11 +147,16 @@ mixin filters-div
                     table.nav
                         for result in filter.results
                             tr
-                                if activeFilter && result.id == activeFilter.id
-                                    td
-                                        a(href= href )
+                                if activeFilter
+                                    if activeFilter.ids.contains(result.id)
+                                        td
                                             b= result.title
                                             span.right.badge= result.size
+                                    else
+                                        if result.size > 0
+                                            td
+                                                a(href=href + '/' + activeFilter.filters + ',' + result.id)= result.title
+                                                    span.right.badge= result.size
                                 else
                                     td
                                         a(href=href + '/'+result.id)= result.title
