@@ -45,9 +45,11 @@ class Login_Controller
 
     request options, (error, response, body)=>
       if error
+        logger?.info ('Could not connect with TM 3.5 server')
         return @.res.render loginPage, {viewModel: errorMessage : 'An error occurred' }
 
       if not (response?.body?.d)
+        logger?.info ('Could not connect with TM 3.5 server')
         return @.res.render loginPage, {viewModel: errorMessage : 'An error occurred' }
 
       loginResponse = response.body.d
