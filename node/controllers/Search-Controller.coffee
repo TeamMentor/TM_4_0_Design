@@ -53,8 +53,8 @@ class SearchController
         callback navigation
 
     showSearchFromGraph: ()=>        
-        queryId = @req.params.queryId
-        filters = @req.params.filters
+        queryId = @.req.params.queryId
+        filters = @.fix_Filters @req.params.filters
 
         logger?.info {user: @.req.session?.username, action:'show', queryId: queryId, filters:filters}
 
@@ -82,9 +82,19 @@ class SearchController
       @.req.query.text = @.req.params.text
       @.search()
 
+    fix_Filters: (filters)=>
+      if filters
+        if filters.substring(0,1) is ','
+          filters = filters.substring(1)
+        if filters.substring(filters.length-1,filters.length) is ','
+          filters = filters.substring(0, filters.length-1)
+        filters = filters.replace(',,',',')
+
+
     search: =>
-      target = @.req.query?.text
-      filters = @.req.query?.filters?.substring(1)
+      target  = @.req.query?.text
+      filters = @.fix_Filters @.req.query?.filters?.substring(1)
+
 
       logger?.info {user: @.req.session?.username, action:'search', target: target, filters:filters}
 

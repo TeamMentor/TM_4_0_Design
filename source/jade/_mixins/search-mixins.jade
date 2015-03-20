@@ -63,7 +63,11 @@ mixin results
                             p.label#resultsTitle= 'Showing ' + results.size() + ' articles'
                 td.text-right
                     if activeFilter
-                        span#activeFilter.filter= activeFilter.titles
+                        for filter in activeFilter
+                            span#activeFilter.filter= filter.title
+                                span.close
+                                    a(href=href + '/' + activeFilter.filters.remove(filter.id)) x
+                        //span#activeFilter.filter= activeFilter.titles
                             span.close
                                 a(href=href) x
 
