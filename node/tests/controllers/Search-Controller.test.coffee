@@ -172,7 +172,7 @@ describe "| controllers | Search-Controller.test |", ->
           $('#results'     ).html().contains('Showing 1 articles')
           $('#articles #list-view-article').html().assert_Is_String()
           $('#list-view-article #result-id-1 h4').html().assert_Is 'result-title-1'
-          $('#activeFilter').html().assert_Is 'title-123<span class="close"><a href="/show/query_Id">x</a></span>'
+          $('#activeFilter').html().assert_Is 'title-123<span class="close"><a href="/show/query_Id/abc">x</a></span>'
           done()
 
       using new Search_Controller(req, res),->
