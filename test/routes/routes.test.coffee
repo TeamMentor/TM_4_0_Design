@@ -1,4 +1,5 @@
-supertest = require('supertest')
+supertest       = require 'supertest'
+Express_Service = require '../../src/services/Express-Service'
 
 describe '| routes | routes.test |', ()->
 
@@ -47,15 +48,18 @@ describe '| routes | routes.test |', ()->
                       '/*']
 
     before ()->
-      process.env.PORT = (10000).random().add 10000
-      express_Service  = require('../../src/tm-server')
+      options =
+        logging_Enabled : false
+        port            : 1024 + (20000).random()
+
+      express_Service  = new Express_Service(options).setup().start()
+
       app              = express_Service.app
-      app.server       = app.listen();
+      #app.server       = app.listen();
 
     after ()->
       app.server.close()
-      delete process.env.PORT
-      express_Service.logging_Service.restore_Console()
+      #express_Service.logging_Service.restore_Console()
 
 
     it 'Check expected paths', ()->

@@ -18,16 +18,18 @@ class Express_Service
     path             = require "path"
     express          = require 'express'
 
-  constructor: ()->
+  constructor: (options)->
     @.dependencies()
+    @.options         = options || { logging_Enabled: true}
     @.app             = express()
     @loginEnabled     = true;
-    @.app.port        = process.env.PORT || 1337;
+    @.app.port        = @.options.port || process.env.PORT || 1337;
     @.session_Service = null
     @.logging_Service = null
 
   setup: ()=>
-    @.set_Logging()
+    if @.options.logging_Enabled
+      @.set_Logging()
     @.set_BodyParser()
     @.set_Config()
     @.set_Static_Route()
@@ -68,9 +70,10 @@ class Express_Service
     @
 
   start:()=>
-    if process.mainModule.filename.not_Contains(['node_modules','mocha','bin','_mocha'])
-      console.log("[Running locally or in Azure] Starting 'TM Jade' Poc on port " + @app.port)
-      @app.server = @app.listen(@app.port)
+    #if process.mainModule.filename.not_Contains(['node_modules','mocha','bin','_mocha'])
+    console.log("Starting 'TM Jade' Poc on port " + @app.port)
+    @app.server = @app.listen(@app.port)
+    @
 
   checkAuth: (req, res, next, config)=>
     if (@.loginEnabled and req and req.session and !req.session.username)
