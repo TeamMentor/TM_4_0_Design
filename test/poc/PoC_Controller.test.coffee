@@ -3,7 +3,7 @@ supertest        = require 'supertest'
 express          = require 'express'
 cheerio          = require 'cheerio'
 
-describe '| poc | Controller-PoC.test' ,->
+describe.only '| poc | Controller-PoC.test' ,->
 
   it 'constructor',->
     using new PoC_Controller() ,->
