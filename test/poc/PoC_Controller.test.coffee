@@ -1,9 +1,9 @@
-PoC_Controller   = require '../../poc/PoC-Controller'
+PoC_Controller   = require '../../src/poc/PoC-Controller'
 supertest        = require 'supertest'
 express          = require 'express'
 cheerio          = require 'cheerio'
 
-describe.only '| poc | Controller-PoC.test' ,->
+describe '| poc | Controller-PoC.test' ,->
 
   it 'constructor',->
     using new PoC_Controller() ,->
@@ -16,6 +16,7 @@ describe.only '| poc | Controller-PoC.test' ,->
     express_Service =
       app:
         get: (path,target)-> routes[path] = target
+
     using new PoC_Controller({ express_Service: express_Service}).register_Routes() ,->
       routes.assert_Is
         '/poc*'                     : @.check_Auth

@@ -1,6 +1,6 @@
 fs     = require 'fs'
 expect = require('chai').expect
-Config = require('../../misc/Config')
+Config = require('../../src/misc/Config')
 
 expectedTm_35_Server  ='https://tmdev01-uno.teammentor.net/'
 expectedTmWebServices = 'Aspx_Pages/TM_WebServices.asmx'

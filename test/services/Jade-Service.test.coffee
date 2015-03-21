@@ -1,6 +1,6 @@
 fs           = require('fs')
 expect       = require("chai").expect
-Jade_Service = require('../../services/Jade-Service')
+Jade_Service = require('../../src/services/Jade-Service')
 
 
 #used to understand better how jade compilation works (specialy how it compiles to java script)

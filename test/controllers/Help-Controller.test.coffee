@@ -3,7 +3,7 @@ supertest         = require 'supertest'
 expect            = require('chai').expect
 request           = require 'request'
 marked            = require 'marked'
-Help_Controller   = require('../../controllers/Help-Controller')
+Help_Controller   = require('../../src/controllers/Help-Controller')
 
 describe '| controllers | Help-Controller.test |', ()->
 
@@ -62,7 +62,7 @@ describe '| controllers | Help-Controller.test |', ()->
       @.pageParams      .assert_Is({})
       @.req             .assert_Is(req)
       @.res             .assert_Is(res)
-      @.docs_TM_Service.assert_Instance_Of require('../../services/Docs-TM-Service')
+      @.docs_TM_Service.assert_Instance_Of require('../../src/services/Docs-TM-Service')
 
       assert_Is_Null(@.content)
       assert_Is_Null(@.docs_Library)

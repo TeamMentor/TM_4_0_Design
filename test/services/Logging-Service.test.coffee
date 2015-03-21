@@ -1,4 +1,4 @@
-Logging_Service = require('./../../services/Logging-Service')
+Logging_Service = require('./../../src/services/Logging-Service')
 
 describe '| services | Logging-Service.test |', ->
 

@@ -1,4 +1,4 @@
-Graph_Service  = require './../../services/Graph-Service'
+Graph_Service  = require './../../src/services/Graph-Service'
 http           = require 'http'
 
 describe '| security | url-generation |', ->

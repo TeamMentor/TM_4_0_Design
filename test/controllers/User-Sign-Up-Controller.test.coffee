@@ -1,7 +1,7 @@
 express                 = require 'express'
 bodyParser              = require('body-parser')
-Login_Controller        = require('../../controllers/Login-Controller')
-User_Sign_Up_Controller = require('../../controllers/User-Sign-Up-Controller')
+Login_Controller        = require('../../src/controllers/Login-Controller')
+User_Sign_Up_Controller = require('../../src/controllers/User-Sign-Up-Controller')
 
 
 describe '| controllers | User-Sign-Up-Controller', ->

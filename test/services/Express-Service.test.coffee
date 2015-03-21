@@ -1,5 +1,5 @@
-Express_Service = require('../../services/Express-Service')
-Session_Service = require('../../services/Session-Service')
+Express_Service = require('../../src/services/Express-Service')
+Session_Service = require('../../src/services/Session-Service')
 express         = require('express')
 session         = require('express-session')
 supertest       = require('supertest')

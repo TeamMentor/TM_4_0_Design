@@ -3,7 +3,7 @@ fs             = require('fs'           )
 http           = require('http'         )
 expect         = require('chai'         ).expect
 spawn          = require('child_process').spawn
-Graph_Service  = require('./../../services/Graph-Service')
+Graph_Service  = require('./../../src/services/Graph-Service')
 Server         = http.Server
 
 describe '| services | Graph-Service.test |', ->

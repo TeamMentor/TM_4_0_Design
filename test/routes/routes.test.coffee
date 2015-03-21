@@ -48,7 +48,7 @@ describe '| routes | routes.test |', ()->
 
     before ()->
       process.env.PORT = (10000).random().add 10000
-      express_Service  = require('../../tm-server')
+      express_Service  = require('../../src/tm-server')
       app              = express_Service.app
       app.server       = app.listen();
 

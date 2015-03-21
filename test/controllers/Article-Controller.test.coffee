@@ -1,6 +1,6 @@
-Article_Controller = require '../../controllers/Article-Controller'
-Express_Service    = require '../../services/Express-Service'
-Session_Service    = require('../../services/Session-Service')
+Article_Controller = require '../../src/controllers/Article-Controller'
+Express_Service    = require '../../src/services/Express-Service'
+Session_Service    = require('../../src/services/Session-Service')
 cheerio            = require 'cheerio'
 
 supertest = require 'supertest'

@@ -1,6 +1,6 @@
 express                 = require 'express'
 bodyParser              = require('body-parser')
-Login_Controller        = require('../../controllers/Login-Controller')
+Login_Controller        = require('../../src/controllers/Login-Controller')
 
 
 describe '| controllers | Login-Controller.test |', ->

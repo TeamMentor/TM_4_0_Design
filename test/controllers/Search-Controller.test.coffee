@@ -2,10 +2,9 @@ fs                = require('fs')
 supertest         = require('supertest')
 expect            = require('chai').expect
 cheerio           = require('cheerio')
-#app               = require('../../server')
-Config            = require('../../misc/Config')
-Search_Controller = require('../../controllers/Search-Controller')
-Express_Service   = require('../../services/Express-Service')
+Config            = require('../../src/misc/Config')
+Search_Controller = require('../../src/controllers/Search-Controller')
+Express_Service   = require('../../src/services/Express-Service')
 
 
 describe "| controllers | Search-Controller.test |", ->
@@ -25,8 +24,8 @@ describe "| controllers | Search-Controller.test |", ->
         @.res               .assert_Is res
         @.config            .assert_Is config
         @.jade_Page         .assert_Is '/source/jade/user/search.jade'
-        @.jade_Service      .assert_Instance_Of require('../../services/Jade-Service')
-        @.graph_Service     .assert_Instance_Of require('../../services/Graph-Service')
+        @.jade_Service      .assert_Instance_Of require('../../src/services/Jade-Service')
+        @.graph_Service     .assert_Instance_Of require('../../src/services/Graph-Service')
         @.defaultUser       .assert_Is 'TMContent'
         @.defaultRepo       .assert_Is 'TM_Test_GraphData'
         @.defaultFolder     .assert_Is '/SearchData/'

@@ -1,4 +1,4 @@
-Pwd_Reset_Controller = require('../../controllers/Pwd-Reset-Controller')
+Pwd_Reset_Controller = require('../../src/controllers/Pwd-Reset-Controller')
 express    = require 'express'
 supertest  = require 'supertest'
 bodyParser = require('body-parser')

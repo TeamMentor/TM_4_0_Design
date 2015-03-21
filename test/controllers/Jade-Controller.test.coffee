@@ -1,5 +1,5 @@
 require 'fluentnode'
-Jade_Controller = require('../../controllers/Jade-Controller')
+Jade_Controller = require('../../src/controllers/Jade-Controller')
 cheerio = require 'cheerio'
 
 describe '| controllers | Jade-Controller.test.js |', ()->

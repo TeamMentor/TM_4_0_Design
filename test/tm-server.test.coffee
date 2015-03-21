@@ -7,7 +7,7 @@ expect          = null
 describe "| tm-server.test |", ->
 
   before ->
-    express_Service  = require('../tm-server')
+    express_Service  = require('../src/tm-server')
     app              = express_Service.app
     expect           = require('chai').expect
 
@@ -31,7 +31,7 @@ describe "| tm-server.test |", ->
 
         assert_Is_Null(html)
         for file in require.cache.keys()
-          if file.contains(['TM_4_0_Design','node','tm-server']) and file.not_Contains(['.test.'])
+          if file.contains(['TM_4_0_Design','src','tm-server']) and file.not_Contains(['.test.'])
             pathToApp = file
             break
 
@@ -40,7 +40,7 @@ describe "| tm-server.test |", ->
         delete require.cache[pathToApp]
 
         express_Service.logging_Service.restore_Console()
-        express_Service  = require('../tm-server')
+        express_Service  = require('../src/tm-server')
         app              = express_Service.app
 
         global.info.assert_Is console.log

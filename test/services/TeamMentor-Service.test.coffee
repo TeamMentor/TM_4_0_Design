@@ -1,7 +1,7 @@
 fs                = require('fs')
 path              = require('path')
 expect            = require("chai").expect
-Docs_TM_Service   = require('../../services/Docs-TM-Service')
+Docs_TM_Service   = require('../../src/services/Docs-TM-Service')
 
 describe "| services | Docs-TM-Service.test", ()->
 
