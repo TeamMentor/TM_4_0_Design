@@ -6,14 +6,14 @@ SCSS_Compiler   = require './source/SCSS-Compiler'
 
 describe.only 'build TM_4_0_Design |', ->
 
-  root_Folder     = "../".append_To_Process_Cwd_Path()
-  source_Assets   = root_Folder.path_Combine("deploy/assets")
+  root_Folder     = __dirname.path_Combine(['..','..'])
+  source_Assets   = root_Folder.path_Combine(['deploy','assets'])
   source_Coffee   = root_Folder.path_Combine("node")
   source_Fonts    = root_Folder.path_Combine("deploy/fonts")
   source_Scss     = root_Folder.path_Combine('source/scss')
   source_Jade     = root_Folder.path_Combine('source')
 
-  build_Folder    = root_Folder.path_Combine("static")
+  build_Folder    = root_Folder.path_Combine(".")
   build_Assets    = build_Folder.path_Combine('assets')
   build_Css       = build_Folder.path_Combine('css')
   build_Fonts     = build_Folder.path_Combine('fonts')
@@ -26,6 +26,8 @@ describe.only 'build TM_4_0_Design |', ->
   io_Actions      = new IO_Actions()
   jade_Compiler   = new Jade_Compiler()
 
+  log build_Folder
+  return
   it 'Clean target folders',->
     build_Folder   .folder_Delete_Recursive().assert_Is_True()
     build_Folder   .folder_Create()          .assert_That_Folder_Exists()
@@ -40,13 +42,11 @@ describe.only 'build TM_4_0_Design |', ->
     new SCSS_Compiler().compile_Files_To scss_Files_In_Scss_Folder, build_Css,done
 
 
-  xit 'Compile Jade files', (done)->
+  it 'Compile Jade files', (done)->
     @timeout(20000)
     jade_Compiler.options.ignore_Folders_Containing.add('user', 'articles', 'home','libraries','learning-paths', 'style-guide', 'search')
     jade_Compiler.compile_Folder_To source_Jade, build_Js_Jade, ->
       done()
-
-
 
   it 'Compile Coffee files', (done)->
     coffee_Compiler.compile_Folder_To source_Coffee, build_Js_Coffee, ->
