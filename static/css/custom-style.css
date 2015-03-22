@@ -284,6 +284,7 @@ i.landing-page {
 #results-2 {
   margin-top: 140px;
   border: none;
+}
 #search-input {
   padding-bottom: 14px;
 }
@@ -850,8 +851,7 @@ td.small {
   #link-forgot-pwd {
     text-align: right;
   }
-  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 { float: left;
- }
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 { float: left; }
   .col-12 { width: 100%; }
   .col-11 { width: 91.66666667%; }
   .col-10 { width: 83.33333333%; }
@@ -966,6 +966,9 @@ ul.side-nav span.badge {
   margin: 0 auto;
   vertical-align: middle;
   float: right;
+}
+.filter-icon {
+  padding: 0 5px 0 0;
 }
 /*------------------------------------*
   HACKS
