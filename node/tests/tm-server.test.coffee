@@ -1,14 +1,15 @@
 require 'fluentnode'
 
-app    = null
-expect = null
+app             = null
+express_Service = null
+expect          = null
 
 describe "| tm-server.test |", ->
 
   before ->
-    app  = require('../tm-server')
-    expect = require('chai').expect
-
+    express_Service  = require('../tm-server')
+    app              = express_Service.app
+    expect           = require('chai').expect
 
   it "Ctor values", ->
     expect(app              ).to.be.an('Function')
@@ -16,9 +17,7 @@ describe "| tm-server.test |", ->
     expect(app._router.stack).to.be.an('Array')
 
   it 'start when not in mocha', (done)->
-
     # for this to work we need to reload app and manipulate: process.mainModule.filename and process.env.PORT
-
     originalName = process.mainModule.filename
 
     process.mainModule.filename.assert_Contains('node_modules/mocha/bin/_mocha')
@@ -40,7 +39,9 @@ describe "| tm-server.test |", ->
         require.cache[pathToApp].assert_Is_Object()
         delete require.cache[pathToApp]
 
-        app = require '../tm-server'
+        express_Service.logging_Service.restore_Console()
+        express_Service  = require('../tm-server')
+        app              = express_Service.app
 
         global.info.assert_Is console.log
 
@@ -52,5 +53,6 @@ describe "| tm-server.test |", ->
               process.mainModule.filename = originalName              # restore the value
               process.mainModule.filename.assert_Contains('node_modules/mocha/bin/_mocha')
               delete process.env.PORT
+              express_Service.logging_Service.restore_Console()
               done()
 

@@ -56,6 +56,9 @@ class Article_Controller
     recentArticles
 
   recentArticles_Add: (id, title)=>
+
+    logger?.info {user: @.req.session?.username, action:'view-article', id: id  , title: title}
+
     @.req.session.recent_Articles ?= []
     @.req.session.recent_Articles.unshift { id: id , title:title}
 

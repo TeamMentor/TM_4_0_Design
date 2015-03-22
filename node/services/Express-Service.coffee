@@ -1,6 +1,7 @@
 Config          = null
 Jade_Service    = null
 Session_Service = null
+Logging_Service = null
 bodyParser      = null
 
 path            = null
@@ -12,6 +13,7 @@ class Express_Service
     Config           = require '../misc/Config'
     Jade_Service     = require '../services/Jade-Service'
     Session_Service  = require '../services/Session-Service'
+    Logging_Service  = require '../services/Logging-Service'
     bodyParser       = require 'body-parser'
     path             = require "path"
     express          = require 'express'
@@ -22,8 +24,10 @@ class Express_Service
     @loginEnabled     = true;
     @.app.port        = process.env.PORT || 1337;
     @.session_Service = null
+    @.logging_Service = null
 
   setup: ()=>
+    @.set_Logging()
     @.set_BodyParser()
     @.set_Config()
     @.set_Static_Route()
@@ -32,6 +36,13 @@ class Express_Service
     @.map_Route('../routes/flare_routes')
     @.map_Route('../routes/routes')
     @
+
+  set_Logging: ()=>
+    @.logging_Service = new Logging_Service().setup()
+
+    logger?.info('[TM-Server] Log is setup')
+    global.info = console.log                   # legacy, global.info calls need to be changed to logger?.info
+    info('Configuring TM_Design Express server')
 
   add_Session: (session_File)=>
     @.session_Service = new Session_Service({filename:session_File}).setup()

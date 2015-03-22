@@ -18,10 +18,11 @@ describe '| poc | Controller-PoC.test' ,->
         get: (path,target)-> routes[path] = target
     using new PoC_Controller({ express_Service: express_Service}).register_Routes() ,->
       routes.assert_Is
-        '/poc*'            : @.check_Auth
-        '/poc'             : @.show_Index
-        '/poc/filters:page': @.show_Filters
-        '/poc/:page'       : @.show_Page
+        '/poc*'                     : @.check_Auth
+        '/poc'                      : @.show_Index
+        '/poc/filters:page'         : @.show_Filters
+        '/poc/filters:page/:filters': @.show_Filters
+        '/poc/:page'                : @.show_Page
 
   it 'check_Auth (anonymous)', (done)->
     res =

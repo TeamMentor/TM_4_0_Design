@@ -1,6 +1,5 @@
-extends ../../_layouts/page_home.jade
-include ../../_mixins/search-mixins.jade
-include poc_results-mixins.jade
+extends ../../_layouts/page_home
+include ../../_mixins/search-mixins
 
 block content
     #application
@@ -12,7 +11,7 @@ block content
                 .lge-container
                     +breadcrumbs
                     +results
-                    +articles-list-poc
+                    +articles-list
             .col-3
                 .lge-container
                     +filters-div

@@ -14,6 +14,10 @@ add_Routes = (express_Service)->
 
     app                     = express_Service.app
 
+
+    app.use (req,res,next)->
+      logger?.info {url: req.url , ip: req.connection.remoteAddress,  agent: req.headers.agent }
+      next()
     #login routes
     
     app.get  '/user/login'     , (req, res)-> new Login_Controller(req, res).redirectToLoginPage()
@@ -38,8 +42,8 @@ add_Routes = (express_Service)->
     #app.get '/passwordReset/:username/:token'               , (req, res)->  res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/pwd-reset.jade'
 
     #errors 404 and 500
-    app.get '/error', (req,res)-> res.status(500).render 'source/jade/guest/500.jade'
-    app.get '/*'    , (req,res)-> res.status(404).render 'source/jade/guest/404.jade'
+    app.get '/error', (req,res)-> res.status(500).render 'source/jade/guest/500.jade',{loggedIn:req.session?.username != undefined}
+    app.get '/*'    , (req,res)-> res.status(404).render 'source/jade/guest/404.jade',{loggedIn:req.session?.username != undefined}
 
     app.use (err, req, res, next)->
       #console.error(err.stack)
@@ -47,6 +51,6 @@ add_Routes = (express_Service)->
                       #{err.stack.split_Lines().take(4).join('\n')}"
       #console.error(err)
       res.status(501)
-         .render 'source/jade/guest/500.jade'
+         .redirect('/error')
 
 module.exports = add_Routes

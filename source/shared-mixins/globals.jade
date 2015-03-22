@@ -9,7 +9,10 @@ mixin breadcrumbs
               a(href= item.href)= item.title
           else
             dd
-              a(href= item.href)= item.title
+              if activeFilter
+                a(href= item.href + '/' + activeFilter.ids)= item.title
+              else
+                a(href= item.href)= item.title
 
 //- Form Inputs
 mixin username-input

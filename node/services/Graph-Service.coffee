@@ -47,6 +47,8 @@ class Graph_Service
     url.GET_Json callback
 
   resolve_To_Ids: (values, callback)=>
+    if not values
+      return callback {}
     url = "#{@server}/convert/to_ids/#{values.url_Encode()}"
     url.GET_Json callback
 

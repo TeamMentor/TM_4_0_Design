@@ -13,12 +13,22 @@ describe '| services | Express-Service.test', ()->
       @.app.port   .assert_Is_Number()
       @loginEnabled.assert_Is_True()
       assert_Is_Null @.session_Service
+      assert_Is_Null @.logging_Service
 
-  it 'test exports',->
-    Express_Service.assert_Is_Function()
-    using new Express_Service(),->
-      @.checkAuth.assert_Is_Function()
-      @.mappedAuth.assert_Is_Function()
+  it 'setup',->
+    using new Express_Service().setup(),->
+      @.app.constructor.name.assert_Is 'EventEmitter'
+      @.app.port       .assert_Is 1337
+      @loginEnabled.assert_Is_True()
+
+      console.log       .assert_Is global.info
+      @.logging_Service.assert_Is_Object()
+      @.logging_Service.original_Console.assert_Is_Function()
+      @.logging_Service.restore_Console()
+      console.log       .assert_Is_Not global.info
+      console.log       .assert_Is @.logging_Service.original_Console
+
+
 
   describe 'session',->
 
@@ -61,11 +71,14 @@ describe '| services | Express-Service.test', ()->
 
               done()
 
-  describe 'auth',->
+
+
+  describe 'checkAuth',->
     expressService = null
 
     before ->
       expressService = new Express_Service()
+
     it 'checkAuth (all null)', (done)->
       expressService.checkAuth(null,null, done,null)
 
@@ -90,33 +103,4 @@ describe '| services | Express-Service.test', ()->
       expressService.checkAuth(req,res, null,config)
 
 
-  describe 'testing behaviour of express-session', ()->
 
-    app = express()
-
-    testValue     = 'this is a session value';
-    sessionAsJson = '{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"}}';
-
-    #recrete the config used on server.js and add a couple test routes
-    before ()->
-      options =
-        secret           : '1234567890'
-        saveUninitialized: true
-        resave           : true
-
-      app.use session(options)
-
-      middleware = (req,res,next)->
-        req.session.value = testValue;
-        next()
-
-      app.get '/session_values'     ,              (req,res)->  res.send req.session
-      app.get '/session_get_userId' , middleware,  (req,res)->  res.send req.session.value
-
-    it 'Check default session values', (done)->
-      supertest(app).get '/session_values'
-                    .expect 200,sessionAsJson, done
-
-    it 'Check specific session value', (done)->
-      supertest(app).get '/session_get_userId'
-                    .expect 200,testValue, done
