@@ -124,20 +124,19 @@ mixin articles-list
                         table
                             tr
                                 td.small
-                                    br
                                     span.label #21
                                     .text-center
                                         +guideline-icon
-                                    .technology-icon
-                                        .asp
                                     // +checklist-icon
                                     // +how-to-icon
+                                    .technology-icon.android
                                 td
                                     span
                                         a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                                             h4=  result.title
                             tr
                                 td
+
 
                                 td
                                     p= result.summary + '...'
