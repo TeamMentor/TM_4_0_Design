@@ -1,7 +1,7 @@
 include ../_mixins/user-mixins
 //- directory-list
 mixin directory-list
-    .bg
+    #directory-list.bg
         if title
             h3#title= title
         #containers
@@ -53,8 +53,7 @@ mixin results
             tr
                 if no_Results
                     td
-                        p.label#no_results No Results
-                        p Please try again
+                        p.label#no_results No results, please try again
                 td
                     if results
                         if results.size() > 250
@@ -135,7 +134,8 @@ mixin articles-list
                         table
                             tr
                                 td
-                                    a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
+                                    span
+                                        a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                                         h4=  result.title
                             tr
                                 td
@@ -164,5 +164,6 @@ mixin filters-div
                                                     span.right.badge= result.size
                                 else
                                     td
-                                        a(href=href + '/'+result.id)= result.title
+                                        a(href=href + '/'+result.id)
+                                            span.filter-icon= result.title
                                             span.right.badge= result.size
