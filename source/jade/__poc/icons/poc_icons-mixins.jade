@@ -7,17 +7,19 @@ mixin articles-list-poc
                         table
                             tr
                                 td.small
-                                    br
                                     span.label #21
-                                    // +guideline-icon
+                                    .text-center
+                                        +guideline-icon
                                     // +checklist-icon
                                     // +how-to-icon
+                                    .technology-icon.android
                                 td
                                     span
                                         a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
-                                        h4=  result.title
+                                            h4=  result.title
                             tr
                                 td
+
 
                                 td
                                     p= result.summary + '...'

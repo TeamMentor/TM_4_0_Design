@@ -123,21 +123,11 @@ mixin articles-list
                     if result
                         table
                             tr
-                                td.small
-                                    span.label #21
-                                    .text-center
-                                        +guideline-icon
-                                    // +checklist-icon
-                                    // +how-to-icon
-                                    .technology-icon.android
                                 td
                                     span
                                         a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
-                                            h4=  result.title
+                                        h4=  result.title
                             tr
-                                td
-
-
                                 td
                                     p= result.summary + '...'
 
