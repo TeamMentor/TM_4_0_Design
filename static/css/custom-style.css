@@ -221,6 +221,9 @@ i.landing-page {
   padding-top: 170px;
   background: #fafafa;
 }
+#landing-page #application {
+  padding-top: 0 !important;
+}
 .bg, #results, #results-2, #search-input, #search-input .input-group {
   background: white;
   border: 1px solid #dbdbdb;
