@@ -268,7 +268,7 @@ i.landing-page {
 #copyright i, #main-app-view i {
   margin: 0 10px 0 0;
 }
-#filters h3 {
+#filters h3, #directory-list h3 {
   line-height: 0em;
 }
 #main-app-view {
@@ -969,6 +969,41 @@ ul.side-nav span.badge {
 }
 .filter-icon {
   padding: 0 5px 0 0;
+}
+.technology-icon {
+  background:url('../assets/icons/technology.jpg') no-repeat;
+  background-size: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 11.1%
+  height: 0;
+}
+.android {
+  background-position: 0% 11.1%;
+}
+.asp {
+  background-position: 0% 22.2%;
+}
+.c-plus-plus {
+  background-position: 0% 40%;
+}
+.ios {
+  background-position: 0% 60%;
+}
+.java {
+  background-position: 0% 100%;
+}
+.php {
+  background-position: 0% 100%;
+}
+.scala {
+  background-position: 0% 100%;
+}
+.wcf {
+  background-position: 0% 100%;
+}
+.web-app {
+  background-position: 0% 100%;
 }
 /*------------------------------------*
   HACKS

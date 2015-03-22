@@ -1,7 +1,7 @@
 include ../_mixins/user-mixins
 //- directory-list
 mixin directory-list
-    .bg
+    #directory-list.bg
         if title
             h3#title= title
         #containers
@@ -123,10 +123,22 @@ mixin articles-list
                     if result
                         table
                             tr
+                                td.small
+                                    br
+                                    span.label #21
+                                    .text-center
+                                        +guideline-icon
+                                    .technology-icon
+                                        .asp
+                                    // +checklist-icon
+                                    // +how-to-icon
                                 td
-                                    a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-'), id=result.id)
-                                        h4=  result.title
+                                    span
+                                        a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
+                                            h4=  result.title
                             tr
+                                td
+
                                 td
                                     p= result.summary + '...'
 
