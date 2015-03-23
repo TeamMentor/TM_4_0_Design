@@ -108,8 +108,9 @@ describe '| controllers | User-Sign-Up-Controller', ->
   it 'userSignUp (webServices - bad server)', (done)->
     req = body : {}
     res =
-      send: (html)->
-        html.assert_Is 'Could not connect with TM 3.5 server'
+      render: (jade_Page, params)->
+        jade_Page.assert_Is signUp_fail
+        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
         done()
     using new User_Sign_Up_Controller(req,res),->
       @.webServices = "http://aaaaaaa.teammentor.net"
@@ -121,8 +122,9 @@ describe '| controllers | User-Sign-Up-Controller', ->
 
     req = body : {}
     res =
-      send: (html)->
-        html.assert_Is 'Bad response received from TM 3.5 server'
+      render: (jade_Page, params)->
+        jade_Page.assert_Is signUp_fail
+        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
         done()
 
     using new User_Sign_Up_Controller(req,res),->
@@ -135,8 +137,9 @@ describe '| controllers | User-Sign-Up-Controller', ->
 
     req = body : {}
     res =
-      send: (html)->
-        html.assert_Is 'Bad data received from TM 3.5 server'
+      render: (jade_Page, params)->
+        jade_Page.assert_Is signUp_fail
+        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
         done()
 
     using new User_Sign_Up_Controller(req,res),->
@@ -149,8 +152,9 @@ describe '| controllers | User-Sign-Up-Controller', ->
 
     req = body : {}
     res =
-      send: (html)->
-        html.assert_Is 'Bad data received from TM 3.5 server'
+      render: (jade_Page, params)->
+        jade_Page.assert_Is signUp_fail
+        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
         done()
 
     using new User_Sign_Up_Controller(req,res),->
@@ -191,8 +195,9 @@ describe '| controllers | User-Sign-Up-Controller', ->
     req =
       body   : { password:'aa' , 'confirm-password':'aa'}
     res =
-      send: (data)->
-        data.assert_Is('Could not connect with TM 3.5 server')
+      render: (jade_Page, params)->
+        jade_Page.assert_Is signUp_fail
+        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
         done()
     using new User_Sign_Up_Controller(req,res),->
       @.webServices = 'https://aaaaaaaa.teammentor.net/'

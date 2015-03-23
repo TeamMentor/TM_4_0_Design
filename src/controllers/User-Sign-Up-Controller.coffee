@@ -47,18 +47,19 @@ class User_Sign_Up_Controller
     request options, (error, response, body)=>
       if (error and error.code is "ENOTFOUND")
         #[QA] ADD ISSUE: Refactor this to show TM 500 error message
-        @.res.send('Could not connect with TM 3.5 server')
-        return
+        logger?.info ('Could not connect with TM 3.5 server')
+        return @.res.render signUp_fail, {viewModel: errorMessage : 'An error occurred' }
 
       if (error or response.body is null or response.statusCode isnt 200)
-        @.res.send('Bad response received from TM 3.5 server')
-        return
+        logger?.info ('Bad response received from TM 3.5 server')
+        return @.res.render signUp_fail, {viewModel: errorMessage : 'An error occurred' }
+
 
       signUpResponse = response.body?.d
 
       if (not signUpResponse) or (not signUpResponse.Validation_Results)
-        @.res.send('Bad data received from TM 3.5 server')
-        return
+        logger?.info ('Bad data received from TM 3.5 server')
+        return @.res.render signUp_fail, {viewModel: errorMessage : 'An error occurred' }
 
       message = ''
 
