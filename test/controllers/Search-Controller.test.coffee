@@ -221,7 +221,7 @@ describe "| controllers | Search-Controller.test |", ->
           html.assert_Contains 'results'
           $ = cheerio.load html
           $('#search-input').attr().assert_Is { id: 'search-input' }
-          $('#results p').text().assert_Is 'No ResultsPlease try again'
+          $('#results p').text().assert_Is 'No results, please try again'
           done()
 
       using new Search_Controller(req, res),->
