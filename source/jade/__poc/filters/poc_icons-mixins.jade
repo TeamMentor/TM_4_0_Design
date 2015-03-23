@@ -1,0 +1,63 @@
+mixin articles-list-poc
+    #articles
+        if results
+            each result in results.take(250)
+                .bg#list-view-article
+                    if result
+                        table
+                            tr
+                                td.small
+                                    br
+                                    span.label #21
+                                    .text-center
+                                        +guideline-icon
+                                    // +checklist-icon
+                                    // +how-to-icon
+                                    .technology-icon.web-app
+                                td
+                                    span
+                                        a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
+                                            h4=  result.title
+                            tr
+                                td
+
+
+                                td
+                                    p= result.summary + '...'
+
+
+mixin filters-div-poc-574
+    if filters
+        #filters
+            .bg
+                h3 Filter by
+                for filter in filters
+                    h4.label= filter.title
+                    table.nav
+                        for result in filter.results
+                            tr
+                                if activeFilter
+                                    if activeFilter.ids.contains(result.id)
+                                        td
+                                            b= result.title
+                                            span.right.badge= result.size
+                                    else
+                                        if result.size > 0
+                                            td
+                                                a(href=href + '/' + activeFilter.filters + ',' + result.id)
+                                                    span.filter-icon
+                                                        // +guideline-icon
+                                                        // +checklist-icon
+                                                        // +how-to-icon
+                                                        // technology icons are applied by .technology-icon with .<technology> appended to it [eg. .technology-icon.asp]
+                                                    = result.title
+                                                    span.right.badge= result.size
+                                else
+                                    td
+                                        a(href=href + '/'+result.id)
+                                            span.filter-icon
+                                                // +guideline-icon
+                                                // +checklist-icon
+                                                // +how-to-icon
+                                            = result.title
+                                            span.right.badge= result.size
