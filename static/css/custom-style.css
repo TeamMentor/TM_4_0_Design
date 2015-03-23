@@ -546,7 +546,7 @@ a.minor{
 a.minor:hover {
   color: #7b7b7b;
 }
-#article a, #help-docs a, #loginwall a {
+#article a, #landing-page a {
   text-decoration: underline;
 }
 .text-center {
