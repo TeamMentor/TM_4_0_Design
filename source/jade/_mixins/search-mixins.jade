@@ -136,7 +136,7 @@ mixin articles-list
                                 td
                                     span
                                         a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
-                                        h4=  result.title
+                                            h4=  result.title
                             tr
                                 td
                                     p= result.summary + '...'
