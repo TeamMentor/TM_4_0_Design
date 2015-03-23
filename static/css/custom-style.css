@@ -974,7 +974,7 @@ ul.side-nav span.badge {
   padding: 0 5px 0 0;
 }
 .technology-icon {
-  background:url('../assets/icons/technology.jpg') no-repeat;
+  background:url('../assets/icons/technology.png') no-repeat;
   background-size: 100%;
   width: 100%;
   margin: 0 auto;
@@ -985,7 +985,7 @@ ul.side-nav span.badge {
   background-position: 0% 0%;
 }
 .asp {
-  background-position: 0% 11.1%;
+  background-position: 0% 12%;
 }
 .c-plus-plus {
   background-position: 0% 24%;

@@ -7,12 +7,13 @@ mixin articles-list-poc
                         table
                             tr
                                 td.small
+                                    br
                                     span.label #21
                                     .text-center
                                         +guideline-icon
                                     // +checklist-icon
                                     // +how-to-icon
-                                    .technology-icon.android
+                                    .technology-icon.web-app
                                 td
                                     span
                                         a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
@@ -48,6 +49,7 @@ mixin filters-div-poc-574
                                                         // +guideline-icon
                                                         // +checklist-icon
                                                         // +how-to-icon
+                                                        // technology icons are applied by .technology-icon with .<technology> appended to it [eg. .technology-icon.asp]
                                                     = result.title
                                                     span.right.badge= result.size
                                 else

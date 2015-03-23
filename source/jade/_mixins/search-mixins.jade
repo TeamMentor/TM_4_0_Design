@@ -8,16 +8,11 @@ mixin directory-list
             if(containers)
                 table.nav
                     each container in containers
-                        if container.size > 0
-                            tr
-                                td
-                                    if activeFilter
-                                        a(href= href + ',' +container.id + '/' + activeFilter.ids, id=container.id)= container.title
-                                    else
-                                        a(href= href + ',' +container.id , id=container.id)= container.title
-                                td
-                                    span.right.badge= container.size
-
+                        tr
+                            td
+                                a(href= href + ',' +container.id, id=container.id)= container.title
+                            td
+                                span.right.badge= container.size
 
 //- search-bar-input
 mixin search-bar-input
@@ -62,12 +57,7 @@ mixin results
                             p.label#resultsTitle= 'Showing ' + results.size() + ' articles'
                 td.text-right
                     if activeFilter
-                        for filter in activeFilter
-                            span#activeFilter.filter= filter.title
-                                span.close
-                                    a(href=href + '/' + activeFilter.filters.remove(filter.id)) x
-                            span 
-                        //span#activeFilter.filter= activeFilter.titles
+                        span#activeFilter.filter= activeFilter.title
                             span.close
                                 a(href=href) x
 
@@ -87,7 +77,7 @@ mixin main-app-view
                           tr
                             td
                                 //a(href='/article/' + recent_Article.id)
-                                a(href='/article/' + recent_Article.id.remove('article-') + '/' + recent_Article.title.replace(/ /g,'-').remove('.'), id=recent_Article.id)
+                                a(href='/article/' + recent_Article.id.remove('article-') + '/' + recent_Article.title.replace(/ /g,'-'), id=recent_Article.id)
                                     +article-icon
                                     = recent_Article.title
 
@@ -110,7 +100,7 @@ mixin main-app-view
                             tr
                                 td
                                     //a(href=top_Article.href)
-                                    a(href= top_Article.href.remove('article-') + '/' + top_Article.title.replace(/ /g,'-').remove('.'), id=top_Article.id)
+                                    a(href= top_Article.href.remove('article-') + '/' + top_Article.title.replace(/ /g,'-'), id=top_Article.id)
                                         +article-icon
                                         = top_Article.title
         //if (newArticles)
@@ -136,7 +126,7 @@ mixin articles-list
                                 td
                                     span
                                         a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
-                                            h4=  result.title
+                                        h4=  result.title
                             tr
                                 td
                                     p= result.summary + '...'
