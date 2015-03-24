@@ -35,6 +35,12 @@ img, object {
 .left {
   float: left !important;
 }
+.mobile {
+  display: block;
+}
+.desktop {
+  display: none;
+}
 /*------------------------------------*
    NAVIGATION
 *------------------------------------*/
@@ -615,13 +621,14 @@ button:hover, button:active {
   border-radius: 3px;
 }
 .filter {
-  padding: 5px 5px 5px 9px;
+  padding: 5px;
   background: #aaaaaa;
-  border-radius:10px;
+  border-radius: 10px;
   border: 1px solid transparent;
   text-align: center;
   color: white !important;
   font-size: 12px;
+  display: block;
 }
 span.rwd-line {
   display: block;
@@ -639,6 +646,10 @@ span.rwd-line {
   padding: 0 5px 0 10px;
   color: white;
   border-left: 1px solid white;
+  float: right;
+}
+.desktop .close a {
+  float: none;
 }
 .close-2 a {
   background: #aaaaaa;
@@ -851,6 +862,16 @@ td.small {
 @media (min-width: 853px) {
   #link-forgot-pwd {
     text-align: right;
+  }
+  .desktop  {
+    display:block;
+  }
+  .mobile {
+    display: none;
+  }
+  .filter {
+    display: inline-block;
+    margin: 2px 5px 0;
   }
   .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 { float: left; }
   .col-12 { width: 100%; }

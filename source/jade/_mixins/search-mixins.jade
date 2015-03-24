@@ -49,27 +49,51 @@ mixin search-2
 //- results
 mixin results
     #results
-        table
-            tr
-                if no_Results
-                    td
-                        p.label#no_results No results, please try again
+        .mobile.lge-container
+            if no_Results
                 td
-                    if results
-                        if results.size() > 250
-                            p.label#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
-                        else
-                            p.label#resultsTitle= 'Showing ' + results.size() + ' articles'
-                td.text-right
-                    if activeFilter
+                    p.label#no_results No Results
+                    p Please try again
+            if results
+                if results.size() > 250
+                    td
+                        p.label#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
+                else
+                    td
+                        p.label#resultsTitle= 'Showing ' + results.size() + ' articles'
+                if activeFilter
+                    table
                         for filter in activeFilter
-                            span#activeFilter.filter= filter.title
+                            tr
+                                td
+                                    span#activeFilter.filter= filter.title
+                                        span.close
+                                            a(href=href + '/' + activeFilter.filters.remove(filter.id)) x
+                            //span#activeFilter.filter= activeFilter.titles
                                 span.close
-                                    a(href=href + '/' + activeFilter.filters.remove(filter.id)) x
-                            span 
-                        //span#activeFilter.filter= activeFilter.titles
-                            span.close
-                                a(href=href) x
+                                    a(href=href) x
+        .desktop
+            table
+                tr
+                    if no_Results
+                        td
+                            p.label#no_results No Results
+                            p Please try again
+                    td
+                        if results
+                            if results.size() > 250
+                                p.label#resultsTitle= 'Showing ' + results.take(250).size() + ' articles (of '  + results.size() + ')'
+                            else
+                                p.label#resultsTitle= 'Showing ' + results.size() + ' articles'
+                    td.text-right
+                        if activeFilter
+                            for filter in activeFilter
+                                span#activeFilter.filter= filter.title
+                                    span.close
+                                        a(href=href + '/' + activeFilter.filters.remove(filter.id)) x
+                            //span#activeFilter.filter= activeFilter.titles
+                                span.close
+                                    a(href=href) x
 
 mixin results-2
     #results-2
