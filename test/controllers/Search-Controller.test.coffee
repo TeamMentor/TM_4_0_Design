@@ -149,7 +149,7 @@ describe "| controllers | Search-Controller.test |", ->
       res    =
         send: (html)->
           $    = cheerio.load html
-          $('#resultsTitle').text().assert_Is 'Showing 1 articles'
+          $('#resultsTitle').text().assert_Is 'Showing 1 articles' + 'Showing 1 articles'
           $('#results'     ).html().contains('Showing 1 articles')
           $('#articles #list-view-article').html().assert_Is_String()
           $('#list-view-article #result-id-1 h4').html().assert_Is 'result-title-1'
@@ -167,7 +167,7 @@ describe "| controllers | Search-Controller.test |", ->
       res    =
         send: (html)->
           $    = cheerio.load html
-          $('#resultsTitle').text().assert_Is 'Showing 1 articles'
+          $('#resultsTitle').text().assert_Is 'Showing 1 articles' + 'Showing 1 articles'
           $('#results'     ).html().contains('Showing 1 articles')
           $('#articles #list-view-article').html().assert_Is_String()
           $('#list-view-article #result-id-1 h4').html().assert_Is 'result-title-1'
@@ -221,7 +221,7 @@ describe "| controllers | Search-Controller.test |", ->
           html.assert_Contains 'results'
           $ = cheerio.load html
           $('#search-input').attr().assert_Is { id: 'search-input' }
-          $('#results p').text().assert_Is 'No results, please try again'
+          $('#results p').text().assert_Is 'No ResultsPlease try again' + 'No ResultsPlease try again'
           done()
 
       using new Search_Controller(req, res),->
@@ -251,7 +251,7 @@ describe "| controllers | Search-Controller.test |", ->
           $ = cheerio.load html
           $('#articles #list-view-article #result-id').attr().assert_Is { href: '/article/result-id/title-id', id: 'result-id' }
           $('#list-view-article h4').html().assert_Is 'title-id'
-          $('#activeFilter').text().assert_Is 'title-123x'
+          $('#activeFilter').text().assert_Is 'title-123x' + 'title-123x'
           done()
 
       using new Search_Controller(req, res),->
