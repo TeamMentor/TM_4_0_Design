@@ -155,12 +155,17 @@ mixin articles-list
                             tr
                                 td.small(rowspan=2)
                                     span.label= '#' + (index +1)
-                                    +checklist-icon
-                                    +guideline-icon
-                                    +alert-icon
-                                    +how-to-icon
-                                    .android-icon.web-app(title='Android')
-                                    .technology-icon.web-app(title='Technology Icon')
+                                    case result.type
+                                        when 'Checklist Item'
+                                            +checklist-icon
+                                        when 'Guideline'
+                                            +guideline-icon
+                                        when 'Code Example'
+                                            +alert-icon
+                                        when 'How To'
+                                            +how-to-icon
+                                            //.android-icon.web-app(title='Android')
+                                            //.technology-icon.web-app(title='Technology Icon')
 
 
                                 td
