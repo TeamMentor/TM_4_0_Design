@@ -69,9 +69,6 @@ mixin results
                                     span#activeFilter.filter= filter.title
                                         span.close
                                             a(href=href + '/' + activeFilter.filters.remove(filter.id)) x
-                            //span#activeFilter.filter= activeFilter.titles
-                                span.close
-                                    a(href=href) x
         .desktop
             table
                 tr
@@ -110,7 +107,6 @@ mixin main-app-view
                         for recent_Article in recent_Articles
                           tr
                             td
-                                //a(href='/article/' + recent_Article.id)
                                 a(href='/article/' + recent_Article.id.remove('article-') + '/' + recent_Article.title.replace(/ /g,'-').remove('.'), id=recent_Article.id)
                                     +article-icon
                                     = recent_Article.title
@@ -159,13 +155,31 @@ mixin articles-list
                             tr
                                 td.small(rowspan=2)
                                     span.label= '#' + (index +1)
+                                    +checklist-icon
+                                    +guideline-icon
+                                    +alert-icon
+                                    +how-to-icon
+                                    .android-icon.web-app(title='Android')
+                                    .technology-icon.web-app(title='Technology Icon')
+
+
                                 td
                                     span
                                         a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                                             h4= result.title
                             tr
                                 td
-                                    p= result.summary + '...'
+                                    p= result.summary
+
+                                    span.label= 'Phase: '
+                                    span= result.phase
+                                    br
+                                    span.label= 'Technology: '
+                                    span= result.technology
+                                    br
+                                    span.label= 'Type: '
+                                    span= result.type
+
 
 //- filters
 mixin filters-div
