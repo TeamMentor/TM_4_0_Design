@@ -152,15 +152,17 @@ mixin main-app-view
 mixin articles-list
     #articles
         if results
-            each result in results.take(250)
+            each result,index in results.take(250)
                 .bg#list-view-article
                     if result
                         table
                             tr
+                                td.small(rowspan=2)
+                                    span.label= '#' + (index +1)
                                 td
                                     span
                                         a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
-                                            h4=  result.title
+                                            h4= result.title
                             tr
                                 td
                                     p= result.summary + '...'
