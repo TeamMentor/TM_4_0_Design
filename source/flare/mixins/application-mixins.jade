@@ -6,14 +6,14 @@ mixin flare-search-bar-input
     #search-bar
         .row.collapse
             .small-1.columns
-                a.button.postfix#navigate-button
+                a.button.search.full-width
                     i.fi-map
             .small-7.large-9.columns
                 input#search(type='text', placeholder='Type keywords here')
             .small-4.large-2.columns
-                a.button.postfix#search-button(href='app-keyword-search')
+                a.button.search.half-width(href='app-keyword-search')
                     +search-icon
-                a.button.postfix#filters-button(href='filters-div')
+                a.button.search.half-width(href='filters-div')
                     +filter-icon
 
 //- Flare Results-Save-Clear
@@ -217,7 +217,7 @@ mixin save-div
                 .small-10.columns
                     +save-input
                 .small-2.columns
-                    a.button.postfix#save-button(href='alert-application')
+                    a.button.search(href='alert-application')
                         +save-icon
 
 // Share Div
@@ -228,5 +228,5 @@ mixin share-div
                 .small-10.columns
                     +share-input
                 .small-2.columns
-                    a.button.postfix#share-button(href='alert-application')
+                    a.button.search(href='alert-application')
                         +share-icon
