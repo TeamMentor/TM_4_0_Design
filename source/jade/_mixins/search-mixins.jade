@@ -153,15 +153,17 @@ mixin articles-list
                     if result
                         table
                             tr
-                                td.small(rowspan=2)
+                                td.small
                                     span.label= '#' + (index +1)
+                                    span.label Type
+                                    span.label Tech
                                     case result.type
                                         when 'Checklist Item'
                                             +checklist-icon
                                         when 'Guideline'
                                             +guideline-icon
                                         when 'Code Example'
-                                            +alert-icon
+                                            +code-sample-icon
                                         when 'How To'
                                             +how-to-icon
                                             //.android-icon.web-app(title='Android')
@@ -173,6 +175,7 @@ mixin articles-list
                                         a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                                             h4= result.title
                             tr
+                                td
                                 td
                                     p= result.summary
 

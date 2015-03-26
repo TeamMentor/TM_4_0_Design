@@ -680,6 +680,8 @@ td, th {
 }
 td.small {
   width: 10px;
+  padding-top: 20px;
+  text-align: center;
 }
 .data tr {
   border: 1px solid #dbdbdb;
