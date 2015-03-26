@@ -155,8 +155,6 @@ mixin articles-list
                             tr
                                 td.small
                                     span.label= '#' + (index +1)
-                                    span.label Type
-                                    span.label Tech
                                     case result.type
                                         when 'Checklist Item'
                                             +checklist-icon
@@ -166,8 +164,6 @@ mixin articles-list
                                             +code-sample-icon
                                         when 'How To'
                                             +how-to-icon
-                                            //.android-icon.web-app(title='Android')
-                                            //.technology-icon.web-app(title='Technology Icon')
 
 
                                 td

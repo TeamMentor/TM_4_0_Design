@@ -1,0 +1,56 @@
+extends ../../_layouts/page_home
+include ../../_mixins/search-mixins
+include poc_active_filters-mixins
+
+block content
+    #application
+        .row
+            .col-3
+                .lge-container
+            .col-6
+                .lge-container
+                    .bg
+                        h4 Type icons
+                        h5 Guideline
+                        +guideline-icon
+                        h5 Checklist
+                        +checklist-icon
+                        h5 How To
+                        +how-to-icon
+                        h5 Code Sample
+                        +code-sample-icon
+
+                        br
+                        h4 Technology Icons
+                        .row
+                            .col-4
+                                h5 Android
+                                .technology-icon.android(title='Android')
+                            .col-4
+                                h5 ASP.Net (all)
+                                .technology-icon.asp(title='ASP.Net')
+                            .col-4
+                                h5 C++
+                                .technology-icon.c-plus-plus(title='C++')
+                        .row
+                            .col-4
+                                h5 iOS
+                                .technology-icon.ios(title='iOS')
+                            .col-4
+                                h5 Java
+                                .technology-icon.java(title='Java')
+                            .col-4
+                                h5 PHP
+                                .technology-icon.php(title='PHP')
+                        .row
+                            .col-4
+                                h5 Scala
+                                .technology-icon.scala(title='Scala')
+                            .col-4
+                                h5 WCF
+                                .technology-icon.wcf(title='WCF')
+                            .col-4
+                                h5 Web App
+                                .technology-icon.web-app(title='Web App')
+            .col-3
+                .lge-container
