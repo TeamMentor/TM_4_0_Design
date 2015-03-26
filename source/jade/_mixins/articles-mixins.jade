@@ -1,6 +1,13 @@
 mixin article
     #article.bg.content
-        h1#title.article-title= title
+        table
+            tr
+                td.small
+                    span.label= '#' + (index +1)
+                    //+filter-icon('Technology',result.technology)
+                    //+filter-icon('Type', result.type)
+                td
+                    h1#title.article-title= title
         #html.article-content!= article_Html
 
 mixin no-article

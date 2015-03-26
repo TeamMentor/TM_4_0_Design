@@ -105,51 +105,54 @@ mixin article-icon
 mixin alert-icon
   i.fi-megaphone
 
+mixin checklist-icon
+  i.fi-checkbox(title='Checklist')
 
+mixin guideline-icon
+  i.fi-page(title='Guideline')
 
-- var icon_style_fix   = 'background-size:10%;padding-top:10%'
+mixin code-sample-icon
+  i.fi-puzzle(title='Code Sample')
+
+mixin how-to-icon
+  i.fi-list-bullet(title='How To')
 
 mixin filter-icon(filter, title)
   case filter
     when 'Type'
       case title
         when 'Checklist Item'
-          i.fi-checkbox(title='Checklist')
+          +checklist-icon
         when 'Guideline'
-          i.fi-page(title='Guideline')
+          +guideline-icon
         when 'Code Example'
-          i.fi-puzzle(title='Code Sample')
+          +code-sample-icon
         when 'How To'
-          i.fi-list-bullet(title='How To')
+          +how-to-icon
         default
-              i.fi-megaphone
+          span
 
     when 'Technology'
       case title
         when 'ASP.NET 3.5'
         when '.NET 3.5'
         when 'ASP.NET 4.0'
-            .technology-icon.asp(title='ASP.Net'    , style=icon_style_fix)
+          .technology-icon.asp(title='ASP.Net')
         when 'Android'
-          .technology-icon.android(title='Android'  , style=icon_style_fix)
+          .technology-icon.android(title='Android')
         when 'C++'
-          .technology-icon.c-plus-plus(title='C++'  , style=icon_style_fix)
+          .technology-icon.c-plus-plus(title='C++')
         when 'iOS'
-          .technology-icon.ios(title='iOS'          , style=icon_style_fix)
+          .technology-icon.ios(title='iOS')
         when 'Java'
-          .technology-icon.java(title='Java'        , style=icon_style_fix)
+          .technology-icon.java(title='Java')
         when 'PHP'
-          .technology-icon.php(title='PHP'          , style=icon_style_fix)
+          .technology-icon.php(title='PHP')
         when 'Scala with Play Framework'
-          .technology-icon.scala(title='Scala'      , style=icon_style_fix)
+          .technology-icon.scala(title='Scala')
         when 'WCF 3.5'
-          .technology-icon.wcf(title='WCF'          , style=icon_style_fix)
+          .technology-icon.wcf(title='WCF')
         when 'Web Application'
-          .technology-icon.web-app(title='Web Application', style=icon_style_fix)
-        default
-          i.fi-megaphone
-
-    when 'Phase'
-      case title
+          .technology-icon.web-app(title='Web Application')
         default
           i.fi-megaphone
