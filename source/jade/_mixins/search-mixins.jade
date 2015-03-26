@@ -155,16 +155,10 @@ mixin articles-list
                             tr
                                 td.small
                                     span.label= '#' + (index +1)
-                                    case result.type
-                                        when 'Checklist Item'
-                                            +checklist-icon
-                                        when 'Guideline'
-                                            +guideline-icon
-                                        when 'Code Example'
-                                            +code-sample-icon
-                                        when 'How To'
-                                            +how-to-icon
-
+                                    br
+                                    +filter-icon('Technology','Java')
+                                    //+filter-icon('Phase'     ,result.phase)
+                                    +filter-icon('Type'      ,result.type)
 
                                 td
                                     span
@@ -199,15 +193,23 @@ mixin filters-div
                                 if activeFilter
                                     if activeFilter.ids.contains(result.id)
                                         td
+                                            +filter-icon(filter.title, result.title)
+                                            span= ' '
                                             b= result.title
                                             span.right.badge= result.size
                                     else
                                         if result.size > 0
                                             td
-                                                a(href=href + '/' + activeFilter.filters + ',' + result.id)= result.title
+                                                a(href=href + '/' + activeFilter.filters + ',' + result.id)
+                                                    +filter-icon(filter.title, result.title)
+                                                    span= ' '
+
+                                                    span= result.title
                                                     span.right.badge= result.size
                                 else
                                     td
                                         a(href=href + '/'+result.id)
+                                            +filter-icon(filter.title, result.title)
+                                            span= ' '
                                             span.filter-icon= result.title
                                             span.right.badge= result.size

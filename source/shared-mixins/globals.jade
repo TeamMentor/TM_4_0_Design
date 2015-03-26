@@ -105,14 +105,51 @@ mixin article-icon
 mixin alert-icon
   i.fi-megaphone
 
-mixin guideline-icon
-  i.fi-page(title='Guideline')
 
-mixin checklist-icon
-  i.fi-checkbox(title='Checklist')
 
-mixin how-to-icon
-  i.fi-list-bullet(title='How To')
+- var icon_style_fix   = 'background-size:10%;padding-top:10%'
 
-mixin code-sample-icon
-  i.fi-puzzle(title='Code Sample')
+mixin filter-icon(filter, title)
+  case filter
+    when 'Type'
+      case title
+        when 'Checklist Item'
+          i.fi-checkbox(title='Checklist')
+        when 'Guideline'
+          i.fi-page(title='Guideline')
+        when 'Code Example'
+          i.fi-puzzle(title='Code Sample')
+        when 'How To'
+          i.fi-list-bullet(title='How To')
+        default
+              i.fi-megaphone
+
+    when 'Technology'
+      case title
+        when 'ASP.NET 3.5'
+        when '.NET 3.5'
+        when 'ASP.NET 4.0'
+            .technology-icon.asp(title='ASP.Net'    , style=icon_style_fix)
+        when 'Android'
+          .technology-icon.android(title='Android'  , style=icon_style_fix)
+        when 'C++'
+          .technology-icon.c-plus-plus(title='C++'  , style=icon_style_fix)
+        when 'iOS'
+          .technology-icon.ios(title='iOS'          , style=icon_style_fix)
+        when 'Java'
+          .technology-icon.java(title='Java'        , style=icon_style_fix)
+        when 'PHP'
+          .technology-icon.php(title='PHP'          , style=icon_style_fix)
+        when 'Scala with Play Framework'
+          .technology-icon.scala(title='Scala'      , style=icon_style_fix)
+        when 'WCF 3.5'
+          .technology-icon.wcf(title='WCF'          , style=icon_style_fix)
+        when 'Web Application'
+          .technology-icon.web-app(title='Web Application', style=icon_style_fix)
+        default
+          i.fi-megaphone
+
+    when 'Phase'
+      case title
+        default
+          i.fi-megaphone
