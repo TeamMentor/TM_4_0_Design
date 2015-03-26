@@ -620,6 +620,9 @@ button:hover, button:active {
   font-size: inherit;
   border-radius: 3px;
 }
+.alert a {
+  text-decoration: underline;
+}
 .filter {
   padding: 5px;
   background: #aaaaaa;
@@ -1026,6 +1029,31 @@ ul.side-nav span.badge {
 }
 .web-app {
   background-position: 0% 102%;
+}
+.poc {
+  margin-top: 0;
+  padding-top: 0;
+}
+.poc #results-2, #links.icons {
+  padding-top: 10px;
+}
+.poc #message {
+  margin-top: 10px;
+}
+#message {
+  margin-top: 160px;
+  font-size: 0.85em !important;
+}
+#message a {
+  text-decoration: underline;
+  text-transform: lowercase !important;
+}
+#team-mentor-navigation #message {
+  font-size: 0.65em !important;
+  margin-top: 0;
+}
+#team-mentor-navigation #message a {
+  font-size: 1em !important;
 }
 /*------------------------------------*
   HACKS
