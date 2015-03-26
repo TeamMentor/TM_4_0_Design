@@ -255,6 +255,9 @@ i.landing-page {
 .bg#list-view-article p {
   margin-top: 0;
 }
+.bg#list-view-article a:hover h4 {
+  color: #8aaf3e !important;
+}
 .bg#list-view-article span.badge {
   margin-top: 10px;
 }
