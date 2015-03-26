@@ -161,8 +161,6 @@ nav a:hover, nav p:hover {
   -webkit-flex-direction: column;
 }
 #results-save-clear {
-  background: white;
-  border: 1px solid #dbdbdb;
   border-radius: 3px;
   margin: 0 0 20px 0;
   padding-bottom: 7px;
@@ -966,7 +964,7 @@ input#search {
   }
   #logo {
     flex: 1;
-    background-size: 90%;
+    max-height: 40px;
   }
   #landing-page h1 {
     line-height: 2.5em;
@@ -1022,18 +1020,10 @@ input#search {
     text-align: left;
   }
 }
-@media (min-width : 1000px) {
-  #logo {
-    background-size: 80%;
-  }
-}
 @media (min-width : 1200px) {
   .landing-page {
     width: 80%;
     margin: 0 auto;
-  }
-  #logo {
-    background-size: 70%;
   }
 }
 @media (min-width: 2000px) {
