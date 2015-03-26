@@ -117,6 +117,12 @@ mixin code-sample-icon
 mixin how-to-icon
   i.fi-list-bullet(title='How To')
 
+mixin any-technology-icon
+  i.fi-asterisk(title='Any Technology')
+
+mixin html5-icon
+  i.fi-html5(title='HTML5')
+
 mixin filter-icon(filter, title)
   case filter
     when 'Type'
@@ -154,5 +160,7 @@ mixin filter-icon(filter, title)
           .technology-icon.wcf(title='WCF')
         when 'Web Application'
           .technology-icon.web-app(title='Web Application')
+        when 'HTML5'
+          +html5-icon
         default
-          i.fi-megaphone
+          +any-technology-icon
