@@ -3,9 +3,9 @@ mixin article
         table
             tr
                 td.small
-                    span.label= '#' + (index +1)
-                    //+filter-icon('Technology',result.technology)
-                    //+filter-icon('Type', result.type)
+                    //span.label= '#' + (index +1)
+                    +filter-icon('Technology',technology)
+                    +filter-icon('Type', type)
                 td
                     h1#title.article-title= title
         #html.article-content!= article_Html

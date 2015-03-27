@@ -35,10 +35,12 @@ class Article_Controller
       article_Id = data.article_Id
       if article_Id
         @graphService.node_Data article_Id, (article_Data)=>
-            title = article_Data?.title
+            title      = article_Data?.title
+            technology = article_Data?.technology
+            type       = article_Data?.type
             @graphService.article_Html article_Id, (data)=>
               @recentArticles_Add article_Id, title
-              send_Article { id : article_Id, title: title,  article_Html: data.html}
+              send_Article { id : article_Id, title: title,  article_Html: data.html, technology: technology, type: type}
       else
         send_Article null
 
