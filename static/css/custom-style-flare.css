@@ -146,7 +146,7 @@ nav a:hover, nav p:hover {
 #lp-links button {
   width: auto;
   padding: 10px;
-  background: #b4cf7b;
+  background: #a6cb5a;
   color: white;
   border: none;
   -webkit-box-shadow: none;
@@ -179,24 +179,19 @@ nav a:hover, nav p:hover {
 #search-bar {
   -webkit-order: 6;
   -webkit-flex: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 #search-bar > div {
-  background: #fff;
-  border:1px solid #dbdbdb;
-  padding: 5px 3px 2px;
+  background:  white;
+  border: 1px solid #dbdbdb;
+  padding: 5px 15px 7px 15px;
   border-radius: 3px;
-}
-#search-bar .button i {
-  color: #8aaf3e;
-}
-#search-bar .button:hover i {
-  color: #b4cf7b;
+  margin: 0 0 15px 0;
 }
 #left-nav, #results, #right-nav {
   padding: 2px;
 }
-#left-nav {
+#left-nav, #small-left-nav {
   -webkit-order: 8;
   -webkit-flex: 100%;
   overflow-y: auto;
@@ -214,29 +209,35 @@ nav a:hover, nav p:hover {
   -webkit-flex-wrap: nowrap;
   -webkit-flex-direction: column;
 }
-#results-save-clear {
-  background: white;
-  border: 1px solid #dbdbdb;
-  border-radius: 3px;
-  margin: 0 0 20px 0;
-  padding-bottom: 7px;
+#large-results {
+  -webkit-flex: 100%;
+  -webkit-order: 10;
+  display: block;
+  min-height: 1px;
+  overflow-y: auto;
+  -webkit-flex-wrap: nowrap;
+  -webkit-flex-direction: column;
 }
-#results-save-clear h4 {
+#results-save-clear, #my-results {
+  margin: 0 0 5px 0;
+  padding: 0 15px 7px 15px;
+}
+#results-save-clear h4, #my-results h4 {
   padding-top: 10px;
 }
-#list-view-article, .bg {
-  background: white;
+.list-view-article, .bg {
+  background: #fefefe;
   padding: 5px;
   border-radius: 3px;
   border: 1px solid #dbdbdb;
   margin-bottom: 20px;
 }
-#list-view-article h3 {
+.list-view-article h3 {
   border-bottom: 1px solid #dbdbdb;
   padding: 0 0 10px 0;
   margin-bottom: 10px;
 }
-#list-view-article p {
+.list-view-article p {
   margin-top: 10px;
 }
 #filters-active {
@@ -246,8 +247,9 @@ nav a:hover, nav p:hover {
   padding: 20px;
   margin-bottom: 20px;
 }
-.bg h3 {
-  margin-top: 0;
+#article h1 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dbdbdb;
 }
 #article-options {
   margin: 20px 0;
@@ -289,7 +291,7 @@ nav a:hover, nav p:hover {
   font-size: 14px;
   color: #444444;
 }
-#right-nav {
+#right-nav, #small-right-nav {
   -webkit-order: 9;
   -webkit-flex: 100%;
   overflow-y: auto;
@@ -322,14 +324,11 @@ section {
 .about h3, .usp h2, .call-to-action h2 {
   color: white;
 }
-.about-us {
+.about-us, .features {
   padding: 2% 0;
 }
 .call-to-action {
   background-position: 0em -18em;
-}
-.call-to-action button i, .usp button i {
-  padding-right: 10px;
 }
 .usp {
   background-position: 0em 0em;
@@ -371,9 +370,9 @@ section {
 }
 .features i, .reasons i, #summary i {
   color: #8baf3e;
-  font-size: 3em;
+  font-size: 2em;
 }
-#features h2 {
+.features h2 {
   text-align: left;
 }
 .footer {
@@ -409,6 +408,10 @@ section {
   -webkit-order: 8;
   -webkit-flex: 100%;
   overflow-y: auto;
+}
+.container {
+  width: 95%;
+  margin: 0 auto;
 }
 /*------------------------------------*
    SUB-NAVIGATION
@@ -468,7 +471,7 @@ ul.side-nav li a {
   display: block;
   text-decoration: none;
 }
-ul.side-nav li a:hover {
+ul.side-nav li:hover {
   background-color: #dbdbdb;
 }
 ul.side-nav span.badge {
@@ -481,10 +484,10 @@ ul.side-nav span.badge {
 *------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
-}
-h1, h2, h3, h4 {
   font-weight: normal;
-  color: #aaaaaa;
+}
+h1, h2, h3 {
+  color: #7b7b7b;
 }
 h4, h5 {
   color: #444444;
@@ -542,9 +545,6 @@ hr {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-i {
-  color: #8aaf3e;
-}
 a {
   color: #444444;
   text-decoration: underline;
@@ -565,12 +565,12 @@ a.action:hover, a.action:focus, a.action:active {
   color: #49661f;
 }
 .minor{
-  color: #aaaaaa;
+  color: #444444;
   text-decoration: none;
   font-size: 14px;
 }
 .minor:hover {
-  color: #444444;
+  color: #aaaaaa;
   text-decoration: none;
 }
 .text-center {
@@ -588,7 +588,6 @@ a.action:hover, a.action:focus, a.action:active {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 12px;
-  font-weight: 700;
   color: #444444;
 }
 /*------------------------------------*
@@ -611,7 +610,7 @@ dl.tabs dd a {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-  background: #b4cf7b;
+  background: #a6cb5a;
   color: #fff;
   text-align: center;
   transition: all 0.5s;
@@ -634,6 +633,9 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   padding: 10px;
   width: 100%;
 }
+.tabs-content .content {
+  padding: 0.5em 0 1.5em 0;
+}
 #articles .tabs dd {
   width: 25%;
   border: none;
@@ -653,8 +655,13 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   border-bottom: 1px solid #dbdbdb;
 }
 #articles .tabs dd a:hover, #articles dl.tabs dd.active a {
+<<<<<<< Updated upstream
   color: #6c9020 !important;
   border-bottom: 1px solid #6c9020;
+=======
+  color: #8aaf3e !important;
+  border-bottom: 1px solid #8aaf3e;
+>>>>>>> Stashed changes
 }
 #articles .tabs-content {
   background: transparent;
@@ -669,17 +676,23 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
 #related-options .tabs-content {
   background: #fafafa;
 }
+#related-options > dl > dd > a > i {
+  margin-right: 10px;
+}
 /*------------------------------------*
    ACCORDION
 *------------------------------------*/
-.accordion {
+dl.accordion {
   margin: 0;
   padding: 0;
 }
 .accordion .accordion-navigation, .accordion dd {
   margin: 0;
   border: 1px solid #dbdbdb;
-  margin: 20px 0;
+  margin-top: 5px;
+}
+.accordion .accordion-navigation:nth-child(1), .accordion dd:nth-child(1) {
+  margin-top: 0;
 }
 .accordion .accordion-navigation > a, .accordion dd > a {
   background: white;
@@ -690,17 +703,13 @@ dl.tabs dd a:hover, dl.tabs dd a:active {
   font-weight: 700;
   color: #444444;
   border-bottom: 1px solid #dbdbdb;
-  border-radius; 3px;
+  border-radius: 3px;
 }
 .accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
-  background: #fafafa;
+  background: #f0f0f0;
 }
 .accordion .accordion-navigation > a:active, .accordion dd > a:active {
   background: #8aaf3e;
-}
-.accordion .accordion-navigation > .content.active, .accordion dd > .content.active {
-  padding-top: 10px;
-  b
 }
 /*------------------------------------*
    TABLES
@@ -733,31 +742,48 @@ button, .button {
   display: inline-block;
 }
 button:hover, button:active, .button:hover, .button:active {
-  background: #b4cf7b;
+  background: #a6cb5a;
   text-decoration: none;
   transition: all 0.5s;
 }
-button i, .button i {
-  color: white;
+button.full-width, .button.full-width {
+  width: 100%;
 }
-.app {
+button.half-width, .button.half-width {
+  width: 50%;
+}
+.search {
+  background: transparent;
   height: auto;
   padding: 5px 0;
+<<<<<<< Updated upstream
   margin-top: 10px;
   width:50% !important;
   background: #b4cf7b;
   border: 1px solid #fafafa;
+=======
+  margin-top: 5px;
+>>>>>>> Stashed changes
   border-radius: 3px;
-  color: white;
+  border: 1px solid transparent;
+  color: #8aaf3e;
   -webkit-box-shadow: none;
   box-shadow: none;
-  text-align: center;
 }
-.app:hover, .app:active {
-  background: #8aaf3e;
-  color: white;
-  border: 1px solid #fafafa;
+.search:hover, .search:active {
   box-shadow: none;
+  color: #6c9020;
+  background: transparent;
+}
+.app {
+  background: #dbdbdb;
+  height: auto;
+  padding: 5px 0;
+  margin-top: 10px;
+  border: 1px solid #fafafa;
+}
+.app:hover {
+  background: #aaaaaa;
 }
 .postfix {
   border-radius: 0;
@@ -765,28 +791,38 @@ button i, .button i {
   padding: 13px 5px 5px 5px;
   border-radius: 0px;
 }
-.postfix i:hover {
-  color: #b4cf7b;
+.icon {
+  padding-right: 10px;
 }
-.postfix i, .app i {
+.app i, .search i {
   text-align: center;
   margin: 0 auto;
   font-size: 20px;
 }
+<<<<<<< Updated upstream
 .app i {
   color: #ffffff !important;
 }
 #save-button, #share-button, #navigate-button, #show-button {
+=======
+#save-button, #share-button, #navigate-button {
+>>>>>>> Stashed changes
   text-align: center;
 }
-#search-bar .button, #save-button, #share-button {
+#save-button, #share-button {
   background: transparent;
+  color: #8aaf3e;
+}
+#show-button {
+  border-radius: 3px;
+  margin-left: 2px;
 }
 .dropdown:after {
   content: '';
 }
 .controls {
   background: #dbdbdb;
+  color: #444444;
   width: 100%;
   padding: 5px 0;
   margin: 5px 0;
@@ -824,11 +860,11 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
   background-color: #fafafa;
   font-family: inherit;
   border: none;
-  border: 2px solid #dbdbdb;
+  border: 1px solid #dbdbdb;
   color: #444444;
   border-radius: 3px;
   font-size: 1em;
-  margin: 0 0 5px 0;
+  margin: 5px 0;
   padding: 0 0 0 0.5rem;
   height: 3rem;
   -webkit-box-sizing: border-box;
@@ -839,18 +875,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus
 input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus,
 input[type="url"]:focus, textarea:focus, select:focus {
   outline: none;
-  border: 2px solid #aaaaaa;
-}
-input#search {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #dbdbdb;
-  border-radius: 0px;
-  outline: none;
-  background: white;
-}
-input#search:active, input#search:focus {
-  border-bottom: 2px solid #aaaaaa;
+  border: 1px solid #aaaaaa;
 }
 #filters input[type=radio] {
   display: none;
@@ -890,10 +915,10 @@ input#search:active, input#search:focus {
 *------------------------------------*/
 .alert-box {
   margin: 10px 0;
-  background-color: #8baf3e;
-  border: 1px solid #8baf3e;
+  background-color: #a6cb5a;
+  border: none;
   border-radius: 3px;
-  color: #ffffff;
+  color: #444444;
   font-size: 14px;
   letter-spacing: 1px;
   position: relative;
@@ -901,7 +926,7 @@ input#search:active, input#search:focus {
 }
 .alert-box.active {
   background-color: #dbdbdb;
-  color: #fff;
+  color: #444444;
   border: 1px solid #dbdbdb;
 }
 .badge {
@@ -932,9 +957,6 @@ input#search:active, input#search:focus {
   }
   .call-to-action {
     background-position: 0em -32em;
-  }
-  button, .button {
-    width: 100%;
   }
 }
 @media (min-width: 641px) {
@@ -999,6 +1021,9 @@ input#search:active, input#search:focus {
   .footer {
     text-align: left;
   }
+  .control-panel {
+    margin-top: 15px !important;
+  }
 }
 @media only screen and (min-width : 900px) {
   #application {
@@ -1059,24 +1084,31 @@ input#search:active, input#search:focus {
   #left-nav:empty, #right-nav:empty {
     display: block;
   }
-  #left-nav, #results, #right-nav {
+  #left-nav, #results, #right-nav, #large-results, #small-right-nav, #small-left-nav {
     padding: 7px;
+  }
+  #small-left-nav, #small-right-nav {
+    flex: 1;
   }
   #results {
     flex: 2;
     -webkit-order: 8;
   }
+  #large-results {
+    flex: 8;
+    -webkit-order: 8;
+  }
   .fixed {
     width: 50%;
   }
-  #right-nav {
+  #right-nav, #small-right-nav {
     -webkit-order: 9;
   }
   #loginwall, #summary {
     padding: 20px;
   }
   .tabs-content {
-    padding: 10px 40px;
+    padding: 10px 20px;
   }
 }
 @media (min-width : 1200px) and (-webkit-device-pixel-ratio: 1.5) {
