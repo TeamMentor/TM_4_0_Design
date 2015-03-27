@@ -5,7 +5,8 @@ mixin user-details-display
 			.small-10.columns
 				h3 User Details
 			.small-2.columns
-				a.button.controls(href='/user-edit')
+				br
+				a.button.controls.full-width(href='/user-edit')
 					+edit-icon
 		.row
 			.small-12.columns
@@ -38,6 +39,7 @@ mixin permanent-filters
 			.small-10.columns
 				h3 Permanent Filters
 			.small-2.columns
+				br
 				a.action(href='user-add-filter')
 					+open-icon
 		+flare-filters-active
@@ -48,10 +50,11 @@ mixin other-user-settings
 		h3 Danger Zone
 		.row
 			.small-12.large-6.columns
-				a.button.controls(href='user-new-password')
+				a.button.controls.icon(href='user-new-password')
 					+new-pw-icon
 			.small-12.large-6.columns
-				a.button.controls(href='#') Delete your account
+				a.button.controls.icon(href='#')
+					+delete-account-icon
 
 //- Flare Edit User Details
 mixin flare-edit-user-details

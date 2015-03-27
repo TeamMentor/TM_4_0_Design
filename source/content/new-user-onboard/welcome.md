@@ -6,6 +6,6 @@ What you can expect to find inside:
 
 * Articles that will help you deal with common security issues;
 * Courses that will teach you new solutions; and
-* Learning Paths that will help you become a savvy programmer.
+* Curated Content that will help you become a savvy programmer.
 
 Still sound good? Come on in, then.

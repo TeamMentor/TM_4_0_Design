@@ -49,6 +49,10 @@ mixin new-pw-icon
 	i.fi-key
 	span Change Password
 
+mixin delete-account-icon
+	i.fi-trash
+	span Delete Your Account
+
 mixin change-filters-icon
 	i.fi-results
 	span Add/Remove Permanent Filters
@@ -78,7 +82,7 @@ mixin flare-password-input
 		.small-10.columns
 			input(type='password', placeholder='Password')
 		.small-2.columns
-			a.button.postfix#save-button(href='#') SHOW
+			a.button.postfix.full-width#show-button(href='#') SHOW
 
 mixin flare-new-password-input
 	label New Password
@@ -87,10 +91,6 @@ mixin flare-new-password-input
 			input(type='password', placeholder='New Password')
 		.small-2.columns
 			.button.postfix#show-button(href='#') Show
-
-mixin password-input
-	label Password
-	input(type='password', id='password', placeholder='Password')
 
 mixin new-password-input
 	label(for='user-new-password') New Password
@@ -341,6 +341,10 @@ mixin save-button
 	button.controls(href='app-keyword-search-save')
 		+save-icon
 
+mixin trash-button
+	button.controls(href='app-keyword-search-save')
+		+clear-icon
+
 mixin share-button
 	button.controls
 		+share-icon
@@ -355,25 +359,34 @@ mixin clear-all-button
 	button(type='submit', id='btn-clear-all') Clear All
 
 mixin edit-button
-	button(type='submit', id='btn-clear-all') Edit
+	button(type='submit', id='btn-edit') Edit
+
+mixin reset-pwd-button
+	button(type='submit', id='btn-reset-pwd') Reset password
 
 //- Alert System
 mixin flare-alert
 	.alert-box(data-alert='')
-		span Error, Validation or Alert Message Here
+		.row
+			.small-1.columns
+				+alert-icon
+			.small-11.columns
+				span Error, Validation or Alert Message Here
 		a.close(href='#') ×
 
 mixin copyright
 	#copyright
 		.row
-			.small-12
+			.small-12.medium-offset-3.medium-6.large-offset-4.large-4.columns
 				a(href='http://www.securityinnovation.com/', target='_blank')
-					#si-logo
-				include:md ../../content/articles/copyright-information.md
-				ul
-					li
-						+i-email
-						a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
-					li
-						+i-toc
-						a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions
+					.logo.si-logo
+		.row
+			.small-12.columns
+			include:md ../../content/articles/copyright-information.md
+			ul
+				li
+					+i-email
+					a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
+				li
+					+i-toc
+					a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions

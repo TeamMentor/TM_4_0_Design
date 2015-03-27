@@ -33,7 +33,7 @@ mixin sign-up-form
 				include:md ../../content/getting-started/agree-to-toc.md
 		br
 		.row
-			.small-12.columns
+			.small-12.medium-6.columns
 				+sign-up-button
 
 mixin sign-up-form-prompts
@@ -55,7 +55,7 @@ mixin sign-up-form-prompts
 			.small-12.columns
 				include:md ../../content/getting-started/agree-to-toc.md
 		.row
-			.small-12.columns
+			.small-12.medium-6.columns
 				+sign-up-button
 
 mixin flare-forgot-password-form
@@ -65,5 +65,20 @@ mixin flare-forgot-password-form
 			.small-12.columns
 				+email-input
 		.row
-			.small-12.columns
+			.small-12.medium-6.columns
 				+get-password-button
+
+mixin pwd-reset-form
+	.bg
+		P Reset your password
+		form(role='form' method='post' action='/flare/home/main-app-view')
+			.row
+				.small-12.columns
+					+password-input
+			.row
+				.small-12.columns
+					+confirm-new-password-input
+			br
+			.row
+				.small-12.medium-7.columns
+					+reset-pwd-button
