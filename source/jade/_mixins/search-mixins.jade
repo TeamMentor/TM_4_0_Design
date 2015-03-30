@@ -120,7 +120,7 @@ mixin main-app-view
                             tr
                                 td
                                     a(href='/search?text=' + top_Search.title.str().url_Encode())
-                                        //+filter-icon(filter.title, result.title)
+                                        +search-icon
                                         = top_Search.title
             .bg
                 #top-articles
