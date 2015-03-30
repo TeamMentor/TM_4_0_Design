@@ -12,7 +12,9 @@ body {
   margin: 0;
   padding: 0;
   display: -webkit-flex;
+  display: flex;
   -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
   background-color: #fafafa;
 }
 body > * {
@@ -22,10 +24,15 @@ body > * {
 }
 nav {
   -webkit-flex-direction: row;
+  flex-direction: row;
   -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-flex: 100%;
+  flex: 100%;
   -webkit-order: 1;
+  order: 1;
   display: -webkit-flex;
+  display: flex;
   z-index: 99;
   background: white;
   border: 1px solid #dbdbdb;
@@ -49,36 +56,47 @@ nav a:hover, nav p:hover {
 }
 #customer {
   -webkit-order: 2;
+  order: 2;
   -webkit-flex: 110%;
+  flex: 110%;
   margin: 5px 0 0 5px;
 }
 #logo {
   -webkit-order: 3;
-  -webkit-flex: 2;
+  order: 3;
+  -webkit-flex: 1;
+  flex: 1;
   margin: 10px 5px;
   background: url('../assets/logos/tm-logo.svg') no-repeat;
   background-size: contain;
   min-height: 20px;
 }
-#search-bar {
-  -webkit-order: 5;
-  -webkit-flex: 100%;
-}
 #user {
   -webkit-order: 4;
-  -webkit-flex: 2;
+  order: 4;
+  -webkit-flex: 1;
+  flex: 1;
   text-align: right;
 }
 #user li {
   list-style-type: none;
   display: inline-block;
-  padding: 10px 0px 0 10px;
+  padding: 15px 0px 0 10px;
 }
 #user li:last-child {
   padding-right: 10px;
 }
+#user li a {
+  font-size: 0.70em;
+}
 #user i {
   padding-right: 10px;
+}
+#search-bar {
+  -webkit-order: 5;
+  order: 5;
+  -webkit-flex: 100%;
+  flex: 100%;
 }
 .logo {
   width: 50%;
@@ -92,7 +110,9 @@ nav a:hover, nav p:hover {
 }
 #lp-links {
   -webkit-order: 5;
+  order: 5;
   -webkit-flex: 100%;
+  flex: 100%;
   text-align: center;
   list-style-type: none;
   margin-top: 10px;
@@ -119,24 +139,24 @@ nav a:hover, nav p:hover {
   letter-spacing: 1px;
   font-size: 0.85em;
 }
-#menu-icon {
-  -webkit-order: 4;
-  -webkit-flex: 23%;
-  text-align: right;
-  padding: 15px 10px 0 0;
-}
 #lp-menu-icon {
   -webkit-order: 4;
+  order: 4;
   -webkit-flex: 23%;
+  flex: 23%;
   text-align: right;
   margin: 20px 12px 0 0;
 }
 #application {
   -webkit-order: 7;
+  order: 7;
   height: 84%;
   -webkit-flex: 100%;
+  flex: 100%;
   display: -webkit-flex;
+  display: flex;
   -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
   overflow-y: auto;
 }
 #left-nav, #results, #right-nav {
@@ -144,7 +164,9 @@ nav a:hover, nav p:hover {
 }
 #left-nav {
   -webkit-order: 8;
+  order: 8;
   -webkit-flex: 100%;
+  flex: 100%;
   overflow-y: auto;
   min-height: 1px;
 }
@@ -153,12 +175,16 @@ nav a:hover, nav p:hover {
 }
 #results {
   -webkit-flex: 100%;
+  flex: 100%;
   -webkit-order: 10;
+  order: 10;
   display: block;
   min-height: 1px;
   overflow-y: auto;
   -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-flex-direction: column;
+  flex-direction: column;
 }
 #results-save-clear {
   border-radius: 3px;
@@ -235,16 +261,22 @@ nav a:hover, nav p:hover {
 }
 #right-nav {
   -webkit-order: 9;
+  order: 9;
   -webkit-flex: 100%;
+  flex: 100%;
   overflow-y: auto;
   min-height: 1px;
 }
 #landing-page {
   height: 90%;
   -webkit-order: 6;
+  order: 6;
   -webkit-flex: 100%;
+  flex: 100%;
   display: -webkit-flex;
+  display: flex;
   -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
   overflow-y: auto;
 }
 section {
@@ -346,12 +378,16 @@ section {
 }
 #loginwall {
   -webkit-order: 7;
+  order: 7;
   -webkit-flex: 100%;
+  flex: 100%;
   overflow-y: auto;
 }
 #summary {
   -webkit-order: 8;
+  order: 8;
   -webkit-flex: 100%;
+  flex: 100%;
   overflow-y: auto;
 }
 /*------------------------------------*
@@ -674,7 +710,6 @@ button, .button {
   text-transform: uppercase;
   transition: all 0.5s;
   max-width: 100%;
-  display: inline-block;
 }
 button:hover, button:active, .button:hover, .button:active {
   background: #b4cf7b;
@@ -899,17 +934,29 @@ input#search {
   .si-logo {
     padding-top: 20%;
   }
+  #user li {
+    padding-top: 10px;
+    padding-right: 15px;
+  }
+  #user li a {
+    font-size: 0.85em;
+  }
 }
 @media (min-width: 850px) {
     #application {
     -webkit-flex: 100%;
+    flex: 100%;
     min-height: 90%;
+    -webkit-flex-direction: row;
     flex-direction: row;
     -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
   #lp-links {
     -webkit-order: 4;
+    order: 4;
     text-align: right;
+    -webkit-flex: 2;
     flex: 2;
     display: block;
   }
@@ -924,6 +971,7 @@ input#search {
     display: none;
   }
   #left-nav, #right-nav {
+    -webkit-flex: 1;
     flex: 1;
   }
   #left-nav:empty, #right-nav:empty {
@@ -933,11 +981,14 @@ input#search {
     padding: 7px;
   }
   #results {
+    -webkit-flex: 2;
     flex: 2;
     -webkit-order: 8;
+    order: 8;
   }
   #right-nav {
     -webkit-order: 9;
+    order: 9;
   }
   #loginwall, #summary {
     padding: 20px;
@@ -947,6 +998,8 @@ input#search {
   }
   #search-bar {
     -webkit-order: 4;
+    order: 4;
+    -webkit-flex: 2;
     flex: 2;
     display: -webkit-flex;
     display: flex;
@@ -959,10 +1012,13 @@ input#search {
   }
   #user {
     -webkit-order: 5;
+    order: 5;
+    -webkit-flex: 1;
     flex: 1;
     margin: 10px 5px;
   }
   #logo {
+    -webkit-flex: 1;
     flex: 1;
     max-height: 40px;
   }
