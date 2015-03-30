@@ -82,6 +82,9 @@ img, object {
   display: block;
   margin: 2px 0;
 }
+#links.text-links {
+  margin-top: 7px;
+}
 #links.icons ul li i {
   padding-right: 10px
 }
@@ -224,7 +227,7 @@ i.landing-page {
 #application {
   width: 100%;
   max-height: 100%;
-  padding-top: 170px;
+  padding-top: 180px;
   background: #fafafa;
 }
 #landing-page #application {
@@ -318,7 +321,7 @@ i.landing-page {
   margin-bottom: 5px;
   width: 100%;
   position: fixed;
-  top: 155px;
+  top: 170px;
   left: 0;
   z-index: 96;
   margin: 0 auto;
@@ -619,6 +622,9 @@ button:hover, button:active {
   font-size: inherit;
   border-radius: 3px;
 }
+.alert a {
+  text-decoration: underline;
+}
 .filter {
   padding: 5px;
   background: #aaaaaa;
@@ -739,7 +745,7 @@ tr.article-title {
     float: right;
   }
   #links.text-links, #links.icons {
-    padding-top: 20px;
+    padding-top: 10px;
   }
   #links.icons ul li {
     display: inline-block;
@@ -1034,6 +1040,23 @@ ul.side-nav span.badge {
 }
 .web-app {
   background-position: 0% 99%;
+}
+#message {
+  font-size: 0.85em !important;
+}
+#message i {
+  font-size: 1.25em;
+}
+#message a {
+  text-decoration: underline;
+  text-transform: lowercase !important;
+}
+#team-mentor-navigation #message {
+  font-size: 0.65em !important;
+  margin-top: 0;
+}
+#team-mentor-navigation #message a {
+  font-size: 1em !important;
 }
 /*------------------------------------*
   HACKS
