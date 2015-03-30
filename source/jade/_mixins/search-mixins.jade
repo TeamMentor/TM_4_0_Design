@@ -109,7 +109,6 @@ mixin main-app-view
                           tr
                             td
                                 a(href='/article/' + recent_Article.id.remove('article-') + '/' + recent_Article.title.replace(/ /g,'-').remove('.'), id=recent_Article.id)
-                                    //+filter-icon(filter.title, result.title)
                                     = recent_Article.title
         if (top_Searches)
             .bg
@@ -120,7 +119,7 @@ mixin main-app-view
                             tr
                                 td
                                     a(href='/search?text=' + top_Search.title.str().url_Encode())
-                                        //+filter-icon(filter.title, result.title)
+                                        +search-icon
                                         = top_Search.title
             .bg
                 #top-articles
@@ -131,7 +130,6 @@ mixin main-app-view
                                 td
                                     //a(href=top_Article.href)
                                     a(href= top_Article.href.remove('article-') + '/' + top_Article.title.replace(/ /g,'-').remove('.'), id=top_Article.id)
-                                        //+filter-icon(filter.title, result.title)
                                         = top_Article.title
         //if (newArticles)
             .bg
