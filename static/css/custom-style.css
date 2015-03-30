@@ -280,6 +280,9 @@ i.landing-page {
 #filters i {
   padding: 0 12px 0 5px;
 }
+#filters .technology-icon {
+  margin-right: 10px;
+}
 #main-app-view {
   margin-top: 120px;
 }
@@ -316,16 +319,6 @@ i.landing-page {
   left: 0;
   z-index: 96;
   margin: 0 auto;
-}
-/*------------------------------------*
-  ARTICLES
-*------------------------------------*/
-#article #title {
-  border-bottom: 1px solid #dbdbdb;
-  padding-bottom: 25px;
-  line-height: 1.5em;
-  margin-bottom: 40px;
-  color: #5c5c5c;
 }
 /*------------------------------------*
    SUB-NAVIGATION
@@ -686,6 +679,16 @@ td.small {
   padding-top: 20px;
   text-align: center;
 }
+td.vertical-align {
+  vertical-align: initial;
+  padding-top: 35px;
+}
+tr.article-title {
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 25px;
+  line-height: 1.5em;
+  color: #5c5c5c;
+}
 .data tr {
   border: 1px solid #dbdbdb;
 }
@@ -1001,7 +1004,6 @@ ul.side-nav span.badge {
   padding-top: 20px;
   margin: 0 auto;
   display: inline-block;
-  margin-right: 10px;
 }
 .android {
   background-position: 0 -2%;
@@ -1044,6 +1046,9 @@ ul.side-nav span.badge {
 #toc-content h4 {
   padding-top: 100px;
   margin-top: -80px;
+}
+.article-content {
+  padding-top: 20px;
 }
 /*------------------------------------*
    GLYPHICONS
