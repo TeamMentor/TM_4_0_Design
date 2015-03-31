@@ -82,6 +82,9 @@ img, object {
   display: block;
   margin: 2px 0;
 }
+#links.text-links {
+  margin-top: 7px;
+}
 #links.icons ul li i {
   padding-right: 10px
 }
@@ -224,7 +227,7 @@ i.landing-page {
 #application {
   width: 100%;
   max-height: 100%;
-  padding-top: 170px;
+  padding-top: 180px;
   background: #fafafa;
 }
 #landing-page #application {
@@ -283,6 +286,9 @@ i.landing-page {
 #filters i {
   padding: 0 12px 0 5px;
 }
+#filters .technology-icon {
+  margin-right: 10px;
+}
 #main-app-view {
   margin-top: 120px;
 }
@@ -315,20 +321,10 @@ i.landing-page {
   margin-bottom: 5px;
   width: 100%;
   position: fixed;
-  top: 155px;
+  top: 170px;
   left: 0;
   z-index: 96;
   margin: 0 auto;
-}
-/*------------------------------------*
-  ARTICLES
-*------------------------------------*/
-#article #title {
-  border-bottom: 1px solid #dbdbdb;
-  padding-bottom: 25px;
-  line-height: 1.5em;
-  margin-bottom: 40px;
-  color: #5c5c5c;
 }
 /*------------------------------------*
    SUB-NAVIGATION
@@ -626,6 +622,9 @@ button:hover, button:active {
   font-size: inherit;
   border-radius: 3px;
 }
+.alert a {
+  text-decoration: underline;
+}
 .filter {
   padding: 5px;
   background: #aaaaaa;
@@ -689,6 +688,16 @@ td.small {
   padding-top: 20px;
   text-align: center;
 }
+td.vertical-align {
+  vertical-align: initial;
+  padding-top: 35px;
+}
+tr.article-title {
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 25px;
+  line-height: 1.5em;
+  color: #5c5c5c;
+}
 .data tr {
   border: 1px solid #dbdbdb;
 }
@@ -736,7 +745,7 @@ td.small {
     float: right;
   }
   #links.text-links, #links.icons {
-    padding-top: 20px;
+    padding-top: 10px;
   }
   #links.icons ul li {
     display: inline-block;
@@ -1004,7 +1013,6 @@ ul.side-nav span.badge {
   padding-top: 20px;
   margin: 0 auto;
   display: inline-block;
-  margin-right: 10px;
 }
 .android {
   background-position: 0 -2%;
@@ -1025,13 +1033,30 @@ ul.side-nav span.badge {
   background-position: 0% 61%;
 }
 .scala {
-  background-position: 0% 73%;
+  background-position: 0% 74%;
 }
 .wcf {
   background-position: 0% 87%;
 }
 .web-app {
   background-position: 0% 99%;
+}
+#message {
+  font-size: 0.85em !important;
+}
+#message i {
+  font-size: 1.25em;
+}
+#message a {
+  text-decoration: underline;
+  text-transform: lowercase !important;
+}
+#team-mentor-navigation #message {
+  font-size: 0.65em !important;
+  margin-top: 0;
+}
+#team-mentor-navigation #message a {
+  font-size: 1em !important;
 }
 /*------------------------------------*
   HACKS
@@ -1047,6 +1072,9 @@ ul.side-nav span.badge {
 #toc-content h4 {
   padding-top: 100px;
   margin-top: -80px;
+}
+.article-content {
+  padding-top: 20px;
 }
 /*------------------------------------*
    GLYPHICONS
