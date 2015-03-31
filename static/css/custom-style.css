@@ -326,6 +326,9 @@ i.landing-page {
   z-index: 96;
   margin: 0 auto;
 }
+#article td.vertical-align i {
+  margin-left: 5px;
+}
 /*------------------------------------*
    SUB-NAVIGATION
 *------------------------------------*/
