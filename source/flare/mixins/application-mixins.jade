@@ -6,39 +6,26 @@ mixin flare-search-bar-input
     #search-bar
         .row.collapse
             .small-2.large-1.columns
-                a.button.search.full-width
-                    i.fi-map
-            .small-6.large-9.columns
-                .container
-                    input#search(type='text', placeholder='Type search keywords here')
-            .small-4.large-2.columns
-                a.button.search.half-width(href='app-keyword-search')
+                a.button.search(href='navigate')
+                    i.fi-list-thumbnails
+            .small-7.large-9.columns
+                input#search(type='text', placeholder='Type keywords here')
+            .small-3.large-2.columns
+                a.button.search(href='app-keyword-search')
                     +search-icon
-                a.button.search.half-width(href='filters-div')
+                a.button.search(href='filters-div')
                     +filter-icon
 
 //- Flare Results-Save-Clear
 mixin flare-results-save-clear
-    #results-save-clear
-        .row.collapse
-            .small-8.large-10.columns
-                h4.label 0/200 results showing
-            .small-4.large-2.columns
-                a.button.app.half-width(href='app-keyword-search-save')
-                    +save-icon
-                a.button.app.half-width(href='main-app-view')
-                    +clear-icon
-
-mixin my-results
-    #my-results
-        .row
-            .large-12.columns
-                .row.collapse
-                    .small-8.large-10.columns
-                        h4.label 0/200 results showing
-                    .small-4.large-2.columns.text-right
-                        a.button.app.half-width(href='main-app-view')
-                            +clear-icon
+    #results-save-clear.row.collapse
+        .small-8.large-10.columns
+            h4.label 0/200 results showing
+        .small-4.large-2.columns
+            a.button.app(href='app-keyword-search-save')
+                +save-icon
+            a.button.app(href='main-app-view')
+                +clear-icon
 
 //- Flare Main App View
 mixin flare-main-app-view
@@ -224,7 +211,7 @@ mixin save-div
                 .small-10.columns
                     +save-input
                 .small-2.columns
-                    a.button.search.full-width(href='alert-application')
+                    a.button.search(href='alert-application')
                         +save-icon
 
 // Share Div
@@ -235,5 +222,5 @@ mixin share-div
                 .small-10.columns
                     +share-input
                 .small-2.columns
-                    a.button.search.full-width(href='alert-application')
+                    a.button.search(href='alert-application')
                         +share-icon
