@@ -36,6 +36,7 @@ nav {
   z-index: 99;
   background: white;
   border: 1px solid #dbdbdb;
+  min-height: 1%;
 }
 .landing-page {
   background: #fafafa;
@@ -162,7 +163,7 @@ nav a:hover, nav p:hover {
 #left-nav, #results, #right-nav {
   padding: 2px;
 }
-#left-nav, #small-left-nav {
+#left-nav {
   -webkit-order: 8;
   order: 8;
   -webkit-flex: 100%;
@@ -260,7 +261,7 @@ nav a:hover, nav p:hover {
   font-size: 14px;
   color: #444444;
 }
-#right-nav, #small-right-nav {
+#right-nav {
   -webkit-order: 9;
   order: 9;
   -webkit-flex: 100%;
@@ -753,11 +754,6 @@ button.circle i {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.search:hover, .search:active {
-  box-shadow: none;
-  color: #6c9020;
-  background: transparent;
-}
 .app {
   background: #dbdbdb;
   height: auto;
@@ -767,12 +763,6 @@ button.circle i {
 }
 .app:hover {
   background: #aaaaaa;
-}
-.postfix {
-  border-radius: 0;
-  height: 3.4em;
-  padding: 13px 5px 5px 5px;
-  border-radius: 0px;
 }
 .icon {
   padding-right: 10px;
@@ -799,6 +789,11 @@ a.button.search:hover i {
   color: #b4cf7b;
   background: transparent;
   color: #8aaf3e;
+}
+.search:hover, .search:active {
+  box-shadow: none;
+  color: #6c9020;
+  background: transparent;
 }
 #show-button {
   border-radius: 3px;
@@ -869,11 +864,6 @@ input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"
 input[type="url"]:focus, textarea:focus, select:focus {
   outline: none;
   border: 1px solid #aaaaaa;
-}
-input#search {
-  width: 100%;
-  outline: none;
-  margin-top: 5px;
 }
 #filters input[type=radio] {
   display: none;
@@ -1168,24 +1158,17 @@ input#search {
   #left-nav:empty, #right-nav:empty {
     display: block;
   }
-  #left-nav, #results, #right-nav, #large-results, #small-right-nav, #small-left-nav {
+  #left-nav, #results, #right-nav {
     padding: 7px;
-  }
-  #small-left-nav, #small-right-nav {
-    flex: 1;
   }
   #results {
     flex: 2;
     -webkit-order: 8;
   }
-  #large-results {
-    flex: 8;
-    -webkit-order: 8;
-  }
   .fixed {
     width: 50%;
   }
-  #right-nav, #small-right-nav {
+  #right-nav {
     -webkit-order: 9;
   }
   #loginwall, #summary {

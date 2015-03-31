@@ -50,8 +50,8 @@ mixin new-pw-icon
     span Change Password
 
 mixin delete-account-icon
-	i.fi-trash
-	span Delete Your Account
+    i.fi-trash
+    span Delete Your Account
 
 mixin change-filters-icon
     i.fi-results
@@ -88,12 +88,12 @@ mixin username-input
     input(type='text', id='username', placeholder='Username')
 
 mixin flare-password-input
-	label Password
-	.row.collapse
-		.small-10.columns
-			input(type='password', placeholder='Password')
-		.small-2.columns
-			a.button.postfix.full-width#show-button(href='#') SHOW
+    label Password
+    .row.collapse
+        .small-10.columns
+            input(type='password', placeholder='Password')
+        .small-2.columns
+            a.button.postfix.full-width#show-button(href='#') SHOW
 
 mixin flare-new-password-input
     label New Password
@@ -357,8 +357,8 @@ mixin save-button
         +save-icon
 
 mixin trash-button
-	button.controls(href='app-keyword-search-save')
-		+clear-icon
+    button.controls(href='app-keyword-search-save')
+        +clear-icon
 
 mixin share-button
     button.controls
@@ -374,37 +374,37 @@ mixin clear-all-button
     button(type='submit', id='btn-clear-all') Clear All
 
 mixin edit-button
-	button(type='submit', id='btn-edit') Edit
+    button(type='submit', id='btn-edit') Edit
 
 mixin reset-pwd-button
-	button(type='submit', id='btn-reset-pwd') Reset password
+    button(type='submit', id='btn-reset-pwd') Reset password
 
 //- Alert System
 mixin flare-alert
-	.alert-box(data-alert='')
-		.row
-			.small-1.columns
-				+alert-icon
-			.small-11.columns
-				span Error, Validation or Alert Message Here
-		a.close(href='#') ×
+    .alert-box(data-alert='')
+        .row
+            .small-1.columns
+                +alert-icon
+            .small-11.columns
+                span Error, Validation or Alert Message Here
+        a.close(href='#') ×
 
 mixin copyright
-	#copyright
-		.row
-			.small-12.medium-offset-3.medium-6.large-offset-4.large-4.columns
-				a(href='http://www.securityinnovation.com/', target='_blank')
-					.logo.si-logo
-		.row
-			.small-12.columns
-			include:md ../../content/articles/copyright-information.md
-			ul
-				li
-					+i-email
-					a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
-				li
-					+i-toc
-					a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions
+    #copyright
+        .row
+            .small-12.medium-offset-3.medium-6.large-offset-4.large-4.columns
+                a(href='http://www.securityinnovation.com/', target='_blank')
+                    .logo.si-logo
+        .row
+            .small-12.columns
+            include:md ../../content/articles/copyright-information.md
+            ul
+                li
+                    +i-email
+                    a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
+                li
+                    +i-toc
+                    a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions
     button(type='submit', id='btn-clear-all') Edit
 
 //- Alert System
