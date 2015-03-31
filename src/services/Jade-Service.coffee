@@ -13,10 +13,10 @@ class JadeService
       Config = require('../misc/Config')
 
       @.config = config || new Config();
-      @.repo_Path      = __dirname.path_Combine('../..')          #calculate the repo path as 3 folders above the current path
-      @.mixins_Folder = @.repo_Path.path_Combine('/source/jade/_mixins/')
+      @.repo_Path      = __dirname.path_Combine("..#{path.sep}..")          #calculate the repo path as 3 folders above the current path
+      @.mixins_Folder = @.repo_Path.path_Combine("#{path.sep}source#{path.sep}jade#{path.sep}_mixins#{path.sep}")
       @.target_Folder = @.config.jade_Compilation;
-      @.mixin_Extends = '../_layouts/page_clean'
+      @.mixin_Extends = "..#{path.sep}_layouts#{path.sep}page_clean"
       @.config.createCacheFolders()                             # ensure cache folders exists
 
 
@@ -32,6 +32,7 @@ class JadeService
 
     calculateTargetPath: (fileToCompile)->
       @.target_Folder.path_Combine(fileToCompile.replace(/\//g,'_')
+                                                .replace(/\\/g,'_')
                                                 .replace(/\./g,'_') + '.txt')
 
     calculateJadePath: (jade_File)->
@@ -80,7 +81,7 @@ class JadeService
     renderMixin: (file, mixin, params)=>
       safeFile      = file.to_Safe_String()                   # only allow letter, numbers, comma, dash and underscore
       safeMixin     = mixin.to_Safe_String()
-      dummyJade     = @.mixins_Folder.path_Combine('/tmp.jade')  # file to be provided to jade.compile (used to resolve the mixin file path)
+      dummyJade     = @.mixins_Folder.path_Combine("#{path.sep}tmp.jade")  # file to be provided to jade.compile (used to resolve the mixin file path)
       code = "extends #{@.mixin_Extends}    \n" +            # add html head and body (with TM css, but no nav bar)
              "include #{safeFile}.jade      \n" +            # imports mixin file
              "block content                 \n" +            # where rendered mixin will be placed

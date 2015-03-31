@@ -2,13 +2,14 @@ PoC_Controller   = require '../../src/poc/PoC-Controller'
 supertest        = require 'supertest'
 express          = require 'express'
 cheerio          = require 'cheerio'
+path             = require 'path'
 
-describe '| poc | Controller-PoC.test' ,->
+describe '| poc | Controller-PoC.test |' ,->
 
   it 'constructor',->
     using new PoC_Controller() ,->
       @.dir_Poc_Pages.assert_Folder_Exists()
-                     .assert_Contains 'source/jade/__poc'
+                     .assert_Contains "source#{path.sep}jade#{path.sep}__poc"
 
   it 'register_Routes', ()->
     routes     = {}
@@ -110,4 +111,3 @@ describe '| poc | Controller-PoC.test' ,->
         .end (err, response, html)->
           response.text.assert_Is 'Moved Temporarily. Redirecting to /guest/404'
           done()
-
