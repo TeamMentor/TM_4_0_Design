@@ -59,6 +59,9 @@ class SearchController
 
         logger?.info {user: @.req.session?.username, action:'show', queryId: queryId, filters:filters}
 
+        if (not queryId?)
+          logger?.info {Error:'GraphDB might not be available, please verify.'}
+
         @get_Navigation queryId, (navigation)=>
           target = navigation.last() || {}
           @graph_Service.graphDataFromGraphDB target.id, filters,  (searchData)=>
