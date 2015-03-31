@@ -36,7 +36,6 @@ nav {
   z-index: 99;
   background: white;
   border: 1px solid #dbdbdb;
-  min-height: 1%;
 }
 .landing-page {
   background: #fafafa;
@@ -865,6 +864,11 @@ input[type="url"]:focus, textarea:focus, select:focus {
   outline: none;
   border: 1px solid #aaaaaa;
 }
+input#search {
+  width: 100%;
+  outline: none;
+  margin-top: 5px;
+}
 #filters input[type=radio] {
   display: none;
 }
@@ -966,7 +970,7 @@ input[type="url"]:focus, textarea:focus, select:focus {
     #application {
     -webkit-flex: 100%;
     flex: 100%;
-    min-height: 90%;
+    height: 90%;
     -webkit-flex-direction: row;
     flex-direction: row;
     -webkit-flex-wrap: nowrap;
