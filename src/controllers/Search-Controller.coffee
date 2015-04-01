@@ -81,11 +81,13 @@ class SearchController
                 if (@searchData.results?)
                   @res.send(@renderPage())
                 else
+                  logger?.info {Error:'There are no results that match your search.'}
                   @res.send @jade_Service.renderJadeFile(@.jade_Error_Page)
             else
               if (@searchData.results?)
                 @res.send(@renderPage())
               else
+                logger?.info {Error:'There are no results that match your search.'}
                 @res.send @jade_Service.renderJadeFile(@.jade_Error_Page)
 
     search_Via_Url: =>
