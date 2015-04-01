@@ -6,14 +6,14 @@ mixin flare-search-bar-input
     #search-bar
         .row.collapse
             .small-2.large-1.columns
-                a.button.search(href='navigate')
+                a.button.search#navigate-button(href='navigate')
                     i.fi-list-thumbnails
             .small-7.large-9.columns
                 input#search(type='text', placeholder='Type keywords here')
             .small-3.large-2.columns
                 a.button.search(href='app-keyword-search')
                     +search-icon
-                a.button.search(href='filters-div')
+                a.button.search#filters-button(href='filters-div')
                     +filter-icon
 
 //- Flare Results-Save-Clear
@@ -53,7 +53,7 @@ mixin flare-main-app-view
 mixin articles-list
     .list-view-article.row
         .small-12.columns
-            h3 Article Headline
+            h3#article-headline Article Headline
         .small-12.medium-10.columns
             include:md ../../content/articles/article-details.md
         .small-12.medium-2.columns
@@ -75,9 +75,9 @@ mixin articles-list
 
 //- Articles List Control
 mixin article-controls
-    .row.control-panel
+    .row.control-panel#article-controls
         .small-4.medium-12.columns
-            +open-icon
+            +open-button
         .small-4.medium-12.columns
             +save-button
         .small-4.medium-12.columns

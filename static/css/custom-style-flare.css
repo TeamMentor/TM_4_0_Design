@@ -40,7 +40,6 @@ nav {
 .landing-page {
   background: #fafafa;
   border-bottom: 1px solid #dbdbdb;
-  padding-bottom: 7px;
 }
 nav a, nav p {
   color: #8aaf3e;
@@ -54,16 +53,9 @@ nav a:hover, nav p:hover {
   color: #6c9020;
   text-decoration: none;
 }
-#customer {
+#logo {
   -webkit-order: 2;
   order: 2;
-  -webkit-flex: 110%;
-  flex: 110%;
-  margin: 5px 0 0 5px;
-}
-#logo {
-  -webkit-order: 3;
-  order: 3;
   -webkit-flex: 1;
   flex: 1;
   margin: 10px 5px;
@@ -72,8 +64,8 @@ nav a:hover, nav p:hover {
   min-height: 20px;
 }
 #user {
-  -webkit-order: 4;
-  order: 4;
+  -webkit-order: 3;
+  order: 3;
   -webkit-flex: 1;
   flex: 1;
   text-align: right;
@@ -81,7 +73,7 @@ nav a:hover, nav p:hover {
 #user li {
   list-style-type: none;
   display: inline-block;
-  padding: 15px 0px 0 10px;
+  padding: 12px 0px 0 10px;
 }
 #user li:last-child {
   padding-right: 10px;
@@ -93,8 +85,8 @@ nav a:hover, nav p:hover {
   padding-right: 10px;
 }
 #search-bar {
-  -webkit-order: 5;
-  order: 5;
+  -webkit-order: 4;
+  order: 4;
   -webkit-flex: 100%;
   flex: 100%;
 }
@@ -108,48 +100,41 @@ nav a:hover, nav p:hover {
   padding-top: 10%;
   height: 0;
 }
-#lp-links {
+#menu-icon {
+  -webkit-order: 4;
+  order: 4;
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: right;
+  margin: 15px 12px 0 0;
+}
+#links {
   -webkit-order: 5;
   order: 5;
   -webkit-flex: 100%;
   flex: 100%;
   text-align: center;
   list-style-type: none;
-  margin-top: 10px;
+  margin: 10px 0;
   display: none;
 }
-#lp-links button {
-  width: auto;
-  padding: 10px;
-  background: #a6cb5a;
-  color: white;
-  border: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  font-size: 0.85em;
+#links li {
+  display: inline-block;
+  padding-right: 20px;
 }
-#lp-links button:hover {
-  background: #8aaf3e;
-  border: none;
+#links li:last-child {
+  padding-right: 0;
 }
-#lp-links a {
+#links a {
   color: #8aaf3e;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
   font-size: 0.85em;
 }
-#lp-menu-icon {
-  -webkit-order: 4;
-  order: 4;
-  -webkit-flex: 23%;
-  flex: 23%;
-  text-align: right;
-  margin: 20px 12px 0 0;
-}
 #application {
-  -webkit-order: 7;
-  order: 7;
+  -webkit-order: 6;
+  order: 6;
   height: 84%;
   -webkit-flex: 100%;
   flex: 100%;
@@ -163,6 +148,14 @@ nav a:hover, nav p:hover {
   padding: 2px;
 }
 #left-nav {
+  -webkit-order: 7;
+  order: 7;
+  -webkit-flex: 100%;
+  flex: 100%;
+  overflow-y: auto;
+  min-height: 1px;
+}
+#right-nav {
   -webkit-order: 8;
   order: 8;
   -webkit-flex: 100%;
@@ -176,8 +169,8 @@ nav a:hover, nav p:hover {
 #results {
   -webkit-flex: 100%;
   flex: 100%;
-  -webkit-order: 10;
-  order: 10;
+  -webkit-order: 9;
+  order: 9;
   display: block;
   min-height: 1px;
   overflow-y: auto;
@@ -250,23 +243,16 @@ nav a:hover, nav p:hover {
 }
 #copyright li {
   display: block;
+  line-height: 1em;
 }
 #copyright p, #copyright a {
-  font-size: 12px;
+  font-size: 10px;
   margin: 0 0 5px 0;
 }
 #copyright i {
   margin-right: 10px;
-  font-size: 14px;
+  font-size: 10px;
   color: #444444;
-}
-#right-nav {
-  -webkit-order: 9;
-  order: 9;
-  -webkit-flex: 100%;
-  flex: 100%;
-  overflow-y: auto;
-  min-height: 1px;
 }
 #landing-page {
   height: 90%;
@@ -343,7 +329,7 @@ section {
 .features {
   background: white;
 }
-.features i, .reasons i, #summary i {
+.features i, .reasons i, #summary i, .summary i {
   color: #8baf3e;
   font-size: 2em;
 }
@@ -387,6 +373,9 @@ section {
   -webkit-flex: 100%;
   flex: 100%;
   overflow-y: auto;
+}
+#summary, #loginwall {
+  padding: 10px;
 }
 .container {
   width: 95%;
@@ -774,6 +763,9 @@ button.circle i {
 .app i {
   color: #ffffff !important;
 }
+.constrain {
+  height: 3.4em;
+}
 a.button.search {
   background: transparent;
   width: 50%;
@@ -794,13 +786,6 @@ a.button.search:hover i {
   color: #6c9020;
   background: transparent;
 }
-#show-button {
-  border-radius: 3px;
-  margin-left: 2px;
-}
-.app i {
-  color: #ffffff !important;
-}
 .full-width {
   width: 100% !important;
 }
@@ -811,7 +796,7 @@ a.button.search:hover i {
   background: #dbdbdb;
   color: #444444;
   width: 100%;
-  padding: 5px 0;
+  padding: 5px 2px;
   margin: 5px 0;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -851,7 +836,7 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
   color: #444444;
   border-radius: 3px;
   font-size: 1em;
-  margin: 5px 0;
+  margin: 0 0 15px 0;
   padding: 0 0 0 0.5rem;
   height: 3rem;
   -webkit-box-sizing: border-box;
@@ -867,7 +852,7 @@ input[type="url"]:focus, textarea:focus, select:focus {
 input#search {
   width: 100%;
   outline: none;
-  margin-top: 5px;
+  margin-top: 6px;
 }
 #filters input[type=radio] {
   display: none;
@@ -906,7 +891,7 @@ input#search {
    MICRO-ELEMENTS
 *------------------------------------*/
 .alert-box {
-  margin: 10px 0;
+  margin: 0 0 10px 0;
   background-color: #a6cb5a;
   border: none;
   border-radius: 3px;
@@ -965,9 +950,12 @@ input#search {
   #user li a {
     font-size: 0.85em;
   }
+  #copyright li {
+    text-align: right !important;
+  }
 }
 @media (min-width: 850px) {
-    #application {
+  #application {
     -webkit-flex: 100%;
     flex: 100%;
     height: 90%;
@@ -976,7 +964,7 @@ input#search {
     -webkit-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
-  #lp-links {
+  #links {
     -webkit-order: 4;
     order: 4;
     text-align: right;
@@ -984,14 +972,10 @@ input#search {
     flex: 2;
     display: block;
   }
-  #lp-links li {
-    display: inline-block;
+  #links li, #links li:last-child {
     padding: 15px 30px 0 0;
   }
-  #lp-links button {
-    margin: 0 15px 0 0;
-  }
-  #lp-menu-icon {
+  #menu-icon {
     display: none;
   }
   #left-nav, #right-nav {
@@ -1014,15 +998,12 @@ input#search {
     -webkit-order: 9;
     order: 9;
   }
-  #loginwall, #summary {
-    padding: 20px;
-  }
   .tabs-content {
     padding: 10px 40px;
   }
   #search-bar {
-    -webkit-order: 4;
-    order: 4;
+    -webkit-order: 5;
+    order: 5;
     -webkit-flex: 2;
     flex: 2;
     display: -webkit-flex;
@@ -1035,8 +1016,8 @@ input#search {
     justify-content: center;
   }
   #user {
-    -webkit-order: 5;
-    order: 5;
+    -webkit-order: 6;
+    order: 6;
     -webkit-flex: 1;
     flex: 1;
     margin: 10px 5px;
@@ -1045,6 +1026,10 @@ input#search {
     -webkit-flex: 1;
     flex: 1;
     max-height: 40px;
+    margin-left: 20px;
+  }
+  input#search {
+    margin-top: 10px;
   }
   #landing-page h1 {
     line-height: 2.5em;
@@ -1090,11 +1075,11 @@ input#search {
     background-position: 0em -50em;
     padding: 6% 0;
   }
+  .call-to-action button i, .usp button i {
+    padding-right: 10px;
+  }
   .clients {
     text-align: center;
-  }
-  .reasons i {
-    font-size: 4em;
   }
   .footer {
     text-align: left;
@@ -1110,47 +1095,22 @@ input#search {
     flex-direction: row;
     -webkit-flex-wrap: wrap;
   }
-  #logo {
-    flex: 1;
-  }
   #links {
-    -webkit-order: 4;
-    text-align: center;
-    flex: 2;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-  }
-  #links li {
-    padding-left: 30px;
-  }
-  #links li:first-child {
-    padding-left: 0;
-  }
-  #lp-links {
     -webkit-order: 4;
     text-align: right;
     flex: 2;
     display: block;
   }
-  #lp-links li {
+  #links li {
     display: inline-block;
     padding: 15px 30px 0 0;
-  }
-  #lp-links button {
-    margin: 0 15px 0 0;
   }
   #menu-icon {
     -webkit-order: 5;
     flex: 1;
     visibility: hidden;
   }
-  #lp-menu-icon {
+  #menu-icon {
     display: none;
   }
   #application {
@@ -1175,22 +1135,20 @@ input#search {
   #right-nav {
     -webkit-order: 9;
   }
-  #loginwall, #summary {
-    padding: 20px;
-  }
   .tabs-content {
     padding: 10px 20px;
   }
 }
 @media (min-width : 1200px) {
   .landing-page {
-    width: 80%;
-    margin: 0 auto;
+    width: 1200px;
+    left: calc((100% - 1200px) / 2)
   }
-}
-@media (min-width: 2000px) {
-  .landing-page {
-    width: 60%;
+  #loginwall {
+    padding: 20px 20px 20px 0;
+  }
+  #summary {
+    padding: 20px 0 20px 20px;
   }
 }
 /*------------------------------------*

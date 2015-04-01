@@ -1,5 +1,6 @@
 include ../mixins/links.jade
 include ../mixins/globals.jade
+include ../mixins/application-mixins.jade
 
 nav
     #logo
@@ -11,8 +12,7 @@ nav
         li
             a(href='../landing-pages/index')
                 +logout-link
-    //#user
-        button.dropdown.circle(href='#', data-dropdown='user-drop', aria-controls='user-drop', aria-expanded='false')
+        //button.dropdown.circle(href='#', data-dropdown='user-drop', aria-controls='user-drop', aria-expanded='false')
             +user-icon
             br
             ul#user-drop.f-dropdown(data-dropdown-content='', aria-hidden='true')

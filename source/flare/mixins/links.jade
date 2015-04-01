@@ -1,28 +1,17 @@
-mixin links-flare-navbar__home
-	button.flare-button.effect.fi-magnifying-glass(action='../home/main-app-view')
-		span Search
-	button.flare-button.effect.fi-map(action='../home/navigate')
-		span Navigate
-	button.flare-button.effect.fi-info(action='../help/index')
-		span Docs
-	button.flare-button.effect.fi-torso(action='../user/index')
-		span User
-	button.flare-button.effect.fi-power(action='../getting-started/login')
-		span Logout
-
 mixin links-navbar__landing-page
 	li
-		a(href='about/') About
+		a(href='about') About
 	li
-		a(href='features/') Features
+		a(href='features') Features
 	li
 		a(href='../help/index') Docs
-	button(href='../getting-started/login') Get Started
+	li
+		a(href='../getting-started/login') Get Started
 
 
 mixin links-home__navigate
 	h3 Navigate
-	ul.side-nav
+	ul.side-nav#navigate
 		li
 			a(href='../articles/fundamentals-of-security') Attacks & Vulnerabilites
 		li

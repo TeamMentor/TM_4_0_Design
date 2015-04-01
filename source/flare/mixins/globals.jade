@@ -12,27 +12,6 @@ mixin save-icon
 mixin share-icon
     i.fi-share
 
-mixin open-icon
-    button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false')
-        i.fi-plus
-    ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
-        li
-            a(href='#') ASP.NET
-        li
-            a(href='#') Android
-        li
-            a(href='#') C++
-        li
-            a(href='#') HTML5
-        li
-            a(href='#') iOS
-        li
-            a(href='#') Java
-        li
-            a(href='#') PHP
-        li
-            a(href='#') Scala
-
 mixin search-icon
     i.fi-magnifying-glass
 
@@ -90,18 +69,18 @@ mixin username-input
 mixin flare-password-input
     label Password
     .row.collapse
-        .small-10.columns
+        .small-9.columns
             input(type='password', placeholder='Password')
-        .small-2.columns
-            a.button.postfix.full-width#show-button(href='#') SHOW
+        .small-3.columns
+            a.button.constrain.full-width(href='#') SHOW
 
 mixin flare-new-password-input
     label New Password
     .row.collapse
-        .small-10.columns
+        .small-10.medium-10.columns
             input(type='password', placeholder='New Password')
-        .small-2.columns
-            .button.postfix#show-button(href='#') Show
+        .small-2.medium-2.columns
+            .button.postfix#show-button(href='#') SHOW
 
 mixin password-input
     label Password
@@ -352,6 +331,27 @@ mixin share-input
     input(type='email', id='share-input', placeholder='Share via Email')
 
 //- Form Buttons
+mixin open-button
+    button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false')
+        i.fi-plus
+    ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
+        li
+            a(href='#') ASP.NET
+        li
+            a(href='#') Android
+        li
+            a(href='#') C++
+        li
+            a(href='#') HTML5
+        li
+            a(href='#') iOS
+        li
+            a(href='#') Java
+        li
+            a(href='#') PHP
+        li
+            a(href='#') Scala
+
 mixin save-button
     button.controls(href='app-keyword-search-save')
         +save-icon
@@ -392,38 +392,16 @@ mixin flare-alert
 mixin copyright
     #copyright
         .row
-            .small-12.medium-offset-3.medium-6.large-offset-4.large-4.columns
+            .small-12.medium-3.columns
                 a(href='http://www.securityinnovation.com/', target='_blank')
                     .logo.si-logo
-        .row
-            .small-12.columns
-            include:md ../../content/articles/copyright-information.md
-            ul
-                li
-                    +i-email
-                    a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
-                li
-                    +i-toc
-                    a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions
-    button(type='submit', id='btn-clear-all') Edit
-
-//- Alert System
-mixin flare-alert
-    .alert-box(data-alert='')
-        span Error, Validation or Alert Message Here
-        a.close(href='#') ×
-
-mixin copyright
-    #copyright
-        .row
-            .small-12
-                a(href='http://www.securityinnovation.com/', target='_blank')
-                    #si-logo
+            .small-12.medium-6.columns
                 include:md ../../content/articles/copyright-information.md
+            .small-12.medium-3.columns
                 ul
                     li
                         +i-email
-                        a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
+                        a(href='mailto:support@securityinnovation.com') Email
                     li
                         +i-toc
                         a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions
