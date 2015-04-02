@@ -53,21 +53,24 @@ mixin flare-main-app-view
 mixin articles-list
     .list-view-article.row
         .small-12.columns
-            h3#article-headline Article Headline
+            a.underline(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
         .small-12.medium-10.columns
             include:md ../../content/articles/article-details.md
         .small-12.medium-2.columns
             +article-controls
     .list-view-article.row
         .small-12.columns
-            h3 Article Headline
+            a.underline(href='../articles/article-new-window-view')
+                h3 Article Headline
         .small-12.medium-10.columns
             include:md ../../content/articles/article-details.md
         .small-12.medium-2.columns
             +article-controls
     .list-view-article.row
         .small-12.columns
-            h3 Article Headline
+            a.underline(href='../articles/article-new-window-view')
+                h3 Article Headline
         .small-12.medium-10.columns
             include:md ../../content/articles/article-details.md
         .small-12.medium-2.columns
@@ -77,11 +80,11 @@ mixin articles-list
 mixin article-controls
     .row.control-panel#article-controls
         .small-4.medium-12.columns
-            +open-button
-        .small-4.medium-12.columns
             +save-button
         .small-4.medium-12.columns
             +share-button
+        .small-4.medium-12.columns
+            // Put article icons here
 
 //- Search Results List
 mixin search-results
