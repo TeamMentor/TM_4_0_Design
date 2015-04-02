@@ -1,0 +1,16 @@
+extends ../../_layouts/page_home
+include ../../_mixins/articles-mixins
+include ../../_mixins/search-mixins
+include _poc_filters-mixins.jade
+
+block content
+    #application
+        .row
+            .col-9
+                .lge-container
+                    +search-2
+                    +poc-remove-filter-2
+                    +articles-list
+            .col-3
+                .lge-container
+                    +poc-remove-filter

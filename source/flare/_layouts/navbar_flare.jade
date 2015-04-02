@@ -1,10 +1,24 @@
 include ../mixins/links.jade
+include ../mixins/globals.jade
+include ../mixins/application-mixins.jade
 
 nav
-	#logo
-		.logo.tm-logo
-	#links
-		+links-flare-navbar__home
-	#menu-icon
-		a(href='#')
-			i.fi-list
+    #logo
+    +flare-search-bar-input
+    #user
+        li
+            a(href='../help/index')
+                +help-link
+        li
+            a(href='../landing-pages/index')
+                +logout-link
+        //button.dropdown.circle(href='#', data-dropdown='user-drop', aria-controls='user-drop', aria-expanded='false')
+            +user-icon
+            br
+            ul#user-drop.f-dropdown(data-dropdown-content='', aria-hidden='true')
+                li
+                    a(href='../user/user.html') Profile
+                li
+                    a(href='../help/index') Docs
+                li
+                    a(href='../landing-pages/index') Logout
