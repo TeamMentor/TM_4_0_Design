@@ -183,6 +183,9 @@ i.landing-page {
   margin: 0;
   margin: 10px 0;
 }
+#footer #si-logo {
+  margin-bottom: 20px;
+}
 #footer i {
   font-size: 1em;
   margin-right: 10px;
@@ -868,6 +871,15 @@ tr.article-title {
   .client-logo {
     width: 100%;
     padding-top: 33%;
+  }
+  #footer {
+    text-align: left !important;
+  }
+  #footer h4 {
+    margin: 0 0 0 20px;
+  }
+  #footer #si-logo {
+    margin-top: 10px;
   }
 }
 @media (min-width: 999px) {
