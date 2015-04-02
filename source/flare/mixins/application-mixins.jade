@@ -6,7 +6,7 @@ mixin flare-search-bar-input
     #search-bar
         .row.collapse
             .small-2.large-1.columns
-                a.button.search#navigate-button(href='navigate')
+                a.button.search.full-width#navigate-button(href='navigate')
                     i.fi-list-thumbnails
             .small-7.large-9.columns
                 input#search(type='text', placeholder='Type keywords here')
@@ -211,7 +211,7 @@ mixin save-div
                 .small-10.columns
                     +save-input
                 .small-2.columns
-                    a.button.search(href='alert-application')
+                    a.button.app.full-width(href='alert-application')
                         +save-icon
 
 // Share Div
@@ -222,5 +222,5 @@ mixin share-div
                 .small-10.columns
                     +share-input
                 .small-2.columns
-                    a.button.search(href='alert-application')
+                    a.button.app.full-width(href='alert-application')
                         +share-icon

@@ -3,7 +3,7 @@ include ../mixins/getting-started-mixins
 
 block content
 	#application
-		#loginwall
+		#left-column
 			+flare-alert
 			dl.tabs(data-tab='data-tab')
 				dd.active
@@ -16,6 +16,5 @@ block content
 				#login.content
 					+flare-alert
 					+login-form
-		#summary
-			.content
-				+team-mentor-summary
+		#right-column
+			+team-mentor-summary
