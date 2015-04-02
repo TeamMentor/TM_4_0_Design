@@ -36,9 +36,9 @@ describe '| controllers | Help-Controller.test |', ()->
     else
       $('#nav-login'              ).text().assert_Is 'Login'
     # check right nav links
-    $('#help-navigation h4'     ).html().assert_Is 'an view title'
-    $('#help-navigation tr td a').attr().assert_Is { href: '/help/an article id' }
-    $('#help-navigation tr td a').html().assert_Is 'an article title'
+    $('#help-nav h4'     ).html().assert_Is 'an view title'
+    $('#help-nav tr td a').attr().assert_Is { href: '/help/an article id' }
+    $('#help-nav tr td a').html().assert_Is 'an article title'
     # check content
     if (title or content)
       $('#help-title'  ).text().assert_Is title
