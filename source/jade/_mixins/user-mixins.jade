@@ -50,18 +50,17 @@ mixin forgot-password-form
 
 //- pwd-reset-form
 mixin pwd-reset-form
-  #form
-    #heading
-      p Reset your password
-    form#pwd-reset-form(role='form' method='post')
-      .form-group
-        +password-input
-        include:md ../../content/getting-started/password-prompt.md
-      .form-group
-        +confirm-password-input
-      .row
-        .col-5
-          +reset-password-button
+  #heading
+    p Reset your password
+  form#pwd-reset-form(role='form' method='post')
+    .form-group
+      +password-input
+      include:md ../../content/getting-started/password-prompt.md
+    .form-group
+      +confirm-password-input
+    .row
+      .col-5
+        +reset-password-button
 
 //- Alerts
 mixin alert-login-failed
