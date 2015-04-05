@@ -110,7 +110,7 @@ describe '| controllers | User-Sign-Up-Controller', ->
     res =
       render: (jade_Page, params)->
         jade_Page.assert_Is signUp_fail
-        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
+        params.assert_Is { viewModel:{ username: undefined,password: undefined,confirmpassword: undefined,email: undefined,errorMessage: 'TEAM Mentor is unavailable, please contact us at <a href=\'mailto:support@securityinnovation.com\'>support@securityinnovation.com</a>' } }
         done()
     using new User_Sign_Up_Controller(req,res),->
       @.webServices = "http://aaaaaaa.teammentor.net"
@@ -124,7 +124,7 @@ describe '| controllers | User-Sign-Up-Controller', ->
     res =
       render: (jade_Page, params)->
         jade_Page.assert_Is signUp_fail
-        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
+        params.assert_Is { viewModel:{ username: undefined,password: undefined,confirmpassword: undefined,email: undefined,errorMessage: 'TEAM Mentor is unavailable, please contact us at <a href=\'mailto:support@securityinnovation.com\'>support@securityinnovation.com</a>' } }
         done()
 
     using new User_Sign_Up_Controller(req,res),->
@@ -197,7 +197,7 @@ describe '| controllers | User-Sign-Up-Controller', ->
     res =
       render: (jade_Page, params)->
         jade_Page.assert_Is signUp_fail
-        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
+        params.assert_Is { viewModel:{ username: undefined,password: 'aa',confirmpassword:'aa',email: undefined,errorMessage: 'TEAM Mentor is unavailable, please contact us at <a href=\'mailto:support@securityinnovation.com\'>support@securityinnovation.com</a>' } }
         done()
     using new User_Sign_Up_Controller(req,res),->
       @.webServices = 'https://aaaaaaaa.teammentor.net/'

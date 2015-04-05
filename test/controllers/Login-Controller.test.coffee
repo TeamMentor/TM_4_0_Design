@@ -87,7 +87,7 @@ describe '| controllers | Login-Controller.test |', ->
     res =
       render: (jade_Page, params)->
         jade_Page.assert_Is loginPage
-        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
+        params.assert_Is { viewModel: {"username":"","password":"", errorMessage: "TEAM Mentor is unavailable, please contact us at <a href='mailto:support@securityinnovation.com'>support@securityinnovation.com</a>" } }
         done()
 
     using new Login_Controller(req, res), ->
