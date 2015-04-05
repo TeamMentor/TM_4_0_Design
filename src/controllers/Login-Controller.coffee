@@ -9,6 +9,7 @@ password_reset_fail        = 'source/jade/guest/pwd-reset-fail.jade'
 password_reset_ok          = '/guest/login-pwd-reset.html'
 blank_credentials_message  = 'Invalid Username or Password'
 loginSuccess               = 0
+errorMessage               = "TEAM Mentor is unavailable, please contact us at <a href='mailto:support@securityinnovation.com'>support@securityinnovation.com</a>"
 
 class Login_Controller
   constructor: (req, res)->
@@ -46,11 +47,17 @@ class Login_Controller
     request options, (error, response, body)=>
       if error
         logger?.info ('Could not connect with TM 3.5 server')
-        return @.res.render loginPage, {viewModel: errorMessage : 'An error occurred' }
+        userViewModel.errorMessage = errorMessage
+        userViewModel.username =''
+        userViewModel.password=''
+        return @.res.render loginPage, {viewModel:userViewModel }
 
       if not (response?.body?.d)
         logger?.info ('Could not connect with TM 3.5 server')
-        return @.res.render loginPage, {viewModel: errorMessage : 'An error occurred' }
+        userViewModel.errorMessage = errorMessage
+        userViewModel.username =''
+        userViewModel.password=''
+        return @.res.render loginPage, {viewModel:userViewModel }
 
       loginResponse = response.body.d
       success = loginResponse?.Login_Status

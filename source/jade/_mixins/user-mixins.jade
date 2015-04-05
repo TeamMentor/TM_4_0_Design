@@ -67,7 +67,7 @@ mixin pwd-reset-form
 mixin alert-login-failed
   if viewModel && viewModel.errorMessage
     .alert(role='alert')
-      #message= 'Error: ' + viewModel.errorMessage
+      #message!= 'Error: ' + viewModel.errorMessage
 
 mixin alert-please-login
   .alert(role='alert')
@@ -82,7 +82,7 @@ mixin alert-pwd-sent
 mixin alert-sign-up-failed
   if viewModel && viewModel.errorMessage
     .alert(role='alert')
-      #message= 'Error: ' + viewModel.errorMessage
+      #message!= 'Error: ' + viewModel.errorMessage
 
 mixin alert-sign-up-OK
   .alert(role='alert')

@@ -1,8 +1,9 @@
 
-signUp_fail = 'source/jade/guest/sign-up-Fail.jade'
-signUp_Ok   = 'source/jade/guest/sign-up-OK.html'
-request     = null
-Config      = null
+signUp_fail  = 'source/jade/guest/sign-up-Fail.jade'
+signUp_Ok    = 'source/jade/guest/sign-up-OK.html'
+errorMessage = "TEAM Mentor is unavailable, please contact us at <a href='mailto:support@securityinnovation.com'>support@securityinnovation.com</a>"
+request      = null
+Config       = null
 
 class User_Sign_Up_Controller
 
@@ -48,11 +49,13 @@ class User_Sign_Up_Controller
       if (error and error.code is "ENOTFOUND")
         #[QA] ADD ISSUE: Refactor this to show TM 500 error message
         logger?.info ('Could not connect with TM 3.5 server')
-        return @.res.render signUp_fail, {viewModel: errorMessage : 'An error occurred' }
+        userViewModel.errorMessage =errorMessage
+        return @.res.render signUp_fail, {viewModel:userViewModel}
 
       if (error or response.body is null or response.statusCode isnt 200)
         logger?.info ('Bad response received from TM 3.5 server')
-        return @.res.render signUp_fail, {viewModel: errorMessage : 'An error occurred' }
+        userViewModel.errorMessage =errorMessage
+        return @.res.render signUp_fail, {viewModel:userViewModel}
 
 
       signUpResponse = response.body?.d
