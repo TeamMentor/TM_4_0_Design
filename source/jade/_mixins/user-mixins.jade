@@ -1,5 +1,25 @@
 include ../../shared-mixins/globals.jade
 
+mixin team-mentor-summary
+  #summary.bg.content
+    include:md ../../content/getting-started/login-wall-summary.md
+    table
+      tr
+        td.text-center
+          i.fi-clipboard-pencil.landing-page
+        td
+          include:md ../../content/getting-started/summary-point-1.md
+      tr
+        td.text-center
+          i.fi-arrows-in.landing-page
+        td
+          include:md ../../content/getting-started/summary-point-2.md
+      tr
+        td.text-center
+          i.fi-checkbox.landing-page
+        td
+          include:md ../../content/getting-started/summary-point-3.md
+
 mixin login-form
   #heading
     include:md ../../content/getting-started/login-form.md
@@ -50,18 +70,17 @@ mixin forgot-password-form
 
 //- pwd-reset-form
 mixin pwd-reset-form
-  #form
-    #heading
-      p Reset your password
-    form#pwd-reset-form(role='form' method='post')
-      .form-group
-        +password-input
-        include:md ../../content/getting-started/password-prompt.md
-      .form-group
-        +confirm-password-input
-      .row
-        .col-5
-          +reset-password-button
+  #heading
+    p Reset your password
+  form#pwd-reset-form(role='form' method='post')
+    .form-group
+      +password-input
+      include:md ../../content/getting-started/password-prompt.md
+    .form-group
+      +confirm-password-input
+    .row
+      .col-5
+        +reset-password-button
 
 //- Alerts
 mixin alert-login-failed

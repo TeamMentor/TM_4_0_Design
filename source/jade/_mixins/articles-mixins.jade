@@ -1,6 +1,13 @@
 mixin article
     #article.bg.content
-        h1#title.article-title= title
+        table
+            tr.article-title
+                td.vertical-align
+                    +filter-icon('Technology',technology)
+                    br
+                    +filter-icon('Type', type)
+                td
+                    h1#title= title
         #html.article-content!= article_Html
 
 mixin no-article

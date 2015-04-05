@@ -54,27 +54,6 @@ mixin see-for-yourself-button
     i.fi-eye
     span See for yourself
 
-//- Summary
-mixin team-mentor-summary
-  #summary.bg.content
-    include:md ../content/getting-started/login-wall-summary.md
-    table
-      tr
-        td.text-center
-          i.fi-clipboard-pencil.landing-page
-        td
-          include:md ../content/getting-started/summary-point-1.md
-      tr
-        td.text-center
-          i.fi-arrows-in.landing-page
-        td
-          include:md ../content/getting-started/summary-point-2.md
-      tr
-        td.text-center
-          i.fi-checkbox.landing-page
-        td
-          include:md ../content/getting-started/summary-point-3.md
-
 mixin menu-icon
   i.fi-list
 
@@ -105,11 +84,64 @@ mixin article-icon
 mixin alert-icon
   i.fi-megaphone
 
-mixin guideline-icon
-  i.fi-page
-
 mixin checklist-icon
-  i.fi-checkbox
+  i.fi-checkbox(title='Checklist')
+
+mixin guideline-icon
+  i.fi-book(title='Guideline')
+
+mixin code-sample-icon
+  i.fi-puzzle(title='Code Sample')
 
 mixin how-to-icon
-  i.fi-list-bullet
+  i.fi-list-bullet(title='How To')
+
+mixin any-technology-icon
+  i.fi-flag(title='Any Technology')
+
+mixin html5-icon
+  i.fi-html5(title='HTML5')
+
+mixin filter-icon(filter, title)
+  case filter
+    when 'Type'
+      case title
+        when 'Checklist Item'
+          +checklist-icon
+        when 'Guideline'
+          +guideline-icon
+        when 'Code Example'
+          +code-sample-icon
+        when 'How To'
+          +how-to-icon
+        default
+          span
+
+    when 'Technology'
+      case title
+        when '.NET'
+        when 'ASP.NET 3.5'
+        when '.NET 3.5'
+        when 'ASP.NET 4.0'
+          .technology-icon.asp(title='ASP.Net')
+        when 'Android'
+          .technology-icon.android(title='Android')
+        when 'C++'
+          .technology-icon.c-plus-plus(title='C++')
+        when 'iOS'
+          .technology-icon.ios(title='iOS')
+        when 'Java'
+          .technology-icon.java(title='Java')
+        when 'PHP'
+          .technology-icon.php(title='PHP')
+        when 'Scala Play'
+        when 'Scala with Play Framework'
+          .technology-icon.scala(title='Scala')
+        when 'WCF 3.5'
+          .technology-icon.wcf(title='WCF')
+        when 'Web Application'
+          .technology-icon.web-app(title='Web Application')
+        when 'HTML5'
+          +html5-icon
+        default
+          +any-technology-icon

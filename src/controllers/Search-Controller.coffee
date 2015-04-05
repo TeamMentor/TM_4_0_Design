@@ -27,6 +27,7 @@ class SearchController
         @.jade_Service       = new Jade_Service(@config)
         @.graph_Service      = new Graph_Service()
         @.jade_Page          = '/source/jade/user/search.jade'
+        @.jade_Error_Page    = '/source/jade/guest/404.jade'
         @.defaultUser        = 'TMContent'
         @.defaultRepo        = 'TM_Test_GraphData'
         @.defaultFolder      = '/SearchData/'
@@ -74,9 +75,15 @@ class SearchController
                 @searchData.activeFilter.ids     = (value.id for value in results.values())
                 @searchData.activeFilter.titles  = (value.title for value in results.values())
                 @searchData.activeFilter.filters = filters
-                @res.send(@renderPage())
+                if (@searchData.results?)
+                  @res.send(@renderPage())
+                else
+                  @res.send @jade_Service.renderJadeFile(@.jade_Error_Page)
             else
-              @res.send(@renderPage())
+              if (@searchData.results?)
+                @res.send(@renderPage())
+              else
+                @res.send @jade_Service.renderJadeFile(@.jade_Error_Page)
 
     search_Via_Url: =>
       @.req.query.text = @.req.params.text

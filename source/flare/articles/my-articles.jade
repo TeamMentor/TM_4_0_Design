@@ -1,5 +1,6 @@
 extends ../_layouts/flare_page
 include ../mixins/articles-mixins
+include ../mixins/application-mixins
 
 block content
 	#application
@@ -7,6 +8,6 @@ block content
 			.bg
 				+links-home__navigate
 		#results
-			+flare-results-save-clear
+			+my-results
 			+saved-articles-list
 		#right-nav

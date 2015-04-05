@@ -1,4 +1,5 @@
-include ../_mixins/user-mixins
+include user-mixins
+
 //- directory-list
 mixin directory-list
     #directory-list.bg
@@ -69,9 +70,6 @@ mixin results
                                     span#activeFilter.filter= filter.title
                                         span.close
                                             a(href=href + '/' + activeFilter.filters.remove(filter.id)) x
-                            //span#activeFilter.filter= activeFilter.titles
-                                span.close
-                                    a(href=href) x
         .desktop
             table
                 tr
@@ -110,11 +108,8 @@ mixin main-app-view
                         for recent_Article in recent_Articles
                           tr
                             td
-                                //a(href='/article/' + recent_Article.id)
                                 a(href='/article/' + recent_Article.id.remove('article-') + '/' + recent_Article.title.replace(/ /g,'-').remove('.'), id=recent_Article.id)
-                                    +article-icon
                                     = recent_Article.title
-
         if (top_Searches)
             .bg
                 #popular-Search-Terms
@@ -135,7 +130,6 @@ mixin main-app-view
                                 td
                                     //a(href=top_Article.href)
                                     a(href= top_Article.href.remove('article-') + '/' + top_Article.title.replace(/ /g,'-').remove('.'), id=top_Article.id)
-                                        +article-icon
                                         = top_Article.title
         //if (newArticles)
             .bg
@@ -152,16 +146,23 @@ mixin main-app-view
 mixin articles-list
     #articles
         if results
-            each result in results.take(250)
+            each result,index in results.take(250)
                 .bg#list-view-article
                     if result
                         table
                             tr
+                                td.small
+                                    span.label= '#' + (index +1)
+                                    br
+                                    +filter-icon('Technology',result.technology)
+                                    br
+                                    +filter-icon('Type', result.type)
+
                                 td
-                                    span
-                                        a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
-                                            h4=  result.title
+                                    a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
+                                        h4= result.title
                             tr
+                                td
                                 td
                                     p= result.summary + '...'
 
@@ -179,15 +180,21 @@ mixin filters-div
                                 if activeFilter
                                     if activeFilter.ids.contains(result.id)
                                         td
+                                            +filter-icon(filter.title, result.title)
                                             b= result.title
                                             span.right.badge= result.size
                                     else
                                         if result.size > 0
                                             td
-                                                a(href=href + '/' + activeFilter.filters + ',' + result.id)= result.title
+                                                a(href=href + '/' + activeFilter.filters + ',' + result.id)
+                                                    span
+                                                        +filter-icon(filter.title, result.title)
+                                                    span= result.title
                                                     span.right.badge= result.size
                                 else
                                     td
                                         a(href=href + '/'+result.id)
-                                            span.filter-icon= result.title
+                                            span
+                                                +filter-icon(filter.title, result.title)
+                                            span= result.title
                                             span.right.badge= result.size

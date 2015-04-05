@@ -82,6 +82,9 @@ img, object {
   display: block;
   margin: 2px 0;
 }
+#links.text-links {
+  margin-top: 7px;
+}
 #links.icons ul li i {
   padding-right: 10px
 }
@@ -180,6 +183,9 @@ i.landing-page {
   margin: 0;
   margin: 10px 0;
 }
+#footer #si-logo {
+  margin-bottom: 20px;
+}
 #footer i {
   font-size: 1em;
   margin-right: 10px;
@@ -191,9 +197,14 @@ i.landing-page {
   GETTING STARTED
 *------------------------------------*/
 #loginwall {
-  border: 1px solid #dbdbdb;
+  background: transparent;
+  margin: 15px 10px 0 10px;
+}
+#login-form, #sign-up-form, #forgot-password, #pwd-reset-form {
   background: white;
-  margin-bottom: 5px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  padding-bottom: 20px;
 }
 #heading {
   background-color: #8aaf3e;
@@ -205,8 +216,7 @@ i.landing-page {
   color: white;
 }
 #summary {
-  max-width: 98%;
-  margin: 0 auto;
+  margin: 10px;
 }
 #summary table td {
   padding: 0 10px;
@@ -224,7 +234,7 @@ i.landing-page {
 #application {
   width: 100%;
   max-height: 100%;
-  padding-top: 170px;
+  padding-top: 180px;
   background: #fafafa;
 }
 #landing-page #application {
@@ -249,11 +259,14 @@ i.landing-page {
 }
 .bg#list-view-article h4 {
   padding: 0 0 20px 0;
-  margin-bottom: 0;
+  margin: 30px 0 7px 0;
   border-bottom: 1px solid #dbdbdb;
 }
 .bg#list-view-article p {
   margin-top: 0;
+}
+.bg#list-view-article a:hover h4 {
+  color: #8aaf3e !important;
 }
 .bg#list-view-article span.badge {
   margin-top: 10px;
@@ -276,6 +289,12 @@ i.landing-page {
 }
 #copyright i, #main-app-view i {
   margin: 0 10px 0 0;
+}
+#filters i {
+  padding: 0 12px 0 5px;
+}
+#filters .technology-icon {
+  margin-right: 10px;
 }
 #main-app-view {
   margin-top: 120px;
@@ -309,20 +328,19 @@ i.landing-page {
   margin-bottom: 5px;
   width: 100%;
   position: fixed;
-  top: 155px;
+  top: 170px;
   left: 0;
   z-index: 96;
   margin: 0 auto;
 }
-/*------------------------------------*
-  ARTICLES
-*------------------------------------*/
-#article #title {
-  border-bottom: 1px solid #dbdbdb;
-  padding-bottom: 25px;
-  line-height: 1.5em;
-  margin-bottom: 40px;
-  color: #5c5c5c;
+#article td.vertical-align i {
+  margin-left: 5px;
+}
+#help-nav {
+  margin: 15px 10px 15px 10px;
+}
+#help-docs {
+  margin: 0 10px 10px 10px;
 }
 /*------------------------------------*
    SUB-NAVIGATION
@@ -620,6 +638,9 @@ button:hover, button:active {
   font-size: inherit;
   border-radius: 3px;
 }
+.alert a {
+  text-decoration: underline;
+}
 .filter {
   padding: 5px;
   background: #aaaaaa;
@@ -680,6 +701,18 @@ td, th {
 }
 td.small {
   width: 10px;
+  padding-top: 20px;
+  text-align: center;
+}
+td.vertical-align {
+  vertical-align: initial;
+  padding-top: 35px;
+}
+tr.article-title {
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 25px;
+  line-height: 1.5em;
+  color: #5c5c5c;
 }
 .data tr {
   border: 1px solid #dbdbdb;
@@ -728,7 +761,7 @@ td.small {
     float: right;
   }
   #links.text-links, #links.icons {
-    padding-top: 20px;
+    padding-top: 10px;
   }
   #links.icons ul li {
     display: inline-block;
@@ -747,7 +780,10 @@ td.small {
     font-size: 14px;
   }
   #loginwall {
-    margin: 0;
+    margin: 15px 7px 0 0;
+  }
+  #summary {
+    margin: 15px 0 0 7px;
   }
   #application {
     padding-top: 60px;
@@ -764,6 +800,12 @@ td.small {
   .client-logo {
     width: 30%;
     padding-top: 10%;
+  }
+  #help-nav {
+    margin: 15px 10px 0 0;
+  }
+  #help-docs {
+    margin: 15px 0 0 10px;
   }
 }
 @media (min-width: 860px) {
@@ -829,6 +871,15 @@ td.small {
   .client-logo {
     width: 100%;
     padding-top: 33%;
+  }
+  #footer {
+    text-align: left !important;
+  }
+  #footer h4 {
+    margin: 0 0 0 20px;
+  }
+  #footer #si-logo {
+    margin-top: 10px;
   }
 }
 @media (min-width: 999px) {
@@ -989,43 +1040,57 @@ ul.side-nav span.badge {
   vertical-align: middle;
   float: right;
 }
-.filter-icon {
-  padding: 0 5px 0 0;
-}
 .technology-icon {
   background:url('../assets/icons/technology.png') no-repeat;
-  background-size: 100%;
-  width: 100%;
+  background-size: 20px;
+  width: 20px;
+  padding-top: 20px;
   margin: 0 auto;
-  padding-top: 100%;
-  height: 0;
+  display: inline-block;
 }
 .android {
-  background-position: 0% 0%;
+  background-position: 0 -2%;
 }
 .asp {
-  background-position: 0% 12%;
+  background-position: 0% 10.5%;
 }
 .c-plus-plus {
-  background-position: 0% 24%;
+  background-position: 0% 23.5%;
 }
 .ios {
-  background-position: 0% 37%;
+  background-position: 0% 36%;
 }
 .java {
-  background-position: 0% 51%;
+  background-position: 0% 49%;
 }
 .php {
-  background-position: 0% 63%;
+  background-position: 0% 61%;
 }
 .scala {
-  background-position: 0% 76%;
+  background-position: 0% 74%;
 }
 .wcf {
-  background-position: 0% 89%;
+  background-position: 0% 87%;
 }
 .web-app {
-  background-position: 0% 102%;
+  background-position: 0% 99%;
+}
+#message {
+  font-size: 0.85em !important;
+}
+#message i {
+  font-size: 1.25em;
+}
+#message a {
+  text-decoration: underline;
+  text-transform: lowercase !important;
+}
+#team-mentor-navigation #message {
+  font-size: 0.65em !important;
+  margin-top: 0;
+}
+#team-mentor-navigation #message a {
+  font-size: 1em !important;
 }
 /*------------------------------------*
   HACKS
@@ -1038,9 +1103,12 @@ ul.side-nav span.badge {
   font-size: 1.5em !important;
   padding: 0;
 }
-#toc-content h4 {
+.toc-content h4 {
   padding-top: 100px;
   margin-top: -80px;
+}
+.article-content {
+  padding-top: 20px;
 }
 /*------------------------------------*
    GLYPHICONS
