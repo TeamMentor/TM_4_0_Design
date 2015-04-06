@@ -802,10 +802,10 @@ tr.article-title {
     padding-top: 10%;
   }
   #help-nav {
-    margin: 15px 10px 0 0;
+    margin: 15px 10px 0 15px;
   }
-  #help-docs {
-    margin: 15px 0 0 10px;
+  #help-docs, #help-index {
+    margin: 15px 15px 0 10px;
   }
 }
 @media (min-width: 860px) {
