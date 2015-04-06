@@ -59,6 +59,9 @@ class SearchController
 
         logger?.info {user: @.req.session?.username, action:'show', queryId: queryId, filters:filters}
 
+        if (not queryId?)
+          logger?.info {Error:'GraphDB might not be available, please verify.'}
+
         @get_Navigation queryId, (navigation)=>
           target = navigation.last() || {}
           @graph_Service.graphDataFromGraphDB target.id, filters,  (searchData)=>
@@ -78,11 +81,13 @@ class SearchController
                 if (@searchData.results?)
                   @res.send(@renderPage())
                 else
+                  logger?.info {Error:'There are no results that match the search.',queryId: queryId, filters:filters}
                   @res.send @jade_Service.renderJadeFile(@.jade_Error_Page)
             else
               if (@searchData.results?)
                 @res.send(@renderPage())
               else
+                logger?.info {Error:'There are no results that match the search.',queryId: queryId, filters:filters}
                 @res.send @jade_Service.renderJadeFile(@.jade_Error_Page)
 
     search_Via_Url: =>
