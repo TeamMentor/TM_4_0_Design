@@ -214,7 +214,7 @@ nav a:hover, nav p:hover {
   padding: 20px;
   margin-bottom: 20px;
 }
-#article h1 {
+article h1 {
   padding-bottom: 20px;
   border-bottom: 1px solid #dbdbdb;
 }
