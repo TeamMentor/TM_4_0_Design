@@ -53,6 +53,11 @@ nav a:hover, nav p:hover {
   color: #6c9020;
   text-decoration: none;
 }
+nav .button {
+  padding: 10px;
+  margin: 0;
+  color: white !important;
+}
 #logo {
   -webkit-order: 2;
   order: 2;
@@ -98,15 +103,13 @@ nav a:hover, nav p:hover {
 .field {
   flex: 1;
 }
-.logo {
-  width: 50%;
-  margin: 0 auto;
-}
 .si-logo {
   background: url('../assets/logos/si-logo.svg') no-repeat;
-  background-size: contain;
-  padding-top: 10%;
+  background-size: cover;
+  padding-top: 20px;
   height: 0;
+  width: 15px;
+  margin: 0 5px 0 10px;
 }
 #menu-icon {
   -webkit-order: 4;
@@ -123,7 +126,7 @@ nav a:hover, nav p:hover {
   flex: 100%;
   text-align: center;
   list-style-type: none;
-  margin: 10px 0;
+  margin: 0 0 10px 0;
   display: none;
 }
 #links li {
@@ -287,7 +290,7 @@ section {
   padding: 1em 0 2em 0;
   background-size: auto;
 }
-.about h3, .usp h2, .call-to-action h2 {
+.about h3, .usp h2, .call-to-action h2, .clients h3 {
   color: white;
 }
 .about-us, .features {
@@ -300,8 +303,8 @@ section {
   background-position: 0em 0em;
 }
 .clients {
-  padding: 0em 2em 3em 2em;
-  background: white;
+  padding: 1em 2em 3em 2em;
+  background: #b4cf7b;
 }
 .clients h2 {
   text-align: left !important;
@@ -345,27 +348,29 @@ section {
   text-align: left;
 }
 footer {
-  padding: 0 0 15px 0;
+  width: 100%;
+  padding: 20px 0 10px 0;
+  display: flex;
+  display: -webkit-flex;
+}
+.si-name {
+  flex: 4;
+  text-align: left;
+  padding: 2px 0 0 0;
+  font-size: 0.75em !important;
+}
+.si-name a, .si-name a:hover {
+  text-decoration: none;
+}
+.icons {
+  flex: 2;
   text-align: center;
 }
-#contact-information {
-  margin-top: 20px;
-}
-footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-footer li {
-  font-size: 0.75em;
-  margin: 0 0 5px 0;
-}
 footer i {
-  margin-right: 10px;
   color: #444444;
 }
 .reasons {
-  padding: 2em;
+  padding: 3em 2em;
   background: white;
 }
 #left-column{
@@ -527,7 +532,7 @@ a {
   transition: 0.3s;
 }
 a:hover, a:active, a:focus {
-  color: #49661f;
+  color: #8aaf3e;
   text-decoration: underline;
 }
 a.action {
@@ -945,12 +950,6 @@ input.field {
   }
 }
 @media (min-width: 641px) {
-  .logo {
-    width: 100%;
-  }
-  .si-logo {
-    padding-top: 20%;
-  }
   #user li {
     padding-top: 7px;
     padding-right: 15px;
@@ -980,8 +979,11 @@ input.field {
     flex: 2;
     display: block;
   }
-  #links li, #links li:last-child {
+  #links li {
     padding: 15px 30px 0 0;
+  }
+  #links li:last-child {
+    padding: 15px 20px 0 0;
   }
   #menu-icon {
     display: none;
@@ -1035,6 +1037,10 @@ input.field {
     -webkit-flex: 1;
     flex: 1;
     max-height: 40px;
+    margin-left: 15px;
+  }
+  footer {
+    padding-left: 10px;
   }
   input#search {
     margin-top: 10px;
@@ -1088,9 +1094,6 @@ input.field {
   }
   .clients {
     text-align: center;
-  }
-  footer {
-    text-align: left;
   }
   .control-panel {
     margin-top: 15px !important;
