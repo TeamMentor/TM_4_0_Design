@@ -119,7 +119,8 @@ mixin alert-pwd-reset-OK
       span Your password has been updated. Please login to access our libraries.
 
 mixin alert-3-5-unavailable
-  if errorMessage
-    .alert(role='alert')
-      #message= 'Error: ' + errorMessage
-      +tm-support-email
+  .alert(role='alert')
+    #message
+      span= 'Error: ' + errorMessage
+      span
+        +tm-support-email
