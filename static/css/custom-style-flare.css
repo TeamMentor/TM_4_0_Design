@@ -53,9 +53,13 @@ nav a:hover, nav p:hover {
   color: #6c9020;
   text-decoration: none;
 }
-nav .button {
-  padding: 10px;
+nav a.button {
+  padding: 5px 10px;
   margin: 0;
+  background: transparent;
+  border: 2px solid #8aaf3e;
+}
+nav a.button:hover {
   color: white !important;
 }
 #logo {
@@ -301,6 +305,9 @@ section {
 }
 .usp {
   background-position: 0em 0em;
+}
+.usp button {
+  background: #6c9020;
 }
 .clients {
   padding: 1em 2em 3em 2em;
@@ -709,7 +716,7 @@ table i {
    BUTTONS
 *------------------------------------*/
 button, .button {
-  background: #8aaf3e;
+  background: #6c9020;
   border-radius: 3px;
   border: none;
   color: white;
@@ -723,7 +730,7 @@ button, .button {
   max-width: 100%;
 }
 button:hover, button:active, .button:hover, .button:active {
-  background: #a6cb5a;
+  background: #8aaf3e;
   text-decoration: none;
   transition: all 0.5s;
 }
