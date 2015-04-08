@@ -344,23 +344,23 @@ section {
 .features h2 {
   text-align: left;
 }
-.footer {
+footer {
   padding: 0 0 15px 0;
   text-align: center;
 }
 #contact-information {
   margin-top: 20px;
 }
-.footer ul {
+footer ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.footer li {
+footer li {
   font-size: 0.75em;
   margin: 0 0 5px 0;
 }
-.footer i {
+footer i {
   margin-right: 10px;
   color: #444444;
 }
@@ -1089,7 +1089,7 @@ input.field {
   .clients {
     text-align: center;
   }
-  .footer {
+  footer {
     text-align: left;
   }
   .control-panel {
