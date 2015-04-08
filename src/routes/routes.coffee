@@ -42,8 +42,8 @@ add_Routes = (express_Service)->
     #app.get '/passwordReset/:username/:token'               , (req, res)->  res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/pwd-reset.jade'
 
     #errors 404 and 500
-    app.get '/error', (req,res)-> res.status(500).render 'source/jade/guest/500.jade',{loggedIn:req.session?.username != undefined}
-    app.get '/*'    , (req,res)-> res.status(404).render 'source/jade/guest/404.jade',{loggedIn:req.session?.username != undefined}
+    app.get '/error', (req,res)-> res.status(500).render 'source/jade/guest/500.jade',{loggedIn:req.session?.username isnt undefined}
+    app.get '/*'    , (req,res)-> res.status(404).render 'source/jade/guest/404.jade',{loggedIn:req.session?.username isnt undefined}
 
     app.use (err, req, res, next)->
       #console.error(err.stack)
