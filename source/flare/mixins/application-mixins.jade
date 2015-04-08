@@ -3,18 +3,14 @@ include globals.jade
 
 //- Flare Search Bar Input
 mixin flare-search-bar-input
-    #search-bar
-        .row.collapse
-            .small-2.large-1.columns
-                a.button.search.full-width#navigate-button(href='navigate')
-                    i.fi-list-thumbnails
-            .small-7.large-9.columns
-                input#search(type='text', placeholder='Type keywords here')
-            .small-3.large-2.columns
-                a.button.search(href='app-keyword-search')
-                    +search-icon
-                a.button.search#filters-button(href='filters-div')
-                    +filter-icon
+    #search.search-bar
+        a.button.add-on#navigate-button(href='navigate')
+            i.fi-list-thumbnails
+        input.field(type='text', placeholder='Type keywords here')
+        a.button.add-on(href='app-keyword-search')
+            +search-icon
+        a.button.add-on#filters-button(href='filters-div')
+            +filter-icon
 
 //- Flare Results-Save-Clear
 mixin flare-results-save-clear

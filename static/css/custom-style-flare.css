@@ -84,11 +84,19 @@ nav a:hover, nav p:hover {
 #user i {
   padding-right: 10px;
 }
-#search-bar {
+#search {
   -webkit-order: 4;
   order: 4;
   -webkit-flex: 100%;
   flex: 100%;
+}
+.search {
+  display: -webkit-flex;
+  display: flex;
+  vertical-align: middle;
+}
+.field {
+  flex: 1;
 }
 .logo {
   width: 50%;
@@ -717,6 +725,10 @@ button:hover, button:active, .button:hover, .button:active {
 button.full-width, .button.full-width {
   width: 100%;
 }
+.add-on {
+  padding: 13.5px;
+  border: 1px solid white;
+}
 button.circle {
   border-radius: 50%;
   height: 45px;
@@ -847,10 +859,8 @@ input[type="url"]:focus, textarea:focus, select:focus {
   outline: none;
   border: 1px solid #aaaaaa;
 }
-input#search {
-  width: 100%;
-  outline: none;
-  margin-top: 6px;
+input.field {
+  margin: 0 0;
 }
 #filters input[type=radio] {
   display: none;
@@ -942,7 +952,7 @@ input#search {
     padding-top: 20%;
   }
   #user li {
-    padding-top: 10px;
+    padding-top: 7px;
     padding-right: 15px;
   }
   #user li a {
@@ -1000,7 +1010,7 @@ input#search {
   .tabs-content {
     padding: 10px 40px;
   }
-  #search-bar {
+  #search {
     -webkit-order: 5;
     order: 5;
     -webkit-flex: 2;
