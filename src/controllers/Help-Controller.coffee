@@ -90,7 +90,7 @@ class Help_Controller
       @render_Jade_and_Send @.jade_Help_Index, {}
 
   user_Logged_In: ()=>
-    (@req.session?.username != undefined)
+    @req.session?.username isnt undefined
 
 Help_Controller.register_Routes =  (app)=>
 

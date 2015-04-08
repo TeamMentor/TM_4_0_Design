@@ -82,13 +82,13 @@ class SearchController
                   @res.send(@renderPage())
                 else
                   logger?.info {Error:'There are no results that match the search.',queryId: queryId, filters:filters}
-                  @res.send @jade_Service.renderJadeFile(@.jade_Error_Page)
+                  @res.send @jade_Service.renderJadeFile(@.jade_Error_Page,{loggedIn:@.req.session?.username isnt undefined})
             else
               if (@searchData.results?)
                 @res.send(@renderPage())
               else
                 logger?.info {Error:'There are no results that match the search.',queryId: queryId, filters:filters}
-                @res.send @jade_Service.renderJadeFile(@.jade_Error_Page)
+                @res.send @jade_Service.renderJadeFile(@.jade_Error_Page,{loggedIn:@.req.session?.username isnt undefined})
 
     search_Via_Url: =>
       @.req.query.text = @.req.params.text

@@ -20,7 +20,7 @@ class Misc_Controller
          .send(html)
 
   user_Logged_In: ()=>
-    (@req.session?.username != undefined)
+    @req.session?.username isnt undefined
 
 Misc_Controller.register_Routes =  (app)=>
 
