@@ -109,7 +109,7 @@ nav .button {
   padding-top: 20px;
   height: 0;
   width: 15px;
-  margin: 0 5px 0 10px;
+  margin: 5px 5px 0 10px;
 }
 #menu-icon {
   -webkit-order: 4;
@@ -357,17 +357,17 @@ footer {
   flex: 4;
   text-align: left;
   padding: 2px 0 0 0;
-  font-size: 0.75em !important;
 }
 .si-name a, .si-name a:hover {
   text-decoration: none;
+  font-size: 0.75em !important;
 }
 .icons {
   flex: 2;
   text-align: center;
 }
 footer i {
-  color: #444444;
+  color: #7b7b7b;
 }
 .reasons {
   padding: 3em 2em;
@@ -552,7 +552,7 @@ a.underline:hover h3 {
   color: #8aaf3e !important;
 }
 .minor{
-  color: #444444;
+  color: #7b7b7b;
   text-decoration: none;
   font-size: 14px;
 }
