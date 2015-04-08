@@ -2,17 +2,19 @@ include ../../shared-mixins/globals.jade
 
 mixin usp-div
     section.usp
-        include:md ../../content/landing-pages/usp.md
-        a(href='../getting-started/index')
-            +start-trial-button
-        //.row
-            .small-12.large-offset-1.large-10.end.columns
-                h2
-                    include:md ../../content/landing-pages/usp.md
-                .row
-                    .small-12.medium-offset-3.medium-6.end.columns
-                        a(href='../getting-started/index')
-                            +start-trial-button
+        .se-slope
+            .se-content
+                include:md ../../content/landing-pages/usp.md
+                a(href='../getting-started/index')
+                    +start-trial-button
+                //.row
+                    .small-12.large-offset-1.large-10.end.columns
+                        h2
+                            include:md ../../content/landing-pages/usp.md
+                        .row
+                            .small-12.medium-offset-3.medium-6.end.columns
+                                a(href='../getting-started/index')
+                                    +start-trial-button
 
 mixin reasons-to-use-tm-div
     section.reasons

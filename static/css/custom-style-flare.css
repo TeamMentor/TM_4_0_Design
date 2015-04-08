@@ -1,6 +1,37 @@
 /*------------------------------------*
    STRUCTURE
 *------------------------------------*/
+.se-slope{
+  margin: 0 -50px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+}
+.se-slope:nth-child(odd){
+  background: #000;
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
+  margin-top: -250px;
+  box-shadow: 0px -1px 3px rgba(0,0,0,0.4);
+}
+.se-slope:nth-child(odd) .se-content{
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  color: #e90089;
+  padding: 130px 100px 250px 100px;
+}
+
+
+
+
 html, body {
   height: 100%;
   width: 100%;
@@ -281,7 +312,7 @@ article h1 {
 section {
   width: 100%;
   display: block;
-  overflow: auto;
+  overflow: hidden;
   background: white;
 }
 .about, .call-to-action, .usp {
@@ -311,7 +342,6 @@ section {
 }
 .clients {
   padding: 1em 2em 3em 2em;
-  background: #b4cf7b;
 }
 .clients h2 {
   text-align: left !important;
@@ -356,9 +386,10 @@ section {
 }
 footer {
   width: 100%;
-  padding: 20px 0 10px 0;
+  padding: 10px 0 10px 0;
   display: flex;
   display: -webkit-flex;
+  background: #b4cf7b;
 }
 .si-name {
   flex: 4;
@@ -373,8 +404,13 @@ footer {
   flex: 2;
   text-align: center;
 }
-footer i {
+footer a i {
+  color: #444444;
+  transition: 0.3s;
+}
+footer a i:hover {
   color: #7b7b7b;
+  transition: 0.3s;
 }
 .reasons {
   padding: 3em 2em;
@@ -559,12 +595,12 @@ a.underline:hover h3 {
   color: #8aaf3e !important;
 }
 .minor{
-  color: #7b7b7b;
+  color: #444444;
   text-decoration: none;
   font-size: 14px;
 }
 .minor:hover {
-  color: #aaaaaa;
+  color: #7b7b7b;
   text-decoration: none;
 }
 .text-center {
