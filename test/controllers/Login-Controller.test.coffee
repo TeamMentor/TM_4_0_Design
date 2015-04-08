@@ -7,6 +7,7 @@ describe '| controllers | Login-Controller.test |', ->
 
   #consts
   loginPage                 = 'source/jade/guest/login-Fail.jade'
+  loginPage_Unavailable     = 'source/jade/guest/login-cant-connect.jade'
   mainPage_user             = '/user/main.html'
   mainPage_no_user          = '/guest/default.html'
   password_sent             = '/guest/pwd-sent.html'
@@ -86,8 +87,8 @@ describe '| controllers | Login-Controller.test |', ->
     req = body: {username:'aaaa', password:'bbb'}
     res =
       render: (jade_Page, params)->
-        jade_Page.assert_Is loginPage
-        params.assert_Is { viewModel: {"username":"","password":"", errorMessage: "TEAM Mentor is unavailable, please contact us at <a href='mailto:support@securityinnovation.com'>support@securityinnovation.com</a>" } }
+        jade_Page.assert_Is loginPage_Unavailable
+        params.assert_Is { viewModel: {"username":"","password":"", errorMessage: "TEAM Mentor is unavailable, please contact us at " } }
         done()
 
     using new Login_Controller(req, res), ->
@@ -98,7 +99,7 @@ describe '| controllers | Login-Controller.test |', ->
     on_Login_Response = (req,res)->
       res.send null
 
-    invoke_LoginUser 'aaa','bbb', loginPage, ->
+    invoke_LoginUser 'aaa','bbb', loginPage_Unavailable, ->
       on_Login_Response = null
       done()
 

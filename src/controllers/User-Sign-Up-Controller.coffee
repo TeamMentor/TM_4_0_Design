@@ -1,9 +1,10 @@
 
-signUp_fail  = 'source/jade/guest/sign-up-Fail.jade'
-signUp_Ok    = 'source/jade/guest/sign-up-OK.html'
-errorMessage = "TEAM Mentor is unavailable, please contact us at <a href='mailto:support@securityinnovation.com'>support@securityinnovation.com</a>"
-request      = null
-Config       = null
+signUp_fail             = 'source/jade/guest/sign-up-Fail.jade'
+signUpPage_Unavailable  = 'source/jade/guest/sign-up-cant-connect.jade'
+signUp_Ok               = 'source/jade/guest/sign-up-OK.html'
+errorMessage            = "TEAM Mentor is unavailable, please contact us at "
+request                 = null
+Config                  = null
 
 class User_Sign_Up_Controller
 
@@ -50,19 +51,19 @@ class User_Sign_Up_Controller
         #[QA] ADD ISSUE: Refactor this to show TM 500 error message
         logger?.info ('Could not connect with TM 3.5 server')
         userViewModel.errorMessage =errorMessage
-        return @.res.render signUp_fail, {viewModel:userViewModel}
+        return @.res.render signUpPage_Unavailable, {viewModel:userViewModel}
 
       if (error or response.body is null or response.statusCode isnt 200)
         logger?.info ('Bad response received from TM 3.5 server')
         userViewModel.errorMessage =errorMessage
-        return @.res.render signUp_fail, {viewModel:userViewModel}
+        return @.res.render signUpPage_Unavailable, {viewModel:userViewModel}
 
 
       signUpResponse = response.body?.d
 
       if (not signUpResponse) or (not signUpResponse.Validation_Results)
         logger?.info ('Bad data received from TM 3.5 server')
-        return @.res.render signUp_fail, {viewModel: errorMessage : 'An error occurred' }
+        return @.res.render signUpPage_Unavailable, {viewModel: errorMessage : 'An error occurred' }
 
       message = ''
 
