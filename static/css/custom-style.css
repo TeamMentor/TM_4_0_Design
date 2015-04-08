@@ -804,7 +804,7 @@ tr.article-title {
   #help-nav {
     margin: 15px 10px 0 0;
   }
-  #help-docs {
+  #help-docs, #help-index {
     margin: 15px 0 0 10px;
   }
 }
