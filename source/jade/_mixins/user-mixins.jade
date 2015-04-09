@@ -121,5 +121,7 @@ mixin alert-pwd-reset-OK
 mixin alert-3-5-unavailable
   if viewModel && viewModel.errorMessage
     .alert(role='alert')
-      #message= 'Error: ' + viewModel.errorMessage
-      +tm-support-email
+      #message
+        span= 'Error: ' + viewModel.errorMessage
+        span
+          +tm-support-email
