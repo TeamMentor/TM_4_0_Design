@@ -4,12 +4,12 @@ include globals.jade
 //- Flare Search Bar Input
 mixin flare-search-bar-input
     #search.search-bar
-        a.button.add-on#navigate-button(href='navigate')
+        button.add-on#navigate-button(href='navigate')
             i.fi-list-thumbnails
         input.field(type='text', placeholder='Type keywords here')
-        a.button.add-on(href='app-keyword-search')
+        button.add-on(href='app-keyword-search')
             +search-icon
-        a.button.add-on#filters-button(href='filters-div')
+        button.add-on#filters-button(href='filters-div')
             +filter-icon
 
 //- Flare Results-Save-Clear

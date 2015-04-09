@@ -1,7 +1,6 @@
 /*------------------------------------*
    STRUCTURE
 *------------------------------------*/
-
 html, body {
   height: 100%;
   width: 100%;
@@ -44,27 +43,6 @@ nav {
 .landing-page {
   background: #fafafa;
   border-bottom: 1px solid #dbdbdb;
-}
-nav a, nav p {
-  color: #8aaf3e;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-nav a:hover, nav p:hover {
-  color: #6c9020;
-  text-decoration: none;
-}
-nav a.button {
-  padding: 5px 10px;
-  margin: 0;
-  background: transparent;
-  border: 2px solid #8aaf3e;
-}
-nav a.button:hover {
-  color: white !important;
 }
 #logo {
   -webkit-order: 2;
@@ -723,25 +701,78 @@ table i {
    BUTTONS
 *------------------------------------*/
 button, .button {
-  background: #6c9020;
+  max-width: 100%;
   border-radius: 3px;
   border: none;
-  color: white;
-  display: inline-block;
-  font-size: 14px;
-  letter-spacing: 1px;
-  padding: 15px;
-  text-align: center;
+  background: none;
+  color: #6c9020;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  -webkit-transition: border-color 0.3s, background-color 0.3s;
+  transition: border-color 0.3s, background-color 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  border: 1px solid #6c9020;
   text-transform: uppercase;
-  transition: all 0.5s;
-  max-width: 100%;
+  font-size: 0.85em;
+  letter-spacing: 1px;
 }
-button:hover, button:active, .button:hover, .button:active {
+button:focus, .button:focus {
+  outline: none;
+}
+nav .btn-landing {
+  padding: 0.5em 10px 0.5em 30px;
+  background: #fff;
+  color: #6c9020;
+  border-color: #6c9020;
+}
+nav .btn-landing .btn-icon {
+  top: 6px;
+}
+.btn-landing {
+  padding: 1em 10px 1em 30px;
+  background: transparent;
+  color: #6c9020;
+  border-color: #6c9020;
+  -webkit-transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+.btn-landing > span {
+  display: inline-block;
+  -webkit-transform: translate3d(-10px, 0, 0);
+  transform: translate3d(-10px, 0, 0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.btn-landing .btn-icon {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  font-size: 14px;
+  -webkit-transform: translate3d(-40px, 2.5em, 0);
+  transform: translate3d(-40px, 2.5em, 0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.btn-landing:hover .btn-icon,
+.btn-landing:hover > span {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.btn-landing:hover {
   background: #8aaf3e;
-  text-decoration: none;
-  transition: all 0.5s;
+  border-color: #8aaf3e;
+  color: #fff;
 }
-button.full-width, .button.full-width {
+
+
+.full-width {
   width: 100%;
 }
 .add-on {
