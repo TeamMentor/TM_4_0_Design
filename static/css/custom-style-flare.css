@@ -1,36 +1,6 @@
 /*------------------------------------*
    STRUCTURE
 *------------------------------------*/
-.se-slope{
-  margin: 0 -50px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  -ms-transform-origin: left center;
-  transform-origin: left center;
-}
-.se-slope:nth-child(odd){
-  background: #000;
-  -webkit-transform: rotate(5deg);
-  -moz-transform: rotate(5deg);
-  -o-transform: rotate(5deg);
-  -ms-transform: rotate(5deg);
-  transform: rotate(5deg);
-  margin-top: -250px;
-  box-shadow: 0px -1px 3px rgba(0,0,0,0.4);
-}
-.se-slope:nth-child(odd) .se-content{
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-  -o-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  transform: rotate(-5deg);
-  color: #e90089;
-  padding: 130px 100px 250px 100px;
-}
-
-
-
 
 html, body {
   height: 100%;
@@ -47,6 +17,9 @@ body {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   background-color: #fafafa;
+}
+img, svg {
+  max-width: 100%;
 }
 body > * {
   -webkit-box-sizing: border-box;
@@ -321,9 +294,13 @@ section {
 .about {
   background-position: 0px 900px;
 }
-.about, .usp, .call-to-action {
+.about, .call-to-action {
   padding: 1em 0 2em 0;
   background-size: auto;
+}
+.usp {
+  background-position: 0em 0em;
+  padding: 3% 0 8%;
 }
 .about h3, .usp h2, .call-to-action h2, .clients h3 {
   color: white;
@@ -333,12 +310,6 @@ section {
 }
 .call-to-action {
   background-position: 0em -18em;
-}
-.usp {
-  background-position: 0em 0em;
-}
-.usp button {
-  background: #6c9020;
 }
 .clients {
   padding: 1em 2em 3em 2em;
@@ -413,7 +384,7 @@ footer a i:hover {
   transition: 0.3s;
 }
 .reasons {
-  padding: 3em 2em;
+  padding: 2em 2em 3em 2em;
   background: white;
 }
 #left-column{
@@ -979,7 +950,7 @@ input.field {
    MEDIA QUERIES
 *------------------------------------*/
 @media (min-width: 550px) {
-  .about, .call-to-action, .usp {
+  .about, .call-to-action {
     padding: 5% 0 8% 0;
   }
   .about, .call-to-action, .usp {
@@ -992,7 +963,7 @@ input.field {
     background-position: 0em -32em;
   }
 }
-@media (min-width: 641px) {
+@media (min-width: 642px) {
   #user li {
     padding-top: 7px;
     padding-right: 15px;
@@ -1093,7 +1064,6 @@ input.field {
   }
   #landing-page h2 {
     line-height: 1.5em;
-    text-align: center;
   }
   #landing-page h3 {
     line-height: 1.5em;
