@@ -1,0 +1,12 @@
+extends ../_layouts/flare_page
+include ../mixins/application-mixins
+
+block content
+	#application
+		#small-left-nav
+			p Recently Viewed
+			p Popular Searches
+			p Popular Articles
+			p New Articles
+		#large-results
+			+articles-list

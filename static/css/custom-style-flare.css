@@ -49,7 +49,7 @@ nav {
   order: 2;
   -webkit-flex: 1;
   flex: 1;
-  margin: 10px 5px;
+  margin: 10px 5px 10px 20px;
   background: url('../assets/logos/tm-logo.svg') no-repeat;
   background-size: contain;
   min-height: 20px;
@@ -67,7 +67,7 @@ nav {
   padding: 12px 0px 0 10px;
 }
 #user li:last-child {
-  padding-right: 10px;
+  padding-right: 20px;
 }
 #user li a {
   font-size: 0.70em;
@@ -85,6 +85,7 @@ nav {
   display: -webkit-flex;
   display: flex;
   vertical-align: middle;
+  width: 99%;
 }
 .field {
   flex: 1;
@@ -149,6 +150,21 @@ nav {
   order: 7;
   -webkit-flex: 100%;
   flex: 100%;
+  overflow-y: hidden;
+  min-height: 1px;
+}
+#small-left-nav {
+  -webkit-order: 7;
+  order: 7;
+  -webkit-flex: 1;
+  flex: 1;
+  min-height: 1px;
+}
+#large-results {
+  -webkit-order: 8;
+  order: 8;
+  -webkit-flex: 4;
+  flex: 4;
   overflow-y: auto;
   min-height: 1px;
 }
@@ -770,8 +786,39 @@ nav .btn-landing .btn-icon {
   border-color: #8aaf3e;
   color: #fff;
 }
-
-
+.btn-search {
+  position: relative;
+  display: inline-block;
+  margin: 1em;
+  padding: 0 5px;
+  border: none;
+  background: transparent;
+  color: #6c9020;
+  font-size: 1em;
+  overflow: visible;
+  -webkit-transition: color 0.7s;
+  transition: color 0.7s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.btn-search:hover {
+  color: #8aaf3e;
+}
+.btn-search:focus {
+  outline: none;
+  color: #8aaf3e;
+}
+.btn-search::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -35px 0 0 -35px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+}
 .full-width {
   width: 100%;
 }
@@ -910,8 +957,9 @@ input[type="url"]:focus, textarea:focus, select:focus {
   border: 1px solid #aaaaaa;
 }
 input.field {
-  margin: 0 0;
+  margin: 7px 0;
 }
+
 #filters input[type=radio] {
   display: none;
 }
