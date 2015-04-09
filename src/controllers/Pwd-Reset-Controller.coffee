@@ -34,7 +34,6 @@ class Pwd_Reset_Controller
                     body   : {email: email}
                     json   : true
                     url    : @.url_WS_SendPasswordReminder
-                    timeout: @.request_Timeout
               }
     request options, (error, response, body)=>
       if ((not error) and response?.statusCode == 200)
