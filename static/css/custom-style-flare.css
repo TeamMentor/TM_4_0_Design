@@ -1,6 +1,80 @@
 /*------------------------------------*
    STRUCTURE
 *------------------------------------*/
+
+#poc-left-nav {
+  -webkit-order: 5;
+  order: 5;
+  -webkit-flex: 1;
+  flex: 1;
+  min-height: 1px;
+}
+#poc-results {
+  -webkit-order: 6;
+  order: 6;
+  -webkit-flex: 3;
+  flex: 3;
+  overflow-y: auto;
+  min-height: 1px;
+  padding: 2px;
+}
+#poc-search {
+  -webkit-order: 8;
+  order: 8;
+  -webkit-flex: 100%;
+  flex: 100%;
+  overflow: hidden;
+}
+#poc-right-nav {
+  -webkit-order: 7;
+  order: 7;
+  -webkit-flex: 1;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 1px;
+}
+#poc-application {
+  -webkit-order: 4;
+  order: 4;
+  height: 84%;
+  -webkit-flex: 100%;
+  flex: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+.display-none {
+  display: none;
+}
+@media (min-width: 550px) {
+  #poc-search {
+    -webkit-order: 3;
+    order: 3;
+    -webkit-flex: 2;
+    flex: 2;
+    overflow: hidden;
+  }
+  #user {
+    -webkit-order: 4;
+    order: 4;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+  #poc-application {
+    -webkit-order: 5;
+    order: 5;
+  }
+}
+
+
+
+
+
+
+
+
 html, body {
   height: 100%;
   width: 100%;
@@ -49,10 +123,11 @@ nav {
   order: 2;
   -webkit-flex: 1;
   flex: 1;
-  margin: 10px 5px 10px 20px;
+  margin: 10px 5px;
   background: url('../assets/logos/tm-logo.svg') no-repeat;
   background-size: contain;
   min-height: 20px;
+  background-color: white;
 }
 #user {
   -webkit-order: 3;
@@ -67,7 +142,7 @@ nav {
   padding: 12px 0px 0 10px;
 }
 #user li:last-child {
-  padding-right: 20px;
+  padding-right: 10px;
 }
 #user li a {
   font-size: 0.70em;
@@ -151,21 +226,6 @@ nav {
   -webkit-flex: 100%;
   flex: 100%;
   overflow-y: hidden;
-  min-height: 1px;
-}
-#small-left-nav {
-  -webkit-order: 7;
-  order: 7;
-  -webkit-flex: 1;
-  flex: 1;
-  min-height: 1px;
-}
-#large-results {
-  -webkit-order: 8;
-  order: 8;
-  -webkit-flex: 4;
-  flex: 4;
-  overflow-y: auto;
   min-height: 1px;
 }
 #right-nav {
@@ -1028,7 +1088,7 @@ input.field {
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
-@media (min-width: 550px) {
+/*@media (min-width: 550px) {
   .about, .call-to-action {
     padding: 5% 0 8% 0;
   }
@@ -1253,7 +1313,7 @@ input.field {
   #right-column {
     padding: 20px 0 20px 20px;
   }
-}
+}*/
 /*------------------------------------*
    GLYPHICONS
 *------------------------------------*/
