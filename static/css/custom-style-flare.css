@@ -175,6 +175,7 @@ span.text {
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 #label {
   -webkit-flex: 100%;
@@ -1170,12 +1171,12 @@ input.search-input, input.search-input:focus {
     flex: 5%;
   }
   #poc-left-nav:hover {
-    -webkit-flex: 25%;
-    flex: 25%;
+    -webkit-flex: 15%;
+    flex: 15%;
   }
   #poc-left-nav:hover ~ #poc-results {
-    -webkit-flex: 70%;
-    flex: 70%;
+    -webkit-flex: 80%;
+    flex: 80%;
   }
   #label {
     -webkit-flex: 25%;
