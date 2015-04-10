@@ -25,53 +25,105 @@ mixin flare-results-save-clear
                 +clear-icon
 
 //- Flare Main App View
-mixin flare-main-app-view
-    #articles
-        dl.tabs(data-tab='data-tab')
-            dd.active
-                a(href='#recently-viewed-articles') Recently Viewed
-            dd
-                a(href='#popular-search-terms') Popular Searches
-            dd
-                a(href='#top-articles') Popular Articles
-            dd
-                a(href='#new-articles') New Articles
-        .tabs-content
-            #recently-viewed-articles.content.active
-                +articles-list
-            #popular-search-terms.content
-                +search-results
-            #top-articles.content
-                +articles-list
-            #new-articles.content
-                +articles-list
+mixin main-app-view
+    #label
+        .label Popular Articles
+    +articles-list
+    //#label
+        .label Recently Viewed Articles
+    //+articles-list
 
 //- Articles List
 mixin articles-list
-    .list-view-article.row
-        .small-12.columns
-            a.underline(href='../articles/article-new-window-view')
-                h3#article-headline Article Headline
-        .small-12.medium-10.columns
-            include:md ../../content/articles/article-details.md
-        .small-12.medium-2.columns
-            +article-controls
-    .list-view-article.row
-        .small-12.columns
-            a.underline(href='../articles/article-new-window-view')
-                h3 Article Headline
-        .small-12.medium-10.columns
-            include:md ../../content/articles/article-details.md
-        .small-12.medium-2.columns
-            +article-controls
-    .list-view-article.row
-        .small-12.columns
-            a.underline(href='../articles/article-new-window-view')
-                h3 Article Headline
-        .small-12.medium-10.columns
-            include:md ../../content/articles/article-details.md
-        .small-12.medium-2.columns
-            +article-controls
+    #articles
+        .container.article
+            .metadata
+                ul
+                    li
+                        span.rank-badge #1
+                        // Search Rank
+                    li
+                        p .
+                        // Technology Icon
+                    li
+                        p .
+                        // Phase Icon
+                    li
+                        button.app
+                            i.fi-bookmark
+                    li
+                        button.app
+                            i.fi-share
+            .summary
+                a(href='../articles/article-new-window-view')
+                    h3#article-headline Article Headline
+                include:md ../../content/articles/article-details.md
+        .container.article
+            .metadata
+                ul
+                    li
+                        span.rank-badge #1
+                        // Search Rank
+                    li
+                        p .
+                        // Technology Icon
+                    li
+                        p .
+                        // Phase Icon
+                    li
+                        button.app
+                            i.fi-bookmark
+                    li
+                        button.app
+                            i.fi-share
+            .summary
+                a(href='../articles/article-new-window-view')
+                    h3#article-headline Article Headline
+                include:md ../../content/articles/article-details.md
+        .container.article
+            .metadata
+                ul
+                    li
+                        span.rank-badge #1
+                        // Search Rank
+                    li
+                        p .
+                        // Technology Icon
+                    li
+                        p .
+                        // Phase Icon
+                    li
+                        button.app
+                            i.fi-bookmark
+                    li
+                        button.app
+                            i.fi-share
+            .summary
+                a(href='../articles/article-new-window-view')
+                    h3#article-headline Article Headline
+                include:md ../../content/articles/article-details.md
+        .container.article
+            .metadata
+                ul
+                    li
+                        span.rank-badge #1
+                        // Search Rank
+                    li
+                        p .
+                        // Technology Icon
+                    li
+                        p .
+                        // Phase Icon
+                    li
+                        button.app
+                            i.fi-bookmark
+                    li
+                        button.app
+                            i.fi-share
+            .summary
+                a(href='../articles/article-new-window-view')
+                    h3#article-headline Article Headline
+                include:md ../../content/articles/article-details.md
 
 //- Articles List Control
 mixin article-controls

@@ -1,18 +1,11 @@
 //- POC Searchbar
 mixin poc-search-bar
     #poc-search
-        .search
-            a.button.btn-search#navigate-button(href='navigate')
-                i.fi-list-thumbnails
-            input.field(type='text', placeholder='Type keywords here')
-            a.button.btn-search(href='app-keyword-search')
+        a.button.btn-divs#navigate-button
+            i.fi-list-thumbnails
+        .search-field
+            input.search-input(type='text', placeholder='Type keywords here')
+            a.button.btn-search#search-button(href='app-keyword-search')
                 +search-icon
-            a.button.btn-search#filters-button(href='filters-div')
-                +filter-icon
-
-mixin poc-search-bar-desktop
-    #poc-search
-        .search
-            input.field(type='text', placeholder='Type keywords here')
-            a.button.btn-search(href='app-keyword-search')
-                +search-icon
+        a.button.btn-divs#filters-button(href='filters-div')
+            +filter-icon

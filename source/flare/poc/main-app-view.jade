@@ -4,7 +4,23 @@ include poc-mixins
 
 block content
 	#poc-application
-		#poc-left-nav.display-none
+		#poc-left-nav
+			ul.side-nav
+				li
+					a(href='../home/navigate')
+						span
+							i.fi-list
+						span.text Index
+				li
+					span
+						i.fi-book
+					span.text Saved Articles
+				li
+					span
+						i.fi-magnifying-glass
+					span.text Saved Searches
 		#poc-results
-			+articles-list
-		#poc-right-nav.display-none
+			+main-app-view
+		#poc-right-nav
+			button
+				i.fi-filter
