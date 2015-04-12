@@ -904,6 +904,9 @@ input#search {
   color: #444444;
   border: 1px solid #dbdbdb;
 }
+.alert-box a {
+  font-size: 0.85em !important;
+}
 .badge {
   background-color: #aaaaaa;
   border-radius: 10px;
