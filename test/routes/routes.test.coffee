@@ -67,13 +67,10 @@ describe '| routes | routes.test |', ()->
     it 'Check expected paths', ()->
         paths = []
         routes = app._router.stack;
-        #log "\nroutes are : " + routes
 
         routes.forEach (item)->
             if (item.route)
               paths.push(item.route.path)
-              #log "\nitem.route is: " + item.route
-              #log "\nitem.route.path is: " + item.route.path
 
         #console.log("\nsorted paths: " + paths.sort())
 
@@ -92,7 +89,6 @@ describe '| routes | routes.test |', ()->
                          .replace(':filters','BBBB')
                          .replace('*','aaaaa')
 
-      #log "path = " + path
 
       expectedStatus = 200;
       expectedStatus = 302 if ['','image','deploy', 'poc'                    ].contains(path.split('/').second().lower())
@@ -113,8 +109,6 @@ describe '| routes | routes.test |', ()->
 
         checkResponse = (error,response) ->
           assert_Is_Null(error)
-          #if expectedStatus = 403 or 500
-          #  log "\n response.text?" + response.text
           response.text.assert_Is_String()
           done()
         if (postRequest)
@@ -147,7 +141,6 @@ describe '| routes | routes.test |', ()->
         res.status.assert_Is(404)
         res.text.assert_Contains(text)
         next()
-
       get500 = (agent, text, next)-> agent.get(baseUrl + '/error?{#foo}').end (err,res)->
         res.status.assert_Is(500)
         res.text.assert_Contains(text)
