@@ -6,12 +6,13 @@ User_Sign_Up_Controller = require('../../src/controllers/User-Sign-Up-Controller
 
 describe '| controllers | User-Sign-Up-Controller', ->
 
-  signUp_fail    = "source/jade/guest/sign-up-Fail.jade"
-  signUp_Ok      = '/guest/sign-up-OK.html'
-  mainPage_user  = '/user/main.html'
-  text_Short_Pwd = 'Password must be 8 to 256 character long'
-  text_Bad_Pwd   = 'Password must contain a non-letter and a non-number character'
-  text_An_Error  = 'An error occurred'
+  signUp_fail             = "source/jade/guest/sign-up-Fail.jade"
+  signUpPage_Unavailable  = 'source/jade/guest/sign-up-cant-connect.jade'
+  signUp_Ok               = '/guest/sign-up-OK.html'
+  mainPage_user           = '/user/main.html'
+  text_Short_Pwd          = 'Password must be 8 to 256 character long'
+  text_Bad_Pwd            = 'Password must contain a non-letter and a non-number character'
+  text_An_Error           = 'An error occurred'
 
   server                   = null
   url_WebServices          = null
@@ -109,8 +110,8 @@ describe '| controllers | User-Sign-Up-Controller', ->
     req = body : {}
     res =
       render: (jade_Page, params)->
-        jade_Page.assert_Is signUp_fail
-        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
+        jade_Page.assert_Is signUpPage_Unavailable
+        params.assert_Is { viewModel:{ username: undefined,password: undefined,confirmpassword: undefined,email: undefined,errorMessage: 'TEAM Mentor is unavailable, please contact us at '} }
         done()
     using new User_Sign_Up_Controller(req,res),->
       @.webServices = "http://aaaaaaa.teammentor.net"
@@ -123,8 +124,8 @@ describe '| controllers | User-Sign-Up-Controller', ->
     req = body : {}
     res =
       render: (jade_Page, params)->
-        jade_Page.assert_Is signUp_fail
-        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
+        jade_Page.assert_Is signUpPage_Unavailable
+        params.assert_Is { viewModel:{ username: undefined,password: undefined,confirmpassword: undefined,email: undefined,errorMessage: 'TEAM Mentor is unavailable, please contact us at '} }
         done()
 
     using new User_Sign_Up_Controller(req,res),->
@@ -138,7 +139,7 @@ describe '| controllers | User-Sign-Up-Controller', ->
     req = body : {}
     res =
       render: (jade_Page, params)->
-        jade_Page.assert_Is signUp_fail
+        jade_Page.assert_Is signUpPage_Unavailable
         params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
         done()
 
@@ -153,7 +154,7 @@ describe '| controllers | User-Sign-Up-Controller', ->
     req = body : {}
     res =
       render: (jade_Page, params)->
-        jade_Page.assert_Is signUp_fail
+        jade_Page.assert_Is signUpPage_Unavailable
         params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
         done()
 
@@ -196,8 +197,8 @@ describe '| controllers | User-Sign-Up-Controller', ->
       body   : { password:'aa' , 'confirm-password':'aa'}
     res =
       render: (jade_Page, params)->
-        jade_Page.assert_Is signUp_fail
-        params.assert_Is { viewModel: { errorMessage: 'An error occurred' } }
+        jade_Page.assert_Is signUpPage_Unavailable
+        params.assert_Is { viewModel:{ username: undefined,password: 'aa',confirmpassword:'aa',email: undefined,errorMessage: 'TEAM Mentor is unavailable, please contact us at ' } }
         done()
     using new User_Sign_Up_Controller(req,res),->
       @.webServices = 'https://aaaaaaaa.teammentor.net/'

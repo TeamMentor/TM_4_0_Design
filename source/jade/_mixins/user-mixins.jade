@@ -117,3 +117,11 @@ mixin alert-pwd-reset-OK
   .alert(role='alert')
     #message
       span Your password has been updated. Please login to access our libraries.
+
+mixin alert-3-5-unavailable
+  if viewModel && viewModel.errorMessage
+    .alert(role='alert')
+      #message
+        span= 'Error: ' + viewModel.errorMessage
+        span
+          +tm-support-email

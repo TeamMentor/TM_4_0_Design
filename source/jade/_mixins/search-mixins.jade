@@ -173,28 +173,29 @@ mixin filters-div
             .bg
                 h3 Filter by
                 for filter in filters
-                    h4.label= filter.title
-                    table.nav
-                        for result in filter.results
-                            tr
-                                if activeFilter
-                                    if activeFilter.ids.contains(result.id)
-                                        td
-                                            +filter-icon(filter.title, result.title)
-                                            b= result.title
-                                            span.right.badge= result.size
-                                    else
-                                        if result.size > 0
+                    span(id='filter-' + filter.title)
+                        h4.label= filter.title
+                        table.nav
+                            for result in filter.results
+                                tr
+                                    if activeFilter
+                                        if activeFilter.ids.contains(result.id)
                                             td
-                                                a(href=href + '/' + activeFilter.filters + ',' + result.id)
-                                                    span
-                                                        +filter-icon(filter.title, result.title)
-                                                    span= result.title
-                                                    span.right.badge= result.size
-                                else
-                                    td
-                                        a(href=href + '/'+result.id)
-                                            span
                                                 +filter-icon(filter.title, result.title)
-                                            span= result.title
-                                            span.right.badge= result.size
+                                                b= result.title
+                                                span.right.badge= result.size
+                                        else
+                                            if result.size > 0
+                                                td
+                                                    a(href=href + '/' + activeFilter.filters + ',' + result.id)
+                                                        span
+                                                            +filter-icon(filter.title, result.title)
+                                                        span= result.title
+                                                        span.right.badge= result.size
+                                    else
+                                        td
+                                            a(href=href + '/'+result.id)
+                                                span
+                                                    +filter-icon(filter.title, result.title)
+                                                span= result.title
+                                                span.right.badge= result.size
