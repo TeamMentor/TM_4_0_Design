@@ -204,6 +204,9 @@ i.landing-page {
   margin: 0;
   margin: 10px 0;
 }
+#footer #si-logo {
+  margin-bottom: 20px;
+}
 #footer i {
   font-size: 1em;
   margin-right: 10px;
@@ -215,9 +218,14 @@ i.landing-page {
   GETTING STARTED
 *------------------------------------*/
 #loginwall {
-  border: 1px solid #dbdbdb;
+  background: transparent;
+  margin: 15px 10px 0 10px;
+}
+#login-form, #sign-up-form, #forgot-password, #pwd-reset-form {
   background: white;
-  margin-bottom: 5px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  padding-bottom: 20px;
 }
 #heading {
   background-color: #8aaf3e;
@@ -229,8 +237,7 @@ i.landing-page {
   color: white;
 }
 #summary {
-  max-width: 98%;
-  margin: 0 auto;
+  margin: 10px;
 }
 #summary table td {
   padding: 0 10px;
@@ -349,6 +356,12 @@ i.landing-page {
 }
 #article td.vertical-align i {
   margin-left: 5px;
+}
+#help-nav {
+  margin: 15px 10px 15px 10px;
+}
+#help-docs {
+  margin: 0 10px 10px 10px;
 }
 /*------------------------------------*
    SUB-NAVIGATION
@@ -791,7 +804,10 @@ tr.article-title {
     font-size: 14px;
   }
   #loginwall {
-    margin: 0;
+    margin: 15px 7px 0 0;
+  }
+  #summary {
+    margin: 15px 0 0 7px;
   }
   #application {
     padding-top: 60px;
@@ -808,6 +824,12 @@ tr.article-title {
   .client-logo {
     width: 30%;
     padding-top: 10%;
+  }
+  #help-nav {
+    margin: 15px 10px 0 0;
+  }
+  #help-docs, #help-index {
+    margin: 15px 0 0 10px;
   }
 }
 @media (min-width: 860px) {
@@ -881,6 +903,15 @@ tr.article-title {
   .client-logo {
     width: 100%;
     padding-top: 33%;
+  }
+  #footer {
+    text-align: left !important;
+  }
+  #footer h4 {
+    margin: 0 0 0 20px;
+  }
+  #footer #si-logo {
+    margin-top: 10px;
   }
 }
 @media (min-width: 999px) {
@@ -1104,7 +1135,7 @@ ul.side-nav span.badge {
   font-size: 1.5em !important;
   padding: 0;
 }
-#toc-content h4 {
+.toc-content h4 {
   padding-top: 100px;
   margin-top: -80px;
 }

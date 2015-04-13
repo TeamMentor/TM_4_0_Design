@@ -5,30 +5,27 @@ include globals.jade
 mixin flare-search-bar-input
     #search-bar
         .row.collapse
-            .small-1.columns
-                a.button.postfix#navigate-button
-                    i.fi-map
+            .small-2.large-1.columns
+                a.button.search.full-width#navigate-button(href='navigate')
+                    i.fi-list-thumbnails
             .small-7.large-9.columns
                 input#search(type='text', placeholder='Type keywords here')
-            .small-4.large-2.columns
-                a.button.postfix#search-button(href='app-keyword-search')
+            .small-3.large-2.columns
+                a.button.search(href='app-keyword-search')
                     +search-icon
-                a.button.postfix#filters-button(href='filters-div')
+                a.button.search#filters-button(href='filters-div')
                     +filter-icon
 
 //- Flare Results-Save-Clear
 mixin flare-results-save-clear
-    #results-save-clear
-        .row
-            .large-12.columns
-                .row.collapse
-                    .small-8.large-10.columns
-                        h4.label 0/200 results showing
-                    .small-4.large-2.columns
-                        a.button.app(href='app-keyword-search-save')
-                            +save-icon
-                        a.button.app(href='main-app-view')
-                            +clear-icon
+    #results-save-clear.row.collapse
+        .small-8.large-10.columns
+            h4.label 0/200 results showing
+        .small-4.large-2.columns
+            a.button.app(href='app-keyword-search-save')
+                +save-icon
+            a.button.app(href='main-app-view')
+                +clear-icon
 
 //- Flare Main App View
 mixin flare-main-app-view
@@ -54,23 +51,26 @@ mixin flare-main-app-view
 
 //- Articles List
 mixin articles-list
-    #list-view-article.row
+    .list-view-article.row
         .small-12.columns
-            h3 Article Headline
+            a.underline(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
         .small-12.medium-10.columns
             include:md ../../content/articles/article-details.md
         .small-12.medium-2.columns
             +article-controls
-    #list-view-article.row
+    .list-view-article.row
         .small-12.columns
-            h3 Article Headline
+            a.underline(href='../articles/article-new-window-view')
+                h3 Article Headline
         .small-12.medium-10.columns
             include:md ../../content/articles/article-details.md
         .small-12.medium-2.columns
             +article-controls
-    #list-view-article.row
+    .list-view-article.row
         .small-12.columns
-            h3 Article Headline
+            a.underline(href='../articles/article-new-window-view')
+                h3 Article Headline
         .small-12.medium-10.columns
             include:md ../../content/articles/article-details.md
         .small-12.medium-2.columns
@@ -78,13 +78,13 @@ mixin articles-list
 
 //- Articles List Control
 mixin article-controls
-    .row
-        .small-4.medium-12.columns
-            +open-icon
+    .row.control-panel#article-controls
         .small-4.medium-12.columns
             +save-button
         .small-4.medium-12.columns
             +share-button
+        .small-4.medium-12.columns
+            // Put article icons here
 
 //- Search Results List
 mixin search-results
@@ -102,42 +102,39 @@ mixin search-results
                 span Search Term Here
                 span.badge #4
 
-//- Flare Saved Articles List
+//- Saved Articles List
 mixin saved-articles-list
-    #list-view-article.row
+    .list-view-article.row
         .small-12.columns
             h3 Article Headline
         .small-12.medium-10.columns
             include:md ../../content/articles/article-details.md
         .small-12.medium-2.columns
-            +article-controls
-    #list-view-article.row
+            +saved-article-controls
+    .list-view-article.row
         .small-12.columns
             h3 Article Headline
         .small-12.medium-10.columns
             include:md ../../content/articles/article-details.md
         .small-12.medium-2.columns
-            +article-controls
-    #list-view-article.row
+            +saved-article-controls
+    .list-view-article.row
         .small-12.columns
             h3 Article Headline
         .small-12.medium-10.columns
             include:md ../../content/articles/article-details.md
         .small-12.medium-2.columns
-            +article-controls
+            +saved-article-controls
 
-// Saved Article Menu
-mixin saved-article-menu
-    .row.text-center
-        .small-12.large-4.columns
-            a.button(href='article-new-window-view', target='_blank')
-                +open-icon
-        .small-12.large-4.columns
-            a.button(href='../home/app-keyword-search-share')
-                +share-icon
-        .small-12.large-4.columns
-            a.button(href='my-search-items')
-                +clear-icon
+//- Saved Articles Controls
+mixin saved-article-controls
+    .row
+        .small-4.medium-12.columns
+            +open-icon
+        .small-4.medium-12.columns
+            +share-button
+        .small-4.medium-12.columns
+            +trash-button
 
 //- Flare Filters Div
 mixin flare-filters-div
@@ -217,7 +214,7 @@ mixin save-div
                 .small-10.columns
                     +save-input
                 .small-2.columns
-                    a.button.postfix#save-button(href='alert-application')
+                    a.button.app.full-width(href='alert-application')
                         +save-icon
 
 // Share Div
@@ -228,5 +225,5 @@ mixin share-div
                 .small-10.columns
                     +share-input
                 .small-2.columns
-                    a.button.postfix#share-button(href='alert-application')
+                    a.button.app.full-width(href='alert-application')
                         +share-icon

@@ -90,7 +90,7 @@ class Express_Service
     if(req && req.session)
       data =  {
         username  : req.session.username,
-        loggedIn  : (req.session.username != undefined)
+        loggedIn  : (req.session.username isnt undefined)
       }
     return data
 
