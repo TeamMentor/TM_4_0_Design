@@ -1,7 +1,6 @@
 supertest       = require 'supertest'
 Express_Service = require '../../src/services/Express-Service'
 request = require('superagent')
-agent = request.agent()
 
 describe '| routes | routes.test |', ()->
 
@@ -124,6 +123,7 @@ describe '| routes | routes.test |', ()->
       runTest(route)
 
     it 'Issue_679_Validate authentication status on error page', (done)->
+      agent = request.agent()
       baseUrl = 'http://localhost:' + app.port
 
       loggedInText = ['<li><a id="nav-user-logout" href="/user/logout"><i class="fi-power"></i><span>Logout</span></a></li>']
