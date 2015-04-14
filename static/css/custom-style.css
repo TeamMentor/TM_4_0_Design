@@ -318,7 +318,7 @@ i.landing-page {
   margin-right: 10px;
 }
 #main-app-view {
-  margin-top: 120px;
+  margin-top: 130px;
 }
 #main-app-view h5 {
   margin: 15px 0;
@@ -339,7 +339,7 @@ i.landing-page {
 }
 #search-div #search-input input {
   padding-top: 20px;
-  max-width: 80%;
+  max-width: 78%;
 }
 #search-input input {
   border: none;
