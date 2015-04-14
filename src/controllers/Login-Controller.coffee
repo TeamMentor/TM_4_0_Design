@@ -3,12 +3,14 @@ request = null
 Config  = null
 
 loginPage                  = 'source/jade/guest/login-Fail.jade'
+loginPage_Unavailable      = 'source/jade/guest/login-cant-connect.jade'
 mainPage_user              = '/user/main.html'
 mainPage_no_user           = '/guest/default.html'
 password_reset_fail        = 'source/jade/guest/pwd-reset-fail.jade'
 password_reset_ok          = '/guest/login-pwd-reset.html'
 blank_credentials_message  = 'Invalid Username or Password'
 loginSuccess               = 0
+errorMessage               = "TEAM Mentor is unavailable, please contact us at "
 
 class Login_Controller
   constructor: (req, res)->
@@ -46,11 +48,18 @@ class Login_Controller
     request options, (error, response, body)=>
       if error
         logger?.info ('Could not connect with TM 3.5 server')
-        return @.res.render loginPage, {viewModel: errorMessage : 'An error occurred' }
+        console.log (errorMessage)
+        userViewModel.errorMessage = errorMessage
+        userViewModel.username =''
+        userViewModel.password=''
+        return @.res.render loginPage_Unavailable, {viewModel:userViewModel }
 
       if not (response?.body?.d)
         logger?.info ('Could not connect with TM 3.5 server')
-        return @.res.render loginPage, {viewModel: errorMessage : 'An error occurred' }
+        userViewModel.errorMessage = errorMessage
+        userViewModel.username =''
+        userViewModel.password=''
+        return @.res.render loginPage_Unavailable, {viewModel:userViewModel }
 
       loginResponse = response.body.d
       success = loginResponse?.Login_Status
