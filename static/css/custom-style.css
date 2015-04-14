@@ -339,7 +339,7 @@ i.landing-page {
 }
 #search-div #search-input input {
   padding-top: 20px;
-  width: 93%;
+  max-width: 80%;
 }
 #search-input input {
   border: none;
@@ -917,6 +917,9 @@ tr.article-title {
   #footer ul.contact li:first-child {
     width: auto;
     display: inline-block;
+  }
+  #search-div #search-input input {
+    width: 93%;
   }
 }
 @media (min-width: 999px) {
