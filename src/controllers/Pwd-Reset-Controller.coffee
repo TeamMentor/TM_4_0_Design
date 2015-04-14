@@ -12,18 +12,21 @@ class Pwd_Reset_Controller
   constructor: (req, res, options)->
     @.dependencies()
 
-    @.options                     = options || {}
-    @.req                         = req
-    @.res                         = res
-    @.config                      = @.options.config || new Config()
-    @.request_Timeout             = @.options.request_Timeout || 1500
-    @.webServices                 = @.config.tm_35_Server + @.config.tmWebServices
-    @.jade_password_reset_fail    = 'source/jade/guest/pwd-reset-fail.jade'
-    @.url_password_reset_ok       = '/guest/login-pwd-reset.html'
-    @.url_password_sent           = '/guest/pwd-sent.html'
-    @.url_WS_SendPasswordReminder = @.webServices + '/SendPasswordReminder'
-    @.url_WS_PasswordReset        = @.webServices + '/PasswordReset'
-    @.url_error_page              = '/error'
+    @.options                      = options || {}
+    @.req                          = req
+    @.res                          = res
+    @.config                       = @.options.config || new Config()
+    @.request_Timeout              = @.options.request_Timeout || 1500
+    @.webServices                  = @.config.tm_35_Server + @.config.tmWebServices
+    @.jade_password_reset_fail     = 'source/jade/guest/pwd-reset-fail.jade'
+    @.url_password_reset_ok        = '/guest/login-pwd-reset.html'
+    @.url_password_sent            = '/guest/pwd-sent.html'
+    @.url_WS_SendPasswordReminder  = @.webServices + '/SendPasswordReminder'
+    @.url_WS_PasswordReset         = @.webServices + '/PasswordReset'
+    @.url_error_page               = '/error'
+    @.errorMessage                 = "TEAM Mentor is unavailable, please contact us at "
+    @.loginPage_Unavailable        = 'source/jade/guest/login-cant-connect.jade'
+
 
   password_Reset: ()=>
 
@@ -39,7 +42,12 @@ class Pwd_Reset_Controller
       if ((not error) and response?.statusCode == 200)
           @.res.redirect(@.url_password_sent);
       else
-          @.res.redirect(@.url_error_page );
+          logger?.info ('Could not connect with TM 3.5 server')
+          userViewModel = {}
+          userViewModel.errorMessage = @.errorMessage
+          userViewModel.username =''
+          userViewModel.password=''
+          return @.res.render @.loginPage_Unavailable, {viewModel:userViewModel }
 
   password_Reset_Page: ()=>
     html = new Jade_Service().renderJadeFile '/source/jade/guest/pwd-reset.jade'

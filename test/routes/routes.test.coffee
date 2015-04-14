@@ -90,7 +90,7 @@ describe '| routes | routes.test |', ()->
       expectedStatus = 200;
       expectedStatus = 302 if ['','image','deploy', 'poc'                    ].contains(path.split('/').second().lower())
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
-                               '/user/logout', '/user/pwd_reset','/pocaaaaa' ].contains(path)
+                               '/user/logout','/pocaaaaa' ].contains(path)
 
       expectedStatus = 403 if ['article','articles','show'                   ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
