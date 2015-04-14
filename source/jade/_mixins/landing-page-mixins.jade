@@ -13,25 +13,26 @@ mixin reasons-div
     #reasons
         .lge-container
             .row
-                .col-offset-3.col-6
+                .col-offset-2.col-8
                     include:md ../../content/landing-pages/reasons-div-heading.md
                     table
                         tr
-                            td.text-center
-                                i.fi-clipboard-pencil.landing-page
+                            td.text-center.lp-icons-width
+                                .lp-icons.fix-vulnerabilities
+                                //img(src='../../../static/assets/icons/Fixvulns-round.png' class="")
                             td
                                 include:md ../../content/landing-pages/selling-point-1.md
                         tr
                             td.text-center
-                                i.fi-arrows-in.landing-page
+                                .lp-icons.reduce-vulnerabilities
+                                //img(src='../../../static/assets/icons/reducevulns-round.png')
                             td
                                 include:md ../../content/landing-pages/selling-point-2.md
                         tr
                             td.text-center
-                                i.fi-checkbox.landing-page
+                                .lp-icons.improve-process
                             td
                                 include:md ../../content/landing-pages/selling-point-3.md
-
 
 mixin clients-div
     #clients
