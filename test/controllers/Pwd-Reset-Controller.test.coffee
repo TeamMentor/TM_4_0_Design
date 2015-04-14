@@ -45,6 +45,11 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
           target.assert_Is '/error'
           ws_Called.assert_True()
           done()
+        render : (target,model)->
+          model.assert_Is_Not_Undefined
+          model.errorMessage?.assert_Is('TEAM Mentor is unavailable, please contact us at ')
+          target.assert_Is('source/jade/guest/login-cant-connect.jade')
+          done()
 
       on_SendPasswordReminder = (ws_req, ws_res)->
         ws_req.body.assert_Is {}
@@ -77,6 +82,11 @@ describe "| controllers | Pwd-Reset-Controller.test |", ->
     res =
       redirect: (target)->
         target.assert_Is '/error'
+        done()
+      render : (target,model)->
+        model.assert_Is_Not_Undefined
+        model.errorMessage?.assert_Is('TEAM Mentor is unavailable, please contact us at ')
+        target.assert_Is('source/jade/guest/login-cant-connect.jade')
         done()
     options =
       config:
