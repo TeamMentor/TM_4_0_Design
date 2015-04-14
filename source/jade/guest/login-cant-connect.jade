@@ -1,0 +1,11 @@
+extends ../_layouts/page_landing
+include ../_mixins/user-mixins
+block content
+    #landing-page
+        .row
+            .col-6
+                #loginwall
+                    +alert-3-5-unavailable
+                    +login-form
+            .col-6
+                +team-mentor-summary
