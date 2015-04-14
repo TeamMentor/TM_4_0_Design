@@ -28,19 +28,18 @@ mixin search-bar-input
                 .col-offset-2.col-8
                     #search-input
                         form(action='/search', method='GET')
-                            label(for='search-input') Search here
+                            label(for='search-input') Search...
                             .input-group
                                 input.form-control(type='text', id='search-input', name='text')
-                                span.input-group-btn
-                                    button#search-button(type='submit')
-                                        +search-icon
+                                button#search-button(type='submit')
+                                    +search-icon
 
 mixin search-2
     #search-div-2
         .lge-container
             #search-input
                 form(action='/search', method='GET')
-                    label(for='search-input') Search here
+                    label(for='search-input') Search...
                     .input-group
                         input.form-control(type='text', name='text', value= text)
                         span.input-group-btn

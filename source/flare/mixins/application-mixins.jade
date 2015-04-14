@@ -3,18 +3,15 @@ include globals.jade
 
 //- Flare Search Bar Input
 mixin flare-search-bar-input
-    #search-bar
-        .row.collapse
-            .small-2.large-1.columns
-                a.button.search.full-width#navigate-button(href='navigate')
-                    i.fi-list-thumbnails
-            .small-7.large-9.columns
-                input#search(type='text', placeholder='Type keywords here')
-            .small-3.large-2.columns
-                a.button.search(href='app-keyword-search')
-                    +search-icon
-                a.button.search#filters-button(href='filters-div')
-                    +filter-icon
+    #search
+        .search
+            a.button.btn-search#navigate-button(href='navigate')
+                i.fi-list-thumbnails
+            input.field(type='text', placeholder='Type keywords here')
+            a.button.btn-search(href='app-keyword-search')
+                +search-icon
+            a.button.btn-search#filters-button(href='filters-div')
+                +filter-icon
 
 //- Flare Results-Save-Clear
 mixin flare-results-save-clear
@@ -28,53 +25,83 @@ mixin flare-results-save-clear
                 +clear-icon
 
 //- Flare Main App View
-mixin flare-main-app-view
-    #articles
-        dl.tabs(data-tab='data-tab')
-            dd.active
-                a(href='#recently-viewed-articles') Recently Viewed
-            dd
-                a(href='#popular-search-terms') Popular Searches
-            dd
-                a(href='#top-articles') Popular Articles
-            dd
-                a(href='#new-articles') New Articles
-        .tabs-content
-            #recently-viewed-articles.content.active
-                +articles-list
-            #popular-search-terms.content
-                +search-results
-            #top-articles.content
-                +articles-list
-            #new-articles.content
-                +articles-list
+mixin main-app-view
+    #label
+        .label Popular Articles
+    +articles-list
+    //#label
+        .label Recently Viewed Articles
+    //+articles-list
 
 //- Articles List
 mixin articles-list
-    .list-view-article.row
-        .small-12.columns
-            a.underline(href='../articles/article-new-window-view')
-                h3#article-headline Article Headline
-        .small-12.medium-10.columns
-            include:md ../../content/articles/article-details.md
-        .small-12.medium-2.columns
-            +article-controls
-    .list-view-article.row
-        .small-12.columns
-            a.underline(href='../articles/article-new-window-view')
-                h3 Article Headline
-        .small-12.medium-10.columns
-            include:md ../../content/articles/article-details.md
-        .small-12.medium-2.columns
-            +article-controls
-    .list-view-article.row
-        .small-12.columns
-            a.underline(href='../articles/article-new-window-view')
-                h3 Article Headline
-        .small-12.medium-10.columns
-            include:md ../../content/articles/article-details.md
-        .small-12.medium-2.columns
-            +article-controls
+    #articles
+        .container.article
+            .metadata
+                ul
+                    li
+                        span.rank-badge #1
+                        // Search Rank
+                    li
+                        p .
+                        // Technology Icon
+                    li
+                        p .
+                        // Phase Icon
+                    li
+                        button.app
+                            i.fi-bookmark
+                    li
+                        button.app
+                            i.fi-share
+            .summary
+                a(href='../articles/article-new-window-view')
+                    h3#article-headline Article Headline
+                include:md ../../content/articles/article-details.md
+        .container.article
+            .metadata
+                ul
+                    li
+                        span.rank-badge #1
+                        // Search Rank
+                    li
+                        p .
+                        // Technology Icon
+                    li
+                        p .
+                        // Phase Icon
+                    li
+                        button.app
+                            i.fi-bookmark
+                    li
+                        button.app
+                            i.fi-share
+            .summary
+                a(href='../articles/article-new-window-view')
+                    h3#article-headline Article Headline
+                include:md ../../content/articles/article-details.md
+        .container.article
+            .metadata
+                ul
+                    li
+                        span.rank-badge #1
+                        // Search Rank
+                    li
+                        p .
+                        // Technology Icon
+                    li
+                        p .
+                        // Phase Icon
+                    li
+                        button.app
+                            i.fi-bookmark
+                    li
+                        button.app
+                            i.fi-share
+            .summary
+                a(href='../articles/article-new-window-view')
+                    h3#article-headline Article Headline
+                include:md ../../content/articles/article-details.md
 
 //- Articles List Control
 mixin article-controls

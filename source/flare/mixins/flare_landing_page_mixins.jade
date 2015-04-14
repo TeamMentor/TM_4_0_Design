@@ -1,16 +1,15 @@
 include ../../shared-mixins/globals.jade
-include ../../shared-mixins/images.jade
 
 mixin usp-div
     section.usp
-            .row
-                .small-12.large-offset-1.large-10.end.columns
-                    h2
-                        include:md ../../content/landing-pages/usp.md
-                    .row
-                        .small-12.medium-offset-3.medium-6.end.columns
-                            a(href='../getting-started/index')
-                                +start-trial-button
+        .row
+            .small-12.large-offset-1.large-10.end.columns
+                h2
+                    include:md ../../content/landing-pages/usp.md
+                .row
+                    .small-12.medium-offset-3.medium-6.end.columns
+                        a(href='../getting-started/index')
+                            +start-trial-button
 
 mixin reasons-to-use-tm-div
     section.reasons
@@ -100,33 +99,18 @@ mixin call-to-action-div
                     +see-for-yourself-button
 
 mixin footer-div
-    section.footer
-        .row
-            #contact-information
-                .small-12.medium-3.columns
-                    ul
-                        li
-                            a(href='http://www.securityinnovation.com/', target='_blank')
-                                .logo.si-logo
-                .small-12.medium-3.columns
-                    ul
-                        li
-                            +i-phone
-                            span +1.978.694.1008
-                        li
-                            +i-email
-                            a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
-                .small-12.medium-3.columns
-                    ul
-                        li
-                            +i-marker
-                            span 187 Ballardvale Street, Suite A202
-                        li Wilmington, MA 01887
-                .small-12.medium-3.columns
-                    ul
-                        li
-                            +i-twitter
-                            a(href="http://www.twitter.com/SecInnovation", target="_blank") @SecInnovation
-                        li
-                            +i-toc
-                            a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions
+    footer
+        .si-logo
+        .si-name
+            a.minor(hreft='http://www.securityinnovation.com/' target='_blank') Security Innovation 2015. All rights reserved.
+        .icons
+            .row
+                .small-3.medium-offset-6.medium-2.columns
+                    a(href='mailto:support@securityinnovation.com' title='Email')
+                        +i-email
+                .small-3.medium-2.columns
+                    a(href='http://www.twitter.com/SecInnovation' target='_blank' title='Twitter')
+                        +i-twitter
+                .small-3.medium-2.columns
+                    a#terms-and-conditions(href='../misc/terms-and-conditions' title ='Terms and Conditions')
+                        +i-toc

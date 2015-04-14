@@ -64,13 +64,6 @@ img, object {
   background-position: top center;
   margin-bottom: 10px;
 }
-#si-logo {
-  background:url('../assets/logos/logos.png') no-repeat;
-  background-position: 0px -43px;
-  height: 30px;
-  width: 160px;
-  margin: 0 auto;
-}
 #links {
   width: 100%;
 }
@@ -168,30 +161,34 @@ i.landing-page {
 #reasons {
   padding-bottom: 0;
 }
-#footer {
-  padding: 0;
-}
 #footer ul {
   list-style: none;
-  padding: 7px 0 0 0;
-}
-#footer li {
-  font-size: 0.75em;
-  margin: 0 0 5px 0;
-}
-#footer h4 {
+  list-style-position: outside;
   margin: 0;
-  margin: 10px 0;
-}
-#footer #si-logo {
-  margin-bottom: 20px;
+  padding: 10px 0;
 }
 #footer i {
-  font-size: 1em;
-  margin-right: 10px;
+  font-size: 1.25em;
 }
-#contact-information {
-  margin-top: -20px;
+#footer li {
+  display: inline-block;
+  font-size: 0.75em;
+}
+#footer li img {
+  vertical-align: middle;
+  padding: 0 10px 0 0;
+}
+#footer ul.si {
+  padding-left: 20px;
+}
+#footer ul.contact li {
+  width: 15%;
+  margin: 0 0 10px;
+  text-align: center;
+}
+#footer ul.contact li:first-child {
+  display: block;
+  width: 100%;
 }
 /*------------------------------------*
   GETTING STARTED
@@ -318,6 +315,7 @@ i.landing-page {
 }
 #search-div #search-input input {
   padding-top: 20px;
+  width: 93%;
 }
 #search-input input {
   border: none;
@@ -808,7 +806,7 @@ tr.article-title {
     margin: 15px 0 0 10px;
   }
 }
-@media (min-width: 860px) {
+@media (min-width: 853px) {
   #landing-page h1 {
     line-height: 2.5em;
   }
@@ -873,13 +871,17 @@ tr.article-title {
     padding-top: 33%;
   }
   #footer {
-    text-align: left !important;
+    text-align: left;
   }
-  #footer h4 {
-    margin: 0 0 0 20px;
+  #footer ul.contact li {
+    width: 20%;
   }
-  #footer #si-logo {
-    margin-top: 10px;
+  #footer i {
+    padding-left: 50px;
+  }
+  #footer ul.contact li:first-child {
+    width: auto;
+    display: inline-block;
   }
 }
 @media (min-width: 999px) {
