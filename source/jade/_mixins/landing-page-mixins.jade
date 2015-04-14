@@ -1,5 +1,3 @@
-include ../../shared-mixins/images.jade
-
 mixin usp-div
     #usp
         .lge-container
@@ -17,23 +15,22 @@ mixin reasons-div
             .row
                 .col-offset-2.col-8
                     include:md ../../content/landing-pages/reasons-div-heading.md
-
                     table
                         tr
-                            td.text-center.lp-icons
-                                .icons.fix-vulnerabilities
+                            td.text-center.lp-icons-width
+                                .lp-icons.fix-vulnerabilities
                                 //img(src='../../../static/assets/icons/Fixvulns-round.png' class="")
                             td
                                 include:md ../../content/landing-pages/selling-point-1.md
                         tr
                             td.text-center
-                                .icons.reduce-vulnerabilities
+                                .lp-icons.reduce-vulnerabilities
                                 //img(src='../../../static/assets/icons/reducevulns-round.png')
                             td
                                 include:md ../../content/landing-pages/selling-point-2.md
                         tr
                             td.text-center
-                                .icons.improve-process
+                                .lp-icons.improve-process
                             td
                                 include:md ../../content/landing-pages/selling-point-3.md
 
@@ -109,34 +106,23 @@ mixin call-to-action-div
 
 mixin footer-div
     #footer
-        .lge-container
-            .row
-                .col-offset-1.col-2
-                    h4.label.text-center TEAM Mentor v 4.0
-                    a(href='http://www.securityinnovation.com/', target='_blank')
-                        #si-logo
-                .col-offset-1.col-8
-                    .row
-                        #contact-information
-                            .col-4
-                                ul
-                                    li
-                                        +i-phone
-                                        span +1.978.694.1008
-                                    li
-                                        +i-email
-                                        a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
-                            .col-4
-                                ul
-                                    li
-                                        +i-marker
-                                        span 187 Ballardvale Street, Suite A202
-                                    li Wilmington, MA 01887
-                            .col-4
-                                ul
-                                    li
-                                        +i-twitter
-                                        a(href="http://www.twitter.com/SecInnovation", target="_blank") @SecInnovation
-                                    li
-                                        +i-toc
-                                        a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions
+        .row
+            .col-6
+                ul.si
+                    li
+                        img(src='../../../static/assets/logos/si-logo.png')
+                    li
+                        a(href='http://www.securityinnovation.com/', target='_blank') Security Innovation 2015. All rights reserved.
+            .col-offset-2.col-4
+                ul.contact
+                    li
+                        .label TEAM Mentor 4.0
+                    li
+                        a(href='mailto:support@securityinnovation.com' title='Email')
+                            +i-email
+                    li
+                        a(href='http://www.twitter.com/SecInnovation' target='_blank' title='Twitter')
+                            +i-twitter
+                    li
+                        a#terms-and-conditions(href='../misc/terms-and-conditions' title ='Terms and Conditions')
+                            +i-toc
