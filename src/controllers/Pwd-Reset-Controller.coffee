@@ -43,10 +43,7 @@ class Pwd_Reset_Controller
           @.res.redirect(@.url_password_sent);
       else
           logger?.info ('Could not connect with TM 3.5 server')
-          userViewModel = {}
-          userViewModel.errorMessage = @.errorMessage
-          userViewModel.username =''
-          userViewModel.password=''
+          userViewModel = {errorMessage:@.errorMessage,username:'',password:''}
           return @.res.render @.loginPage_Unavailable, {viewModel:userViewModel }
 
   password_Reset_Page: ()=>
