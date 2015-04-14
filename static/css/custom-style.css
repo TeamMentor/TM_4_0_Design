@@ -139,6 +139,30 @@ i.landing-page {
 #usp {
   background-position: 0px 0px;
 }
+#reasons {
+  padding-bottom: 0;
+}
+.lp-icons {
+  width: 20%;
+}
+.icons {
+  background: url(../assets/icons/icons.png) no-repeat;
+  background-size: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 95%;
+  height: 0;
+}
+.fix-vulnerabilities {
+  background-position: 0% 0%;
+}
+.reduce-vulnerabilities {
+  background-position: 0% 48%;
+}
+.improve-process {
+  padding-top: 110%;
+  background-position: 0% 105%;
+}
 #clients {
   padding: 0 0 5% 0;
 }
@@ -164,9 +188,6 @@ i.landing-page {
 }
 .ubs {
   background-position: 0% 100%;
-}
-#reasons {
-  padding-bottom: 0;
 }
 #footer {
   padding: 0;
@@ -577,6 +598,9 @@ a.minor:hover {
 .text-right {
   text-align: right !important;
 }
+.text-left {
+  text-align: left !important;
+}
 .normal {
   font-weight: normal;
 }
@@ -823,6 +847,14 @@ tr.article-title {
   }
   #reasons h2, #features h2 {
     text-align: center;
+  }
+  .icons {
+    width: 80%;
+    padding-top: 75%;
+  }
+  .improve-process {
+    padding-top: 82%;
+    background-position: 0% 100%;
   }
   h1 {
     font-size: 2.25em;
