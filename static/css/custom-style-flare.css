@@ -203,8 +203,8 @@ span.text {
 article {
   -webkit-flex: 100%;
   flex: 100%;
-  -webkit-order: 2;
-  order: 2;
+  -webkit-order: 3;
+  order: 3;
   overflow-y: auto;
   background: white;
   border: 1px solid #dbdbdb;
@@ -1202,8 +1202,8 @@ input.search-input, input.search-input:focus {
   #label {
     -webkit-flex: 25%;
     flex: 25%;
-    -webkit-order: 2;
-    order: 2;
+    -webkit-order: 1;
+    order: 1;
     padding: 5px;
   }
   .btn-search {
@@ -1219,12 +1219,12 @@ input.search-input, input.search-input:focus {
   #articles {
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
-    -webkit-flex: 2;
-    flex: 2;
+    -webkit-flex: 4;
+    flex: 4;
   }
   article {
-    -webkit-flex: 2;
-    flex: 2;
+    -webkit-flex: 4;
+    flex: 4;
   }
 }
 @media (min-width: 1070px) {
