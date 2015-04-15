@@ -26,12 +26,33 @@ mixin flare-results-save-clear
 
 //- Flare Main App View
 mixin main-app-view
-    #label
-        .label Popular Articles
-    +articles-list
-    //#label
-        .label Recently Viewed Articles
-    //+articles-list
+    section.poc-row
+        #label
+            .label Recently Viewed Articles
+        +articles-list
+    section.poc-row
+        #label
+            .label Popular Search Terms
+        #articles
+            .container.search-term
+                a(href='app-keyword-search')
+                    span
+                        +search-icon
+                    span Search Term
+            .container.search-term
+                a(href='app-keyword-search')
+                    span
+                        +search-icon
+                    span Search Term
+            .container.search-term
+                a(href='app-keyword-search')
+                    span
+                        +search-icon
+                    span Search Term
+    section.poc-row
+        #label
+            .label Top Articles
+        +articles-list
 
 //- Articles List
 mixin articles-list
