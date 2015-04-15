@@ -40,7 +40,7 @@ class Article_Controller
             type       = article_Data?.type
             @graphService.article_Html article_Id, (data)=>
               @recentArticles_Add article_Id, title
-              send_Article { id : article_Id, title: title,  article_Html: data.html, technology: technology, type: type}
+              send_Article { id : article_Id, title: title,  article_Html: data?.html, technology: technology, type: type}
       else
         send_Article null
 
