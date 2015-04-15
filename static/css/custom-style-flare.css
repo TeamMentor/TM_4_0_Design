@@ -83,18 +83,28 @@ ul.side-nav {
 }
 ul.side-nav li {
   border-bottom: 1px solid #dbdbdb;
-  padding: 10px 0;
+  padding: 14px 0;
   color: #7b7b7b;
   font-size: 0.85em;
 }
 ul.side-nav li:hover {
   background: #dbdbdb;
 }
-ul.side-nav i {
-  padding: 0 15px;
+.no-style {
+  border: none;
+  background: none;
 }
-#poc-left-nav:hover span.text {
+.no-style li:hover {
+  background: transparent !important;
+}
+#poc-left-nav i, #poc-right-nav i {
+  padding-left: 44%;
+}
+#poc-left-nav:hover span.text, #poc-right-nav:hover span.text {
   display: inline-block;
+}
+#poc-left-nav:hover i, #poc-right-nav:hover i {
+  padding: 0 15px;
 }
 span.text {
   display: none;
@@ -167,7 +177,8 @@ span.text {
   overflow-y: auto;
   min-height: 1px;
   display: none;
-  background: red;
+  background: white;
+  border-left: 1px solid #dbdbdb;
 }
 #poc-application {
   -webkit-order: 3;
@@ -962,11 +973,11 @@ nav .btn-landing .btn-icon {
 .btn-search {
   position: relative;
   display: inline-block;
-  padding: 7px 0 0 40px;
+  padding: 12px 15px;
   border: none;
   background: transparent;
   color: #6c9020;
-  font-size: 1.25em;
+  font-size: 1em;
   overflow: visible;
   -webkit-transition: color 0.7s;
   transition: color 0.7s;
@@ -1203,6 +1214,8 @@ input.search-input, input.search-input:focus {
     -webkit-order: 5;
     order: 5;
     height: calc(100% - 60px);
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
   #poc-search #navigate-button, #poc-search #filters-button {
     display: none;
@@ -1227,12 +1240,30 @@ input.search-input, input.search-input:focus {
     -webkit-flex: 80%;
     flex: 80%;
   }
+  #poc-right-nav #filters {
+    display: none;
+  }
+  #poc-right-nav:hover {
+    -webkit-flex: 25%;
+    flex: 25%;
+  }
+  #poc-right-nav:hover #filters {
+    display: block;
+  }
+  #poc-right-nav:hover ~ #poc-results {
+    -webkit-flex: 70%;
+    flex: 70%;
+  }
   #label {
     -webkit-flex: 25%;
     flex: 25%;
     -webkit-order: 1;
     order: 1;
     padding: 5px;
+  }
+  .btn-search {
+    padding: 7px 0 0 10px;
+    font-size: 1.25em;
   }
 }
 @media (min-width: 950px) {
