@@ -1,5 +1,6 @@
 supertest       = require 'supertest'
 Express_Service = require '../../src/services/Express-Service'
+request = require('superagent')
 
 describe '| routes | routes.test |', ()->
 
@@ -70,7 +71,7 @@ describe '| routes | routes.test |', ()->
             if (item.route)
               paths.push(item.route.path)
 
-        #console.log(paths.sort())
+        #console.log("\nsorted paths: " + paths.sort())
 
         paths.length.assert_Is(expectedPaths.length)
         paths.forEach (path)->
@@ -87,10 +88,11 @@ describe '| routes | routes.test |', ()->
                          .replace(':filters','BBBB')
                          .replace('*','aaaaa')
 
+
       expectedStatus = 200;
       expectedStatus = 302 if ['','image','deploy', 'poc'                    ].contains(path.split('/').second().lower())
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
-                               '/user/logout', '/user/pwd_reset','/pocaaaaa' ].contains(path)
+                               '/user/logout','/pocaaaaa' ].contains(path)
 
       expectedStatus = 403 if ['article','articles','show'                   ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
@@ -119,3 +121,35 @@ describe '| routes | routes.test |', ()->
 
     for route in expectedPaths
       runTest(route)
+
+    it 'Issue_679_Validate authentication status on error page', (done)->
+      agent = request.agent()
+      baseUrl = 'http://localhost:' + app.port
+
+      loggedInText = ['<li><a id="nav-user-logout" href="/user/logout"><i class="fi-power"></i><span>Logout</span></a></li>']
+      loggedOutText = ['<li><a id="nav-login" href="/guest/login.html">Login</a></li>']
+
+      postData = {username:'user', password:'a'}
+      userLogin = (agent, postData, next)-> agent.post(baseUrl + '/user/login').send(postData).end (err,res)->
+        assert_Is_Null(err)
+        next()
+      userLogout = (next)-> agent.get(baseUrl + '/user/logout').end (err,res)->
+        res.status.assert_Is(200)
+        next()
+
+      get404 = (agent, text, next)-> agent.get(baseUrl + '/foo').end (err,res)->
+        res.status.assert_Is(404)
+        res.text.assert_Contains(text)
+        next()
+      get500 = (agent, text, next)-> agent.get(baseUrl + '/error?{#foo}').end (err,res)->
+        res.status.assert_Is(500)
+        res.text.assert_Contains(text)
+        next()
+
+      userLogin agent,postData, ->
+        get404 agent,loggedInText, ->
+          get500 agent,loggedInText, ->
+            userLogout ->
+              get404 agent, loggedOutText, ->
+                get500 agent, loggedOutText, ->
+                  done()

@@ -49,6 +49,7 @@
     "cheerio": "latest",
     "juice": "^0.5.0",
     "mocha": "latest",
+    "superagent": "^1.1.0",
     "supertest": "latest"
   }
 }
