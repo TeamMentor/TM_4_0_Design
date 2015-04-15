@@ -193,7 +193,7 @@ span.text {
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  overflow: hidden;
+  overflow-y: auto;
 }
 #label {
   -webkit-flex: 100%;
@@ -396,7 +396,7 @@ article h1 {
 section {
   width: 100%;
   display: block;
-  overflow: hidden;
+  overflow-y: auto;
 }
 .half-width {
   width: 50%;
