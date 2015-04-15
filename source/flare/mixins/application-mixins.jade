@@ -2,16 +2,16 @@ include ../../shared-mixins/globals.jade
 include globals.jade
 
 //- Flare Search Bar Input
-mixin flare-search-bar-input
+mixin search-bar
     #search
-        .search
-            a.button.btn-search#navigate-button(href='navigate')
-                i.fi-list-thumbnails
-            input.field(type='text', placeholder='Type keywords here')
-            a.button.btn-search(href='app-keyword-search')
+        a.button.btn-divs#navigate-button
+            i.fi-list-thumbnails
+        .search-field
+            input.search-input(type='text', placeholder='Type keywords here')
+            a.button.btn-search#search-button(href='app-keyword-search')
                 +search-icon
-            a.button.btn-search#filters-button(href='filters-div')
-                +filter-icon
+        a.button.btn-divs#filters-button(href='filters-div')
+            +filter-icon
 
 //- Flare Results-Save-Clear
 mixin flare-results-save-clear
@@ -26,30 +26,16 @@ mixin flare-results-save-clear
 
 //- Flare Main App View
 mixin main-app-view
-    section.poc-row
+    section.row
         #label
             .label Recently Viewed Articles
         +articles-list
-    section.poc-row
+    section.row
         #label
             .label Popular Search Terms
         #articles
-            .container.search-term
-                a(href='app-keyword-search')
-                    span
-                        +search-icon
-                    span Search Term
-            .container.search-term
-                a(href='app-keyword-search')
-                    span
-                        +search-icon
-                    span Search Term
-            .container.search-term
-                a(href='app-keyword-search')
-                    span
-                        +search-icon
-                    span Search Term
-    section.poc-row
+            +search-term-list
+    section.row
         #label
             .label Top Articles
         +articles-list
@@ -124,31 +110,39 @@ mixin articles-list
                     h3#article-headline Article Headline
                 include:md ../../content/articles/article-details.md
 
-//- Articles List Control
-mixin article-controls
-    .row.control-panel#article-controls
-        .small-4.medium-12.columns
-            +save-button
-        .small-4.medium-12.columns
-            +share-button
-        .small-4.medium-12.columns
-            // Put article icons here
-
-//- Search Results List
-mixin search-results
+mixin left-navigation
     ul.side-nav
         li
-            a(href='#')
-                span.icon
-                    +search-icon
-                span Search Term Here
-                span.badge #4
+            a(href='../home/navigate')
+                span
+                    i.fi-list
+                span.text Index
         li
-            a(href='#')
-                span.icon
-                    +search-icon
-                span Search Term Here
-                span.badge #4
+            span
+                i.fi-book
+            span.text Saved Articles
+        li
+            span
+                i.fi-magnifying-glass
+            span.text Saved Searches
+
+//- Search Results List
+mixin search-term-list
+    .container.search-term
+        a(href='app-keyword-search')
+            span
+                +search-icon
+            span Search Term
+    .container.search-term
+        a(href='app-keyword-search')
+            span
+                +search-icon
+            span Search Term
+    .container.search-term
+        a(href='app-keyword-search')
+            span
+                +search-icon
+            span Search Term
 
 //- Saved Articles List
 mixin saved-articles-list
@@ -185,7 +179,13 @@ mixin saved-article-controls
             +trash-button
 
 //- Flare Filters Div
-mixin flare-filters-div
+mixin filters-div
+    ul.side-nav.no-style
+        li
+            span
+                +filter-icon
+            span.text Filter by
+    br
     #filters
         dl.accordion(data-accordion='data-accordion')
             dd.accordion-navigation.active

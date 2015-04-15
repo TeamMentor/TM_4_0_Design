@@ -4,11 +4,19 @@ include ../mixins/articles-mixins
 block content
 	#application
 		#left-nav
+			+left-navigation
 		#results
-			+flare-alert
-			.bg
+			#label
+				.label Info
+				p . Technology Icon
+				p . Type Icon
+				+save-button
+				+share-button
+			article
 				+article
 				+article-options
-			+related-options
-			+copyright
+				//+related-options
+				//+flare-alert
+				//+copyright
 		#right-nav
+			+filters-div

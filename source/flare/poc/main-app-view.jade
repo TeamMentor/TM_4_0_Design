@@ -3,29 +3,10 @@ include ../mixins/application-mixins
 include poc-mixins
 
 block content
-	#poc-application
-		#poc-left-nav
-			ul.side-nav
-				li
-					a(href='../home/navigate')
-						span
-							i.fi-list
-						span.text Index
-				li
-					span
-						i.fi-book
-					span.text Saved Articles
-				li
-					span
-						i.fi-magnifying-glass
-					span.text Saved Searches
-		#poc-results
+	#application
+		#left-nav
+			+left-navigation
+		#results
 			+main-app-view
-		#poc-right-nav
-			ul.side-nav.no-style
-				li
-					span
-						+filter-icon
-					span.text Filter by
-			br
-			+flare-filters-div
+		#right-nav
+			+filters-div

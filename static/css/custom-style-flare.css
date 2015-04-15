@@ -16,6 +16,7 @@ body {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   background-color: #fafafa;
+  font-family: Arial, Helvetica, sans-serif;
 }
 body > * {
   -webkit-box-sizing: border-box;
@@ -64,9 +65,9 @@ body > * {
 #user i {
   padding-right: 10px;
 }
-#poc-left-nav {
-  -webkit-order: 4;
-  order:4;
+#left-nav {
+  -webkit-order: 1;
+  order:1;
   -webkit-flex: 1;
   flex: 1;
   min-height: 1px;
@@ -97,21 +98,21 @@ ul.side-nav li:hover {
 .no-style li:hover {
   background: transparent !important;
 }
-#poc-left-nav i, #poc-right-nav i {
+#left-nav i, #right-nav i {
   padding-left: 44%;
 }
-#poc-left-nav:hover span.text, #poc-right-nav:hover span.text {
+#left-nav:hover span.text, #right-nav:hover span.text {
   display: inline-block;
 }
-#poc-left-nav:hover i, #poc-right-nav:hover i {
+#left-nav:hover i, #right-nav:hover i {
   padding: 0 15px;
 }
 span.text {
   display: none;
 }
-#poc-results {
-  -webkit-order: 5;
-  order: 5;
+#results {
+  -webkit-order: 2;
+  order: 2;
   -webkit-flex: 1;
   flex: 1;
   -webkit-flex-wrap: wrap;
@@ -122,7 +123,7 @@ span.text {
   min-height: 1px;
   padding: 10px;
 }
-#poc-search {
+#search {
   -webkit-order: 7;
   order: 7;
   -webkit-flex: 100%;
@@ -169,7 +170,7 @@ span.text {
   order: 2;
   text-align: center;
 }
-#poc-right-nav {
+#right-nav {
   -webkit-order: 6;
   order: 6;
   -webkit-flex: 1;
@@ -180,7 +181,7 @@ span.text {
   background: white;
   border-left: 1px solid #dbdbdb;
 }
-#poc-application {
+#application {
   -webkit-order: 3;
   order: 3;
   -webkit-flex: 100%;
@@ -195,15 +196,31 @@ span.text {
 #label {
   -webkit-flex: 100%;
   flex: 100%;
-  -webkit-order: 1;
-  order: 1;
+  -webkit-order: 2;
+  order: 2;
   margin: 5px 0 0 0;
 }
-#articles {
+article {
   -webkit-flex: 100%;
   flex: 100%;
   -webkit-order: 2;
   order: 2;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #dbdbdb;
+  padding: 0 30px 30px 30px;
+  margin: 0 0 0 10px;
+}
+article h1 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dbdbdb;
+}
+#articles {
+  -webkit-flex: 100%;
+  flex: 100%;
+  -webkit-order: 3;
+  order: 3;
+  overflow-y: auto;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -241,8 +258,8 @@ span.text {
 .metadata {
   -webkit-order: 1;
   order: 1;
-  -webkit-flex: 15%;
-  flex: 15%;
+  -webkit-flex: 7%;
+  flex: 7%;
   background: #b4cf7b;
   padding: 20px 10px 10px;
   text-align: center;
@@ -257,8 +274,8 @@ span.text {
 .summary {
   -webkit-order: 2;
   order: 2;
-  -webkit-flex: 90%;
-  flex: 90%;
+  -webkit-flex: 93%;
+  flex: 93%;
   padding: 10px 10px 10px 20px;
   border: 1px solid #dbdbdb;
   border-left: none;
@@ -277,7 +294,7 @@ span.text {
 .container.article a:hover h3 {
   color: #8aaf3e;
 }
-.poc-row {
+.row {
   background: transparent;
   display: -webkit-flex;
   display: flex;
@@ -285,7 +302,7 @@ span.text {
   flex-wrap: wrap;
   margin: 10px 0;
 }
-.poc-row:first-child {
+.row:first-child {
   margin: 0;
 }
 
@@ -298,15 +315,6 @@ span.text {
 .landing-page {
   background: #fafafa;
   border-bottom: 1px solid #dbdbdb;
-}
-.search {
-  display: -webkit-flex;
-  display: flex;
-  vertical-align: middle;
-  width: 99%;
-}
-.field {
-  flex: 1;
 }
 .si-logo {
   background: url('../assets/logos/si-logo.svg') no-repeat;
@@ -322,7 +330,9 @@ span.text {
   -webkit-flex: 1;
   flex: 1;
   text-align: right;
-  margin: 15px 12px 0 0;
+  background: white;
+  height: 50px;
+  border-bottom: 1px solid #dbdbdb;
 }
 #links {
   -webkit-order: 5;
@@ -348,70 +358,14 @@ span.text {
   letter-spacing: 1px;
   font-size: 0.85em;
 }
-#application {
-  -webkit-order: 6;
-  order: 6;
-  height: 84%;
-  -webkit-flex: 100%;
-  flex: 100%;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  overflow-y: auto;
-}
-#left-nav, #results, #right-nav {
-  padding: 2px;
-}
-#left-nav {
-  -webkit-order: 7;
-  order: 7;
-  -webkit-flex: 100%;
-  flex: 100%;
-  overflow-y: hidden;
-  min-height: 1px;
-}
-#right-nav {
-  -webkit-order: 8;
-  order: 8;
-  -webkit-flex: 100%;
-  flex: 100%;
-  overflow-y: auto;
-  min-height: 1px;
-}
-#left-nav:empty, #right-nav:empty {
-  display: none;
-}
-#results {
-  -webkit-flex: 100%;
-  flex: 100%;
-  -webkit-order: 9;
-  order: 9;
-  display: block;
-  min-height: 1px;
-  overflow-y: auto;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-}
 #results-save-clear {
   border-radius: 3px;
   margin: 0 0 20px 0;
   padding-bottom: 7px;
 }
-
 #filters-active {
   margin-bottom: 20px;
-}
-.bg {
-  padding: 20px;
-  margin-bottom: 20px;
-}
-article h1 {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #dbdbdb;
-}
+}`
 #article-options {
   margin: 20px 0;
   width: 100%;
@@ -469,6 +423,12 @@ section {
   width: 100%;
   display: block;
   overflow: hidden;
+}
+.half-width {
+  width: 50%;
+  margin: 0 auto;
+}
+.about, .reasons, .clients, .call-to-action, .about-us, .features {
   background: white;
 }
 .about, .call-to-action, .usp {
@@ -569,23 +529,6 @@ footer a i:hover {
 .reasons {
   padding: 2em 2em 3em 2em;
   background: white;
-}
-#left-column{
-  -webkit-order: 7;
-  order: 7;
-  -webkit-flex: 100%;
-  flex: 100%;
-  overflow-y: auto;
-}
-#right-column {
-  -webkit-order: 8;
-  order: 8;
-  -webkit-flex: 100%;
-  flex: 100%;
-  overflow-y: auto;
-}
-#right-column, #left-column {
-  padding: 10px;
 }
 /*------------------------------------*
    SUB-NAVIGATION
@@ -965,6 +908,7 @@ nav .btn-landing .btn-icon {
   width: auto;
   text-align: center;
   border-radius: 0;
+  padding: 18px 20px;
 }
 .btn-divs i {
   color: white;
@@ -973,7 +917,7 @@ nav .btn-landing .btn-icon {
 .btn-search {
   position: relative;
   display: inline-block;
-  padding: 12px 15px;
+  padding: 18px 0 0 15px;
   border: none;
   background: transparent;
   color: #6c9020;
@@ -1053,12 +997,13 @@ button.circle i {
 .controls {
   background: #dbdbdb;
   color: #444444;
-  width: 100%;
+  width: 45%;
   padding: 5px 2px;
-  margin: 5px 0;
+  margin: 5px 5px;
   -webkit-box-shadow: none;
   box-shadow: none;
   border: none;
+  display: inline-block;
 }
 .controls:hover {
   background: #aaaaaa;
@@ -1183,7 +1128,7 @@ input.search-input, input.search-input:focus {
     -webkit-flex: 25%;
     flex: 25%;
   }
-  #poc-search {
+  #search {
     -webkit-order: 3;
     order: 3;
     -webkit-flex: 70%;
@@ -1210,59 +1155,59 @@ input.search-input, input.search-input:focus {
     -webkit-flex: 25%;
     flex: 25%;
   }
-  #poc-application {
+  #application {
     -webkit-order: 5;
     order: 5;
     height: calc(100% - 60px);
     -webkit-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
-  #poc-search #navigate-button, #poc-search #filters-button {
+  #search #navigate-button, #search #filters-button {
     display: none;
   }
-  #poc-results {
+  #results {
     display: -webkit-flex;
     display: flex;
     -webkit-flex: 90%;
     flex: 90%;
     padding: 0 10px;
   }
-  #poc-left-nav, #poc-right-nav {
+  #left-nav, #right-nav {
     display: block;
     -webkit-flex: 5%;
     flex: 5%;
   }
-  #poc-left-nav:hover {
+  #left-nav:hover {
     -webkit-flex: 15%;
     flex: 15%;
   }
-  #poc-left-nav:hover ~ #poc-results {
+  #left-nav:hover ~ #results {
     -webkit-flex: 80%;
     flex: 80%;
   }
-  #poc-right-nav #filters {
+  #right-nav #filters {
     display: none;
   }
-  #poc-right-nav:hover {
+  #right-nav:hover {
     -webkit-flex: 25%;
     flex: 25%;
   }
-  #poc-right-nav:hover #filters {
+  #right-nav:hover #filters {
     display: block;
   }
-  #poc-right-nav:hover ~ #poc-results {
+  #right-nav:hover ~ #results {
     -webkit-flex: 70%;
     flex: 70%;
   }
   #label {
     -webkit-flex: 25%;
     flex: 25%;
-    -webkit-order: 1;
-    order: 1;
+    -webkit-order: 2;
+    order: 2;
     padding: 5px;
   }
   .btn-search {
-    padding: 7px 0 0 10px;
+    padding: 10px 0 0 10px;
     font-size: 1.25em;
   }
 }
@@ -1274,13 +1219,21 @@ input.search-input, input.search-input:focus {
   #articles {
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
-    -webkit-flex: 4;
-    flex: 4;
+    -webkit-flex: 2;
+    flex: 2;
+  }
+  article {
+    -webkit-flex: 2;
+    flex: 2;
   }
 }
 @media (min-width: 1070px) {
-  .container.article, .container.search-term {
+  .container.article {
     width: 32%;
+  }
+  .container.article, .container.search-term {
+    -webkit-flex: 32%;
+    flex: 32%;
     display: inline-block;
     margin: 5px;
   }

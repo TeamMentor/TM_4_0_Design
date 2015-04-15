@@ -2,8 +2,7 @@ include application-mixins.jade
 
 //- Article
 mixin article
-	article
-		include:md ../../content/articles/article-new-window.md
+	include:md ../../content/articles/article-new-window.md
 
 //- Article Options
 mixin article-options
@@ -38,101 +37,6 @@ mixin related-options
 				+articles-list
 			#related-courses.content
 				+articles-list
-
-mixin flare-directory-list
-	#directory-list
-		h3 Fundamentals of Security
-		ul.side-nav
-			li
-				a(href='')
-					span.badge 14
-					span A New ID Is Assigned on Login A New ID Is Assigned on Login
-			li
-				a(href='')
-					span.badge 14
-					span A New ID Is Assigned on Login
-			li
-				a(href='')
-					span.badge 14
-					span A New ID Is Assigned on Login A New ID Is Assigned on Login
-		button.button.dropdown(href='#', data-dropdown='drop1', aria-controls='drop1', aria-expanded='false') Select a Directory
-		br
-		ul#drop1.f-dropdown(data-dropdown-content='', aria-hidden='true', tabindex='-1')
-			li
-				a(href='#') A New ID Is Assigned on Login A New ID Is Assigned on Login
-			li
-				a(href='#') A New ID Is Assigned on Login A New ID Is Assigned on Login
-			li
-				a(href='#') A New ID Is Assigned on Login A New ID Is Assigned on Login
-
-//- Directory List
-mixin directory-list
-	h3 Fundamentals of Security
-	.list-group
-		a(href='fundamentals-of-security')
-			table
-				tr
-					td A New ID Is Assigned on Login A New ID Is Assigned on Login
-					td
-						span.badge 14
-				// tr
-			// table
-		// link
-		a(href='fundamentals-of-security')
-			table
-				tr
-					td Second Level Directory
-					td
-						span.badge 14
-				// tr
-			// table
-		// link
-		a(href='fundamentals-of-security')
-			table
-				tr
-					td Second Level Directory
-					td
-						span.badge 14
-				// tr
-			// table
-		// link
-		a(href='fundamentals-of-security')
-			table
-				tr
-					td Second Level Directory
-					td
-						span.badge 14
-				// tr
-			// table
-		// link
-		a(href='fundamentals-of-security')
-			table
-				tr
-					td Second Level Directory
-					td
-						span.badge 14
-				// tr
-			// table
-		// link
-		a(href='fundamentals-of-security')
-			table
-				tr
-					td Second Level Directory
-					td
-						span.badge 14
-				// tr
-			// table
-		// link
-		a(href='fundamentals-of-security')
-			table
-				tr
-					td Second Level Directory
-					td
-						span.badge 14
-				// tr
-			// table
-		// link
-	// list-group
 
 mixin terms-and-conditions
 	.bg
