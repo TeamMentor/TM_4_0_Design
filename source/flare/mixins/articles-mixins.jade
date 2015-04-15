@@ -2,41 +2,33 @@ include application-mixins.jade
 
 //- Article
 mixin article
-	include:md ../../content/articles/article-new-window.md
+	section.row
+		#label
+			+article-info
+		article
+			include:md ../../content/articles/article-new-window.md
 
-//- Article Options
-mixin article-options
-	#article-options
-		.row
-			.small-12.medium-6.columns
-				ul
-					li #technology
-					li #phase
-					li #type
-			.small-12.medium-6.columns
-				.row
-					.small-6.columns
-						+save-button
-					.small-6.columns
-						+share-button
+//- Article Info
+mixin article-info
+	.label Info
+	p . Technology Icon
+	p . Type Icon
+	+save-button
+	+share-button
 
 
 //- Related Courses and Articles
 mixin related-options
-	#related-options
-		h3 You might also like
-		dl.tabs(data-tab='data-tab' class='related-options-width')
-			dd.active
-				a(href='#related-articles')
-					+articles-icon
-			dd
-				a(href='#related-courses')
-					+courses-icon
-		.tabs-content
-			#related-articles.content.active
-				+articles-list
-			#related-courses.content
-				+articles-list
+	section.row
+		#label
+			.label Related Articles
+		#articles
+			+articles-list
+	section.row
+		#label
+			.label Related Courses
+		#articles
+			+articles-list
 
 mixin terms-and-conditions
 	.bg

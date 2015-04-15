@@ -382,15 +382,29 @@ mixin reset-pwd-button
 //- Alert System
 mixin flare-alert
     .alert-box(data-alert='')
-        .row
-            .small-1.columns
-                +alert-icon
-            .small-11.columns
-                span Error, Validation or Alert Message Here
+        +alert-icon
+        span Error, Validation or Alert Message Here
         a.close(href='#') ×
 
 mixin copyright
-    #copyright
+    footer.copyright
+        .si-logo
+        .si-name
+            a(hreft='http://www.securityinnovation.com/' target='_blank') Security Innovation 2015. All rights reserved.
+        .icons
+            ul
+                li
+                    .label TEAM Mentor 4.0
+                li
+                    a(href='mailto:support@securityinnovation.com' title='Email')
+                        +i-email
+                li
+                    a(href='http://www.twitter.com/SecInnovation' target='_blank' title='Twitter')
+                        +i-twitter
+                li
+                    a#terms-and-conditions(href='../misc/terms-and-conditions' title ='Terms and Conditions')
+                        +i-toc
+    //#copyright
         .row
             .small-12.medium-3.columns
                 a(href='http://www.securityinnovation.com/', target='_blank')

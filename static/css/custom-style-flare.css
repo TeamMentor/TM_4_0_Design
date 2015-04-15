@@ -147,7 +147,7 @@ span.text {
   order: 3;
 }
 .search-field {
-  background: #fafafa;
+  background: white;
   display: -webkit-flex;
   display: flex;
   -webkit-flex: 90%;
@@ -155,6 +155,7 @@ span.text {
   -webkit-order: 2;
   order: 2;
   padding: 0 10px;
+  border-top: 1px solid #dbdbdb;
 }
 .search-field input[type="text"] {
   -webkit-flex: 90%;
@@ -162,6 +163,7 @@ span.text {
   -webkit-order: 1;
   order: 1;
   padding: 10px 0 0 10px;
+  background: transparent;
 }
 .search-field #search-button {
   -webkit-flex: 10%;
@@ -198,18 +200,19 @@ span.text {
   flex: 100%;
   -webkit-order: 2;
   order: 2;
-  margin: 5px 0 0 0;
+  padding: 0 10px;
+  position: relative;
 }
 article {
   -webkit-flex: 100%;
   flex: 100%;
-  -webkit-order: 3;
-  order: 3;
+  -webkit-order: 1;
+  order: 1;
   overflow-y: auto;
   background: white;
   border: 1px solid #dbdbdb;
   padding: 0 30px 30px 30px;
-  margin: 0 0 0 10px;
+  margin: 0 0 20px 0;
 }
 article h1 {
   padding-bottom: 20px;
@@ -316,14 +319,6 @@ article h1 {
   background: #fafafa;
   border-bottom: 1px solid #dbdbdb;
 }
-.si-logo {
-  background: url('../assets/logos/si-logo.svg') no-repeat;
-  background-size: cover;
-  padding-top: 20px;
-  height: 0;
-  width: 15px;
-  margin: 5px 5px 0 10px;
-}
 #menu-icon {
   -webkit-order: 4;
   order: 4;
@@ -386,27 +381,6 @@ article h1 {
 #article-options ul li:last-child {
   padding-right: 0;
 }
-#copyright {
-  padding: 30px 0;
-  text-align: center;
-}
-#copyright ul {
-  list-style: none;
-  padding: 0;
-}
-#copyright li {
-  display: block;
-  line-height: 1em;
-}
-#copyright p, #copyright a {
-  font-size: 10px;
-  margin: 0 0 5px 0;
-}
-#copyright i {
-  margin-right: 10px;
-  font-size: 10px;
-  color: #444444;
-}
 #landing-page {
   height: 90%;
   -webkit-order: 6;
@@ -428,7 +402,7 @@ section {
   width: 50%;
   margin: 0 auto;
 }
-.about, .reasons, .clients, .call-to-action, .about-us, .features {
+.about, .reasons, .clients, .call-to-action, .about-us, .features, footer {
   background: white;
 }
 .about, .call-to-action, .usp {
@@ -450,6 +424,9 @@ section {
 }
 .about-us, .features {
   padding: 2% 0;
+}
+.reasons {
+  padding: 2em 2em 3em 2em;
 }
 .call-to-action {
   background-position: 0em -18em;
@@ -500,23 +477,36 @@ section {
 }
 footer {
   width: 100%;
-  padding: 10px 0 10px 0;
+  padding: 0 0 10px 0;
   display: flex;
   display: -webkit-flex;
-  background: #b4cf7b;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.si-logo {
+  background: url('../assets/logos/si-logo.svg') no-repeat;
+  background-size: cover;
+  padding-top: 20px;
+  height: 0;
+  width: 15px;
+  margin: 5px 5px 0 18%;
 }
 .si-name {
-  flex: 4;
+  flex: calc (100% - 30px);
   text-align: left;
-  padding: 2px 0 0 0;
+  padding: 5px 0 0 0;
 }
 .si-name a, .si-name a:hover {
   text-decoration: none;
   font-size: 0.75em !important;
 }
 .icons {
-  flex: 2;
+  flex: 100%;
   text-align: center;
+  padding: 10px 0;
 }
 footer a i {
   color: #444444;
@@ -526,10 +516,33 @@ footer a i:hover {
   color: #7b7b7b;
   transition: 0.3s;
 }
-.reasons {
-  padding: 2em 2em 3em 2em;
-  background: white;
+footer.copyright {
+  background: transparent;
 }
+footer ul {
+  list-style-type: none;
+  list-style-position: outside;
+  margin: 0;
+  padding: 0;
+}
+footer ul li:first-child {
+  display: block;
+  width: 100%;
+}
+footer ul li {
+  display: inline-block;
+  width: 15%
+}
+footer .label {
+  border-bottom: none;
+}
+
+
+
+
+
+
+
 /*------------------------------------*
    SUB-NAVIGATION
 *------------------------------------*/
@@ -974,7 +987,7 @@ button.circle i {
 .app {
   padding: 5px 0;
   margin: 2px 0;
-  width: 50%;
+  width: 70%;
   background: #6c9020;
   border: 1px solid #b4cf7b;
   border-radius: 3px;
@@ -997,8 +1010,8 @@ button.circle i {
 .controls {
   background: #dbdbdb;
   color: #444444;
-  width: 45%;
-  padding: 5px 2px;
+  width: auto;
+  padding: 5px 20px;
   margin: 5px 5px;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1099,15 +1112,20 @@ input.search-input, input.search-input:focus {
    MICRO-ELEMENTS
 *------------------------------------*/
 .alert-box {
-  margin: 0 0 10px 0;
+  width: 100%;
   background-color: #a6cb5a;
   border: none;
   border-radius: 3px;
   color: #444444;
   font-size: 14px;
   letter-spacing: 1px;
-  position: relative;
   padding: 10px;
+}
+a.close {
+  float: right;
+}
+.alert-box i {
+  padding: 0 10px 0 0;
 }
 .alert-box.active {
   background-color: #dbdbdb;
@@ -1123,6 +1141,17 @@ input.search-input, input.search-input:focus {
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
+@media (min-width: 500px) {
+  .si-logo {
+    margin: 5px 10px 0 5px;
+  }
+  .si-name {
+    flex: 2;
+  }
+  .icons {
+    flex: 1;
+  }
+}
 @media (min-width: 700px) {
   #logo {
     -webkit-flex: 25%;
@@ -1210,6 +1239,22 @@ input.search-input, input.search-input:focus {
     padding: 10px 0 0 10px;
     font-size: 1.25em;
   }
+  .icons {
+    flex: 2;
+  }
+  footer ul {
+    text-align: right;
+  }
+  footer ul li:first-child {
+    display: inline-block !important;
+    width: auto !important;
+  }
+  footer ul li {
+    width: 10%;
+  }
+  footer ul li:last-child {
+    padding: 0 20px 0 0;
+  }
 }
 @media (min-width: 950px) {
   #label {
@@ -1225,6 +1270,12 @@ input.search-input, input.search-input:focus {
   article {
     -webkit-flex: 4;
     flex: 4;
+    margin: 0 17px 0 29px;
+    padding: 20px 40px;
+  }
+  .alert-box {
+    width: 76%;
+    margin-left: 21%;
   }
 }
 @media (min-width: 1070px) {
