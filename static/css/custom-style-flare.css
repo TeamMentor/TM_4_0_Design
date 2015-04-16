@@ -201,7 +201,7 @@ span.text {
   flex: 100%;
   -webkit-order: 2;
   order: 2;
-  padding: 0 10px;
+  padding: 0 0 20px 0;
   position: relative;
 }
 article {
@@ -312,8 +312,14 @@ article h1 {
 
 
 
-
-
+#label ul {
+  margin: 0;
+  padding: 0;
+}
+#label ul li {
+  display: inline-block;
+  width: 50%;
+}
 
 
 .landing-page {
