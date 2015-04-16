@@ -1,0 +1,430 @@
+//- static texts
+- var head_title = 'TEAM Mentor 4.0 (Html version)'
+
+//- Icons
+mixin metadata-icon
+    i.fi-list-bullet
+    span Data
+
+mixin save-icon
+    i.fi-bookmark
+
+mixin share-icon
+    i.fi-share
+
+mixin search-icon
+    i.fi-magnifying-glass
+
+mixin filter-icon
+    i.fi-filter
+
+mixin clear-icon
+    i.fi-trash
+
+mixin edit-icon
+    i.fi-pencil
+
+mixin new-pw-icon
+    i.fi-key
+    span Change Password
+
+mixin delete-account-icon
+    i.fi-trash
+    span Delete Your Account
+
+mixin change-filters-icon
+    i.fi-results
+    span Add/Remove Permanent Filters
+
+mixin navigate-icon
+    i.fi-map
+
+mixin help-icon
+    i.fi-info
+
+mixin articles-icon
+    i.fi-book
+    span Related Articles
+
+mixin courses-icon
+    i.fi-paperclip
+    span Related Courses
+
+mixin user-icon
+    i.fi-torso
+
+mixin help-link
+    i.fi-info
+    span Docs
+
+mixin logout-link
+    i.fi-power
+    span Logout
+
+//- Form Inputs
+mixin username-input
+    label Username
+    input(type='text', id='username', placeholder='Username')
+
+mixin flare-password-input
+    label Password
+    .row.collapse
+        .small-9.columns
+            input(type='password', placeholder='Password')
+        .small-3.columns
+            a.button.search.full-width(href='#') SHOW
+
+mixin flare-new-password-input
+    label New Password
+    .row.collapse
+        .small-10.medium-10.columns
+            input(type='password', placeholder='New Password')
+        .small-2.medium-2.columns
+            .button.postfix#show-button(href='#') SHOW
+
+mixin password-input
+    label Password
+    input(type='password', id='password', placeholder='Password')
+
+mixin new-password-input
+    label(for='user-new-password') New Password
+    input(type='password', id='user-new-password', placeholder='New Password')
+
+mixin confirm-new-password-input
+    label(for='user-confirm-new-password') Confirm New Password
+    input(type='password', id='user-confirm-new-password', placeholder='Confirm New Password')
+
+mixin email-input
+    label Email Address
+    input(type='email', id='email', placeholder='Email Address')
+
+mixin name-input
+    label Name
+    input(type='text', id='name', placeholder='Full Name')
+
+mixin title-input
+    label Title
+    input(type='text', id='title', placeholder='Title')
+
+mixin company-input
+    label Company
+    input(type='text', id='company', placeholder='Company')
+
+mixin state-input
+    label State
+    select
+        option(value='ms') Filtered
+        option(value='miss') By
+        option(value='Mrs') Country
+        option(value='Mr') Chosen
+
+mixin country-input
+    label Country
+    select
+        option(value='Afghanistan') Afghanistan
+        option(value='Albania') Albania
+        option(value='Algeria') Algeria
+        option(value='Andorra') Andorra
+        option(value='Angola') Angola
+        option(value='antiguaandbarbuda') Antigua and Barbuda
+        option(value='argentina') Argentina
+        option(value='armenia') Armenia
+        option(value='aruba') Aruba
+        option(value='australia') Australia
+        option(value='austria') Austria
+        option(value='azerbaijan') Azerbaijan
+        option(value='bahamas') Bahamas, The
+        option(value='bahrain') Bahrain
+        option(value='bangladesh') Bangladesh
+        option(value='barbados') Barbados
+        option(value='belarus') Belarus
+        option(value='belgium') Belgium
+        option(value='belize') Belize
+        option(value='benin') Benin
+        option(value='bhutan') Bhutan
+        option(value='bolivia') Bolivia
+        option(value='bosniaandherzegovina') Bosnia and Herzegovina
+        option(value='botswana') Botswana
+        option(value='barzil') Brazil
+        option(value='brunei') Brunei
+        option(value='bulgaria') Bulgaria
+        option(value='burkinafaso') Burkina Faso
+        option(value='burma') Burma
+        option(value='burundi') Burundi
+        option(value='cambodia') Cambodia
+        option(value='cameroon') Cameroon
+        option(value='canada') Canada
+        option(value='capeverde') Cape Verde
+        option(value='centeralafricanrepuclic') Central African Republic
+        option(value='chad') Chad
+        option(value='chile') Chile
+        option(value='china') China
+        option(value='colombia') Colombia
+        option(value='comoros') Comoros
+        option(value='congodemocratic') Congo, Democratic Republic of the
+        option(value='congorepublic') Congo, Republic of the
+        option(value='costarica') Costa Rica
+        option(value='cotedivoire') Cote d'Ivoire
+        option(value='croatia') Croatia
+        option(value='cuba') Cuba
+        option(value='curacao') Curacao
+        option(value='cyprus') Cyprus
+        option(value='czechrepublic') Czech Republic
+        option(value='denmark') Denmark
+        option(value='djibouti') Djibouti
+        option(value='dominica') Dominica
+        option(value='dominicanrepublic') Dominican Republic
+        option(value='easttimor') East Timor
+        option(value='ecaudor') Ecuador
+        option(value='egypt') Egypt
+        option(value='elsalvador') El Salvador
+        option(value='equatorialguinea') Equatorial Guinea
+        option(value='eritrea') Eritrea
+        option(value='estonia') Estonia
+        option(value='ethiopia') Ethiopia
+        option(value='fiji') Fiji
+        option(value='finland') Finland
+        option(value='france') France
+        option(value='gabon') Gabon
+        option(value='gambia') Gambia, The
+        option(value='georgia') Georgia
+        option(value='germany') Germany
+        option(value='ghana') Ghana
+        option(value='greece') Greece
+        option(value='grenada') Grenada
+        option(value='guatemala') Guatemala
+        option(value='guinea') Guinea
+        option(value='guinea-bissau') Guinea-Bissau
+        option(value='guyana') Guyana
+        option(value='haiti') Haiti
+        option(value='holysee') Holy See
+        option(value='honduras') Honduras
+        option(value='hongkong') Hong Kong
+        option(value='hungary') Hungary
+        option(value='iceland') Iceland
+        option(value='india') India
+        option(value='indonesia') Indonesia
+        option(value='iran') Iran
+        option(value='iraw') Iraq
+        option(value='ireland') Ireland
+        option(value='israel') Israel
+        option(value='italy') Italy
+        option(value='jamaica') Jamaica
+        option(value='japan') Japan
+        option(value='jordan') Jordan
+        option(value='kazakhstan') Kazakhstan
+        option(value='kenya') Kenya
+        option(value='kiribati') Kiribati
+        option(value='northkorea') Korea, North
+        option(value='soutkorea') Korea, South
+        option(value='kosovo') Kosovo
+        option(value='kuwait') Kuwait
+        option(value='kyrgyzstan') Kyrgyzstan
+        option(value='laos') Laos
+        option(value='latvia') Latvia
+        option(value='lebanon') Lebanon
+        option(value='lesotho') Lesotho
+        option(value='liberia') Liberia
+        option(value='libya') Libya
+        option(value='liechtenstein') Liechtenstein
+        option(value='lithuania') Lithuania
+        option(value='luxembourg') Luxembourg
+        option(value='macau') Macau
+        option(value='macedonia') Macedonia
+        option(value='madagascar') Madagascar
+        option(value='malawai') Malawi
+        option(value='malaysia') Malaysia
+        option(value='maldives') Maldives
+        option(value='mali') Mali
+        option(value='malta') Malta
+        option(value='marshallislands') Marshall Islands
+        option(value='mauritania') Mauritania
+        option(value='mauritius') Mauritius
+        option(value='mexico') Mexico
+        option(value='micronesia') Micronesia
+        option(value='moldova') Moldova
+        option(value='monaco') Monaco
+        option(value='mongolia') Mongolia
+        option(value='montenegro') Montenegro
+        option(value='morocco') Morocco
+        option(value='mozambique') Mozambique
+        option(value='namibia') Namibia
+        option(value='nauru') Nauru
+        option(value='nepal') Nepal
+        option(value='netherlands') Netherlands
+        option(value='netherlandsantilles') Netherlands Antilles
+        option(value='newzealand') New Zealand
+        option(value='nicaragua') Nicaragua
+        option(value='niger') Niger
+        option(value='nigeria') Nigeria
+        option(value='norway') Norway
+        option(value='oman') Oman
+        option(value='pakistan') Pakistan
+        option(value='palau') Palau
+        option(value='palestinianterritories') Palestinian Territories
+        option(value='panama') Panama
+        option(value='papaunewguinea') Papua New Guinea
+        option(value='paraguay') Paraguay
+        option(value='peru') Peru
+        option(value='philippines') Philippines
+        option(value='poland') Poland
+        option(value='portugal') Portugal
+        option(value='qatar') Qatar
+        option(value='romania') Romania
+        option(value='russia') Russia
+        option(value='rwanda') Rwanda
+        option(value='saintkitts') Saint Kitts and Nevis
+        option(value='saintlucia') Saint Lucia
+        option(value='saintvincent') Saint Vincent and the Grenadines
+        option(value='samoa') Samoa
+        option(value='sanmarino') San Marino
+        option(value='saotome') Sao Tome and Principe
+        option(value='saudiarabia') Saudi Arabia
+        option(value='senegal') Senegal
+        option(value='serbia') Serbia
+        option(value='seychelles') Seychelles
+        option(value='sierraleone') Sierra Leone
+        option(value='singapore') Singapore
+        option(value='sintmaarten') Sint Maarten
+        option(value='slovakia') Slovakia
+        option(value='slovenia') Slovenia
+        option(value='solomonislands') Solomon Islands
+        option(value='somalia') Somalia
+        option(value='southafrica') South Africa
+        option(value='southsudan') South Sudan
+        option(value='spain') Spain
+        option(value='srilanka') Sri Lanka
+        option(value='sudan') Sudan
+        option(value='suriname') Suriname
+        option(value='swaziland') Swaziland
+        option(value='sweden') Sweden
+        option(value='switzerland') Switzerland
+        option(value='syria') Syria
+        option(value='taiwan') Taiwan
+        option(value='tajikistan') Tajikistan
+        option(value='tanzania') Tanzania
+        option(value='thailand') Thailand
+        option(value='togo') Togo
+        option(value='tonga') Tonga
+        option(value='trinidadandtobago') Trinidad and Tobago
+        option(value='tunisia') Tunisia
+        option(value='turkey') Turkey
+        option(value='turkmenistan') Turkmenistan
+        option(value='tuvalu') Tuvalu
+        option(value='uganda') Uganda
+        option(value='ukraine') Ukraine
+        option(value='unitedarabemirates') United Arab Emirates
+        option(value='unitedkingdom') United Kingdom
+        option(value='uruguay') Uruguay
+        option(value='uzbekistan') Uzbekistan
+        option(value='vanuatu') Vanuatu
+        option(value='venezuela') Venezuela
+        option(value='vietnam') Vietnam
+        option(value='yemen') Yemen
+        option(value='zambia') Zambia
+        option(value='zimbabwe') Zimbabwe
+
+mixin save-input
+    input(type='text', id='save-input', placeholder='Save to Dashboard')
+
+mixin share-input
+    input(type='email', id='share-input', placeholder='Share via Email')
+
+//- Form Buttons
+mixin open-button
+    button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false')
+        i.fi-plus
+    ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
+        li
+            a(href='#') ASP.NET
+        li
+            a(href='#') Android
+        li
+            a(href='#') C++
+        li
+            a(href='#') HTML5
+        li
+            a(href='#') iOS
+        li
+            a(href='#') Java
+        li
+            a(href='#') PHP
+        li
+            a(href='#') Scala
+
+mixin save-button
+    button.app
+        +save-icon
+
+mixin trash-button
+    button.app
+        +clear-icon
+
+mixin share-button
+    button.app
+        +share-icon
+
+mixin save-results-button
+    button.app Save Results
+
+mixin clear-results-button
+    button.app Clear Results
+
+mixin ok-button
+    button(type='submit', id='btn-ok') OK, Save
+
+mixin clear-selected-button
+    button(type='submit', id='btn-clear-selected') Clear Selected
+
+mixin clear-all-button
+    button(type='submit', id='btn-clear-all') Clear All
+
+mixin edit-button
+    button(type='submit', id='btn-edit') Edit
+
+mixin reset-pwd-button
+    button(type='submit', id='btn-reset-pwd') Reset password
+
+//- Alert System
+mixin flare-alert
+    .alert-box(data-alert='')
+        +alert-icon
+        span Error, Validation or Alert Message Here
+        a.close(href='#') ×
+
+mixin copyright
+    footer.copyright
+        .si-logo
+        .si-name
+            a(hreft='http://www.securityinnovation.com/' target='_blank') Security Innovation 2015. All rights reserved.
+        .icons
+            ul
+                li
+                    .label TEAM Mentor 4.0
+                li
+                    a(href='mailto:support@securityinnovation.com' title='Email')
+                        +i-email
+                li
+                    a(href='http://www.twitter.com/SecInnovation' target='_blank' title='Twitter')
+                        +i-twitter
+                li
+                    a#terms-and-conditions(href='../misc/terms-and-conditions' title ='Terms and Conditions')
+                        +i-toc
+    //#copyright
+        .row
+            .small-12.medium-3.columns
+                a(href='http://www.securityinnovation.com/', target='_blank')
+                    .logo.si-logo
+            .small-12.medium-6.columns
+                include:md ../../content/articles/copyright-information.md
+            .small-12.medium-3.columns
+                ul
+                    li
+                        +i-email
+                        a(href='mailto:support@securityinnovation.com') Email
+                    li
+                        +i-toc
+                        a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions
+
+mixin team-mentor-svg
+    include ../../../static/assets/stock-img/tm.svg
