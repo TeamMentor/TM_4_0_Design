@@ -1129,10 +1129,11 @@ a.close {
 *------------------------------------*/
 @media (min-width: 500px) {
   .si-logo {
-    margin: 5px 10px 0 5px;
+    margin: 15px 10px 0 5px;
   }
   .si-name {
     flex: 2;
+    margin: 10px 0 0 0;
   }
   .icons {
     flex: 1;
