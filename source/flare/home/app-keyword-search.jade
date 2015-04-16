@@ -5,9 +5,12 @@ block content
 	#application
 		#left-nav
 		#results
-			+flare-results-save-clear
-			#articles
-				+articles-list
-			br
+			section.row
+				#label
+					.label 0/200 results showing
+					+save-results-button
+					+clear-results-button
+				#articles
+					+articles-list
 			+copyright
 		#right-nav

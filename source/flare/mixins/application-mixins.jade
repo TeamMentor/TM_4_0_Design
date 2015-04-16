@@ -28,13 +28,13 @@ mixin flare-results-save-clear
 mixin main-app-view
     section.row
         #label
-            .label Recently Viewed Articles
-        +articles-list
-    section.row
-        #label
             .label Popular Search Terms
         #articles
             +search-term-list
+    section.row
+        #label
+            .label Recently Viewed Articles
+        +articles-list
     section.row
         #label
             .label Top Articles
@@ -113,10 +113,9 @@ mixin articles-list
 mixin left-navigation
     ul.side-nav
         li
-            a(href='../home/navigate')
-                span
-                    i.fi-list
-                span.text Index
+            span
+                i.fi-list
+            span.text Index
         li
             span
                 i.fi-book
@@ -185,8 +184,7 @@ mixin filters-div
             span
                 +filter-icon
             span.text Filter by
-    br
-    #filters
+    //#filters
         dl.accordion(data-accordion='data-accordion')
             dd.accordion-navigation.active
                 a(href='#and-filters')
