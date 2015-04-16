@@ -14,15 +14,13 @@ mixin search-bar
             +filter-icon
 
 //- Flare Results-Save-Clear
-mixin flare-results-save-clear
-    #results-save-clear.row.collapse
-        .small-8.large-10.columns
-            h4.label 0/200 results showing
-        .small-4.large-2.columns
-            a.button.app(href='app-keyword-search-save')
-                +save-icon
-            a.button.app(href='main-app-view')
-                +clear-icon
+mixin results-save-clear
+    .label 0/200 results showing
+    ul
+        li
+            +save-results-button
+        li
+            +clear-results-button
 
 //- Flare Main App View
 mixin main-app-view
@@ -34,81 +32,82 @@ mixin main-app-view
     section.row
         #label
             .label Recently Viewed Articles
-        +articles-list
+        #articles
+            +articles-list
     section.row
         #label
             .label Top Articles
-        +articles-list
+        #articles
+            +articles-list
 
 //- Articles List
 mixin articles-list
-    #articles
-        .container.article
-            .metadata
-                ul
-                    li
-                        span.rank-badge #1
-                        // Search Rank
-                    li
-                        p .
-                        // Technology Icon
-                    li
-                        p .
-                        // Phase Icon
-                    li
-                        button.app
-                            i.fi-bookmark
-                    li
-                        button.app
-                            i.fi-share
-            .summary
-                a(href='../articles/article-new-window-view')
-                    h3#article-headline Article Headline
-                include:md ../../content/articles/article-details.md
-        .container.article
-            .metadata
-                ul
-                    li
-                        span.rank-badge #1
-                        // Search Rank
-                    li
-                        p .
-                        // Technology Icon
-                    li
-                        p .
-                        // Phase Icon
-                    li
-                        button.app
-                            i.fi-bookmark
-                    li
-                        button.app
-                            i.fi-share
-            .summary
-                a(href='../articles/article-new-window-view')
-                    h3#article-headline Article Headline
-                include:md ../../content/articles/article-details.md
-        .container.article
-            .metadata
-                ul
-                    li
-                        span.rank-badge #1
-                        // Search Rank
-                    li
-                        p .
-                        // Technology Icon
-                    li
-                        p .
-                        // Phase Icon
-                    li
-                        button.app
-                            i.fi-bookmark
-                    li
-                        button.app
-                            i.fi-share
-            .summary
-                a(href='../articles/article-new-window-view')
-                    h3#article-headline Article Headline
-                include:md ../../content/articles/article-details.md
+    .container.article
+        .metadata
+            ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
+                li
+                    p .
+                    // Technology Icon
+                li
+                    p .
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-bookmark
+                li
+                    button.app
+                        i.fi-share
+        .summary
+            a(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
+    .container.article
+        .metadata
+            ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
+                li
+                    p .
+                    // Technology Icon
+                li
+                    p .
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-bookmark
+                li
+                    button.app
+                        i.fi-share
+        .summary
+            a(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
+    .container.article
+        .metadata
+            ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
+                li
+                    p .
+                    // Technology Icon
+                li
+                    p .
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-bookmark
+                li
+                    button.app
+                        i.fi-share
+        .summary
+            a(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
 
 mixin left-navigation
     ul.side-nav

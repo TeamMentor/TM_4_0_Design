@@ -204,6 +204,14 @@ span.text {
   padding: 0 0 20px 0;
   position: relative;
 }
+#label ul {
+  margin: 0;
+  padding: 0;
+}
+#label ul li {
+  display: inline-block;
+  width: 50%;
+}
 article {
   -webkit-flex: 100%;
   flex: 100%;
@@ -311,15 +319,6 @@ article h1 {
 }
 
 
-
-#label ul {
-  margin: 0;
-  padding: 0;
-}
-#label ul li {
-  display: inline-block;
-  width: 50%;
-}
 
 
 .landing-page {
