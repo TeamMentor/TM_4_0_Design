@@ -102,6 +102,9 @@ mixin any-technology-icon
 mixin html5-icon
   i.fi-html5(title='HTML5')
 
+mixin vuln-icon
+  i.fi-shield(title='HTML5')
+
 mixin filter-icon(filter, title)
   case filter
     when 'Type'
@@ -114,6 +117,8 @@ mixin filter-icon(filter, title)
           +code-sample-icon
         when 'How To'
           +how-to-icon
+        when 'Vulnerability'
+          +vuln-icon
         default
           span
 

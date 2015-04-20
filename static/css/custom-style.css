@@ -440,7 +440,6 @@ form p {
 }
 label, .label {
   display: inline-block;
-  padding: 3px 0 0 0;
   margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 1px;
