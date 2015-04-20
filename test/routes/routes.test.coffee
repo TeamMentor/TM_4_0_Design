@@ -1,6 +1,6 @@
-supertest       = require 'supertest'
-Express_Service = require '../../src/services/Express-Service'
-request = require('superagent')
+supertest       = null
+Express_Service = null
+request         = null
 
 describe '| routes | routes.test |', ()->
 
@@ -48,7 +48,13 @@ describe '| routes | routes.test |', ()->
                       '/poc/:page'
                       '/*']
 
+    dependencies = ->
+      supertest       = require 'supertest'
+      Express_Service = require '../../src/services/Express-Service'
+      request         = require('superagent')
+
     before ()->
+      dependencies()
       options =
         logging_Enabled : false
         port            : 1024 + (20000).random()

@@ -1,11 +1,20 @@
-Article_Controller = require '../../src/controllers/Article-Controller'
-Express_Service    = require '../../src/services/Express-Service'
-Session_Service    = require('../../src/services/Session-Service')
-cheerio            = require 'cheerio'
-
-supertest = require 'supertest'
+Article_Controller = null
+Express_Service    = null
+Session_Service    = null
+cheerio            = null
+supertest          = null
 
 describe '| controllers | Article-Controller.test', ->
+
+  dependencies = ->
+    Article_Controller = require '../../src/controllers/Article-Controller'
+    Express_Service    = require '../../src/services/Express-Service'
+    Session_Service    = require('../../src/services/Session-Service')
+    cheerio            = require 'cheerio'
+    supertest          = require 'supertest'
+
+  before ->
+    dependencies()
 
   it 'constructor', (done)->
     using new Article_Controller(), ->
@@ -57,6 +66,26 @@ describe '| controllers | Article-Controller.test', ->
 
     using new Article_Controller(req,res), ->
       @.graphService = graphService
+      @.article()
+
+  it 'article (verify syntax highlighting)', (done)->
+
+    #article_Id    = 'article-06d834ff8317'
+    #article_Id    = 'article-76077de05e90'
+    article_Id    = 'article-8be858175e32'
+
+    req =
+      params: ref: article_Id
+      session: recent_Articles: []
+
+    res =
+      send : (html)->
+        $ = cheerio.load(html)
+        $.html().assert_Contains('<pre><code><span class="keyword">')
+        $.html().assert_Contains('<link href="/static/css/syntax-highlighting-github-style.css" rel="stylesheet">')
+        done()
+
+    using new Article_Controller(req,res), ->
       @.article()
 
   it 'articles', (done)->
@@ -136,6 +165,9 @@ describe '| controllers | Article-Controller.test', ->
 
 
   describe 'routes |',->
+
+    before ->
+      dependencies()
 
     it 'register_Routes',->
       route_Inner_Code = 'new Article_Controller(req, res, app.config, graph_Options)[method_Name]();'

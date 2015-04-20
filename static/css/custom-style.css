@@ -535,14 +535,14 @@ ul, ol {
 ul ul, ol ul {
   margin-bottom: 0;
 }
-code, pre {
-  font-family: Lucida Console, Courier, monospace;
-  font-size: 0.8em;
+code, pre { /* commented out for #413 - code syntax highlighting */
+  /* font-family: Lucida Console, Courier, monospace; */
+  /* font-size: 0.8em; */
   display: block;
   padding: 20px;
   line-height: 1.5;
-  color: #444444;
-  letter-spacing: 2px;
+  /* color: #444444; */
+  /* letter-spacing: 2px; */
   white-space: pre-wrap;                 /* CSS3 browsers  */
   white-space: -moz-pre-wrap !important; /* 1999+ Mozilla  */
   white-space: -pre-wrap;                /* Opera 4 thru 6 */

@@ -2,7 +2,8 @@ fs     = null
 path   = null
 jade   = null
 Config = null
-
+cheerio = require('cheerio')
+highlight = require('highlight').Highlight
 
 class JadeService
     constructor: (config)->
@@ -68,7 +69,15 @@ class JadeService
       if (@.cacheEnabled() is false)
         jadeFile_Path = @.calculateJadePath(jadeFile)
         if (fs.existsSync(jadeFile_Path))
-            return jade.renderFile(jadeFile_Path,params)
+          if params then if params.article_Html
+            if params.article_Html.contains('<pre>')
+              $ = cheerio.load(params.article_Html)
+              $('pre').each (i,elem)->
+                if $(elem).text().trim() == '' then $(elem).remove()
+                $(elem).find($('br')).replaceWith('\n')
+                $(elem).replaceWith($('<pre><code>' + highlight($(elem).text()) + '</code></pre>'))
+              params.article_Html = $.html()
+          return jade.renderFile(jadeFile_Path,params)
         return ""
 
       targetFile_Path = this.calculateTargetPath(jadeFile);
