@@ -99,7 +99,7 @@ mixin results-2
 //- main-app-view
 mixin main-app-view
     #main-app-view
-        if (recent_Articles && recent_Articles.values().not_Empty())
+        if (recent_Articles && recent_Articles.size())
             .bg
                 #recently-Viewed-Articles
                     h5.label Recently Viewed Articles
