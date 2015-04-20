@@ -68,6 +68,26 @@ describe '| controllers | Article-Controller.test', ->
       @.graphService = graphService
       @.article()
 
+  it 'article (verify syntax highlighting)', (done)->
+
+    #article_Id    = 'article-06d834ff8317'
+    #article_Id    = 'article-76077de05e90'
+    article_Id    = 'article-8be858175e32'
+
+    req =
+      params: ref: article_Id
+      session: recent_Articles: []
+
+    res =
+      send : (html)->
+        $ = cheerio.load(html)
+        $.html().assert_Contains('<pre><code><span class="keyword">')
+        $.html().assert_Contains('<link href="/static/css/syntax-highlighting-github-style.css" rel="stylesheet">')
+        done()
+
+    using new Article_Controller(req,res), ->
+      @.article()
+
   it 'articles', (done)->
 
     article_Id      = 'article-12345'
