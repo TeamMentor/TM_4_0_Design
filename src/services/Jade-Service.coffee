@@ -76,7 +76,7 @@ class JadeService
                 if $(elem).text().trim() == '' then $(elem).remove()
                 $(elem).find($('br')).replaceWith('\n')
                 $(elem).replaceWith($('<pre><code>' + highlight($(elem).text()) + '</code></pre>'))
-             params.article_Html = $.html()
+              params.article_Html = $.html()
           return jade.renderFile(jadeFile_Path,params)
         return ""
 
