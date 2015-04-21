@@ -81,7 +81,7 @@ describe '| controllers | Article-Controller.test', ->
     res =
       send : (html)->
         $ = cheerio.load(html)
-        $.html().assert_Contains('<pre><code><span class="keyword">')
+        $.html().assert_Contains('<pre><span class="keyword">')
         $.html().assert_Contains('<link href="/static/css/syntax-highlighting-github-style.css" rel="stylesheet">')
         done()
 
