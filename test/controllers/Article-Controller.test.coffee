@@ -40,7 +40,8 @@ describe '| controllers | Article-Controller.test', ->
 
     article_Id    = 'article-12345'
     article_Title = 'this is an title'
-    article_Html  = 'html is here'
+    article_Text  = 'html is here '
+    article_Html  = 'html is here <pre> var a =12 </pre>'
 
     req =
       params: ref: article_Id
@@ -49,8 +50,11 @@ describe '| controllers | Article-Controller.test', ->
     res =
       send : (data)->
         $ = cheerio.load(data)
+
         $('#article #title').html().assert_Is article_Title
-        $('#article #html' ).html().assert_Is article_Html
+        html = $('#article #html' ).html().assert_Contains article_Text
+                                          .assert_Contains('<pre> <span class="keyword">')
+        $.html().assert_Contains('<link href="/static/css/syntax-highlighting-github-style.css" rel="stylesheet">')
         done()
 
     graphService =
@@ -68,10 +72,11 @@ describe '| controllers | Article-Controller.test', ->
       @.graphService = graphService
       @.article()
 
-  it 'article (verify syntax highlighting)', (done)->
+  # this test doesn't work on Travis since the article-8be858175e32 doesn't exist in there, so the highlight check was added to the
+  # 'article (good id)' test (above)
 
-    #article_Id    = 'article-06d834ff8317'
-    #article_Id    = 'article-76077de05e90'
+  xit 'article (verify syntax highlighting)', (done)->
+
     article_Id    = 'article-8be858175e32'
 
     req =
