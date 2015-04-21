@@ -1016,7 +1016,7 @@ button.circle i {
 .app i {
   color: white !important;
 }
-.results {
+#label button {
   width: 100%;
   padding: 10px 0;
   background: #7b7b7b;
@@ -1027,7 +1027,7 @@ button.circle i {
   box-shadow: none;
   text-transform: capitalize;
 }
-.results:hover {
+#label button:hover {
   background: #aaaaaa;
 }
 .full-width {
