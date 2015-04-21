@@ -4,10 +4,7 @@ include ../mixins/articles-mixins
 block content
 	#application
 		#left-nav
-			.bg
-				+links-home__navigate
+			+left-navigation
 		#results
-			+flare-results-save-clear
-			.bg
-				+search-results
+			+saved-results
 		#right-nav

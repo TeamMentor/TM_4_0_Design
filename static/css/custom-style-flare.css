@@ -258,6 +258,14 @@ article h1 {
 .container.search-term i {
   padding: 0 10px 0 0;
 }
+.container.search-term .close {
+  border-left: 1px solid #dbdbdb;
+  padding: 0 0 0 10px;
+  margin: 0 0 0 20px;
+}
+.container.search-term .close i {
+  padding: 0;
+}
 .container.search-term a {
   text-decoration: none;
 }
@@ -1133,7 +1141,7 @@ input.search-input, input.search-input:focus {
   letter-spacing: 1px;
   padding: 10px;
 }
-a.close {
+.close {
   float: right;
 }
 .alert-box i {

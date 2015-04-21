@@ -2,48 +2,140 @@ include application-mixins.jade
 
 //- Article
 mixin article
-	section.row
-		#label
-			+article-info
-		article
-			include:md ../../content/articles/article-new-window.md
-
-//- Article Info
-mixin article-info
-	.label Info
-	p # Technology Type
-	p # Article Type
-	ul
-		li
-			+save-button
-		li
-			+share-button
-
+  section.row
+    #label
+      .label Info
+      p # Technology Type
+      p # Article Type
+      ul
+        li
+          +save-button
+        li
+          +share-button
+    article
+      include:md ../../content/articles/article-new-window.md
 
 //- Related Courses and Articles
 mixin related-options
-	section.row
-		#label
-			.label Related Articles
-		#articles
-			+articles-list
-	section.row
-		#label
-			.label Related Courses
-		#articles
-			+articles-list
+  section.row
+    #label
+      .label Related Articles
+    #articles
+      +articles-list
+  section.row
+    #label
+      .label Related Courses
+    #articles
+      +articles-list
 
 //- Saved Articles
 mixin saved-articles
-	section.row
-		#label
-			.label Saved Articles
-			ul
-				li
-					button Clear all Articles
-		#articles
-			+saved-articles-list
+  section.row
+    #label
+      .label Saved Articles
+      ul
+        li
+          button Clear all Articles
+    #articles
+      .container.article
+        .metadata
+          ul
+            li
+              span.rank-badge #1
+              // Search Rank
+            li
+              p #
+              // Technology Icon
+            li
+              p #
+              // Phase Icon
+            li
+              button.app
+                i.fi-share
+            li
+              button.app
+                i.fi-trash
+        .summary
+          a(href='../articles/article-new-window-view')
+            h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
+      .container.article
+        .metadata
+          ul
+            li
+              span.rank-badge #1
+              // Search Rank
+            li
+              p #
+              // Technology Icon
+            li
+              p #
+              // Phase Icon
+            li
+              button.app
+                i.fi-share
+            li
+              button.app
+                i.fi-trash
+        .summary
+          a(href='../articles/article-new-window-view')
+            h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
+      .container.article
+        .metadata
+          ul
+            li
+              span.rank-badge #1
+              // Search Rank
+            li
+              p #
+              // Technology Icon
+            li
+              p #
+              // Phase Icon
+            li
+              button.app
+                i.fi-share
+            li
+              button.app
+                i.fi-trash
+        .summary
+          a(href='../articles/article-new-window-view')
+            h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
+
+//- Saved Search Results
+mixin saved-results
+  section.row
+    #label
+      .label Saved Search Results
+      ul
+        li
+          button Clear all Results
+    #articles
+      .container.search-term
+        a(href='app-keyword-search')
+          span
+            +search-icon
+          span Search Term
+        a.close(href='my-search-items')
+          i.fi-trash
+      .container.search-term
+        a(href='app-keyword-search')
+          span
+            +search-icon
+          span Search Term
+        a.close(href='my-search-items')
+          i.fi-trash
+      .container.search-term
+        a(href='app-keyword-search')
+          span
+            +search-icon
+          span Search Term
+        a.close(href='my-search-items')
+          i.fi-trash
+
 
 mixin terms-and-conditions
-	.bg
-		include:md ../../content/terms-and-conditions/terms-and-conditions.md
+    .bg
+        include:md ../../content/terms-and-conditions/terms-and-conditions.md
