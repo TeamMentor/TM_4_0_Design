@@ -42,10 +42,8 @@ mixin search-2
                     label(for='search-input') Search...
                     .input-group
                         input.form-control(type='text', name='text', value= text)
-                        span.input-group-btn
-                            button#search-button(type='submit')
-                              span(style='position:relative;left:-40px')
-                                +search-icon
+                        button#search-button(type='submit')
+                            +search-icon
 
 //- results
 mixin results

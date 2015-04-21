@@ -356,6 +356,9 @@ i.landing-page {
   z-index: 96;
   margin: 0 auto;
 }
+#search-div-2 input {
+  max-width: 90%;
+}
 #article td.vertical-align i {
   margin-left: 5px;
 }
