@@ -223,3 +223,33 @@ mixin share-div
                 .small-2.columns
                     a.button.app.full-width(href='alert-application')
                         +share-icon
+
+// Error 403
+mixin error-403
+  section.error
+    span
+      include:md ../../content/error-pages/error-403.md
+
+// Error 404
+mixin error-404
+  section.error
+    span
+      include:md ../../content/error-pages/error-404.md
+
+// Error 500
+mixin error-500
+  section.error
+    span
+      include:md ../../content/error-pages/error-500.md
+
+// Unavailable
+mixin unavailable
+  section.error
+    span
+      include:md ../../content/error-pages/unavailable.md
+
+// Upgraded
+mixin upgraded
+  section.error
+    span
+      include:md ../../content/error-pages/upgraded.md
