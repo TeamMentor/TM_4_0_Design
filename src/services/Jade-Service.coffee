@@ -1,17 +1,22 @@
-fs     = null
-path   = null
-jade   = null
-Config = null
-
+fs        = null
+path      = null
+jade      = null
+cheerio   = null
+Config    = null
+Highlight = null
 
 class JadeService
+
+    dependencies: ()->
+      fs          = require('fs')
+      path        = require('path')
+      jade        = require('jade')
+      cheerio     = require('cheerio')
+      Config      = require('../misc/Config')
+      {Highlight} = require('highlight')
+
     constructor: (config)->
-
-      fs     = require('fs')
-      path   = require('path')
-      jade   = require('jade')
-      Config = require('../misc/Config')
-
+      @.dependencies()
       @.config = config || new Config();
       @.repo_Path      = __dirname.path_Combine("..#{path.sep}..")          #calculate the repo path as 3 folders above the current path
       @.mixins_Folder = @.repo_Path.path_Combine("#{path.sep}source#{path.sep}jade#{path.sep}_mixins#{path.sep}")
@@ -64,11 +69,25 @@ class JadeService
       return fs.existsSync(targetFile_Path);
 
 
+    apply_Highlight: (html)=>
+      if html.not_Contains('<pre>')
+        return html
+      $ = cheerio.load(html)
+      $('pre').each (i,elem)->
+        if $(elem).text().trim() is ''
+          $(elem).remove()
+        else
+          $(elem).find($('br')).replaceWith('\n')
+          $(elem).replaceWith($('<pre>' + Highlight($(elem).text()) + '</pre>'))
+      $.html()
+
     renderJadeFile: (jadeFile, params)=>
       if (@.cacheEnabled() is false)
         jadeFile_Path = @.calculateJadePath(jadeFile)
         if (fs.existsSync(jadeFile_Path))
-            return jade.renderFile(jadeFile_Path,params)
+          if params and params.article_Html
+              params.article_Html = @.apply_Highlight(params.article_Html)
+          return jade.renderFile(jadeFile_Path,params)
         return ""
 
       targetFile_Path = this.calculateTargetPath(jadeFile);

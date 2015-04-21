@@ -35,6 +35,7 @@
     "express-session": "latest",
     "fluentnode": "latest",
     "github": "latest",
+    "highlight": "^0.2.3",
     "jade": "latest",
     "marked": "latest",
     "nedb": "latest",
