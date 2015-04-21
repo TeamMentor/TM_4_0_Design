@@ -3,107 +3,107 @@ include globals.jade
 
 //- Flare Search Bar Input
 mixin search-bar
-    #search
-        a.button.btn-divs#navigate-button
-            i.fi-list-thumbnails
-        .search-field
-            input.search-input(type='text', placeholder='Type keywords here')
-            a.button.btn-search#search-button(href='app-keyword-search')
-                +search-icon
-        a.button.btn-divs#filters-button(href='filters-div')
-            +filter-icon
+  #search
+    a.button.btn-divs#navigate-button
+      i.fi-list-thumbnails
+    .search-field
+      input.search-input(type='text', placeholder='Type keywords here')
+      a.button.btn-search#search-button(href='app-keyword-search')
+        +search-icon
+      a.button.btn-divs#filters-button(href='filters-div')
+        +filter-icon
 
 //- Flare Results-Save-Clear
 mixin results-save-clear
     .label 0/200 results showing
     ul
-        li
-            +save-results-button
-        li
-            +clear-results-button
+      li
+        +save-results-button
+      li
+        +clear-results-button
 
 //- Flare Main App View
 mixin main-app-view
     section.row
-        #label
-            .label Popular Search Terms
-        #articles
-            +search-term-list
+      #label
+        .label Popular Search Terms
+      #articles
+        +search-term-list
     section.row
-        #label
-            .label Recently Viewed Articles
-        #articles
-            +articles-list
+      #label
+        .label Recently Viewed Articles
+      #articles
+        +articles-list
     section.row
-        #label
-            .label Top Articles
-        #articles
-            +articles-list
+      #label
+        .label Top Articles
+      #articles
+        +articles-list
 
 //- Articles List
 mixin articles-list
-    .container.article
-        .metadata
-            ul
-                li
-                    span.rank-badge #1
-                    // Search Rank
-                li
-                    p #
-                    // Technology Icon
-                li
-                    p #
-                    // Phase Icon
-                li
-                    button.app
-                        i.fi-bookmark
-                li
-                    button.app
-                        i.fi-share
+  .container.article
+    .metadata
+      ul
+        li
+          span.rank-badge #1
+          // Search Rank
+        li
+          p #
+          // Technology Icon
+        li
+          p #
+          // Phase Icon
+        li
+          button.app
+            i.fi-bookmark
+        li
+          button.app
+            i.fi-share
         .summary
             a(href='../articles/article-new-window-view')
                 h3#article-headline Article Headline
             include:md ../../content/articles/article-details.md
-    .container.article
-        .metadata
-            ul
-                li
-                    span.rank-badge #1
-                    // Search Rank
-                li
-                    p #
-                    // Technology Icon
-                li
-                    p #
-                    // Phase Icon
-                li
-                    button.app
-                        i.fi-bookmark
-                li
-                    button.app
-                        i.fi-share
+  .container.article
+    .metadata
+      ul
+        li
+          span.rank-badge #1
+          // Search Rank
+        li
+          p #
+          // Technology Icon
+        li
+          p #
+          // Phase Icon
+        li
+          button.app
+            i.fi-bookmark
+        li
+          button.app
+            i.fi-share
         .summary
             a(href='../articles/article-new-window-view')
                 h3#article-headline Article Headline
             include:md ../../content/articles/article-details.md
-    .container.article
-        .metadata
-            ul
-                li
-                    span.rank-badge #1
-                    // Search Rank
-                li
-                    p #
-                    // Technology Icon
-                li
-                    p #
-                    // Phase Icon
-                li
-                    button.app
-                        i.fi-bookmark
-                li
-                    button.app
-                        i.fi-share
+  .container.article
+    .metadata
+      ul
+        li
+          span.rank-badge #1
+          // Search Rank
+        li
+          p #
+          // Technology Icon
+        li
+          p #
+          // Phase Icon
+        li
+          button.app
+            i.fi-bookmark
+        li
+          button.app
+            i.fi-share
         .summary
             a(href='../articles/article-new-window-view')
                 h3#article-headline Article Headline
@@ -111,29 +111,29 @@ mixin articles-list
 
 //- Search Results List
 mixin search-term-list
-    .container.search-term
-        a(href='app-keyword-search')
-            span
-                +search-icon
-            span Search Term
-    .container.search-term
-        a(href='app-keyword-search')
-            span
-                +search-icon
-            span Search Term
-    .container.search-term
-        a(href='app-keyword-search')
-            span
-                +search-icon
-            span Search Term
+  .container.search-term
+    a(href='app-keyword-search')
+      span
+        +search-icon
+      span Search Term
+  .container.search-term
+    a(href='app-keyword-search')
+      span
+        +search-icon
+      span Search Term
+  .container.search-term
+    a(href='app-keyword-search')
+      span
+        +search-icon
+      span Search Term
 
 //- Flare Filters Div
 mixin filters-div
     ul.side-nav.no-style
-        li
-            span
-                +filter-icon
-            span.text Filter by
+      li
+        span
+          +filter-icon
+        span.text Filter by
     //#filters
         dl.accordion(data-accordion='data-accordion')
             dd.accordion-navigation.active

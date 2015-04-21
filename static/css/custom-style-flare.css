@@ -333,6 +333,12 @@ article h1 {
 .row:first-child {
   margin: 0;
 }
+.error {
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
 
 
 
