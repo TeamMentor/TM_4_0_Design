@@ -5,9 +5,8 @@ include ../mixins/application-mixins
 block content
 	#application
 		#left-nav
-			.bg
-				+links-home__navigate
+			+left-navigation
 		#results
-			+my-results
-			+saved-articles-list
+			+saved-articles
 		#right-nav
+			+filters-div

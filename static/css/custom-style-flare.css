@@ -1327,7 +1327,7 @@ a.close {
   }
   .container.article, .container.search-term {
     display: inline-block;
-    margin: 5px;
+    margin: 0 5px;
   }
   .summary {
     -webkit-order: 1;

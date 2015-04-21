@@ -33,6 +33,17 @@ mixin related-options
 		#articles
 			+articles-list
 
+//- Saved Articles
+mixin saved-articles
+	section.row
+		#label
+			.label Saved Articles
+			ul
+				li
+					button Clear all Articles
+		#articles
+			+saved-articles-list
+
 mixin terms-and-conditions
 	.bg
 		include:md ../../content/terms-and-conditions/terms-and-conditions.md

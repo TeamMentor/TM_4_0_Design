@@ -10,19 +10,20 @@ mixin links-navbar__landing-page
             i.fi-mail.btn-icon
             span Get Started
 
-
-mixin links-home__navigate
-    h3 Navigate
-    ul.side-nav#navigate
+mixin left-navigation
+    ul.side-nav
         li
-            a(href='../articles/fundamentals-of-security') Attacks & Vulnerabilites
+            span
+                i.fi-list
+            span.text Index
         li
-            a(href='../articles/fundamentals-of-security') Principles & Standards
+            span
+                i.fi-book
+            span.text Saved Articles
         li
-            a(href='../articles/my-articles') My Articles
-        li
-            a(href='../articles/my-search-items') My Saved Searches
-
+            span
+                i.fi-magnifying-glass
+            span.text Saved Searches
 
 mixin links_user_pages
     h3 Account Details

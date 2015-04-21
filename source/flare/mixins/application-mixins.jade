@@ -109,20 +109,74 @@ mixin articles-list
                 h3#article-headline Article Headline
             include:md ../../content/articles/article-details.md
 
-mixin left-navigation
-    ul.side-nav
-        li
-            span
-                i.fi-list
-            span.text Index
-        li
-            span
-                i.fi-book
-            span.text Saved Articles
-        li
-            span
-                i.fi-magnifying-glass
-            span.text Saved Searches
+//- Saved Articles List
+mixin saved-articles-list
+    .container.article
+        .metadata
+            ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
+                li
+                    p #
+                    // Technology Icon
+                li
+                    p #
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-share
+                li
+                    button.app
+                        i.fi-trash
+        .summary
+            a(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
+    .container.article
+        .metadata
+            ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
+                li
+                    p #
+                    // Technology Icon
+                li
+                    p #
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-share
+                li
+                    button.app
+                        i.fi-trash
+        .summary
+            a(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
+    .container.article
+        .metadata
+            ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
+                li
+                    p #
+                    // Technology Icon
+                li
+                    p #
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-share
+                li
+                    button.app
+                        i.fi-trash
+        .summary
+            a(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
 
 //- Search Results List
 mixin search-term-list
@@ -141,40 +195,6 @@ mixin search-term-list
             span
                 +search-icon
             span Search Term
-
-//- Saved Articles List
-mixin saved-articles-list
-    .list-view-article.row
-        .small-12.columns
-            h3 Article Headline
-        .small-12.medium-10.columns
-            include:md ../../content/articles/article-details.md
-        .small-12.medium-2.columns
-            +saved-article-controls
-    .list-view-article.row
-        .small-12.columns
-            h3 Article Headline
-        .small-12.medium-10.columns
-            include:md ../../content/articles/article-details.md
-        .small-12.medium-2.columns
-            +saved-article-controls
-    .list-view-article.row
-        .small-12.columns
-            h3 Article Headline
-        .small-12.medium-10.columns
-            include:md ../../content/articles/article-details.md
-        .small-12.medium-2.columns
-            +saved-article-controls
-
-//- Saved Articles Controls
-mixin saved-article-controls
-    .row
-        .small-4.medium-12.columns
-            +open-icon
-        .small-4.medium-12.columns
-            +share-button
-        .small-4.medium-12.columns
-            +trash-button
 
 //- Flare Filters Div
 mixin filters-div
