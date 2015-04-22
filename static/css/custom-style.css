@@ -77,7 +77,7 @@ img, object {
   list-style-type: none;
   padding: 0;
 }
-#links.text-links ul li, #links.icons ul li {
+#links ul li, #links ul li {
   display: block;
   margin: 2px 0;
 }
@@ -94,6 +94,13 @@ img, object {
 }
 #links ul li a:hover, #links ul li a:focus, #links ul li a:active {
   color: #6c9020;
+}
+#team-mentor-navigation #message {
+  font-size: 0.65em !important;
+  margin-top: 0;
+}
+#team-mentor-navigation #message a {
+  font-size: 1em !important;
 }
 /*------------------------------------*
    LANDING PAGES
@@ -141,9 +148,45 @@ i.landing-page {
 #reasons {
   padding-bottom: 0;
 }
-.lp-icons-width {
+#reasons table tr td:first-child {
   width: 20%;
+  text-align: center;
 }
+#clients {
+  padding: 0 0 5% 0;
+}
+#footer ul {
+  list-style: none;
+  list-style-position: outside;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 0.75em;
+}
+#footer i {
+  font-size: 1.25em;
+}
+#footer li {
+  display: inline-block;
+}
+#footer li img {
+  vertical-align: middle;
+  padding: 0 10px 0 0;
+}
+#footer ul.si {
+  padding-left: 20px;
+}
+#footer ul.contact li {
+  width: 15%;
+  margin: 0 0 10px;
+  text-align: center;
+}
+#footer ul.contact li:first-child {
+  display: block;
+  width: 100%;
+}
+/*------------------------------------*
+   LANDING PAGE SPRITES
+*------------------------------------*/
 .lp-icons {
   background: url(../assets/icons/icons.png) no-repeat;
   background-size: 100%;
@@ -161,9 +204,6 @@ i.landing-page {
 .improve-process {
   padding-top: 110%;
   background-position: 0% 105%;
-}
-#clients {
-  padding: 0 0 5% 0;
 }
 .client-logo {
   background: url(../assets/clients/logos.jpg) no-repeat;
@@ -188,37 +228,40 @@ i.landing-page {
 .ubs {
   background-position: 0% 100%;
 }
-#reasons {
-  padding-bottom: 0;
-}
-#footer ul {
-  list-style: none;
-  list-style-position: outside;
-  margin: 0;
-  padding: 10px 0;
-}
-#footer i {
-  font-size: 1.25em;
-}
-#footer li {
+.technology-icon {
+  background:url('../assets/icons/technology.png') no-repeat;
+  background-size: 20px;
+  width: 20px;
+  padding-top: 20px;
+  margin: 0 auto;
   display: inline-block;
-  font-size: 0.75em;
 }
-#footer li img {
-  vertical-align: middle;
-  padding: 0 10px 0 0;
+.android {
+  background-position: 0 -2%;
 }
-#footer ul.si {
-  padding-left: 20px;
+.asp {
+  background-position: 0% 10.5%;
 }
-#footer ul.contact li {
-  width: 15%;
-  margin: 0 0 10px;
-  text-align: center;
+.c-plus-plus {
+  background-position: 0% 23.5%;
 }
-#footer ul.contact li:first-child {
-  display: block;
-  width: 100%;
+.ios {
+  background-position: 0% 36%;
+}
+.java {
+  background-position: 0% 49%;
+}
+.php {
+  background-position: 0% 61%;
+}
+.scala {
+  background-position: 0% 74%;
+}
+.wcf {
+  background-position: 0% 87%;
+}
+.web-app {
+  background-position: 0% 99%;
 }
 /*------------------------------------*
   GETTING STARTED
@@ -338,14 +381,6 @@ i.landing-page {
 #main-app-view h5 {
   margin: 15px 0;
 }
-#results {
-  margin: 0 0 5px 0;
-  width: 100%;
-}
-#results-2 {
-  margin-top: 150px;
-  border: none;
-}
 #search-input {
   padding-bottom: 14px;
 }
@@ -373,6 +408,14 @@ i.landing-page {
 }
 #search-div-2 input {
   max-width: 90%;
+}
+#results {
+  margin: 0 0 5px 0;
+  width: 100%;
+}
+#results-2 {
+  margin-top: 150px;
+  border: none;
 }
 #article td.vertical-align i {
   margin-left: 5px;
@@ -716,14 +759,15 @@ span.rwd-line {
 .desktop .close a {
   float: none;
 }
-.close-2 a {
-  background: #aaaaaa;
-  text-align: right;
-  text-decoration: none;
-  margin: 0 0 0 10px;
-  padding: 5px 7px;
-  border-radius: 50%;
-  color: white;
+#message {
+  font-size: 0.85em !important;
+}
+#message i {
+  font-size: 1.25em;
+}
+#message a {
+  text-decoration: underline;
+  text-transform: lowercase !important;
 }
 /*------------------------------------*
    TABLES
@@ -1022,138 +1066,6 @@ tr.article-title {
 }
 .clearfix:after, .container:after, .row:after {
   clear: both;
-}
-/*------------------------------------*
-  POC STYLES
-*------------------------------------*/
-.filter-2 {
-  padding: 10px 10px 10px 14px;
-  background: #d1d1d1;
-  border-radius:17px;
-  border: 1px solid #dbdbdb;
-  text-align: center;
-  letter-spacing: 1px;
-  font-size: 12px;
-}
-.dropdown {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 10px;
-}
-.dropdown button {
-  background: #fafafa;
-  color: #444444;
-  border: 1px solid #dbdbdb;
-  box-shadow: none;
-  width: 100%;
-  padding: 15px;
-  font-size: 14px;
-  text-align: left;
-  border-radius: 0px;
-}
-.dropdown button:hover {
-  background: #fafafa;
-}
-.dropdown button i {
-  color: #444444 !important;
-}
-.dropdown .dropdown-menu {
-  background: #fafafa;
-  border-radius: 3px;
-  border: none;
-  border-bottom: none;
-  display: none;
-  font-size: 14px;
-  list-style-type: none;
-  margin: 0;
-  margin-top: 5px;
-  padding: 0;
-}
-.dropdown .dropdown-menu table.nav {
-  background: white;
-}
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-ul.side-nav {
-  display: block;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  list-style-position: outside;
-  font-size: 14px;
-  background: #fafafa;
-  border-radius: 3px;
-  margin-top: -5px;
-}
-ul.side-nav li {
-  padding: 7px;
-  border: 1px solid #dbdbdb;
-}
-ul.side-nav li a {
-  display: block;
-  text-decoration: none;
-}
-ul.side-nav li:hover {
-  background-color: #dbdbdb;
-}
-ul.side-nav span.badge {
-  margin: 0 auto;
-  vertical-align: middle;
-  float: right;
-}
-.technology-icon {
-  background:url('../assets/icons/technology.png') no-repeat;
-  background-size: 20px;
-  width: 20px;
-  padding-top: 20px;
-  margin: 0 auto;
-  display: inline-block;
-}
-.android {
-  background-position: 0 -2%;
-}
-.asp {
-  background-position: 0% 10.5%;
-}
-.c-plus-plus {
-  background-position: 0% 23.5%;
-}
-.ios {
-  background-position: 0% 36%;
-}
-.java {
-  background-position: 0% 49%;
-}
-.php {
-  background-position: 0% 61%;
-}
-.scala {
-  background-position: 0% 74%;
-}
-.wcf {
-  background-position: 0% 87%;
-}
-.web-app {
-  background-position: 0% 99%;
-}
-#message {
-  font-size: 0.85em !important;
-}
-#message i {
-  font-size: 1.25em;
-}
-#message a {
-  text-decoration: underline;
-  text-transform: lowercase !important;
-}
-#team-mentor-navigation #message {
-  font-size: 0.65em !important;
-  margin-top: 0;
-}
-#team-mentor-navigation #message a {
-  font-size: 1em !important;
 }
 /*------------------------------------*
   HACKS
