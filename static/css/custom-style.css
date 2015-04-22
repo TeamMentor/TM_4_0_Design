@@ -53,9 +53,15 @@ img, object {
   background: white;
   border: 1px solid #dbdbdb;
 }
-#team-mentor-navigation {
+#team-mentor-navigation, #customer-navigation {
   height: auto;
   text-align: center;
+  width: 100%;
+  float: left;
+}
+#customer-navigation {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dbdbdb;
 }
 #tm-logo {
   background:url('../assets/logos/logos.png') no-repeat;
@@ -260,6 +266,15 @@ i.landing-page {
 }
 #landing-page #application {
   padding-top: 0 !important;
+}
+#customer #application {
+  padding-top: 220px;
+}
+#customer #search-div, #customer #search-div-2 {
+  top: 215px;
+}
+#customer #results-2 {
+  margin-top: 160px;
 }
 .bg, #results, #results-2, #search-input, #search-input .input-group {
   background: white;
@@ -774,6 +789,10 @@ tr.article-title {
   #team-mentor-navigation {
     height: 60px;
   }
+  #customer-navigation {
+    height: 60px;
+    margin-bottom: 0;
+  }
   #tm-logo {
     background-position: 0px 0px;
     display: inline-block;
@@ -817,10 +836,13 @@ tr.article-title {
   #application {
     padding-top: 60px;
   }
-  #search-div {
-    top: 60px;
+  #customer #application {
+    padding-top: 130px;
   }
-  #search-div-2 {
+  #customer #search-div, #customer #search-div-2  {
+    top: 120px;
+  }
+  #search-div, #search-div-2  {
     top: 60px;
   }
   #results-2 {
