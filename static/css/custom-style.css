@@ -268,13 +268,13 @@ i.landing-page {
   padding-top: 0 !important;
 }
 #customer #application {
-  padding-top: 220px;
+  padding-top: 230px;
 }
 #customer #search-div, #customer #search-div-2 {
-  top: 215px;
+  top: 235px;
 }
 #customer #results-2 {
-  margin-top: 160px;
+  margin-top: 165px;
 }
 .bg, #results, #results-2, #search-input, #search-input .input-group {
   background: white;
