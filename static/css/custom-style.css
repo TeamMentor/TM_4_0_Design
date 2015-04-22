@@ -292,7 +292,7 @@ i.landing-page {
   padding: 10px;
 }
 #summary table tr td:first-child {
-  width: 30%;
+  width: 90px;
 }
 #message i {
   font-size: 1.5em;
