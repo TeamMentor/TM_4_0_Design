@@ -1,139 +1,187 @@
-include ../../shared-mixins/globals.jade
 include globals.jade
 
 //- Flare Search Bar Input
 mixin search-bar
-  #search
-    a.button.btn-divs#navigate-button
-      i.fi-list-thumbnails
-    .search-field
-      input.search-input(type='text', placeholder='Type keywords here')
-      a.button.btn-search#search-button(href='app-keyword-search')
-        +search-icon
-    a.button.btn-divs#filters-button(href='filters-div')
-      +filter-icon
+    #search
+        a.button.btn-divs#navigate-button
+            i.fi-list-thumbnails
+        .search-field
+            input.search-input(type='text', placeholder='Type keywords here')
+            a.button.btn-search#search-button(href='app-keyword-search')
+                i.fi-magnifying-glass
+        a.button.btn-divs#filters-button(href='filters-div')
+            i.fi-filter
 
 //- Flare Results-Save-Clear
 mixin results-save-clear
     .label 0/200 results showing
     ul
-      li
-        +save-results-button
-      li
-        +clear-results-button
+        li
+            +save-results-button
+        li
+            +clear-results-button
 
 //- Flare Main App View
 mixin main-app-view
     section.row
-      #label
-        .label Popular Search Terms
-      #articles
-        +search-term-list
+        #label
+            .label Popular Search Terms
+        #articles
+            +search-term-list
     section.row
-      #label
-        .label Recently Viewed Articles
-      #articles
-        +articles-list
+        #label
+            .label Recently Viewed Articles
+        #articles
+            +articles-list
     section.row
-      #label
-        .label Top Articles
-      #articles
-        +articles-list
+        #label
+            .label Top Articles
+        #articles
+            +articles-list
 
 //- Articles List
 mixin articles-list
-  .container.article
-    .metadata
-      ul
-        li
-          span.rank-badge #1
-          // Search Rank
-        li
-          p #
-          // Technology Icon
-        li
-          p #
-          // Phase Icon
-        li
-          button.app
-            i.fi-bookmark
-        li
-          button.app
-            i.fi-share
+    .container.article
+        .metadata
+            ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
+                li
+                    p #
+                    // Technology Icon
+                li
+                    p #
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-bookmark
+                li
+                    button.app
+                        i.fi-share
         .summary
             a(href='../articles/article-new-window-view')
                 h3#article-headline Article Headline
-            include:md ../../content/articles/article-details.md
-  .container.article
-    .metadata
-      ul
-        li
-          span.rank-badge #1
-          // Search Rank
-        li
-          p #
-          // Technology Icon
-        li
-          p #
-          // Phase Icon
-        li
-          button.app
-            i.fi-bookmark
-        li
-          button.app
-            i.fi-share
+            include:md ../../../content/articles/article-details.md
+    .container.article
+        .metadata
+            ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
+                li
+                    p #
+                    // Technology Icon
+                li
+                    p #
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-bookmark
+                li
+                    button.app
+                        i.fi-share
         .summary
             a(href='../articles/article-new-window-view')
                 h3#article-headline Article Headline
-            include:md ../../content/articles/article-details.md
-  .container.article
-    .metadata
-      ul
-        li
-          span.rank-badge #1
-          // Search Rank
-        li
-          p #
-          // Technology Icon
-        li
-          p #
-          // Phase Icon
-        li
-          button.app
-            i.fi-bookmark
-        li
-          button.app
-            i.fi-share
+            include:md ../../../content/articles/article-details.md
+    .container.article
+        .metadata
+            ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
+                li
+                    p #
+                    // Technology Icon
+                li
+                    p #
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-bookmark
+                li
+                    button.app
+                        i.fi-share
         .summary
             a(href='../articles/article-new-window-view')
                 h3#article-headline Article Headline
-            include:md ../../content/articles/article-details.md
+            include:md ../../../content/articles/article-details.md
+
+mixin left-navigation
+    ul.side-nav
+        li
+            span
+                i.fi-list
+            span.text Index
+        li
+            span
+                i.fi-book
+            span.text Saved Articles
+        li
+            span
+                i.fi-magnifying-glass
+            span.text Saved Searches
 
 //- Search Results List
 mixin search-term-list
-  .container.search-term
-    a(href='app-keyword-search')
-      span
-        +search-icon
-      span Search Term
-  .container.search-term
-    a(href='app-keyword-search')
-      span
-        +search-icon
-      span Search Term
-  .container.search-term
-    a(href='app-keyword-search')
-      span
-        +search-icon
-      span Search Term
+    .container.search-term
+        a(href='app-keyword-search')
+            span
+                i.fi-magnifying-glass
+            span Search Term
+    .container.search-term
+        a(href='app-keyword-search')
+            span
+                i.fi-magnifying-glass
+            span Search Term
+    .container.search-term
+        a(href='app-keyword-search')
+            span
+                i.fi-magnifying-glass
+            span Search Term
+
+//- Saved Articles List
+mixin saved-articles-list
+    .list-view-article.row
+        .small-12.columns
+            h3 Article Headline
+        .small-12.medium-10.columns
+            include:md ../../../content/articles/article-details.md
+        .small-12.medium-2.columns
+            +saved-article-controls
+    .list-view-article.row
+        .small-12.columns
+            h3 Article Headline
+        .small-12.medium-10.columns
+            include:md ../../../content/articles/article-details.md
+        .small-12.medium-2.columns
+            +saved-article-controls
+    .list-view-article.row
+        .small-12.columns
+            h3 Article Headline
+        .small-12.medium-10.columns
+            include:md ../../../content/articles/article-details.md
+        .small-12.medium-2.columns
+            +saved-article-controls
+
+//- Saved Articles Controls
+mixin saved-article-controls
+    .row
+        .small-4.medium-12.columns
+            i.fi-shield
+        .small-4.medium-12.columns
+            +share-button
+        .small-4.medium-12.columns
+            +trash-button
 
 //- Flare Filters Div
 mixin filters-div
     ul.side-nav.no-style
-      li
-        span
-          +filter-icon
-        span.text Filter by
+        li
+            span
+                i.fi-filter
+            span.text Filter by
     //#filters
         dl.accordion(data-accordion='data-accordion')
             dd.accordion-navigation.active
@@ -211,7 +259,7 @@ mixin save-div
                     +save-input
                 .small-2.columns
                     a.button.app.full-width(href='alert-application')
-                        +save-icon
+                        i.fi-bookmark
 
 // Share Div
 mixin share-div
@@ -222,34 +270,4 @@ mixin share-div
                     +share-input
                 .small-2.columns
                     a.button.app.full-width(href='alert-application')
-                        +share-icon
-
-// Error 403
-mixin error-403
-  section.error
-    span
-      include:md ../../content/error-pages/error-403.md
-
-// Error 404
-mixin error-404
-  section.error
-    span
-      include:md ../../content/error-pages/error-404.md
-
-// Error 500
-mixin error-500
-  section.error
-    span
-      include:md ../../content/error-pages/error-500.md
-
-// Unavailable
-mixin unavailable
-  section.error
-    span
-      include:md ../../content/error-pages/unavailable.md
-
-// Upgraded
-mixin upgraded
-  section.error
-    span
-      include:md ../../content/error-pages/upgraded.md
+                        i.fi-share
