@@ -1,6 +1,58 @@
 //- static texts
 - var head_title = 'TEAM Mentor 4.0 (Html version)'
 
+//- Icons
+mixin metadata-icon
+    i.fi-list-bullet
+    span Data
+
+mixin save-icon
+    i.fi-bookmark
+
+mixin share-icon
+    i.fi-share
+
+mixin search-icon
+    i.fi-magnifying-glass
+
+mixin filter-icon
+    i.fi-filter
+
+mixin clear-icon
+    i.fi-trash
+
+mixin edit-icon
+    i.fi-pencil
+
+mixin new-pw-icon
+    i.fi-key
+    span Change Password
+
+mixin delete-account-icon
+    i.fi-trash
+    span Delete Your Account
+
+mixin change-filters-icon
+    i.fi-results
+    span Add/Remove Permanent Filters
+
+mixin navigate-icon
+    i.fi-map
+
+mixin help-icon
+    i.fi-info
+
+mixin articles-icon
+    i.fi-book
+    span Related Articles
+
+mixin courses-icon
+    i.fi-paperclip
+    span Related Courses
+
+mixin user-icon
+    i.fi-torso
+
 mixin help-link
     i.fi-info
     span Docs
@@ -336,7 +388,7 @@ mixin reset-pwd-button
 //- Alert System
 mixin flare-alert
     .alert-box(data-alert='')
-        +alert-icon
+        i.fi-megaphone
         span Error, Validation or Alert Message Here
         a.close(href='#') ×
 
@@ -351,13 +403,13 @@ mixin copyright
                     .label TEAM Mentor 4.0
                 li
                     a(href='mailto:support@securityinnovation.com' title='Email')
-                        +i-email
+                        i.fi-mail
                 li
                     a(href='http://www.twitter.com/SecInnovation' target='_blank' title='Twitter')
-                        +i-twitter
+                        i.fi-social-twitter
                 li
                     a#terms-and-conditions(href='../misc/terms-and-conditions' title ='Terms and Conditions')
-                        +i-toc
+                        i.fi-paperclip
     //#copyright
         .row
             .small-12.medium-3.columns

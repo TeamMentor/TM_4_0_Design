@@ -3,16 +3,17 @@ include ../mixins/getting-started-mixins
 
 block content
 	#application
-		#left-column
-			dl.tabs(data-tab='data-tab')
-				dd
-					a(href='#signup') Sign Up
-				dd.active
-					a(href='#login') Login
-			.tabs-content
-				#signup.content
-					+sign-up-form
-				#login.content.active
-					+login-form
-		#right-column
+		section.row
+			span.input.input--ichiro
+				input#input-25.input__field.input__field--ichiro(type='text')
+				label.input__label.input__label--ichiro(for='input-25')
+					span.input__label-content.input__label-content--ichiro Bird&apos;s Color
+			span.input.input--ichiro
+				input#input-26.input__field.input__field--ichiro(type='text')
+				label.input__label.input__label--ichiro(for='input-26')
+					span.input__label-content.input__label-content--ichiro Wing Span
+			span.input.input--ichiro
+				input#input-27.input__field.input__field--ichiro(type='text')
+				label.input__label.input__label--ichiro(for='input-27')
+					span.input__label-content.input__label-content--ichiro Beak Length
 			+team-mentor-summary
