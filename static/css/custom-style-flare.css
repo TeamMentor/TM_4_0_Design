@@ -1280,8 +1280,8 @@ input.search-input, input.search-input:focus {
     line-height: 1.75em;
   }
   .input-field, .button-field {
-    -webkit-flex: 30%;
-    flex: 30%;
+    -webkit-flex: 29%;
+    flex: 29%;
     padding: 0 10px;
   }
   .access-form, #login-form .button-field {
@@ -1289,6 +1289,12 @@ input.search-input, input.search-input:focus {
   }
   .conditions {
     padding: 15px 10px;
+  }
+}
+@media (min-width: 800px) {
+  #sign-up-form .input-field, #sign-up-form .button-field, #sign-up-form .conditions  {
+    -webkit-flex: 35%;
+    flex: 35%;
   }
 }
 @media (min-width: 950px) {
@@ -1325,10 +1331,6 @@ input.search-input, input.search-input:focus {
   }
   footer.copyright {
     margin-left: 21%;
-  }
-  #sign-up-form .input-field, #sign-up-form .button-field, #sign-up-form .conditions  {
-    -webkit-flex: 35%;
-    flex: 35%;
   }
 }
 @media (min-width: 1070px) {
