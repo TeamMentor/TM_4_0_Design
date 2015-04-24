@@ -3,11 +3,10 @@ include ../mixins/user-mixins
 include ../mixins/application-mixins
 
 block content
-	#application
-		#left-column
-        +left-navigation
-		#results
-			.bg
-				+flare-edit-user-details
-		#right-nav
-		// right-nav
+  #application
+    #left-column
+      +left-navigation
+    #content
+      .bg
+        +flare-edit-user-details
+    #right-nav

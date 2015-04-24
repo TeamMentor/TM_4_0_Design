@@ -3,11 +3,10 @@ include ../mixins/articles-mixins
 include ../mixins/application-mixins
 
 block content
-	#application
-		#left-column
-      #left-column
+  #application
+    #left-column
       +left-navigation
-		#results
-			+saved-articles
-		#right-nav
-			+filters-div
+    #content
+      +saved-articles
+    #right-column
+      +filters-div

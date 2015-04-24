@@ -2,18 +2,18 @@ extends ../_layouts/flare_page_landing
 include ../mixins/getting-started-mixins
 
 block content
-	#application
-		section.row
-			span.input.input--ichiro
-				input#input-25.input__field.input__field--ichiro(type='text')
-				label.input__label.input__label--ichiro(for='input-25')
-					span.input__label-content.input__label-content--ichiro Bird&apos;s Color
-			span.input.input--ichiro
-				input#input-26.input__field.input__field--ichiro(type='text')
-				label.input__label.input__label--ichiro(for='input-26')
-					span.input__label-content.input__label-content--ichiro Wing Span
-			span.input.input--ichiro
-				input#input-27.input__field.input__field--ichiro(type='text')
-				label.input__label.input__label--ichiro(for='input-27')
-					span.input__label-content.input__label-content--ichiro Beak Length
-			+team-mentor-summary
+    #application
+      #two-thirds-column
+        section.row
+          #label
+            .label Login
+          #articles
+            +login-form
+        br
+        section.row
+          #label
+            .label Sign Up
+          #articles
+            +sign-up-form
+      #one-third-column
+        +team-mentor-summary
