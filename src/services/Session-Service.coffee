@@ -19,7 +19,8 @@ class Session_Service
                                 , saveUninitialized: true , resave: true
                                 , cookie: { path: '/' , httpOnly: true , maxAge: 365 * 24 * 3600 * 1000 }
                                 , store: @ })
-    @.db.loadDatabase ->
+    @.db.loadDatabase =>
+      @.db.persistence.setAutocompactionInterval(30 * 1000) # set to 30s
       callback() if callback
     @
 
@@ -43,11 +44,11 @@ class Session_Service
     @.db.find {}, (err,sessionData)=>
       users_Searches = []
       if sessionData
-          for session in sessionData
-              if session.data.user_Searches
-                for user_Search in session.data.user_Searches
-                  if user_Search.results
-                    users_Searches.push(user_Search)
+        for session in sessionData
+          if session.data.user_Searches
+            for user_Search in session.data.user_Searches
+              if user_Search.results
+                users_Searches.push(user_Search)
         callback users_Searches
 
   top_Articles: (callback)=>

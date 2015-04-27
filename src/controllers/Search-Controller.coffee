@@ -129,7 +129,10 @@ class SearchController
             @.req.session.user_Searches.push user_Search
           else
             user_Search = { title: target, results: 0, username: @.req.session?.username }
-            @.req.session.user_Searches.push user_Search
+            if @.req.session.user_Searches.size() < 200 # don't store  more than 200 bad searches per user
+              @.req.session.user_Searches.push user_Search
+            else
+              logger?.info {Error:'User had more than 200 bad searches, so not capturing current value'}
             searchData.no_Results = true
             @res.send @jade_Service.renderJadeFile(jade_Page, searchData)
             return
