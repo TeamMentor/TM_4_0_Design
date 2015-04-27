@@ -82,11 +82,11 @@ class JadeService
       $.html()
 
     renderJadeFile: (jadeFile, params)=>
+      if params and params.article_Html
+        params.article_Html = @.apply_Highlight(params.article_Html)
       if (@.cacheEnabled() is false)
         jadeFile_Path = @.calculateJadePath(jadeFile)
         if (fs.existsSync(jadeFile_Path))
-          if params and params.article_Html
-              params.article_Html = @.apply_Highlight(params.article_Html)
           return jade.renderFile(jadeFile_Path,params)
         return ""
 
