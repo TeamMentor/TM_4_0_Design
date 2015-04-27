@@ -48,7 +48,7 @@ add_Routes = (express_Service)->
     app.use (err, req, res, next)->
       #console.error(err.stack)
       console.log "Error with request url: #{req.url} \n
-                      #{err.stack.split_Lines().take(4).join('\n')}"
+                      #{err.stack.split_Lines().take(8).join('\n')}"
       #console.error(err)
       res.status(501)
          .redirect('/error')
