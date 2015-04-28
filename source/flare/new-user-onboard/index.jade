@@ -2,14 +2,14 @@ extends ../_layouts/flare_page
 include ../mixins/application-mixins
 
 block content
-    #application
-        #left-nav
-        #results
-            +flare-main-app-view
-            +copyright
-        #right-nav
+  #application
+    #left-nav
+    #content
+      +flare-main-app-view
+      +copyright
+    #right-nav
 
-        //ol.joyride-list(data-joyride='')
+      //ol.joyride-list(data-joyride='')
             li(data-id='welcome', data-text='Start Tutorial', data-options='tip_location: top; prev_button: false')
                 include:md ../../content/new-user-onboard/welcome.md
             li(data-id='search-bar', data-text='Next', data-prev-text='Prev')

@@ -1,4 +1,4 @@
-include application-mixins.jade
+include prod-application-mixins.jade
 
 //- Article
 mixin article
@@ -6,7 +6,7 @@ mixin article
 		#label
 			+article-info
 		article
-			include:md ../../content/articles/article-new-window.md
+			include:md ../../../content/articles/article-new-window.md
 
 //- Article Info
 mixin article-info
@@ -26,13 +26,13 @@ mixin related-options
 		#label
 			.label Related Articles
 		#articles
-			+articles-list
+			+prod-articles-list
 	section.row
 		#label
 			.label Related Courses
 		#articles
-			+articles-list
+			+prod-articles-list
 
 mixin terms-and-conditions
 	.bg
-		include:md ../../content/terms-and-conditions/terms-and-conditions.md
+		include:md ../../../content/terms-and-conditions/terms-and-conditions.md

@@ -1,0 +1,37 @@
+extends ../../_layouts/page_logged_out
+include ../../_mixins/landing-page-mixins
+
+mixin features-poc-div
+    #features
+        .lge-container
+            .row
+                .col-offset-2.col-8
+                    include:md ../../content/landing-pages/features-div-heading.md
+                    table
+                        tr
+                            td
+                                .poc-icons-four
+                            td
+                                include:md ../../content/landing-pages/feature-1.md
+                        tr
+                            td
+                                .poc-icons-five
+                            td
+                                include:md ../../content/landing-pages/feature-2.md
+                        tr
+                            td
+                                .poc-icons-six
+                            td
+                                include:md ../../content/landing-pages/feature-3.md
+                        tr
+                            td
+                                .poc-icons-seven
+                            td
+                                include:md ../../content/landing-pages/feature-4.md
+
+block content
+    +usp-div
+    +reasons-poc-div
+    +clients-div
+    +call-to-action-div
+    +footer-div

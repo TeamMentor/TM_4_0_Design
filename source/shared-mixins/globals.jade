@@ -120,7 +120,7 @@ mixin filter-icon(filter, title)
         when 'Vulnerability'
           +vuln-icon
         default
-          span 
+          span
 
     when 'Technology'
       case title
@@ -128,24 +128,24 @@ mixin filter-icon(filter, title)
         when 'ASP.NET 3.5'
         when '.NET 3.5'
         when 'ASP.NET 4.0'
-          .technology-icon.asp(title='ASP.Net')
+          .asp(title='ASP.Net')
         when 'Android'
-          .technology-icon.android(title='Android')
+          .android(title='Android')
         when 'C++'
-          .technology-icon.c-plus-plus(title='C++')
+          .c-plus-plus(title='C++')
         when 'iOS'
-          .technology-icon.ios(title='iOS')
+          .ios(title='iOS')
         when 'Java'
-          .technology-icon.java(title='Java')
+          .java(title='Java')
         when 'PHP'
-          .technology-icon.php(title='PHP')
+          .php(title='PHP')
         when 'Scala Play'
         when 'Scala with Play Framework'
-          .technology-icon.scala(title='Scala')
+          .scala(title='Scala')
         when 'WCF 3.5'
-          .technology-icon.wcf(title='WCF')
+          .wcf(title='WCF')
         when 'Web Application'
-          .technology-icon.web-app(title='Web Application')
+          .web-app(title='Web Application')
         when 'HTML5'
           +html5-icon
         default
