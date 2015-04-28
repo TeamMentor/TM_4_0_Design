@@ -20,7 +20,7 @@ mixin results-save-clear
             +clear-results-button
 
 //- Flare Main App View
-mixin main-app-view
+mixin start-view
     section.row
         #label
             .label Popular Search Terms
@@ -30,21 +30,25 @@ mixin main-app-view
         #label
             .label Recently Viewed Articles
         #articles
-            +articles-list
+            +prod-articles-list
     section.row
         #label
             .label Top Articles
         #articles
-            +articles-list
+            +prod-articles-list
 
 //- Articles List
-mixin articles-list
+mixin prod-articles-list
     .container.article
         .metadata
             ul
                 li
                     span.rank-badge #1
-                    // Search Rank
+                li
+                    h3#article-headline Article Headline Article Headline Article Headline
+        .summary
+            include:md ../../../content/articles/article-details.md
+            ul
                 li
                     p #
                     // Technology Icon
@@ -57,54 +61,6 @@ mixin articles-list
                 li
                     button.app
                         i.fi-share
-        .summary
-            a(href='../articles/article-new-window-view')
-                h3#article-headline Article Headline
-            include:md ../../../content/articles/article-details.md
-    .container.article
-        .metadata
-            ul
-                li
-                    span.rank-badge #1
-                    // Search Rank
-                li
-                    p #
-                    // Technology Icon
-                li
-                    p #
-                    // Phase Icon
-                li
-                    button.app
-                        i.fi-bookmark
-                li
-                    button.app
-                        i.fi-share
-        .summary
-            a(href='../articles/article-new-window-view')
-                h3#article-headline Article Headline
-            include:md ../../../content/articles/article-details.md
-    .container.article
-        .metadata
-            ul
-                li
-                    span.rank-badge #1
-                    // Search Rank
-                li
-                    p #
-                    // Technology Icon
-                li
-                    p #
-                    // Phase Icon
-                li
-                    button.app
-                        i.fi-bookmark
-                li
-                    button.app
-                        i.fi-share
-        .summary
-            a(href='../articles/article-new-window-view')
-                h3#article-headline Article Headline
-            include:md ../../../content/articles/article-details.md
 
 mixin left-navigation
     ul.side-nav

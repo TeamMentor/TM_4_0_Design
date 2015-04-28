@@ -282,6 +282,8 @@ article.marketing {
   border-radius: 3px;
   display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
   -webkit-flex: 100%;
   flex: 100%;
   -webkit-order: 1;
@@ -290,35 +292,31 @@ article.marketing {
 .metadata {
   -webkit-order: 1;
   order: 1;
-  -webkit-flex: 10%;
-  flex: 10%;
   background: #b4cf7b;
-  padding: 20px 10px 10px;
-  text-align: center;
+  padding: 10px;
 }
 .metadata ul {
   list-style-type: none;
   list-style-position: outside;
   display: block;
-  margin: 5px 0 0 0;
+  margin: 0;
   padding: 0;
 }
-.metadata ul li:nth-child(2) {
-  padding: 18px 0 0 0;
+.metadata ul li {
+  display: inline-block;
+  text-align: left;
 }
 .summary {
   -webkit-order: 2;
   order: 2;
-  -webkit-flex: 90%;
-  flex: 90%;
   padding: 10px;
   border: 1px solid #dbdbdb;
   border-left: none;
 }
 .container.article h3 {
-  border-bottom: 1px solid #dbdbdb;
-  padding: 0 0 10px 0;
-  margin: 10px 0;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
 }
 .container.article p {
   margin-top: 10px;
@@ -762,122 +760,6 @@ a.action:hover, a.action:focus, a.action:active {
   padding-top: 10px;
 }
 /*------------------------------------*
-   TABS
-*------------------------------------*/
-dl.tabs {
-  padding: 0;
-  margin: 0;
-}
-.tabs dd {
-  margin: 0;
-  border: 1px solid #dbdbdb;
-  width: 50%;
-}
-.tabs dd i {
-  color: white;
-}
-dl.tabs dd a {
-  font-size: 14px;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 1px;
-  background: #a6cb5a;
-  color: #fff;
-  text-align: center;
-  transition: all 0.5s;
-}
-dl.tabs dd:last-child {
-  border-left: none;
-}
-.tabs dd.active a, .tabs .tab-title.active a {
-  color: #fff;
-  background: #8aaf3e;
-  transition: all 0.5s
-}
-dl.tabs dd a:hover, dl.tabs dd a:active {
-  background: #8aaf3e;
-}
-.tabs-content {
-  border: 1px solid #dbdbdb;
-  border-top: none;
-  background:#fff;
-  padding: 10px;
-  width: 100%;
-}
-.tabs-content .content {
-  padding: 0.5em 0 1.5em 0;
-}
-#articles .tabs dd {
-  width: 25%;
-  border: none;
-  padding: 0 0 10px 20px;
-  margin: 10px 0 0 0;
-}
-#articles .tabs dd:first-child {
-  padding: 0 0 10px 0;
-}
-#articles .tabs dd a {
-  font-size: 12px;
-  letter-spacing: 0px;
-  padding: 0 0 10px 0;
-  background: transparent;
-  color: #aaaaaa;
-  border: none;
-  border-bottom: 1px solid #dbdbdb;
-}
-#articles .tabs dd a:hover, #articles dl.tabs dd.active a {
-  color: #8aaf3e !important;
-  border-bottom: 1px solid #8aaf3e;
-}
-#articles .tabs-content {
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin-top: -10px;
-}
-#articles h3 {
-  padding-top: 0;
-  margin-bottom: 0;
-}
-#related-options .tabs-content {
-  background: #fafafa;
-}
-#related-options > dl > dd > a > i {
-  margin-right: 10px;
-}
-/*------------------------------------*
-   ACCORDION
-*------------------------------------*/
-dl.accordion {
-  margin: 0;
-  padding: 0;
-}
-.accordion .accordion-navigation, .accordion dd {
-  margin: 0;
-  border: 1px solid #dbdbdb;
-  margin-top: 5px;
-}
-.accordion .accordion-navigation:nth-child(1), .accordion dd:nth-child(1) {
-  margin-top: 0;
-}
-.accordion .accordion-navigation > a, .accordion dd > a {
-  background: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #444444;
-  border-bottom: 1px solid #dbdbdb;
-  border-radius: 3px;
-}
-.accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
-  background: #f0f0f0;
-}
-.accordion .accordion-navigation > a:active, .accordion dd > a:active {
-  background: #8aaf3e;
-}
-/*------------------------------------*
    TABLES
 *------------------------------------*/
 table {
@@ -1127,6 +1009,7 @@ input.search-input, input.search-input:focus {
   text-align: center;
   border: 1px solid white;
   padding: 7px;
+  margin: 0 15px 0 0;
 }
 /*------------------------------------*
    MEDIA QUERIES
@@ -1336,6 +1219,7 @@ input.search-input, input.search-input:focus {
 @media (min-width: 1070px) {
   .container.article {
     width: 31%;
+    margin: 0 5px 30px 5px;
   }
   .container.article, .container.search-term {
     display: inline-block;
