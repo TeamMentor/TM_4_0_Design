@@ -141,8 +141,9 @@ img, object {
   padding-bottom: 0;
 }
 #reasons table tr td:first-child, #features table tr td:first-child {
-  width: 20%;
+  width: 18%;
   text-align: center;
+  padding: 0 1em;
 }
 #clients {
   padding: 0 0 5% 0;
@@ -771,6 +772,26 @@ tr.article-title {
   line-height: 1.5em;
   color: #5c5c5c;
 }
+/*------------------------------------*
+   POC
+*------------------------------------*/
+.poc-icons-one, .poc-icons-two , .poc-icons-three, .poc-icons-four, .poc-icons-five , .poc-icons-six, .poc-icons-seven {
+  margin: 0 auto;
+  height: 0;
+}
+.poc-icons-one, .poc-icons-two , .poc-icons-three, .poc-icons-four, .poc-icons-five , .poc-icons-six, .poc-icons-seven {
+  background: url(../assets/icons/CompletedSet3.png) no-repeat;
+  width: 100%;
+  padding-top: 120%;
+  background-size: 700%;
+}
+.poc-icons-one { background-position: 0% 0%; }
+.poc-icons-two { background-position: 17% 0%; }
+.poc-icons-three { background-position: 34% 0%; }
+.poc-icons-four { background-position: 50.5% 0%; }
+.poc-icons-five { background-position: 67% 0%; }
+.poc-icons-six { background-position: 83% 0%; }
+.poc-icons-seven { background-position: 100% 0%; }
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
