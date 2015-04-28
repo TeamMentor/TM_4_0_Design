@@ -299,11 +299,11 @@ img, object {
 /*------------------------------------*
    APPLICATION
 *------------------------------------*/
-#application, #search-input .input-group, #search-div, #search-div-2 {
+#application, #search-div, #search-div-2 {
   background: #fafafa;
 }
 #application {
-  padding-top: 180px;
+  padding-top: 130px;
 }
 #landing-page #application {
   padding-top: 0 !important;
@@ -317,7 +317,7 @@ img, object {
 #customer #results-2 {
   margin-top: 165px;
 }
-.bg, #results, #results-2, #search-input, #search-input .input-group {
+.bg, #results, #results-2, #search-input {
   background: white;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
@@ -379,7 +379,7 @@ img, object {
   padding-bottom: 14px;
 }
 #search-div #search-input input {
-  padding-top: 20px;
+  padding: 5px 0 0 20px;
   display: inline-block;
   width: 90%;
 }
@@ -390,7 +390,7 @@ img, object {
 #search-div, #search-div-2 {
   margin-bottom: 5px;
   position: fixed;
-  top: 170px;
+  top: 140px;
   left: 0;
   z-index: 96;
   margin: 0 auto;
@@ -412,7 +412,7 @@ img, object {
   margin-left: 5px;
 }
 #help-nav {
-  margin: 15px 10px 15px 10px;
+  margin: 30px 10px 15px 10px;
 }
 #help-docs {
   margin: 0 10px 10px 10px;
@@ -482,6 +482,9 @@ table.nav td a {
 form, .form-group {
   margin-bottom: 15px;
   list-style-type: none;
+}
+#search-div form, #search-div-2 form {
+  margin: 0;
 }
 form, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"],
 input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"],
@@ -839,13 +842,13 @@ tr.article-title {
   #links ul li a{ font-size: 0.85em; }
   #loginwall { margin: 15px 7px 0 0; }
   #summary { margin: 15px 0 0 7px; }
-  #application { padding-top: 60px; }
+  #application { padding-top: 40px; }
   #customer #application { padding-top: 130px; }
   #customer #search-div, #customer #search-div-2  { top: 120px; }
   #search-div, #search-div-2  { top: 60px; }
   #results-2 { margin-top: 160px; }
-  #help-nav { margin: 15px 10px 0 0; }
-  #help-docs, #help-index { margin: 15px 0 0 10px; }
+  #help-nav { margin: 30px 10px 0 0; }
+  #help-docs, #help-index { margin: 30px 0 0 10px; }
 }
 @media (min-width: 853px) {
   #landing-page h1 { line-height: 2.5em; }
