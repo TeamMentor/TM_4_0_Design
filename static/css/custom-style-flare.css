@@ -289,34 +289,46 @@ article.marketing {
   -webkit-order: 1;
   order: 1;
 }
-.metadata {
+.headline {
   -webkit-order: 1;
   order: 1;
   background: #b4cf7b;
-  padding: 10px;
+  padding: 20px;
+  display: -webkit-flex;
+  display: flex;
 }
-.metadata ul {
-  list-style-type: none;
-  list-style-position: outside;
-  display: block;
-  margin: 0;
-  padding: 0;
+.rank {
+  -webkit-order: 1;
+  order: 1;
+  margin: 3px 0 0 0;
 }
-.metadata ul li {
-  display: inline-block;
-  text-align: left;
+.article-title {
+  -webkit-order: 2;
+  order: 2;
+  padding: 0 0 0 20px;
 }
 .summary {
   -webkit-order: 2;
   order: 2;
-  padding: 10px;
+  padding: 10px 20px;
   border: 1px solid #dbdbdb;
-  border-left: none;
+}
+.summary ul {
+  list-style-type: none;
+  margin: 0 0 0 0;
+  padding: 10px 0 0 0;
+  border-top: 1px solid #dbdbdb;
+  text-align: right;
+}
+.summary li {
+  display: inline-block;
+  width: 15%;
 }
 .container.article h3 {
   padding: 0;
   margin: 0;
   vertical-align: middle;
+  color: white;
 }
 .container.article p {
   margin-top: 10px;
@@ -807,6 +819,7 @@ button:hover, .button:hover {
   text-align: center;
   border-radius: 0;
   padding: 18px 20px;
+  margin: 0;
 }
 .btn-divs i {
   color: white;
@@ -815,7 +828,7 @@ button:hover, .button:hover {
 .btn-search {
   position: relative;
   display: inline-block;
-  padding: 18px 0 0 15px;
+  padding: 12px 0 0 15px;
   border: none;
   background: transparent;
   color: #6c9020;
@@ -826,7 +839,7 @@ button:hover, .button:hover {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .btn-search:hover {
-  color: #8aaf3e;
+  background: none;
 }
 .btn-search:focus {
   outline: none;
@@ -870,16 +883,15 @@ button.circle i {
   color: #b4cf7b;
 }
 .app {
-  padding: 5px 0;
-  margin: 2px 0;
+  padding: 0 20px;
   width: 100%;
   background: #6c9020;
-  border: 1px solid #b4cf7b;
   color: white;
   border-radius: 20px;
   -webkit-box-shadow: none;
   box-shadow: none;
-  font-size: 0.85em;
+  font-size: 0.5em;
+  text-algin: center;
 }
 .app:hover {
   background: #8aaf3e;
@@ -1002,14 +1014,15 @@ input.search-input, input.search-input:focus {
   color: #444444;
   border: 1px solid #dbdbdb;
 }
-.rank-badge {
+.badge {
+  background: #8aaf3e;
   color: white;
   font-size: 0.85em;
   letter-spacing: 1px;
   text-align: center;
-  border: 1px solid white;
-  padding: 7px;
+  padding: 7px 10px;
   margin: 0 15px 0 0;
+  border-radius: 20px;
 }
 /*------------------------------------*
    MEDIA QUERIES
@@ -1124,7 +1137,7 @@ input.search-input, input.search-input:focus {
     padding: 15px 5px;
   }
   .btn-search {
-    padding: 10px 0 0 10px;
+    padding: 5px 0 0 10px;
     font-size: 1.25em;
   }
   .icons {
@@ -1218,10 +1231,10 @@ input.search-input, input.search-input:focus {
 }
 @media (min-width: 1070px) {
   .container.article {
-    width: 31%;
     margin: 0 5px 30px 5px;
+    display: inline-block;
   }
-  .container.article, .container.search-term {
+  .container.search-term {
     display: inline-block;
     margin: 0 5px;
   }
@@ -1230,24 +1243,12 @@ input.search-input, input.search-input:focus {
     order: 1;
     border-left: 1px solid #dbdbdb;
   }
-  .metadata {
+  .headline {
     -webkit-flex: 100%;
     flex: 100%;
-    padding: 0 10px;
-    height: 47px;
+    padding: 10px;
   }
-  .metadata ul {
-    width: 100%;
-    margin: 0 auto;
-    padding: 5px 0 0 0;
-  }
-  .metadata ul li {
-    display: inline-block;
-    width: 20%;
-    text-align: left;
-    padding: 0;
-  }
-  .metadata ul li:nth-child(2) {
+  .article-title {
     padding: 0;
   }
 }
@@ -1255,9 +1256,6 @@ input.search-input, input.search-input:focus {
   .landing-page {
     width: 1285px;
     margin: 0 auto;
-  }
-  .container.article {
-    width: 32%;
   }
 }
 /*------------------------------------*

@@ -40,11 +40,55 @@ mixin start-view
 //- Articles List
 mixin prod-articles-list
     .container.article
-        .metadata
+        .headline
+            .rank
+                span.badge #1
+            .article-title
+                a(href='../article-new-window-view')
+                    h3#article-headline Article Headline Article Headline Article Headline
+        .summary
+            include:md ../../../content/articles/article-details.md
             ul
                 li
-                    span.rank-badge #1
+                    p #
+                    // Technology Icon
                 li
+                    p #
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-bookmark
+                li
+                    button.app
+                        i.fi-share
+    .container.article
+        .headline
+            .rank
+                span.badge #1
+            .article-title
+                a(href='../article-new-window-view')
+                    h3#article-headline Article Headline Article Headline Article Headline
+        .summary
+            include:md ../../../content/articles/article-details.md
+            ul
+                li
+                    p #
+                    // Technology Icon
+                li
+                    p #
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-bookmark
+                li
+                    button.app
+                        i.fi-share
+    .container.article
+        .headline
+            .rank
+                span.badge #1
+            .article-title
+                a(href='../article-new-window-view')
                     h3#article-headline Article Headline Article Headline Article Headline
         .summary
             include:md ../../../content/articles/article-details.md
