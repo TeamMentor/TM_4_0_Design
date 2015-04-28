@@ -279,7 +279,7 @@ article.marketing {
 .container.article {
   margin: 0 0 30px 0;
   background: white;
-  border-radius: 3px;
+  border-radius: 20px;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -318,7 +318,6 @@ article.marketing {
   margin: 0 0 0 0;
   padding: 10px 0 0 0;
   border-top: 1px solid #dbdbdb;
-  text-align: right;
 }
 .summary li {
   display: inline-block;
@@ -531,13 +530,6 @@ section {
 }
 .features {
   background: white;
-}
-.features i, .reasons i, .summary i {
-  color: #8baf3e;
-  font-size: 2em;
-}
-.summary i {
-  line-height: 2em;
 }
 .features h2 {
   text-align: left;
@@ -883,14 +875,13 @@ button.circle i {
   color: #b4cf7b;
 }
 .app {
-  padding: 0 20px;
+  padding: 5px 20px;
   width: 100%;
   background: #6c9020;
   color: white;
   border-radius: 20px;
   -webkit-box-shadow: none;
   box-shadow: none;
-  font-size: 0.5em;
   text-algin: center;
 }
 .app:hover {
@@ -1022,7 +1013,6 @@ input.search-input, input.search-input:focus {
   text-align: center;
   padding: 7px 10px;
   margin: 0 15px 0 0;
-  border-radius: 20px;
 }
 /*------------------------------------*
    MEDIA QUERIES
@@ -1241,7 +1231,9 @@ input.search-input, input.search-input:focus {
   .summary {
     -webkit-order: 1;
     order: 1;
-    border-left: 1px solid #dbdbdb;
+  }
+  .summary ul li {
+    width: 5%;
   }
   .headline {
     -webkit-flex: 100%;
