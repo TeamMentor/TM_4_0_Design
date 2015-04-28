@@ -4,13 +4,12 @@ include ../mixins/user-mixins
 include ../mixins/application-mixins
 
 block content
-	#application
-		#left-nav
-			.bg
-				+links_user_pages
-		#results
-			+flare-alert
-			+user-details-display
-			+permanent-filters
-			+other-user-settings
-		#right-nav
+  #application
+    #left-column
+      +left-navigation
+    #content
+      +flare-alert
+      +user-details-display
+      +permanent-filters
+      +other-user-settings
+    #right-nav

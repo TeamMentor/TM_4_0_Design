@@ -3,16 +3,15 @@ include ../mixins/user-mixins
 include ../mixins/application-mixins
 
 block content
-	#application
-		#left-nav
-			.bg
-				+links_user_pages
-		#results
-			.bg
-				h3 Add or Remove Permanent Filters
-				+flare-filters-div
-				br
-				.row
-					.small-12.medium-6.end.columns
-						+ok-button
-		#right-nav
+  #application
+    #left-column
+      +left-navigation
+    #content
+      .bg
+        h3 Add or Remove Permanent Filters
+        +flare-filters-div
+        br
+        .row
+          .small-12.medium-6.end.columns
+            +ok-button
+    #right-nav

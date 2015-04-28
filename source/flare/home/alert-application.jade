@@ -3,12 +3,13 @@ include ../mixins/application-mixins
 
 block content
     #application
-        #left-nav
-        #results
-            +flare-alert
-            +flare-results-save-clear
-            #articles
-                +articles-list
-            br
-            +copyright
-        #right-nav
+      #left-column
+        +left-navigation
+      #content
+          +flare-alert
+          +flare-results-save-clear
+          #articles
+              +articles-list
+          br
+          +copyright
+      #right-nav

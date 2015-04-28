@@ -1,3 +1,6 @@
+include ../../shared-mixins/globals.jade
+include globals.jade
+
 //- Flare User Details Display
 mixin user-details-display
 	.bg
@@ -7,7 +10,7 @@ mixin user-details-display
 			.small-2.columns
 				br
 				a.button.controls.full-width(href='/user-edit')
-					+edit-icon
+					i.fi-pencil
 		.row
 			.small-12.columns
 				.label Name
@@ -41,7 +44,7 @@ mixin permanent-filters
 			.small-2.columns
 				br
 				a.action(href='user-add-filter')
-					+open-icon
+					i.fi-shield
 		+flare-filters-active
 
 //- Flare Other User Settings
@@ -51,10 +54,10 @@ mixin other-user-settings
 		.row
 			.small-12.large-6.columns
 				a.button.controls.icon(href='user-new-password')
-					+new-pw-icon
+					span new password icon
 			.small-12.large-6.columns
 				a.button.controls.icon(href='#')
-					+delete-account-icon
+					span delete account icon
 
 //- Flare Edit User Details
 mixin flare-edit-user-details

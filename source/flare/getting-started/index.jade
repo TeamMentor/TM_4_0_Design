@@ -2,17 +2,18 @@ extends ../_layouts/flare_page_landing
 include ../mixins/getting-started-mixins
 
 block content
-	#application
-		#left-column
-			dl.tabs(data-tab='data-tab')
-				dd
-					a(href='#signup') Sign Up
-				dd.active
-					a(href='#login') Login
-			.tabs-content
-				#signup.content
-					+sign-up-form
-				#login.content.active
-					+login-form
-		#right-column
-			+team-mentor-summary
+    #application
+      #two-thirds-column
+        section.row
+          #label
+            .label Login
+          #articles
+            +login-form
+        br
+        section.row
+          #label
+            .label Sign Up
+          #articles
+            +sign-up-form
+      #one-third-column
+        +team-mentor-summary

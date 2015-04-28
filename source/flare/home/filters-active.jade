@@ -2,11 +2,12 @@ extends ../_layouts/flare_page
 include ../mixins/application-mixins
 
 block content
-	#application
-		#left-nav
-		#results
-			+flare-filters-active
-			+flare-results-save-clear
-			+articles-list
-			+copyright
-		#right-nav
+  #application
+    #left-column
+      +left-navigation
+    #content
+      +flare-filters-active
+      +flare-results-save-clear
+      +articles-list
+      +copyright
+    #right-nav
