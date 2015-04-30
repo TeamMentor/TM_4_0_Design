@@ -2,9 +2,9 @@ supertest       = null
 Express_Service = null
 request         = null
 
-describe.only '| routes | routes.test |', ()->
+describe '| routes | routes.test |', ()->
 
-    @.timeout 4000
+    @.timeout 7000
     express_Service = null
     app             = null
 
@@ -21,9 +21,6 @@ describe.only '| routes | routes.test |', ()->
                       '/articles'
                       '/search'
                       '/search/:text'
-                      '/flare'
-                      '/flare/all'
-                      '/flare/main-app-view'
                       '/show'
                       '/show/:queryId'
                       '/show/:queryId/:filters'
@@ -91,7 +88,7 @@ describe.only '| routes | routes.test |', ()->
     runTest = (originalPath) ->
       path = originalPath.replace(':version','flare')
                          .replace(':area/:page','help/index')
-                         .replace(':file/:mixin', 'globals/navigate-link')
+                         .replace(':file/:mixin', 'globals/tm-support-email')
                          #.replace(':area','help')
                          .replace(':page','default')
                          .replace(':queryId','AAAA')
@@ -136,7 +133,7 @@ describe.only '| routes | routes.test |', ()->
       agent = request.agent()
       baseUrl = 'http://localhost:' + app.port
 
-      loggedInText = ['<li><a id="nav-user-logout" href="/user/logout"><i class="fi-power"></i><span>Logout</span></a></li>']
+      loggedInText = ['<li><a id="nav-user-logout" href="/user/logout"><span class="icon-Logout"></span><span>Logout</span></a></li><']
       loggedOutText = ['<li><a id="nav-login" href="/guest/login.html">Login</a></li>']
 
       postData = {username:'user', password:'a'}
