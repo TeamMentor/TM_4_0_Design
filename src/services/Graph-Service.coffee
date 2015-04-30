@@ -87,5 +87,9 @@ class Graph_Service
       else
         callback {}
 
+  search_Log_Empty_Search : (user, value, callback)=>
+    url_Log_Search = "#{@server}/user/log_search_empty/#{user.url_Encode()}/#{value.url_Encode()}"
+    url_Log_Search.GET_Json (json)=>
+      callback {}
 
 module.exports = Graph_Service

@@ -189,6 +189,8 @@ describe "| controllers | Search-Controller.test |", ->
         callback on_Query_From_Text_Search(text)
       resolve_To_Ids: (query_Id,callback)->
         callback { query_Id : { id: 'id-123', title: 'title-123'}}
+      search_Log_Empty_Search: (user, value, callback)->
+          callback {}
       graphDataFromGraphDB: (query_Id, filters, callback)->
         callback on_GraphDataFromGraphDB(query_Id, filters)
 

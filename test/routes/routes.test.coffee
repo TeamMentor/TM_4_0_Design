@@ -12,6 +12,7 @@ describe '| routes | routes.test |', ()->
                       '/flare/:area/:page'
                       '/flare/default'
                       '/Image/:name'
+                      '/a/:ref'
                       '/article/:ref/:title'
                       '/article/:ref'
                       '/articles'
@@ -100,7 +101,7 @@ describe '| routes | routes.test |', ()->
       expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
                                '/user/logout','/pocaaaaa' ].contains(path)
 
-      expectedStatus = 403 if ['article','articles','show'                   ].contains(path.split('/').second().lower())
+      expectedStatus = 403 if ['a','article','articles','show'               ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
 
       expectedStatus = 404 if ['/aaaaa'                                      ].contains(path)
