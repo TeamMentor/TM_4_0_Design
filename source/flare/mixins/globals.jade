@@ -63,20 +63,28 @@ mixin logout-link
 
 //- Form Inputs
 mixin username-input
-    label(for='username') Username
+    label Username
     input(type='text', id='username', placeholder='Username')
+
+mixin flare-password-input
+    label Password
+    .row.collapse
+        .small-9.columns
+            input(type='password', placeholder='Password')
+        .small-3.columns
+            a.button.search.full-width(href='#') SHOW
 
 mixin flare-new-password-input
     label New Password
-    input(type='password', placeholder='New Password')
+    .row.collapse
+        .small-10.medium-10.columns
+            input(type='password', placeholder='New Password')
+        .small-2.medium-2.columns
+            .button.postfix#show-button(href='#') SHOW
 
 mixin password-input
     label Password
     input(type='password', id='password', placeholder='Password')
-
-mixin confirm-password-input
-    label(for='password') Confirm Password
-    input(type='password', placeholder='Password')
 
 mixin new-password-input
     label(for='user-new-password') New Password
@@ -380,7 +388,7 @@ mixin reset-pwd-button
 //- Alert System
 mixin flare-alert
     .alert-box(data-alert='')
-        i.fi-megaphone
+        +alert-icon
         span Error, Validation or Alert Message Here
         a.close(href='#') ×
 
@@ -395,13 +403,13 @@ mixin copyright
                     .label TEAM Mentor 4.0
                 li
                     a(href='mailto:support@securityinnovation.com' title='Email')
-                        i.fi-mail
+                        +i-email
                 li
                     a(href='http://www.twitter.com/SecInnovation' target='_blank' title='Twitter')
-                        i.fi-social-twitter
+                        +i-twitter
                 li
                     a#terms-and-conditions(href='../misc/terms-and-conditions' title ='Terms and Conditions')
-                        i.fi-paperclip
+                        +i-toc
     //#copyright
         .row
             .small-12.medium-3.columns
