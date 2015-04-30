@@ -82,8 +82,8 @@ img, object {
 #links.text-links {
   margin-top: 7px;
 }
-#links.icon-links ul li i {
-  padding-right: 10px
+#links.icon-links ul li [class^="icon-"], #links.icon-links ul li [class*=" icon-"] {
+  padding: 0 6px 0 0;
 }
 #links a {
   text-transform: uppercase;
@@ -150,9 +150,6 @@ img, object {
   padding: 10px 0;
   font-size: 0.75em;
 }
-#footer i {
-  font-size: 1.25em;
-}
 #footer li {
   display: inline-block;
 }
@@ -171,6 +168,9 @@ img, object {
 #footer ul.contact li:first-child {
   display: block;
   width: 100%;
+}
+#footer ul.contact a {
+  text-decoration: none;
 }
 /*------------------------------------*
    SPRITES
@@ -299,7 +299,7 @@ img, object {
   background: #fafafa;
 }
 #application {
-  padding-top: 130px;
+  margin-top: 160px;
 }
 #landing-page #application {
   padding-top: 0 !important;
@@ -355,12 +355,9 @@ img, object {
 #copyright li {
   display: block;
 }
-#copyright p, #copyright a, #copyright i {
+#copyright p, #copyright a {
   font-size: 0.75em;
   margin: 5px 0;
-}
-#copyright i, #main-app-view i {
-  margin: 0 10px 0 0;
 }
 #filters [class^="icon-"], #filters [class*=" icon-"] {
   font-size: 1.25em;
@@ -378,7 +375,7 @@ img, object {
 #search-div #search-input input {
   padding: 5px 0 0 20px;
   display: inline-block;
-  width: 90%;
+  width: 85%;
 }
 #search-input input {
   border: none;
@@ -387,13 +384,13 @@ img, object {
 #search-div, #search-div-2 {
   margin-bottom: 5px;
   position: fixed;
-  top: 140px;
+  top: 170px;
   left: 0;
   z-index: 96;
   margin: 0 auto;
 }
 #search-div-2 input {
-  max-width: 90%;
+  width: 85%;
 }
 #search-div, #search-div-2, #results {
   width: 100%;
@@ -669,12 +666,12 @@ button:hover, button:active {
   -webkit-box-shadow: none;
   background: transparent;
   float: right;
-  padding: 15px 0;
-  width: 10%;
-}
-#search-button i {
+  width: 15%;
+  font-size: 1.2em;
   color: #8aaf3e;
-  font-size: 20px;
+}
+#search-button:hover {
+  color: #6c9020;
 }
 .btn-landing {
   border-radius: 25px;
@@ -838,20 +835,27 @@ tr.article-title {
     width: 60%;
     float: right;
   }
-  #links.text-links, #links.icon-links { padding-top: 10px; }
+  #links.text-links, #links.icon-links { padding-top: 5px; }
   #links.text-links ul, #links.icon-links ul { text-align: right; }
   #links.text-links ul li,  #links.icon-links ul li { padding: 0 20px 0 0; }
   #links.text-links ul li:last-child, #links.icon-links ul li:last-child { padding-right: 20px; }
   #links ul li a{ font-size: 0.85em; }
   #loginwall { margin: 15px 7px 0 0; }
   #summary { margin: 15px 0 0 7px; }
-  #application { padding-top: 60px; }
+  #application { margin-top: 60px; }
   #customer #application { padding-top: 130px; }
   #customer #search-div, #customer #search-div-2  { top: 120px; }
   #search-div, #search-div-2  { top: 60px; }
-  #results-2 { margin-top: 160px; }
-  #help-nav { margin: 30px 10px 0 0; }
-  #help-docs, #help-index { margin: 30px 0 0 10px; }
+  #results-2 { margin-top: 140px; }
+  #landing-page #application {
+    margin: 70px 0 0 0;
+  }
+  #help-nav { margin: 10px 10px 0 0; }
+  #help-docs, #help-index { margin: 10px 0 0 10px; }
+  #search-button { width: 8%; }
+  #search-div-2 input, #search-div input {
+    width: 92%;
+  }
 }
 @media (min-width: 853px) {
   #landing-page h1 { line-height: 2.5em; }
@@ -885,11 +889,14 @@ tr.article-title {
     padding-top: 33%;
   }
   #footer { text-align: left; }
-  #footer ul.contact li { width: 20%; }
-  #footer i { padding-left: 50px; }
+  #footer ul.contact li {
+    width: 20%;
+    text-align: right;
+  }
   #footer ul.contact li:first-child {
     width: auto;
     display: inline-block;
+    text-align: left;
   }
 }
 @media (min-width: 1280px) {
@@ -1196,19 +1203,8 @@ tr.article-title {
   color: rgb(255, 255, 255);
 }
 
-.icon-Search .path1:before {
+.icon-Search:before {
   content: "\e62b";
-  color: rgb(68, 68, 68);
-}
-.icon-Search .path2:before {
-  content: "\e62c";
-  margin-left: -1.0341796875em;
-  color: rgb(68, 68, 68);
-}
-.icon-Search .path3:before {
-  content: "\e62d";
-  margin-left: -1.0341796875em;
-  color: rgb(255, 255, 255);
 }
 
 .icon-Twitter:before {

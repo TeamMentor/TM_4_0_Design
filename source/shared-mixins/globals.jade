@@ -33,16 +33,16 @@ mixin email-input
 
 //- Form Buttons
 mixin login-button
-  button.full-width(type='submit', id='btn-login') Login
+  button.btn-landing.full-width(type='submit', id='btn-login') Login
 
 mixin sign-up-button
-  button.full-width(type='submit', id='btn-sign-up') Sign Up
+  button.btn-landing.full-width(type='submit', id='btn-sign-up') Sign Up
 
 mixin get-password-button
-  button.full-width(type='submit' id='btn-get-password') Get Password
+  button.btn-landing.full-width(type='submit' id='btn-get-password') Get Password
 
 mixin reset-password-button
-  button.full-width(type='submit' id='btn-reset-password') Reset Password
+  button.btn-landing.full-width(type='submit' id='btn-reset-password') Reset Password
 
 mixin start-trial-button
   button.btn-landing
@@ -74,13 +74,34 @@ mixin arrow-down
   i.fi-arrow-down
 
 mixin search-icon
-  i.fi-magnifying-glass
+  span.icon-Search
+    span.path1
+    span.path2
+    span.path3
 
 mixin article-icon
   i.fi-page
 
 mixin alert-icon
   i.fi-megaphone
+
+mixin index-icon
+  span.icon-Index
+
+mixin info-icon
+  span.icon-Info
+
+mixin logout-icon
+  span.icon-Logout
+
+mixin mail-icon
+  span.icon-Mail
+
+mixin twitter-icon
+  span.icon-Twitter
+
+mixin paperclip-icon
+  span.icon-Paperclip
 
 mixin php-icon
   span.icon-PHP

@@ -25,16 +25,20 @@ mixin links-navbar__home
 	ul
 		li
 			a#nav-user-main(href='/user/main.html')
-				+search-link
+				+search-icon
+				span Search
 		li
 			a#nav-user-guidance(href='/show/')
-				+navigate-link
+				+index-icon
+				span Index
 		li
 			a#nav-user-help(href='/help/index.html')
-				+help-link
+				+info-icon
+				span Docs
 		li
 			a#nav-user-logout(href='/user/logout')
-				+logout-link
+				+logout-icon
+				span Logout
 
 mixin terms-and-conditions-links
 	.bg#help-nav

@@ -117,7 +117,6 @@ mixin main-app-view
                             tr
                                 td
                                     a(href='/search?text=' + top_Search.title.str().url_Encode())
-                                        +search-icon
                                         = top_Search.title
             .bg
                 #top-articles
@@ -137,7 +136,6 @@ mixin main-app-view
                             tr
                                 td
                                     a(href=newArticle.href)
-                                        +article-icon
                                         = newArticle.title
 
 //- articles-list
