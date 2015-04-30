@@ -1,3 +1,5 @@
+include globals.jade
+
 //- Flare Search Bar Input
 mixin search-bar
     #search
@@ -6,9 +8,9 @@ mixin search-bar
         .search-field
             input.search-input(type='text', placeholder='Type keywords here')
             a.button.btn-search#search-button(href='app-keyword-search')
-                +search-icon
+                i.fi-magnifying-glass
         a.button.btn-divs#filters-button(href='filters-div')
-            +filter-icon
+            i.fi-filter
 
 //- Flare Results-Save-Clear
 mixin results-save-clear
@@ -20,7 +22,7 @@ mixin results-save-clear
             +clear-results-button
 
 //- Flare Main App View
-mixin start-view
+mixin main-app-view
     section.row
         #label
             .label Popular Search Terms
@@ -30,25 +32,21 @@ mixin start-view
         #label
             .label Recently Viewed Articles
         #articles
-            +prod-articles-list
+            +articles-list
     section.row
         #label
             .label Top Articles
         #articles
-            +prod-articles-list
+            +articles-list
 
 //- Articles List
-mixin prod-articles-list
+mixin articles-list
     .container.article
-        .headline
-            .rank
-                span.badge #1
-            .article-title
-                a(href='article-new-window-view')
-                    h3#article-headline Article Headline Article Headline Article Headline
-        .summary
-            include:md ../../content/articles/article-details.md
+        .metadata
             ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
                 li
                     p #
                     // Technology Icon
@@ -61,16 +59,16 @@ mixin prod-articles-list
                 li
                     button.app
                         i.fi-share
-    .container.article
-        .headline
-            .rank
-                span.badge #1
-            .article-title
-                a(href='article-new-window-view')
-                    h3#article-headline Article Headline Article Headline Article Headline
         .summary
+            a(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
             include:md ../../content/articles/article-details.md
+    .container.article
+        .metadata
             ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
                 li
                     p #
                     // Technology Icon
@@ -83,16 +81,16 @@ mixin prod-articles-list
                 li
                     button.app
                         i.fi-share
-    .container.article
-        .headline
-            .rank
-                span.badge #1
-            .article-title
-                a(href='article-new-window-view')
-                    h3#article-headline Article Headline Article Headline Article Headline
         .summary
+            a(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
             include:md ../../content/articles/article-details.md
+    .container.article
+        .metadata
             ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
                 li
                     p #
                     // Technology Icon
@@ -105,6 +103,98 @@ mixin prod-articles-list
                 li
                     button.app
                         i.fi-share
+        .summary
+            a(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
+
+mixin saved-articles
+    section.row
+        #label
+          .label Saved Articles
+          ul
+            li
+                button Clear all articles
+        #articles
+          +saved-article-list
+
+mixin saved-article-list
+    .container.article
+        .metadata
+            ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
+                li
+                    p #
+                    // Technology Icon
+                li
+                    p #
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-share
+                li
+                    button.app
+                        i.fi-trash
+        .summary
+            a(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
+    .container.article
+        .metadata
+            ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
+                li
+                    p #
+                    // Technology Icon
+                li
+                    p #
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-share
+                li
+                    button.app
+                        i.fi-trash
+        .summary
+            a(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
+    .container.article
+        .metadata
+            ul
+                li
+                    span.rank-badge #1
+                    // Search Rank
+                li
+                    p #
+                    // Technology Icon
+                li
+                    p #
+                    // Phase Icon
+                li
+                    button.app
+                        i.fi-share
+                li
+                    button.app
+                        i.fi-trash
+        .summary
+            a(href='../articles/article-new-window-view')
+                h3#article-headline Article Headline
+            include:md ../../content/articles/article-details.md
+
+mixin saved-results
+    section.row
+        #label
+          .label Saved Results
+          ul
+            li
+                button Clear all articles
+        #articles
+          +search-term-list
 
 mixin left-navigation
     ul.side-nav
@@ -126,17 +216,17 @@ mixin search-term-list
     .container.search-term
         a(href='app-keyword-search')
             span
-                +search-icon
+                i.fi-magnifying-glass
             span Search Term
     .container.search-term
         a(href='app-keyword-search')
             span
-                +search-icon
+                i.fi-magnifying-glass
             span Search Term
     .container.search-term
         a(href='app-keyword-search')
             span
-                +search-icon
+                i.fi-magnifying-glass
             span Search Term
 
 //- Saved Articles List
@@ -167,18 +257,18 @@ mixin saved-articles-list
 mixin saved-article-controls
     .row
         .small-4.medium-12.columns
-            +open-icon
+            i.fi-shield
         .small-4.medium-12.columns
-            +share-button
+            //+share-button
         .small-4.medium-12.columns
-            +trash-button
+            //+trash-button
 
 //- Flare Filters Div
 mixin filters-div
     ul.side-nav.no-style
         li
             span
-                +filter-icon
+                i.fi-filter
             span.text Filter by
     //#filters
         dl.accordion(data-accordion='data-accordion')
@@ -254,10 +344,10 @@ mixin save-div
         .bg
             .row.collapse
                 .small-10.columns
-                    +save-input
+                    //+save-input
                 .small-2.columns
                     a.button.app.full-width(href='alert-application')
-                        +save-icon
+                        i.fi-bookmark
 
 // Share Div
 mixin share-div
@@ -265,7 +355,7 @@ mixin share-div
         .bg
             .row.collapse
                 .small-10.columns
-                    +share-input
+                    //+share-input
                 .small-2.columns
                     a.button.app.full-width(href='alert-application')
-                        +share-icon
+                        i.fi-share

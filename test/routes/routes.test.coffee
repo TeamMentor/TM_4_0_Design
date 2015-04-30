@@ -2,15 +2,18 @@ supertest       = null
 Express_Service = null
 request         = null
 
-describe '| routes | routes.test |', ()->
+describe.only '| routes | routes.test |', ()->
 
     @.timeout 4000
     express_Service = null
     app             = null
 
     expectedPaths = [ '/'
-                      '/flare/:area/:page'
-                      '/flare/default'
+                      '/flare/_dev/:area/:page'
+                      '/flare/_dev/all'
+                      '/flare/_dev'
+                      '/flare/:page'
+                      '/flare'
                       '/Image/:name'
                       '/a/:ref'
                       '/article/:ref/:title'
@@ -98,7 +101,7 @@ describe '| routes | routes.test |', ()->
 
       expectedStatus = 200;
       expectedStatus = 302 if ['','image','deploy', 'poc'                    ].contains(path.split('/').second().lower())
-      expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
+      expectedStatus = 302 if ['/flare','/flare/_dev','/flare/main-app-view','/user/login',
                                '/user/logout','/pocaaaaa' ].contains(path)
 
       expectedStatus = 403 if ['a','article','articles','show'               ].contains(path.split('/').second().lower())
