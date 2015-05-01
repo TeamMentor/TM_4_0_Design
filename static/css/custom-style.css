@@ -271,15 +271,6 @@ img, object {
   background: transparent;
   margin: 15px 10px 0 10px;
 }
-#heading {
-  background-color: #8aaf3e;
-  max-width: 100%;
-  padding: 5px;
-  text-align: center;
-}
-#heading p {
-  color: white;
-}
 #summary {
   margin: 10px;
 }
@@ -492,6 +483,11 @@ form p {
   font-size: 0.75em;
   margin-top: 0;
 }
+form h4 {
+  margin: 5px 0 20px;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid #dbdbdb;
+}
 label, .label {
   display: inline-block;
   margin-bottom: 5px;
@@ -693,13 +689,30 @@ button:hover, button:active {
   padding: 2px 2px 2px 1px;
 }
 .alert {
-  padding: 15px;
+  padding: 15px 20px;
   margin-bottom: 5px;
-  background: white;
-  border: 1px solid #8aaf3e;
-  color: #8aaf3e !important;
-  font-size: inherit;
   border-radius: 3px;
+}
+.alert-ok {
+  background: #b4cf7b;
+  color: white;
+}
+.alert-ok .alert-icon {
+  color: #6c9020;
+}
+.alert-bad {
+  background: #cf7b7b;
+  color: white;
+}
+.alert-bad .alert-icon {
+  color: #902020;
+}
+span.alert-icon {
+  font-size: 2em;
+  padding: 0 10px 0 0;
+}
+span.alert-text {
+  vertical-align: super;
 }
 .filter {
   padding: 5px;
