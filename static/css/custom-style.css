@@ -691,13 +691,24 @@ button:hover, button:active {
 .alert {
   padding: 15px 20px;
   margin-bottom: 5px;
+  border-radius: 3px;
+}
+.alert-ok {
   background: #b4cf7b;
   color: white;
-  border-radius: 3px;
+}
+.alert-ok .alert-icon {
+  color: #6c9020;
+}
+.alert-bad {
+  background: #cf7b7b;
+  color: white;
+}
+.alert-bad .alert-icon {
+  color: #902020;
 }
 span.alert-icon {
   font-size: 2em;
-  color: #6c9020;
   padding: 0 10px 0 0;
 }
 span.alert-text {
