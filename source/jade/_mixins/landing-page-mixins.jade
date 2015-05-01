@@ -11,26 +11,29 @@ mixin usp-div
 
 mixin reasons-div
     #reasons
-        .lge-container
             .row
-                .col-offset-2.col-8
-                    include:md ../../content/landing-pages/reasons-div-heading.md
-                    table
-                        tr
-                            td
-                                .fix-vulnerabilities
-                            td
-                                include:md ../../content/landing-pages/selling-point-1.md
-                        tr
-                            td
-                                .reduce-vulnerabilities
-                            td
-                                include:md ../../content/landing-pages/selling-point-2.md
-                        tr
-                            td
-                                .improve-process
-                            td
-                                include:md ../../content/landing-pages/selling-point-3.md
+                .col-5
+                    img(src='../../../static/assets/stock-img/Computer.png')
+                .col-7
+                    .lge-container
+                        br
+                        include:md ../../content/landing-pages/reasons-div-heading.md
+                        table
+                            tr
+                                td
+                                    .fix-vulnerabilities
+                                td
+                                    include:md ../../content/landing-pages/selling-point-1.md
+                            tr
+                                td
+                                    .reduce-vulnerabilities
+                                td
+                                    include:md ../../content/landing-pages/selling-point-2.md
+                            tr
+                                td
+                                    .expand-knowledge
+                                td
+                                    include:md ../../content/landing-pages/selling-point-3.md
 
 mixin clients-div
     #clients
