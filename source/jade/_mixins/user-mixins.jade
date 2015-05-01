@@ -92,45 +92,44 @@ mixin alert-please-login
   .alert.alert-bad(role='alert')
     #message
       span.alert-icon !
-      span You need to login to see that page.
+      span.alert-text You need to login to see that page.
 
 mixin alert-pwd-sent
   .alert.alert-ok(role='alert')
     #message
       span.alert-icon !
-      span If you entered a valid address, then a password reset link has been sent to your email address.
+      span.alert-text If you entered a valid address, then a password reset link has been sent to your email address.
 
 mixin alert-sign-up-failed
   if viewModel && viewModel.errorMessage
     .alert.alert-bad(role='alert')
       #message
-        span !
-        span = 'Error: ' + viewModel.errorMessage
+        span.alert-icon !
+        span.alert-text = 'Error: ' + viewModel.errorMessage
 
 mixin alert-sign-up-OK
   .alert.alert-ok(role='alert')
     #message
-      span !
-      span Thanks for signing up to TEAM Mentor. Please login to access our libraries.
+      span.alert-icon !
+      span.alert-text Thanks for signing up to TEAM Mentor. Please login to access our libraries.
 
 mixin alert-pwd-reset-failed
  if errorMessage
    .alert.alert-bad(role='alert')
      #message
-      span !
-      span= 'Error: ' + errorMessage
+      span.alert-icon !
+      span.alert-text= 'Error: ' + errorMessage
 
 mixin alert-pwd-reset-OK
   .alert.alert-ok(role='alert')
     #message
-      span !
-      span Your password has been updated. Please login to access our libraries.
+      span.alert-icon !
+      span.alert-text Your password has been updated. Please login to access our libraries.
 
 mixin alert-3-5-unavailable
   if viewModel && viewModel.errorMessage
     .alert.alert-bad(role='alert')
       #message
-        span !
-        span= 'Error: ' + viewModel.errorMessage
-        span
+        span.alert-icon !
+        span.alert-text= 'Error: ' + viewModel.errorMessage
           +tm-support-email

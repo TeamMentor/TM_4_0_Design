@@ -350,6 +350,10 @@ img, object {
   font-size: 0.75em;
   margin: 5px 0;
 }
+#copyright [class^="icon-"], #copyright [class*=" icon-"] {
+  font-size: 0.65em;
+  margin: 0 10px 0 0;
+}
 #filters [class^="icon-"], #filters [class*=" icon-"] {
   font-size: 1.25em;
   padding: 0 10px 0 0px;
@@ -392,9 +396,6 @@ img, object {
 #results-2 {
   margin-top: 150px;
   border: none;
-}
-#article td.vertical-align i {
-  margin-left: 5px;
 }
 #help-nav {
   margin: 30px 10px 15px 10px;
@@ -629,7 +630,7 @@ a.minor{
 a.minor:hover {
   color: #565656;
 }
-#article a, #landing-page a, .alert a, #message a {
+#article a, #landing-page a, #message a {
   text-decoration: underline;
 }
 .text-right {
@@ -695,17 +696,31 @@ button:hover, button:active {
 }
 .alert-ok {
   background: #b4cf7b;
+  color: #6c9020;
+}
+.alert-ok a {
   color: white;
+  text-decoration: none !important;
+}
+.alert-ok a:hover {
+  color: #6c9020 !important;
 }
 .alert-ok .alert-icon {
   color: #6c9020;
 }
 .alert-bad {
   background: #cf7b7b;
-  color: white;
+  color: #902020;
 }
 .alert-bad .alert-icon {
   color: #902020;
+}
+.alert-bad a {
+  color: white !important;
+  text-decoration: none !important;
+}
+.alert-bad a:hover {
+  color: #902020 !important;
 }
 span.alert-icon {
   font-size: 2em;
@@ -776,8 +791,7 @@ td.small {
   text-align: center;
 }
 td.vertical-align {
-  vertical-align: initial;
-  padding-top: 35px;
+  vertical-align: middle;
 }
 tr.article-title {
   border-bottom: 1px solid #dbdbdb;
@@ -971,6 +985,10 @@ tr.article-title {
 #article h1.article-title {
   font-size: 2em;
   margin-bottom: 0;
+}
+#article ul {
+  padding: 10px;
+  margin: 20px;
 }
 #html > h1, #html > h2 {
   font-size: 1.5em !important;
