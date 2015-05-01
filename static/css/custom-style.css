@@ -721,9 +721,6 @@ span.alert-text {
   font-size: 12px;
   display: block;
 }
-span.rwd-line {
-  display: block;
-}
 .filtered {
   font-size: 12px;
   color: #aaaaaa;
@@ -913,7 +910,6 @@ tr.article-title {
   }
 }
 @media (min-width: 1280px) {
-  span.rwd-line { display: inline; }
   #landing-page, .landing-page {
     width: 80%;
     left: 10%;
