@@ -84,7 +84,9 @@ mixin pwd-reset-form
 mixin alert-login-failed
   if viewModel && viewModel.errorMessage
     .alert(role='alert')
-      #message= 'Error: ' + viewModel.errorMessage
+      #message
+        span.alert-icon !
+        span.alert-text= 'Error: ' + viewModel.errorMessage
 
 mixin alert-please-login
   .alert(role='alert')

@@ -689,13 +689,19 @@ button:hover, button:active {
   padding: 2px 2px 2px 1px;
 }
 .alert {
-  padding: 15px;
+  padding: 15px 20px;
   margin-bottom: 5px;
-  background: white;
-  border: 1px solid #8aaf3e;
-  color: #8aaf3e !important;
-  font-size: inherit;
+  background: #b4cf7b;
+  color: white;
   border-radius: 3px;
+}
+span.alert-icon {
+  font-size: 2em;
+  color: #6c9020;
+  padding: 0 10px 0 0;
+}
+span.alert-text {
+  vertical-align: super;
 }
 .filter {
   padding: 5px;
