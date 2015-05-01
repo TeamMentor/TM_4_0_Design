@@ -135,6 +135,7 @@ img, object {
 }
 #reasons {
   padding-bottom: 0;
+  background: #b4cf7b;
 }
 #reasons img {
   max-width: 50%;
