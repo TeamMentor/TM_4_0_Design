@@ -1,12 +1,15 @@
 include ../mixins/links.jade
 include ../mixins/application-mixins.jade
+include ../../shared-mixins/globals.jade
 
 #logo
 #user
     li
         a(href='../help/index')
-            +help-link
+            +info-icon
+            span Docs
     li
         a(href='../landing-pages/index')
-            +logout-link
+            +logout-icon
+            span Logout
 +search-bar

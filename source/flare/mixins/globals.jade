@@ -1,3 +1,5 @@
+include ../../shared-mixins/globals.jade
+
 //- static texts
 - var head_title = 'TEAM Mentor 4.0 (Html version)'
 
@@ -57,31 +59,6 @@ mixin help-link
 mixin logout-link
     i.fi-power
     span Logout
-
-// Icons
-mixin index-icon
-    span.icon-Index
-
-mixin info-icon
-    span.icon-Info
-
-mixin logout-icon
-    span.icon-Logout
-
-mixin mail-icon
-    span.icon-Mail
-
-mixin paperclip-icon
-    span.icon-Paperclip
-
-mixin search-icon
-    span.icon-Search
-        span.path1
-        span.path2
-        span.path3
-
-mixin twitter-icon
-    span.icon-Twitter
 
 //- Form Inputs
 mixin username-input
@@ -425,25 +402,10 @@ mixin copyright
                     .label TEAM Mentor 4.0
                 li
                     a(href='mailto:support@securityinnovation.com' title='Email')
-                        +i-email
+                        +mail-icon
                 li
                     a(href='http://www.twitter.com/SecInnovation' target='_blank' title='Twitter')
-                        +i-twitter
+                        +twitter-icon
                 li
                     a#terms-and-conditions(href='../misc/terms-and-conditions' title ='Terms and Conditions')
-                        +i-toc
-    //#copyright
-        .row
-            .small-12.medium-3.columns
-                a(href='http://www.securityinnovation.com/', target='_blank')
-                    .logo.si-logo
-            .small-12.medium-6.columns
-                include:md ../../content/articles/copyright-information.md
-            .small-12.medium-3.columns
-                ul
-                    li
-                        +i-email
-                        a(href='mailto:support@securityinnovation.com') Email
-                    li
-                        +i-toc
-                        a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions
+                        +paperclip-icon

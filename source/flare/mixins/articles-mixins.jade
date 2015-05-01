@@ -1,5 +1,3 @@
-include prod-application-mixins.jade
-
 //- Article
 mixin article
 	section.row
@@ -15,9 +13,9 @@ mixin article-info
 	p # Type Icon
 	ul
 		li
-			+save-button
+			button.app Save Article
 		li
-			+share-button
+			button.app Share Article
 
 
 //- Related Courses and Articles
@@ -26,12 +24,12 @@ mixin related-options
 		#label
 			.label Related Articles
 		#articles
-			+prod-articles-list
+			+articles-list
 	section.row
 		#label
 			.label Related Courses
 		#articles
-			+prod-articles-list
+			+articles-list
 
 mixin terms-and-conditions
 	.bg

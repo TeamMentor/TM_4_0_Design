@@ -1,10 +1,7 @@
 extends ../_layouts/flare_page
-include ../mixins/getting-started-mixins
 
 block content
   #application
-    #left-column
-      +help-navigation
     #content
-      +team-mentor-summary
-    #right-nav
+      +help-navigation
+      include:md ../../content/help/page-index.md
