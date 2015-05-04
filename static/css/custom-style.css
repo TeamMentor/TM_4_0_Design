@@ -408,6 +408,10 @@ img, object {
   margin-top: 150px;
   border: none;
 }
+#article ul {
+  padding: 10px;
+  margin: 20px;
+}
 #article td.vertical-align i {
   margin-left: 5px;
 }
