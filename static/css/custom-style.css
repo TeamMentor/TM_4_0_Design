@@ -734,7 +734,7 @@ button:hover, button:active {
   color: #902020 !important;
 }
 .alert-neutral {
-  background: transparent;
+  background: #fafafa;
   border: 1px solid #dbdbdb;
 }
 span.alert-icon {
