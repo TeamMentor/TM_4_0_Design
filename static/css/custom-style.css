@@ -347,7 +347,7 @@ img, object {
   font-size: 0.65em;
   margin: 0 10px 0 0;
 }
-#filters [class^="icon-"], #filters [class*=" icon-"] {
+#filters [class^="icon-"], #filters [class*=" icon-"], #articles [class^="icon-"], #articles [class*=" icon-"], #article [class^="icon-"], #article [class*=" icon-"] {
   font-size: 1.25em;
   padding: 0 10px 0 0px;
 }
@@ -785,7 +785,6 @@ td, th {
 td.small {
   width: 10px;
   padding-top: 20px;
-  text-align: center;
 }
 td.vertical-align {
   vertical-align: middle;
@@ -1013,12 +1012,12 @@ tr.article-title {
 }
 .icon-Android .path1:before {
   content: "\e602";
-  color: #444444;
+  color: #a4c639;
 }
 .icon-Android .path2:before {
   content: "\e603";
   margin-left: -1em;
-  color: white;
+  color: rgb(68, 68, 68);
 }
 .icon-Android .path3:before {
   content: "\e604";
@@ -1027,24 +1026,23 @@ tr.article-title {
 }
 .icon-C .path1:before {
   content: "\e605";
-  color: rgb(68, 68, 68);
+  color: #044f88;
 }
 .icon-C .path2:before {
   content: "\e606";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 .icon-C .path3:before {
   content: "\e607";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 .icon-C .path4:before {
   content: "\e608";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: white;
 }
-
 .icon-Checklist .path1:before {
   content: "\e609";
   color: rgb(68, 68, 68);
@@ -1059,7 +1057,6 @@ tr.article-title {
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-
 .icon-CodeExample .path1:before {
   content: "\e60c";
   color: rgb(68, 68, 68);
@@ -1069,7 +1066,6 @@ tr.article-title {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Guideline .path1:before {
   content: "\e60e";
   color: rgb(68, 68, 68);
@@ -1084,7 +1080,6 @@ tr.article-title {
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-
 .icon-HowTo .path1:before {
   content: "\e611";
   color: rgb(68, 68, 68);
@@ -1094,33 +1089,29 @@ tr.article-title {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-HTML5 .path1:before {
   content: "\e613";
-  color: rgb(68, 68, 68);
+  color: #f42600;
 }
 .icon-HTML5 .path2:before {
   content: "\e614";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: #ff4f00;
 }
 .icon-HTML5 .path3:before {
   content: "\e615";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: white;
 }
-
 .icon-Index:before {
   content: "\e616";
 }
-
 .icon-Info:before {
   content: "\e617";
 }
-
 .icon-iOS .path1:before {
   content: "\e618";
-  color: rgb(68, 68, 68);
+  color: #a6a8ab;
 }
 .icon-iOS .path2:before {
   content: "\e619";
@@ -1132,10 +1123,9 @@ tr.article-title {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Java .path1:before {
   content: "\e61b";
-  color: rgb(68, 68, 68);
+  color: #e76f00;
 }
 .icon-Java .path2:before {
   content: "\e61c";
@@ -1152,18 +1142,15 @@ tr.article-title {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Logout:before {
   content: "\e61f";
 }
-
 .icon-Mail:before {
   content: "\e620";
 }
-
 .icon-Net .path1:before {
   content: "\e621";
-  color: rgb(68, 68, 68);
+  color: #0069ab;
 }
 .icon-Net .path2:before {
   content: "\e622";
@@ -1180,14 +1167,12 @@ tr.article-title {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Paperclip:before {
   content: "\e625";
 }
-
 .icon-PHP .path1:before {
   content: "\e626";
-  color: rgb(68, 68, 68);
+  color: #6082bb;
 }
 .icon-PHP .path2:before {
   content: "\e627";
@@ -1199,25 +1184,21 @@ tr.article-title {
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-
 .icon-Scala .path1:before {
   content: "\e629";
-  color: rgb(68, 68, 68);
+  color: #ef000a;
 }
 .icon-Scala .path2:before {
   content: "\e62a";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Search:before {
   content: "\e62b";
 }
-
 .icon-Twitter:before {
   content: "\e62e";
 }
-
 .icon-Vulnerabilities .path1:before {
   content: "\e62f";
   color: rgb(68, 68, 68);
@@ -1232,17 +1213,15 @@ tr.article-title {
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-
 .icon-WCF .path1:before {
   content: "\e632";
-  color: rgb(68, 68, 68);
+  color: #0069ab;
 }
 .icon-WCF .path2:before {
   content: "\e633";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Web-App .path1:before {
   content: "\e634";
   color: rgb(68, 68, 68);
