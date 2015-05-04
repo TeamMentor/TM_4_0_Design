@@ -135,7 +135,7 @@ img, object {
 }
 #reasons {
   padding-bottom: 0;
-  background: #b4cf7b;
+  background: #fafafa;
 }
 #reasons img {
   max-width: 50%;
@@ -271,7 +271,7 @@ img, object {
 }
 #summary table tr td:first-child {
   width: 80px;
-  padding: 0 20px;
+  padding: 0 50px;
 }
 #message td {
   padding: 0;
@@ -714,6 +714,10 @@ button:hover, button:active {
 }
 .alert-bad a:hover {
   color: #902020 !important;
+}
+.alert-neutral {
+  background: transparent;
+  border: 1px solid #dbdbdb;
 }
 span.alert-icon {
   font-size: 2em;
