@@ -1,22 +1,8 @@
+include ../../shared-mixins/globals.jade
+
 //- static texts
 - var head_title = 'TEAM Mentor 4.0 (Html version)'
 - var tm_version  = 'TEAM Mentor v4.0 (Alpha 15)'
-
-mixin navigate-link
-    i.fi-list-thumbnails
-    span Index
-
-mixin search-link
-    i.fi-magnifying-glass
-    span Search
-
-mixin help-link
-    i.fi-info
-    span Docs
-
-mixin logout-link
-    i.fi-power
-    span Logout
 
 mixin tm-support-email
     a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
@@ -30,8 +16,8 @@ mixin copyright
                 include:md ../../content/articles/copyright-information.md
                 ul
                     li
-                        +i-email
+                        +mail-icon
                         a(href='mailto:support@securityinnovation.com') support@securityinnovation.com
                     li
-                        +i-toc
+                        +paperclip-icon
                         a#terms-and-conditions(href="/misc/terms-and-conditions") Terms & Conditions

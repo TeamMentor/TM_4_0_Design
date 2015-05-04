@@ -2,7 +2,8 @@ include ../_mixins/links.jade
 
 .fixed
     #customer-navigation
-        #tm-logo
+        #customer-logo
+            img(src='../../../static/assets/clients/McKesson.jpg')
     #team-mentor-navigation
         a(href='/user/main.html')
             #tm-logo
@@ -10,5 +11,5 @@ include ../_mixins/links.jade
             +links-navbar__home
             ul#message
                 li
-                    i.fi-wrench
+                    +mail-icon
                     span Found an issue? Send us <a href="mailto:support@securityinnovation.com">an email</a>.
