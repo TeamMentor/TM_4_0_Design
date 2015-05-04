@@ -139,7 +139,6 @@ img, object {
 }
 #reasons {
   padding-bottom: 0;
-  background: #fafafa;
 }
 #reasons img {
   max-width: 50%;
@@ -183,27 +182,42 @@ img, object {
 /*------------------------------------*
    SPRITES
 *------------------------------------*/
-.elsevier, .fedex, .mass-mutual, .microsoft, .ubs, .android, .asp, .c-plus-plus, .ios, .java, .php, .scala, .wcf, .web-app {
+.fix-vulnerabilities, .reduce-vulnerabilities, .improve-process, .delivers-compliance, .integrates, .cross-references, .provides-guidance, .elsevier, .fedex, .mass-mutual, .microsoft, .ubs {
   margin: 0 auto;
   height: 0;
 }
-.fix-vulnerabilities, .reduce-vulnerabilities, .expand-knowledge, .delivers-compliance, .integrates, .cross-references, .provides-guidance {
-  margin: 0 auto;
-  height: 0;
-}
-.fix-vulnerabilities, .reduce-vulnerabilities, .expand-knowledge, .delivers-compliance, .integrates, .cross-references, .provides-guidance {
+.fix-vulnerabilities, .reduce-vulnerabilities, .improve-process, .delivers-compliance, .integrates, .cross-references, .provides-guidance {
   background: url(../assets/icons/landing-page-icons.png) no-repeat;
   width: 100%;
-  padding-top: 120%;
+  padding-top: 110%;
+}
+.fix-vulnerabilities, .reduce-vulnerabilities, .provides-guidance {
+  background-size: 685%;
+}
+.improve-process, .delivers-compliance, .integrates, .cross-references {
   background-size: 700%;
 }
-.fix-vulnerabilities { background-position: 0% 0%; }
-.reduce-vulnerabilities { background-position: 17% 0%; }
-.expand-knowledge { background-position: 34% 0%; }
-.delivers-compliance { background-position: 50.5% 0%; }
-.integrates { background-position: 67% 0%; }
-.cross-references { background-position: 85% 0%; }
-.provides-guidance { background-position: 101% 0%; }
+.fix-vulnerabilities, .elsevier {
+  background-position: 0% 0%;
+}
+.reduce-vulnerabilities {
+  background-position: 17.2% 0%;
+}
+.improve-process {
+  background-position: 34% 0%;
+}
+.delivers-compliance {
+  background-position: 50.3% 0%;
+}
+.integrates {
+  background-position: 66.7% 0%;
+}
+.cross-references {
+  background-position: 83% 0%;
+}
+.provides-guidance {
+  background-position: 100% 0%;
+}
 .elsevier {
   background-position: 0% 0%;
 }
@@ -889,6 +903,9 @@ tr.article-title {
   }
   #about { background-position: 0px -1400px; }
   #call-to-action { background-position: 0px -800px; }
+  #reasons h2 {
+    text-align: center;
+  }
   #reasons img {
     max-width: 100%
   }
