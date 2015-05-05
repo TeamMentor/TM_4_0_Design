@@ -27,7 +27,7 @@ img, object {
 }
 .lge-container {
   max-width: 100%;
-  padding: 15px;
+  padding: 7px;
 }
 .right { float: right !important; }
 .left { float: left !important; }
@@ -301,7 +301,7 @@ img, object {
   background: #fafafa;
 }
 #application {
-  margin-top: 160px;
+  margin-top: 180px;
 }
 #landing-page #application {
   padding-top: 0 !important;
@@ -390,7 +390,7 @@ img, object {
 #search-div, #search-div-2 {
   margin-bottom: 5px;
   position: fixed;
-  top: 170px;
+  top: 180px;
   left: 0;
   z-index: 96;
   margin: 0 auto;
@@ -416,9 +416,9 @@ img, object {
   margin-left: 5px;
 }
 #help-nav {
-  margin: 30px 10px 15px 10px;
+  margin: 10px 10px 15px 10px;
 }
-#help-docs {
+#help-docs, #help-index {
   margin: 0 10px 10px 10px;
 }
 /*------------------------------------*
@@ -873,10 +873,10 @@ tr.article-title {
   #links ul li a{ font-size: 0.85em; }
   #loginwall { margin: 15px 7px 0 0; }
   #summary { margin: 15px 0 0 7px; }
-  #application { margin-top: 60px; }
+  #application { margin-top: 70px; }
   #customer #application { padding-top: 60px; }
   #customer #search-div, #customer #search-div-2  { top: 120px; }
-  #search-div, #search-div-2  { top: 60px; }
+  #search-div, #search-div-2  { top: 70px; }
   #results-2 { margin-top: 140px; }
   #landing-page #application {
     margin: 70px 0 0 0;
