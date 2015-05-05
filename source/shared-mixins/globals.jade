@@ -107,6 +107,10 @@ mixin web-app-icon
     span.path5
     span.path6
     span.path7
+    span.path8
+    span.path9
+    span.path10
+    span.path11
 
 mixin net-icon
   span.icon-Net(title='.Net')
@@ -138,6 +142,8 @@ mixin android-icon
     span.path1
     span.path2
     span.path3
+    span.path4
+    span.path5
 
 mixin c-icon
   span.icon-C(title='C++')
@@ -152,6 +158,7 @@ mixin checklist-icon
     span.path2
     span.path3
     span.path4
+    span.path5
 
 mixin code-example-icon
   span.icon-CodeExample(title='Code Example')
@@ -170,10 +177,30 @@ mixin how-to-icon
     span.path2
 
 mixin html5-icon
-  span.icon-HTML5(title='HTML5')
+  span.icon-HTML(title='HTML5')
+    span.path1
+    span.path2
+
+mixin deploy-icon
+  span.icon-Deploy(title='Deployment')
+    span.path1
+    span.path2
+
+mixin design-icon
+  span.icon-Design(title='Design')
+    span.path1
+    span.path2
+
+mixin implement-icon
+  span.icon-Implementation(title='Implementation')
     span.path1
     span.path2
     span.path3
+
+mixin test-icon
+  span.icon-Test(title='Test')
+    span.path1
+    span.path2
 
 mixin filter-icon(filter, title)
   case filter
@@ -220,3 +247,14 @@ mixin filter-icon(filter, title)
           +html5-icon
         default
           +all-icon
+
+    when 'Phase'
+      case title
+        when 'Deployment'
+          +deploy-icon
+        when 'Design'
+          +design-icon
+        when 'Implementation'
+          +implement-icon
+        when 'Test'
+          +test-icon
