@@ -1074,310 +1074,330 @@ tr.article-title {
   color: rgb(255, 255, 255);
 }
 
-.icon-C .path1:before {
+.icon-Article:before {
   content: "\e607";
+}
+
+.icon-C .path1:before {
+  content: "\e608";
   color: rgb(68, 68, 68);
 }
 .icon-C .path2:before {
-  content: "\e608";
+  content: "\e609";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
 .icon-Checklist .path1:before {
-  content: "\e609";
+  content: "\e60a";
   color: rgb(255, 255, 255);
 }
 .icon-Checklist .path2:before {
-  content: "\e60a";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-Checklist .path3:before {
   content: "\e60b";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Checklist .path4:before {
+.icon-Checklist .path3:before {
   content: "\e60c";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Checklist .path5:before {
+.icon-Checklist .path4:before {
   content: "\e60d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Checklist .path5:before {
+  content: "\e60e";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
 
 .icon-CodeExample .path1:before {
-  content: "\e60e";
+  content: "\e60f";
   color: rgb(68, 68, 68);
 }
 .icon-CodeExample .path2:before {
-  content: "\e60f";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-CodeExample .path3:before {
   content: "\e610";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-CodeExample .path4:before {
+.icon-CodeExample .path3:before {
   content: "\e611";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-CodeExample .path5:before {
+.icon-CodeExample .path4:before {
   content: "\e612";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-CodeExample .path6:before {
+.icon-CodeExample .path5:before {
   content: "\e613";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-CodeExample .path7:before {
+.icon-CodeExample .path6:before {
   content: "\e614";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-CodeExample .path8:before {
+.icon-CodeExample .path7:before {
   content: "\e615";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-CodeExample .path9:before {
+.icon-CodeExample .path8:before {
   content: "\e616";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
-.icon-Deploy .path1:before {
+.icon-CodeExample .path9:before {
   content: "\e617";
-  color: rgb(68, 68, 68);
-}
-.icon-Deploy .path2:before {
-  content: "\e618";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
-.icon-Design .path1:before {
+.icon-Delete:before {
+  content: "\e618";
+}
+
+.icon-Deploy .path1:before {
   content: "\e619";
   color: rgb(68, 68, 68);
 }
-.icon-Design .path2:before {
+.icon-Deploy .path2:before {
   content: "\e61a";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
-.icon-Guideline .path1:before {
+.icon-Design .path1:before {
   content: "\e61b";
+  color: rgb(68, 68, 68);
+}
+.icon-Design .path2:before {
+  content: "\e61c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.icon-Filter:before {
+  content: "\e61d";
+}
+
+.icon-Guideline .path1:before {
+  content: "\e61e";
   color: rgb(255, 255, 255);
 }
 .icon-Guideline .path2:before {
-  content: "\e61c";
+  content: "\e61f";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
 
 .icon-HowTo .path1:before {
-  content: "\e61d";
+  content: "\e620";
   color: rgb(68, 68, 68);
 }
 .icon-HowTo .path2:before {
-  content: "\e61e";
+  content: "\e621";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
 .icon-HTML .path1:before {
-  content: "\e61f";
+  content: "\e622";
   color: rgb(255, 255, 255);
 }
 .icon-HTML .path2:before {
-  content: "\e620";
+  content: "\e623";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
 
 .icon-Implementation .path1:before {
-  content: "\e621";
+  content: "\e624";
   color: rgb(68, 68, 68);
 }
 .icon-Implementation .path2:before {
-  content: "\e622";
+  content: "\e625";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
 .icon-Implementation .path3:before {
-  content: "\e623";
+  content: "\e626";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
 .icon-Index:before {
-  content: "\e624";
+  content: "\e627";
 }
 
 .icon-Info:before {
-  content: "\e625";
+  content: "\e628";
 }
 
 .icon-iOS .path1:before {
-  content: "\e626";
+  content: "\e629";
   color: rgb(68, 68, 68);
 }
 .icon-iOS .path2:before {
-  content: "\e627";
+  content: "\e62a";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
 .icon-Java .path1:before {
-  content: "\e628";
+  content: "\e62b";
   color: rgb(68, 68, 68);
 }
 .icon-Java .path2:before {
-  content: "\e629";
+  content: "\e62c";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
 .icon-Logout:before {
-  content: "\e62a";
+  content: "\e62d";
 }
 
 .icon-Mail:before {
-  content: "\e62b";
+  content: "\e62e";
 }
 
 .icon-Net .path1:before {
-  content: "\e62c";
+  content: "\e62f";
   color: rgb(68, 68, 68);
 }
 .icon-Net .path2:before {
-  content: "\e62d";
+  content: "\e630";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
 .icon-Paperclip:before {
-  content: "\e62e";
+  content: "\e631";
 }
 
 .icon-PHP .path1:before {
-  content: "\e62f";
+  content: "\e632";
   color: rgb(255, 255, 255);
 }
 .icon-PHP .path2:before {
-  content: "\e630";
+  content: "\e633";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
 
+.icon-Save:before {
+  content: "\e634";
+}
+
 .icon-Scala .path1:before {
-  content: "\e631";
+  content: "\e635";
   color: rgb(68, 68, 68);
 }
 .icon-Scala .path2:before {
-  content: "\e632";
+  content: "\e636";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
 .icon-Search:before {
-  content: "\e633";
+  content: "\e637";
+}
+
+.icon-Share:before {
+  content: "\e638";
 }
 
 .icon-Test .path1:before {
-  content: "\e634";
-  color: rgb(68, 68, 68);
-}
-.icon-Test .path2:before {
-  content: "\e635";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-
-.icon-Twitter:before {
-  content: "\e636";
-}
-
-.icon-Vulnerabilities .path1:before {
-  content: "\e637";
-  color: rgb(255, 255, 255);
-}
-.icon-Vulnerabilities .path2:before {
-  content: "\e638";
-  margin-left: -1em;
-  color: rgb(68, 68, 68);
-}
-
-.icon-WCF .path1:before {
   content: "\e639";
   color: rgb(68, 68, 68);
 }
-.icon-WCF .path2:before {
+.icon-Test .path2:before {
   content: "\e63a";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
-.icon-Web-App .path1:before {
+.icon-Twitter:before {
   content: "\e63b";
-  color: rgb(68, 68, 68);
 }
-.icon-Web-App .path2:before {
+
+.icon-Vulnerabilities .path1:before {
   content: "\e63c";
-  margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Web-App .path3:before {
+.icon-Vulnerabilities .path2:before {
   content: "\e63d";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-.icon-Web-App .path4:before {
+
+.icon-WCF .path1:before {
   content: "\e63e";
-  margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-.icon-Web-App .path5:before {
+.icon-WCF .path2:before {
   content: "\e63f";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: rgb(255, 255, 255);
 }
-.icon-Web-App .path6:before {
+
+.icon-Web-App .path1:before {
   content: "\e640";
-  margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-.icon-Web-App .path7:before {
+.icon-Web-App .path2:before {
   content: "\e641";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: rgb(255, 255, 255);
 }
-.icon-Web-App .path8:before {
+.icon-Web-App .path3:before {
   content: "\e642";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-.icon-Web-App .path9:before {
+.icon-Web-App .path4:before {
   content: "\e643";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-.icon-Web-App .path10:before {
+.icon-Web-App .path5:before {
   content: "\e644";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-.icon-Web-App .path11:before {
+.icon-Web-App .path6:before {
   content: "\e645";
+  margin-left: -1em;
+  color: rgb(68, 68, 68);
+}
+.icon-Web-App .path7:before {
+  content: "\e646";
+  margin-left: -1em;
+  color: rgb(68, 68, 68);
+}
+.icon-Web-App .path8:before {
+  content: "\e647";
+  margin-left: -1em;
+  color: rgb(68, 68, 68);
+}
+.icon-Web-App .path9:before {
+  content: "\e648";
+  margin-left: -1em;
+  color: rgb(68, 68, 68);
+}
+.icon-Web-App .path10:before {
+  content: "\e649";
+  margin-left: -1em;
+  color: rgb(68, 68, 68);
+}
+.icon-Web-App .path11:before {
+  content: "\e64a";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }

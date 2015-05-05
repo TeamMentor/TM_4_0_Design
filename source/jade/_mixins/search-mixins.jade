@@ -153,6 +153,8 @@ mixin articles-list
                                     +filter-icon('Technology',result.technology)
                                     br
                                     +filter-icon('Type', result.type)
+                                    br
+                                    +filter-icon('Phase', result.phase)
 
                                 td
                                     a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)

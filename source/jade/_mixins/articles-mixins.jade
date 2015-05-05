@@ -3,9 +3,11 @@ mixin article
         table
             tr.article-title
                 td.vertical-align
-                    +filter-icon('Technology',technology)
+                    +filter-icon('Technology', technology)
                     br
                     +filter-icon('Type', type)
+                    br
+                    +filter-icon('Phase', phase)
                 td
                     h1#title= title
         #html.article-content!= article_Html
