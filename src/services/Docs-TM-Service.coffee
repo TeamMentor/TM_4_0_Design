@@ -17,10 +17,13 @@ class Docs_TM_Service
     @._tmSite                = 'https://docs.teammentor.net'
     @._tmWebServices         = '/Aspx_Pages/TM_WebServices.asmx/'
     @.cache                  = new Cache_Service("docs_cache")
+    @.libraryDirectory       = '.tmCache/Lib_Docs-json'
 
 
-  asmx_GetFolderStructure_Libraries: (callback)=>
-    @cache.json_POST @.calculateTargetUrl('GetFolderStructure_Libraries'), {}, callback
+  getFolderStructure_Libraries: (callback)=>
+    json          = (@.libraryDirectory  + "/Library/TM Documentation.json").load_Json();
+    json_Library    = json.guidanceExplorer.library.first()
+    callback json_Library
 
   asmx_GetGUIObjects: (callback)=>
     @cache.json_POST @.calculateTargetUrl('GetGUIObjects'), {}, callback
@@ -30,53 +33,67 @@ class Docs_TM_Service
     @._tmSite + @._tmWebServices + wsName
 
   getArticlesMetadata: (callback)=>
-    @asmx_GetGUIObjects (guiObjects)->
+    json_Folder = @.libraryDirectory.append("/Library")
 
-      articlesMetadata = {};
-      mappings      = guiObjects.d.GuidanceItemsMappings;
-      uniqueStrings = guiObjects.d.UniqueStrings;
-
-      articlesMetadata._numberOfArticles = 0;
-
-      mappings.forEach (mapping)->
-        keys = mapping.split(',');
+    json_Files = json_Folder.files_Recursive(".json")
+    articlesMetadata = {};
+    articlesMetadata._numberOfArticles = 0;
+    json_Files.forEach (file)->
+      jsonFile = file.load_Json().TeamMentor_Article
+      if (jsonFile?)
         metadata =
-                        Id         : uniqueStrings[keys[0]],
-                        Title      : uniqueStrings[keys[2]],
-                        Technology : uniqueStrings[keys[3]],
-                        Phase      : uniqueStrings[keys[4]],
-                        Type       : uniqueStrings[keys[5]],
-                        Category   : uniqueStrings[keys[6]]
+          Id         : jsonFile?.Metadata?.first().Id.first(),
+          Title      : jsonFile?.Metadata?.first().Title.first(),
+          Technology : jsonFile?.Metadata?.first().Technology?.first(),
+          Phase      : jsonFile?.Metadata?.first().Phase?.first(),
+          Type       : jsonFile?.Metadata?.first().Type?.first(),
+          Category   : jsonFile?.Metadata?.first().Category?.first()
 
         articlesMetadata[metadata.Id]= metadata;
         articlesMetadata._numberOfArticles++;
+    callback articlesMetadata;
 
-      callback articlesMetadata;
 
   getLibraryData: (callback)->
-    @asmx_GetFolderStructure_Libraries (getFolderStructure)=>
+    @getFolderStructure_Libraries (tmLibrary)=>
       @.getArticlesMetadata (articlesMetadata)=>
-
         libraryData = [];
-        getFolderStructure.d.forEach (tmLibrary)->
-                library =
-                            Title   : tmLibrary.name,
-                            Folders : [],
-                            Views   : [],
-                            Articles: {}
+        library =
+                  Title   : tmLibrary["$"].name
+                  Folders : [],
+                  Views   : [],
+                  Articles: {}
 
-                tmLibrary.guidanceItems = [];
+        tmLibrary.guidanceItems = [];
+        views =tmLibrary?.libraryStructure?.first().view
 
-                tmLibrary.views.forEach (tmView)->
-                        view = { Title: tmView.caption, Articles: [] };
+        views.forEach (tmView) ->
+          view = {Title: tmView['$'].caption, Articles: [] };
+          items = tmView.items.first().item
+          #Finding ids in views
+          items.forEach (guidanceItemId)->
+            articleMetadata = articlesMetadata[guidanceItemId];
+            view   .Articles.push(articleMetadata);
+            library.Articles[articleMetadata.Id] = articleMetadata;
 
-                        tmView.guidanceItems.forEach (guidanceItemId)->
-                                articleMetadata = articlesMetadata[guidanceItemId];
-                                view   .Articles.push(articleMetadata);
-                                library.Articles[articleMetadata.Id] = articleMetadata;
-                        library.Views.push(view);
-                libraryData.push(library);
-
+          #Adding view to library
+          library.Views.push(view);
+          libraryData.push(library);
         callback libraryData
+
+  json_Files: (callback)=>
+    json_Folder = @.libraryDirectory.append("/Library")
+    callback  json_Folder.files_Recursive(".json")
+
+  article_Data: (articleId)=>
+    console.log (articleId)
+    @json_Files (jsonFiles)=>
+      article_File = jsonFile for  jsonFile in   jsonFiles when jsonFile.contains(articleId)
+      if article_File and article_File.file_Exists()
+        console.log("File " + article_File)
+        return article_File.load_Json().TeamMentor_Article
+      else
+        return null
+
 
 module.exports = Docs_TM_Service

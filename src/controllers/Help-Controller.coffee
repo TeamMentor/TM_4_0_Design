@@ -43,11 +43,13 @@ class Help_Controller
     if article_Title is null
       @show_Content("No content for the current page",'')
       return
-    docs_Url = @.docs_Server + '/content/' + @.page_Id()
-    docs_Url.GET (html)=>
-      if html
-        @show_Content(article_Title, html)
-      else
+
+    callback =@.docs_TM_Service.article_Data @.page_Id()
+    if callback
+        console.log ("Mike"+callback?.Content.first().Data.first())
+        content =callback?.Content.first().Data.first()
+        @show_Content(article_Title,content )
+    else
         @show_Content('Error fetching page from docs site','')
 
 
