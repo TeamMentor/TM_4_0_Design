@@ -8,7 +8,7 @@ mixin search-bar
             a.button.btn-search#search-button(href='app-keyword-search')
                 +search-icon
         a.button.btn-divs#filters-button(href='filters-div')
-            +filter-icon
+            +filters-icon
 
 //- Flare Results-Save-Clear
 mixin results-save-clear
@@ -56,9 +56,11 @@ mixin articles-list
                     p #
                     // Phase Icon
                 li
-                    button.app Save
+                    button.app
+                        +save-icon
                 li
-                    button.app Share
+                    button.app
+                        +share-icon
     .container.article
         .headline
             .rank
@@ -76,9 +78,11 @@ mixin articles-list
                     p #
                     // Phase Icon
                 li
-                    button.app Save
+                    button.app
+                        +save-icon
                 li
-                    button.app Share
+                    button.app
+                        +share-icon
     .container.article
         .headline
             .rank
@@ -96,9 +100,11 @@ mixin articles-list
                     p #
                     // Phase Icon
                 li
-                    button.app Save
+                    button.app
+                        +save-icon
                 li
-                    button.app Share
+                    button.app
+                        +share-icon
 
 mixin left-navigation
     ul.side-nav
@@ -106,36 +112,32 @@ mixin left-navigation
             +index-icon
             span.text Index
         li
-            span Icon
+            +article-icon
             span.text Saved Articles
         li
-            span Icon
+            +search-icon
             span.text Saved Searches
 
 //- Search Results List
 mixin search-term-list
     .container.search-term
         a(href='app-keyword-search')
-            span
-                +search-icon
+            +search-icon
             span Search Term
     .container.search-term
         a(href='app-keyword-search')
-            span
-                +search-icon
+            +search-icon
             span Search Term
     .container.search-term
         a(href='app-keyword-search')
-            span
-                +search-icon
+            +search-icon
             span Search Term
 
 //- Flare Filters Div
 mixin filters-div
-    ul.side-nav.no-style
+    ul.side-nav
         li
-            span
-                +filter-icon
+            +filters-icon
             span.text Filter by
     //#filters
         dl.accordion(data-accordion='data-accordion')
