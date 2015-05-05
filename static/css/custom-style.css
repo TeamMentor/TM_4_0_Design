@@ -992,7 +992,7 @@ tr.article-title {
   font-size: 2em;
   margin-bottom: 0;
 }
-#article ul {
+#article ul, #article ol {
   padding: 10px;
   margin: 20px;
 }
