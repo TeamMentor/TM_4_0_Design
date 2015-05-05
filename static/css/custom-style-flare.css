@@ -134,13 +134,13 @@ span.text {
 }
 #navigate-button {
   -webkit-flex: 8%;
-  flex: 8%;
+  flex: 12%;
   -webkit-order: 1;
   order: 1;
 }
 #filters-button {
   -webkit-flex: 8%;
-  flex: 8%;
+  flex: 12%;
   -webkit-order: 3;
   order: 3;
 }
