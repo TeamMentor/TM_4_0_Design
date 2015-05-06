@@ -69,7 +69,7 @@ class Help_Controller
     @.res.redirect @.imagePath + @.req.params.name
 
   show_Content: (title, content)=>
-    if (content_cache[@.page_Id()]?)
+    if (content_cache[@.page_Id()]==undefined)
       @.content_Cache_Set title, content
     view_Model =
       title:   title

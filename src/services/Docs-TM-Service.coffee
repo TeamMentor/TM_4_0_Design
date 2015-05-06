@@ -86,7 +86,6 @@ class Docs_TM_Service
     callback  json_Folder.files_Recursive(".json")
 
   article_Data: (articleId)=>
-    console.log ("Article Id" + articleId)
     @json_Files (jsonFiles)=>
       article_File = jsonFile for  jsonFile in   jsonFiles when jsonFile.contains(articleId)
       if article_File and article_File.file_Exists()
