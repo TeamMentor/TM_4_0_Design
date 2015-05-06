@@ -25,13 +25,6 @@ class Docs_TM_Service
     json_Library    = json.guidanceExplorer.library.first()
     callback json_Library
 
-  asmx_GetGUIObjects: (callback)=>
-    @cache.json_POST @.calculateTargetUrl('GetGUIObjects'), {}, callback
-
-
-  calculateTargetUrl: (wsName)->
-    @._tmSite + @._tmWebServices + wsName
-
   getArticlesMetadata: (callback)=>
     json_Folder = @.libraryDirectory.append("/Library")
 
