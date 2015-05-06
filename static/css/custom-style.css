@@ -329,22 +329,20 @@ img, object {
   padding: 1em 3em 2em 3em;
 }
 .bg#list-view-article {
-  padding: 10px;
-  padding-top: 1px;
+  padding: 0;
 }
 .bg#list-view-article h4 {
-  padding: 0 0 20px 0;
-  margin: 30px 0 7px 0;
-  border-bottom: 1px solid #dbdbdb;
-}
-.bg#list-view-article p {
-  margin-top: 0;
+  padding: 0;
+  margin: 0;
 }
 .bg#list-view-article a:hover h4 {
-  color: #8aaf3e !important;
+  color: white;
 }
 .bg#list-view-article span.badge {
   margin-top: 10px;
+}
+.bg#list-view-article tr.article-headline {
+  background: #b4cf7b;
 }
 #copyright {
   padding: 20px 0 5px 0;
@@ -707,6 +705,14 @@ button:hover, button:active {
   font-size: 12px;
   padding: 2px 2px 2px 1px;
 }
+.rank {
+  background: #8aaf3e;
+  padding: 10px;
+  color: white;
+  font-size: 0.75em;
+  letter-spacing: 1px;
+  text-align: center;
+}
 .alert {
   padding: 15px 20px;
   margin-bottom: 5px;
@@ -819,6 +825,10 @@ tr.article-title {
   padding-bottom: 25px;
   line-height: 1.5em;
   color: #5c5c5c;
+}
+td.filter-icons {
+  padding: 0 0 0 10px;
+  text-align: center;
 }
 /*------------------------------------*
    MEDIA QUERIES
