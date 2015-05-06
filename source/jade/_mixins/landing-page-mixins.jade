@@ -11,26 +11,27 @@ mixin usp-div
 
 mixin reasons-div
     #reasons
-        .lge-container
             .row
                 .col-offset-2.col-8
-                    include:md ../../content/landing-pages/reasons-div-heading.md
-                    table
-                        tr
-                            td
-                                .fix-vulnerabilities
-                            td
-                                include:md ../../content/landing-pages/selling-point-1.md
-                        tr
-                            td
-                                .reduce-vulnerabilities
-                            td
-                                include:md ../../content/landing-pages/selling-point-2.md
-                        tr
-                            td
-                                .improve-process
-                            td
-                                include:md ../../content/landing-pages/selling-point-3.md
+                    .lge-container
+                        br
+                        include:md ../../content/landing-pages/reasons-div-heading.md
+                        table
+                            tr
+                                td
+                                    .fix-vulnerabilities
+                                td
+                                    include:md ../../content/landing-pages/selling-point-1.md
+                            tr
+                                td
+                                    .reduce-vulnerabilities
+                                td
+                                    include:md ../../content/landing-pages/selling-point-2.md
+                            tr
+                                td
+                                    .improve-process
+                                td
+                                    include:md ../../content/landing-pages/selling-point-3.md
 
 mixin clients-div
     #clients
@@ -116,10 +117,10 @@ mixin footer-div
                         .label TEAM Mentor 4.0
                     li
                         a(href='mailto:support@securityinnovation.com' title='Email')
-                            +i-email
+                            +mail-icon
                     li
                         a(href='http://www.twitter.com/SecInnovation' target='_blank' title='Twitter')
-                            +i-twitter
+                            +twitter-icon
                     li
                         a#terms-and-conditions(href='../misc/terms-and-conditions' title ='Terms and Conditions')
-                            +i-toc
+                            +paperclip-icon

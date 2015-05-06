@@ -33,77 +33,147 @@ mixin email-input
 
 //- Form Buttons
 mixin login-button
-  button.full-width(type='submit', id='btn-login') Login
+  button.btn-landing.full-width(type='submit', id='btn-login') Login
 
 mixin sign-up-button
-  button.full-width(type='submit', id='btn-sign-up') Sign Up
+  button.btn-landing.full-width(type='submit', id='btn-sign-up') Sign Up
 
 mixin get-password-button
-  button.full-width(type='submit' id='btn-get-password') Get Password
+  button.btn-landing.full-width(type='submit' id='btn-get-password') Get Password
 
 mixin reset-password-button
-  button.full-width(type='submit' id='btn-reset-password') Reset Password
+  button.btn-landing.full-width(type='submit' id='btn-reset-password') Reset Password
 
 mixin start-trial-button
   button.btn-landing
-    i.fi-key.btn-icon
     span Start your free trial today
 
 mixin see-for-yourself-button
   button.btn-landing
-    i.fi-eye.btn-icon
     span See for yourself
 
-mixin menu-icon
-  i.fi-list
-
-mixin i-phone
-  i.fi-telephone
-
-mixin i-email
-  i.fi-mail
-
-mixin i-marker
-  i.fi-marker
-
-mixin i-twitter
-  i.fi-social-twitter
-
-mixin i-toc
-  i.fi-paperclip
-
-mixin arrow-down
-  i.fi-arrow-down
-
 mixin search-icon
-  i.fi-magnifying-glass
+  span.icon-Search(title='Search')
+    span.path1
+    span.path2
+    span.path3
 
-mixin article-icon
-  i.fi-page
+mixin index-icon
+  span.icon-Index(title='Index')
 
-mixin alert-icon
-  i.fi-megaphone
+mixin info-icon
+  span.icon-Info(title='Info')
+
+mixin logout-icon
+  span.icon-Logout(title='Logout')
+
+mixin mail-icon
+  span.icon-Mail(title='Mail')
+
+mixin twitter-icon
+  span.icon-Twitter(title='Twitter')
+
+mixin paperclip-icon
+  span.icon-Paperclip(title='Terms & Conditions')
+
+mixin php-icon
+  span.icon-PHP(title='PHP')
+    span.path1
+    span.path2
+    span.path3
+
+mixin scala-icon
+  span.icon-Scala(title='Scala')
+      span.path1
+      span.path2
+
+mixin vulnerabilities-icon
+  span.icon-Vulnerabilities(title='Vulnerabilities')
+    span.path1
+    span.path2
+    span.path3
+
+mixin wcf-icon
+  span.icon-WCF(title='WCF')
+    span.path1
+    span.path2
+
+mixin web-app-icon
+  span.icon-Web-App(title='Web Application')
+    span.path1
+    span.path2
+    span.path3
+    span.path4
+    span.path5
+    span.path6
+    span.path7
+
+mixin net-icon
+  span.icon-Net(title='.Net')
+    span.path1
+    span.path2
+    span.path3
+    span.path4
+
+mixin ios-icon
+  span.icon-iOS(title='iOS')
+    span.path1
+    span.path2
+    span.path3
+
+mixin java-icon
+  span.icon-Java(title='Java')
+    span.path1
+    span.path2
+    span.path3
+    span.path4
+
+mixin all-icon
+  span.icon-All(title='All')
+    span.path1
+    span.path2
+
+mixin android-icon
+  span.icon-Android(title='Android')
+    span.path1
+    span.path2
+    span.path3
+
+mixin c-icon
+  span.icon-C(title='C++')
+    span.path1
+    span.path2
+    span.path3
+    span.path4
 
 mixin checklist-icon
-  i.fi-checkbox(title='Checklist')
+  span.icon-Checklist(title='Checklist')
+    span.path1
+    span.path2
+    span.path3
+    span.path4
+
+mixin code-example-icon
+  span.icon-CodeExample(title='Code Example')
+    span.path1
+    span.path2
 
 mixin guideline-icon
-  i.fi-book(title='Guideline')
-
-mixin code-sample-icon
-  i.fi-puzzle(title='Code Sample')
+  span.icon-Guideline(title='Guideline')
+    span.path1
+    span.path2
+    span.path3
 
 mixin how-to-icon
-  i.fi-list-bullet(title='How To')
-
-mixin any-technology-icon
-  i.fi-flag(title='Any Technology')
+  span.icon-HowTo(title='How To')
+    span.path1
+    span.path2
 
 mixin html5-icon
-  i.fi-html5(title='HTML5')
-
-mixin vuln-icon
-  i.fi-shield(title='Vulnerability')
+  span.icon-HTML5(title='HTML5')
+    span.path1
+    span.path2
+    span.path3
 
 mixin filter-icon(filter, title)
   case filter
@@ -114,11 +184,11 @@ mixin filter-icon(filter, title)
         when 'Guideline'
           +guideline-icon
         when 'Code Example'
-          +code-sample-icon
+          +code-example-icon
         when 'How To'
           +how-to-icon
         when 'Vulnerability'
-          +vuln-icon
+          +vulnerabilities-icon
         default
           span
 
@@ -128,25 +198,25 @@ mixin filter-icon(filter, title)
         when 'ASP.NET 3.5'
         when '.NET 3.5'
         when 'ASP.NET 4.0'
-          .asp(title='ASP.Net')
+          +net-icon
         when 'Android'
-          .android(title='Android')
+          +android-icon
         when 'C++'
-          .c-plus-plus(title='C++')
+          +c-icon
         when 'iOS'
-          .ios(title='iOS')
+          +ios-icon
         when 'Java'
-          .java(title='Java')
+          +java-icon
         when 'PHP'
-          .php(title='PHP')
+          +php-icon
         when 'Scala Play'
         when 'Scala with Play Framework'
-          .scala(title='Scala')
+          +scala-icon
         when 'WCF 3.5'
-          .wcf(title='WCF')
+          +wcf-icon
         when 'Web Application'
-          .web-app(title='Web Application')
+          +web-app-icon
         when 'HTML5'
           +html5-icon
         default
-          +any-technology-icon
+          +all-icon
