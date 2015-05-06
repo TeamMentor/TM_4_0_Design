@@ -3,6 +3,7 @@
 *------------------------------------*/
 html {
   font: 100% Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 html, body {
   margin: 0;
@@ -88,6 +89,9 @@ img, object {
 }
 #links.icon-links ul li [class^="icon-"], #links.icon-links ul li [class*=" icon-"] {
   padding: 0 6px 0 0;
+}
+.text {
+  font-family: Helvetica, sans-serif;
 }
 #links a {
   text-transform: uppercase;
@@ -879,7 +883,7 @@ td.filter-icons {
   #application { margin-top: 70px; }
   #customer #application { padding-top: 60px; }
   #customer #search-div, #customer #search-div-2  { top: 120px; }
-  #search-div, #search-div-2  { top: 70px; }
+  #search-div, #search-div-2  { top: 60px; }
   #results-2 { margin-top: 140px; }
   #landing-page #application {
     margin: 70px 0 0 0;
