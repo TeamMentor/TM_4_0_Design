@@ -585,6 +585,9 @@ h6 {
 p, a {
   color: #444444;
 }
+.bg#list-view-article a:hover h4 {
+  color: #8aaf3e !important;
+}
 p {
   font-size: 0.85em;
   line-height: 1.5em;
