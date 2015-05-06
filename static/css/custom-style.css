@@ -996,6 +996,10 @@ tr.article-title {
   padding: 10px;
   margin: 20px;
 }
+#article ol {
+  padding: 10px;
+  margin: 20px;
+}
 #html > h1, #html > h2 {
   font-size: 1.5em !important;
   padding: 0;
