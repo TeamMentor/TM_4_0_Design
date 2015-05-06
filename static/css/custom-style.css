@@ -406,13 +406,6 @@ img, object {
   margin-top: 150px;
   border: none;
 }
-#article ul {
-  padding: 10px;
-  margin: 20px;
-}
-#article td.vertical-align i {
-  margin-left: 5px;
-}
 #help-nav {
   margin: 10px 10px 15px 10px;
 }
@@ -1013,6 +1006,10 @@ td.filter-icons {
   padding: 10px;
   margin: 20px;
 }
+#article ol {
+  padding: 10px;
+  margin: 20px;
+}
 #html > h1, #html > h2 {
   font-size: 1.5em !important;
   padding: 0;
@@ -1389,6 +1386,7 @@ td.filter-icons {
 .icon-Web-App .path7:before {
   content: "\e646";
   margin-left: -1em;
+<<<<<<< HEAD
   color: rgb(68, 68, 68);
 }
 .icon-Web-App .path8:before {
@@ -1411,3 +1409,7 @@ td.filter-icons {
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
+=======
+  color: rgb(255, 255, 255);
+}
+>>>>>>> 141dbca5de7d519a79ab849a64cb51050fc3216f
