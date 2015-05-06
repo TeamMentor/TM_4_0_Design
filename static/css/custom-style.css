@@ -333,20 +333,16 @@ img, object {
   padding: 1em 3em 2em 3em;
 }
 .bg#list-view-article {
-  padding: 0;
+  padding: 1em;
+  display: inline-block;
 }
-.bg#list-view-article h4 {
-  padding: 0;
+#list-view-article h4 {
+  padding: 0 0 0.5em 0;
+  border-bottom: 1px solid #dbdbdb;
   margin: 0;
 }
-.bg#list-view-article a:hover h4 {
-  color: white;
-}
-.bg#list-view-article span.badge {
-  margin-top: 10px;
-}
-.bg#list-view-article tr.article-headline {
-  background: #b4cf7b;
+#list-view-article p {
+  margin: 0;
 }
 #copyright {
   padding: 20px 0 5px 0;
@@ -701,14 +697,6 @@ button:hover, button:active {
   border-radius:10px;
   font-size: 12px;
   padding: 2px 2px 2px 1px;
-}
-.rank {
-  background: #8aaf3e;
-  padding: 10px;
-  color: white;
-  font-size: 0.75em;
-  letter-spacing: 1px;
-  text-align: center;
 }
 .alert {
   padding: 15px 20px;
