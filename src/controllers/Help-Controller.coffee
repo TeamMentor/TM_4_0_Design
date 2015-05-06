@@ -2,7 +2,6 @@ fs                 = null
 request            = null
 Jade_Service       = null
 Docs_TM_Service    = null
-
 content_cache = {};
 
 class Help_Controller
@@ -28,7 +27,7 @@ class Help_Controller
     @.gitHubImagePath  = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/'
     @.jade_Help_Index  = '/source/jade/misc/help-index.jade'
     @.jade_Help_Page   = '/source/jade/misc/help-page.jade'
-
+    @.imagePath        = '../../.tmCache/Lib_Docs-json/_Images/'
   content_Cache_Set: (title, content)=>
     key = @.page_Id()
     if (key)
@@ -43,11 +42,9 @@ class Help_Controller
     if article_Title is null
       @show_Content("No content for the current page",'')
       return
-
     callback =@.docs_TM_Service.article_Data @.page_Id()
     if callback
-        console.log ("Mike"+callback?.Content.first().Data.first())
-        content =callback?.Content.first().Data.first()
+        content =callback.html
         @show_Content(article_Title,content )
     else
         @show_Content('Error fetching page from docs site','')
@@ -68,11 +65,12 @@ class Help_Controller
     @.res.status(200)
          .send(html)
 
-  redirect_Images_to_GitHub: ()=>
-    @.res.redirect @.gitHubImagePath + @.req.params.name
+  redirect_Images_to_Folder: ()=>
+    @.res.redirect @.imagePath + @.req.params.name
 
   show_Content: (title, content)=>
-    @.content_Cache_Set title, content
+    if (content_cache[@.page_Id()]?)
+      @.content_Cache_Set title, content
     view_Model =
       title:   title
       content: content
@@ -98,6 +96,6 @@ Help_Controller.register_Routes =  (app)=>
 
   app.get '/help/index.html', (req, res)-> new Help_Controller(req, res).show_Index_Page()
   app.get '/help/:page*'    , (req, res)-> new Help_Controller(req, res).show_Help_Page()
-  app.get '/Image/:name'    , (req, res)-> new Help_Controller(req, res).redirect_Images_to_GitHub()
+  app.get '/Image/:name'    , (req, res)-> new Help_Controller(req, res).redirect_Images_to_Folder()
 
 module.exports = Help_Controller

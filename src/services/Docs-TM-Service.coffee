@@ -59,7 +59,7 @@ class Docs_TM_Service
       @.getArticlesMetadata (articlesMetadata)=>
         libraryData = [];
         library =
-                  Title   : tmLibrary["$"].name
+                  Title   : tmLibrary["$"].caption
                   Folders : [],
                   Views   : [],
                   Articles: {}
@@ -82,16 +82,15 @@ class Docs_TM_Service
         callback libraryData
 
   json_Files: (callback)=>
-    json_Folder = @.libraryDirectory.append("/Library")
+    json_Folder = @.libraryDirectory.append("/Articles_Html")
     callback  json_Folder.files_Recursive(".json")
 
   article_Data: (articleId)=>
-    console.log (articleId)
+    console.log ("Article Id" + articleId)
     @json_Files (jsonFiles)=>
       article_File = jsonFile for  jsonFile in   jsonFiles when jsonFile.contains(articleId)
       if article_File and article_File.file_Exists()
-        console.log("File " + article_File)
-        return article_File.load_Json().TeamMentor_Article
+        return article_File.load_Json()
       else
         return null
 

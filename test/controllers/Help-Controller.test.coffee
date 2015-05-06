@@ -5,7 +5,7 @@ request           = require 'request'
 marked            = require 'marked'
 Help_Controller   = require('../../src/controllers/Help-Controller')
 
-describe '| controllers | Help-Controller.test |', ()->
+describe.only '| controllers | Help-Controller.test |', ()->
 
   help_Controller = null
   on_Res_Send     = -> @
@@ -115,13 +115,13 @@ describe '| controllers | Help-Controller.test |', ()->
         check_Help_Page_Contents html, false, view_Model.title, view_Model.content, done
       @.render_Jade_and_Send @.jade_Help_Page, view_Model
 
-  it 'redirect_Images_to_GitHub', (done)->
+  it 'redirect_Images_to_CacheFolder', (done)->
     using help_Controller,->
       @.req = { params: name: 'req_param_value'}
       @.res.redirect = (value)=>
-        value.assert_Is @.gitHubImagePath + 'req_param_value'
+        value.assert_Is @.imagePath + 'req_param_value'
         done()
-      @.redirect_Images_to_GitHub()
+      @.redirect_Images_to_Folder()
 
   it 'show_Content', (done)->
     page_Id = 'id'     .add_5_Letters()
@@ -214,7 +214,7 @@ describe '| controllers | Help-Controller.test |', ()->
 
     it 'fetch_Article_and_Show (bad server)', (done)->
       using help_Controller, ->
-        @.docs_Server = 'http://aaaaaaaa.teammentor.net'
+        @.docs_TM_Service = docs_TM_Service
         check_Show_Content 'aaaa','', 'Error fetching page from docs site', done
 
     it 'fetch_Article_and_Show (valid server, good response)', (done)->
@@ -227,7 +227,7 @@ describe '| controllers | Help-Controller.test |', ()->
         res.send(help_Content)
 
       using help_Controller, ->
-        @.docs_Server     = url_Mocked_Server
+        @.docs_TM_Service     = url_Mocked_Server
         @.req = { params: page: page_Id }
         check_Show_Content article_Title,help_Content, null, done
 
@@ -237,7 +237,7 @@ describe '| controllers | Help-Controller.test |', ()->
         res.send(null)
 
       using help_Controller, ->
-        @.docs_Server     = url_Mocked_Server
+        @.docs_Server     = docs_TM_Service
         @.req = { params: page: 'abc' }
         check_Show_Content 'a','', 'Error fetching page from docs site', done
 
@@ -251,9 +251,7 @@ describe '| controllers | Help-Controller.test |', ()->
         res.send(help_Content)
 
       using new Help_Controller(req,res), ->
-
         @.docs_TM_Service = docs_TM_Service
-        @.docs_Server     = url_Mocked_Server
         @.req = { params: page: page_Id }
 
         @.render_Jade_and_Send = (jade_Page, view_Model)=>
@@ -276,4 +274,4 @@ describe '| controllers | Help-Controller.test |', ()->
       routes.keys().assert_Is [ '/help/index.html', '/help/:page*', '/Image/:name' ]
       routes['/help/index.html'].source_Code().assert_Contains 'return new Help_Controller(req, res).show_Index_Page();'
       routes['/help/:page*'    ].source_Code().assert_Contains 'return new Help_Controller(req, res).show_Help_Page();'
-      routes['/Image/:name'    ].source_Code().assert_Contains 'return new Help_Controller(req, res).redirect_Images_to_GitHub();'
+      routes['/Image/:name'    ].source_Code().assert_Contains 'return new Help_Controller(req, res).redirect_Images_to_Folder();'
