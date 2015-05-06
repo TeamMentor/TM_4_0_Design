@@ -1055,17 +1055,17 @@ td.filter-icons {
 .icon-Android .path2:before {
   content: "\e603";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #a4c639;
 }
 .icon-Android .path3:before {
   content: "\e604";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #a4c639;
 }
 .icon-Android .path4:before {
   content: "\e605";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #a4c639;
 }
 .icon-Android .path5:before {
   content: "\e606";
@@ -1268,7 +1268,7 @@ td.filter-icons {
 
 .icon-Net .path1:before {
   content: "\e62f";
-  color: rgb(68, 68, 68);
+  color: #005ea7;
 }
 .icon-Net .path2:before {
   content: "\e630";
