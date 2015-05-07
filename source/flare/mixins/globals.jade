@@ -357,7 +357,7 @@ mixin save-button
 
 mixin trash-button
     button.app
-        +clear-icon
+        +delete-icon
 
 mixin share-button
     button.app
@@ -369,8 +369,11 @@ mixin save-results-button
 mixin clear-results-button
     button.app Clear Results
 
-mixin ok-button
-    button(type='submit', id='btn-ok') OK, Save
+mixin save-article-button
+    button.app Save Article
+
+mixin share-article-button
+    button.app Share Article
 
 mixin clear-selected-button
     button(type='submit', id='btn-clear-selected') Clear Selected

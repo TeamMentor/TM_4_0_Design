@@ -38,9 +38,10 @@ class Article_Controller
             title      = article_Data?.title
             technology = article_Data?.technology
             type       = article_Data?.type
+            phase       = article_Data?.phase
             @graphService.article_Html article_Id, (data)=>
               @recentArticles_Add article_Id, title
-              send_Article { id : article_Id, title: title,  article_Html: data?.html, technology: technology, type: type}
+              send_Article { id : article_Id, title: title,  article_Html: data?.html, technology: technology, type: type, phase: phase}
       else
         send_Article null
 
