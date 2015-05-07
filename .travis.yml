@@ -3,14 +3,14 @@ language: node_js
 node_js:
 - 0.1
 before_install:
--export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-- cd TM_4_0_Design
-- mkdir ./.tmCache
-- cd ./.tmCache
-- git clone https://tm-build:$git_pwd@github.com/TMContent/Lib_Docs-json.git ./.tmCache/Lib_Docs-json
-- npm install
-- npm test
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - "cd TM_4_0_Design"
+  - "mkdir ./.tmCache"
+  - "cd ./.tmCache"
+  - "git clone https://tm-build:$git_pwd@github.com/TMContent/Lib_Docs-json.git ./.tmCache/Lib_Docs-json"
+  - "npm install"
+  - "npm test"
 after_script:
 - 'echo ''Since tests passed: instrument files, rerun tests and publish results to
   coveralls'' '
