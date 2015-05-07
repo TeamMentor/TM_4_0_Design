@@ -1378,7 +1378,6 @@ td.filter-icons {
 .icon-Web-App .path7:before {
   content: "\e646";
   margin-left: -1em;
-<<<<<<< HEAD
   color: rgb(68, 68, 68);
 }
 .icon-Web-App .path8:before {
@@ -1401,7 +1400,3 @@ td.filter-icons {
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-=======
-  color: rgb(255, 255, 255);
-}
->>>>>>> 141dbca5de7d519a79ab849a64cb51050fc3216f
