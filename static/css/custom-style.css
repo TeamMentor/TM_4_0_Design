@@ -1039,7 +1039,7 @@ td.filter-icons {
 }
 .icon-All .path1:before {
   content: "\e600";
-  color: #902023;
+  color: #b190e2;
 }
 .icon-All .path2:before {
   content: "\e601";
@@ -1053,17 +1053,17 @@ td.filter-icons {
 .icon-Android .path2:before {
   content: "\e603";
   margin-left: -1em;
-  color: #a4c639;
+  color: #a0cf4b;
 }
 .icon-Android .path3:before {
   content: "\e604";
   margin-left: -1em;
-  color: #a4c639;
+  color: #a0cf4b;
 }
 .icon-Android .path4:before {
   content: "\e605";
   margin-left: -1em;
-  color: #a4c639;
+  color: #a0cf4b;
 }
 .icon-Android .path5:before {
   content: "\e606";
@@ -1072,7 +1072,7 @@ td.filter-icons {
 }
 .icon-C .path1:before {
   content: "\e608";
-  color: #5d98d5;
+  color: #90bae2;
 }
 .icon-C .path2:before {
   content: "\e609";
@@ -1101,11 +1101,11 @@ td.filter-icons {
 .icon-Checklist .path5:before {
   content: "\e60e";
   margin-left: -1em;
-  color: #6c9020;
+  color: #f6788d;
 }
 .icon-CodeExample .path1:before {
   content: "\e60f";
-  color: #6c9020;
+  color: #5ed4a6;
 }
 .icon-CodeExample .path2:before {
   content: "\e610";
@@ -1149,7 +1149,7 @@ td.filter-icons {
 }
 .icon-Deploy .path1:before {
   content: "\e619";
-  color: #6c9020;
+  color: #a79389;
 }
 .icon-Deploy .path2:before {
   content: "\e61a";
@@ -1158,7 +1158,7 @@ td.filter-icons {
 }
 .icon-Design .path1:before {
   content: "\e61b";
-  color: #6c9020;
+  color: #cb6e6e;
 }
 .icon-Design .path2:before {
   content: "\e61c";
@@ -1172,11 +1172,11 @@ td.filter-icons {
 .icon-Guideline .path2:before {
   content: "\e61f";
   margin-left: -1em;
-  color: #6c9020;
+  color: #f3bf4f;
 }
 .icon-HowTo .path1:before {
   content: "\e620";
-  color: #6c9020;
+  color: #679ff3;
 }
 .icon-HowTo .path2:before {
   content: "\e621";
@@ -1190,16 +1190,16 @@ td.filter-icons {
 .icon-HTML .path2:before {
   content: "\e623";
   margin-left: -1em;
-  color: #f52800;
+  color: #f87359;
 }
 .icon-Implementation .path1:before {
   content: "\e624";
-  color: #6c9020;
+  color: #73b2df;
 }
 .icon-Implementation .path2:before {
   content: "\e625";
   margin-left: -1em;
-  color: #6c9020;
+  color: #73b2df;
 }
 .icon-Implementation .path3:before {
   content: "\e626";
@@ -1223,7 +1223,7 @@ td.filter-icons {
 }
 .icon-Java .path1:before {
   content: "\e62b";
-  color: #f87700;
+  color: #ff9200;
 }
 .icon-Java .path2:before {
   content: "\e62c";
@@ -1238,7 +1238,7 @@ td.filter-icons {
 }
 .icon-Net .path1:before {
   content: "\e62f";
-  color: #005ea7;
+  color: #5990b5;
 }
 .icon-Net .path2:before {
   content: "\e630";
@@ -1259,7 +1259,7 @@ td.filter-icons {
 }
 .icon-Scala .path1:before {
   content: "\e635";
-  color: #ef000a;
+  color: #ea7a78;
 }
 .icon-Scala .path2:before {
   content: "\e636";
@@ -1271,7 +1271,7 @@ td.filter-icons {
 }
 .icon-Test .path1:before {
   content: "\e639";
-  color: #6c9020;
+  color: #cbb654;
 }
 .icon-Test .path2:before {
   content: "\e63a";
@@ -1288,11 +1288,11 @@ td.filter-icons {
 .icon-Vulnerabilities .path2:before {
   content: "\e63d";
   margin-left: -1em;
-  color: #6c9020;
+  color: #82a931;
 }
 .icon-WCF .path1:before {
   content: "\e63e";
-  color: #007396;
+  color: #59caf5;
 }
 .icon-WCF .path2:before {
   content: "\e63f";
@@ -1301,7 +1301,7 @@ td.filter-icons {
 }
 .icon-Web-App .path1:before {
   content: "\e640";
-  color: #902077;
+  color: #6eb87a;
 }
 .icon-Web-App .path2:before {
   content: "\e641";
@@ -1311,45 +1311,45 @@ td.filter-icons {
 .icon-Web-App .path3:before {
   content: "\e642";
   margin-left: -1em;
-  color: #902077;
+  color: #6eb87a;
 }
 .icon-Web-App .path4:before {
   content: "\e643";
   margin-left: -1em;
-  color: #902077;
+  color: #6eb87a;
 }
 .icon-Web-App .path5:before {
   content: "\e644";
   margin-left: -1em;
-  color: #902077;
+  color: #6eb87a;
 }
 .icon-Web-App .path6:before {
   content: "\e645";
   margin-left: -1em;
-  color: #902077;
+  color: #6eb87a;
 }
 .icon-Web-App .path7:before {
   content: "\e646";
   margin-left: -1em;
-  color: #902077;
+  color: #6eb87a;
 }
 .icon-Web-App .path8:before {
   content: "\e647";
   margin-left: -1em;
-  color: #902077;
+  color: #6eb87a;
 }
 .icon-Web-App .path9:before {
   content: "\e648";
   margin-left: -1em;
-  color: #902077;
+  color: #6eb87a;
 }
 .icon-Web-App .path10:before {
   content: "\e649";
   margin-left: -1em;
-  color: #902077;
+  color: #6eb87a;
 }
 .icon-Web-App .path11:before {
   content: "\e64a";
   margin-left: -1em;
-  color: #902077;
+  color: #6eb87a;
 }
