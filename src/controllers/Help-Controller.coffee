@@ -27,6 +27,7 @@ class Help_Controller
     @.gitHubImagePath  = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/'
     @.jade_Help_Index  = '/source/jade/misc/help-index.jade'
     @.jade_Help_Page   = '/source/jade/misc/help-page.jade'
+    @.jade_Error_Page  = '/source/jade/guest/404.jade'
     @.imagePath        = '../../.tmCache/Lib_Docs-json/_Images/'
   content_Cache_Set: (title, content)=>
     key = @.page_Id()
@@ -52,8 +53,12 @@ class Help_Controller
 
   map_Docs_Library: (next)=>
     @.docs_TM_Service.getLibraryData (libraries)=>
-      @.docs_Library = libraries.first()
-      next()
+      if(libraries? )
+        @.docs_Library = libraries.first()
+        next()
+      else
+        console.log("Documentation Library not found!")
+        @.render_Jade_and_Send(@.jade_Error_Page,{})
 
   page_Id: =>
     @.req?.params?.page || null

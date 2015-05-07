@@ -23,6 +23,7 @@ describe "| services | Docs-TM-Service.test", ()->
 
     it 'getArticlesMetadata', ()->
       docs_TM_Service.getArticlesMetadata (articlesMetadata)->
+
         expect(articlesMetadata                  ).to.be.an('Object')
         expect(articlesMetadata._numberOfArticles).to.be.an('Number')
         expect(articlesMetadata._numberOfArticles).to.be.above(100)

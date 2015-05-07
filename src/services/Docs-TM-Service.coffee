@@ -21,7 +21,7 @@ class Docs_TM_Service
 
 
   getFolderStructure_Libraries: (callback)=>
-    json          = (@.libraryDirectory  + "/Library/TM Documentation.json").load_Json();
+    json          = (@.libraryDirectory + "/Library/TM Documentation.json").load_Json();
     json_Library    = json.guidanceExplorer.library.first()
     callback json_Library
 
@@ -46,33 +46,42 @@ class Docs_TM_Service
         articlesMetadata._numberOfArticles++;
     callback articlesMetadata;
 
+  fileExist :() ->
+    return ((@.libraryDirectory + "/Library/TM Documentation.json").file_Exists())
+
+  documentationIndex:() ->
+    return (@.libraryDirectory + "/Library/TM Documentation.json")
 
   getLibraryData: (callback)->
-    @getFolderStructure_Libraries (tmLibrary)=>
-      @.getArticlesMetadata (articlesMetadata)=>
-        libraryData = [];
-        library =
-                  Title   : tmLibrary["$"].caption
-                  Folders : [],
-                  Views   : [],
-                  Articles: {}
+    #checking if documentation library was backported.
+    if (@fileExist())
+      @getFolderStructure_Libraries (tmLibrary)=>
+        @.getArticlesMetadata (articlesMetadata)=>
+          libraryData = [];
+          library =
+                    Title   : tmLibrary["$"].caption
+                    Folders : [],
+                    Views   : [],
+                    Articles: {}
 
-        tmLibrary.guidanceItems = [];
-        views =tmLibrary?.libraryStructure?.first().view
+          tmLibrary.guidanceItems = [];
+          views =tmLibrary?.libraryStructure?.first().view
 
-        views.forEach (tmView) ->
-          view = {Title: tmView['$'].caption, Articles: [] };
-          items = tmView.items.first().item
-          #Finding ids in views
-          items.forEach (guidanceItemId)->
-            articleMetadata = articlesMetadata[guidanceItemId];
-            view   .Articles.push(articleMetadata);
-            library.Articles[articleMetadata.Id] = articleMetadata;
+          views.forEach (tmView) ->
+            view = {Title: tmView['$'].caption, Articles: [] };
+            items = tmView.items.first().item
+            #Finding ids in views
+            items.forEach (guidanceItemId)->
+              articleMetadata = articlesMetadata[guidanceItemId];
+              view   .Articles.push(articleMetadata);
+              library.Articles[articleMetadata.Id] = articleMetadata;
 
-          #Adding view to library
-          library.Views.push(view);
-          libraryData.push(library);
-        callback libraryData
+            #Adding view to library
+            library.Views.push(view);
+            libraryData.push(library);
+          callback libraryData
+    else
+      callback undefined
 
   json_Files: (callback)=>
     json_Folder = @.libraryDirectory.append("/Articles_Html")
