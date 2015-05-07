@@ -147,18 +147,18 @@ mixin articles-list
                     .bg#list-view-article
                         table
                             tr
-                                td.small
+                                td
                                     span.label= '#' + (index +1)
-                                    br
-                                    +filter-icon('Technology',result.technology)
-                                    br
-                                    +filter-icon('Type', result.type)
-
                                 td
                                     a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                                         h4= result.title
                             tr
                                 td
+                                    +filter-icon('Technology',result.technology)
+                                    br
+                                    +filter-icon('Type', result.type)
+                                    br
+                                    +filter-icon('Phase', result.phase)
                                 td
                                     p= result.summary + '...'
 

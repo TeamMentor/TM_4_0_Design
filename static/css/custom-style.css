@@ -3,6 +3,7 @@
 *------------------------------------*/
 html {
   font: 100% Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 html, body {
   margin: 0;
@@ -27,7 +28,7 @@ img, object {
 }
 .lge-container {
   max-width: 100%;
-  padding: 15px;
+  padding: 7px;
 }
 .right { float: right !important; }
 .left { float: left !important; }
@@ -88,6 +89,9 @@ img, object {
 }
 #links.icon-links ul li [class^="icon-"], #links.icon-links ul li [class*=" icon-"] {
   padding: 0 6px 0 0;
+}
+.text {
+  font-family: Helvetica, sans-serif;
 }
 #links a {
   text-transform: uppercase;
@@ -301,7 +305,7 @@ img, object {
   background: #fafafa;
 }
 #application {
-  margin-top: 160px;
+  margin-top: 180px;
 }
 #landing-page #application {
   padding-top: 0 !important;
@@ -323,28 +327,22 @@ img, object {
 .bg {
   padding: 20px;
   padding-top: 5px;
-  margin-bottom: 5px;
+  margin: 0 0 15px 0;
 }
 .bg.content {
   padding: 1em 3em 2em 3em;
 }
 .bg#list-view-article {
-  padding: 10px;
-  padding-top: 1px;
+  padding: 1em;
+  display: inline-block;
 }
-.bg#list-view-article h4 {
-  padding: 0 0 20px 0;
-  margin: 30px 0 7px 0;
+#list-view-article h4 {
+  padding: 0 0 0.5em 0;
   border-bottom: 1px solid #dbdbdb;
+  margin: 0;
 }
-.bg#list-view-article p {
-  margin-top: 0;
-}
-.bg#list-view-article a:hover h4 {
-  color: #8aaf3e !important;
-}
-.bg#list-view-article span.badge {
-  margin-top: 10px;
+#list-view-article p {
+  margin: 0;
 }
 #copyright {
   padding: 20px 0 5px 0;
@@ -390,7 +388,7 @@ img, object {
 #search-div, #search-div-2 {
   margin-bottom: 5px;
   position: fixed;
-  top: 170px;
+  top: 180px;
   left: 0;
   z-index: 96;
   margin: 0 auto;
@@ -402,16 +400,16 @@ img, object {
   width: 100%;
 }
 #results {
-  margin: 0 0 5px 0;
+  margin: 0 0 15px 0;
 }
 #results-2 {
   margin-top: 150px;
   border: none;
 }
 #help-nav {
-  margin: 30px 10px 15px 10px;
+  margin: 10px 10px 15px 10px;
 }
-#help-docs {
+#help-docs, #help-index {
   margin: 0 10px 10px 10px;
 }
 /*------------------------------------*
@@ -574,7 +572,7 @@ h3 {
 }
 h4 {
   font-size: 1.25em;
-  line-height: 1.11em;
+  line-height: 1.3em;
 }
 h5 {
   font-size: 1em;
@@ -586,6 +584,9 @@ h6 {
 }
 p, a {
   color: #444444;
+}
+.bg#list-view-article a:hover h4 {
+  color: #8aaf3e !important;
 }
 p {
   font-size: 0.85em;
@@ -680,9 +681,6 @@ button:hover, button:active {
 }
 #search-button:hover {
   color: #6c9020;
-}
-.btn-landing {
-  border-radius: 25px;
 }
 /*------------------------------------*
    MICRO-ELEMENTS
@@ -813,6 +811,10 @@ tr.article-title {
   line-height: 1.5em;
   color: #5c5c5c;
 }
+td.filter-icons {
+  padding: 0 0 0 10px;
+  text-align: center;
+}
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
@@ -866,7 +868,7 @@ tr.article-title {
   #links ul li a{ font-size: 0.85em; }
   #loginwall { margin: 15px 7px 0 0; }
   #summary { margin: 15px 0 0 7px; }
-  #application { margin-top: 60px; }
+  #application { margin-top: 70px; }
   #customer #application { padding-top: 60px; }
   #customer #search-div, #customer #search-div-2  { top: 120px; }
   #search-div, #search-div-2  { top: 60px; }
@@ -992,7 +994,7 @@ tr.article-title {
   font-size: 2em;
   margin-bottom: 0;
 }
-#article ul {
+#article ul, #article ol {
   padding: 10px;
   margin: 20px;
 }
@@ -1014,14 +1016,15 @@ tr.article-title {
 *------------------------------------*/
 @font-face {
   font-family: 'icons';
-  src:url('../assets/fonts/icons.eot?-z9b70b');
-  src:url('../assets/fonts/icons.eot?#iefix-z9b70b') format('embedded-opentype'),
-    url('../assets/fonts/icons.woff?-z9b70b') format('woff'),
-    url('../assets/fonts/icons.ttf?-z9b70b') format('truetype'),
-    url('../assets/fonts/icons.svg?-z9b70b#icomoon') format('svg');
+  src:url('../assets/fonts/icons.eot?4uhl8d');
+  src:url('../assets/fonts/icons.eot?#iefix4uhl8d') format('embedded-opentype'),
+    url('../assets/fonts/icons.woff?4uhl8d') format('woff'),
+    url('../assets/fonts/icons.ttf?4uhl8d') format('truetype'),
+    url('../assets/fonts/icons.svg?4uhl8d#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icons';
   speak: none;
@@ -1030,278 +1033,370 @@ tr.article-title {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .icon-All .path1:before {
   content: "\e600";
+  color: rgb(68, 68, 68);
 }
 .icon-All .path2:before {
   content: "\e601";
   margin-left: -1em;
-  color: white;
+  color: rgb(255, 255, 255);
 }
+
 .icon-Android .path1:before {
   content: "\e602";
-  color: rgb(68, 68, 68);
+  color: rgb(255, 255, 255);
 }
 .icon-Android .path2:before {
   content: "\e603";
   margin-left: -1em;
-  color: white;
+  color: rgb(68, 68, 68);
 }
 .icon-Android .path3:before {
   content: "\e604";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-.icon-C .path1:before {
+.icon-Android .path4:before {
   content: "\e605";
+  margin-left: -1em;
+  color: rgb(68, 68, 68);
+}
+.icon-Android .path5:before {
+  content: "\e606";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.icon-Article:before {
+  content: "\e607";
+}
+
+.icon-C .path1:before {
+  content: "\e608";
   color: rgb(68, 68, 68);
 }
 .icon-C .path2:before {
-  content: "\e606";
-  margin-left: -1em;
-  color: white;
-}
-.icon-C .path3:before {
-  content: "\e607";
-  margin-left: -1em;
-  color: white;
-}
-.icon-C .path4:before {
-  content: "\e608";
-  margin-left: -1em;
-  color: white;
-}
-.icon-Checklist .path1:before {
   content: "\e609";
-  color: rgb(68, 68, 68);
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.icon-Checklist .path1:before {
+  content: "\e60a";
+  color: rgb(255, 255, 255);
 }
 .icon-Checklist .path2:before {
-  content: "\e60a";
+  content: "\e60b";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 .icon-Checklist .path3:before {
-  content: "\e60b";
-  margin-left: -1em;
-  color: rgb(68, 68, 68);
-}
-.icon-CodeExample .path1:before {
   content: "\e60c";
-  color: rgb(68, 68, 68);
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }
-.icon-CodeExample .path2:before {
+.icon-Checklist .path4:before {
   content: "\e60d";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
-.icon-Guideline .path1:before {
+.icon-Checklist .path5:before {
   content: "\e60e";
+  margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-.icon-Guideline .path2:before {
+
+.icon-CodeExample .path1:before {
   content: "\e60f";
+  color: rgb(68, 68, 68);
+}
+.icon-CodeExample .path2:before {
+  content: "\e610";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Guideline .path3:before {
-  content: "\e610";
-  margin-left: -1em;
-  color: rgb(68, 68, 68);
-}
-
-.icon-HowTo .path1:before {
+.icon-CodeExample .path3:before {
   content: "\e611";
-  color: rgb(68, 68, 68);
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }
-.icon-HowTo .path2:before {
+.icon-CodeExample .path4:before {
   content: "\e612";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
-.icon-HTML5 .path1:before {
+.icon-CodeExample .path5:before {
   content: "\e613";
-  color: rgb(68, 68, 68);
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }
-.icon-HTML5 .path2:before {
+.icon-CodeExample .path6:before {
   content: "\e614";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-HTML5 .path3:before {
+.icon-CodeExample .path7:before {
   content: "\e615";
-  margin-left: -1em;
-  color: rgb(68, 68, 68);
-}
-
-.icon-Index:before {
-  content: "\e616";
-}
-
-.icon-Info:before {
-  content: "\e617";
-}
-
-.icon-iOS .path1:before {
-  content: "\e618";
-  color: rgb(68, 68, 68);
-}
-.icon-iOS .path2:before {
-  content: "\e619";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-iOS .path3:before {
+.icon-CodeExample .path8:before {
+  content: "\e616";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-CodeExample .path9:before {
+  content: "\e617";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.icon-Delete:before {
+  content: "\e618";
+}
+
+.icon-Deploy .path1:before {
+  content: "\e619";
+  color: rgb(68, 68, 68);
+}
+.icon-Deploy .path2:before {
   content: "\e61a";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
-.icon-Java .path1:before {
+.icon-Design .path1:before {
   content: "\e61b";
   color: rgb(68, 68, 68);
 }
-.icon-Java .path2:before {
+.icon-Design .path2:before {
   content: "\e61c";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Java .path3:before {
+
+.icon-Filter:before {
   content: "\e61d";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
 }
-.icon-Java .path4:before {
+
+.icon-Guideline .path1:before {
   content: "\e61e";
-  margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
-.icon-Logout:before {
+.icon-Guideline .path2:before {
   content: "\e61f";
-}
-
-.icon-Mail:before {
-  content: "\e620";
-}
-
-.icon-Net .path1:before {
-  content: "\e621";
+  margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-.icon-Net .path2:before {
-  content: "\e622";
+
+.icon-HowTo .path1:before {
+  content: "\e620";
+  color: rgb(68, 68, 68);
+}
+.icon-HowTo .path2:before {
+  content: "\e621";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Net .path3:before {
+
+.icon-HTML .path1:before {
+  content: "\e622";
+  color: rgb(255, 255, 255);
+}
+.icon-HTML .path2:before {
   content: "\e623";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: rgb(68, 68, 68);
 }
-.icon-Net .path4:before {
+
+.icon-Implementation .path1:before {
   content: "\e624";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: rgb(68, 68, 68);
 }
-
-.icon-Paperclip:before {
+.icon-Implementation .path2:before {
   content: "\e625";
-}
-
-.icon-PHP .path1:before {
-  content: "\e626";
+  margin-left: -1em;
   color: rgb(68, 68, 68);
 }
-.icon-PHP .path2:before {
-  content: "\e627";
+.icon-Implementation .path3:before {
+  content: "\e626";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-PHP .path3:before {
-  content: "\e628";
-  margin-left: -1em;
-  color: rgb(68, 68, 68);
+
+.icon-Index:before {
+  content: "\e627";
 }
 
-.icon-Scala .path1:before {
+.icon-Info:before {
+  content: "\e628";
+}
+
+.icon-iOS .path1:before {
   content: "\e629";
   color: rgb(68, 68, 68);
 }
-.icon-Scala .path2:before {
+.icon-iOS .path2:before {
   content: "\e62a";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
-.icon-Search:before {
+.icon-Java .path1:before {
   content: "\e62b";
+  color: rgb(68, 68, 68);
+}
+.icon-Java .path2:before {
+  content: "\e62c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }
 
-.icon-Twitter:before {
+.icon-Logout:before {
+  content: "\e62d";
+}
+
+.icon-Mail:before {
   content: "\e62e";
 }
 
-.icon-Vulnerabilities .path1:before {
+.icon-Net .path1:before {
   content: "\e62f";
   color: rgb(68, 68, 68);
 }
-.icon-Vulnerabilities .path2:before {
+.icon-Net .path2:before {
   content: "\e630";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Vulnerabilities .path3:before {
+
+.icon-Paperclip:before {
   content: "\e631";
+}
+
+.icon-PHP .path1:before {
+  content: "\e632";
+  color: rgb(255, 255, 255);
+}
+.icon-PHP .path2:before {
+  content: "\e633";
+  margin-left: -1em;
+  color: rgb(68, 68, 68);
+}
+
+.icon-Save:before {
+  content: "\e634";
+}
+
+.icon-Scala .path1:before {
+  content: "\e635";
+  color: rgb(68, 68, 68);
+}
+.icon-Scala .path2:before {
+  content: "\e636";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.icon-Search:before {
+  content: "\e637";
+}
+
+.icon-Share:before {
+  content: "\e638";
+}
+
+.icon-Test .path1:before {
+  content: "\e639";
+  color: rgb(68, 68, 68);
+}
+.icon-Test .path2:before {
+  content: "\e63a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.icon-Twitter:before {
+  content: "\e63b";
+}
+
+.icon-Vulnerabilities .path1:before {
+  content: "\e63c";
+  color: rgb(255, 255, 255);
+}
+.icon-Vulnerabilities .path2:before {
+  content: "\e63d";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
 
 .icon-WCF .path1:before {
-  content: "\e632";
+  content: "\e63e";
   color: rgb(68, 68, 68);
 }
 .icon-WCF .path2:before {
-  content: "\e633";
+  content: "\e63f";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 
 .icon-Web-App .path1:before {
-  content: "\e634";
+  content: "\e640";
   color: rgb(68, 68, 68);
 }
 .icon-Web-App .path2:before {
-  content: "\e635";
+  content: "\e641";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 .icon-Web-App .path3:before {
-  content: "\e636";
+  content: "\e642";
   margin-left: -1em;
   color: rgb(68, 68, 68);
 }
 .icon-Web-App .path4:before {
-  content: "\e637";
+  content: "\e643";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: rgb(68, 68, 68);
 }
 .icon-Web-App .path5:before {
-  content: "\e638";
+  content: "\e644";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: rgb(68, 68, 68);
 }
 .icon-Web-App .path6:before {
-  content: "\e639";
+  content: "\e645";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: rgb(68, 68, 68);
 }
 .icon-Web-App .path7:before {
-  content: "\e63a";
+  content: "\e646";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: rgb(68, 68, 68);
+}
+.icon-Web-App .path8:before {
+  content: "\e647";
+  margin-left: -1em;
+  color: rgb(68, 68, 68);
+}
+.icon-Web-App .path9:before {
+  content: "\e648";
+  margin-left: -1em;
+  color: rgb(68, 68, 68);
+}
+.icon-Web-App .path10:before {
+  content: "\e649";
+  margin-left: -1em;
+  color: rgb(68, 68, 68);
+}
+.icon-Web-App .path11:before {
+  content: "\e64a";
+  margin-left: -1em;
+  color: rgb(68, 68, 68);
 }
