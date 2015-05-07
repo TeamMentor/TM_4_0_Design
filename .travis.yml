@@ -3,12 +3,8 @@ language: node_js
 node_js:
 - 0.1
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
   - "mkdir ./.tmCache"
-  - "git clone https://tm-build:$git_pwd@github.com/TMContent/Lib_Docs-json.git ./.tmCache/Lib_Docs-json"
-  - "npm install"
-  - "npm test"
+  - "git clone https://github.com/TMContent/Lib_Docs-json ./.tmCache/Lib_Docs-json"
 after_script:
 - 'echo ''Since tests passed: instrument files, rerun tests and publish results to
   coveralls'' '
