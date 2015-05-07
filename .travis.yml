@@ -8,6 +8,7 @@ before_install:
   - "mkdir ./.tmCache"
   - "cd ./.tmCache"
   - "git clone https://tm-build:$git_pwd@github.com/TMContent/Lib_Docs-json.git ./.tmCache/Lib_Docs-json"
+  - "cd .."
   - "npm install"
   - "npm test"
 after_script:
