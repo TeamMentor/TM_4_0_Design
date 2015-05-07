@@ -63,6 +63,7 @@ img, object {
 #team-mentor-navigation #message {
   font-size: 0.65em !important;
   margin-top: 3px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 #team-mentor-navigation #message a {
   font-size: 1em !important;
