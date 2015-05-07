@@ -1079,7 +1079,7 @@ td.filter-icons {
 
 .icon-C .path1:before {
   content: "\e608";
-  color: rgb(68, 68, 68);
+  color: #5d98d5;
 }
 .icon-C .path2:before {
   content: "\e609";
@@ -1212,7 +1212,7 @@ td.filter-icons {
 .icon-HTML .path2:before {
   content: "\e623";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #f52800;
 }
 
 .icon-Implementation .path1:before {
@@ -1240,7 +1240,7 @@ td.filter-icons {
 
 .icon-iOS .path1:before {
   content: "\e629";
-  color: rgb(68, 68, 68);
+  color: #a6a8ab;
 }
 .icon-iOS .path2:before {
   content: "\e62a";
@@ -1250,7 +1250,7 @@ td.filter-icons {
 
 .icon-Java .path1:before {
   content: "\e62b";
-  color: rgb(68, 68, 68);
+  color: #f87700;
 }
 .icon-Java .path2:before {
   content: "\e62c";
@@ -1287,7 +1287,7 @@ td.filter-icons {
 .icon-PHP .path2:before {
   content: "\e633";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #6c7eb7;
 }
 
 .icon-Save:before {
@@ -1296,7 +1296,7 @@ td.filter-icons {
 
 .icon-Scala .path1:before {
   content: "\e635";
-  color: rgb(68, 68, 68);
+  color: #ef000a;
 }
 .icon-Scala .path2:before {
   content: "\e636";
@@ -1338,7 +1338,7 @@ td.filter-icons {
 
 .icon-WCF .path1:before {
   content: "\e63e";
-  color: rgb(68, 68, 68);
+  color: #007396;
 }
 .icon-WCF .path2:before {
   content: "\e63f";
