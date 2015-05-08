@@ -1,6 +1,6 @@
 extends ../_layouts/page_logged_in
 include ../_mixins/error-mixins.jade
-
+include ../_mixins/landing-page-mixins
 block content
 	#application
 		.row
@@ -11,3 +11,5 @@ block content
 					+unavailable
 			.col-3
 				.lge-container
+    br
+    +footer-div

@@ -108,7 +108,7 @@ img, object {
 #landing-page {
   margin-top: 175px;
 }
-#landing-page form, #about-us, #clients, #features, #footer, #reasons {
+#landing-page form, #about-us, #clients, #features, #reasons {
   background: white;
 }
 #landing-page form {
@@ -123,7 +123,7 @@ img, object {
   background: url(../assets/stock-img/bg-img-small.jpg) no-repeat;
   background-size: auto;
 }
-#about-us, #clients, #features, #footer, #reasons {
+#about-us, #clients, #features, #reasons {
   border-left: 1px solid #dbdbdb;
   border-right: 1px solid #dbdbdb;
 }
@@ -162,15 +162,15 @@ img, object {
   padding: 10px 0;
   font-size: 0.75em;
 }
+#footer ul.si {
+  padding: 1em 0 0 1em;
+}
 #footer li {
   display: inline-block;
 }
 #footer li img {
   vertical-align: middle;
   padding: 0 10px 0 0;
-}
-#footer ul.si {
-  padding-left: 20px;
 }
 #footer ul.contact li {
   width: 15%;
@@ -925,6 +925,7 @@ td.filter-icons {
   #footer ul.contact li {
     width: 20%;
     text-align: right;
+    margin: 0;
   }
   #footer ul.contact li:first-child {
     width: auto;
