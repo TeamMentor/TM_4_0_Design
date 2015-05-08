@@ -1038,7 +1038,6 @@ td.filter-icons {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .icon-All .path1:before {
   content: "\e600";
   color: rgb(68, 68, 68);
@@ -1051,12 +1050,12 @@ td.filter-icons {
 
 .icon-Android .path1:before {
   content: "\e602";
-  color: rgb(255, 255, 255);
+  color: rgb(68, 68, 68);
 }
 .icon-Android .path2:before {
   content: "\e603";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: rgb(255, 255, 255);
 }
 .icon-Android .path3:before {
   content: "\e604";
@@ -1208,12 +1207,12 @@ td.filter-icons {
 
 .icon-HTML .path1:before {
   content: "\e622";
-  color: rgb(255, 255, 255);
+  color: rgb(68, 68, 68);
 }
 .icon-HTML .path2:before {
   content: "\e623";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: rgb(255, 255, 255);
 }
 
 .icon-Implementation .path1:before {
