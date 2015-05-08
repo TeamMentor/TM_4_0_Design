@@ -1,5 +1,6 @@
 extends ../_layouts/page_logged_out
 include ../_mixins/user-mixins
+include ../_mixins/landing-page-mixins
 block content
     .row
         .col-6
@@ -7,3 +8,5 @@ block content
                 +login-form
         .col-6
             +team-mentor-summary
+    br
+    +footer-div
