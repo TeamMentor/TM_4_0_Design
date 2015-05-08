@@ -65,7 +65,11 @@ class Login_Controller
       success = loginResponse?.Login_Status
       if (success == loginSuccess)
           @.req.session.username = username
-          @.res.redirect(mainPage_user)
+          if(@.req.session.redirectUrl?)
+            log ("user want to go to" + @.req.session.redirectUrl )
+            @.req.session.redirectUrl = undefined
+          else
+            @.res.redirect(mainPage_user)
       else
           @.req.session.username = undefined
 
