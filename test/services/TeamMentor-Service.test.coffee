@@ -16,32 +16,14 @@ describe "| services | Docs-TM-Service.test", ()->
         expect(@                         ).to.be.an('object')
         expect(@._tmSite                 ).to.be.an('string')
         expect(@._tmWebServices          ).to.be.an('string')
-        expect(@.calculateTargetUrl      ).to.be.an('function')
         expect(@.getArticlesMetadata     ).to.be.an('function')
         expect(@.getLibraryData          ).to.be.an('function')
 
         @.disableCache = false
 
-    it 'calculateTargetUrl', ()->
-      wsName    = "GetGUIObjects";
-      targetUrl = docs_TM_Service.calculateTargetUrl(wsName);
-      expect(targetUrl).to.be.equal('https://docs.teammentor.net/Aspx_Pages/TM_WebServices.asmx/GetGUIObjects');
-
-
-    it 'asmx_GetFolderStructure_Libraries', (done)->
-      using docs_TM_Service, ->
-        @.asmx_GetFolderStructure_Libraries =>
-          @.cache.path_Key('json_post_' + @.calculateTargetUrl('GetFolderStructure_Libraries')).assert_File_Exists()
-          done()
-
-    it 'asmx_GetGUIObjects', (done)->
-      using docs_TM_Service, ->
-        @.asmx_GetGUIObjects =>
-          @.cache.path_Key('json_post_' + @.calculateTargetUrl('GetGUIObjects'               )).assert_File_Exists()
-          done();
-
     it 'getArticlesMetadata', ()->
       docs_TM_Service.getArticlesMetadata (articlesMetadata)->
+
         expect(articlesMetadata                  ).to.be.an('Object')
         expect(articlesMetadata._numberOfArticles).to.be.an('Number')
         expect(articlesMetadata._numberOfArticles).to.be.above(100)
