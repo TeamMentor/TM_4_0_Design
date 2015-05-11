@@ -84,13 +84,13 @@ class Login_Controller
     username = @.req.query.username
     token    = @.req.query.requestToken
     if username and token
-      server = 'https://tmdev01-uno.teammentor.net'               # currently hard-coded to this server
-      #url = "#{server}/_Customizations/SSO.aspx?username=#{username}&requestToken=#{token}"
-      url = "#{server}/Aspx_Pages/SSO.aspx?username=#{username}&requestToken=#{token}"
-
+      server = @.config.tm_35_Server
+      path   = @.req.route.path.substring(1)
+      url = "#{server}#{path}?username=#{username}&requestToken=#{token}"
       options =
         url: url
         followRedirect: false
+
       request options,(error, response, data)=>
         if response.headers?.location is '/teammentor'
           @.req.session.username = username
