@@ -25,6 +25,9 @@ add_Routes = (express_Service)->
     app.get  '/user/logout'    , (req, res)-> new Login_Controller(req, res).logoutUser()
     app.post '/user/sign-up'   , (req, res)-> new User_Sign_Up_Controller(req, res).userSignUp()
 
+    app.get '/_Customizations/SSO.aspx', (req, res)-> new Login_Controller(req, res).tm_SSO()
+    app.get '/Aspx_Pages/SSO.aspx'     , (req, res)-> new Login_Controller(req, res).tm_SSO()
+
     app.get '/index.html'      , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/default.jade'
     app.get '/guest/:page.html', (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/' + req.params.page + '.jade'
     app.get '/guest/:page'     , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/' + req.params.page + '.jade'
