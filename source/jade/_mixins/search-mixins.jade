@@ -147,13 +147,13 @@ mixin articles-list
                     .bg#list-view-article
                         table
                             tr
-                                td
+                                td.filter-icons
                                     span.label= '#' + (index +1)
                                 td
                                     a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                                         h4= result.title
                             tr
-                                td
+                                td(colspan='1.5')
                                     +filter-icon('Technology',result.technology)
                                     br
                                     +filter-icon('Type', result.type)
