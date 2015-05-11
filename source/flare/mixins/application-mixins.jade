@@ -13,11 +13,11 @@ mixin search-bar
 //- Flare Results-Save-Clear
 mixin results-save-clear
     .label 0/200 results showing
-    ul
-        li
-            +save-results-button
-        li
-            +clear-results-button
+        ul
+            li
+                +save-results-button
+            li
+                +clear-results-button
 
 //- Flare Main App View
 mixin start-view
@@ -40,69 +40,62 @@ mixin start-view
 //- Articles List
 mixin articles-list
     .container.article
-        .headline
-            .rank
-                span.badge #1
-            .article-title
-                a(href='article-new-window-view')
-                    h3#article-headline Article Headline Article Headline Article Headline
-        .summary
-            include:md ../../content/articles/article-details.md
+        .metadata
             ul
                 li
-                    p #
+                    span.badge #1
+                li #
                     // Technology Icon
-                li
-                    p #
+                li #
                     // Phase Icon
+                li #
+                    // Type Icon
                 li
                     +save-button
                 li
                     +share-button
-    .container.article
-        .headline
-            .rank
-                span.badge #1
-            .article-title
-                a(href='article-new-window-view')
-                    h3#article-headline Article Headline Article Headline Article Headline
         .summary
+            a(href='article-new-window-view')
+                h3#article-headline Article Headline Article Headline Article Headline
             include:md ../../content/articles/article-details.md
+    .container.article
+        .metadata
             ul
                 li
-                    p #
+                    span.badge #1
+                li #
                     // Technology Icon
-                li
-                    p #
+                li #
                     // Phase Icon
+                li #
+                    // Type Icon
                 li
-                    button.app
-                        +save-icon
+                    +save-button
                 li
-                    button.app
-                        +share-icon
-    .container.article
-        .headline
-            .rank
-                span.badge #1
-            .article-title
-                a(href='article-new-window-view')
-                    h3#article-headline Article Headline Article Headline Article Headline
+                    +share-button
         .summary
+            a(href='article-new-window-view')
+                h3#article-headline Article Headline Article Headline Article Headline
             include:md ../../content/articles/article-details.md
+    .container.article
+        .metadata
             ul
                 li
-                    p #
+                    span.badge #1
+                li #
                     // Technology Icon
-                li
-                    p #
+                li #
                     // Phase Icon
+                li #
+                    // Type Icon
                 li
-                    button.app
-                        +save-icon
+                    +save-button
                 li
-                    button.app
-                        +share-icon
+                    +share-button
+        .summary
+            a(href='article-new-window-view')
+                h3#article-headline Article Headline Article Headline Article Headline
+            include:md ../../content/articles/article-details.md
 
 mixin left-navigation
     ul.side-nav

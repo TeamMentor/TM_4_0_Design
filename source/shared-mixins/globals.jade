@@ -116,8 +116,11 @@ mixin net-icon
   span.icon-Net(title='.Net')
     span.path1
     span.path2
-    span.path3
-    span.path4
+
+mixin net-3-5-icon
+  span.icon-Net-3-5(title='.Net')
+    span.path1
+    span.path2
 
 mixin ios-icon
   span.icon-iOS(title='iOS')
@@ -238,9 +241,10 @@ mixin filter-icon(filter, title)
       case title
         when '.NET'
         when 'ASP.NET 3.5'
-        when '.NET 3.5'
         when 'ASP.NET 4.0'
           +net-icon
+        when '.NET 3.5'
+          +net-3-5-icon
         when 'Android'
           +android-icon
         when 'C++'

@@ -241,89 +241,60 @@ article.marketing {
   flex: 100%;
   -webkit-order: 3;
   order: 3;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
   overflow-y: auto;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  flex-direction: row;
+}
+.container.article, .container.search-term {
+  -moz-flex: 1;
+  -webkit-flex: 1;
+  flex: 1 1 400px;
+  margin: 0.5em;
+  background: white;
 }
 .container.search-term {
-  margin: 0 0 15px 0;
   padding: 10px 20px;
-  background: white;
   border-radius: 20px;
   border: 1px solid #dbdbdb;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex: 100%;
-  flex: 100%;
-  -webkit-order: 1;
-  order: 1;
+  word-wrap: normal;
   color: #444444;
 }
 .container.search-term [class^="icon-"], .container.search-term [class*=" icon-"] {
   padding: 0 10px 0 0;
   font-size: 0.85em;
 }
-.container.search-term .close {
-  border-left: 1px solid #dbdbdb;
-  padding: 0 0 0 10px;
-  margin: 0 0 0 20px;
-}
-.container.search-term .close i {
-  padding: 0;
-}
 .container.search-term a {
   text-decoration: none;
 }
-.container.article {
-  margin: 0 0 30px 0;
-  background: white;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 100%;
-  flex: 100%;
-  -webkit-order: 1;
-  order: 1;
-}
-.headline {
+.metadata {
   -webkit-order: 1;
   order: 1;
   background: #b4cf7b;
-  padding: 20px;
-  display: -webkit-flex;
-  display: flex;
+  padding: 1em;
 }
-.rank {
-  -webkit-order: 1;
-  order: 1;
-  margin: 3px 0 0 0;
+.metadata ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
-.article-title {
-  -webkit-order: 2;
-  order: 2;
-  padding: 0 0 0 20px;
+.metadata ul li {
+  display: inline-block;
 }
 .summary {
   -webkit-order: 2;
   order: 2;
-  padding: 10px 20px;
+  padding: 2em 1em;
   border: 1px solid #dbdbdb;
 }
-.summary ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.summary li {
-  display: inline-block;
-  width: 25%;
-}
 .container.article h3 {
-  padding: 0;
-  margin: 0;
-  vertical-align: middle;
   color: #565656;
+  margin: 0 0 1em 0;
+  padding: 0 0 0.75em 0;
+  border-bottom: 1px solid #dbdbdb;
 }
 .container.article p {
   margin-top: 10px;
@@ -332,7 +303,7 @@ article.marketing {
   text-decoration: none;
 }
 .container.article a:hover h3 {
-  color: white;
+  color:  #8aaf3e;
 }
 .row {
   background: transparent;
@@ -849,6 +820,9 @@ label, .label {
   padding: 10px 0 12px 0;
   width: 100%;
 }
+.label ul li {
+  display: inline-block;
+}
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"],
 input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"],
 input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
@@ -1035,8 +1009,8 @@ input.search-input, input.search-input:focus {
     flex: 40%;
   }
   #label {
-    -webkit-flex: 25%;
-    flex: 25%;
+    -webkit-flex: 100%;
+    flex: 100%;
     -webkit-order: 1;
     order: 1;
     padding: 15px 5px;
@@ -1098,8 +1072,8 @@ input.search-input, input.search-input:focus {
 }
 @media (min-width: 950px) {
   #label {
-    -webkit-flex: 1;
-    flex: 1;
+    -webkit-flex: 100%;
+    flex: 100%;
     padding: 10px  5px 15px 5px;
   }
   #label ul li {
@@ -1108,10 +1082,16 @@ input.search-input, input.search-input:focus {
     padding: 5px 0 0 0;
   }
   #articles {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -moz-flex-flow: row wrap;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
-    -webkit-flex: 4;
-    flex: 4;
+    -moz-justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
   }
   article {
     -webkit-flex: 4;
@@ -1130,39 +1110,6 @@ input.search-input, input.search-input:focus {
   }
   footer.copyright {
     margin-left: 21%;
-  }
-}
-@media (min-width: 1070px) {
-  .container.article {
-    margin: 0 5px 30px 5px;
-    display: inline-block;
-  }
-  .container.search-term {
-    display: inline-block;
-    margin: 0 5px;
-  }
-  .summary {
-    -webkit-order: 1;
-    order: 1;
-  }
-  .summary ul {
-    text-align: right;
-    padding: 0;
-  }
-  .summary ul li {
-    width: auto;
-    padding: 0 10px 0 0;
-  }
-  .summary ul li:last-child {
-    padding: 0;
-  }
-  .headline {
-    -webkit-flex: 100%;
-    flex: 100%;
-    padding: 10px;
-  }
-  .article-title {
-    padding: 0;
   }
 }
 @media (min-width: 1285px) {
