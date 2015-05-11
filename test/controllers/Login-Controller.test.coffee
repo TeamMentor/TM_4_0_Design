@@ -207,4 +207,34 @@ describe '| controllers | Login-Controller.test |', ->
       @.webServices = url_WebServices
       @.loginUser()
 
+  it 'Redirect upon login when URL is correct',(done)->
+    newUsername         = 'tm'
+    newPassword         = 'tm'
 
+    redirect = (jade_Page)->
+      jade_Page.assert_Is_Not_Null()
+      jade_Page.assert_Is('/foo/bar')
+      done()
+
+    req = body: {username:newUsername, password:newPassword}, session:{redirectUrl:'/foo/bar'}
+    res = redirect: redirect
+
+    using new Login_Controller(req, res), ->
+      @.webServices = url_WebServices
+      @.loginUser()
+
+  it 'Redirect upon login when URL is not a local URL',(done)->
+    newUsername         = 'tm'
+    newPassword         = 'tm'
+
+    redirect = (jade_Page)->
+      jade_Page.assert_Is_Not_Null()
+      jade_Page.assert_Is('/user/main.html')
+      done()
+
+    req = body: {username:newUsername, password:newPassword}, session:{redirectUrl:'https://www.google.com'}
+    res = redirect: redirect
+
+    using new Login_Controller(req, res), ->
+      @.webServices = url_WebServices
+      @.loginUser()
