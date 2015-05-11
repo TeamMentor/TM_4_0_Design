@@ -1246,6 +1246,15 @@ td.filter-icons {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
+.icon-Net-3-5 .path1:before {
+  content: "\e62f";
+  color: #5962b5;
+}
+.icon-Net-3-5 .path2:before {
+  content: "\e630";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
 .icon-Paperclip:before {
   content: "\e631";
 }
