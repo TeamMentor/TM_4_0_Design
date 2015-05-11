@@ -63,6 +63,7 @@ img, object {
 #team-mentor-navigation #message {
   font-size: 0.65em !important;
   margin-top: 3px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 #team-mentor-navigation #message a {
   font-size: 1em !important;
@@ -107,7 +108,7 @@ img, object {
 #landing-page {
   margin-top: 175px;
 }
-#landing-page form, #about-us, #clients, #features, #footer, #reasons {
+#landing-page form, #about-us, #clients, #features, #reasons {
   background: white;
 }
 #landing-page form {
@@ -122,7 +123,7 @@ img, object {
   background: url(../assets/stock-img/bg-img-small.jpg) no-repeat;
   background-size: auto;
 }
-#about-us, #clients, #features, #footer, #reasons {
+#about-us, #clients, #features, #reasons {
   border-left: 1px solid #dbdbdb;
   border-right: 1px solid #dbdbdb;
 }
@@ -161,15 +162,15 @@ img, object {
   padding: 10px 0;
   font-size: 0.75em;
 }
+#footer ul.si {
+  padding: 1em 0 0 1em;
+}
 #footer li {
   display: inline-block;
 }
 #footer li img {
   vertical-align: middle;
   padding: 0 10px 0 0;
-}
-#footer ul.si {
-  padding-left: 20px;
 }
 #footer ul.contact li {
   width: 15%;
@@ -924,6 +925,7 @@ td.filter-icons {
   #footer ul.contact li {
     width: 20%;
     text-align: right;
+    margin: 0;
   }
   #footer ul.contact li:first-child {
     width: auto;
@@ -1037,7 +1039,6 @@ td.filter-icons {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .icon-All .path1:before {
   content: "\e600";
   color: rgb(68, 68, 68);
@@ -1050,12 +1051,12 @@ td.filter-icons {
 
 .icon-Android .path1:before {
   content: "\e602";
-  color: rgb(255, 255, 255);
+  color: rgb(68, 68, 68);
 }
 .icon-Android .path2:before {
   content: "\e603";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: rgb(255, 255, 255);
 }
 .icon-Android .path3:before {
   content: "\e604";
@@ -1207,12 +1208,12 @@ td.filter-icons {
 
 .icon-HTML .path1:before {
   content: "\e622";
-  color: rgb(255, 255, 255);
+  color: rgb(68, 68, 68);
 }
 .icon-HTML .path2:before {
   content: "\e623";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: rgb(255, 255, 255);
 }
 
 .icon-Implementation .path1:before {
