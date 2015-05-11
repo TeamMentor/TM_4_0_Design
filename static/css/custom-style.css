@@ -1038,8 +1038,7 @@ td.filter-icons {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-.icon-All .path1:before {
+}.icon-All .path1:before {
   content: "\e600";
   color: #b190e2;
 }
@@ -1050,7 +1049,7 @@ td.filter-icons {
 }
 .icon-Android .path1:before {
   content: "\e602";
-  color: rgb(68, 68, 68);
+  color: rgb(255, 255, 255);
 }
 .icon-Android .path2:before {
   content: "\e603";
@@ -1187,7 +1186,7 @@ td.filter-icons {
 }
 .icon-HTML .path1:before {
   content: "\e622";
-  color: rgb(68, 68, 68);
+  color: rgb(255, 255, 255);
 }
 .icon-HTML .path2:before {
   content: "\e623";
@@ -1355,4 +1354,3 @@ td.filter-icons {
   margin-left: -1em;
   color: #6eb87a;
 }
->>>>>>> Issue_744
