@@ -15,8 +15,8 @@ describe '| controllers | Help-Controller.test |', ()->
     status: (status)->
       status.assert_Is '200'
       @
-    #send:
-    #status: -> @
+  #send:
+  #status: -> @
   library =
     Title    : 'library title'
     Articles : { 'article_id_2': { Title: 'article_title_2'} }
@@ -27,6 +27,8 @@ describe '| controllers | Help-Controller.test |', ()->
   docs_TM_Service =
     getLibraryData: (callback)->
       callback [library]
+    article_Data : (articleId) ->
+      return {html:'<h1>Test</h1>'}
 
   check_Help_Page_Contents = (html, loggedIn, title, content, next)->
     $ = cheerio.load(html)
@@ -115,13 +117,13 @@ describe '| controllers | Help-Controller.test |', ()->
         check_Help_Page_Contents html, false, view_Model.title, view_Model.content, done
       @.render_Jade_and_Send @.jade_Help_Page, view_Model
 
-  it 'redirect_Images_to_GitHub', (done)->
+  it 'redirect_Images_to_Folder', (done)->
     using help_Controller,->
       @.req = { params: name: 'req_param_value'}
       @.res.redirect = (value)=>
-        value.assert_Is @.gitHubImagePath + 'req_param_value'
+        value.assert_Is @.imagePath + 'req_param_value'
         done()
-      @.redirect_Images_to_GitHub()
+      @.redirect_Images_to_Folder()
 
   it 'show_Content', (done)->
     page_Id = 'id'     .add_5_Letters()
@@ -214,20 +216,26 @@ describe '| controllers | Help-Controller.test |', ()->
 
     it 'fetch_Article_and_Show (bad server)', (done)->
       using help_Controller, ->
-        @.docs_Server = 'http://aaaaaaaa.teammentor.net'
+        docs_TM_Service =
+          article_Data : (articleId) ->
+            return false
+        @.docs_TM_Service =docs_TM_Service
         check_Show_Content 'aaaa','', 'Error fetching page from docs site', done
 
     it 'fetch_Article_and_Show (valid server, good response)', (done)->
       article_Title = 'an_title_'.add_5_Letters()
       page_Id       = 'an_id_'.add_5_Letters()
-      help_Content  = 'an_content_'.add_5_Letters()
+      help_Content  = '<h1>Test</h1>'
 
       on_Content        = (req,res)->
         req.params.page.assert_Is page_Id
         res.send(help_Content)
 
       using help_Controller, ->
-        @.docs_Server     = url_Mocked_Server
+        docs_TM_Service =
+          article_Data : (articleId) ->
+            return {html: help_Content}
+        @.docs_TM_Service =docs_TM_Service
         @.req = { params: page: page_Id }
         check_Show_Content article_Title,help_Content, null, done
 
@@ -237,25 +245,30 @@ describe '| controllers | Help-Controller.test |', ()->
         res.send(null)
 
       using help_Controller, ->
-        @.docs_Server     = url_Mocked_Server
+        docs_TM_Service =
+          article_Data : (articleId) ->
+            return false
+        @.docs_TM_Service =docs_TM_Service
         @.req = { params: page: 'abc' }
         check_Show_Content 'a','', 'Error fetching page from docs site', done
 
     it 'show_Help_Page (valid server, good response)', (done)->
       page_Id       = library.Articles.keys().first()
       article_Title = library.Articles[page_Id].Title
-      help_Content  = 'an_content_'.add_5_Letters()
+      help_Content  = '<h1>Test</h1>'
 
       on_Content        = (req,res)->
         req.params.page.assert_Is page_Id
         res.send(help_Content)
 
       using new Help_Controller(req,res), ->
-
+        docs_TM_Service =
+          getLibraryData: (callback)->
+            callback [library]
+          article_Data : (articleId) ->
+            return {html:'<h1>Test</h1>'}
         @.docs_TM_Service = docs_TM_Service
-        @.docs_Server     = url_Mocked_Server
         @.req = { params: page: page_Id }
-
         @.render_Jade_and_Send = (jade_Page, view_Model)=>
           jade_Page         .assert_Is @.jade_Help_Page
           view_Model.title  .assert_Is article_Title
@@ -276,4 +289,4 @@ describe '| controllers | Help-Controller.test |', ()->
       routes.keys().assert_Is [ '/help/index.html', '/help/:page*', '/Image/:name' ]
       routes['/help/index.html'].source_Code().assert_Contains 'return new Help_Controller(req, res).show_Index_Page();'
       routes['/help/:page*'    ].source_Code().assert_Contains 'return new Help_Controller(req, res).show_Help_Page();'
-      routes['/Image/:name'    ].source_Code().assert_Contains 'return new Help_Controller(req, res).redirect_Images_to_GitHub();'
+      routes['/Image/:name'    ].source_Code().assert_Contains 'return new Help_Controller(req, res).redirect_Images_to_Folder();'
