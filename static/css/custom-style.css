@@ -332,9 +332,12 @@ img, object {
   font-size: 0.65em;
   margin: 0 10px 0 0;
 }
-#filters [class^="icon-"], #filters [class*=" icon-"], #articles [class^="icon-"], #articles [class*=" icon-"], #article [class^="icon-"], #article [class*=" icon-"] {
+#filters [class^="icon-"], #filters [class*=" icon-"],  #article [class^="icon-"], #article [class*=" icon-"] {
   font-size: 1.25em;
   padding: 0 10px 0 0px;
+}
+#articles [class^="icon-"], #articles [class*=" icon-"] {
+  font-size: 1.25em;
 }
 #main-app-view {
   margin-top: 120px;
@@ -775,14 +778,8 @@ td.vertical-align {
   vertical-align: middle;
   text-align: right;
 }
-tr.article-title {
-  border-bottom: 1px solid #dbdbdb;
-  padding-bottom: 25px;
-  line-height: 1.5em;
-  color: #5c5c5c;
-}
 td.filter-icons {
-  padding: 0 0 0 10px;
+  width: 6%;
   text-align: center;
 }
 /*------------------------------------*
@@ -842,7 +839,7 @@ td.filter-icons {
   #application { margin-top: 70px; }
   #customer #application { padding-top: 60px; }
   #customer #search-div, #customer #search-div-2  { top: 120px; }
-  #search-div, #search-div-2  { top: 60px; }
+  #search-div, #search-div-2  { top: 70px; }
   #results-2 { margin-top: 140px; }
   #landing-page #application {
     margin: 70px 0 0 0;
