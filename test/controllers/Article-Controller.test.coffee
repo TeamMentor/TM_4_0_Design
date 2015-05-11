@@ -4,7 +4,7 @@ Session_Service    = null
 cheerio            = null
 supertest          = null
 
-describe '| controllers | Article-Controller.test', ->
+describe.only '| controllers | Article-Controller.test', ->
 
   dependencies = ->
     Article_Controller = require '../../src/controllers/Article-Controller'
@@ -125,6 +125,27 @@ describe '| controllers | Article-Controller.test', ->
       @.graphService = graphService
       @.articles()
 
+
+  it 'check_Guid (bad guid v1)', (done)->
+
+    new Article_Controller {params: guid : 'article-20bc957875f7'}, null, done
+            .check_Guid()
+
+  it 'check_Guid (bad guid v2)', (done)->
+    new Article_Controller {params: guid : '/XML-External-Entity-(XXE)-Injection'}, null, done
+      .check_Guid()
+
+  it 'check_Guid (valid guid)', (done)->
+    req =
+      params: guid : '5b653aa9-7669-4dcb-88d2-8b0f601da772'
+    res =
+      redirect: (target)=>
+        target.assert_Is "/article/#{req.params.guid}"
+        done()
+
+    using new Article_Controller(req,res), ->
+      @.check_Guid()
+
   it 'recentArticles, recentArticles_add', (done)->
     article_Id    = 'id-aaaaaaaa'
     article_Title = 'title-bbbbb'
@@ -185,6 +206,7 @@ describe '| controllers | Article-Controller.test', ->
       Article_Controller.register_Routes app
       routes.keys().assert_Is [ '/a/:ref','/article/:ref/:title','/article/:ref', '/articles' ]
       routes['/a/:ref'             ].source_Code().assert_Contains route_Inner_Code
+      routes['/article/:ref/:guid' ].source_Code().assert_Contains route_Inner_Code
       routes['/article/:ref/:title'].source_Code().assert_Contains route_Inner_Code
       routes['/article/:ref'       ].source_Code().assert_Contains route_Inner_Code
       routes['/articles'           ].source_Code().assert_Contains route_Inner_Code
