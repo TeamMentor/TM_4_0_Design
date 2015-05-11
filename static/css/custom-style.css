@@ -302,6 +302,9 @@ img, object {
   padding: 1em;
   display: inline-block;
 }
+.bg#list-view-article table {
+  width: 100%;
+}
 #list-view-article h4 {
   padding: 0 0 0.5em 0;
   border-bottom: 1px solid #dbdbdb;
