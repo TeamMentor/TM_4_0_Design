@@ -62,7 +62,7 @@ img, object {
 }
 #team-mentor-navigation #message {
   font-size: 0.65em !important;
-  margin-top: 3px;
+  margin-top: 0px;
   font-family: Helvetica, Arial, sans-serif;
 }
 #team-mentor-navigation #message a {
@@ -81,23 +81,23 @@ img, object {
   list-style-type: none;
   padding: 0;
 }
-#links ul li, #links ul li {
+#links ul li {
   display: block;
-  margin: 2px 0;
+  margin: 0px 0;
 }
 #links.text-links {
   margin-top: 7px;
 }
-#links.icon-links ul li [class^="icon-"], #links.icon-links ul li [class*=" icon-"] {
+#links ul li [class^="icon-"], #links ul li [class*=" icon-"] {
   padding: 0 6px 0 0;
-}
-.text {
-  font-family: Helvetica, sans-serif;
 }
 #links a {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #8aaf3e;
+  font-size: 0.85em;
+  font-weight: 500;
+  font-family: Helvetica, sans-serif;
 }
 #links a:hover, #links a:focus, #links a:active {
   color: #6c9020;
@@ -244,41 +244,6 @@ img, object {
 .ubs {
   background-position: 0% 100%;
 }
-.android, .asp, .c-plus-plus, .ios, .java, .php, .scala, .wcf, .web-app {
-  background:url('../assets/icons/technology.png') no-repeat;
-  background-size: 20px;
-  width: 20px;
-  padding-top: 20px;
-  display: inline-block;
-  margin-right: 10px;
-}
-.android {
-  background-position: 0 -2%;
-}
-.asp {
-  background-position: 0% 10.5%;
-}
-.c-plus-plus {
-  background-position: 0% 23.5%;
-}
-.ios {
-  background-position: 0% 36%;
-}
-.java {
-  background-position: 0% 49%;
-}
-.php {
-  background-position: 0% 61%;
-}
-.scala {
-  background-position: 0% 74%;
-}
-.wcf {
-  background-position: 0% 87%;
-}
-.web-app {
-  background-position: 0% 99%;
-}
 /*------------------------------------*
   GETTING STARTED
 *------------------------------------*/
@@ -331,7 +296,7 @@ img, object {
   margin: 0 0 15px 0;
 }
 .bg.content {
-  padding: 1em 3em 2em 3em;
+  padding: 1em;
 }
 .bg#list-view-article {
   padding: 1em;
@@ -805,6 +770,7 @@ td.small {
 }
 td.vertical-align {
   vertical-align: middle;
+  text-align: right;
 }
 tr.article-title {
   border-bottom: 1px solid #dbdbdb;
@@ -850,7 +816,7 @@ td.filter-icons {
     height: auto;
     padding: 3px 20px;
   }
-  #tm-logo, #links, #links.icon-links ul li, #links.text-links ul li { display: inline-block; }
+  #tm-logo, #links, #links ul li { display: inline-block; }
   #tm-logo {
     background-position: 0px 0px;
     float: left;
@@ -862,11 +828,12 @@ td.filter-icons {
     width: 60%;
     float: right;
   }
-  #links.text-links, #links.icon-links { padding-top: 5px; }
-  #links.text-links ul, #links.icon-links ul { text-align: right; }
-  #links.text-links ul li,  #links.icon-links ul li { padding: 0 20px 0 0; }
-  #links.text-links ul li:last-child, #links.icon-links ul li:last-child { padding-right: 20px; }
-  #links ul li a{ font-size: 0.85em; }
+  #links ul {
+    padding-top: 5px;
+    text-align: right;
+  }
+  #links ul li { padding: 0 20px 0 0; }
+  #links ul li:last-child { padding-right: 20px; }
   #loginwall { margin: 15px 7px 0 0; }
   #summary { margin: 15px 0 0 7px; }
   #application { margin-top: 70px; }
@@ -885,6 +852,9 @@ td.filter-icons {
   }
 }
 @media (min-width: 853px) {
+  .landing-page #links {
+    margin: 0.75em 0 0 0;
+  }
   #landing-page h1 { line-height: 2.5em; }
   #landing-page h2 { line-height: 1.5em; }
   #landing-page h3 { line-height: 1.5em; }
@@ -931,6 +901,9 @@ td.filter-icons {
     width: auto;
     display: inline-block;
     text-align: left;
+  }
+  .bg.content {
+  padding: 1em 3em 2em 3em;
   }
 }
 @media (min-width: 1280px) {
@@ -1038,7 +1011,8 @@ td.filter-icons {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}.icon-All .path1:before {
+}
+.icon-All .path1:before {
   content: "\e600";
   color: #b190e2;
 }
