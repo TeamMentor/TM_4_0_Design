@@ -38,6 +38,8 @@ describe '| routes | routes.test |', ()->
                       '/user/login'
                       '/user/login'
                       '/user/logout'
+                      '/_Customizations/SSO.aspx'
+                      '/Aspx_Pages/SSO.aspx'
                       '/user/main.html'
                       '/user/pwd_reset'
                       '/user/sign-up'
