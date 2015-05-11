@@ -16,6 +16,7 @@ describe '| routes | routes.test |', ()->
                       '/flare'
                       '/Image/:name'
                       '/a/:ref'
+                      '/article/:ref/:guid'
                       '/article/:ref/:title'
                       '/article/:ref'
                       '/articles'

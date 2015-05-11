@@ -17,7 +17,7 @@ class Docs_TM_Service
     @._tmSite                = 'https://docs.teammentor.net'
     @._tmWebServices         = '/Aspx_Pages/TM_WebServices.asmx/'
     @.cache                  = new Cache_Service("docs_cache")
-    @.libraryDirectory       = '.tmCache/Lib_Docs-json'
+    @.libraryDirectory       = __dirname.path_Combine '../../.tmCache/Lib_Docs-json'
 
 
   getFolderStructure_Libraries: (callback)=>
@@ -26,8 +26,7 @@ class Docs_TM_Service
     callback json_Library
 
   getArticlesMetadata: (callback)=>
-    json_Folder = @.libraryDirectory.append("/Library")
-
+    json_Folder = @.libraryDirectory.path_Combine("Library")
     json_Files = json_Folder.files_Recursive(".json")
     articlesMetadata = {};
     articlesMetadata._numberOfArticles = 0;

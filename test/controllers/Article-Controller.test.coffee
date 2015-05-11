@@ -4,7 +4,7 @@ Session_Service    = null
 cheerio            = null
 supertest          = null
 
-describe.only '| controllers | Article-Controller.test', ->
+describe '| controllers | Article-Controller.test', ->
 
   dependencies = ->
     Article_Controller = require '../../src/controllers/Article-Controller'
@@ -196,7 +196,7 @@ describe.only '| controllers | Article-Controller.test', ->
       dependencies()
 
     it 'register_Routes',->
-      route_Inner_Code = 'new Article_Controller(req, res, app.config, graph_Options)[method_Name]();'
+      route_Inner_Code = 'new Article_Controller(req, res, next, app.config, graph_Options)[method_Name]();'
       routes = {}
       app    =
         get: (url, checkAuth,target)->
@@ -204,7 +204,7 @@ describe.only '| controllers | Article-Controller.test', ->
           routes[url] = target
 
       Article_Controller.register_Routes app
-      routes.keys().assert_Is [ '/a/:ref','/article/:ref/:title','/article/:ref', '/articles' ]
+      routes.keys().assert_Is [ '/a/:ref','/article/:ref/:guid', '/article/:ref/:title','/article/:ref', '/articles' ]
       routes['/a/:ref'             ].source_Code().assert_Contains route_Inner_Code
       routes['/article/:ref/:guid' ].source_Code().assert_Contains route_Inner_Code
       routes['/article/:ref/:title'].source_Code().assert_Contains route_Inner_Code
