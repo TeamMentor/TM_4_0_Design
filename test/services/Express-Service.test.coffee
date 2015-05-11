@@ -102,5 +102,18 @@ describe '| services | Express-Service.test', ()->
       req = { session: { username: undefined} }
       expressService.checkAuth(req,res, null,config)
 
+    it 'checkAuth (no session username) redirection', (done)->
 
-
+      send = (html)->
+        html.assert_Contains('You need to login to see that page.')
+        done()
+      res = {}
+      res.status = (value)->
+        value.assert_Is(403)
+        res
+      res.send   = send
+      config = null
+      req = { session: { username: undefined},url:'/a/article/00000001' }
+      expressService.checkAuth(req,res, null,config)
+      req.session.redirectUrl.assert_Is_Not_Null()
+      req.session.redirectUrl.assert_Is('/a/article/00000001')
