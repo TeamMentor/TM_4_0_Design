@@ -1038,56 +1038,48 @@ td.filter-icons {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-.icon-All .path1:before {
+}.icon-All .path1:before {
   content: "\e600";
-  color: rgb(68, 68, 68);
+  color: #b190e2;
 }
 .icon-All .path2:before {
   content: "\e601";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Android .path1:before {
   content: "\e602";
-  color: rgb(68, 68, 68);
+  color: rgb(255, 255, 255);
 }
 .icon-Android .path2:before {
   content: "\e603";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: #a0cf4b;
 }
 .icon-Android .path3:before {
   content: "\e604";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #a0cf4b;
 }
 .icon-Android .path4:before {
   content: "\e605";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #a0cf4b;
 }
 .icon-Android .path5:before {
   content: "\e606";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
-.icon-Article:before {
-  content: "\e607";
-}
-
 .icon-C .path1:before {
   content: "\e608";
-  color: rgb(68, 68, 68);
+  color: #90bae2;
 }
 .icon-C .path2:before {
   content: "\e609";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Checklist .path1:before {
   content: "\e60a";
   color: rgb(255, 255, 255);
@@ -1110,12 +1102,11 @@ td.filter-icons {
 .icon-Checklist .path5:before {
   content: "\e60e";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #f6788d;
 }
-
 .icon-CodeExample .path1:before {
   content: "\e60f";
-  color: rgb(68, 68, 68);
+  color: #5ed4a6;
 }
 .icon-CodeExample .path2:before {
   content: "\e610";
@@ -1157,35 +1148,24 @@ td.filter-icons {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
-.icon-Delete:before {
-  content: "\e618";
-}
-
 .icon-Deploy .path1:before {
   content: "\e619";
-  color: rgb(68, 68, 68);
+  color: #a79389;
 }
 .icon-Deploy .path2:before {
   content: "\e61a";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Design .path1:before {
   content: "\e61b";
-  color: rgb(68, 68, 68);
+  color: #cb6e6e;
 }
 .icon-Design .path2:before {
   content: "\e61c";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
-.icon-Filter:before {
-  content: "\e61d";
-}
-
 .icon-Guideline .path1:before {
   content: "\e61e";
   color: rgb(255, 255, 255);
@@ -1193,94 +1173,91 @@ td.filter-icons {
 .icon-Guideline .path2:before {
   content: "\e61f";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #f3bf4f;
 }
-
 .icon-HowTo .path1:before {
   content: "\e620";
-  color: rgb(68, 68, 68);
+  color: #679ff3;
 }
 .icon-HowTo .path2:before {
   content: "\e621";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-HTML .path1:before {
   content: "\e622";
-  color: rgb(68, 68, 68);
+  color: rgb(255, 255, 255);
 }
 .icon-HTML .path2:before {
   content: "\e623";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: #f87359;
 }
-
 .icon-Implementation .path1:before {
   content: "\e624";
-  color: rgb(68, 68, 68);
+  color: #73b2df;
 }
 .icon-Implementation .path2:before {
   content: "\e625";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #73b2df;
 }
 .icon-Implementation .path3:before {
   content: "\e626";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Index:before {
   content: "\e627";
 }
-
 .icon-Info:before {
   content: "\e628";
 }
-
 .icon-iOS .path1:before {
   content: "\e629";
-  color: rgb(68, 68, 68);
+  color: #a6a8ab;
 }
 .icon-iOS .path2:before {
   content: "\e62a";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Java .path1:before {
   content: "\e62b";
-  color: rgb(68, 68, 68);
+  color: #ff9200;
 }
 .icon-Java .path2:before {
   content: "\e62c";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Logout:before {
   content: "\e62d";
 }
-
 .icon-Mail:before {
   content: "\e62e";
 }
-
 .icon-Net .path1:before {
   content: "\e62f";
-  color: rgb(68, 68, 68);
+  color: #5990b5;
 }
 .icon-Net .path2:before {
   content: "\e630";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
+.icon-Net-3-5 .path1:before {
+  content: "\e62f";
+  color: #5962b5;
+}
+.icon-Net-3-5 .path2:before {
+  content: "\e630";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
 .icon-Paperclip:before {
   content: "\e631";
 }
-
 .icon-PHP .path1:before {
   content: "\e632";
   color: rgb(255, 255, 255);
@@ -1288,45 +1265,32 @@ td.filter-icons {
 .icon-PHP .path2:before {
   content: "\e633";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #6c7eb7;
 }
-
-.icon-Save:before {
-  content: "\e634";
-}
-
 .icon-Scala .path1:before {
   content: "\e635";
-  color: rgb(68, 68, 68);
+  color: #ea7a78;
 }
 .icon-Scala .path2:before {
   content: "\e636";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Search:before {
   content: "\e637";
 }
-
-.icon-Share:before {
-  content: "\e638";
-}
-
 .icon-Test .path1:before {
   content: "\e639";
-  color: rgb(68, 68, 68);
+  color: #cbb654;
 }
 .icon-Test .path2:before {
   content: "\e63a";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Twitter:before {
   content: "\e63b";
 }
-
 .icon-Vulnerabilities .path1:before {
   content: "\e63c";
   color: rgb(255, 255, 255);
@@ -1334,22 +1298,20 @@ td.filter-icons {
 .icon-Vulnerabilities .path2:before {
   content: "\e63d";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #82a931;
 }
-
 .icon-WCF .path1:before {
   content: "\e63e";
-  color: rgb(68, 68, 68);
+  color: #59caf5;
 }
 .icon-WCF .path2:before {
   content: "\e63f";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Web-App .path1:before {
   content: "\e640";
-  color: rgb(68, 68, 68);
+  color: #6eb87a;
 }
 .icon-Web-App .path2:before {
   content: "\e641";
@@ -1359,45 +1321,45 @@ td.filter-icons {
 .icon-Web-App .path3:before {
   content: "\e642";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #6eb87a;
 }
 .icon-Web-App .path4:before {
   content: "\e643";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #6eb87a;
 }
 .icon-Web-App .path5:before {
   content: "\e644";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #6eb87a;
 }
 .icon-Web-App .path6:before {
   content: "\e645";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #6eb87a;
 }
 .icon-Web-App .path7:before {
   content: "\e646";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #6eb87a;
 }
 .icon-Web-App .path8:before {
   content: "\e647";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #6eb87a;
 }
 .icon-Web-App .path9:before {
   content: "\e648";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #6eb87a;
 }
 .icon-Web-App .path10:before {
   content: "\e649";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #6eb87a;
 }
 .icon-Web-App .path11:before {
   content: "\e64a";
   margin-left: -1em;
-  color: rgb(68, 68, 68);
+  color: #6eb87a;
 }
