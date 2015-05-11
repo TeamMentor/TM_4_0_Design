@@ -8,6 +8,8 @@ install:
   - ps: Install-Product node $env:nodejs_version
   # install modules
   - npm install
+  - md .\.tmCache
+  - git clone https://github.com/TMContent/Lib_Docs-json .\.tmCache\Lib_Docs-json
 
 # Post-install test scripts.
 test_script:

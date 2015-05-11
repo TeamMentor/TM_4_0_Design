@@ -2,6 +2,9 @@ sudo: false
 language: node_js
 node_js:
 - 0.1
+before_install:
+  - "mkdir ./.tmCache"
+  - "git clone https://github.com/TMContent/Lib_Docs-json ./.tmCache/Lib_Docs-json"
 after_script:
 - 'echo ''Since tests passed: instrument files, rerun tests and publish results to
   coveralls'' '

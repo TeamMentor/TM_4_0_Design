@@ -17,66 +17,82 @@ class Docs_TM_Service
     @._tmSite                = 'https://docs.teammentor.net'
     @._tmWebServices         = '/Aspx_Pages/TM_WebServices.asmx/'
     @.cache                  = new Cache_Service("docs_cache")
+    @.libraryDirectory       = __dirname.path_Combine '../../.tmCache/Lib_Docs-json'
 
 
-  asmx_GetFolderStructure_Libraries: (callback)=>
-    @cache.json_POST @.calculateTargetUrl('GetFolderStructure_Libraries'), {}, callback
-
-  asmx_GetGUIObjects: (callback)=>
-    @cache.json_POST @.calculateTargetUrl('GetGUIObjects'), {}, callback
-
-
-  calculateTargetUrl: (wsName)->
-    @._tmSite + @._tmWebServices + wsName
+  getFolderStructure_Libraries: (callback)=>
+    json          = (@.libraryDirectory + "/Library/TM Documentation.json").load_Json();
+    json_Library    = json.guidanceExplorer.library.first()
+    callback json_Library
 
   getArticlesMetadata: (callback)=>
-    @asmx_GetGUIObjects (guiObjects)->
-
-      articlesMetadata = {};
-      mappings      = guiObjects.d.GuidanceItemsMappings;
-      uniqueStrings = guiObjects.d.UniqueStrings;
-
-      articlesMetadata._numberOfArticles = 0;
-
-      mappings.forEach (mapping)->
-        keys = mapping.split(',');
+    json_Folder = @.libraryDirectory.path_Combine("Library")
+    json_Files = json_Folder.files_Recursive(".json")
+    articlesMetadata = {};
+    articlesMetadata._numberOfArticles = 0;
+    json_Files.forEach (file)->
+      jsonFile = file.load_Json().TeamMentor_Article
+      if (jsonFile?)
         metadata =
-                        Id         : uniqueStrings[keys[0]],
-                        Title      : uniqueStrings[keys[2]],
-                        Technology : uniqueStrings[keys[3]],
-                        Phase      : uniqueStrings[keys[4]],
-                        Type       : uniqueStrings[keys[5]],
-                        Category   : uniqueStrings[keys[6]]
+          Id         : jsonFile?.Metadata?.first().Id.first(),
+          Title      : jsonFile?.Metadata?.first().Title.first(),
+          Technology : jsonFile?.Metadata?.first().Technology?.first(),
+          Phase      : jsonFile?.Metadata?.first().Phase?.first(),
+          Type       : jsonFile?.Metadata?.first().Type?.first(),
+          Category   : jsonFile?.Metadata?.first().Category?.first()
 
         articlesMetadata[metadata.Id]= metadata;
         articlesMetadata._numberOfArticles++;
+    callback articlesMetadata;
 
-      callback articlesMetadata;
+  fileExist :() ->
+    return ((@.libraryDirectory + "/Library/TM Documentation.json").file_Exists())
+
+  documentationIndex:() ->
+    return (@.libraryDirectory + "/Library/TM Documentation.json")
 
   getLibraryData: (callback)->
-    @asmx_GetFolderStructure_Libraries (getFolderStructure)=>
-      @.getArticlesMetadata (articlesMetadata)=>
+    #checking if documentation library was backported.
+    if (@fileExist())
+      @getFolderStructure_Libraries (tmLibrary)=>
+        @.getArticlesMetadata (articlesMetadata)=>
+          libraryData = [];
+          library =
+                    Title   : tmLibrary["$"].caption
+                    Folders : [],
+                    Views   : [],
+                    Articles: {}
 
-        libraryData = [];
-        getFolderStructure.d.forEach (tmLibrary)->
-                library =
-                            Title   : tmLibrary.name,
-                            Folders : [],
-                            Views   : [],
-                            Articles: {}
+          tmLibrary.guidanceItems = [];
+          views =tmLibrary?.libraryStructure?.first().view
 
-                tmLibrary.guidanceItems = [];
+          views.forEach (tmView) ->
+            view = {Title: tmView['$'].caption, Articles: [] };
+            items = tmView.items.first().item
+            #Finding ids in views
+            items.forEach (guidanceItemId)->
+              articleMetadata = articlesMetadata[guidanceItemId];
+              view   .Articles.push(articleMetadata);
+              library.Articles[articleMetadata.Id] = articleMetadata;
 
-                tmLibrary.views.forEach (tmView)->
-                        view = { Title: tmView.caption, Articles: [] };
+            #Adding view to library
+            library.Views.push(view);
+            libraryData.push(library);
+          callback libraryData
+    else
+      callback undefined
 
-                        tmView.guidanceItems.forEach (guidanceItemId)->
-                                articleMetadata = articlesMetadata[guidanceItemId];
-                                view   .Articles.push(articleMetadata);
-                                library.Articles[articleMetadata.Id] = articleMetadata;
-                        library.Views.push(view);
-                libraryData.push(library);
+  json_Files: (callback)=>
+    json_Folder = @.libraryDirectory.append("/Articles_Html")
+    callback  json_Folder.files_Recursive(".json")
 
-        callback libraryData
+  article_Data: (articleId)=>
+    @json_Files (jsonFiles)=>
+      article_File = jsonFile for  jsonFile in   jsonFiles when jsonFile.contains(articleId)
+      if article_File and article_File.file_Exists()
+        return article_File.load_Json()
+      else
+        return null
+
 
 module.exports = Docs_TM_Service

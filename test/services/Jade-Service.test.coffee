@@ -13,7 +13,7 @@ describe "| services | Jade-Service |", ()->
 
             @.config        .assert_Is_Object()
             @.target_Folder .assert_Is_String()
-            @.repo_Path     .folder_Name().assert_Is('TM_4_0_Design')
+            @.repo_Path     .folder_Name().replace(/-/g,'_').lower().assert_Is('tm_4_0_design') # in appveyor this is tm-4-0-design
             @.mixins_Folder .folder_Name().assert_Is('_mixins')
             @.mixin_Extends .assert_Is("..#{path.sep}_layouts#{path.sep}page_clean")
 

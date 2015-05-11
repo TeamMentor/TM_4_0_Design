@@ -4,6 +4,7 @@ Config  = null
 
 loginPage                  = 'source/jade/guest/login-Fail.jade'
 loginPage_Unavailable      = 'source/jade/guest/login-cant-connect.jade'
+guestPage_403              = 'source/jade/guest/403.jade'
 mainPage_user              = '/user/main.html'
 mainPage_no_user           = '/guest/default.html'
 password_reset_fail        = 'source/jade/guest/pwd-reset-fail.jade'
@@ -78,6 +79,26 @@ class Login_Controller
   logoutUser: ()=>
     @.req.session.username = undefined
     @.res.redirect(mainPage_no_user)
+
+  tm_SSO: ()=>
+    username = @.req.query.username
+    token    = @.req.query.requestToken
+    if username and token
+      server = 'https://tmdev01-uno.teammentor.net'               # currently hard-coded to this server
+      #url = "#{server}/_Customizations/SSO.aspx?username=#{username}&requestToken=#{token}"
+      url = "#{server}/Aspx_Pages/SSO.aspx?username=#{username}&requestToken=#{token}"
+
+      options =
+        url: url
+        followRedirect: false
+      request options,(error, response, data)=>
+        if response.headers?.location is '/teammentor'
+          @.req.session.username = username
+          return @.res.redirect '/'
+
+        @.res.render guestPage_403
+    else
+      @.res.render guestPage_403
 
 
 module.exports = Login_Controller
