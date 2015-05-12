@@ -339,9 +339,6 @@ img, object {
   font-size: 1.25em;
   padding: 0 10px 0 0px;
 }
-#articles [class^="icon-"], #articles [class*=" icon-"] {
-  font-size: 1.25em;
-}
 #main-app-view {
   margin-top: 120px;
 }
@@ -781,9 +778,6 @@ td.vertical-align {
   vertical-align: middle;
   text-align: right;
 }
-td.filter-icons {
-  width: 6%;
-}
 /*------------------------------------*
    MEDIA QUERIES
 *------------------------------------*/
@@ -841,7 +835,10 @@ td.filter-icons {
   #application { margin-top: 70px; }
   #customer #application { padding-top: 60px; }
   #customer #search-div, #customer #search-div-2  { top: 120px; }
-  #search-div, #search-div-2  { top: 70px; }
+  #search-div, #search-div-2  {
+    top: 60px;
+    padding-top: 10px;
+  }
   #results-2 { margin-top: 140px; }
   #landing-page #application {
     margin: 70px 0 0 0;
