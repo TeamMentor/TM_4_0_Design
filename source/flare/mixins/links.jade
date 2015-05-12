@@ -155,21 +155,47 @@ mixin git-repo-link
 
 mixin help-navigation
     #help-nav
-        ul
-            li About TEAM Mentor
-            li Installation
-            li Administration
-            li UI Elements
-            li Reading Content
-            li Editing Content
-            li Eclipse for Fortify plugin
-            li HP Fortify SCA UI Integration
-            li Visual Studio Plugin
+        ul.sub-nav
+            li
+                a(href='help-sub-navigation')
+                    span About TEAM Mentor
+            li
+                a(href='help-sub-navigation')
+                    span Installation
+            li
+                a(href='help-sub-navigation')
+                    span Administration
+            li
+                a(href='help-sub-navigation')
+                    span UI Elements
+            li
+                a(href='help-sub-navigation')
+                    span Reading Content
+            li
+                a(href='help-sub-navigation')
+                    span Editing Content
+            li
+                a(href='help-sub-navigation')
+                    span Eclipse for Fortify plugin
+            li
+                a(href='help-sub-navigation')
+                    span HP Fortify SCA UI Integration
+            li
+                a(href='help-sub-navigation')
+                    span Visual Studio Plugin
 
 mixin help-sub-navigation
-    #help-nav
-        ul
-            li What's new in this release?
-            li Introduction to TEAM Mentor
-            li Quick Start Guide
-            li Support
+    #help-sub-nav
+        ul.sub-nav
+            li
+                a(href='help-sub-navigation')
+                    span What's new in this release?
+            li
+                a(href='help-sub-navigation')
+                    span Introduction to TEAM Mentor
+            li
+                a(href='help-sub-navigation')
+                    span Quick Start Guide
+            li
+                a(href='help-sub-navigation')
+                    span Support

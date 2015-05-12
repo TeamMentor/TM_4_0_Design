@@ -234,6 +234,7 @@ article {
   border: 1px solid #dbdbdb;
   padding: 0 2em 1em 2em;
   margin: 0 0 1em 0;
+  border-radius: 3px;
 }
 article h1, article h2, article h3, article h4, article h5, article h6 {
   margin: 1em 0 0 0;
@@ -352,7 +353,7 @@ article a {
   -webkit-flex: 100%;
   flex: 100%;
   min-height: 1px;
-  padding: 0 20px;
+  padding: 1em;
 }
 #one-fourth-column {
   -webkit-order: 1;
@@ -364,7 +365,7 @@ article a {
 #help-nav {
   padding: 1em;
 }
-#help-nav ul {
+ul.sub-nav {
   background: white;
   list-style-type: none;
   padding: 0;
@@ -375,12 +376,15 @@ article a {
   border: 1px solid #dbdbdb;
   border-radius: 3px;
 }
-#help-nav ul li {
+ul.sub-nav li {
   padding: 0.5em;
   -moz-flex: 1;
   -webkit-flex: 1;
   flex: 1 1 100px;
   display: inline-block;
+}
+#help-sub-nav {
+
 }
 
 
@@ -1094,7 +1098,6 @@ span.alert-text {
   #three-fourths-column {
     -webkit-flex: 75%;
     flex: 75%;
-    padding: 0;
   }
   #one-fourth-column {
     display: block;
@@ -1176,7 +1179,7 @@ span.alert-text {
   .conditions {
     padding: 15px 10px;
   }
-  #help-nav ul li {
+  ul.sub-nav li {
     -moz-flex: 1;
     -webkit-flex: 1;
     flex: 100%;
