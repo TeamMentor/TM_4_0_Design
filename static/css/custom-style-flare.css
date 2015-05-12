@@ -198,21 +198,31 @@ span.text {
   flex: 100%;
   -webkit-order: 2;
   order: 2;
-  padding: 0 0 20px 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-direction: column;
   position: relative;
+  margin: 0 0 1em 0;
+}
+#label .label, #label ul {
+  flex: 1;
+}
+#label .label span {
+  padding: 0 2em 0 0;
 }
 #label ul {
-  margin: 10px 0 0 0;
   padding: 0;
   text-align: center;
 }
 #label ul li {
   display: inline-block;
-  width: 49%;
+  width: 50%;
   padding: 0 5px 0 0;
 }
 #label ul li:last-child {
-  padding-right: 0;
+  padding: 0;
 }
 article {
   -webkit-flex: 100%;
@@ -222,19 +232,14 @@ article {
   overflow-y: auto;
   background: white;
   border: 1px solid #dbdbdb;
-  padding: 0 20px 20px 20px;
-  margin: 0 0 20px 0;
+  padding: 0 2em 1em 2em;
+  margin: 0 0 1em 0;
 }
-article h1 {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #dbdbdb;
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  margin: 1em 0 0 0;
 }
-article.marketing {
-  background: none;
-  border: none;
-  border-left: 1px solid #dbdbdb;
-  margin: 0;
-  margin-left: 20px;
+article a {
+  text-decoration: underline;
 }
 #articles {
   -webkit-flex: 100%;
@@ -253,15 +258,15 @@ article.marketing {
   -moz-flex: 1;
   -webkit-flex: 1;
   flex: 1 1 400px;
-  margin: 0.5em;
+  margin: 0 0 1em 0;
   background: white;
 }
 .container.search-term {
   padding: 10px 20px;
   border-radius: 20px;
-  border: 1px solid #dbdbdb;
   word-wrap: normal;
   color: #444444;
+  border: 1px solid #dbdbdb;
 }
 .container.search-term [class^="icon-"], .container.search-term [class*=" icon-"] {
   padding: 0 10px 0 0;
@@ -273,16 +278,21 @@ article.marketing {
 .metadata {
   -webkit-order: 1;
   order: 1;
+  padding: 0.5em 0.35em;
   background: #b4cf7b;
-  padding: 1em;
 }
 .metadata ul {
+  flex: 1;
   list-style-type: none;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 .metadata ul li {
   display: inline-block;
+  text-align: left;
+  width: 16%;
+  padding: 0 2px;
 }
 .summary {
   -webkit-order: 2;
@@ -311,7 +321,6 @@ article.marketing {
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 10px 0;
 }
 .row:first-child {
   margin: 0;
@@ -761,7 +770,7 @@ button.circle i {
   color: #b4cf7b;
 }
 .app {
-  padding: 5px 20px;
+  padding: 5px;
   width: 100%;
   background: #6c9020;
   color: white;
@@ -902,7 +911,7 @@ input.search-input, input.search-input:focus {
 *------------------------------------*/
 @media (min-width: 500px) {
   .si-logo {
-    margin: 15px 10px 0 5px;
+    margin: 15px 10px 0 10px;
   }
   .si-name {
     flex: 2;
@@ -914,14 +923,14 @@ input.search-input, input.search-input:focus {
 }
 @media (min-width: 700px) {
   #logo {
-    -webkit-flex: 25%;
-    flex: 25%;
+    -webkit-flex: 21%;
+    flex: 21%;
   }
   #search {
     -webkit-order: 3;
     order: 3;
-    -webkit-flex: 70%;
-    flex: 50%;
+    -webkit-flex: 52%;
+    flex: 52%;
     overflow: hidden;
     border-bottom: 1px solid #dbdbdb;
     background: white;
@@ -941,8 +950,8 @@ input.search-input, input.search-input:focus {
   #user {
     -webkit-order: 4;
     order: 4;
-    -webkit-flex: 25%;
-    flex: 25%;
+    -webkit-flex: 21%;
+    flex: 21%;
   }
   #application {
     -webkit-order: 5;
@@ -1022,6 +1031,19 @@ input.search-input, input.search-input:focus {
   .icons {
     flex: 2;
   }
+  #label {
+    margin: 0;
+    flex-direction: row;
+  }
+  #label .label {
+    flex: 2;
+  }
+  #label ul {
+    flex: 1;
+  }
+  .container.article, .container.search-term {
+    margin: 0 0.5em 0.5em 0.5em;
+  }
   footer ul {
     text-align: right;
   }
@@ -1032,6 +1054,9 @@ input.search-input, input.search-input:focus {
   footer ul li {
     width: 10%;
     text-align: center;
+  }
+  article {
+    padding: 1em 2em;
   }
   article h1 {
     font-size: 2.25em;
@@ -1052,6 +1077,10 @@ input.search-input, input.search-input:focus {
     font-size: 1em;
     line-height: 1.75em;
   }
+  #article-container {
+    width: 60%;
+    margin: 0 auto;
+  }
   .input-field, .button-field {
     -webkit-flex: 29%;
     flex: 29%;
@@ -1071,16 +1100,6 @@ input.search-input, input.search-input:focus {
   }
 }
 @media (min-width: 950px) {
-  #label {
-    -webkit-flex: 100%;
-    flex: 100%;
-    padding: 10px  5px 15px 5px;
-  }
-  #label ul li {
-    display: block;
-    width: 100%;
-    padding: 5px 0 0 0;
-  }
   #articles {
     display: -moz-flex;
     display: -webkit-flex;
@@ -1093,22 +1112,8 @@ input.search-input, input.search-input:focus {
     justify-content: flex-start;
     max-width: 100%;
   }
-  article {
-    -webkit-flex: 4;
-    flex: 4;
-    margin: 0 6px 0 29px;
-    padding: 20px 40px;
-  }
-  article.marketing {
-    margin: 0;
-    margin-left: 20px;
-    padding: 0 0 20px 20px;
-  }
   .alert-box {
     width: 76%;
-    margin-left: 21%;
-  }
-  footer.copyright {
     margin-left: 21%;
   }
 }
