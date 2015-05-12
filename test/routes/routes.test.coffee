@@ -136,7 +136,7 @@ describe '| routes | routes.test |', ()->
       agent = request.agent()
       baseUrl = 'http://localhost:' + app.port
 
-      loggedInText = ['<span class="text">Logout</span>']
+      loggedInText = ['<span title="Logout" class="icon-Logout">']
       loggedOutText = ['<li><a id="nav-login" href="/guest/login.html">Login</a></li>']
 
       postData = {username:'user', password:'a'}
