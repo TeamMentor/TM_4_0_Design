@@ -1243,6 +1243,15 @@ td.vertical-align {
   margin-left: -1em;
   color: #6c7eb7;
 }
+.icon-Principle .path1:before {
+  content: "\e62a";
+  color: #eaa878;
+}
+.icon-Principle .path2:before {
+  content: "\e62b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
 .icon-Scala .path1:before {
   content: "\e635";
   color: #ea7a78;

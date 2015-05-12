@@ -194,6 +194,11 @@ mixin design-icon
     span.path1
     span.path2
 
+mixin principle-icon
+  span.icon-Principle
+    span.path1
+    span.path2
+
 mixin implement-icon
   span.icon-Implementation(title='Implementation')
     span.path1
@@ -277,3 +282,5 @@ mixin filter-icon(filter, title)
           +implement-icon
         when 'Test'
           +test-icon
+        when 'Principle'
+          +principle-icon
