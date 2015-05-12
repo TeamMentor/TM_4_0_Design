@@ -1033,8 +1033,11 @@ input.search-input, input.search-input:focus {
   .icons {
     flex: 2;
   }
+  #label {
+    margin: 0;
+  }
   .container.article, .container.search-term {
-    margin: 0.5em 0.5em;
+    margin: 0 0.5em 0.5em 0.5em;
   }
   footer ul {
     text-align: right;
