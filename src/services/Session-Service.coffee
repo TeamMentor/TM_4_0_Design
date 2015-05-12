@@ -1,6 +1,9 @@
 Nedb            = null
 Express_Session = null
 
+DEFAULT_SEARCHES = [{ id :'abc1', title: 'prevent sql injection'    , results:10},
+                    { id :'abc2', title: 'xss'                      , results:10},
+                    { id :'abc3', title: 'secure connection string' , results:10}]
 class Session_Service
 
   dependencies: ()->
@@ -49,7 +52,9 @@ class Session_Service
             for user_Search in session.data.user_Searches
               if user_Search.results
                 users_Searches.push(user_Search)
-        callback users_Searches
+      if users_Searches.empty()
+        users_Searches = DEFAULT_SEARCHES
+      callback users_Searches
 
   top_Articles: (callback)=>
     @.viewed_Articles (data)->
