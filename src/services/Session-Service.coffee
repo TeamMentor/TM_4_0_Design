@@ -7,9 +7,9 @@ class Session_Service
                       { id :'abc2', title: 'xss'                      , results:10},
                       { id :'abc3', title: 'secure connection string' , results:10}]
   DEFAULT_ARTICLES:
-                      [{id: 'a52c239f7acb', title: 'How-to-Test-for-Local-Machine-Credential-Theft-Bugs-in-Scala'},
-                       {id: 'ad642f375ab4', title: 'How-to-Test-for-Network-Credential-Sniffing-Bugs-in-Scala'},
-                       {id: '287691cd9ed3', title: 'Input-Is-Validated-for-Length,-Range,-Format-And-Type'}]
+                      [{id: '1d72228392bf', title: 'Decrypt a String via a Block Cipher Using AES'},
+                       {id: '22ed784143ee', title: 'Using Parameterized Queries for Secure Database Access'},
+                       {id: '17f790dedf10', title: 'Constrain, Reject, and Sanitize Input'}]
   dependencies: ()->
     Nedb            = require('nedb')
     Express_Session = require 'express-session'
