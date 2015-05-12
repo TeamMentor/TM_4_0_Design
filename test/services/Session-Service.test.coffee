@@ -3,7 +3,7 @@ session         = require('express-session')
 express         = require 'express'
 supertest       = require 'supertest'
 
-describe '| services | Session.test', ()->
+describe.only '| services | Session.test', ()->
 
   testDb         = './_session_TestDb'
   session_Service = null
@@ -53,6 +53,23 @@ describe '| services | Session.test', ()->
             assert_Is_Null(data);
             done()
 
+  it 'users_Searches (default values)', (done)->
+    using session_Service,->
+      @.set 'sid-1', {recent_Articles: [{id: 'id_1', title: 'title_1'}]}, =>
+        @.users_Searches (result)=>
+          result.assert_Is session_Service.DEFAULT_SEARCHES
+          done()
+
+  it 'users_Searches', (done)->
+    using session_Service,->
+      @.set 'sid-1', {user_Searches: [{ id :'abc1', title: 'search a' , results:11},
+                                      { id :'abc2', title: 'search b' , results:12},
+                                      { id :'abc2', title: 'search b' , results:13}
+                                      { id :'abc3', title: 'search c' , results:0}]}, =>
+        @.users_Searches (result)=>
+          result.assert_Size_Is 6
+          result.fourth().assert_Is { id :'abc1', title: 'search a' , results:11}
+          done()
 
   it 'viewed_Articles', (done)->
     using session_Service,->
@@ -65,6 +82,12 @@ describe '| services | Session.test', ()->
                 @.viewed_Articles (data)->
                   data.json_Str().assert_Contains ['id_1','id_2', 'id_3', 'id_4','title_1','title_2', 'title_3', 'title_4']
                   done()
+
+  it 'viewed_Articles (default)', (done)->
+    using session_Service,->
+      @.viewed_Articles (data)=>
+        data.assert_Is @.DEFAULT_ARTICLES
+        done()
 
   describe 'testing behaviour of express-session', ()->
 

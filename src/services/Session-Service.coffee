@@ -1,11 +1,15 @@
 Nedb            = null
 Express_Session = null
 
-DEFAULT_SEARCHES = [{ id :'abc1', title: 'prevent sql injection'    , results:10},
-                    { id :'abc2', title: 'xss'                      , results:10},
-                    { id :'abc3', title: 'secure connection string' , results:10}]
 class Session_Service
 
+  DEFAULT_SEARCHES:  [{ id :'abc1', title: 'prevent sql injection'    , results:10},
+                      { id :'abc2', title: 'xss'                      , results:10},
+                      { id :'abc3', title: 'secure connection string' , results:10}]
+  DEFAULT_ARTICLES:
+                      [{id: 'a52c239f7acb', title: 'How-to-Test-for-Local-Machine-Credential-Theft-Bugs-in-Scala'},
+                       {id: 'ad642f375ab4', title: 'How-to-Test-for-Network-Credential-Sniffing-Bugs-in-Scala'},
+                       {id: '287691cd9ed3', title: 'Input-Is-Validated-for-Length,-Range,-Format-And-Type'}]
   dependencies: ()->
     Nedb            = require('nedb')
     Express_Session = require 'express-session'
@@ -35,7 +39,7 @@ class Session_Service
 
   viewed_Articles: (callback)=>
     @.db.find {}, (err,sessionData)=>
-      viewed_Articles = []
+      viewed_Articles = @.DEFAULT_ARTICLES
       if sessionData
           for session in sessionData
               if session.data.recent_Articles
@@ -45,15 +49,13 @@ class Session_Service
 
   users_Searches: (callback)=>
     @.db.find {}, (err,sessionData)=>
-      users_Searches = []
+      users_Searches = @.DEFAULT_SEARCHES
       if sessionData
         for session in sessionData
           if session.data.user_Searches
             for user_Search in session.data.user_Searches
               if user_Search.results
                 users_Searches.push(user_Search)
-      if users_Searches.empty()
-        users_Searches = DEFAULT_SEARCHES
       callback users_Searches
 
   top_Articles: (callback)=>
@@ -114,11 +116,6 @@ class Session_Service
       @.top_Articles (top_Articles)=>
         data.top_Articles = top_Articles.slice(0, 3)
         callback data
-
-      #topResults = []
-      #topResults.add(results.pop()).add(results.pop())
-      #          .add(results.pop()).add(results.pop())
-      #          .add(results.pop())
 
 
 #based on code from https://github.com/louischatriot/connect-nedb-session/blob/master/index.js
