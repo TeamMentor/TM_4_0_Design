@@ -153,7 +153,7 @@ mixin articles-list
                                     a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                                         h4= result.title
                             tr
-                                td(colspan='1.5')
+                                td.filter-icons
                                     +filter-icon('Technology',result.technology)
                                     br
                                     +filter-icon('Type', result.type)
