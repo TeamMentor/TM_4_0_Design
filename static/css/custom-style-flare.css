@@ -1035,6 +1035,13 @@ input.search-input, input.search-input:focus {
   }
   #label {
     margin: 0;
+    flex-direction: row;
+  }
+  #label .label {
+    flex: 2;
+  }
+  #label ul {
+    flex: 1;
   }
   .container.article, .container.search-term {
     margin: 0 0.5em 0.5em 0.5em;
@@ -1088,16 +1095,6 @@ input.search-input, input.search-input:focus {
   }
 }
 @media (min-width: 950px) {
-  #label {
-    -webkit-flex: 100%;
-    flex: 100%;
-    padding: 10px 5px 15px 5px;
-  }
-  #label ul li {
-    display: block;
-    width: 100%;
-    padding: 5px 0 0 0;
-  }
   #articles {
     display: -moz-flex;
     display: -webkit-flex;
