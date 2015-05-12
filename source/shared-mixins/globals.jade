@@ -174,6 +174,11 @@ mixin guideline-icon
     span.path2
     span.path3
 
+mixin principle-icon
+  span.icon-Principle(title='Principle')
+    span.path1
+    span.path2
+
 mixin how-to-icon
   span.icon-HowTo(title='How To')
     span.path1
@@ -234,6 +239,8 @@ mixin filter-icon(filter, title)
           +how-to-icon
         when 'Vulnerability'
           +vulnerabilities-icon
+        when 'Principle'
+          +principle-icon
         default
           span
 
