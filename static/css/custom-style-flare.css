@@ -198,21 +198,28 @@ span.text {
   flex: 100%;
   -webkit-order: 2;
   order: 2;
-  padding: 0 0 20px 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-direction: column;
   position: relative;
+  margin: 0 0 1em 0;
+}
+#label .label, #label ul {
+  flex: 1;
 }
 #label ul {
-  margin: 10px 0 0 0;
   padding: 0;
   text-align: center;
 }
 #label ul li {
   display: inline-block;
-  width: 49%;
+  width: 50%;
   padding: 0 5px 0 0;
 }
 #label ul li:last-child {
-  padding-right: 0;
+  padding: 0;
 }
 article {
   -webkit-flex: 100%;
@@ -253,15 +260,15 @@ article.marketing {
   -moz-flex: 1;
   -webkit-flex: 1;
   flex: 1 1 400px;
-  margin: 0.5em;
+  margin: 0 0 1em 0;
   background: white;
 }
 .container.search-term {
   padding: 10px 20px;
   border-radius: 20px;
-  border: 1px solid #dbdbdb;
   word-wrap: normal;
   color: #444444;
+  border: 1px solid #dbdbdb;
 }
 .container.search-term [class^="icon-"], .container.search-term [class*=" icon-"] {
   padding: 0 10px 0 0;
@@ -273,16 +280,21 @@ article.marketing {
 .metadata {
   -webkit-order: 1;
   order: 1;
+  padding: 0.5em 0.35em;
   background: #b4cf7b;
-  padding: 1em;
 }
 .metadata ul {
+  flex: 1;
   list-style-type: none;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 .metadata ul li {
   display: inline-block;
+  text-align: left;
+  width: 16%;
+  padding: 0 2px;
 }
 .summary {
   -webkit-order: 2;
@@ -311,7 +323,6 @@ article.marketing {
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 10px 0;
 }
 .row:first-child {
   margin: 0;
@@ -761,7 +772,7 @@ button.circle i {
   color: #b4cf7b;
 }
 .app {
-  padding: 5px 20px;
+  padding: 5px;
   width: 100%;
   background: #6c9020;
   color: white;
@@ -1022,6 +1033,9 @@ input.search-input, input.search-input:focus {
   .icons {
     flex: 2;
   }
+  .container.article, .container.search-term {
+    margin: 0.5em 0.5em;
+  }
   footer ul {
     text-align: right;
   }
@@ -1074,7 +1088,7 @@ input.search-input, input.search-input:focus {
   #label {
     -webkit-flex: 100%;
     flex: 100%;
-    padding: 10px  5px 15px 5px;
+    padding: 10px 5px 15px 5px;
   }
   #label ul li {
     display: block;
