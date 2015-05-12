@@ -3,7 +3,7 @@ session         = require('express-session')
 express         = require 'express'
 supertest       = require 'supertest'
 
-describe.only '| services | Session.test', ()->
+describe '| services | Session.test', ()->
 
   testDb         = './_session_TestDb'
   session_Service = null
