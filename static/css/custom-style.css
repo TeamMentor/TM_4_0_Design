@@ -339,6 +339,9 @@ img, object {
   font-size: 1.25em;
   padding: 0 10px 0 0px;
 }
+ #articles [class^="icon-"], #articles [class*=" icon-"] {
+  font-size: 1.25em;
+ }
 #main-app-view {
   margin-top: 120px;
 }
