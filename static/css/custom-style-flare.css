@@ -209,6 +209,9 @@ span.text {
 #label .label, #label ul {
   flex: 1;
 }
+#label .label span {
+  padding: 0 2em 0 0;
+}
 #label ul {
   padding: 0;
   text-align: center;
@@ -229,19 +232,14 @@ article {
   overflow-y: auto;
   background: white;
   border: 1px solid #dbdbdb;
-  padding: 0 20px 20px 20px;
-  margin: 0 0 20px 0;
+  padding: 0 2em 1em 2em;
+  margin: 0 0 1em 0;
 }
-article h1 {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #dbdbdb;
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  margin: 1em 0 0 0;
 }
-article.marketing {
-  background: none;
-  border: none;
-  border-left: 1px solid #dbdbdb;
-  margin: 0;
-  margin-left: 20px;
+article a {
+  text-decoration: underline;
 }
 #articles {
   -webkit-flex: 100%;
@@ -913,7 +911,7 @@ input.search-input, input.search-input:focus {
 *------------------------------------*/
 @media (min-width: 500px) {
   .si-logo {
-    margin: 15px 10px 0 5px;
+    margin: 15px 10px 0 10px;
   }
   .si-name {
     flex: 2;
@@ -925,14 +923,14 @@ input.search-input, input.search-input:focus {
 }
 @media (min-width: 700px) {
   #logo {
-    -webkit-flex: 25%;
-    flex: 25%;
+    -webkit-flex: 21%;
+    flex: 21%;
   }
   #search {
     -webkit-order: 3;
     order: 3;
-    -webkit-flex: 70%;
-    flex: 50%;
+    -webkit-flex: 52%;
+    flex: 52%;
     overflow: hidden;
     border-bottom: 1px solid #dbdbdb;
     background: white;
@@ -952,8 +950,8 @@ input.search-input, input.search-input:focus {
   #user {
     -webkit-order: 4;
     order: 4;
-    -webkit-flex: 25%;
-    flex: 25%;
+    -webkit-flex: 21%;
+    flex: 21%;
   }
   #application {
     -webkit-order: 5;
@@ -1057,6 +1055,9 @@ input.search-input, input.search-input:focus {
     width: 10%;
     text-align: center;
   }
+  article {
+    padding: 1em 2em;
+  }
   article h1 {
     font-size: 2.25em;
   }
@@ -1075,6 +1076,10 @@ input.search-input, input.search-input:focus {
   article p {
     font-size: 1em;
     line-height: 1.75em;
+  }
+  #article-container {
+    width: 60%;
+    margin: 0 auto;
   }
   .input-field, .button-field {
     -webkit-flex: 29%;
@@ -1107,22 +1112,8 @@ input.search-input, input.search-input:focus {
     justify-content: flex-start;
     max-width: 100%;
   }
-  article {
-    -webkit-flex: 4;
-    flex: 4;
-    margin: 0 6px 0 29px;
-    padding: 20px 40px;
-  }
-  article.marketing {
-    margin: 0;
-    margin-left: 20px;
-    padding: 0 0 20px 20px;
-  }
   .alert-box {
     width: 76%;
-    margin-left: 21%;
-  }
-  footer.copyright {
     margin-left: 21%;
   }
 }
