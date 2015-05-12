@@ -157,9 +157,22 @@ mixin git-repo-link
         a(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
 
 mixin help-navigation
-    if library
-        each view in library.Views
-            .label= view.Title
-            ul.side-nav
-                li
-                    a(href= '/help/' + article.Id)= article.Title
+    #help-nav
+        ul
+            li About TEAM Mentor
+            li Installation
+            li Administration
+            li UI Elements
+            li Reading Content
+            li Editing Content
+            li Eclipse for Fortify plugin
+            li HP Fortify SCA UI Integration
+            li Visual Studio Plugin
+
+mixin help-sub-navigation
+    #help-nav
+        ul
+            li What's new in this release?
+            li Introduction to TEAM Mentor
+            li Quick Start Guide
+            li Support
