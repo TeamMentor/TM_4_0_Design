@@ -1,4 +1,4 @@
-extends _layouts/flare_page
+extends ../_layouts/flare_page
 
 block content
   #application
@@ -8,6 +8,6 @@ block content
       +help-sub-navigation
     #three-fourths-column
       article
-          include:md ../content/help/page-index.md
+        include:md ../content/help/page-index.md
     #right-column
       +filters-div
