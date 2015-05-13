@@ -17,7 +17,7 @@ register_Routes =   (express_Service)->
 
   app.get '/flare/_dev/:area/:page'  , (req, res)->  res.send preCompiler.renderJadeFile '/source/flare-dev/' + req.params.area + '/' + req.params.page + '.jade'
   app.get '/flare/_dev/all'          , (req, res)->  res.send preCompiler.renderJadeFile '/source/flare-dev/index.jade'
-  app.get '/flare/_dev'              , (req, res)->  res.redirect '/flare/-dev/all'
+  app.get '/flare/_dev'              , (req, res)->  res.redirect '/flare/_dev/all'
 
   app.get '/flare/:page'             , (req, res)->  res.send preCompiler.renderJadeFile '/source/flare/' + req.params.page + '.jade'
   app.get '/flare'                   , (req, res)->  res.redirect '/flare/main-app-view'
