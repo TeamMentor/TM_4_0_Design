@@ -12,4 +12,7 @@ include ../_mixins/links.jade
             ul#message
                 li
                     +mail-icon
-                    span Found an issue? Send us <a href="mailto:support@securityinnovation.com">an email</a>.
+                    span Found an issue? Send us
+                        =  ' '
+                        a#tm-support-email(href="mailto:support@securityinnovation.com") an email
+                        =  '.'
