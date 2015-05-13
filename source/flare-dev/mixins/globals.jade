@@ -379,9 +379,9 @@ mixin reset-pwd-button
 
 //- Alert System
 mixin flare-alert
-    .alert-box(data-alert='')
-        i.fi-megaphone
-        span Error, Validation or Alert Message Here
+    .alert-box.alert-bad(data-alert='')
+        span.alert-icon !
+        span.alert-text Error, Validation or Alert Message Here
         a.close(href='#') ×
 
 mixin copyright
