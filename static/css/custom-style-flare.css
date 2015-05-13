@@ -333,19 +333,20 @@ article a {
   display: flex;
 }
 #two-thirds-column {
-  -webkit-order: 2;
-  order:2;
+  -webkit-order: 1;
+  order:1;
   -webkit-flex: 100%;
   flex: 100%;
   min-height: 1px;
   padding: 0 20px;
 }
 #one-third-column {
-  -webkit-order: 1;
-  order:1;
+  -webkit-order: 2;
+  order:2;
   -webkit-flex: 100%;
   flex: 100%;
   min-height: 1px;
+  padding: 1em 1em 0 1em;
 }
 #three-fourths-column {
   -webkit-order: 2;
@@ -529,6 +530,42 @@ section {
   padding-top: 33%;
   height: 0;
 }
+.fix-vulnerabilities, .reduce-vulnerabilities, .improve-process, .delivers-compliance, .integrates, .cross-references, .provides-guidance, .elsevier, .fedex, .mass-mutual, .microsoft, .ubs {
+  margin: 0 auto;
+  height: 0;
+}
+.fix-vulnerabilities, .reduce-vulnerabilities, .improve-process, .delivers-compliance, .integrates, .cross-references, .provides-guidance {
+  background: url(../assets/icons/landing-page-icons.png) no-repeat;
+  width: 100%;
+  padding-top: 110%;
+}
+.fix-vulnerabilities, .reduce-vulnerabilities, .provides-guidance {
+  background-size: 685%;
+}
+.improve-process, .delivers-compliance, .integrates, .cross-references {
+  background-size: 700%;
+}
+.fix-vulnerabilities, .elsevier {
+  background-position: 0% 0%;
+}
+.reduce-vulnerabilities {
+  background-position: 17.2% 0%;
+}
+.improve-process {
+  background-position: 34% 0%;
+}
+.delivers-compliance {
+  background-position: 50.3% 0%;
+}
+.integrates {
+  background-position: 66.7% 0%;
+}
+.cross-references {
+  background-position: 83% 0%;
+}
+.provides-guidance {
+  background-position: 100% 0%;
+}
 .elsevier {
   background-position: 0% 0%;
 }
@@ -710,9 +747,15 @@ table {
   padding: 0 12px;
   border-collapse: collapse;
 }
-table i {
-  font-size: 60px;
-  padding-right: 80px;
+section.tm-summary table {
+  border: 0;
+  margin: 2em 1em;
+}
+section.tm-summary table tr td:first-child{
+  width: 20%;
+}
+section.tm-summary table tr td:last-child {
+  padding: 0 1em;
 }
 /*------------------------------------*
    BUTTONS
@@ -912,9 +955,12 @@ input.search-input, input.search-input:focus {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-.input-field, .button-field {
+.input-field, .button-field, .conditions {
   -webkit-flex: 100%;
   flex: 100%;
+}
+.conditions {
+  margin: 1em 0;
 }
 .button-field li {
   list-style-type: none;
@@ -1175,16 +1221,13 @@ span.alert-text {
     width: 60%;
     margin: 0 auto;
   }
-  .input-field, .button-field {
-    -webkit-flex: 29%;
-    flex: 29%;
+  .input-field, .button-field, .conditions {
+    -webkit-flex: 1 1 50%;
+    flex: 1 1 50%;
     padding: 0 10px;
   }
-  .access-form, #login-form .button-field {
-    margin-top: 20px;
-  }
-  .conditions {
-    padding: 15px 10px;
+  .access-form {
+    margin-top: 1.25em;
   }
   #sub-nav .item {
     font-size: 0.85em;
@@ -1196,12 +1239,6 @@ span.alert-text {
   #sub-nav .item ul li {
     padding: 1em;
     font-size: 0.95em;
-  }
-}
-@media (min-width: 800px) {
-  #sign-up-form .input-field, #sign-up-form .button-field, #sign-up-form .conditions  {
-    -webkit-flex: 35%;
-    flex: 35%;
   }
 }
 @media (min-width: 950px) {
