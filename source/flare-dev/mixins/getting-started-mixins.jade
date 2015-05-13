@@ -50,24 +50,6 @@ mixin sign-up-form
         .conditions
             include:md ../../content/getting-started/agree-to-toc.md
 
-mixin sign-up-form-prompts
-    p hello
-    form#sign-up-form.access-form(action='#')
-        .input-field
-            +username-input
-            include:md ../../content/getting-started/username-prompt.md
-        .input-field
-            +email-input
-            include:md ../../content/getting-started/email-prompt.md
-        .input-field
-            +flare-password-input
-            include:md ../../content/getting-started/password-prompt.md
-        .conditions
-            include:md ../../content/getting-started/agree-to-toc.md
-        .button-field
-            li
-                +sign-up-button
-
 mixin flare-forgot-password-form
     form#forgot-passward-form.access-form(action='#')
         .input-field
@@ -77,16 +59,10 @@ mixin flare-forgot-password-form
             +get-password-button
 
 mixin pwd-reset-form
-    .bg
-        P Reset your password
-        form(role='form' method='post' action='/flare/home/main-app-view')
-            .row
-                .small-12.columns
-                    +password-input
-            .row
-                .small-12.columns
-                    +confirm-new-password-input
-            br
-            .row
-                .small-12.medium-7.columns
-                    +reset-pwd-button
+    form#password-reset-form.access-form(role='form' method='post' action='/flare/home/main-app-view')
+        .input-field
+            +password-input
+        .input-field
+            +confirm-new-password-input
+        .button-field
+            +reset-pwd-button
