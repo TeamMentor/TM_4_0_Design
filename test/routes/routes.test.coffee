@@ -117,7 +117,11 @@ describe '| routes | routes.test |', ()->
       it testName, (done) ->
 
         checkResponse = (error,response) ->
-          assert_Is_Null(error)
+          if(response.statusCode is 200)
+            assert_Is_Null(error)
+          else
+            assert_Is_Not_Null(error)
+
           response.text.assert_Is_String()
           done()
         if (postRequest)
