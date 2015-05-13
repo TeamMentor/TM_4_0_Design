@@ -4,6 +4,7 @@ Config  = null
 
 loginPage                  = 'source/jade/guest/login-Fail.jade'
 loginPage_Unavailable      = 'source/jade/guest/login-cant-connect.jade'
+guestPage_403              = 'source/jade/guest/403.jade'
 mainPage_user              = '/user/main.html'
 mainPage_no_user           = '/guest/default.html'
 password_reset_fail        = 'source/jade/guest/pwd-reset-fail.jade'
@@ -64,7 +65,12 @@ class Login_Controller
       loginResponse = response.body.d
       success = loginResponse?.Login_Status
       if (success == loginSuccess)
-          @.req.session.username = username
+        @.req.session.username = username
+        redirectUrl =@.req.session.redirectUrl
+        if(redirectUrl? && redirectUrl.is_Local_Url())
+          delete @.req.session.redirectUrl
+          @.res.redirect(redirectUrl)
+        else
           @.res.redirect(mainPage_user)
       else
           @.req.session.username = undefined
@@ -78,6 +84,26 @@ class Login_Controller
   logoutUser: ()=>
     @.req.session.username = undefined
     @.res.redirect(mainPage_no_user)
+
+  tm_SSO: ()=>
+    username = @.req.query.username
+    token    = @.req.query.requestToken
+    if username and token
+      server = @.config.tm_35_Server
+      path   = @.req.route.path.substring(1)
+      url = "#{server}#{path}?username=#{username}&requestToken=#{token}"
+      options =
+        url: url
+        followRedirect: false
+
+      request options,(error, response, data)=>
+        if response.headers?.location is '/teammentor'
+          @.req.session.username = username
+          return @.res.redirect '/'
+
+        @.res.render guestPage_403
+    else
+      @.res.render guestPage_403
 
 
 module.exports = Login_Controller

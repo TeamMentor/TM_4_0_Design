@@ -1,5 +1,6 @@
 extends ../_layouts/page
 include ../_mixins/view-blocks.jade
+include ../_mixins/landing-page-mixins
 block content
   #application
     .row
@@ -7,3 +8,5 @@ block content
         +help-navigation
       .col-9
         +help-content
+        br
+        +footer-div

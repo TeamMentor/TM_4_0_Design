@@ -3,6 +3,13 @@ Express_Session = null
 
 class Session_Service
 
+  DEFAULT_SEARCHES:  [{ id :'abc1', title: 'prevent sql injection'    , results:10},
+                      { id :'abc2', title: 'xss'                      , results:10},
+                      { id :'abc3', title: 'secure connection string' , results:10}]
+  DEFAULT_ARTICLES:
+                      [{id: '1d72228392bf', title: 'Decrypt a String via a Block Cipher Using AES'},
+                       {id: '22ed784143ee', title: 'Using Parameterized Queries for Secure Database Access'},
+                       {id: '17f790dedf10', title: 'Constrain, Reject, and Sanitize Input'}]
   dependencies: ()->
     Nedb            = require('nedb')
     Express_Session = require 'express-session'
@@ -32,7 +39,7 @@ class Session_Service
 
   viewed_Articles: (callback)=>
     @.db.find {}, (err,sessionData)=>
-      viewed_Articles = []
+      viewed_Articles = @.DEFAULT_ARTICLES
       if sessionData
           for session in sessionData
               if session.data.recent_Articles
@@ -42,14 +49,14 @@ class Session_Service
 
   users_Searches: (callback)=>
     @.db.find {}, (err,sessionData)=>
-      users_Searches = []
+      users_Searches = @.DEFAULT_SEARCHES
       if sessionData
         for session in sessionData
           if session.data.user_Searches
             for user_Search in session.data.user_Searches
               if user_Search.results
                 users_Searches.push(user_Search)
-        callback users_Searches
+      callback users_Searches
 
   top_Articles: (callback)=>
     @.viewed_Articles (data)->
@@ -109,11 +116,6 @@ class Session_Service
       @.top_Articles (top_Articles)=>
         data.top_Articles = top_Articles.slice(0, 3)
         callback data
-
-      #topResults = []
-      #topResults.add(results.pop()).add(results.pop())
-      #          .add(results.pop()).add(results.pop())
-      #          .add(results.pop())
 
 
 #based on code from https://github.com/louischatriot/connect-nedb-session/blob/master/index.js

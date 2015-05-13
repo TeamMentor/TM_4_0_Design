@@ -1,3 +1,5 @@
+include ../../shared-mixins/globals.jade
+
 //- static texts
 - var head_title = 'TEAM Mentor 4.0 (Html version)'
 
@@ -11,9 +13,6 @@ mixin save-icon
 
 mixin share-icon
     i.fi-share
-
-mixin search-icon
-    i.fi-magnifying-glass
 
 mixin filter-icon
     i.fi-filter
@@ -63,20 +62,28 @@ mixin logout-link
 
 //- Form Inputs
 mixin username-input
-    label(for='username') Username
+    label Username
     input(type='text', id='username', placeholder='Username')
+
+mixin flare-password-input
+    label Password
+    .row.collapse
+        .small-9.columns
+            input(type='password', placeholder='Password')
+        .small-3.columns
+            a.button.search.full-width(href='#') SHOW
 
 mixin flare-new-password-input
     label New Password
-    input(type='password', placeholder='New Password')
+    .row.collapse
+        .small-10.medium-10.columns
+            input(type='password', placeholder='New Password')
+        .small-2.medium-2.columns
+            .button.postfix#show-button(href='#') SHOW
 
 mixin password-input
     label Password
     input(type='password', id='password', placeholder='Password')
-
-mixin confirm-password-input
-    label(for='password') Confirm Password
-    input(type='password', placeholder='Password')
 
 mixin new-password-input
     label(for='user-new-password') New Password
@@ -350,7 +357,7 @@ mixin save-button
 
 mixin trash-button
     button.app
-        +clear-icon
+        +delete-icon
 
 mixin share-button
     button.app
@@ -362,8 +369,11 @@ mixin save-results-button
 mixin clear-results-button
     button.app Clear Results
 
-mixin ok-button
-    button(type='submit', id='btn-ok') OK, Save
+mixin save-article-button
+    button.app Save Article
+
+mixin share-article-button
+    button.app Share Article
 
 mixin clear-selected-button
     button(type='submit', id='btn-clear-selected') Clear Selected
@@ -380,7 +390,7 @@ mixin reset-pwd-button
 //- Alert System
 mixin flare-alert
     .alert-box(data-alert='')
-        i.fi-megaphone
+        +alert-icon
         span Error, Validation or Alert Message Here
         a.close(href='#') ×
 
@@ -395,25 +405,10 @@ mixin copyright
                     .label TEAM Mentor 4.0
                 li
                     a(href='mailto:support@securityinnovation.com' title='Email')
-                        i.fi-mail
+                        +mail-icon
                 li
                     a(href='http://www.twitter.com/SecInnovation' target='_blank' title='Twitter')
-                        i.fi-social-twitter
+                        +twitter-icon
                 li
                     a#terms-and-conditions(href='../misc/terms-and-conditions' title ='Terms and Conditions')
-                        i.fi-paperclip
-    //#copyright
-        .row
-            .small-12.medium-3.columns
-                a(href='http://www.securityinnovation.com/', target='_blank')
-                    .logo.si-logo
-            .small-12.medium-6.columns
-                include:md ../../content/articles/copyright-information.md
-            .small-12.medium-3.columns
-                ul
-                    li
-                        +i-email
-                        a(href='mailto:support@securityinnovation.com') Email
-                    li
-                        +i-toc
-                        a#terms-and-conditions(href="../misc/terms-and-conditions") Terms & Conditions
+                        +paperclip-icon

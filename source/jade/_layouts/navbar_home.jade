@@ -4,9 +4,12 @@ include ../_mixins/links.jade
     #team-mentor-navigation
         a(href='/user/main.html')
             #tm-logo
-        #links.icon-links
+        #links
             +links-navbar__home
             ul#message
                 li
-                    i.fi-wrench
-                    span Found an issue? Send us <a href="mailto:support@securityinnovation.com">an email</a>.
+                    +mail-icon
+                    span Found an issue? Send us
+                        =  ' '
+                        a#tm-support-email(href="mailto:support@securityinnovation.com") an email
+                        =  '.'

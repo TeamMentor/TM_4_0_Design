@@ -4,22 +4,24 @@ request         = null
 
 describe '| routes | routes.test |', ()->
 
-    @.timeout 4000
+    @.timeout 7000
     express_Service = null
     app             = null
 
     expectedPaths = [ '/'
-                      '/flare/:area/:page'
-                      '/flare/default'
+                      '/flare/_dev/:area/:page'
+                      '/flare/_dev/all'
+                      '/flare/_dev'
+                      '/flare/:page'
+                      '/flare'
                       '/Image/:name'
+                      '/a/:ref'
+                      '/article/:ref/:guid'
                       '/article/:ref/:title'
                       '/article/:ref'
                       '/articles'
                       '/search'
                       '/search/:text'
-                      '/flare'
-                      '/flare/all'
-                      '/flare/main-app-view'
                       '/show'
                       '/show/:queryId'
                       '/show/:queryId/:filters'
@@ -36,6 +38,8 @@ describe '| routes | routes.test |', ()->
                       '/user/login'
                       '/user/login'
                       '/user/logout'
+                      '/_Customizations/SSO.aspx'
+                      '/Aspx_Pages/SSO.aspx'
                       '/user/main.html'
                       '/user/pwd_reset'
                       '/user/sign-up'
@@ -87,7 +91,7 @@ describe '| routes | routes.test |', ()->
     runTest = (originalPath) ->
       path = originalPath.replace(':version','flare')
                          .replace(':area/:page','help/index')
-                         .replace(':file/:mixin', 'globals/navigate-link')
+                         .replace(':file/:mixin', 'globals/tm-support-email')
                          #.replace(':area','help')
                          .replace(':page','default')
                          .replace(':queryId','AAAA')
@@ -97,10 +101,10 @@ describe '| routes | routes.test |', ()->
 
       expectedStatus = 200;
       expectedStatus = 302 if ['','image','deploy', 'poc'                    ].contains(path.split('/').second().lower())
-      expectedStatus = 302 if ['/flare','/flare/main-app-view','/user/login',
+      expectedStatus = 302 if ['/flare','/flare/_dev','/flare/main-app-view','/user/login',
                                '/user/logout','/pocaaaaa' ].contains(path)
 
-      expectedStatus = 403 if ['article','articles','show'                   ].contains(path.split('/').second().lower())
+      expectedStatus = 403 if ['a','article','articles','show'               ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
 
       expectedStatus = 404 if ['/aaaaa'                                      ].contains(path)
@@ -113,7 +117,11 @@ describe '| routes | routes.test |', ()->
       it testName, (done) ->
 
         checkResponse = (error,response) ->
-          assert_Is_Null(error)
+          if(response.statusCode is 200)
+            assert_Is_Null(error)
+          else
+            assert_Is_Not_Null(error)
+
           response.text.assert_Is_String()
           done()
         if (postRequest)
@@ -132,7 +140,7 @@ describe '| routes | routes.test |', ()->
       agent = request.agent()
       baseUrl = 'http://localhost:' + app.port
 
-      loggedInText = ['<li><a id="nav-user-logout" href="/user/logout"><i class="fi-power"></i><span>Logout</span></a></li>']
+      loggedInText = ['<span title="Logout" class="icon-Logout">']
       loggedOutText = ['<li><a id="nav-login" href="/guest/login.html">Login</a></li>']
 
       postData = {username:'user', password:'a'}

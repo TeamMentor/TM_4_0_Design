@@ -45,108 +45,244 @@ mixin reset-password-button
   button.full-width(type='submit' id='btn-reset-password') Reset Password
 
 mixin start-trial-button
-  button.btn-landing
-    i.fi-key.btn-icon
+  button
     span Start your free trial today
 
 mixin see-for-yourself-button
-  button.btn-landing
-    i.fi-eye.btn-icon
+  button
     span See for yourself
 
-mixin menu-icon
-  i.fi-list
-
-mixin i-phone
-  i.fi-telephone
-
-mixin i-email
-  i.fi-mail
-
-mixin i-marker
-  i.fi-marker
-
-mixin i-twitter
-  i.fi-social-twitter
-
-mixin i-toc
-  i.fi-paperclip
-
-mixin arrow-down
-  i.fi-arrow-down
-
 mixin search-icon
-  i.fi-magnifying-glass
+  span.icon-Search(title='Search')
+    span.path1
+    span.path2
+    span.path3
 
-mixin article-icon
-  i.fi-page
+mixin index-icon
+  span.icon-Index(title='Index')
 
-mixin alert-icon
-  i.fi-megaphone
+mixin info-icon
+  span.icon-Info(title='Info')
+
+mixin logout-icon
+  span.icon-Logout(title='Logout')
+
+mixin mail-icon
+  span.icon-Mail(title='Mail')
+
+mixin twitter-icon
+  span.icon-Twitter(title='Twitter')
+
+mixin paperclip-icon
+  span.icon-Paperclip(title='Terms & Conditions')
+
+mixin php-icon
+  span.icon-PHP(title='PHP')
+    span.path1
+    span.path2
+    span.path3
+
+mixin scala-icon
+  span.icon-Scala(title='Scala')
+      span.path1
+      span.path2
+
+mixin vulnerabilities-icon
+  span.icon-Vulnerabilities(title='Vulnerabilities')
+    span.path1
+    span.path2
+    span.path3
+
+mixin wcf-icon
+  span.icon-WCF(title='WCF')
+    span.path1
+    span.path2
+
+mixin web-app-icon
+  span.icon-Web-App(title='Web Application')
+    span.path1
+    span.path2
+    span.path3
+    span.path4
+    span.path5
+    span.path6
+    span.path7
+    span.path8
+    span.path9
+    span.path10
+    span.path11
+
+mixin net-icon
+  span.icon-Net(title='.Net')
+    span.path1
+    span.path2
+
+mixin net-3-5-icon
+  span.icon-Net-3-5(title='.Net')
+    span.path1
+    span.path2
+
+mixin ios-icon
+  span.icon-iOS(title='iOS')
+    span.path1
+    span.path2
+    span.path3
+
+mixin java-icon
+  span.icon-Java(title='Java')
+    span.path1
+    span.path2
+    span.path3
+    span.path4
+
+mixin all-icon
+  span.icon-All(title='Technology Independant')
+    span.path1
+    span.path2
+
+mixin android-icon
+  span.icon-Android(title='Android')
+    span.path1
+    span.path2
+    span.path3
+    span.path4
+    span.path5
+
+mixin c-icon
+  span.icon-C(title='C++')
+    span.path1
+    span.path2
+    span.path3
+    span.path4
 
 mixin checklist-icon
-  i.fi-checkbox(title='Checklist')
+  span.icon-Checklist(title='Checklist')
+    span.path1
+    span.path2
+    span.path3
+    span.path4
+    span.path5
+
+mixin code-example-icon
+  span.icon-CodeExample(title='Code Example')
+    span.path1
+    span.path2
 
 mixin guideline-icon
-  i.fi-book(title='Guideline')
+  span.icon-Guideline(title='Guideline')
+    span.path1
+    span.path2
+    span.path3
 
-mixin code-sample-icon
-  i.fi-puzzle(title='Code Sample')
+mixin principle-icon
+  span.icon-Principle(title='Principle')
+    span.path1
+    span.path2
 
 mixin how-to-icon
-  i.fi-list-bullet(title='How To')
-
-mixin any-technology-icon
-  i.fi-flag(title='Any Technology')
+  span.icon-HowTo(title='How To')
+    span.path1
+    span.path2
 
 mixin html5-icon
-  i.fi-html5(title='HTML5')
+  span.icon-HTML5(title='HTML5')
+    span.path1
+    span.path2
 
-mixin vuln-icon
-  i.fi-shield(title='Vulnerability')
+mixin deploy-icon
+  span.icon-Deploy(title='Deployment')
+    span.path1
+    span.path2
+
+mixin design-icon
+  span.icon-Design(title='Design')
+    span.path1
+    span.path2
+
+mixin implement-icon
+  span.icon-Implementation(title='Implementation')
+    span.path1
+    span.path2
+    span.path3
+
+mixin test-icon
+  span.icon-Test(title='Test')
+    span.path1
+    span.path2
+
+mixin article-icon
+  span.icon-Article(title='Article')
+
+mixin filters-icon
+  span.icon-Filter(title='Filter')
+
+mixin delete-icon
+  span.icon-Delete(title='Delete')
+
+mixin save-icon
+  span.icon-Save(title='Save')
+
+mixin share-icon
+  span.icon-Share(title='Share')
 
 mixin filter-icon(filter, title)
-  case filter
-    when 'Type'
-      case title
-        when 'Checklist Item'
-          +checklist-icon
-        when 'Guideline'
-          +guideline-icon
-        when 'Code Example'
-          +code-sample-icon
-        when 'How To'
-          +how-to-icon
-        when 'Vulnerability'
-          +vuln-icon
-        default
-          span
+  span#filter-icon
+    case filter
+      when 'Type'
+        case title
+          when 'Checklist Item'
+            +checklist-icon
+          when 'Guideline'
+            +guideline-icon
+          when 'Code Example'
+            +code-example-icon
+          when 'How To'
+            +how-to-icon
+          when 'Vulnerability'
+            +vulnerabilities-icon
+          when 'Principle'
+            +principle-icon
+          default
+            span
 
-    when 'Technology'
-      case title
-        when '.NET'
-        when 'ASP.NET 3.5'
-        when '.NET 3.5'
-        when 'ASP.NET 4.0'
-          .asp(title='ASP.Net')
-        when 'Android'
-          .android(title='Android')
-        when 'C++'
-          .c-plus-plus(title='C++')
-        when 'iOS'
-          .ios(title='iOS')
-        when 'Java'
-          .java(title='Java')
-        when 'PHP'
-          .php(title='PHP')
-        when 'Scala Play'
-        when 'Scala with Play Framework'
-          .scala(title='Scala')
-        when 'WCF 3.5'
-          .wcf(title='WCF')
-        when 'Web Application'
-          .web-app(title='Web Application')
-        when 'HTML5'
-          +html5-icon
-        default
-          +any-technology-icon
+      when 'Technology'
+        case title
+          when '.NET'
+          when 'ASP.NET 3.5'
+          when 'ASP.NET 4.0'
+            +net-icon
+          when '.NET 3.5'
+            +net-3-5-icon
+          when 'Android'
+            +android-icon
+          when 'C++'
+            +c-icon
+          when 'iOS'
+            +ios-icon
+          when 'Java'
+            +java-icon
+          when 'PHP'
+            +php-icon
+          when 'Scala Play'
+          when 'Scala with Play Framework'
+            +scala-icon
+          when 'WCF'
+          when 'WCF 3.5'
+            +wcf-icon
+          when 'Web Application'
+            +web-app-icon
+          when 'HTML5'
+            +html5-icon
+          default
+            +all-icon
+
+      when 'Phase'
+        case title
+          when 'Deployment'
+            +deploy-icon
+          when 'Design'
+            +design-icon
+          when 'Implementation'
+            +implement-icon
+          when 'Test'
+            +test-icon

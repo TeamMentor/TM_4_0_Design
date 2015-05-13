@@ -60,7 +60,7 @@ class Express_Service
     @.app.config = new Config(null, false);
 
   set_Static_Route:()=>
-    @app.use(express['static'](process.cwd()));
+    @app.use(express['static'](path.join(__dirname,'../../')));
 
   set_Views_Path :()=>
     @.app.set('views', path.join(__dirname,'../../'))
@@ -80,6 +80,7 @@ class Express_Service
       if req.url is '/'
         res.redirect '/index.html'
       else
+        req.session.redirectUrl = req.url
         res.status(403)
            .send(new Jade_Service(config).renderJadeFile('/source/jade/guest/login-required.jade'))
     else

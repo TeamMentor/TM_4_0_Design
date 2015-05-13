@@ -1,13 +1,15 @@
 extends ../_layouts/page
 include ../_mixins/error-mixins.jade
-
+include ../_mixins/landing-page-mixins
 block content
-	#application
-		.row
-			.col-3
-				.lge-container
-			.col-6
-				.lge-container
-					+error_403
-			.col-3
-				.lge-container
+    #application
+        .row
+            .col-3
+                .lge-container
+            .col-6
+                .lge-container
+                    +error_403
+            .col-3
+                .lge-container
+    br
+    +footer-div

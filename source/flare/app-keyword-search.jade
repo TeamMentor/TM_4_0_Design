@@ -1,5 +1,5 @@
-extends ../_layouts/flare_page
-include mixins/prod-application-mixins
+extends _layouts/flare_page
+include mixins/application-mixins
 
 block content
   #application
@@ -9,10 +9,11 @@ block content
       section.row
         #label
           +results-save-clear
+      section.row
         #articles
-          +prod-articles-list
-          +prod-articles-list
-          +prod-articles-list
+          +articles-list
+          +articles-list
+          +articles-list
       +copyright
     #right-column
       +filters-div

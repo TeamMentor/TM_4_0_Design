@@ -11,10 +11,11 @@ class Article_Controller
     Graph_Service    = require('../services/Graph-Service')
     Config           = require('../misc/Config')
 
-  constructor: (req, res, config,graph_Options)->
+  constructor: (req, res, next, config,graph_Options)->
     @dependencies()
-    @.req              = req;
-    @.res              = res;
+    @.req              = req
+    @.res              = res
+    @.next             = next
     @.config           = config || new Config()
     @.jade_Article     = '/source/jade/user/article.jade'
     @.jade_Articles    = '/source/jade/user/articles.jade'
@@ -38,9 +39,10 @@ class Article_Controller
             title      = article_Data?.title
             technology = article_Data?.technology
             type       = article_Data?.type
+            phase       = article_Data?.phase
             @graphService.article_Html article_Id, (data)=>
               @recentArticles_Add article_Id, title
-              send_Article { id : article_Id, title: title,  article_Html: data?.html, technology: technology, type: type}
+              send_Article { id : article_Id, title: title,  article_Html: data?.html, technology: technology, type: type, phase: phase}
       else
         send_Article null
 
@@ -48,6 +50,18 @@ class Article_Controller
     @graphService.articles (articles)=>
       view_Model = { results: articles.values()}
       @res.send @jade_Service.renderJadeFile(@jade_Articles, view_Model)
+
+  check_Guid: =>
+    guid = @.req.params?.guid
+    if(guid and                                                                       # if we have a value
+       guid.split('-').size() is 5 and                                                #   are there are 4 dashes
+       guid.size() is 36)                                                             #   and the size if 32
+      guid_regex = /^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$/i  # use this regex to check if the value provided is a guid
+      if guid_regex.test(guid.upper())                                                # if it isa regex
+        return @.res.redirect "/article/#{guid}"                                      #   redirect the user back to the /article/:ref route
+                                                                                      # if not
+    @.next()                                                                          #   continue with the next express route
+
 
   recentArticles: =>
     @.req.session ?= {}
@@ -68,13 +82,14 @@ Article_Controller.register_Routes = (app, expressService,graph_Options) ->
 
   checkAuth       =  (req,res,next) -> expressService.checkAuth(req, res, next, app?.config)
 
-  articleController = (method_Name) ->                                  # pins method_Name value
-        return (req, res) ->                                             # returns function for express
-            new Article_Controller(req, res, app.config,graph_Options)[method_Name]()    # creates SearchController object with live
+  articleController = (method_Name) ->                                                       # pins method_Name value
+        return (req, res,next) ->                                                            # returns function for express
+            new Article_Controller(req, res, next, app.config,graph_Options)[method_Name]()   # creates SearchController object with live
 
-
-  app.get "/article/:ref/:title", checkAuth, articleController('article')
-  app.get "/article/:ref"       , checkAuth, articleController('article')
-  app.get "/articles"           , checkAuth, articleController('articles')
+  app.get '/a/:ref'             , checkAuth, articleController('article')
+  app.get '/article/:ref/:guid' , checkAuth, articleController('check_Guid')
+  app.get '/article/:ref/:title', checkAuth, articleController('article')
+  app.get '/article/:ref'       , checkAuth, articleController('article')
+  app.get '/articles'           , checkAuth, articleController('articles')
 
 module.exports = Article_Controller

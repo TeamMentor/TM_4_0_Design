@@ -117,7 +117,6 @@ mixin main-app-view
                             tr
                                 td
                                     a(href='/search?text=' + top_Search.title.str().url_Encode())
-                                        +search-icon
                                         = top_Search.title
             .bg
                 #top-articles
@@ -137,7 +136,6 @@ mixin main-app-view
                             tr
                                 td
                                     a(href=newArticle.href)
-                                        +article-icon
                                         = newArticle.title
 
 //- articles-list
@@ -149,19 +147,19 @@ mixin articles-list
                     .bg#list-view-article
                         table
                             tr
-                                td.small
+                                td.filter-icons
                                     span.label= '#' + (index +1)
-                                    br
-                                    +filter-icon('Technology',result.technology)
-                                    br
-                                    +filter-icon('Type', result.type)
-
                                 td
                                     a(href='/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                                         h4= result.title
                             tr
-                                td
-                                td
+                                td.filter-icons
+                                    +filter-icon('Technology',result.technology)
+                                    br
+                                    +filter-icon('Type', result.type)
+                                    br
+                                    +filter-icon('Phase', result.phase)
+                                td.full-width
                                     p= result.summary + '...'
 
 //- filters

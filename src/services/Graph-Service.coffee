@@ -67,7 +67,7 @@ class Graph_Service
     url_Search = "#{@server}/search/query_from_text_search/#{text.url_Encode()}"
 
     url_Convert.GET_Json (json)->
-      mapping = json[json.keys().first()]
+      mapping = json[json.keys?().first()]
       if mapping?.id?.contains 'query-'
         callback mapping.id
       else
