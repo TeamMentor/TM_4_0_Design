@@ -353,7 +353,7 @@ article a {
   -webkit-flex: 100%;
   flex: 100%;
   min-height: 1px;
-  padding: 1em;
+  padding: 1em 1em 0 0.5em;
 }
 #one-fourth-column {
   -webkit-order: 1;
@@ -361,7 +361,7 @@ article a {
   -webkit-flex: 100%;
   flex: 100%;
   min-height: 1px;
-  padding: 1em 1em 0 1em;
+  padding: 1em 0.5em 1em 1em;
 }
 #sub-nav {
   display: -webkit-flex;
