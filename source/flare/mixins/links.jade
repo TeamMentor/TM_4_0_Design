@@ -154,11 +154,96 @@ mixin git-repo-link
         a(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
 
 mixin help-navigation
-    #help-nav
+    #sub-nav
+        .item
+            a(href='help-sub-navigation')
+                span About TEAM Mentor
+        .item
+            a(href='help-sub-navigation')
+                span Installation
+        .item
+            a(href='help-sub-navigation')
+                span Administration
+        .item
+            a(href='help-sub-navigation')
+                span UI Elements
+        .item
+            a(href='help-sub-navigation')
+                span Reading Content
+        .item
+            a(href='help-sub-navigation')
+                span Editing Content
+        .item
+            a(href='help-sub-navigation')
+                span Eclipse for Fortify plugin
+        .item
+            a(href='help-sub-navigation')
+                span HP Fortify SCA UI Integration
+        .item
+            a(href='help-sub-navigation')
+                span Visual Studio Plugin
+
+mixin help-sub-navigation
+    #sub-nav
+        .item
+            a(href='help-sub-navigation')
+                span About TEAM Mentor
+                ul
+                    li
+                        a(href='help-docs')
+                            span What's new in this release?
+                    li
+                        a(href='help-docs')
+                            span Introduction to TEAM Mentor
+                    li
+                        a(href='help-docs')
+                            span Quick Start Guide
+                    li
+                        a(href='help-docs')
+                            span Support
+        .item
+            a(href='help-sub-navigation')
+                span Installation
+        .item
+            a(href='help-sub-navigation')
+                span Administration
+        .item
+            a(href='help-sub-navigation')
+                span UI Elements
+        .item
+            a(href='help-sub-navigation')
+                span Reading Content
+        .item
+            a(href='help-sub-navigation')
+                span Editing Content
+        .item
+            a(href='help-sub-navigation')
+                span Eclipse for Fortify plugin
+        .item
+            a(href='help-sub-navigation')
+                span HP Fortify SCA UI Integration
+        .item
+            a(href='help-sub-navigation')
+                span Visual Studio Plugin
+
+    //#help-nav
         ul.sub-nav
             li
                 a(href='help-sub-navigation')
                     span About TEAM Mentor
+                ul
+                    li
+                        a(href='help-docs')
+                            span What's new in this release?
+                    li
+                        a(href='help-docs')
+                            span Introduction to TEAM Mentor
+                    li
+                        a(href='help-docs')
+                            span Quick Start Guide
+                    li
+                        a(href='help-docs')
+                            span Support
             li
                 a(href='help-sub-navigation')
                     span Installation
@@ -183,19 +268,3 @@ mixin help-navigation
             li
                 a(href='help-sub-navigation')
                     span Visual Studio Plugin
-
-mixin help-sub-navigation
-    #help-sub-nav
-        ul.sub-nav
-            li
-                a(href='help-sub-navigation')
-                    span What's new in this release?
-            li
-                a(href='help-sub-navigation')
-                    span Introduction to TEAM Mentor
-            li
-                a(href='help-sub-navigation')
-                    span Quick Start Guide
-            li
-                a(href='help-sub-navigation')
-                    span Support

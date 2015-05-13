@@ -2,9 +2,12 @@ extends _layouts/flare_page
 
 block content
   #application
+    #left-column
+      +left-navigation
     #one-fourth-column
-      +help-navigation
+      +help-sub-navigation
     #three-fourths-column
-        +help-sub-navigation
-        article
-            include:md ../content/help/page-index.md
+      article
+          include:md ../content/help/page-index.md
+    #right-column
+      +filters-div

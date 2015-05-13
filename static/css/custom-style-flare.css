@@ -181,7 +181,7 @@ span.text {
   background: white;
   border-left: 1px solid #dbdbdb;
 }
-#application {
+#application, #application-logged-out {
   -webkit-order: 3;
   order: 3;
   -webkit-flex: 100%;
@@ -361,32 +361,38 @@ article a {
   -webkit-flex: 100%;
   flex: 100%;
   min-height: 1px;
+  padding: 1em 1em 0 1em;
 }
-#help-nav {
-  padding: 1em;
-}
-ul.sub-nav {
-  background: white;
-  list-style-type: none;
-  padding: 0;
+#sub-nav {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  background: white;
   border: 1px solid #dbdbdb;
+  border-bottom: 0;
   border-radius: 3px;
 }
-ul.sub-nav li {
-  padding: 0.5em;
+#sub-nav .item {
   -moz-flex: 1;
   -webkit-flex: 1;
-  flex: 1 1 100px;
-  display: inline-block;
+  flex: 1 1 100%;
+  padding: 0.5em;
+  border-bottom: 1px solid #dbdbdb;
+  font-size: 0.75em;
 }
-#help-sub-nav {
-
+#sub-nav .item ul {
+  padding: 0;
+  margin: 0.5em;
+  list-style-type: none;
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-bottom: 0;
 }
-
+#sub-nav .item ul li {
+  padding: 0.5em;
+  border-bottom: 1px solid #dbdbdb;
+}
 
 
 
@@ -1035,7 +1041,7 @@ span.alert-text {
     -webkit-flex: 21%;
     flex: 21%;
   }
-  #application {
+  #application, #application-logged-out {
     -webkit-order: 5;
     order: 5;
     height: calc(100% - 50px);
@@ -1160,7 +1166,7 @@ span.alert-text {
   article h5 {
     font-size: 1.25em;
   }
-  article p {
+  article p, article li {
     font-size: 1em;
     line-height: 1.75em;
   }
@@ -1179,16 +1185,16 @@ span.alert-text {
   .conditions {
     padding: 15px 10px;
   }
-  ul.sub-nav li {
-    -moz-flex: 1;
-    -webkit-flex: 1;
-    flex: 100%;
-    display: block;
+  #sub-nav .item {
+    font-size: 0.85em;
     padding: 1em;
-    border-bottom: 1px solid #dbdbdb;
   }
-  #help-nav ul li:last-child {
-    border-bottom: none;
+  #sub-nav .item ul {
+    margin: 1.5em 0 1em 0;
+  }
+  #sub-nav .item ul li {
+    padding: 1em;
+    font-size: 0.95em;
   }
 }
 @media (min-width: 800px) {
@@ -1209,6 +1215,9 @@ span.alert-text {
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
     max-width: 100%;
+  }
+  #application-logged-out {
+    padding: 0 10%;
   }
 }
 @media (min-width: 1285px) {
