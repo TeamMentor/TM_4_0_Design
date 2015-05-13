@@ -226,62 +226,63 @@ mixin share-icon
   span.icon-Share(title='Share')
 
 mixin filter-icon(filter, title)
-  case filter
-    when 'Type'
-      case title
-        when 'Checklist Item'
-          +checklist-icon
-        when 'Guideline'
-          +guideline-icon
-        when 'Code Example'
-          +code-example-icon
-        when 'How To'
-          +how-to-icon
-        when 'Vulnerability'
-          +vulnerabilities-icon
-        when 'Principle'
-          +principle-icon
-        default
-          span
+  span#filter-icon
+    case filter
+      when 'Type'
+        case title
+          when 'Checklist Item'
+            +checklist-icon
+          when 'Guideline'
+            +guideline-icon
+          when 'Code Example'
+            +code-example-icon
+          when 'How To'
+            +how-to-icon
+          when 'Vulnerability'
+            +vulnerabilities-icon
+          when 'Principle'
+            +principle-icon
+          default
+            span
 
-    when 'Technology'
-      case title
-        when '.NET'
-        when 'ASP.NET 3.5'
-        when 'ASP.NET 4.0'
-          +net-icon
-        when '.NET 3.5'
-          +net-3-5-icon
-        when 'Android'
-          +android-icon
-        when 'C++'
-          +c-icon
-        when 'iOS'
-          +ios-icon
-        when 'Java'
-          +java-icon
-        when 'PHP'
-          +php-icon
-        when 'Scala Play'
-        when 'Scala with Play Framework'
-          +scala-icon
-        when 'WCF'
-        when 'WCF 3.5'
-          +wcf-icon
-        when 'Web Application'
-          +web-app-icon
-        when 'HTML5'
-          +html5-icon
-        default
-          +all-icon
+      when 'Technology'
+        case title
+          when '.NET'
+          when 'ASP.NET 3.5'
+          when 'ASP.NET 4.0'
+            +net-icon
+          when '.NET 3.5'
+            +net-3-5-icon
+          when 'Android'
+            +android-icon
+          when 'C++'
+            +c-icon
+          when 'iOS'
+            +ios-icon
+          when 'Java'
+            +java-icon
+          when 'PHP'
+            +php-icon
+          when 'Scala Play'
+          when 'Scala with Play Framework'
+            +scala-icon
+          when 'WCF'
+          when 'WCF 3.5'
+            +wcf-icon
+          when 'Web Application'
+            +web-app-icon
+          when 'HTML5'
+            +html5-icon
+          default
+            +all-icon
 
-    when 'Phase'
-      case title
-        when 'Deployment'
-          +deploy-icon
-        when 'Design'
-          +design-icon
-        when 'Implementation'
-          +implement-icon
-        when 'Test'
-          +test-icon
+      when 'Phase'
+        case title
+          when 'Deployment'
+            +deploy-icon
+          when 'Design'
+            +design-icon
+          when 'Implementation'
+            +implement-icon
+          when 'Test'
+            +test-icon
