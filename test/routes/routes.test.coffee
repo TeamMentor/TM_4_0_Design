@@ -34,6 +34,7 @@ describe '| routes | routes.test |', ()->
                       '/passwordReset/:username/:token'
                       '/help/index.html'
                       '/help/:page*'
+                      '/help/article/:page*'
                       '/misc/:page'
                       '/index.html'
                       '/user/login'

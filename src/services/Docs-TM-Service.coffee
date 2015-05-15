@@ -72,9 +72,9 @@ class Docs_TM_Service
             #Finding ids in views
             items.forEach (guidanceItemId)->
               articleMetadata = articlesMetadata[guidanceItemId];
-              view   .Articles.push(articleMetadata);
-              library.Articles[articleMetadata.Id] = articleMetadata;
-
+              if(articleMetadata?)
+                view   .Articles.push(articleMetadata);
+                library.Articles[articleMetadata.Id] = articleMetadata;
             #Adding view to library
             library.Views.push(view);
             libraryData.push(library);
