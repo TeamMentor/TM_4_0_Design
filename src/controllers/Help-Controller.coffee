@@ -99,8 +99,9 @@ class Help_Controller
 
 Help_Controller.register_Routes =  (app)=>
 
-  app.get '/help/index.html', (req, res)-> new Help_Controller(req, res).show_Index_Page()
-  app.get '/help/:page*'    , (req, res)-> new Help_Controller(req, res).show_Help_Page()
-  app.get '/Image/:name'    , (req, res)-> new Help_Controller(req, res).redirect_Images_to_Folder()
+  app.get '/help/index.html'      , (req, res)-> new Help_Controller(req, res).show_Index_Page()
+  app.get '/help/article/:page*'  , (req, res)-> new Help_Controller(req, res).show_Help_Page()
+  app.get '/help/:page*'          , (req, res)-> new Help_Controller(req, res).show_Help_Page()
+  app.get '/Image/:name'          , (req, res)-> new Help_Controller(req, res).redirect_Images_to_Folder()
 
 module.exports = Help_Controller

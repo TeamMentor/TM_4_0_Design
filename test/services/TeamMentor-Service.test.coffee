@@ -26,10 +26,11 @@ describe "| services | Docs-TM-Service.test", ()->
 
         expect(articlesMetadata                  ).to.be.an('Object')
         expect(articlesMetadata._numberOfArticles).to.be.an('Number')
-        expect(articlesMetadata._numberOfArticles).to.be.above(100)
+        expect(articlesMetadata._numberOfArticles).to.be.above(44)
 
         metadata = articlesMetadata["23a3c023-fc74-46fe-9a6e-e7ec2d136335"]
 
+        expect(articlesMetadata['00000000-0000-0000-0000-000000000000']).to.be.undefined
         expect(metadata           ).to.be.an('Object')
         expect(metadata.Title     ).to.be.equal('Installing TEAM Mentor Eclipse Plugin for Fortify')
         expect(metadata.Technology).to.be.equal('Eclipse Plugin')
@@ -39,7 +40,7 @@ describe "| services | Docs-TM-Service.test", ()->
     
     it 'getLibraryData', ()->
         docs_TM_Service.getLibraryData (libraryData)->
-        
+
           #check libraryData object types
           expect(libraryData).to.be.an('Array');
           expect(libraryData).to.be.not.empty;
