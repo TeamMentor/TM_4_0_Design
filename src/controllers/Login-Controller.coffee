@@ -86,7 +86,7 @@ class Login_Controller
     @.res.redirect(mainPage_no_user)
 
   tm_SSO: ()=>
-    username = @.req.query.username
+    username = @.req.query.username || @.req.query.userName
     token    = @.req.query.requestToken
     if username and token
       server = @.config.tm_35_Server

@@ -286,7 +286,8 @@ describe '| controllers | Help-Controller.test |', ()->
           routes[url] = target
 
       Help_Controller.register_Routes app
-      routes.keys().assert_Is [ '/help/index.html', '/help/:page*', '/Image/:name' ]
-      routes['/help/index.html'].source_Code().assert_Contains 'return new Help_Controller(req, res).show_Index_Page();'
-      routes['/help/:page*'    ].source_Code().assert_Contains 'return new Help_Controller(req, res).show_Help_Page();'
-      routes['/Image/:name'    ].source_Code().assert_Contains 'return new Help_Controller(req, res).redirect_Images_to_Folder();'
+      routes.keys().assert_Is [ '/help/index.html', '/help/article/:page*', '/help/:page*', '/Image/:name' ]
+      routes['/help/index.html'     ].source_Code().assert_Contains 'return new Help_Controller(req, res).show_Index_Page();'
+      routes['/help/article/:page*' ].source_Code().assert_Contains 'return new Help_Controller(req, res).show_Help_Page();'
+      routes['/help/:page*'         ].source_Code().assert_Contains 'return new Help_Controller(req, res).show_Help_Page();'
+      routes['/Image/:name'         ].source_Code().assert_Contains 'return new Help_Controller(req, res).redirect_Images_to_Folder();'

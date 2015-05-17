@@ -19,6 +19,7 @@ describe '| routes | routes.test |', ()->
                       '/article/:ref/:guid'
                       '/article/:ref/:title'
                       '/article/:ref'
+                      '/teamMentor/open/:guid'
                       '/articles'
                       '/search'
                       '/search/:text'
@@ -33,6 +34,7 @@ describe '| routes | routes.test |', ()->
                       '/passwordReset/:username/:token'
                       '/help/index.html'
                       '/help/:page*'
+                      '/help/article/:page*'
                       '/misc/:page'
                       '/index.html'
                       '/user/login'
@@ -104,7 +106,7 @@ describe '| routes | routes.test |', ()->
       expectedStatus = 302 if ['/flare','/flare/_dev','/flare/main-app-view','/user/login',
                                '/user/logout','/pocaaaaa' ].contains(path)
 
-      expectedStatus = 403 if ['a','article','articles','show'               ].contains(path.split('/').second().lower())
+      expectedStatus = 403 if ['a','article','articles','show', 'teammentor' ].contains(path.split('/').second().lower())
       expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
 
       expectedStatus = 404 if ['/aaaaa'                                      ].contains(path)
