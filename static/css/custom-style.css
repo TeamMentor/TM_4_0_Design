@@ -390,6 +390,9 @@ img, object {
 #help ul {
   padding: 0 0 0 2em;
 }
+#help a {
+  text-decoration: underline;
+}
 /*------------------------------------*
    SUB-NAVIGATION
 *------------------------------------*/
