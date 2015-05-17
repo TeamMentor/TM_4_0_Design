@@ -40,11 +40,11 @@ mixin help-navigation
               td
                 a(href= '/help/' + article.Id)= article.Title
 mixin help-index
-  #help-index.bg.content
+  #help.bg.content
     include:md ../../content/help/page-index.md
 
 mixin help-content
-  #help-docs.bg.content
+  #help.bg.content
     if title
       h1#help-title= title
     #help-content!= content
