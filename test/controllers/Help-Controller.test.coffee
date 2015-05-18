@@ -46,8 +46,8 @@ describe '| controllers | Help-Controller.test |', ()->
       $('#help-title'  ).text().assert_Is title
       $('#help-content').text().assert_Is content
     else
-      $('#help-index h2'          ).html().assert_Is 'TEAM Mentor Documents'
-      $('#help-index p'           ).html().assert_Is 'Welcome to the TEAM Mentor Documentation Website where you will find detailed information on how to install TEAM Mentor, how it works and how to customize it.'
+      $('#team-mentor-documents').html().assert_Is 'TEAM Mentor Documents'
+      $('p'                     ).html().assert_Is 'Welcome to the TEAM Mentor Documentation Website where you will find detailed information on how to install TEAM Mentor, how it works and how to customize it.'
     next()
 
   @.timeout 5000
