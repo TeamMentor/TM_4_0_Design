@@ -989,40 +989,41 @@ input.search-input, input.search-input:focus {
 /*------------------------------------*
    ACCORDIONS
 *------------------------------------*/
-#left-column .accordion {
+#left-column .accordion-item {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  -webkit-flex: 33%;
-  flex: 33%;
+  -webkit-flex: 100%;
+  flex: 100%;
+  width: 33%;
 }
-.accordion-item {
-  -webkit-flex: 33%;
-  flex: 33%;
-  display: -webkit-flex;
-  display: flex;
+.accordion-title {
+  flex: 30%;
   border-bottom: 1px solid #dbdbdb;
   padding: 1.25em 0;
   color: #7b7b7b;
   font-size: 0.85em;
+  width: 33%;
 }
-.accordion-title {
-  -webkit-flex: 100%;
-  flex: 100%;
-}
-.accordion-panel {
-  -webkit-flex: 100%;
-  flex: 100%;
-  padding: 0 1em;
-  border-bottom: 1px solid #dbdbdb;
+.accordion-item:hover .accordion-title {
+  background: #fafafa;
 }
 .accordion-item [class^="icon-"], .accordion-item [class*=" icon-"] {
   color: #7b7b7b;
+}
+.accordion-panel {
+  flex: 4 0 20%;
+  padding: 0 1em;
+  border-bottom: 1px solid #dbdbdb;
+  max-height: 600px;
+  overflow: auto;
+  display: none;
+}
+.accordion-panel:target {
+  display: block;
 }
 .accordion ul {
   margin: 0;
