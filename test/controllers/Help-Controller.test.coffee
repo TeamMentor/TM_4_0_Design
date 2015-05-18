@@ -3,6 +3,7 @@ supertest         = require 'supertest'
 expect            = require('chai').expect
 request           = require 'request'
 marked            = require 'marked'
+
 Help_Controller   = require('../../src/controllers/Help-Controller')
 
 describe '| controllers | Help-Controller.test |', ()->
@@ -19,7 +20,7 @@ describe '| controllers | Help-Controller.test |', ()->
   #status: -> @
   library =
     Title    : 'library title'
-    Articles : { 'article_id_2': { Title: 'article_title_2'} }
+    Articles : { 'article_id_2': { Title: 'article_title_2'},'1eda3d77-43e0-474b-be99-9ba118408dd3':{Title:'Introduction to TEAM Mentor'}}
     Folders  : []
     Views    : [ { Title: 'an view title', Articles: [ {Title:'an article title', Id: 'an article id'}]}]
     content  : 'library index page content'
@@ -28,7 +29,10 @@ describe '| controllers | Help-Controller.test |', ()->
     getLibraryData: (callback)->
       callback [library]
     article_Data : (articleId) ->
-      return {html:'<h1>Test</h1>'}
+      if (articleId=='1eda3d77-43e0-474b-be99-9ba118408dd3')
+        return {html:(__dirname+'/response/expectedIndex').file_Contents()}
+      else
+        return {html:'<h1>Test</h1>'}
 
   check_Help_Page_Contents = (html, loggedIn, title, content, next)->
     $ = cheerio.load(html)
@@ -46,8 +50,8 @@ describe '| controllers | Help-Controller.test |', ()->
       $('#help-title'  ).text().assert_Is title
       $('#help-content').text().assert_Is content
     else
-      $('#team-mentor-documents').html().assert_Is 'TEAM Mentor Documents'
-      $('p'                     ).html().assert_Is 'Welcome to the TEAM Mentor Documentation Website where you will find detailed information on how to install TEAM Mentor, how it works and how to customize it.'
+      $('#help-title').html().assert_Is 'Introduction to TEAM Mentor'
+      $('p strong   ').html().assert_Is 'Welcome to TEAM Mentor.'
     next()
 
   @.timeout 5000
@@ -153,14 +157,18 @@ describe '| controllers | Help-Controller.test |', ()->
       @show_Help_Page()
 
   it 'show_Index_Page (anonymous users)', (done)->
+    page_Id = 'id'     .add_5_Letters()
     using help_Controller,->
-      @.req      = {}
+      @.req      = { params: page: page_Id }
       @.res.send = (html)-> check_Help_Page_Contents html, false, null, null, done
       @.show_Index_Page()
 
   it 'show_Index_Page (logged in users)', (done)->
+    page_Id = 'id'     .add_5_Letters()
     using help_Controller,->
-      @.req      = { session : username : 'aaaa' }
+      @.req          = {}
+      @.req.session  = username : 'aaaa'
+      @.req.params   = page: page_Id
       @.res.send = (html)-> check_Help_Page_Contents html, true, null, null, done
       @.show_Index_Page()
 
