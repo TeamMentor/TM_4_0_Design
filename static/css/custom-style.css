@@ -387,7 +387,7 @@ img, object {
 #help {
   margin: 0 10px 10px 10px;
 }
-#help ul {
+#help ul, #help ol {
   padding: 0 0 0 2em;
 }
 #help a {
