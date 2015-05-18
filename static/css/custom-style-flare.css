@@ -76,9 +76,6 @@ body * {
   background: white;
   border-right: 1px solid #dbdbdb;
 }
-#left-column:hover span.text, #right-column:hover span.text {
-  display: inline-block;
-}
 ul.side-nav {
   display: block;
   margin: 0;
@@ -95,9 +92,6 @@ ul.side-nav li {
 ul.side-nav li:hover {
   background: #dbdbdb;
 }
-#left-column:hover ul.side-nav li > [class^="icon-"], #left-column:hover ul.side-nav li > [class*=" icon-"], #right-column:hover ul.side-nav li > [class^="icon-"], #right-column:hover ul.side-nav li > [class*=" icon-"] {
-  padding: 0 10px 0 0;
-}
 .no-style {
   border: none;
   background: none;
@@ -107,6 +101,7 @@ ul.side-nav li:hover {
 }
 span.text {
   display: none;
+  color: #7b7b7b;
 }
 #content {
   -webkit-order: 2;
@@ -966,6 +961,28 @@ input.search-input, input.search-input:focus {
   list-style-type: none;
 }
 /*------------------------------------*
+   ACCORDIONS
+*------------------------------------*/
+.accordion {}
+.accordion-item {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 15px 0;
+  color: #7b7b7b;
+  font-size: 0.85em;
+}
+.accordion-item:hover {
+  background: #dbdbdb;
+}
+.accordion-item [class^="icon-"], .accordion-item [class*=" icon-"] {
+  color: #7b7b7b;
+}
+.accordion-panel {
+  display: none;
+}
+.accordion-panel:target {
+  display: block;
+}
+/*------------------------------------*
    MICRO-ELEMENTS
 *------------------------------------*/
 .alert-box {
@@ -1108,33 +1125,28 @@ span.alert-text {
     -webkit-flex: 5%;
     flex: 5%;
     text-align:center;
+    transition: 0.3s;
   }
-  #left-column:hover {
-    -webkit-flex: 15%;
-    flex: 15%;
+  #left-column:hover, #right-column:hover {
+    -webkit-flex: 25%;
+    flex: 25%;
     text-align: left;
+    transition: 0.5s;
   }
-  #left-column:hover ~ #content {
-    -webkit-flex: 80%;
-    flex: 80%;
+  #left-column:hover span.text, #right-column:hover span.text {
+    display: inline-block;
+  }
+  #left-column:hover ul.side-nav li > [class^="icon-"], #left-column:hover ul.side-nav li > [class*=" icon-"], #right-column:hover ul.side-nav li > [class^="icon-"], #right-column:hover ul.side-nav li > [class*=" icon-"] {
+    padding: 0 10px 0 0;
+  }
+  #left-column:hover .accordion-item [class^="icon-"], #left-column:hover .accordion-item [class*=" icon-"] {
+    padding: 0 10px 0 10px;
   }
   #left-column:hover ul.side-nav li, #right-column:hover ul.side-nav li {
     padding: 15px 0 15px 10px;
   }
   #right-column #filters {
     display: none;
-  }
-  #right-column:hover {
-    -webkit-flex: 25%;
-    flex: 25%;
-    text-align: left;
-  }
-  #right-column:hover #filters {
-    display: block;
-  }
-  #right-column:hover ~ #content {
-    -webkit-flex: 60%;
-    flex: 60%;
   }
   #two-thirds-column {
     -webkit-flex: 60%;

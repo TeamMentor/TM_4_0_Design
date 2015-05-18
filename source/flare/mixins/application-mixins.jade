@@ -98,10 +98,13 @@ mixin articles-list
             include:md ../../content/articles/article-details.md
 
 mixin left-navigation
+    .accordion
+        .accordion-item
+            a(href='#panel-1')
+                +index-icon
+                span.text Index
+            #panel-1.accordion-panel This accordion uses the max-height attribute in conjunction with a
     ul.side-nav
-        li
-            +index-icon
-            span.text Index
         li
             +article-icon
             span.text Saved Articles
