@@ -27,6 +27,7 @@ class Help_Controller
     @.gitHubImagePath  = 'https://raw.githubusercontent.com/TMContent/Lib_Docs/master/_Images/'
     @.jade_Help_Index  = '/source/jade/misc/help-index.jade'
     @.jade_Help_Page   = '/source/jade/misc/help-page.jade'
+    @.index_Page_Id    = '1eda3d77-43e0-474b-be99-9ba118408dd3'
     @.jade_Error_Page  = '/source/jade/guest/404.jade'
     @.imagePath        = '../../.tmCache/Lib_Docs-json/_Images/'
   content_Cache_Set: (title, content)=>
@@ -91,8 +92,10 @@ class Help_Controller
       @.fetch_Article_and_Show @.docs_Library?.Articles[@.page_Id()]?.Title || null
 
   show_Index_Page: ()=>
+    #setting up index page
+    @.req?.params?.page= @.index_Page_Id
     @map_Docs_Library =>
-      @render_Jade_and_Send @.jade_Help_Index, {}
+      @.fetch_Article_and_Show @.docs_Library?.Articles[@.page_Id()]?.Title || null
 
   user_Logged_In: ()=>
     @req.session?.username isnt undefined

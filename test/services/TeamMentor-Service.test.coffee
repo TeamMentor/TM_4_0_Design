@@ -70,8 +70,8 @@ describe "| services | Docs-TM-Service.test", ()->
           expect(library.Title     ).to.be.equal('TM Documentation' );
           expect(view   .Title     ).to.be.equal('About TEAM Mentor');
           expect(article           ).to.deep.equal(view.Articles[0]);
-          expect(article.Title     ).to.be.equal('What is new in this release?');
-          expect(article.Technology).to.be.equal('TEAM Mentor');
+          expect(article.Title     ).to.be.equal('Introduction to TEAM Mentor');
+          expect(article.Technology).to.be.equal('');
           expect(article.Phase     ).to.be.equal('NA');
-          expect(article.Type      ).to.be.equal('Documentation');
-          expect(article.Category  ).to.be.equal('Administration');
+          expect(article.Type      ).to.be.equal('');
+          expect(article.Category  ).to.be.equal('');
