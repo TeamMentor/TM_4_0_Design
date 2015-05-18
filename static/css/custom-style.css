@@ -384,8 +384,14 @@ img, object {
 #help-nav {
   margin: 10px 10px 15px 10px;
 }
-#help-docs, #help-index {
+#help {
   margin: 0 10px 10px 10px;
+}
+#help ul {
+  padding: 0 0 0 2em;
+}
+#help a {
+  text-decoration: underline;
 }
 /*------------------------------------*
    SUB-NAVIGATION
@@ -847,7 +853,7 @@ td.vertical-align {
     margin: 70px 0 0 0;
   }
   #help-nav { margin: 10px 10px 0 0; }
-  #help-docs, #help-index { margin: 10px 0 0 10px; }
+  #help { margin: 10px 0 0 10px; }
   #search-button { width: 8%; }
   #search-div-2 input, #search-div input {
     width: 92%;
