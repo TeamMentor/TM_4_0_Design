@@ -989,52 +989,6 @@ input.search-input, input.search-input:focus {
 /*------------------------------------*
    ACCORDIONS
 *------------------------------------*/
-#left-column .accordion-item {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  -webkit-flex: 100%;
-  flex: 100%;
-  width: 33%;
-}
-.accordion-title {
-  flex: 30%;
-  border-bottom: 1px solid #dbdbdb;
-  padding: 1.25em 0;
-  color: #7b7b7b;
-  font-size: 0.85em;
-  width: 33%;
-}
-.accordion-item:hover .accordion-title {
-  background: #fafafa;
-}
-.accordion-item [class^="icon-"], .accordion-item [class*=" icon-"] {
-  color: #7b7b7b;
-}
-.accordion-panel {
-  flex: 4 0 20%;
-  padding: 0 1em;
-  border-bottom: 1px solid #dbdbdb;
-  max-height: 600px;
-  overflow: auto;
-  display: none;
-}
-.accordion-panel:target {
-  display: block;
-}
-.accordion ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-.accordion ul li {
-  padding: 0.5em 1.5em;
-  border-left: 1px solid #dbdbdb;
-  flex: 1;
-}
 /*------------------------------------*
    MICRO-ELEMENTS
 *------------------------------------*/
