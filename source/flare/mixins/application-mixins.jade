@@ -180,10 +180,28 @@ mixin search-term-list
 
 //- Flare Filters Div
 mixin filters-div
-    ul.side-nav
-        li
-            +filters-icon
-            span.text Filter by
+    +filters-icon
+    span.text Filter by
+
+    br
+    br
+    .label Technology
+    ul.filters
+        li # .NET
+        li # .NET 3.5
+        li # Android
+        li # ASP.NET
+        li # C ++
+        li # HTML5
+        li # iOS
+        li # Java
+        li # PHP
+        li # Scala
+        li # Technology Independent
+        li # WCF
+        li # Web Application
+    br
+    br
     a.button(href='#') Back
     //#filters
         dl.accordion(data-accordion='data-accordion')

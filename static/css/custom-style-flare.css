@@ -175,6 +175,28 @@ body * {
   border-left: 1px solid #dbdbdb;
   transition: 0.3s;
   height: 0;
+  padding: 1em;
+}
+ul.filters {
+  -webkit-order: 1;
+  order:1;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-direction: row;
+  -webkit-flex: 100%;
+  flex: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.filters li {
+  border: 1px solid #dbdbdb;
+  border-radius: 25px;
+  flex: 1 0 28%;
+  margin: 0.5em;
+  padding: 0.5em 1em;
 }
 #label {
   -webkit-flex: 100%;
