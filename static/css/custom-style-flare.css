@@ -144,6 +144,9 @@ body * {
   display: none;
   height: 0;
 }
+#left-column [class^="icon-"], #left-column [class*=" icon-"], #right-column [class^="icon-"], #right-column [class*=" icon-"] {
+  color: #565656;
+}
 #content {
   -webkit-order: 3;
   order: 3;
@@ -1021,6 +1024,12 @@ input.search-input, input.search-input:focus {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   overflow-y: auto;
+}
+#left-column .accordion-title {
+  padding: 0;
+}
+#left-column:target .accordion-title, #left-column:hover .accordion-title {
+  padding: 1em;
 }
 .accordion-title {
   flex: 100%;
