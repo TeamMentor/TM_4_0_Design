@@ -272,11 +272,11 @@ article a {
 .container.article, .container.search-term {
   -moz-flex: 1;
   -webkit-flex: 1;
-  flex: 1 1 400px;
-  margin: 0 0 1em 0;
   background: white;
 }
 .container.search-term {
+  flex: 1 0 auto;
+  margin: 0 0.5em 1em 0.5em;
   padding: 10px 20px;
   border-radius: 20px;
   word-wrap: normal;
@@ -289,6 +289,10 @@ article a {
 }
 .container.search-term a {
   text-decoration: none;
+}
+.container.article {
+  flex: 1 1 400px;
+  margin: 0 0 1em 0;
 }
 .metadata {
   -webkit-order: 1;
