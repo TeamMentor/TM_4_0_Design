@@ -295,32 +295,7 @@ article a {
 }
 .container.article {
   flex: 1 1 400px;
-  margin: 0 0 1em 0;
-}
-.metadata {
-  -webkit-order: 1;
-  order: 1;
-  padding: 0.5em 0.35em;
-  background: #b4cf7b;
-}
-.metadata ul {
-  flex: 1;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-.metadata ul li {
-  display: inline-block;
-  text-align: left;
-  width: 16%;
-  padding: 0 2px;
-}
-.summary {
-  -webkit-order: 2;
-  order: 2;
-  padding: 2em 1em;
-  border: 1px solid #dbdbdb;
+  margin: 0 0 3em 0;
 }
 .container.article h3 {
   color: #565656;
@@ -336,6 +311,28 @@ article a {
 }
 .container.article a:hover h3 {
   color:  #8aaf3e;
+}
+.metadata {
+  padding: 0 0 0.35em 0;
+  background: #b4cf7b;
+}
+.metadata ul {
+  flex: 1;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  padding: 0 0.5em;
+}
+.metadata ul li {
+  display: inline-block;
+  text-align: left;
+  width: 16%;
+  padding: 0 2px;
+}
+.summary {
+  padding: 1.5em 1em 0.5em;
+  border: 1px solid #dbdbdb;
 }
 .row {
   background: transparent;
@@ -815,6 +812,7 @@ button, .button {
   border-radius: 20px;
   padding: 10px;
   border: none;
+  display: inline-block;
   background-color: #8aaf3e;
   margin: 5px 0;
   color: white;
@@ -903,24 +901,49 @@ button.circle i {
   color: #b4cf7b;
 }
 .app {
-  padding: 5px;
-  width: 100%;
-  background: #6c9020;
+  font-size: 1.1em;
+  background: 0;
+  border-radius: 0;
   color: white;
-  border-radius: 20px;
   -webkit-box-shadow: none;
   box-shadow: none;
-  text-algin: center;
+  display: inline-block;
+  vertical-align: sup;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
-.app:hover {
-  background: #8aaf3e;
+.app:hover:before, .app:focus:before, .app:active:before {
+  -webkit-animation-name: icon-pop;
+  animation-name: icon-pop;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+.app:before {
+  padding: 0 1px;
+  font-family: 'icons';
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 .full-width {
   display: block;
   width: 100% !important;
-}
-.dropdown:after {
-  content: '';
 }
 #label button, .minor {
   padding: 10px 0;
@@ -932,7 +955,18 @@ button.circle i {
 #label button:hover, .minor:hover {
   background: #aaaaaa;
 }
-
+@-webkit-keyframes icon-pop {
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+@keyframes icon-pop {
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
 /*------------------------------------*
    FORMS
 *------------------------------------*/
@@ -1051,6 +1085,7 @@ input.search-input, input.search-input:focus {
 .accordion-panel ul li {
   padding: 0.5em 1em;
   border-left: 1px solid #dbdbdb;
+  width: 100%;
 }
 .accordion-panel ul li:nth-child(even) {
   background: #fafafa;
@@ -1123,10 +1158,10 @@ span.alert-text {
 .badge {
   background: #8aaf3e;
   color: white;
-  font-size: 0.85em;
+  font-size: 1em;
   letter-spacing: 1px;
   text-align: center;
-  padding: 7px 10px;
+  padding: 0.75em;
   margin: 0 15px 0 0;
 }
 /*------------------------------------*
