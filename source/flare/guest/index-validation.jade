@@ -1,9 +1,11 @@
-extends _layouts/flare_page_landing
-include mixins/getting-started-mixins
+extends ../_layouts/flare_page_landing
+include ../mixins/getting-started-mixins
 
 block content
   #application
     #two-thirds-column
+      br
+      +flare-alert
       section.row
         #label
           .label Login
