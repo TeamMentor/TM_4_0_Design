@@ -140,7 +140,7 @@ body * {
   transition: 0.3s;
   display: block;
 }
-#left-column:target ~ #content, #left-column:target ~ #right-column, #right-column:target ~ #content, #right-column:target ~ #left-column {
+#left-column:target ~ #content, #left-column:target ~ #right-column, #right-column:target ~ #content, #right-column:target ~ #left-column, #left-column:target ~ #one-fourth-column, #left-column:target ~ #three-fourths-column , #right-column:target ~ #one-fourth-column, #right-column:target ~ #three-fourths-column {
   display: none;
   height: 0;
 }
@@ -366,20 +366,19 @@ article a {
   min-height: 1px;
   padding: 1em 1em 0 1em;
 }
-#three-fourths-column {
-  -webkit-order: 2;
-  order:2;
-  -webkit-flex: 100%;
-  flex: 100%;
-  min-height: 1px;
-}
 #one-fourth-column {
   -webkit-order: 1;
   order:1;
   -webkit-flex: 100%;
   flex: 100%;
-  min-height: 1px;
-  margin: 0 0 1em 0;
+  padding: 1em 1em 0 1em;
+}
+#three-fourths-column {
+  -webkit-order: 2;
+  order:2;
+  -webkit-flex: 100%;
+  flex: 100%;
+  padding: 1em 1em 0 1em;
 }
 /*------------------------------------*
    SUB-NAVIGATION
@@ -411,20 +410,6 @@ span.text {
   color: #7b7b7b;
   padding: 0 1em;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #sub-nav {
   display: -webkit-flex;
   display: flex;
