@@ -11,16 +11,71 @@ mixin links-navbar__landing-page
             span Get Started
 
 mixin left-navigation
-    ul.side-nav
-        li
-            +index-icon
-            span.text Index
-        li
-            +article-icon
-            span.text Saved Articles
-        li
-            +search-icon
-            span.text Saved Searches
+    .accordion
+        .accordion-title
+            a(href="#navigate")
+                +index-icon
+                span.text Index
+        #navigate.accordion-panel
+            ul
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+                li
+                    a(href='navigate') Directory
+        .accordion-title
+            a(href='')
+                +article-icon
+                span.text Saved Articles
+        .accordion-title
+            a(href='')
+                +search-icon
+                span.text Saved Searches
+        .accordion-title
+            a.button.full-width(href='#') Back
 
 mixin links_user_pages
     h3 Account Details
@@ -33,125 +88,6 @@ mixin links_user_pages
             a(href='developer-utilities') Developer Utilities
         li
             a(href='other') Other
-
-//- Flare Page Links
-mixin flare-all-pages-links
-    ul.side-nav
-        li
-            a(href='articles/alert-article-new-window-view') articles/alert-article-new-window-view
-        li
-            a(href='articles/article-new-window-view') articles/article-new-window-view
-        li
-            a(href='articles/my-articles') articles/my-articles
-        li
-            a(href='articles/my-search-items') articles/my-search-items
-        li
-            a(href='error-pages/error-occurred') error-pages/error-occurred
-        li
-            a(href='error-pages/unavailable') error-pages/unavailable
-        li
-            a(href='error-pages/upgraded') error-pages/upgraded
-        li
-            a(href='getting-started/forgot-password') getting-started/forgot-password
-        li
-            a(href='getting-started/index-prompts') getting-started/index-prompts
-        li
-            a(href='getting-started/index-validation') getting-started/index-validation
-        li
-            a(href='getting-started/index') getting-started/index
-        li
-            a(href='help/index') help/index
-        li
-            a(href='home/alert-application') home/alert-application
-        li
-            a(href='home/app-keyword-search-save') home/app-keyword-search-save
-        li
-            a(href='home/app-keyword-search-share') home/app-keyword-search-share
-        li
-            a(href='home/app-keyword-search') home/app-keyword-search
-        li
-            a(href='home/customer-main-app-view') home/customer-main-app-view
-        li
-            a(href='home/filters-active') home/filters-active
-        li
-            a(href='home/filters-div') home/filters-div
-        li
-            a(href='home/main-app-view') home/main-app-view
-        li
-            a(href='home/navigate') home/navigate
-        li
-            a(href='landing-pages/about') landing-pages/about
-        li
-            a(href='landing-pages/features') landing-pages/features
-        li
-            a(href='landing-pages/index') landing-pages/index
-        li
-            a(href='new-user-onboard/index') new-user-onboard/index
-        li
-            a(href='new-user-onboard/step-one-search') new-user-onboard/step-one-search
-        li
-            a(href='new-user-onboard/step-two-filter-button') new-user-onboard/step-two-filter-button
-        li
-            a(href='new-user-onboard/step-four-filters-active') new-user-onboard/step-four-filters-active
-        li
-            a(href='new-user-onboard/step-three-filters-div') new-user-onboard/step-three-filters-div
-        li
-            a(href='new-user-onboard/step-five-navigate') new-user-onboard/step-five-navigate
-        li
-            a(href='new-user-onboard/step-six-navigate-page') new-user-onboard/step-six-navigate-page
-        li
-            a(href='new-user-onboard/finish') new-user-onboard/finish
-        li
-            a(href='user/alert-user') user/alert-user
-        li
-            a(href='user/backend') user/backend
-        li
-            a(href='user/developer-utilities') user/developer-utilities
-        li
-            a(href='user/other') user/other
-        li
-            a(href='user/terms-and-conditions') user/terms-and-conditions
-        li
-            a(href='user/user-add-filter') user/user-add-filter
-        li
-            a(href='user/user-edit') user/user-edit
-        li
-            a(href='user/user-new-password') user/user-new-password
-        li
-            a(href='user/user') user/user
-
-
-//- my-articles-links
-mixin my-articles-links
-    .list-group
-        a(href='article-new-window-view', target='_blank') A New ID Is Assigned on Login
-        a(href='article-new-window-view', target='_blank') A New Or Blank Session ID is Assigned on Logout
-        a(href='article-new-window-view', target='_blank') Access to the Credential Store is Limited
-        a(href='article-new-window-view', target='_blank') AJAX Injection Vulnerability
-        a(href='article-new-window-view', target='_blank') All Input is Validated
-        a(href='article-new-window-view', target='_blank') All Private Resources Require Authentication
-        a(href='article-new-window-view', target='_blank') All Senstive Data is Encrypted
-        a(href='article-new-window-view', target='_blank') Assume All Input is Malicious
-        a(href='article-new-window-view', target='_blank') Authentication is Centralized
-        a(href='article-new-window-view', target='_blank') Centralize Authentication
-        a(href='article-new-window-view', target='_blank') Client-side Validation is Not Relied On
-        a(href='article-new-window-view', target='_blank') Cross Site Scripting Vulnerablity
-        a(href='article-new-window-view', target='_blank') Deny All Access by Default
-        a(href='article-new-window-view', target='_blank') Do Not Cache Sensitive Data
-        a(href='article-new-window-view', target='_blank') Do Not Leave Passwords in Memory
-        a(href='article-new-window-view', target='_blank') Don't Trust User Input
-        a(href='article-new-window-view', target='_blank') Echoed Input is Encoded
-        a(href='article-new-window-view', target='_blank') Missing Authentication
-        a(href='article-new-window-view', target='_blank') Missing Authorization
-        a(href='article-new-window-view', target='_blank') Hard-coded Credentials
-        a(href='article-new-window-view', target='_blank') Missing Encryption
-        a(href='article-new-window-view', target='_blank') Unrestricted Dangerous Uploads
-        a(href='article-new-window-view', target='_blank') Using Untrusted Inputs
-
-//- git-repo-link
-mixin git-repo-link
-    .list-group
-        a(href='https://github.com/TeamMentor/TM_4_0_Design'                   ) https://github.com/TeamMentor/TM_4_0_Design
 
 mixin help-navigation
     #sub-nav

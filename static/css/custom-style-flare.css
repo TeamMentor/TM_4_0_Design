@@ -230,13 +230,10 @@ ul.filters li:hover {
   padding: 0 2em 0 0;
 }
 #label ul {
-  padding: 0;
-  text-align: center;
+  text-align: right;
 }
 #label ul li {
-  display: inline-block;
   width: 50%;
-  padding: 0 5px 0 0;
 }
 #label ul li:last-child {
   padding: 0;
@@ -295,6 +292,7 @@ article a {
 }
 .container.article {
   flex: 1 1 400px;
+  height: 100%;
   margin: 0 0 3em 0;
 }
 .container.article h3 {
@@ -340,6 +338,9 @@ article a {
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 .row:first-child {
   margin: 0;
@@ -731,6 +732,15 @@ p, li {
 ul, ol {
   margin: 0;
 }
+ul.inline {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+ul.inline li {
+  display: inline-block;
+  padding: 0 0.5em;
+}
 code, pre {
   font-family: monospace, monospace;
   font-size: 1em;
@@ -893,17 +903,10 @@ button.circle {
   text-align: center;
   padding: 2px 0;
 }
-button.circle i {
-  font-size: 2em;
-  color: #8aaf3e;
-}
-.circle:hover i {
-  color: #b4cf7b;
-}
-.app {
+.btn-result {
   font-size: 1.1em;
-  background: 0;
-  border-radius: 0;
+  background: #b4cf7b;
+  border-radius: 50%;
   color: white;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -919,7 +922,7 @@ button.circle i {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-.app:hover:before, .app:focus:before, .app:active:before {
+.btn-result:hover:before, .btn-result:focus:before, .btn-result:active:before {
   -webkit-animation-name: icon-pop;
   animation-name: icon-pop;
   -webkit-animation-duration: 0.3s;
@@ -929,7 +932,7 @@ button.circle i {
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
-.app:before {
+.btn-result:before {
   padding: 0 1px;
   font-family: 'icons';
   -webkit-transform: translateZ(0);
