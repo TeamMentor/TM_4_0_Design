@@ -916,6 +916,7 @@ button.circle i {
   background: #8aaf3e;
 }
 .full-width {
+  display: block;
   width: 100% !important;
 }
 .dropdown:after {
@@ -1032,7 +1033,7 @@ input.search-input, input.search-input:focus {
   padding: 1em;
 }
 .accordion-title {
-  flex: 100%;
+  width: 100%;
   padding: 1em;
   margin: auto;
 }
