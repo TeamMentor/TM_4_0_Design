@@ -1036,7 +1036,6 @@ input.search-input, input.search-input:focus {
 .accordion-title {
   flex: 100%;
   padding: 1em;
-  border-bottom: 1px solid #dbdbdb;
   margin: auto;
 }
 .accordion-panel {
@@ -1211,17 +1210,24 @@ span.alert-text {
     text-align: left;
     transition: 0.5s;
   }
-  #left-column:hover span.text, #right-column:hover span.text {
+  #left-column .accordion-title:last-child, #right-column a.button {
+    display: none;
+  }
+  #left-column #navigate {
+    display: none;
+    height: 0;
+    transition: 0.3s;
+  }
+  #left-column:hover #navigate.accordion-panel:target {
+    display:block;
+    height: 100%;
+    transition: 0.3s;
+  }
+  #left-column span.text, #right-column span.text, #filters {
+    display: none;
+  }
+  #left-column:hover span.text, #right-column:hover span.text, #right-column:hover #filters {
     display: inline-block;
-  }
-  #left-column:hover ul.side-nav li > [class^="icon-"], #left-column:hover ul.side-nav li > [class*=" icon-"], #right-column:hover ul.side-nav li > [class^="icon-"], #right-column:hover ul.side-nav li > [class*=" icon-"] {
-    padding: 0 10px 0 0;
-  }
-  #left-column:hover .accordion-item [class^="icon-"], #left-column:hover .accordion-item [class*=" icon-"] {
-    padding: 0 10px 0 10px;
-  }
-  #left-column:hover ul.side-nav li, #right-column:hover ul.side-nav li {
-    padding: 15px 0 15px 10px;
   }
   #right-column {
     -webkit-order: 3;

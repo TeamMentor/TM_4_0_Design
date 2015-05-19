@@ -100,9 +100,10 @@ mixin articles-list
 mixin left-navigation
     .accordion
         .accordion-title
-            +index-icon
-            span.text Index
-        .accordion-panel
+            a(href="#navigate")
+                +index-icon
+                span.text Index
+        #navigate.accordion-panel
             ul
                 li
                     a(href='navigate') Directory
@@ -185,83 +186,34 @@ mixin filters-div
 
     br
     br
-    .label Technology
-    ul.filters
-        li # .NET
-        li # .NET 3.5
-        li # Android
-        li # ASP.NET
-        li # C ++
-        li # HTML5
-        li # iOS
-        li # Java
-        li # PHP
-        li # Scala
-        li # Technology Independent
-        li # WCF
-        li # Web Application
-    .label Phase
-    ul.filters
-        li # Deployment
-        li # Design
-        li # Implementation
-        li # Test
-    .label Type
-    ul.filters
-        li # Checklist Item
-        li # Code Example
-        li # Guideline
-        li # How To
-        li # Vulnerability
-    br
-    a.button(href='#') Back
-    //#filters
-        dl.accordion(data-accordion='data-accordion')
-            dd.accordion-navigation.active
-                a(href='#and-filters')
-                    i.fi-arrow-down.icon
-                    span And filters
-                #and-filters.content.active
-                    table
-                        tr
-                            td
-                                input#and-type1(type='checkbox', name='and-type', value='And Type 1')
-                                label(for='and-type1') And Type 1
-                            td
-                                span.badge 14
-                        tr
-                            td
-                                input#and-type2(type='checkbox', name='and-type', value='And Type 2')
-                                label.checkbox(for='and-type2') And Type 2
-                            td
-                                span.badge 14
-                        tr
-                            td
-                                input#and-type3(type='checkbox', name='and-type', value='And Type 3')
-                                label.checkbox(for='and-type3') And Type 3
-                            td
-                                span.badge 14
-            dd.accordion-navigation
-                a(href='#or-filters')
-                    i.fi-arrow-down.icon
-                    span Or filters
-                #or-filters.content.active
-                    table
-                        tr
-                            td
-                                input#or-type1(type='radio', name='or-type', value='Or Type 1')
-                                label(for='or-type1') Or Type 1
-                            td
-                                span.badge 14
-                        tr
-                            td
-                                input#or-type2(type='radio', name='or-type', value='Or Type 2')
-                                label(for='or-type2') Or Type 2
-                            td
-                                span.badge 14
-                        tr
-                            td
-                                input#or-type3(type='radio', name='or-type', value='Or Type 3')
-                                label(for='or-type3') Or Type 3
-                            td
-                                span.badge 14
+    #filters
+        .label Technology
+        ul.filters
+            li # .NET
+            li # .NET 3.5
+            li # Android
+            li # ASP.NET
+            li # C ++
+            li # HTML5
+            li # iOS
+            li # Java
+            li # PHP
+            li # Scala
+            li # Technology Independent
+            li # WCF
+            li # Web Application
+        .label Phase
+        ul.filters
+            li # Deployment
+            li # Design
+            li # Implementation
+            li # Test
+        .label Type
+        ul.filters
+            li # Checklist Item
+            li # Code Example
+            li # Guideline
+            li # How To
+            li # Vulnerability
+        br
+        a.button(href='#') Back
