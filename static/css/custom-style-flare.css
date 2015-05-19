@@ -134,6 +134,14 @@ body * {
   background: white;
   border-right: 1px solid #dbdbdb;
 }
+#left-column:target, #right-column:target {
+  height: 100%;
+  transition: 0.3s;
+}
+#left-column:target ~ #content, #left-column:target ~ #right-column, #right-column:target ~ #content, #right-column:target ~ #left-column {
+  display: none;
+  height: 0;
+}
 #content {
   -webkit-order: 3;
   order: 3;
@@ -166,14 +174,6 @@ body * {
   background: white;
   border-left: 1px solid #dbdbdb;
   transition: 0.3s;
-  height: 0;
-}
-#left-column:target, #right-column:target {
-  height: 100%;
-  transition: 0.3s;
-}
-#left-column:target ~ #content, #left-column:target ~ #right-column {
-  display: none;
   height: 0;
 }
 #label {
