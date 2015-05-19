@@ -1191,6 +1191,8 @@ span.alert-text {
   #content {
     display: -webkit-flex;
     display: flex;
+    -webkit-order: 2;
+    order: 2;
     -webkit-flex: 90%;
     flex: 90%;
     padding: 10px;
@@ -1201,6 +1203,7 @@ span.alert-text {
     flex: 5%;
     text-align:center;
     transition: 0.3s;
+    height: 100%;
   }
   #left-column:hover, #right-column:hover {
     -webkit-flex: 25%;
@@ -1220,8 +1223,9 @@ span.alert-text {
   #left-column:hover ul.side-nav li, #right-column:hover ul.side-nav li {
     padding: 15px 0 15px 10px;
   }
-  #right-column #filters {
-    display: none;
+  #right-column {
+    -webkit-order: 3;
+    order: 3;
   }
   #two-thirds-column {
     -webkit-flex: 60%;
