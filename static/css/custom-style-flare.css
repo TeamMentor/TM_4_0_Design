@@ -194,7 +194,7 @@ ul.filters {
 ul.filters li {
   border: 1px solid #dbdbdb;
   border-radius: 25px;
-  flex: 1 0 28%;
+  flex: 1 0 auto;
   margin: 0.5em;
   padding: 0.5em 1em;
 }
