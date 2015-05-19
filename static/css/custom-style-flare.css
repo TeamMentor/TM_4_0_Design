@@ -134,14 +134,6 @@ body * {
   background: white;
   border-right: 1px solid #dbdbdb;
 }
-#left-column:target {
-  height: 100%;
-  transition: 0.3s;
-}
-#left-column:target ~ #content, #left-column:target ~ #right-column {
-  display: none;
-  height: 0;
-}
 #content {
   -webkit-order: 3;
   order: 3;
@@ -152,7 +144,6 @@ body * {
   display: -webkit-flex;
   display: flex;
   overflow-y: auto;
-  min-height: 1px;
   padding: 10px;
 }
 #search {
@@ -177,11 +168,12 @@ body * {
   transition: 0.3s;
   height: 0;
 }
-#right-column:target {
+#left-column:target, #right-column:target {
   height: 100%;
   transition: 0.3s;
 }
-#right-column:target ~ #content {
+#left-column:target ~ #content, #left-column:target ~ #right-column {
+  display: none;
   height: 0;
 }
 #label {
