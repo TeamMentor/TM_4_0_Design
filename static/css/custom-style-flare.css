@@ -1,4 +1,4 @@
- /*------------------------------------*
+/*------------------------------------*
    STRUCTURE
 *------------------------------------*/
 html, body {
@@ -120,24 +120,31 @@ body * {
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  overflow-y: auto;
+  overflow: auto;
 }
 #left-column {
   -webkit-order: 1;
   order:1;
   display: -webkit-flex;
   display: flex;
-  display: none;
   -webkit-flex: 100%;
   flex: 100%;
-  height: 100%;
-  min-height: 1px;
+  height: 0;
+  transition: 0.3s;
   background: white;
   border-right: 1px solid #dbdbdb;
 }
+#left-column:target {
+  height: 100%;
+  transition: 0.3s;
+}
+#left-column:target ~ #content, #left-column:target ~ #right-column {
+  display: none;
+  height: 0;
+}
 #content {
-  -webkit-order: 2;
-  order: 2;
+  -webkit-order: 3;
+  order: 3;
   -webkit-flex: 1;
   flex: 100%;
   -webkit-flex-wrap: wrap;
@@ -160,14 +167,22 @@ body * {
   background: #fafafa;
 }
 #right-column {
-  -webkit-order: 6;
-  order: 6;
+  -webkit-order: 2;
+  order: 2;
   -webkit-flex: 1;
   flex: 100%;
   overflow-y: auto;
-  min-height: 1px;
   background: white;
   border-left: 1px solid #dbdbdb;
+  transition: 0.3s;
+  height: 0;
+}
+#right-column:target {
+  height: 100%;
+  transition: 0.3s;
+}
+#right-column:target ~ #content {
+  height: 0;
 }
 #label {
   -webkit-flex: 100%;
@@ -366,8 +381,8 @@ ul.side-nav li:hover {
   background: transparent !important;
 }
 span.text {
-  display: none;
   color: #7b7b7b;
+  padding: 0 1em;
 }
 
 
@@ -850,9 +865,6 @@ button:hover, .button:hover {
   opacity: 0;
   pointer-events: none;
 }
-.full-width {
-  width: 100%;
-}
 .add-on {
   padding: 13.5px;
   border: 1px solid white;
@@ -988,14 +1000,12 @@ input.search-input, input.search-input:focus {
 /*------------------------------------*
    ACCORDIONS
 *------------------------------------*/
-#left-column:target {
-  display: block;
-}
 #left-column .accordion {
   display: -webkit-flex;
   display: flex;
   -webkit-flex: 100%;
   flex: 100%;
+  height: 100%;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   overflow-y: auto;
@@ -1007,8 +1017,8 @@ input.search-input, input.search-input:focus {
   margin: auto;
 }
 .accordion-panel {
-  padding: 1em;
-  max-height: 500px;
+  padding: 0 0.5em;
+  max-height: 65%;
   overflow: auto;
   width: 100%;
 }
@@ -1018,7 +1028,11 @@ input.search-input, input.search-input:focus {
   padding: 0 1em;
 }
 .accordion-panel ul li {
-  padding: 1em 0;
+  padding: 0.5em 1em;
+  border-left: 1px solid #dbdbdb;
+}
+.accordion-panel ul li:nth-child(even) {
+  background: #fafafa;
 }
 /*------------------------------------*
    MICRO-ELEMENTS

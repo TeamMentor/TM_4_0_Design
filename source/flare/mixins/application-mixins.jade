@@ -100,10 +100,9 @@ mixin articles-list
 mixin left-navigation
     .accordion
         .accordion-title
-            a(href='#panel-1')
-                +index-icon
-                span.text Index
-        #panel-1.accordion-panel
+            +index-icon
+            span.text Index
+        .accordion-panel
             ul
                 li
                     a(href='navigate') Directory
@@ -161,8 +160,8 @@ mixin left-navigation
             a(href='')
                 +search-icon
                 span.text Saved Searches
-        .close
-            a(href='#') <-
+        .accordion-title
+            a.button(href='#') Back
 
 //- Search Results List
 mixin search-term-list
@@ -185,6 +184,7 @@ mixin filters-div
         li
             +filters-icon
             span.text Filter by
+    a.button(href='#') Back
     //#filters
         dl.accordion(data-accordion='data-accordion')
             dd.accordion-navigation.active
