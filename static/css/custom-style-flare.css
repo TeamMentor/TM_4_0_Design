@@ -984,7 +984,7 @@ form ul {
 label, .label {
   display: inline-block;
   padding: 3px 0 0 0;
-  margin-bottom: 5px;
+  margin: 0 0 5px;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
@@ -1054,17 +1054,14 @@ input.search-input, input.search-input:focus {
    ACCORDIONS
 *------------------------------------*/
 #left-column .accordion {
-  display: -webkit-flex;
-  display: flex;
   -webkit-flex: 100%;
   flex: 100%;
   height: 100%;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-flex-direction: column;
+  flex-direction: column;
   overflow-y: auto;
-}
-#left-column .accordion-title {
-  padding: 0;
 }
 #left-column:target .accordion-title, #left-column:hover .accordion-title {
   padding: 1em;
@@ -1072,13 +1069,14 @@ input.search-input, input.search-input:focus {
 .accordion-title {
   width: 100%;
   padding: 1em;
-  margin: auto;
+  border-bottom: 1px solid #dbdbdb;
 }
 .accordion-panel {
   padding: 0 0.5em;
   max-height: 65%;
   overflow: auto;
   width: 100%;
+  border-bottom: 1px solid #dbdbdb;
 }
 .accordion-panel ul {
   list-style-type: none;
@@ -1086,12 +1084,14 @@ input.search-input, input.search-input:focus {
   padding: 0 1em;
 }
 .accordion-panel ul li {
-  padding: 0.5em 1em;
-  border-left: 1px solid #dbdbdb;
+  padding: 0.5em 2em;
+  border: 1px solid #dbdbdb;
+  background: #fafafa;
+  border-top: 0;
   width: 100%;
 }
-.accordion-panel ul li:nth-child(even) {
-  background: #fafafa;
+.accordion-panel ul li:hover {
+  background: #dbdbdb;
 }
 /*------------------------------------*
    MICRO-ELEMENTS

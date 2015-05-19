@@ -174,13 +174,10 @@ mixin saved-search-term-list
 
 //- Flare Filters Div
 mixin filters-div
-    +filters-icon
-    span.text Filter by
-
-    br
-    br
     #filters
-        .label Technology
+        .label
+            +filters-icon
+            span.text Technology
         ul.filters
             li # .NET
             li # .NET 3.5
@@ -195,13 +192,19 @@ mixin filters-div
             li # Technology Independent
             li # WCF
             li # Web Application
-        .label Phase
+        br
+        .label
+            +filters-icon
+            span.text Phase
         ul.filters
             li # Deployment
             li # Design
             li # Implementation
             li # Test
-        .label Type
+        br
+        .label
+            +filters-icon
+            span.text Type
         ul.filters
             li # Checklist Item
             li # Code Example
