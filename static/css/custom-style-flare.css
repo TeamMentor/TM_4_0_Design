@@ -1270,6 +1270,9 @@ span.alert-text {
     -webkit-order: 3;
     order: 3;
   }
+  #right-column:hover .filters-icon {
+    display: none;
+  }
   #two-thirds-column {
     -webkit-flex: 60%;
     flex: 60%;
