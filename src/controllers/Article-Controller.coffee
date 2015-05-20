@@ -62,6 +62,8 @@ class Article_Controller
                                                                                       # if not
     @.next()                                                                          #   continue with the next express route
 
+  redirect_Home: =>
+    return @.res.redirect "/"
 
   recentArticles: =>
     @.req.session ?= {}
@@ -92,6 +94,7 @@ Article_Controller.register_Routes = (app, expressService,graph_Options) ->
   app.get '/article/:ref'         , checkAuth, articleController('article')
   app.get '/articles'             , checkAuth, articleController('articles')
   app.get '/teamMentor/open/:guid', checkAuth, articleController('check_Guid')
+  app.get '/teamMentor'           , checkAuth, articleController('redirect_Home')
 
 
 module.exports = Article_Controller
