@@ -31,7 +31,11 @@ add_Routes = (express_Service)->
     app.get '/index.html'      , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/default.jade'
     app.get '/guest/:page.html', (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/' + req.params.page + '.jade'
     app.get '/guest/:page'     , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/' + req.params.page + '.jade'
-
+    app.get '/teammentor'      , (req, res)->
+        if req.session?.username
+            res.redirect "/user/main.html"                                                                        # to prevent cached infinite redirects (due to 3.5 redirect of / to /teammentor
+        else
+            res.redirect "/index.html"
 
     options = { express_Service: express_Service }
     Search_Controller                  .register_Routes(app, express_Service)

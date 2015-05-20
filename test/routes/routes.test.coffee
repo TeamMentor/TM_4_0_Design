@@ -20,6 +20,7 @@ describe '| routes | routes.test |', ()->
                       '/article/:ref/:title'
                       '/article/:ref'
                       '/teamMentor/open/:guid'
+                      '/teamMentor'
                       '/articles'
                       '/search'
                       '/search/:text'
