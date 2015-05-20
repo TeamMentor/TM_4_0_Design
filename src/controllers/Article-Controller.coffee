@@ -63,7 +63,7 @@ class Article_Controller
     @.next()                                                                          #   continue with the next express route
 
   redirect_Home: =>
-    return @.res.redirect "/"
+    return @.res.redirect "/user/main.html"                                           # to prevent cached infinite redirects (due to 3.5 redirect of / to /teammentor
 
   recentArticles: =>
     @.req.session ?= {}
