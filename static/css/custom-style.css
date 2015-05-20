@@ -1419,3 +1419,7 @@ td.vertical-align {
 .icon-Article:before {
   content: "\e63d";
 }
+
+.icon-Share:before {
+  content: "\e652";
+}
