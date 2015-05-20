@@ -202,7 +202,7 @@ ul.filters li {
   background: #fafafa;
   border-radius: 25px;
   flex: 1 0 auto;
-  margin: 0.5em;
+  margin: 0.25em;
   padding: 0.5em 1em;
   transition: 0.3s;
 }
@@ -1039,9 +1039,6 @@ input.search-input, input.search-input:focus {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-.user {
-  margin: 0.5em;
-}
 .input-field, .button-field, .conditions {
   -webkit-flex: 100%;
   flex: 100%;
@@ -1288,13 +1285,13 @@ span.alert-text {
   #three-fourths-column {
     -webkit-flex: 75%;
     flex: 75%;
-    padding: 0.5em 1em 0.5em 0.5em;
+    padding: 0 1em 0.5em 0.5em;
   }
   #one-fourth-column {
     display: block;
     -webkit-flex: 25%;
     flex: 25%;
-    padding: 0.5em 0.5em 0.5em 1em;
+    padding: 0 0.5em 0.5em 1em;
   }
   #label {
     -webkit-flex: 100%;

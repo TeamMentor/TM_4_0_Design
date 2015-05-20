@@ -67,13 +67,17 @@ mixin left-navigation
                 li
                     a(href='navigate') Directory
         .accordion-title
-            a(href='/user/my-articles')
-                +article-icon
-                span.text Saved Articles
+            a(href='/misc/help-index')
+                +info-icon
+                span.text Docs
         .accordion-title
-            a(href='/user/my-search-results')
-                +search-icon
-                span.text Saved Searches
+            a(href='/user/user')
+                +info-icon
+                span.text User
+        .accordion-title
+            a(href='/guest/index')
+                +logout-icon
+                span.text Logout
         .accordion-title
             a.button.full-width(href='#') Back
 

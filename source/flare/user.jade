@@ -8,14 +8,20 @@ block content
         +left-navigation
       #right-column
         +filters-div
-      #one-fourth-column
-        .label @username
-        form.user
-          input(type='text', name="name", value="First name, Last name")
-          input(type='text', name="work", value="Position, Company")
-          input(type='email', name="email", value="Email")
-          button(type='submit') Update Profile
+      #content
+          #one-fourth-column
+            section.row
+                #label
+                  .label @username
+                #articles
+                    form
+                      input(type='text', name="name", value="First name, Last name")
+                      input(type='text', name="work", value="Position, Company")
+                      input(type='email', name="email", value="Email")
+                      button(type='submit') Update Profile
 
-      #three-fourths-column
-        +saved-search-results
-        +saved-articles-list
+          #three-fourths-column
+            +saved-search-results
+            br
+            br
+            +saved-articles-list
