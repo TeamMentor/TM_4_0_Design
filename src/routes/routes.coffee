@@ -2,6 +2,7 @@
 add_Routes = (express_Service)->
     Express_Service         = require '../services/Express-Service'
     Jade_Service            = require '../services/Jade-Service'
+    Ga_Service              = require '../services/GoogleAnalytics-Service'
     Article_Controller      = require '../controllers/Article-Controller'
     Help_Controller         = require '../controllers/Help-Controller'
     Jade_Controller         = require '../controllers/Jade-Controller'
@@ -17,6 +18,8 @@ add_Routes = (express_Service)->
 
     app.use (req,res,next)->
       logger?.info {url: req.url , ip: req.connection.remoteAddress,  agent: req.headers.agent }
+      using new Ga_Service(),->
+        @.trackEvent('Route',"Method #{req.method}, Url #{req.url}")
       next()
     #login routes
     
