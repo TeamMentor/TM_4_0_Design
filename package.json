@@ -39,6 +39,7 @@
     "jade": "latest",
     "marked": "latest",
     "nedb": "latest",
+    "nodealytics": "0.0.6",
     "request": "latest",
     "supervisor": "latest",
     "teammentor": "^0.1.2",
