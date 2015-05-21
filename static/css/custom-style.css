@@ -999,11 +999,11 @@ td.vertical-align {
 *------------------------------------*/
 @font-face {
   font-family: 'icons';
-  src:url('../assets/fonts/icons.eot?8bj19b');
-  src:url('../assets/fonts/icons.eot?#iefix8bj19b') format('embedded-opentype'),
-    url('../assets/fonts/icons.woff?8bj19b') format('woff'),
-    url('../assets/fonts/icons.ttf?8bj19b') format('truetype'),
-    url('../assets/fonts/icons.svg?8bj19b#icons') format('svg');
+  src:url('../assets/fonts/icons.eot?uf9at6');
+  src:url('../assets/fonts/icons.eot?#iefixuf9at6') format('embedded-opentype'),
+    url('../assets/fonts/icons.woff?uf9at6') format('woff'),
+    url('../assets/fonts/icons.ttf?uf9at6') format('truetype'),
+    url('../assets/fonts/icons.svg?uf9at6#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1019,6 +1019,7 @@ td.vertical-align {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .icon-Deploy .path1:before {
   content: "\e600";
   color: #a79389;
@@ -1077,7 +1078,6 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Implementation .path1:before {
   content: "\e60d";
   color: #73b2df;
@@ -1092,15 +1092,12 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Index:before {
   content: "\e610";
 }
-
 .icon-Info:before {
   content: "\e611";
 }
-
 .icon-iOS .path1:before {
   content: "\e612";
   color: #a6a8ab;
@@ -1110,7 +1107,6 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Java .path1:before {
   content: "\e614";
   color: #ff9200;
@@ -1120,15 +1116,12 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Logout:before {
   content: "\e616";
 }
-
 .icon-Mail:before {
   content: "\e617";
 }
-
 .icon-Net .path1:before {
   content: "\e618";
   color: #5990b5;
@@ -1147,11 +1140,9 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Paperclip:before {
   content: "\e61a";
 }
-
 .icon-PHP .path1:before {
   content: "\e61b";
   color: rgb(255, 255, 255);
@@ -1161,7 +1152,6 @@ td.vertical-align {
   margin-left: -1em;
   color: #6c7eb7;
 }
-
 .icon-Principle .path1:before {
   content: "\e61d";
   color: #eaa878;
@@ -1171,11 +1161,9 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Save:before {
   content: "\e61f";
 }
-
 .icon-Scala .path1:before {
   content: "\e620";
   color: #ea7a78;
@@ -1185,11 +1173,9 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Search:before {
   content: "\e622";
 }
-
 .icon-Test .path1:before {
   content: "\e623";
   color: #cbb654;
@@ -1199,15 +1185,12 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Tick:before {
   content: "\e625";
 }
-
 .icon-Twitter:before {
   content: "\e626";
 }
-
 .icon-Vulnerabilities .path1:before {
   content: "\e627";
   color: rgb(255, 255, 255);
@@ -1217,7 +1200,6 @@ td.vertical-align {
   margin-left: -1em;
   color: #82a931;
 }
-
 .icon-WCF .path1:before {
   content: "\e629";
   color: #59caf5;
@@ -1227,7 +1209,6 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Web-App .path1:before {
   content: "\e62b";
   color: #6eb87a;
@@ -1282,7 +1263,6 @@ td.vertical-align {
   margin-left: -1em;
   color: #6eb87a;
 }
-
 .icon-All .path1:before {
   content: "\e636";
   color: #b190e2;
@@ -1292,7 +1272,6 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Android .path1:before {
   content: "\e638";
   color: #a0cf4b;
@@ -1317,7 +1296,6 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-C .path1:before {
   content: "\e63e";
   color: #90bae2;
@@ -1327,7 +1305,6 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Checklist .path1:before {
   content: "\e640";
   color: rgb(255, 255, 255);
@@ -1352,11 +1329,9 @@ td.vertical-align {
   margin-left: -1em;
   color: #f6788d;
 }
-
 .icon-Close:before {
   content: "\e645";
 }
-
 .icon-CodeExample .path1:before {
   content: "\e646";
   color: #5ed4a6;
@@ -1401,7 +1376,6 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Default .path1:before {
   content: "\e64f";
   color: rgb(68, 68, 68);
@@ -1411,15 +1385,15 @@ td.vertical-align {
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
 .icon-Delete:before {
   content: "\e651";
 }
-
 .icon-Article:before {
   content: "\e63d";
 }
-
 .icon-Share:before {
   content: "\e652";
+}
+.icon-User:before {
+  content: "\e653";
 }
