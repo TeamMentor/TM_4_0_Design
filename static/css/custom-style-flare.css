@@ -1065,6 +1065,9 @@ input.search-input, input.search-input:focus {
 #left-column:target .accordion-title, #left-column:hover .accordion-title {
   padding: 1em;
 }
+#left-column .accordion-panel {
+  border-bottom: 0;
+}
 .accordion-title {
   width: 100%;
   padding: 1em;
@@ -1250,14 +1253,12 @@ span.alert-text {
     display: none;
   }
   #left-column #navigate {
-    display: none;
     height: 0;
-    transition: 0.3s;
+    transition: 0.5s;
   }
   #left-column:hover #navigate.accordion-panel:target {
-    display:block;
     height: 100%;
-    transition: 0.3s;
+    transition: 0.5s;
   }
   #left-column span.text, #right-column span.text, #filters {
     display: none;
