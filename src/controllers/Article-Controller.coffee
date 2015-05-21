@@ -70,7 +70,6 @@ class Article_Controller
                                                                                       # if not
     @.next()                                                                          #   continue with the next express route
 
-
   recentArticles: =>
     @.req.session ?= {}
     @.req.session.recent_Articles ?= []
