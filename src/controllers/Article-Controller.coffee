@@ -2,7 +2,7 @@ Express_Service  = null
 Jade_Service     = null
 Graph_Service    = null
 Config           = null
-
+Ga_Service       = null
 class Article_Controller
 
   dependencies: ()->
@@ -10,6 +10,7 @@ class Article_Controller
     Jade_Service     = require('../services/Jade-Service')
     Graph_Service    = require('../services/Graph-Service')
     Config           = require('../misc/Config')
+    Ga_Service       = require('../services/GoogleAnalytics-Service')
 
   constructor: (req, res, next, config,graph_Options)->
     @dependencies()
@@ -23,6 +24,9 @@ class Article_Controller
     @.jade_Service     = new Jade_Service(@.config);
     @.graphService     = new Graph_Service(graph_Options)
 
+
+
+
   article: =>
     send_Article = (view_Model)=>
       if view_Model
@@ -33,9 +37,13 @@ class Article_Controller
     article_Ref = @req.params.ref
 
     @.graphService.article article_Ref, (data)=>
+
+
       article_Id = data.article_Id
       if article_Id
         @graphService.node_Data article_Id, (article_Data)=>
+           using new Ga_Service(), ->
+             @.trackPage(article_Data?.title,article_Id)
             title      = article_Data?.title
             technology = article_Data?.technology
             type       = article_Data?.type
