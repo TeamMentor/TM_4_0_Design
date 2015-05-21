@@ -71,7 +71,10 @@ describe '| poc | Controller-PoC.test |' ,->
     new PoC_Controller().show_Index(req,res)
 
   it 'show_Page (good link)', (done)->
-    express_Service = session_Service: users_Searches: (callback) -> callback []
+    express_Service =
+      session_Service:
+          users_Searches: (callback) -> callback []
+          user_Data: (session, callback) -> callback []
     using new PoC_Controller({ express_Service: express_Service}), ->
 
       req = params : page : @.map_Files_As_Pages().last().name
@@ -82,7 +85,6 @@ describe '| poc | Controller-PoC.test |' ,->
         send: (html)->
           html.assert_Is_String()
           done()
-
       @.show_Page(req,res)
 
   it 'show_Page (bad link)', (done)->
