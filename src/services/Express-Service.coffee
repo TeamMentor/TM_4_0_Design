@@ -31,6 +31,7 @@ class Express_Service
     if @.options.logging_Enabled
       @.set_Logging()
     @.set_BodyParser()
+    @.remove_Unwanted_Headers()
     @.set_Config()
     @.set_Static_Route()
     @.add_Session()      # for now not using the async version of add_Session
@@ -55,6 +56,8 @@ class Express_Service
     @.app.use(bodyParser.json({limit:'1kb'})                       );     # to support JSON-encoded bodies
     @.app.use(bodyParser.urlencoded({limit:'1kb', extended: true }));     # to support URL-encoded bodies
 
+  remove_Unwanted_Headers : () ->
+    @.app.disable("x-powered-by")
 
   set_Config:()=>
     @.app.config = new Config(null, false);
