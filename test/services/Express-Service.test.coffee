@@ -54,23 +54,36 @@ describe '| services | Express-Service.test', ()->
       using expressService.session_Service,->
         @.constructor.name.assert_Is 'Session_Service'
         @.db.constructor.name.assert_Is 'Datastore'
+        supertest(expressService.app)
+            .get '/'
+            .end (err,res)=>
+              @.db.find {},  (err, docs) ->
+                assert_Is_Null err
+                docs.assert_Size_Is(1)
+                using docs.first(),->
+                  @.sid.assert_Is_String()
+                  @._id.assert_Is_String()
+                  @.data.assert_Is_Object()
 
-        @.db.find {},  (err, docs) ->
-          assert_Is_Null err
-          docs.assert_Size_Is(1)
-          using docs.first(),->
-            @.sid.assert_Is_String()
-            @._id.assert_Is_String()
-            @.data.assert_Is_Object()
+                  using @.data.cookie,->
+                    @.path.assert_Is '/'
+                    @._expires.assert_Instance_Of(Date)
+                    @.originalMaxAge.assert_Bigger_Than 3153600000
+                    @.httpOnly.assert_Is_True()
 
-            using @.data.cookie,->
-              @.path.assert_Is '/'
-              @._expires.assert_Instance_Of(Date)
-              @.originalMaxAge.assert_Bigger_Than 3153600000
-              @.httpOnly.assert_Is_True()
+                    done()
 
-              done()
-
+    it 'clear_Empty_Sessions', (done)->
+      supertest(expressService.app)
+        .get '/'
+        .end (err,res)->
+          using expressService.session_Service,->
+            @.db.find {},  (err, docs) =>
+              docs.assert_Not_Empty()
+              @.clear_Empty_Sessions =>
+                @.db.find {},  (err, docs) ->
+                  docs.assert_Empty()
+                  done()
 
 
   describe 'checkAuth',->
