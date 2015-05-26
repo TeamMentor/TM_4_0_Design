@@ -28,8 +28,23 @@ class Session_Service
                                 , store: @ })
     @.db.loadDatabase =>
       @.db.persistence.setAutocompactionInterval(30 * 1000) # set to 30s
-      callback() if callback
+      @.clear_Empty_Sessions ->
+        logger?.info('[Session_Service] Configured')
+        callback() if callback
     @
+
+  clear_Empty_Sessions: (callback)=>
+    logger?.info "[Session_Service] clearing empty sessions"
+    cleared = 0
+    @.db.find {}, (err,sessionData)=>
+      for session in sessionData
+        if not session.data.recent_Articles       # remove sessions that did not see at least one article
+          @.db.remove session
+          cleared++
+      if cleared
+        logger?.info "[Session_Service] removed #{cleared} sessions"
+      callback()
+
 
 
   #TM Specific methods
