@@ -23,7 +23,7 @@ class Session_Service
 
   setup: (callback)=>
     @.session = Express_Session({ secret: '1234567890', key: 'tm-session'
-                                , saveUninitialized: true , resave: true
+                                , saveUninitialized: false , resave: true
                                 , cookie: { path: '/' , httpOnly: true , maxAge: 365 * 24 * 3600 * 1000 }
                                 , store: @ })
     @.db.loadDatabase =>
