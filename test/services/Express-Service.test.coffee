@@ -28,22 +28,25 @@ describe '| services | Express-Service.test', ()->
       console.log       .assert_Is_Not global.info
       console.log       .assert_Is @.logging_Service.original_Console
 
-
-
   describe 'session',->
 
     expressService = null
+    session_File   = './.tmCache/_test_sessionData'
 
     before ->
-      expressService = new Express_Service()
+      using new Express_Service(),->
+        expressService = @
+        @.add_Session(session_File)
+        @.app.get '/',(req,res)->
+          req.session.value = '42'      # set a value on the session (due to saveUninitialized: false)
+          res.send('42')
 
     it 'Create temp session file',(done)->
-      session_File = './.tmCache/_test_sessionData'
-      expressService.add_Session(session_File)
       session_File.file_Delete().assert_Is_True();
       supertest(expressService.app)
         .get '/'
         .end (err,res)->
+          res.text.assert_Is 42
           using session_File, ->
             @.assert_File_Exists()
             @.file_Contents().assert_Contains('sid')
