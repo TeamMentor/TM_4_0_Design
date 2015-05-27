@@ -11,9 +11,6 @@ class Config
         @tm_35_Server      ='https://tmdev01-uno.teammentor.net/'
         @tmWebServices     ='Aspx_Pages/TM_WebServices.asmx'
 
-        @gaTrackingId      ='UA-60335577-1'         #Google Analytics Tracking Id
-        @gaTrackingSite    ='beta.teammentor.net'   #Google Analytics Tracking Site
-
     createCacheFolders : ()->
         if not fs.existsSync(@cache_folder)
             fs.mkdirSync(@cache_folder)

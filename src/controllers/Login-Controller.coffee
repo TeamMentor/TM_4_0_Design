@@ -1,7 +1,6 @@
 
-request    = null
-Config     = null
-Ga_Service = null
+request = null
+Config  = null
 
 loginPage                  = 'source/jade/guest/login-Fail.jade'
 loginPage_Unavailable      = 'source/jade/guest/login-cant-connect.jade'
@@ -17,16 +16,14 @@ errorMessage               = "TEAM Mentor is unavailable, please contact us at "
 class Login_Controller
   constructor: (req, res)->
 
-    request      = require('request')
-    Config       = require('../misc/Config')
-    Ga_Service   = require('../services/GoogleAnalytics-Service')
+    request = require('request')
+    Config  = require('../misc/Config')
 
     #@.users              = users
     @.req                = req || {}
     @.res                = res || {}
     @.config             = new Config();
     @.webServices        = @.config.tm_35_Server + @.config.tmWebServices
-    @.gaService          = new Ga_Service()
         
   redirectToLoginPage:  ()=>
     @.res.redirect(loginPage)
@@ -68,7 +65,6 @@ class Login_Controller
       loginResponse = response.body.d
       success = loginResponse?.Login_Status
       if (success == loginSuccess)
-        @.gaService.trackEvent('User Account',"Login Success #{username}")
         @.req.session.username = username
         redirectUrl =@.req.session.redirectUrl
         if(redirectUrl? && redirectUrl.is_Local_Url())
@@ -78,7 +74,7 @@ class Login_Controller
           @.res.redirect(mainPage_user)
       else
           @.req.session.username = undefined
-          @.gaService.trackEvent('User Account',"Login Failed #{username} ")
+
           if (loginResponse?.Validation_Results !=null && loginResponse?.Validation_Results?.not_Empty())
               userViewModel.errorMessage  = loginResponse.Validation_Results.first().Message
           else
