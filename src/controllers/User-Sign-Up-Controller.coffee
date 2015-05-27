@@ -12,12 +12,12 @@ class User_Sign_Up_Controller
 
     request = require('request')
     Config  = require('../misc/Config')
-
+    Login_Controller        = require('../controllers/Login-Controller')
     @.req                = req || {}
     @.res                = res || {}
     @.config             = new Config();
     @.webServices        = @.config.tm_35_Server + @.config.tmWebServices
-
+    @.login              = new Login_Controller(req,res)
   userSignUp: ()=>
     userViewModel =
                     {
@@ -70,8 +70,7 @@ class User_Sign_Up_Controller
       #log signUpResponse
 
       if (signUpResponse.Signup_Status is 0)
-        @res.redirect('/guest/sign-up-OK.html')
-        return
+        return @.login.loginUser()
       if (signUpResponse.Validation_Results.empty())
         message = signUpResponse.Simple_Error_Message || 'An error occurred'
       else
