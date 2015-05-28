@@ -45,7 +45,7 @@ class Analytics_Service
     if not @.config.analitycsEnabled
       console.log('Analytics not enabled')
       return
-    console.log(@.apiKey())
+
     actionName = if pageTitle then pageTitle else @.req.url
     url        = @.config.analitycsTrackingSite + @.req.url
     ipAddress  = @.remoteIp()
@@ -56,8 +56,8 @@ class Analytics_Service
       _id            :@.req.sessionID,
       rand           :''.add_5_Random_Letters(),                          #random value to avoid caching
       apiv           :1,                                                  #Api version always set to 1
-      ua             :@.req.headers["User-Agent"],
-      lang           :@.req.headers["Accept-Language"],
+      ua             :@.req.header?("User-Agent"),
+      lang           :@.req.header?("Accept-Language"),
       token_auth     :@.apiKey(),
       cip            :ipAddress,
       e_c            :eventCategory,                                     #Event category
