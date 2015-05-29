@@ -19,8 +19,9 @@ describe '| services | Analytics-Service.test |', ->
       @.setup()
 
 
-  it ' missing Analytics siteId()',->
+  it ' setup missing Analytics siteId()',->
     using new Analytics_Service(), ->
+      @.config.analitycsTrackUrl      = 'http://foo/bar'
       result = @.setup()
       result.toString().assert_Is('Error: siteId must be provided.')
 

@@ -9,19 +9,23 @@ class Analytics_Service
     piwikAnalytics = require 'piwik-tracker'
     Config         = require('../misc/Config')
 
-  setup:() =>
-    try
-      piwik = new piwikAnalytics(@.config.analitycsSiteId, @.config.analitycsTrackUrl)
-    catch error
-      return error
-
-
   constructor:(req, res)->
     @.dependencies()
     @.req      = req
     @.res      = res
     @.config   = new Config()
-    @.setup()
+
+
+  setup:() =>
+    try
+      if @.config.analitycsEnabled
+        console.log('Analytics is enabled')
+      else
+        console.log('Analytics not enabled')
+
+      piwik = new piwikAnalytics(@.config.analitycsSiteId, @.config.analitycsTrackUrl)
+    catch error
+      return error
 
   remoteIp: () ->
     ipAddr = @.req.headers["x-forwarded-for"]
@@ -43,13 +47,12 @@ class Analytics_Service
 
   track : (pageTitle,eventCategory, eventName) ->
     if not @.config.analitycsEnabled
-      console.log('Analytics not enabled')
       return
 
     actionName = if pageTitle then pageTitle else @.req.url
     url        = @.config.analitycsTrackingSite + @.req.url
     ipAddress  = @.remoteIp()
-    console.log ('Remote Ip ' + ipAddress)
+
     piwik?.track({
       url            :url,
       action_name    :actionName,
