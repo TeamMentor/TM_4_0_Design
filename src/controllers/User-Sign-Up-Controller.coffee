@@ -5,19 +5,22 @@ signUp_Ok               = 'source/jade/guest/sign-up-OK.html'
 errorMessage            = "TEAM Mentor is unavailable, please contact us at "
 request                 = null
 Config                  = null
+Analytics_Service       = null
 
 class User_Sign_Up_Controller
 
   constructor: (req, res)->
-
-    request = require('request')
-    Config  = require('../misc/Config')
-    Login_Controller        = require('../controllers/Login-Controller')
+    request              = require('request')
+    Config               = require('../misc/Config')
+    Login_Controller     = require('../controllers/Login-Controller')
+    Analytics_Service    = require('../services/Analytics-Service')
     @.req                = req || {}
     @.res                = res || {}
     @.config             = new Config();
     @.webServices        = @.config.tm_35_Server + @.config.tmWebServices
     @.login              = new Login_Controller(req,res)
+    @.analyticsService   = new Analytics_Service(@.req, @.res)
+
   userSignUp: ()=>
     userViewModel =
                     {
@@ -67,17 +70,17 @@ class User_Sign_Up_Controller
 
       message = ''
 
-      #log signUpResponse
-
       if (signUpResponse.Signup_Status is 0)
+        @.analyticsService.track('','User Account',"Signup Success #{@.req.body.username}")
         return @.login.loginUser()
+
       if (signUpResponse.Validation_Results.empty())
         message = signUpResponse.Simple_Error_Message || 'An error occurred'
       else
         message = signUpResponse.Validation_Results.first().Message
       userViewModel.errorMessage = message
+      @.analyticsService.track('','User Account',"Signup Failed #{@.req.body.username}")
       @res.render(signUp_fail, {viewModel:userViewModel})
-
 
 
 module.exports = User_Sign_Up_Controller
