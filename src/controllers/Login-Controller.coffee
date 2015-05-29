@@ -1,6 +1,7 @@
 
-request = null
-Config  = null
+request    = null
+Config     = null
+analytics_Service = null
 
 loginPage                  = 'source/jade/guest/login-Fail.jade'
 loginPage_Unavailable      = 'source/jade/guest/login-cant-connect.jade'
@@ -16,14 +17,16 @@ errorMessage               = "TEAM Mentor is unavailable, please contact us at "
 class Login_Controller
   constructor: (req, res)->
 
-    request = require('request')
-    Config  = require('../misc/Config')
+    request      = require('request')
+    Config       = require('../misc/Config')
+    analytics_Service   = require('../services/Analytics-Service')
 
     #@.users              = users
     @.req                = req || {}
     @.res                = res || {}
     @.config             = new Config();
     @.webServices        = @.config.tm_35_Server + @.config.tmWebServices
+    @.analyticsService   = new analytics_Service(@.req, @.res)
         
   redirectToLoginPage:  ()=>
     @.res.redirect(loginPage)
@@ -65,6 +68,7 @@ class Login_Controller
       loginResponse = response.body.d
       success = loginResponse?.Login_Status
       if (success == loginSuccess)
+        @.analyticsService.track('','User Account','Login Success')
         @.req.session.username = username
         redirectUrl =@.req.session.redirectUrl
         if(redirectUrl? && redirectUrl.is_Local_Url())
@@ -74,7 +78,7 @@ class Login_Controller
           @.res.redirect(mainPage_user)
       else
           @.req.session.username = undefined
-
+          @.analyticsService.track('','User Account','Login Failed')
           if (loginResponse?.Validation_Results !=null && loginResponse?.Validation_Results?.not_Empty())
               userViewModel.errorMessage  = loginResponse.Validation_Results.first().Message
           else

@@ -2,14 +2,15 @@ Express_Service  = null
 Jade_Service     = null
 Graph_Service    = null
 Config           = null
-
+Analytics_Service       = null
 class Article_Controller
 
   dependencies: ()->
-    Express_Service  = require('../services/Express-Service')
-    Jade_Service     = require('../services/Jade-Service')
-    Graph_Service    = require('../services/Graph-Service')
-    Config           = require('../misc/Config')
+    Express_Service    = require('../services/Express-Service')
+    Jade_Service       = require('../services/Jade-Service')
+    Graph_Service      = require('../services/Graph-Service')
+    Config             = require('../misc/Config')
+    Analytics_Service  = require('../services/Analytics-Service')
 
   constructor: (req, res, next, config,graph_Options)->
     @dependencies()
@@ -23,6 +24,9 @@ class Article_Controller
     @.jade_Service     = new Jade_Service(@.config);
     @.graphService     = new Graph_Service(graph_Options)
 
+
+
+
   article: =>
     send_Article = (view_Model)=>
       if view_Model
@@ -33,9 +37,13 @@ class Article_Controller
     article_Ref = @req.params.ref
 
     @.graphService.article article_Ref, (data)=>
+
+
       article_Id = data.article_Id
       if article_Id
         @graphService.node_Data article_Id, (article_Data)=>
+           using new Analytics_Service(@.req, @.res), ->
+             @.track(article_Data?.title,article_Id)
             title      = article_Data?.title
             technology = article_Data?.technology
             type       = article_Data?.type
