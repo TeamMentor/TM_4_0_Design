@@ -301,9 +301,6 @@ article a {
   padding: 0 0 0.75em 0;
   border-bottom: 1px solid #dbdbdb;
 }
-.container.article p {
-  margin-top: 10px;
-}
 .container.article a {
   text-decoration: none;
 }
@@ -311,7 +308,6 @@ article a {
   color:  #8aaf3e;
 }
 .metadata {
-  padding: 0 0 0.35em 0;
   background: #b4cf7b;
 }
 .metadata ul {
@@ -320,17 +316,22 @@ article a {
   padding: 0;
   margin: 0;
   text-align: center;
-  padding: 0 0.5em;
 }
 .metadata ul li {
   display: inline-block;
-  text-align: left;
+  text-align: center;
   width: 16%;
   padding: 0 2px;
 }
 .summary {
   padding: 1.5em 1em 0.5em;
   border: 1px solid #dbdbdb;
+}
+.seen {
+  display: none;
+}
+.summary a:visited .seen {
+  display: block;
 }
 .row {
   background: transparent;
@@ -725,7 +726,7 @@ h5 {
 }
 p, li {
   font-size: 0.85em;
-  line-height: 1.5em;
+  line-height: 2em;
 }
 ul, ol {
   margin: 0;
