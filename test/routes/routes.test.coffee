@@ -20,6 +20,7 @@ describe '| routes | routes.test |', ()->
                       '/article/:ref/:title'
                       '/article/:ref'
                       '/teamMentor/open/:guid'
+                      '/teamMentor'
                       '/articles'
                       '/search'
                       '/search/:text'
@@ -102,17 +103,17 @@ describe '| routes | routes.test |', ()->
 
 
       expectedStatus = 200;
-      expectedStatus = 302 if ['','image','deploy', 'poc'                    ].contains(path.split('/').second().lower())
+      expectedStatus = 302 if ['','image','deploy', 'poc'                         ].contains(path.split('/').second().lower())
       expectedStatus = 302 if ['/flare','/flare/_dev','/flare/main-app-view','/user/login',
-                               '/user/logout','/pocaaaaa' ].contains(path)
+                               '/user/logout','/pocaaaaa','/teamMentor'           ].contains(path)
 
-      expectedStatus = 403 if ['a','article','articles','show', 'teammentor' ].contains(path.split('/').second().lower())
-      expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text' ].contains(path)
+      expectedStatus = 403 if ['a','article','articles','show'                    ].contains(path.split('/').second().lower())
+      expectedStatus = 403 if ['/user/main.html', '/search', '/search/:text'      ].contains(path)
+      expectedStatus = 403 if path is '/teamMentor/open/:guid'
+      expectedStatus = 404 if ['/aaaaa'                                           ].contains(path)
+      expectedStatus = 500 if ['/error'                                           ].contains(path)
 
-      expectedStatus = 404 if ['/aaaaa'                                      ].contains(path)
-      expectedStatus = 500 if ['/error'                                      ].contains(path)
-
-      postRequest = ['/user/pwd_reset','/user/sign-up'                       ].contains(path)
+      postRequest = ['/user/pwd_reset','/user/sign-up'                            ].contains(path)
 
       testName = "[#{expectedStatus}] #{originalPath}" + (if(path != originalPath) then "  (#{path})" else  "")
 

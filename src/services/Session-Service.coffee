@@ -23,13 +23,28 @@ class Session_Service
 
   setup: (callback)=>
     @.session = Express_Session({ secret: '1234567890', key: 'tm-session'
-                                , saveUninitialized: true , resave: true
+                                , saveUninitialized: false , resave: true
                                 , cookie: { path: '/' , httpOnly: true , maxAge: 365 * 24 * 3600 * 1000 }
                                 , store: @ })
     @.db.loadDatabase =>
       @.db.persistence.setAutocompactionInterval(30 * 1000) # set to 30s
-      callback() if callback
+      @.clear_Empty_Sessions ->
+        logger?.info('[Session_Service] Configured')
+        callback() if callback
     @
+
+  clear_Empty_Sessions: (callback)=>
+    logger?.info "[Session_Service] clearing empty sessions"
+    cleared = 0
+    @.db.find {}, (err,sessionData)=>
+      for session in sessionData
+        if not session.data.recent_Articles       # remove sessions that did not see at least one article
+          @.db.remove session
+          cleared++
+      if cleared
+        logger?.info "[Session_Service] removed #{cleared} sessions"
+      callback()
+
 
 
   #TM Specific methods

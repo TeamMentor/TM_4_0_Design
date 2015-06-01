@@ -39,6 +39,7 @@
     "jade": "latest",
     "marked": "latest",
     "nedb": "latest",
+    "piwik-tracker": "^0.1.1",
     "request": "latest",
     "supervisor": "latest",
     "teammentor": "^0.1.2",

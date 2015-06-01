@@ -80,7 +80,6 @@ mixin php-icon
   span.icon-PHP(title='PHP')
     span.path1
     span.path2
-    span.path3
 
 mixin scala-icon
   span.icon-Scala(title='Scala')
@@ -91,7 +90,6 @@ mixin vulnerabilities-icon
   span.icon-Vulnerabilities(title='Vulnerabilities')
     span.path1
     span.path2
-    span.path3
 
 mixin wcf-icon
   span.icon-WCF(title='WCF')
@@ -132,8 +130,6 @@ mixin java-icon
   span.icon-Java(title='Java')
     span.path1
     span.path2
-    span.path3
-    span.path4
 
 mixin all-icon
   span.icon-All(title='Technology Independant')
@@ -152,8 +148,6 @@ mixin c-icon
   span.icon-C(title='C++')
     span.path1
     span.path2
-    span.path3
-    span.path4
 
 mixin checklist-icon
   span.icon-Checklist(title='Checklist')
@@ -167,12 +161,18 @@ mixin code-example-icon
   span.icon-CodeExample(title='Code Example')
     span.path1
     span.path2
+    span.path3
+    span.path4
+    span.path5
+    span.path6
+    span.path7
+    span.path8
+    span.path9
 
 mixin guideline-icon
   span.icon-Guideline(title='Guideline')
     span.path1
     span.path2
-    span.path3
 
 mixin principle-icon
   span.icon-Principle(title='Principle')
@@ -198,6 +198,8 @@ mixin design-icon
   span.icon-Design(title='Design')
     span.path1
     span.path2
+    span.path3
+    span.path4
 
 mixin principle-icon
   span.icon-Principle
@@ -224,6 +226,11 @@ mixin filters-icon
 mixin delete-icon
   span.icon-Delete(title='Delete')
 
+mixin default-icon
+  span.icon-Default(title='Default')
+    span.path1
+    span.path2
+
 mixin save-icon
   span.icon-Save(title='Save')
 
@@ -248,7 +255,7 @@ mixin filter-icon(filter, title)
           when 'Principle'
             +principle-icon
           default
-            span
+            +default-icon
 
       when 'Technology'
         case title

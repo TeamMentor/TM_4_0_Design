@@ -28,22 +28,25 @@ describe '| services | Express-Service.test', ()->
       console.log       .assert_Is_Not global.info
       console.log       .assert_Is @.logging_Service.original_Console
 
-
-
   describe 'session',->
 
     expressService = null
+    session_File   = './.tmCache/_test_sessionData'
 
     before ->
-      expressService = new Express_Service()
+      using new Express_Service(),->
+        expressService = @
+        @.add_Session(session_File)
+        @.app.get '/',(req,res)->
+          req.session.value = '42'      # set a value on the session (due to saveUninitialized: false)
+          res.send('42')
 
     it 'Create temp session file',(done)->
-      session_File = './.tmCache/_test_sessionData'
-      expressService.add_Session(session_File)
       session_File.file_Delete().assert_Is_True();
       supertest(expressService.app)
         .get '/'
         .end (err,res)->
+          res.text.assert_Is 42
           using session_File, ->
             @.assert_File_Exists()
             @.file_Contents().assert_Contains('sid')
@@ -54,23 +57,36 @@ describe '| services | Express-Service.test', ()->
       using expressService.session_Service,->
         @.constructor.name.assert_Is 'Session_Service'
         @.db.constructor.name.assert_Is 'Datastore'
+        supertest(expressService.app)
+            .get '/'
+            .end (err,res)=>
+              @.db.find {},  (err, docs) ->
+                assert_Is_Null err
+                docs.assert_Size_Is(1)
+                using docs.first(),->
+                  @.sid.assert_Is_String()
+                  @._id.assert_Is_String()
+                  @.data.assert_Is_Object()
 
-        @.db.find {},  (err, docs) ->
-          assert_Is_Null err
-          docs.assert_Size_Is(1)
-          using docs.first(),->
-            @.sid.assert_Is_String()
-            @._id.assert_Is_String()
-            @.data.assert_Is_Object()
+                  using @.data.cookie,->
+                    @.path.assert_Is '/'
+                    @._expires.assert_Instance_Of(Date)
+                    @.originalMaxAge.assert_Bigger_Than 3153600000
+                    @.httpOnly.assert_Is_True()
 
-            using @.data.cookie,->
-              @.path.assert_Is '/'
-              @._expires.assert_Instance_Of(Date)
-              @.originalMaxAge.assert_Bigger_Than 3153600000
-              @.httpOnly.assert_Is_True()
+                    done()
 
-              done()
-
+    it 'clear_Empty_Sessions', (done)->
+      supertest(expressService.app)
+        .get '/'
+        .end (err,res)->
+          using expressService.session_Service,->
+            @.db.find {},  (err, docs) =>
+              docs.assert_Not_Empty()
+              @.clear_Empty_Sessions =>
+                @.db.find {},  (err, docs) ->
+                  docs.assert_Empty()
+                  done()
 
 
   describe 'checkAuth',->
