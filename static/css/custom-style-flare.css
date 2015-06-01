@@ -353,16 +353,12 @@ article a {
   display: flex;
 }
 #two-thirds-column {
-  -webkit-order: 1;
-  order:1;
   -webkit-flex: 100%;
   flex: 100%;
   min-height: 1px;
   padding: 0 20px;
 }
 #one-third-column {
-  -webkit-order: 2;
-  order:2;
   -webkit-flex: 100%;
   flex: 100%;
   min-height: 1px;
@@ -464,59 +460,44 @@ section {
   display: block;
   overflow-y: auto;
 }
-.usp ul {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  list-style-type: none;
-}
-.usp h2, .usp button {
-  flex: 100%;
-}
-.landing-page button {
-  width: 25%;
-}
 .about, .reasons, .clients, .call-to-action, .about-us, .features, footer {
   background: white;
 }
 .about, .call-to-action, .usp {
   background-image: url(../assets/stock-img/bg-img-small.jpg);
+  padding: 1em;
 }
 .about {
   background-position: 0px 900px;
 }
 .about, .call-to-action {
-  padding: 1em 1em 2em;
+  padding: 1em 1em 1em;
   background-size: auto;
 }
 .usp {
   background-position: 0em 0em;
-  padding: 3% 1em 8%;
 }
-.about h3, .usp h2, .call-to-action h2, .clients h3 {
+.about h3, .usp h2, .call-to-action h2 {
   color: white;
 }
 .about-us, .features {
   padding: 2% 0;
 }
 .reasons {
-  padding: 2em 2em 3em 2em;
+  padding: 1em;
+}
+.reasons table tr td:first-child {
+  width: 7em;
+  padding: 0 1em 0 0;
 }
 .call-to-action {
   background-position: 0em -18em;
 }
 .clients {
-  padding: 1em 2em 3em 2em;
+  padding: 0 1em 2em 1em;
 }
 .clients h2 {
   text-align: left !important;
-}
-.client-logo {
-  background: url(../assets/clients/logos.jpg) no-repeat;
-  background-size: 100%;
-  width: 100%;
-  padding-top: 33%;
-  height: 0;
 }
 .features {
   background: white;
@@ -616,23 +597,12 @@ footer ul li {
 .provides-guidance {
   background-position: 100% 0%;
 }
-.elsevier {
-  background-position: 0% 0%;
-}
-.fedex {
-  background-position: 0% 20%;
-}
-.mass-mutual {
-  background-position: 0% 40%;
-}
-.microsoft {
-  background-position: 0% 60%;
-}
-.symantec {
-  background-position: 0% 80%;
-}
-.ubs {
-  background-position: 0% 100%;
+.client-logos {
+  background: url(../assets/clients/logos.jpg) no-repeat;
+  background-size: 100%;
+  width: 100%;
+  padding-top:5%;
+  height: 0;
 }
 /*------------------------------------*
    TYPOGRAPHY
@@ -886,6 +856,10 @@ button.circle {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
+.btn-landing {
+  width: auto;
+  padding: 0.5em 2em;
+}
 .full-width {
   display: block;
   width: 100% !important;
@@ -1131,11 +1105,13 @@ span.alert-text {
   .icons { flex: 1; }
   .about, .call-to-action, .usp {
     background: url(../assets/stock-img/bg-img-medium.jpg) no-repeat;
-    padding: 7% 1em 5%;
+    padding: 7% 10% 5%;
     text-align: center;
   }
   .about { background-position: 0px -820px; }
   .call-to-action { background-position: 0px -500px; }
+  .reasons { padding: 2em 10%; }
+  .clients { padding: 0 10% 2em;}
 }
 @media (min-width: 700px) {
   #logo {
@@ -1285,24 +1261,12 @@ span.alert-text {
     width: 10%;
     text-align: center;
   }
-  article {
-    padding: 1em 2em;
-  }
-  article h1 {
-    font-size: 2.25em;
-  }
-  article h2 {
-    font-size: 2em;
-  }
-  article h3 {
-    font-size: 1.75em;
-  }
-  article h4 {
-    font-size: 1.5em;
-  }
-  article h5 {
-    font-size: 1.25em;
-  }
+  article { padding: 1em 2em; }
+  h1 { font-size: 2.25em; }
+  h2 { font-size: 2em; }
+  h3 { font-size: 1.75em; }
+  h4 { font-size: 1.5em; }
+  h5 { font-size: 1.25em; }
   article p, article li {
     font-size: 1em;
     line-height: 1.75em;
@@ -1332,10 +1296,12 @@ span.alert-text {
   }
   .about, .call-to-action, .usp {
     background: url(../assets/stock-img/bg-img-large.jpg) no-repeat;
-    padding: 8% 1em;
+    padding: 8% 15%;
   }
   .about { background-position: 0px -1400px; }
   .call-to-action { background-position: 0px -800px; }
+  .reasons { padding: 3em 25%;}
+  .clients { padding: 0 15% 3em;}
 }
 @media (min-width: 950px) {
   #articles {
@@ -1358,6 +1324,9 @@ span.alert-text {
   .landing-page {
     width: 1285px;
     margin: 0 auto;
+  }
+  .about, .call-to-action, .usp {
+    padding: 8% 25%;
   }
 }
 /*------------------------------------*

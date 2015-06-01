@@ -3,53 +3,32 @@ include globals.jade
 
 mixin usp
   section.usp
-    ul
-      li
-        include:md ../../content/landing-pages/usp.md
-      li
-        a(href='../getting-started/index')
-          +start-trial-button
+    include:md ../../content/landing-pages/usp.md
+    a.button.btn-landing(href='../getting-started/index') Start your free trial today
 
-mixin reasons-to-use-tm
-    section.reasons
-        include:md ../../content/landing-pages/reasons-div-heading.md
-        .row
-            .small-12.medium-offset-1.medium-10.large-offset-2.large-8.end.columns
-                .row
-                    .small-3.large-2.columns.text-center
-                        br
-                        i.fi-clipboard-pencil
-                    .small-9.large-10.columns
-                        include:md ../../content/landing-pages/selling-point-1.md
-                br
-                .row
-                    .small-3.large-2.columns.text-center
-                        br
-                        i.fi-arrows-in
-                    .small-9.large-10.columns
-                        include:md ../../content/landing-pages/selling-point-2.md
-                br
-                .row
-                    .small-3.large-2.columns.text-center
-                        br
-                        i.fi-checkbox
-                    .small-9.large-10.columns
-                        include:md ../../content/landing-pages/selling-point-3.md
+mixin reasons
+  section.reasons
+    include:md ../../content/landing-pages/reasons-div-heading.md
+    section.row
+      #one-fourth-column
+        .fix-vulnerabilities
+      #three-fourths-column
+        include:md ../../content/landing-pages/selling-point-1.md
+    section.row
+      #one-fourth-column
+        .reduce-vulnerabilities
+      #three-fourths-column
+        include:md ../../content/landing-pages/selling-point-2.md
+    section.row
+      #one-fourth-column
+        .improve-process
+      #three-fourths-column
+        include:md ../../content/landing-pages/selling-point-3.md
 
 mixin clients
     section.clients
         include:md ../../content/landing-pages/clients-div-heading.md
-        .row
-            .small-offset-1.small-2.columns
-                .client-logo.elsevier
-            .small-2.columns
-                .client-logo.fedex
-            .small-2.columns
-                .client-logo.mass-mutual
-            .small-2.columns
-                .client-logo.microsoft
-            .small-2.end.columns
-                .client-logo.ubs
+        .client-logos
 
 mixin about-tagline
     //section.about
