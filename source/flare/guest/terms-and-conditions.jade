@@ -1,0 +1,32 @@
+extends ../_layouts/flare_page
+include ../mixins/articles-mixins
+include ../mixins/application-mixins
+
+block content
+	#application
+		#left-column
+			+left-navigation
+		#right-column
+			+filters-div
+		#content
+			#one-fourth-column
+				#sub-nav
+					.item
+						a(href='#') Terms & Conditions Heading
+					.item
+						a(href='#') Terms & Conditions Heading
+					.item
+						a(href='#') Terms & Conditions Heading
+					.item
+						a(href='#') Terms & Conditions Heading
+					.item
+						a(href='#') Terms & Conditions Heading
+					.item
+						a(href='#') Terms & Conditions Heading
+					.item
+						a(href='#') Terms & Conditions Heading
+					.item
+						a(href='#') Terms & Conditions Heading
+			#three-fourths-column
+				article
+					include:md ../../content/terms-and-conditions/terms-and-conditions.md

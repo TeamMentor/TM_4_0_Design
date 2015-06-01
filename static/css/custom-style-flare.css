@@ -673,6 +673,8 @@ footer {
 }
 footer.copyright {
   background: transparent;
+  -webkit-order: 100;
+  order: 100;
 }
 footer ul {
   list-style-type: none;

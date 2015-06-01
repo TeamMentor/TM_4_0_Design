@@ -1,6 +1,6 @@
-extends _layouts/flare_page
-include mixins/user-mixins
-include mixins/application-mixins
+extends ../_layouts/flare_page
+include ../mixins/user-mixins
+include ../mixins/application-mixins
 
 block content
   #application
@@ -25,3 +25,4 @@ block content
             br
             br
             +saved-articles-list
+          +copyright
