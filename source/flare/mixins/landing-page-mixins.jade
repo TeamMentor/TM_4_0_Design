@@ -1,8 +1,8 @@
 include ../../shared-mixins/globals.jade
 include globals.jade
 
-mixin usp-div
-    //section.usp
+mixin usp
+    section.usp
         .row
             .small-12.large-offset-1.large-10.end.columns
                 h2
@@ -12,8 +12,8 @@ mixin usp-div
                         a(href='../getting-started/index')
                             +start-trial-button
 
-mixin reasons-to-use-tm-div
-    //section.reasons
+mixin reasons-to-use-tm
+    section.reasons
         include:md ../../content/landing-pages/reasons-div-heading.md
         .row
             .small-12.medium-offset-1.medium-10.large-offset-2.large-8.end.columns
@@ -38,8 +38,8 @@ mixin reasons-to-use-tm-div
                     .small-9.large-10.columns
                         include:md ../../content/landing-pages/selling-point-3.md
 
-mixin clients-div
-    //section.clients
+mixin clients
+    section.clients
         include:md ../../content/landing-pages/clients-div-heading.md
         .row
             .small-offset-1.small-2.columns
@@ -53,19 +53,19 @@ mixin clients-div
             .small-2.end.columns
                 .client-logo.ubs
 
-mixin about-tagline-div
+mixin about-tagline
     //section.about
         .row
             .small-12.large-offset-1.large-10.end.columns
                 include:md ../../content/landing-pages/about-tm-tagline.md
 
-mixin about-us-div
+mixin about-us
     //section.about-us
         .row
             .small-12.large-offset-2.large-8.end.columns
                 include:md ../../content/landing-pages/about-tm-summary.md
 
-mixin features-div
+mixin features
     //section.features
         .row
             .small-12.large-offset-2.large-8.columns
@@ -91,27 +91,10 @@ mixin features-div
                     .small-9.large-10.columns
                         include:md ../../content/landing-pages/feature-4.md
 
-mixin call-to-action-div
-    //section.call-to-action
+mixin call-to-action
+    section.call-to-action
         .row
             .small-12.medium-offset-2.medium-8.end.columns
                 include:md ../../content/landing-pages/call-to-action.md
                 a(href='../getting-started/index')
                     +see-for-yourself-button
-
-mixin footer-div
-    //footer
-        .si-logo
-        .si-name
-            a.minor(hreft='http://www.securityinnovation.com/' target='_blank') Security Innovation 2015. All rights reserved.
-        .icons
-            .row
-                .small-3.medium-offset-6.medium-2.columns
-                    a(href='mailto:support@securityinnovation.com' title='Email')
-                        +i-email
-                .small-3.medium-2.columns
-                    a(href='http://www.twitter.com/SecInnovation' target='_blank' title='Twitter')
-                        +i-twitter
-                .small-3.medium-2.columns
-                    a#terms-and-conditions(href='../misc/terms-and-conditions' title ='Terms and Conditions')
-                        +i-toc
