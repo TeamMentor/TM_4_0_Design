@@ -39,6 +39,26 @@ body * {
   background-color: white;
   border-bottom: 1px solid #dbdbdb;
 }
+#links {
+  -webkit-order: 2;
+  order: 2;
+  -webkit-flex: 50%;
+  flex: 50%;
+  text-align: right;
+  height: 50px;
+  background: white;
+}
+#links ul {
+  list-style-type: none;
+  padding: 0;
+}
+#links ul li {
+  display: inline-block;
+  padding: 0.75em 0.5em 0;
+}
+#links ul li:last-child {
+  display: none;
+}
 #user {
   -webkit-order: 2;
   order: 2;
@@ -729,6 +749,9 @@ button:focus, .button:focus {
 button:hover, .button:hover {
   background-color: #b4cf7b;
 }
+.btn-nav {
+  padding: 0 1em;
+}
 .btn-divs {
   background: #8aaf3e;
   color: white;
@@ -1081,6 +1104,15 @@ span.alert-text {
     -webkit-flex: 21%;
     flex: 21%;
   }
+  #links ul li {
+    padding: 0 1em;
+  }
+  #links ul li:last-child {
+    display: inline-block;
+    padding: 0 0.5em 0 0;
+    vertical-align: middle;
+    margin-top: 5px;
+  }
   #search {
     -webkit-order: 3;
     order: 3;
@@ -1215,14 +1247,6 @@ span.alert-text {
   }
   footer ul {
     text-align: right;
-  }
-  footer ul li:first-child {
-    display: inline-block !important;
-    width: auto !important;
-  }
-  footer ul li {
-    width: 10%;
-    text-align: center;
   }
   article { padding: 1em 2em; }
   h1 { font-size: 2.25em; }
