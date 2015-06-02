@@ -47,6 +47,7 @@ body * {
   text-align: right;
   height: 50px;
   background: white;
+  border-bottom: 1px solid #dbdbdb;
 }
 #links ul {
   list-style-type: none;
@@ -297,8 +298,8 @@ article a {
 .container.search-term {
   flex: 1 0 auto;
   margin: 0 0.5em 1em 0.5em;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 1em;
+  border-radius: 30px;
   word-wrap: normal;
   color: #444444;
   border: 1px solid #dbdbdb;
@@ -474,6 +475,7 @@ span.text {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   overflow-y: auto;
+  background: white;
 }
 section {
   width: 100%;
@@ -485,13 +487,12 @@ section {
 }
 .about, .call-to-action, .usp {
   background-image: url(../assets/stock-img/bg-img-small.jpg);
-  padding: 1em;
+  padding: 0 1em;
 }
 .about {
   background-position: 0px 900px;
 }
 .about, .call-to-action {
-  padding: 1em;
   background-size: auto;
 }
 .usp {
@@ -499,11 +500,9 @@ section {
 }
 .about h3, .usp h2, .call-to-action h2 {
   color: white;
+  line-height: 1.5em;
 }
-.about-us, .features {
-  padding: 2% 0;
-}
-.reasons {
+.reasons, .about-us, .features {
   padding: 1em;
 }
 .call-to-action {
@@ -512,14 +511,8 @@ section {
 .clients {
   padding: 0 1em 2em 1em;
 }
-.clients h2 {
-  text-align: left !important;
-}
 .features {
   background: white;
-}
-.features h2 {
-  text-align: left;
 }
 footer {
   width: 100%;
@@ -562,14 +555,14 @@ footer ul li {
 /*------------------------------------*
   SPRITES
 *------------------------------------*/
-.fix-vulnerabilities, .reduce-vulnerabilities, .improve-process, .delivers-compliance, .integrates, .cross-references, .provides-guidance, .elsevier, .fedex, .mass-mutual, .microsoft, .ubs {
+.fix-vulnerabilities, .reduce-vulnerabilities, .improve-process, .delivers-compliance, .integrates, .cross-references, .provides-guidance {
   margin: 0 auto;
   height: 0;
 }
 .fix-vulnerabilities, .reduce-vulnerabilities, .improve-process, .delivers-compliance, .integrates, .cross-references, .provides-guidance {
   background: url(../assets/icons/landing-page-icons.png) no-repeat;
-  width: 100%;
-  padding-top: 110%;
+  width: 50%;
+  padding-top: 50%;
 }
 .fix-vulnerabilities, .reduce-vulnerabilities, .provides-guidance {
   background-size: 685%;
@@ -625,7 +618,7 @@ h3 {
 }
 h4 {
   font-size: 1.25em;
-  line-height: 1.11em;
+  line-height: 1.5em;
 }
 h5 {
   font-size: 1em;
@@ -1096,8 +1089,11 @@ span.alert-text {
   }
   .about { background-position: 0px -820px; }
   .call-to-action { background-position: 0px -500px; }
-  .reasons { padding: 2em 10%; }
+  .reasons, .about-us, .features { padding: 2em 10%; }
   .clients { padding: 0 10% 2em;}
+  .reasons h2, .clients h2, .features h2 {
+    text-align: center;
+  }
 }
 @media (min-width: 700px) {
   #logo {
@@ -1287,8 +1283,12 @@ span.alert-text {
   }
   .about { background-position: 0px -1400px; }
   .call-to-action { background-position: 0px -800px; }
-  .reasons { padding: 3em 10%;}
-  .clients { padding: 0 10% 3em;}
+  .reasons, .about-us, .features { padding: 3em 10%; }
+  .clients { padding: 0 10% 3em; }
+  .fix-vulnerabilities, .reduce-vulnerabilities, .improve-process, .delivers-compliance, .integrates, .cross-references, .provides-guidance {
+    width: 100%;
+    padding-top: 110%;
+  }
 }
 @media (min-width: 950px) {
   #articles {
@@ -1315,7 +1315,7 @@ span.alert-text {
   .about, .call-to-action, .usp {
     padding: 8% 20%;
   }
-  .reasons { padding: 3em 20%; }
+  .reasons, .about-us, .features { padding: 3em 20%; }
   .clients { padding: 0em 20% 3em; }
 }
 /*------------------------------------*
