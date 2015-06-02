@@ -1,10 +1,12 @@
 include ../_mixins/links.jade
 
 .fixed.landing-page
-	#team-mentor-navigation
-		h1 Custom TM
-	#team-mentor-navigation
-		a(href='/')
-			#tm-logo
-		#links
-			+links-navbar__landing-page
+    if custom_Banner
+        #team-mentor-navigation
+            h1= custom_Banner
+
+    #team-mentor-navigation
+        a(href='/')
+            #tm-logo
+        #links
+            +links-navbar__landing-page

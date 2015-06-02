@@ -82,8 +82,13 @@ class JadeService
       $.html()
 
     renderJadeFile: (jadeFile, params)=>
+
       if params and params.article_Html
         params.article_Html = @.apply_Highlight(params.article_Html)
+      else
+        params =
+          custom_Banner : "Custom header"
+
       if (@.cacheEnabled() is false)
         jadeFile_Path = @.calculateJadePath(jadeFile)
         if (fs.existsSync(jadeFile_Path))
