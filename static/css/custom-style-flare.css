@@ -471,7 +471,7 @@ section {
   background-position: 0px 900px;
 }
 .about, .call-to-action {
-  padding: 1em 1em 1em;
+  padding: 1em;
   background-size: auto;
 }
 .usp {
@@ -485,10 +485,6 @@ section {
 }
 .reasons {
   padding: 1em;
-}
-.reasons table tr td:first-child {
-  width: 7em;
-  padding: 0 1em 0 0;
 }
 .call-to-action {
   background-position: 0em -18em;
@@ -507,7 +503,9 @@ section {
 }
 footer {
   width: 100%;
-  padding: 0 0 10px 0;
+  padding: 0 0.5em;
+  -webkit-order: 100;
+  order: 100;
   display: flex;
   display: -webkit-flex;
   -webkit-flex-direction: row;
@@ -516,47 +514,30 @@ footer {
   flex-wrap: wrap;
   text-align: center;
 }
+footer ul {
+  list-style-type: none;
+  list-style-position: outside;
+  padding: 0;
+  text-align: right;
+}
+footer ul li {
+  display: inline-block;
+  width: auto;
+  padding: 0 1em;
+}
 .si-logo {
   background: url('../assets/logos/si-logo.svg') no-repeat;
   background-size: cover;
   padding-top: 20px;
   height: 0;
   width: 15px;
-  margin: 5px 5px 0 18%;
-}
-.si-name {
-  flex: calc (100% - 30px);
-  text-align: left;
-  padding: 5px 0 0 0;
-}
-.si-name a, .si-name a:hover {
-  text-decoration: none;
-  font-size: 0.75em !important;
+  margin: 5px 0 0 0;
+  flex: 1;
 }
 .icons {
-  flex: 100%;
+  flex: 3;
   text-align: center;
-  padding: 10px 0;
   font-size: 0.85em;
-}
-footer.copyright {
-  background: transparent;
-  -webkit-order: 100;
-  order: 100;
-}
-footer ul {
-  list-style-type: none;
-  list-style-position: outside;
-  margin: 0;
-  padding: 0;
-}
-footer ul li:first-child {
-  display: block;
-  width: 100%;
-}
-footer ul li {
-  display: inline-block;
-  width: 15%
 }
 /*------------------------------------*
   SPRITES
@@ -596,13 +577,6 @@ footer ul li {
 }
 .provides-guidance {
   background-position: 100% 0%;
-}
-.client-logos {
-  background: url(../assets/clients/client-logos.jpg) no-repeat;
-  background-size: 100%;
-  width: 100%;
-  padding-top:5%;
-  height: 0;
 }
 /*------------------------------------*
    TYPOGRAPHY
@@ -804,17 +778,6 @@ button:hover, .button:hover {
   padding: 13.5px;
   border: 1px solid white;
 }
-button.circle {
-  border-radius: 50%;
-  height: 45px;
-  width: 45px;
-  background: white;
-  border: 1px solid #dbdbdb;
-  float: right;
-  margin: 0 5px 0 0;
-  text-align: center;
-  padding: 2px 0;
-}
 .btn-result {
   font-size: 1.1em;
   background: #b4cf7b;
@@ -858,7 +821,8 @@ button.circle {
 }
 .btn-landing {
   width: auto;
-  padding: 0.5em 2em;
+  padding: 1em 2em;
+  text-transform: capitalize;
 }
 .full-width {
   display: block;
@@ -1101,10 +1065,6 @@ span.alert-text {
 *------------------------------------*/
 @media (min-width: 500px) {
   .si-logo { margin: 15px 10px 0 10px; }
-  .si-name {
-    flex: 2;
-    margin: 10px 0 0 0;
-  }
   .icons { flex: 1; }
   .about, .call-to-action, .usp {
     background: url(../assets/stock-img/bg-img-medium.jpg) no-repeat;
@@ -1270,7 +1230,7 @@ span.alert-text {
   h3 { font-size: 1.75em; }
   h4 { font-size: 1.5em; }
   h5 { font-size: 1.25em; }
-  article p, article li {
+  p, li {
     font-size: 1em;
     line-height: 1.75em;
   }
@@ -1303,8 +1263,8 @@ span.alert-text {
   }
   .about { background-position: 0px -1400px; }
   .call-to-action { background-position: 0px -800px; }
-  .reasons { padding: 3em 25%;}
-  .clients { padding: 0 15% 3em;}
+  .reasons { padding: 3em 10%;}
+  .clients { padding: 0 10% 3em;}
 }
 @media (min-width: 950px) {
   #articles {
@@ -1329,8 +1289,10 @@ span.alert-text {
     margin: 0 auto;
   }
   .about, .call-to-action, .usp {
-    padding: 8% 25%;
+    padding: 8% 20%;
   }
+  .reasons { padding: 3em 20%; }
+  .clients { padding: 0em 20% 3em; }
 }
 /*------------------------------------*
    ICONS

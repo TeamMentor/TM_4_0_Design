@@ -3,63 +3,6 @@ include ../../shared-mixins/globals.jade
 //- static texts
 - var head_title = 'TEAM Mentor 4.0 (Html version)'
 
-//- Icons
-mixin metadata-icon
-    i.fi-list-bullet
-    span Data
-
-mixin save-icon
-    i.fi-bookmark
-
-mixin share-icon
-    i.fi-share
-
-mixin filter-icon
-    i.fi-filter
-
-mixin clear-icon
-    i.fi-trash
-
-mixin edit-icon
-    i.fi-pencil
-
-mixin new-pw-icon
-    i.fi-key
-    span Change Password
-
-mixin delete-account-icon
-    i.fi-trash
-    span Delete Your Account
-
-mixin change-filters-icon
-    i.fi-results
-    span Add/Remove Permanent Filters
-
-mixin navigate-icon
-    i.fi-map
-
-mixin help-icon
-    i.fi-info
-
-mixin articles-icon
-    i.fi-book
-    span Related Articles
-
-mixin courses-icon
-    i.fi-paperclip
-    span Related Courses
-
-mixin user-icon
-    i.fi-torso
-
-mixin help-link
-    i.fi-info
-    span Docs
-
-mixin logout-link
-    i.fi-power
-    span Logout
-
 //- Form Inputs
 mixin username-input
     label Username
@@ -395,10 +338,9 @@ mixin flare-alert
         a.close(href='#') ×
 
 mixin copyright
-    footer.copyright
-        .si-logo
-        .si-name
-            a(hreft='http://www.securityinnovation.com/' target='_blank') Security Innovation 2015. All rights reserved.
+    footer
+        a(href='http://www.securityinnovation.com/' target='_blank')
+            .si-logo
         .icons
             ul
                 li
