@@ -598,7 +598,7 @@ footer ul li {
   background-position: 100% 0%;
 }
 .client-logos {
-  background: url(../assets/clients/logos.jpg) no-repeat;
+  background: url(../assets/clients/client-logos.jpg) no-repeat;
   background-size: 100%;
   width: 100%;
   padding-top:5%;
@@ -732,7 +732,7 @@ section.tm-summary table tr td:last-child {
 button, .button {
   width: 100%;
   border-radius: 20px;
-  padding: 10px;
+  padding: 1em;
   border: none;
   display: inline-block;
   background-color: #8aaf3e;
@@ -1022,6 +1022,9 @@ input.search-input, input.search-input:focus {
 /*------------------------------------*
    MICRO-ELEMENTS
 *------------------------------------*/
+img {
+  width: 100%;
+}
 .alert-box {
   width: 100%;
   background-color: #a6cb5a;
