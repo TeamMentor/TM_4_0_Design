@@ -87,7 +87,7 @@ class JadeService
         params.article_Html = @.apply_Highlight(params.article_Html)
       else
         params =
-          custom_Banner : "Custom header"
+          custom_Banner : "Custom header ... "
 
       if (@.cacheEnabled() is false)
         jadeFile_Path = @.calculateJadePath(jadeFile)
