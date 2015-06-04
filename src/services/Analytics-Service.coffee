@@ -17,15 +17,16 @@ class Analytics_Service
 
 
   setup:() =>
-    try
-      if @.config.analitycsEnabled
-        console.log('Analytics is enabled')
+    if @.config and @.config.analitycsEnabled
+      'Analytics is enabled'.log()
+      if not @.config.analitycsSiteId
+        'Error: siteId must be provided.'.log()
+      else if not @.config.analitycsTrackUrl
+        'Error: A tracker URL must be provided, e.g. http://example.com/piwik.php'.log()
       else
-        console.log('Analytics not enabled')
-
-      piwik = new piwikAnalytics(@.config.analitycsSiteId, @.config.analitycsTrackUrl)
-    catch error
-      return error
+        piwik = new piwikAnalytics(@.config.analitycsSiteId, @.config.analitycsTrackUrl)
+    else
+      'Analytics not enabled'.log()
 
   remoteIp: () ->
     ipAddr = @.req.headers["x-forwarded-for"]
@@ -43,7 +44,7 @@ class Analytics_Service
       return ''
 
   trackUrl: (url) ->
-    piwik.track (url)
+    piwik?.track (url)
 
   track : (pageTitle,eventCategory, eventName) ->
     if not @.config.analitycsEnabled
