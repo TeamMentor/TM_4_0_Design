@@ -6,10 +6,8 @@ describe '| services | Analytics-Service.test |', ->
 
   ga_Service = null
 
-
   before ->
     ga_Service = new Analytics_Service()
-
 
   it 'constructor()',->
     using new Analytics_Service(), ->
@@ -21,13 +19,15 @@ describe '| services | Analytics-Service.test |', ->
 
   it ' setup missing Analytics siteId()',->
     using new Analytics_Service(), ->
+      @.config.analitycsEnabled = true
       @.config.analitycsTrackUrl      = 'http://foo/bar'
       result = @.setup()
       result.toString().assert_Is('Error: siteId must be provided.')
 
   it ' missing Analytics Track site()',->
     using new Analytics_Service(), ->
-      @.config.analitycsSiteId        = 1
+      @.config.analitycsEnabled = true
+      @.config.analitycsSiteId  = 1
       result = @.setup()
       result.toString().assert_Is('Error: A tracker URL must be provided, e.g. http://example.com/piwik.php')
 
