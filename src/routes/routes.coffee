@@ -39,6 +39,8 @@ add_Routes = (express_Service)->
             res.redirect "/user/main.html"                                                                        # to prevent cached infinite redirects (due to 3.5 redirect of / to /teammentor
         else
             res.redirect "/index.html"
+    #Placeholder for express to post the helmet module content-security-policy json data
+    #app.post '/csp'             , (req,res)-> someFunction(to process csp-report json data so that it is usable for us)
 
     options = { express_Service: express_Service }
     Search_Controller                  .register_Routes(app, express_Service)

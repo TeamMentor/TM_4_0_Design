@@ -6,6 +6,7 @@ bodyParser      = null
 
 path            = null
 express         = null
+helmet          = null
 
 class Express_Service
 
@@ -17,6 +18,7 @@ class Express_Service
     bodyParser       = require 'body-parser'
     path             = require "path"
     express          = require 'express'
+    helmet           = require 'helmet'
 
   constructor: (options)->
     @.dependencies()
@@ -36,6 +38,7 @@ class Express_Service
     @.set_Static_Route()
     @.add_Session()      # for now not using the async version of add_Session
     @.set_Views_Path()
+    @set_Secure_Headers()
     @.map_Route('../routes/flare_routes')
     @.map_Route('../routes/routes')
     @
@@ -67,6 +70,28 @@ class Express_Service
 
   set_Views_Path :()=>
     @.app.set('views', path.join(__dirname,'../../'))
+
+  set_Secure_Headers: ()=>
+    @.app.use(helmet.csp({
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'none'"],
+      styleSrc: ["'self'"]
+      imgSrc: ["'self'"],
+      objectSrc: ["'self'"],
+      mediaSrc: ["'none'"],
+      frameSrc: ["'self'"]
+      #reportUri: '/csp', # Browser will POST reports of policy failures to this URI
+      reportOnly: false, # set to true if you only want to report errors; site will still function
+      setAllHeaders: false, # helmet sniffs user-agent of browser and sets appropriate header values;
+                            # if no user-agent matched, it will set ALL headers w/ 1.0 spec
+      disableAndroid: false # set to true to disable CSP on Android (can be flaky)
+    }));
+    @.app.use(helmet.hsts({    #http://tools.ietf.org/html/rfc6797 - HTTP Strict Transport Security
+      maxAge: 10886400000,     # Milliseconds - must be at least 18 weeks to be approved by Google
+      includeSubdomains: true, # Must be enabled to be approved by Google
+      preload: true # Submits site for baked-into-Chrome HSTS by adding preload to header - https://hstspreload.appspot.com/
+    }));
+    @.app.use(helmet.hidePoweredBy()); # hides "X-Powered-By: Express" set by default in Express header
 
   map_Route: (file)=>
     require(file)(@)
