@@ -7,7 +7,12 @@ expectedTm_35_Server  ='https://tmdev01-uno.teammentor.net/'
 expectedTmWebServices = 'Aspx_Pages/TM_WebServices.asmx'
 
 
-describe '| misc | Config.test', ()->
+describe '| misc | Config', ()->
+
+  before ->
+
+  after ->
+
   it 'constructor', ->
     using new Config(), ->
       @.cache_folder.assert_Contains ('tmCache')
@@ -52,8 +57,54 @@ describe '| misc | Config.test', ()->
         config.createCacheFolders()
         expect(fs.existsSync(config.cache_folder    )).to.be.true
         expect(fs.existsSync(config.jade_Compilation)).to.be.true
-        expect(fs.existsSync(config.library_Data)).to.be.true
+        expect(fs.existsSync(config.library_Data    )).to.be.true
 
-    it.only 'has_SiteData_Config',->
-      using new Config(),->
-        @.has_SiteData_Config().assert_False()
+  describe '| with custom SiteData location',->
+
+    siteData_Folder = '_tmp_SiteData'
+    siteData_Name   = 'SiteData_Temp'
+    tmConfig        =
+      tm_Design:
+        port: 12345
+      tm_Graph:
+        port: 23456
+
+    before ->
+      siteData_Folder = siteData_Folder             .folder_Create()                .assert_Folder_Exists()
+      siteData_Folder.path_Combine(siteData_Name   ).folder_Create()                .assert_Folder_Exists()
+                     .path_Combine('TM_4'          ).folder_Create()                .assert_Folder_Exists()
+                     .path_Combine('tm.config.json').file_Write(tmConfig.json_Str()).assert_File_Exists()
+
+    after ->
+      siteData_Folder.folder_Delete_Recursive()
+                     .assert_True()
+
+    it 'When process.env.TM_SITE_DATA is not set', ->
+      using new Config(), ->
+        assert_Is_Undefined @.siteData_Folder()
+        assert_Is_Undefined @.siteData_TM_Config()
+
+    it 'siteData_Folder (when process.env.TM_SITE_DATA is set to a full path)', ->
+      using new Config(), ->
+        process.env[@.DEFAULT_ENV_TM_SITE_DATA] = siteData_Folder
+        @.siteData_Folder().assert_Is siteData_Folder
+
+    it '@.siteData_Folder (when process.env.TM_SITE_DATA is set to a virtual path)', ->
+      using new Config(), ->
+        virtual_Path = "#{siteData_Folder.folder_Name()}/#{siteData_Name}"
+        process.env[@.DEFAULT_ENV_TM_SITE_DATA] = virtual_Path
+        @.siteData_Folder().assert_Contains virtual_Path
+        virtual_Path.folder_Create()
+        @.siteData_Folder().assert_Folder_Exists()
+
+    it 'siteData_TM_Config, load_Options, options (when siteData_Folder is valid)', ->
+      using new Config(), ->
+        virtual_Path = "#{siteData_Folder.folder_Name()}/#{siteData_Name}"
+        process.env[@.DEFAULT_ENV_TM_SITE_DATA] = virtual_Path
+
+        @.siteData_TM_Config().assert_File_Exists()
+        options = @.load_Options().assert_Is @._options
+                                  .assert_Is @.options()
+        options.tm_Design.port.assert_Is 12345
+        options.tm_Graph.port.assert_Is 23456
+

@@ -20,9 +20,9 @@ class JadeService
       @.config = config || new Config();
       @.repo_Path      = __dirname.path_Combine("..#{path.sep}..")          #calculate the repo path as 3 folders above the current path
       @.mixins_Folder = @.repo_Path.path_Combine("#{path.sep}source#{path.sep}jade#{path.sep}_mixins#{path.sep}")
-      @.target_Folder = @.config.jade_Compilation;
+      @.target_Folder = @.config.jade_Compilation();
       @.mixin_Extends = "..#{path.sep}_layouts#{path.sep}page_clean"
-      @.config.createCacheFolders()                             # ensure cache folders exists
+      @.config.createCacheFolders()                                       # ensure cache folders exists
 
 
     enableCache: (value)->                           #set to true to allow caching of jade compiled files

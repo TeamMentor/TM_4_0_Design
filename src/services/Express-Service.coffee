@@ -20,10 +20,13 @@ class Express_Service
 
   constructor: (options)->
     @.dependencies()
-    @.options         = options || { logging_Enabled: true}
+    @.config          = new Config()
+    @.options         = options || @.config.load_Options()
+    @.options.logging_Enabled = true
+    @.config          =
     @.app             = express()
     @loginEnabled     = true;
-    @.app.port        = @.options.port || process.env.PORT || 1337;
+    @.app.port        = @.options.TM_Design?.port || process.env.PORT || 1337;
     @.session_Service = null
     @.logging_Service = null
 
