@@ -1,19 +1,19 @@
 //- Flare Search Bar Input
 mixin search-bar
     #search
-        a.button.btn-divs#navigate-button(href='#left-column')
+        a.button.btn-mobile(href='#left-column')
             +index-icon
-        .search-field
+        .search-input
             input.search-input(type='text', placeholder='Type keywords here')
-            a.button.btn-search#search-button(href='app-keyword-search')
+            a.button.btn-search(href='app-keyword-search')
                 +search-icon
-        a.button.btn-divs#filters-button(href='#right-column')
+        a.button.btn-mobile(href='#right-column')
             +filters-icon
 
 //- Clear and Save Results
 mixin results-save-clear
     .label 0/200 results showing
-    ul.inline
+    ul.display-inline
         li
             +save-results-button
         li
@@ -22,7 +22,7 @@ mixin results-save-clear
 //-Clear and Delete Results
 mixin results-delete-share
     .label 0/200 results showing
-    ul.inline
+    ul.display-inline
         li
             +delete-results-button
         li
@@ -147,7 +147,7 @@ mixin saved-search-term-list
         a(href='app-keyword-search')
             +search-icon
             span Search Term
-    ul.inline
+    ul.display-inline
         li
             +delete-button
         li
@@ -156,7 +156,7 @@ mixin saved-search-term-list
         a(href='app-keyword-search')
             +search-icon
             span Search Term
-    ul.inline
+    ul.display-inline
         li
             +delete-button
         li
@@ -165,7 +165,7 @@ mixin saved-search-term-list
         a(href='app-keyword-search')
             +search-icon
             span Search Term
-    ul.inline
+    ul.display-inline
         li
             +delete-button
         li
