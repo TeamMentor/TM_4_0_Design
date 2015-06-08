@@ -852,7 +852,7 @@ td.vertical-align {
   #landing-page #application {
     margin: 70px 0 0 0;
   }
-  #help-nav { margin: 10px 10px 0 0; }
+  #help-nav { margin: 0 10px 0 0; }
   #help { margin: 10px 0 0 10px; }
   #search-button { width: 8%; }
   #search-div-2 input, #search-div input {
@@ -977,7 +977,7 @@ td.vertical-align {
   font-size: 2em;
   margin-bottom: 0;
 }
-#article ul, #article ol, #help-index ul, #help-index ol, #help-docs ul, #help-docs ol {
+#article ul, #article ol, .toc-content ul, .toc-content ol {
   padding: 10px;
   margin: 20px;
 }
