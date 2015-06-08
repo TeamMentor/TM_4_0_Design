@@ -23,5 +23,8 @@ class Config
             fs.mkdirSync(@jade_Compilation)
         if not fs.existsSync(@library_Data)
             fs.mkdirSync(@library_Data)
-    
+
+    has_SiteData_Config: ()->
+        false
+
 module.exports = Config

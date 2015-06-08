@@ -47,9 +47,13 @@ describe '| misc | Config.test', ()->
         expect(fs.existsSync(custom_config.cache_folder    )).to.be.false
         expect(fs.existsSync(custom_config.jade_Compilation)).to.be.false
 
-    it "createCacheFolders", ->
+    it 'createCacheFolders', ->
         config = new Config()
         config.createCacheFolders()
         expect(fs.existsSync(config.cache_folder    )).to.be.true
         expect(fs.existsSync(config.jade_Compilation)).to.be.true
         expect(fs.existsSync(config.library_Data)).to.be.true
+
+    it.only 'has_SiteData_Config',->
+      using new Config(),->
+        @.has_SiteData_Config().assert_False()
