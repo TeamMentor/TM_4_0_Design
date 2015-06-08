@@ -1,15 +1,36 @@
 extends ../_layouts/page_logged_in.jade
-include ../_mixins/user-mixins
-include ../_mixins/search-mixins
 
 block content
   #application
-    +search-bar-input
-    .row
-      .col-2
-        .lge-container
-      .col-8
-        .lge-container
-          +main-app-view
-      .col-2
-        .lge-container
+      .row
+        br
+        br
+        .col-offset-1.col-10
+          .row
+            .col-10
+              br
+              .label Welcome to TEAM Mentor
+            .col-2
+              button Go to app
+          br
+          .col-4
+            .lge-container
+              .bg
+                h2 Search
+                img(src='../../../static/assets/stock-img/jade-search.jpg')
+                .lge-container
+                  p TEAM Mentor 4.0 has faster and more reliable search results. Search the database by filter, issue or technology.
+          .col-4
+            .lge-container
+              .bg
+                h2 Navigate
+                img(src='../../../static/assets/stock-img/jade-index.jpg')
+                .lge-container
+                  p Not sure where to start? You can browse our index and find groups of articles that cover entire topics.
+          .col-4
+            .lge-container
+              .bg
+                h2 Filters
+                img(src='../../../static/assets/stock-img/jade-filter.jpg')
+                .lge-container
+                  p Filter your results to find articles that directly relate to you. You can filter by technology, phase and type.
