@@ -3,38 +3,26 @@ include mixins/application-mixins
 
 block content
   #application
-    #left-column
-      +left-navigation
-    #right-column
-      +filters-div
-    #content
-      //+flare-main-app-view
-      //+copyright
-
-      //ol.joyride-list(data-joyride='')
-            li(data-id='welcome', data-text='Start Tutorial', data-options='tip_location: top; prev_button: false')
-                include:md ../../content/new-user-onboard/welcome.md
-            li(data-id='search-bar', data-text='Next', data-prev-text='Prev')
-                include:md ../../content/new-user-onboard/step-one-search.md
-            li(data-id='filters-button', data-button='Next', data-prev-text='Prev', data-options='tip_location:top;tip_animation:fade')
-                include:md ../../content/new-user-onboard/step-two-filtering.md
-
-            // The application needs to show the example results here
-
-            li(data-id='article-headline', data-button='Next', data-prev-text='Prev', data-options='tip_location:top;tip_animation:fade')
-                include:md ../../content/new-user-onboard/step-three-filtered-results.md
-            li(data-id='article-controls', data-button='Next', data-prev-text='Prev', data-options='tip_location:top;tip_animation:fade')
-                include:md ../../content/new-user-onboard/step-four-article-controls.md
-            li(data-id='results-save-clear', data-button='Next', data-prev-text='Prev', data-options='tip_location:top;tip_animation:fade')
-                include:md ../../content/new-user-onboard/step-five-result-controls.md
-            li(data-id='navigate-button', data-button='Next', data-prev-text='Prev', data-options='tip_location:top;tip_animation:fade')
-                include:md ../../content/new-user-onboard/step-six-navigate.md
-
-            // The application needs to toggle the navigate button here
-
-            li(data-id='navigate', data-button='Next', data-prev-text='Prev', data-options='tip_location:top;tip_animation:fade')
-                include:md ../../content/new-user-onboard/step-seven-saved-items.md
-            li(data-id='navigate', data-button='Next', data-prev-text='Prev', data-options='tip_location:top;tip_animation:fade')
-                include:md ../../content/new-user-onboard/step-eight-curated-content.md
-            li(data-button='end', data-prev-text='Prev')
-                include:md ../../content/new-user-onboard/finish.md
+    .landing-page
+      section.row
+        #label
+          .label Welcome to TEAM Mentor
+          ul.inline
+            li
+              button Go to app
+        #articles
+          #one-third-column
+            .container.article
+              .summary
+                h2 Search
+                p TEAM Mentor 4.0 has faster and more reliable search results. Search the database by filter, issue or technology.
+          #one-third-column
+            .container.article
+              .summary
+                h2 Navigate
+                p Not sure where to start? You can browse our index and find groups of articles that cover entire topics.
+          #one-third-column
+            .container.article
+              .summary
+                h2 Filters
+                p Filter your results to find articles that directly relate to you. You can filter by technology, phase and type.

@@ -1194,14 +1194,14 @@ span.alert-text {
     display: none;
   }
   #two-thirds-column {
-    -webkit-flex: 60%;
-    flex: 60%;
+    -webkit-flex: 66%;
+    flex: 66%;
     padding: 0;
   }
   #one-third-column {
     display: block;
-    -webkit-flex: 40%;
-    flex: 40%;
+    -webkit-flex: 33%;
+    flex: 33%;
   }
   #three-fourths-column {
     -webkit-flex: 75%;
