@@ -1,5 +1,5 @@
 extends _layouts/flare_page
-include mixins/application-mixins.jade
+include mixins/articles-mixins
 
 block content
   section.row.application
@@ -8,4 +8,7 @@ block content
     aside#right-nav
       +filters-div
     main
-      +start-view
+      .article-container
+        +article
+      +related-options
+      +copyright

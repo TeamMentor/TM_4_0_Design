@@ -15,7 +15,7 @@ mixin left-navigation
             a(href="#navigate")
                 +index-icon
                 span.text Index
-        #navigate.accordion-panel
+        .accordion-panel#navigate
             ul
                 li
                     a(href='navigate') Directory
@@ -37,47 +37,20 @@ mixin left-navigation
                     a(href='navigate') Directory
                 li
                     a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-                li
-                    a(href='navigate') Directory
-        .accordion-title
+    ul.side-nav
+        li
             a(href='/misc/help-index')
                 +info-icon
                 span.text Docs
-        .accordion-title
+        li
             a(href='/user/user')
                 +user-icon
                 span.text User
-        .accordion-title
+        li
             a(href='/guest/index')
                 +logout-icon
                 span.text Logout
-        .accordion-title
+        li
             a.button.full-width(href='#') Back
 
 mixin links_user_pages

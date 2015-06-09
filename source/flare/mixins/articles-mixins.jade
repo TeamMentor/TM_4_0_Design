@@ -1,21 +1,21 @@
 //- Article
 mixin article
 	section.row
-		#label
+		section.row__label
 			+article-info
 		article
 			include:md ../../content/articles/article-new-window.md
 
 //- Article Info
 mixin article-info
-	.label
-		span #
-		span #
-		span #
-	ul
-		li
+	ul.display-inline.thirds
+		li #
+		li #
+		li #
+	ul.display-inline
+		li.half-width
 			+save-button
-		li
+		li.half-width
 			+share-button
 
 

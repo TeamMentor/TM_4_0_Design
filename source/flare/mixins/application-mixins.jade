@@ -1,13 +1,13 @@
 //- Flare Search Bar Input
 mixin search-bar
-    #search
-        a.button.btn-mobile(href='#left-column')
+    .search
+        a.button.btn-mobile(href='#left-nav')
             +index-icon
         .search-input
             input.search-input(type='text', placeholder='Type keywords here')
             a.button.btn-search(href='app-keyword-search')
                 +search-icon
-        a.button.btn-mobile(href='#right-column')
+        a.button.btn-mobile(href='#right-nav')
             +filters-icon
 
 //- Clear and Save Results
@@ -31,46 +31,46 @@ mixin results-delete-share
 //- Start View
 mixin start-view
     section.row
-        #label
+        section.row__label
             .label Popular Search Terms
-        #articles
+        section.row
             +search-term-list
     section.row
-        #label
+        section.row__label
             .label Recently Viewed Articles
-        #articles
+        section.row
             +articles-list
     section.row
-        #label
+        section.row__label
             .label Top Articles
-        #articles
+        section.row
             +articles-list
 
 //- Articles List
 mixin articles-list
-    .container.article
+    article.result
         +metadata
         +article-summary
-    .container.article
+    article.result
         +metadata
         +article-summary
-    .container.article
+    article.result
         +metadata
         +article-summary
 
 //- Saved Articles List
 mixin saved-articles-list
     section.row
-        #label
+        section.row__label
             +results-delete-share
-        #articles
-            .container.article
+        section.row
+            article
                 +metadata-saved
                 +article-summary
-            .container.article
+            article
                 +metadata-saved
                 +article-summary
-            .container.article
+            article
                 +metadata-saved
                 +article-summary
 
@@ -119,31 +119,31 @@ mixin article-summary
 //- Saved Search Results List
 mixin saved-search-results
     section.row
-        #label
+        section.row__label
             +results-delete-share
-        #articles
+        section.row
             +saved-search-term-list
             +saved-search-term-list
             +saved-search-term-list
 
 //- Search Results List
 mixin search-term-list
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
 
 //- Saved Search Results List
 mixin saved-search-term-list
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
@@ -152,7 +152,7 @@ mixin saved-search-term-list
             +delete-button
         li
             +share-button
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
@@ -161,7 +161,7 @@ mixin saved-search-term-list
             +delete-button
         li
             +share-button
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
@@ -176,41 +176,41 @@ mixin filters-div
     .filters-icon
         +filters-icon
     #filters
-        .label
-            +filters-icon
-            span.text Technology
-        ul.filters
-            li # .NET
-            li # .NET 3.5
-            li # Android
-            li # ASP.NET
-            li # C ++
-            li # HTML5
-            li # iOS
-            li # Java
-            li # PHP
-            li # Scala
-            li # Technology Independent
-            li # WCF
-            li # Web Application
-        br
-        .label
-            +filters-icon
-            span.text Phase
-        ul.filters
-            li # Deployment
-            li # Design
-            li # Implementation
-            li # Test
-        br
-        .label
-            +filters-icon
-            span.text Type
-        ul.filters
-            li # Checklist Item
-            li # Code Example
-            li # Guideline
-            li # How To
-            li # Vulnerability
-        br
+        section.row
+            .label
+                +filters-icon
+                span.text Technology
+            ul.filters
+                li # .NET
+                li # .NET 3.5
+                li # Android
+                li # ASP.NET
+                li # C ++
+                li # HTML5
+                li # iOS
+                li # Java
+                li # PHP
+                li # Scala
+                li # Technology Independent
+                li # WCF
+                li # Web Application
+        section.row
+            .label
+                +filters-icon
+                span.text Phase
+            ul.filters
+                li # Deployment
+                li # Design
+                li # Implementation
+                li # Test
+        section.row
+            .label
+                +filters-icon
+                span.text Type
+            ul.filters
+                li # Checklist Item
+                li # Code Example
+                li # Guideline
+                li # How To
+                li # Vulnerability
         a.button.full-width(href='#') Back
