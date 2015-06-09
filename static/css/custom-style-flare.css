@@ -269,7 +269,7 @@ article.result {
 article.result h3 {
   color: #565656;
   margin: 0 0 1em 0;
-  padding: 0 0 0.75em 0;
+  padding: 0 0 0.5em 0;
   border-bottom: 1px solid #dbdbdb;
   line-height: 1.5em;
   transition: 0.3s;
@@ -727,7 +727,7 @@ button:hover, .button:hover {
   pointer-events: none;
 }
 .btn-result {
-  font-size: 1.1em;
+  font-size: 0.95em;
   padding: 0.75em;
   background: #b4cf7b;
   color: white;
