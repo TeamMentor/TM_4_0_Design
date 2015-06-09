@@ -1,0 +1,16 @@
+extends _layouts/flare_page
+
+block content
+  .application
+    aside#left-nav
+      +left-navigation
+    aside#right-nav
+      +filters-div
+    main
+      section.row
+        .col-3
+          +help-sub-navigation
+        .col-9
+          article
+            p Specific docs page here
+            include:md ../content/help/page-index.md

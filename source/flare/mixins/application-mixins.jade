@@ -1,76 +1,77 @@
 //- Flare Search Bar Input
 mixin search-bar
     .search
-        a.button.btn-divs#navigate-button(href='#left-column')
+        a.button.btn-mobile(href='#left-nav')
             +index-icon
         .search-field
             input.search-input(type='text', placeholder='Type keywords here')
             a.button.btn-search#search-button(href='app-keyword-search')
                 +search-icon
-        a.button.btn-divs#filters-button(href='#right-column')
+        a.button.btn-mobile(href='#right-nav')
             +filters-icon
 
 //- Clear and Save Results
 mixin results-save-clear
-    .label 0/200 results showing
-    ul.inline
-        li
-            +save-results-button
-        li
-            +delete-results-button
+    section.row__label
+        .label 0/200 results showing
+        ul.display-inline
+            li.half-width
+                +save-results-button
+            li.half-width
+                +delete-results-button
 
 //-Clear and Delete Results
 mixin results-delete-share
     .label 0/200 results showing
-    ul.inline
-        li
+    ul.display-inline
+        li.half-width
             +delete-results-button
-        li
+        li.half-width
             +share-results-button
 
 //- Start View
 mixin start-view
     section.row
-        #label
+        section.row__label
             .label Popular Search Terms
-        #articles
+        section.row
             +search-term-list
     section.row
-        #label
+        section.row__label
             .label Recently Viewed Articles
-        #articles
+        section.row
             +articles-list
     section.row
-        #label
+        section.row__label
             .label Top Articles
-        #articles
+        section.row
             +articles-list
 
 //- Articles List
 mixin articles-list
-    .container.article
+    article.result
         +metadata
         +article-summary
-    .container.article
+    article.result
         +metadata
         +article-summary
-    .container.article
+    article.result
         +metadata
         +article-summary
 
 //- Saved Articles List
 mixin saved-articles-list
     section.row
-        #label
+        section.row__label
             +results-delete-share
-        #articles
-            .container.article
+        section.row
+            article.result
                 +metadata-saved
                 +article-summary
-            .container.article
+            article.result
                 +metadata-saved
                 +article-summary
-            .container.article
+            article.result
                 +metadata-saved
                 +article-summary
 
@@ -118,63 +119,64 @@ mixin article-summary
 
 //- Saved Search Results List
 mixin saved-search-results
+    section.row__label
+        +results-delete-share
     section.row
-        #label
-            +results-delete-share
-        #articles
-            +saved-search-term-list
-            +saved-search-term-list
-            +saved-search-term-list
+        +saved-search-term-list
+        +saved-search-term-list
+        +saved-search-term-list
 
 //- Search Results List
 mixin search-term-list
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
 
 //- Saved Search Results List
 mixin saved-search-term-list
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
-    ul.inline
-        li
+    ul.display-inline
+        li.half-width
             +delete-button
-        li
+        li.half-width
             +share-button
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
-    ul.inline
-        li
+    ul.display-inline
+        li.half-width
             +delete-button
-        li
+        li.half-width
             +share-button
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
-    ul.inline
-        li
+    ul.display-inline
+        li.half-width
             +delete-button
-        li
+        li.half-width
             +share-button
 
 //- Flare Filters Div
 mixin filters-div
-    .filters-icon
-        +filters-icon
+    .nav-icon
+        ul
+            li
+                +filters-icon
     #filters
         .label
             +filters-icon

@@ -1,5 +1,5 @@
 extends _layouts/flare_page
-include mixins/application-mixins.jade
+include mixins/articles-mixins
 
 block content
   .application
@@ -7,5 +7,5 @@ block content
       +left-navigation
     aside#right-nav
       +filters-div
-    main
-      +start-view
+    #content
+      +saved-search-results

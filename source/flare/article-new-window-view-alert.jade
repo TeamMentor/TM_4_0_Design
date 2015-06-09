@@ -1,13 +1,13 @@
-extends ../_layouts/flare_page
-include ../mixins/articles-mixins
+extends _layouts/flare_page
+include mixins/articles-mixins
 
 block content
-  #application
-    #left-column
+  .application
+    aside#left-nav
       +left-navigation
-    #right-column
+    aside#right-nav
       +filters-div
-    #content
+    main
       .article-container
         +flare-alert
         +article

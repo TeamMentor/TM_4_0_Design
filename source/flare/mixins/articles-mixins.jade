@@ -1,10 +1,9 @@
 //- Article
 mixin article
-	section.row
-		#label
-			+article-info
-		article
-			include:md ../../content/articles/article-new-window.md
+	section.row__label
+		+article-info
+	article
+		include:md ../../content/articles/article-new-window.md
 
 //- Article Info
 mixin article-info
@@ -12,26 +11,23 @@ mixin article-info
 		span #
 		span #
 		span #
-	ul
-		li
+	ul.display-inline
+		li.half-width
 			+save-button
-		li
+		li.half-width
 			+share-button
 
 
 //- Related Courses and Articles
 mixin related-options
+	section.row__label
+		.label Related Articles
 	section.row
-		#label
-			.label Related Articles
-		#articles
 			+articles-list
+	section.row__label
+		.label Related Courses
 	section.row
-		#label
-			.label Related Courses
-		#articles
-			+articles-list
+		+articles-list
 
 mixin terms-and-conditions
-	.bg
-		include:md ../../content/terms-and-conditions/terms-and-conditions.md
+	include:md ../../content/terms-and-conditions/terms-and-conditions.md

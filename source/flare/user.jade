@@ -1,0 +1,27 @@
+extends _layouts/flare_page
+include mixins/user-mixins
+include mixins/application-mixins
+
+block content
+  .application
+      aside#left-nav
+        +left-navigation
+      aside#right-nav
+        +filters-div
+      main
+        section.row
+          .col-4
+            section.row__label
+              .label @username
+            section.row
+              form
+                input(type='text', name="name", value="First name, Last name")
+                input(type='text', name="work", value="Position, Company")
+                input(type='email', name="email", value="Email")
+                button(type='submit') Update Profile
+          .col-8
+            +saved-search-results
+            br
+            br
+            +saved-articles-list
+          +copyright
