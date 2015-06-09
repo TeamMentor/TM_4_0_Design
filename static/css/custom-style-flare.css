@@ -700,6 +700,7 @@ button:hover, .button:hover {
   position: relative;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  padding: 0.75em;
 }
 .btn-result:hover:before, .btn-result:focus:before, .btn-result:active:before {
   -webkit-animation-name: icon-pop;
@@ -1013,12 +1014,13 @@ span.text {
         -ms-flex: 52%;
             flex: 52%;
     overflow: hidden;
+    border-top: 0;
     border-bottom: 1px solid #dbdbdb;
     background: white;
   }
   .search-field {
     background: #fafafa;
-    border: 1px solid #dbdbdb;
+    border: 0;
     border-radius: 20px;
     font-size: 0.85em;
     height: 80%;
@@ -1027,8 +1029,12 @@ span.text {
   .search-field input[type="text"] {
     background: transparent;
     padding: 0 0 0 10px;
+    border: 0;
   }
-  section.row__application {
+  section.row {
+    height: 100%;
+  }
+  section.row.application {
     -webkit-order: 5;
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
@@ -1046,6 +1052,13 @@ span.text {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: flex-start;
+      -ms-flex-align: start;
     -webkit-order: 2;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -1055,6 +1068,7 @@ span.text {
         -ms-flex: 90%;
             flex: 90%;
     padding: 10px;
+    height: 100%;
   }
   aside {
     display: block;
@@ -1062,6 +1076,8 @@ span.text {
     -webkit-box-flex: 5%;
         -ms-flex: 5%;
             flex: 5%;
+    -webkit-align-items: flex-start;
+      -ms-flex-align: start;
     text-align:center;
     -webkit-transition: 0.3s;
             transition: 0.3s;
@@ -1121,6 +1137,7 @@ span.text {
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
+    flex: 100%;
   }
   section.row__label .label {
     -webkit-box-flex: 2;

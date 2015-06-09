@@ -30,21 +30,18 @@ mixin results-delete-share
 
 //- Start View
 mixin start-view
+    section.row__label
+        .label Popular Search Terms
     section.row
-        section.row__label
-            .label Popular Search Terms
-        section.row
-            +search-term-list
+        +search-term-list
+    section.row__label
+        .label Recently Viewed Articles
     section.row
-        section.row__label
-            .label Recently Viewed Articles
-        section.row
-            +articles-list
+        +articles-list
+    section.row__label
+        .label Top Articles
     section.row
-        section.row__label
-            .label Top Articles
-        section.row
-            +articles-list
+        +articles-list
 
 //- Articles List
 mixin articles-list
