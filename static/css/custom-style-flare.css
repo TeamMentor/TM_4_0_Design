@@ -1014,7 +1014,6 @@ span.text {
         -ms-flex: 52%;
             flex: 52%;
     overflow: hidden;
-    border-top: 0;
     border-bottom: 1px solid #dbdbdb;
     background: white;
   }
@@ -1025,6 +1024,9 @@ span.text {
     font-size: 0.85em;
     height: 80%;
     margin: auto;
+  }
+  .search-input {
+    border: 0;
   }
   .search-field input[type="text"] {
     background: transparent;
