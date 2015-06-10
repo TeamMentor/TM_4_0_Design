@@ -1,1 +1,0 @@
-Reduce the number of vulnerabilities over time.

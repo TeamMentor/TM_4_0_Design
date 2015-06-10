@@ -1,1 +1,0 @@
-## Instant resources that bridge the gap between developer questions and technical solutions
