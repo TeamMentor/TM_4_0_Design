@@ -1,0 +1,20 @@
+extends _layouts/flare_page_landing
+include mixins/getting-started-mixins
+
+block content
+  .application
+    section.row
+      .col-8
+        br
+        +flare-alert
+        section.row__label
+          .label Login
+        section.row
+            +login-form
+        br
+        section.row__label
+          .label Sign Up
+        section.row
+            +sign-up-form
+      .col-4
+        +team-mentor-summary

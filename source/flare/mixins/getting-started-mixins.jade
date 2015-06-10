@@ -1,0 +1,69 @@
+include ../../shared-mixins/globals.jade
+include globals.jade
+
+mixin team-mentor-summary
+    section.tm-summary
+        .label With TEAM Mentor, you can...
+        table
+            tr
+                td
+                    .fix-vulnerabilities
+                td
+                    include:md ../../content/getting-started/summary-point-1.md
+            tr
+                td
+                    .reduce-vulnerabilities
+                td
+                    include:md ../../content/getting-started/summary-point-2.md
+            tr
+                td
+                    .improve-process
+                td
+                    include:md ../../content/getting-started/summary-point-3.md
+
+mixin login-form
+    form#login-form(role='form' method='post' action='/flare/home/main-app-view')
+        .input-field
+            +username-input
+        .input-field
+            +password-input
+        .button-field
+            li
+                button Login
+        .button-field
+            li
+                button.minor(href='/guest/pwd-forgot.html') Forgot password?
+
+mixin sign-up-form
+    form#sign-up-form(action='../home/main-app-view')
+        .input-field
+            +username-input
+        .input-field
+            +email-input
+        .input-field
+            +password-input
+        .input-field
+            +confirm-password-input
+        .button-field
+            li
+                +sign-up-button
+        .conditions
+            include:md ../../content/getting-started/agree-to-toc.md
+
+mixin flare-forgot-password-form
+    form#forgot-passward-form(action='#')
+        .input-field
+            +email-input
+        .button-field
+            br
+            +get-password-button
+
+mixin pwd-reset-form
+    form#password-reset-form(role='form' method='post' action='/flare/home/main-app-view')
+        .input-field
+            +password-input
+        .input-field
+            +confirm-new-password-input
+        .button-field
+            br
+            +reset-pwd-button

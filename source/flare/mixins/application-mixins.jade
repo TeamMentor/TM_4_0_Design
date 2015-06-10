@@ -1,182 +1,218 @@
 //- Flare Search Bar Input
 mixin search-bar
-    #search
-        a.button.btn-divs#navigate-button
+    .search
+        a.button.btn-mobile(href='#left-nav')
             +index-icon
         .search-field
             input.search-input(type='text', placeholder='Type keywords here')
             a.button.btn-search#search-button(href='app-keyword-search')
                 +search-icon
-        a.button.btn-divs#filters-button(href='filters-div')
+        a.button.btn-mobile(href='#right-nav')
             +filters-icon
 
-//- Flare Results-Save-Clear
+//- Clear and Save Results
 mixin results-save-clear
-    .label 0/200 results showing
-        ul
-            li
+    section.row__label
+        .label 0/200 results showing
+        ul.display-inline
+            li.half-width
                 +save-results-button
-            li
-                +clear-results-button
+            li.half-width
+                +delete-results-button
 
-//- Flare Main App View
+//-Clear and Delete Results
+mixin results-delete-share
+    .label 0/200 results showing
+    ul.display-inline
+        li.half-width
+            +delete-results-button
+        li.half-width
+            +share-results-button
+
+//- Start View
 mixin start-view
     section.row
-        #label
+        section.row__label
             .label Popular Search Terms
-        #articles
+        section.row
             +search-term-list
     section.row
-        #label
+        section.row__label
             .label Recently Viewed Articles
-        #articles
+        section.row
             +articles-list
     section.row
-        #label
+        section.row__label
             .label Top Articles
-        #articles
+        section.row
             +articles-list
 
 //- Articles List
 mixin articles-list
-    .container.article
-        .metadata
-            ul
-                li
-                    span.badge #1
-                li #
-                    // Technology Icon
-                li #
-                    // Phase Icon
-                li #
-                    // Type Icon
-                li
-                    +save-button
-                li
-                    +share-button
-        .summary
-            a(href='article-new-window-view')
-                h3#article-headline Article Headline Article Headline Article Headline
-            include:md ../../content/articles/article-details.md
-    .container.article
-        .metadata
-            ul
-                li
-                    span.badge #1
-                li #
-                    // Technology Icon
-                li #
-                    // Phase Icon
-                li #
-                    // Type Icon
-                li
-                    +save-button
-                li
-                    +share-button
-        .summary
-            a(href='article-new-window-view')
-                h3#article-headline Article Headline Article Headline Article Headline
-            include:md ../../content/articles/article-details.md
-    .container.article
-        .metadata
-            ul
-                li
-                    span.badge #1
-                li #
-                    // Technology Icon
-                li #
-                    // Phase Icon
-                li #
-                    // Type Icon
-                li
-                    +save-button
-                li
-                    +share-button
-        .summary
-            a(href='article-new-window-view')
-                h3#article-headline Article Headline Article Headline Article Headline
-            include:md ../../content/articles/article-details.md
+    article.result
+        +metadata
+        +article-summary
+    article.result
+        +metadata
+        +article-summary
+    article.result
+        +metadata
+        +article-summary
 
-mixin left-navigation
-    ul.side-nav
-        li
-            +index-icon
-            span.text Index
-        li
-            +article-icon
-            span.text Saved Articles
-        li
-            +search-icon
-            span.text Saved Searches
+//- Saved Articles List
+mixin saved-articles-list
+    section.row
+        section.row__label
+            +results-delete-share
+        section.row
+            article.result
+                +metadata-saved
+                +article-summary
+            article.result
+                +metadata-saved
+                +article-summary
+            article.result
+                +metadata-saved
+                +article-summary
+
+//- Article Metadata (unsaved)
+mixin metadata
+    .metadata
+        ul
+            li
+                +tick-icon
+            li #
+                // Technology Icon
+            li #
+                // Phase Icon
+            li #
+                // Type Icon
+            li
+                +save-button
+            li
+                +share-button
+
+//- Article Metadata (saved)
+mixin metadata-saved
+    .metadata
+        ul
+            li
+                span.badge #1
+            li #
+                // Technology Icon
+            li #
+                // Phase Icon
+            li #
+                // Type Icon
+            li
+                +delete-button
+            li
+                +share-button
+
+//- Article Summary
+mixin article-summary
+    .summary
+        a(href='article-new-window-view')
+            h3#article-headline Article Headline Article Headline Article Headline
+        //include:md ../../content/articles/article-details.md
+
+
+//- Saved Search Results List
+mixin saved-search-results
+    section.row__label
+        +results-delete-share
+    section.row
+        +saved-search-term-list
+        +saved-search-term-list
+        +saved-search-term-list
 
 //- Search Results List
 mixin search-term-list
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
-    .container.search-term
+    article.search-term
         a(href='app-keyword-search')
             +search-icon
             span Search Term
 
+//- Saved Search Results List
+mixin saved-search-term-list
+    article.search-term
+        a(href='app-keyword-search')
+            +search-icon
+            span Search Term
+    ul.display-inline
+        li.half-width
+            +delete-button
+        li.half-width
+            +share-button
+    article.search-term
+        a(href='app-keyword-search')
+            +search-icon
+            span Search Term
+    ul.display-inline
+        li.half-width
+            +delete-button
+        li.half-width
+            +share-button
+    article.search-term
+        a(href='app-keyword-search')
+            +search-icon
+            span Search Term
+    ul.display-inline
+        li.half-width
+            +delete-button
+        li.half-width
+            +share-button
+
 //- Flare Filters Div
 mixin filters-div
-    ul.side-nav
-        li
+    .nav-icon
+        ul
+            li
+                +filters-icon
+    #filters
+        .label
             +filters-icon
-            span.text Filter by
-    //#filters
-        dl.accordion(data-accordion='data-accordion')
-            dd.accordion-navigation.active
-                a(href='#and-filters')
-                    i.fi-arrow-down.icon
-                    span And filters
-                #and-filters.content.active
-                    table
-                        tr
-                            td
-                                input#and-type1(type='checkbox', name='and-type', value='And Type 1')
-                                label(for='and-type1') And Type 1
-                            td
-                                span.badge 14
-                        tr
-                            td
-                                input#and-type2(type='checkbox', name='and-type', value='And Type 2')
-                                label.checkbox(for='and-type2') And Type 2
-                            td
-                                span.badge 14
-                        tr
-                            td
-                                input#and-type3(type='checkbox', name='and-type', value='And Type 3')
-                                label.checkbox(for='and-type3') And Type 3
-                            td
-                                span.badge 14
-            dd.accordion-navigation
-                a(href='#or-filters')
-                    i.fi-arrow-down.icon
-                    span Or filters
-                #or-filters.content.active
-                    table
-                        tr
-                            td
-                                input#or-type1(type='radio', name='or-type', value='Or Type 1')
-                                label(for='or-type1') Or Type 1
-                            td
-                                span.badge 14
-                        tr
-                            td
-                                input#or-type2(type='radio', name='or-type', value='Or Type 2')
-                                label(for='or-type2') Or Type 2
-                            td
-                                span.badge 14
-                        tr
-                            td
-                                input#or-type3(type='radio', name='or-type', value='Or Type 3')
-                                label(for='or-type3') Or Type 3
-                            td
-                                span.badge 14
+            span.text Technology
+        ul.filters
+            li # .NET
+            li # .NET 3.5
+            li # Android
+            li # ASP.NET
+            li # C ++
+            li # HTML5
+            li # iOS
+            li # Java
+            li # PHP
+            li # Scala
+            li # Technology Independent
+            li # WCF
+            li # Web Application
+        br
+        .label
+            +filters-icon
+            span.text Phase
+        ul.filters
+            li # Deployment
+            li # Design
+            li # Implementation
+            li # Test
+        br
+        .label
+            +filters-icon
+            span.text Type
+        ul.filters
+            li # Checklist Item
+            li # Code Example
+            li # Guideline
+            li # How To
+            li # Vulnerability
+        br
+        a.button.full-width(href='#') Back

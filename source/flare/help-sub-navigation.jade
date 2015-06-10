@@ -1,5 +1,4 @@
 extends _layouts/flare_page
-include mixins/articles-mixins
 
 block content
   .application
@@ -8,9 +7,8 @@ block content
     aside#right-nav
       +filters-div
     main
-      .article-container
-        +article
-        br
-        br
-      +related-options
-      +copyright
+      .col-3
+        +help-sub-navigation
+      .col-9
+        article
+          include:md ../content/help/page-index.md

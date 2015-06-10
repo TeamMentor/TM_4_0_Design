@@ -3,83 +3,10 @@ include ../../shared-mixins/globals.jade
 //- static texts
 - var head_title = 'TEAM Mentor 4.0 (Html version)'
 
-//- Icons
-mixin metadata-icon
-    i.fi-list-bullet
-    span Data
-
-mixin save-icon
-    i.fi-bookmark
-
-mixin share-icon
-    i.fi-share
-
-mixin filter-icon
-    i.fi-filter
-
-mixin clear-icon
-    i.fi-trash
-
-mixin edit-icon
-    i.fi-pencil
-
-mixin new-pw-icon
-    i.fi-key
-    span Change Password
-
-mixin delete-account-icon
-    i.fi-trash
-    span Delete Your Account
-
-mixin change-filters-icon
-    i.fi-results
-    span Add/Remove Permanent Filters
-
-mixin navigate-icon
-    i.fi-map
-
-mixin help-icon
-    i.fi-info
-
-mixin articles-icon
-    i.fi-book
-    span Related Articles
-
-mixin courses-icon
-    i.fi-paperclip
-    span Related Courses
-
-mixin user-icon
-    i.fi-torso
-
-mixin help-link
-    i.fi-info
-    span Docs
-
-mixin logout-link
-    i.fi-power
-    span Logout
-
 //- Form Inputs
 mixin username-input
     label Username
     input(type='text', id='username', placeholder='Username')
-
-mixin flare-password-input
-    label Password
-    .row.collapse
-        .small-9.columns
-            input(type='password', placeholder='Password')
-        .small-3.columns
-            a.button.search.full-width(href='#') SHOW
-
-mixin flare-new-password-input
-    label New Password
-    .row.collapse
-        .small-10.medium-10.columns
-            input(type='password', placeholder='New Password')
-        .small-2.medium-2.columns
-            .button.postfix#show-button(href='#') SHOW
 
 mixin password-input
     label Password
@@ -323,13 +250,7 @@ mixin country-input
         option(value='zambia') Zambia
         option(value='zimbabwe') Zimbabwe
 
-mixin save-input
-    input(type='text', id='save-input', placeholder='Save to Dashboard')
-
-mixin share-input
-    input(type='email', id='share-input', placeholder='Share via Email')
-
-//- Form Buttons
+//- Buttons
 mixin open-button
     button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false')
         i.fi-plus
@@ -352,28 +273,28 @@ mixin open-button
             a(href='#') Scala
 
 mixin save-button
-    button.app
-        +save-icon
+    button.btn-result.icon-Save
 
-mixin trash-button
-    button.app
-        +delete-icon
+mixin delete-button
+    button.btn-result.icon-Delete
 
 mixin share-button
-    button.app
-        +share-icon
+    button.btn-result.icon-Share
 
 mixin save-results-button
-    button.app Save Results
+    button.btn-app Save Results
 
-mixin clear-results-button
-    button.app Clear Results
+mixin delete-results-button
+    button.btn-app Delete Results
+
+mixin share-results-button
+    button.btn-app Share Results
 
 mixin save-article-button
-    button.app Save Article
+    button.btn-app Save Article
 
 mixin share-article-button
-    button.app Share Article
+    button.btn-app Share Article
 
 mixin clear-selected-button
     button(type='submit', id='btn-clear-selected') Clear Selected
@@ -389,20 +310,19 @@ mixin reset-pwd-button
 
 //- Alert System
 mixin flare-alert
-    .alert-box(data-alert='')
-        +alert-icon
-        span Error, Validation or Alert Message Here
+    .alert-box.alert-ok(data-alert='')
+        span.alert-icon !
+        span.alert-text Error, Validation or Alert Message Here
         a.close(href='#') ×
 
 mixin copyright
-    footer.copyright
-        .si-logo
-        .si-name
-            a(hreft='http://www.securityinnovation.com/' target='_blank') Security Innovation 2015. All rights reserved.
+    footer
+        a(href='http://www.securityinnovation.com/' target='_blank')
+            .si-logo
         .icons
             ul
                 li
-                    .label TEAM Mentor 4.0
+                    .label.no-underline TEAM Mentor 4.0
                 li
                     a(href='mailto:support@securityinnovation.com' title='Email')
                         +mail-icon

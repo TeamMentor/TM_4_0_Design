@@ -1,0 +1,68 @@
+include ../../shared-mixins/globals.jade
+include globals.jade
+
+mixin usp
+  section.usp
+    include:md ../../content/landing-pages/usp.md
+    a.button.btn-landing(href='../getting-started/index') Start your free trial today
+
+mixin reasons
+  section.reasons
+    include:md ../../content/landing-pages/reasons-div-heading.md
+    section.row
+      .col-3
+        .fix-vulnerabilities
+      .col-9
+        include:md ../../content/landing-pages/selling-point-1.md
+    section.row
+      .col-3
+        .reduce-vulnerabilities
+      .col-9
+        include:md ../../content/landing-pages/selling-point-2.md
+    section.row
+      .col-3
+        .improve-process
+      .col-9
+        include:md ../../content/landing-pages/selling-point-3.md
+
+mixin clients
+  section.clients
+    include:md ../../content/landing-pages/clients-div-heading.md
+    img(src='../../../static/assets/clients/client-logos.png')
+
+mixin about-tagline
+  section.about
+    include:md ../../content/landing-pages/about-tm-tagline.md
+
+mixin about-us
+  section.about-us
+    include:md ../../content/landing-pages/about-tm-summary.md
+
+mixin features
+  section.features
+    include:md ../../content/landing-pages/features-div-heading.md
+    section.row
+      .col-3
+        .delivers-compliance
+      .col-9
+        include:md ../../content/landing-pages/feature-1.md
+    section.row
+      .col-3
+        .integrates
+      .col-9
+        include:md ../../content/landing-pages/feature-2.md
+    section.row
+      .col-3
+        .cross-references
+      .col-9
+        include:md ../../content/landing-pages/feature-3.md
+    section.row
+      .col-3
+        .provides-guidance
+      .col-9
+        include:md ../../content/landing-pages/feature-4.md
+
+mixin call-to-action
+  section.call-to-action
+    include:md ../../content/landing-pages/call-to-action.md
+    a.button.btn-landing(href='../getting-started/index') See for yourself

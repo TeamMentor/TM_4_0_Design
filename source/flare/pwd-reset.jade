@@ -1,0 +1,13 @@
+extends _layouts/flare_page_landing
+include mixins/getting-started-mixins
+
+block content
+  .application
+    section.row
+      .col-8
+        section.row__label
+          .label Reset your password
+        section.row
+            +pwd-reset-form
+      .col-4
+        +team-mentor-summary
