@@ -31,56 +31,44 @@ class JadeService
     cache_Enabled: ()->
       global.config?.jade_Compilation?.enabled || false
 
-    calculate_Target_Path: (fileToCompile)->
-      if target_Folder = global.config?.jade_Compilation?.path
-        if target_Folder.folder_Not_Exists()
-          "creating folder #{target_Folder}".log()
-          target_Folder.folder_Create()
-        target_Folder.path_Combine(fileToCompile.replace(/\//g,'_')
-                                                .replace(/\\/g,'_')
-                                                .replace(/\./g,'_') + '.txt')
+    calculate_Compile_Path: (fileToCompile)->
+      if compile_Folder = global.config?.tm_design?.folder_Jade_Compilation
+        if compile_Folder.folder_Not_Exists()
+          compile_Folder.folder_Create()
+        return compile_Folder.path_Combine(fileToCompile.replace(/\//g,'_')
+                                                        .replace(/\\/g,'_')
+                                                        .replace(/\./g,'_') + '.txt')
+      return null
 
-    calculate_Jade_Path: (jade_File)->
-      if jade_File.file_Exists()
-        return jade_File
-      @.repo_Path.path_Combine(jade_File)
+    calculate_Jade_Path: (jade_File)=>
+      if jade_File.file_Exists()                                    then return jade_File
+      if jade_Folder = global.config?.tm_design?.folder_Jade_Files  then return jade_Folder.path_Combine(jade_File)
+      return null
 
-    compile_JadeFile_To_Disk: (fileToCompile)->
 
-      fileToCompile_Path = @.calculate_Jade_Path(fileToCompile)
+    compile_JadeFile_To_Disk: (target)->
 
-      if (fs.existsSync(fileToCompile_Path)==false)
-        return false
+      jade_File = @.calculate_Jade_Path(target)
 
-      targetFile_Path = @.calculate_Target_Path(fileToCompile);
+      if (not jade_File) or jade_File.file_Not_Exists() then return false
 
-      if (fs.existsSync(targetFile_Path))
-          fs.unlinkSync(targetFile_Path)
+      targetFile_Path = @.calculate_Compile_Path(target);
+      targetFile_Path.file_Delete()
 
-      fileContents = fs.readFileSync(fileToCompile_Path,  "utf8");
-      file_Compiled = jade.compileClient(fileContents , { filename:fileToCompile_Path, compileDebug : false} );
+      js_Code = jade.compileClient(jade_File.file_Contents() , { filename:jade_File, compileDebug : false} );
 
       exportCode =  'var jade = require(\'jade/lib/runtime.js\'); \n' +
-                    'module.exports = ' + file_Compiled;
+                    'module.exports = ' + js_Code;
 
-
-      fs.writeFileSync(targetFile_Path, exportCode);
-      return fs.existsSync(targetFile_Path);
-
-
-    folder_Jade_Files: ->
-      @.repo_Path      = __dirname.path_Combine("..#{path.sep}..")          #calculate the repo path as 3 folders above the current path
-
-    folder_Mixins: =>
-      @.mixins_Folder = @.folder_Jade_Files().path_Combine("#{path.sep}source#{path.sep}jade#{path.sep}_mixins#{path.sep}")
-
+      exportCode.save_As(targetFile_Path)
+                .file_Exists()
 
     render_Jade_File: (jadeFile, params)=>
       if params and params.article_Html
         params.article_Html = @.apply_Highlight(params.article_Html)
       if (@.cache_Enabled() is false)
         jadeFile_Path = @.calculate_Jade_Path(jadeFile)
-        if (fs.existsSync(jadeFile_Path))
+        if jadeFile_Path?.file_Exists()
           return jade.renderFile(jadeFile_Path,params)
         return ""
 
@@ -91,17 +79,17 @@ class JadeService
 
       return require(targetFile_Path)(params);
 
-    render_Mixin: (file, mixin, params)=>
-      mixin_Extends = "..#{path.sep}_layouts#{path.sep}page_clean"
-
-      safeFile      = file.to_Safe_String()                                   # only allow letter, numbers, comma, dash and underscore
-      safeMixin     = mixin.to_Safe_String()
-      dummyJade     = @.folder_Mixins().path_Combine("#{path.sep}tmp.jade")   # file to be provided to jade.compile (used to resolve the mixin file path)
-      code = "extends #{mixin_Extends}    \n" +                               # add html head and body (with TM css, but no nav bar)
-             "include #{safeFile}.jade      \n" +                             # imports mixin file
-             "block content                 \n" +                             # where rendered mixin will be placed
-             "  +#{safeMixin}                 "                               # mixin to render
-      return jade.compile(code, {filename: dummyJade })(params)
+    #render_Mixin: (file, mixin, params)=>
+    #  mixin_Extends = "..#{path.sep}_layouts#{path.sep}page_clean"
+    #
+    #  safeFile      = file.to_Safe_String()                                   # only allow letter, numbers, comma, dash and underscore
+    #  safeMixin     = mixin.to_Safe_String()
+    #  dummyJade     = @.folder_Mixins().path_Combine("#{path.sep}tmp.jade")   # file to be provided to jade.compile (used to resolve the mixin file path)
+    #  code = "extends #{mixin_Extends}    \n" +                               # add html head and body (with TM css, but no nav bar)
+    #         "include #{safeFile}.jade      \n" +                             # imports mixin file
+    #         "block content                 \n" +                             # where rendered mixin will be placed
+    #         "  +#{safeMixin}                 "                               # mixin to render
+    #  return jade.compile(code, {filename: dummyJade })(params)
 
 
 module.exports = JadeService

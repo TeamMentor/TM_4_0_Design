@@ -4,9 +4,31 @@ require 'fluentnode'
 #{expect}     = require "chai"
 Jade_Service = require '../../src/services/Jade-Service'
 
-
-#used to understand better how jade compilation works (specialy how it compiles to java script)
 describe.only "| services | Jade-Service |", ()->
+
+  jade_File    = null
+  mixin_File   = null
+  compile_Path = null
+  jade_Path    = null
+  jade_Html    = null
+
+  before ->
+    compile_Path   = '_tmp_Jade_Compilation'.assert_Folder_Not_Exists()
+    jade_Path      = '_tmp_Jade_Files'      .assert_Folder_Not_Exists()
+    jade_File      = 'test.jade'
+    mixin_File     = 'mixin.jade'
+    jade_Contents  = "include mixin.jade\nh2 in-jade\n+test"
+                      #+test"
+    mixin_Contents = "mixin test\n  h3 inside-mixin"
+    jade_Html      = '<h2>in-jade</h2><h3>inside-mixin</h3>'
+    jade_Path.folder_Create()
+    mixin_Contents.save_As jade_Path.path_Combine mixin_File
+    jade_Contents. save_As jade_Path.path_Combine jade_File
+
+    after ->
+      compile_Path.folder_Delete_Recursive().assert_Is_True()
+      jade_Path   .folder_Delete_Recursive().assert_Is_True()
+
   it 'constructor', ()->
     using new Jade_Service(),->
       @.assert_Is_Object()
@@ -17,11 +39,11 @@ describe.only "| services | Jade-Service |", ()->
       #@.mixin_Extends .assert_Is("..#{path.sep}_layouts#{path.sep}page_clean")
 
       @.apply_Highlight         .assert_Is_Function()
-      @.calculate_Target_Path   .assert_Is_Function()
+      @.calculate_Compile_Path  .assert_Is_Function()
       @.cache_Enabled           .assert_Is_Function()
       @.compile_JadeFile_To_Disk.assert_Is_Function()
       @.render_Jade_File        .assert_Is_Function()
-      @.render_Mixin            .assert_Is_Function()
+      #@.render_Mixin            .assert_Is_Function()
 
           #@.target_Folder         .assert_Is(@.config.jade_Compilation)
 
@@ -42,78 +64,68 @@ describe.only "| services | Jade-Service |", ()->
       @.cache_Enabled()    .assert_Is_False()
 
 
-  it 'calculate_Target_Path', ()->
-    using new Jade_Service(), ->
-
-      target_Path = '_tmp_Jade_Compilation' #.assert_Folder_Not_Exists()
-      global.config = jade_Compilation : path : '_tmp_Jade_Compilation'
-
-      @.calculate_Target_Path("aaa"                  ).assert_Is target_Path.path_Combine('aaa.txt'             )
-      @.calculate_Target_Path("aaa/bbb"              ).assert_Is target_Path.path_Combine('aaa_bbb.txt'         )
-      @.calculate_Target_Path("aaa/bbb/ccc"          ).assert_Is target_Path.path_Combine('aaa_bbb_ccc.txt'     )
-      @.calculate_Target_Path("aaa/bbb.jade"         ).assert_Is target_Path.path_Combine('aaa_bbb_jade.txt'    )
-      @.calculate_Target_Path("aaa/bbb.ccc.jade"     ).assert_Is target_Path.path_Combine('aaa_bbb_ccc_jade.txt')
-      target_Path.folder_Delete()
+  it 'calculate_Compile_Path', ()->
+    global.config = tm_design : folder_Jade_Compilation : compile_Path
+    using new Jade_Service().calculate_Compile_Path, ->
+      @("aaa"              ).assert_Is compile_Path.path_Combine('aaa.txt'             )
+      @("aaa/bbb"          ).assert_Is compile_Path.path_Combine('aaa_bbb.txt'         )
+      @("aaa/bbb/ccc"      ).assert_Is compile_Path.path_Combine('aaa_bbb_ccc.txt'     )
+      @("aaa/bbb.jade"     ).assert_Is compile_Path.path_Combine('aaa_bbb_jade.txt'    )
+      @("aaa/bbb.ccc.jade" ).assert_Is compile_Path.path_Combine('aaa_bbb_ccc_jade.txt')
 
       global.config = null
-      assert_Is_Undefined @.calculate_Target_Path "aaa"
+      assert_Is_Null @ "aaa"
 
-    return
-      #targetFolder        = jadeService.target_Folder;
+  it 'calculate_Jade_Path',->
+      global.config = tm_design : folder_Jade_Files : jade_Path
+      using new Jade_Service().calculate_Jade_Path, ->
+        @("a.jade"    ).assert_Is jade_Path.path_Combine 'a.jade'
+        @("/a.jade"   ).assert_Is jade_Path.path_Combine 'a.jade'
+        @("a/b.jade"  ).assert_Is jade_Path.path_Combine 'a/b.jade'
+        @("/a/b.jade" ).assert_Is jade_Path.path_Combine 'a/b.jade'
 
-      #targetFolder.assert_Is jadeService.config.jade_Compilation
+        global.config = null
+        assert_Is_Null @ "aaa"
 
-      # if the compiled jade file is .js , we will have a circular auto compilation when running the tests using (for example) mocha -w node/tests/**/*jade*.js -R list
+  it 'compile_JadeFile_To_Disk', ()->
+    global.config = tm_design :
+                      folder_Jade_Files       : jade_Path
+                      folder_Jade_Compilation : compile_Path
 
+    using new Jade_Service(), ->
 
-
-  return
-
-  it 'calculateJadePath',->
-      using new Jade_Service(), ->
-        @.calculateJadePath("a.jade"                        ).assert_Is(@.repo_Path + "#{path.sep}a.jade")
-        @.calculateJadePath("#{path.sep}a.jade"             ).assert_Is(@.repo_Path + "#{path.sep}a.jade")
-        @.calculateJadePath("a#{path.sep}b.jade"            ).assert_Is(@.repo_Path + "#{path.sep}a#{path.sep}b.jade")
-        @.calculateJadePath("#{path.sep}a#{path.sep}b.jade" ).assert_Is(@.repo_Path + "#{path.sep}a#{path.sep}b.jade")
-
-
-  it 'compileJadeFileToDisk', ()->
-      jadeService = new Jade_Service();
-      defaultJadeFile = '/source/jade/guest/default.jade';
-
-      jadeService.compileJadeFileToDisk('a').assert_Is_False()
-
-      targetPath    = jadeService.calculateTargetPath(defaultJadeFile);
-      #if(fs.existsSync(targetPath)==false)
-      jadeService.compileJadeFileToDisk(defaultJadeFile).assert_Is_True()
-      jadeTemplate  = require(targetPath);
+      compiled_File    = @.calculate_Compile_Path(jade_File).assert_File_Not_Exists();
+      @.compile_JadeFile_To_Disk(jade_File).assert_Is_True()
+      jadeTemplate  = require(compiled_File.real_Path());
       jadeTemplate.assert_Is_Function()
       jadeTemplate().assert_Is_String()
-
       html = jadeTemplate();
-      html.assert_Contains '<!DOCTYPE html><html lang="en"><head>'
+      html.assert_Is jade_Html
+
+      global.config  = null
+      @.compile_JadeFile_To_Disk('a').assert_Is_False()
 
   it 'renderJadeFile', ()->
-      using new Jade_Service(),->
+    global.config = tm_design :
+      folder_Jade_Files       : jade_Path
+      folder_Jade_Compilation : compile_Path
 
-        @.renderJadeFile('a').assert_Is("");
-
-        @.enableCache();
-
-        helpJadeFile    = '/source/jade/misc/help-index.jade';
-
-        @.renderJadeFile('a').assert_Is("");
-        @.renderJadeFile(helpJadeFile, { structure: []}).assert_Is_Not('')
-        @.renderJadeFile(helpJadeFile                  ).assert_Contains(    '<a id="nav-about" href="/guest/about.html">About</a>')
-        @.renderJadeFile(helpJadeFile,{loggedIn:false} ).assert_Contains(    '<a id="nav-about" href="/guest/about.html">About</a>')
-        @.renderJadeFile(helpJadeFile,{loggedIn:true}  ).assert_Not_Contains('<a id="nav-about" href="/guest/about.html">About</a>')
-
-  it 'renderMixin', (done)->
     using new Jade_Service(),->
-      @.renderMixin('search-mixins', 'results', {resultsTitle : 'AAAA'})
-        .assert_Contains ['<!DOCTYPE html><html lang="en"', 'link href="/static/css/custom-style.css']
-          #                 '<h5 id="resultsTitle">AAAA</h5>']
-      done()
+
+        @.render_Jade_File('a').assert_Is("");
+        @.render_Jade_File(jade_File, { structure: []}).assert_Is_Not ''
+        @.render_Jade_File(jade_File                  ).assert_Is jade_Html
+        #@.render_Jade_File(jade_File,{loggedIn:false} ).assert_Is '<h2>abc</h2><h1>false</h1>'
+        #@.render_Jade_File(jade_File,{loggedIn:true}  ).assert_Is '<h2>abc</h2><h1>true</h1>'
+
+
+
+  #it 'renderMixin', (done)->
+  #  using new Jade_Service(),->
+  #    @.renderMixin('search-mixins', 'results', {resultsTitle : 'AAAA'})
+  #      .assert_Contains ['<!DOCTYPE html><html lang="en"', 'link href="/static/css/custom-style.css']
+  #        #                 '<h5 id="resultsTitle">AAAA</h5>']
+  #    done()
 
     ###
     it('cleanCacheFolder', function()
