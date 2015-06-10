@@ -1,7 +1,6 @@
 fs                 = null
 path               = null
 request            = null
-Config             = null
 Express_Service    = null
 Jade_Service       = null
 Graph_Service      = null
@@ -11,20 +10,18 @@ recentSearches_Cache = ["Logging","Struts","Administrative Controls"]
 url_Prefix           = 'show'
 
 class SearchController
-    constructor: (req, res, config,express_Service)->
+    constructor: (req, res,express_Service)->
 
         fs                 = require('fs')
         path               = require('path')
         request            = require('request')
-        Config             = require('../misc/Config')
         Express_Service    = require('../services/Express-Service')
         Jade_Service       = require('../services/Jade-Service')
         Graph_Service      = require('../services/Graph-Service')
         @.req                = req
         @.res                = res
-        @.config             = config || new Config()
         @.express_Service    = express_Service
-        @.jade_Service       = new Jade_Service(@config)
+        @.jade_Service       = new Jade_Service()
         @.graph_Service      = new Graph_Service()
         @.jade_Page          = '/source/jade/user/search.jade'
         @.jade_Error_Page    = '/source/jade/guest/404.jade'
@@ -165,12 +162,12 @@ class SearchController
 SearchController.register_Routes = (app, expressService) ->
 
     expressService ?= new Express_Service()
-    checkAuth       =  (req,res,next) -> expressService.checkAuth(req, res,next, app.config)
+    checkAuth       =  (req,res,next) -> expressService.checkAuth(req, res,next)
     urlPrefix       = url_Prefix            # urlPrefix should be moved to a global static class
 
     searchController = (method_Name) ->                                  # pins method_Name value
         return (req, res) ->                                             # returns function for express
-            new SearchController(req, res, app.config,expressService)[method_Name]()    # creates SearchController object with live
+            new SearchController(req, res,expressService)[method_Name]()    # creates SearchController object with live
                                                                          # res,req and invokes method_Name
 
     app.get "/"                              , checkAuth , searchController('showMainAppView')

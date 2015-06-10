@@ -1,10 +1,12 @@
+require 'fluentnode'
+
 Article_Controller = null
 Express_Service    = null
 Session_Service    = null
 cheerio            = null
 supertest          = null
 
-describe '| controllers | Article-Controller.test', ->
+describe.only '| controllers | Article-Controller.test', ->
 
   dependencies = ->
     Article_Controller = require '../../src/controllers/Article-Controller'
@@ -36,7 +38,7 @@ describe '| controllers | Article-Controller.test', ->
     using new Article_Controller(req,res), ->
       @.article()
 
-  it 'article (good id)', (done)->
+  it 'article (good id, verify syntax highlighting)', (done)->
 
     article_Id    = 'article-12345'
     article_Title = 'this is an title'
@@ -70,27 +72,6 @@ describe '| controllers | Article-Controller.test', ->
 
     using new Article_Controller(req,res), ->
       @.graphService = graphService
-      @.article()
-
-  # this test doesn't work on Travis since the article-8be858175e32 doesn't exist in there, so the highlight check was added to the
-  # 'article (good id)' test (above)
-
-  xit 'article (verify syntax highlighting)', (done)->
-
-    article_Id    = 'article-8be858175e32'
-
-    req =
-      params: ref: article_Id
-      session: recent_Articles: []
-
-    res =
-      send : (html)->
-        $ = cheerio.load(html)
-        $.html().assert_Contains('<pre><span class="keyword">')
-        $.html().assert_Contains('<link href="/static/css/syntax-highlighting-github-style.css" rel="stylesheet">')
-        done()
-
-    using new Article_Controller(req,res), ->
       @.article()
 
   it 'articles', (done)->
@@ -196,7 +177,7 @@ describe '| controllers | Article-Controller.test', ->
       dependencies()
 
     it 'register_Routes',->
-      route_Inner_Code = 'new Article_Controller(req, res, next, app.config, graph_Options)[method_Name]();'
+      route_Inner_Code = 'new Article_Controller(req, res, next, graph_Options)[method_Name]();'
       routes = {}
       app    =
         get: (url, checkAuth,target)->

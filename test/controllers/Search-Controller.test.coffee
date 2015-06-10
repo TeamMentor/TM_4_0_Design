@@ -2,7 +2,6 @@ fs                = require('fs')
 supertest         = require('supertest')
 expect            = require('chai').expect
 cheerio           = require('cheerio')
-Config            = require('../../src/misc/Config')
 Search_Controller = require('../../src/controllers/Search-Controller')
 Express_Service   = require('../../src/services/Express-Service')
 
@@ -16,13 +15,11 @@ describe "| controllers | Search-Controller.test |", ->
 
       req    = {}
       res    = {}
-      config = new Config()
 
-      using new Search_Controller(req, res, config), ->
+      using new Search_Controller(req, res), ->
         assert_Is_Null @.searchData
         @.req               .assert_Is req
         @.res               .assert_Is res
-        @.config            .assert_Is config
         @.jade_Page         .assert_Is '/source/jade/user/search.jade'
         @.jade_Service      .assert_Instance_Of require('../../src/services/Jade-Service')
         @.graph_Service     .assert_Instance_Of require('../../src/services/Graph-Service')
@@ -32,9 +29,6 @@ describe "| controllers | Search-Controller.test |", ->
         @.defaultDataFile   .assert_Is 'Data_Validation'
         @.urlPrefix         .assert_Is 'show'
         assert_Is_Null @.searchData
-
-      using new Search_Controller(),->
-        @.config.assert_Is(new Config())
 
   it 'renderPage', (done)->
     using new Search_Controller(),->
@@ -59,8 +53,7 @@ describe "| controllers | Search-Controller.test |", ->
               send: (html)->
                   html.assert_Is_String()
                   done()
-    config = new Config()
-    using new Search_Controller(req, res, config),->
+    using new Search_Controller(req, res),->
       @.showSearchFromGraph()
 
 
@@ -305,115 +298,3 @@ describe "| controllers | Search-Controller.test |", ->
                           assert_Is_Null err
                           res.text.contains 'Top Articles'
                           done()
-
-  # using_Express_Service_With_Search_Controller = (callback)->
-  #   using new Express_Service(),->
-  #     @.add_Session(tmpSessionFile)
-  #     @.loginEnabled = false
-  #     Search_Controller.registerRoutes @.app, @
-
-  #     @.open_Article = (id, title, callback)=>
-  #       supertest(@.app)
-  #       .get("/article/view/#{id}/#{title}")
-  #       .end (err,res)=>
-  #         callback res
-
-  #     callback.apply @
-
-#
-#      using_Express_Service_With_Search_Controller ()->
-#
-#        id    = 'this-is-an-guid'
-#        title = 'c'
-#        @.open_Article id, title, (res)=>
-#            res.text.assert_Contains ['Moved Temporarily. Redirecting to','this-is-an-guid']
-#            @.expressSession.db.find {}, (err,sessionData)->
-#              sessionData.first().data.recent_Articles.assert_Is [ { id: 'this-is-an-guid', title: 'c' } ]
-#              done()
-
-
-#    xit 'User views an article which is captured on the recent_Articles list', (done)->
-#
-#      using_Express_Service_With_Search_Controller ()->
-#
-#        id    = 'this-is-an-guid'
-#        title = 'c'
-#        @.open_Article id, title, (res)=>
-#            res.text.assert_Contains ['Moved Temporarily. Redirecting to','this-is-an-guid']
-#            @.expressSession.db.find {}, (err,sessionData)->
-#              sessionData.first().data.recent_Articles.assert_Is [ { id: 'this-is-an-guid', title: 'c' } ]
-#              done()
-#
-#    xit 'open multiple articles,  open article/viewed.json', (done)->
-#      using_Express_Service_With_Search_Controller ()->
-#        @.open_Article 'a', 'title 1', (res)=>
-#          @.open_Article 'b', 'title 2', (res)=>
-#            @.open_Article 'b', 'title 2', (res)=>
-#              @.open_Article 'c', 'title 2', (res)=>
-#                supertest(@.app).get('/article/viewed.json')
-#                  .end (err, res)->
-#                    data = JSON.parse res.text
-#                    data.assert_Size_Is_Bigger_Than(3)
-#                    done()
-#
-
-
-  #to redo once we have better offline content mapped to this
-# xit 'renderPage (and check content)', ->
-#   searchController.config.enable_Jade_Cache = false
-#   console.log ('')
-#   searchController.searchData = null;                         # renderPage() should call loadSearchData()
-
-#   html       = searchController.renderPage()
-#   searchData = searchController.searchData
-
-#   expect(searchData).to.be.an('Object')
-#   expect(html      ).to.be.an  ('String')
-#   expect(html      ).to.contain('<!DOCTYPE html>')
-
-#   $ = cheerio.load(html)
-#   expect($).to.be.an('Function')
-
-#   #containers
-#   expect($('#title').html()).to.be.equal(searchData.title)
-#   expect($('#containers').html()).to.not.equal(null)
-#   expect($('#containers a').length).to.be.above(0)
-
-#   for container in searchData.containers
-#     element = $("#" + container.id)
-#     expect(element.html()).to.not.be.null
-#     expect(element.html()).to.contain(container.title)
-#     expect(element.html()).to.contain(container.size)
-
-#   #results
-#   expect($('#resultsTitle').html()).to.equal(searchData.resultsTitle)
-
-#   for result in searchData.results
-#       element = $("#" + result.id)
-#       expect(element.html()             ).to.not.be.null
-#       expect(element.attr('id'  )       ).to.equal(result.id)
-#       expect(element.attr('href')       ).to.equal(result.link)
-#       expect(element.find('h4'  ).html()).to.equal(result.title)
-#       expect(element.find('p'   ).html()).to.equal(result.summary)
-
-#   #filters
-#   mappedFilters = {}
-#   for filter in searchData.filters
-#       mappedFilters[filter.title] = filter
-
-#   expect($('#filters'     ).html()).to.not.equal(null)
-#   expect($('#filters h3'  ).html()).to.equal('Filters')
-#   expect($('#filters form').html()).to.not.equal(null)
-#   expect($('#filters form .form-group').html()).to.not.equal(null)
-
-#   formGroups = $('#filters form .form-group')
-#   expect(formGroups.length).to.equal(searchData.filters.length)
-#   for formGroup in formGroups
-#       title = $(formGroup).find('h5').html()
-#       expect(title).to.be.an('String')
-#       mappedFilter = mappedFilters[title]
-#       expect(mappedFilter).to.be.an('Object')
-#       formGroupHtml = $(formGroup).html()
-#       for result in mappedFilter.results
-#           expect(formGroupHtml).to.contain(result.title)
-#           expect(formGroupHtml).to.contain(result.size)

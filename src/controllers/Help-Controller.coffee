@@ -30,6 +30,7 @@ class Help_Controller
     @.index_Page_Id    = '1eda3d77-43e0-474b-be99-9ba118408dd3'
     @.jade_Error_Page  = '/source/jade/guest/404.jade'
     @.imagePath        = '../../.tmCache/Lib_Docs-json/_Images/'
+
   content_Cache_Set: (title, content)=>
     key = @.page_Id()
     if (key)
@@ -44,7 +45,7 @@ class Help_Controller
     if article_Title is null
       @show_Content("No content for the current page",'')
       return
-    callback =@.docs_TM_Service.article_Data @.page_Id()
+    callback = @.docs_TM_Service.article_Data @.page_Id()
     if callback
         content =callback.html
         @show_Content(article_Title,content )
@@ -67,7 +68,7 @@ class Help_Controller
   render_Jade_and_Send: (jade_Page, view_Model)=>
     view_Model.loggedIn = @.user_Logged_In()
     view_Model.library  = @.docs_Library
-    html = new Jade_Service().renderJadeFile(jade_Page, view_Model)
+    html = new Jade_Service().render_Jade_File(jade_Page, view_Model)
     @.res.status(200)
          .send(html)
 

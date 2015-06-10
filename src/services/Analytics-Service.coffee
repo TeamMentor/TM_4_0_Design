@@ -1,4 +1,3 @@
-Config           = null
 piwikAnalytics   = null
 piwik            = null
 path             = require('path')
@@ -7,24 +6,24 @@ class Analytics_Service
 
   dependencies:()->
     piwikAnalytics = require 'piwik-tracker'
-    Config         = require('../misc/Config')
 
   constructor:(req, res)->
     @.dependencies()
-    @.req      = req
-    @.res      = res
-    @.config   = new Config()
-
+    @.req               = req
+    @.res               = res
+    @.analitycsEnabled  = global.config?.analitycsEnabled
+    @.analitycsSiteId   = global.config?.analitycsSiteId
+    @.analitycsTrackUrl = global.config?.analitycsTrackUrl
 
   setup:() =>
-    if @.config and @.config.analitycsEnabled
+    if @.analitycsEnabled
       'Analytics is enabled'.log()
-      if not @.config.analitycsSiteId
+      if not @.analitycsSiteId
         'Error: siteId must be provided.'.log()
-      else if not @.config.analitycsTrackUrl
+      else if not @.analitycsTrackUrl
         'Error: A tracker URL must be provided, e.g. http://example.com/piwik.php'.log()
       else
-        piwik = new piwikAnalytics(@.config.analitycsSiteId, @.config.analitycsTrackUrl)
+        piwik = new piwikAnalytics(@.analitycsSiteId, @.analitycsTrackUrl)
     else
       'Analytics not enabled'.log()
 
@@ -47,11 +46,11 @@ class Analytics_Service
     piwik?.track (url)
 
   track : (pageTitle,eventCategory, eventName) ->
-    if not @.config.analitycsEnabled
+    if not @.analitycsEnabled
       return
 
     actionName = if pageTitle then pageTitle else @.req.url
-    url        = @.config.analitycsTrackingSite + @.req.url
+    url        = @.analitycsTrackingSite + @.req.url
     ipAddress  = @.remoteIp()
 
     piwik?.track({

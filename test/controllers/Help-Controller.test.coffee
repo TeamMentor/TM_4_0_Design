@@ -30,7 +30,7 @@ describe '| controllers | Help-Controller.test |', ()->
       callback [library]
     article_Data : (articleId) ->
       if (articleId=='1eda3d77-43e0-474b-be99-9ba118408dd3')
-        return {html:(__dirname+'/response/expectedIndex').file_Contents()}
+        return {html:'<p><strong>Welcome to TEAM Mentor.</strong> <br>\n</p><p>\nTEAM Mentor</p>'}
       else
         return {html:'<h1>Test</h1>'}
 

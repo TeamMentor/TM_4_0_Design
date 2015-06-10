@@ -1,16 +1,12 @@
-Config       = null
 Jade_Service = null
 
 class Jade_Controller
-  constructor: (req, res, config)->
-
-    Config        = require('../misc/Config')
+  constructor: (req, res)->
     Jade_Service  = require('../services/Jade-Service')
 
     @.req          = req;
     @.res          = res;
-    @.config       = config || new Config();
-    @.jade_Service = new Jade_Service(@.config);
+    @.jade_Service = new Jade_Service();
 
 
   renderMixin: (viewModel)=>
@@ -30,7 +26,7 @@ class Jade_Controller
   renderFile: (viewModel)=>
     file_Raw  =  @.req.params.file.to_Safe_String().replace(/_/g,'/')
     file      = "/source/#{file_Raw}.jade"
-    html      =  @.jade_Service.renderJadeFile(file, viewModel || {})
+    html      =  @.jade_Service.render_Jade_File(file, viewModel || {})
     @.res.send(html)
 
   renderFile_GET: ()=>

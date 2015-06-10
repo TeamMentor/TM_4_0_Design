@@ -1,27 +1,25 @@
-Express_Service  = null
-Jade_Service     = null
-Graph_Service    = null
-Config           = null
-Analytics_Service       = null
+Express_Service   = null
+Jade_Service      = null
+Graph_Service     = null
+Analytics_Service = null
+
 class Article_Controller
 
   dependencies: ()->
     Express_Service    = require('../services/Express-Service')
     Jade_Service       = require('../services/Jade-Service')
     Graph_Service      = require('../services/Graph-Service')
-    Config             = require('../misc/Config')
     Analytics_Service  = require('../services/Analytics-Service')
 
-  constructor: (req, res, next, config,graph_Options)->
+  constructor: (req, res, next,graph_Options)->
     @dependencies()
     @.req              = req
     @.res              = res
     @.next             = next
-    @.config           = config || new Config()
-    @.jade_Article     = '/source/jade/user/article.jade'
-    @.jade_Articles    = '/source/jade/user/articles.jade'
-    @.jade_No_Article  = '/source/jade/user/no-article.jade'
-    @.jade_Service     = new Jade_Service(@.config);
+    @.jade_Article     = 'user/article.jade'
+    @.jade_Articles    = 'user/articles.jade'
+    @.jade_No_Article  = 'user/no-article.jade'
+    @.jade_Service     = new Jade_Service();
     @.graphService     = new Graph_Service(graph_Options)
 
 
@@ -30,9 +28,9 @@ class Article_Controller
   article: =>
     send_Article = (view_Model)=>
       if view_Model
-        @res.send @jade_Service.renderJadeFile(@jade_Article, view_Model)
+        @res.send @jade_Service.render_Jade_File(@jade_Article, view_Model)
       else
-        @res.send @jade_Service.renderJadeFile(@jade_No_Article)
+        @res.send @jade_Service.render_Jade_File(@jade_No_Article)
 
     article_Ref = @req.params.ref
 
@@ -57,7 +55,7 @@ class Article_Controller
   articles: =>
     @graphService.articles (articles)=>
       view_Model = { results: articles.values()}
-      @res.send @jade_Service.renderJadeFile(@jade_Articles, view_Model)
+      @res.send @jade_Service.render_Jade_File(@jade_Articles, view_Model)
 
   check_Guid: =>
     guid = @.req.params?.guid
@@ -87,11 +85,11 @@ class Article_Controller
 
 Article_Controller.register_Routes = (app, expressService,graph_Options) ->
 
-  checkAuth       =  (req,res,next) -> expressService.checkAuth(req, res, next, app?.config)
+  checkAuth       =  (req,res,next) -> expressService.checkAuth(req, res, next)
 
   articleController = (method_Name) ->                                                       # pins method_Name value
         return (req, res,next) ->                                                            # returns function for express
-            new Article_Controller(req, res, next, app.config,graph_Options)[method_Name]()   # creates SearchController object with live
+            new Article_Controller(req, res, next,graph_Options)[method_Name]()   # creates SearchController object with live
 
   app.get '/a/:ref'               , checkAuth, articleController('article')
   app.get '/article/:ref/:guid'   , checkAuth, articleController('check_Guid')
