@@ -1,1 +1,0 @@
-Reduce the number of vulnerabilities over time as developers learn about each vulnerability at the time it is identified.

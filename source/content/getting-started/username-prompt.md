@@ -1,1 +1,0 @@
-Your username should only contain letters and numbers.
