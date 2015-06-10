@@ -1,16 +1,14 @@
-Config          = null
 Jade_Service    = null
 Session_Service = null
 Logging_Service = null
 bodyParser      = null
-
 path            = null
 express         = null
 
 class Express_Service
 
   dependencies: ()->
-    Config           = require '../misc/Config'
+
     Jade_Service     = require '../services/Jade-Service'
     Session_Service  = require '../services/Session-Service'
     Logging_Service  = require '../services/Logging-Service'
@@ -18,24 +16,22 @@ class Express_Service
     path             = require "path"
     express          = require 'express'
 
-  constructor: (options)->
+  constructor: (config)->
     @.dependencies()
-    @.config          = new Config()
-    @.options         = options || @.config.load_Options()
-    @.options.logging_Enabled = true
-    @.config          =
-    @.app             = express()
-    @loginEnabled     = true;
-    @.app.port        = @.options.TM_Design?.port || process.env.PORT || 1337;
-    @.session_Service = null
-    @.logging_Service = null
+
+    @.config                  = config || global.config
+    @.logging_Enabled         = @.config?.logging_Enabled || true
+    @.app                     = express()
+    @loginEnabled             = true;
+    @.app.port                = @.config.tm_design?.port || process.env.PORT || 1337;
+    @.session_Service         = null
+    @.logging_Service         = null
 
   setup: ()=>
-    if @.options.logging_Enabled
+    if @.logging_Enabled
       @.set_Logging()
     @.set_BodyParser()
     @.remove_Unwanted_Headers()
-    @.set_Config()
     @.set_Static_Route()
     @.add_Session()      # for now not using the async version of add_Session
     @.set_Views_Path()
@@ -62,14 +58,11 @@ class Express_Service
   remove_Unwanted_Headers : () ->
     @.app.disable("x-powered-by")
 
-  set_Config:()=>
-    @.app.config = new Config(null, false);
-
   set_Static_Route:()=>
     @app.use(express['static'](path.join(__dirname,'../../')));
 
   set_Views_Path :()=>
-    @.app.set('views', path.join(__dirname,'../../'))
+    @.app.set('views', path.join(__dirname,'../../../TM_4_Jade'))
 
   map_Route: (file)=>
     require(file)(@)
@@ -88,7 +81,7 @@ class Express_Service
       else
         req.session.redirectUrl = req.url
         res.status(403)
-           .send(new Jade_Service(config).renderJadeFile('/source/jade/guest/login-required.jade'))
+           .send(new Jade_Service().render_Jade_File('guest/login-required.jade'))
     else
       next()
 

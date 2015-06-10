@@ -15,6 +15,7 @@ class JadeService
 
     constructor: ()->
       @.dependencies()
+      @.mixin_Extends = "..#{path.sep}_layouts#{path.sep}page_clean"
 
     apply_Highlight: (html)=>
       if html.not_Contains('<pre>')
@@ -43,6 +44,7 @@ class JadeService
     calculate_Jade_Path: (jade_File)=>
       if jade_File.file_Exists()                                    then return jade_File
       if jade_Folder = global.config?.tm_design?.folder_Jade_Files  then return jade_Folder.path_Combine(jade_File)
+      log jade_Folder
       return null
 
 
@@ -68,28 +70,27 @@ class JadeService
         params.article_Html = @.apply_Highlight(params.article_Html)
       if (@.cache_Enabled() is false)
         jadeFile_Path = @.calculate_Jade_Path(jadeFile)
+
         if jadeFile_Path?.file_Exists()
           return jade.renderFile(jadeFile_Path,params)
         return ""
 
-      targetFile_Path = this.calculate_Target_Path(jadeFile);
+      targetFile_Path = @.calculate_Compile_Path(jadeFile);
       if (fs.existsSync(targetFile_Path) == false)
-          if (this.compile_JadeFile_To_Disk(jadeFile) == false)
+          if (@.compile_JadeFile_To_Disk(jadeFile) == false)
               return "";
 
       return require(targetFile_Path)(params);
 
-    #render_Mixin: (file, mixin, params)=>
-    #  mixin_Extends = "..#{path.sep}_layouts#{path.sep}page_clean"
-    #
-    #  safeFile      = file.to_Safe_String()                                   # only allow letter, numbers, comma, dash and underscore
-    #  safeMixin     = mixin.to_Safe_String()
-    #  dummyJade     = @.folder_Mixins().path_Combine("#{path.sep}tmp.jade")   # file to be provided to jade.compile (used to resolve the mixin file path)
-    #  code = "extends #{mixin_Extends}    \n" +                               # add html head and body (with TM css, but no nav bar)
-    #         "include #{safeFile}.jade      \n" +                             # imports mixin file
-    #         "block content                 \n" +                             # where rendered mixin will be placed
-    #         "  +#{safeMixin}                 "                               # mixin to render
-    #  return jade.compile(code, {filename: dummyJade })(params)
+    render_Mixin: (file, mixin, params)=>
+      safeFile      = file.to_Safe_String()                                   # only allow letter, numbers, comma, dash and underscore
+      safeMixin     = mixin.to_Safe_String()
+      dummyJade     = @.calculate_Jade_Path('/_mixins/tmp.jade')              # file to be provided to jade.compile (used to resolve the mixin file path)
+      code = "extends #{@.mixin_Extends}    \n" +                               # add html head and body (with TM css, but no nav bar)
+             "include #{safeFile}.jade      \n" +                             # imports mixin file
+             "block content                 \n" +                             # where rendered mixin will be placed
+             "  +#{safeMixin}                 "                               # mixin to render
+      return jade.compile(code, {filename: dummyJade })(params)
 
 
 module.exports = JadeService

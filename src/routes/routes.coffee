@@ -31,9 +31,9 @@ add_Routes = (express_Service)->
     app.get '/_Customizations/SSO.aspx', (req, res)-> new Login_Controller(req, res).tm_SSO()
     app.get '/Aspx_Pages/SSO.aspx'     , (req, res)-> new Login_Controller(req, res).tm_SSO()
 
-    app.get '/index.html'      , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/default.jade'
-    app.get '/guest/:page.html', (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/' + req.params.page + '.jade'
-    app.get '/guest/:page'     , (req, res)-> res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/' + req.params.page + '.jade'
+    app.get '/index.html'      , (req, res)-> res.send new Jade_Service(app.config).render_Jade_File 'guest/default.jade'
+    app.get '/guest/:page.html', (req, res)-> res.send new Jade_Service(app.config).render_Jade_File 'guest/' + req.params.page + '.jade'
+    app.get '/guest/:page'     , (req, res)-> res.send new Jade_Service(app.config).render_Jade_File 'guest/' + req.params.page + '.jade'
     app.get '/teamMentor'      , (req, res)->
         if req.session?.username
             res.redirect "/user/main.html"                                                                        # to prevent cached infinite redirects (due to 3.5 redirect of / to /teammentor
@@ -52,8 +52,8 @@ add_Routes = (express_Service)->
     #app.get '/passwordReset/:username/:token'               , (req, res)->  res.send new Jade_Service(app.config).renderJadeFile '/source/jade/guest/pwd-reset.jade'
 
     #errors 404 and 500
-    app.get '/error', (req,res)-> res.status(500).render 'source/jade/guest/500.jade',{loggedIn:req.session?.username isnt undefined}
-    app.get '/*'    , (req,res)-> res.status(404).render 'source/jade/guest/404.jade',{loggedIn:req.session?.username isnt undefined}
+    app.get '/error', (req,res)-> res.status(500).render 'guest/500.jade',{loggedIn:req.session?.username isnt undefined}
+    app.get '/*'    , (req,res)-> res.status(404).render 'guest/404.jade',{loggedIn:req.session?.username isnt undefined}
 
     app.use (err, req, res, next)->
       #console.error(err.stack)

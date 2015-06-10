@@ -6,7 +6,7 @@ Session_Service    = null
 cheerio            = null
 supertest          = null
 
-describe.only '| controllers | Article-Controller.test', ->
+describe '| controllers | Article-Controller.test', ->
 
   dependencies = ->
     Article_Controller = require '../../src/controllers/Article-Controller'
@@ -20,8 +20,8 @@ describe.only '| controllers | Article-Controller.test', ->
 
   it 'constructor', (done)->
     using new Article_Controller(), ->
-      @.jade_Article.assert_Is    '/source/jade/user/article.jade'
-      @.jade_No_Article.assert_Is '/source/jade/user/no-article.jade'
+      @.jade_Article.assert_Is    'user/article.jade'
+      @.jade_No_Article.assert_Is 'user/no-article.jade'
       done()
 
   it 'article (bad id)', (done)->

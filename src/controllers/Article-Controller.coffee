@@ -22,9 +22,6 @@ class Article_Controller
     @.jade_Service     = new Jade_Service();
     @.graphService     = new Graph_Service(graph_Options)
 
-
-
-
   article: =>
     send_Article = (view_Model)=>
       if view_Model
@@ -35,7 +32,6 @@ class Article_Controller
     article_Ref = @req.params.ref
 
     @.graphService.article article_Ref, (data)=>
-
 
       article_Id = data.article_Id
       if article_Id

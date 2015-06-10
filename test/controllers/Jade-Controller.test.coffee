@@ -1,8 +1,8 @@
-require 'fluentnode'
 Jade_Controller = require('../../src/controllers/Jade-Controller')
+Jade_Service    = require('../../src/services/Jade-Service')
 cheerio = require 'cheerio'
 
-describe '| controllers | Jade-Controller.test.js |', ()->
+describe.only '| controllers | Jade-Controller.test.js |', ()->
 
   describe 'render mixin', ->
     mixin_File   = null
@@ -18,11 +18,12 @@ describe '| controllers | Jade-Controller.test.js |', ()->
     dynamic_h2   = 'from test_'.add_5_Random_Letters()
 
     before ->
-      mixin_File   = ".".temp_Name_In_Folder().append('.jade')
-      extends_File = mixin_File.replace('.jade','_extends.jade')
+      using new Jade_Service(),->
+        mixin_File   =  @.calculate_Jade_Path '_mixins/_tmp_Mixin_'.add_5_Letters().add('.jade')
+        extends_File = mixin_File.replace('.jade','_extends.jade')
 
-      mixin_File   .file_Write(mixin_Code  ).assert_File_Contents(mixin_Code)
-      extends_File .file_Write(extends_Code).assert_File_Contents(extends_Code)
+        mixin_File   .file_Write(mixin_Code  ).assert_File_Contents(mixin_Code)
+        extends_File .file_Write(extends_Code).assert_File_Contents(extends_Code)
 
     assert_On_Send =
       (next)->
@@ -40,7 +41,7 @@ describe '| controllers | Jade-Controller.test.js |', ()->
                 params:
                   file: mixin_File.file_Name_Without_Extension()
                   mixin:mixin_Name
-        @.jade_Service.mixins_Folder = mixin_File.parent_Folder()
+
         @.jade_Service.mixin_Extends = extends_File.file_Name()
 
         callback.apply(@)
@@ -89,7 +90,7 @@ describe '| controllers | Jade-Controller.test.js |', ()->
 
     it 'renderFile', (done)->
       req =
-            params: { file: 'jade_guest_about'}
+            params: { file: 'guest_about'}
 
       res =
             send: (html)->

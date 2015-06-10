@@ -1,7 +1,6 @@
 piwikAnalytics   = null
 piwik            = null
-path             = require('path')
-fs               = require('fs')
+
 class Analytics_Service
 
   dependencies:()->
@@ -36,8 +35,8 @@ class Analytics_Service
     return ipAddr
 
   apiKey:() ->
-    if (path.join(process.cwd(),'../Site_Data/secrets.json').file_Exists())
-      secrets = path.join(process.cwd(),'../Site_Data/secrets.json').load_Json()
+    if (process.cwd().path_Combine('../Site_Data/secrets.json').file_Exists())
+      secrets = process.cwd().path_Combine('../Site_Data/secrets.json').load_Json()
       return secrets.AnalyticsApiKey
     else
       return ''

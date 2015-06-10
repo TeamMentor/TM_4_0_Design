@@ -14,7 +14,7 @@ class Jade_Controller
       viewModel = JSON.parse viewModel.viewModel
     file  = @req.params.file
     mixin = @req.params.mixin
-    html  = @.jade_Service.renderMixin(file, mixin,viewModel || {})
+    html  = @.jade_Service.render_Mixin(file, mixin,viewModel || {})
     @.res.send(html)
 
   renderMixin_GET: ()=>
@@ -25,7 +25,7 @@ class Jade_Controller
 
   renderFile: (viewModel)=>
     file_Raw  =  @.req.params.file.to_Safe_String().replace(/_/g,'/')
-    file      = "/source/#{file_Raw}.jade"
+    file      = "#{file_Raw}.jade"
     html      =  @.jade_Service.render_Jade_File(file, viewModel || {})
     @.res.send(html)
 

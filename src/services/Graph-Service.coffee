@@ -1,6 +1,3 @@
-require('fluentnode')
-fs            = require('fs')
-#Cache_Service = require('teammentor').Cache_Service
 class Graph_Service
 
   constructor: (options)->

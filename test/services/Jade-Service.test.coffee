@@ -4,7 +4,7 @@ require 'fluentnode'
 #{expect}     = require "chai"
 Jade_Service = require '../../src/services/Jade-Service'
 
-describe.only "| services | Jade-Service |", ()->
+describe "| services | Jade-Service |", ()->
 
   jade_File    = null
   mixin_File   = null
