@@ -1,0 +1,19 @@
+extends _layouts/flare_page
+include mixins/application-mixins
+
+block content
+  .application
+    aside#left-nav
+      +left-navigation
+    aside#right-nav
+      +filters-div
+    main
+      section.row
+        .col-3
+          .map
+            .label Map
+        .col-9
+          section.row
+            +articles-list
+            +articles-list
+            +articles-list

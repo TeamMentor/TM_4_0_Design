@@ -133,7 +133,6 @@ section.row {
   -webkit-align-content: flex-start;
       -ms-flex-line-pack: start;
           align-content: flex-start;
-  padding: 0.5em 0;
 }
 aside {
   display: -webkit-flex;
@@ -929,6 +928,11 @@ aside .accordion-panel {
 *------------------------------------*/
 img {
   width: 100%;
+}
+.map {
+  background: #dbdbdb;
+  height: 300px;
+  margin: 0.5em 0 0 0;
 }
 .alert-box {
   width: 100%;
