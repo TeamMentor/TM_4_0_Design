@@ -3,14 +3,22 @@ mixin article
 	section.row__label
 		+article-info
 	article
+		section.row
+			ul.article-info
+				li #
+				li #
+				li #
+			.article-title
+				h1 Article Title Article Title Article Title Article Title Article Title Article Title
 		include:md ../../content/articles/article-new-window.md
 
 //- Article Info
 mixin article-info
 	.label
 		span #
-		span #
-		span #
+		span This article is a part of  
+			span
+				a(href='curated-content') Curated Content
 	ul.display-inline
 		li.half-width
 			+save-button
