@@ -1046,7 +1046,9 @@ span.alert-text {
   .tm-logo {
     -webkit-flex: 21%;
     flex: 5%;
-    background-position: px 10px;
+    background-position: 0px 10px;
+    background: url(../assets/logos/tm-icon.svg) no-repeat;
+    background-color: white;
   }
   .links ul li {
     padding: 0 1em;
@@ -1065,16 +1067,18 @@ span.alert-text {
     overflow: hidden;
     border-bottom: 1px solid #dbdbdb;
     background: white;
-    padding: 0 5em 0 1em;
+    padding: 0 5em 0 0;
   }
   .search-field {
     background: #fafafa;
     border: 1px solid #dbdbdb;
-    border-radius: 20px;
+    border-radius: 2em;
     font-size: 0.85em;
     height: 80%;
     width: 100%;
     flex: 100%;
+    margin: 0.5em 0 0 0;
+    padding: 0.35em 0 0 1em;
   }
   .search-field input[type="text"] {
     background: transparent;
