@@ -1,1 +1,0 @@
-Stores and cross-references your security policies with out-of-the-box secure coding checklists and examples.

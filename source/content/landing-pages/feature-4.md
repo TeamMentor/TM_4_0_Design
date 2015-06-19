@@ -1,1 +1,0 @@
-Provides guidance to assist developers in reducing security vulnerabilities in software applications.

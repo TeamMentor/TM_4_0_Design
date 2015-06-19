@@ -1,1 +1,0 @@
-We'll email you a confirmation.

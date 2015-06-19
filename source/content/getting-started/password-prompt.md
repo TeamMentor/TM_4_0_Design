@@ -1,1 +1,0 @@
-Your password should be at least 8 characters long. It should have at least one of each of the following: uppercase and lowercase letters, number and special character.
