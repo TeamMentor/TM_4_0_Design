@@ -85,8 +85,11 @@ describe '| controllers | User-Sign-Up-Controller', ->
         jade_Page.assert_Is(expected_Target)
         callback()
 
+    mockedLogin = new Login_Controller(req,res)
+    mockedLogin.webServices = url_WebServices
     using new User_Sign_Up_Controller(req, res), ->
       @.webServices = url_WebServices
+      @.login= mockedLogin
       @.userSignUp()
 
 
@@ -175,7 +178,7 @@ describe '| controllers | User-Sign-Up-Controller', ->
     pwd  = "**tm**pwd**"
     email = "#{user}@teammentor.net"
 
-    invoke_UserSignUp user,pwd,email,signUp_Ok,'', ->
+    invoke_UserSignUp user,pwd,email,mainPage_user,'', ->
       invoke_LoginUser user,pwd,mainPage_user, ->
         done()
 

@@ -10,15 +10,15 @@ Analytics_Service       = null
 class User_Sign_Up_Controller
 
   constructor: (req, res)->
-
-    request     = require('request')
-    Config      = require('../misc/Config')
-    Analytics_Service  = require('../services/Analytics-Service')
-
+    request              = require('request')
+    Config               = require('../misc/Config')
+    Login_Controller     = require('../controllers/Login-Controller')
+    Analytics_Service    = require('../services/Analytics-Service')
     @.req                = req || {}
     @.res                = res || {}
     @.config             = new Config();
     @.webServices        = @.config.tm_35_Server + @.config.tmWebServices
+    @.login              = new Login_Controller(req,res)
     @.analyticsService   = new Analytics_Service(@.req, @.res)
 
   userSignUp: ()=>
@@ -70,12 +70,10 @@ class User_Sign_Up_Controller
 
       message = ''
 
-      #log signUpResponse
-
       if (signUpResponse.Signup_Status is 0)
         @.analyticsService.track('','User Account',"Signup Success #{@.req.body.username}")
-        @res.redirect('/guest/sign-up-OK.html')
-        return
+        return @.login.loginUser()
+
       if (signUpResponse.Validation_Results.empty())
         message = signUpResponse.Simple_Error_Message || 'An error occurred'
       else
@@ -83,7 +81,6 @@ class User_Sign_Up_Controller
       userViewModel.errorMessage = message
       @.analyticsService.track('','User Account',"Signup Failed #{@.req.body.username}")
       @res.render(signUp_fail, {viewModel:userViewModel})
-
 
 
 module.exports = User_Sign_Up_Controller
