@@ -18,7 +18,7 @@ class Graph_Service
       url_Article_Html.GET_Json callback
 
   article: (article_Ref, callback)=>
-    if not article_Ref
+    if not article_Ref or article_Ref.length >12
       callback ''
     else
       url_Article = "#{@server}/data/article/#{article_Ref.str().url_Encode()}"

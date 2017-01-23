@@ -45,6 +45,20 @@ describe '| services | Graph-Service.test |', ->
       data.url.assert_Is "/data/article/#{ref}"
       done()
 
+  it 'article id needs to be 12 character long', (done)->
+    server.respond_With_Request_Url()
+    ref = 'abc_'.add_Random_Letters(8)
+    graphService.article ref, (data)=>
+      data.url.assert_Is "/data/article/#{ref}"
+      done()
+
+  it 'GraphDB should not be invoked if article id is longer than 12 characters', (done)->
+    server.respond_With_Request_Url()
+    ref = 'abc_'.add_Random_Letters(9)
+    graphService.article ref, (data)=>
+      data.assert_Is_Undefined();
+      done()
+
   it 'articles', (done)->
     graphService.articles (data)=>
       data.assert_Is { url: '/data/articles/' }
